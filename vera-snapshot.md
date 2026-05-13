@@ -1,0 +1,28 @@
+- generic [active] [ref=e1] [box=0,0,1440,6796]:
+  - region "We value your privacy" [ref=e518] [box=40,748,440,212]:
+    - generic [ref=e520] [box=67,769,386,170]:
+      - heading "We value your privacy" [level=2] [ref=e521] [box=67,769,386,24]
+      - generic [ref=e522] [box=67,805,386,134]:
+        - paragraph [ref=e524] [box=67,805,386,74]
+        - generic [ref=e526] [box=67,895,386,44]
+  - link "Skip to main navigation" [ref=e2] [cursor=pointer] [box=0,0,1,5]:
+    - /url: "#main-menu"
+  - generic [ref=e3] [box=0,0,1440,6796]:
+    - banner [ref=e4] [box=96,0,1248,154]:
+      - link "Vera Therapeutics" [ref=e5] [cursor=pointer] [box=96,79,150,75]:
+        - /url: https://veratx.com/
+        - img "Vera Therapeutics" [ref=e6] [box=96,79,150,75]
+      - navigation [ref=e7] [box=665,79,679,74]:
+        - list [ref=e8] [box=665,79,679,74]
+    - heading "News Release" [level=1] [ref=e24] [box=96,220,447,77]
+    - generic [ref=e26] [box=96,574,1248,5571]:
+      - complementary [ref=e27] [box=96,574,260,5571]:
+        - list [ref=e28] [box=96,574,260,778]
+      - article [ref=e68] [box=406,574,938,5571]:
+        - generic [ref=e69] [box=406,574,938,39]
+        - heading "Vera Therapeutics Provides Business Update and Reports First Quarter 2026 Financial Results" [level=2] [ref=e71] [box=406,613,938,245]
+        - generic [ref=e74] [box=406,878,938,5267]
+    - contentinfo [ref=e491] [box=0,6270,1440,526]:
+      - generic [ref=e492] [box=96,6410,1248,319]:
+        - generic [ref=e493] [box=96,6410,1248,230]
+        - generic [ref=e506] [box=96,6640,1248,89]

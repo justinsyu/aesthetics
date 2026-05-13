@@ -1,0 +1,787 @@
+- main:
+  - 'link "Accessibility: Skip TopNav"':
+    - /url: "#maincontainer"
+  - generic "Home":
+    - link "Home":
+      - /url: https://www.globenewswire.com
+      - img "GlobeNewswire"
+  - list:
+    - listitem "newsroom":
+      - link "newsroom":
+        - /url: https://www.globenewswire.com/newsroom
+        - text: Newsroom
+    - listitem "services":
+      - link "services":
+        - /url: https://www.globenewswire.com/services
+        - text: Services
+    - listitem "contact":
+      - link "contact":
+        - /url: https://insight.notified.com/globenewswire-contact-us?utm_medium=Website&utm_source=Contact%20Us&utm_campaign=Contact%20Us%20ENG
+        - text: Contact Us
+    - listitem "aboutus":
+      - link "aboutus":
+        - /url: https://www.globenewswire.com/about
+        - text: About Us
+    - listitem "language":
+      - button "English":
+        - generic: English
+  - link "Sign In":
+    - /url: https://www.globenewswire.com/home/signin
+  - link "Register":
+    - /url: https://portal.notified.com/en/registration
+  - button:
+  - navigation:
+    - list:
+      - link "Consumer Products and Services News":
+        - /url: /news/consumer-products-services
+      - button "Toggle Consumer Products and Services News submenu":
+      - link "Energy News":
+        - /url: /news/energy
+      - button "Toggle Energy News submenu":
+      - link "Banks & Financial Services News":
+        - /url: /news/banks-financial-services
+      - button "Toggle Banks & Financial Services News submenu":
+      - link "Healthcare News":
+        - /url: /news/heathcare
+      - button "Toggle Healthcare News submenu":
+      - link "Industrials and Utilities News":
+        - /url: /news/industrials-utilities
+      - button "Toggle Industrials and Utilities News submenu":
+      - link "Technology and Telecom News":
+        - /url: /news/technology-telecom
+      - button "Toggle Technology and Telecom News submenu":
+  - heading "Iovance.jpg" [level=1]:
+    - link "Iovance.jpg":
+      - /url: https://www.iovance.com/
+      - img "Iovance.jpg"
+  - heading "Iovance Biotherapeutics Highlights Positive First Quarter 2026 Results, Business Achievements and Corporate Updates" [level=1]
+  - paragraph:
+    - time: May 07, 2026 07:05 ET
+    - text: "| Source:"
+    - link "Iovance Biotherapeutics, Inc.":
+      - /url: /en/search/organization/Iovance%2520Biotherapeutics%2520Inc
+    - button "Follow":
+      - generic: Follow
+  - separator
+  - generic: Share
+  - list:
+    - button:
+    - button:
+      - generic "Globenewswire Twitter":
+    - button:
+    - link:
+      - /url: "#"
+    - button:
+    - button:
+    - separator
+    - button:
+  - paragraph:
+    - emphasis: 1Q26 Total Revenue of ~$71M Delivers ~
+    - emphasis: 45% Year-over-Year Growth
+  - paragraph:
+    - emphasis: 2Q26 Revenue Guidance of
+    - emphasis: $86M to $88M and FY26 of $350M to $370M
+  - paragraph:
+    - emphasis: 40% Confirmed Objective Response Rate in Metastatic Serous Endometrial Cancer
+  - paragraph: "SAN CARLOS, Calif., May 07, 2026 (GLOBE NEWSWIRE) -- Iovance Biotherapeutics, Inc. (NASDAQ: IOVA), a commercial biotechnology company focused on innovating, developing, and delivering novel polyclonal tumor infiltrating lymphocyte (TIL) therapies for patients with cancer, today reported first quarter 2026 financial results, business achievements, and corporate updates."
+  - paragraph: Frederick Vogt, Ph.D., J.D., Interim President and Chief Executive Officer of Iovance, stated, “We are accelerating the adoption and commercial expansion for Amtagvi after record high demand. Iovance is well positioned through 2026 for long-term revenue growth, while advancing multiple ongoing and new clinical trials, including our registrational trial in advanced sarcomas now underway and encouraging initial data reported today for lifileucel in metastatic serous endometrial cancer. Internal manufacturing efficiencies, operational improvements, and cost reductions will benefit gross margin and propel future profitability, sustainable growth, and long-term value for patients and shareholders.”
+  - paragraph:
+    - strong: First Quarter 2026
+    - strong: Financial Highlights
+    - emphasis: Continued Strength in Execution and Cost Discipline
+  - list:
+    - text: Total product revenue of ~$71 million increased by ~45% over 1Q25, reflecting significant performance improvements over the prior annual maintenance period.
+    - list:
+      - listitem: U.S. Amtagvi revenue was ~$60 million.
+      - listitem: Global Proleukin revenue was ~$11 million.
+    - listitem: Gross margin of 41% absorbed one-time costs for the annual maintenance period and the recent internal facility expansion.
+    - text: Consistent with 1Q25, revenue was affected by maintenance of the Iovance Cell Therapy Center (
+    - emphasis: i
+    - text: CTC). The facility has now been expanded to ensure continuous supply going forward during future maintenance periods.
+    - listitem: Research and Development (R&D) expenses decreased by 12% compared to 4Q25, driven by operational efficiencies and marking the third consecutive quarter of improvements.
+    - text: Successful centralization of manufacturing at
+    - emphasis: i
+    - text: CTC, significant operational excellence initiatives focused on Amtagvi production, and R&D optimization should further reduce costs and improve gross margins in 2026 and 2027.
+  - paragraph:
+    - strong: Second Quarter 2026 and Full Year 2026 Guidance
+    - emphasis: Strong Growth in Amtagvi Forecast for 2026
+  - list:
+    - listitem: Total product revenue guidance for 2Q26 is $86 million to $88 million and for FY26 is $350 million to $370 million.
+    - text: U.S. Amtagvi revenue for 2Q26 is expected to be $79 million to $81 million, reflecting an expected ~23% increase over 4Q25 (the quarter prior to
+    - emphasis: i
+    - text: CTC maintenance).
+  - paragraph:
+    - strong: Amtagvi Commercial Business
+    - emphasis: Strong U.S. Commercial Business to Deliver Strong Growth in 2026
+  - list:
+    - text: Increasing Amtagvi demand, catalyzed by real-world data, is driven by adoption and referrals toward earlier treatment. Recently published real world
+    - link "objective response":
+      - /url: https://www.sciencedirect.com/science/article/abs/pii/S2666636726003295
+    - text: rates were 52% in patients with two or fewer prior lines of therapy. Five-year follow-up clinical
+    - link "data":
+      - /url: https://ascopubs.org/doi/10.1200/JCO-25-00765
+    - text: demonstrated deep and durable responses in heavily pretreated patients, with a median duration of response of 3 years.
+    - listitem: Demand and referral patterns are accelerating across a growing network of more than 90 U.S. and Canadian academic and community authorized treatment centers (ATCs). By year-end 2026, at least 110 ATCs will be activated.
+    - listitem: Amtagvi turnaround time is 32 days or less with the first scaled, centralized commercial manufacturing process for TIL therapy. This is significantly faster than any other TIL therapy in development.
+    - text: "Amtagvi global expansion is advancing:"
+    - list:
+      - listitem: Decisions on marketing authorization application (MAA) approvals are expected in Australia in the first half of 2026 and in Switzerland in the first half of 2027.
+      - listitem: In the United Kingdom, Iovance withdrew its initial MAA for lifileucel in May 2026 for procedural reasons. With the full agreement of the Medicines and Healthcare products Regulatory Agency (MHRA), Iovance will promptly resubmit the MAA with updated information for an expedited review by the MHRA, which is expected to be completed over the coming months.
+      - listitem: Iovance is working to resubmit an MAA to the European Medicines Agency (EMA) in 2026.
+      - listitem: Other regulatory submissions are planned in markets with a high prevalence of advanced melanoma, non-small cell lung cancer (NSCLC), and soft tissue sarcomas.
+  - paragraph:
+    - strong: Pipeline Updates
+    - emphasis: New Data Across Several Pipeline Programs Anticipated Throughout 2026
+  - list:
+    - text: Registrational Trials of Lifileucel Treatment in Solid Tumors
+    - list:
+      - text: "IOV-END-201: Positive initial data in previously treated metastatic serous endometrial cancer:"
+      - list:
+        - listitem: The confirmed objective response rate (cORR) by RECIST v1.1 was 40% and disease control rate was 100% in the first five evaluable patients with a median of 2 prior lines of therapy.
+        - listitem: All five patients were mismatch repair proficient and progressed on prior chemotherapy and checkpoint inhibitor therapy.
+        - listitem: These initial responses build on established differentiation of lifileucel from immune checkpoint inhibitors, including in melanoma, and demonstrate its advantages for solid tumor indications.
+        - text: Serous endometrial cancer is a difficult to treat subtype accounting for ~40% of the approximately 12,500 annual U.S. endometrial cancer deaths.
+        - superscript: "1"
+        - text: The second line setting represents an area of unmet medical need, with no therapy approved by FDA specifically for patients with serous endometrial carcinoma or for patients who have received prior PD-1 blocking antibodies.
+        - listitem: Engagement on an expedited approval pathway with the ongoing IOV-END-201 trial is planned with the U.S. Food and Drug Administration (FDA).
+      - text: "IOV-LUN-202:"
+      - link "initial results":
+        - /url: https://ir.iovance.com/news-releases/news-release-details/iovance-biotherapeutics-reports-potential-best-class-clinical
+      - text: "in previously treated, metastatic non-squamous NSCLC supported FDA Fast Track Designation, reflecting the high unmet medical need in this population. Upcoming milestones include:"
+      - list:
+        - listitem: Updated data at a major medical meeting in 2026.
+        - listitem: Completion of enrollment in 2026 to support a supplemental Biologics License Application (sBLA).
+        - listitem: Potential for a U.S. accelerated approval and launch in the second half of 2027.
+      - text: "IOV-SAR-201: a new registrational trial in undifferentiated pleomorphic sarcoma (UPS) and dedifferentiated liposarcoma (DDLPS) is now underway, driven by"
+      - link "positive early data":
+        - /url: https://ir.iovance.com/news-releases/news-release-details/iovance-announces-positive-results-first-clinical-trial-til-cell
+      - text: with a cORR of 50% in the first six evaluable patients.
+      - list:
+        - listitem: Site activation and enrollment are on track to begin in the third quarter of 2026.
+        - listitem: Iovance is actively engaging with FDA on a path to expedited approval for lifileucel in UPS and DDLPS.
+      - text: "TILVANCE-301: A Phase 3 randomized trial of lifileucel and pembrolizumab in frontline advanced melanoma."
+      - list:
+        - listitem: Sites are actively enrolling patients across a broad global footprint.
+        - listitem: An early interim analysis based on cORR is intended for a potential sBLA in frontline advanced melanoma.
+        - listitem: TILVANCE-301 is also the confirmatory trial to support full approval in second line advanced melanoma.
+    - text: Next Generation Pipeline
+    - list:
+      - text: An Investigational New Drug (IND) application was submitted to FDA for a Phase 1/2 basket trial of IOV-5001, a second-generation IL-12 tethered TIL therapy, to begin enrolling in 2H 2026. Cohorts include advanced colorectal cancer, triple negative and estrogen receptor low breast cancers, and other highly prevalent solid tumors representing more than 100,000 U.S. deaths annually.
+      - superscript: "2"
+      - text: IOV-5001 is designed to remodel the suppressive tumor microenvironment (TME) and activate immunologically cold tumors to support TIL responses. A first-generation IL-12 secreted TIL therapy showed a cORR of 63% in 16 melanoma patients at cell doses much lower than used with typical TIL therapies as well as those safely achievable with IOV-5001.
+      - superscript: "3"
+      - listitem: A Phase 1/2 trial, IOV-GM1-201, is enrolling using IOV-4001, a PD-1 inactivated TIL therapy, in previously treated advanced melanoma and NSCLC. IOV-4001 is engineered to resist inhibitory signals and enhance the ability of TIL therapies to fight and kill cancer in the TME.
+      - text: A Phase 1 safety cohort using IOV-3001 is advancing through multiple dose levels in the Phase 1/2 trial of our second-generation, modified IL-2 analog for the TIL treatment regimen.
+      - link "IOV-3001":
+        - /url: https://www.iovance.com/uploads/Simpson-ASCO-2024-IOV-3001-Preclinical-Poster_D5-APP-2756-publication.pdf
+      - text: selectively expands effector T cells while avoiding activation of regulatory T cells, with the potential for a lower dose IL-2 regimen with reduced adverse events. IOV-3001 exhibits favorable pharmacokinetics and is expected to be superior to Proleukin as a component of future TIL regimens.
+      - listitem: Multiple investigator-sponsored clinical trials of lifileucel are enrolling in cutaneous squamous and Merkel cell carcinomas as well as other new solid tumor indications.
+  - paragraph:
+    - strong: Corporate Updates
+  - list:
+    - text: Iovance currently owns or licenses nearly 400 granted or allowed U.S. and international
+    - link "patents and patent rights":
+      - /url: https://www.iovance.com/intellectual-property/
+    - text: for Amtagvi and other TIL-related technologies, as well as more than 1,000 patent applications worldwide, which are expected to provide exclusivity into 2042 for Amtagvi and beyond for pipeline therapies.
+    - listitem: Dr. Friedrich Graf Finckenstein, Chief Medical Officer, will retire from Iovance in June 2026. The company thanks Dr. Finckenstein for his service and contributions to the development of Amtagvi and other pipeline products. A new Chief Medical Officer is expected to be announced in the near term.
+    - text: Iovance’s cash position was ~$319 million on March 31, 2026.
+    - superscript: "4"
+    - text: The current cash position, bolstered by expense reductions, is expected to fund operations well into 2028.
+  - paragraph:
+    - strong: Webcast and Conference Call
+  - paragraph:
+    - text: Management will host a conference call and live audio webcast to discuss these results and provide a corporate update today at 8:30 a.m. ET. To listen to the live or archived audio webcast, please register at
+    - link "https://edge.media-server.com/mmc/p/wmx3s4fc":
+      - /url: https://url.us.m.mimecastprotect.com/s/hfr9Cv27jZUL0mm6uziQSQVbWe?domain=edge.media-server.com
+    - text: . The live and archived webcast can be accessed in the Investors section of the Company’s website, IR.Iovance.com, for one year.
+  - paragraph:
+    - superscript: 1.Hamilton, C., Cheung, M., Osann, K. et al. Uterine papillary serous and clear cell carcinomas predict for poorer survival compared to grade 3 endometrioid corpus cancers. Br J Cancer 94, 642–646
+    - superscript:
+      - text: 2. Surveillance, Epidemiology, and End Results Program
+      - link "Cancer Stat Facts":
+        - /url: https://seer.cancer.gov/statfacts/
+      - text: (accessed May 2026).
+    - superscript: 3. Zhang L, Rosenberg SA, et al, Clin Cancer Res 2015;21(10):2278–2288.
+    - superscript: 4. Cash, cash equivalents, short-term investments, and restricted cash as of March 31, 2026.
+  - paragraph:
+    - strong: About
+    - strong
+    - strong: Iovance Biotherapeutics, Inc.
+  - paragraph:
+    - text: Iovance Biotherapeutics, Inc. aims to be the global leader in innovating, developing, and delivering tumor infiltrating lymphocyte (TIL) therapies for patients with cancer. We are pioneering a transformational approach to cure cancer by harnessing the human immune system’s ability to recognize and destroy diverse cancer cells in each patient. The
+    - link "Iovance TIL platform":
+      - /url: https://www.iovance.com/our-science/til-platform/
+    - text: has demonstrated promising clinical data across multiple solid tumors. Iovance’s Amtagvi
+    - superscript: ®
+    - text: is the first FDA-approved T cell therapy for a solid tumor indication. We are committed to continuous innovation in cell therapy, including gene-edited cell therapy, that may extend and improve life for patients with cancer. For more information, please visit
+    - link "www.iovance.com":
+      - /url: http://www.iovance.com
+    - text: .
+  - paragraph:
+    - text: Amtagvi
+    - superscript: ®
+    - text: and its accompanying design marks, Proleukin
+    - superscript: ®
+    - text: ", Iovance"
+    - superscript: ®
+    - text: ", and IovanceCares™ are trademarks and registered trademarks of Iovance Biotherapeutics, Inc. or its subsidiaries. All other trademarks and registered trademarks are the property of their respective owners."
+  - paragraph:
+    - text: Information on Iovance’s broad, industry-leading patent portfolio is available on the Intellectual Property page on
+    - link "www.iovance.com":
+      - /url: http://www.iovance.com
+    - text: .
+  - paragraph:
+    - strong: Forward-Looking Statements
+  - paragraph:
+    - text: "Certain matters discussed in this press release are “forward-looking statements” of Iovance Biotherapeutics, Inc. (hereinafter referred to as the “Company,” “we,” “us,” or “our”) within the meaning of the Private Securities Litigation Reform Act of 1995 (the “PSLRA”). Without limiting the foregoing, we may, in some cases, use terms such as “predicts,” “believes,” “potential,” “achievable,” “continue,” “estimates,” “anticipates,” “expects,” “plans,” “intends,” “forecast,” “guidance,” “outlook,” “may,” “can,” “could,” “might,” “will,” “should,” or other words that convey uncertainty of future events or outcomes and are intended to identify forward-looking statements. Forward-looking statements are based on assumptions and assessments made in light of management’s experience and perception of historical trends, current conditions, expected future developments, and other factors believed to be appropriate. Forward-looking statements in this press release are made as of the date of this press release, and we undertake no duty to update or revise any such statements, whether as a result of new information, future events or otherwise. Forward-looking statements are not guarantees of future performance and are subject to risks, uncertainties, and other factors, many of which are outside of our control, that may cause actual results, levels of activity, performance, achievements, and developments to be materially different from those expressed in or implied by these forward-looking statements. Important factors that could cause actual results, developments, and business decisions to differ materially from forward-looking statements are described in the sections titled \"Risk Factors\" in our filings with the U.S. Securities and Exchange Commission, including our most recent Annual Report on Form 10-K and Quarterly Reports on Form 10-Q, and include, but are not limited to, the following substantial known and unknown risks and uncertainties inherent in our business: the risks related to our ability to successfully commercialize our products; the acceptance by the market of our products and product candidates, if approved, and their potential pricing and/or reimbursement by payors, and whether such acceptance is sufficient to support continued commercialization or development of our products or product candidates; the risk regarding our ability to manufacture our therapies at our"
+    - emphasis: i
+    - text: "CTC facility, including the risk that our ability to increase manufacturing capacity at our facility may adversely affect our commercial launch; the risk that the successful development or commercialization of our products may not generate sufficient revenue from product sales, and we may not become profitable in the near term, or at all; the risks related to the timing of and our ability to successfully develop, submit, obtain, or maintain regulatory authority approval of our product candidates; whether clinical trial results from our pivotal studies and cohorts, and meetings with regulatory authorities may support registrational studies and subsequent approvals by regulatory authorities, including the risk that the planned registrational trial in advanced sarcomas may not support approval; preliminary and interim clinical results, which may include efficacy and safety results, from ongoing clinical trials or cohorts may not be reflected in the final analyses of our ongoing clinical trials or subgroups within these trials or in other prior trials or cohorts; the risk that we may be required to conduct additional clinical trials or modify ongoing or future clinical trials based on feedback from regulatory authorities; the risk that our interpretation of the results of our clinical trials or communications with regulatory authorities may differ from the interpretation of such results or communications by such regulatory authorities; the risk that clinical data from ongoing clinical trials of Amtagvi will not continue or be repeated in ongoing or planned clinical trials or may not support regulatory approval or renewal of authorization; the risk that unanticipated expenses may decrease our estimated cash balances and forecasts and increase our estimated capital requirements; the risk that we may not be able to recognize revenue for our products; the risk that Proleukin revenues, and other factors such as the number of ATCs, may not serve as a leading indicator for Amtagvi revenues; the risks regarding our anticipated operating and financial performance, including our financial guidance and projections; the effects of global and domestic geopolitical factors or public health events; and other factors, including general economic conditions and regulatory developments, not within our control. Any financial guidance provided in this press release assumes the following: no material change in our ability to manufacture our products; no material change in payor coverage; no material change in revenue recognition policies; no new business development transactions not completed as of the period covered by this press release; and no material fluctuation in exchange rates."
+  - paragraph
+  - paragraph
+  - button "Popup Expand Table":
+  - table:
+    - rowgroup:
+      - row "IOVANCE BIOTHERAPEUTICS, INC. Selected Condensed Consolidated Balance Sheets (in thousands)":
+        - cell "IOVANCE BIOTHERAPEUTICS, INC. Selected Condensed Consolidated Balance Sheets (in thousands)":
+          - strong:
+            - text: IOVANCE BIOTHERAPEUTICS, INC.
+            - text: Selected Condensed Consolidated Balance Sheets
+            - text: (in thousands)
+      - row:
+        - cell
+        - cell
+        - cell
+        - cell
+        - cell
+      - row "March 31, 2026 (unaudited) December 31, 2025":
+        - cell
+        - cell
+        - cell "March 31, 2026 (unaudited)":
+          - strong:
+            - text: March 31, 2026
+            - text: (unaudited)
+        - cell
+        - cell "December 31, 2025":
+          - strong: December 31, 2025
+      - row "Cash, cash equivalents, and investments $ 313,443 $ 296,980":
+        - cell "Cash, cash equivalents, and investments"
+        - cell
+        - cell "$"
+        - cell "313,443"
+        - cell
+        - cell "$"
+        - cell "296,980"
+      - row "Restricted cash $ 5,992 $ 5,980":
+        - cell "Restricted cash"
+        - cell
+        - cell "$"
+        - cell "5,992"
+        - cell
+        - cell "$"
+        - cell "5,980"
+      - row "Total assets $ 925,665 $ 913,170":
+        - cell "Total assets"
+        - cell
+        - cell "$"
+        - cell "925,665"
+        - cell
+        - cell "$"
+        - cell "913,170"
+      - row "Stockholders' equity $ 721,754 $ 698,583":
+        - cell "Stockholders' equity"
+        - cell
+        - cell "$"
+        - cell "721,754"
+        - cell
+        - cell "$"
+        - cell "698,583"
+  - paragraph:
+    - strong
+  - paragraph
+  - button "Popup Expand Table":
+  - table:
+    - rowgroup:
+      - row "Condensed Consolidated Statements of Operations (in thousands, except per share information)":
+        - cell "Condensed Consolidated Statements of Operations (in thousands, except per share information)":
+          - strong:
+            - text: Condensed Consolidated Statements of Operations
+            - text: (in thousands, except per share information)
+      - row:
+        - cell
+        - cell
+        - cell
+      - row "For the Three Months Ended":
+        - cell
+        - cell
+        - cell "For the Three Months Ended":
+          - strong: For the Three Months Ended
+      - row "March 31,":
+        - cell
+        - cell
+        - cell "March 31,":
+          - strong: March 31,
+      - row "2026 (unaudited) 2025 (unaudited)":
+        - cell
+        - cell
+        - cell "2026 (unaudited)":
+          - strong: "2026"
+          - strong: (unaudited)
+        - cell
+        - cell "2025 (unaudited)":
+          - strong: "2025"
+          - strong: (unaudited)
+      - row "Revenue":
+        - cell "Revenue":
+          - strong: Revenue
+        - cell
+        - cell
+        - cell
+        - cell
+        - cell
+        - cell
+      - row "Product revenue, net $ 71,430 $ 49,324":
+        - cell "Product revenue, net"
+        - cell
+        - cell "$"
+        - cell "71,430"
+        - cell
+        - cell
+        - cell "$"
+        - cell "49,324"
+        - cell
+      - row "Total revenue 71,430 49,324":
+        - cell "Total revenue"
+        - cell
+        - cell
+        - cell "71,430"
+        - cell
+        - cell
+        - cell
+        - cell "49,324"
+        - cell
+      - row:
+        - cell
+        - cell
+        - cell
+        - cell
+        - cell
+        - cell
+        - cell
+      - row "Costs and expenses*":
+        - cell "Costs and expenses*":
+          - strong: Costs and expenses*
+        - cell
+        - cell
+        - cell
+        - cell
+        - cell
+        - cell
+      - row "Cost of sales** $ 42,498 $ 42,715":
+        - cell "Cost of sales**":
+          - text: Cost of sales
+          - strong: "**"
+        - cell
+        - cell "$"
+        - cell "42,498"
+        - cell
+        - cell
+        - cell "$"
+        - cell "42,715"
+        - cell
+      - row "Research and development** 62,487 75,965":
+        - cell "Research and development**":
+          - text: Research and development
+          - strong: "**"
+        - cell
+        - cell
+        - cell "62,487"
+        - cell
+        - cell
+        - cell
+        - cell "75,965"
+        - cell
+      - row "Selling, general and administrative** 38,949 43,800":
+        - cell "Selling, general and administrative**":
+          - text: Selling, general and administrative
+          - strong: "**"
+        - cell
+        - cell
+        - cell "38,949"
+        - cell
+        - cell
+        - cell
+        - cell "43,800"
+        - cell
+      - row "Depreciation and amortization 8,539 8,065":
+        - cell "Depreciation and amortization"
+        - cell
+        - cell
+        - cell "8,539"
+        - cell
+        - cell
+        - cell
+        - cell "8,065"
+        - cell
+      - row "Total costs and expenses 152,473 170,545":
+        - cell "Total costs and expenses"
+        - cell
+        - cell
+        - cell "152,473"
+        - cell
+        - cell
+        - cell
+        - cell "170,545"
+        - cell
+      - row "Loss from operations (81,043 ) (121,221 )":
+        - cell "Loss from operations":
+          - strong: Loss from operations
+        - cell
+        - cell
+        - cell "(81,043"
+        - cell ")"
+        - cell
+        - cell
+        - cell "(121,221"
+        - cell ")"
+      - row "Other income":
+        - cell "Other income":
+          - strong: Other income
+        - cell
+        - cell
+        - cell
+        - cell
+        - cell
+        - cell
+      - row "Interest and other income, net 1,333 3,220":
+        - cell "Interest and other income, net"
+        - cell
+        - cell
+        - cell "1,333"
+        - cell
+        - cell
+        - cell
+        - cell "3,220"
+        - cell
+      - row "Net Loss before income taxes (79,710 ) (118,001 )":
+        - cell "Net Loss before income taxes":
+          - strong: Net Loss before income taxes
+        - cell
+        - cell
+        - cell "(79,710"
+        - cell ")"
+        - cell
+        - cell
+        - cell "(118,001"
+        - cell ")"
+      - row "Income tax (expense) benefit 665 1,838":
+        - cell "Income tax (expense) benefit"
+        - cell
+        - cell
+        - cell "665"
+        - cell
+        - cell
+        - cell
+        - cell "1,838"
+        - cell
+      - row "Net Loss $ (79,045 ) $ (116,163 )":
+        - cell "Net Loss":
+          - strong: Net Loss
+        - cell
+        - cell "$"
+        - cell "(79,045"
+        - cell ")"
+        - cell
+        - cell "$"
+        - cell "(116,163"
+        - cell ")"
+      - row:
+        - cell
+        - cell
+        - cell
+        - cell
+        - cell
+        - cell
+        - cell
+      - row "Net Loss Per Share of Common Stock, Basic and Diluted $ (0.19 ) $ (0.36 )":
+        - cell "Net Loss Per Share of Common Stock, Basic and Diluted":
+          - strong: Net Loss Per Share of Common Stock, Basic and Diluted
+        - cell
+        - cell "$"
+        - cell "(0.19"
+        - cell ")"
+        - cell
+        - cell "$"
+        - cell "(0.36"
+        - cell ")"
+      - row:
+        - cell
+        - cell
+        - cell
+        - cell
+        - cell
+        - cell
+        - cell
+      - row "Weighted-Average Shares of Common Stock Outstanding, Basic and Diluted 418,511 322,868":
+        - cell "Weighted-Average Shares of Common Stock Outstanding, Basic and Diluted":
+          - strong: Weighted-Average Shares of Common Stock Outstanding, Basic and Diluted
+        - cell
+        - cell
+        - cell "418,511"
+        - cell
+        - cell
+        - cell
+        - cell "322,868"
+        - cell
+      - row:
+        - cell
+        - cell
+        - cell
+        - cell
+        - cell
+        - cell
+        - cell
+      - row "*Non-cash stock-based compensation included in cost of sales and operating expenses:":
+        - cell "*Non-cash stock-based compensation included in cost of sales and operating expenses:":
+          - strong: "*Non-cash stock-based compensation included in cost of sales and operating expenses:"
+        - cell
+        - cell
+        - cell
+        - cell
+        - cell
+        - cell
+      - row "Cost of sales $ 1,019 $ 2,420":
+        - cell "Cost of sales"
+        - cell
+        - cell "$"
+        - cell "1,019"
+        - cell
+        - cell
+        - cell "$"
+        - cell "2,420"
+        - cell
+      - row "Research and development 5,117 9,917":
+        - cell "Research and development"
+        - cell
+        - cell
+        - cell "5,117"
+        - cell
+        - cell
+        - cell
+        - cell "9,917"
+        - cell
+      - row "Selling, general and administrative 5,133 10,578":
+        - cell "Selling, general and administrative"
+        - cell
+        - cell
+        - cell "5,133"
+        - cell
+        - cell
+        - cell
+        - cell "10,578"
+        - cell
+      - row "Total stock-based compensation included in costs and expenses $ 11,269 $ 22,915":
+        - cell "Total stock-based compensation included in costs and expenses"
+        - cell
+        - cell "$"
+        - cell "11,269"
+        - cell
+        - cell
+        - cell "$"
+        - cell "22,915"
+        - cell
+      - row "** Excludes depreciation and amortization":
+        - cell "** Excludes depreciation and amortization":
+          - strong: "** Excludes depreciation and amortization"
+        - cell
+        - cell
+        - cell
+        - cell
+        - cell
+        - cell
+  - paragraph:
+    - strong
+  - paragraph:
+    - strong: CONTACTS
+  - paragraph:
+    - strong: Investors
+    - text: IR@iovance.com
+    - text: 650-260-7120 ext. 150
+  - paragraph:
+    - strong: Media
+    - text: PR@iovance.com
+    - text: 650-260-7120 ext. 150
+  - separator
+  - separator
+  - heading "Tags" [level=2]
+  - link "Iovance":
+    - /url: /en/search/tag/iovance
+  - link "TIL therapy":
+    - /url: /en/search/tag/til%2520therapy
+  - link "melanoma":
+    - /url: /en/search/tag/melanoma
+  - link "NSCLC":
+    - /url: /en/search/tag/nsclc
+  - generic: Company Profile
+  - generic: Iovance Biotherapeutics, Inc.
+  - text: "Industry:"
+  - generic: Biotechnology
+  - text: "Website:"
+  - link "https://www.iovance.com/":
+    - /url: https://www.iovance.com/
+  - generic: Press Release Actions
+  - list:
+    - link "Print":
+      - /url: https://www.globenewswire.com/news-release/2026/05/07/3289839/0/en/Iovance-Biotherapeutics-Highlights-Positive-First-Quarter-2026-Results-Business-Achievements-and-Corporate-Updates.html?print=1
+    - link "Download PDF":
+      - /url: https://www.globenewswire.com/news-release/2026/05/07/3289839/0/en/Iovance-Biotherapeutics-Highlights-Positive-First-Quarter-2026-Results-Business-Achievements-and-Corporate-Updates.html?pdf=1
+    - link "Subscribe via RSS":
+      - /url: /rssfeed/organization/LRXCZ6mew69UXTfI52mJBw==
+    - link "Subscribe via ATOM":
+      - /url: /atomfeed/organization/LRXCZ6mew69UXTfI52mJBw==
+    - link "Javascript":
+      - /url: https://www.globenewswire.com/JSWidget/organization/1TkMtmAqfM6V3P8oLzi-UA%3d%3d
+  - heading "Recommended Reading" [level=2]
+  - list:
+    - text: April 27, 2026 08:01 ET |
+    - text: "Source:"
+    - link "Iovance Biotherapeutics, Inc.":
+      - /url: /en/search/organization/Iovance%2520Biotherapeutics%2520Inc
+    - link "Iovance Biotherapeutics to Report First Quarter 2026 Financial Results and Corporate Updates on Thursday, May 7, 2026":
+      - /url: https://www.globenewswire.com/news-release/2026/04/27/3281588/0/en/Iovance-Biotherapeutics-to-Report-First-Quarter-2026-Financial-Results-and-Corporate-Updates-on-Thursday-May-7-2026.html
+    - paragraph: "SAN CARLOS, Calif., April 27, 2026 (GLOBE NEWSWIRE) -- Iovance Biotherapeutics, Inc. (NASDAQ: IOVA), a biotechnology company focused on innovating, developing, and delivering novel polyclonal tumor..."
+    - link "Read More":
+      - /url: https://www.globenewswire.com/news-release/2026/04/27/3281588/0/en/Iovance-Biotherapeutics-to-Report-First-Quarter-2026-Financial-Results-and-Corporate-Updates-on-Thursday-May-7-2026.html
+    - generic "Iovance Biotherapeutics to Report First Quarter 2026 Financial Results and Corporate Updates on Thursday, May 7, 2026":
+      - img "Iovance Biotherapeutics to Report First Quarter 2026 Financial Results and Corporate Updates on Thursday, May 7, 2026"
+    - text: April 17, 2026 17:15 ET |
+    - text: "Source:"
+    - link "Iovance Biotherapeutics, Inc.":
+      - /url: /en/search/organization/Iovance%2520Biotherapeutics%2520Inc
+    - link "Iovance Biotherapeutics Reports Inducement Grants under NASDAQ Listing Rule 5635(c)(4)":
+      - /url: https://www.globenewswire.com/news-release/2026/04/17/3276514/0/en/Iovance-Biotherapeutics-Reports-Inducement-Grants-under-NASDAQ-Listing-Rule-5635-c-4.html
+    - paragraph: "SAN CARLOS, Calif., April 17, 2026 (GLOBE NEWSWIRE) -- Iovance Biotherapeutics, Inc. (NASDAQ: IOVA) (\"Iovance\" or the “Company”), a biotechnology company focused on innovating, developing, and..."
+    - link "Read More":
+      - /url: https://www.globenewswire.com/news-release/2026/04/17/3276514/0/en/Iovance-Biotherapeutics-Reports-Inducement-Grants-under-NASDAQ-Listing-Rule-5635-c-4.html
+    - generic "Iovance Biotherapeutics Reports Inducement Grants under NASDAQ Listing Rule 5635(c)(4)":
+      - img "Iovance Biotherapeutics Reports Inducement Grants under NASDAQ Listing Rule 5635(c)(4)"
+  - heading "Explore" [level=2]
+  - button "⏴ Previous"
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293303/0/en/BingX-Launches-EventX-Turning-Real-World-Events-Into-Tradable-Assets.html
+  - generic: May 12, 2026 14:04 ET
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293303/0/en/BingX-Launches-EventX-Turning-Real-World-Events-Into-Tradable-Assets.html
+    - text: BingX Launches EventX, Turning Real-World Events I...
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293302/0/en/OKANA-Resort-Indoor-Waterpark-Enters-Its-First-Full-Summer-with-Every-Experience-Open.html
+  - generic: May 12, 2026 14:03 ET
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293302/0/en/OKANA-Resort-Indoor-Waterpark-Enters-Its-First-Full-Summer-with-Every-Experience-Open.html
+    - text: OKANA Resort & Indoor Waterpark Enters Its First F...
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293294/0/en/The-25th-Tunnel-to-Towers-NYC-5K-Run-Walk-is-Set-for-September-27th.html
+  - generic: May 12, 2026 13:58 ET
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293294/0/en/The-25th-Tunnel-to-Towers-NYC-5K-Run-Walk-is-Set-for-September-27th.html
+    - text: The 25th Tunnel to Towers NYC 5K Run & Walk is Set...
+  - 'link "BloodPril: The TRUTH..."':
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293324/0/en/BloodPril-The-TRUTH-Behind-the-Blood-Pril-Nitric-Oxide-Formula-and-What-Consumers-Need-to-Know.html
+    - 'img "BloodPril: The TRUTH..."'
+  - generic: May 12, 2026 15:33 ET
+  - 'link "BloodPril: The TRUTH..."':
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293324/0/en/BloodPril-The-TRUTH-Behind-the-Blood-Pril-Nitric-Oxide-Formula-and-What-Consumers-Need-to-Know.html
+    - text: "BloodPril: The TRUTH Behind the 'Blood Pril' Nitri..."
+  - iframe
+  - generic: May 12, 2026 14:43 ET
+  - link "Productive Launches...":
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293312/0/en/Productive-Launches-5-0-With-AI-Agents-That-Free-Teams-From-Routine-Work.html
+    - text: Productive Launches 5.0 With AI Agents That Free T...
+  - link "BingX Launches...":
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293303/0/en/BingX-Launches-EventX-Turning-Real-World-Events-Into-Tradable-Assets.html
+    - img "BingX Launches..."
+  - generic: May 12, 2026 14:04 ET
+  - link "BingX Launches...":
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293303/0/en/BingX-Launches-EventX-Turning-Real-World-Events-Into-Tradable-Assets.html
+    - text: BingX Launches EventX, Turning Real-World Events I...
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293302/0/en/OKANA-Resort-Indoor-Waterpark-Enters-Its-First-Full-Summer-with-Every-Experience-Open.html
+  - generic: May 12, 2026 14:03 ET
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293302/0/en/OKANA-Resort-Indoor-Waterpark-Enters-Its-First-Full-Summer-with-Every-Experience-Open.html
+    - text: OKANA Resort & Indoor Waterpark Enters Its First F...
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293294/0/en/The-25th-Tunnel-to-Towers-NYC-5K-Run-Walk-is-Set-for-September-27th.html
+  - generic: May 12, 2026 13:58 ET
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293294/0/en/The-25th-Tunnel-to-Towers-NYC-5K-Run-Walk-is-Set-for-September-27th.html
+    - text: The 25th Tunnel to Towers NYC 5K Run & Walk is Set...
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293324/0/en/BloodPril-The-TRUTH-Behind-the-Blood-Pril-Nitric-Oxide-Formula-and-What-Consumers-Need-to-Know.html
+  - generic: May 12, 2026 15:33 ET
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293324/0/en/BloodPril-The-TRUTH-Behind-the-Blood-Pril-Nitric-Oxide-Formula-and-What-Consumers-Need-to-Know.html
+    - text: "BloodPril: The TRUTH Behind the 'Blood Pril' Nitri..."
+  - iframe
+  - generic: May 12, 2026 14:43 ET
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293312/0/en/Productive-Launches-5-0-With-AI-Agents-That-Free-Teams-From-Routine-Work.html
+    - text: Productive Launches 5.0 With AI Agents That Free T...
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293303/0/en/BingX-Launches-EventX-Turning-Real-World-Events-Into-Tradable-Assets.html
+  - generic: May 12, 2026 14:04 ET
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293303/0/en/BingX-Launches-EventX-Turning-Real-World-Events-Into-Tradable-Assets.html
+    - text: BingX Launches EventX, Turning Real-World Events I...
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293302/0/en/OKANA-Resort-Indoor-Waterpark-Enters-Its-First-Full-Summer-with-Every-Experience-Open.html
+  - generic: May 12, 2026 14:03 ET
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293302/0/en/OKANA-Resort-Indoor-Waterpark-Enters-Its-First-Full-Summer-with-Every-Experience-Open.html
+    - text: OKANA Resort & Indoor Waterpark Enters Its First F...
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293294/0/en/The-25th-Tunnel-to-Towers-NYC-5K-Run-Walk-is-Set-for-September-27th.html
+  - generic: May 12, 2026 13:58 ET
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293294/0/en/The-25th-Tunnel-to-Towers-NYC-5K-Run-Walk-is-Set-for-September-27th.html
+    - text: The 25th Tunnel to Towers NYC 5K Run & Walk is Set...
+  - button "⏵ Next"
+  - generic: About Us
+  - paragraph: GlobeNewswire is one of the world's largest newswire distribution networks, specializing in the delivery of corporate press releases, financial disclosures and multimedia content to media, investors, and consumers worldwide.
+  - generic: Global News
+  - list:
+    - link "English":
+      - /url: https://www.globenewswire.com/newsroom
+    - link "Français":
+      - /url: https://www.globenewswire.com/fr/newsroom
+    - link "Deutsch":
+      - /url: https://www.globenewswire.com/de/newsroom
+  - generic: Newswire Distribution Network & Management
+  - list:
+    - link "Home":
+      - /url: https://www.globenewswire.com/
+    - link "Newsroom":
+      - /url: https://www.globenewswire.com/newsroom
+    - link "RSS Feeds":
+      - /url: https://www.globenewswire.com/rss/list
+    - link "Notified, opens a new tab":
+      - /url: https://www.notified.com
+      - text: Notified
+    - link "Legal, opens a new tab":
+      - /url: https://www.notified.com/privacy
+      - text: Legal
+    - link "About Us, opens a new tab":
+      - /url: /about
+      - text: About Us
+    - link "Contact Us, opens a new tab":
+      - /url: https://insight.notified.com/globenewswire-contact-us?utm_medium=Website&utm_source=Contact%20Us&utm_campaign=Contact%20Us%20ENG
+      - text: Contact Us
+    - link "Resources, opens a new tab":
+      - /url: https://www.notified.com/resources
+      - text: Resources
+  - paragraph: © 2026 Digital Media Innovations, LLC. All rights reserved.
+  - link "GlobeNewswire Linkedin, opens a new tab":
+    - /url: https://www.linkedin.com/company/1006947
+  - link "Notified Twitter, opens a new tab":
+    - /url: https://twitter.com/Notified
+- button "Cookies Settings"
+- text: Cookies Settings

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HEOR · Evidence built in reverse costs twice.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,900&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0f1f;
+    --navy-900:#04122e;
+    --navy-800:#08214f;
+    --navy-700:#0e2f72;
+    --blue-600:#1546ff;
+    --blue-500:#2a63ff;
+    --blue-300:#7ea1ff;
+    --blue-100:#dbe4ff;
+    --paper:#f6f3ec;
+    --rule:#1f2540;
+    --muted:#5a6178;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--paper);font-family:'Inter',system-ui,sans-serif;color:var(--ink);}
+
+  .card{
+    width:1080px;max-width:100%;
+    margin:0 auto;
+    background:var(--paper);
+    overflow:hidden;position:relative;
+  }
+  .card::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:
+      radial-gradient(rgba(0,0,0,.018) 1px, transparent 1px),
+      radial-gradient(rgba(255,255,255,.025) 1px, transparent 1px);
+    background-size: 3px 3px, 5px 5px;
+    background-position: 0 0, 1px 2px;
+    mix-blend-mode:multiply;opacity:.7;
+  }
+
+  /* ============= CARD 1 · Sequence ============= */
+  .c1{padding:64px 72px 60px;}
+  .c1 h1{
+    font-family:'Playfair Display',serif;font-weight:900;
+    font-size:104px;line-height:.95;letter-spacing:-.02em;
+    color:var(--navy-900);margin:8px 0 14px;
+  }
+  .c1 h1 em{font-style:italic;color:var(--blue-600);font-weight:900;}
+  .c1 .subdeck{
+    font-family:'Playfair Display',serif;font-style:italic;font-weight:700;
+    font-size:22px;color:var(--navy-800);margin:6px 0 24px;
+  }
+  .c1 .scene{position:relative;height:280px;margin:6px 0 14px;}
+  .c1 .scene svg{width:100%;height:100%;display:block;}
+
+  .c1 .compare{
+    display:grid;grid-template-columns:1fr 1px 1fr;gap:0;align-items:start;margin-top:18px;
+    border-top:1px solid var(--rule);padding-top:22px;
+  }
+  .c1 .compare .divider-v{background:var(--rule);width:1px;}
+  .c1 .lane{padding:0 22px;}
+  .c1 .lane:first-child{padding-left:0;}
+  .c1 .lane:last-child{padding-right:0;}
+  .c1 .lane h4{
+    font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;
+    letter-spacing:.28em;text-transform:uppercase;margin:0 0 14px;
+    color:var(--muted);
+  }
+  .c1 .lane.right h4{color:var(--blue-600);}
+  .c1 .lane ol{
+    list-style:none;padding:0;margin:0;counter-reset:s;
+    display:flex;flex-direction:column;gap:10px;
+  }
+  .c1 .lane li{
+    counter-increment:s;display:grid;grid-template-columns:28px 1fr;align-items:start;gap:10px;
+    font-size:14px;color:var(--ink);line-height:1.35;
+  }
+  .c1 .lane li::before{
+    content:counter(s,decimal-leading-zero);
+    font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;
+    color:var(--muted);padding-top:2px;
+  }
+  .c1 .lane.right li::before{color:var(--blue-600);}
+  .c1 .lane li strong{display:block;font-weight:700;color:var(--navy-900);font-size:14px;letter-spacing:.02em;}
+  .c1 .lane li span{color:#475569;font-size:13px;}
+
+  .c1 .stat{
+    margin-top:30px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+    padding:26px 0;
+  }
+  .c1 .stat .copy{
+    font-family:'Playfair Display',serif;font-weight:700;font-size:22px;line-height:1.4;color:var(--navy-900);
+    margin:0;
+  }
+</style>
+</head>
+<body>
+
+  <!-- ============= CARD 1 · Sequence ============= -->
+  <section class="card c1">
+
+    <h1>Evidence built<br/><em>in&nbsp;reverse</em><br/>costs twice.</h1>
+    <p class="subdeck">HEOR input in Phase&nbsp;II beats Phase&nbsp;III retrofit, every time.</p>
+
+    <div class="scene" aria-hidden="true">
+      <svg viewBox="0 0 1000 280" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="brokeRoad" x1="0" x2="1">
+            <stop offset="0" stop-color="#cdc8b6"/>
+            <stop offset="1" stop-color="#8a8676"/>
+          </linearGradient>
+          <linearGradient id="cleanRoad" x1="0" x2="1">
+            <stop offset="0" stop-color="#dbe4ff"/>
+            <stop offset="1" stop-color="#7ea1ff"/>
+          </linearGradient>
+          <linearGradient id="spark" x1="0" x2="1">
+            <stop offset="0" stop-color="#1546ff" stop-opacity="0"/>
+            <stop offset="1" stop-color="#1546ff"/>
+          </linearGradient>
+        </defs>
+
+        <!-- broken path (reactive lane) -->
+        <path d="M40,210 C200,210 280,140 460,140" stroke="url(#brokeRoad)" stroke-width="36" fill="none" stroke-linecap="round"/>
+        <!-- cracks -->
+        <g stroke="#5a5440" stroke-width="1.5" opacity=".7">
+          <path d="M80,210 L130,205 M170,200 L220,190 M260,180 L300,165 M340,148 L400,142"/>
+        </g>
+        <!-- rubble -->
+        <g fill="#a09b88" opacity=".95">
+          <circle cx="48" cy="240" r="6"/><circle cx="62" cy="248" r="4"/>
+          <rect x="74" y="234" width="10" height="8" rx="2"/>
+          <rect x="92" y="244" width="14" height="8" rx="2" transform="rotate(14 99 248)"/>
+        </g>
+        <!-- collapsed door (reactive lane) -->
+        <g transform="translate(440,98)">
+          <rect x="0" y="0" width="44" height="80" fill="#8a8676" transform="skewY(8)"/>
+          <rect x="46" y="6" width="8" height="74" fill="#6c6757"/>
+        </g>
+
+        <!-- clean path (HEOR-led lane) -->
+        <path d="M520,140 C700,140 760,60 920,60" stroke="url(#cleanRoad)" stroke-width="40" fill="none" stroke-linecap="round"/>
+        <path d="M530,140 C700,140 760,62 920,62" stroke="url(#spark)" stroke-width="6" fill="none" stroke-linecap="round" opacity=".95"/>
+
+        <!-- milestone dots on HEOR-led lane -->
+        <g fill="#04122e">
+          <circle cx="540" cy="140" r="6"/><circle cx="640" cy="120" r="6"/>
+          <circle cx="760" cy="80" r="6"/><circle cx="900" cy="60" r="6"/>
+        </g>
+
+        <!-- collapsed door (blue, HEOR-led arrival) -->
+        <g transform="translate(890,22)">
+          <rect x="0" y="0" width="44" height="80" fill="#1546ff" transform="skewY(8)"/>
+          <rect x="46" y="6" width="8" height="74" fill="#04122e"/>
+        </g>
+
+        <!-- traveler -->
+        <g transform="translate(844,30)">
+          <circle cx="0" cy="0" r="6" fill="#04122e"/>
+          <path d="M-9,7 L9,7 L7,32 L-7,32 Z" fill="#04122e"/>
+          <!-- arms -->
+          <rect x="-12" y="7" width="3" height="22" fill="#04122e"/>
+          <rect x="9" y="7" width="3" height="22" fill="#04122e"/>
+          <!-- legs -->
+          <rect x="-6" y="32" width="4" height="12" fill="#04122e"/>
+          <rect x="2" y="32" width="4" height="12" fill="#04122e"/>
+        </g>
+
+        <!-- lane labels -->
+        <text x="40" y="270" font-family="'JetBrains Mono'" font-size="10" letter-spacing="2" fill="#5a6178" font-weight="700">REACTIVE · LATE HEOR</text>
+        <text x="820" y="44" text-anchor="end" font-family="'JetBrains Mono'" font-size="10" letter-spacing="2" fill="#1546ff" font-weight="700">HEOR-LED · LAUNCH-READY</text>
+      </svg>
+    </div>
+
+    <div class="compare">
+      <div class="lane left">
+        <h4>The reactive path</h4>
+        <ol>
+          <li><div><strong>Clinical-only design</strong><span>Endpoints chosen for the regulator, not the payer.</span></div></li>
+          <li><div><strong>Late HEOR ask</strong><span>Brought in ONLY at Phase III, to "support" not shape.</span></div></li>
+          <li><div><strong>Payer pushback</strong><span>Comparators wrong. Sub-populations missing.</span></div></li>
+          <li><div><strong>Reprice or restrict</strong><span>Coverage with conditions, rebates, carve-outs, delay.</span></div></li>
+        </ol>
+      </div>
+      <div class="divider-v"></div>
+      <div class="lane right">
+        <h4>The HEOR-led path</h4>
+        <ol>
+          <li><div><strong>Early value story by Phase&nbsp;II</strong><span>Taking into consideration payers, HTAs, and clinicians upfront.</span></div></li>
+          <li><div><strong>Endpoint &amp; comparator selection</strong><span>Chosen to optimize product value across stakeholders.</span></div></li>
+          <li><div><strong>RWE + economic models</strong><span>Aligned with the product value story.</span></div></li>
+          <li><div><strong>Launch with evidence</strong><span>Defendable price. Faster reimbursement.</span></div></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="stat">
+      <p class="copy">Launches with HEOR embedded before pivotal trial design are better positioned for faster reimbursement and stronger price defense; public benchmarks show NICE guidance occurring 109 days earlier for products with scientific advice, and AMNOG discounts more than 3x larger when added benefit is not demonstrated.</p>
+    </div>
+  </section>
+
+</body>
+</html>

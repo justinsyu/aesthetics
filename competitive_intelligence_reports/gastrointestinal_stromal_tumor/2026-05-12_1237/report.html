@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gastrointestinal Stromal Tumor Competitive Intelligence Update</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 36px 0 20px;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 850;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 82px; line-height: .92; letter-spacing: 0; font-weight: 560; max-width: 1280px; }
+    h2 { font-size: 53px; line-height: .98; letter-spacing: 0; font-weight: 560; max-width: 1300px; }
+    h3 { font-size: 28px; line-height: 1.04; letter-spacing: 0; font-weight: 650; }
+    .dek { margin-top: 18px; color: var(--muted); font-size: 27px; line-height: 1.24; max-width: 1280px; }
+    .section-head { margin-bottom: 20px; }
+    .section-head p { margin-top: 12px; color: var(--muted); font-size: 24px; line-height: 1.22; max-width: 1300px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .panel, .metric, .card, .table, .callout {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.86);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel { padding: 24px; }
+    .panel.dark, .callout { background: #11130f; color: var(--paper); border-color: #11130f; }
+    .panel.dark p, .panel.dark li, .callout p, .callout li { color: rgba(246,241,232,.84); }
+    .metric { padding: 20px; min-height: 150px; }
+    .num { font-size: 50px; line-height: .92; font-weight: 850; letter-spacing: 0; }
+    .label { margin-top: 12px; font-size: 18px; line-height: 1.24; color: var(--muted); }
+    .card { padding: 22px; min-height: 198px; }
+    .card p { color: var(--muted); font-size: 19px; line-height: 1.22; margin-top: 12px; }
+    .card .tag { margin-bottom: 12px; }
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      white-space: nowrap;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .red { background: var(--red); }
+    .gray { background: var(--gray); }
+    .list { margin: 14px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+    .list li { position: relative; padding-left: 20px; color: var(--muted); font-size: 20px; line-height: 1.22; }
+    .list li::before { content: ""; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; border-radius: 50%; background: var(--lime); border: 1px solid var(--line); }
+    .table { display: grid; }
+    .row { display: grid; grid-template-columns: .95fr .7fr 1.15fr 1.7fr; border-bottom: 1px solid var(--line); min-height: 72px; }
+    .row:last-child { border-bottom: 0; }
+    .cell { padding: 12px 13px; border-right: 1px solid var(--line); font-size: 15.5px; line-height: 1.17; }
+    .cell:last-child { border-right: 0; }
+    .head .cell { background: #11130f; color: var(--paper); font-weight: 850; text-transform: uppercase; font-size: 12px; }
+    .callout { padding: 23px 28px; }
+    .callout h3 { font-size: 31px; }
+    .callout p { margin-top: 12px; font-size: 24px; line-height: 1.18; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .cite + .cite::before { content: ","; margin-right: 1px; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    .source-note { color: var(--muted); font-size: 15px; line-height: 1.22; margin-top: 12px; }
+    .source-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 13px; }
+    .source-item { border: 1.5px solid var(--line); border-radius: 18px; background: rgba(255,250,240,.86); padding: 15px 16px; min-height: 94px; }
+    .source-item strong { display: block; font-size: 17px; line-height: 1.15; }
+    .source-item p { margin-top: 8px; color: var(--muted); font-size: 14.5px; line-height: 1.2; }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .wrap { width: 1360px; }
+      .panel, .metric, .card, .table, .callout { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) {
+      .slide { width: 1600px; height: 900px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">GIST CI update | May 5-12, 2026 evidence window</div>
+      <h1>Gastrointestinal stromal tumor competitive intelligence update</h1>
+      <p class="dek">This report includes seven dated primary-source items with visible publication or registry update dates from May 5, 2026 through May 12, 2026.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287594/0/en/cogent-biosciences-reports-recent-business-highlights-and-first-quarter-2026-financial-results.html">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06948955">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04924075">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07581977">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT02834013">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT02012699">6</a><a class="cite" href="https://www.dovepress.com/gastrointestinal-stromal-tumor-gist-arising-in-the-setting-of-a-large--peer-reviewed-fulltext-article-IMCRJ">7</a></p>
+      <div class="grid-4" style="margin-top:34px;">
+        <div class="metric"><div class="num">7</div><div class="label">Primary-source records were used in the report.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287594/0/en/cogent-biosciences-reports-recent-business-highlights-and-first-quarter-2026-financial-results.html">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06948955">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04924075">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07581977">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT02834013">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT02012699">6</a><a class="cite" href="https://www.dovepress.com/gastrointestinal-stromal-tumor-gist-arising-in-the-setting-of-a-large--peer-reviewed-fulltext-article-IMCRJ">7</a></div></div>
+        <div class="metric"><div class="num">5</div><div class="label">ClinicalTrials.gov records had visible last-update dates in the evidence window.<a class="cite" href="https://clinicaltrials.gov/study/NCT06948955">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04924075">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07581977">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT02834013">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT02012699">6</a></div></div>
+        <div class="metric"><div class="num">1</div><div class="label">Company update reported bezuclastinib GIST launch planning and ASCO presentation selection.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287594/0/en/cogent-biosciences-reports-recent-business-highlights-and-first-quarter-2026-financial-results.html">1</a></div></div>
+        <div class="metric"><div class="num">1</div><div class="label">Peer-reviewed case report was published in the window.<a class="cite" href="https://www.dovepress.com/gastrointestinal-stromal-tumor-gist-arising-in-the-setting-of-a-large--peer-reviewed-fulltext-article-IMCRJ">7</a></div></div>
+      </div>
+      <div class="callout" style="margin-top:24px;">
+        <h3>Factual scope</h3>
+        <p>The included sources document bezuclastinib launch planning, a bezuclastinib expanded-access record, a belzutifan Phase 2 record, an endoscopic device RCT record, a rare-tumor immunotherapy basket record, a data and biospecimen repository record, and a published case report.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287594/0/en/cogent-biosciences-reports-recent-business-highlights-and-first-quarter-2026-financial-results.html">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06948955">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04924075">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07581977">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT02834013">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT02012699">6</a><a class="cite" href="https://www.dovepress.com/gastrointestinal-stromal-tumor-gist-arising-in-the-setting-of-a-large--peer-reviewed-fulltext-article-IMCRJ">7</a></p>
+      </div>
+    </div>
+    <div class="slide-num">01 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Bezuclastinib | Company and registry sources</div>
+        <h2>Cogent reported GIST launch planning, and ClinicalTrials.gov listed a bezuclastinib expanded-access program<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287594/0/en/cogent-biosciences-reports-recent-business-highlights-and-first-quarter-2026-financial-results.html">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06948955">2</a></h2>
+        <p>The Cogent source was dated May 5, 2026, and the expanded-access record displayed a May 8, 2026 last-update date.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287594/0/en/cogent-biosciences-reports-recent-business-highlights-and-first-quarter-2026-financial-results.html">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06948955">2</a></p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag lime">Launch planning</span>
+          <h3>Bezuclastinib</h3>
+          <p>Cogent stated that it was planning for dual launches of bezuclastinib in systemic mastocytosis and GIST.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287594/0/en/cogent-biosciences-reports-recent-business-highlights-and-first-quarter-2026-financial-results.html">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">ASCO</span>
+          <h3>PEAK</h3>
+          <p>Cogent stated that pivotal data from the Phase 3 PEAK trial in GIST patients had been selected for oral presentation at the 2026 ASCO Annual Meeting.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287594/0/en/cogent-biosciences-reports-recent-business-highlights-and-first-quarter-2026-financial-results.html">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag orange">Funding</span>
+          <h3>Cash runway</h3>
+          <p>Cogent reported ending first-quarter 2026 with $866.4 million in cash, which it stated was sufficient to fund operations into 2028.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287594/0/en/cogent-biosciences-reports-recent-business-highlights-and-first-quarter-2026-financial-results.html">1</a></p>
+        </div>
+      </div>
+      <div class="panel dark" style="margin-top:22px;">
+        <h3>Expanded access record</h3>
+        <ul class="list">
+          <li>ClinicalTrials.gov listed NCT06948955 as available expanded access sponsored by Cogent Biosciences for bezuclastinib coadministered with sunitinib in GIST.<a class="cite" href="https://clinicaltrials.gov/study/NCT06948955">2</a></li>
+          <li>The registry summary stated that the program provides investigational bezuclastinib with sunitinib to GIST patients with no comparable or satisfactory alternative therapy options.<a class="cite" href="https://clinicaltrials.gov/study/NCT06948955">2</a></li>
+          <li>The registry summary stated that the combination provides broad inhibition of primary and secondary KIT mutations that commonly occur in GIST.<a class="cite" href="https://clinicaltrials.gov/study/NCT06948955">2</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">02 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">ClinicalTrials.gov | Updated records</div>
+        <h2>Five GIST-relevant records displayed update dates inside the evidence window<a class="cite" href="https://clinicaltrials.gov/study/NCT06948955">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04924075">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07581977">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT02834013">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT02012699">6</a></h2>
+        <p>The records below displayed last-update dates from May 5, 2026 through May 12, 2026.<a class="cite" href="https://clinicaltrials.gov/study/NCT06948955">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04924075">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07581977">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT02834013">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT02012699">6</a></p>
+      </div>
+      <div class="table">
+        <div class="row head">
+          <div class="cell">Record</div>
+          <div class="cell">Visible date</div>
+          <div class="cell">Status</div>
+          <div class="cell">Recorded GIST-relevant content</div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT06948955</strong><br />Bezuclastinib + sunitinib</div>
+          <div class="cell">2026-05-08<a class="cite" href="https://clinicaltrials.gov/study/NCT06948955">2</a></div>
+          <div class="cell">Available expanded access<a class="cite" href="https://clinicaltrials.gov/study/NCT06948955">2</a></div>
+          <div class="cell">The record described bezuclastinib coadministered with sunitinib for locally advanced, unresectable, or metastatic GIST.<a class="cite" href="https://clinicaltrials.gov/study/NCT06948955">2</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT04924075</strong><br />Belzutifan</div>
+          <div class="cell">2026-05-11<a class="cite" href="https://clinicaltrials.gov/study/NCT04924075">3</a></div>
+          <div class="cell">Recruiting Phase 2<a class="cite" href="https://clinicaltrials.gov/study/NCT04924075">3</a></div>
+          <div class="cell">The record described belzutifan monotherapy in advanced wt GIST and other HIF-2 alpha-related tumor cohorts, with ORR by BICR as the primary objective.<a class="cite" href="https://clinicaltrials.gov/study/NCT04924075">3</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT07581977</strong><br />Two-tooth endoscopic clip</div>
+          <div class="cell">2026-05-12<a class="cite" href="https://clinicaltrials.gov/study/NCT07581977">4</a></div>
+          <div class="cell">Recruiting RCT<a class="cite" href="https://clinicaltrials.gov/study/NCT07581977">4</a></div>
+          <div class="cell">The record described a novel two-tooth clip used in ESD and EFTR of GIST, with submucosal dissection efficiency as the primary aim.<a class="cite" href="https://clinicaltrials.gov/study/NCT07581977">4</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT02834013</strong><br />DART rare tumors</div>
+          <div class="cell">2026-05-12<a class="cite" href="https://clinicaltrials.gov/study/NCT02834013">5</a></div>
+          <div class="cell">Active, not recruiting<a class="cite" href="https://clinicaltrials.gov/study/NCT02834013">5</a></div>
+          <div class="cell">The record listed a Phase 2 nivolumab and ipilimumab rare-tumor trial and stated that the GIST cohort closed to accrual on September 26, 2018.<a class="cite" href="https://clinicaltrials.gov/study/NCT02834013">5</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT02012699</strong><br />iCaRe2 repository</div>
+          <div class="cell">2026-05-05<a class="cite" href="https://clinicaltrials.gov/study/NCT02012699">6</a></div>
+          <div class="cell">Recruiting repository<a class="cite" href="https://clinicaltrials.gov/study/NCT02012699">6</a></div>
+          <div class="cell">The record listed GIST among conditions and described a resource collecting standardized longitudinal data and biospecimens.<a class="cite" href="https://clinicaltrials.gov/study/NCT02012699">6</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">03 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Published evidence | Case report</div>
+        <h2>A peer-reviewed case report described high-risk gastric GIST in a large hiatal hernia<a class="cite" href="https://www.dovepress.com/gastrointestinal-stromal-tumor-gist-arising-in-the-setting-of-a-large--peer-reviewed-fulltext-article-IMCRJ">7</a></h2>
+        <p>The International Medical Case Reports Journal article displayed a May 7, 2026 publication date.<a class="cite" href="https://www.dovepress.com/gastrointestinal-stromal-tumor-gist-arising-in-the-setting-of-a-large--peer-reviewed-fulltext-article-IMCRJ">7</a></p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag pink">Presentation</span>
+          <h3>Large hiatal hernia</h3>
+          <p>The report stated that CT showed a large hiatal hernia with an 8.4 x 6.5 cm heterogeneous mass arising from herniated and non-herniated gastric wall and extending into the esophageal lumen.<a class="cite" href="https://www.dovepress.com/gastrointestinal-stromal-tumor-gist-arising-in-the-setting-of-a-large--peer-reviewed-fulltext-article-IMCRJ">7</a></p>
+        </div>
+        <div class="card">
+          <span class="tag orange">Treatment</span>
+          <h3>Adjuvant imatinib</h3>
+          <p>The report stated that surgical resection confirmed high-risk GIST and that the patient received adjuvant imatinib 400 mg daily.<a class="cite" href="https://www.dovepress.com/gastrointestinal-stromal-tumor-gist-arising-in-the-setting-of-a-large--peer-reviewed-fulltext-article-IMCRJ">7</a></p>
+        </div>
+        <div class="card">
+          <span class="tag red">Follow-up</span>
+          <h3>Recurrent lesion</h3>
+          <p>The report stated that follow-up CT on August 10, 2025 showed a 6.2 x 6.0 cm recurrent lesion.<a class="cite" href="https://www.dovepress.com/gastrointestinal-stromal-tumor-gist-arising-in-the-setting-of-a-large--peer-reviewed-fulltext-article-IMCRJ">7</a></p>
+        </div>
+      </div>
+      <div class="panel dark" style="margin-top:22px;">
+        <h3>Article conclusion</h3>
+        <ul class="list">
+          <li>The article concluded that a hiatal hernia with mass should prompt suspicion for malignancy and that GIST should remain an important differential diagnosis.<a class="cite" href="https://www.dovepress.com/gastrointestinal-stromal-tumor-gist-arising-in-the-setting-of-a-large--peer-reviewed-fulltext-article-IMCRJ">7</a></li>
+          <li>The article stated that immunohistochemistry was essential for definitive diagnosis in the case and that complete surgical resection, consideration of adjuvant therapy, and radiological surveillance were needed for high-risk disease.<a class="cite" href="https://www.dovepress.com/gastrointestinal-stromal-tumor-gist-arising-in-the-setting-of-a-large--peer-reviewed-fulltext-article-IMCRJ">7</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">04 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Reference register</div>
+        <h2>Sources used in this update<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287594/0/en/cogent-biosciences-reports-recent-business-highlights-and-first-quarter-2026-financial-results.html">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06948955">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04924075">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07581977">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT02834013">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT02012699">6</a><a class="cite" href="https://www.dovepress.com/gastrointestinal-stromal-tumor-gist-arising-in-the-setting-of-a-large--peer-reviewed-fulltext-article-IMCRJ">7</a></h2>
+        <p>Each source below has a corresponding visible-date screenshot and highlighted evidence screenshot in the separate reference screenshots PDF.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287594/0/en/cogent-biosciences-reports-recent-business-highlights-and-first-quarter-2026-financial-results.html">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06948955">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04924075">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07581977">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT02834013">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT02012699">6</a><a class="cite" href="https://www.dovepress.com/gastrointestinal-stromal-tumor-gist-arising-in-the-setting-of-a-large--peer-reviewed-fulltext-article-IMCRJ">7</a></p>
+      </div>
+      <div class="source-grid">
+        <div class="source-item"><strong>1. Cogent Biosciences business update</strong><p>Visible date: May 05, 2026; source records bezuclastinib GIST launch planning, PEAK ASCO selection, and cash runway.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287594/0/en/cogent-biosciences-reports-recent-business-highlights-and-first-quarter-2026-financial-results.html">1</a></p></div>
+        <div class="source-item"><strong>2. NCT06948955</strong><p>Visible date: 2026-05-08; source records bezuclastinib and sunitinib expanded access in GIST.<a class="cite" href="https://clinicaltrials.gov/study/NCT06948955">2</a></p></div>
+        <div class="source-item"><strong>3. NCT04924075</strong><p>Visible date: 2026-05-11; source records belzutifan monotherapy in advanced wt GIST and other cohorts.<a class="cite" href="https://clinicaltrials.gov/study/NCT04924075">3</a></p></div>
+        <div class="source-item"><strong>4. NCT07581977</strong><p>Visible date: 2026-05-12; source records a two-tooth clip-assisted ESD and EFTR GIST RCT.<a class="cite" href="https://clinicaltrials.gov/study/NCT07581977">4</a></p></div>
+        <div class="source-item"><strong>5. NCT02834013</strong><p>Visible date: 2026-05-12; source records DART nivolumab and ipilimumab rare-tumor trial details and the closed GIST cohort.<a class="cite" href="https://clinicaltrials.gov/study/NCT02834013">5</a></p></div>
+        <div class="source-item"><strong>6. NCT02012699</strong><p>Visible date: 2026-05-05; source records iCaRe2 repository data and biospecimen collection and lists GIST among conditions.<a class="cite" href="https://clinicaltrials.gov/study/NCT02012699">6</a></p></div>
+        <div class="source-item"><strong>7. International Medical Case Reports Journal</strong><p>Visible date: Published 7 May 2026; source records a high-risk gastric GIST case report with adjuvant imatinib and recurrent-lesion follow-up.<a class="cite" href="https://www.dovepress.com/gastrointestinal-stromal-tumor-gist-arising-in-the-setting-of-a-large--peer-reviewed-fulltext-article-IMCRJ">7</a></p></div>
+      </div>
+    </div>
+    <div class="slide-num">05 / 05</div>
+  </article>
+</body>
+</html>

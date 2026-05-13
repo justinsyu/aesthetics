@@ -1,0 +1,325 @@
+- main:
+  - 'link "Accessibility: Skip TopNav"':
+    - /url: "#maincontainer"
+  - generic "Home":
+    - link "Home":
+      - /url: https://www.globenewswire.com
+      - img "GlobeNewswire"
+  - list:
+    - listitem "newsroom":
+      - link "newsroom":
+        - /url: https://www.globenewswire.com/newsroom
+        - text: Newsroom
+    - listitem "services":
+      - link "services":
+        - /url: https://www.globenewswire.com/services
+        - text: Services
+    - listitem "contact":
+      - link "contact":
+        - /url: https://insight.notified.com/globenewswire-contact-us?utm_medium=Website&utm_source=Contact%20Us&utm_campaign=Contact%20Us%20ENG
+        - text: Contact Us
+    - listitem "aboutus":
+      - link "aboutus":
+        - /url: https://www.globenewswire.com/about
+        - text: About Us
+    - listitem "language":
+      - button "English":
+        - generic: English
+  - link "Sign In":
+    - /url: https://www.globenewswire.com/home/signin
+  - link "Register":
+    - /url: https://portal.notified.com/en/registration
+  - button:
+  - navigation:
+    - list:
+      - link "Consumer Products and Services News":
+        - /url: /news/consumer-products-services
+      - button "Toggle Consumer Products and Services News submenu":
+      - link "Energy News":
+        - /url: /news/energy
+      - button "Toggle Energy News submenu":
+      - link "Banks & Financial Services News":
+        - /url: /news/banks-financial-services
+      - button "Toggle Banks & Financial Services News submenu":
+      - link "Healthcare News":
+        - /url: /news/heathcare
+      - button "Toggle Healthcare News submenu":
+      - link "Industrials and Utilities News":
+        - /url: /news/industrials-utilities
+      - button "Toggle Industrials and Utilities News submenu":
+      - link "Technology and Telecom News":
+        - /url: /news/technology-telecom
+      - button "Toggle Technology and Telecom News submenu":
+  - heading "AIMLogo.jpg" [level=1]:
+    - link "AIMLogo.jpg":
+      - /url: https://aimimmuno.com/
+      - img "AIMLogo.jpg"
+  - heading "AIM ImmunoTech Announces 50% Objective Response Rate (ORR) in UPMC Recurrent Ovarian Cancer Phase 2 Clinical Trial, Suggesting Breakthrough Combination Potential" [level=1]
+  - heading "Final UPMC Primary Endpoint Report Details Positive Data from Ovarian Cancer Clinical Trial Combining Ampligen, Pembrolizumab and Cisplatin" [level=2]
+  - paragraph:
+    - time: May 07, 2026 08:23 ET
+    - text: "| Source:"
+    - link "AIM ImmunoTech Inc.":
+      - /url: /en/search/organization/AIM%2520ImmunoTech%2520Inc§
+    - button "Follow":
+      - generic: Follow
+  - separator
+  - generic: Share
+  - list:
+    - button:
+    - button:
+      - generic "Globenewswire Twitter":
+    - button:
+    - link:
+      - /url: "#"
+    - button:
+    - button:
+    - separator
+    - button:
+  - paragraph:
+    - text: OCALA, Fla., May 07, 2026 (GLOBE NEWSWIRE) --
+    - link "AIM ImmunoTech Inc.":
+      - /url: https://www.globenewswire.com/Tracker?data=6NuPiarVO4EYMKBWJA-8f2ZNSb6t_LJ1VbAYDQKDKv-2TOFvaugY70VPXMmIN3gMsFuMAZWUV1FJj3gtswqBd0l8eSMA0eWXC0XAzunKLCc=
+      - strong: AIM ImmunoTech Inc.
+    - strong: "(NYSE American: AIM)"
+    - text: (“AIM” or the “Company”) today announced the Final Primary Endpoint Report on Objective Response Rate data from a University of Pittsburgh Medical Center (“UPMC”) Phase 2 clinical trial – in which AIM and Merck Sharp & Dohme (“Merck”) are collaborators – evaluating Ampligen
+    - superscript: ®
+    - text: (rintatolimod) in combination with checkpoint inhibition and chemotherapy in recurrent ovarian cancer—data that may signal a major step forward in overcoming resistance to immunotherapy. The study aimed to improve clinical outcomes by overcoming the immunosuppressive tumor microenvironment characteristic of ovarian cancer through locoregional and systemic immune activation strategies. This clinical trial was financially supported by a Merck grant.
+  - paragraph:
+    - emphasis: Read more about the study at
+    - 'link "ClinicalTrials.gov: NCT03734692"':
+      - /url: https://www.globenewswire.com/Tracker?data=thhuKceqQgnNtcIkZfYvRYqkVOhiDR1urqqvlz6zB74bcIDTtB60IrXwsDRTq7QRdXfU3FO-YASygoOlGcb-_dE8TV_k14WmihbulN8orv9KqXw5Kbq3rUJhsk5IBQe3VISukXs-tsIcYyUVGHvsOA==
+      - emphasis: "ClinicalTrials.gov: NCT03734692"
+    - emphasis: .
+  - paragraph: "Topline results included:"
+  - list:
+    - listitem: 50% Objective Response Rate (ORR), including 21% complete responses
+    - listitem: 79% Clinical Benefit Rate
+    - listitem: Median Overall Survival of 32.5 months
+    - listitem: Durable responses exceeding 70+ months in select patients
+    - listitem: No Grade 4 or 5 toxicities observed
+  - paragraph:
+    - emphasis: Read the full UPMC Primary Endpoint Report
+    - link "here":
+      - /url: https://www.globenewswire.com/Tracker?data=4Ve4gjSzP0jaYL0OwMNlEtFxJpoabC5_OpESPO2PKfbk0ik8gVTPXMF4a7veqgTI2yapyI1MlciJ3ECs5AkSVLOTlDUsLKaqER2YhRI1usKVuLE7_GPU_Rq3xLbh_9oO
+      - emphasis: here
+    - emphasis: .
+  - paragraph: Collection of additional secondary endpoint data including progression-free survival, time to disease progression and overall survival is expected to be completed in January 2027.
+  - paragraph: "Robert P. Edwards, MD, McCall Chair of Obstetrics, Gynecology, and Reproductive Science at the University of Pittsburgh School of Medicine, stated: “This single-arm Phase 2 trial is the third in a series of consecutive studies evaluating IP chemotherapy or chemoimmunotherapy using this analytical approach. The addition of IP Ampligen and systemic PD-1 checkpoint inhibition to IP cisplatin chemotherapy resulted in a significant improvement in both clinical response rates and immune activation across highly comparable patient cohorts in the 3 trials.”"
+  - paragraph: AIM Chief Executive Officer Thomas K. Equels stated, “These results represent what we believe is a strong step forward in the potential to enhance treatment of recurrent ovarian cancer, if further studies support findings of relatively low toxicity, clinical benefit and durable response. Once again, data suggests that Ampligen may unlock the full potential of checkpoint immunotherapies. We are particularly encouraged by the durability of the observed responses. This supports our proposition that Ampligen has the potential to play a major role in solid tumor immuno-oncology — expanding the number of patients who benefit from checkpoint inhibitors across multiple cancer types, including ovarian cancer and pancreatic cancer. With strong intellectual property protection extending into 2039 and a growing body of positive clinical evidence, we believe we are well positioned to advance Ampligen into later-stage development and strategic partnerships.”
+  - paragraph:
+    - strong: About AIM ImmunoTech Inc.
+  - paragraph:
+    - text: AIM ImmunoTech Inc. is an immuno-pharma company focused on the research and development of therapeutics to treat multiple types of cancers, immune disorders and viral diseases, including COVID-19. The Company’s lead product is a first-in-class investigational drug called Ampligen
+    - superscript: ®
+    - text: (rintatolimod), a dsRNA and highly selective TLR3 agonist immuno-modulator with broad spectrum activity in clinical trials for globally important cancers, viral diseases and disorders of the immune system.
+  - paragraph:
+    - text: For more information, please visit
+    - link "aimimmuno.com":
+      - /url: https://www.globenewswire.com/Tracker?data=yxLzc0Hy93ciEUDhFc6c7rMuWz2ST3lXoJx_VeJWAW3yWPF62T4HW_rhEwY4TOicpF9JSzmTiWZWnd1qradLNw==
+    - text: and connect with the Company on
+    - link "X":
+      - /url: https://www.globenewswire.com/Tracker?data=PGv-b1GkSDocY-Ek7s1yuxaLTweaZUbbjPlplOWiTDK9s2PeHljl39eVl6TrErlpLXurPq8ubvsPEZ5UTVnkRQ==
+    - text: ","
+    - link "LinkedIn":
+      - /url: https://www.globenewswire.com/Tracker?data=B5c7WLhzZFR9Q1MlTwSqWbUe3C7_6bEQpBPGJmPV_QuHpJu4FmaEt4mf2w4l6ChgnmUTT4LUPFunBm5Afbi1ZjgHjUPLgiuw3s9XMTaysvBLyM-ZXgGvxYKiXh9U1XQEXfPzwsUZ81jq4gfptcBHVg==
+    - text: ", and"
+    - link "Facebook":
+      - /url: https://www.globenewswire.com/Tracker?data=VhsYdZnNMhKSHpDsSzfaGGpdkLO07UQ_3ub1XUq86dunrZX3pvtLCfo0sX0TiBMnXVNXxPZ9IK6usUxxJrUfCMysNpcUZRux-HfEQ5cQg0I=
+    - text: .
+  - paragraph:
+    - strong: Forward-Looking Statements
+  - paragraph:
+    - text: "This press release contains forward-looking statements within the meaning of Section 27A of the Securities Act of 1933, as amended, and Section 21E of the Securities Exchange Act of 1934, as amended, that involve a number of risks and uncertainties. For those statements, the Company claims the protection of the safe harbor for forward-looking statements contained in the Private Securities Litigation Reform Act of 1995. Forward-looking statements may be identified by the use of words such as “believes,” “expects,” “intends,” “may,” “will,” “plans,” “potential,” “anticipates,” or similar expressions. Any forward-looking statements set forth in this press release speak only as of the date hereof. Such forward-looking statements may include: statements relating to the timing of commencement, enrollment, completion, and results of clinical trials; IP expansion and regulatory progress; and timing for receiving government approvals, if at all. The Company does not undertake to update any of these forward-looking statements to reflect events or circumstances that occur after the date hereof, except as required by applicable law. The Company is in various stages of seeking to determine whether Ampligen will be effective in the treatment of multiple types of viral diseases, cancers, and immune-deficiency disorders, and disclosures in the Company’s reports filed with the SEC, on its website, and in its press releases set forth its current and anticipated future activities. These activities are subject to change for a number of reasons. Significant additional testing and trials will be required to determine whether Ampligen"
+    - superscript: ®
+    - text: will be effective in the treatment of these conditions. Results obtained in preclinical studies do not necessarily predict results in humans. Human clinical trials will be necessary to prove whether or not Ampligen
+    - superscript: ®
+    - text: will be efficacious in humans. No assurance can be given as to whether current or planned clinical trials will be successful or yield favorable data, and the trials are subject to many factors including lack of regulatory approval(s), lack of study drug, lack of adequate funding, or a change in priorities at the institutions sponsoring other trials. Even if these clinical trials are initiated, the Company cannot assure that the clinical studies will be successful or yield any useful data. No assurance can be given that the findings in preliminary studies will prove true or that such studies will yield favorable results, or that future studies will not result in findings that are different from those reported in the studies referenced in the Company’s reports filed with the SEC, on the Company’s website, and in its press releases. Operating in foreign countries carries with it a number of risks, including potential difficulties in enforcing intellectual property rights. The Company cannot assure that its potential foreign operations will not be adversely affected by these risks.
+  - paragraph: For a detailed discussion of risk factors, please review the “Risk Factors” section in the Company’s most recent Annual Report on Form 10-K and subsequent Quarterly Reports on Form 10-Q filed with the SEC. These filings are available at www.sec.gov and www.aimimmuno.com. The information found on the Company’s website is not incorporated by reference into this press release and is included for reference purposes only.
+  - paragraph:
+    - text: A photo accompanying this announcement is available at
+    - link "https://www.globenewswire.com/NewsRoom/AttachmentNg/4272224c-2335-4a58-9f30-bf722123ab7f":
+      - /url: https://www.globenewswire.com/Tracker?data=hth1chV3RYp6ZkDcZCv2kDfZsUxdOsw_ARBTmxjOBSvLozoEmkaB39LJCpHCLVqjBbfAjRWIASQs-iP0q-dGT2UstRbDTdSkinwnwScPVyMyZLU87OB3MNEQCT3_ldvDv71GFk6dDyt1gM8ev_v24k5W2BjRotH7x0G_gwVaoPv3SbZ7anE1utiOT2KASEU5lUftG2RySfT_kzhvdGpmjVuj-oNN1xYzN0Lekc9N_MoswcIn-ZR-m14fhK8Sigo4g7Gw40pLLrZN3X9blqEibA==
+  - link "edwards-robert-hi-res":
+    - /url: "#"
+    - img "edwards-robert-hi-res"
+  - generic "Robert P. Edwards, MD, McCall Chair of Obstetrics, Gynecology, and Reproductive Science at the University of Pittsburgh School of Medicine": Robert P. Edwards, MD, McCall Chair of Obstetrics, Gynecology, and Reproductive Science at the Unive...
+  - generic "Robert P. Edwards, MD, McCall Chair of Obstetrics, Gynecology, and Reproductive Science at the University of Pittsburgh School of Medicine": Robert P. Edwards, MD, McCall Chair of Obstetrics, Gynecology, and Reproductive Science at the Unive...
+  - separator
+  - heading "Tags" [level=2]
+  - link "cancer":
+    - /url: /en/search/tag/cancer
+  - link "ovarian cancer":
+    - /url: /en/search/tag/ovarian%2520cancer
+  - link "Immuno-Oncology":
+    - /url: /en/search/tag/immuno-oncology
+  - link "oncology":
+    - /url: /en/search/tag/oncology
+  - separator
+  - heading "Contact Data" [level=3]
+  - link "Contact":
+    - /url: "#"
+  - generic: Company Profile
+  - generic: AIM ImmunoTech Inc.
+  - text: "Industry:"
+  - generic: Pharmaceuticals & Biotechnology
+  - text: "Website:"
+  - link "https://aimimmuno.com/":
+    - /url: https://aimimmuno.com/
+  - generic: Press Release Actions
+  - list:
+    - link "Print":
+      - /url: https://www.globenewswire.com/news-release/2026/05/07/3289988/29489/en/AIM-ImmunoTech-Announces-50-Objective-Response-Rate-ORR-in-UPMC-Recurrent-Ovarian-Cancer-Phase-2-Clinical-Trial-Suggesting-Breakthrough-Combination-Potential.html?print=1
+    - link "Download PDF":
+      - /url: https://www.globenewswire.com/news-release/2026/05/07/3289988/29489/en/AIM-ImmunoTech-Announces-50-Objective-Response-Rate-ORR-in-UPMC-Recurrent-Ovarian-Cancer-Phase-2-Clinical-Trial-Suggesting-Breakthrough-Combination-Potential.html?pdf=1
+    - link "Subscribe via RSS":
+      - /url: /rssfeed/organization/cBEs5cDNG3vTNTScpAXAMw==
+    - link "Subscribe via ATOM":
+      - /url: /atomfeed/organization/cBEs5cDNG3vTNTScpAXAMw==
+    - link "Javascript":
+      - /url: https://www.globenewswire.com/JSWidget/organization/Ho8lBo-ef7UEx2hL8NY2NA%3d%3d
+  - heading "Recommended Reading" [level=2]
+  - list:
+    - text: May 08, 2026 08:40 ET |
+    - text: "Source:"
+    - link "AIM ImmunoTech Inc.":
+      - /url: /en/search/organization/AIM%2520ImmunoTech%2520Inc§
+    - link "AIM ImmunoTech, Inc. Announces Exercise of Warrants for Approx. $4.2 Million in Gross Proceeds":
+      - /url: https://www.globenewswire.com/news-release/2026/05/08/3291065/0/en/AIM-ImmunoTech-Inc-Announces-Exercise-of-Warrants-for-Approx-4-2-Million-in-Gross-Proceeds.html
+    - paragraph: OCALA, Fla., May 08, 2026 (GLOBE NEWSWIRE) -- AIM ImmunoTech, Inc. (NYSEAM:AIM) (“AIM ImmunoTech” or the “Company”), a late-stage biotechnology company focused on the discovery and development of...
+    - link "Read More":
+      - /url: https://www.globenewswire.com/news-release/2026/05/08/3291065/0/en/AIM-ImmunoTech-Inc-Announces-Exercise-of-Warrants-for-Approx-4-2-Million-in-Gross-Proceeds.html
+    - generic "AIM ImmunoTech, Inc. Announces Exercise of Warrants for Approx. $4.2 Million in Gross Proceeds":
+      - img "AIM ImmunoTech, Inc. Announces Exercise of Warrants for Approx. $4.2 Million in Gross Proceeds"
+    - text: April 16, 2026 09:00 ET |
+    - text: "Source:"
+    - link "AIM ImmunoTech Inc.":
+      - /url: /en/search/organization/AIM%2520ImmunoTech%2520Inc§
+    - link "AIM ImmunoTech Enters Pivotal Value Inflection Phase with Planned Phase 3 Study of Ampligen® in Pancreatic Cancer, Backed by Positive Clinical Signals, Orphan Drug Status, and Global IP":
+      - /url: https://www.globenewswire.com/news-release/2026/04/16/3275404/0/en/AIM-ImmunoTech-Enters-Pivotal-Value-Inflection-Phase-with-Planned-Phase-3-Study-of-Ampligen-in-Pancreatic-Cancer-Backed-by-Positive-Clinical-Signals-Orphan-Drug-Status-and-Global-I.html
+    - paragraph: Company to participate in Live Virtual Investor Closing Bell segment today, April 16th at 4:00 PM ET; Register for the event here OCALA, Fla., April 16, 2026 (GLOBE NEWSWIRE) -- AIM ImmunoTech Inc....
+    - link "Read More":
+      - /url: https://www.globenewswire.com/news-release/2026/04/16/3275404/0/en/AIM-ImmunoTech-Enters-Pivotal-Value-Inflection-Phase-with-Planned-Phase-3-Study-of-Ampligen-in-Pancreatic-Cancer-Backed-by-Positive-Clinical-Signals-Orphan-Drug-Status-and-Global-I.html
+    - generic "AIM ImmunoTech Enters Pivotal Value Inflection Phase with Planned Phase 3 Study of Ampligen® in Pancreatic Cancer, Backed by Positive Clinical Signals, Orphan Drug Status, and Global IP":
+      - img "AIM ImmunoTech Enters Pivotal Value Inflection Phase with Planned Phase 3 Study of Ampligen® in Pancreatic Cancer, Backed by Positive Clinical Signals, Orphan Drug Status, and Global IP"
+  - heading "Explore" [level=2]
+  - button "⏴ Previous"
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293303/0/en/BingX-Launches-EventX-Turning-Real-World-Events-Into-Tradable-Assets.html
+  - generic: May 12, 2026 14:04 ET
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293303/0/en/BingX-Launches-EventX-Turning-Real-World-Events-Into-Tradable-Assets.html
+    - text: BingX Launches EventX, Turning Real-World Events I...
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293302/0/en/OKANA-Resort-Indoor-Waterpark-Enters-Its-First-Full-Summer-with-Every-Experience-Open.html
+  - generic: May 12, 2026 14:03 ET
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293302/0/en/OKANA-Resort-Indoor-Waterpark-Enters-Its-First-Full-Summer-with-Every-Experience-Open.html
+    - text: OKANA Resort & Indoor Waterpark Enters Its First F...
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293294/0/en/The-25th-Tunnel-to-Towers-NYC-5K-Run-Walk-is-Set-for-September-27th.html
+  - generic: May 12, 2026 13:58 ET
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293294/0/en/The-25th-Tunnel-to-Towers-NYC-5K-Run-Walk-is-Set-for-September-27th.html
+    - text: The 25th Tunnel to Towers NYC 5K Run & Walk is Set...
+  - 'link "BloodPril: The TRUTH..."':
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293324/0/en/BloodPril-The-TRUTH-Behind-the-Blood-Pril-Nitric-Oxide-Formula-and-What-Consumers-Need-to-Know.html
+    - 'img "BloodPril: The TRUTH..."'
+  - generic: May 12, 2026 15:33 ET
+  - 'link "BloodPril: The TRUTH..."':
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293324/0/en/BloodPril-The-TRUTH-Behind-the-Blood-Pril-Nitric-Oxide-Formula-and-What-Consumers-Need-to-Know.html
+    - text: "BloodPril: The TRUTH Behind the 'Blood Pril' Nitri..."
+  - iframe
+  - generic: May 12, 2026 14:43 ET
+  - link "Productive Launches...":
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293312/0/en/Productive-Launches-5-0-With-AI-Agents-That-Free-Teams-From-Routine-Work.html
+    - text: Productive Launches 5.0 With AI Agents That Free T...
+  - link "BingX Launches...":
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293303/0/en/BingX-Launches-EventX-Turning-Real-World-Events-Into-Tradable-Assets.html
+    - img "BingX Launches..."
+  - generic: May 12, 2026 14:04 ET
+  - link "BingX Launches...":
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293303/0/en/BingX-Launches-EventX-Turning-Real-World-Events-Into-Tradable-Assets.html
+    - text: BingX Launches EventX, Turning Real-World Events I...
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293302/0/en/OKANA-Resort-Indoor-Waterpark-Enters-Its-First-Full-Summer-with-Every-Experience-Open.html
+  - generic: May 12, 2026 14:03 ET
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293302/0/en/OKANA-Resort-Indoor-Waterpark-Enters-Its-First-Full-Summer-with-Every-Experience-Open.html
+    - text: OKANA Resort & Indoor Waterpark Enters Its First F...
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293294/0/en/The-25th-Tunnel-to-Towers-NYC-5K-Run-Walk-is-Set-for-September-27th.html
+  - generic: May 12, 2026 13:58 ET
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293294/0/en/The-25th-Tunnel-to-Towers-NYC-5K-Run-Walk-is-Set-for-September-27th.html
+    - text: The 25th Tunnel to Towers NYC 5K Run & Walk is Set...
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293324/0/en/BloodPril-The-TRUTH-Behind-the-Blood-Pril-Nitric-Oxide-Formula-and-What-Consumers-Need-to-Know.html
+  - generic: May 12, 2026 15:33 ET
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293324/0/en/BloodPril-The-TRUTH-Behind-the-Blood-Pril-Nitric-Oxide-Formula-and-What-Consumers-Need-to-Know.html
+    - text: "BloodPril: The TRUTH Behind the 'Blood Pril' Nitri..."
+  - iframe
+  - generic: May 12, 2026 14:43 ET
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293312/0/en/Productive-Launches-5-0-With-AI-Agents-That-Free-Teams-From-Routine-Work.html
+    - text: Productive Launches 5.0 With AI Agents That Free T...
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293303/0/en/BingX-Launches-EventX-Turning-Real-World-Events-Into-Tradable-Assets.html
+  - generic: May 12, 2026 14:04 ET
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293303/0/en/BingX-Launches-EventX-Turning-Real-World-Events-Into-Tradable-Assets.html
+    - text: BingX Launches EventX, Turning Real-World Events I...
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293302/0/en/OKANA-Resort-Indoor-Waterpark-Enters-Its-First-Full-Summer-with-Every-Experience-Open.html
+  - generic: May 12, 2026 14:03 ET
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293302/0/en/OKANA-Resort-Indoor-Waterpark-Enters-Its-First-Full-Summer-with-Every-Experience-Open.html
+    - text: OKANA Resort & Indoor Waterpark Enters Its First F...
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293294/0/en/The-25th-Tunnel-to-Towers-NYC-5K-Run-Walk-is-Set-for-September-27th.html
+  - generic: May 12, 2026 13:58 ET
+  - link:
+    - /url: https://www.globenewswire.com/news-release/2026/05/12/3293294/0/en/The-25th-Tunnel-to-Towers-NYC-5K-Run-Walk-is-Set-for-September-27th.html
+    - text: The 25th Tunnel to Towers NYC 5K Run & Walk is Set...
+  - button "⏵ Next"
+  - generic: About Us
+  - paragraph: GlobeNewswire is one of the world's largest newswire distribution networks, specializing in the delivery of corporate press releases, financial disclosures and multimedia content to media, investors, and consumers worldwide.
+  - generic: Global News
+  - list:
+    - link "English":
+      - /url: https://www.globenewswire.com/newsroom
+    - link "Français":
+      - /url: https://www.globenewswire.com/fr/newsroom
+    - link "Deutsch":
+      - /url: https://www.globenewswire.com/de/newsroom
+  - generic: Newswire Distribution Network & Management
+  - list:
+    - link "Home":
+      - /url: https://www.globenewswire.com/
+    - link "Newsroom":
+      - /url: https://www.globenewswire.com/newsroom
+    - link "RSS Feeds":
+      - /url: https://www.globenewswire.com/rss/list
+    - link "Notified, opens a new tab":
+      - /url: https://www.notified.com
+      - text: Notified
+    - link "Legal, opens a new tab":
+      - /url: https://www.notified.com/privacy
+      - text: Legal
+    - link "About Us, opens a new tab":
+      - /url: /about
+      - text: About Us
+    - link "Contact Us, opens a new tab":
+      - /url: https://insight.notified.com/globenewswire-contact-us?utm_medium=Website&utm_source=Contact%20Us&utm_campaign=Contact%20Us%20ENG
+      - text: Contact Us
+    - link "Resources, opens a new tab":
+      - /url: https://www.notified.com/resources
+      - text: Resources
+  - paragraph: © 2026 Digital Media Innovations, LLC. All rights reserved.
+  - link "GlobeNewswire Linkedin, opens a new tab":
+    - /url: https://www.linkedin.com/company/1006947
+  - link "Notified Twitter, opens a new tab":
+    - /url: https://twitter.com/Notified
+- button "Cookies Settings"
+- text: Cookies Settings

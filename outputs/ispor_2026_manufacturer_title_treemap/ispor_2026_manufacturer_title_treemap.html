@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ISPOR 2026 Manufacturer Title Treemap</title>
+  <style>
+    :root { --ink:#10120f; --muted:#5c6257; --paper:#f6f1e8; --card:#fffaf0; --line:#1b1f17; --lime:#d7ff5f; --orange:#ffb86b; --blue:#b8d8ff; --pink:#ffd3e0; --gray:#d6d0c2; --radius:26px; }
+    * { box-sizing:border-box; } html,body { margin:0; background:var(--paper); scrollbar-width:none; } html::-webkit-scrollbar, body::-webkit-scrollbar { display:none; }
+    body { color:var(--ink); font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height:1.28; }
+    .sheet { width:1200px; height:2600px; padding:62px 52px 52px; overflow:hidden; background:var(--paper); position:relative; }
+    .top { display:grid; grid-template-columns:520px 1fr; gap:32px; align-items:end; }
+    .eyebrow { display:inline-flex; align-items:center; width:fit-content; border:1.4px solid var(--line); padding:8px 11px; border-radius:999px; font-size:15px; font-weight:850; letter-spacing:.06em; text-transform:uppercase; background:var(--lime); margin-bottom:18px; }
+    h1 { margin:0; max-width:520px; font-size:66px; line-height:.9; letter-spacing:-0.03em; font-weight:540; }
+    .metrics { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; } .metric { min-height:112px; border:1.5px solid var(--line); border-radius:var(--radius); background:var(--card); padding:15px; } .metric.dark { background:#11130f; color:var(--paper); }
+    .num { font-size:39px; line-height:.92; font-weight:900; letter-spacing:-0.045em; } .label { margin-top:10px; color:var(--muted); font-size:12px; line-height:1.2; font-weight:740; } .metric.dark .label { color:rgba(246,241,232,.74); }
+    .chart-panel { margin-top:24px; border:1.5px solid var(--line); border-radius:var(--radius); background:#11130f; color:var(--paper); padding:28px 24px 24px; height:2196px; display:grid; grid-template-rows:auto 1fr auto; gap:18px; }
+    .chart-head { display:flex; justify-content:space-between; gap:28px; align-items:end; border-bottom:1px solid rgba(246,241,232,.24); padding-bottom:16px; } h2 { margin:0; font-size:38px; line-height:.95; letter-spacing:-0.015em; font-weight:630; } .chart-sub { margin-top:8px; color:rgba(246,241,232,.7); font-size:14px; line-height:1.25; }
+    .legend { display:grid; grid-template-columns:auto auto auto auto; gap:8px 12px; align-items:center; color:rgba(246,241,232,.75); font-size:12px; font-weight:760; text-transform:uppercase; letter-spacing:.04em; white-space:nowrap; } .swatch { width:15px; height:15px; border:1px solid rgba(246,241,232,.34); border-radius:999px; background:var(--lime); } .swatch.orange { background:var(--orange); } .swatch.blue { background:var(--blue); } .swatch.pink { background:var(--pink); } .swatch.gray { background:var(--gray); }
+    .treemap { position:relative; width:1048px; height:1960px; overflow:hidden; border-radius:18px; background:#191b16; border:1px solid rgba(246,241,232,.24); }
+    .tile { position:absolute; border:1px solid rgba(16,18,15,.42); border-radius:10px; overflow:hidden; padding:8px 9px; } .tile.large { padding:10px 11px; border-radius:12px; } .tile.medium { padding:8px 9px; border-radius:10px; } .tile.small { padding:6px 7px; border-radius:8px; } .tile.count { padding:0; border-radius:6px; }
+    .tile-copy { width:100%; max-width:100%; } .tile.tier-top .tile-copy, .tile.tier-strong .tile-copy { width:50%; max-width:50%; }
+    .tile-rank { font-size:11px; line-height:1; font-weight:900; opacity:.65; letter-spacing:.08em; } .tile-name { margin-top:5px; font-size:18px; line-height:.96; letter-spacing:-0.01em; font-weight:890; overflow-wrap:anywhere; } .tile.medium .tile-name { font-size:14px; line-height:.98; } .tile.small .tile-name { font-size:10.5px; line-height:1; }
+    .tile.tier-top .tile-rank { font-size:18px; } .tile.tier-top .tile-name { margin-top:10px; font-size:42px; line-height:.92; letter-spacing:-0.025em; } .tile.tier-top .tile-count { margin-top:12px; font-size:17px; }
+    .tile.tier-strong .tile-rank { font-size:15px; } .tile.tier-strong .tile-name { margin-top:8px; font-size:31px; line-height:.93; letter-spacing:-0.02em; } .tile.tier-strong .tile-count { margin-top:10px; font-size:14px; }
+    .tile-count { margin-top:6px; font-size:11px; line-height:1; font-weight:850; opacity:.74; } .tile.medium .tile-count { font-size:9.5px; } .tile.small .tile-count { font-size:8px; } .count-only { position:absolute; inset:0; display:grid; place-items:center; font-size:9px; line-height:1; font-weight:900; opacity:.8; }
+    .note { color:rgba(246,241,232,.68); font-size:12px; line-height:1.25; font-weight:650; border-top:1px solid rgba(246,241,232,.22); padding-top:12px; } .note strong { color:var(--paper); font-weight:900; } .page-num { position:absolute; right:40px; bottom:24px; color:rgba(16,18,15,.38); font-size:11px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; }
+    @page { size:12.5in 27.083333in; margin:0; } @media print { body,*,*::before,*::after { -webkit-print-color-adjust:exact; print-color-adjust:exact; } html,body { width:1200px; height:2600px; background:var(--paper); } .sheet { width:1200px; height:2600px; background:var(--paper); } }
+  </style>
+</head>
+<body>
+  <main class="sheet">
+    <section class="top">
+      <div>
+        <div class="eyebrow">ISPOR 2026 manufacturer data</div>
+        <h1>Manufacturer title treemap</h1>
+      </div>
+      <div class="metrics" aria-label="summary metrics">
+        <div class="metric dark"><div class="num">684</div><div class="label">manufacturer attendees with populated normalized titles</div></div>
+        <div class="metric"><div class="num">43</div><div class="label">normalized title categories represented</div></div>
+        <div class="metric"><div class="num">93%</div><div class="label">of populated manufacturer titles in the top 20 categories</div></div>
+        <div class="metric"><div class="num">56%</div><div class="label">Director-type titles: Director, Senior Director, Associate Director, and Executive Director</div></div>
+      </div>
+    </section>
+    <section class="chart-panel">
+      <div class="chart-head">
+        <div>
+          <h2>All normalized manufacturer titles</h2>
+          <p class="chart-sub">Area represents attendee count; compact tiles show count labels when names would not fit.</p>
+        </div>
+        <div class="legend" aria-label="tile color legend">
+          <span class="swatch"></span><span>Rank 1-3</span>
+          <span class="swatch orange"></span><span>4-9</span>
+          <span class="swatch blue"></span><span>10-20</span>
+          <span class="swatch pink"></span><span>21-35</span>
+        </div>
+      </div>
+      <div class="treemap" role="img" aria-label="Treemap of all normalized manufacturer titles by attendee count">
+          <div class="tile large tier-top" title="Director: 187" style="left:6.000px;top:6.000px;width:1036.000px;height:523.501px;background:#d7ff5f;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="tile-copy"><div class="tile-rank">01</div><div class="tile-name">Director</div><div class="tile-count">187 rows</div></div></div>
+          <div class="tile large tier-top" title="Senior Director: 85" style="left:6.000px;top:535.501px;width:518.083px;height:472.533px;background:#d7ff5f;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="tile-copy"><div class="tile-rank">02</div><div class="tile-name">Senior Director</div><div class="tile-count">85 rows</div></div></div>
+          <div class="tile large tier-top" title="Associate Director: 84" style="left:530.083px;top:535.501px;width:511.917px;height:472.533px;background:#d7ff5f;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="tile-copy"><div class="tile-rank">03</div><div class="tile-name">Associate Director</div><div class="tile-count">84 rows</div></div></div>
+          <div class="tile large tier-strong" title="Manager: 43" style="left:6.000px;top:1014.033px;width:355.805px;height:344.660px;background:#ffb86b;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="tile-copy"><div class="tile-rank">04</div><div class="tile-name">Manager</div><div class="tile-count">43 rows</div></div></div>
+          <div class="tile large tier-strong" title="Senior Manager: 38" style="left:6.000px;top:1364.693px;width:355.805px;height:303.886px;background:#ffb86b;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="tile-copy"><div class="tile-rank">05</div><div class="tile-name">Senior Manager</div><div class="tile-count">38 rows</div></div></div>
+          <div class="tile large tier-strong" title="Head: 35" style="left:6.000px;top:1674.579px;width:355.805px;height:279.421px;background:#ffb86b;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="tile-copy"><div class="tile-rank">06</div><div class="tile-name">Head</div><div class="tile-count">35 rows</div></div></div>
+          <div class="tile large tier-strong" title="Lead: 31" style="left:367.805px;top:1014.033px;width:345.434px;height:254.262px;background:#ffb86b;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="tile-copy"><div class="tile-rank">07</div><div class="tile-name">Lead</div><div class="tile-count">31 rows</div></div></div>
+          <div class="tile large tier-strong" title="Vice President: 29" style="left:719.239px;top:1014.033px;width:322.761px;height:254.262px;background:#ffb86b;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="tile-copy"><div class="tile-rank">08</div><div class="tile-name">Vice President</div><div class="tile-count">29 rows</div></div></div>
+          <div class="tile large tier-strong" title="Executive Director: 28" style="left:367.805px;top:1274.295px;width:399.222px;height:197.872px;background:#ffb86b;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="tile-copy"><div class="tile-rank">09</div><div class="tile-name">Executive Director</div><div class="tile-count">28 rows</div></div></div>
+          <div class="tile large" title="Scientist: 19" style="left:773.028px;top:1274.295px;width:268.972px;height:197.872px;background:#b8d8ff;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="tile-copy"><div class="tile-rank">10</div><div class="tile-name">Scientist</div><div class="tile-count">19 rows</div></div></div>
+          <div class="tile medium" title="Senior Scientist: 7" style="left:367.805px;top:1478.167px;width:147.086px;height:128.913px;background:#b8d8ff;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="tile-copy"><div class="tile-rank">11</div><div class="tile-name">Senior Scientist</div><div class="tile-count">7 rows</div></div></div>
+          <div class="tile medium" title="Doctor: 6" style="left:367.805px;top:1613.080px;width:147.086px;height:109.640px;background:#b8d8ff;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="tile-copy"><div class="tile-rank">12</div><div class="tile-name">Doctor</div><div class="tile-count">6 rows</div></div></div>
+          <div class="tile medium" title="Researcher: 6" style="left:367.805px;top:1728.720px;width:147.086px;height:109.640px;background:#b8d8ff;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="tile-copy"><div class="tile-rank">13</div><div class="tile-name">Researcher</div><div class="tile-count">6 rows</div></div></div>
+          <div class="tile medium" title="Analyst: 6" style="left:367.805px;top:1844.360px;width:147.086px;height:109.640px;background:#b8d8ff;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="tile-copy"><div class="tile-rank">14</div><div class="tile-name">Analyst</div><div class="tile-count">6 rows</div></div></div>
+          <div class="tile medium" title="Health Economist: 6" style="left:520.891px;top:1478.167px;width:122.592px;height:131.667px;background:#b8d8ff;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="tile-copy"><div class="tile-rank">15</div><div class="tile-name">Health Economist</div><div class="tile-count">6 rows</div></div></div>
+          <div class="tile medium" title="Principal Scientist: 6" style="left:520.891px;top:1615.834px;width:122.592px;height:131.667px;background:#b8d8ff;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="tile-copy"><div class="tile-rank">16</div><div class="tile-name">Principal Scientist</div><div class="tile-count">6 rows</div></div></div>
+          <div class="tile small" title="Associate Vice President: 5" style="left:520.891px;top:1753.500px;width:122.592px;height:108.722px;background:#b8d8ff;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="tile-copy"><div class="tile-rank">17</div><div class="tile-name">Associate Vice President</div><div class="tile-count">5 rows</div></div></div>
+          <div class="tile small" title="Consultant: 4" style="left:520.891px;top:1868.222px;width:122.592px;height:85.778px;background:#b8d8ff;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="tile-copy"><div class="tile-rank">18</div><div class="tile-name">Consultant</div><div class="tile-count">4 rows</div></div></div>
+          <div class="tile small" title="Fellow: 4" style="left:649.484px;top:1478.167px;width:93.629px;height:112.459px;background:#b8d8ff;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="tile-copy"><div class="tile-rank">19</div><div class="tile-name">Fellow</div><div class="tile-count">4 rows</div></div></div>
+          <div class="tile small" title="Specialist: 4" style="left:749.113px;top:1478.167px;width:93.629px;height:112.459px;background:#b8d8ff;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="tile-copy"><div class="tile-rank">20</div><div class="tile-name">Specialist</div><div class="tile-count">4 rows</div></div></div>
+          <div class="tile small" title="Medical Science Liaison: 4" style="left:848.742px;top:1478.167px;width:93.629px;height:112.459px;background:#ffd3e0;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="tile-copy"><div class="tile-rank">21</div><div class="tile-name">Medical Science Liaison</div><div class="tile-count">4 rows</div></div></div>
+          <div class="tile small" title="Liaison: 4" style="left:948.371px;top:1478.167px;width:93.629px;height:112.459px;background:#ffd3e0;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="tile-copy"><div class="tile-rank">22</div><div class="tile-name">Liaison</div><div class="tile-count">4 rows</div></div></div>
+          <div class="tile small" title="Senior Specialist: 4" style="left:649.484px;top:1596.626px;width:107.675px;height:97.821px;background:#ffd3e0;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="tile-copy"><div class="tile-rank">23</div><div class="tile-name">Senior Specialist</div><div class="tile-count">4 rows</div></div></div>
+          <div class="tile small" title="Associate Principal Scientist: 4" style="left:649.484px;top:1700.447px;width:107.675px;height:97.821px;background:#ffd3e0;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="tile-copy"><div class="tile-rank">24</div><div class="tile-name">Associate Principal Scientist</div><div class="tile-count">4 rows</div></div></div>
+          <div class="tile small" title="Epidemiologist: 3" style="left:649.484px;top:1804.268px;width:107.675px;height:71.866px;background:#ffd3e0;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="tile-copy"><div class="tile-rank">25</div><div class="tile-name">Epidemiologist</div><div class="tile-count">3 rows</div></div></div>
+          <div class="tile small" title="Postdoctoral Fellow: 3" style="left:649.484px;top:1882.134px;width:107.675px;height:71.866px;background:#ffd3e0;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="tile-copy"><div class="tile-rank">26</div><div class="tile-name">Postdoctoral Fellow</div><div class="tile-count">3 rows</div></div></div>
+          <div class="tile small" title="Senior Vice President: 3" style="left:763.159px;top:1596.626px;width:88.947px;height:87.225px;background:#ffd3e0;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="tile-copy"><div class="tile-rank">27</div><div class="tile-name">Senior Vice President</div><div class="tile-count">3 rows</div></div></div>
+          <div class="tile small" title="Associate: 3" style="left:858.106px;top:1596.626px;width:88.947px;height:87.225px;background:#ffd3e0;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="tile-copy"><div class="tile-rank">28</div><div class="tile-name">Associate</div><div class="tile-count">3 rows</div></div></div>
+          <div class="tile small" title="Senior Principal Scientist: 3" style="left:953.053px;top:1596.626px;width:88.947px;height:87.225px;background:#ffd3e0;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="tile-copy"><div class="tile-rank">29</div><div class="tile-name">Senior Principal Scientist</div><div class="tile-count">3 rows</div></div></div>
+          <div class="tile count" title="Principal Health Economist: 2" style="left:763.159px;top:1689.851px;width:81.373px;height:61.537px;background:#ffd3e0;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="count-only"><span>2</span></div></div>
+          <div class="tile count" title="Pharmacist: 2" style="left:763.159px;top:1757.388px;width:81.373px;height:61.537px;background:#ffd3e0;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="count-only"><span>2</span></div></div>
+          <div class="tile count" title="Statistician: 2" style="left:763.159px;top:1824.925px;width:81.373px;height:61.537px;background:#ffd3e0;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="count-only"><span>2</span></div></div>
+          <div class="tile count" title="Recruiter: 2" style="left:763.159px;top:1892.463px;width:81.373px;height:61.537px;background:#ffd3e0;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="count-only"><span>2</span></div></div>
+          <div class="tile count" title="Biostatistician: 2" style="left:850.532px;top:1689.851px;width:92.734px;height:53.766px;background:#ffd3e0;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="count-only"><span>2</span></div></div>
+          <div class="tile count" title="Medical Affairs Specialist: 2" style="left:949.266px;top:1689.851px;width:92.734px;height:53.766px;background:#ffd3e0;color:#10120f;border-color:rgba(16,18,15,.42);"><div class="count-only"><span>2</span></div></div>
+          <div class="tile count" title="Director II: 1" style="left:850.532px;top:1749.617px;width:43.367px;height:53.766px;background:#72746c;color:#f6f1e8;border-color:rgba(246,241,232,.22);"><div class="count-only"><span>1</span></div></div>
+          <div class="tile count" title="Expert: 1" style="left:899.899px;top:1749.617px;width:43.367px;height:53.766px;background:#72746c;color:#f6f1e8;border-color:rgba(246,241,232,.22);"><div class="count-only"><span>1</span></div></div>
+          <div class="tile count" title="Intern: 1" style="left:949.266px;top:1749.617px;width:43.367px;height:53.766px;background:#72746c;color:#f6f1e8;border-color:rgba(246,241,232,.22);"><div class="count-only"><span>1</span></div></div>
+          <div class="tile count" title="Economist: 1" style="left:998.633px;top:1749.617px;width:43.367px;height:53.766px;background:#72746c;color:#f6f1e8;border-color:rgba(246,241,232,.22);"><div class="count-only"><span>1</span></div></div>
+          <div class="tile count" title="Senior Scientific Advisor: 1" style="left:850.532px;top:1809.383px;width:52.768px;height:44.206px;background:#72746c;color:#f6f1e8;border-color:rgba(246,241,232,.22);"><div class="count-only"><span>1</span></div></div>
+          <div class="tile count" title="Chief Officer: 1" style="left:850.532px;top:1859.589px;width:52.768px;height:44.206px;background:#72746c;color:#f6f1e8;border-color:rgba(246,241,232,.22);"><div class="count-only"><span>1</span></div></div>
+          <div class="tile count" title="Advisor: 1" style="left:850.532px;top:1909.794px;width:52.768px;height:44.206px;background:#72746c;color:#f6f1e8;border-color:rgba(246,241,232,.22);"><div class="count-only"><span>1</span></div></div>
+          <div class="tile count" title="Senior Health Economist: 1" style="left:909.300px;top:1809.383px;width:132.700px;height:15.272px;background:#72746c;color:#f6f1e8;border-color:rgba(246,241,232,.22);"><div class="count-only"><span>1</span></div></div>
+      </div>
+      <p class="note"><strong>Manufacturer focus:</strong> Title normalization is available for 684 of 1,065 manufacturer attendee rows. Percentages are calculated among those 684 rows; all 43 normalized title categories are represented, including 26 categories with four or fewer rows.</p>
+    </section>
+    <div class="page-num">01 / 01</div>
+  </main>
+</body>
+</html>

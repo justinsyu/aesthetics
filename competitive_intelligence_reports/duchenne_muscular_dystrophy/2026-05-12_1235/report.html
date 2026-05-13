@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Duchenne muscular dystrophy CI report - May 12, 2026</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+    @page { size: 1600px 900px; margin: 0; }
+    html, body { margin: 0; padding: 0; background: var(--paper-2); color: var(--ink); }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+
+    .slide {
+      position: relative;
+      width: 1600px;
+      height: 900px;
+      min-height: 900px;
+      overflow: hidden;
+      padding: 36px 0 20px;
+      page-break-after: always;
+      background: var(--paper);
+    }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .wrap {
+      position: relative;
+      z-index: 1;
+      width: 1360px;
+      margin: 0 auto;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1.5px solid var(--line);
+      border-radius: 999px;
+      background: var(--lime);
+      color: var(--ink);
+      font-size: 15px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      line-height: 1;
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 {
+      max-width: 1120px;
+      margin-top: 22px;
+      font-size: 92px;
+      line-height: .94;
+      font-weight: 590;
+      letter-spacing: 0;
+    }
+    h2 {
+      max-width: 1120px;
+      margin-top: 18px;
+      font-size: 60px;
+      line-height: 1;
+      font-weight: 590;
+      letter-spacing: 0;
+    }
+    h3 {
+      font-size: 27px;
+      line-height: 1.05;
+      font-weight: 740;
+      letter-spacing: 0;
+    }
+    .dek {
+      max-width: 1080px;
+      margin-top: 18px;
+      font-size: 29px;
+      line-height: 1.24;
+      color: var(--muted);
+      font-weight: 470;
+    }
+    .slide-num {
+      position: absolute;
+      right: 44px;
+      bottom: 24px;
+      z-index: 2;
+      font-size: 13px;
+      font-weight: 850;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .cite {
+      color: inherit;
+      font-size: .58em;
+      vertical-align: super;
+      margin-left: 2px;
+      font-weight: 950;
+      text-decoration: none;
+    }
+    .grid {
+      display: grid;
+      gap: 18px;
+      margin-top: 44px;
+    }
+    .grid.two { grid-template-columns: repeat(2, 1fr); }
+    .grid.three { grid-template-columns: repeat(3, 1fr); }
+    .grid.four { grid-template-columns: repeat(4, 1fr); }
+    .card {
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 250, 240, .88);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      min-height: 238px;
+    }
+    .card.dark {
+      background: #11130f;
+      color: var(--paper);
+      box-shadow: none;
+    }
+    .card.dark .meta, .card.dark .body { color: #efe8dc; }
+    .body {
+      margin-top: 12px;
+      color: #20241d;
+      font-size: 21px;
+      line-height: 1.28;
+      font-weight: 470;
+    }
+    .meta {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.1;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+    .tagrow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .tag {
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 9px;
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 850;
+      text-transform: uppercase;
+      color: var(--ink);
+      background: var(--gray);
+    }
+    .tag.lime { background: var(--lime); }
+    .tag.blue { background: var(--blue); }
+    .tag.orange { background: var(--orange); }
+    .tag.pink { background: var(--pink); }
+    .tag.red { background: var(--red); }
+    .metric {
+      display: block;
+      font-size: 64px;
+      line-height: .95;
+      font-weight: 680;
+      margin-bottom: 10px;
+    }
+    .small-metric {
+      display: block;
+      font-size: 44px;
+      line-height: 1;
+      font-weight: 720;
+      margin-bottom: 8px;
+    }
+    .table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin-top: 38px;
+      border: 1.5px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      background: rgba(255, 250, 240, .9);
+      box-shadow: var(--shadow);
+    }
+    .table th, .table td {
+      border-bottom: 1.2px solid rgba(27,31,23,.52);
+      border-right: 1.2px solid rgba(27,31,23,.52);
+      text-align: left;
+      vertical-align: top;
+      padding: 21px 18px;
+      font-size: 17px;
+      line-height: 1.22;
+    }
+    .table th {
+      background: #11130f;
+      color: var(--paper);
+      font-size: 14px;
+      line-height: 1.05;
+      text-transform: uppercase;
+      font-weight: 860;
+    }
+    .table tr:last-child td { border-bottom: 0; }
+    .table th:last-child, .table td:last-child { border-right: 0; }
+    .kicker {
+      font-size: 18px;
+      line-height: 1.22;
+      color: var(--muted);
+      max-width: 1180px;
+      margin-top: 14px;
+    }
+    .timeline {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 12px 18px;
+      margin-top: 42px;
+    }
+    .date-pill {
+      align-self: start;
+      border: 1.4px solid var(--line);
+      border-radius: 999px;
+      background: var(--lime);
+      padding: 10px 12px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 860;
+    }
+    .event {
+      border-left: 5px solid var(--line);
+      background: rgba(255,250,240,.88);
+      padding: 13px 18px 14px;
+      min-height: 91px;
+      font-size: 21px;
+      line-height: 1.25;
+      box-shadow: var(--shadow);
+    }
+    .source-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px 18px;
+      margin-top: 34px;
+    }
+    .source-item {
+      border: 1.3px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255,250,240,.88);
+      padding: 14px 16px;
+      min-height: 106px;
+      font-size: 18px;
+      line-height: 1.22;
+    }
+    .source-item strong {
+      display: block;
+      font-size: 20px;
+      line-height: 1.1;
+      margin-bottom: 5px;
+    }
+    .note {
+      margin-top: 34px;
+      border: 1.5px solid var(--line);
+      border-radius: 18px;
+      background: #11130f;
+      color: var(--paper);
+      padding: 24px 26px;
+      font-size: 22px;
+      line-height: 1.28;
+    }
+    .bottom-band {
+      position: absolute;
+      left: 120px;
+      right: 120px;
+      bottom: 68px;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 24px;
+      align-items: center;
+      border: 1.5px solid var(--line);
+      border-radius: 24px;
+      background: #11130f;
+      color: var(--paper);
+      padding: 22px 28px;
+      min-height: 132px;
+      box-shadow: none;
+    }
+    .bottom-band strong {
+      font-size: 30px;
+      line-height: 1.02;
+      font-weight: 720;
+    }
+    .bottom-band span {
+      font-size: 22px;
+      line-height: 1.25;
+      color: #efe8dc;
+    }
+    .compact h2 { font-size: 54px; }
+    .compact .grid { margin-top: 30px; }
+    .compact .card { min-height: 205px; padding: 22px; }
+    .compact h3 { font-size: 24px; }
+    .compact .body { font-size: 18px; line-height: 1.24; }
+    .compact .tag { font-size: 11px; padding: 5px 8px; }
+    @media print {
+      html, body { width: 1600px; margin: 0; padding: 0; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; }
+    }
+  </style>
+</head>
+<body>
+
+<article class="slide">
+  <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+  <div class="wrap">
+    <div class="eyebrow">Duchenne muscular dystrophy | Competitive intelligence</div>
+    <h1>Primary-source update for May 6-12, 2026</h1>
+    <p class="dek">This report covers dated company releases and SEC-filed exhibits captured with highlighted evidence screenshots for the seven cited sources.</p>
+    <div class="grid three">
+      <div class="card dark">
+        <span class="meta">Clinical signal</span>
+        <h3>Entrada reported dystrophin and Time to Rise signals</h3>
+        <p class="body">ELEVATE-44-201 Cohort 1 showed a 2.36% dystrophin increase over 4.00% baseline and statistically significant Time to Rise velocity improvement versus placebo.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289797/0/en/Entrada-Therapeutics-Announces-Positive-Topline-Results-from-Cohort-1-of-Participants-with-Duchenne-Muscular-Dystrophy-Treated-with-ENTR-601-44-in-Phase-1-2-ELEVATE-44-201-Study.html">1</a></p>
+      </div>
+      <div class="card">
+        <span class="meta">Trial execution</span>
+        <h3>Solid reported first Phase 3 IMPACT DUCHENNE dosing</h3>
+        <p class="body">Solid said the first IMPACT DUCHENNE participant had been dosed and that 46 participants had been dosed with SGT-003 in INSPIRE DUCHENNE as of a May 4 cutoff.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289921/0/en/Solid-Biosciences-Doses-First-Participant-in-Phase-3-IMPACT-DUCHENNE-Clinical-Trial-Evaluating-SGT-003-in-Duchenne-Muscular-Dystrophy.html">2</a></p>
+      </div>
+      <div class="card">
+        <span class="meta">Filing and access</span>
+        <h3>Dyne and Capricor disclosed regulatory-facing items</h3>
+        <p class="body">Dyne reported a positive FDA pre-BLA meeting for z-rostudirsen with Q2 2026 BLA timing, while Capricor reported deramiocel Priority Review with an August 22, 2026 PDUFA date.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1818794/000119312526215720/dyn-ex99_1.htm">5</a>, <a class="cite" href="https://www.capricor.com/investors/news-events/press-releases/detail/343/capricor-therapeutics-takes-legal-action-to-protect-patient">4</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-band">
+    <strong>Evidence scope</strong>
+    <span>Seven cited source pages were captured with visible dates from May 6-11, 2026 and highlighted evidence screenshots for each reference.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289797/0/en/Entrada-Therapeutics-Announces-Positive-Topline-Results-from-Cohort-1-of-Participants-with-Duchenne-Muscular-Dystrophy-Treated-with-ENTR-601-44-in-Phase-1-2-ELEVATE-44-201-Study.html">1</a>, <a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289921/0/en/Solid-Biosciences-Doses-First-Participant-in-Phase-3-IMPACT-DUCHENNE-Clinical-Trial-Evaluating-SGT-003-in-Duchenne-Muscular-Dystrophy.html">2</a>, <a class="cite" href="https://www.sec.gov/Archives/edgar/data/873303/000119312526208966/srpt-ex99_1.htm">3</a>, <a class="cite" href="https://www.capricor.com/investors/news-events/press-releases/detail/343/capricor-therapeutics-takes-legal-action-to-protect-patient">4</a>, <a class="cite" href="https://www.sec.gov/Archives/edgar/data/1818794/000119312526215720/dyn-ex99_1.htm">5</a>, <a class="cite" href="https://investors.atossatherapeutics.com/2026-05-08-Atossa-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Provides-a-Corporate-Update">6</a>, <a class="cite" href="https://investors.tenayatherapeutics.com/news-releases/news-release-details/tenaya-therapeutics-reports-first-quarter-2026-financial-results">7</a></span>
+  </div>
+  <div class="slide-num">01 / 07</div>
+</article>
+
+<article class="slide">
+  <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+  <div class="wrap">
+    <div class="eyebrow">Late-stage and launch-facing programs</div>
+    <h2>Four cited updates center on registration, approval conversion, or access mechanics</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Program</th>
+          <th>Reported item</th>
+          <th>Modality / position</th>
+          <th>Visible date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>z-rostudirsen</strong><br />Dyne Therapeutics</td>
+          <td>Dyne reported a positive FDA pre-BLA meeting and stated that z-rostudirsen was on track for Q2 2026 BLA submission and a potential Q1 2027 launch.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1818794/000119312526215720/dyn-ex99_1.htm">5</a></td>
+          <td>Exon 51 DMD program</td>
+          <td>May 11, 2026<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1818794/000119312526215720/dyn-ex99_1.htm">5</a></td>
+        </tr>
+        <tr>
+          <td><strong>Deramiocel</strong><br />Capricor Therapeutics</td>
+          <td>Capricor reported filing a lawsuit against Nippon Shinyaku and NS Pharma over the U.S. distribution agreement and reported FDA Priority Review with an August 22, 2026 PDUFA date.<a class="cite" href="https://www.capricor.com/investors/news-events/press-releases/detail/343/capricor-therapeutics-takes-legal-action-to-protect-patient">4</a></td>
+          <td>Cell therapy for DMD</td>
+          <td>May 07, 2026<a class="cite" href="https://www.capricor.com/investors/news-events/press-releases/detail/343/capricor-therapeutics-takes-legal-action-to-protect-patient">4</a></td>
+        </tr>
+        <tr>
+          <td><strong>AMONDYS 45 / VYONDYS 53</strong><br />Sarepta Therapeutics</td>
+          <td>Sarepta reported completing supplemental NDA submissions for AMONDYS 45 and VYONDYS 53 seeking conversion to traditional approval.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/873303/000119312526208966/srpt-ex99_1.htm">3</a></td>
+          <td>PMO therapies</td>
+          <td>May 6, 2026<a class="cite" href="https://www.sec.gov/Archives/edgar/data/873303/000119312526208966/srpt-ex99_1.htm">3</a></td>
+        </tr>
+        <tr>
+          <td><strong>SGT-003</strong><br />Solid Biosciences</td>
+          <td>Solid reported first participant dosing in Phase 3 IMPACT DUCHENNE and 46 participants dosed with SGT-003 in Phase 1/2 INSPIRE DUCHENNE as of May 4, 2026.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289921/0/en/Solid-Biosciences-Doses-First-Participant-in-Phase-3-IMPACT-DUCHENNE-Clinical-Trial-Evaluating-SGT-003-in-Duchenne-Muscular-Dystrophy.html">2</a></td>
+          <td>Microdystrophin gene therapy</td>
+          <td>May 07, 2026<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289921/0/en/Solid-Biosciences-Doses-First-Participant-in-Phase-3-IMPACT-DUCHENNE-Clinical-Trial-Evaluating-SGT-003-in-Duchenne-Muscular-Dystrophy.html">2</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="slide-num">02 / 07</div>
+</article>
+
+<article class="slide">
+  <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+  <div class="wrap">
+    <div class="eyebrow">Clinical and translational readouts</div>
+    <h2>Recent cited items span treated-patient data, trial start, and preclinical DMD models</h2>
+    <div class="grid two">
+      <div class="card">
+        <span class="meta">Entrada | ENTR-601-44</span>
+        <span class="small-metric">2.36%</span>
+        <h3>Dystrophin increase over 4.00% baseline</h3>
+        <p class="body">Entrada reported the ELEVATE-44-201 Cohort 1 dystrophin increase and a statistically significant Time to Rise velocity improvement in treated participants versus placebo.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289797/0/en/Entrada-Therapeutics-Announces-Positive-Topline-Results-from-Cohort-1-of-Participants-with-Duchenne-Muscular-Dystrophy-Treated-with-ENTR-601-44-in-Phase-1-2-ELEVATE-44-201-Study.html">1</a></p>
+      </div>
+      <div class="card">
+        <span class="meta">Solid | SGT-003</span>
+        <span class="small-metric">46</span>
+        <h3>Participants dosed in INSPIRE DUCHENNE</h3>
+        <p class="body">Solid reported 46 Phase 1/2 participants dosed with SGT-003 as of a May 4 cutoff and first participant dosing in Phase 3 IMPACT DUCHENNE.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289921/0/en/Solid-Biosciences-Doses-First-Participant-in-Phase-3-IMPACT-DUCHENNE-Clinical-Trial-Evaluating-SGT-003-in-Duchenne-Muscular-Dystrophy.html">2</a></p>
+      </div>
+      <div class="card">
+        <span class="meta">Atossa | (Z)-endoxifen</span>
+        <h3>Preclinical DMD and FDA designation signal</h3>
+        <p class="body">Atossa reported that (Z)-endoxifen improved muscle strength and increased lean mass in dystrophic mouse models, and it reported FDA Orphan Drug Designation for DMD.<a class="cite" href="https://investors.atossatherapeutics.com/2026-05-08-Atossa-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Provides-a-Corporate-Update">6</a></p>
+      </div>
+      <div class="card">
+        <span class="meta">Tenaya | TN-301</span>
+        <h3>HDAC6 inhibitor preclinical DMD update</h3>
+        <p class="body">Tenaya reported that TN-301 treatment at doses as low as 3 mg/kg improved grip strength to wild-type levels within five weeks and that TN-301 had FDA Rare Pediatric Disease and Orphan Drug designations for DMD.<a class="cite" href="https://investors.tenayatherapeutics.com/news-releases/news-release-details/tenaya-therapeutics-reports-first-quarter-2026-financial-results">7</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num">03 / 07</div>
+</article>
+
+<article class="slide">
+  <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+  <div class="wrap">
+    <div class="eyebrow">Commercial and access surface</div>
+    <h2>Three cited items point to revenue base, filing cadence, and distribution risk</h2>
+    <div class="grid three">
+      <div class="card dark">
+        <span class="meta">Sarepta Q1 2026</span>
+        <span class="metric">$330.5M</span>
+        <h3>Net product revenue</h3>
+        <p class="body">Sarepta reported $330.5 million in Q1 2026 net product revenue, consisting of $102.0 million of ELEVIDYS net product revenue and $228.6 million of PMO net product revenues.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/873303/000119312526208966/srpt-ex99_1.htm">3</a></p>
+      </div>
+      <div class="card">
+        <span class="meta">Capricor access mechanics</span>
+        <h3>Distribution dispute disclosed ahead of PDUFA date</h3>
+        <p class="body">Capricor reported a lawsuit against Nippon Shinyaku and NS Pharma over the U.S. distribution agreement for deramiocel and reported FDA Priority Review with an August 22, 2026 target PDUFA action date.<a class="cite" href="https://www.capricor.com/investors/news-events/press-releases/detail/343/capricor-therapeutics-takes-legal-action-to-protect-patient">4</a></p>
+      </div>
+      <div class="card">
+        <span class="meta">Dyne launch-facing timeline</span>
+        <h3>Pre-BLA meeting and potential launch timing</h3>
+        <p class="body">Dyne reported a positive FDA pre-BLA meeting for z-rostudirsen in exon 51 DMD, with BLA submission on track for Q2 2026 and potential launch in Q1 2027.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1818794/000119312526215720/dyn-ex99_1.htm">5</a></p>
+      </div>
+    </div>
+    <div class="note">This slide reports sponsor-disclosed facts only; it does not assess probability of approval, commercial uptake, or legal outcome.</div>
+  </div>
+  <div class="bottom-band">
+    <strong>Boundary</strong>
+    <span>The commercial-access section is limited to Sarepta product revenue, Capricor distribution litigation and PDUFA timing, and Dyne's sponsor-stated potential launch timing.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/873303/000119312526208966/srpt-ex99_1.htm">3</a>, <a class="cite" href="https://www.capricor.com/investors/news-events/press-releases/detail/343/capricor-therapeutics-takes-legal-action-to-protect-patient">4</a>, <a class="cite" href="https://www.sec.gov/Archives/edgar/data/1818794/000119312526215720/dyn-ex99_1.htm">5</a></span>
+  </div>
+  <div class="slide-num">04 / 07</div>
+</article>
+
+<article class="slide compact">
+  <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+  <div class="wrap">
+    <div class="eyebrow">Modality watchlist</div>
+    <h2>Cited updates cut across exon skipping, gene therapy, cell therapy, and small molecules</h2>
+    <div class="grid three">
+      <div class="card">
+        <span class="meta">Exon skipping</span>
+        <h3>ENTR-601-44 and z-rostudirsen</h3>
+        <p class="body">Entrada reported ELEVATE-44-201 Cohort 1 dystrophin and Time to Rise signals, and Dyne reported z-rostudirsen pre-BLA alignment and planned Q2 2026 BLA submission.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289797/0/en/Entrada-Therapeutics-Announces-Positive-Topline-Results-from-Cohort-1-of-Participants-with-Duchenne-Muscular-Dystrophy-Treated-with-ENTR-601-44-in-Phase-1-2-ELEVATE-44-201-Study.html">1</a>, <a class="cite" href="https://www.sec.gov/Archives/edgar/data/1818794/000119312526215720/dyn-ex99_1.htm">5</a></p>
+        <div class="tagrow"><span class="tag lime">Exon 44</span><span class="tag blue">Exon 51</span></div>
+      </div>
+      <div class="card">
+        <span class="meta">Gene therapy</span>
+        <h3>SGT-003</h3>
+        <p class="body">Solid reported first participant dosing in the Phase 3 IMPACT DUCHENNE trial and 46 participants dosed in Phase 1/2 INSPIRE DUCHENNE.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289921/0/en/Solid-Biosciences-Doses-First-Participant-in-Phase-3-IMPACT-DUCHENNE-Clinical-Trial-Evaluating-SGT-003-in-Duchenne-Muscular-Dystrophy.html">2</a></p>
+        <div class="tagrow"><span class="tag orange">Microdystrophin</span></div>
+      </div>
+      <div class="card">
+        <span class="meta">Cell therapy</span>
+        <h3>Deramiocel</h3>
+        <p class="body">Capricor reported FDA Priority Review for deramiocel with a target PDUFA action date of August 22, 2026.<a class="cite" href="https://www.capricor.com/investors/news-events/press-releases/detail/343/capricor-therapeutics-takes-legal-action-to-protect-patient">4</a></p>
+        <div class="tagrow"><span class="tag pink">Priority review</span></div>
+      </div>
+      <div class="card">
+        <span class="meta">Approved PMO products</span>
+        <h3>AMONDYS 45 and VYONDYS 53</h3>
+        <p class="body">Sarepta reported completed sNDA submissions for AMONDYS 45 and VYONDYS 53 seeking conversion to traditional approval.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/873303/000119312526208966/srpt-ex99_1.htm">3</a></p>
+        <div class="tagrow"><span class="tag gray">Traditional approval request</span></div>
+      </div>
+      <div class="card">
+        <span class="meta">Small molecule</span>
+        <h3>(Z)-endoxifen</h3>
+        <p class="body">Atossa reported preclinical DMD data for (Z)-endoxifen and FDA Orphan Drug Designation for DMD.<a class="cite" href="https://investors.atossatherapeutics.com/2026-05-08-Atossa-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Provides-a-Corporate-Update">6</a></p>
+        <div class="tagrow"><span class="tag red">ODD</span></div>
+      </div>
+      <div class="card">
+        <span class="meta">Small molecule</span>
+        <h3>TN-301</h3>
+        <p class="body">Tenaya reported DMD preclinical grip-strength results for TN-301 and FDA Rare Pediatric Disease and Orphan Drug designations for DMD.<a class="cite" href="https://investors.tenayatherapeutics.com/news-releases/news-release-details/tenaya-therapeutics-reports-first-quarter-2026-financial-results">7</a></p>
+        <div class="tagrow"><span class="tag lime">RPD</span><span class="tag red">ODD</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-band">
+    <strong>Modality coverage</strong>
+    <span>The watchlist reflects cited source items for exon-skipping programs, microdystrophin gene therapy, cell therapy, approved PMO products, and two small-molecule DMD programs.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289797/0/en/Entrada-Therapeutics-Announces-Positive-Topline-Results-from-Cohort-1-of-Participants-with-Duchenne-Muscular-Dystrophy-Treated-with-ENTR-601-44-in-Phase-1-2-ELEVATE-44-201-Study.html">1</a>, <a class="cite" href="https://www.sec.gov/Archives/edgar/data/1818794/000119312526215720/dyn-ex99_1.htm">5</a>, <a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289921/0/en/Solid-Biosciences-Doses-First-Participant-in-Phase-3-IMPACT-DUCHENNE-Clinical-Trial-Evaluating-SGT-003-in-Duchenne-Muscular-Dystrophy.html">2</a>, <a class="cite" href="https://www.capricor.com/investors/news-events/press-releases/detail/343/capricor-therapeutics-takes-legal-action-to-protect-patient">4</a>, <a class="cite" href="https://www.sec.gov/Archives/edgar/data/873303/000119312526208966/srpt-ex99_1.htm">3</a>, <a class="cite" href="https://investors.atossatherapeutics.com/2026-05-08-Atossa-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Provides-a-Corporate-Update">6</a>, <a class="cite" href="https://investors.tenayatherapeutics.com/news-releases/news-release-details/tenaya-therapeutics-reports-first-quarter-2026-financial-results">7</a></span>
+  </div>
+  <div class="slide-num">05 / 07</div>
+</article>
+
+<article class="slide">
+  <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+  <div class="wrap">
+    <div class="eyebrow">Dated event timeline</div>
+    <h2>Primary-source activity in the monitored seven-day window</h2>
+    <div class="timeline">
+      <div class="date-pill">May 6</div>
+      <div class="event">Sarepta reported $330.5 million in Q1 2026 net product revenues and completed sNDA submissions for AMONDYS 45 and VYONDYS 53 seeking traditional approval conversion.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/873303/000119312526208966/srpt-ex99_1.htm">3</a></div>
+      <div class="date-pill">May 6</div>
+      <div class="event">Tenaya reported TN-301 preclinical DMD grip-strength results and FDA Rare Pediatric Disease and Orphan Drug designations for TN-301 in DMD.<a class="cite" href="https://investors.tenayatherapeutics.com/news-releases/news-release-details/tenaya-therapeutics-reports-first-quarter-2026-financial-results">7</a></div>
+      <div class="date-pill">May 7</div>
+      <div class="event">Entrada reported ELEVATE-44-201 Cohort 1 dystrophin increase and Time to Rise velocity improvement, and Solid reported first participant dosing in Phase 3 IMPACT DUCHENNE.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289797/0/en/Entrada-Therapeutics-Announces-Positive-Topline-Results-from-Cohort-1-of-Participants-with-Duchenne-Muscular-Dystrophy-Treated-with-ENTR-601-44-in-Phase-1-2-ELEVATE-44-201-Study.html">1</a>, <a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289921/0/en/Solid-Biosciences-Doses-First-Participant-in-Phase-3-IMPACT-DUCHENNE-Clinical-Trial-Evaluating-SGT-003-in-Duchenne-Muscular-Dystrophy.html">2</a></div>
+      <div class="date-pill">May 7</div>
+      <div class="event">Capricor reported filing litigation over its deramiocel U.S. distribution agreement and reported Priority Review with an August 22, 2026 PDUFA date.<a class="cite" href="https://www.capricor.com/investors/news-events/press-releases/detail/343/capricor-therapeutics-takes-legal-action-to-protect-patient">4</a></div>
+      <div class="date-pill">May 8</div>
+      <div class="event">Atossa reported (Z)-endoxifen preclinical DMD results in dystrophic mouse models and FDA Orphan Drug Designation for DMD.<a class="cite" href="https://investors.atossatherapeutics.com/2026-05-08-Atossa-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Provides-a-Corporate-Update">6</a></div>
+      <div class="date-pill">May 11</div>
+      <div class="event">Dyne reported a positive FDA pre-BLA meeting for z-rostudirsen and stated that BLA submission remained on track for Q2 2026.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1818794/000119312526215720/dyn-ex99_1.htm">5</a></div>
+    </div>
+  </div>
+  <div class="slide-num">06 / 07</div>
+</article>
+
+<article class="slide">
+  <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+  <div class="wrap">
+    <div class="eyebrow">References and evidence chain</div>
+    <h2>All cited sources had visible May 6-12, 2026 dates and marked evidence screenshots</h2>
+    <div class="source-list">
+      <div class="source-item"><strong>1. Entrada Therapeutics</strong>Visible date: May 07, 2026; Cohort 1 dystrophin and Time to Rise statements are cited from the company release.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289797/0/en/Entrada-Therapeutics-Announces-Positive-Topline-Results-from-Cohort-1-of-Participants-with-Duchenne-Muscular-Dystrophy-Treated-with-ENTR-601-44-in-Phase-1-2-ELEVATE-44-201-Study.html">1</a></div>
+      <div class="source-item"><strong>2. Solid Biosciences</strong>Visible date: May 07, 2026; IMPACT DUCHENNE and INSPIRE DUCHENNE dosing statements are cited from the company release.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289921/0/en/Solid-Biosciences-Doses-First-Participant-in-Phase-3-IMPACT-DUCHENNE-Clinical-Trial-Evaluating-SGT-003-in-Duchenne-Muscular-Dystrophy.html">2</a></div>
+      <div class="source-item"><strong>3. Sarepta Therapeutics</strong>Visible date: May 6, 2026; Q1 2026 product revenue and sNDA statements are cited from the SEC-filed exhibit.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/873303/000119312526208966/srpt-ex99_1.htm">3</a></div>
+      <div class="source-item"><strong>4. Capricor Therapeutics</strong>Visible date: May 07, 2026; litigation and PDUFA statements are cited from the company release.<a class="cite" href="https://www.capricor.com/investors/news-events/press-releases/detail/343/capricor-therapeutics-takes-legal-action-to-protect-patient">4</a></div>
+      <div class="source-item"><strong>5. Dyne Therapeutics</strong>Visible date: May 11, 2026; pre-BLA, BLA timing, and potential launch statements are cited from the SEC-filed exhibit.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1818794/000119312526215720/dyn-ex99_1.htm">5</a></div>
+      <div class="source-item"><strong>6. Atossa Therapeutics</strong>Visible date: May 8, 2026; preclinical DMD and Orphan Drug Designation statements are cited from the company release.<a class="cite" href="https://investors.atossatherapeutics.com/2026-05-08-Atossa-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Provides-a-Corporate-Update">6</a></div>
+      <div class="source-item"><strong>7. Tenaya Therapeutics</strong>Visible date: May 06, 2026; TN-301 preclinical and FDA designation statements are cited from the company release.<a class="cite" href="https://investors.tenayatherapeutics.com/news-releases/news-release-details/tenaya-therapeutics-reports-first-quarter-2026-financial-results">7</a></div>
+      <div class="source-item"><strong>Screenshot appendix</strong>The separate screenshots PDF labels each date-verification image and each highlighted evidence image by reference number.</div>
+    </div>
+  </div>
+  <div class="slide-num">07 / 07</div>
+</article>
+
+</body>
+</html>

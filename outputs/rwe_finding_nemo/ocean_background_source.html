@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <style>
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    html,
+    body {
+      margin: 0;
+      background: #052b45;
+    }
+
+    .sheet {
+      position: relative;
+      width: 1200px;
+      height: 1038px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 82% 11%, rgba(255,200,75,.34), transparent 18rem),
+        radial-gradient(circle at 14% 20%, rgba(54,196,216,.48), transparent 28rem),
+        linear-gradient(180deg, #0b8dad 0%, #087392 58%, #064b6d 100%);
+    }
+
+    .sheet::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 80px;
+      background:
+        radial-gradient(ellipse at 25% 100%, rgba(54,196,216,.22), transparent 28rem),
+        linear-gradient(180deg, rgba(6,75,109,0), rgba(5,43,69,.78));
+      pointer-events: none;
+    }
+
+    .bubbles {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 7% 11%, rgba(238,252,255,.30) 0 8px, transparent 9px),
+        radial-gradient(circle at 5% 18%, rgba(238,252,255,.24) 0 13px, transparent 14px),
+        radial-gradient(circle at 92% 35%, rgba(238,252,255,.20) 0 18px, transparent 19px),
+        radial-gradient(circle at 95% 46%, rgba(238,252,255,.24) 0 8px, transparent 9px),
+        radial-gradient(circle at 12% 75%, rgba(238,252,255,.18) 0 20px, transparent 21px);
+      pointer-events: none;
+    }
+
+    @page {
+      size: 1200px 1038px;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <main class="sheet" aria-hidden="true">
+    <div class="bubbles"></div>
+  </main>
+</body>
+</html>

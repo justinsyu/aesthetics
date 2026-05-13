@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reference Managers for Systematic Review Preparation</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 26px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body {
+      background: var(--paper-2);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.28;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .sheet {
+      position: relative;
+      width: 1200px;
+      height: 2220px;
+      margin: 0 auto;
+      overflow: hidden;
+      background: var(--paper);
+      padding: 46px 52px 40px;
+    }
+    .sheet > :not(.sheet-bg-img):not(.hairline) { position: relative; z-index: 1; }
+    .sheet > .sheet-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .hairline {
+      position: absolute;
+      inset: 24px;
+      z-index: 2;
+      border: 1.5px solid rgba(16,18,15,.18);
+      border-radius: 34px;
+      pointer-events: none;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.5px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 850;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      background: var(--lime);
+      white-space: nowrap;
+    }
+    .date {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.25;
+      text-align: right;
+      white-space: nowrap;
+    }
+    h1 {
+      margin: 0;
+      font-size: 70px;
+      line-height: .92;
+      font-weight: 560;
+      letter-spacing: 0;
+      max-width: 1040px;
+    }
+    .subtitle {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 23px;
+      line-height: 1.24;
+      max-width: 1045px;
+    }
+    .scope {
+      display: grid;
+      grid-template-columns: .94fr 1.06fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .scope-card {
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,250,240,.82);
+      padding: 18px 20px;
+      box-shadow: var(--shadow);
+      min-height: 124px;
+    }
+    .scope-card.dark { background: #11130f; color: var(--paper); }
+    .scope-card h2 {
+      margin: 0 0 9px;
+      font-size: 26px;
+      line-height: 1;
+      font-weight: 780;
+      letter-spacing: 0;
+    }
+    .scope-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.25;
+    }
+    .scope-card.dark p { color: rgba(246,241,232,.74); }
+    .matrix {
+      margin-top: 22px;
+      border: 1.6px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+    .row {
+      display: grid;
+      grid-template-columns: .88fr .76fr .84fr 1.18fr 1.18fr;
+      min-height: 135px;
+      border-bottom: 1.4px solid var(--line);
+    }
+    .row:last-child { border-bottom: 0; }
+    .row.header {
+      min-height: 56px;
+      background: #11130f;
+      color: var(--paper);
+    }
+    .cell {
+      padding: 15px 13px;
+      border-right: 1.4px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 9px;
+      min-width: 0;
+    }
+    .cell:last-child { border-right: 0; }
+    .header .cell {
+      justify-content: center;
+      font-size: 12.5px;
+      font-weight: 850;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: rgba(246,241,232,.86);
+    }
+    .tool-name {
+      font-size: 24px;
+      line-height: .95;
+      font-weight: 820;
+      letter-spacing: 0;
+    }
+    .tagline {
+      color: var(--muted);
+      font-size: 12.8px;
+      line-height: 1.2;
+      font-weight: 650;
+    }
+    .pill {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 8px;
+      font-size: 10.5px;
+      line-height: 1;
+      font-weight: 850;
+      text-transform: uppercase;
+      white-space: nowrap;
+      background: var(--paper-2);
+    }
+    .pill.lime { background: var(--lime); }
+    .pill.orange { background: var(--orange); }
+    .mini {
+      color: var(--muted);
+      font-size: 13.4px;
+      line-height: 1.2;
+      font-weight: 560;
+    }
+    .track {
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(16,18,15,.11);
+      border: 1px solid rgba(16,18,15,.24);
+      overflow: hidden;
+    }
+    .fill { height: 100%; border-radius: 999px; }
+    .w50 { width: 50%; }
+    .w55 { width: 55%; }
+    .w65 { width: 65%; }
+    .w75 { width: 75%; }
+    .w80 { width: 80%; }
+    .w90 { width: 90%; }
+    .collect { background: var(--blue); }
+    .dedupe { background: var(--lime); }
+    .export { background: var(--orange); }
+    .bars { display: grid; gap: 9px; }
+    .bar-label {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 9px;
+      align-items: center;
+    }
+    .bar-label strong {
+      font-size: 11px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+    .decision-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 22px;
+    }
+    .callout {
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      background: rgba(255,250,240,.82);
+      box-shadow: var(--shadow);
+      min-height: 176px;
+    }
+    .callout.dark { background: #11130f; color: var(--paper); }
+    .callout h2 {
+      margin: 0 0 12px;
+      font-size: 31px;
+      line-height: 1;
+      letter-spacing: 0;
+      font-weight: 790;
+    }
+    .callout li {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.25;
+    }
+    .callout.dark li { color: rgba(246,241,232,.74); }
+    .callout ul {
+      margin: 0;
+      padding-left: 18px;
+      display: grid;
+      gap: 8px;
+    }
+    .footer {
+      position: relative;
+      z-index: 1;
+      margin-top: 24px;
+      color: rgba(16,18,15,.62);
+      font-size: 9px;
+      line-height: 1.32;
+    }
+    .sources { max-width: 1040px; }
+    sup {
+      font-size: .55em;
+      line-height: 0;
+      vertical-align: super;
+      font-weight: 850;
+    }
+    @page { size: 1200px 2220px; margin: 0; }
+    @media print {
+      body, *, *::before, *::after {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      body { background: var(--paper); }
+      .sheet { margin: 0; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="sheet">
+    <img class="sheet-bg-img" src="systematic_review_reference_managers_bg.png" alt="" aria-hidden="true" />
+    <div class="hairline"></div>
+    <header>
+      <div class="topbar">
+        <div class="eyebrow">Citation tools</div>
+        <div class="date">AI-assisted summary with PubMed-indexed usage examples.</div>
+      </div>
+      <h1>Reference Managers for Systematic Review Preparation</h1>
+      <p class="subtitle">Covers citation collection, PDF management, duplicate removal, and library export. Excludes screening, extraction, appraisal, and review-automation software.</p>
+    </header>
+
+    <section class="scope" aria-label="Scope">
+      <div class="scope-card dark">
+        <h2>Included Scope</h2>
+        <p>Citation managers used before screening across free, paid, and institutional access models.</p>
+      </div>
+      <div class="scope-card">
+        <h2>Excluded Scope</h2>
+        <p>Review conduct software, even when it imports, deduplicates, or manages citation records.</p>
+      </div>
+    </section>
+
+    <section class="matrix" aria-label="Reference manager comparison">
+      <div class="row header">
+        <div class="cell">Tool</div>
+        <div class="cell">Access model</div>
+        <div class="cell">Preparation functions</div>
+        <div class="cell">PubMed-indexed example</div>
+        <div class="cell">Access and workflow notes</div>
+      </div>
+
+      <div class="row">
+        <div class="cell"><div class="tool-name">Zotero<sup><a href="https://www.zotero.org/">1</a></sup></div><div class="tagline">Open-source desktop + web reference manager</div></div>
+        <div class="cell"><span class="pill lime">Free core</span><div class="mini">Paid storage may apply for hosted file sync.</div></div>
+        <div class="cell"><div class="bars"><div class="bar-label"><strong>Collect</strong><div class="track"><div class="fill collect w90"></div></div></div><div class="bar-label"><strong>Dedup</strong><div class="track"><div class="fill dedupe w80"></div></div></div><div class="bar-label"><strong>Export</strong><div class="track"><div class="fill export w90"></div></div></div></div></div>
+        <div class="cell"><div class="mini">Yan et al. reported title/abstract/keyword screening using Zotero v5.0.96.3 with Paperpile in a sepsis text-mining review.<sup><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8800516/">11</a></sup></div></div>
+        <div class="cell"><div class="mini">Browser capture, group libraries, duplicate detection, citation plugins, CSL styles, and portable exports are commonly used features.</div></div>
+      </div>
+
+      <div class="row">
+        <div class="cell"><div class="tool-name">Mendeley<sup><a href="https://www.elsevier.com/products/mendeley">2</a></sup></div><div class="tagline">Elsevier reference manager</div></div>
+        <div class="cell"><span class="pill lime">Free account</span><div class="mini">Free desktop/web manager with account-based syncing.</div></div>
+        <div class="cell"><div class="bars"><div class="bar-label"><strong>Collect</strong><div class="track"><div class="fill collect w80"></div></div></div><div class="bar-label"><strong>Dedup</strong><div class="track"><div class="fill dedupe w65"></div></div></div><div class="bar-label"><strong>Export</strong><div class="track"><div class="fill export w80"></div></div></div></div></div>
+        <div class="cell"><div class="mini">A disaster-loss database systematic review imported articles into Mendeley and removed duplicate records before screening.<sup><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8552254/">12</a></sup></div></div>
+        <div class="cell"><div class="mini">PDF organization, Mendeley Cite, library sync, database imports, and duplicate management are commonly used features.</div></div>
+      </div>
+
+      <div class="row">
+        <div class="cell"><div class="tool-name">JabRef<sup><a href="https://www.jabref.org/">3</a></sup></div><div class="tagline">Open-source BibTeX/BibLaTeX manager</div></div>
+        <div class="cell"><span class="pill lime">Free / local</span><div class="mini">Text-file libraries with no vendor account required.</div></div>
+        <div class="cell"><div class="bars"><div class="bar-label"><strong>Collect</strong><div class="track"><div class="fill collect w55"></div></div></div><div class="bar-label"><strong>Dedup</strong><div class="track"><div class="fill dedupe w80"></div></div></div><div class="bar-label"><strong>Export</strong><div class="track"><div class="fill export w90"></div></div></div></div></div>
+        <div class="cell"><div class="mini">A somatostatin receptor imaging review used JabRef to remove duplicates between PubMed and Scopus search results.<sup><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10184815/">13</a></sup></div></div>
+        <div class="cell"><div class="mini">Transparent local libraries, duplicate detection, import/export support, and LaTeX/BibTeX workflows are typical uses.</div></div>
+      </div>
+
+      <div class="row">
+        <div class="cell"><div class="tool-name">EndNote<sup><a href="https://endnote.com/product-details/">4</a></sup></div><div class="tagline">Commercial desktop + web reference manager</div></div>
+        <div class="cell"><span class="pill orange">Paid / license</span><div class="mini">Often supplied through university or medical-library subscriptions.</div></div>
+        <div class="cell"><div class="bars"><div class="bar-label"><strong>Collect</strong><div class="track"><div class="fill collect w90"></div></div></div><div class="bar-label"><strong>Dedup</strong><div class="track"><div class="fill dedupe w90"></div></div></div><div class="bar-label"><strong>Export</strong><div class="track"><div class="fill export w90"></div></div></div></div></div>
+        <div class="cell"><div class="mini">Bramer described a PubMed-indexed method for reference checking in systematic reviews using EndNote with Scopus or Web of Science.<sup><a href="https://pubmed.ncbi.nlm.nih.gov/30271303/">14</a></sup></div></div>
+        <div class="cell"><div class="mini">Large database imports, duplicate workflows, Word integration, and librarian-supported workflows are common in health sciences.</div></div>
+      </div>
+
+      <div class="row">
+        <div class="cell"><div class="tool-name">RefWorks<sup><a href="https://refworks.proquest.com/">5</a></sup></div><div class="tagline">Web-based reference manager</div></div>
+        <div class="cell"><span class="pill orange">Institutional</span><div class="mini">Generally accessed through a subscribing university or organization.</div></div>
+        <div class="cell"><div class="bars"><div class="bar-label"><strong>Collect</strong><div class="track"><div class="fill collect w70"></div></div></div><div class="bar-label"><strong>Dedup</strong><div class="track"><div class="fill dedupe w65"></div></div></div><div class="bar-label"><strong>Export</strong><div class="track"><div class="fill export w75"></div></div></div></div></div>
+        <div class="cell"><div class="mini">Kwon et al. compared de-duplication performance in RefWorks, EndNote, and Mendeley using systematic review search records.<sup><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4613377/">15</a></sup></div></div>
+        <div class="cell"><div class="mini">Web-based libraries, sharing, citation output, institutional support, and duplicate handling are common uses.</div></div>
+      </div>
+
+      <div class="row">
+        <div class="cell"><div class="tool-name">Paperpile<sup><a href="https://paperpile.com/">6</a></sup></div><div class="tagline">Web-first reference manager</div></div>
+        <div class="cell"><span class="pill orange">Subscription</span><div class="mini">Official pricing includes trial access followed by paid plans.</div></div>
+        <div class="cell"><div class="bars"><div class="bar-label"><strong>Collect</strong><div class="track"><div class="fill collect w80"></div></div></div><div class="bar-label"><strong>Dedup</strong><div class="track"><div class="fill dedupe w65"></div></div></div><div class="bar-label"><strong>Export</strong><div class="track"><div class="fill export w75"></div></div></div></div></div>
+        <div class="cell"><div class="mini">Wiley and Bei reported using Paperpile to remove duplicates in a systematic review of psychosocial resources and allostatic load.<sup><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5374015/">16</a></sup></div></div>
+        <div class="cell"><div class="mini">Browser-based collection, Google Docs writing, PDF handling, Drive integration, and duplicate detection are common uses.</div></div>
+      </div>
+
+      <div class="row">
+        <div class="cell"><div class="tool-name">Papers<sup><a href="https://www.papersapp.com/">7</a></sup></div><div class="tagline">ReadCube Papers reference manager</div></div>
+        <div class="cell"><span class="pill orange">Subscription</span><div class="mini">Paid individual and team-oriented product.</div></div>
+        <div class="cell"><div class="bars"><div class="bar-label"><strong>Collect</strong><div class="track"><div class="fill collect w80"></div></div></div><div class="bar-label"><strong>Dedup</strong><div class="track"><div class="fill dedupe w50"></div></div></div><div class="bar-label"><strong>Export</strong><div class="track"><div class="fill export w70"></div></div></div></div></div>
+        <div class="cell"><div class="mini">Ebner et al. stored eligible papers in Papers software before screening and duplicate removal in a radiology meta-analysis.<sup><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6957301/">17</a></sup></div></div>
+        <div class="cell"><div class="mini">PDF reading, article discovery, annotations, SmartCite, cloud libraries, and team collaboration are common uses.</div></div>
+      </div>
+
+      <div class="row">
+        <div class="cell"><div class="tool-name">Citavi<sup><a href="https://www.citavi.com/">8</a></sup></div><div class="tagline">Reference and knowledge manager</div></div>
+        <div class="cell"><span class="pill orange">Paid / license</span><div class="mini">Individual, academic, and organizational licensing model.</div></div>
+        <div class="cell"><div class="bars"><div class="bar-label"><strong>Collect</strong><div class="track"><div class="fill collect w80"></div></div></div><div class="bar-label"><strong>Dedup</strong><div class="track"><div class="fill dedupe w65"></div></div></div><div class="bar-label"><strong>Export</strong><div class="track"><div class="fill export w75"></div></div></div></div></div>
+        <div class="cell"><div class="mini">A digital-health technologies systematic review used Citavi 6 for importing articles and screening literature.<sup><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9652730/">18</a></sup></div></div>
+        <div class="cell"><div class="mini">Reference management, notes, knowledge organization, tasks, Word integration, and team libraries are common uses.</div></div>
+      </div>
+
+      <div class="row">
+        <div class="cell"><div class="tool-name">Bookends<sup><a href="https://www.sonnysoftware.com/bookends/bookends.html">9</a></sup></div><div class="tagline">Mac/iOS bibliography manager</div></div>
+        <div class="cell"><span class="pill orange">Paid app</span><div class="mini">Mac/iOS-focused commercial application.</div></div>
+        <div class="cell"><div class="bars"><div class="bar-label"><strong>Collect</strong><div class="track"><div class="fill collect w65"></div></div></div><div class="bar-label"><strong>Dedup</strong><div class="track"><div class="fill dedupe w65"></div></div></div><div class="bar-label"><strong>Export</strong><div class="track"><div class="fill export w75"></div></div></div></div></div>
+        <div class="cell"><div class="mini">A 2025 scoping review of textbook outcome in gastrectomy imported search results into Bookends and removed duplicates.<sup><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12630219/">19</a></sup></div></div>
+        <div class="cell"><div class="mini">Mac-native citation workflows, PDF attachment handling, import/export, and manuscript integration are common uses.</div></div>
+      </div>
+
+      <div class="row">
+        <div class="cell"><div class="tool-name">Sciwheel<sup><a href="https://sciwheel.com/">10</a></sup></div><div class="tagline">Web reference manager and collaboration tool</div></div>
+        <div class="cell"><span class="pill orange">Paid / org</span><div class="mini">Often positioned for institutions and research teams.</div></div>
+        <div class="cell"><div class="bars"><div class="bar-label"><strong>Collect</strong><div class="track"><div class="fill collect w70"></div></div></div><div class="bar-label"><strong>Dedup</strong><div class="track"><div class="fill dedupe w50"></div></div></div><div class="bar-label"><strong>Export</strong><div class="track"><div class="fill export w65"></div></div></div></div></div>
+        <div class="cell"><div class="mini">A scoping review on shared decision-making in dementia exported records to Sciwheel, removed duplicates, and exported unique citations.<sup><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10866150/">20</a></sup></div></div>
+        <div class="cell"><div class="mini">Web-based saving, citation management, sharing, annotations, and collaboration features are common uses.</div></div>
+      </div>
+    </section>
+
+    <section class="decision-grid" aria-label="Notes">
+      <div class="callout dark">
+        <h2>Selection Variables</h2>
+        <ul>
+          <li>Access model, including free, paid, subscription, or institution-provided team access.</li>
+          <li>Storage model, including local files, cloud synchronization, and multi-user team access.</li>
+          <li>Export format compatibility for screening tools, bibliography files, and later analysis.</li>
+        </ul>
+      </div>
+      <div class="callout">
+        <h2>Boundaries</h2>
+        <ul>
+          <li>This is not a comparison of screening, extraction, risk-of-bias, or AI review automation.</li>
+          <li>The examples show documented use, not endorsement, ranking, or comparative effectiveness.</li>
+          <li>The bars summarize citation-library preparation functions before formal review conduct.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="sources">
+        Linked citations: 1-10 official tool pages; 11-20 PubMed/PMC examples. Bars summarize citation import, duplicate handling, export portability, access model, and review preparation.
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

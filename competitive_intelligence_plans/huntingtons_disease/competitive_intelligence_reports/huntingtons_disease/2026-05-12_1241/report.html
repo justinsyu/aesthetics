@@ -1,0 +1,597 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Huntington's Disease CI Update</title>
+  <style>
+    @page {
+      size: 1600px 900px;
+      margin: 0;
+    }
+
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --card: #fffaf0;
+      --line: rgba(16, 18, 15, 0.18);
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --red: #ff7a6d;
+      --green: #b9e769;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      letter-spacing: 0;
+    }
+
+    body {
+      width: 1600px;
+    }
+
+    .slide {
+      position: relative;
+      width: 1600px;
+      height: 900px;
+      overflow: hidden;
+      padding: 74px 88px 58px;
+      background-color: var(--paper);
+      background-image: url("assets/tan_slide_background.png");
+      background-size: cover;
+      background-position: center;
+      break-after: page;
+      page-break-after: always;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .kicker::before {
+      content: "";
+      width: 42px;
+      height: 8px;
+      background: var(--lime);
+      border: 1px solid var(--ink);
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      max-width: 1120px;
+      font-size: 78px;
+      line-height: 0.95;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      font-size: 48px;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      font-size: 24px;
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 980px;
+      margin-top: 24px;
+      font-size: 24px;
+      line-height: 1.34;
+      color: #252821;
+    }
+
+    .topline {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 34px;
+      align-items: start;
+      margin-top: 44px;
+    }
+
+    .panel {
+      border: 1.5px solid var(--ink);
+      background: rgba(255, 250, 240, 0.86);
+      box-shadow: 8px 8px 0 var(--ink);
+      padding: 24px 26px;
+    }
+
+    .metric-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .metric {
+      min-height: 116px;
+      padding: 16px 18px;
+      border: 1.5px solid var(--ink);
+      background: var(--card);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 34px;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .metric span {
+      display: block;
+      font-size: 14px;
+      line-height: 1.22;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .source-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .source-card {
+      min-height: 238px;
+      padding: 22px;
+      border: 1.5px solid var(--ink);
+      background: rgba(255, 250, 240, 0.88);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .tag {
+      align-self: flex-start;
+      padding: 7px 10px;
+      border: 1.3px solid var(--ink);
+      background: var(--blue);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .tag.orange {
+      background: var(--orange);
+    }
+
+    .tag.lime {
+      background: var(--lime);
+    }
+
+    .tag.green {
+      background: var(--green);
+    }
+
+    .source-card p,
+    .body-copy p,
+    .finding p,
+    .timeline-row p {
+      font-size: 18px;
+      line-height: 1.34;
+      color: #22251f;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 0.84fr 1.16fr;
+      gap: 34px;
+      margin-top: 34px;
+      align-items: start;
+    }
+
+    .finding-stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .finding {
+      border: 1.5px solid var(--ink);
+      background: rgba(255, 250, 240, 0.88);
+      padding: 20px 22px;
+    }
+
+    .finding h3 {
+      margin-bottom: 10px;
+    }
+
+    .callout {
+      border: 1.5px solid var(--ink);
+      background: var(--lime);
+      padding: 26px;
+      box-shadow: 8px 8px 0 var(--ink);
+    }
+
+    .callout h3 {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+
+    .callout p {
+      font-size: 22px;
+      line-height: 1.3;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+      background: rgba(255, 250, 240, 0.88);
+      border: 1.5px solid var(--ink);
+      font-size: 17px;
+      line-height: 1.25;
+    }
+
+    .data-table th,
+    .data-table td {
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+      padding: 15px 16px;
+    }
+
+    .data-table th {
+      background: var(--ink);
+      color: var(--paper);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .data-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .timeline-row {
+      display: grid;
+      grid-template-columns: 190px 1fr 230px;
+      gap: 16px;
+      align-items: start;
+      padding: 18px 20px;
+      border: 1.5px solid var(--ink);
+      background: rgba(255, 250, 240, 0.88);
+    }
+
+    .timeline-date {
+      font-size: 25px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .timeline-label {
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .ref-list {
+      display: grid;
+      gap: 16px;
+      margin-top: 36px;
+    }
+
+    .ref {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 18px 20px;
+      border: 1.5px solid var(--ink);
+      background: rgba(255, 250, 240, 0.88);
+    }
+
+    .ref-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border: 1.5px solid var(--ink);
+      background: var(--orange);
+      font-weight: 900;
+      font-size: 20px;
+    }
+
+    .ref p {
+      font-size: 18px;
+      line-height: 1.28;
+    }
+
+    .ref a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-decoration-thickness: 1.5px;
+      text-underline-offset: 3px;
+    }
+
+    .cite {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 18px;
+      height: 18px;
+      margin-left: 4px;
+      padding: 0 5px;
+      border: 1px solid var(--ink);
+      border-radius: 50%;
+      background: var(--orange);
+      color: var(--ink);
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 900;
+      text-decoration: none;
+      vertical-align: super;
+    }
+
+    .foot {
+      position: absolute;
+      left: 88px;
+      right: 88px;
+      bottom: 28px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .source-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .pill {
+      border: 1.3px solid var(--ink);
+      background: var(--card);
+      padding: 9px 12px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .big-number {
+      font-size: 96px;
+      line-height: 0.85;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+  </style>
+</head>
+<body>
+  <section class="slide" aria-label="Title">
+    <div class="kicker">Competitive intelligence report</div>
+    <h1>Huntington's Disease CI Update</h1>
+    <p class="lead">Primary-source scan covering eligible updates published from May 5 through May 12, 2026; the included evidence set is limited to ClinicalTrials.gov records and SEC exhibits with visible dates inside that window.<a class="cite" href="https://clinicaltrials.gov/study/NCT07326709">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06826612">2</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1070081/000107008126000011/tmb-20260507xex99d1.htm">3</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1590560/000110465926055242/qure-20260505xex99d1.htm">4</a></p>
+    <div class="topline">
+      <div class="panel">
+        <h3>Read-through</h3>
+        <p class="lead" style="font-size:22px;margin-top:14px;">Votoplam had both a Phase 3 recruiting record update and a PTC disclosure tying PIVOT-HD extension data to the Novartis-led INVEST-HD program.<a class="cite" href="https://clinicaltrials.gov/study/NCT07326709">1</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1070081/000107008126000011/tmb-20260507xex99d1.htm">3</a> uniQure's AMT-130 update showed different US and UK regulatory tracks, while Roche's SPK-10001 record remained a recruiting Phase 1/2 gene therapy study.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1590560/000110465926055242/qure-20260505xex99d1.htm">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06826612">2</a></p>
+      </div>
+      <div class="metric-row">
+        <div class="metric"><strong>4</strong><span>Eligible primary sources cited in the report.<a class="cite" href="https://clinicaltrials.gov/study/NCT07326709">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06826612">2</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1070081/000107008126000011/tmb-20260507xex99d1.htm">3</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1590560/000110465926055242/qure-20260505xex99d1.htm">4</a></span></div>
+        <div class="metric"><strong>2</strong><span>ClinicalTrials.gov recruiting records updated inside the evidence window.<a class="cite" href="https://clinicaltrials.gov/study/NCT07326709">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06826612">2</a></span></div>
+        <div class="metric"><strong>2</strong><span>SEC Exhibit 99.1 updates with Huntington's disease content.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1070081/000107008126000011/tmb-20260507xex99d1.htm">3</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1590560/000110465926055242/qure-20260505xex99d1.htm">4</a></span></div>
+        <div class="metric"><strong>12</strong><span>Rendered evidence screenshots captured for date and claim verification.<a class="cite" href="https://clinicaltrials.gov/study/NCT07326709">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06826612">2</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1070081/000107008126000011/tmb-20260507xex99d1.htm">3</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1590560/000110465926055242/qure-20260505xex99d1.htm">4</a></span></div>
+      </div>
+    </div>
+    <div class="foot"><span>Huntington's Disease</span><span>05.12.26</span></div>
+  </section>
+
+  <section class="slide" aria-label="Source map">
+    <div class="kicker">Evidence map</div>
+    <h2>Eligible primary-source updates</h2>
+    <div class="source-grid">
+      <div class="source-card">
+        <span class="tag lime">ClinicalTrials.gov</span>
+        <h3>Novartis votoplam / INVEST-HD</h3>
+        <p>NCT07326709 was last updated May 12, 2026, lists Novartis Pharmaceuticals as sponsor, and shows the study as recruiting.<a class="cite" href="https://clinicaltrials.gov/study/NCT07326709">1</a></p>
+        <p>The record lists a Phase 3 interventional design, estimated enrollment of 770, and a Month 36 cUHDRS primary endpoint.<a class="cite" href="https://clinicaltrials.gov/study/NCT07326709">1</a></p>
+      </div>
+      <div class="source-card">
+        <span class="tag green">ClinicalTrials.gov</span>
+        <h3>Roche SPK-10001 gene therapy</h3>
+        <p>NCT06826612 was last updated May 5, 2026, lists Hoffmann-La Roche as sponsor, and shows the study as recruiting.<a class="cite" href="https://clinicaltrials.gov/study/NCT06826612">2</a></p>
+        <p>The record lists a Phase 1/Phase 2 interventional design, estimated enrollment of 53, and SPK-10001 versus placebo surgery control.<a class="cite" href="https://clinicaltrials.gov/study/NCT06826612">2</a></p>
+      </div>
+      <div class="source-card">
+        <span class="tag orange">SEC exhibit</span>
+        <h3>PTC votoplam disclosure</h3>
+        <p>PTC's May 7, 2026 exhibit reported positive topline results from the 24-month PIVOT-HD extension analysis of votoplam.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1070081/000107008126000011/tmb-20260507xex99d1.htm">3</a></p>
+        <p>PTC said the data supported the ongoing Novartis-led global Phase 3 INVEST-HD study and triggered a $50 million milestone payment in Q2 2026.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1070081/000107008126000011/tmb-20260507xex99d1.htm">3</a></p>
+      </div>
+      <div class="source-card">
+        <span class="tag">SEC exhibit</span>
+        <h3>uniQure AMT-130 disclosure</h3>
+        <p>uniQure's May 5, 2026 exhibit said AMT-130 FDA interactions are advancing, with a Type B meeting scheduled for Q2 2026.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1590560/000110465926055242/qure-20260505xex99d1.htm">4</a></p>
+        <p>uniQure said its UK MAA remains on track for Q3 2026 after a successful MHRA pre-submission meeting.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1590560/000110465926055242/qure-20260505xex99d1.htm">4</a></p>
+      </div>
+    </div>
+    <div class="foot"><span>Source map</span><span>Primary sources only</span></div>
+  </section>
+
+  <section class="slide" aria-label="Votoplam">
+    <div class="kicker">Votoplam / INVEST-HD</div>
+    <h2>Votoplam has a trial-record update and a sponsor-readout disclosure in the same evidence window</h2>
+    <div class="two-col">
+      <div class="callout">
+        <div class="big-number">770</div>
+        <h3>Estimated Phase 3 enrollment</h3>
+        <p>ClinicalTrials.gov lists INVEST-HD as a recruiting Phase 3 interventional study sponsored by Novartis Pharmaceuticals, with estimated enrollment of 770.<a class="cite" href="https://clinicaltrials.gov/study/NCT07326709">1</a></p>
+      </div>
+      <div class="finding-stack">
+        <div class="finding">
+          <h3>Primary endpoint</h3>
+          <p>The INVEST-HD primary outcome is change from baseline in cUHDRS score, measured from baseline to Month 36.<a class="cite" href="https://clinicaltrials.gov/study/NCT07326709">1</a></p>
+        </div>
+        <div class="finding">
+          <h3>Extension readout referenced by PTC</h3>
+          <p>PTC reported a dose-dependent cUHDRS benefit in Stage 2 participants relative to a natural history cohort, including 52% slowing of disease progression at the 10 mg dose.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1070081/000107008126000011/tmb-20260507xex99d1.htm">3</a></p>
+        </div>
+        <div class="finding">
+          <h3>Operational and financial marker</h3>
+          <p>PTC said the findings support the Novartis-led global Phase 3 INVEST-HD study and that first patient dosing triggered a $50 million milestone payment from Novartis to PTC in Q2 2026.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1070081/000107008126000011/tmb-20260507xex99d1.htm">3</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><span>Votoplam</span><span>ClinicalTrials.gov + SEC</span></div>
+  </section>
+
+  <section class="slide" aria-label="SPK-10001">
+    <div class="kicker">Roche / SPK-10001</div>
+    <h2>Roche gene therapy record remains recruiting with safety and functional endpoints</h2>
+    <div class="two-col">
+      <div class="panel">
+        <h3>Trial profile</h3>
+        <div class="source-strip">
+          <span class="pill">Recruiting<a class="cite" href="https://clinicaltrials.gov/study/NCT06826612">2</a></span>
+          <span class="pill">Phase 1/2<a class="cite" href="https://clinicaltrials.gov/study/NCT06826612">2</a></span>
+          <span class="pill">53 estimated enrollment<a class="cite" href="https://clinicaltrials.gov/study/NCT06826612">2</a></span>
+          <span class="pill">Quadruple masked<a class="cite" href="https://clinicaltrials.gov/study/NCT06826612">2</a></span>
+        </div>
+        <p class="lead" style="font-size:22px;margin-top:28px;">ClinicalTrials.gov lists SPK-10001 and placebo surgery control as study interventions in a randomized interventional design.<a class="cite" href="https://clinicaltrials.gov/study/NCT06826612">2</a></p>
+      </div>
+      <div class="finding-stack">
+        <div class="finding">
+          <h3>Primary safety outcomes</h3>
+          <p>The record lists treatment-emergent adverse event count and severity as primary outcomes followed from Day 1 through approximately five years.<a class="cite" href="https://clinicaltrials.gov/study/NCT06826612">2</a></p>
+        </div>
+        <div class="finding">
+          <h3>Primary functional outcome</h3>
+          <p>The record also lists change from baseline in Unified Huntington's Disease Rating Scale Total Functional Capacity score at Month 24 as a primary outcome.<a class="cite" href="https://clinicaltrials.gov/study/NCT06826612">2</a></p>
+        </div>
+        <div class="finding">
+          <h3>Planning marker</h3>
+          <p>The record shows study start on February 21, 2025, and estimated primary completion on January 12, 2035.<a class="cite" href="https://clinicaltrials.gov/study/NCT06826612">2</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><span>SPK-10001</span><span>ClinicalTrials.gov</span></div>
+  </section>
+
+  <section class="slide" aria-label="AMT-130">
+    <div class="kicker">uniQure / AMT-130</div>
+    <h2>AMT-130 disclosure separates FDA design discussion from UK filing preparation</h2>
+    <div class="two-col">
+      <div class="callout" style="background:var(--blue);">
+        <h3>US path</h3>
+        <p>uniQure said FDA cannot agree that Phase I/II data compared with an external control are sufficient as primary evidence of effectiveness for an AMT-130 marketing application.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1590560/000110465926055242/qure-20260505xex99d1.htm">4</a></p>
+      </div>
+      <div class="finding-stack">
+        <div class="finding">
+          <h3>Type B meeting</h3>
+          <p>uniQure said it was granted a Type B meeting with FDA and plans to discuss a potential new clinical trial design plus the statistical analysis plan for four-year data expected in Q3 2026.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1590560/000110465926055242/qure-20260505xex99d1.htm">4</a></p>
+        </div>
+        <div class="finding">
+          <h3>UK filing plan</h3>
+          <p>After a constructive pre-submission meeting with MHRA, uniQure said it expects to submit a UK Marketing Authorization Application for AMT-130 based on three-year data in Q3 2026.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1590560/000110465926055242/qure-20260505xex99d1.htm">4</a></p>
+        </div>
+        <div class="finding">
+          <h3>Company framing</h3>
+          <p>uniQure's exhibit framed AMT-130 as advancing globally while also preparing for continued FDA engagement and evaluating additional international opportunities.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1590560/000110465926055242/qure-20260505xex99d1.htm">4</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><span>AMT-130</span><span>SEC Exhibit 99.1</span></div>
+  </section>
+
+  <section class="slide" aria-label="Disclosed markers">
+    <div class="kicker">Forward markers</div>
+    <h2>Disclosed next markers and long-tail trial milestones</h2>
+    <div class="timeline">
+      <div class="timeline-row">
+        <div><div class="timeline-date">Q2 2026</div><div class="timeline-label">AMT-130 FDA</div></div>
+        <p>uniQure said a Type B meeting with FDA is scheduled for Q2 2026 to discuss trial design and the four-year data statistical analysis plan.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1590560/000110465926055242/qure-20260505xex99d1.htm">4</a></p>
+        <p>Regulatory interaction</p>
+      </div>
+      <div class="timeline-row">
+        <div><div class="timeline-date">Q2 2026</div><div class="timeline-label">Votoplam payment</div></div>
+        <p>PTC said first patient dosing in Phase 3 INVEST-HD triggered a $50 million milestone payment from Novartis to PTC in Q2 2026.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1070081/000107008126000011/tmb-20260507xex99d1.htm">3</a></p>
+        <p>Partner economics</p>
+      </div>
+      <div class="timeline-row">
+        <div><div class="timeline-date">Q3 2026</div><div class="timeline-label">AMT-130 data / UK</div></div>
+        <p>uniQure said four-year AMT-130 data are expected in Q3 2026 and that a UK MAA based on three-year data is expected in Q3 2026.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1590560/000110465926055242/qure-20260505xex99d1.htm">4</a></p>
+        <p>Data and filing</p>
+      </div>
+      <div class="timeline-row">
+        <div><div class="timeline-date">2030</div><div class="timeline-label">INVEST-HD</div></div>
+        <p>ClinicalTrials.gov lists the INVEST-HD estimated primary completion date as April 2, 2030, and the estimated study completion date as April 30, 2030.<a class="cite" href="https://clinicaltrials.gov/study/NCT07326709">1</a></p>
+        <p>Phase 3 endpoint horizon</p>
+      </div>
+      <div class="timeline-row">
+        <div><div class="timeline-date">2035</div><div class="timeline-label">SPK-10001</div></div>
+        <p>ClinicalTrials.gov lists the SPK-10001 estimated primary completion and study completion date as January 12, 2035.<a class="cite" href="https://clinicaltrials.gov/study/NCT06826612">2</a></p>
+        <p>Gene therapy follow-up</p>
+      </div>
+    </div>
+    <div class="foot"><span>Disclosed future markers</span><span>No secondary sources used</span></div>
+  </section>
+
+  <section class="slide" aria-label="References">
+    <div class="kicker">References</div>
+    <h2>Primary sources</h2>
+    <div class="ref-list">
+      <div class="ref">
+        <span class="ref-num">1</span>
+        <p>ClinicalTrials.gov, NCT07326709, "A Study to Investigate the Efficacy, Safety and Tolerability of Votoplam in Participants With Huntington's Disease"; last update posted May 12, 2026. <a href="https://clinicaltrials.gov/study/NCT07326709">clinicaltrials.gov/study/NCT07326709</a></p>
+      </div>
+      <div class="ref">
+        <span class="ref-num">2</span>
+        <p>ClinicalTrials.gov, NCT06826612, "A Randomized Study of SPK-10001 Gene Therapy in Participants With Huntington's Disease"; last update posted May 5, 2026. <a href="https://clinicaltrials.gov/study/NCT06826612">clinicaltrials.gov/study/NCT06826612</a></p>
+      </div>
+      <div class="ref">
+        <span class="ref-num">3</span>
+        <p>PTC Therapeutics, SEC Exhibit 99.1, "PTC Therapeutics Provides Corporate Update and Reports First Quarter 2026 Financial Results"; source date May 7, 2026. <a href="https://www.sec.gov/Archives/edgar/data/1070081/000107008126000011/tmb-20260507xex99d1.htm">sec.gov exhibit 99.1</a></p>
+      </div>
+      <div class="ref">
+        <span class="ref-num">4</span>
+        <p>uniQure, SEC Exhibit 99.1, "uniQure Announces First Quarter 2026 Financial Results and Provides Recent Company Updates"; source date May 5, 2026. <a href="https://www.sec.gov/Archives/edgar/data/1590560/000110465926055242/qure-20260505xex99d1.htm">sec.gov exhibit 99.1</a></p>
+      </div>
+    </div>
+    <div class="panel" style="margin-top:28px;padding:18px 22px;">
+      <p style="font-size:18px;line-height:1.3;">Companion evidence file contains the 12 rendered, highlighted screenshots used for date verification and claim verification across these four sources.<a class="cite" href="https://clinicaltrials.gov/study/NCT07326709">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06826612">2</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1070081/000107008126000011/tmb-20260507xex99d1.htm">3</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1590560/000110465926055242/qure-20260505xex99d1.htm">4</a></p>
+    </div>
+    <div class="foot"><span>References</span><span>Evidence screenshots archived separately</span></div>
+  </section>
+</body>
+</html>

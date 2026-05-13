@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ovarian Cancer Competitive Intelligence Report</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 36px 0 20px;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 850;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 84px; line-height: .93; letter-spacing: 0; font-weight: 560; max-width: 1320px; }
+    h2 { font-size: 55px; line-height: .98; letter-spacing: 0; font-weight: 560; max-width: 1310px; }
+    h3 { font-size: 29px; line-height: 1.04; letter-spacing: 0; font-weight: 650; }
+    .dek { margin-top: 18px; color: var(--muted); font-size: 27px; line-height: 1.23; max-width: 1280px; }
+    .section-head { margin-bottom: 20px; }
+    .section-head p { margin-top: 12px; color: var(--muted); font-size: 24px; line-height: 1.24; max-width: 1300px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .panel, .metric, .card, .table, .callout, .event, .source-card {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.86);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel { padding: 26px; }
+    .panel.dark, .callout.dark { background: #11130f; color: var(--paper); border-color: #11130f; }
+    .panel.dark p, .panel.dark .muted, .panel.dark li, .callout.dark p { color: rgba(246,241,232,.82); }
+    .metric { padding: 21px; min-height: 150px; }
+    .num { font-size: 52px; line-height: .92; font-weight: 850; letter-spacing: 0; }
+    .label { margin-top: 12px; font-size: 17px; line-height: 1.25; color: var(--muted); }
+    .card { padding: 23px; min-height: 188px; }
+    .card p { color: var(--muted); font-size: 18px; line-height: 1.27; margin-top: 10px; }
+    .card .tag { margin-bottom: 12px; }
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      white-space: nowrap;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .red { background: var(--red); }
+    .gray { background: var(--gray); }
+    .mini { font-size: 16px; color: var(--muted); line-height: 1.31; }
+    .muted { color: var(--muted); }
+    .list { margin: 14px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+    .list li { position: relative; padding-left: 20px; color: var(--muted); font-size: 18px; line-height: 1.24; }
+    .list li::before { content: ""; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; border-radius: 50%; background: var(--lime); border: 1px solid var(--line); }
+    .table { display: grid; border-radius: 20px; }
+    .row { display: grid; grid-template-columns: 1.16fr 1.35fr .75fr .72fr .9fr; border-bottom: 1px solid var(--line); min-height: 70px; }
+    .row:last-child { border-bottom: 0; }
+    .cell { padding: 13px 13px; border-right: 1px solid var(--line); font-size: 15px; line-height: 1.2; }
+    .cell:last-child { border-right: 0; }
+    .head .cell { background: #11130f; color: var(--paper); font-weight: 850; text-transform: uppercase; font-size: 11px; }
+    .timeline { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 20px; }
+    .event { padding: 18px; min-height: 180px; }
+    .event p { color: var(--muted); font-size: 17px; line-height: 1.24; margin-top: 9px; }
+    .event strong { display: block; font-size: 22px; line-height: 1.05; }
+    .callout { padding: 22px; }
+    .callout p { margin-top: 10px; font-size: 17px; line-height: 1.28; }
+    .key-takeaway { padding: 24px 28px; }
+    .key-takeaway h3 { font-size: 32px; line-height: 1.02; }
+    .key-takeaway p { margin-top: 12px; font-size: 25px; line-height: 1.2; }
+    .source-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 18px; }
+    .source-card { padding: 17px 18px; min-height: 108px; }
+    .source-card p { font-size: 15px; color: var(--muted); line-height: 1.24; margin-top: 7px; }
+    .source-card strong { display: block; font-size: 18px; line-height: 1.08; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    .dark .tag { color: var(--ink); }
+
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .wrap { width: 1360px; }
+      .panel, .metric, .card, .table, .callout, .event, .source-card { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) {
+      .slide { width: 1600px; height: 900px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Ovarian cancer CI report | May 12, 2026</div>
+      <h1>This week’s ovarian cancer source set is concentrated in trial-record movement</h1>
+      <p class="dek">The May 6-12, 2026 evidence window captured two company releases and six ClinicalTrials.gov records spanning preclinical ERNA-101 activity, Olvi-Vec’s Phase 3 timing, R-DXd, mirvetuximab plus carboplatin, INCB123667, sacituzumab tirumotecan, and M1774 plus ZEN-3694.<a class="cite" href="https://www.ernexatx.com/press-releases/ernexa-therapeutics-unveils-breakthrough-preclinical-results">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290643/0/en/Genelux-Corporation-Reports-First-Quarter-Financial-Results-and-Provides-Business-Updates.html">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06161025">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06890338">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07214779">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07318558">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06824467">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05950464">8</a></p>
+      <div class="grid-4" style="margin-top:30px;">
+        <div class="metric"><div class="num">8</div><div class="label">Primary or official sources verified with visible-date screenshots.<a class="cite" href="https://clinicaltrials.gov/study/NCT06161025">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06890338">4</a></div></div>
+        <div class="metric"><div class="num">6</div><div class="label">ClinicalTrials.gov records updated from May 8 to May 12, 2026.<a class="cite" href="https://clinicaltrials.gov/study/NCT07214779">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05950464">8</a></div></div>
+        <div class="metric"><div class="num">3</div><div class="label">Phase 3 trial records in the captured registry set: INCB123667 and two sac-TMT studies.<a class="cite" href="https://clinicaltrials.gov/study/NCT07214779">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07318558">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06824467">7</a></div></div>
+        <div class="metric"><div class="num">2H26</div><div class="label">Genelux stated that OnPrime/GOG-3076 Olvi-Vec topline data remained expected in the second half of 2026.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290643/0/en/Genelux-Corporation-Reports-First-Quarter-Financial-Results-and-Provides-Business-Updates.html">2</a></div></div>
+      </div>
+      <div class="panel dark key-takeaway" style="margin-top:22px;">
+        <h3>Central finding</h3>
+        <p>The captured week-of-change set points to active competition in maintenance, platinum-resistant or recurrent disease, biomarker-defined enrollment, and non-standard modalities rather than a single product-class event.<a class="cite" href="https://clinicaltrials.gov/study/NCT07318558">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06824467">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07214779">5</a><a class="cite" href="https://www.ernexatx.com/press-releases/ernexa-therapeutics-unveils-breakthrough-preclinical-results">1</a></p>
+      </div>
+    </div>
+    <div class="slide-num">01 / 08</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Week-of-change map</div>
+        <h2>Events clustered across five posting dates in the May 6-12 window</h2>
+        <p>The verified sources show one preclinical company release on May 6, one Phase 3 business update on May 7, three ClinicalTrials.gov updates on May 8, one registry update on May 11, and two registry updates on May 12.<a class="cite" href="https://www.ernexatx.com/press-releases/ernexa-therapeutics-unveils-breakthrough-preclinical-results">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290643/0/en/Genelux-Corporation-Reports-First-Quarter-Financial-Results-and-Provides-Business-Updates.html">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07214779">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05950464">8</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06161025">3</a></p>
+      </div>
+      <div class="timeline">
+        <div class="event">
+          <span class="tag lime">May 6</span>
+          <strong>ERNA-101 preclinical signal</strong>
+          <p>Ernexa reported complete tumor clearance and 100% survival through long-term follow-up for ERNA-101 plus anti-PD-1 in ovarian cancer models.<a class="cite" href="https://www.ernexatx.com/press-releases/ernexa-therapeutics-unveils-breakthrough-preclinical-results">1</a></p>
+        </div>
+        <div class="event">
+          <span class="tag blue">May 7</span>
+          <strong>Olvi-Vec Phase 3 timing</strong>
+          <p>Genelux said the randomized Phase 3 OnPrime/GOG-3076 ovarian cancer registrational trial remained on track for 2H26 topline data.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290643/0/en/Genelux-Corporation-Reports-First-Quarter-Financial-Results-and-Provides-Business-Updates.html">2</a></p>
+        </div>
+        <div class="event">
+          <span class="tag orange">May 8</span>
+          <strong>Three recruiting records</strong>
+          <p>ClinicalTrials.gov showed recruiting records for INCB123667 and two sacituzumab tirumotecan maintenance studies updated on May 8.<a class="cite" href="https://clinicaltrials.gov/study/NCT07214779">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07318558">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06824467">7</a></p>
+        </div>
+        <div class="event">
+          <span class="tag pink">May 11</span>
+          <strong>M1774 plus ZEN-3694</strong>
+          <p>The NCI-sponsored Phase 1 record for M1774 plus ZEN-3694 in recurrent ovarian and endometrial cancers was recruiting and last updated on May 11.<a class="cite" href="https://clinicaltrials.gov/study/NCT05950464">8</a></p>
+        </div>
+        <div class="event">
+          <span class="tag red">May 12</span>
+          <strong>R-DXd and mirvetuximab</strong>
+          <p>Two recruiting ClinicalTrials.gov records posted May 12 updates: Daiichi Sankyo’s R-DXd Phase 2/3 study and AbbVie’s mirvetuximab plus carboplatin Phase 2 study.<a class="cite" href="https://clinicaltrials.gov/study/NCT06161025">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06890338">4</a></p>
+        </div>
+      </div>
+      <div class="callout dark key-takeaway" style="margin-top:18px;">
+        <h3>Interpretation limited to source set</h3>
+        <p>This report treats each source as evidence of a disclosed company update or official trial-record change in the seven-day window; it does not infer efficacy, regulatory probability, or commercial performance beyond those source facts.<a class="cite" href="https://clinicaltrials.gov/study/NCT06161025">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06890338">4</a></p>
+      </div>
+    </div>
+    <div class="slide-num">02 / 08</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Late-stage records</div>
+        <h2>Phase 3 activity in the captured set centers on INCB123667 and sac-TMT</h2>
+        <p>All three Phase 3 ClinicalTrials.gov records in the source set were recruiting, and each record named a biomarker, maintenance, or recurrent-disease setting.<a class="cite" href="https://clinicaltrials.gov/study/NCT07214779">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07318558">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06824467">7</a></p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag orange">Phase 3 | 466</span>
+          <h3>INCB123667</h3>
+          <p>Incyte’s recruiting record compares INCB123667 with investigator’s choice chemotherapy in participants with platinum-resistant ovarian cancer and Cyclin E1 overexpression.<a class="cite" href="https://clinicaltrials.gov/study/NCT07214779">5</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">Phase 3 | 900</span>
+          <h3>Sac-TMT front-line maintenance</h3>
+          <p>Merck’s recruiting record evaluates sacituzumab tirumotecan with or without bevacizumab versus standard of care maintenance after first-line platinum-based chemotherapy in non-HRD-positive advanced ovarian cancer.<a class="cite" href="https://clinicaltrials.gov/study/NCT07318558">6</a></p>
+        </div>
+        <div class="card">
+          <span class="tag pink">Phase 3 | 770</span>
+          <h3>Sac-TMT recurrent maintenance</h3>
+          <p>Merck’s second recruiting record evaluates sacituzumab tirumotecan with or without bevacizumab versus standard of care after second-line platinum-based doublet chemotherapy in platinum-sensitive recurrent ovarian cancer.<a class="cite" href="https://clinicaltrials.gov/study/NCT06824467">7</a></p>
+        </div>
+      </div>
+      <div class="grid-2" style="margin-top:18px;">
+        <div class="panel">
+          <h3>Enrollment scale</h3>
+          <ul class="list">
+            <li>The largest captured Phase 3 record is the 900-participant sac-TMT front-line maintenance study.<a class="cite" href="https://clinicaltrials.gov/study/NCT07318558">6</a></li>
+            <li>The second sac-TMT maintenance study lists an estimated enrollment of 770 participants.<a class="cite" href="https://clinicaltrials.gov/study/NCT06824467">7</a></li>
+            <li>The INCB123667 platinum-resistant study lists an estimated enrollment of 466 participants.<a class="cite" href="https://clinicaltrials.gov/study/NCT07214779">5</a></li>
+          </ul>
+        </div>
+        <div class="panel dark">
+          <h3>Competitive implication from records</h3>
+          <p style="font-size:25px;line-height:1.2;margin-top:12px;">The week’s late-stage registry movement is not restricted to post-progression treatment; it includes front-line maintenance, recurrent maintenance, and platinum-resistant disease.<a class="cite" href="https://clinicaltrials.gov/study/NCT07318558">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06824467">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07214779">5</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">03 / 08</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Targeted and combination studies</div>
+        <h2>R-DXd and mirvetuximab records add Phase 2/3 and Phase 2 movement</h2>
+        <p>The two May 12 ClinicalTrials.gov updates cover platinum-resistant high-grade disease for R-DXd and newly diagnosed FR-alpha-expressing advanced-stage serous disease for mirvetuximab plus carboplatin.<a class="cite" href="https://clinicaltrials.gov/study/NCT06161025">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06890338">4</a></p>
+      </div>
+      <div class="grid-2">
+        <div class="panel">
+          <span class="tag lime">Phase 2/3 | 860</span>
+          <h3 style="margin-top:13px;">R-DXd in platinum-resistant high-grade ovarian, primary peritoneal, or fallopian tube cancer</h3>
+          <ul class="list">
+            <li>The Daiichi Sankyo record is recruiting and lists Phase 2/Phase 3 design.<a class="cite" href="https://clinicaltrials.gov/study/NCT06161025">3</a></li>
+            <li>The record lists an estimated enrollment of 860 participants.<a class="cite" href="https://clinicaltrials.gov/study/NCT06161025">3</a></li>
+            <li>The official title places the study in platinum-resistant high-grade ovarian, primary peritoneal, or fallopian tube cancer.<a class="cite" href="https://clinicaltrials.gov/study/NCT06161025">3</a></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="tag blue">Phase 2 | 140</span>
+          <h3 style="margin-top:13px;">Mirvetuximab soravtansine plus carboplatin in newly diagnosed FR-alpha-expressing disease</h3>
+          <ul class="list">
+            <li>The AbbVie record is recruiting and lists Phase 2 design.<a class="cite" href="https://clinicaltrials.gov/study/NCT06890338">4</a></li>
+            <li>The record lists an estimated enrollment of 140 participants.<a class="cite" href="https://clinicaltrials.gov/study/NCT06890338">4</a></li>
+            <li>The official title places the study in newly diagnosed advanced-stage serous epithelial ovarian, fallopian tube, or primary peritoneal cancer with FR-alpha expression.<a class="cite" href="https://clinicaltrials.gov/study/NCT06890338">4</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout dark key-takeaway" style="margin-top:18px;">
+        <h3>Read across only from trial records</h3>
+        <p>Both May 12 records are recruiting and sponsor-reported; the captured source facts support development-stage comparison, not cross-trial efficacy comparison.<a class="cite" href="https://clinicaltrials.gov/study/NCT06161025">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06890338">4</a></p>
+      </div>
+    </div>
+    <div class="slide-num">04 / 08</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Biomarker and disease-state filters</div>
+        <h2>Captured records use defined ovarian cancer subgroups rather than broad all-comer framing</h2>
+        <p>Across the registry records, named filters include Cyclin E1 overexpression, non-HRD-positive disease, platinum-sensitive recurrence, platinum-resistant high-grade disease, FR-alpha expression, and recurrent ovarian or endometrial cancer.<a class="cite" href="https://clinicaltrials.gov/study/NCT07214779">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07318558">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06824467">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06161025">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06890338">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05950464">8</a></p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag orange">Cyclin E1</span>
+          <h3>INCB123667</h3>
+          <p>The Incyte record requires Cyclin E1 overexpression in platinum-resistant ovarian cancer.<a class="cite" href="https://clinicaltrials.gov/study/NCT07214779">5</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">Non-HRD positive</span>
+          <h3>Sac-TMT first line</h3>
+          <p>The Merck front-line maintenance study is specified for newly diagnosed advanced non-HRD-positive ovarian cancer after first-line platinum-based chemotherapy.<a class="cite" href="https://clinicaltrials.gov/study/NCT07318558">6</a></p>
+        </div>
+        <div class="card">
+          <span class="tag pink">Platinum-sensitive</span>
+          <h3>Sac-TMT recurrence</h3>
+          <p>The recurrent maintenance sac-TMT study is specified for platinum-sensitive recurrent ovarian cancer after second-line platinum-based doublet chemotherapy.<a class="cite" href="https://clinicaltrials.gov/study/NCT06824467">7</a></p>
+        </div>
+        <div class="card">
+          <span class="tag lime">Platinum-resistant</span>
+          <h3>R-DXd</h3>
+          <p>The Daiichi Sankyo record specifies platinum-resistant high-grade ovarian, primary peritoneal, or fallopian tube cancer.<a class="cite" href="https://clinicaltrials.gov/study/NCT06161025">3</a></p>
+        </div>
+        <div class="card">
+          <span class="tag red">FR-alpha</span>
+          <h3>Mirvetuximab</h3>
+          <p>The AbbVie record specifies newly diagnosed FR-alpha-expressing advanced-stage serous epithelial ovarian, fallopian tube, or primary peritoneal cancer.<a class="cite" href="https://clinicaltrials.gov/study/NCT06890338">4</a></p>
+        </div>
+        <div class="card">
+          <span class="tag gray">Recurrent</span>
+          <h3>M1774 plus ZEN-3694</h3>
+          <p>The NCI-sponsored Phase 1 record lists recurrent ovarian and recurrent endometrial cancers and includes recurrent platinum-resistant ovarian carcinoma among conditions.<a class="cite" href="https://clinicaltrials.gov/study/NCT05950464">8</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">05 / 08</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Company-disclosed modality signals</div>
+        <h2>Cell therapy and oncolytic-virus updates sit beside registry movement</h2>
+        <p>The two company releases in the evidence window were not ClinicalTrials.gov records: Ernexa reported ERNA-101 preclinical ovarian cancer model findings on May 6, and Genelux provided an Olvi-Vec Phase 3 business update on May 7.<a class="cite" href="https://www.ernexatx.com/press-releases/ernexa-therapeutics-unveils-breakthrough-preclinical-results">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290643/0/en/Genelux-Corporation-Reports-First-Quarter-Financial-Results-and-Provides-Business-Updates.html">2</a></p>
+      </div>
+      <div class="grid-2">
+        <div class="panel">
+          <span class="tag lime">Preclinical | ERNA-101</span>
+          <h3 style="margin-top:13px;">Ernexa reported ovarian cancer model activity with anti-PD-1 combination therapy</h3>
+          <ul class="list">
+            <li>The release describes ERNA-101 as an allogeneic induced mesenchymal stem cell therapy engineered to home to tumors and secrete IL-7 and IL-15.<a class="cite" href="https://www.ernexatx.com/press-releases/ernexa-therapeutics-unveils-breakthrough-preclinical-results">1</a></li>
+            <li>The release says ERNA-101 plus anti-PD-1 resulted in complete tumor clearance and 100% survival through long-term follow-up in ovarian cancer models.<a class="cite" href="https://www.ernexatx.com/press-releases/ernexa-therapeutics-unveils-breakthrough-preclinical-results">1</a></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="tag blue">Phase 3 | Olvi-Vec</span>
+          <h3 style="margin-top:13px;">Genelux reiterated second-half 2026 topline timing for OnPrime/GOG-3076</h3>
+          <ul class="list">
+            <li>The release identifies OnPrime/GOG-3076 as a randomized Phase 3 ovarian cancer registrational trial of Olvi-Vec.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290643/0/en/Genelux-Corporation-Reports-First-Quarter-Financial-Results-and-Provides-Business-Updates.html">2</a></li>
+            <li>The release states the trial remains on track for topline data in the second half of 2026.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290643/0/en/Genelux-Corporation-Reports-First-Quarter-Financial-Results-and-Provides-Business-Updates.html">2</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="grid-2" style="margin-top:18px;">
+        <div class="panel dark">
+          <h3>Evidence-status contrast</h3>
+          <p style="font-size:25px;line-height:1.2;margin-top:12px;">Ernexa’s release reports preclinical model results, while Genelux’s release reports timing for a randomized Phase 3 registrational trial.<a class="cite" href="https://www.ernexatx.com/press-releases/ernexa-therapeutics-unveils-breakthrough-preclinical-results">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290643/0/en/Genelux-Corporation-Reports-First-Quarter-Financial-Results-and-Provides-Business-Updates.html">2</a></p>
+        </div>
+        <div class="panel">
+          <h3>Why it matters for surveillance</h3>
+          <p style="font-size:25px;line-height:1.2;margin-top:12px;color:var(--muted);">The company-disclosed items add non-registry signal types to the week’s source set: mechanistic preclinical evidence and a forward-dated Phase 3 topline milestone.<a class="cite" href="https://www.ernexatx.com/press-releases/ernexa-therapeutics-unveils-breakthrough-preclinical-results">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290643/0/en/Genelux-Corporation-Reports-First-Quarter-Financial-Results-and-Provides-Business-Updates.html">2</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">06 / 08</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Trial-record matrix</div>
+        <h2>Captured official records by program, setting, phase, enrollment, and status</h2>
+        <p>The table below uses only sponsor-reported ClinicalTrials.gov fields from records last updated May 8-12, 2026.<a class="cite" href="https://clinicaltrials.gov/study/NCT06161025">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05950464">8</a></p>
+      </div>
+      <div class="table">
+        <div class="row head">
+          <div class="cell">Program / sponsor</div>
+          <div class="cell">Setting captured in official title or overview</div>
+          <div class="cell">Phase</div>
+          <div class="cell">Enrollment</div>
+          <div class="cell">Status / date</div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>R-DXd / Daiichi Sankyo</strong><br />NCT06161025<a class="cite" href="https://clinicaltrials.gov/study/NCT06161025">3</a></div>
+          <div class="cell">Platinum-resistant high-grade ovarian, primary peritoneal, or fallopian tube cancer.<a class="cite" href="https://clinicaltrials.gov/study/NCT06161025">3</a></div>
+          <div class="cell">Phase 2 / Phase 3<a class="cite" href="https://clinicaltrials.gov/study/NCT06161025">3</a></div>
+          <div class="cell">860<a class="cite" href="https://clinicaltrials.gov/study/NCT06161025">3</a></div>
+          <div class="cell">Recruiting; last update posted May 12, 2026.<a class="cite" href="https://clinicaltrials.gov/study/NCT06161025">3</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>Mirvetuximab + carboplatin / AbbVie</strong><br />NCT06890338<a class="cite" href="https://clinicaltrials.gov/study/NCT06890338">4</a></div>
+          <div class="cell">Newly diagnosed FR-alpha-expressing advanced-stage serous epithelial ovarian, fallopian tube, or primary peritoneal cancer.<a class="cite" href="https://clinicaltrials.gov/study/NCT06890338">4</a></div>
+          <div class="cell">Phase 2<a class="cite" href="https://clinicaltrials.gov/study/NCT06890338">4</a></div>
+          <div class="cell">140<a class="cite" href="https://clinicaltrials.gov/study/NCT06890338">4</a></div>
+          <div class="cell">Recruiting; last update posted May 12, 2026.<a class="cite" href="https://clinicaltrials.gov/study/NCT06890338">4</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>INCB123667 / Incyte</strong><br />NCT07214779<a class="cite" href="https://clinicaltrials.gov/study/NCT07214779">5</a></div>
+          <div class="cell">Platinum-resistant ovarian cancer with Cyclin E1 overexpression.<a class="cite" href="https://clinicaltrials.gov/study/NCT07214779">5</a></div>
+          <div class="cell">Phase 3<a class="cite" href="https://clinicaltrials.gov/study/NCT07214779">5</a></div>
+          <div class="cell">466<a class="cite" href="https://clinicaltrials.gov/study/NCT07214779">5</a></div>
+          <div class="cell">Recruiting; last update posted May 8, 2026.<a class="cite" href="https://clinicaltrials.gov/study/NCT07214779">5</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>Sacituzumab tirumotecan / Merck</strong><br />NCT07318558<a class="cite" href="https://clinicaltrials.gov/study/NCT07318558">6</a></div>
+          <div class="cell">Maintenance with or without bevacizumab in newly diagnosed non-HRD-positive advanced ovarian cancer after first-line platinum-based chemotherapy.<a class="cite" href="https://clinicaltrials.gov/study/NCT07318558">6</a></div>
+          <div class="cell">Phase 3<a class="cite" href="https://clinicaltrials.gov/study/NCT07318558">6</a></div>
+          <div class="cell">900<a class="cite" href="https://clinicaltrials.gov/study/NCT07318558">6</a></div>
+          <div class="cell">Recruiting; last update posted May 8, 2026.<a class="cite" href="https://clinicaltrials.gov/study/NCT07318558">6</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>Sacituzumab tirumotecan / Merck</strong><br />NCT06824467<a class="cite" href="https://clinicaltrials.gov/study/NCT06824467">7</a></div>
+          <div class="cell">Maintenance with or without bevacizumab after second-line platinum-based doublet chemotherapy in platinum-sensitive recurrent ovarian cancer.<a class="cite" href="https://clinicaltrials.gov/study/NCT06824467">7</a></div>
+          <div class="cell">Phase 3<a class="cite" href="https://clinicaltrials.gov/study/NCT06824467">7</a></div>
+          <div class="cell">770<a class="cite" href="https://clinicaltrials.gov/study/NCT06824467">7</a></div>
+          <div class="cell">Recruiting; last update posted May 8, 2026.<a class="cite" href="https://clinicaltrials.gov/study/NCT06824467">7</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>M1774 + ZEN-3694 / NCI</strong><br />NCT05950464<a class="cite" href="https://clinicaltrials.gov/study/NCT05950464">8</a></div>
+          <div class="cell">Recurrent ovarian and endometrial cancers, including recurrent platinum-resistant ovarian carcinoma.<a class="cite" href="https://clinicaltrials.gov/study/NCT05950464">8</a></div>
+          <div class="cell">Phase 1<a class="cite" href="https://clinicaltrials.gov/study/NCT05950464">8</a></div>
+          <div class="cell">65<a class="cite" href="https://clinicaltrials.gov/study/NCT05950464">8</a></div>
+          <div class="cell">Recruiting; last update posted May 11, 2026.<a class="cite" href="https://clinicaltrials.gov/study/NCT05950464">8</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">07 / 08</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Sources and method</div>
+        <h2>Source set, date discipline, and evidence limitations</h2>
+        <p>This report uses primary company disclosures and official ClinicalTrials.gov records whose visible dates fall inside May 6-12, 2026; screenshots of publication dates and highlighted support text are bundled as a separate reference PDF.<a class="cite" href="https://www.ernexatx.com/press-releases/ernexa-therapeutics-unveils-breakthrough-preclinical-results">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05950464">8</a></p>
+      </div>
+      <div class="source-grid">
+        <div class="source-card" id="src-1"><strong>1. Ernexa Therapeutics press release</strong><p>May 6, 2026; ERNA-101 preclinical ovarian cancer model results with anti-PD-1 combination therapy.<a class="cite" href="https://www.ernexatx.com/press-releases/ernexa-therapeutics-unveils-breakthrough-preclinical-results">1</a></p></div>
+        <div class="source-card" id="src-2"><strong>2. Genelux business update</strong><p>May 7, 2026; OnPrime/GOG-3076 Olvi-Vec Phase 3 ovarian cancer topline timing expected in 2H26.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290643/0/en/Genelux-Corporation-Reports-First-Quarter-Financial-Results-and-Provides-Business-Updates.html">2</a></p></div>
+        <div class="source-card" id="src-3"><strong>3. NCT06161025</strong><p>Daiichi Sankyo R-DXd Phase 2/3; recruiting; last update posted May 12, 2026; estimated enrollment 860.<a class="cite" href="https://clinicaltrials.gov/study/NCT06161025">3</a></p></div>
+        <div class="source-card" id="src-4"><strong>4. NCT06890338</strong><p>AbbVie mirvetuximab soravtansine plus carboplatin Phase 2; recruiting; last update posted May 12, 2026; estimated enrollment 140.<a class="cite" href="https://clinicaltrials.gov/study/NCT06890338">4</a></p></div>
+        <div class="source-card" id="src-5"><strong>5. NCT07214779</strong><p>Incyte INCB123667 Phase 3 in platinum-resistant ovarian cancer with Cyclin E1 overexpression; recruiting; last update posted May 8, 2026.<a class="cite" href="https://clinicaltrials.gov/study/NCT07214779">5</a></p></div>
+        <div class="source-card" id="src-6"><strong>6. NCT07318558</strong><p>Merck sacituzumab tirumotecan front-line maintenance Phase 3; recruiting; last update posted May 8, 2026; estimated enrollment 900.<a class="cite" href="https://clinicaltrials.gov/study/NCT07318558">6</a></p></div>
+        <div class="source-card" id="src-7"><strong>7. NCT06824467</strong><p>Merck sacituzumab tirumotecan recurrent maintenance Phase 3; recruiting; last update posted May 8, 2026; estimated enrollment 770.<a class="cite" href="https://clinicaltrials.gov/study/NCT06824467">7</a></p></div>
+        <div class="source-card" id="src-8"><strong>8. NCT05950464</strong><p>NCI M1774 plus ZEN-3694 Phase 1 in recurrent ovarian and endometrial cancers; recruiting; last update posted May 11, 2026.<a class="cite" href="https://clinicaltrials.gov/study/NCT05950464">8</a></p></div>
+      </div>
+      <div class="callout dark" style="margin-top:16px;">
+        <h3>Limitation</h3>
+        <p>The findings are bounded by the captured seven-day source set and should be read as competitive-intelligence surveillance, not clinical guidance or a comprehensive ovarian cancer market landscape.<a class="cite" href="https://clinicaltrials.gov/study/NCT06161025">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06890338">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07214779">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07318558">6</a></p>
+      </div>
+    </div>
+    <div class="slide-num">08 / 08</div>
+  </article>
+</body>
+</html>

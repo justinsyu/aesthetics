@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NSCLC Competitive Intelligence Update</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 36px 0 20px;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 850;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 82px; line-height: .92; letter-spacing: 0; font-weight: 560; max-width: 1260px; }
+    h2 { font-size: 52px; line-height: .98; letter-spacing: 0; font-weight: 560; max-width: 1300px; }
+    h3 { font-size: 28px; line-height: 1.04; letter-spacing: 0; font-weight: 700; }
+    .dek { margin-top: 18px; color: var(--muted); font-size: 27px; line-height: 1.22; max-width: 1260px; }
+    .section-head { margin-bottom: 20px; }
+    .section-head p { margin-top: 12px; color: var(--muted); font-size: 23px; line-height: 1.22; max-width: 1280px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .panel, .metric, .card, .table, .callout {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.86);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel { padding: 24px; }
+    .panel.dark, .callout { background: #11130f; color: var(--paper); border-color: #11130f; }
+    .panel.dark p, .panel.dark li, .callout p, .callout li { color: rgba(246,241,232,.86); }
+    .metric { padding: 21px; min-height: 150px; }
+    .num { font-size: 50px; line-height: .92; font-weight: 850; letter-spacing: 0; }
+    .label { margin-top: 12px; font-size: 18px; line-height: 1.24; color: var(--muted); }
+    .card { padding: 22px; min-height: 216px; }
+    .card p { color: var(--muted); font-size: 18px; line-height: 1.24; margin-top: 11px; }
+    .compact .card { min-height: 172px; }
+    .compact .card p { font-size: 17px; line-height: 1.2; }
+    .card .tag { margin-bottom: 12px; }
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      white-space: nowrap;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .red { background: var(--red); }
+    .gray { background: var(--gray); }
+    .list { margin: 13px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+    .list li { position: relative; padding-left: 20px; color: var(--muted); font-size: 20px; line-height: 1.2; }
+    .list li::before { content: ""; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; border-radius: 50%; background: var(--lime); border: 1px solid var(--line); }
+    .table { display: grid; border-radius: 18px; }
+    .row { display: grid; grid-template-columns: .9fr 1.8fr .72fr 1.12fr; border-bottom: 1px solid var(--line); min-height: 74px; }
+    .row:last-child { border-bottom: 0; }
+    .cell { padding: 12px 13px; border-right: 1px solid var(--line); font-size: 16px; line-height: 1.18; }
+    .cell:last-child { border-right: 0; }
+    .head .cell { background: #11130f; color: var(--paper); font-weight: 850; text-transform: uppercase; font-size: 12px; }
+    .source-table .row { grid-template-columns: .42fr 1.42fr .66fr .88fr 1.8fr; min-height: 67px; }
+    .timeline { display: grid; gap: 10px; margin-top: 20px; }
+    .event { display: grid; grid-template-columns: 150px 260px 1fr; gap: 16px; align-items: stretch; }
+    .event > div { border: 1.4px solid var(--line); background: rgba(255,250,240,.88); padding: 15px 17px; min-height: 62px; }
+    .event .date { border-radius: 18px 0 0 18px; font-size: 24px; font-weight: 850; }
+    .event .source { font-size: 18px; font-weight: 800; color: var(--muted); }
+    .event .fact { border-radius: 0 18px 18px 0; font-size: 19px; line-height: 1.18; color: var(--muted); }
+    .callout { padding: 22px 26px; }
+    .callout h3 { font-size: 31px; }
+    .callout p { margin-top: 11px; font-size: 24px; line-height: 1.17; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .cite + .cite::before { content: ","; margin-right: 1px; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    .source-note { color: var(--muted); font-size: 15px; line-height: 1.22; margin-top: 11px; }
+    strong { color: var(--ink); }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .wrap { width: 1360px; }
+      .panel, .metric, .card, .table, .callout { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) {
+      .slide { width: 1600px; height: 900px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">NSCLC CI update | May 5-12, 2026 evidence window</div>
+      <h1>NSCLC competitive intelligence update</h1>
+      <p class="dek">This report includes primary-source company releases and ClinicalTrials.gov records with visible publication or last-update dates from May 5, 2026 through May 12, 2026.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287464/0/en/BioNTech-Announces-First-Quarter-2026-Financial-Results-and-Corporate-Update.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/06/3288745/0/en/pathos-ai-acquires-majority-stake-in-deuteroncology-to-advance-next-generation-met-inhibitor-identified-by-pathos-foundry-platform.html">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289874/0/en/black-diamond-therapeutics-reports-first-quarter-2026-financial-results-and-provides-corporate-update.html">3</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289800/0/en/Cullinan-Therapeutics-Provides-Corporate-Update-and-Reports-First-Quarter-2026-Financial-Results.html">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04746924">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06670196">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07431827">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06074588">8</a></p>
+      <div class="grid-4" style="margin-top:34px;">
+        <div class="metric"><div class="num">8</div><div class="label">Primary sources are cited in the report.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287464/0/en/BioNTech-Announces-First-Quarter-2026-Financial-Results-and-Corporate-Update.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/06/3288745/0/en/pathos-ai-acquires-majority-stake-in-deuteroncology-to-advance-next-generation-met-inhibitor-identified-by-pathos-foundry-platform.html">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289874/0/en/black-diamond-therapeutics-reports-first-quarter-2026-financial-results-and-provides-corporate-update.html">3</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289800/0/en/Cullinan-Therapeutics-Provides-Corporate-Update-and-Reports-First-Quarter-2026-Financial-Results.html">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04746924">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06670196">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07431827">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06074588">8</a></div></div>
+        <div class="metric"><div class="num">4</div><div class="label">Company releases displayed May 5-7 publication dates.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287464/0/en/BioNTech-Announces-First-Quarter-2026-Financial-Results-and-Corporate-Update.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/06/3288745/0/en/pathos-ai-acquires-majority-stake-in-deuteroncology-to-advance-next-generation-met-inhibitor-identified-by-pathos-foundry-platform.html">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289874/0/en/black-diamond-therapeutics-reports-first-quarter-2026-financial-results-and-provides-corporate-update.html">3</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289800/0/en/Cullinan-Therapeutics-Provides-Corporate-Update-and-Reports-First-Quarter-2026-Financial-Results.html">4</a></div></div>
+        <div class="metric"><div class="num">4</div><div class="label">ClinicalTrials.gov records displayed May 8-12 last-update dates.<a class="cite" href="https://clinicaltrials.gov/study/NCT04746924">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06670196">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07431827">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06074588">8</a></div></div>
+        <div class="metric"><div class="num">2</div><div class="label">Cited registry records displayed May 12, 2026 last-update dates.<a class="cite" href="https://clinicaltrials.gov/study/NCT04746924">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06074588">8</a></div></div>
+      </div>
+      <div class="callout" style="margin-top:24px;">
+        <h3>Factual scope</h3>
+        <p>Included facts are limited to source-visible statements captured in the saved screenshots; the report does not include forecasts, recommendations, or strategic advice.</p>
+      </div>
+    </div>
+    <div class="slide-num">01 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Company releases</div>
+        <h2>Four company releases documented NSCLC-relevant pipeline or regulatory facts<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287464/0/en/BioNTech-Announces-First-Quarter-2026-Financial-Results-and-Corporate-Update.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/06/3288745/0/en/pathos-ai-acquires-majority-stake-in-deuteroncology-to-advance-next-generation-met-inhibitor-identified-by-pathos-foundry-platform.html">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289874/0/en/black-diamond-therapeutics-reports-first-quarter-2026-financial-results-and-provides-corporate-update.html">3</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289800/0/en/Cullinan-Therapeutics-Provides-Corporate-Update-and-Reports-First-Quarter-2026-Financial-Results.html">4</a></h2>
+        <p>The source dates on this slide were visibly verified from open browser screenshots and ranged from May 5 through May 7, 2026.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287464/0/en/BioNTech-Announces-First-Quarter-2026-Financial-Results-and-Corporate-Update.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/06/3288745/0/en/pathos-ai-acquires-majority-stake-in-deuteroncology-to-advance-next-generation-met-inhibitor-identified-by-pathos-foundry-platform.html">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289874/0/en/black-diamond-therapeutics-reports-first-quarter-2026-financial-results-and-provides-corporate-update.html">3</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289800/0/en/Cullinan-Therapeutics-Provides-Corporate-Update-and-Reports-First-Quarter-2026-Financial-Results.html">4</a></p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <span class="tag lime">Stage III NSCLC</span>
+          <h3>BioNTech: ROSETTA Lung-201</h3>
+          <p>BioNTech stated that ROSETTA Lung-201, a global Phase 3 trial, is evaluating pumitamig versus durvalumab after concurrent chemoradiation in patients with unresectable stage III NSCLC.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287464/0/en/BioNTech-Announces-First-Quarter-2026-Financial-Results-and-Corporate-Update.html">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">MET-altered disease</span>
+          <h3>Pathos AI: DO-2</h3>
+          <p>Pathos AI reported that in a Phase 1 study of 28 patients, DO-2 demonstrated tumor shrinkage in all 10 evaluable MET exon 14 skipping NSCLC patients and a peripheral edema rate of 5%.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/06/3288745/0/en/pathos-ai-acquires-majority-stake-in-deuteroncology-to-advance-next-generation-met-inhibitor-identified-by-pathos-foundry-platform.html">2</a></p>
+        </div>
+        <div class="card">
+          <span class="tag orange">EGFR-mutant NSCLC</span>
+          <h3>Black Diamond: silevertinib</h3>
+          <p>Black Diamond stated that an oral presentation of silevertinib Phase 2 data in frontline EGFRm NSCLC, including preliminary DOR and PFS data, would occur at the 2026 ASCO Annual Meeting.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289874/0/en/black-diamond-therapeutics-reports-first-quarter-2026-financial-results-and-provides-corporate-update.html">3</a></p>
+        </div>
+        <div class="card">
+          <span class="tag pink">EGFR exon 20ins</span>
+          <h3>Cullinan: zipalertinib</h3>
+          <p>Cullinan stated that the zipalertinib NDA for relapsed EGFR exon 20 insertion NSCLC was accepted by FDA, with a PDUFA target action date of February 27, 2027.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289800/0/en/Cullinan-Therapeutics-Provides-Corporate-Update-and-Reports-First-Quarter-2026-Financial-Results.html">4</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">02 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">ClinicalTrials.gov records</div>
+        <h2>Four cited registry records displayed May 8-12 last-update dates<a class="cite" href="https://clinicaltrials.gov/study/NCT04746924">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06670196">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07431827">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06074588">8</a></h2>
+        <p>The registry facts below are limited to top-of-record fields visible in captured ClinicalTrials.gov screenshots.<a class="cite" href="https://clinicaltrials.gov/study/NCT04746924">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06670196">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07431827">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06074588">8</a></p>
+      </div>
+      <div class="table">
+        <div class="row head">
+          <div class="cell">Record and status</div>
+          <div class="cell">Source-visible record title or statement</div>
+          <div class="cell">Visible update</div>
+          <div class="cell">Sponsor field</div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT04746924</strong><br />Terminated<a class="cite" href="https://clinicaltrials.gov/study/NCT04746924">5</a></div>
+          <div class="cell">The record stated that termination was sponsor-conducted based on lack of efficacy and not driven by safety concerns.<a class="cite" href="https://clinicaltrials.gov/study/NCT04746924">5</a></div>
+          <div class="cell">2026-05-12<a class="cite" href="https://clinicaltrials.gov/study/NCT04746924">5</a></div>
+          <div class="cell">The sponsor field showed BeiGene, and the information-provider field showed BeOne Medicines (BeiGene).<a class="cite" href="https://clinicaltrials.gov/study/NCT04746924">5</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT06670196</strong><br />Recruiting<a class="cite" href="https://clinicaltrials.gov/study/NCT06670196">6</a></div>
+          <div class="cell">The record title described SKB264 plus osimertinib versus osimertinib in EGFR-mutated locally advanced or metastatic non-squamous NSCLC.<a class="cite" href="https://clinicaltrials.gov/study/NCT06670196">6</a></div>
+          <div class="cell">2026-05-08<a class="cite" href="https://clinicaltrials.gov/study/NCT06670196">6</a></div>
+          <div class="cell">The sponsor field showed Sichuan Kelun-Biotech Biopharmaceutical Co., Ltd.<a class="cite" href="https://clinicaltrials.gov/study/NCT06670196">6</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT07431827</strong><br />Recruiting<a class="cite" href="https://clinicaltrials.gov/study/NCT07431827">7</a></div>
+          <div class="cell">The record title described MK-3475A plus or minus calderasib in completely resected stage IIA-IIIB (N2) KRAS G12Cm NSCLC.<a class="cite" href="https://clinicaltrials.gov/study/NCT07431827">7</a></div>
+          <div class="cell">2026-05-11<a class="cite" href="https://clinicaltrials.gov/study/NCT07431827">7</a></div>
+          <div class="cell">The sponsor field showed Merck Sharp & Dohme LLC.<a class="cite" href="https://clinicaltrials.gov/study/NCT07431827">7</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT06074588</strong><br />Active, not recruiting<a class="cite" href="https://clinicaltrials.gov/study/NCT06074588">8</a></div>
+          <div class="cell">The record title described sacituzumab tirumotecan versus chemotherapy in previously treated advanced or metastatic nonsquamous NSCLC with EGFR mutations or other genomic alterations.<a class="cite" href="https://clinicaltrials.gov/study/NCT06074588">8</a></div>
+          <div class="cell">2026-05-12<a class="cite" href="https://clinicaltrials.gov/study/NCT06074588">8</a></div>
+          <div class="cell">The sponsor field showed Merck Sharp & Dohme LLC.<a class="cite" href="https://clinicaltrials.gov/study/NCT06074588">8</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">03 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Biomarker and setting map</div>
+        <h2>The cited items span stage III, MET, EGFR, KRAS, and TROP2-directed records<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287464/0/en/BioNTech-Announces-First-Quarter-2026-Financial-Results-and-Corporate-Update.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/06/3288745/0/en/pathos-ai-acquires-majority-stake-in-deuteroncology-to-advance-next-generation-met-inhibitor-identified-by-pathos-foundry-platform.html">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289874/0/en/black-diamond-therapeutics-reports-first-quarter-2026-financial-results-and-provides-corporate-update.html">3</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289800/0/en/Cullinan-Therapeutics-Provides-Corporate-Update-and-Reports-First-Quarter-2026-Financial-Results.html">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06670196">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07431827">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06074588">8</a></h2>
+        <p>Each card below uses the source-visible wording from the release or registry record, without adding conclusions about clinical or commercial effect.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287464/0/en/BioNTech-Announces-First-Quarter-2026-Financial-Results-and-Corporate-Update.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/06/3288745/0/en/pathos-ai-acquires-majority-stake-in-deuteroncology-to-advance-next-generation-met-inhibitor-identified-by-pathos-foundry-platform.html">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289874/0/en/black-diamond-therapeutics-reports-first-quarter-2026-financial-results-and-provides-corporate-update.html">3</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289800/0/en/Cullinan-Therapeutics-Provides-Corporate-Update-and-Reports-First-Quarter-2026-Financial-Results.html">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06670196">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07431827">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06074588">8</a></p>
+      </div>
+      <div class="grid-3 compact">
+        <div class="card">
+          <span class="tag lime">Stage III</span>
+          <h3>After chemoradiation</h3>
+          <p>ROSETTA Lung-201 evaluates pumitamig against durvalumab in unresectable stage III NSCLC after concurrent chemoradiation.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287464/0/en/BioNTech-Announces-First-Quarter-2026-Financial-Results-and-Corporate-Update.html">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">MET exon 14</span>
+          <h3>MET-altered NSCLC</h3>
+          <p>Pathos reported DO-2 tumor shrinkage in 10 of 10 evaluable MET exon 14 skipping NSCLC patients in a Phase 1 study.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/06/3288745/0/en/pathos-ai-acquires-majority-stake-in-deuteroncology-to-advance-next-generation-met-inhibitor-identified-by-pathos-foundry-platform.html">2</a></p>
+        </div>
+        <div class="card">
+          <span class="tag orange">EGFRm</span>
+          <h3>Frontline data event</h3>
+          <p>Black Diamond's release described a silevertinib Phase 2 frontline EGFRm NSCLC ASCO oral presentation including preliminary DOR and PFS data.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289874/0/en/black-diamond-therapeutics-reports-first-quarter-2026-financial-results-and-provides-corporate-update.html">3</a></p>
+        </div>
+        <div class="card">
+          <span class="tag pink">EGFR exon 20ins</span>
+          <h3>Relapsed disease</h3>
+          <p>Cullinan stated that FDA accepted zipalertinib's NDA for relapsed EGFR exon 20 insertion NSCLC.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289800/0/en/Cullinan-Therapeutics-Provides-Corporate-Update-and-Reports-First-Quarter-2026-Financial-Results.html">4</a></p>
+        </div>
+        <div class="card">
+          <span class="tag gray">KRAS G12C</span>
+          <h3>Resected stage II-IIIB</h3>
+          <p>NCT07431827 lists MK-3475A plus or minus calderasib in completely resected stage IIA-IIIB (N2) KRAS G12Cm NSCLC.<a class="cite" href="https://clinicaltrials.gov/study/NCT07431827">7</a></p>
+        </div>
+        <div class="card">
+          <span class="tag red">Advanced EGFR</span>
+          <h3>ADC-containing records</h3>
+          <p>NCT06670196 lists SKB264 plus osimertinib, and NCT06074588 lists sacituzumab tirumotecan versus chemotherapy in EGFR-mutated or genomically altered nonsquamous NSCLC settings.<a class="cite" href="https://clinicaltrials.gov/study/NCT06670196">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06074588">8</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">04 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Date-ordered evidence trail</div>
+        <h2>The cited source dates run from May 5 through May 12, 2026<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287464/0/en/BioNTech-Announces-First-Quarter-2026-Financial-Results-and-Corporate-Update.html">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06074588">8</a></h2>
+        <p>Company release publication dates and ClinicalTrials.gov last-update dates were visibly boxed in saved source screenshots.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287464/0/en/BioNTech-Announces-First-Quarter-2026-Financial-Results-and-Corporate-Update.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/06/3288745/0/en/pathos-ai-acquires-majority-stake-in-deuteroncology-to-advance-next-generation-met-inhibitor-identified-by-pathos-foundry-platform.html">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289874/0/en/black-diamond-therapeutics-reports-first-quarter-2026-financial-results-and-provides-corporate-update.html">3</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289800/0/en/Cullinan-Therapeutics-Provides-Corporate-Update-and-Reports-First-Quarter-2026-Financial-Results.html">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04746924">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06670196">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07431827">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06074588">8</a></p>
+      </div>
+      <div class="timeline">
+        <div class="event"><div class="date">May 05</div><div class="source">BioNTech</div><div class="fact">ROSETTA Lung-201 is being conducted to evaluate pumitamig versus durvalumab in unresectable stage III NSCLC after concurrent chemoradiation.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287464/0/en/BioNTech-Announces-First-Quarter-2026-Financial-Results-and-Corporate-Update.html">1</a></div></div>
+        <div class="event"><div class="date">May 06</div><div class="source">Pathos AI</div><div class="fact">The release reported Phase 1 DO-2 data in MET exon 14 skipping NSCLC patients.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/06/3288745/0/en/pathos-ai-acquires-majority-stake-in-deuteroncology-to-advance-next-generation-met-inhibitor-identified-by-pathos-foundry-platform.html">2</a></div></div>
+        <div class="event"><div class="date">May 07</div><div class="source">Black Diamond</div><div class="fact">The release stated that frontline EGFRm NSCLC silevertinib Phase 2 data would be presented orally at ASCO 2026.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289874/0/en/black-diamond-therapeutics-reports-first-quarter-2026-financial-results-and-provides-corporate-update.html">3</a></div></div>
+        <div class="event"><div class="date">May 07</div><div class="source">Cullinan</div><div class="fact">The release stated that zipalertinib's relapsed EGFR exon 20 insertion NSCLC NDA was accepted by FDA.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289800/0/en/Cullinan-Therapeutics-Provides-Corporate-Update-and-Reports-First-Quarter-2026-Financial-Results.html">4</a></div></div>
+        <div class="event"><div class="date">May 08</div><div class="source">ClinicalTrials.gov</div><div class="fact">NCT06670196 was listed as recruiting and described SKB264 plus osimertinib versus osimertinib in EGFR-mutated non-squamous NSCLC.<a class="cite" href="https://clinicaltrials.gov/study/NCT06670196">6</a></div></div>
+        <div class="event"><div class="date">May 11</div><div class="source">ClinicalTrials.gov</div><div class="fact">NCT07431827 was listed as recruiting and described MK-3475A plus or minus calderasib in KRAS G12Cm NSCLC.<a class="cite" href="https://clinicaltrials.gov/study/NCT07431827">7</a></div></div>
+        <div class="event"><div class="date">May 12</div><div class="source">ClinicalTrials.gov</div><div class="fact">NCT04746924 was listed as terminated, and NCT06074588 was listed as active, not recruiting.<a class="cite" href="https://clinicaltrials.gov/study/NCT04746924">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06074588">8</a></div></div>
+      </div>
+    </div>
+    <div class="slide-num">05 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Source register</div>
+        <h2>References used in the report<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287464/0/en/BioNTech-Announces-First-Quarter-2026-Financial-Results-and-Corporate-Update.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/06/3288745/0/en/pathos-ai-acquires-majority-stake-in-deuteroncology-to-advance-next-generation-met-inhibitor-identified-by-pathos-foundry-platform.html">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289874/0/en/black-diamond-therapeutics-reports-first-quarter-2026-financial-results-and-provides-corporate-update.html">3</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289800/0/en/Cullinan-Therapeutics-Provides-Corporate-Update-and-Reports-First-Quarter-2026-Financial-Results.html">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04746924">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06670196">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07431827">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06074588">8</a></h2>
+        <p>The visible source dates below were captured from the source webpages in Chrome and included in the separate labeled screenshots PDF.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287464/0/en/BioNTech-Announces-First-Quarter-2026-Financial-Results-and-Corporate-Update.html">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06074588">8</a></p>
+      </div>
+      <div class="table source-table">
+        <div class="row head">
+          <div class="cell">Ref</div>
+          <div class="cell">Source</div>
+          <div class="cell">Visible date</div>
+          <div class="cell">Type</div>
+          <div class="cell">Screenshot-supported fact used</div>
+        </div>
+        <div class="row">
+          <div class="cell">1</div>
+          <div class="cell">BioNTech Q1 2026 corporate update<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287464/0/en/BioNTech-Announces-First-Quarter-2026-Financial-Results-and-Corporate-Update.html">1</a></div>
+          <div class="cell">May 05, 2026<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287464/0/en/BioNTech-Announces-First-Quarter-2026-Financial-Results-and-Corporate-Update.html">1</a></div>
+          <div class="cell">Company release</div>
+          <div class="cell">ROSETTA Lung-201 evaluates pumitamig versus durvalumab after concurrent chemoradiation in unresectable stage III NSCLC.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287464/0/en/BioNTech-Announces-First-Quarter-2026-Financial-Results-and-Corporate-Update.html">1</a></div>
+        </div>
+        <div class="row">
+          <div class="cell">2</div>
+          <div class="cell">Pathos AI DeuterOncology release<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/06/3288745/0/en/pathos-ai-acquires-majority-stake-in-deuteroncology-to-advance-next-generation-met-inhibitor-identified-by-pathos-foundry-platform.html">2</a></div>
+          <div class="cell">May 06, 2026<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/06/3288745/0/en/pathos-ai-acquires-majority-stake-in-deuteroncology-to-advance-next-generation-met-inhibitor-identified-by-pathos-foundry-platform.html">2</a></div>
+          <div class="cell">Company release</div>
+          <div class="cell">DO-2 was reported to show tumor shrinkage in 10 of 10 evaluable MET exon 14 skipping NSCLC patients in Phase 1.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/06/3288745/0/en/pathos-ai-acquires-majority-stake-in-deuteroncology-to-advance-next-generation-met-inhibitor-identified-by-pathos-foundry-platform.html">2</a></div>
+        </div>
+        <div class="row">
+          <div class="cell">3</div>
+          <div class="cell">Black Diamond Q1 2026 update<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289874/0/en/black-diamond-therapeutics-reports-first-quarter-2026-financial-results-and-provides-corporate-update.html">3</a></div>
+          <div class="cell">May 07, 2026<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289874/0/en/black-diamond-therapeutics-reports-first-quarter-2026-financial-results-and-provides-corporate-update.html">3</a></div>
+          <div class="cell">Company release</div>
+          <div class="cell">Silevertinib Phase 2 frontline EGFRm NSCLC data were listed for oral presentation at ASCO 2026.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289874/0/en/black-diamond-therapeutics-reports-first-quarter-2026-financial-results-and-provides-corporate-update.html">3</a></div>
+        </div>
+        <div class="row">
+          <div class="cell">4</div>
+          <div class="cell">Cullinan Q1 2026 update<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289800/0/en/Cullinan-Therapeutics-Provides-Corporate-Update-and-Reports-First-Quarter-2026-Financial-Results.html">4</a></div>
+          <div class="cell">May 07, 2026<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289800/0/en/Cullinan-Therapeutics-Provides-Corporate-Update-and-Reports-First-Quarter-2026-Financial-Results.html">4</a></div>
+          <div class="cell">Company release</div>
+          <div class="cell">Zipalertinib NDA acceptance and the February 27, 2027 PDUFA target date were reported for relapsed EGFR exon 20ins NSCLC.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289800/0/en/Cullinan-Therapeutics-Provides-Corporate-Update-and-Reports-First-Quarter-2026-Financial-Results.html">4</a></div>
+        </div>
+        <div class="row">
+          <div class="cell">5-8</div>
+          <div class="cell">ClinicalTrials.gov registry records<a class="cite" href="https://clinicaltrials.gov/study/NCT04746924">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06670196">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07431827">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06074588">8</a></div>
+          <div class="cell">May 08-12, 2026<a class="cite" href="https://clinicaltrials.gov/study/NCT04746924">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06670196">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07431827">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06074588">8</a></div>
+          <div class="cell">Trial registry</div>
+          <div class="cell">The records showed terminated, recruiting, recruiting, and active-not-recruiting statuses for NCT04746924, NCT06670196, NCT07431827, and NCT06074588, respectively.<a class="cite" href="https://clinicaltrials.gov/study/NCT04746924">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06670196">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07431827">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06074588">8</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">06 / 06</div>
+  </article>
+</body>
+</html>

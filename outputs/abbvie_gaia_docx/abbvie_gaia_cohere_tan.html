@@ -1,0 +1,1467 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Automated Clinical Document Generation Platform for Pharmaceutical R&amp;D</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 26px;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+      scrollbar-width: none;
+    }
+
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar { display: none; }
+
+    body { line-height: 1.24; }
+
+    .slide {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: stretch;
+      background: var(--paper);
+      page-break-after: always;
+      break-after: page;
+    }
+
+    .slide:last-child {
+      page-break-after: auto;
+      break-after: auto;
+    }
+
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      width: min(1360px, calc(100vw - 48px));
+      height: 100%;
+      margin: 0 auto;
+      padding: 52px 0 42px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    h1,
+    h2,
+    h3,
+    p { margin: 0; }
+
+    h1 {
+      font-size: 82px;
+      line-height: .93;
+      font-weight: 560;
+      letter-spacing: 0;
+      max-width: 1240px;
+    }
+
+    h2 {
+      font-size: 56px;
+      line-height: .96;
+      font-weight: 560;
+      letter-spacing: 0;
+      max-width: 1180px;
+    }
+
+    h3 {
+      font-size: 24px;
+      line-height: 1.04;
+      font-weight: 850;
+      letter-spacing: 0;
+    }
+
+    .topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 13px;
+      line-height: 1;
+      color: var(--muted);
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      background: var(--lime);
+      color: var(--ink);
+      padding: 8px 13px 7px;
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      white-space: nowrap;
+    }
+
+    .slide-no { color: rgba(16, 18, 15, .48); }
+
+    .dek {
+      color: var(--muted);
+      font-size: 25px;
+      line-height: 1.23;
+      max-width: 1120px;
+      font-weight: 560;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.25;
+      font-weight: 620;
+    }
+
+    .tiny {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.24;
+      font-weight: 680;
+    }
+
+    .muted { color: var(--muted); }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .panel,
+    .card,
+    .metric-card {
+      border: 2px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 250, 240, .88);
+      box-shadow: var(--shadow);
+    }
+
+    .panel { padding: 24px; }
+    .card { padding: 20px; }
+
+    .dark {
+      background: #11130f;
+      color: var(--paper);
+      box-shadow: none;
+    }
+
+    .dark .small,
+    .dark .tiny,
+    .dark .muted { color: rgba(246, 241, 232, .72); }
+
+    .metric-card {
+      min-height: 136px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .metric {
+      font-size: 61px;
+      line-height: .88;
+      font-weight: 930;
+      letter-spacing: 0;
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.18;
+      font-weight: 680;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 44px;
+      min-height: 26px;
+      padding: 0 8px;
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      background: var(--blue);
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    .tag.lime { background: var(--lime); }
+    .tag.orange { background: var(--orange); }
+    .tag.pink { background: var(--pink); }
+    .tag.gray { background: var(--gray); }
+    .tag.red { background: var(--red); }
+
+    .title-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .title-row .dek { max-width: 690px; }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .pill-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      border: 1.6px solid var(--line);
+      border-radius: 999px;
+      background: var(--paper-2);
+      padding: 0 10px;
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      white-space: nowrap;
+    }
+
+    .pill:nth-child(2n) { background: var(--blue); }
+    .pill:nth-child(3n) { background: var(--orange); }
+    .pill:nth-child(4n) { background: var(--pink); }
+    .pill:nth-child(5n) { background: var(--lime); }
+
+    .hero-body {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 20px;
+      align-items: stretch;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .hero-note {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .big-callout {
+      font-size: 39px;
+      line-height: 1.02;
+      font-weight: 780;
+      letter-spacing: 0;
+    }
+
+    .note-band {
+      border: 2px solid var(--line);
+      border-radius: var(--radius);
+      background: #11130f;
+      color: var(--paper);
+      padding: 22px 24px;
+      font-size: 24px;
+      line-height: 1.18;
+      font-weight: 700;
+    }
+
+    .note-band span { color: var(--lime); }
+
+    .burden-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .burden-grid .metric-card { min-height: 154px; }
+
+    .logic-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .logic-item {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 12px;
+      align-items: start;
+      border: 1.6px solid rgba(16, 18, 15, .75);
+      border-radius: 18px;
+      background: rgba(255, 250, 240, .72);
+      padding: 14px;
+    }
+
+    .badge {
+      width: 42px;
+      height: 42px;
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: var(--lime);
+      font-size: 15px;
+      font-weight: 950;
+      line-height: 1;
+    }
+
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .step-card {
+      position: relative;
+      min-height: 372px;
+      padding: 24px 22px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      justify-content: flex-start;
+    }
+
+    .step-number {
+      width: 56px;
+      height: 56px;
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      background: var(--blue);
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 950;
+    }
+
+    .step-card:nth-child(1) .step-number { background: var(--lime); }
+    .step-card:nth-child(2) .step-number { background: var(--blue); }
+    .step-card:nth-child(3) .step-number { background: var(--orange); }
+    .step-card:nth-child(4) .step-number { background: var(--pink); }
+
+    .step-card h3 {
+      font-size: 32px;
+      line-height: .98;
+    }
+
+    .step-card .small {
+      font-size: 22px;
+      line-height: 1.16;
+      color: var(--ink);
+      font-weight: 720;
+    }
+
+    .step-foot {
+      margin-top: auto;
+      display: grid;
+      gap: 8px;
+    }
+
+    .step-foot div {
+      border: 1.5px solid rgba(16, 18, 15, .62);
+      border-radius: 12px;
+      background: rgba(235, 228, 214, .62);
+      padding: 8px 10px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.12;
+      font-weight: 760;
+    }
+
+    .ui-flow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .ui-card {
+      padding: 18px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 14px;
+      min-height: 466px;
+    }
+
+    .mock {
+      border: 2px solid var(--line);
+      border-radius: 14px;
+      background: var(--card);
+      min-height: 225px;
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: 38px 1fr;
+    }
+
+    .mock-top {
+      border-bottom: 2px solid var(--line);
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 12px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .mock-body {
+      padding: 16px;
+      display: grid;
+      gap: 10px;
+      align-content: start;
+    }
+
+    .mock-line {
+      height: 18px;
+      border: 1.5px solid var(--line);
+      border-radius: 999px;
+      background: var(--paper-2);
+    }
+
+    .mock-line.short { width: 56%; }
+    .mock-line.mid { width: 74%; }
+    .mock-line.blue { background: var(--blue); }
+    .mock-line.lime { background: var(--lime); }
+    .mock-line.pink { background: var(--pink); }
+
+    .blocks-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 13px 16px;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .block-card {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 14px;
+      align-items: start;
+      min-height: 122px;
+      padding: 16px;
+    }
+
+    .block-card .badge {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+    }
+
+    .block-card ul,
+    .lesson-card ul {
+      margin: 8px 0 0 18px;
+      padding: 0;
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.17;
+      font-weight: 620;
+    }
+
+    .block-card li,
+    .lesson-card li { margin: 0 0 3px; }
+
+    .arch {
+      display: grid;
+      grid-template-columns: 145px 1.08fr 1.08fr 1.08fr .95fr;
+      gap: 14px;
+      align-items: stretch;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .arch-col {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-height: 0;
+    }
+
+    .arch-box {
+      border: 2px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255, 250, 240, .88);
+      padding: 13px;
+      min-height: 0;
+    }
+
+    .arch-box.dark {
+      background: #11130f;
+      color: var(--paper);
+    }
+
+    .arch-box h3 {
+      font-size: 18px;
+      margin-bottom: 9px;
+    }
+
+    .stack-list {
+      display: grid;
+      gap: 7px;
+    }
+
+    .stack-item {
+      border: 1.6px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper-2);
+      padding: 6px 8px;
+      font-size: 12.2px;
+      line-height: 1.05;
+      font-weight: 780;
+      text-align: center;
+    }
+
+    .dark .stack-item {
+      border-color: rgba(246, 241, 232, .76);
+      background: rgba(246, 241, 232, .09);
+      color: var(--paper);
+    }
+
+    .connector {
+      display: grid;
+      place-items: center;
+      min-height: 34px;
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    .growth-layout {
+      display: grid;
+      grid-template-columns: .7fr 1.3fr;
+      gap: 18px;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .roadmap-metrics {
+      display: grid;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .roadmap-metric {
+      border: 1.6px solid rgba(246, 241, 232, .72);
+      border-radius: 18px;
+      padding: 13px 14px;
+      background: rgba(246, 241, 232, .06);
+    }
+
+    .roadmap-metric strong {
+      display: block;
+      color: var(--lime);
+      font-size: 28px;
+      line-height: .95;
+      font-weight: 930;
+      margin-bottom: 5px;
+    }
+
+    .growth-list {
+      display: grid;
+      gap: 11px;
+      min-height: 0;
+    }
+
+    .growth-item {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 16px;
+      border: 2px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 250, 240, .88);
+      min-height: 74px;
+    }
+
+    .growth-item .badge {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      background: var(--blue);
+    }
+
+    .growth-item:nth-child(2) .badge { background: var(--lime); }
+    .growth-item:nth-child(3) .badge { background: var(--orange); }
+    .growth-item:nth-child(4) .badge { background: var(--pink); }
+    .growth-item:nth-child(5) .badge { background: var(--gray); }
+    .growth-item:nth-child(6) .badge { background: var(--red); }
+
+    .lesson-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 13px 16px;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .lesson-card {
+      min-height: 132px;
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 15px;
+    }
+
+    .lesson-card .badge {
+      width: 46px;
+      height: 46px;
+      background: var(--blue);
+      border-radius: 14px;
+    }
+
+    .lesson-card h3 {
+      font-size: 21px;
+      line-height: 1.02;
+    }
+
+    .lesson-card .small {
+      margin-top: 7px;
+      font-size: 13.7px;
+      line-height: 1.18;
+      font-weight: 620;
+    }
+
+    .assessment-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .assessment-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .assessment-item {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 12px;
+      align-items: start;
+      border-top: 1.6px solid rgba(16, 18, 15, .22);
+      padding-top: 12px;
+    }
+
+    .assessment-item:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .assessment-item .badge {
+      width: 34px;
+      height: 34px;
+      font-size: 13px;
+    }
+
+    .footer {
+      position: absolute;
+      z-index: 2;
+      left: 50%;
+      bottom: 19px;
+      transform: translateX(-50%);
+      width: min(1360px, calc(100vw - 48px));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      color: rgba(16, 18, 15, .44);
+      font-size: 10.5px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    .accent-line {
+      height: 11px;
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      overflow: hidden;
+      display: flex;
+      margin-top: 14px;
+    }
+
+    .accent-line span:nth-child(1) { width: 30%; background: var(--lime); }
+    .accent-line span:nth-child(2) { width: 26%; background: var(--blue); }
+    .accent-line span:nth-child(3) { width: 22%; background: var(--orange); }
+    .accent-line span:nth-child(4) { width: 22%; background: var(--pink); }
+
+    @page {
+      size: 1600px 900px;
+      margin: 0;
+    }
+
+    @media print {
+      html,
+      body {
+        width: 1600px;
+        height: 900px;
+      }
+
+      .slide {
+        width: 1600px;
+        height: 900px;
+        min-height: 900px;
+      }
+
+      .wrap,
+      .footer {
+        width: 1360px;
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+      .wrap { width: calc(100vw - 28px); padding-top: 32px; }
+      h1 { font-size: 48px; }
+      h2 { font-size: 38px; }
+      .dek { font-size: 19px; }
+      .hero-body,
+      .burden-grid,
+      .growth-layout,
+      .assessment-grid,
+      .arch,
+      .workflow,
+      .ui-flow,
+      .blocks-grid,
+      .lesson-grid,
+      .metric-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="topline">
+        <span class="eyebrow">AbbVie GAIA case study</span>
+        <span class="slide-no">01 / 09</span>
+      </div>
+      <div class="hero-body">
+        <div class="hero-note">
+          <div>
+            <h1>Automated clinical document generation for pharmaceutical R&amp;D</h1>
+            <p class="dek" style="margin-top: 22px;">GAIA reframes clinical document creation as an enterprise platform problem: connect approved data, reusable prompts, orchestration logic, and human review to produce first drafts at scale.</p>
+          </div>
+          <div class="note-band"><span>Core readout:</span> the operating model is not "AI writes the document." It is a controlled first-draft factory for regulated teams.</div>
+        </div>
+        <div class="panel">
+          <h3>Scale signals</h3>
+          <div class="metric-grid">
+            <div class="metric-card">
+              <div class="metric">26</div>
+              <div class="metric-label">document types automated by the end of 2024</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric">20K</div>
+              <div class="metric-label">annual hours saved across automated workflows</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric">90+</div>
+              <div class="metric-label">data sources integrated through the platform</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric">350+</div>
+              <div class="metric-label">document types targeted by 2030</div>
+            </div>
+          </div>
+          <div class="accent-line"><span></span><span></span><span></span><span></span></div>
+          <p class="small" style="margin-top: 18px;">AbbVie positioned GAIA as a reusable document generation platform for R&amp;D, not a single automation for a CSR or one regulatory template.</p>
+          <div class="pill-grid" aria-label="Document families">
+            <span class="pill">CSR</span>
+            <span class="pill">PSUR</span>
+            <span class="pill">NDA annual reports</span>
+            <span class="pill">EUCTR</span>
+            <span class="pill">SSL</span>
+            <span class="pill">ICF</span>
+            <span class="pill">ISF</span>
+          </div>
+          <div class="logic-list" style="margin-top: 22px;">
+            <div class="logic-item">
+              <div class="badge">A</div>
+              <div>
+                <h3>Time to first draft</h3>
+                <p class="small">The platform focuses on the longest manual step in the creation cycle while preserving expert review.</p>
+              </div>
+            </div>
+            <div class="logic-item">
+              <div class="badge">B</div>
+              <div>
+                <h3>Reusable enterprise assets</h3>
+                <p class="small">Prompts, templates, feature services, and data connections become shared components across document types.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><span>Automated clinical document generation</span><span>AbbVie GAIA | 2025</span></div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="topline">
+        <span class="eyebrow">Platform rationale</span>
+        <span class="slide-no">02 / 09</span>
+      </div>
+      <div class="title-row">
+        <div>
+          <h2>Why the documentation problem needs a platform</h2>
+          <p class="dek" style="margin-top: 14px;">Clinical and regulatory authoring is a repeatable orchestration challenge: complex templates, regulated workflows, multiple source systems, and large volumes of structured content.</p>
+        </div>
+      </div>
+      <div class="burden-grid">
+        <div class="panel">
+          <h3>Documentation burden</h3>
+          <div class="grid cols-2" style="margin-top: 16px;">
+            <div class="metric-card">
+              <div class="metric">87</div>
+              <div class="metric-label">documents can be required during clinical study startup</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric">100s</div>
+              <div class="metric-label">of document types appear across the R&amp;D lifecycle</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric">65%+</div>
+              <div class="metric-label">involve multiple source systems or inputs</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric">72%+</div>
+              <div class="metric-label">include tables, figures, charts, or data blocks</div>
+            </div>
+          </div>
+        </div>
+        <div class="panel dark">
+          <h3>Why point solutions break down</h3>
+          <div class="logic-list">
+            <div class="logic-item">
+              <div class="badge">1</div>
+              <div>
+                <h3>Document types share infrastructure</h3>
+                <p class="small">Reusable orchestration, prompt, data, and rendering components make the next document cheaper to automate.</p>
+              </div>
+            </div>
+            <div class="logic-item">
+              <div class="badge">2</div>
+              <div>
+                <h3>Approved data changes continuously</h3>
+                <p class="small">GAIA pulls current data through integration layers instead of becoming another document repository.</p>
+              </div>
+            </div>
+            <div class="logic-item">
+              <div class="badge">3</div>
+              <div>
+                <h3>Human judgment remains central</h3>
+                <p class="small">The target is time to first draft. Medical writers and domain experts still review content, style, formatting, and final use.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><span>Platform rationale</span><span>02 / 09</span></div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="topline">
+        <span class="eyebrow">First-draft automation</span>
+        <span class="slide-no">03 / 09</span>
+      </div>
+      <div>
+        <h2>How GAIA delivers first-draft automation</h2>
+        <p class="dek" style="margin-top: 14px;">The source process decomposes document generation into setup, data retrieval, AI-assisted transformation, and draft compilation.</p>
+      </div>
+      <div class="workflow">
+        <div class="panel step-card">
+          <div class="step-number">1</div>
+          <h3>Setup</h3>
+          <p class="small">Document type and scope are defined to initiate generation.</p>
+          <div class="step-foot">
+            <div>Control: document type, scope, and initiation trigger</div>
+            <div>Output: generation request with boundaries</div>
+          </div>
+        </div>
+        <div class="panel step-card">
+          <div class="step-number">2</div>
+          <h3>Ingestion</h3>
+          <p class="small">Data is automatically retrieved and organized from approved sources.</p>
+          <div class="step-foot">
+            <div>Control: approved source systems and access rights</div>
+            <div>Output: normalized evidence inputs</div>
+          </div>
+        </div>
+        <div class="panel step-card">
+          <div class="step-number">3</div>
+          <h3>Transformation</h3>
+          <p class="small">AI interprets data and applies business logic to create draft-ready content.</p>
+          <div class="step-foot">
+            <div>Control: section rules, prompts, and context</div>
+            <div>Output: draft-ready narrative and data blocks</div>
+          </div>
+        </div>
+        <div class="panel step-card">
+          <div class="step-number">4</div>
+          <h3>Generation</h3>
+          <p class="small">Drafts are compiled and provided for download, review, and refinement through existing workflows.</p>
+          <div class="step-foot">
+            <div>Control: template, rendering, and review path</div>
+            <div>Output: first draft package for human review</div>
+          </div>
+        </div>
+      </div>
+      <div class="note-band">Commentary: this is strongest when each section has explicit business rules, approved inputs, acceptance criteria, and a named human owner.</div>
+    </div>
+    <div class="footer"><span>First-draft automation</span><span>03 / 09</span></div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="topline">
+        <span class="eyebrow">Authoring flow</span>
+        <span class="slide-no">04 / 09</span>
+      </div>
+      <div>
+        <h2>GAIA transforms document authoring into a guided workflow</h2>
+        <p class="dek" style="margin-top: 14px;">The user experience mirrors the visible source slides: select the document, specify parameters, then download an AbbVie-specific draft for review.</p>
+      </div>
+      <div class="ui-flow">
+        <div class="panel ui-card">
+          <div class="topline" style="letter-spacing: 0; text-transform: none; font-size: 17px;">
+            <span class="tag lime">1</span>
+            <h3>Document selection</h3>
+          </div>
+          <div class="mock">
+            <div class="mock-top"><span>GAIA</span><span>New PSUR document</span></div>
+            <div class="mock-body">
+              <div class="mock-line lime mid"></div>
+              <div class="mock-line"></div>
+              <div class="mock-line short"></div>
+              <div class="mock-line blue mid"></div>
+            </div>
+          </div>
+          <p class="small">Users select from a library of possible clinical documents, with role-based access to the documents they are authorized to create.</p>
+        </div>
+        <div class="panel ui-card">
+          <div class="topline" style="letter-spacing: 0; text-transform: none; font-size: 17px;">
+            <span class="tag blue">2</span>
+            <h3>User prompts</h3>
+          </div>
+          <div class="mock">
+            <div class="mock-top"><span>GAIA</span><span>Sections to generate</span></div>
+            <div class="mock-body">
+              <div class="mock-line pink"></div>
+              <div class="mock-line mid"></div>
+              <div class="mock-line blue"></div>
+              <div class="mock-line short"></div>
+              <div class="mock-line lime mid"></div>
+            </div>
+          </div>
+          <p class="small">An intuitive prompt-based interface captures the document parameters, sections, and business context needed for generation.</p>
+        </div>
+        <div class="panel ui-card">
+          <div class="topline" style="letter-spacing: 0; text-transform: none; font-size: 17px;">
+            <span class="tag orange">3</span>
+            <h3>Document generation</h3>
+          </div>
+          <div class="mock">
+            <div class="mock-top"><span>GAIA</span><span>Download document</span></div>
+            <div class="mock-body">
+              <div class="mock-line short"></div>
+              <div class="mock-line mid"></div>
+              <div class="mock-line"></div>
+              <div class="mock-line blue short"></div>
+              <div class="mock-line lime"></div>
+            </div>
+          </div>
+          <p class="small">GenAI-generated text, tables, figures, and templates are compiled into AbbVie-specific drafts for downstream review.</p>
+        </div>
+      </div>
+      <div class="panel dark" style="padding: 18px 22px;">
+        <p class="small">Human-in-the-loop is a design constraint, not an afterthought: all AI-generated content goes through expert review before use.</p>
+      </div>
+    </div>
+    <div class="footer"><span>Authoring flow</span><span>04 / 09</span></div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="topline">
+        <span class="eyebrow">Reusable components</span>
+        <span class="slide-no">05 / 09</span>
+      </div>
+      <div>
+        <h2>Key building blocks of GAIA</h2>
+        <p class="dek" style="margin-top: 14px;">The architecture uses a modular "Lego block" model so document automation can expand without rebuilding the platform for every use case.</p>
+      </div>
+      <div class="blocks-grid">
+        <div class="panel block-card">
+          <div class="badge">UI</div>
+          <div>
+            <h3>User interface layer</h3>
+            <ul>
+              <li>Role-based security provides access to appropriate documents</li>
+              <li>Supports in-browser rendering and downloads</li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel block-card">
+          <div class="badge">API</div>
+          <div>
+            <h3>Integration layer</h3>
+            <ul>
+              <li>API hub supports secure integration with upstream and downstream systems</li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel block-card">
+          <div class="badge">ORC</div>
+          <div>
+            <h3>Document orchestrator</h3>
+            <ul>
+              <li>Core component configured for every document type</li>
+              <li>Supports full, partial, and package generation</li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel block-card">
+          <div class="badge">CAT</div>
+          <div>
+            <h3>Feature catalog</h3>
+            <ul>
+              <li>Reusable tools for extraction, data manipulation, document building, and table creation</li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel block-card">
+          <div class="badge">PMT</div>
+          <div>
+            <h3>Prompt library</h3>
+            <ul>
+              <li>Centralized prompts stored by document and section</li>
+              <li>Built for reuse as new document types are added</li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel block-card">
+          <div class="badge">LLM</div>
+          <div>
+            <h3>LLM router and garden</h3>
+            <ul>
+              <li>Access to cloud-hosted and privately-hosted LLMs</li>
+              <li>Central tracking of pricing and token usage</li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel block-card">
+          <div class="badge">AWS</div>
+          <div>
+            <h3>AWS serverless infrastructure</h3>
+            <ul>
+              <li>Native serverless infrastructure supports availability and autoscaling</li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel block-card">
+          <div class="badge">AGT</div>
+          <div>
+            <h3>Agentic catalog</h3>
+            <ul>
+              <li>Agent and MCP tools simplify the design and development required to add documents</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><span>Reusable components</span><span>05 / 09</span></div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="topline">
+        <span class="eyebrow">Architecture pattern</span>
+        <span class="slide-no">06 / 09</span>
+      </div>
+      <div class="title-row">
+        <div>
+          <h2>GAIA platform architecture in one view</h2>
+          <p class="dek" style="margin-top: 14px;">The visual source slide shows a deterministic orchestrator coordinating UI services, stores, feature services, agentic components, and external systems.</p>
+        </div>
+      </div>
+      <div class="arch">
+        <div class="arch-col">
+          <div class="arch-box dark" style="min-height: 164px;">
+            <h3>User</h3>
+            <p class="small">Authorized R&amp;D user initiates, monitors, reviews, and downloads document output.</p>
+          </div>
+          <div class="connector">to</div>
+          <div class="arch-box">
+            <h3>Legend</h3>
+            <div class="stack-list">
+              <div class="stack-item" style="background: var(--pink);">UI</div>
+              <div class="stack-item" style="background: var(--blue);">Services</div>
+              <div class="stack-item" style="background: var(--lime);">Agents</div>
+              <div class="stack-item" style="background: var(--orange);">Config</div>
+            </div>
+          </div>
+        </div>
+        <div class="arch-col">
+          <div class="arch-box">
+            <h3>React UI and UI Lambdas</h3>
+            <div class="stack-list">
+              <div class="stack-item">User login</div>
+              <div class="stack-item">Select document</div>
+              <div class="stack-item">Select document options</div>
+              <div class="stack-item">Upload documents</div>
+              <div class="stack-item">Generate documents</div>
+              <div class="stack-item">Return document status</div>
+              <div class="stack-item">Download document</div>
+              <div class="stack-item">Render or regenerate</div>
+            </div>
+          </div>
+          <div class="arch-box dark">
+            <h3>Bedrock AgentCore runtime</h3>
+            <div class="stack-list">
+              <div class="stack-item">Orchestrator agent</div>
+            </div>
+          </div>
+        </div>
+        <div class="arch-col">
+          <div class="arch-box dark">
+            <h3>"Deterministic" orchestrator</h3>
+            <p class="tiny">Defines document-specific operation order and calls the required services.</p>
+          </div>
+          <div class="arch-box">
+            <h3>Stores, configuration, and libraries</h3>
+            <div class="stack-list">
+              <div class="stack-item">Orchestrator store</div>
+              <div class="stack-item">Template library</div>
+              <div class="stack-item">Feature configuration store</div>
+            </div>
+          </div>
+          <div class="arch-box">
+            <h3>Transient storage</h3>
+            <div class="stack-list">
+              <div class="stack-item">Interim documents</div>
+              <div class="stack-item">Final documents</div>
+              <div class="stack-item">Uploaded files</div>
+            </div>
+          </div>
+        </div>
+        <div class="arch-col">
+          <div class="arch-box">
+            <h3>Feature catalog services</h3>
+            <div class="stack-list">
+              <div class="stack-item">SQL service</div>
+              <div class="stack-item">API service</div>
+              <div class="stack-item">S3 service</div>
+              <div class="stack-item">SharePoint service</div>
+              <div class="stack-item">Pandas service</div>
+              <div class="stack-item">Extraction service</div>
+              <div class="stack-item">LLM router</div>
+              <div class="stack-item">Prompt library wrapper</div>
+              <div class="stack-item">Document builder</div>
+            </div>
+          </div>
+          <div class="arch-box dark">
+            <h3>MCP server and reporting</h3>
+            <div class="stack-list">
+              <div class="stack-item">Data integration</div>
+              <div class="stack-item">Quality checker</div>
+              <div class="stack-item">Entity extraction</div>
+              <div class="stack-item">Generation status</div>
+            </div>
+          </div>
+        </div>
+        <div class="arch-col">
+          <div class="arch-box dark" style="flex: 1;">
+            <h3>External systems</h3>
+            <div class="stack-list">
+              <div class="stack-item">Document repository</div>
+              <div class="stack-item">Literature</div>
+              <div class="stack-item">Product MDM</div>
+              <div class="stack-item">Data lake</div>
+              <div class="stack-item">Regulatory information</div>
+              <div class="stack-item">Management system</div>
+              <div class="stack-item">LLM garden</div>
+              <div class="stack-item">Prompt library</div>
+            </div>
+          </div>
+          <div class="panel" style="padding: 13px;">
+            <p class="tiny">Commentary: separating transient generation from systems of record reduces repository sprawl and keeps governed source systems authoritative.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><span>Architecture pattern</span><span>06 / 09</span></div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="topline">
+        <span class="eyebrow">Growth roadmap</span>
+        <span class="slide-no">07 / 09</span>
+      </div>
+      <div class="growth-layout">
+        <div class="panel dark" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <h2 style="font-size: 52px;">What unlocks additional growth</h2>
+            <p class="small" style="margin-top: 18px;">The next phase is less about larger prompts and more about context engineering, feedback loops, enterprise reuse, and event-driven generation.</p>
+            <div class="roadmap-metrics">
+              <div class="roadmap-metric">
+                <strong>26 to 350+</strong>
+                <p class="tiny">document-type expansion depends on reusable components and document-by-document decomposition</p>
+              </div>
+              <div class="roadmap-metric">
+                <strong>20K to 115K+</strong>
+                <p class="tiny">annual hour savings target scales only if quality, adoption, and review burden stay controlled</p>
+              </div>
+              <div class="roadmap-metric">
+                <strong>UI to headless</strong>
+                <p class="tiny">scheduled and event-triggered generation moves the platform beyond interactive authoring</p>
+              </div>
+            </div>
+          </div>
+          <div class="metric-card" style="background: var(--lime); box-shadow: none;">
+            <div class="metric" style="color: var(--ink);">70-80%</div>
+            <div class="metric-label" style="color: var(--ink);">reported quality plateau when relying on LLMs alone</div>
+          </div>
+        </div>
+        <div class="growth-list">
+          <div class="growth-item">
+            <div class="badge">1</div>
+            <h3>Adding agents and tools to accelerate document design and platform development</h3>
+          </div>
+          <div class="growth-item">
+            <div class="badge">2</div>
+            <h3>Using context engineering with vector and graph databases to include deeper insights</h3>
+          </div>
+          <div class="growth-item">
+            <div class="badge">3</div>
+            <h3>Designing a self-learning platform informed by human feedback</h3>
+          </div>
+          <div class="growth-item">
+            <div class="badge">4</div>
+            <h3>Enabling enterprise-wide utilization beyond the original R&amp;D seed use cases</h3>
+          </div>
+          <div class="growth-item">
+            <div class="badge">5</div>
+            <h3>Integrating 90+ data sources to support headless generation and external triggers</h3>
+          </div>
+          <div class="growth-item">
+            <div class="badge">6</div>
+            <h3>Investigating domain-specific language models for smarter context-aware automation</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><span>Growth roadmap</span><span>07 / 09</span></div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="topline">
+        <span class="eyebrow">Operating lessons</span>
+        <span class="slide-no">08 / 09</span>
+      </div>
+      <div>
+        <h2>What the team learned on the journey</h2>
+        <p class="dek" style="margin-top: 14px;">The source material emphasizes that implementation risk is as much organizational as technical.</p>
+      </div>
+      <div class="lesson-grid">
+        <div class="panel lesson-card">
+          <div class="badge">CM</div>
+          <div>
+            <h3>Organizational change management</h3>
+            <p class="small">AI solutions require new ways of working. Change management helps prepare the business, addresses job-security concerns, and teaches teams how to prompt, review, and trust responsibly.</p>
+          </div>
+        </div>
+        <div class="panel lesson-card">
+          <div class="badge">NW</div>
+          <div>
+            <h3>Everyone works in the new</h3>
+            <p class="small">Agents and automation can accelerate PMO work, SLC documentation, testing, and writing code or prompts. The delivery model itself becomes part of the transformation.</p>
+          </div>
+        </div>
+        <div class="panel lesson-card">
+          <div class="badge">VR</div>
+          <div>
+            <h3>Value realization strategy</h3>
+            <p class="small">Stakeholders need clarity on baseline assumptions, relevant KPIs, and how results will be measured, including time trials, automatable share, achieved automation, and residual review effort.</p>
+          </div>
+        </div>
+        <div class="panel lesson-card">
+          <div class="badge">BP</div>
+          <div>
+            <h3>Business participation in development</h3>
+            <p class="small">Development teams need medical writers who can provide fast feedback. Frequent demos prevent black-box delivery, and prompt tuning requires technical expertise plus business participation.</p>
+          </div>
+        </div>
+        <div class="panel lesson-card">
+          <div class="badge">TM</div>
+          <div>
+            <h3>Establish a team that's done this before</h3>
+            <p class="small">The learning curve is real. AbbVie stacked the project with industry, data, AI/GenAI, and quality compliance experience so implicit writing knowledge could become executable design.</p>
+          </div>
+        </div>
+        <div class="panel lesson-card">
+          <div class="badge">QA</div>
+          <div>
+            <h3>Define accuracy, writing style, and formatting early</h3>
+            <p class="small">Generated outputs are variable. Teams need acceptance criteria for accuracy, writing style, and formatting before they can test outputs against the right expectations.</p>
+          </div>
+        </div>
+      </div>
+      <div class="note-band">Commentary: the hardest reusable asset may be the operating discipline around quality, review, and value measurement.</div>
+    </div>
+    <div class="footer"><span>Operating lessons</span><span>08 / 09</span></div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="topline">
+        <span class="eyebrow">Balanced interpretation</span>
+        <span class="slide-no">09 / 09</span>
+      </div>
+      <div>
+        <h2>What looks durable, and what still needs proof</h2>
+        <p class="dek" style="margin-top: 14px;">GAIA reads as a mature LLMOps implementation, but the strongest interpretation is disciplined augmentation rather than end-to-end autonomous regulatory authoring.</p>
+      </div>
+      <div class="assessment-grid">
+        <div class="panel">
+          <h3>What looks durable</h3>
+          <div class="assessment-list">
+            <div class="assessment-item">
+              <div class="badge">1</div>
+              <div>
+                <h3>Platform-first architecture</h3>
+                <p class="small">Reusable components make the 27th document type easier than the first.</p>
+              </div>
+            </div>
+            <div class="assessment-item">
+              <div class="badge">2</div>
+              <div>
+                <h3>Human-in-the-loop governance</h3>
+                <p class="small">The workflow acknowledges current validation limits while preserving near-term productivity gains.</p>
+              </div>
+            </div>
+            <div class="assessment-item">
+              <div class="badge">3</div>
+              <div>
+                <h3>Multi-model and live data access</h3>
+                <p class="small">The LLM router, prompt library, and API hub reduce lock-in and keep master data in authoritative systems.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel dark">
+          <h3>What still needs monitoring</h3>
+          <div class="assessment-list">
+            <div class="assessment-item">
+              <div class="badge">A</div>
+              <div>
+                <h3>GXP-ready is not GXP-validated</h3>
+                <p class="small">Regulated use still depends on review, controls, and acceptance criteria that can survive audit scrutiny.</p>
+              </div>
+            </div>
+            <div class="assessment-item">
+              <div class="badge">B</div>
+              <div>
+                <h3>2030 savings remain aspirational</h3>
+                <p class="small">The 115K+ annual hour target depends on adoption, quality, and how much human effort remains after first draft.</p>
+              </div>
+            </div>
+            <div class="assessment-item">
+              <div class="badge">C</div>
+              <div>
+                <h3>The final quality gap may be hard</h3>
+                <p class="small">The last 20-30% of document quality may require deeper context, structured evaluation, and workflow-specific tuning.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="note-band">Bottom line: GAIA is most compelling as an operating model for regulated GenAI - modular automation, live governed data, explicit quality gates, and business-owned review.</div>
+    </div>
+    <div class="footer"><span>Balanced interpretation</span><span>09 / 09</span></div>
+  </article>
+</body>
+</html>

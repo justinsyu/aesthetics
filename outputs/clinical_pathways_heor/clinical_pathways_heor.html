@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HEOR Unlocks Clinical Pathway Adoption</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 26px;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.22;
+      scrollbar-width: none;
+    }
+
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar { display: none; }
+
+    body {
+      display: grid;
+      place-items: start center;
+    }
+
+    .slide {
+      width: 1600px;
+      height: 1100px;
+      position: relative;
+      overflow: hidden;
+      padding: 48px 54px 46px;
+      background:
+        radial-gradient(circle at 10% 8%, rgba(215,255,95,0.28), transparent 31rem),
+        radial-gradient(circle at 88% 9%, rgba(184,216,255,0.30), transparent 28rem),
+        radial-gradient(circle at 52% 98%, rgba(255,184,107,0.18), transparent 30rem),
+        var(--paper);
+    }
+
+    .slide::before {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border: 1.5px solid rgba(16,18,15,0.18);
+      border-radius: 34px;
+      pointer-events: none;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 22px;
+    }
+
+    .top {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--lime);
+      font-size: 14px;
+      font-weight: 850;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      max-width: 1040px;
+      margin: 0;
+      font-size: 66px;
+      line-height: .93;
+      letter-spacing: -0.045em;
+      font-weight: 520;
+    }
+
+    h1 em {
+      font-style: normal;
+      background: linear-gradient(180deg, transparent 58%, var(--lime) 58%);
+    }
+
+    .subtitle {
+      margin: 15px 0 0;
+      max-width: 1080px;
+      color: var(--muted);
+      font-size: 22px;
+      line-height: 1.28;
+    }
+
+    .mini {
+      width: 300px;
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,250,240,.86);
+      box-shadow: var(--shadow);
+      padding: 18px 20px 20px;
+    }
+
+    .mini .label {
+      font-size: 12px;
+      line-height: 1.1;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 900;
+      color: var(--muted);
+    }
+
+    .mini .big {
+      margin-top: 8px;
+      font-size: 35px;
+      line-height: .98;
+      letter-spacing: -0.045em;
+      font-weight: 850;
+    }
+
+    .mini p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.35;
+    }
+
+    .stage {
+      position: relative;
+      min-height: 0;
+      border: 1.5px solid var(--line);
+      border-radius: 32px;
+      background: rgba(255,250,240,.76);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .road {
+      position: absolute;
+      left: 88px;
+      right: 92px;
+      bottom: 252px;
+      height: 124px;
+      transform: skewX(-18deg);
+      background:
+        linear-gradient(90deg, rgba(16,18,15,0.10) 0 1px, transparent 1px 90px),
+        rgba(184,216,255,.28);
+      border: 1.3px solid rgba(16,18,15,.26);
+      border-radius: 34px;
+    }
+
+    .road::before,
+    .road::after {
+      content: "";
+      position: absolute;
+      top: 53px;
+      width: 92px;
+      height: 18px;
+      border-radius: 999px;
+      background: var(--blue);
+      border: 1px solid rgba(16,18,15,.35);
+      transform: skewX(18deg);
+    }
+
+    .road::before { left: 318px; }
+    .road::after { left: 856px; }
+
+    .medicine {
+      position: absolute;
+      left: 76px;
+      bottom: 278px;
+      width: 190px;
+      height: 262px;
+    }
+
+    .bottle {
+      position: absolute;
+      left: 32px;
+      bottom: 0;
+      width: 122px;
+      height: 196px;
+      border: 3px solid var(--line);
+      border-radius: 10px 10px 18px 18px;
+      background: linear-gradient(90deg, #eaf4ff 0 31%, var(--blue) 31% 57%, #f8fcff 57%);
+      box-shadow: 12px 16px 0 rgba(16,18,15,.10);
+      overflow: hidden;
+    }
+
+    .bottle::before {
+      display: none;
+    }
+
+    .cap {
+      position: absolute;
+      left: 31px;
+      bottom: 186px;
+      width: 124px;
+      height: 34px;
+      border: 3px solid var(--line);
+      border-radius: 14px 14px 8px 8px;
+      background: var(--paper-2);
+      z-index: 3;
+    }
+
+    .cap::after {
+      content: "";
+      position: absolute;
+      left: 13px;
+      right: 13px;
+      top: 8px;
+      height: 15px;
+      background: repeating-linear-gradient(90deg, transparent 0 8px, rgba(16,18,15,.45) 8px 10px);
+      opacity: .75;
+    }
+
+    .label-card {
+      position: absolute;
+      left: 50%;
+      width: 80px;
+      transform: translateX(-50%);
+      top: 58px;
+      min-height: 92px;
+      border: 2px solid var(--line);
+      border-radius: 10px;
+      background: var(--card);
+      padding: 11px 8px;
+      text-align: center;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .plus {
+      width: 42px;
+      height: 42px;
+      margin: 0 auto 6px;
+      position: relative;
+    }
+
+    .plus::before,
+    .plus::after {
+      content: "";
+      position: absolute;
+      background: var(--lime);
+      border: 2px solid var(--line);
+    }
+
+    .plus::before { left: 14px; top: 0; width: 14px; height: 42px; }
+    .plus::after { left: 0; top: 14px; width: 42px; height: 14px; }
+
+    .label-card b {
+      display: block;
+      font-size: 13px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      text-align: center;
+    }
+
+    .label-card span {
+      display: block;
+      margin-top: 6px;
+      width: 54px;
+      height: 10px;
+      border-top: 2px solid rgba(16,18,15,.65);
+      border-bottom: 2px solid rgba(16,18,15,.45);
+    }
+
+    .gate {
+      position: absolute;
+      bottom: 260px;
+      width: 300px;
+      height: 372px;
+    }
+
+    .gate.coverage { left: 420px; }
+    .gate.pathway { left: 850px; }
+
+    .sign {
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      top: 0;
+      min-height: 82px;
+      border: 4px solid var(--line);
+      border-radius: 12px;
+      background: var(--card);
+      display: grid;
+      place-items: center;
+      padding: 10px 14px;
+      text-align: center;
+      font-weight: 900;
+      font-size: 25px;
+      line-height: 1.05;
+      box-shadow: 10px 12px 0 rgba(16,18,15,.10);
+    }
+
+    .sign span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 17px;
+      font-weight: 650;
+    }
+
+    .gate.coverage .sign { border-color: #69a7e6; }
+    .gate.pathway .sign { border-color: #11130f; }
+
+    .posts {
+      position: absolute;
+      left: 34px;
+      right: 34px;
+      top: 94px;
+      bottom: 0;
+    }
+
+    .post,
+    .bar,
+    .door {
+      position: absolute;
+      border: 4px solid var(--line);
+      background: var(--blue);
+    }
+
+    .gate.pathway .post,
+    .gate.pathway .bar,
+    .gate.pathway .door {
+      background: #123a6b;
+      border-color: #071f3c;
+    }
+
+    .post {
+      top: 0;
+      bottom: 0;
+      width: 40px;
+    }
+
+    .post.left { left: 0; }
+    .post.right { right: 0; }
+
+    .bar {
+      left: 38px;
+      right: 38px;
+      height: 36px;
+    }
+
+    .bar.top { top: 12px; }
+    .bar.mid { top: 124px; }
+    .bar.low { top: 230px; }
+
+    .gate.coverage .bar.mid,
+    .gate.coverage .bar.low,
+    .gate.pathway .bar.mid,
+    .gate.pathway .bar.low { display: none; }
+
+    .gate.coverage .bar.low {
+      display: block;
+      top: auto;
+      bottom: 0;
+      left: 38px;
+      right: 38px;
+      height: 4px;
+      background: var(--line);
+      border: 0;
+      z-index: 4;
+    }
+
+    .gate.coverage .door {
+      left: 45px;
+      width: 148px;
+      height: 238px;
+      bottom: 0;
+      border: 0;
+      border-radius: 0;
+      background:
+        linear-gradient(180deg, transparent 0 36px, rgba(16,18,15,.55) 36px 41px, rgba(184,216,255,.95) 41px 54px, rgba(16,18,15,.55) 54px 59px, transparent 59px 86px, rgba(16,18,15,.55) 86px 91px, rgba(184,216,255,.95) 91px 104px, rgba(16,18,15,.55) 104px 109px, transparent 109px 136px, rgba(16,18,15,.55) 136px 141px, rgba(184,216,255,.95) 141px 154px, rgba(16,18,15,.55) 154px 159px, transparent 159px 187px, rgba(16,18,15,.55) 187px 192px, rgba(184,216,255,.95) 192px 205px, rgba(16,18,15,.55) 205px 210px, transparent 210px),
+        repeating-linear-gradient(90deg, transparent 0 7px, rgba(16,18,15,.58) 7px 11px, rgba(184,216,255,.96) 11px 21px, rgba(16,18,15,.58) 21px 25px, transparent 25px 37px);
+      z-index: 2;
+    }
+
+    .gate.coverage .door.left {
+    }
+
+    .gate.coverage .door.right {
+      display: none;
+    }
+
+    .gate.pathway .door {
+      left: 40px;
+      bottom: 0;
+      width: 152px;
+      height: 226px;
+      background:
+        repeating-linear-gradient(45deg, rgba(255,138,118,.95) 0 22px, var(--pink) 22px 44px);
+      border-color: #071f3c;
+      opacity: .94;
+    }
+
+    .bolt {
+      display: none;
+    }
+
+    .b1 { left: 8px; top: 148px; }
+    .b2 { right: 8px; top: 148px; }
+    .b3 { left: 8px; top: 254px; }
+    .b4 { right: 8px; top: 254px; }
+
+    .lock {
+      position: absolute;
+      left: 104px;
+      top: 176px;
+      width: 96px;
+      height: 112px;
+      z-index: 3;
+      filter: drop-shadow(8px 10px 0 rgba(16,18,15,.16));
+    }
+
+    .lock svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .heor-key {
+      position: absolute;
+      left: 500px;
+      right: 180px;
+      bottom: 24px;
+      height: 184px;
+      border: 1.5px solid var(--line);
+      border-radius: 28px;
+      background: #11130f;
+      color: var(--paper);
+      padding: 22px 24px 22px 152px;
+      box-shadow: var(--shadow);
+      z-index: 7;
+    }
+
+    .key-art {
+      position: absolute;
+      left: 34px;
+      top: 39px;
+      width: 92px;
+      height: 106px;
+    }
+
+    .key-art svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .heor-key h2 {
+      margin: 0;
+      font-size: 32px;
+      line-height: 1.02;
+      letter-spacing: -0.035em;
+      font-weight: 850;
+    }
+
+    .heor-key p {
+      margin: 8px 0 0;
+      max-width: 710px;
+      color: rgba(246,241,232,.74);
+      font-size: 15px;
+      line-height: 1.28;
+    }
+
+    .chips {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .chip {
+      min-height: 35px;
+      border: 1px solid rgba(246,241,232,.30);
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6px 8px;
+      font-size: 10.5px;
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: .025em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .chip:nth-child(1) { background: var(--lime); }
+    .chip:nth-child(2) { background: var(--blue); }
+    .chip:nth-child(3) { background: var(--orange); }
+    .chip:nth-child(4) { background: var(--pink); }
+
+    .callout {
+      position: absolute;
+      right: 38px;
+      top: 138px;
+      width: 278px;
+      border: 1.5px solid var(--line);
+      border-radius: 26px;
+      background: var(--lime);
+      padding: 18px 18px 19px;
+      box-shadow: 10px 12px 0 rgba(16,18,15,.12);
+      z-index: 6;
+    }
+
+    .callout .tag {
+      display: inline-block;
+      margin-bottom: 11px;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .callout b {
+      display: block;
+      font-size: 28px;
+      line-height: .98;
+      letter-spacing: -0.04em;
+    }
+
+    .callout span {
+      display: block;
+      margin-top: 10px;
+      font-size: 14px;
+      line-height: 1.28;
+      color: rgba(16,18,15,.78);
+    }
+
+    .arrow-label {
+      position: absolute;
+      bottom: 376px;
+      padding: 7px 11px;
+      border: 1.2px solid rgba(16,18,15,.44);
+      border-radius: 999px;
+      background: rgba(255,250,240,.86);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 850;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .arrow-label.a { left: 292px; }
+    .arrow-label.b { left: 724px; }
+
+    .footer {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.25;
+    }
+
+    .footer b { color: var(--ink); }
+
+    .slide-num {
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(16,18,15,.38);
+      font-weight: 800;
+    }
+
+    @media print {
+      @page { size: 1600px 1100px; margin: 0; }
+      html, body { width: 1600px; height: 1100px; }
+      .slide {
+        width: 1600px;
+        height: 1100px;
+        page-break-after: always;
+        break-after: page;
+      }
+      .stage,
+      .mini,
+      .heor-key,
+      .callout {
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide" aria-label="HEOR clinical pathway access infographic">
+    <div class="wrap">
+      <header class="top">
+        <div>
+          <div class="eyebrow">HEOR - clinical pathway access - evidence key</div>
+          <h1>Coverage opens one gate. HEOR helps <em>unlock the pathway.</em></h1>
+          <p class="subtitle">Payer coverage is necessary, but not sufficient. Pathway committees, IDNs, clinicians, and patients still need decision-grade evidence that explains value, budget impact, workflow fit, and real-world follow-through.</p>
+        </div>
+        <aside class="mini" aria-label="Access gap summary">
+          <div class="label">The access gap</div>
+          <div class="big">Covered does not always mean used.</div>
+          <p>Clinical pathway adoption depends on whether the product can be positioned, afforded, implemented, and defended against the actual standard of care.</p>
+        </aside>
+      </header>
+
+      <section class="stage" aria-label="Illustration of payer coverage gate and clinical pathway gate">
+        <div class="road" aria-hidden="true"></div>
+
+        <div class="medicine" aria-hidden="true">
+          <div class="cap"></div>
+          <div class="bottle">
+            <div class="label-card">
+              <div class="plus"></div>
+              <b>Therapy</b>
+              <span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="arrow-label a">Coverage policy</div>
+        <div class="arrow-label b">Pathway fit</div>
+
+        <div class="gate coverage" aria-hidden="true">
+          <div class="sign">Payer coverage<span>the payer gate</span></div>
+          <div class="posts">
+            <div class="post left"></div>
+            <div class="post right"></div>
+            <div class="bar top"></div>
+            <div class="bar mid"></div>
+            <div class="bar low"></div>
+            <div class="door left"></div>
+            <div class="door right"></div>
+            <div class="bolt b1"></div>
+            <div class="bolt b2"></div>
+          </div>
+        </div>
+        <div class="gate pathway" aria-hidden="true">
+          <div class="sign">Clinical pathway<span>the adoption gate</span></div>
+          <div class="posts">
+            <div class="post left"></div>
+            <div class="post right"></div>
+            <div class="bar top"></div>
+            <div class="bar mid"></div>
+            <div class="bar low"></div>
+            <div class="door"></div>
+            <div class="bolt b1"></div>
+            <div class="bolt b2"></div>
+            <div class="bolt b3"></div>
+            <div class="bolt b4"></div>
+            <div class="lock">
+              <svg viewBox="0 0 96 112" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M25 45V31c0-15 10-25 23-25s23 10 23 25v14" fill="none" stroke="#071f3c" stroke-width="10" stroke-linecap="round"/>
+                <path d="M33 45V31c0-10 6-16 15-16s15 6 15 16v14" fill="none" stroke="#ffb86b" stroke-width="6" stroke-linecap="round"/>
+                <rect x="14" y="42" width="68" height="58" rx="15" fill="#ffb86b" stroke="#071f3c" stroke-width="6"/>
+                <path d="M24 50h48" stroke="#ffd08f" stroke-width="4" stroke-linecap="round" opacity=".75"/>
+                <circle cx="48" cy="68" r="8" fill="#071f3c"/>
+                <rect x="44" y="68" width="8" height="18" rx="4" fill="#071f3c"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <aside class="callout">
+          <span class="tag">HEOR-tailored message</span>
+          <b>Build the evidence key early.</b>
+          <span>Then payer, pathway, and field teams are answering the same access questions.</span>
+        </aside>
+
+        <section class="heor-key" aria-label="HEOR evidence package">
+          <div class="key-art" aria-hidden="true">
+            <svg viewBox="0 0 110 120" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="38" cy="42" r="24" fill="#d7ff5f" stroke="#f6f1e8" stroke-width="5"/>
+              <circle cx="38" cy="42" r="9" fill="#11130f" stroke="#f6f1e8" stroke-width="3"/>
+              <path d="M58 56 L101 99" stroke="#d7ff5f" stroke-width="17" stroke-linecap="round"/>
+              <path d="M83 81 L73 91 M94 92 L82 104" stroke="#d7ff5f" stroke-width="10" stroke-linecap="round"/>
+              <path d="M58 56 L101 99" stroke="#11130f" stroke-width="3" stroke-linecap="round" opacity=".55"/>
+            </svg>
+          </div>
+          <h2>HEOR is the evidence key.</h2>
+          <p>It connects clinical benefit to the access questions that decide routine use: which patients, compared with what, at what budget impact, with what burden, and with what real-world follow-up.</p>
+          <div class="chips">
+            <div class="chip">Comparator + endpoints</div>
+            <div class="chip">Budget impact + value dossier</div>
+            <div class="chip">RWE, utilization, adherence</div>
+            <div class="chip">PROs, burden, pathway fit</div>
+          </div>
+        </section>
+      </section>
+
+      <footer class="footer">
+        <div><b>Bottom line:</b> approval can start the journey and coverage can open the payer gate, but HEOR is what makes the route credible for pathway adoption and sustained use.</div>
+        <div class="slide-num">01 / 01</div>
+      </footer>
+    </div>
+  </article>
+</body>
+</html>

@@ -1,0 +1,292 @@
+- generic [active] [ref=e1] [box=0,0,1440,10163]:
+  - button "Show glossary" [ref=e3] [box=1397,195,48,117]:
+    - generic [ref=e4] [box=-22579,196,158,29]: Show glossary
+    - img [ref=e5] [box=1397,196,46,119]
+  - generic [ref=e7] [box=1451,0,480,1000]:
+    - heading [level=4] [ref=e8] [box=1483,24,166,26]: Search for terms
+    - button [ref=e9] [box=1891,125,47,120]:
+      - generic [ref=e10] [box=-22085,126,148,29]: Hide glossary
+      - img [ref=e11] [box=1891,126,45,124]
+    - paragraph [ref=e13] [box=1483,65,416,78]:
+      - text: "Study record managers: refer to the"
+      - link [ref=e14] [cursor=pointer] [box=1483,68,350,45]:
+        - /url: /policy#data-element-definitions
+        - text: Data Element Definitions
+      - text: if submitting registration or results information.
+    - searchbox [ref=e16] [box=1483,159,416,32]
+    - separator [ref=e17] [box=1483,203,416,2]
+    - list [ref=e19] [box=1487,217,408,5951]:
+      - listitem [ref=e20] [box=1487,217,408,41]:
+        - button [ref=e21] [box=1487,217,408,41]: Accepts healthy volunteers
+      - listitem [ref=e22] [box=1487,266,408,41]:
+        - button [ref=e23] [box=1487,266,408,41]: Active comparator arm
+      - listitem [ref=e24] [box=1487,315,408,41]:
+        - button [ref=e25] [box=1487,315,408,41]: Adverse event
+      - listitem [ref=e26] [box=1487,363,408,41]:
+        - button [ref=e27] [box=1487,363,408,41]: Age or age group
+      - listitem [ref=e28] [box=1487,412,408,41]:
+        - button [ref=e29] [box=1487,412,408,41]: All-cause mortality
+      - listitem [ref=e30] [box=1487,461,408,41]:
+        - button [ref=e31] [box=1487,461,408,41]: Allocation
+      - listitem [ref=e32] [box=1487,510,408,41]:
+        - button [ref=e33] [box=1487,510,408,41]: Arm
+      - listitem [ref=e34] [box=1487,558,408,41]:
+        - button [ref=e35] [box=1487,558,408,41]: Arm type
+      - listitem [ref=e36] [box=1487,607,408,41]:
+        - button [ref=e37] [box=1487,607,408,41]: Baseline characteristics
+      - listitem [ref=e38] [box=1487,656,408,41]:
+        - button [ref=e39] [box=1487,656,408,41]: Canceled submission
+      - listitem [ref=e40] [box=1487,705,408,41]:
+        - button [ref=e41] [box=1487,705,408,41]: Certain agreements
+      - listitem [ref=e42] [box=1487,754,408,41]:
+        - button [ref=e43] [box=1487,754,408,41]: Certification
+      - listitem [ref=e44] [box=1487,802,408,41]:
+        - button [ref=e45] [box=1487,802,408,41]: Certification/extension first posted
+      - listitem [ref=e46] [box=1487,851,408,41]:
+        - button [ref=e47] [box=1487,851,408,41]: Certification/extension first submitted
+      - listitem [ref=e48] [box=1487,900,408,59]:
+        - button [ref=e49] [box=1487,900,408,59]: Certification/extension first submitted that met QC criteria
+      - listitem [ref=e50] [box=1487,967,408,41]:
+        - button [ref=e51] [box=1487,967,408,41]: Clinical study
+      - listitem [ref=e52] [box=1487,1016,408,41]:
+        - button [ref=e53] [box=1487,1016,408,41]: Clinical trial
+      - listitem [ref=e54] [box=1487,1065,408,41]:
+        - button [ref=e55] [box=1487,1065,408,41]: ClinicalTrials.gov identifier (NCT number)
+      - listitem [ref=e56] [box=1487,1114,408,41]:
+        - button [ref=e57] [box=1487,1114,408,41]: Collaborator
+      - listitem [ref=e58] [box=1487,1162,408,41]:
+        - button [ref=e59] [box=1487,1162,408,41]: Condition/disease
+      - listitem [ref=e60] [box=1487,1211,408,41]:
+        - button [ref=e61] [box=1487,1211,408,41]: Contact
+      - listitem [ref=e62] [box=1487,1260,408,41]:
+        - button [ref=e63] [box=1487,1260,408,41]: Cross-over assignment
+      - listitem [ref=e64] [box=1487,1309,408,41]:
+        - button [ref=e65] [box=1487,1309,408,41]: Data Monitoring Committee (DMC)
+      - listitem [ref=e66] [box=1487,1357,408,41]:
+        - button [ref=e67] [box=1487,1357,408,41]: Early Phase 1 (formerly listed as Phase 0)
+      - listitem [ref=e68] [box=1487,1406,408,41]:
+        - button [ref=e69] [box=1487,1406,408,41]: Eligibility criteria
+      - listitem [ref=e70] [box=1487,1455,408,41]:
+        - button [ref=e71] [box=1487,1455,408,41]: Enrollment
+      - listitem [ref=e72] [box=1487,1504,408,41]:
+        - button [ref=e73] [box=1487,1504,408,41]: Exclusion criteria
+      - listitem [ref=e74] [box=1487,1553,408,41]:
+        - button [ref=e75] [box=1487,1553,408,41]: Expanded access
+        - text: External, opens in a new tab.
+      - listitem [ref=e76] [box=1487,1601,408,41]:
+        - button [ref=e77] [box=1487,1601,408,41]: Expanded access status
+      - listitem [ref=e78] [box=1487,1650,408,41]:
+        - button [ref=e79] [box=1487,1650,408,41]: Expanded access type
+      - listitem [ref=e80] [box=1487,1699,408,41]:
+        - button [ref=e81] [box=1487,1699,408,41]: Experimental arm
+      - listitem [ref=e82] [box=1487,1748,408,41]:
+        - button [ref=e83] [box=1487,1748,408,41]: Extension request
+      - listitem [ref=e84] [box=1487,1797,408,41]:
+        - button [ref=e85] [box=1487,1797,408,41]: Facility name
+      - listitem [ref=e86] [box=1487,1845,408,41]:
+        - button [ref=e87] [box=1487,1845,408,41]: Factorial assignment
+      - listitem [ref=e88] [box=1487,1894,408,41]:
+        - button [ref=e89] [box=1487,1894,408,41]: FDAAA 801 Violations
+      - listitem [ref=e90] [box=1487,1943,408,41]:
+        - button [ref=e91] [box=1487,1943,408,41]: First posted
+      - listitem [ref=e92] [box=1487,1992,408,41]:
+        - button [ref=e93] [box=1487,1992,408,41]: First submitted
+      - listitem [ref=e94] [box=1487,2041,408,41]:
+        - button [ref=e95] [box=1487,2041,408,41]: First submitted that met QC criteria
+      - listitem [ref=e96] [box=1487,2089,408,59]:
+        - button [ref=e97] [box=1487,2089,408,59]: Food and Drug Administration Amendments Act of 2007, Section 801 (FDAAA 801)
+      - listitem [ref=e98] [box=1487,2157,408,41]:
+        - button [ref=e99] [box=1487,2157,408,41]: Funder type
+      - listitem [ref=e100] [box=1487,2205,408,41]:
+        - button [ref=e101] [box=1487,2205,408,41]: Gender-based eligibility
+      - listitem [ref=e102] [box=1487,2254,408,41]:
+        - button [ref=e103] [box=1487,2254,408,41]: Group/cohort
+      - listitem [ref=e104] [box=1487,2303,408,41]:
+        - button [ref=e105] [box=1487,2303,408,41]: Human subjects protection review board
+      - listitem [ref=e106] [box=1487,2352,408,41]:
+        - button [ref=e107] [box=1487,2352,408,41]: Inclusion criteria
+      - listitem [ref=e108] [box=1487,2400,408,41]:
+        - button [ref=e109] [box=1487,2400,408,41]: Informed consent
+      - listitem [ref=e110] [box=1487,2449,408,41]:
+        - button [ref=e111] [box=1487,2449,408,41]: Informed consent form (ICF)
+      - listitem [ref=e112] [box=1487,2498,408,41]:
+        - button [ref=e113] [box=1487,2498,408,41]: Intervention model
+      - listitem [ref=e114] [box=1487,2547,408,41]:
+        - button [ref=e115] [box=1487,2547,408,41]: Intervention/treatment
+      - listitem [ref=e116] [box=1487,2596,408,41]:
+        - button [ref=e117] [box=1487,2596,408,41]: Interventional study (clinical trial)
+      - listitem [ref=e118] [box=1487,2644,408,41]:
+        - button [ref=e119] [box=1487,2644,408,41]: Investigator
+      - listitem [ref=e120] [box=1487,2693,408,41]:
+        - button [ref=e121] [box=1487,2693,408,41]: Last update posted
+      - listitem [ref=e122] [box=1487,2742,408,41]:
+        - button [ref=e123] [box=1487,2742,408,41]: Last update submitted
+      - listitem [ref=e124] [box=1487,2791,408,41]:
+        - button [ref=e125] [box=1487,2791,408,41]: Last update submitted that met QC criteria
+      - listitem [ref=e126] [box=1487,2840,408,41]:
+        - button [ref=e127] [box=1487,2840,408,41]: Last verified
+      - listitem [ref=e128] [box=1487,2888,408,41]:
+        - button [ref=e129] [box=1487,2888,408,41]: Location
+      - listitem [ref=e130] [box=1487,2937,408,41]:
+        - button [ref=e131] [box=1487,2937,408,41]: Location countries
+      - listitem [ref=e132] [box=1487,2986,408,41]:
+        - button [ref=e133] [box=1487,2986,408,41]: Masking
+      - listitem [ref=e134] [box=1487,3035,408,41]:
+        - button [ref=e135] [box=1487,3035,408,41]: NCT number
+      - listitem [ref=e136] [box=1487,3084,408,41]:
+        - button [ref=e137] [box=1487,3084,408,41]: No intervention arm
+      - listitem [ref=e138] [box=1487,3132,408,41]:
+        - button [ref=e139] [box=1487,3132,408,41]: Observational study
+      - listitem [ref=e140] [box=1487,3181,408,41]:
+        - button [ref=e141] [box=1487,3181,408,41]: Observational study model
+      - listitem [ref=e142] [box=1487,3230,408,41]:
+        - button [ref=e143] [box=1487,3230,408,41]: Other adverse event
+      - listitem [ref=e144] [box=1487,3279,408,41]:
+        - button [ref=e145] [box=1487,3279,408,41]: Other study IDs
+      - listitem [ref=e146] [box=1487,3327,408,41]:
+        - button [ref=e147] [box=1487,3327,408,41]: Other terms
+      - listitem [ref=e148] [box=1487,3376,408,41]:
+        - button [ref=e149] [box=1487,3376,408,41]: Outcome measure
+      - listitem [ref=e150] [box=1487,3425,408,41]:
+        - button [ref=e151] [box=1487,3425,408,41]: Parallel assignment
+      - listitem [ref=e152] [box=1487,3474,408,41]:
+        - button [ref=e153] [box=1487,3474,408,41]: Participant flow
+      - listitem [ref=e154] [box=1487,3523,408,41]:
+        - button [ref=e155] [box=1487,3523,408,41]: Patient registry
+      - listitem [ref=e156] [box=1487,3571,408,41]:
+        - button [ref=e157] [box=1487,3571,408,41]: Phase
+      - listitem [ref=e158] [box=1487,3620,408,41]:
+        - button [ref=e159] [box=1487,3620,408,41]: Phase 1
+      - listitem [ref=e160] [box=1487,3669,408,41]:
+        - button [ref=e161] [box=1487,3669,408,41]: Phase 2
+      - listitem [ref=e162] [box=1487,3718,408,41]:
+        - button [ref=e163] [box=1487,3718,408,41]: Phase 3
+      - listitem [ref=e164] [box=1487,3767,408,41]:
+        - button [ref=e165] [box=1487,3767,408,41]: Phase 4
+      - listitem [ref=e166] [box=1487,3815,408,41]:
+        - button [ref=e167] [box=1487,3815,408,41]: Phase Not Applicable
+      - listitem [ref=e168] [box=1487,3864,408,41]:
+        - button [ref=e169] [box=1487,3864,408,41]: Placebo
+      - listitem [ref=e170] [box=1487,3913,408,41]:
+        - button [ref=e171] [box=1487,3913,408,41]: Placebo comparator arm
+      - listitem [ref=e172] [box=1487,3962,408,41]:
+        - button [ref=e173] [box=1487,3962,408,41]: Primary completion date
+      - listitem [ref=e174] [box=1487,4010,408,41]:
+        - button [ref=e175] [box=1487,4010,408,41]: Primary outcome measure
+      - listitem [ref=e176] [box=1487,4059,408,41]:
+        - button [ref=e177] [box=1487,4059,408,41]: Primary purpose
+      - listitem [ref=e178] [box=1487,4108,408,41]:
+        - button [ref=e179] [box=1487,4108,408,41]: Principal investigator (PI)
+      - listitem [ref=e180] [box=1487,4157,408,41]:
+        - button [ref=e181] [box=1487,4157,408,41]: Protocol
+      - listitem [ref=e182] [box=1487,4206,408,41]:
+        - button [ref=e183] [box=1487,4206,408,41]: Quality control (QC) review
+      - listitem [ref=e184] [box=1487,4254,408,41]:
+        - button [ref=e185] [box=1487,4254,408,41]: Randomized allocation
+      - listitem [ref=e186] [box=1487,4303,408,41]:
+        - button [ref=e187] [box=1487,4303,408,41]: Recruitment status
+      - listitem [ref=e188] [box=1487,4352,408,41]:
+        - button [ref=e189] [box=1487,4352,408,41]: Registration
+      - listitem [ref=e190] [box=1487,4401,408,41]:
+        - button [ref=e191] [box=1487,4401,408,41]: Removed location countries
+      - listitem [ref=e192] [box=1487,4450,408,41]:
+        - button [ref=e193] [box=1487,4450,408,41]: Reporting group
+      - listitem [ref=e194] [box=1487,4498,408,41]:
+        - button [ref=e195] [box=1487,4498,408,41]: Responsible party
+      - listitem [ref=e196] [box=1487,4547,408,41]:
+        - button [ref=e197] [box=1487,4547,408,41]: Results database
+      - listitem [ref=e198] [box=1487,4596,408,41]:
+        - button [ref=e199] [box=1487,4596,408,41]: Results delayed
+      - listitem [ref=e200] [box=1487,4645,408,41]:
+        - button [ref=e201] [box=1487,4645,408,41]: Results first posted
+      - listitem [ref=e202] [box=1487,4694,408,41]:
+        - button [ref=e203] [box=1487,4694,408,41]: Results first posted with QC comments
+      - listitem [ref=e204] [box=1487,4742,408,41]:
+        - button [ref=e205] [box=1487,4742,408,41]: Results first submitted
+      - listitem [ref=e206] [box=1487,4791,408,41]:
+        - button [ref=e207] [box=1487,4791,408,41]: Results first submitted that met QC criteria
+      - listitem [ref=e208] [box=1487,4840,408,41]:
+        - button [ref=e209] [box=1487,4840,408,41]: Results returned after quality control review
+      - listitem [ref=e210] [box=1487,4889,408,41]:
+        - button [ref=e211] [box=1487,4889,408,41]: Results submitted to ClinicalTrials.gov
+      - listitem [ref=e212] [box=1487,4937,408,41]:
+        - button [ref=e213] [box=1487,4937,408,41]: Secondary outcome measure
+      - listitem [ref=e214] [box=1487,4986,408,41]:
+        - button [ref=e215] [box=1487,4986,408,41]: Serious adverse event
+      - listitem [ref=e216] [box=1487,5035,408,41]:
+        - button [ref=e217] [box=1487,5035,408,41]: Sex
+      - listitem [ref=e218] [box=1487,5084,408,41]:
+        - button [ref=e219] [box=1487,5084,408,41]: Sham comparator arm
+      - listitem [ref=e220] [box=1487,5133,408,41]:
+        - button [ref=e221] [box=1487,5133,408,41]: Single group assignment
+      - listitem [ref=e222] [box=1487,5181,408,41]:
+        - button [ref=e223] [box=1487,5181,408,41]: Sort studies by
+      - listitem [ref=e224] [box=1487,5230,408,41]:
+        - button [ref=e225] [box=1487,5230,408,41]: Sponsor
+      - listitem [ref=e226] [box=1487,5279,408,41]:
+        - button [ref=e227] [box=1487,5279,408,41]: Statistical analysis plan (SAP)
+      - listitem [ref=e228] [box=1487,5328,408,41]:
+        - button [ref=e229] [box=1487,5328,408,41]: Status
+      - listitem [ref=e230] [box=1487,5377,408,41]:
+        - button [ref=e231] [box=1487,5377,408,41]: Study completion date
+      - listitem [ref=e232] [box=1487,5425,408,41]:
+        - button [ref=e233] [box=1487,5425,408,41]: Study design
+      - listitem [ref=e234] [box=1487,5474,408,41]:
+        - button [ref=e235] [box=1487,5474,408,41]: Study documents
+      - listitem [ref=e236] [box=1487,5523,408,41]:
+        - button [ref=e237] [box=1487,5523,408,41]: Study IDs
+      - listitem [ref=e238] [box=1487,5572,408,41]:
+        - button [ref=e239] [box=1487,5572,408,41]: Study record
+      - listitem [ref=e240] [box=1487,5621,408,41]:
+        - button [ref=e241] [box=1487,5621,408,41]: Study registry
+      - listitem [ref=e242] [box=1487,5669,408,41]:
+        - button [ref=e243] [box=1487,5669,408,41]: Study results
+      - listitem [ref=e244] [box=1487,5718,408,41]:
+        - button [ref=e245] [box=1487,5718,408,41]: Study start date
+      - listitem [ref=e246] [box=1487,5767,408,41]:
+        - button [ref=e247] [box=1487,5767,408,41]: Study type
+      - listitem [ref=e248] [box=1487,5816,408,41]:
+        - button [ref=e249] [box=1487,5816,408,41]: Submitted date
+      - listitem [ref=e250] [box=1487,5864,408,41]:
+        - button [ref=e251] [box=1487,5864,408,41]: Title
+      - listitem [ref=e252] [box=1487,5913,408,41]:
+        - button [ref=e253] [box=1487,5913,408,41]: Title acronym
+      - listitem [ref=e254] [box=1487,5962,408,41]:
+        - button [ref=e255] [box=1487,5962,408,41]: Type of intervention
+      - listitem [ref=e256] [box=1487,6011,408,59]:
+        - button [ref=e257] [box=1487,6011,408,59]: U.S. Agency for Healthcare Research and Quality (AHRQ)
+      - listitem [ref=e258] [box=1487,6078,408,41]:
+        - button [ref=e259] [box=1487,6078,408,41]: U.S. Food and Drug Administration (FDA)
+      - listitem [ref=e260] [box=1487,6127,408,41]:
+        - button [ref=e261] [box=1487,6127,408,41]: Unknown
+  - generic [ref=e262] [box=0,0,1440,10163]:
+    - generic [ref=e263] [box=0,0,1440,250]:
+      - region "Official website of the United States government" [ref=e265] [box=0,0,1440,27]:
+        - generic [ref=e268] [box=208,4,1024,19]
+      - link "Skip to main page content" [ref=e272] [cursor=pointer] [box=0,-61,215,41]:
+        - /url: "#main-content"
+      - banner [ref=e274] [box=0,27,1440,57]:
+        - generic [ref=e276] [box=52,35,1336,41]
+      - banner [ref=e282] [box=0,84,1440,102]:
+        - generic [ref=e284] [box=52,84,1336,101]
+      - navigation "Breadcrumbs" [ref=e316] [box=52,187,891,63]:
+        - list [ref=e317] [box=48,203,899,31]
+    - main [ref=e323] [box=0,250,1440,9371]:
+      - generic [ref=e324] [box=0,250,1440,9371]:
+        - generic [ref=e438] [box=52,250,1336,417]
+        - generic [ref=e477] [box=69,707,1302,44]
+        - generic [ref=e493] [box=0,792,1440,8829]
+    - generic [ref=e340] [box=0,9621,1440,542]:
+      - generic [ref=e345] [box=36,9621,1368,196]:
+        - navigation "Footer navigation" [ref=e347] [box=52,9629,745,188]
+        - generic [ref=e380] [box=1108,9653,280,164]
+      - generic [ref=e383] [box=0,9847,1440,316]:
+        - region "Agency identifier" [ref=e384] [box=0,9847,1424,124]
+        - navigation "Important links" [ref=e401] [box=0,9971,1424,103]
+        - region "Government information and services" [ref=e424] [box=0,10073,1424,54]
+        - paragraph [ref=e431] [box=0,10128,1424,19]: "Revision: v3.5.3"
+  - button "Tell us what you think!" [ref=e1029] [cursor=pointer] [box=1389,819,52,110]:
+    - img "Tell us what you think!" [ref=e1030] [box=1389,819,52,110]
+  - dialog [ref=e1031] [box=1440,500,400,500]:
+    - button [ref=e1033] [cursor=pointer] [box=1813,512,17,20]:
+      - img [ref=e1034] [box=1813,512,17,17]

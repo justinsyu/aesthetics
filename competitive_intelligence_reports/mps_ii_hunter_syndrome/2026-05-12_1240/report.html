@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MPS II / Hunter Syndrome Competitive Intelligence Update</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 36px 0 20px;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 850;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 82px; line-height: .92; font-weight: 560; max-width: 1260px; }
+    h2 { font-size: 54px; line-height: .98; font-weight: 560; max-width: 1300px; }
+    h3 { font-size: 28px; line-height: 1.05; font-weight: 650; }
+    .dek { margin-top: 18px; color: var(--muted); font-size: 27px; line-height: 1.24; max-width: 1280px; }
+    .section-head { margin-bottom: 20px; }
+    .section-head p { margin-top: 12px; color: var(--muted); font-size: 24px; line-height: 1.24; max-width: 1300px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .panel, .metric, .card, .table, .callout {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.86);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel { padding: 24px; }
+    .panel.dark, .callout { background: #11130f; color: var(--paper); border-color: #11130f; }
+    .panel.dark p, .panel.dark li, .callout p, .callout li { color: rgba(246,241,232,.84); }
+    .metric { padding: 22px; min-height: 148px; }
+    .num { font-size: 50px; line-height: .92; font-weight: 850; }
+    .label { margin-top: 12px; font-size: 18px; line-height: 1.24; color: var(--muted); }
+    .card { padding: 22px; min-height: 238px; }
+    .card p { color: var(--muted); font-size: 19px; line-height: 1.25; margin-top: 12px; }
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      white-space: nowrap;
+      margin-bottom: 12px;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .red { background: var(--red); }
+    .gray { background: var(--gray); }
+    .list { margin: 14px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+    .list li { position: relative; padding-left: 20px; color: var(--muted); font-size: 20px; line-height: 1.22; }
+    .list li::before { content: ""; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; border-radius: 50%; background: var(--lime); border: 1px solid var(--line); }
+    .table { display: grid; }
+    .row { display: grid; border-bottom: 1px solid var(--line); min-height: 78px; }
+    .row:last-child { border-bottom: 0; }
+    .cols-4 { grid-template-columns: .84fr .72fr 1.52fr 1.32fr; }
+    .cols-3 { grid-template-columns: .82fr 1.2fr 1.7fr; }
+    .cell { padding: 13px 14px; border-right: 1px solid var(--line); font-size: 16px; line-height: 1.22; }
+    .cell:last-child { border-right: 0; }
+    .head .cell { background: #11130f; color: var(--paper); font-weight: 850; text-transform: uppercase; font-size: 12px; }
+    .callout { padding: 24px 28px; }
+    .callout h3 { font-size: 31px; }
+    .callout p { margin-top: 12px; font-size: 24px; line-height: 1.18; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .cite + .cite::before { content: ","; margin-right: 1px; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    .source-note { color: var(--muted); font-size: 15px; line-height: 1.25; margin-top: 12px; }
+    strong { font-weight: 850; }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .wrap { width: 1360px; }
+      .panel, .metric, .card, .table, .callout { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) {
+      .slide { width: 1600px; height: 900px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">MPS II / Hunter syndrome CI | May 6-12, 2026 evidence window</div>
+      <h1>MPS II competitive intelligence update</h1>
+      <p class="dek">This report includes five primary sources with visible publication, filing, or registry dates from May 6, 2026 through May 12, 2026: Federal Register/FDA, Denali SEC materials, ClinicalTrials.gov, and GC Biopharma.<a class="cite" href="https://www.federalregister.gov/api/v1/documents/2026-09242?fields[]=publication_date&amp;fields[]=title&amp;fields[]=abstract">1</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000062/ex991pressreleaseq12026.htm">2</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000064/dnli-20260331.htm">3</a><a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT06075537">4</a><a class="cite" href="https://www.gcbiopharma.com/kor/news_view.do?idx=3187">5</a></p>
+      <div class="grid-4" style="margin-top:34px;">
+        <div class="metric"><div class="num">5</div><div class="label">Primary sources were used in this report.<a class="cite" href="https://www.federalregister.gov/api/v1/documents/2026-09242?fields[]=publication_date&amp;fields[]=title&amp;fields[]=abstract">1</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000062/ex991pressreleaseq12026.htm">2</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000064/dnli-20260331.htm">3</a><a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT06075537">4</a><a class="cite" href="https://www.gcbiopharma.com/kor/news_view.do?idx=3187">5</a></div></div>
+        <div class="metric"><div class="num">2</div><div class="label">Denali SEC sources were dated May 7, 2026.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000062/ex991pressreleaseq12026.htm">2</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000064/dnli-20260331.htm">3</a></div></div>
+        <div class="metric"><div class="num">1</div><div class="label">ClinicalTrials.gov MPS II record was updated on May 12, 2026.<a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT06075537">4</a></div></div>
+        <div class="metric"><div class="num">1</div><div class="label">GC Biopharma reported a Peru authorization for Hunterase ICV.<a class="cite" href="https://www.gcbiopharma.com/kor/news_view.do?idx=3187">5</a></div></div>
+      </div>
+      <div class="callout" style="margin-top:24px;">
+        <h3>Factual scope</h3>
+        <p>The windowed evidence covers AVLAYAH priority-review-voucher issuance, U.S. launch and commercial distribution, the COMPASS confirmatory study, a Denali extension-study registry update, and Hunterase ICV authorization in Peru.<a class="cite" href="https://www.federalregister.gov/api/v1/documents/2026-09242?fields[]=publication_date&amp;fields[]=title&amp;fields[]=abstract">1</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000062/ex991pressreleaseq12026.htm">2</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000064/dnli-20260331.htm">3</a><a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT06075537">4</a><a class="cite" href="https://www.gcbiopharma.com/kor/news_view.do?idx=3187">5</a></p>
+      </div>
+    </div>
+    <div class="slide-num">01 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Regulatory and commercial events</div>
+        <h2>Windowed sources recorded one FDA voucher notice, one U.S. launch update, and one Peru authorization<a class="cite" href="https://www.federalregister.gov/api/v1/documents/2026-09242?fields[]=publication_date&amp;fields[]=title&amp;fields[]=abstract">1</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000062/ex991pressreleaseq12026.htm">2</a><a class="cite" href="https://www.gcbiopharma.com/kor/news_view.do?idx=3187">5</a></h2>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag lime">FDA / PRV</span>
+          <h3>AVLAYAH voucher notice</h3>
+          <p>The Federal Register API listed a May 11, 2026 publication date for FDA's notice announcing issuance of a priority review voucher for AVLAYAH.<a class="cite" href="https://www.federalregister.gov/api/v1/documents/2026-09242?fields[]=publication_date&amp;fields[]=title&amp;fields[]=abstract">1</a></p>
+          <p>FDA determined that AVLAYAH, approved March 24, 2026 and manufactured by Denali Therapeutics Inc., met the criteria for a priority review voucher.<a class="cite" href="https://www.federalregister.gov/api/v1/documents/2026-09242?fields[]=publication_date&amp;fields[]=title&amp;fields[]=abstract">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">U.S. launch</span>
+          <h3>Commercial treatment began</h3>
+          <p>Denali's May 7, 2026 SEC exhibit stated AVLAYAH had launched in the U.S. and that first patients were treated in the commercial setting in April.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000062/ex991pressreleaseq12026.htm">2</a></p>
+          <p>Denali stated that commercial product availability, distribution, and a patient support hub were in place.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000062/ex991pressreleaseq12026.htm">2</a></p>
+        </div>
+        <div class="card">
+          <span class="tag orange">Peru authorization</span>
+          <h3>Hunterase ICV</h3>
+          <p>GC Biopharma stated on May 6, 2026 that Hunterase ICV received marketing authorization from Peru's DIGEMID.<a class="cite" href="https://www.gcbiopharma.com/kor/news_view.do?idx=3187">5</a></p>
+          <p>GC Biopharma stated the Peru authorization was Hunterase ICV's third overseas authorization after Japan and Russia.<a class="cite" href="https://www.gcbiopharma.com/kor/news_view.do?idx=3187">5</a></p>
+        </div>
+      </div>
+      <div class="panel dark" style="margin-top:22px;">
+        <h3>Additional recorded facts</h3>
+        <ul class="list">
+          <li>GC Biopharma stated Hunterase ICV is administered directly into the cerebral ventricles once monthly.<a class="cite" href="https://www.gcbiopharma.com/kor/news_view.do?idx=3187">5</a></li>
+          <li>Denali stated the ongoing global Phase 2/3 COMPASS study is designed to generate confirmatory evidence and support global regulatory submissions for AVLAYAH.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000062/ex991pressreleaseq12026.htm">2</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">02 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Denali 10-Q</div>
+        <h2>Denali's May 7 filing described AVLAYAH's approved use, distribution timing, biomarker result, and confirmatory study<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000064/dnli-20260331.htm">3</a></h2>
+      </div>
+      <div class="table">
+        <div class="row head cols-4">
+          <div class="cell">Topic</div>
+          <div class="cell">Date context</div>
+          <div class="cell">Reported fact</div>
+          <div class="cell">Evidence boundary</div>
+        </div>
+        <div class="row cols-4">
+          <div class="cell"><strong>Approved use</strong></div>
+          <div class="cell">Filed May 7, 2026<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000064/dnli-20260331.htm">3</a></div>
+          <div class="cell">Denali reported AVLAYAH is approved for neurologic manifestations in Hunter syndrome/MPS II when initiated in presymptomatic or symptomatic pediatric patients weighing at least 5 kg before advanced neurologic impairment.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000064/dnli-20260331.htm">3</a></div>
+          <div class="cell">The source states continued approval may be contingent on verification of clinical benefit in a confirmatory trial.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000064/dnli-20260331.htm">3</a></div>
+        </div>
+        <div class="row cols-4">
+          <div class="cell"><strong>Distribution</strong></div>
+          <div class="cell">April 2026 event<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000064/dnli-20260331.htm">3</a></div>
+          <div class="cell">Denali reported commercial distribution of AVLAYAH began in April 2026.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000064/dnli-20260331.htm">3</a></div>
+          <div class="cell">The same filing states Denali had one approved product at the time of filing.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000064/dnli-20260331.htm">3</a></div>
+        </div>
+        <div class="row cols-4">
+          <div class="cell"><strong>Biomarker</strong></div>
+          <div class="cell">Week 24 result<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000064/dnli-20260331.htm">3</a></div>
+          <div class="cell">Denali reported a 91% reduction in cerebrospinal fluid heparan sulfate from baseline by week 24 in the Phase 1/2 clinical trial.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000064/dnli-20260331.htm">3</a></div>
+          <div class="cell">The filing describes CSF HS as a surrogate endpoint reasonably likely to predict clinical benefit for neurologic manifestations of Hunter syndrome.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000064/dnli-20260331.htm">3</a></div>
+        </div>
+        <div class="row cols-4">
+          <div class="cell"><strong>Confirmation</strong></div>
+          <div class="cell">Ongoing study<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000064/dnli-20260331.htm">3</a></div>
+          <div class="cell">Denali reported the global Phase 2/3 COMPASS study is designed to generate confirmatory evidence.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000064/dnli-20260331.htm">3</a></div>
+          <div class="cell">Denali also stated COMPASS is intended to support global regulatory submissions for AVLAYAH.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000064/dnli-20260331.htm">3</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">03 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Current registry signal</div>
+        <h2>ClinicalTrials.gov showed one MPS II record updated on May 12, 2026<a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT06075537">4</a></h2>
+        <p>The source is the ClinicalTrials.gov API record for NCT06075537, which displayed the same May 12, 2026 last-update date captured in the source screenshot.<a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT06075537">4</a></p>
+      </div>
+      <div class="grid-2">
+        <div class="panel">
+          <span class="tag lime">NCT06075537</span>
+          <h3>Tividenofusp alfa extension</h3>
+          <ul class="list">
+            <li>ClinicalTrials.gov lists the record as a Denali Therapeutics study of long-term safety, tolerability, and efficacy of tividenofusp alfa in MPS II participants from DNLI-E-0002 or DNLI-E-0007.<a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT06075537">4</a></li>
+            <li>The registry status is enrolling by invitation.<a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT06075537">4</a></li>
+            <li>The registry phases include Phase 2 and Phase 3.<a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT06075537">4</a></li>
+          </ul>
+        </div>
+        <div class="panel dark">
+          <span class="tag blue">Denali package</span>
+          <h3>Registry activity and company filing align on long-term evidence generation</h3>
+          <p style="margin-top:14px; font-size:24px; line-height:1.2;">The ClinicalTrials.gov extension record identifies long-term follow-up for tividenofusp alfa in MPS II, while Denali's May 7 filing states COMPASS is designed to generate confirmatory evidence for AVLAYAH.<a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT06075537">4</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000064/dnli-20260331.htm">3</a></p>
+          <p style="margin-top:16px; font-size:20px; line-height:1.22;">This slide does not include ClinicalTrials.gov MPS II records last updated before May 6, 2026.</p>
+        </div>
+      </div>
+      <div class="table" style="margin-top:22px;">
+        <div class="row head cols-3">
+          <div class="cell">Record</div>
+          <div class="cell">Visible date / status</div>
+          <div class="cell">Recorded source text used</div>
+        </div>
+        <div class="row cols-3">
+          <div class="cell"><strong>NCT06075537</strong></div>
+          <div class="cell">Last update posted May 12, 2026; enrolling by invitation.<a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT06075537">4</a></div>
+          <div class="cell">The title describes an extension study of long-term safety, tolerability, and efficacy of tividenofusp alfa in participants with MPS II from DNLI-E-0002 or DNLI-E-0007.<a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT06075537">4</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">04 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Reference map</div>
+        <h2>Every cited source has a visible date screenshot and a marked evidence screenshot</h2>
+        <p>Visible reference sections list source names, dates, and URLs only; local screenshot filenames are kept in the source log, not on this slide.</p>
+      </div>
+      <div class="table">
+        <div class="row head cols-4">
+          <div class="cell">Ref</div>
+          <div class="cell">Visible date</div>
+          <div class="cell">Source</div>
+          <div class="cell">Facts supported in report</div>
+        </div>
+        <div class="row cols-4">
+          <div class="cell"><strong>1</strong></div>
+          <div class="cell">2026-05-11<a class="cite" href="https://www.federalregister.gov/api/v1/documents/2026-09242?fields[]=publication_date&amp;fields[]=title&amp;fields[]=abstract">1</a></div>
+          <div class="cell">Federal Register/FDA API notice for AVLAYAH rare pediatric disease priority review voucher.<a class="cite" href="https://www.federalregister.gov/api/v1/documents/2026-09242?fields[]=publication_date&amp;fields[]=title&amp;fields[]=abstract">1</a></div>
+          <div class="cell">Voucher issuance notice and FDA determination that AVLAYAH met voucher criteria.<a class="cite" href="https://www.federalregister.gov/api/v1/documents/2026-09242?fields[]=publication_date&amp;fields[]=title&amp;fields[]=abstract">1</a></div>
+        </div>
+        <div class="row cols-4">
+          <div class="cell"><strong>2</strong></div>
+          <div class="cell">May 7, 2026<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000062/ex991pressreleaseq12026.htm">2</a></div>
+          <div class="cell">Denali 8-K exhibit 99.1 Q1 2026 business update.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000062/ex991pressreleaseq12026.htm">2</a></div>
+          <div class="cell">U.S. launch, first commercial-setting treatment in April, and COMPASS confirmatory-study statement.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000062/ex991pressreleaseq12026.htm">2</a></div>
+        </div>
+        <div class="row cols-4">
+          <div class="cell"><strong>3</strong></div>
+          <div class="cell">2026-05-07<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000064/dnli-20260331.htm">3</a></div>
+          <div class="cell">Denali Form 10-Q for quarter ended March 31, 2026.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000064/dnli-20260331.htm">3</a></div>
+          <div class="cell">Approved use, commercial distribution, CSF HS reduction, and COMPASS evidence-generation statement.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1714899/000171489926000064/dnli-20260331.htm">3</a></div>
+        </div>
+        <div class="row cols-4">
+          <div class="cell"><strong>4</strong></div>
+          <div class="cell">2026-05-12<a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT06075537">4</a></div>
+          <div class="cell">ClinicalTrials.gov API record NCT06075537.<a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT06075537">4</a></div>
+          <div class="cell">Denali extension-study title, sponsor, enrolling-by-invitation status, and Phase 2/3 classification.<a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT06075537">4</a></div>
+        </div>
+        <div class="row cols-4">
+          <div class="cell"><strong>5</strong></div>
+          <div class="cell">2026-05-06<a class="cite" href="https://www.gcbiopharma.com/kor/news_view.do?idx=3187">5</a></div>
+          <div class="cell">GC Biopharma official news release on Hunterase ICV.<a class="cite" href="https://www.gcbiopharma.com/kor/news_view.do?idx=3187">5</a></div>
+          <div class="cell">Peru DIGEMID authorization, third overseas authorization, and once-monthly intracerebroventricular administration.<a class="cite" href="https://www.gcbiopharma.com/kor/news_view.do?idx=3187">5</a></div>
+        </div>
+      </div>
+      <p class="source-note">Evidence outside the May 6-12, 2026 window was excluded from the report body.</p>
+    </div>
+    <div class="slide-num">05 / 05</div>
+  </article>
+</body>
+</html>

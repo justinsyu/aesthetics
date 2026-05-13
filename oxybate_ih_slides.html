@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Branded Oxybates in Idiopathic Hypersomnia: Evidence Landscape and Generation Opportunities</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --green: #324a2f;
+      --sage: #a6b696;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --unknown: #b65a8a;
+      --gray: #d6d0c2;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 26px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(215,255,95,0.32), transparent 34rem),
+        radial-gradient(circle at 84% 12%, rgba(184,216,255,0.28), transparent 26rem),
+        var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.38;
+    }
+
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .cite {
+      font-size: 0.62em;
+      vertical-align: super;
+      margin-left: 2px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .wrap { width: min(1360px, calc(100vw - 48px)); margin: 0 auto; }
+
+    header {
+      position: relative;
+      padding: 42px 0 26px;
+      border-bottom: 1.5px solid rgba(16,18,15,0.2);
+    }
+
+    .hero {
+      display: grid;
+      gap: 26px;
+      align-items: start;
+      padding: 0;
+    }
+    h1 {
+      font-size: clamp(44px, 4.7vw, 72px);
+      line-height: 0.92;
+      letter-spacing: -0.045em;
+      font-weight: 500;
+      margin: 0;
+      max-width: 100%;
+    }
+    .hero-card {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,0.72);
+      border-radius: var(--radius);
+      padding: 22px 26px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1.4px solid var(--line);
+      padding: 8px 11px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+    }
+    .hero-card p { margin: 0; color: var(--muted); font-size: 22px; }
+    .hero-card strong { color: var(--ink); }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin: 0 0 42px;
+    }
+    .metric {
+      border: 1.4px solid rgba(16,18,15,0.8);
+      border-radius: 22px;
+      background: rgba(255,250,240,0.65);
+      padding: 20px;
+      min-height: 150px;
+    }
+    .metric .num {
+      font-size: 50px;
+      line-height: 0.95;
+      font-weight: 900;
+      letter-spacing: -0.06em;
+    }
+    .metric .label { margin-top: 12px; font-size: 16px; color: var(--muted); }
+
+    section { padding: 34px 0; }
+    .section-head {
+      display: block;
+      margin: 0 0 28px;
+    }
+    .section-head h2 {
+      font-size: clamp(38px, 4.25vw, 62px);
+      line-height: 0.96;
+      letter-spacing: -0.04em;
+      font-weight: 500;
+      margin: 0;
+    }
+    .section-head p {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 21px;
+      max-width: none;
+      width: 100%;
+    }
+
+    .panel {
+      border: 1.5px solid var(--line);
+      border-radius: 32px;
+      background: rgba(255,250,240,0.86);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel.dark {
+      background: #11130f;
+      color: var(--paper);
+    }
+    .panel.dark .muted, .panel.dark p, .panel.dark td, .panel.dark th { color: rgba(246,241,232,0.72); }
+    .panel-pad { padding: 28px; }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0;
+      background: var(--line);
+    }
+    .time-item {
+      background: var(--card);
+      border-left: 2px solid var(--line);
+      padding: 28px 22px;
+      min-height: 205px;
+    }
+    .time-item:first-child { border-left: 0; }
+    .time-year { font-size: 14px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+    .time-title { margin-top: 14px; font-size: 24px; font-weight: 900; letter-spacing: -0.02em; }
+    .time-text { margin-top: 10px; font-size: 16px; color: var(--muted); }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 16px;
+    }
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      padding: 18px 16px;
+      border-bottom: 1px solid rgba(16,18,15,0.14);
+    }
+    th {
+      font-size: 12px;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: rgba(16,18,15,0.04);
+    }
+    tr:last-child td { border-bottom: 0; }
+    .product { font-weight: 900; font-size: 22px; letter-spacing: -0.03em; }
+    .sub { color: var(--muted); font-size: 14px; margin-top: 3px; }
+    .pill {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      margin: 2px 3px 2px 0;
+      white-space: nowrap;
+    }
+    .pill.lime { background: var(--lime); }
+    .pill.orange { background: var(--orange); }
+    .pill.blue { background: var(--blue); }
+    .pill.pink { background: var(--pink); }
+    .pill.gray { background: var(--gray); }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .cards.two-up {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .cards.three-up {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .evidence-card {
+      border: 1.5px solid var(--line);
+      border-radius: 26px;
+      background: var(--card);
+      padding: 22px;
+      min-height: 440px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .evidence-card h3 {
+      margin: 0;
+      font-size: 38px;
+      letter-spacing: -0.06em;
+      line-height: 0.96;
+      font-weight: 500;
+    }
+    .evidence-card .pill { display: block; width: fit-content; }
+    .evidence-card .company { color: var(--muted); font-size: 15px; margin-top: 5px; }
+    .evidence-card h4 {
+      margin: 0 0 6px;
+      font-size: 12.5px;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+    .evidence-card p { margin: 0; color: var(--muted); font-size: 15.5px; }
+    .evidence-card ul { margin: 0; padding-left: 21px; color: var(--muted); font-size: 15.5px; }
+    .evidence-card li { margin: 0 0 7px; }
+
+    .matrix {
+      display: grid;
+      grid-template-columns: 220px repeat(3, 1fr);
+      border: 1.5px solid var(--line);
+      border-radius: 30px;
+      overflow: hidden;
+      background: var(--line);
+      gap: 1px;
+    }
+    .matrix > div { background: var(--card); padding: 16px; min-height: 78px; }
+    .matrix .head { background: #11130f; color: var(--paper); font-weight: 900; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; }
+    .matrix .rowhead { font-weight: 800; font-size: 17px; }
+    .score { font-size: 14px; color: var(--muted); }
+    .signal { font-weight: 900; font-size: 24px; letter-spacing: -0.05em; }
+    .yes { color: #24522b; }
+    .partial { color: #8b5a00; }
+    .no { color: #6a6a62; }
+    .matrix-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      align-items: center;
+      margin: -12px 0 14px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+    .matrix-legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      white-space: nowrap;
+    }
+    .matrix-legend .signal {
+      font-size: 21px;
+      line-height: 1;
+    }
+
+    .strategy {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .strategy-card {
+      background: #11130f;
+      color: var(--paper);
+      border-radius: 26px;
+      padding: 28px;
+      min-height: 360px;
+      border: 1px solid rgba(246,241,232,0.2);
+    }
+    .strategy-card .step { font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--lime); font-weight: 850; }
+    .strategy-card h3 { margin: 18px 0 14px; font-size: 30px; letter-spacing: -0.04em; line-height: 1; font-weight: 500; }
+    .strategy-card p { margin: 0; color: rgba(246,241,232,0.78); font-size: 18px; line-height: 1.4; }
+    .strategy-card ul { margin: 0; padding-left: 20px; color: rgba(246,241,232,0.78); font-size: 17px; }
+    .strategy-card li { margin: 0 0 8px; }
+
+    .sources {
+      font-size: 19px;
+      color: var(--muted);
+      column-count: 2;
+      column-gap: 42px;
+    }
+    .sources p { break-inside: avoid; margin: 0 0 13px; }
+    sup { font-size: 10px; font-weight: 800; }
+    .caption { font-size: 14px; color: var(--muted); margin-top: 10px; }
+
+    @media (max-width: 1100px) {
+      .hero, .section-head { grid-template-columns: 1fr; }
+      .metrics, .cards, .strategy { grid-template-columns: repeat(2, 1fr); }
+      .cards.three-up { grid-template-columns: repeat(2, 1fr); }
+      .timeline { grid-template-columns: repeat(3, 1fr); }
+      .matrix { grid-template-columns: 180px repeat(3, minmax(120px, 1fr)); overflow-x: auto; }
+    }
+    @media (max-width: 760px) {
+      .wrap { width: min(100vw - 28px, 1360px); }
+      header { padding-top: 24px; }
+      .metrics, .cards, .strategy, .timeline, .cards.three-up { grid-template-columns: 1fr; }
+      .panel-pad { padding: 20px; }
+      table { font-size: 13px; }
+      .table-scroll { overflow-x: auto; }
+      .sources { column-count: 1; }
+    }
+
+
+    /* Slide deck wrappers */
+    .slide-deck { display: block; }
+    .slide {
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      padding: 48px 0 32px;
+      page-break-after: always;
+      break-after: page;
+    }
+    .slide:last-child {
+      page-break-after: auto;
+      break-after: auto;
+    }
+    .slide > .wrap {
+      width: min(1360px, calc(100vw - 48px));
+      margin: 0 auto;
+    }
+    .slide header {
+      width: 100%;
+      border-bottom: 0;
+      padding: 0;
+    }
+    .slide header .metrics { margin-top: 30px; }
+    .slide-hero {
+      align-items: center;
+      padding: 0;
+    }
+    .slide-hero h1 {
+      font-size: 78px;
+      line-height: 0.9;
+      max-width: 1360px;
+    }
+    .slide-hero h1 span { display: block; }
+    .slide-hero .hero { gap: 30px; }
+    .slide-hero .eyebrow {
+      margin-top: 18px;
+      margin-bottom: 0;
+      font-size: 16px;
+    }
+    .slide-hero .hero-card {
+      max-width: none;
+      padding: 30px 32px;
+    }
+    .slide-hero .hero-card p {
+      font-size: 26px;
+      line-height: 1.32;
+    }
+    .slide .section-slide { width: 100%; padding: 0; }
+    .slide .section-slide .section-head { margin-top: 0; }
+    .slide .metrics { margin: 0; }
+    .slide .panel + .section-head { margin-top: 0; }
+    .slide .sources { column-count: 2; }
+    .study-table-slide table { font-size: 15px; }
+    .study-table-slide th, .study-table-slide td { padding: 16px 14px; }
+    .heor-slide .evidence-card {
+      min-height: 540px;
+      padding: 20px;
+      gap: 12px;
+    }
+    .heor-slide .evidence-card p,
+    .heor-slide .evidence-card ul { font-size: 14.5px; }
+
+    @media (max-width: 760px) {
+      .slide { align-items: flex-start; padding: 24px 0; }
+      .slide > .wrap { width: min(100vw - 28px, 1360px); }
+    }
+
+    @page {
+      size: 1600px 900px;
+      margin: 0;
+    }
+
+    @media print {
+      html, body {
+        width: 1600px;
+        min-height: 900px;
+      }
+      .slide {
+        display: flex;
+        align-items: start;
+        page-break-before: auto;
+        break-before: auto;
+        page-break-after: always;
+        break-after: page;
+        page-break-inside: avoid;
+        break-inside: avoid;
+        min-height: 900px;
+        height: 900px;
+        padding: 90px 0 32px;
+        overflow: hidden;
+      }
+      .slide.slide-hero { padding: 0; }
+      .slide:last-child {
+        page-break-after: auto;
+        break-after: auto;
+      }
+      .slide > .wrap { width: 1360px; }
+      .slide-hero { align-items: center; padding: 0; }
+      .metrics { grid-template-columns: repeat(4, 1fr); }
+      .timeline { grid-template-columns: repeat(6, 1fr); }
+      .cards { grid-template-columns: repeat(4, 1fr); }
+      .cards.two-up { grid-template-columns: repeat(2, 1fr); }
+      .cards.three-up { grid-template-columns: repeat(3, 1fr); }
+      .matrix { grid-template-columns: 220px repeat(3, 1fr); overflow: hidden; }
+      .strategy { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media print {
+      body { background: var(--paper); }
+      .panel, .metric, .hero-card, .evidence-card { box-shadow: none; }
+      a { text-decoration: none; }
+      /* Ensure all .wrap elements get a fixed width in print, including the
+         hero slide where .wrap is nested inside <header> */
+      .wrap, .slide .wrap { width: 1360px; margin: 0 auto; }
+      /* Compact matrix slide so it fits one print page (1600x900) */
+      .matrix > div { padding: 9px 12px; min-height: 0; }
+      .matrix .head { padding: 9px 12px; font-size: 13px; }
+      .matrix .rowhead { font-size: 14.5px; }
+      .matrix .signal { font-size: 19px; }
+      .matrix .score { font-size: 12.5px; line-height: 1.28; }
+      .matrix-legend { margin: -8px 0 10px; font-size: 14px; }
+      .matrix-legend .signal { font-size: 17px; }
+      /* Slightly tighter section header on the matrix slide so 7 rows fit */
+      .slide .section-head { margin: 0 0 18px; }
+      .slide .section-head h2 { font-size: 44px; }
+      .slide .section-head p { font-size: 17px; margin-top: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="slide-deck">
+
+    <!-- SLIDE 1: HERO -->
+    <article class="slide slide-hero" aria-label="Slide 1: Branded oxybates in idiopathic hypersomnia">
+      <header>
+        <div class="wrap hero">
+          <div>
+            <h1>Branded oxybates in idiopathic hypersomnia: evidence landscape and generation opportunities</h1>
+            <div class="eyebrow">Adult IH &bull; evidence analysis &bull; May 2026</div>
+          </div>
+          <aside class="hero-card">
+            <p><strong>Scope:</strong> Branded oxybate therapies with identifiable IH-relevant material in public regulatory and trial sources reviewed: <strong>Xywav</strong>, <strong>Xyrem</strong>, and <strong>Lumryz</strong>. Evidence base, methodological caveats, and possible directions for further evidence generation are summarized for consideration.<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-2">[2]</a><a class="cite" href="#source-3">[3]</a></p>
+          </aside>
+          <div class="metrics">
+            <div class="metric"><div class="num">3</div><div class="label">Branded oxybate products with identifiable IH-relevant material<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-2">[2]</a><a class="cite" href="#source-3">[3]</a></div></div>
+            <div class="metric"><div class="num">1/3</div><div class="label">Products with a US adult IH indication (Xywav)<a class="cite" href="#source-1">[1]</a></div></div>
+            <div class="metric"><div class="num">2025</div><div class="label">First placebo-controlled academic RCT of sodium oxybate in adult IH (SODHI)<a class="cite" href="#source-6">[6]</a></div></div>
+            <div class="metric"><div class="num">Pending</div><div class="label">Public REVITALYZ (Lumryz) IH efficacy results in reviewed sources<a class="cite" href="#source-5">[5]</a></div></div>
+          </div>
+        </div>
+      </header>
+    </article>
+
+    <!-- SLIDE 2: PRODUCT LANDSCAPE -->
+    <article class="slide" aria-label="Slide 2: Product landscape and approval status">
+      <div class="wrap">
+        <section class="section-slide">
+          <div class="section-head">
+            <h2>Product landscape and approval status</h2>
+            <p>The three branded oxybates differ on regulatory positioning for IH and on the type of IH evidence that has been published. The framing here is descriptive: positions vary across formulation, dosing schedule, indication scope, and depth of public IH-specific data.<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-2">[2]</a><a class="cite" href="#source-3">[3]</a></p>
+          </div>
+          <div class="panel">
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th>Formulation &amp; dosing</th>
+                    <th>US status (reviewed labels)</th>
+                    <th>EU / Canada status (reviewed materials)</th>
+                    <th>IH-specific public evidence identified</th>
+                    <th>Bottom-line IH status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><div class="product">Xywav<a class="cite" href="#source-1">[1]</a></div><div class="sub">Ca/Mg/K/Na oxybates oral solution; once- or twice-nightly</div></td>
+                    <td>Mixed-cation oxybate oral solution; individualized titration in adult IH<a class="cite" href="#source-1">[1]</a></td>
+                    <td>FDA-approved for adult IH (Aug 2021)<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-4">[4]</a></td>
+                    <td>No public EMA EPAR with IH indication identified; Canadian monograph reviewed indicates cataplexy in narcolepsy only<a class="cite" href="#source-1">[1]</a></td>
+                    <td>Pivotal phase 3 RCT, OL titration paper, 24-week OLE, phase 4 DUET<a class="cite" href="#source-4">[4]</a><a class="cite" href="#source-9">[9]</a><a class="cite" href="#source-10">[10]</a></td>
+                    <td><span class="pill lime">Approved &amp; best-supported</span></td>
+                  </tr>
+                  <tr>
+                    <td><div class="product">Xyrem<a class="cite" href="#source-2">[2]</a></div><div class="sub">Sodium oxybate IR oral solution; twice nightly</div></td>
+                    <td>Sodium oxybate immediate-release oral solution<a class="cite" href="#source-2">[2]</a></td>
+                    <td>US label reviewed shows narcolepsy cataplexy or EDS only, not IH<a class="cite" href="#source-2">[2]</a></td>
+                    <td>EMA EPAR reviewed shows narcolepsy with cataplexy; Canadian monograph reviewed shows cataplexy in narcolepsy only<a class="cite" href="#source-2">[2]</a></td>
+                    <td>2025 academic RCT (SODHI), 2016 retrospective chart review, AASM guideline support for off-label adult IH<a class="cite" href="#source-6">[6]</a><a class="cite" href="#source-8">[8]</a><a class="cite" href="#source-11">[11]</a></td>
+                    <td><span class="pill orange">Off-label; meaningful but narrower evidence</span></td>
+                  </tr>
+                  <tr>
+                    <td><div class="product">Lumryz<a class="cite" href="#source-3">[3]</a></div><div class="sub">Sodium oxybate ER oral suspension; once nightly</div></td>
+                    <td>Extended-release sodium oxybate, once nightly<a class="cite" href="#source-3">[3]</a></td>
+                    <td>US label reviewed shows narcolepsy cataplexy or EDS only (now ages 7+), not IH<a class="cite" href="#source-3">[3]</a></td>
+                    <td>No EMA or Canada IH authorization identified in reviewed materials<a class="cite" href="#source-3">[3]</a></td>
+                    <td>Phase 3 IH trial, REVITALYZ (NCT06525077); no public IH efficacy results in reviewed sources<a class="cite" href="#source-5">[5]</a><a class="cite" href="#source-12">[12]</a></td>
+                    <td><span class="pill blue">Investigational for IH</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+    </article>
+
+    <!-- SLIDE 3: EVIDENCE TIMELINE -->
+    <article class="slide" aria-label="Slide 3: IH oxybate evidence and regulatory milestones">
+      <div class="wrap">
+        <section class="section-slide">
+          <div class="section-head">
+            <h2>Evidence and regulatory milestones</h2>
+            <p>The public trajectory of branded oxybate IH evidence has been asymmetric. Xywav progressed from registration trial through approval, extension follow-up, and phase 4 confirmation. Xyrem accumulated later academic evidence without an IH label. Lumryz remains between development and public IH readout in the reviewed sources.<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-4">[4]</a><a class="cite" href="#source-6">[6]</a><a class="cite" href="#source-12">[12]</a></p>
+          </div>
+          <div class="panel">
+            <div class="timeline">
+              <div class="time-item"><div class="time-year">2016</div><div class="time-title">Xyrem off-label IH chart review<a class="cite" href="#source-8">[8]</a></div><div class="time-text">Leu-Semenescu et&nbsp;al. retrospective field study in adult IH and narcolepsy type 1.<a class="cite" href="#source-8">[8]</a></div></div>
+              <div class="time-item"><div class="time-year">2018</div><div class="time-title">Xywav phase 3 IH program initiated<a class="cite" href="#source-1">[1]</a></div><div class="time-text">Registration-grade development of mixed-cation oxybate in adult IH begins.<a class="cite" href="#source-1">[1]</a></div></div>
+              <div class="time-item"><div class="time-year">Aug 2021</div><div class="time-title">FDA approves Xywav for adult IH<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-4">[4]</a></div><div class="time-text">First and to date only branded oxybate with a US adult IH indication.<a class="cite" href="#source-1">[1]</a></div></div>
+              <div class="time-item"><div class="time-year">2022&ndash;2023</div><div class="time-title">Pivotal RCT &amp; 24-week OLE published<a class="cite" href="#source-9">[9]</a><a class="cite" href="#source-10">[10]</a></div><div class="time-text">Open-label titration analysis (Thorpy 2022) and OLE (Morse 2023) report symptom and TEAE trajectories.<a class="cite" href="#source-9">[9]</a><a class="cite" href="#source-10">[10]</a></div></div>
+              <div class="time-item"><div class="time-year">2025</div><div class="time-title">SODHI Xyrem RCT &amp; REVITALYZ enrollment<a class="cite" href="#source-6">[6]</a><a class="cite" href="#source-12">[12]</a></div><div class="time-text">Dauvilliers et&nbsp;al. publish placebo-controlled IH RCT for sodium oxybate; Lumryz REVITALYZ completes enrollment per company communications.<a class="cite" href="#source-6">[6]</a><a class="cite" href="#source-12">[12]</a></div></div>
+              <div class="time-item"><div class="time-year">2026</div><div class="time-title">Xywav DUET phase 4 published<a class="cite" href="#source-4">[4]</a></div><div class="time-text">Plante et&nbsp;al. add objective actigraphy and functional outcomes; REVITALYZ top-line readout expected per company materials.<a class="cite" href="#source-4">[4]</a><a class="cite" href="#source-12">[12]</a></div></div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </article>
+
+    <!-- SLIDE 4: XYWAV STUDY EVIDENCE -->
+    <article class="slide study-table-slide" aria-label="Slide 4: Study-level evidence for Xywav">
+      <div class="wrap">
+        <section class="section-slide">
+          <div class="section-head">
+            <h2>Study-level evidence: Xywav</h2>
+            <p>The Xywav adult IH dataset is the only one in the class that combines a registration-grade randomized-withdrawal trial, an open-label extension, and a phase 4 prospective cohort with objective sleep measures. Effect estimates are concentrated in responder-enriched and uncontrolled designs, which is methodologically relevant when interpreting magnitude.<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-4">[4]</a><a class="cite" href="#source-9">[9]</a><a class="cite" href="#source-10">[10]</a></p>
+          </div>
+          <div class="panel">
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Study</th>
+                    <th>Design &amp; n</th>
+                    <th>Key endpoints &amp; results</th>
+                    <th>Methodological notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><div class="product">Pivotal phase 3<a class="cite" href="#source-1">[1]</a></div><div class="sub">NCT03533114; Study 2</div></td>
+                    <td>Multicenter, double-blind, placebo-controlled, randomized withdrawal after open-label titration (10+ wks) and stable-dose period; <strong>n=154 enrolled, 115 randomized/evaluable</strong>.<a class="cite" href="#source-1">[1]</a></td>
+                    <td>Median ESS change SDP&rarr;DB-RWP: <strong>+8 placebo vs 0 Xywav</strong> (p&lt;0.0001). PGIc worsening: <strong>88.1% placebo vs 21.4% Xywav</strong>. Median IHSS change: <strong>+14 vs 0</strong> (p&lt;0.0001).<a class="cite" href="#source-1">[1]</a></td>
+                    <td>Enriched randomized-withdrawal estimates maintenance among responders/tolerators rather than de novo average treatment effect in unselected IH.<a class="cite" href="#source-1">[1]</a></td>
+                  </tr>
+                  <tr>
+                    <td><div class="product">Open-label titration<a class="cite" href="#source-9">[9]</a></div><div class="sub">Thorpy et&nbsp;al., 2022</div></td>
+                    <td>OL analysis from phase 3 program; <strong>safety pop. 154; mITT 115</strong>.<a class="cite" href="#source-9">[9]</a></td>
+                    <td>Reported clinically meaningful improvements on ESS, IHSS, PGI-C, FOSQ-10, WPAI:SHP during OL phase. Early TEAEs decreased from <strong>56.5% (wks 1&ndash;4) to 31.7% (wks 13&ndash;16)</strong>.<a class="cite" href="#source-9">[9]</a></td>
+                    <td>OL design with no control group and response-enriched population; useful for tolerability trajectory rather than causal effect estimation.<a class="cite" href="#source-9">[9]</a></td>
+                  </tr>
+                  <tr>
+                    <td><div class="product">24-week OLE<a class="cite" href="#source-10">[10]</a></div><div class="sub">Morse et&nbsp;al., 2023</div></td>
+                    <td>Open-label extension after pivotal RCT; <strong>106 entered OLE</strong>.<a class="cite" href="#source-10">[10]</a></td>
+                    <td>PGI-C "very much improved" rose from <strong>36.7% (OLE wk 2) to 53.8% (OLE end)</strong>; FOSQ-10 and WPAI:SHP stable; new TEAEs decreased over OLE.<a class="cite" href="#source-10">[10]</a></td>
+                    <td>Uncontrolled extension with survivor bias; supports durability narrative without confirming it under blinding.<a class="cite" href="#source-10">[10]</a></td>
+                  </tr>
+                  <tr>
+                    <td><div class="product">DUET (phase 4)<a class="cite" href="#source-4">[4]</a></div><div class="sub">Plante et&nbsp;al., 2026; NCT05875974</div></td>
+                    <td>Prospective, multicenter, single-arm, OL multi-cohort; <strong>n=46 enrolled, 40 completed</strong>; ICSD-3 IH; once-/twice-nightly.<a class="cite" href="#source-4">[4]</a></td>
+                    <td>ESS LS mean &Delta;<strong>&minus;8.4</strong> (p&lt;0.0001); IHSS &Delta;<strong>&minus;15.5</strong>; PGI-C overall improvement <strong>94.6%</strong>; sleep inertia <strong>81.1%</strong>; actigraphy nocturnal TST <strong>&minus;24.6 min</strong> (p=0.0035); FOSQ-10 <strong>+3.3</strong>.<a class="cite" href="#source-4">[4]</a></td>
+                    <td>Single-arm, small sample limits multiplicity beyond primary/key secondary; LST subtype not separately analyzed.<a class="cite" href="#source-4">[4]</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+    </article>
+
+    <!-- SLIDE 5: XYREM AND LUMRYZ STUDY EVIDENCE -->
+    <article class="slide study-table-slide" aria-label="Slide 5: Study-level evidence for Xyrem and Lumryz">
+      <div class="wrap">
+        <section class="section-slide">
+          <div class="section-head">
+            <h2>Study-level evidence: Xyrem and Lumryz</h2>
+            <p>Xyrem has direct adult IH efficacy data, but the body remains small and is not embedded in an IH-specific regulatory package. Lumryz has identifiable IH protocol-level information without public efficacy results in the reviewed sources, leaving its IH-specific certainty currently insufficient.<a class="cite" href="#source-2">[2]</a><a class="cite" href="#source-6">[6]</a><a class="cite" href="#source-8">[8]</a><a class="cite" href="#source-12">[12]</a></p>
+          </div>
+          <div class="panel">
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Study</th>
+                    <th>Design &amp; n</th>
+                    <th>Key endpoints &amp; results</th>
+                    <th>Methodological notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><div class="product">SODHI (Xyrem)<a class="cite" href="#source-6">[6]</a></div><div class="sub">Dauvilliers et&nbsp;al., 2025; NCT03597555</div></td>
+                    <td>Randomized, double-blind, placebo-controlled (registry indicates crossover elements); ICSD-3 adult IH; sodium oxybate <strong>4.5&ndash;9 g/night</strong> vs placebo.<a class="cite" href="#source-6">[6]</a></td>
+                    <td>Class&nbsp;I evidence at 8 weeks: IHSS LS mean &Delta;<strong>&minus;11.61</strong> (95% CI &minus;16.63 to &minus;6.59, p&lt;0.0001); MWT latency <strong>+14.75 min</strong> (95% CI 9.98&ndash;19.52, p&lt;0.0001); ESS improved (between-group estimate not visible in accessible snippets).<a class="cite" href="#source-6">[6]</a></td>
+                    <td>TEAEs <strong>81.8% vs 26.1% placebo</strong>; single published RCT, no broader confirmatory program identified.<a class="cite" href="#source-6">[6]</a></td>
+                  </tr>
+                  <tr>
+                    <td><div class="product">Leu-Semenescu (Xyrem)<a class="cite" href="#source-8">[8]</a></div><div class="sub">Retrospective, 2016</div></td>
+                    <td>Specialist-center chart review; <strong>n=41 IH</strong>; mean dose <strong>4.3 &plusmn; 2.2 g/night</strong>.<a class="cite" href="#source-8">[8]</a></td>
+                    <td>ESS &Delta;<strong>&minus;3.5 &plusmn; 4.5</strong>; severe morning inertia improved in <strong>24/34 (71%)</strong>; mean follow-up <strong>15.8 months</strong>.<a class="cite" href="#source-8">[8]</a></td>
+                    <td>Side effects in <strong>67%</strong>; <strong>53% discontinuation</strong> over follow-up; pre-approval-era diagnostic phenotyping; confounding inherent.<a class="cite" href="#source-8">[8]</a></td>
+                  </tr>
+                  <tr>
+                    <td><div class="product">AASM guideline (Xyrem)<a class="cite" href="#source-11">[11]</a></div><div class="sub">2021 practice guideline</div></td>
+                    <td>Evidence synthesis; not a trial.<a class="cite" href="#source-11">[11]</a></td>
+                    <td>AASM suggests sodium oxybate for adult IH; supports off-label use.<a class="cite" href="#source-11">[11]</a></td>
+                    <td>Downstream evidence; does not substitute for an IH regulatory package.<a class="cite" href="#source-11">[11]</a></td>
+                  </tr>
+                  <tr>
+                    <td><div class="product">REVITALYZ (Lumryz)<a class="cite" href="#source-5">[5]</a></div><div class="sub">NCT06525077</div></td>
+                    <td>Phase 3, double-blind, placebo-controlled, randomized withdrawal; <strong>~150 planned</strong>; adults with IH whether or not on prior oxybates/alerting agents.<a class="cite" href="#source-5">[5]</a><a class="cite" href="#source-12">[12]</a></td>
+                    <td><strong>No public IH efficacy results identified in the reviewed sources.</strong> Primary endpoint described as ESS at week 14; secondary endpoints include PGI-C, IHSS, FOSQ.<a class="cite" href="#source-5">[5]</a><a class="cite" href="#source-12">[12]</a></td>
+                    <td>Top-line readout described in company communications as expected in 2026; certainty for IH currently insufficient pending public data.<a class="cite" href="#source-12">[12]</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+    </article>
+
+    <!-- SLIDE 6: GRADE-STYLE CERTAINTY -->
+    <article class="slide" aria-label="Slide 6: Comparative certainty assessment">
+      <div class="wrap">
+        <section class="section-slide">
+          <div class="section-head">
+            <h2>Comparative certainty assessment</h2>
+            <p>A GRADE-style summary across risk of bias, consistency, directness, precision, magnitude, and applicability. The framing is comparative rather than evaluative: it characterizes what the public evidence supports for adult IH today, not what any product should or should not be used for.<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-2">[2]</a><a class="cite" href="#source-3">[3]</a><a class="cite" href="#source-4">[4]</a><a class="cite" href="#source-6">[6]</a></p>
+          </div>
+          <div class="matrix-legend" aria-label="Certainty legend">
+            <span><span class="signal yes">&#9679;</span> Supportive evidence identified</span>
+            <span><span class="signal partial">&#9680;</span> Partial or emerging evidence</span>
+            <span><span class="signal no">&#9675;</span> Evidence gap / cannot assess</span>
+          </div>
+          <div class="matrix" role="table" aria-label="Comparative certainty matrix">
+            <div class="head">Domain</div><div class="head">Xywav</div><div class="head">Xyrem</div><div class="head">Lumryz</div>
+
+            <div class="rowhead">Risk of bias</div>
+            <div><span class="signal partial">&#9680;</span><div class="score">Pivotal trial uses responder-enriched randomized withdrawal; DUET single-arm OL.<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-4">[4]</a></div></div>
+            <div><span class="signal partial">&#9680;</span><div class="score">One RCT helps; body still relies heavily on retrospective data.<a class="cite" href="#source-6">[6]</a><a class="cite" href="#source-8">[8]</a></div></div>
+            <div><span class="signal no">&#9675;</span><div class="score">No public IH results yet; cannot characterize.<a class="cite" href="#source-12">[12]</a></div></div>
+
+            <div class="rowhead">Consistency</div>
+            <div><span class="signal yes">&#9679;</span><div class="score">Direction consistent across pivotal trial, OLE, DUET on ESS/IHSS.<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-4">[4]</a><a class="cite" href="#source-10">[10]</a></div></div>
+            <div><span class="signal partial">&#9680;</span><div class="score">Existing studies point the same way; few studies overall.<a class="cite" href="#source-6">[6]</a><a class="cite" href="#source-8">[8]</a></div></div>
+            <div><span class="signal no">&#9675;</span><div class="score">Cannot assess.<a class="cite" href="#source-12">[12]</a></div></div>
+
+            <div class="rowhead">Directness</div>
+            <div><span class="signal yes">&#9679;</span><div class="score">High; IH-specific, label-aligned studies.<a class="cite" href="#source-1">[1]</a></div></div>
+            <div><span class="signal partial">&#9680;</span><div class="score">Direct adult IH studies; no IH regulatory indication; older diagnostic era for retrospective data.<a class="cite" href="#source-6">[6]</a><a class="cite" href="#source-8">[8]</a></div></div>
+            <div><span class="signal no">&#9675;</span><div class="score">Indirect from narcolepsy plus protocol-only IH information.<a class="cite" href="#source-3">[3]</a><a class="cite" href="#source-5">[5]</a></div></div>
+
+            <div class="rowhead">Precision</div>
+            <div><span class="signal partial">&#9680;</span><div class="score">Pivotal n reasonable for rare disease but modest; rare harms imprecise.<a class="cite" href="#source-1">[1]</a></div></div>
+            <div><span class="signal partial">&#9680;</span><div class="score">Granular public values incomplete; small evidence base.<a class="cite" href="#source-6">[6]</a></div></div>
+            <div><span class="signal no">&#9675;</span><div class="score">Very low; no public IH outcome estimates.<a class="cite" href="#source-12">[12]</a></div></div>
+
+            <div class="rowhead">Magnitude</div>
+            <div><span class="signal yes">&#9679;</span><div class="score">Large symptomatic signal on ESS/IHSS; functional gains in DUET.<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-4">[4]</a></div></div>
+            <div><span class="signal partial">&#9680;</span><div class="score">Potentially large in 2025 RCT on IHSS and MWT.<a class="cite" href="#source-6">[6]</a></div></div>
+            <div><span class="signal no">&#9675;</span><div class="score">Cannot assess.<a class="cite" href="#source-12">[12]</a></div></div>
+
+            <div class="rowhead">Applicability</div>
+            <div><span class="signal partial">&#9680;</span><div class="score">Stable co-medications allowed; pediatric IH absent; LST subtype not separately resolved.<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-4">[4]</a></div></div>
+            <div><span class="signal partial">&#9680;</span><div class="score">Refractory adult specialist practice; weaker for broad routine care.<a class="cite" href="#source-6">[6]</a><a class="cite" href="#source-8">[8]</a></div></div>
+            <div><span class="signal no">&#9675;</span><div class="score">Once-nightly dosing may reduce burden in principle; not yet evidence of IH efficacy.<a class="cite" href="#source-3">[3]</a></div></div>
+
+            <div class="rowhead">Overall certainty (adult IH)</div>
+            <div><span class="signal yes">&#9679;</span><div class="score">Moderate for short-term symptom benefit; low&ndash;moderate for long-term/objective; low for uncommon harms.<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-4">[4]</a></div></div>
+            <div><span class="signal partial">&#9680;</span><div class="score">Low overall certainty.<a class="cite" href="#source-6">[6]</a><a class="cite" href="#source-8">[8]</a></div></div>
+            <div><span class="signal no">&#9675;</span><div class="score">Very low or insufficient certainty.<a class="cite" href="#source-12">[12]</a></div></div>
+          </div>
+        </section>
+      </div>
+    </article>
+
+    <!-- SLIDE 7: EVIDENCE GAPS -->
+    <article class="slide" aria-label="Slide 7: Evidence gaps">
+      <div class="wrap">
+        <section class="section-slide">
+          <div class="section-head">
+            <h2>Evidence gaps</h2>
+            <p>Across the branded oxybate class, several IH-specific evidence gaps appear repeatedly in the reviewed sources. They are the same patterns regardless of product, which suggests structural opportunities for class-level evidence generation rather than only product-level work.<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-4">[4]</a><a class="cite" href="#source-6">[6]</a><a class="cite" href="#source-8">[8]</a><a class="cite" href="#source-12">[12]</a></p>
+          </div>
+          <div class="cards three-up">
+            <article class="evidence-card">
+              <div>
+                <h3>Population &amp; phenotype</h3>
+                <div class="company">Who is studied vs. who is treated</div>
+              </div>
+              <div><span class="pill gray">Pediatric IH absent</span><span class="pill gray">LST not separately analyzed</span></div>
+              <div>
+                <h4>What the evidence shows</h4>
+                <p>Registration-grade studies focus on adults; pediatric IH evidence was not identified. The long-sleep-time (LST) subtype and prior oxybate exposure are inconsistently reported.<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-4">[4]</a></p>
+              </div>
+              <div>
+                <h4>Possible directions</h4>
+                <ul>
+                  <li>Bayesian-extrapolated adolescent PK/PD and safety programs.<a class="cite" href="#source-1">[1]</a></li>
+                  <li>Pre-specified LST subgroup analyses in future trials.<a class="cite" href="#source-4">[4]</a></li>
+                  <li>Stratification by prior oxybate exposure and cardiometabolic risk.<a class="cite" href="#source-1">[1]</a></li>
+                </ul>
+              </div>
+            </article>
+            <article class="evidence-card">
+              <div>
+                <h3>Outcomes &amp;<br>objectivity</h3>
+                <div class="company">What is measured vs. what matters</div>
+              </div>
+              <div><span class="pill gray">Limited objective sleep physiology</span><span class="pill gray">Sparse driving/cognition data</span></div>
+              <div>
+                <h4>What the evidence shows</h4>
+                <p>Most registration-grade evidence relies on patient-reported sleepiness scales; objective measures (MWT, PSG, actigraphy, psychomotor vigilance) appear unevenly across the dataset, with DUET adding actigraphy in a small single-arm cohort.<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-4">[4]</a></p>
+              </div>
+              <div>
+                <h4>Possible directions</h4>
+                <ul>
+                  <li>Mechanistic trials nested in routine treatment initiation, capturing MWT, PSG, vigilance, driving simulator, digital cognition.<a class="cite" href="#source-4">[4]</a></li>
+                  <li>Standardized actigraphy and sleep-inertia capture across products.<a class="cite" href="#source-4">[4]</a></li>
+                </ul>
+              </div>
+            </article>
+            <article class="evidence-card">
+              <div>
+                <h3>Comparative &amp; long-term safety</h3>
+                <div class="company">Across products and over time</div>
+              </div>
+              <div><span class="pill gray">No head-to-head trials</span><span class="pill gray">Rare-event capture limited</span></div>
+              <div>
+                <h4>What the evidence shows</h4>
+                <p>No head-to-head IH trials between branded oxybates were identified. Long-term, rare-event, and psychiatric/sleep-disordered-breathing safety data come mostly from narcolepsy datasets and short IH extensions.<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-2">[2]</a><a class="cite" href="#source-3">[3]</a></p>
+              </div>
+              <div>
+                <h4>Possible directions</h4>
+                <ul>
+                  <li>Multi-product expert-center prospective registries focused on IH.<a class="cite" href="#source-8">[8]</a></li>
+                  <li>Comparative-effectiveness designs once Lumryz IH efficacy is public.<a class="cite" href="#source-12">[12]</a></li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </article>
+
+    <!-- SLIDE 8: PRODUCT-SPECIFIC EVIDENCE GENERATION OPTIONS -->
+    <article class="slide heor-slide" aria-label="Slide 8: Product-specific evidence generation considerations">
+      <div class="wrap">
+        <section class="section-slide">
+          <div class="section-head">
+            <h2>Product-specific evidence generation considerations</h2>
+            <p>The directions below describe study designs identified in the reviewed sources as candidates for closing specific gaps. They are presented as options for stakeholders to consider in light of their priorities, rather than as recommendations.<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-4">[4]</a><a class="cite" href="#source-6">[6]</a><a class="cite" href="#source-12">[12]</a></p>
+          </div>
+          <div class="cards three-up">
+            <article class="evidence-card">
+              <div>
+                <h3>Xywav</h3>
+                <div class="company">Mature IH dataset; specific gaps remain</div>
+              </div>
+              <div><span class="pill lime">Pediatric program option</span><span class="pill blue">Mechanistic outcomes option</span></div>
+              <div>
+                <h4>Gap A &mdash; Pediatric IH absent</h4>
+                <p><strong>Design option:</strong> Bayesian extrapolation plus open-label adolescent PK/PD and safety program, expanded only if signal and tolerability are acceptable. <strong>n:</strong> 40&ndash;60 adolescents with adult borrowing. <strong>Duration:</strong> 26-week primary, 52-week extension.<a class="cite" href="#source-1">[1]</a></p>
+              </div>
+              <div>
+                <h4>Gap B &mdash; Objective performance outcomes</h4>
+                <p><strong>Design option:</strong> Mechanistic trial nested in routine initiation. <strong>Outcomes:</strong> MWT, psychomotor vigilance, driving simulator, 24-hour PSG, actigraphy, digital cognition. <strong>n:</strong> 40&ndash;60 adults. <strong>Duration:</strong> 12&ndash;18 months.<a class="cite" href="#source-4">[4]</a></p>
+              </div>
+              <div>
+                <h4>Feasibility</h4>
+                <p>Pediatric: moderate to difficult given rarity and phenotype heterogeneity; mechanistic: moderately feasible at specialist centers.<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-4">[4]</a></p>
+              </div>
+            </article>
+            <article class="evidence-card">
+              <div>
+                <h3>Xyrem</h3>
+                <div class="company">Strong single RCT; replication and long-term gaps</div>
+              </div>
+              <div><span class="pill orange">Confirmatory RCT option</span><span class="pill blue">Registry option</span></div>
+              <div>
+                <h4>Gap A &mdash; Replication needed</h4>
+                <p><strong>Design option:</strong> Multinational, double-blind, placebo-controlled adult IH RCT (parallel-group preferred; otherwise randomized withdrawal with mandated reporting of pre-randomization response). <strong>Co-primary:</strong> ESS and IHSS. <strong>n:</strong> 120&ndash;140 for superiority; ~260&ndash;320 for active-comparator non-inferiority. <strong>Duration:</strong> 12-week blinded + 40-week extension.<a class="cite" href="#source-6">[6]</a></p>
+              </div>
+              <div>
+                <h4>Gap B &mdash; Long-term safety</h4>
+                <p><strong>Design option:</strong> Prospective expert-center IH registry. <strong>Outcomes:</strong> discontinuation, falls, depression/suicidality, sleep apnea, ER visits, weight, BP. <strong>n:</strong> 300&ndash;500. <strong>Duration:</strong> 3&ndash;5 years.<a class="cite" href="#source-8">[8]</a></p>
+              </div>
+              <div>
+                <h4>Feasibility</h4>
+                <p>Scientifically straightforward; commercially harder absent an IH-label sponsor pathway. Registry feasibility is moderate via consortia.<a class="cite" href="#source-6">[6]</a><a class="cite" href="#source-8">[8]</a></p>
+              </div>
+            </article>
+            <article class="evidence-card">
+              <div>
+                <h3>Lumryz</h3>
+                <div class="company">Pipeline asset for IH</div>
+              </div>
+              <div><span class="pill blue">REVITALYZ readout option</span><span class="pill orange">Comparative-effectiveness option</span></div>
+              <div>
+                <h4>Gap A &mdash; No public IH efficacy yet</h4>
+                <p><strong>Design option:</strong> Complete REVITALYZ reporting and publish full CONSORT dataset, including subgroup analyses by prior oxybate use and LST phenotype. Trial already sized at ~150.<a class="cite" href="#source-12">[12]</a></p>
+              </div>
+              <div>
+                <h4>Gap B &mdash; Comparative value</h4>
+                <p><strong>Design option:</strong> Open-label, rater-blinded comparative-effectiveness trial vs twice-nightly oxybate. <strong>Outcomes:</strong> ESS/IHSS non-inferiority; adherence/persistence superiority; satisfaction; nighttime awakening burden; productivity. <strong>n:</strong> 150&ndash;180. <strong>Duration:</strong> 24&ndash;26 weeks.<a class="cite" href="#source-12">[12]</a></p>
+              </div>
+              <div>
+                <h4>Feasibility</h4>
+                <p>High once REVITALYZ is public; comparative-effectiveness logical when payer-facing differentiation is desired.<a class="cite" href="#source-12">[12]</a></p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </article>
+
+    <!-- SLIDE 9: SAMPLE SIZE & FEASIBILITY -->
+    <article class="slide" aria-label="Slide 9: Sample size and feasibility considerations">
+      <div class="wrap">
+        <section class="section-slide">
+          <div class="section-head">
+            <h2>Sample size and feasibility considerations</h2>
+            <p>Planning estimates for two-arm superiority designs are summarized for orientation only. They are intended to support discussion among potential sponsors and investigators, and would be refined using variance from full original datasets prior to protocol-ready power calculations.<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-4">[4]</a><a class="cite" href="#source-6">[6]</a></p>
+          </div>
+          <div class="strategy">
+            <div class="strategy-card">
+              <div class="step">Consideration 01</div>
+              <h3>Per-arm sizing for symptom endpoints</h3>
+              <p>For a two-arm superiority trial at &alpha;=0.05, 90% power:</p>
+              <ul>
+                <li>ESS &Delta;=3 points, SD=5 &rarr; ~59 per arm</li>
+                <li>IHSS &Delta;=6 points, SD=10 &rarr; ~59 per arm</li>
+                <li>MWT &Delta;=8 minutes, SD=12 &rarr; ~47 per arm</li>
+              </ul>
+              <p>A 120&ndash;140 patient adult IH RCT is therefore not excessive for superiority on conventional symptom endpoints after dropout.<a class="cite" href="#source-6">[6]</a></p>
+            </div>
+            <div class="strategy-card">
+              <div class="step">Consideration 02</div>
+              <h3>Timeline ranges by program type</h3>
+              <p>Indicative durations identified in the reviewed sources:</p>
+              <ul>
+                <li>Pooled reanalysis of existing Xywav data: ~6&ndash;9 months if data access exists.<a class="cite" href="#source-1">[1]</a></li>
+                <li>New adult Xyrem confirmatory RCT: ~3.5&ndash;4 years end-to-end.<a class="cite" href="#source-6">[6]</a></li>
+                <li>Lumryz head-to-head burden/adherence study post-REVITALYZ: ~2.5&ndash;3 years.<a class="cite" href="#source-12">[12]</a></li>
+                <li>Pediatric IH program: ~3&ndash;4.5 years; staged adolescent-first design recommended in source materials.<a class="cite" href="#source-1">[1]</a></li>
+              </ul>
+            </div>
+            <div class="strategy-card">
+              <div class="step">Consideration 03</div>
+              <h3>Operational levers and design choices</h3>
+              <p>Frequently cited feasibility levers for a rare-disease class:</p>
+              <ul>
+                <li>Specialist hypersomnia consortia for enrollment and safety registries.<a class="cite" href="#source-8">[8]</a></li>
+                <li>Pre-specified LST and prior-oxybate subgroup analyses to limit interpretive ambiguity.<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-4">[4]</a></li>
+                <li>Active-comparator non-inferiority margins agreed with regulators in advance.<a class="cite" href="#source-6">[6]</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </article>
+
+    <!-- SLIDE 10: REFERENCES -->
+    <article class="slide" aria-label="Slide 10: References">
+      <div class="wrap">
+        <section class="section-slide">
+          <div class="section-head">
+            <h2>References &amp; limitations</h2>
+            <p>Sources reviewed through May 2026. Some granular details (e.g., full ESS effect tables for SODHI; FDA multidisciplinary review for the Xywav IH supplement; EMA records for Xywav/Lumryz in IH) were not reliably retrievable in the public materials reviewed and are conservatively labeled as not identified rather than not authorized.<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-6">[6]</a></p>
+          </div>
+          <div class="sources">
+            <p id="source-1"><sup>1</sup> <a href="https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/212690s011lbl.pdf" target="_blank" rel="noopener">FDA. Xywav (calcium, magnesium, potassium, sodium oxybates) prescribing information.</a></p>
+            <p id="source-2"><sup>2</sup> <a href="https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/021196s042lbl.pdf" target="_blank" rel="noopener">FDA. Xyrem (sodium oxybate) prescribing information.</a></p>
+            <p id="source-3"><sup>3</sup> <a href="https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/214755s006lbl.pdf" target="_blank" rel="noopener">FDA. Lumryz (sodium oxybate ER) prescribing information.</a></p>
+            <p id="source-4"><sup>4</sup> <a href="https://link.springer.com/10.1007/s40263-025-01262-9" target="_blank" rel="noopener">Plante DT, et al. DUET phase 4 prospective study of low-sodium oxybate in adults with idiopathic hypersomnia.</a></p>
+            <p id="source-5"><sup>5</sup> <a href="https://clinicaltrials.gov/study/NCT06525077" target="_blank" rel="noopener">ClinicalTrials.gov. REVITALYZ: phase 3 study of once-nightly sodium oxybate (FT218/Lumryz) in idiopathic hypersomnia, NCT06525077.</a></p>
+            <p id="source-6"><sup>6</sup> <a href="https://pubmed.ncbi.nlm.nih.gov/40359459/" target="_blank" rel="noopener">Dauvilliers Y, et al. SODHI: randomized placebo-controlled trial of sodium oxybate in adult idiopathic hypersomnia, 2025.</a></p>
+            <p id="source-7"><sup>7</sup> <a href="https://www.xywavhcp.com/pdf/XYWAV-nagivating-ih-symptoms.pdf" target="_blank" rel="noopener">Jazz Pharmaceuticals. Xywav HCP IH symptom navigation materials.</a></p>
+            <p id="source-8"><sup>8</sup> <a href="https://pubmed.ncbi.nlm.nih.gov/26847972/" target="_blank" rel="noopener">Leu-Semenescu S, et al. Sodium oxybate use in idiopathic hypersomnia and narcolepsy type 1: retrospective chart review, 2016.</a></p>
+            <p id="source-9"><sup>9</sup> <a href="https://www.researchgate.net/publication/364742997_Efficacy_and_Safety_of_Lower-Sodium_Oxybate_in_an_Open-Label_Titration_Period_of_a_Phase_3_Clinical_Study_in_Adults_with_Idiopathic_Hypersomnia" target="_blank" rel="noopener">Thorpy MJ, et al. Open-label titration of low-sodium oxybate in adult IH, 2022.</a></p>
+            <p id="source-10"><sup>10</sup> <a href="https://www.researchgate.net/publication/372158815_Long-term_efficacy_and_safety_of_low-sodium_oxybate_in_an_open-label_extension_period_of_a_placebo-controlled_double-blind_randomized_withdrawal_study_in_adults_with_idiopathic_hypersomnia" target="_blank" rel="noopener">Morse AM, et al. 24-week open-label extension of low-sodium oxybate in adult IH, 2023.</a></p>
+            <p id="source-11"><sup>11</sup> <a href="https://pubmed.ncbi.nlm.nih.gov/34743789/" target="_blank" rel="noopener">AASM clinical practice guideline for the treatment of central disorders of hypersomnolence, 2021.</a></p>
+            <p id="source-12"><sup>12</sup> <a href="https://www.sec.gov/Archives/edgar/data/1012477/000110465925122274/tm2533819d1_ex99-1.htm" target="_blank" rel="noopener">Avadel Pharmaceuticals SEC filing referencing REVITALYZ enrollment and expected top-line readout.</a></p>
+          </div>
+          <p class="caption">Style note: visual styling is consistent with a minimalist enterprise aesthetic (cream backgrounds, large typography, rounded modular cards, dark panels, lime accents). No third-party logos or proprietary templates are used.</p>
+        </section>
+      </div>
+    </article>
+
+  </main>
+</body>
+</html>

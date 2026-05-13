@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wet AMD Terminology Across Ocular, 4DMT, and EyePoint</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 26px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.34;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      page-break-after: always;
+      break-after: page;
+      padding: 70px 0 34px;
+      background: var(--paper);
+    }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .wrap { width: min(1360px, calc(100vw - 48px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 16px;
+      font-weight: 850;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 {
+      font-size: 88px;
+      line-height: .9;
+      letter-spacing: -0.045em;
+      font-weight: 500;
+      max-width: 1300px;
+    }
+    h2 {
+      font-size: 56px;
+      line-height: .96;
+      letter-spacing: -0.04em;
+      font-weight: 500;
+    }
+    h3 {
+      font-size: 28px;
+      line-height: 1.02;
+      letter-spacing: -0.035em;
+      font-weight: 650;
+    }
+    .section-head { margin-bottom: 24px; }
+    .section-head p { margin-top: 12px; color: var(--muted); font-size: 22px; max-width: 1230px; }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 22px; align-items: stretch; margin-top: 34px; }
+    .panel, .card {
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,250,240,.86);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel.dark { background: #11130f; color: var(--paper); }
+    .panel.dark p, .panel.dark li, .panel.dark .muted { color: rgba(246,241,232,.74); }
+    .panel-pad { padding: 28px; }
+    .hero-grid .panel.dark .panel-pad { padding: 36px; height: 100%; }
+    .hero-finding { font-size: 31px; line-height: 1.18; margin-top: 22px; }
+    .big-copy { font-size: 30px; line-height: 1.26; color: var(--muted); }
+    .big-copy strong { color: var(--ink); }
+    .panel.dark .big-copy strong { color: var(--paper); }
+    .metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 20px; }
+    .metric {
+      min-height: 132px;
+      border: 1.4px solid var(--line);
+      border-radius: 22px;
+      padding: 18px;
+      background: var(--card);
+    }
+    .num { font-size: 48px; line-height: .94; letter-spacing: -0.055em; font-weight: 850; }
+    .label { margin-top: 10px; font-size: 15px; color: var(--muted); }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .company-card { min-height: 580px; display: flex; flex-direction: column; }
+    .inventory-card { min-height: 0; height: 430px; }
+    .inventory-card .company-body { padding: 16px 22px; gap: 10px; }
+    .inventory-card .block-title { font-size: 12.5px; margin-bottom: 6px; }
+    .inventory-card .mini-list { font-size: 16px; line-height: 1.24; gap: 8px; }
+    .inventory-card .chip { font-size: 13.5px; min-height: 30px; padding: 6px 9px; }
+    .company-head {
+      padding: 18px 20px;
+      border-bottom: 1.4px solid var(--line);
+      background: var(--lime);
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: baseline;
+    }
+    .company-head .tag { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; font-weight: 850; }
+    .company-body { padding: 18px 20px; display: grid; gap: 13px; }
+    .block-title { font-size: 12px; font-weight: 900; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); margin-bottom: 7px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 27px;
+      padding: 5px 8px;
+      border: 1.15px solid var(--line);
+      border-radius: 999px;
+      background: var(--paper-2);
+      font-size: 12px;
+      line-height: 1.15;
+      font-weight: 750;
+      white-space: nowrap;
+    }
+    .chip.blue { background: var(--blue); }
+    .chip.orange { background: var(--orange); }
+    .chip.pink { background: var(--pink); }
+    .chip.lime { background: var(--lime); }
+    .chip.gray { background: var(--gray); }
+    .mini-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; color: var(--muted); font-size: 15px; }
+    .mini-list li { padding-left: 16px; position: relative; }
+    .mini-list li::before { content: ""; position: absolute; left: 0; top: .62em; width: 6px; height: 6px; border-radius: 50%; background: var(--ink); }
+    .matrix { display: grid; grid-template-columns: .72fr repeat(3, 1fr); border: 1.5px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    .cell { min-height: 92px; padding: 16px 17px; border-right: 1.2px solid var(--line); border-bottom: 1.2px solid var(--line); background: rgba(255,250,240,.9); font-size: 16px; color: var(--muted); }
+    .cell:nth-child(4n) { border-right: 0; }
+    .cell.row-last { border-bottom: 0; }
+    .cell.head { min-height: 60px; background: #11130f; color: var(--paper); font-weight: 850; letter-spacing: .02em; }
+    .cell.rowhead { color: var(--ink); font-weight: 850; background: var(--paper-2); }
+    .cell strong { color: var(--ink); }
+    .cell.head strong { color: var(--paper); }
+    .contrast-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: stretch; }
+    .contrast-grid .panel { height: 510px; }
+    .contrast-grid .panel-pad { height: 100%; display: flex; flex-direction: column; padding: 30px 28px 28px; }
+    .quote-row { display: grid; gap: 14px; }
+    .contrast-grid .quote-row { flex: 1; grid-template-rows: repeat(3, 1fr); }
+    .quote-card { border: 1.4px solid var(--line); border-radius: 22px; background: rgba(255,250,240,.88); padding: 20px; }
+    .contrast-grid .quote-card { display: flex; align-items: center; min-height: 0; padding: 18px 20px; }
+    .quote-card p { color: var(--muted); font-size: 19px; line-height: 1.28; }
+    .quote-card strong { color: var(--ink); }
+    .panel.dark .quote-card p { color: var(--muted); }
+    .panel.dark .quote-card strong { color: var(--ink); }
+    .example-quote {
+      border-left: 5px solid var(--line);
+      padding-left: 12px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.22;
+    }
+    .inventory-card .example-quote { font-size: 16.2px; line-height: 1.14; }
+    .example-quote strong { color: var(--ink); }
+    .interpret-card .mini-list { font-size: 20px; line-height: 1.3; gap: 10px; }
+    .source-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .source-list { list-style: none; padding: 0; margin: 14px 0 0; display: grid; gap: 7px; font-size: 13.5px; color: var(--muted); }
+    .source-list li { border-top: 1px solid rgba(16,18,15,.18); padding-top: 7px; }
+    .source-list a { color: var(--ink); font-weight: 750; }
+    .footnote { position: absolute; left: 120px; bottom: 31px; font-size: 12px; color: rgba(16,18,15,.52); max-width: 1280px; }
+    .slide-num { position: absolute; right: 40px; bottom: 28px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; }
+    sup { font-size: 10px; font-weight: 850; }
+    .cite { font-size: .62em; vertical-align: super; margin-left: 2px; font-weight: 850; text-decoration: none; }
+
+    @media print {
+      @page { size: 1600px 900px; margin: 0; }
+      body, *, *::before, *::after { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 70px 0 34px; box-shadow: none; }
+      .wrap { width: 1360px; }
+      .panel, .card, .metric, .matrix { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Wet AMD terminology audit</div>
+      <h1>Three retina companies, three different language systems</h1>
+      <div class="hero-grid">
+        <div class="panel">
+          <div class="panel-pad">
+            <p class="big-copy">All three manufacturers anchor to <strong>wet AMD</strong>, but the surrounding vocabulary diverges sharply: Ocular emphasizes <strong>continuous local drug delivery</strong>, 4DMT emphasizes <strong>genetic medicine as backbone therapy</strong>, and EyePoint emphasizes a <strong>bioerodible sustained-delivery insert</strong>.</p>
+            <div class="metrics">
+              <div class="metric"><div class="num">3</div><div class="label">companies reviewed</div></div>
+              <div class="metric"><div class="num">16+</div><div class="label">official pages / releases surfaced</div></div>
+              <div class="metric"><div class="num">5</div><div class="label">terminology dimensions compared</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="panel dark">
+          <div class="panel-pad">
+            <h3>High-level finding</h3>
+            <p class="big-copy hero-finding">Disease language is mostly standardized; platform and positioning language is not. The convention differences signal each company’s desired category: implant, gene therapy, or sustained-release insert.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footnote">Scope: public company websites and official investor pages available on May 11, 2026. “Wet AMD-related” means pages whose visible copy, page title, or official release copy references wet AMD, neovascular AMD, AXPAXLI / OTX-TKI, 4D-150, DURAVYU / EYP-1901, or named wet AMD trials.</div>
+    <div class="slide-num">01 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Page inventory</div>
+        <h2>Wet AMD content appears in different parts of each site</h2>
+        <p>Ocular and EyePoint concentrate terminology on program and clinical-trial pages. 4DMT spreads terminology across pipeline, patient education, and several news releases.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card company-card inventory-card">
+          <div class="company-head"><h3>Ocular</h3><span class="tag">ocutx.com</span></div>
+          <div class="company-body">
+            <div>
+              <div class="block-title">Where it appears</div>
+              <ul class="mini-list">
+                <li>AXPAXLI, pipeline, clinical trials, retinal disease, investor pages, and SOL updates.<sup>1-6</sup></li>
+              </ul>
+            </div>
+            <div>
+              <div class="block-title">Example language</div>
+              <p class="example-quote"><strong>“1-2 injections per year”</strong> and <strong>“continuous and consistent drug delivery”</strong> from ELUTYX hydrogel.</p>
+              <p class="example-quote" style="margin-top:6px;"><strong>“Potential first-in-class”</strong> and <strong>“multi-year therapy”</strong> for wet AMD.</p>
+              <p class="example-quote" style="margin-top:6px;"><strong>“Axitinib intravitreal implant”</strong> and <strong>“bioresorbable hydrogel.”</strong></p>
+            </div>
+            <div>
+              <div class="block-title">Page convention</div>
+              <div class="chips">
+                <span class="chip lime">AXPAXLI</span><span class="chip gray">OTX-TKI legacy</span><span class="chip blue">ELUTYX</span><span class="chip orange">durability</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card company-card inventory-card">
+          <div class="company-head" style="background:var(--blue);"><h3>4DMT</h3><span class="tag">4dmoleculartherapeutics.com</span></div>
+          <div class="company-body">
+            <div>
+              <div class="block-title">Where it appears</div>
+              <ul class="mini-list">
+                <li>Pipeline, retinal diseases education, 4FRONT, PRISM, RMAT, and focused-pipeline releases.<sup>7-11</sup></li>
+              </ul>
+            </div>
+            <div>
+              <div class="block-title">Example language</div>
+              <p class="example-quote"><strong>“Potential backbone therapy”</strong> with <strong>“single, low-dose intravitreal delivery”</strong> and multi-year anti-VEGF expression.</p>
+              <p class="example-quote" style="margin-top:6px;"><strong>“Intravitreal genetic medicine”</strong> with a <strong>“dual-transgene payload.”</strong></p>
+              <p class="example-quote" style="margin-top:6px;"><strong>“VEGF A, B, C and PlGF”</strong> inhibition.</p>
+            </div>
+            <div>
+              <div class="block-title">Page convention</div>
+              <div class="chips">
+                <span class="chip blue">4D-150</span><span class="chip lime">genetic medicine</span><span class="chip orange">backbone therapy</span><span class="chip gray">MNV / CNV</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card company-card inventory-card">
+          <div class="company-head" style="background:var(--orange);"><h3>EyePoint</h3><span class="tag">eyepoint.bio</span></div>
+          <div class="company-body">
+            <div>
+              <div class="block-title">Where it appears</div>
+              <ul class="mini-list">
+                <li>Our Programs, Science & Technology, wet AMD trial recruiting, and pivotal-program updates.<sup>12-16</sup></li>
+              </ul>
+            </div>
+            <div>
+              <div class="block-title">Example language</div>
+              <p class="example-quote"><strong>“Every six-month dosing”</strong>, <strong>“supplement-free”</strong>, and a <strong>“bioerodible sustained release insert.”</strong></p>
+              <p class="example-quote" style="margin-top:6px;"><strong>“Best-in-class durable therapies”</strong> using the <strong>Durasert E</strong> platform.</p>
+              <p class="example-quote" style="margin-top:6px;"><strong>“Vorolanib intravitreal insert”</strong> and <strong>“sustained delivery.”</strong></p>
+            </div>
+            <div>
+              <div class="block-title">Page convention</div>
+              <div class="chips">
+                <span class="chip orange">DURAVYU</span><span class="chip gray">EYP-1901</span><span class="chip blue">Durasert E</span><span class="chip pink">bioerodible insert</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">02 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Terminology matrix</div>
+        <h2>The shared disease term is “wet AMD,” but conventions around it vary</h2>
+      </div>
+      <div class="matrix">
+        <div class="cell head">Dimension</div>
+        <div class="cell head"><strong>Ocular</strong></div>
+        <div class="cell head"><strong>4DMT</strong></div>
+        <div class="cell head"><strong>EyePoint</strong></div>
+
+        <div class="cell rowhead">Disease description</div>
+        <div class="cell">Uses <strong>wet AMD</strong> and <strong>wet age-related macular degeneration</strong>; patient page also says “advanced form of dry AMD.”<sup>1,3</sup></div>
+        <div class="cell">Uses <strong>Wet AMD</strong>, <strong>neovascular AMD</strong>, and acronym <strong>nAMD</strong>; patient page also explains <strong>CNV</strong>.<sup>8,9</sup></div>
+        <div class="cell">Uses <strong>wet AMD</strong>, <strong>wet age-related macular degeneration</strong>, and <strong>wAMD</strong> in trial recruiting.<sup>13,16</sup></div>
+
+        <div class="cell rowhead">Product / asset name</div>
+        <div class="cell"><strong>AXPAXLI</strong>; legacy “also known as OTX-TKI.”<sup>2</sup></div>
+        <div class="cell"><strong>4D-150</strong> only; asset name is tightly coupled to platform language.<sup>8</sup></div>
+        <div class="cell"><strong>DURAVYU</strong>; “formerly EYP-1901” appears in investor/news framing.<sup>13,15</sup></div>
+
+        <div class="cell rowhead">Modality label</div>
+        <div class="cell">“Axitinib intravitreal implant,” “axitinib intravitreal hydrogel,” and <strong>hydrogel-based formulation</strong>.<sup>2,6</sup></div>
+        <div class="cell"><strong>Intravitreal genetic medicine</strong>, “dual-transgene payload,” and R100 vector terminology.<sup>8,10</sup></div>
+        <div class="cell"><strong>Vorolanib intravitreal insert</strong>, “bioerodible sustained delivery treatment,” Durasert E.<sup>13,14</sup></div>
+
+        <div class="cell rowhead">Mechanism / biology</div>
+        <div class="cell">Axitinib is framed as a <strong>tyrosine kinase inhibitor</strong> with pan-VEGF receptor inhibition.<sup>2,6</sup></div>
+        <div class="cell">Aflibercept plus anti-VEGF-C RNAi; positioned as inhibiting <strong>VEGF A, B, C and PlGF</strong>.<sup>8</sup></div>
+        <div class="cell">Vorolanib is a TKI with multi-target language across VEGF, PDGF, IL-6, and JAK1 signaling.<sup>13</sup></div>
+
+        <div class="cell rowhead row-last">Clinical positioning</div>
+        <div class="cell row-last"><strong>“Potential first-in-class,”</strong> <strong>“multi-year,”</strong> <strong>“reduce treatment burden”</strong>; trial names stay secondary.<sup>2,4,6</sup></div>
+        <div class="cell row-last"><strong>“Potential backbone therapy,”</strong> <strong>“preserve vision,”</strong> <strong>“low-dose single intravitreal injection”</strong>; trial names stay secondary.<sup>8,10</sup></div>
+        <div class="cell row-last"><strong>“Every six months,”</strong> <strong>“supplement-free,”</strong> <strong>“best-in-class durable therapies”</strong>; trial names stay secondary.<sup>13,15</sup></div>
+      </div>
+    </div>
+    <div class="slide-num">03 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Messaging contrast</div>
+        <h2>The categories they want you to hear are different</h2>
+        <p>Terminology choices reveal category strategy more than disease definition.</p>
+      </div>
+      <div class="contrast-grid">
+        <div class="panel dark">
+          <div class="panel-pad">
+            <h3>Convention A: burden language<br>is universal</h3>
+            <div class="quote-row" style="margin-top:20px;">
+              <div class="quote-card"><p><strong>Ocular:</strong> emphasizes monthly anti-VEGF injections as the historical burden, then frames AXPAXLI as continuous release from ELUTYX hydrogel.<sup>1,2</sup></p></div>
+              <div class="quote-card"><p><strong>4DMT:</strong> reframes burden through one-time genetic delivery and calls 4D-150 a potential “backbone therapy.”<sup>8,10</sup></p></div>
+              <div class="quote-card"><p><strong>EyePoint:</strong> focuses on six-month dosing, “supplement-free” control, and sustained-release insert design.<sup>13,15</sup></p></div>
+            </div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-pad">
+            <h3>Convention B: technical vocabulary maps to product architecture</h3>
+            <div class="quote-row" style="margin-top:20px;">
+              <div class="quote-card"><p><strong>Hydrogel implant:</strong> Ocular repeats “implant,” “hydrogel,” “bioresorbable,” and “axitinib” to make the delivery material part of the brand story.</p></div>
+              <div class="quote-card"><p><strong>Genetic medicine:</strong> 4DMT repeats “vector,” “payload,” “transgene,” and “intravitreal genetic medicine” to signal a different therapeutic class.</p></div>
+              <div class="quote-card"><p><strong>Insert platform:</strong> EyePoint repeats “insert,” “Durasert E,” “bioerodible,” and “sustained delivery” to separate DURAVYU from conventional injections.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">04 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Side-by-side interpretation</div>
+        <h2>Terminology conventions diverge most in abbreviation, mechanism, and promise</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card company-card interpret-card" style="min-height:520px;">
+          <div class="company-head"><h3>Ocular</h3><span class="tag">device-like drug delivery</span></div>
+          <div class="company-body">
+            <div class="block-title">Convention</div>
+            <p style="font-size:20px;color:var(--muted);line-height:1.3;">Plain disease language with asset-centered platform vocabulary.</p>
+            <div>
+              <div class="block-title">Distinctive terms</div>
+              <div class="chips"><span class="chip lime">ELUTYX</span><span class="chip blue">hydrogel</span><span class="chip gray">bioresorbable</span><span class="chip orange">SOL-1 / SOL-R / SOL-X</span></div>
+            </div>
+            <div>
+              <div class="block-title">Implication</div>
+              <ul class="mini-list">
+                <li>Reads closest to a durable local drug-delivery story.</li>
+                <li>Less disease-abbreviation density than 4DMT.</li>
+                <li>Uses “continuous release” as the key bridge from product to value.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card company-card interpret-card" style="min-height:520px;">
+          <div class="company-head" style="background:var(--blue);"><h3>4DMT</h3><span class="tag">genetic medicine</span></div>
+          <div class="company-body">
+            <div class="block-title">Convention</div>
+            <p style="font-size:20px;color:var(--muted);line-height:1.3;">More scientific vocabulary and the broadest abbreviation set.</p>
+            <div>
+              <div class="block-title">Distinctive terms</div>
+              <div class="chips"><span class="chip blue">nAMD</span><span class="chip gray">CNV / MNV</span><span class="chip lime">R100 vector</span><span class="chip orange">backbone therapy</span></div>
+            </div>
+            <div>
+              <div class="block-title">Implication</div>
+              <ul class="mini-list">
+                <li>Most likely to sound like a platform company.</li>
+                <li>Mechanism language is intentionally multi-ligand and gene-delivery forward.</li>
+                <li>“Backbone therapy” is a stronger category claim than burden reduction alone.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card company-card interpret-card" style="min-height:520px;">
+          <div class="company-head" style="background:var(--orange);"><h3>EyePoint</h3><span class="tag">sustained insert</span></div>
+          <div class="company-body">
+            <div class="block-title">Convention</div>
+            <p style="font-size:20px;color:var(--muted);line-height:1.3;">Brand-led, dosing-led language with insert-platform proof points.</p>
+            <div>
+              <div class="block-title">Distinctive terms</div>
+              <div class="chips"><span class="chip orange">DURAVYU</span><span class="chip gray">EYP-1901</span><span class="chip blue">Durasert E</span><span class="chip pink">wAMD</span></div>
+            </div>
+            <div>
+              <div class="block-title">Implication</div>
+              <ul class="mini-list">
+                <li>Most brand-forward naming convention of the three.</li>
+                <li>“Every six months” is more explicit than Ocular’s “multi-year” language.</li>
+                <li>Highlights what the delivery system does not contain: no PEG/PLGA and no free-floating particles.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">05 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Sources</div>
+        <h2>Official pages and releases used for the terminology pull</h2>
+        <p>After a second pass, I added newer official investor releases as confirmation. They reinforce the same conventions; they do not introduce a fourth terminology pattern.</p>
+      </div>
+      <div class="source-grid">
+        <div class="card">
+          <div class="company-head"><h3>Ocular</h3><span class="tag">1-6 + checked</span></div>
+          <div class="panel-pad">
+            <ul class="source-list">
+              <li><sup>1</sup> <a href="https://www.ocutx.com/">Ocular home page</a></li>
+              <li><sup>2</sup> <a href="https://www.ocutx.com/pipeline/axpaxli/">AXPAXLI page</a></li>
+              <li><sup>3</sup> <a href="https://www.ocutx.com/retinal-disease/">Retinal disease page</a></li>
+              <li><sup>4</sup> <a href="https://www.ocutx.com/pipeline/clinical-trials/">Clinical trials page</a></li>
+              <li><sup>5</sup> <a href="https://www.ocutx.com/pipeline/">Pipeline page</a></li>
+              <li><sup>6</sup> <a href="https://investors.ocutx.com/news-releases/news-release-details/ocular-therapeutixtm-reports-positive-results-landmark-sol-1">SOL-1 positive results release</a></li>
+              <li>Also checked: <a href="https://www.ocutx.com/investors/">investor overview</a> and <a href="https://investors.ocutx.com/news-releases">release archive</a>.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="company-head" style="background:var(--blue);"><h3>4DMT</h3><span class="tag">7-11 + checked</span></div>
+          <div class="panel-pad">
+            <ul class="source-list">
+              <li><sup>7</sup> <a href="https://4dmoleculartherapeutics.com/">4DMT home page</a></li>
+              <li><sup>8</sup> <a href="https://4dmoleculartherapeutics.com/pipeline/">Pipeline page</a></li>
+              <li><sup>9</sup> <a href="https://4dmoleculartherapeutics.com/patients/retinal-diseases/">Retinal diseases page</a></li>
+              <li><sup>10</sup> <a href="https://ir.4dmoleculartherapeutics.com/news-releases/news-release-details/4dmt-announces-first-patients-enrolled-4front-1-phase-3-clinical">4FRONT-1 enrollment release</a></li>
+              <li><sup>11</sup> <a href="https://ir.4dmoleculartherapeutics.com/news-releases">4DMT investor release archive</a></li>
+              <li>Also checked: <a href="https://ir.4dmoleculartherapeutics.com/news-releases/news-release-details/4dmt-announces-positive-long-term-data-phase-12-prism-clinical">PRISM long-term data</a> and <a href="https://ir.4dmoleculartherapeutics.com/news-releases/news-release-details/4dmt-receives-fda-regenerative-medicine-advanced-therapy-rmat">RMAT release</a>.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="company-head" style="background:var(--orange);"><h3>EyePoint</h3><span class="tag">12-16 + checked</span></div>
+          <div class="panel-pad">
+            <ul class="source-list">
+              <li><sup>12</sup> <a href="https://eyepoint.bio/">EyePoint home page</a></li>
+              <li><sup>13</sup> <a href="https://eyepoint.bio/our-programs/">Our Programs page</a></li>
+              <li><sup>14</sup> <a href="https://eyepoint.bio/science-and-technology/">Science & Technology page</a></li>
+              <li><sup>15</sup> <a href="https://investors.eyepoint.bio/news-releases/news-release-details/eyepoint-reports-corporate-update-and-anticipated-pivotal">Corporate update / pivotal program release</a></li>
+              <li><sup>16</sup> <a href="https://wetamdclinicaltrial.com/">DURAVYU wet AMD trial page</a></li>
+              <li>Also checked: <a href="https://investors.eyepoint.bio/news-releases/news-release-details/eyepoint-reports-fourth-quarter-and-full-year-2025-financial">Q4 / FY update</a> and <a href="https://investors.eyepoint.bio/news-releases/news-release-details/eyepoint-announces-first-patients-dosed-both-global-phase-3">Phase 3 update</a>.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footnote">Note: some company pages use investor-hosted domains for press releases; those pages were treated as official manufacturer website pages when linked from company investor navigation.</div>
+    <div class="slide-num">06 / 06</div>
+  </article>
+</body>
+</html>

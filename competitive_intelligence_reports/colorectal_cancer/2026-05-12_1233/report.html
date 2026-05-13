@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Colorectal Cancer Competitive Intelligence Update</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 36px 0 20px;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 850;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 82px; line-height: .92; letter-spacing: 0; font-weight: 560; max-width: 1260px; }
+    h2 { font-size: 54px; line-height: .98; letter-spacing: 0; font-weight: 560; max-width: 1300px; }
+    h3 { font-size: 29px; line-height: 1.05; letter-spacing: 0; font-weight: 650; }
+    .dek { margin-top: 18px; color: var(--muted); font-size: 27px; line-height: 1.23; max-width: 1270px; }
+    .section-head { margin-bottom: 20px; }
+    .section-head p { margin-top: 12px; color: var(--muted); font-size: 24px; line-height: 1.22; max-width: 1300px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .panel, .metric, .card, .table, .callout {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.88);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel { padding: 25px; }
+    .panel.dark, .callout { background: #11130f; color: var(--paper); border-color: #11130f; }
+    .panel.dark p, .panel.dark li, .callout p, .callout li { color: rgba(246,241,232,.86); }
+    .metric { padding: 22px; min-height: 150px; }
+    .num { font-size: 52px; line-height: .92; font-weight: 850; letter-spacing: 0; }
+    .label { margin-top: 12px; font-size: 18px; line-height: 1.24; color: var(--muted); }
+    .card { padding: 22px; min-height: 205px; }
+    .card p { color: var(--muted); font-size: 19px; line-height: 1.24; margin-top: 12px; }
+    .card .tag, .panel .tag { margin-bottom: 12px; }
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      white-space: nowrap;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .red { background: var(--red); }
+    .gray { background: var(--gray); }
+    .list { margin: 13px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+    .list li { position: relative; padding-left: 19px; color: var(--muted); font-size: 20px; line-height: 1.2; }
+    .list li::before { content: ""; position: absolute; left: 0; top: .53em; width: 8px; height: 8px; border-radius: 50%; background: var(--lime); border: 1px solid var(--line); }
+    .table { display: grid; }
+    .row { display: grid; grid-template-columns: .85fr .78fr 1.5fr 1.35fr; border-bottom: 1px solid var(--line); min-height: 78px; }
+    .row:last-child { border-bottom: 0; }
+    .cell { padding: 12px 13px; border-right: 1px solid var(--line); font-size: 16px; line-height: 1.18; }
+    .cell:last-child { border-right: 0; }
+    .head .cell { background: #11130f; color: var(--paper); font-weight: 850; text-transform: uppercase; font-size: 12px; }
+    .callout { padding: 23px 27px; }
+    .callout h3 { font-size: 31px; }
+    .callout p { margin-top: 12px; font-size: 24px; line-height: 1.17; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .cite + .cite::before { content: ","; margin-right: 1px; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    .source-note { color: var(--muted); font-size: 15px; line-height: 1.24; margin-top: 12px; }
+    .source-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; }
+    .source-card { min-height: 178px; padding: 15px; border: 1.5px solid var(--line); background: rgba(255,250,240,.9); border-radius: 18px; }
+    .source-card h3 { font-size: 19px; line-height: 1.04; }
+    .source-card p { margin-top: 8px; color: var(--muted); font-size: 14px; line-height: 1.2; }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .wrap { width: 1360px; }
+      .panel, .metric, .card, .table, .callout, .source-card { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) {
+      .slide { width: 1600px; height: 900px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Colorectal cancer CI update | May 6-12, 2026 evidence window</div>
+      <h1>Colorectal cancer competitive intelligence update</h1>
+      <p class="dek">This report includes seven primary-source items with visible publication or registry update dates from May 6, 2026 through May 8, 2026, all within the May 6-12, 2026 evidence window.<a class="cite" href="https://investors.guardanthealth.com/press-releases/press-releases/2026/Guardant-Health-Reports-First-Quarter-2026-Financial-Results-and-Increases-2026-Revenue-Guidance/default.aspx">1</a><a class="cite" href="https://news.ontario.ca/en/release/1007418/ontario-lowering-eligibility-age-for-life-saving-colon-cancer-screening">2</a><a class="cite" href="https://www.immunocore.com/investors/news/press-releases/detail/130/immunocore-reports-first-quarter-financial-results-and-provides-a-business-update">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07549412">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07284849">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06662786">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07221357">7</a></p>
+      <div class="grid-4" style="margin-top:34px;">
+        <div class="metric"><div class="num">7</div><div class="label">Primary sources were used in the report.<a class="cite" href="https://investors.guardanthealth.com/press-releases/press-releases/2026/Guardant-Health-Reports-First-Quarter-2026-Financial-Results-and-Increases-2026-Revenue-Guidance/default.aspx">1</a><a class="cite" href="https://news.ontario.ca/en/release/1007418/ontario-lowering-eligibility-age-for-life-saving-colon-cancer-screening">2</a><a class="cite" href="https://www.immunocore.com/investors/news/press-releases/detail/130/immunocore-reports-first-quarter-financial-results-and-provides-a-business-update">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07549412">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07284849">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06662786">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07221357">7</a></div></div>
+        <div class="metric"><div class="num">4</div><div class="label">ClinicalTrials.gov records were included; each record was listed as recruiting and had a visible last-update date of May 6 or May 8, 2026.<a class="cite" href="https://clinicaltrials.gov/study/NCT07549412">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07284849">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06662786">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07221357">7</a></div></div>
+        <div class="metric"><div class="num">$41.6M</div><div class="label">Guardant reported Q1 2026 screening revenue and approximately 44,000 Shield screening tests.<a class="cite" href="https://investors.guardanthealth.com/press-releases/press-releases/2026/Guardant-Health-Reports-First-Quarter-2026-Financial-Results-and-Increases-2026-Revenue-Guidance/default.aspx">1</a></div></div>
+        <div class="metric"><div class="num">45</div><div class="label">Ontario said publicly funded colorectal cancer screening eligibility will be lowered to age 45 for all individuals on July 1, 2026.<a class="cite" href="https://news.ontario.ca/en/release/1007418/ontario-lowering-eligibility-age-for-life-saving-colon-cancer-screening">2</a></div></div>
+      </div>
+      <div class="callout" style="margin-top:24px;">
+        <h3>Factual scope</h3>
+        <p>The included sources document screening-test commercialization, a provincial screening-eligibility change, one IMC-R117C pipeline update, and four recruiting interventional trial records in metastatic or advanced colorectal cancer settings.<a class="cite" href="https://investors.guardanthealth.com/press-releases/press-releases/2026/Guardant-Health-Reports-First-Quarter-2026-Financial-Results-and-Increases-2026-Revenue-Guidance/default.aspx">1</a><a class="cite" href="https://news.ontario.ca/en/release/1007418/ontario-lowering-eligibility-age-for-life-saving-colon-cancer-screening">2</a><a class="cite" href="https://www.immunocore.com/investors/news/press-releases/detail/130/immunocore-reports-first-quarter-financial-results-and-provides-a-business-update">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07549412">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07284849">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06662786">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07221357">7</a></p>
+      </div>
+    </div>
+    <div class="slide-num">01 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Screening and access</div>
+        <h2>Two sources reported screening-market and eligibility facts inside the evidence window<a class="cite" href="https://investors.guardanthealth.com/press-releases/press-releases/2026/Guardant-Health-Reports-First-Quarter-2026-Financial-Results-and-Increases-2026-Revenue-Guidance/default.aspx">1</a><a class="cite" href="https://news.ontario.ca/en/release/1007418/ontario-lowering-eligibility-age-for-life-saving-colon-cancer-screening">2</a></h2>
+        <p>Guardant published a May 7, 2026 financial update, and Ontario published a May 7, 2026 screening-eligibility release.<a class="cite" href="https://investors.guardanthealth.com/press-releases/press-releases/2026/Guardant-Health-Reports-First-Quarter-2026-Financial-Results-and-Increases-2026-Revenue-Guidance/default.aspx">1</a><a class="cite" href="https://news.ontario.ca/en/release/1007418/ontario-lowering-eligibility-age-for-life-saving-colon-cancer-screening">2</a></p>
+      </div>
+      <div class="grid-2">
+        <div class="panel">
+          <span class="tag blue">Commercial screening</span>
+          <h3>Guardant Health reported Q1 screening revenue and Shield volume</h3>
+          <ul class="list">
+            <li>Guardant reported screening revenue of $41.6 million for Q1 2026, compared with $5.7 million for the corresponding prior-year period.<a class="cite" href="https://investors.guardanthealth.com/press-releases/press-releases/2026/Guardant-Health-Reports-First-Quarter-2026-Financial-Results-and-Increases-2026-Revenue-Guidance/default.aspx">1</a></li>
+            <li>Guardant said Shield screening test volume grew to approximately 44,000 tests in Q1 2026, from approximately 9,000 tests in the prior-year period.<a class="cite" href="https://investors.guardanthealth.com/press-releases/press-releases/2026/Guardant-Health-Reports-First-Quarter-2026-Financial-Results-and-Increases-2026-Revenue-Guidance/default.aspx">1</a></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="tag lime">Public screening</span>
+          <h3>Ontario announced a July 1 eligibility expansion</h3>
+          <ul class="list">
+            <li>Ontario said publicly funded colorectal cancer screening eligibility will be lowered from age 50 to age 45 for all individuals starting July 1, 2026.<a class="cite" href="https://news.ontario.ca/en/release/1007418/ontario-lowering-eligibility-age-for-life-saving-colon-cancer-screening">2</a></li>
+            <li>Ontario said eligibility for people at increased risk will be age 40, and the expansion gives more than one million additional people the option to connect to screening services.<a class="cite" href="https://news.ontario.ca/en/release/1007418/ontario-lowering-eligibility-age-for-life-saving-colon-cancer-screening">2</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:22px;">
+        <h3>Recorded screening facts</h3>
+        <p>The source set contains one U.S. company commercial update for a blood-based screening test and one Ontario government release changing access to publicly funded colorectal cancer screening.<a class="cite" href="https://investors.guardanthealth.com/press-releases/press-releases/2026/Guardant-Health-Reports-First-Quarter-2026-Financial-Results-and-Increases-2026-Revenue-Guidance/default.aspx">1</a><a class="cite" href="https://news.ontario.ca/en/release/1007418/ontario-lowering-eligibility-age-for-life-saving-colon-cancer-screening">2</a></p>
+      </div>
+    </div>
+    <div class="slide-num">02 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Pipeline and trial activity</div>
+        <h2>One company pipeline update and four registry records describe active colorectal cancer development activity<a class="cite" href="https://www.immunocore.com/investors/news/press-releases/detail/130/immunocore-reports-first-quarter-financial-results-and-provides-a-business-update">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07549412">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07284849">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06662786">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07221357">7</a></h2>
+        <p>Immunocore's May 6 update described IMC-R117C enrollment, while four ClinicalTrials.gov records showed visible May 6 or May 8 registry updates.<a class="cite" href="https://www.immunocore.com/investors/news/press-releases/detail/130/immunocore-reports-first-quarter-financial-results-and-provides-a-business-update">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07549412">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07284849">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06662786">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07221357">7</a></p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag pink">IMC-R117C</span>
+          <h3>Immunocore</h3>
+          <p>Immunocore stated that it is enrolling a Phase 1/2 dose-escalation trial of IMC-R117C in HLA-A*02:01 positive patients with advanced solid tumors, including colorectal cancer, as a single agent and with standards of care.<a class="cite" href="https://www.immunocore.com/investors/news/press-releases/detail/130/immunocore-reports-first-quarter-financial-results-and-provides-a-business-update">3</a></p>
+        </div>
+        <div class="card">
+          <span class="tag orange">Initial data</span>
+          <h3>2027 timing</h3>
+          <p>Immunocore stated that it expects to present initial data for IMC-R117C in 2027.<a class="cite" href="https://www.immunocore.com/investors/news/press-releases/detail/130/immunocore-reports-first-quarter-financial-results-and-provides-a-business-update">3</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">Registry records</span>
+          <h3>Four recruiting studies</h3>
+          <p>The four included ClinicalTrials.gov records were all listed as recruiting and described interventional studies in colorectal cancer settings.<a class="cite" href="https://clinicaltrials.gov/study/NCT07549412">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07284849">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06662786">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07221357">7</a></p>
+        </div>
+      </div>
+      <div class="table" style="margin-top:22px;">
+        <div class="row head">
+          <div class="cell">Visible update</div>
+          <div class="cell">Sponsor</div>
+          <div class="cell">Record</div>
+          <div class="cell">Design stated in record title</div>
+        </div>
+        <div class="row">
+          <div class="cell">2026-05-06<a class="cite" href="https://clinicaltrials.gov/study/NCT07221357">7</a></div>
+          <div class="cell">Bristol Myers Squibb<a class="cite" href="https://clinicaltrials.gov/study/NCT07221357">7</a></div>
+          <div class="cell">NCT07221357: ROSETTA CRC-203<a class="cite" href="https://clinicaltrials.gov/study/NCT07221357">7</a></div>
+          <div class="cell">Blinded, randomized Phase 2/3 study of pumitamig plus chemotherapy versus bevacizumab plus chemotherapy.<a class="cite" href="https://clinicaltrials.gov/study/NCT07221357">7</a></div>
+        </div>
+        <div class="row">
+          <div class="cell">2026-05-08<a class="cite" href="https://clinicaltrials.gov/study/NCT07549412">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07284849">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06662786">6</a></div>
+          <div class="cell">EMD Serono, Incyte, Janssen<a class="cite" href="https://clinicaltrials.gov/study/NCT07549412">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07284849">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06662786">6</a></div>
+          <div class="cell">NCT07549412, NCT07284849, and NCT06662786<a class="cite" href="https://clinicaltrials.gov/study/NCT07549412">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07284849">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06662786">6</a></div>
+          <div class="cell">Each of the three records described a Phase 3 colorectal cancer study.<a class="cite" href="https://clinicaltrials.gov/study/NCT07549412">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07284849">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06662786">6</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">03 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">ClinicalTrials.gov detail</div>
+        <h2>Registry records covered later-line and first-line metastatic colorectal cancer settings<a class="cite" href="https://clinicaltrials.gov/study/NCT07549412">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07284849">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06662786">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07221357">7</a></h2>
+        <p>All statements in the table are limited to fields visible in the saved ClinicalTrials.gov browser screenshots.<a class="cite" href="https://clinicaltrials.gov/study/NCT07549412">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07284849">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06662786">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07221357">7</a></p>
+      </div>
+      <div class="table">
+        <div class="row head">
+          <div class="cell">Record</div>
+          <div class="cell">Sponsor and date</div>
+          <div class="cell">Population or setting stated</div>
+          <div class="cell">Intervention or comparator stated</div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT07549412</strong><br />PROCEADE-CRC-03</div>
+          <div class="cell">EMD Serono; updated 2026-05-08<a class="cite" href="https://clinicaltrials.gov/study/NCT07549412">4</a></div>
+          <div class="cell">Previously treated metastatic colorectal cancer; the official title describes an open-label, 3-arm Phase 3 study.<a class="cite" href="https://clinicaltrials.gov/study/NCT07549412">4</a></div>
+          <div class="cell">Precemtabart tocentecan with or without bevacizumab compared to trifluridine/tipiracil plus bevacizumab.<a class="cite" href="https://clinicaltrials.gov/study/NCT07549412">4</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT07284849</strong><br />INCA33890</div>
+          <div class="cell">Incyte; updated 2026-05-08<a class="cite" href="https://clinicaltrials.gov/study/NCT07284849">5</a></div>
+          <div class="cell">First-line metastatic microsatellite-stable colorectal cancer; the official title describes a randomized, double-blind Phase 3 study.<a class="cite" href="https://clinicaltrials.gov/study/NCT07284849">5</a></div>
+          <div class="cell">Standard-of-care chemotherapy and bevacizumab with or without INCA33890.<a class="cite" href="https://clinicaltrials.gov/study/NCT07284849">5</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT06662786</strong><br />OrigAMI-2</div>
+          <div class="cell">Janssen; updated 2026-05-08<a class="cite" href="https://clinicaltrials.gov/study/NCT06662786">6</a></div>
+          <div class="cell">First-line KRAS/NRAS and BRAF wild-type unresectable or metastatic left-sided colorectal cancer; the official title describes an open-label Phase 3 study.<a class="cite" href="https://clinicaltrials.gov/study/NCT06662786">6</a></div>
+          <div class="cell">Amivantamab plus mFOLFOX6 or FOLFIRI versus cetuximab plus mFOLFOX6 or FOLFIRI.<a class="cite" href="https://clinicaltrials.gov/study/NCT06662786">6</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT07221357</strong><br />ROSETTA CRC-203</div>
+          <div class="cell">Bristol Myers Squibb; updated 2026-05-06<a class="cite" href="https://clinicaltrials.gov/study/NCT07221357">7</a></div>
+          <div class="cell">Previously untreated, unresectable, or metastatic colorectal cancer; the official title describes a blinded, randomized Phase 2/3 study.<a class="cite" href="https://clinicaltrials.gov/study/NCT07221357">7</a></div>
+          <div class="cell">Pumitamig plus chemotherapy versus bevacizumab plus chemotherapy.<a class="cite" href="https://clinicaltrials.gov/study/NCT07221357">7</a></div>
+        </div>
+      </div>
+      <p class="source-note">The table excludes uncited search results and secondary summaries; each row is tied to the visible ClinicalTrials.gov source page for that record.<a class="cite" href="https://clinicaltrials.gov/study/NCT07549412">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07284849">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06662786">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07221357">7</a></p>
+    </div>
+    <div class="slide-num">04 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Source register</div>
+        <h2>Included sources and visible dates<a class="cite" href="https://investors.guardanthealth.com/press-releases/press-releases/2026/Guardant-Health-Reports-First-Quarter-2026-Financial-Results-and-Increases-2026-Revenue-Guidance/default.aspx">1</a><a class="cite" href="https://news.ontario.ca/en/release/1007418/ontario-lowering-eligibility-age-for-life-saving-colon-cancer-screening">2</a><a class="cite" href="https://www.immunocore.com/investors/news/press-releases/detail/130/immunocore-reports-first-quarter-financial-results-and-provides-a-business-update">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07549412">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07284849">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06662786">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07221357">7</a></h2>
+        <p>The saved source log records the visible date, URL, date-verification screenshot, evidence screenshot, and extracted facts for every citation used in this report.</p>
+      </div>
+      <div class="source-grid">
+        <div class="source-card">
+          <span class="tag blue">1</span>
+          <h3>Guardant Health</h3>
+          <p>Visible date: May 7, 2026. Q1 2026 financial update with screening revenue and Shield test volume.<a class="cite" href="https://investors.guardanthealth.com/press-releases/press-releases/2026/Guardant-Health-Reports-First-Quarter-2026-Financial-Results-and-Increases-2026-Revenue-Guidance/default.aspx">1</a></p>
+        </div>
+        <div class="source-card">
+          <span class="tag lime">2</span>
+          <h3>Ontario Newsroom</h3>
+          <p>Visible date: May 7, 2026. Release lowering publicly funded colorectal cancer screening eligibility.<a class="cite" href="https://news.ontario.ca/en/release/1007418/ontario-lowering-eligibility-age-for-life-saving-colon-cancer-screening">2</a></p>
+        </div>
+        <div class="source-card">
+          <span class="tag pink">3</span>
+          <h3>Immunocore</h3>
+          <p>Visible date: May 6, 2026. Q1 update with IMC-R117C enrollment and initial-data timing.<a class="cite" href="https://www.immunocore.com/investors/news/press-releases/detail/130/immunocore-reports-first-quarter-financial-results-and-provides-a-business-update">3</a></p>
+        </div>
+        <div class="source-card">
+          <span class="tag orange">4</span>
+          <h3>NCT07549412</h3>
+          <p>Visible date: 2026-05-08. EMD Serono PROCEADE-CRC-03 recruiting Phase 3 record.<a class="cite" href="https://clinicaltrials.gov/study/NCT07549412">4</a></p>
+        </div>
+        <div class="source-card">
+          <span class="tag gray">5</span>
+          <h3>NCT07284849</h3>
+          <p>Visible date: 2026-05-08. Incyte recruiting Phase 3 record for INCA33890 plus chemotherapy and bevacizumab.<a class="cite" href="https://clinicaltrials.gov/study/NCT07284849">5</a></p>
+        </div>
+        <div class="source-card">
+          <span class="tag red">6</span>
+          <h3>NCT06662786</h3>
+          <p>Visible date: 2026-05-08. Janssen recruiting Phase 3 OrigAMI-2 record for amivantamab-based therapy.<a class="cite" href="https://clinicaltrials.gov/study/NCT06662786">6</a></p>
+        </div>
+        <div class="source-card">
+          <span class="tag blue">7</span>
+          <h3>NCT07221357</h3>
+          <p>Visible date: 2026-05-06. Bristol Myers Squibb recruiting Phase 2/3 ROSETTA CRC-203 record.<a class="cite" href="https://clinicaltrials.gov/study/NCT07221357">7</a></p>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:24px;">
+        <h3>Evidence handling</h3>
+        <p>Every cited source has a saved visible-date screenshot and a saved evidence screenshot with a visible box around the cited date or source text.</p>
+      </div>
+    </div>
+    <div class="slide-num">05 / 05</div>
+  </article>
+</body>
+</html>

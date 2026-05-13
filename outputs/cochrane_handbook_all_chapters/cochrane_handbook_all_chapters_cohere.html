@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cochrane Handbook: Most Important Points Across All Chapters</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 26px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.25;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    p, h1, h2, h3 { margin: 0; }
+
+    .slide {
+      position: relative;
+      width: 100vw;
+      min-height: 100vh;
+      height: 100vh;
+      overflow: hidden;
+      page-break-after: always;
+      break-after: page;
+      padding: 48px 0 34px;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .wrap {
+      width: min(1370px, calc(100vw - 56px));
+      height: 100%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 22px;
+      position: relative;
+      z-index: 1;
+    }
+    .top {
+      position: relative;
+      display: block;
+      padding-right: 172px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 850;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      background: var(--lime);
+      margin-bottom: 16px;
+    }
+    .chapter {
+      position: absolute;
+      top: 12px;
+      right: 0;
+      font-size: 12px;
+      line-height: 1.05;
+      font-weight: 850;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(16,18,15,.50);
+      text-align: right;
+      white-space: nowrap;
+    }
+    h1 {
+      max-width: 1260px;
+      font-size: 58px;
+      line-height: .94;
+      font-weight: 560;
+      letter-spacing: 0;
+    }
+    .subhead {
+      margin-top: 12px;
+      width: calc(100% + 172px);
+      max-width: 1370px;
+      color: var(--muted);
+      font-size: 22.5px;
+      line-height: 1.2;
+      font-weight: 540;
+    }
+    .panel .subhead,
+    .card .subhead {
+      width: auto;
+      max-width: 100%;
+    }
+    .content {
+      min-height: 0;
+      display: grid;
+      gap: 16px;
+    }
+    .grid-2 { grid-template-columns: 1fr 1fr; }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    .grid-main { grid-template-columns: .88fr 1.12fr; }
+    .grid-wide-left { grid-template-columns: 1.16fr .84fr; }
+
+    .panel, .card, .metric {
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,250,240,.84);
+      box-shadow: var(--shadow);
+      min-width: 0;
+    }
+    .panel { padding: 23px 24px; }
+    .panel.dark, .card.dark, .metric.dark {
+      background: #11130f;
+      color: var(--paper);
+    }
+    .panel.dark p, .card.dark p, .metric.dark .label, .panel.dark .check {
+      color: rgba(246,241,232,.73);
+    }
+    .card {
+      padding: 19px 20px 18px;
+      min-height: 150px;
+    }
+    .card h3, .panel h3 {
+      font-size: 29px;
+      line-height: 1;
+      font-weight: 780;
+      letter-spacing: 0;
+    }
+    .card p {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 20px;
+      line-height: 1.12;
+      font-weight: 540;
+    }
+    .metric {
+      padding: 18px;
+      min-height: 132px;
+    }
+    .metric .num {
+      font-size: 54px;
+      line-height: .9;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+    .metric .label {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.1;
+      font-weight: 760;
+    }
+
+    .checklist { display: grid; gap: 13px; margin-top: 15px; }
+    .check {
+      display: grid;
+      grid-template-columns: 26px 1fr;
+      gap: 12px;
+      align-items: start;
+      color: var(--muted);
+      font-size: 19.5px;
+      line-height: 1.1;
+      font-weight: 560;
+    }
+    .check::before {
+      content: "";
+      display: block;
+      width: 18px;
+      height: 18px;
+      margin-top: 1px;
+      border: 1.4px solid var(--line);
+      border-radius: 50%;
+      background: var(--lime);
+    }
+    .dark .check::before { border-color: rgba(246,241,232,.72); }
+
+    .pill-row { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 13px; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 9px 5px;
+      background: var(--paper-2);
+      font-size: 10.6px;
+      line-height: 1;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      white-space: nowrap;
+    }
+    .pill.lime { background: var(--lime); }
+    .pill.blue { background: var(--blue); }
+    .pill.orange { background: var(--orange); }
+    .pill.pink { background: var(--pink); }
+    .pill.red { background: var(--red); }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+    .step {
+      position: relative;
+      border: 1.4px solid var(--line);
+      border-radius: 20px;
+      background: var(--card);
+      padding: 15px;
+      min-height: 126px;
+    }
+    .step::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -9px;
+      width: 14px;
+      height: 14px;
+      border-top: 1.5px solid var(--line);
+      border-right: 1.5px solid var(--line);
+      transform: translateY(-50%) rotate(45deg);
+      background: var(--paper);
+      z-index: 2;
+    }
+    .step:last-child::after { display: none; }
+    .step .kicker {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1;
+      font-weight: 850;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .step strong {
+      display: block;
+      font-size: 20px;
+      line-height: 1;
+      font-weight: 850;
+      letter-spacing: 0;
+    }
+    .step p {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.1;
+      font-weight: 560;
+    }
+
+    .matrix {
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--line);
+      display: grid;
+      gap: 1px;
+      box-shadow: var(--shadow);
+    }
+    .row {
+      display: grid;
+      grid-template-columns: .64fr 1fr 1fr 1fr;
+      gap: 1px;
+      background: var(--line);
+    }
+    .row.three { grid-template-columns: .7fr 1fr 1fr; }
+    .cell {
+      background: var(--card);
+      padding: 12px 14px;
+      min-height: 63px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.08;
+      font-weight: 570;
+    }
+    .head .cell {
+      min-height: 40px;
+      background: #11130f;
+      color: var(--paper);
+      font-size: 10px;
+      font-weight: 850;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+    }
+    .cell.strong {
+      color: var(--ink);
+      font-weight: 850;
+      font-size: 17px;
+    }
+
+    .bands {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+    }
+    .band {
+      border: 1.4px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255,250,240,.86);
+      padding: 14px;
+      min-height: 168px;
+    }
+    .band strong {
+      display: block;
+      font-size: 22px;
+      line-height: 1;
+      font-weight: 850;
+      letter-spacing: 0;
+    }
+    .band p {
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.08;
+      font-weight: 560;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: end;
+      color: rgba(16,18,15,.52);
+      font-size: 11px;
+      line-height: 1.25;
+      font-weight: 760;
+      letter-spacing: .02em;
+    }
+    .footer a { color: rgba(16,18,15,.72); }
+
+    .slide-title h1 { font-size: 78px; max-width: 1370px; }
+    .slide-title .content {
+      align-content: start;
+      padding-top: 26px;
+    }
+    .slide-title .flow {
+      gap: 16px;
+      align-items: stretch;
+    }
+    .slide-title .step {
+      display: flex;
+      flex-direction: column;
+      min-height: 278px;
+      padding: 24px 22px;
+    }
+    .slide-title .step .kicker {
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+    .slide-title .step strong {
+      font-size: 31px;
+      line-height: .96;
+    }
+    .slide-title .step p {
+      margin-top: 14px;
+      font-size: 23px;
+      line-height: 1.08;
+    }
+    .slide-coverage h1 { font-size: 54px; }
+    .slide-coverage .band { min-height: 185px; }
+    .slide-coverage .bands { grid-template-columns: 1.05fr 1.45fr 1.05fr 1fr; }
+    .slide-synthesis .panel.dark h3,
+    .slide-takeaways .panel.dark h3 {
+      font-size: 34px;
+    }
+    .slide-synthesis .panel.dark .check,
+    .slide-takeaways .panel.dark .check {
+      font-size: 23px;
+      line-height: 1.08;
+    }
+    .slide-scope .panel.dark h3 {
+      font-size: 32.5px;
+    }
+    .slide-scope .panel.dark .check {
+      font-size: 22.2px;
+      line-height: 1.08;
+    }
+    .slide-scope .panel.dark .checklist {
+      gap: 12px;
+    }
+    .slide-scope .grid-main {
+      height: 442px;
+    }
+    .slide-searching .grid-3 {
+      align-items: start;
+      align-content: start;
+    }
+    .slide-searching .grid-3 .panel {
+      height: 325px;
+      padding-bottom: 18px;
+    }
+    .slide-bias .grid-wide-left {
+      grid-template-columns: 1.405fr .735fr;
+    }
+    .slide-bias .cell { font-size: 17.3px; line-height: 1.06; }
+    .slide-bias .cell.strong { font-size: 18px; }
+    .slide-bias .panel.dark h3,
+    .slide-advanced .panel.dark h3,
+    .slide-interpretation .panel.dark h3 {
+      font-size: 33px;
+    }
+    .slide-bias .panel.dark .check,
+    .slide-advanced .panel.dark .check,
+    .slide-interpretation .panel.dark .check {
+      font-size: 22.5px;
+      line-height: 1.08;
+    }
+    .slide-bias .panel.dark .check {
+      font-size: 21.5px;
+      line-height: 1.08;
+    }
+    .slide-bias .panel.dark .checklist {
+      gap: 21px;
+    }
+    .slide-interpretation .metric {
+      padding: 28px;
+    }
+    .slide-interpretation .metric .num {
+      font-size: 66px;
+    }
+    .slide-interpretation .metric .label {
+      font-size: 22px;
+      line-height: 1.06;
+    }
+    .slide-interpretation .card h3 { font-size: 32px; }
+    .slide-interpretation .card p {
+      font-size: 22px;
+      line-height: 1.08;
+    }
+    .slide-interpretation .panel.dark h3 { font-size: 35px; }
+    .slide-interpretation .panel.dark .check {
+      font-size: 26px;
+      line-height: 1.15;
+    }
+    .slide-interpretation .panel.dark .checklist {
+      gap: 27px;
+    }
+    .slide-updating .panel h3 { font-size: 32px; }
+    .slide-updating .panel .check {
+      font-size: 22px;
+      line-height: 1.08;
+    }
+    .slide-updating h1 {
+      max-width: 1000px;
+      font-size: 56px;
+    }
+    .slide-updating main.content {
+      align-items: start;
+    }
+    .slide-updating .panel {
+      height: 400px;
+    }
+    .slide-perspectives main.content {
+      align-content: start;
+      align-items: start;
+    }
+    .slide-perspectives .band strong { font-size: 24px; }
+    .slide-perspectives .band p {
+      font-size: 18.5px;
+      line-height: 1.03;
+    }
+    .slide-perspectives .panel.dark h3 { font-size: 32px; }
+    .slide-perspectives .panel.dark {
+      padding-top: 18px;
+      padding-bottom: 16px;
+    }
+    .slide-perspectives .panel.dark .check {
+      font-size: 23px;
+      line-height: 1.1;
+    }
+    .slide-perspectives .panel.dark .checklist {
+      gap: 13px;
+      margin-top: 12px;
+    }
+    .slide-perspectives .band {
+      display: flex;
+      flex-direction: column;
+    }
+    .slide-perspectives .band .pill-row {
+      margin-top: auto;
+    }
+    .slide-advanced .grid-main {
+      grid-template-columns: 1.08fr .92fr;
+    }
+    .slide-advanced .panel.dark h3 {
+      max-width: 500px;
+      font-size: 31px;
+    }
+    .slide-advanced .panel.dark .checklist {
+      gap: 24px;
+      margin-top: 20px;
+    }
+    .slide-coverage .band strong { font-size: 22px; }
+    .slide-coverage .band p { font-size: 17px; line-height: 1.05; }
+    .slide-coverage .band:nth-child(2) p { font-size: 15.2px; line-height: 1.03; }
+    .slide-coverage .chapter-list > span,
+    .slide-coverage .chapter-list .chapter-col > span {
+      display: grid;
+      grid-template-columns: 25px 1fr;
+      column-gap: 6px;
+      break-inside: avoid;
+      margin-bottom: 2px;
+    }
+    .slide-coverage .chapter-list b,
+    .slide-coverage .chapter-list em {
+      font: inherit;
+      font-style: normal;
+      min-width: 0;
+    }
+    .slide-coverage .chapter-list b {
+      text-align: right;
+    }
+    .slide-coverage .chapter-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 18px;
+    }
+    .slide-coverage .chapter-list .chapter-col {
+      display: block;
+      min-width: 0;
+    }
+    .slide-coverage .panel.dark h3 { font-size: 34px; }
+    .slide-coverage .panel.dark .check {
+      font-size: 22px;
+      line-height: 1.08;
+    }
+    .slide-coverage .bands {
+      align-items: stretch;
+    }
+    .slide-coverage .band {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      padding-bottom: 48px;
+    }
+    .slide-coverage .band .pill-row {
+      position: absolute;
+      left: 14px;
+      bottom: 18px;
+      margin-top: 0;
+    }
+    .slide-takeaways .panel.dark .check {
+      line-height: 1.17;
+    }
+    .slide-takeaways .panel.dark .checklist {
+      gap: 18px;
+    }
+    .slide-takeaways main.content {
+      height: 570px;
+      align-content: stretch;
+    }
+    .slide-takeaways .content > .panel:first-child h3 {
+      max-width: 760px;
+      font-size: 30px;
+    }
+    .slide-takeaways .content > .panel:last-child h3 {
+      margin-bottom: 12px;
+    }
+    .slide-takeaways .content > .panel:last-child .subhead {
+      margin-top: 0 !important;
+    }
+    .slide-scope .grid-main,
+    .slide-bias .grid-wide-left,
+    .slide-synthesis .grid-main,
+    .slide-interpretation .grid-main,
+    .slide-advanced .grid-main,
+    .slide-takeaways .grid-2,
+    .slide-coverage main.content {
+      align-items: start;
+      align-content: start;
+    }
+    .slide-scope .grid-main,
+    .slide-synthesis .grid-main,
+    .slide-interpretation .grid-main,
+    .slide-bias .grid-wide-left,
+    .slide-advanced .grid-main,
+    .slide-takeaways .grid-2 {
+      align-items: stretch;
+      align-content: stretch;
+    }
+    .slide-bias .grid-wide-left > *,
+    .slide-scope .grid-main > *,
+    .slide-synthesis .grid-main > *,
+    .slide-interpretation .grid-main > *,
+    .slide-advanced .grid-main > *,
+    .slide-takeaways .grid-2 > * {
+      height: 100%;
+    }
+    .slide-scope .grid-main > .content,
+    .slide-synthesis .grid-main > .content,
+    .slide-interpretation .grid-main > .content {
+      align-content: stretch;
+    }
+    .slide-takeaways .grid-2 > .content {
+      grid-template-rows: auto auto 1fr;
+      align-content: stretch;
+      gap: 12px;
+    }
+    .slide-takeaways .grid-2 > .content > .panel {
+      padding: 18px 20px;
+    }
+    .slide-takeaways .content > .panel:last-child {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 0;
+    }
+    .slide-coverage main.content {
+      align-content: start;
+    }
+
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      body, *, *::before, *::after {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      html, body { width: 1600px; height: auto; background: var(--paper); }
+      .slide {
+        width: 1600px;
+        height: 900px;
+        min-height: 900px;
+        padding: 48px 0 34px;
+      }
+      .wrap { width: 1370px; }
+      .panel, .card, .metric, .matrix { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide slide-title">
+    <img class="slide-bg-img" src="cochrane_slide_bg.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <header class="top">
+        <div>
+          <div class="eyebrow">Cochrane Handbook / version 6.5</div>
+          <h1>Cochrane Handbook methods<br />for intervention reviews</h1>
+          <p class="subhead">Across 31 main chapters, the guidance covers question definition, bias assessment, synthesis transparency, certainty assessment and decision-relevant reporting.</p>
+        </div>
+        <div class="chapter">All chapters<br />Part 1-4</div>
+      </header>
+
+      <main class="content">
+        <section class="flow">
+          <div class="step"><span class="kicker">01</span><strong>Question</strong><p>Review scope is defined through answerable questions, evidence gaps and intended users.</p></div>
+          <div class="step"><span class="kicker">02</span><strong>Methods</strong><p>Protocols specify eligibility, outcomes, searches, data collection, risk of bias and synthesis.</p></div>
+          <div class="step"><span class="kicker">03</span><strong>Evidence</strong><p>Study identification, data extraction, bias assessment and synthesis groupings form the evidence base.</p></div>
+          <div class="step"><span class="kicker">04</span><strong>Certainty</strong><p>Summary of findings tables and GRADE communicate confidence in the evidence.</p></div>
+          <div class="step"><span class="kicker">05</span><strong>Reporting</strong><p>Reporting covers interpretation, plain language summaries, clinical-guidance boundaries and updating.</p></div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>Source synthesis: Cochrane Handbook for Systematic Reviews of Interventions, current version 6.5.</span>
+        <span>01 / 11 · <a href="https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current">cochrane.org/handbook/current</a></span>
+      </footer>
+    </div>
+  </article>
+
+  <article class="slide slide-scope">
+    <img class="slide-bg-img" src="cochrane_slide_bg.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <header class="top">
+        <div>
+          <div class="eyebrow">Question and protocol</div>
+          <h1>Review methods begin with the question<br />and protocol</h1>
+          <p class="subhead">The Handbook presents question scope and protocol clarity as prerequisites for later methods.</p>
+        </div>
+        <div class="chapter">Chapters I-II<br />1-3</div>
+      </header>
+
+      <main class="content grid-main">
+        <section class="panel dark">
+          <h3>Operating requirements described in the Handbook</h3>
+          <div class="checklist">
+            <div class="check">Systematic reviews contain pre-specified questions and methods documented in protocols to minimize bias.</div>
+            <div class="check">Review teams include topic expertise, methods expertise, project management, quality assurance, and conflict-of-interest management.</div>
+            <div class="check">Stakeholder involvement is part of review planning for decisions about scope and relevance.</div>
+            <div class="check">PICO defines scope, and protocols define how populations, interventions, outcomes and study designs are grouped for synthesis.</div>
+            <div class="check">Critical and important outcomes are limited in number, decision-relevant, and include adverse as well as beneficial outcomes.</div>
+          </div>
+        </section>
+        <section class="content grid-2">
+          <div class="card">
+            <h3>Broad and narrow scopes</h3>
+            <p>Broad reviews address decisions across options, while narrow reviews address more specific questions. Logic models and stakeholder engagement inform scope.</p>
+            <div class="pill-row"><span class="pill lime">scope</span><span class="pill blue">logic model</span><span class="pill orange">users</span></div>
+          </div>
+          <div class="card">
+            <h3>Protocol changes</h3>
+            <p>Changes to planned methods during a review are documented and reported, with sensitivity analyses when feasible.</p>
+            <div class="pill-row"><span class="pill pink">protocol</span><span class="pill">deviations</span><span class="pill red">bias control</span></div>
+          </div>
+          <div class="card">
+            <h3>Outcomes rarely define eligibility</h3>
+            <p>Studies are generally included whether or not they report outcome data; exclusion may apply when outcomes of interest were not measured.</p>
+            <div class="pill-row"><span class="pill blue">eligibility</span><span class="pill orange">outcomes</span></div>
+          </div>
+          <div class="card">
+            <h3>Resource planning</h3>
+            <p>Cochrane planning emphasizes author time, search support, statistical support, software, data access and the commitment to respond to feedback and updates.</p>
+            <div class="pill-row"><span class="pill lime">team</span><span class="pill">resources</span><span class="pill pink">updating</span></div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>Source synthesis: Chapters I-II and 1-3.</span>
+        <span>02 / 11 · <a href="https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-02">scope and questions</a></span>
+      </footer>
+    </div>
+  </article>
+
+  <article class="slide slide-searching">
+    <img class="slide-bg-img" src="cochrane_slide_bg.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <header class="top">
+        <div>
+          <div class="eyebrow">Finding and structuring evidence</div>
+          <h1>Searching, selection and data collection are audit trails</h1>
+          <p class="subhead">Cochrane methods treat the study as the unit of interest, but rely on many reports and sources to reconstruct what happened and what was measured.</p>
+        </div>
+        <div class="chapter">Chapters 4-5<br />13, III</div>
+      </header>
+
+      <main class="content">
+        <section class="flow">
+          <div class="step"><span class="kicker">Search</span><strong>Specialist input</strong><p>Protocol-stage search planning includes an experienced health librarian or information specialist.</p></div>
+          <div class="step"><span class="kicker">Sources</span><strong>Beyond journals</strong><p>CENTRAL, MEDLINE, Embase, trials registers, regulatory agencies and clinical study reports can contain study information.</p></div>
+          <div class="step"><span class="kicker">Select</span><strong>Studies, not reports</strong><p>Multiple reports of the same study are identified and linked before or during extraction.</p></div>
+          <div class="step"><span class="kicker">Extract</span><strong>Usable data</strong><p>Data forms capture source representation and planned-analysis requirements.</p></div>
+          <div class="step"><span class="kicker">Archive</span><strong>Reuse</strong><p>Data storage supports future access, sharing, updates and reproducibility.</p></div>
+        </section>
+        <section class="content grid-3">
+          <div class="panel">
+            <h3>Search sensitivity</h3>
+            <div class="checklist">
+              <div class="check">Search strategies prioritize high sensitivity, even when precision is lower.</div>
+              <div class="check">Trials registers are included in Cochrane review searches.</div>
+              <div class="check">Unpublished and regulatory sources are sources of study results.</div>
+            </div>
+          </div>
+          <div class="panel dark">
+            <h3>Source discrepancies</h3>
+            <div class="checklist">
+              <div class="check">Trials registers, journal articles, regulatory documents and study reports can conflict.</div>
+              <div class="check">Source selection identifies which records are likely to contain the most complete information.</div>
+              <div class="check">The analysis plan describes discrepancy resolution across sources.</div>
+            </div>
+          </div>
+          <div class="panel">
+            <h3>Missing results and bias</h3>
+            <div class="checklist">
+              <div class="check">Non-reporting bias arises when reporting depends on the P value, magnitude or direction of results.</div>
+              <div class="check">Selective non-reporting and under-reporting can bias synthesis even when the study is known.</div>
+              <div class="check">Funnel plots have setting-specific uses and limitations.</div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>Source synthesis: Chapters 4-5, 13 and reporting guidance.</span>
+        <span>03 / 11 · <a href="https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-04">searching and selection</a></span>
+      </footer>
+    </div>
+  </article>
+
+  <article class="slide slide-bias">
+    <img class="slide-bg-img" src="cochrane_slide_bg.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <header class="top">
+        <div>
+          <div class="eyebrow">Bias and certainty</div>
+          <h1>Bias is assessed at the result, study, synthesis and evidence-body levels</h1>
+          <p class="subhead">The Handbook separates internal validity of individual results from bias in a synthesis and certainty in a body of evidence.</p>
+        </div>
+        <div class="chapter">Chapters 7-8<br />13-14, 25</div>
+      </header>
+
+      <main class="content grid-wide-left">
+        <section class="matrix">
+          <div class="row head">
+            <div class="cell">Layer</div>
+            <div class="cell">Core question</div>
+            <div class="cell">Cochrane tool or frame</div>
+            <div class="cell">Decision consequence</div>
+          </div>
+          <div class="row">
+            <div class="cell strong">Trial result</div>
+            <div class="cell">Could design, conduct or reporting have distorted this specific result?</div>
+            <div class="cell">RoB 2 domains and signalling questions.</div>
+            <div class="cell">Domain judgements feed an overall risk-of-bias judgement for the result.</div>
+          </div>
+          <div class="row">
+            <div class="cell strong">Non-randomized result</div>
+            <div class="cell">How close is the study to a target trial without biasing features?</div>
+            <div class="cell">ROBINS-I, including confounding and co-interventions specified in the protocol.</div>
+            <div class="cell">Judgements can be low, moderate, serious or critical risk of bias.</div>
+          </div>
+          <div class="row">
+            <div class="cell strong">Synthesis</div>
+            <div class="cell">Are available results systematically different from missing results?</div>
+            <div class="cell">Assessment of missing evidence, selective non-reporting and funnel plot signals.</div>
+            <div class="cell">Bias may affect the meta-analysis or other synthesis, not just individual studies.</div>
+          </div>
+          <div class="row">
+            <div class="cell strong">Body of evidence</div>
+            <div class="cell">What is the confidence level in the effect estimate?</div>
+            <div class="cell">GRADE: risk of bias, inconsistency, indirectness, imprecision and publication bias.</div>
+            <div class="cell">Certainty is reported as high, moderate, low or very low.</div>
+          </div>
+        </section>
+        <section class="panel dark">
+          <h3>Bias assessment elements</h3>
+          <div class="checklist">
+            <div class="check">Risk-of-bias assessment addresses whether results overestimate or underestimate the true intervention effect.</div>
+            <div class="check">Signalling-question answers and judgements are accompanied by written justifications.</div>
+            <div class="check">Study funding and conflicts of interest are considered in directness, heterogeneity, within-study bias and missing-results bias assessments.</div>
+            <div class="check">Risk of bias and certainty are separate concepts in the Handbook.</div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>Source synthesis: Chapters 7-8, 13-14 and 25.</span>
+        <span>04 / 11 · <a href="https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-08">risk of bias in randomized trials</a></span>
+      </footer>
+    </div>
+  </article>
+
+  <article class="slide slide-synthesis">
+    <img class="slide-bg-img" src="cochrane_slide_bg.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <header class="top">
+        <div>
+          <div class="eyebrow">Synthesis choices</div>
+          <h1>Synthesis planning covers pooled and<br />non-pooled evidence</h1>
+          <p class="subhead">The Handbook treats synthesis as a planned process for bringing evidence together, whether or not statistical pooling is appropriate.</p>
+        </div>
+        <div class="chapter">Chapters 6<br />9-12</div>
+      </header>
+
+      <main class="content grid-main">
+        <section class="panel dark">
+          <h3>Decisions specified before result interpretation</h3>
+          <div class="checklist">
+            <div class="check">Effect measures match outcome data types: dichotomous, continuous, ordinal, count/rate or time-to-event.</div>
+            <div class="check">Comparisons and study groupings are prepared before synthesis; PICO tabulation informs what can be combined.</div>
+            <div class="check">Meta-analysis applies when studies are sufficiently comparable and data are usable; heterogeneity remains part of interpretation.</div>
+            <div class="check">Prediction intervals in random-effects meta-analysis communicate between-study variation when appropriate.</div>
+            <div class="check">Sensitivity analyses examine whether findings are robust to influential decisions.</div>
+          </div>
+        </section>
+        <section class="content grid-2">
+          <div class="card">
+            <h3>Network meta-analysis</h3>
+            <p>Compares three or more interventions by combining direct and indirect evidence, but requires similarity across studies and attention to incoherence.</p>
+            <div class="pill-row"><span class="pill blue">direct</span><span class="pill orange">indirect</span><span class="pill pink">incoherence</span></div>
+          </div>
+          <div class="card">
+            <h3>Other synthesis methods</h3>
+            <p>These methods apply when data are incompletely reported and provide more limited information than meta-analysis.</p>
+            <div class="pill-row"><span class="pill lime">tabulation</span><span class="pill blue">visual display</span></div>
+          </div>
+          <div class="card">
+            <h3>Vote counting by significance</h3>
+            <p>Cochrane guidance identifies major limitations in synthesis methods that count statistically significant findings.</p>
+            <div class="pill-row"><span class="pill red">limitation</span><span class="pill">P-value counting</span></div>
+          </div>
+          <div class="card">
+            <h3>Pooled estimate prerequisites</h3>
+            <p>A pooled estimate depends on eligibility, risk of bias, study designs, heterogeneity and reporting-bias assessments.</p>
+            <div class="pill-row"><span class="pill orange">heterogeneity</span><span class="pill pink">bias</span></div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>Source synthesis: Chapters 6 and 9-12.</span>
+        <span>05 / 11 · <a href="https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-10">meta-analysis</a></span>
+      </footer>
+    </div>
+  </article>
+
+  <article class="slide slide-interpretation">
+    <img class="slide-bg-img" src="cochrane_slide_bg.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <header class="top">
+        <div>
+          <div class="eyebrow">Interpretation</div>
+          <h1>Interpretation combines results, certainty, magnitude and context</h1>
+          <p class="subhead">Cochrane reviews report effects and certainty while distinguishing review conclusions from clinical guidelines.</p>
+        </div>
+        <div class="chapter">Chapters 14-15<br />III</div>
+      </header>
+
+      <main class="content grid-main">
+        <section class="content grid-2">
+          <div class="metric dark">
+            <div class="num">7</div>
+            <div class="label">Maximum number of critical or important outcomes typically included in a Summary of findings table.</div>
+          </div>
+          <div class="metric">
+            <div class="num">4</div>
+            <div class="label">GRADE certainty levels: high, moderate, low and very low.</div>
+          </div>
+          <div class="card">
+            <h3>Absolute effects</h3>
+            <p>Relative effects need interpretation alongside baseline risk, absolute effects and, where helpful, number needed to treat.</p>
+          </div>
+          <div class="card">
+            <h3>Continuous outcome translation</h3>
+            <p>Natural units, minimal important differences and other interpretable frames are used to explain standardized effects.</p>
+          </div>
+        </section>
+        <section class="panel dark">
+          <h3>Interpretation reporting boundaries</h3>
+          <div class="checklist">
+            <div class="check">Reporting emphasizes confidence intervals and exact P values rather than statistical-significance labels.</div>
+            <div class="check">The Handbook distinguishes no evidence of an effect from evidence of no effect.</div>
+            <div class="check">Review conclusions explain certainty, benefits, harms, values, preferences and cost while remaining distinct from clinical guidance.</div>
+            <div class="check">Objectives, outcomes, caveats and conclusions are consistent across the main text, abstract, plain language summary and Summary of findings tables.</div>
+            <div class="check">Reporting audiences include healthcare professionals, consumers, policy makers and methods specialists.</div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>Source synthesis: Chapters 14-15 and Chapter III.</span>
+        <span>06 / 11 · <a href="https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-15">interpreting results</a></span>
+      </footer>
+    </div>
+  </article>
+
+  <article class="slide slide-updating">
+    <img class="slide-bg-img" src="cochrane_slide_bg.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <header class="top">
+        <div>
+          <div class="eyebrow">Reporting, updating and overviews</div>
+          <h1>Reporting, updating and Overviews extend the review record</h1>
+          <p class="subhead">The Handbook links transparent reporting, plain language, updating and Overviews to review use and maintenance.</p>
+        </div>
+        <div class="chapter">Chapters III-V<br />22</div>
+      </header>
+
+      <main class="content grid-3">
+        <section class="panel">
+          <h3>Reporting standards</h3>
+          <div class="checklist">
+            <div class="check">Cochrane protocols and reviews follow PRISMA 2020 and PRISMA for Protocols.</div>
+            <div class="check">Plain language summaries state key messages for consumers and non-expert readers.</div>
+            <div class="check">Methods, results, caveats and conclusions are consistent across summary formats.</div>
+          </div>
+        </section>
+        <section class="panel dark">
+          <h3>Updating criteria</h3>
+          <div class="checklist">
+            <div class="check">Reviews are assessed periodically because new studies may make results out of date or misleading.</div>
+            <div class="check">Update decisions depend on continuing relevance and whether new data or methods could affect findings.</div>
+            <div class="check">Updates can revise scope, eligibility criteria and methods, with changes managed and reported.</div>
+          </div>
+        </section>
+        <section class="panel">
+          <h3>Overviews and review-level questions</h3>
+          <div class="checklist">
+            <div class="check">Overviews search for and analyse multiple systematic reviews on related questions.</div>
+            <div class="check">The unit of search, inclusion and analysis is the systematic review rather than the primary study.</div>
+            <div class="check">The Overview format is matched to the question and associated methodological challenges.</div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>Source synthesis: Chapters III-V and 22.</span>
+        <span>07 / 11 · <a href="https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-iv">updating a review</a></span>
+      </footer>
+    </div>
+  </article>
+
+  <article class="slide slide-perspectives">
+    <img class="slide-bg-img" src="cochrane_slide_bg.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <header class="top">
+        <div>
+          <div class="eyebrow">Specific perspectives</div>
+          <h1>Part 3 extends intervention reviews beyond benefits alone</h1>
+          <p class="subhead">Part 3 expands intervention reviews to address equity, complexity, patient-reported outcomes, harms, economic evidence and qualitative evidence.</p>
+        </div>
+        <div class="chapter">Chapters 16-21<br />Part 3</div>
+      </header>
+
+      <main class="content">
+        <section class="bands">
+          <div class="band"><strong>Equity</strong><p>Equity assessment addresses distribution of effects and avoidable or unfair health differences, including PROGRESS-Plus factors.</p><div class="pill-row"><span class="pill lime">Ch 16</span></div></div>
+          <div class="band"><strong>Complexity</strong><p>Complex-intervention assessment addresses components, context interactions and the wider system into which the intervention is introduced.</p><div class="pill-row"><span class="pill blue">Ch 17</span></div></div>
+          <div class="band"><strong>PROs</strong><p>Patient-reported outcomes represent outcomes reported directly by patients and include pre-specified preferred PROMs.</p><div class="pill-row"><span class="pill pink">Ch 18</span></div></div>
+          <div class="band"><strong>Harms</strong><p>Adverse aspects of interventions may require bespoke searches and careful handling of incomplete reporting.</p><div class="pill-row"><span class="pill red">Ch 19</span></div></div>
+          <div class="band"><strong>Economics</strong><p>Economic evidence addresses costs, cost-effectiveness and applicability when healthcare decisions allocate limited resources.</p><div class="pill-row"><span class="pill orange">Ch 20</span></div></div>
+          <div class="band"><strong>Qualitative</strong><p>Qualitative evidence synthesis can explain complexity, context, implementation, preferences and stakeholder experiences.</p><div class="pill-row"><span class="pill">Ch 21</span></div></div>
+        </section>
+        <section class="panel dark">
+          <h3>Shared methods implications across Part 3</h3>
+          <div class="checklist">
+            <div class="check">These perspectives change question formulation, eligibility criteria, searching, appraisal, synthesis, Summary of findings tables and interpretation.</div>
+            <div class="check">Protocol-stage planning covers these perspectives when they are relevant to the review question.</div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>Source synthesis: Chapters 16-21.</span>
+        <span>08 / 11 · <a href="https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-16">equity and specific populations</a></span>
+      </footer>
+    </div>
+  </article>
+
+  <article class="slide slide-advanced">
+    <img class="slide-bg-img" src="cochrane_slide_bg.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <header class="top">
+        <div>
+          <div class="eyebrow">Advanced methods</div>
+          <h1>Non-standard designs and data sources require design-specific methods</h1>
+          <p class="subhead">Part 4 covers approaches for keeping reviews current, handling randomized-trial variants, including non-randomized evidence, and using individual participant data.</p>
+        </div>
+        <div class="chapter">Chapters 22-26<br />Part 4</div>
+      </header>
+
+      <main class="content grid-main">
+        <section class="matrix">
+          <div class="row three head"><div class="cell">Topic</div><div class="cell">When it matters</div><div class="cell">Method consequence</div></div>
+          <div class="row three"><div class="cell strong">Living reviews</div><div class="cell">Rapidly evolving fields where research is frequently published.</div><div class="cell">Continual updating needs processes for rapid identification, storage and synthesis.</div></div>
+          <div class="row three"><div class="cell strong">Prospective meta-analysis</div><div class="cell">Studies are identified or planned before results are known.</div><div class="cell">Often collaborative, frequently using individual participant data.</div></div>
+          <div class="row three"><div class="cell strong">Trial variants</div><div class="cell">Cluster, crossover and multi-arm trials introduce correlations or design-specific biases.</div><div class="cell">Analyses and RoB variants address trial design; arm handling is specified.</div></div>
+          <div class="row three"><div class="cell strong">Non-randomized studies</div><div class="cell">Randomized trials cannot answer the question or are insufficient.</div><div class="cell">Interpretation addresses design features, confounding and expected heterogeneity.</div></div>
+          <div class="row three"><div class="cell strong">IPD reviews</div><div class="cell">Aggregate data are insufficient for a high-quality or thorough review.</div><div class="cell">Analyses are pre-specified; time, funding and data-management requirements are higher.</div></div>
+        </section>
+        <section class="panel dark">
+          <h3>Advanced-methods constraints</h3>
+          <div class="checklist">
+            <div class="check">Formal sequential statistical methods are outside the main analyses for standard updated Cochrane meta-analyses.</div>
+            <div class="check">Non-randomized studies may be justified, but biases are likely to be greater than in randomized trials.</div>
+            <div class="check">ROBINS-I starts from a target trial and assesses pre-intervention, at-intervention and post-intervention features.</div>
+            <div class="check">IPD can improve data quality and analysis flexibility, but creates new demands for collaboration, governance and pre-specification.</div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>Source synthesis: Chapters 22-26.</span>
+        <span>09 / 11 · <a href="https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-26">individual participant data</a></span>
+      </footer>
+    </div>
+  </article>
+
+  <article class="slide slide-takeaways">
+    <img class="slide-bg-img" src="cochrane_slide_bg.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <header class="top">
+        <div>
+          <div class="eyebrow">Cross-chapter synthesis</div>
+          <h1>The Handbook emphasizes pre-specification and transparent judgement</h1>
+          <p class="subhead">Across the chapters, review rigor is represented as a chain of explicit decisions that readers can inspect.</p>
+        </div>
+        <div class="chapter">All chapters<br />Synthesis</div>
+      </header>
+
+      <main class="content grid-2">
+        <section class="panel dark">
+          <h3>Recurring requirements across the Handbook</h3>
+          <div class="checklist">
+            <div class="check">The review question, eligibility criteria, outcomes, methods and synthesis plans are pre-specified.</div>
+            <div class="check">Bias is addressed as a multi-layer problem: within studies, across syntheses, from missing results and within the body of evidence.</div>
+            <div class="check">Synthesis is limited to evidence that can be meaningfully synthesized; heterogeneity and indirectness are substantive considerations.</div>
+            <div class="check">Certainty and absolute effects are communicated so decision makers can understand what the evidence does and does not support.</div>
+            <div class="check">Review reporting, updating, equity, harms, economics, implementation and patient-important outcomes are addressed when relevant.</div>
+          </div>
+        </section>
+        <section class="content">
+          <div class="panel">
+            <h3>Common methodological risks identified in the Handbook</h3>
+            <div class="pill-row">
+              <span class="pill red">post-hoc scope</span>
+              <span class="pill red">outcome switching</span>
+              <span class="pill red">low-sensitivity searches</span>
+              <span class="pill red">unlinked reports</span>
+              <span class="pill red">unjustified pooling</span>
+              <span class="pill red">vote counting</span>
+              <span class="pill red">P-value thresholds</span>
+              <span class="pill red">missing harms assessment</span>
+              <span class="pill red">outdated reviews</span>
+              <span class="pill red">unsupported clinical guidance</span>
+            </div>
+          </div>
+          <div class="panel">
+            <h3>Documentation artifacts described in the Handbook</h3>
+            <div class="pill-row">
+              <span class="pill lime">protocol</span>
+              <span class="pill blue">search strategy</span>
+              <span class="pill orange">data decisions</span>
+              <span class="pill pink">RoB justifications</span>
+              <span class="pill">synthesis rationale</span>
+              <span class="pill lime">GRADE</span>
+              <span class="pill blue">SoF tables</span>
+              <span class="pill orange">plain language</span>
+              <span class="pill pink">update record</span>
+            </div>
+          </div>
+          <div class="panel">
+            <h3>Synthesis statement</h3>
+            <p class="subhead" style="font-size: 22px; line-height: 1.12; margin-top: 0;">A Cochrane review documents the path from question to conclusion so users can assess whether the findings apply to a specific decision context.</p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>Source synthesis: all main Handbook chapters.</span>
+        <span>10 / 11 · <a href="https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current">cochrane.org/handbook/current</a></span>
+      </footer>
+    </div>
+  </article>
+
+  <article class="slide slide-coverage">
+    <img class="slide-bg-img" src="cochrane_slide_bg.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <header class="top">
+        <div>
+          <div class="eyebrow">Chapter coverage</div>
+          <h1>Coverage map for the synthesis deck</h1>
+          <p class="subhead">The deck synthesizes the 31 main chapters of the current Cochrane Handbook for Systematic Reviews of Interventions, v6.5.</p>
+        </div>
+        <div class="chapter">Sources<br />All chapters</div>
+      </header>
+
+      <main class="content">
+        <section class="bands">
+          <div class="band"><strong>Part 1</strong><p class="chapter-list"><span><b>1</b><em>Introduction</em></span><span><b>2</b><em>Planning a Cochrane Review</em></span><span><b>3</b><em>Reporting the review</em></span><span><b>4</b><em>Updating a review</em></span><span><b>5</b><em>Overviews of Reviews</em></span></p><div class="pill-row"><span class="pill lime">About reviews</span></div></div>
+          <div class="band"><strong>Part 2</strong><p class="chapter-list chapter-columns"><span class="chapter-col"><span><b>1</b><em>Starting a review</em></span><span><b>2</b><em>Scope and questions</em></span><span><b>3</b><em>Inclusion and grouping</em></span><span><b>4</b><em>Searching and selecting</em></span><span><b>5</b><em>Collecting data</em></span><span><b>6</b><em>Effect measures</em></span><span><b>7</b><em>Bias and conflicts</em></span></span><span class="chapter-col"><span><b>8</b><em>RoB in randomized trials</em></span><span><b>9</b><em>Preparing for synthesis</em></span><span><b>10</b><em>Meta-analysis</em></span><span><b>11</b><em>Network meta-analysis</em></span><span><b>12</b><em>Other synthesis</em></span><span><b>13</b><em>Missing results</em></span><span><b>14</b><em>SoF and GRADE</em></span><span><b>15</b><em>Interpreting results</em></span></span></p><div class="pill-row"><span class="pill blue">Core methods</span></div></div>
+          <div class="band"><strong>Part 3</strong><p class="chapter-list"><span><b>16</b><em>Equity</em></span><span><b>17</b><em>Intervention complexity</em></span><span><b>18</b><em>Patient-reported outcomes</em></span><span><b>19</b><em>Adverse effects</em></span><span><b>20</b><em>Economic evidence</em></span><span><b>21</b><em>Qualitative evidence</em></span></p><div class="pill-row"><span class="pill orange">Specific perspectives</span></div></div>
+          <div class="band"><strong>Part 4</strong><p class="chapter-list"><span><b>22</b><em>Prospective approaches</em></span><span><b>23</b><em>Variants on randomized trials</em></span><span><b>24</b><em>Non-randomized studies</em></span><span><b>25</b><em>Risk of bias in non-randomized studies</em></span><span><b>26</b><em>Individual participant data</em></span></p><div class="pill-row"><span class="pill pink">Other topics</span></div></div>
+        </section>
+        <section class="panel dark">
+          <h3>Primary source</h3>
+          <div class="checklist">
+            <div class="check">Cochrane Handbook for Systematic Reviews of Interventions, current online version 6.5, Cochrane, 2024.</div>
+            <div class="check">All synthesis text is paraphrased from the current official Cochrane Handbook chapter pages.</div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>Source synthesis: current Cochrane Handbook table of contents and all main chapter pages.</span>
+        <span>11 / 11 · <a href="https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current">cochrane.org/handbook/current</a></span>
+      </footer>
+    </div>
+  </article>
+</body>
+</html>

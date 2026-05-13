@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>HEOR — A Five-Part Argument for Building the Evidence Early</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,900&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0f1f;
+    --navy-900:#04122e;
+    --navy-800:#08214f;
+    --navy-700:#0e2f72;
+    --blue-600:#1546ff;
+    --blue-500:#2a63ff;
+    --blue-300:#7ea1ff;
+    --blue-100:#dbe4ff;
+    --paper:#f6f3ec;
+    --paper-2:#fbf9f3;
+    --paper-3:#efeadf;
+    --rule:#1f2540;
+    --muted:#5a6178;
+    --line:#d6d2c4;
+    --red:#b3261e;
+    --gold:#b78a2c;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#e9e6dc;font-family:'Inter',system-ui,sans-serif;color:var(--ink);}
+  .deck{display:flex;flex-direction:column;align-items:center;gap:60px;padding:64px 16px 120px;}
+  .stripe{
+    width:1080px;max-width:100%;color:#5a6178;font-size:11px;letter-spacing:.32em;
+    text-transform:uppercase;text-align:center;font-weight:600;font-family:'JetBrains Mono',monospace;
+  }
+  .stripe .ornament{display:inline-block;margin:0 14px;color:#9aa0b3;}
+
+  .card{
+    width:1080px;max-width:100%;
+    background:var(--paper);
+    border-radius:6px;
+    box-shadow:0 40px 80px -40px rgba(4,18,46,.45), 0 1px 0 rgba(0,0,0,.05);
+    overflow:hidden;position:relative;
+  }
+  .card::before{
+    /* paper grain */
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:
+      radial-gradient(rgba(0,0,0,.018) 1px, transparent 1px),
+      radial-gradient(rgba(255,255,255,.025) 1px, transparent 1px);
+    background-size: 3px 3px, 5px 5px;
+    background-position: 0 0, 1px 2px;
+    mix-blend-mode:multiply;opacity:.7;
+  }
+  .corner{
+    position:absolute;top:24px;right:32px;display:flex;align-items:baseline;gap:10px;
+    font-family:'JetBrains Mono',monospace;color:var(--ink);font-weight:700;
+  }
+  .corner .num{font-size:13px;letter-spacing:.16em;}
+  .corner .of{font-size:10px;color:var(--muted);letter-spacing:.18em;}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;font-size:11px;
+    letter-spacing:.32em;text-transform:uppercase;color:var(--ink);
+    display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:24px;height:1px;background:var(--ink);}
+  .hairline{height:1px;background:var(--ink);opacity:.85;width:100%;}
+
+  /* ============= CARD 1 — Sequence ============= */
+  .c1{padding:64px 72px 60px;}
+  .c1 .top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:18px;}
+  .c1 .kicker{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.28em;color:var(--muted);}
+  .c1 h1{
+    font-family:'Playfair Display',serif;font-weight:900;
+    font-size:104px;line-height:.95;letter-spacing:-.02em;
+    color:var(--navy-900);margin:8px 0 14px;
+  }
+  .c1 h1 em{font-style:italic;color:var(--blue-600);font-weight:900;}
+  .c1 .subdeck{
+    font-family:'Playfair Display',serif;font-style:italic;font-weight:700;
+    font-size:22px;color:var(--navy-800);margin:6px 0 24px;
+  }
+  .c1 .scene{position:relative;height:280px;margin:6px 0 14px;}
+  .c1 .scene svg{width:100%;height:100%;display:block;}
+
+  .c1 .compare{
+    display:grid;grid-template-columns:1fr 1px 1fr;gap:0;align-items:start;margin-top:18px;
+    border-top:1px solid var(--rule);padding-top:22px;
+  }
+  .c1 .compare .divider-v{background:var(--rule);width:1px;}
+  .c1 .lane{padding:0 22px;}
+  .c1 .lane:first-child{padding-left:0;}
+  .c1 .lane:last-child{padding-right:0;}
+  .c1 .lane h4{
+    font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;
+    letter-spacing:.28em;text-transform:uppercase;margin:0 0 14px;
+    color:var(--muted);
+  }
+  .c1 .lane.right h4{color:var(--blue-600);}
+  .c1 .lane ol{
+    list-style:none;padding:0;margin:0;counter-reset:s;
+    display:flex;flex-direction:column;gap:10px;
+  }
+  .c1 .lane li{
+    counter-increment:s;display:grid;grid-template-columns:28px 1fr;align-items:start;gap:10px;
+    font-size:14px;color:var(--ink);line-height:1.35;
+  }
+  .c1 .lane li::before{
+    content:counter(s,decimal-leading-zero);
+    font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;
+    color:var(--muted);padding-top:2px;
+  }
+  .c1 .lane.right li::before{color:var(--blue-600);}
+  .c1 .lane li strong{display:block;font-weight:700;color:var(--navy-900);font-size:14px;letter-spacing:.02em;}
+  .c1 .lane li span{color:#475569;font-size:13px;}
+
+  .c1 .stat{
+    margin-top:30px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+    padding:24px 0;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:28px;
+  }
+  .c1 .stat .pct{
+    font-family:'Playfair Display',serif;font-weight:900;font-size:96px;line-height:1;
+    color:var(--blue-600);letter-spacing:-.04em;
+  }
+  .c1 .stat .copy{
+    font-family:'Playfair Display',serif;font-weight:700;font-size:22px;line-height:1.2;color:var(--navy-900);
+  }
+  .c1 .stat .copy small{display:block;font-family:'Inter',sans-serif;font-style:normal;font-weight:600;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:8px;}
+  .c1 .stat .stamp{
+    writing-mode:vertical-rl;transform:rotate(180deg);
+    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.32em;
+    text-transform:uppercase;color:var(--blue-600);font-weight:700;
+    border-left:1px solid var(--blue-600);padding-left:10px;
+  }
+
+  /* ============= CARD 1·A — Blueprint variant ============= */
+  .c1a{padding:0;background:#08163a;color:#dbe4ff;}
+  .c1a::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:
+      linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+    background-size: 28px 28px;
+    opacity:1;mix-blend-mode:normal;
+  }
+  .c1a .corner{color:#dbe4ff;}
+  .c1a .corner .of{color:#7ea1ff;}
+  .c1a .eyebrow{color:#7ea1ff;}
+  .c1a .eyebrow::before{background:#7ea1ff;}
+  .c1a .inner{
+    padding:56px 60px 56px;display:grid;
+    grid-template-columns:1fr 1.5fr;
+    grid-template-areas:"title title" "body diagram";
+    gap:28px 40px;align-items:start;position:relative;
+  }
+  .c1a .titleblock{grid-area:title;max-width:920px;}
+  .c1a .leftcol{grid-area:body;display:flex;flex-direction:column;gap:18px;align-self:start;}
+  .c1a .build{grid-area:diagram;align-self:start;min-height:1020px;}
+  .c1a h1{
+    font-family:'Playfair Display',serif;font-weight:900;font-size:112px;line-height:.92;
+    letter-spacing:-.025em;color:#f6f3ec;margin:18px 0 12px;
+  }
+  .c1a h1 em{font-style:italic;color:#7ea1ff;}
+  .c1a .subdeck{font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:20px;color:#bfd1ff;margin:0 0 18px;}
+  .c1a .body{font-size:14.5px;color:#bfd1ff;line-height:1.6;max-width:480px;}
+  .c1a .body b{color:#fff;}
+  .c1a .legend{
+    margin-top:18px;display:grid;grid-template-columns:auto 1fr;gap:6px 18px;
+    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;
+    text-transform:uppercase;color:#7ea1ff;font-weight:700;
+  }
+  .c1a .legend .lvl{color:#f6f3ec;letter-spacing:.22em;}
+  .c1a .stamp-a{
+    margin-top:22px;display:inline-flex;align-items:center;gap:10px;
+    border:1.5px solid #7ea1ff;color:#7ea1ff;padding:10px 14px;
+    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:700;
+  }
+  .c1a .build svg{width:100%;height:auto;display:block;}
+  .c1a .hairline-a{height:1px;background:#7ea1ff;opacity:.85;}
+
+  /* ============= CARD 1·B — Compounding cost variant ============= */
+  .c1b{padding:64px 72px 60px;background:linear-gradient(180deg,#fbf9f3,#efeadf);}
+  .c1b .top{display:flex;justify-content:space-between;align-items:flex-end;}
+  .c1b .kicker{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.28em;color:var(--muted);font-weight:700;}
+  .c1b h1{
+    font-family:'Playfair Display',serif;font-weight:900;
+    font-size:104px;line-height:.92;letter-spacing:-.03em;
+    color:var(--navy-900);margin:14px 0 4px;
+  }
+  .c1b h1 em{font-style:italic;color:var(--blue-600);}
+  .c1b .subdeck{font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:22px;color:var(--navy-800);margin:6px 0 28px;}
+  .c1b .chart{position:relative;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:24px 0;background:rgba(255,255,255,.4);}
+  .c1b .chart svg{width:100%;height:auto;display:block;}
+  .c1b .grid-cols{
+    margin-top:24px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;
+  }
+  .c1b .grid-cols .col h4{
+    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--muted);margin:0 0 8px;font-weight:700;
+  }
+  .c1b .grid-cols .col .price{
+    font-family:'Playfair Display',serif;font-weight:900;font-size:64px;line-height:1;
+    color:var(--navy-900);letter-spacing:-.02em;
+  }
+  .c1b .grid-cols .col .price .mult{color:var(--blue-600);font-style:italic;}
+  .c1b .grid-cols .col.danger .price{color:var(--red);}
+  .c1b .grid-cols .col.danger .price .mult{color:var(--red);}
+  .c1b .grid-cols .col p{font-size:13.5px;color:#384258;line-height:1.5;margin:8px 0 0;}
+  .c1b .stamp-row{
+    margin-top:30px;display:flex;justify-content:space-between;align-items:center;
+    border-top:1px solid var(--rule);padding-top:20px;
+  }
+  .c1b .quote-b{
+    font-family:'Playfair Display',serif;font-style:italic;font-weight:900;
+    font-size:24px;color:var(--navy-900);max-width:680px;line-height:1.25;
+  }
+  .c1b .quote-b span{color:var(--blue-600);}
+  .c1b .seal-b{
+    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--blue-600);font-weight:700;
+    border:1.5px solid var(--blue-600);padding:8px 14px;white-space:nowrap;
+  }
+
+  /* ============= CARD 1·C — Reversed filmstrip variant ============= */
+  .c1c{padding:0;background:#0b0f1a;color:#f6f3ec;}
+  .c1c::before{display:none;}
+  .c1c .corner{color:#f6f3ec;}
+  .c1c .corner .of{color:#7ea1ff;}
+  .c1c .eyebrow-c{
+    font-family:'JetBrains Mono',monospace;font-size:11px;
+    letter-spacing:.32em;text-transform:uppercase;color:#dbe4ff;font-weight:600;
+    display:flex;align-items:center;gap:10px;
+  }
+  .c1c .eyebrow-c::before{content:"";width:24px;height:1px;background:#dbe4ff;}
+  .c1c .inner{padding:60px 72px 60px;position:relative;}
+  .c1c h1{
+    font-family:'Playfair Display',serif;font-weight:900;font-size:96px;line-height:.95;
+    letter-spacing:-.03em;color:#f6f3ec;margin:18px 0 6px;
+  }
+  .c1c h1 em{font-style:italic;color:#ff7a7a;}
+  .c1c .subdeck{font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:20px;color:#bfd1ff;margin:0 0 22px;}
+  .c1c .hairline-c{height:1px;background:#dbe4ff;opacity:.5;}
+  .c1c .filmstrip{
+    position:relative;background:#000;padding:14px 0;margin-top:18px;
+    border-top:1px solid #2a3a6e;border-bottom:1px solid #2a3a6e;
+  }
+  .c1c .sprockets{
+    display:flex;justify-content:space-between;padding:0 18px;
+  }
+  .c1c .sprockets .hole{width:18px;height:12px;background:#0b0f1a;border-radius:2px;}
+  .c1c .frames{
+    display:grid;grid-template-columns:repeat(5,1fr);gap:10px;padding:14px 18px;
+  }
+  .c1c .frame{
+    background:#11192e;border:1px solid #2a3a6e;border-radius:2px;padding:14px 14px 16px;min-height:220px;
+    display:flex;flex-direction:column;justify-content:space-between;
+    position:relative;
+  }
+  .c1c .frame .frameNum{
+    font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.28em;
+    color:#7ea1ff;text-transform:uppercase;font-weight:700;
+  }
+  .c1c .frame .stage{
+    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;
+    text-transform:uppercase;color:#dbe4ff;font-weight:700;margin-top:4px;
+  }
+  .c1c .frame .scene{flex:1;display:flex;align-items:center;justify-content:center;padding:6px 0;}
+  .c1c .frame .scene svg{width:80px;height:80px;color:#dbe4ff;}
+  .c1c .frame .caption{
+    font-family:'Playfair Display',serif;font-style:italic;font-size:13px;color:#dbe4ff;line-height:1.35;font-weight:700;
+  }
+  .c1c .frame.fail .scene svg{color:#ff7a7a;}
+  .c1c .frame.fail{border-color:#ff7a7a;background:#1a0e10;}
+  .c1c .frame.fail .stage{color:#ff7a7a;}
+  .c1c .frame.fail .frameNum{color:#ff7a7a;}
+  .c1c .arrow-row{
+    display:grid;grid-template-columns:repeat(5,1fr);gap:10px;padding:0 18px;align-items:center;
+    margin-top:14px;
+  }
+  .c1c .arrow-row .ar{
+    text-align:center;font-family:'JetBrains Mono',monospace;font-size:10px;
+    letter-spacing:.22em;color:#7ea1ff;font-weight:700;
+    border-top:2px dashed #2a3a6e;padding-top:10px;
+  }
+  .c1c .arrow-row .ar.origin{color:#7ea1ff;border-top-color:#7ea1ff;}
+  .c1c .rewind{
+    margin-top:16px;display:flex;justify-content:space-between;align-items:center;
+    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.28em;
+    text-transform:uppercase;color:#7ea1ff;font-weight:700;
+  }
+  .c1c .rewind .arrow-line{flex:1;height:1px;background:linear-gradient(90deg,#ff7a7a,#7ea1ff);margin:0 16px;}
+  .c1c .pull-c{
+    margin-top:30px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px;
+    border-top:1px solid #2a3a6e;padding-top:22px;
+  }
+  .c1c .pull-c .markline{height:1px;background:#dbe4ff;width:80px;}
+  .c1c .pull-c .quote{
+    font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:22px;color:#f6f3ec;line-height:1.3;
+  }
+  .c1c .pull-c .quote em{color:#ff7a7a;font-style:italic;}
+  .c1c .pull-c .stamp{
+    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.28em;
+    text-transform:uppercase;color:#dbe4ff;font-weight:700;
+    border:1.5px solid #dbe4ff;padding:10px 14px;
+  }
+
+  /* ============= CARD 2 — Timing ============= */
+  .c2{padding:0;background:var(--paper-2);}
+  .c2 .inner{padding:60px 72px 64px;position:relative;}
+  .c2 .head{display:flex;justify-content:space-between;align-items:center;}
+  .c2 h1{
+    font-family:'Inter',sans-serif;font-weight:900;
+    font-size:62px;line-height:1.02;color:var(--navy-900);margin:18px 0 6px;
+    letter-spacing:-.02em;text-transform:uppercase;
+  }
+  .c2 h1 .it{
+    font-family:'Playfair Display',serif;font-style:italic;font-weight:900;
+    color:var(--blue-600);text-transform:none;letter-spacing:-.01em;
+  }
+  .c2 .subdeck{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:var(--navy-800);margin:0 0 28px;font-weight:700;}
+
+  .c2 .tline{
+    position:relative;margin-top:8px;
+  }
+  .c2 .tline svg.line{width:100%;height:auto;display:block;}
+  .c2 .stages{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:24px;
+  }
+  .c2 .stage{
+    border-top:1px solid var(--rule);padding-top:14px;
+  }
+  .c2 .stage .tag{
+    font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--blue-600);font-weight:700;margin-bottom:6px;
+  }
+  .c2 .stage h3{
+    font-family:'Inter',sans-serif;font-weight:900;font-size:28px;letter-spacing:-.01em;
+    margin:0 0 6px;color:var(--navy-900);
+  }
+  .c2 .stage .tease{
+    font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:14px;
+    color:var(--navy-800);margin:0 0 8px;
+  }
+  .c2 .stage p{font-size:13px;color:#445069;margin:0;line-height:1.45;}
+
+  .c2 .figs{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:34px;align-items:end;}
+  .c2 .fig{display:flex;justify-content:center;}
+  .c2 .fig svg{width:160px;height:200px;}
+
+  .c2 .pull{
+    margin-top:36px;display:grid;grid-template-columns:80px 1fr auto;gap:22px;align-items:center;
+    border-top:1px solid var(--rule);padding-top:22px;
+  }
+  .c2 .pull .markline{height:1px;background:var(--ink);}
+  .c2 .pull .quote{
+    font-family:'Playfair Display',serif;font-weight:700;font-size:22px;line-height:1.25;color:var(--navy-900);
+  }
+  .c2 .pull .quote em{font-style:italic;color:var(--blue-600);}
+  .c2 .pull .stamp{
+    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.28em;
+    text-transform:uppercase;font-weight:700;color:var(--blue-600);
+    padding:8px 12px;border:1px solid var(--blue-600);
+  }
+
+  /* ============= CARD 3 — Denied ============= */
+  .c3{padding:0;background:var(--navy-900);color:#f6f3ec;}
+  .c3::before{display:none;}
+  .c3 .inner{padding:60px 72px 60px;position:relative;overflow:hidden;}
+  .c3 .corner{color:#f6f3ec;}
+  .c3 .corner .of{color:#9da6c0;}
+  .c3 .eyebrow{color:#dbe4ff;}
+  .c3 .eyebrow::before{background:#dbe4ff;}
+  .c3 .small{
+    font-family:'Inter',sans-serif;font-weight:800;font-size:24px;
+    letter-spacing:.06em;text-transform:uppercase;color:#dbe4ff;margin:18px 0 4px;
+  }
+  .c3 .huge{
+    font-family:'Inter',sans-serif;font-weight:900;
+    font-size:200px;line-height:.92;letter-spacing:-.04em;
+    color:#f6f3ec;margin:0;
+  }
+  .c3 .huge .blue{color:var(--blue-300);}
+
+  .c3 .body{
+    display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;margin-top:24px;
+  }
+  .c3 .verdict{
+    border:1px solid #2a3a6e;border-radius:6px;padding:24px;
+    background:linear-gradient(180deg,rgba(20,30,68,.5),rgba(8,16,42,.5));
+    backdrop-filter:blur(2px);
+  }
+  .c3 .verdict .label{
+    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.32em;
+    text-transform:uppercase;color:#9da6c0;margin-bottom:10px;
+  }
+  .c3 .verdict .num{
+    font-family:'Playfair Display',serif;font-weight:900;font-size:80px;line-height:1;
+    color:#f6f3ec;letter-spacing:-.03em;
+  }
+  .c3 .verdict .num .unit{
+    font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.28em;
+    color:var(--blue-300);font-weight:700;margin-left:10px;
+  }
+  .c3 .verdict .meta{
+    color:#c2cae0;font-size:14px;margin-top:14px;line-height:1.5;
+    font-family:'Playfair Display',serif;font-style:italic;font-weight:700;
+  }
+
+  .c3 .vault{position:relative;}
+  .c3 .vault svg{width:100%;height:auto;display:block;}
+  .c3 .stamp-overlay{
+    position:absolute;top:30px;right:-20px;transform:rotate(-12deg);
+    border:5px solid #ff5959;color:#ff5959;
+    padding:14px 22px;font-family:'Inter',sans-serif;font-weight:900;
+    font-size:46px;letter-spacing:.06em;
+    background:rgba(8,16,42,.6);
+    text-shadow:0 0 18px rgba(255,89,89,.25);
+    box-shadow:0 0 0 2px rgba(255,89,89,.15) inset;
+    opacity:.92;
+  }
+
+  .c3 .triplet{
+    margin-top:32px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+    border-top:1px solid #2a3a6e;border-bottom:1px solid #2a3a6e;
+  }
+  .c3 .triplet .t{
+    padding:18px 22px;border-right:1px solid #2a3a6e;
+  }
+  .c3 .triplet .t:last-child{border-right:0;}
+  .c3 .triplet .who{
+    font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--blue-300);font-weight:700;margin-bottom:6px;
+  }
+  .c3 .triplet .ask{
+    font-family:'Playfair Display',serif;font-style:italic;font-size:18px;color:#f6f3ec;line-height:1.3;font-weight:700;
+  }
+  .c3 .triplet .ask b{font-style:normal;color:#fff;}
+
+  .c3 .stamp-line{
+    margin-top:22px;text-align:center;
+    font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.32em;
+    text-transform:uppercase;color:var(--blue-300);font-weight:700;
+  }
+
+  /* ============= CARD 4 — Three tiers ============= */
+  .c4{padding:64px 72px 64px;background:var(--paper);}
+  .c4 .head{display:flex;justify-content:space-between;align-items:flex-end;}
+  .c4 h1{
+    font-family:'Inter',sans-serif;font-weight:900;
+    font-size:74px;line-height:1;letter-spacing:-.02em;color:var(--navy-900);
+    margin:14px 0 6px;text-transform:uppercase;
+  }
+  .c4 h1 .one{color:var(--blue-600);}
+  .c4 .subdeck{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:var(--navy-800);margin:8px 0 28px;font-weight:700;}
+
+  .c4 .stack{display:flex;flex-direction:column;gap:14px;}
+  .c4 .tier{
+    position:relative;display:grid;grid-template-columns:120px 1fr auto;
+    align-items:center;border:1px solid var(--rule);background:#fff;
+    padding:22px 26px;border-radius:4px;overflow:hidden;
+  }
+  .c4 .tier .ico{display:flex;align-items:center;justify-content:center;}
+  .c4 .tier .ico svg{width:54px;height:54px;}
+  .c4 .tier .text h3{
+    font-family:'Inter',sans-serif;font-weight:900;font-size:30px;letter-spacing:.04em;
+    margin:0;color:var(--navy-900);
+  }
+  .c4 .tier .text p{margin:6px 0 0;font-size:14px;color:#475569;line-height:1.5;}
+  .c4 .tier .grade{
+    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--muted);font-weight:700;text-align:right;
+  }
+  .c4 .tier .grade big{display:block;font-family:'Playfair Display',serif;font-size:46px;font-weight:900;color:var(--navy-900);line-height:1;letter-spacing:-.02em;}
+
+  .c4 .t1{background:linear-gradient(90deg,#08214f 0 110px,#fff 110px);width:100%;}
+  .c4 .t1 .ico svg{color:#fff;}
+  .c4 .t2{background:linear-gradient(90deg,#7ea1ff 0 110px,#fff 110px);width:96%;align-self:flex-start;}
+  .c4 .t2 .ico svg{color:#08214f;}
+  .c4 .t3{background:linear-gradient(90deg,#cdd2dc 0 110px,#fff 110px);width:90%;align-self:flex-start;position:relative;}
+  .c4 .t3 .ico svg{color:var(--red);}
+  .c4 .t3 .text h3 .red{color:var(--red);}
+  .c4 .t3 .text p i{font-style:italic;color:var(--red);}
+  .c4 .t3 .crumble{
+    position:absolute;right:-6px;top:0;bottom:0;width:140px;pointer-events:none;
+    background:
+      radial-gradient(7px 7px at 30% 40%, #6b7281 60%, transparent 61%),
+      radial-gradient(5px 5px at 60% 70%, #7c8395 60%, transparent 61%),
+      radial-gradient(9px 9px at 80% 30%, #555c70 60%, transparent 61%),
+      radial-gradient(4px 4px at 50% 85%, #8a91a3 60%, transparent 61%),
+      linear-gradient(135deg, transparent 0 50%, #cdd2dc 50%);
+    clip-path:polygon(20% 0,100% 0,100% 100%,0 100%,0 65%);
+    opacity:.85;
+  }
+
+  .c4 .stamp-row{
+    margin-top:30px;display:flex;justify-content:space-between;align-items:center;
+    border-top:1px solid var(--rule);padding-top:18px;
+  }
+  .c4 .stamp-row .quote{
+    font-family:'Playfair Display',serif;font-style:italic;font-weight:900;
+    font-size:24px;color:var(--navy-900);
+  }
+  .c4 .stamp-row .quote span{color:var(--blue-600);}
+  .c4 .stamp-row .seal{
+    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--blue-600);font-weight:700;border:1px solid var(--blue-600);padding:8px 14px;
+  }
+
+  /* ============= CARD 5 — The Cliff ============= */
+  .c5{padding:0;background:var(--paper-3);}
+  .c5 .inner{padding:60px 72px 60px;display:grid;grid-template-columns:1.05fr .95fr;gap:42px;align-items:start;}
+  .c5 h1{
+    font-family:'Playfair Display',serif;font-weight:900;font-size:84px;line-height:.96;
+    letter-spacing:-.02em;color:var(--navy-900);margin:18px 0 8px;
+  }
+  .c5 h1 em{font-style:italic;color:var(--blue-600);}
+  .c5 .subdeck{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:var(--navy-800);margin:0 0 22px;font-weight:700;}
+  .c5 .body{font-size:15px;color:#384258;line-height:1.6;max-width:520px;}
+  .c5 .body b{color:var(--navy-900);}
+  .c5 .badge{
+    display:inline-flex;align-items:center;gap:10px;background:var(--navy-900);color:#fff;
+    padding:10px 14px;font-family:'JetBrains Mono',monospace;font-size:11px;
+    letter-spacing:.28em;text-transform:uppercase;font-weight:700;margin-bottom:8px;
+  }
+  .c5 .badge .arrow{color:var(--blue-300);}
+  .c5 .stamp{
+    margin-top:22px;display:inline-flex;align-items:center;gap:10px;
+    border:1.5px solid var(--blue-600);color:var(--blue-600);
+    padding:12px 16px;font-family:'JetBrains Mono',monospace;font-size:12px;
+    letter-spacing:.28em;text-transform:uppercase;font-weight:700;
+  }
+  .c5 .stamp .dot{width:8px;height:8px;border-radius:50%;background:var(--blue-600);}
+  .c5 .cliff{position:relative;}
+  .c5 .cliff svg{width:100%;height:auto;display:block;}
+  .c5 .annot{
+    margin-top:14px;border-top:1px solid var(--rule);padding-top:12px;
+    display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+    font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--muted);font-weight:700;
+  }
+  .c5 .annot div big{display:block;font-family:'Playfair Display',serif;color:var(--navy-900);font-size:24px;letter-spacing:-.01em;font-weight:900;margin-bottom:4px;}
+  .c5 .colophon{
+    margin-top:18px;font-family:'JetBrains Mono',monospace;font-size:10px;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:600;
+  }
+
+  @media print{
+    body{background:#fff;}
+    .deck{gap:0;padding:0;}
+    .card{box-shadow:none;border-radius:0;page-break-after:always;}
+    .stripe{display:none;}
+  }
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <div class="stripe">A FIVE-PART ARGUMENT FOR HEOR <span class="ornament">·</span> DESIGN THE EVIDENCE EARLY <span class="ornament">·</span> DEFEND THE VALUE LATE</div>
+
+  <!-- ============= CARD 1 — Sequence ============= -->
+  <section class="card c1">
+    <div class="corner"><span class="num">01</span><span class="of">/ 05</span></div>
+    <div class="top">
+      <span class="eyebrow">HEOR · Sequence</span>
+      <span class="kicker">Phase&nbsp;0 → Launch</span>
+    </div>
+    <div class="hairline" style="margin-top:14px;"></div>
+
+    <h1>Evidence built<br/><em>in&nbsp;reverse</em><br/>costs twice.</h1>
+    <p class="subdeck">Phase&nbsp;I design beats Phase&nbsp;III retrofit — every time.</p>
+
+    <div class="scene" aria-hidden="true">
+      <svg viewBox="0 0 1000 280" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="brokeRoad" x1="0" x2="1">
+            <stop offset="0" stop-color="#cdc8b6"/>
+            <stop offset="1" stop-color="#8a8676"/>
+          </linearGradient>
+          <linearGradient id="cleanRoad" x1="0" x2="1">
+            <stop offset="0" stop-color="#dbe4ff"/>
+            <stop offset="1" stop-color="#7ea1ff"/>
+          </linearGradient>
+          <linearGradient id="spark" x1="0" x2="1">
+            <stop offset="0" stop-color="#1546ff" stop-opacity="0"/>
+            <stop offset="1" stop-color="#1546ff"/>
+          </linearGradient>
+        </defs>
+
+        <!-- broken path with milestone markers (top lane = old way reversed) -->
+        <path d="M40,210 C200,210 280,140 460,140" stroke="url(#brokeRoad)" stroke-width="36" fill="none" stroke-linecap="round"/>
+        <!-- cracks -->
+        <g stroke="#5a5440" stroke-width="1.5" opacity=".7">
+          <path d="M80,210 L130,205 M170,200 L220,190 M260,180 L300,165 M340,148 L400,142"/>
+        </g>
+        <!-- rubble -->
+        <g fill="#a09b88" opacity=".95">
+          <circle cx="48" cy="240" r="6"/><circle cx="62" cy="248" r="4"/>
+          <rect x="74" y="234" width="10" height="8" rx="2"/>
+          <rect x="92" y="244" width="14" height="8" rx="2" transform="rotate(14 99 248)"/>
+        </g>
+        <!-- collapsed door -->
+        <g transform="translate(440,98)">
+          <rect x="0" y="0" width="44" height="80" fill="#8a8676" transform="skewY(8)"/>
+          <rect x="46" y="6" width="8" height="74" fill="#6c6757"/>
+        </g>
+
+        <!-- clean path (right way) -->
+        <path d="M520,140 C700,140 760,60 920,60" stroke="url(#cleanRoad)" stroke-width="40" fill="none" stroke-linecap="round"/>
+        <path d="M530,140 C700,140 760,62 920,62" stroke="url(#spark)" stroke-width="6" fill="none" stroke-linecap="round" opacity=".95"/>
+
+        <!-- milestone dots on right lane -->
+        <g fill="#04122e">
+          <circle cx="540" cy="140" r="6"/><circle cx="640" cy="120" r="6"/>
+          <circle cx="760" cy="80" r="6"/><circle cx="900" cy="60" r="6"/>
+        </g>
+        <!-- doorway/portal -->
+        <g transform="translate(900,12)">
+          <rect x="-14" y="6" width="14" height="92" fill="#04122e"/>
+          <rect x="0" y="0" width="68" height="100" fill="#1546ff"/>
+          <rect x="6" y="6" width="56" height="88" fill="#04122e"/>
+          <rect x="30" y="40" width="6" height="20" rx="3" fill="#7ea1ff"/>
+        </g>
+
+        <!-- traveler -->
+        <g transform="translate(844,30)">
+          <circle cx="0" cy="0" r="6" fill="#04122e"/>
+          <path d="M-9,7 L9,7 L7,32 L-7,32 Z" fill="#04122e"/>
+          <rect x="-6" y="32" width="4" height="12" fill="#04122e"/>
+          <rect x="2" y="32" width="4" height="12" fill="#04122e"/>
+        </g>
+
+        <!-- labels -->
+        <text x="40" y="270" font-family="'JetBrains Mono'" font-size="10" letter-spacing="2" fill="#5a6178" font-weight="700">REACTIVE · LATE HEOR</text>
+        <text x="730" y="44" font-family="'JetBrains Mono'" font-size="10" letter-spacing="2" fill="#1546ff" font-weight="700">HEOR-LED · LAUNCH-READY</text>
+      </svg>
+    </div>
+
+    <div class="compare">
+      <div class="lane left">
+        <h4>The reactive path</h4>
+        <ol>
+          <li><div><strong>Clinical-only design</strong><span>Endpoints chosen for the regulator, not the payer.</span></div></li>
+          <li><div><strong>Late HEOR ask</strong><span>Brought in at dossier-prep — to "support" not shape.</span></div></li>
+          <li><div><strong>Payer pushback</strong><span>Comparators wrong. Sub-populations missing. RWE thin.</span></div></li>
+          <li><div><strong>Reprice or restrict</strong><span>Coverage with conditions, rebates, carve-outs, delay.</span></div></li>
+        </ol>
+      </div>
+      <div class="divider-v"></div>
+      <div class="lane right">
+        <h4>The HEOR-led path</h4>
+        <ol>
+          <li><div><strong>Value story in Phase I</strong><span>Co-designed with payers, HTAs, and clinicians upfront.</span></div></li>
+          <li><div><strong>Endpoints &amp; comparators locked</strong><span>Chosen for what the dossier will need to prove.</span></div></li>
+          <li><div><strong>Economic + RWE model</strong><span>Built alongside the trial — not from its leftovers.</span></div></li>
+          <li><div><strong>Launch with proof</strong><span>Defendable price. Faster reimbursement. Longer protection.</span></div></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="stat">
+      <div class="pct">2&times;</div>
+      <div class="copy">
+        Launches with HEOR embedded before Phase&nbsp;II reach broad reimbursement up to <em>twice</em> as fast — and defend their price an average of 18&nbsp;months longer.
+        <small>BECAUSE THE EVIDENCE WAS BUILT — NOT BACK-FILLED.</small>
+      </div>
+      <div class="stamp">Design once · Defend forever</div>
+    </div>
+  </section>
+
+  <div class="stripe">01·A <span class="ornament">·</span> A BLUEPRINT FOR THE EVIDENCE PACKAGE</div>
+
+  <!-- ============= CARD 1·A : Blueprint ============= -->
+  <section class="card c1a">
+    <div class="corner"><span class="num">01·A</span><span class="of">/ Variant</span></div>
+    <div class="inner">
+      <div class="titleblock">
+        <span class="eyebrow">HEOR · Variant A · The Blueprint</span>
+        <div class="hairline-a" style="margin-top:14px;"></div>
+        <h1>You don't pour the<br/>foundation <em>last.</em></h1>
+        <p class="subdeck">An evidence package is a structure: load-bearing, or it falls.</p>
+      </div>
+
+      <div class="leftcol">
+        <p class="body">
+          The top floor is what the launch ships: <b>dossiers (GVD, AMCP), HTA submissions, FDA submissions (PCOR), and field tools.</b> Beneath it, four levels of HEOR work carry the load. The foundation is poured before the trial begins, in burden of illness, unmet need, and the target product profile. Each floor above locks in load-bearing decisions: payer landscape, endpoints, comparators, the cost-effectiveness model. Skip a level, and the load path breaks. The whole tower fails, not just the floor you skipped.
+        </p>
+        <div class="legend">
+          <span class="lvl">04</span><span>Launch · GVD, AMCP, HTA, FDA/PCOR, field tools</span>
+          <span class="lvl">03</span><span>Phase III · CEA, BIM, ITC/NMA, RWE</span>
+          <span class="lvl">02</span><span>Phase II · Endpoints, PROs, comparators</span>
+          <span class="lvl">01</span><span>Phase I · Value framework, payer landscape</span>
+          <span class="lvl">00</span><span>Foundation · Burden of illness, unmet need, TPP</span>
+        </div>
+        <div class="stamp-a">Foundation first · Story second</div>
+      </div>
+
+      <div class="build" aria-hidden="true">
+        <svg viewBox="0 0 560 1020" xmlns="http://www.w3.org/2000/svg">
+          <!-- Drawing border / title block -->
+          <text x="0" y="14" font-family="JetBrains Mono" font-size="10" letter-spacing="3" fill="#7ea1ff" font-weight="700">SECTION ELEVATION · FIG. 01·A</text>
+          <text x="560" y="14" text-anchor="end" font-family="JetBrains Mono" font-size="10" letter-spacing="3" fill="#7ea1ff" font-weight="700">SCALE · 1:1 STORY</text>
+          <line x1="0" y1="24" x2="560" y2="24" stroke="#7ea1ff" stroke-width="0.5" opacity=".5"/>
+
+          <!-- Atmosphere : post-launch zone -->
+          <text x="60" y="46" font-family="JetBrains Mono" font-size="10" letter-spacing="2.5" fill="#7ea1ff" font-weight="700" opacity=".75">POST-LAUNCH ATMOSPHERE · ONGOING RWE &amp; LIFECYCLE</text>
+          <line x1="60" y1="56" x2="500" y2="56" stroke="#7ea1ff" stroke-width="0.5" stroke-dasharray="3 4" opacity=".5"/>
+
+          <!-- Antenna : ongoing evidence signal -->
+          <line x1="280" y1="88" x2="280" y2="64" stroke="#dbe4ff" stroke-width="1.5"/>
+          <circle cx="280" cy="64" r="5" fill="#7ea1ff"/>
+          <g stroke="#7ea1ff" stroke-width="0.9" opacity=".85" fill="none">
+            <path d="M266 64 Q280 48 294 64"/>
+            <path d="M254 60 Q280 34 306 60" opacity=".5"/>
+          </g>
+
+          <!-- Dimension line, left -->
+          <g stroke="#7ea1ff" stroke-width="0.7" opacity=".8">
+            <line x1="40" y1="88" x2="40" y2="820"/>
+            <line x1="34" y1="88" x2="46" y2="88"/>
+            <line x1="34" y1="820" x2="46" y2="820"/>
+          </g>
+          <text x="24" y="454" transform="rotate(-90 24 454)" font-family="JetBrains Mono" font-size="11" letter-spacing="3.5" fill="#7ea1ff" font-weight="700" text-anchor="middle">5 LEVELS · 1 STORY</text>
+
+          <!-- FLOOR 04 : Launch (filled, taller for 3 text lines) -->
+          <rect x="80" y="88" width="400" height="142" fill="#7ea1ff" stroke="#dbe4ff" stroke-width="1.5"/>
+          <text x="280" y="128" text-anchor="middle" font-family="JetBrains Mono" font-size="17" fill="#04122e" font-weight="800" letter-spacing="3">04 · LAUNCH</text>
+          <text x="280" y="166" text-anchor="middle" font-family="Inter" font-size="13" font-style="italic" fill="#04122e" font-weight="600">GVD · AMCP · HTA submissions</text>
+          <text x="280" y="194" text-anchor="middle" font-family="Inter" font-size="13" font-style="italic" fill="#04122e" font-weight="600">FDA/PCOR · field tools</text>
+
+          <!-- FLOOR 03 : Phase III -->
+          <rect x="80" y="230" width="400" height="130" fill="none" stroke="#dbe4ff" stroke-width="1.5"/>
+          <text x="280" y="278" text-anchor="middle" font-family="JetBrains Mono" font-size="15" fill="#dbe4ff" font-weight="700" letter-spacing="3">03 · PHASE III</text>
+          <text x="280" y="312" text-anchor="middle" font-family="Inter" font-size="13" font-style="italic" fill="#bfd1ff">CEA + BIM · ITC/NMA · RWE</text>
+
+          <!-- FLOOR 02 : Phase II -->
+          <rect x="80" y="360" width="400" height="130" fill="none" stroke="#dbe4ff" stroke-width="1.5"/>
+          <text x="280" y="408" text-anchor="middle" font-family="JetBrains Mono" font-size="15" fill="#dbe4ff" font-weight="700" letter-spacing="3">02 · PHASE II</text>
+          <text x="280" y="442" text-anchor="middle" font-family="Inter" font-size="13" font-style="italic" fill="#bfd1ff">Endpoints · PROs · comparators</text>
+
+          <!-- FLOOR 01 : Phase I -->
+          <rect x="80" y="490" width="400" height="130" fill="none" stroke="#dbe4ff" stroke-width="1.5"/>
+          <text x="280" y="538" text-anchor="middle" font-family="JetBrains Mono" font-size="15" fill="#dbe4ff" font-weight="700" letter-spacing="3">01 · PHASE I</text>
+          <text x="280" y="572" text-anchor="middle" font-family="Inter" font-size="13" font-style="italic" fill="#bfd1ff">Value framework · payer landscape</text>
+
+          <!-- FOUNDATION 00 : pre-clinical / discovery -->
+          <rect x="60" y="620" width="440" height="200" fill="#1546ff" stroke="#dbe4ff" stroke-width="1.5"/>
+          <text x="280" y="690" text-anchor="middle" font-family="JetBrains Mono" font-size="20" fill="#fff" font-weight="800" letter-spacing="4">00 · FOUNDATION</text>
+          <text x="280" y="722" text-anchor="middle" font-family="Inter" font-size="14" font-style="italic" fill="#dbe4ff" font-weight="600">Burden of illness · unmet need · target product profile</text>
+          <g stroke="#7ea1ff" stroke-width="0.6" opacity=".4">
+            <line x1="70" y1="754" x2="490" y2="754"/>
+            <line x1="70" y1="766" x2="490" y2="766"/>
+            <line x1="70" y1="778" x2="490" y2="778"/>
+            <line x1="70" y1="790" x2="490" y2="790"/>
+            <line x1="70" y1="802" x2="490" y2="802"/>
+          </g>
+
+          <!-- Ground line + hatch -->
+          <line x1="20" y1="824" x2="540" y2="824" stroke="#7ea1ff" stroke-width="1"/>
+          <g stroke="#7ea1ff" stroke-width="0.7" opacity=".7">
+            <line x1="20" y1="824" x2="14" y2="838"/><line x1="40" y1="824" x2="34" y2="838"/>
+            <line x1="60" y1="824" x2="54" y2="838"/><line x1="80" y1="824" x2="74" y2="838"/>
+            <line x1="100" y1="824" x2="94" y2="838"/><line x1="120" y1="824" x2="114" y2="838"/>
+            <line x1="140" y1="824" x2="134" y2="838"/><line x1="160" y1="824" x2="154" y2="838"/>
+            <line x1="180" y1="824" x2="174" y2="838"/><line x1="200" y1="824" x2="194" y2="838"/>
+            <line x1="220" y1="824" x2="214" y2="838"/><line x1="240" y1="824" x2="234" y2="838"/>
+            <line x1="260" y1="824" x2="254" y2="838"/><line x1="280" y1="824" x2="274" y2="838"/>
+            <line x1="300" y1="824" x2="294" y2="838"/><line x1="320" y1="824" x2="314" y2="838"/>
+            <line x1="340" y1="824" x2="334" y2="838"/><line x1="360" y1="824" x2="354" y2="838"/>
+            <line x1="380" y1="824" x2="374" y2="838"/><line x1="400" y1="824" x2="394" y2="838"/>
+            <line x1="420" y1="824" x2="414" y2="838"/><line x1="440" y1="824" x2="434" y2="838"/>
+            <line x1="460" y1="824" x2="454" y2="838"/><line x1="480" y1="824" x2="474" y2="838"/>
+            <line x1="500" y1="824" x2="494" y2="838"/><line x1="520" y1="824" x2="514" y2="838"/>
+          </g>
+
+          <!-- Load path arrow on right -->
+          <g stroke="#7ea1ff" stroke-width="0.8">
+            <line x1="500" y1="160" x2="530" y2="160"/>
+            <line x1="530" y1="160" x2="530" y2="720"/>
+            <line x1="530" y1="720" x2="506" y2="720"/>
+            <polygon points="506,720 514,716 514,724" fill="#7ea1ff"/>
+          </g>
+          <text x="546" y="440" transform="rotate(-90 546 440)" font-family="JetBrains Mono" font-size="10" letter-spacing="3" fill="#7ea1ff" font-weight="700" text-anchor="middle">LOAD PATH · STORY RESTS ON EVIDENCE</text>
+
+          <!-- Anti-pattern warning -->
+          <line x1="60" y1="868" x2="500" y2="868" stroke="#ff7a7a" stroke-width="0.7" stroke-dasharray="3 3"/>
+          <text x="280" y="894" text-anchor="middle" font-family="JetBrains Mono" font-size="12" letter-spacing="3" fill="#ff7a7a" font-weight="700">RETROFIT BELOW THIS LINE: STRUCTURE COMPROMISED</text>
+
+          <!-- Caption -->
+          <text x="280" y="956" text-anchor="middle" font-family="JetBrains Mono" font-size="11" letter-spacing="3" fill="#bfd1ff" font-weight="700">FIG. 01·A · BUILT FROM THE GROUND UP</text>
+          <line x1="180" y1="976" x2="380" y2="976" stroke="#7ea1ff" stroke-width="0.5" opacity=".5"/>
+          <text x="280" y="998" text-anchor="middle" font-family="Inter" font-style="italic" font-size="13" fill="#7ea1ff" font-weight="600">A foundation poured forward, not retrofitted in reverse.</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="stripe">01·B <span class="ornament">·</span> THE COMPOUNDING COST OF DELAY</div>
+
+  <!-- ============= CARD 1·B — Compounding Cost ============= -->
+  <section class="card c1b">
+    <div class="corner"><span class="num">01·B</span><span class="of">/ Variant</span></div>
+    <div class="top">
+      <span class="eyebrow">HEOR · Variant B · The Cost Curve</span>
+      <span class="kicker">Cost to repair × time deferred</span>
+    </div>
+    <div class="hairline" style="margin-top:14px;"></div>
+
+    <h1>Late HEOR<br/><em>earns interest.</em></h1>
+    <p class="subdeck">Every milestone you defer, the bill grows — and the leverage shrinks.</p>
+
+    <div class="chart" aria-hidden="true">
+      <svg viewBox="0 0 940 340" xmlns="http://www.w3.org/2000/svg">
+        <!-- Title -->
+        <text x="20" y="22" font-family="JetBrains Mono" font-size="10" letter-spacing="3" fill="#5a6178" font-weight="700">FIG. 01-B · COST TO REPAIR HEOR EVIDENCE BY STAGE</text>
+        <text x="920" y="22" text-anchor="end" font-family="JetBrains Mono" font-size="10" letter-spacing="3" fill="#5a6178" font-weight="700">RELATIVE · INDEX 1×</text>
+
+        <!-- Y axis title -->
+        <text x="14" y="180" transform="rotate(-90 14 180)" font-family="JetBrains Mono" font-size="9" letter-spacing="3" fill="#5a6178" font-weight="700">RELATIVE COST OF FIX →</text>
+
+        <!-- Y axis -->
+        <line x1="60" y1="60" x2="60" y2="280" stroke="#1f2540" stroke-width="1.2"/>
+        <line x1="60" y1="280" x2="900" y2="280" stroke="#1f2540" stroke-width="1.2"/>
+
+        <!-- Y gridlines -->
+        <g stroke="#d6d2c4" stroke-width="0.6" stroke-dasharray="2 4">
+          <line x1="60" y1="230" x2="900" y2="230"/>
+          <line x1="60" y1="180" x2="900" y2="180"/>
+          <line x1="60" y1="130" x2="900" y2="130"/>
+          <line x1="60" y1="80"  x2="900" y2="80"/>
+        </g>
+        <g font-family="JetBrains Mono" font-size="10" fill="#5a6178" font-weight="700" letter-spacing="1">
+          <text x="54" y="284" text-anchor="end">1×</text>
+          <text x="54" y="234" text-anchor="end">10×</text>
+          <text x="54" y="184" text-anchor="end">25×</text>
+          <text x="54" y="134" text-anchor="end">50×</text>
+          <text x="54" y="84"  text-anchor="end">100×</text>
+        </g>
+
+        <!-- Vertical guides for stages -->
+        <g stroke="#bdb5a2" stroke-width="0.6" stroke-dasharray="2 4">
+          <line x1="220" y1="60" x2="220" y2="280"/>
+          <line x1="450" y1="60" x2="450" y2="280"/>
+          <line x1="680" y1="60" x2="680" y2="280"/>
+          <line x1="880" y1="60" x2="880" y2="280"/>
+        </g>
+
+        <!-- Curve A: HEOR embedded early — flat -->
+        <path d="M60,278 C260,275 460,272 900,266" fill="none" stroke="#1546ff" stroke-width="3"/>
+        <text x="900" y="258" text-anchor="end" font-family="Inter" font-size="11" fill="#1546ff" font-weight="800" letter-spacing="2">EMBEDDED EARLY</text>
+
+        <!-- Curve B: HEOR retrofitted — steep -->
+        <path d="M60,278 C260,272 460,210 900,72" fill="none" stroke="#04122e" stroke-width="4"/>
+        <text x="640" y="120" font-family="Inter" font-size="14" fill="#04122e" font-weight="900" letter-spacing="2">RETROFIT LATER</text>
+
+        <!-- Markers along curves -->
+        <g>
+          <circle cx="220" cy="276" r="5" fill="#1546ff"/>
+          <circle cx="450" cy="271" r="5" fill="#1546ff"/>
+          <circle cx="680" cy="269" r="5" fill="#1546ff"/>
+          <circle cx="880" cy="266" r="5" fill="#1546ff"/>
+          <circle cx="220" cy="270" r="5" fill="#04122e"/>
+          <circle cx="450" cy="232" r="5" fill="#04122e"/>
+          <circle cx="680" cy="156" r="5" fill="#04122e"/>
+          <circle cx="880" cy="76"  r="8" fill="#b3261e"/>
+        </g>
+
+        <!-- 100× callout -->
+        <g>
+          <line x1="880" y1="76" x2="820" y2="42" stroke="#b3261e" stroke-width="0.7"/>
+          <text x="816" y="40" text-anchor="end" font-family="Playfair Display" font-style="italic" font-size="22" fill="#b3261e" font-weight="900">100×+</text>
+          <text x="816" y="56" text-anchor="end" font-family="JetBrains Mono" font-size="9" letter-spacing="2" fill="#b3261e" font-weight="700">AND STILL THE WRONG PACKAGE</text>
+        </g>
+
+        <!-- X axis stage labels -->
+        <g font-family="JetBrains Mono" font-size="11" fill="#04122e" font-weight="800" letter-spacing="2">
+          <text x="220" y="304" text-anchor="middle">PHASE I</text>
+          <text x="450" y="304" text-anchor="middle">PHASE II</text>
+          <text x="680" y="304" text-anchor="middle">PHASE III</text>
+          <text x="880" y="304" text-anchor="middle">LAUNCH</text>
+        </g>
+        <text x="900" y="324" text-anchor="end" font-family="JetBrains Mono" font-size="9" letter-spacing="3" fill="#5a6178" font-weight="700">DEVELOPMENT TIME →</text>
+      </svg>
+    </div>
+
+    <div class="grid-cols">
+      <div class="col">
+        <h4>Phase I → II</h4>
+        <div class="price">1<span class="mult">×</span></div>
+        <p>Endpoints, comparators, and PROs are still on the page. The fix costs almost nothing — and shapes the trial.</p>
+      </div>
+      <div class="col">
+        <h4>Phase III</h4>
+        <div class="price">10–25<span class="mult">×</span></div>
+        <p>Now you're paying for indirect comparisons, mappings, and post-hoc analyses to plug what was never planned for.</p>
+      </div>
+      <div class="col danger">
+        <h4>Launch retrofit</h4>
+        <div class="price">100<span class="mult">×+</span></div>
+        <p>And it still won't be the package you would have built. Repriced launches. Restricted access. Lost peak share.</p>
+      </div>
+    </div>
+
+    <div class="stamp-row">
+      <div class="quote-b">The HEOR you skip <span>compounds.</span> Quietly. Until the dossier is due — and arrives all at once.</div>
+      <div class="seal-b">Pay early · Pay once</div>
+    </div>
+  </section>
+
+  <div class="stripe">01·C <span class="ornament">·</span> THE ORIGIN STORY OF EVERY DENIED LAUNCH</div>
+
+  <!-- ============= CARD 1·C — Reversed filmstrip ============= -->
+  <section class="card c1c">
+    <div class="corner"><span class="num">01·C</span><span class="of">/ Variant</span></div>
+    <div class="inner">
+      <span class="eyebrow-c">HEOR · Variant C · The Origin Story</span>
+      <div class="hairline-c" style="margin-top:14px;"></div>
+
+      <h1>Run the launch<br/><em>backwards.</em></h1>
+      <p class="subdeck">Every denied dossier has a Phase&nbsp;I origin — the break is always upstream.</p>
+
+      <div class="filmstrip" aria-hidden="false">
+        <div class="sprockets">
+          <span class="hole"></span><span class="hole"></span><span class="hole"></span>
+          <span class="hole"></span><span class="hole"></span><span class="hole"></span>
+          <span class="hole"></span><span class="hole"></span><span class="hole"></span>
+          <span class="hole"></span><span class="hole"></span><span class="hole"></span>
+        </div>
+
+        <div class="frames">
+          <div class="frame">
+            <div>
+              <div class="frameNum">FRAME 01</div>
+              <div class="stage">Phase I</div>
+            </div>
+            <div class="scene">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="32" cy="32" r="22"/>
+                <path d="M32 16 v18 l12 8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="caption">"HEOR can wait."<br/>The lie that started it all.</div>
+          </div>
+
+          <div class="frame">
+            <div>
+              <div class="frameNum">FRAME 02</div>
+              <div class="stage">Phase II</div>
+            </div>
+            <div class="scene">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="32" cy="32" r="22"/>
+                <circle cx="32" cy="32" r="14"/>
+                <circle cx="32" cy="32" r="6"/>
+                <path d="M50 14 L40 26" stroke-linecap="round"/>
+                <polygon points="50,14 46,18 50,22" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="caption">Endpoints chosen for the regulator. <em>Off-target for the payer.</em></div>
+          </div>
+
+          <div class="frame">
+            <div>
+              <div class="frameNum">FRAME 03</div>
+              <div class="stage">Phase III</div>
+            </div>
+            <div class="scene">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M8 56 H56"/>
+                <rect x="14" y="40" width="8" height="16"/>
+                <rect x="28" y="28" width="8" height="28"/>
+                <rect x="42" y="20" width="8" height="36"/>
+                <path d="M14 16 L24 26 L36 18 L52 30" stroke-linecap="round" stroke-dasharray="3 3"/>
+              </svg>
+            </div>
+            <div class="caption">Comparators don't match the payer ask. <em>Patches begin.</em></div>
+          </div>
+
+          <div class="frame">
+            <div>
+              <div class="frameNum">FRAME 04</div>
+              <div class="stage">Pre-launch</div>
+            </div>
+            <div class="scene">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="14" y="10" width="36" height="44" rx="2"/>
+                <path d="M20 20 H44 M20 28 H44 M20 36 H38"/>
+                <path d="M30 6 L36 24 L26 36 L34 54" stroke="#ff7a7a" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="caption">The dossier lands without economics.<br/><em>The crack shows.</em></div>
+          </div>
+
+          <div class="frame fail">
+            <div>
+              <div class="frameNum">FRAME 05</div>
+              <div class="stage">T-0 · Denied</div>
+            </div>
+            <div class="scene">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5">
+                <circle cx="32" cy="32" r="24"/>
+                <line x1="18" y1="18" x2="46" y2="46" stroke-linecap="round"/>
+                <line x1="46" y1="18" x2="18" y2="46" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="caption">Repriced. Restricted. Delayed. <em>Peak year never returns.</em></div>
+          </div>
+        </div>
+
+        <div class="sprockets">
+          <span class="hole"></span><span class="hole"></span><span class="hole"></span>
+          <span class="hole"></span><span class="hole"></span><span class="hole"></span>
+          <span class="hole"></span><span class="hole"></span><span class="hole"></span>
+          <span class="hole"></span><span class="hole"></span><span class="hole"></span>
+        </div>
+      </div>
+
+      <div class="arrow-row">
+        <div class="ar origin">← THE ORIGIN</div>
+        <div class="ar">← upstream</div>
+        <div class="ar">← upstream</div>
+        <div class="ar">← upstream</div>
+        <div class="ar" style="color:#ff7a7a;border-top-color:#ff7a7a;">THE SYMPTOM</div>
+      </div>
+
+      <div class="rewind">
+        <span>← REWIND</span>
+        <span class="arrow-line"></span>
+        <span>EVERY FAILURE TRACES BACK TO PHASE I</span>
+      </div>
+
+      <div class="pull-c">
+        <div class="markline"></div>
+        <div class="quote">The dossier didn't fail at the dossier. <em>It failed in Phase&nbsp;I.</em></div>
+        <div class="stamp">Origin story · Phase I</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stripe">02 <span class="ornament">·</span> ON TIMING <span class="ornament">·</span> WHEN HEOR ARRIVES CHANGES WHAT IT'S WORTH</div>
+
+  <!-- ============= CARD 2 — Timing ============= -->
+  <section class="card c2">
+    <div class="corner"><span class="num">02</span><span class="of">/ 05</span></div>
+    <div class="inner">
+      <div class="head">
+        <span class="eyebrow">HEOR · Timing</span>
+        <span class="eyebrow" style="color:var(--blue-600);"><span style="background:var(--blue-600);width:24px;"></span>Leverage curve</span>
+      </div>
+      <div class="hairline" style="margin-top:14px;"></div>
+
+      <h1>Phase&nbsp;I is leverage.<br/><span class="it">Launch is PR.</span></h1>
+      <p class="subdeck">Influence on the launch value story decays with every milestone you wait.</p>
+
+      <!-- Decay curve -->
+      <div class="tline">
+        <svg class="line" viewBox="0 0 1000 140" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="decay" x1="0" x2="1">
+              <stop offset="0" stop-color="#04122e"/>
+              <stop offset=".5" stop-color="#1546ff"/>
+              <stop offset="1" stop-color="#cdd2dc"/>
+            </linearGradient>
+          </defs>
+          <line x1="40" y1="120" x2="960" y2="120" stroke="#1f2540" stroke-width="1"/>
+          <path d="M40,30 C260,40 480,80 960,118" fill="none" stroke="url(#decay)" stroke-width="3"/>
+          <!-- markers -->
+          <g fill="#04122e">
+            <circle cx="160" cy="44" r="6"/><circle cx="420" cy="74" r="6"/>
+            <circle cx="680" cy="100" r="6"/><circle cx="900" cy="116" r="6"/>
+          </g>
+          <!-- y axis label -->
+          <text x="40" y="22" font-family="'JetBrains Mono'" font-size="10" letter-spacing="2" fill="#5a6178" font-weight="700">INFLUENCE ON VALUE STORY</text>
+          <text x="960" y="138" text-anchor="end" font-family="'JetBrains Mono'" font-size="10" letter-spacing="2" fill="#5a6178" font-weight="700">DEVELOPMENT TIME →</text>
+        </svg>
+      </div>
+
+      <div class="stages">
+        <div class="stage">
+          <div class="tag">Phase&nbsp;I</div>
+          <h3>Maximum.</h3>
+          <p class="tease">Endpoints still plastic.</p>
+          <p>Comparators unfixed. RWE infrastructure on the table. Payers will engage.</p>
+        </div>
+        <div class="stage">
+          <div class="tag">Phase&nbsp;II</div>
+          <h3>Real.</h3>
+          <p class="tease">Economic model still shapes the trial.</p>
+          <p>PROs, biomarkers, and sub-populations can still be co-designed.</p>
+        </div>
+        <div class="stage">
+          <div class="tag">Phase&nbsp;III</div>
+          <h3>Diminishing.</h3>
+          <p class="tease">Documenting, not designing.</p>
+          <p>Modeling, indirect comparisons, and secondary analyses to patch the gaps.</p>
+        </div>
+        <div class="stage">
+          <div class="tag">Launch</div>
+          <h3>Spent.</h3>
+          <p class="tease">Tell the story you're stuck with.</p>
+          <p>The package is fixed. HEOR becomes communications, not strategy.</p>
+        </div>
+      </div>
+
+      <div class="figs">
+        <div class="fig">
+          <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+            <g fill="#04122e">
+              <rect x="40" y="60" width="120" height="160" rx="6"/>
+              <rect x="46" y="40" width="108" height="24" rx="4"/>
+              <rect x="86" y="32" width="28" height="14" rx="2"/>
+            </g>
+            <g fill="#fff">
+              <rect x="56" y="86" width="88" height="6"/>
+              <rect x="56" y="100" width="76" height="4"/>
+              <rect x="56" y="110" width="84" height="4"/>
+              <rect x="56" y="120" width="64" height="4"/>
+              <rect x="56" y="138" width="50" height="4"/>
+              <rect x="56" y="148" width="80" height="4"/>
+            </g>
+            <text x="100" y="190" text-anchor="middle" font-family="'JetBrains Mono'" font-size="11" font-weight="700" letter-spacing="2" fill="#fff">EVIDENCE</text>
+            <text x="100" y="206" text-anchor="middle" font-family="'JetBrains Mono'" font-size="11" font-weight="700" letter-spacing="2" fill="#7ea1ff">PLAN</text>
+          </svg>
+        </div>
+        <div class="fig">
+          <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg" opacity=".75">
+            <g fill="#1546ff">
+              <rect x="40" y="60" width="120" height="160" rx="6"/>
+              <rect x="46" y="40" width="108" height="24" rx="4"/>
+              <rect x="86" y="32" width="28" height="14" rx="2"/>
+            </g>
+            <g fill="#fff" opacity=".95">
+              <rect x="56" y="86" width="88" height="6"/>
+              <rect x="56" y="100" width="76" height="4"/>
+              <rect x="56" y="110" width="84" height="4"/>
+              <rect x="56" y="120" width="64" height="4"/>
+              <rect x="56" y="138" width="50" height="4"/>
+            </g>
+          </svg>
+        </div>
+        <div class="fig">
+          <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg" opacity=".5">
+            <g fill="#7ea1ff">
+              <rect x="40" y="60" width="120" height="160" rx="6"/>
+              <rect x="46" y="40" width="108" height="24" rx="4"/>
+              <rect x="86" y="32" width="28" height="14" rx="2"/>
+            </g>
+            <g fill="#fff" opacity=".9">
+              <rect x="56" y="86" width="60" height="6"/>
+              <rect x="56" y="100" width="50" height="4"/>
+              <rect x="56" y="110" width="56" height="4"/>
+            </g>
+          </svg>
+        </div>
+        <div class="fig">
+          <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg" opacity=".28">
+            <g fill="#a8b1c8">
+              <rect x="40" y="60" width="120" height="160" rx="6"/>
+              <rect x="46" y="40" width="108" height="24" rx="4"/>
+              <rect x="86" y="32" width="28" height="14" rx="2"/>
+            </g>
+            <g fill="#fff" opacity=".7">
+              <rect x="56" y="86" width="40" height="6"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <div class="pull">
+        <div class="markline"></div>
+        <div class="quote">HEOR isn't a pre-launch deliverable. <em>It's a development discipline.</em></div>
+        <div class="stamp">Late HEOR = expensive storytelling</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stripe">03 <span class="ornament">·</span> THE COST OF AN EMPTY DOSSIER</div>
+
+  <!-- ============= CARD 3 — Denied ============= -->
+  <section class="card c3">
+    <div class="corner"><span class="num">03</span><span class="of">/ 05</span></div>
+    <div class="inner">
+      <span class="eyebrow">HEOR · Denied at Launch</span>
+      <div class="hairline" style="margin-top:14px;background:#dbe4ff;"></div>
+
+      <p class="small">Filed without evidence.</p>
+      <h2 class="huge">Den<span class="blue">ied.</span></h2>
+
+      <div class="body">
+        <div class="verdict">
+          <div class="label">Reimbursement Delay</div>
+          <div class="num">12–24<span class="unit">months stuck in review</span></div>
+          <div class="meta">Plus repeat submissions, re-modeling, repriced launches, and peak-year share that never returns.</div>
+        </div>
+
+        <div class="vault" aria-hidden="true">
+          <svg viewBox="0 0 460 340" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="vaultGlow" cx="50%" cy="40%" r="60%">
+                <stop offset="0" stop-color="#1546ff" stop-opacity=".55"/>
+                <stop offset="1" stop-color="#04122e" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <!-- vault wall -->
+            <rect x="0" y="0" width="460" height="340" fill="#0a1a40"/>
+            <g stroke="#16244e" stroke-width="1">
+              <path d="M0 60H460M0 120H460M0 180H460M0 240H460M0 300H460"/>
+              <path d="M60 0V340M150 0V340M240 0V340M330 0V340M420 0V340"/>
+            </g>
+            <!-- vault door circle -->
+            <circle cx="230" cy="170" r="130" fill="#0e2150" stroke="#1546ff" stroke-width="2" opacity=".95"/>
+            <circle cx="230" cy="170" r="106" fill="#0a1a40" stroke="#2a3a6e" stroke-width="1.5"/>
+            <circle cx="230" cy="170" r="80" fill="url(#vaultGlow)"/>
+            <!-- spokes -->
+            <g stroke="#1546ff" stroke-width="3" stroke-linecap="round">
+              <line x1="230" y1="60" x2="230" y2="40"/>
+              <line x1="230" y1="280" x2="230" y2="300"/>
+              <line x1="120" y1="170" x2="100" y2="170"/>
+              <line x1="340" y1="170" x2="360" y2="170"/>
+              <line x1="155" y1="95" x2="140" y2="80"/>
+              <line x1="305" y1="95" x2="320" y2="80"/>
+              <line x1="155" y1="245" x2="140" y2="260"/>
+              <line x1="305" y1="245" x2="320" y2="260"/>
+            </g>
+            <!-- center wheel -->
+            <circle cx="230" cy="170" r="32" fill="#1546ff"/>
+            <circle cx="230" cy="170" r="22" fill="#0e2150"/>
+            <g stroke="#7ea1ff" stroke-width="3" stroke-linecap="round">
+              <line x1="230" y1="148" x2="230" y2="132"/>
+              <line x1="230" y1="192" x2="230" y2="208"/>
+              <line x1="208" y1="170" x2="192" y2="170"/>
+              <line x1="252" y1="170" x2="268" y2="170"/>
+            </g>
+            <!-- dossier silhouette inside, faint -->
+            <g opacity=".5" transform="translate(202,150)">
+              <rect width="56" height="40" fill="#7ea1ff" rx="2"/>
+              <rect x="4" y="6" width="48" height="3" fill="#0e2150"/>
+              <rect x="4" y="14" width="40" height="3" fill="#0e2150"/>
+              <rect x="4" y="22" width="32" height="3" fill="#0e2150"/>
+            </g>
+          </svg>
+          <div class="stamp-overlay">DENIED</div>
+        </div>
+      </div>
+
+      <div class="triplet">
+        <div class="t">
+          <div class="who">PAYERS</div>
+          <div class="ask">"Compared to what — <b>and at what cost?</b>"</div>
+        </div>
+        <div class="t">
+          <div class="who">HTAs</div>
+          <div class="ask">"Show me the <b>cost-effectiveness</b> and the budget impact."</div>
+        </div>
+        <div class="t">
+          <div class="who">PROVIDERS</div>
+          <div class="ask">"Which <b>outcomes that matter</b> does this actually move?"</div>
+        </div>
+      </div>
+
+      <p class="stamp-line">Silent denial is the market's default.</p>
+    </div>
+  </section>
+
+  <div class="stripe">04 <span class="ornament">·</span> ON GRADING THE PACKAGE</div>
+
+  <!-- ============= CARD 4 — Three tiers ============= -->
+  <section class="card c4">
+    <div class="corner"><span class="num">04</span><span class="of">/ 05</span></div>
+    <div class="head">
+      <span class="eyebrow">HEOR · Evidence Tiering</span>
+      <span class="eyebrow" style="color:var(--blue-600);">Three tiers · One survives</span>
+    </div>
+    <div class="hairline" style="margin-top:14px;"></div>
+
+    <h1>Three tiers.<br/><span class="one">Only one</span> holds water.</h1>
+    <p class="subdeck">Clinical wins don't survive payer interrogation without economics.</p>
+
+    <div class="stack">
+      <div class="tier t1">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <div class="text">
+          <h3>DEFENSIBLE</h3>
+          <p>Trial data + RWE + economic model + payer-aligned endpoints. The package answers the question before it's asked.</p>
+        </div>
+        <div class="grade">Grade<big>A</big></div>
+      </div>
+      <div class="tier t2">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2h6v2M8 11h8M8 15h6"/></svg>
+        </div>
+        <div class="text">
+          <h3>NEGOTIABLE</h3>
+          <p>Strong clinical data, thin economics. Access — but priced down, restricted, or rebated. You lose margin in the talks you couldn't avoid.</p>
+        </div>
+        <div class="grade">Grade<big>C</big></div>
+      </div>
+      <div class="tier t3">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M8 8l8 8M16 8l-8 8"/></svg>
+        </div>
+        <div class="text">
+          <h3>INDEFENSIBLE <span class="red">— no economic case</span></h3>
+          <p><i>The dossier crumbles on review.</i> The launch trajectory resets, the price collapses, and the value story is rewritten by the people you're trying to convince.</p>
+        </div>
+        <div class="grade">Grade<big>F</big></div>
+        <div class="crumble" aria-hidden="true"></div>
+      </div>
+    </div>
+
+    <div class="stamp-row">
+      <div class="quote">Clinical proof <span>≠</span> economic proof.</div>
+      <div class="seal">A package, not a pitch</div>
+    </div>
+  </section>
+
+  <div class="stripe">05 <span class="ornament">·</span> THE FORECAST PRESSURE TEST</div>
+
+  <!-- ============= CARD 5 — The Cliff ============= -->
+  <section class="card c5">
+    <div class="corner"><span class="num">05</span><span class="of">/ 05</span></div>
+    <div class="inner">
+      <div>
+        <span class="eyebrow">HEOR · Pressure Test</span>
+        <div class="hairline" style="margin-top:14px;"></div>
+
+        <h1>$300B<br/>expires by 2030.<br/><em>Backfill</em><br/>can't wait<br/>for evidence.</h1>
+        <p class="subdeck">Patent cliffs don't care about your launch timeline. Payers do.</p>
+        <span class="badge"><span class="arrow">→</span>The forecast pressure test</span>
+
+        <p class="body">
+          By 2030, an estimated <b>$300B+ of pharma revenue</b> rolls off patent. The launches replacing it can't afford to back-fill their evidence. Most launch forecasts assume coverage, price, and uptake on day one — and without an HEOR-grounded package, all three are quietly negotiated away, line by line, before peak year.
+        </p>
+
+        <div class="stamp"><span class="dot"></span>Pressure-test the value story before the market does</div>
+      </div>
+
+      <div>
+        <div class="cliff" aria-hidden="true">
+          <svg viewBox="0 0 520 420" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="cliffL" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stop-color="#3b4456"/>
+                <stop offset="1" stop-color="#1c2230"/>
+              </linearGradient>
+              <linearGradient id="cliffR" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stop-color="#4a546b"/>
+                <stop offset="1" stop-color="#252b3c"/>
+              </linearGradient>
+              <radialGradient id="abyss" cx="50%" cy="40%" r="60%">
+                <stop offset="0" stop-color="#1546ff"/>
+                <stop offset="1" stop-color="#04122e"/>
+              </radialGradient>
+            </defs>
+
+            <!-- Left cliff (peak forecast) -->
+            <path d="M0,140 L160,140 L200,180 L160,220 L120,210 L80,250 L40,240 L0,300 Z" fill="url(#cliffL)"/>
+            <!-- revenue stack on left top -->
+            <g transform="translate(40,80)">
+              <rect x="0" y="50" width="120" height="14" fill="#1546ff"/>
+              <rect x="6" y="34" width="108" height="14" fill="#2a63ff" opacity=".9"/>
+              <rect x="12" y="18" width="96" height="14" fill="#7ea1ff" opacity=".9"/>
+              <rect x="18" y="2" width="84" height="14" fill="#dbe4ff" opacity=".9"/>
+              <text x="60" y="80" text-anchor="middle" font-family="'JetBrains Mono'" font-size="10" letter-spacing="2" fill="#04122e" font-weight="800">PEAK YEAR</text>
+            </g>
+
+            <!-- Right cliff (current trajectory) -->
+            <path d="M360,160 L520,160 L520,300 L460,260 L420,275 L380,240 L360,260 Z" fill="url(#cliffR)"/>
+            <!-- new launch climbers -->
+            <g transform="translate(380,108)">
+              <rect x="0" y="42" width="34" height="10" fill="#7ea1ff"/>
+              <rect x="0" y="28" width="34" height="10" fill="#dbe4ff" opacity=".9"/>
+              <rect x="0" y="14" width="22" height="10" fill="#dbe4ff" opacity=".7"/>
+              <rect x="46" y="34" width="34" height="18" fill="#1546ff"/>
+              <rect x="92" y="20" width="34" height="32" fill="#04122e"/>
+              <text x="80" y="68" text-anchor="middle" font-family="'JetBrains Mono'" font-size="9" letter-spacing="2" fill="#04122e" font-weight="800">NEW LAUNCHES</text>
+            </g>
+
+            <!-- abyss -->
+            <ellipse cx="270" cy="350" rx="240" ry="42" fill="url(#abyss)" opacity=".95"/>
+            <ellipse cx="270" cy="358" rx="190" ry="22" fill="#04122e" opacity=".7"/>
+
+            <!-- falling boulder = forecast loss -->
+            <g transform="translate(220,210) rotate(-12)">
+              <path d="M0,0 L80,-10 L100,30 L70,60 L10,55 Z" fill="#2a3144" stroke="#04122e" stroke-width="2"/>
+              <text x="50" y="22" font-family="Inter" font-size="13" font-weight="900" fill="#fff" text-anchor="middle">$200B</text>
+              <text x="50" y="42" font-family="Inter" font-size="11" font-weight="700" fill="#7ea1ff" text-anchor="middle" letter-spacing="2">REVENUE</text>
+            </g>
+
+            <!-- bridge dotted across -->
+            <path d="M170,170 C220,150 320,150 360,170" stroke="#1546ff" stroke-width="2" stroke-dasharray="3 5" fill="none" opacity=".7"/>
+            <text x="265" y="148" text-anchor="middle" font-family="'JetBrains Mono'" font-size="10" letter-spacing="2" fill="#1546ff" font-weight="800">HEOR BRIDGE</text>
+
+            <!-- crack line on right cliff -->
+            <path d="M380,160 C384,200 372,230 386,265" stroke="#b3261e" stroke-width="2" fill="none" opacity=".7"/>
+            <path d="M395,160 C400,210 388,240 402,275" stroke="#b3261e" stroke-width="1.5" fill="none" opacity=".5"/>
+          </svg>
+        </div>
+
+        <div class="annot">
+          <div><big>$300B+</big>off-patent by 2030</div>
+          <div><big>3</big>assumptions tested at launch</div>
+          <div><big>0</big>survive without HEOR</div>
+        </div>
+        <div class="colophon">END · A FIVE-PART ARGUMENT FOR HEOR</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stripe">DESIGNED FOR LAUNCH LEADERS WHO'D RATHER BUILD THE EVIDENCE THAN BORROW THE STORY.</div>
+
+</div>
+</body>
+</html>

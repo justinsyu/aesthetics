@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HNSCC Competitive Intelligence Report - May 12, 2026</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: rgba(255,250,240,.88);
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    body { overflow-x: hidden; }
+    .slide {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      padding: 36px 0 20px;
+      display: flex;
+      align-items: stretch;
+    }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      opacity: .98;
+    }
+    .wrap {
+      position: relative;
+      z-index: 1;
+      width: min(1360px, calc(100vw - 56px));
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+    .topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 8px;
+      border: 1.5px solid var(--ink);
+      border-radius: 999px;
+      background: var(--lime);
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1;
+      font-weight: 800;
+      padding: 8px 12px;
+      text-transform: uppercase;
+    }
+    .meta {
+      font-size: 14px;
+      line-height: 1.25;
+      color: var(--muted);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 {
+      max-width: 1120px;
+      font-size: 82px;
+      line-height: .93;
+      font-weight: 560;
+    }
+    h2 {
+      max-width: 1180px;
+      font-size: 54px;
+      line-height: .98;
+      font-weight: 560;
+    }
+    h3 {
+      font-size: 28px;
+      line-height: 1.04;
+      font-weight: 650;
+    }
+    .dek {
+      max-width: 1120px;
+      color: var(--ink);
+      font-size: 27px;
+      line-height: 1.24;
+      font-weight: 440;
+    }
+    .grid-5 {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .card, .metric, .source-card {
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+    .source-card {
+      min-height: 170px;
+      padding: 18px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .source-card strong {
+      display: block;
+      font-size: 20px;
+      line-height: 1.05;
+      font-weight: 750;
+    }
+    .source-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.25;
+      font-weight: 650;
+      text-transform: uppercase;
+    }
+    .source-card p {
+      font-size: 16px;
+      line-height: 1.22;
+      color: var(--ink);
+    }
+    .metric-row {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr .9fr;
+      gap: 16px;
+    }
+    .metric {
+      min-height: 170px;
+      padding: 22px;
+    }
+    .metric .value {
+      display: block;
+      font-size: 58px;
+      line-height: .9;
+      font-weight: 760;
+    }
+    .metric .label {
+      display: block;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.2;
+      font-weight: 650;
+    }
+    .card {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .card.dark {
+      background: #11130f;
+      color: var(--paper);
+      border-color: #11130f;
+      box-shadow: none;
+    }
+    .card.dark .body { color: var(--paper); }
+    .card.dark .muted, .card.dark .small { color: #ede6d7; }
+    .body {
+      font-size: 19px;
+      line-height: 1.27;
+      color: var(--ink);
+    }
+    .small {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.24;
+      font-weight: 620;
+    }
+    .muted { color: var(--muted); }
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 9px;
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--gray);
+      color: var(--ink);
+    }
+    .tag.blue { background: var(--blue); }
+    .tag.orange { background: var(--orange); }
+    .tag.pink { background: var(--pink); }
+    .tag.lime { background: var(--lime); }
+    .tag.red { background: var(--red); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border: 1.5px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,250,240,.9);
+      box-shadow: var(--shadow);
+    }
+    th, td {
+      border-bottom: 1.2px solid rgba(27,31,23,.72);
+      border-right: 1.2px solid rgba(27,31,23,.72);
+      text-align: left;
+      vertical-align: top;
+      padding: 13px 14px;
+      font-size: 15.5px;
+      line-height: 1.22;
+    }
+    th {
+      background: #11130f;
+      color: var(--paper);
+      font-size: 13px;
+      line-height: 1.1;
+      text-transform: uppercase;
+      font-weight: 850;
+    }
+    td:last-child, th:last-child { border-right: 0; }
+    tr:last-child td { border-bottom: 0; }
+    td strong {
+      font-size: 16.5px;
+      line-height: 1.08;
+      font-weight: 780;
+    }
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+    .event {
+      min-height: 214px;
+      padding: 18px 16px;
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .event .when {
+      display: inline-flex;
+      align-self: flex-start;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 9px;
+      background: var(--lime);
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+    .event strong {
+      font-size: 20px;
+      line-height: 1.05;
+      font-weight: 770;
+    }
+    .event p {
+      font-size: 15.5px;
+      line-height: 1.23;
+    }
+    .source-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+    .audit {
+      min-height: 280px;
+      padding: 17px 15px;
+      border: 1.5px solid var(--line);
+      border-radius: 18px;
+      background: var(--card);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .audit strong {
+      font-size: 18px;
+      line-height: 1.05;
+      font-weight: 780;
+    }
+    .audit p {
+      font-size: 14.5px;
+      line-height: 1.2;
+    }
+    .slide-num {
+      position: absolute;
+      z-index: 2;
+      right: 30px;
+      bottom: 18px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+    .cite {
+      color: inherit;
+      font-size: .58em;
+      vertical-align: super;
+      margin-left: 2px;
+      font-weight: 900;
+      text-decoration: none;
+    }
+    .cite:hover { text-decoration: underline; }
+    @media print {
+      @page { size: 1600px 900px; margin: 0; }
+      html, body { width: 1600px; }
+      .slide {
+        width: 1600px;
+        height: 900px;
+        min-height: 900px;
+        page-break-after: always;
+        break-after: page;
+      }
+      .wrap { width: 1360px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="topline">
+        <div class="eyebrow">HNSCC | Competitive Intelligence</div>
+        <div class="meta">Run date May 12, 2026 | Evidence window May 6-12, 2026</div>
+      </div>
+      <h1>Five issuer disclosures define the current HNSCC evidence window</h1>
+      <p class="dek">The included source set comprises Inhibrx randomized Phase 2 data, Bicara and Corbus program updates, Pyxis MICVO development disclosure, and PDS Biotech's upcoming Q1 update notice.<a class="cite" href="https://inhibrxbiosciences.investorroom.com/2026-05-11-Inhibrx-Reports-Interim-Phase-2-Data-for-INBRX-106-in-First-Line-HNSCC-Initial-Results-Demonstrate-Potential-Costimulatory-Benefit-Over-PD-1-Monotherapy">1</a>,<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291783/0/en/bicara-therapeutics-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a>,<a class="cite" href="https://ir.corbuspharma.com/news-events/press-releases/detail/467/corbus-pharmaceuticals-reports-q1-2026-financial-results-and-provides-a-corporate-update">3</a>,<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290537/0/en/Pyxis-Oncology-Appoints-Nelson-Azoulay-as-Chief-Business-Officer.html">4</a>,<a class="cite" href="https://pdsbiotech.com/index.php/investors/news-center/press-releases/press-releases1/134-2026-news/1037-pds-biotech-announces-conference-call-and-webcast-for-2026-f2026-05-06-050506">5</a></p>
+      <div class="grid-5">
+        <div class="source-card"><span>May 11</span><strong>Inhibrx</strong><p>Interim first-line HNSCC Phase 2 HexAgon readout for INBRX-106 plus pembrolizumab versus pembrolizumab alone.<a class="cite" href="https://inhibrxbiosciences.investorroom.com/2026-05-11-Inhibrx-Reports-Interim-Phase-2-Data-for-INBRX-106-in-First-Line-HNSCC-Initial-Results-Demonstrate-Potential-Costimulatory-Benefit-Over-PD-1-Monotherapy">1</a></p></div>
+        <div class="source-card"><span>May 11</span><strong>Bicara</strong><p>FORTIFI-HN01 enrollment, planned loading/Q3W maintenance study, ASCO data, and cash runway update.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291783/0/en/bicara-therapeutics-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a></p></div>
+        <div class="source-card"><span>May 12</span><strong>Corbus</strong><p>CRB-701 FDA alignment, ASCO monotherapy data timing, second-line HNSCC registrational start timing, and cash runway update.<a class="cite" href="https://ir.corbuspharma.com/news-events/press-releases/detail/467/corbus-pharmaceuticals-reports-q1-2026-financial-results-and-provides-a-corporate-update">3</a></p></div>
+        <div class="source-card"><span>May 7</span><strong>Pyxis</strong><p>Chief business officer appointment and MICVO clinical-development status in recurrent/metastatic HNSCC.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290537/0/en/Pyxis-Oncology-Appoints-Nelson-Azoulay-as-Chief-Business-Officer.html">4</a></p></div>
+        <div class="source-card"><span>May 6</span><strong>PDS Biotech</strong><p>Q1 results call scheduled for May 13 and lead HPV16-positive HNSCC program context.<a class="cite" href="https://pdsbiotech.com/index.php/investors/news-center/press-releases/press-releases1/134-2026-news/1037-pds-biotech-announces-conference-call-and-webcast-for-2026-f2026-05-06-050506">5</a></p></div>
+      </div>
+    </div>
+    <div class="slide-num">01 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="topline">
+        <div class="eyebrow">Clinical Data | First Line R/M</div>
+        <div class="meta">Randomized Phase 2 evidence</div>
+      </div>
+      <h2>Inhibrx reported confirmed response separation for INBRX-106 plus pembrolizumab</h2>
+      <div class="metric-row">
+        <div class="metric"><span class="value">44.0%</span><span class="label">Confirmed objective response rate for INBRX-106 plus pembrolizumab in the response-evaluable population.<a class="cite" href="https://inhibrxbiosciences.investorroom.com/2026-05-11-Inhibrx-Reports-Interim-Phase-2-Data-for-INBRX-106-in-First-Line-HNSCC-Initial-Results-Demonstrate-Potential-Costimulatory-Benefit-Over-PD-1-Monotherapy">1</a></span></div>
+        <div class="metric"><span class="value">21.4%</span><span class="label">Confirmed objective response rate for pembrolizumab alone in the same interim analysis.<a class="cite" href="https://inhibrxbiosciences.investorroom.com/2026-05-11-Inhibrx-Reports-Interim-Phase-2-Data-for-INBRX-106-in-First-Line-HNSCC-Initial-Results-Demonstrate-Potential-Costimulatory-Benefit-Over-PD-1-Monotherapy">1</a></span></div>
+        <div class="metric"><span class="value">53</span><span class="label">Patients were included in the confirmed-response evaluable population at the May 7, 2026 data cutoff.<a class="cite" href="https://inhibrxbiosciences.investorroom.com/2026-05-11-Inhibrx-Reports-Interim-Phase-2-Data-for-INBRX-106-in-First-Line-HNSCC-Initial-Results-Demonstrate-Potential-Costimulatory-Benefit-Over-PD-1-Monotherapy">1</a></span></div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="tag-row"><span class="tag lime">OX40 agonist</span><span class="tag blue">PD-L1 CPS >=20</span><span class="tag orange">Treatment-naive</span></div>
+          <h3>Trial population and design</h3>
+          <p class="body">The Phase 2 HexAgon portion evaluated INBRX-106, a hexavalent OX40 agonist, with pembrolizumab versus pembrolizumab monotherapy in first-line treatment-naive, PD-L1 positive (CPS >=20) metastatic or unresectable recurrent HNSCC.<a class="cite" href="https://inhibrxbiosciences.investorroom.com/2026-05-11-Inhibrx-Reports-Interim-Phase-2-Data-for-INBRX-106-in-First-Line-HNSCC-Initial-Results-Demonstrate-Potential-Costimulatory-Benefit-Over-PD-1-Monotherapy">1</a></p>
+          <p class="body">The randomized Phase 2 portion enrolled 68 patients, including 33 assigned to the combination arm and 35 assigned to pembrolizumab alone.<a class="cite" href="https://inhibrxbiosciences.investorroom.com/2026-05-11-Inhibrx-Reports-Interim-Phase-2-Data-for-INBRX-106-in-First-Line-HNSCC-Initial-Results-Demonstrate-Potential-Costimulatory-Benefit-Over-PD-1-Monotherapy">1</a></p>
+        </div>
+        <div class="card dark">
+          <h3>Disclosed next steps</h3>
+          <p class="body">Inhibrx stated that Phase 2 progression-free survival data are expected in the fourth quarter of 2026 and that the Phase 3 portion of HexAgon is planned to begin during the third quarter of 2026.<a class="cite" href="https://inhibrxbiosciences.investorroom.com/2026-05-11-Inhibrx-Reports-Interim-Phase-2-Data-for-INBRX-106-in-First-Line-HNSCC-Initial-Results-Demonstrate-Potential-Costimulatory-Benefit-Over-PD-1-Monotherapy">1</a></p>
+          <p class="small">The same release reported three complete radiographic responses in the combination arm and no complete responses with pembrolizumab alone.<a class="cite" href="https://inhibrxbiosciences.investorroom.com/2026-05-11-Inhibrx-Reports-Interim-Phase-2-Data-for-INBRX-106-in-First-Line-HNSCC-Initial-Results-Demonstrate-Potential-Costimulatory-Benefit-Over-PD-1-Monotherapy">1</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">02 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="topline">
+        <div class="eyebrow">Registrational Programs | Sponsor Updates</div>
+        <div class="meta">Bicara and Corbus</div>
+      </div>
+      <h2>Bicara and Corbus each disclosed HNSCC registration-path details</h2>
+      <div class="grid-2">
+        <div class="card">
+          <div class="tag-row"><span class="tag pink">EGFR / TGF-beta</span><span class="tag blue">1L R/M HPV-negative</span><span class="tag lime">Pivotal Phase 2/3</span></div>
+          <h3>Ficerafusp alfa</h3>
+          <p class="body">Bicara said FORTIFI-HN01 in first-line recurrent/metastatic HPV-negative HNSCC is expected to be substantially enrolled by year-end 2026 to enable an interim analysis in mid-2027 for potential accelerated approval support.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291783/0/en/bicara-therapeutics-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a></p>
+          <p class="body">Bicara also said it plans a randomized study of ficerafusp alfa plus pembrolizumab using a 12-week 1500 mg weekly loading dose followed by 2250 mg every three weeks, with initiation expected in the third quarter of 2026.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291783/0/en/bicara-therapeutics-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a></p>
+          <p class="small">Bicara reported $539.8 million in cash, cash equivalents, and marketable securities as of March 31, 2026, expected to fund operations into the first half of 2029.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291783/0/en/bicara-therapeutics-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a></p>
+        </div>
+        <div class="card">
+          <div class="tag-row"><span class="tag orange">Nectin-4 ADC</span><span class="tag blue">2L HNSCC</span><span class="tag lime">FDA alignment</span></div>
+          <h3>CRB-701</h3>
+          <p class="body">Corbus stated that it reached broad alignment with FDA on the registration path for CRB-701 in HNSCC and cervical cancer and is continuing FDA interactions to finalize protocols and statistical analysis plans.<a class="cite" href="https://ir.corbuspharma.com/news-events/press-releases/detail/467/corbus-pharmaceuticals-reports-q1-2026-financial-results-and-provides-a-corporate-update">3</a></p>
+          <p class="body">Corbus listed 2026 CRB-701 catalysts that include ASCO 2026 monotherapy data in HNSCC and cervical cancer, initiation of a second-line HNSCC registrational study this summer, and first-line HNSCC CRB-701 plus Keytruda combination data in early Q1 2027.<a class="cite" href="https://ir.corbuspharma.com/news-events/press-releases/detail/467/corbus-pharmaceuticals-reports-q1-2026-financial-results-and-provides-a-corporate-update">3</a></p>
+          <p class="small">Corbus reported $138.2 million in cash, cash equivalents, and investments as of March 31, 2026, expected to fund operations into 2028.<a class="cite" href="https://ir.corbuspharma.com/news-events/press-releases/detail/467/corbus-pharmaceuticals-reports-q1-2026-financial-results-and-provides-a-corporate-update">3</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">03 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="topline">
+        <div class="eyebrow">Mechanism Map | Included Sources</div>
+        <div class="meta">Only claims with May 6-12 visible dates</div>
+      </div>
+      <h2>The week spans IO costimulation, bifunctional EGFR/TGF-beta, ADCs, and HPV16 immunotherapy</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Asset / Sponsor</th>
+            <th>Mechanism or modality</th>
+            <th>Disclosed HNSCC setting</th>
+            <th>Current source-window status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>INBRX-106 / Inhibrx</strong></td>
+            <td>Hexavalent OX40 agonist combined with pembrolizumab.<a class="cite" href="https://inhibrxbiosciences.investorroom.com/2026-05-11-Inhibrx-Reports-Interim-Phase-2-Data-for-INBRX-106-in-First-Line-HNSCC-Initial-Results-Demonstrate-Potential-Costimulatory-Benefit-Over-PD-1-Monotherapy">1</a></td>
+            <td>First-line treatment-naive PD-L1 CPS >=20 metastatic or unresectable recurrent HNSCC.<a class="cite" href="https://inhibrxbiosciences.investorroom.com/2026-05-11-Inhibrx-Reports-Interim-Phase-2-Data-for-INBRX-106-in-First-Line-HNSCC-Initial-Results-Demonstrate-Potential-Costimulatory-Benefit-Over-PD-1-Monotherapy">1</a></td>
+            <td>Interim randomized Phase 2 data reported, with PFS expected Q4 2026 and Phase 3 portion planned Q3 2026.<a class="cite" href="https://inhibrxbiosciences.investorroom.com/2026-05-11-Inhibrx-Reports-Interim-Phase-2-Data-for-INBRX-106-in-First-Line-HNSCC-Initial-Results-Demonstrate-Potential-Costimulatory-Benefit-Over-PD-1-Monotherapy">1</a></td>
+          </tr>
+          <tr>
+            <td><strong>Ficerafusp alfa / Bicara</strong></td>
+            <td>EGFR-directed monoclonal antibody bound to a TGF-beta ligand trap.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291783/0/en/bicara-therapeutics-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a></td>
+            <td>First-line recurrent/metastatic HPV-negative HNSCC with pembrolizumab.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291783/0/en/bicara-therapeutics-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a></td>
+            <td>FORTIFI-HN01 pivotal trial execution continued; alternate loading/Q3W maintenance regimen study expected Q3 2026.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291783/0/en/bicara-therapeutics-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a></td>
+          </tr>
+          <tr>
+            <td><strong>CRB-701 / Corbus</strong></td>
+            <td>Next-generation Nectin-4 targeting antibody-drug conjugate licensed from CSPC Megalith Biopharmaceutical.<a class="cite" href="https://ir.corbuspharma.com/news-events/press-releases/detail/467/corbus-pharmaceuticals-reports-q1-2026-financial-results-and-provides-a-corporate-update">3</a></td>
+            <td>Second-line HNSCC registrational path and first-line HNSCC combination data path.<a class="cite" href="https://ir.corbuspharma.com/news-events/press-releases/detail/467/corbus-pharmaceuticals-reports-q1-2026-financial-results-and-provides-a-corporate-update">3</a></td>
+            <td>FDA broad alignment disclosed; ASCO 2026 monotherapy data and summer 2026 registrational initiation listed.<a class="cite" href="https://ir.corbuspharma.com/news-events/press-releases/detail/467/corbus-pharmaceuticals-reports-q1-2026-financial-results-and-provides-a-corporate-update">3</a></td>
+          </tr>
+          <tr>
+            <td><strong>MICVO / Pyxis</strong></td>
+            <td>First-in-concept ADC targeting extradomain-B of fibronectin in the tumor extracellular matrix.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290537/0/en/Pyxis-Oncology-Appoints-Nelson-Azoulay-as-Chief-Business-Officer.html">4</a></td>
+            <td>Recurrent/metastatic HNSCC monotherapy Phase 1 and combination Phase 1/2 with Keytruda in R/M HNSCC and other solid tumors.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290537/0/en/Pyxis-Oncology-Appoints-Nelson-Azoulay-as-Chief-Business-Officer.html">4</a></td>
+            <td>FDA Fast Track designation disclosed for adult R/M HNSCC after platinum chemotherapy and anti-PD-(L)1 therapy.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290537/0/en/Pyxis-Oncology-Appoints-Nelson-Azoulay-as-Chief-Business-Officer.html">4</a></td>
+          </tr>
+          <tr>
+            <td><strong>PDS0101 / PDS Biotech</strong></td>
+            <td>Lead investigational targeted immunotherapy developed with a standard-of-care immune checkpoint inhibitor.<a class="cite" href="https://pdsbiotech.com/index.php/investors/news-center/press-releases/press-releases1/134-2026-news/1037-pds-biotech-announces-conference-call-and-webcast-for-2026-f2026-05-06-050506">5</a></td>
+            <td>Advanced HPV16-positive head and neck squamous cell cancers.<a class="cite" href="https://pdsbiotech.com/index.php/investors/news-center/press-releases/press-releases1/134-2026-news/1037-pds-biotech-announces-conference-call-and-webcast-for-2026-f2026-05-06-050506">5</a></td>
+            <td>PDS stated that it initiated a pivotal clinical trial for its lead program and will provide a clinical programs update during its May 13, 2026 Q1 results call.<a class="cite" href="https://pdsbiotech.com/index.php/investors/news-center/press-releases/press-releases1/134-2026-news/1037-pds-biotech-announces-conference-call-and-webcast-for-2026-f2026-05-06-050506">5</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="slide-num">04 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="topline">
+        <div class="eyebrow">Catalyst Calendar | Dated Disclosures</div>
+        <div class="meta">Calendar statements from included sources</div>
+      </div>
+      <h2>Near-term HNSCC events cluster around ASCO 2026, summer starts, and late-2026 readouts</h2>
+      <div class="timeline">
+        <div class="event"><span class="when">May 13, 2026</span><strong>PDS Q1 call</strong><p>PDS said it will provide financial results plus a clinical programs and corporate update on May 13, 2026 at 8:00 a.m. ET.<a class="cite" href="https://pdsbiotech.com/index.php/investors/news-center/press-releases/press-releases1/134-2026-news/1037-pds-biotech-announces-conference-call-and-webcast-for-2026-f2026-05-06-050506">5</a></p></div>
+        <div class="event"><span class="when">ASCO 2026</span><strong>Bicara and Corbus data</strong><p>Bicara said it will present long-term follow-up from three ficerafusp alfa plus pembrolizumab Phase 1b HNSCC cohorts at ASCO 2026, and Corbus listed CRB-701 HNSCC monotherapy data at the same meeting.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291783/0/en/bicara-therapeutics-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a>,<a class="cite" href="https://ir.corbuspharma.com/news-events/press-releases/detail/467/corbus-pharmaceuticals-reports-q1-2026-financial-results-and-provides-a-corporate-update">3</a></p></div>
+        <div class="event"><span class="when">Summer 2026</span><strong>CRB-701 registrational start</strong><p>Corbus stated it is on track to start a registrational study for CRB-701 in second-line HNSCC this summer.<a class="cite" href="https://ir.corbuspharma.com/news-events/press-releases/detail/467/corbus-pharmaceuticals-reports-q1-2026-financial-results-and-provides-a-corporate-update">3</a></p></div>
+        <div class="event"><span class="when">Q3-Q4 2026</span><strong>Bicara and Inhibrx trial actions</strong><p>Bicara expects to initiate the ficerafusp alfa loading/Q3W maintenance study in Q3 2026, while Inhibrx plans to begin the Phase 3 HexAgon portion in Q3 2026 and expects Phase 2 PFS data in Q4 2026.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291783/0/en/bicara-therapeutics-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a>,<a class="cite" href="https://inhibrxbiosciences.investorroom.com/2026-05-11-Inhibrx-Reports-Interim-Phase-2-Data-for-INBRX-106-in-First-Line-HNSCC-Initial-Results-Demonstrate-Potential-Costimulatory-Benefit-Over-PD-1-Monotherapy">1</a></p></div>
+        <div class="event"><span class="when">2027</span><strong>Mid-2027 and early Q1</strong><p>Bicara said FORTIFI-HN01 substantial enrollment by year-end 2026 is intended to enable an interim analysis in mid-2027, and Corbus listed CRB-701 plus Keytruda first-line HNSCC data in early Q1 2027.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291783/0/en/bicara-therapeutics-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a>,<a class="cite" href="https://ir.corbuspharma.com/news-events/press-releases/detail/467/corbus-pharmaceuticals-reports-q1-2026-financial-results-and-provides-a-corporate-update">3</a></p></div>
+      </div>
+      <div class="card dark">
+        <p class="body">No source in this report is used unless the publication date was visibly verified as May 6, May 7, May 11, or May 12, 2026 and the source text supporting each cited claim was captured with visible highlight or bounding-box markup.<a class="cite" href="https://inhibrxbiosciences.investorroom.com/2026-05-11-Inhibrx-Reports-Interim-Phase-2-Data-for-INBRX-106-in-First-Line-HNSCC-Initial-Results-Demonstrate-Potential-Costimulatory-Benefit-Over-PD-1-Monotherapy">1</a>,<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291783/0/en/bicara-therapeutics-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a>,<a class="cite" href="https://ir.corbuspharma.com/news-events/press-releases/detail/467/corbus-pharmaceuticals-reports-q1-2026-financial-results-and-provides-a-corporate-update">3</a>,<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290537/0/en/Pyxis-Oncology-Appoints-Nelson-Azoulay-as-Chief-Business-Officer.html">4</a>,<a class="cite" href="https://pdsbiotech.com/index.php/investors/news-center/press-releases/press-releases1/134-2026-news/1037-pds-biotech-announces-conference-call-and-webcast-for-2026-f2026-05-06-050506">5</a></p>
+      </div>
+    </div>
+    <div class="slide-num">05 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="topline">
+        <div class="eyebrow">Reference Audit | Evidence Controls</div>
+        <div class="meta">One screenshots PDF accompanies this report</div>
+      </div>
+      <h2>Reference sources and visible-date checks</h2>
+      <div class="source-grid">
+        <div class="audit"><strong>Reference 1: Inhibrx</strong><p>Visible date: May 11, 2026. Evidence screenshots support the reported HexAgon response-evaluable population, cORR comparison, and Phase 3/PFS next steps.<a class="cite" href="https://inhibrxbiosciences.investorroom.com/2026-05-11-Inhibrx-Reports-Interim-Phase-2-Data-for-INBRX-106-in-First-Line-HNSCC-Initial-Results-Demonstrate-Potential-Costimulatory-Benefit-Over-PD-1-Monotherapy">1</a></p><p class="small">Source type: issuer press release distributed through PRNewswire and hosted by Inhibrx.<a class="cite" href="https://inhibrxbiosciences.investorroom.com/2026-05-11-Inhibrx-Reports-Interim-Phase-2-Data-for-INBRX-106-in-First-Line-HNSCC-Initial-Results-Demonstrate-Potential-Costimulatory-Benefit-Over-PD-1-Monotherapy">1</a></p></div>
+        <div class="audit"><strong>Reference 2: Bicara</strong><p>Visible date: May 11, 2026. Evidence screenshots support FORTIFI-HN01 enrollment timing, loading/Q3W maintenance study timing, ASCO 2026 follow-up data, and cash runway.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291783/0/en/bicara-therapeutics-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a></p><p class="small">Source type: issuer press release distributed through GlobeNewswire.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291783/0/en/bicara-therapeutics-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a></p></div>
+        <div class="audit"><strong>Reference 3: Corbus</strong><p>Visible date: May 12, 2026. Evidence screenshots support FDA alignment, second-line HNSCC study timing, ASCO 2026 CRB-701 data timing, and cash runway.<a class="cite" href="https://ir.corbuspharma.com/news-events/press-releases/detail/467/corbus-pharmaceuticals-reports-q1-2026-financial-results-and-provides-a-corporate-update">3</a></p><p class="small">Source type: issuer investor-relations press release.<a class="cite" href="https://ir.corbuspharma.com/news-events/press-releases/detail/467/corbus-pharmaceuticals-reports-q1-2026-financial-results-and-provides-a-corporate-update">3</a></p></div>
+        <div class="audit"><strong>Reference 4: Pyxis</strong><p>Visible date: May 7, 2026. Evidence screenshots support MICVO corporate-development focus, recurrent/metastatic HNSCC trial status, and FDA Fast Track designation wording.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290537/0/en/Pyxis-Oncology-Appoints-Nelson-Azoulay-as-Chief-Business-Officer.html">4</a></p><p class="small">Source type: issuer press release distributed through GlobeNewswire.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290537/0/en/Pyxis-Oncology-Appoints-Nelson-Azoulay-as-Chief-Business-Officer.html">4</a></p></div>
+        <div class="audit"><strong>Reference 5: PDS Biotech</strong><p>Visible date: May 6, 2026. Evidence screenshots support the May 13 Q1 call timing and PDS0101 advanced HPV16-positive HNSCC program context.<a class="cite" href="https://pdsbiotech.com/index.php/investors/news-center/press-releases/press-releases1/134-2026-news/1037-pds-biotech-announces-conference-call-and-webcast-for-2026-f2026-05-06-050506">5</a></p><p class="small">Source type: issuer website press release.<a class="cite" href="https://pdsbiotech.com/index.php/investors/news-center/press-releases/press-releases1/134-2026-news/1037-pds-biotech-announces-conference-call-and-webcast-for-2026-f2026-05-06-050506">5</a></p></div>
+      </div>
+      <div class="card dark">
+        <p class="body">The report contains no treatment recommendations, investment recommendations, or uncited secondary-source summaries; each substantive disease, asset, timing, and financial statement is cited to a visibly dated source in the May 6-12, 2026 window.<a class="cite" href="https://inhibrxbiosciences.investorroom.com/2026-05-11-Inhibrx-Reports-Interim-Phase-2-Data-for-INBRX-106-in-First-Line-HNSCC-Initial-Results-Demonstrate-Potential-Costimulatory-Benefit-Over-PD-1-Monotherapy">1</a>,<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291783/0/en/bicara-therapeutics-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a>,<a class="cite" href="https://ir.corbuspharma.com/news-events/press-releases/detail/467/corbus-pharmaceuticals-reports-q1-2026-financial-results-and-provides-a-corporate-update">3</a>,<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290537/0/en/Pyxis-Oncology-Appoints-Nelson-Azoulay-as-Chief-Business-Officer.html">4</a>,<a class="cite" href="https://pdsbiotech.com/index.php/investors/news-center/press-releases/press-releases1/134-2026-news/1037-pds-biotech-announces-conference-call-and-webcast-for-2026-f2026-05-06-050506">5</a></p>
+      </div>
+    </div>
+    <div class="slide-num">06 / 06</div>
+  </article>
+</body>
+</html>

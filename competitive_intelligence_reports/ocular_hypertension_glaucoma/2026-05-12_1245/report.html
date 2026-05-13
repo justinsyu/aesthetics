@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ocular Hypertension / Glaucoma Competitive Intelligence Update</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 36px 0 20px;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 850;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 80px; line-height: .94; letter-spacing: 0; font-weight: 560; max-width: 1280px; }
+    h2 { font-size: 54px; line-height: 1; letter-spacing: 0; font-weight: 560; max-width: 1300px; }
+    h3 { font-size: 28px; line-height: 1.04; letter-spacing: 0; font-weight: 650; }
+    .dek { margin-top: 18px; color: var(--muted); font-size: 27px; line-height: 1.24; max-width: 1280px; }
+    .section-head { margin-bottom: 18px; }
+    .section-head p { margin-top: 12px; color: var(--muted); font-size: 24px; line-height: 1.24; max-width: 1300px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .panel, .metric, .card, .table, .callout {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.86);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel { padding: 24px; }
+    .panel.dark, .callout { background: #11130f; color: var(--paper); border-color: #11130f; }
+    .panel.dark p, .panel.dark li, .callout p, .callout li { color: rgba(246,241,232,.84); }
+    .metric { padding: 20px; min-height: 150px; }
+    .num { font-size: 52px; line-height: .92; font-weight: 850; letter-spacing: 0; }
+    .label { margin-top: 12px; font-size: 18px; line-height: 1.25; color: var(--muted); }
+    .card { padding: 22px; min-height: 214px; }
+    .card p { color: var(--muted); font-size: 19px; line-height: 1.23; margin-top: 12px; }
+    .card .tag { margin-bottom: 12px; }
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      white-space: nowrap;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .red { background: var(--red); }
+    .gray { background: var(--gray); }
+    .list { margin: 12px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+    .list li { position: relative; padding-left: 20px; color: var(--muted); font-size: 20px; line-height: 1.22; }
+    .list li::before { content: ""; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; border-radius: 50%; background: var(--lime); border: 1px solid var(--line); }
+    .table { display: grid; }
+    .row { display: grid; grid-template-columns: 1.02fr .72fr .9fr 1.72fr; border-bottom: 1px solid var(--line); min-height: 67px; }
+    .row:last-child { border-bottom: 0; }
+    .cell { padding: 12px 13px; border-right: 1px solid var(--line); font-size: 16px; line-height: 1.18; }
+    .cell:last-child { border-right: 0; }
+    .head .cell { background: #11130f; color: var(--paper); font-weight: 850; text-transform: uppercase; font-size: 12px; }
+    .source-row { grid-template-columns: .42fr .98fr .75fr 2.4fr; min-height: 68px; }
+    .callout { padding: 24px 28px; }
+    .callout h3 { font-size: 32px; }
+    .callout p { margin-top: 12px; font-size: 24px; line-height: 1.18; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .cite + .cite::before { content: ","; margin-right: 1px; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    .source-note { color: var(--muted); font-size: 15px; line-height: 1.25; margin-top: 10px; }
+    .small { font-size: 14px; line-height: 1.2; color: var(--muted); }
+    strong { font-weight: 850; }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .wrap { width: 1360px; }
+      .panel, .metric, .card, .table, .callout { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) {
+      .slide { width: 1600px; height: 900px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Ocular hypertension / glaucoma CI update | May 6-12, 2026 evidence window</div>
+      <h1>Current registry updates in ocular hypertension and glaucoma</h1>
+      <p class="dek">This report includes seven ClinicalTrials.gov records with visible Last Update Posted dates from May 6, May 7, or May 12, 2026.<a class="cite" href="https://clinicaltrials.gov/study/NCT07168902">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05523622">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07408154">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04702789">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07074782">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07580014">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06593405">7</a></p>
+      <div class="grid-4" style="margin-top:34px;">
+        <div class="metric"><div class="num">7</div><div class="label">Included source records are ClinicalTrials.gov study pages.<a class="cite" href="https://clinicaltrials.gov/study/NCT07168902">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05523622">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07408154">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04702789">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07074782">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07580014">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06593405">7</a></div></div>
+        <div class="metric"><div class="num">4</div><div class="label">Included records showed a recruiting status.<a class="cite" href="https://clinicaltrials.gov/study/NCT05523622">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07408154">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07580014">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06593405">7</a></div></div>
+        <div class="metric"><div class="num">1</div><div class="label">Included record showed active, not recruiting status for BL1107 versus timolol.<a class="cite" href="https://clinicaltrials.gov/study/NCT07168902">1</a></div></div>
+        <div class="metric"><div class="num">1</div><div class="label">Included record showed terminated status for a fixed-combination glaucoma or ocular-hypertension study.<a class="cite" href="https://clinicaltrials.gov/study/NCT04702789">4</a></div></div>
+      </div>
+      <div class="callout" style="margin-top:24px;">
+        <h3>Factual scope</h3>
+        <p>The included records describe BL1107 eye drops versus timolol, TonoVera intraocular-pressure measurement, direct versus standard SLT, a Krytantek/Eliptic/Gaap study, prostaglandin-analogue neuroprotection, OCT/OCTA retinal and choroidal features, and occupational-therapy medication management.<a class="cite" href="https://clinicaltrials.gov/study/NCT07168902">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05523622">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07408154">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04702789">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07074782">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07580014">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06593405">7</a></p>
+      </div>
+    </div>
+    <div class="slide-num">01 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">IOP-lowering, laser, and treatment records</div>
+        <h2>Four included records covered drug, laser, fixed-combination, or neuroprotection studies<a class="cite" href="https://clinicaltrials.gov/study/NCT07168902">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07408154">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04702789">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07074782">5</a></h2>
+        <p>The visible Last Update Posted dates for these records were May 6 or May 7, 2026.<a class="cite" href="https://clinicaltrials.gov/study/NCT07168902">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07408154">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04702789">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07074782">5</a></p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <span class="tag lime">Drug study</span>
+          <h3>BL1107 versus timolol</h3>
+          <p>ClinicalTrials.gov listed NCT07168902 as an active-not-recruiting Phase 2 study of BL1107 eye drops versus timolol in adults with primary open-angle glaucoma or ocular hypertension, with Bausch & Lomb Incorporated as sponsor and May 7, 2026 as Last Update Posted.<a class="cite" href="https://clinicaltrials.gov/study/NCT07168902">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">Laser study</span>
+          <h3>Direct versus standard SLT</h3>
+          <p>ClinicalTrials.gov listed NCT07408154 as a recruiting record titled "Direct vs Standard SLT for Glaucoma: A Noninferiority Trial," with Medical University of South Carolina as sponsor and May 6, 2026 as Last Update Posted.<a class="cite" href="https://clinicaltrials.gov/study/NCT07408154">3</a></p>
+        </div>
+        <div class="card">
+          <span class="tag red">Terminated</span>
+          <h3>Krytantek, Eliptic, and Gaap study</h3>
+          <p>ClinicalTrials.gov listed NCT04702789 as a terminated study comparing Krytantek Ofteno PF or Eliptic Ofteno PF plus Gaap Ofteno PF for primary open-angle glaucoma or ocular hypertension, with Laboratorios Sophia S.A de C.V. as sponsor and May 7, 2026 as Last Update Posted.<a class="cite" href="https://clinicaltrials.gov/study/NCT04702789">4</a></p>
+        </div>
+        <div class="card">
+          <span class="tag orange">Not yet recruiting</span>
+          <h3>Prostaglandin-analogue neuroprotection</h3>
+          <p>ClinicalTrials.gov listed NCT07074782 as not yet recruiting and titled "Retinal Ganglion Cell Neuroprotection Under Prostaglandin Analogues," with Association for Innovation and Biomedical Research on Light and Image as sponsor and May 6, 2026 as Last Update Posted.<a class="cite" href="https://clinicaltrials.gov/study/NCT07074782">5</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">02 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Measurement, imaging, and care-delivery records</div>
+        <h2>Three included records covered IOP measurement, OCT/OCTA features, or medication management<a class="cite" href="https://clinicaltrials.gov/study/NCT05523622">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07580014">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06593405">7</a></h2>
+        <p>The visible Last Update Posted dates for these records were May 6 or May 12, 2026.<a class="cite" href="https://clinicaltrials.gov/study/NCT05523622">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07580014">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06593405">7</a></p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag lime">Recruiting</span>
+          <h3>TonoVera IOP measurement</h3>
+          <p>ClinicalTrials.gov listed NCT05523622 as a recruiting study comparing intraocular-pressure measurement with the novel TonoVera device and other commonly used devices, with State University of New York at Buffalo as sponsor and May 6, 2026 as Last Update Posted.<a class="cite" href="https://clinicaltrials.gov/study/NCT05523622">2</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">Recruiting</span>
+          <h3>OCT and OCTA features</h3>
+          <p>ClinicalTrials.gov listed NCT07580014 as a recruiting record titled "Choroidal and Retinal Features in PACD and POAG on OCT and OCTA," with Zhongshan Ophthalmic Center, Sun Yat-sen University as sponsor and May 12, 2026 as Last Update Posted.<a class="cite" href="https://clinicaltrials.gov/study/NCT07580014">6</a></p>
+        </div>
+        <div class="card">
+          <span class="tag pink">Recruiting</span>
+          <h3>Medication management</h3>
+          <p>ClinicalTrials.gov listed NCT06593405 as a recruiting record titled "The Role of Occupational Therapy for Improving Medication Management for Persons With AMD, DR and Glaucoma," with MCPHS University as sponsor and May 12, 2026 as Last Update Posted.<a class="cite" href="https://clinicaltrials.gov/study/NCT06593405">7</a></p>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:24px;">
+        <h3>Recorded modalities</h3>
+        <p>The included records contain source titles for intraocular-pressure measurement, direct selective laser trabeculoplasty, OCT/OCTA retinal and choroidal features, and occupational-therapy medication management.<a class="cite" href="https://clinicaltrials.gov/study/NCT05523622">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07408154">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07580014">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06593405">7</a></p>
+      </div>
+    </div>
+    <div class="slide-num">03 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Included ClinicalTrials.gov records</div>
+        <h2>Registry rows used in this report</h2>
+        <p>Each row below cites the corresponding ClinicalTrials.gov page whose visible title, status, sponsor, and Last Update Posted date were screenshot-verified.<a class="cite" href="https://clinicaltrials.gov/study/NCT07168902">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05523622">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07408154">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04702789">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07074782">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07580014">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06593405">7</a></p>
+      </div>
+      <div class="table">
+        <div class="row head">
+          <div class="cell">Record</div>
+          <div class="cell">Date</div>
+          <div class="cell">Status</div>
+          <div class="cell">Visible title and sponsor</div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT07168902</strong></div>
+          <div class="cell">2026-05-07<a class="cite" href="https://clinicaltrials.gov/study/NCT07168902">1</a></div>
+          <div class="cell">Active, not recruiting<a class="cite" href="https://clinicaltrials.gov/study/NCT07168902">1</a></div>
+          <div class="cell">BL1107 eye drops versus timolol in primary open-angle glaucoma or ocular hypertension; sponsor Bausch & Lomb Incorporated.<a class="cite" href="https://clinicaltrials.gov/study/NCT07168902">1</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT05523622</strong></div>
+          <div class="cell">2026-05-06<a class="cite" href="https://clinicaltrials.gov/study/NCT05523622">2</a></div>
+          <div class="cell">Recruiting<a class="cite" href="https://clinicaltrials.gov/study/NCT05523622">2</a></div>
+          <div class="cell">TonoVera intraocular-pressure measurement compared with other commonly used devices; sponsor State University of New York at Buffalo.<a class="cite" href="https://clinicaltrials.gov/study/NCT05523622">2</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT07408154</strong></div>
+          <div class="cell">2026-05-06<a class="cite" href="https://clinicaltrials.gov/study/NCT07408154">3</a></div>
+          <div class="cell">Recruiting<a class="cite" href="https://clinicaltrials.gov/study/NCT07408154">3</a></div>
+          <div class="cell">Direct versus standard SLT for glaucoma; sponsor Medical University of South Carolina.<a class="cite" href="https://clinicaltrials.gov/study/NCT07408154">3</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT04702789</strong></div>
+          <div class="cell">2026-05-07<a class="cite" href="https://clinicaltrials.gov/study/NCT04702789">4</a></div>
+          <div class="cell">Terminated<a class="cite" href="https://clinicaltrials.gov/study/NCT04702789">4</a></div>
+          <div class="cell">Krytantek Ofteno PF or Eliptic Ofteno PF plus Gaap Ofteno PF for POAG or ocular hypertension; sponsor Laboratorios Sophia S.A de C.V.<a class="cite" href="https://clinicaltrials.gov/study/NCT04702789">4</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT07074782</strong></div>
+          <div class="cell">2026-05-06<a class="cite" href="https://clinicaltrials.gov/study/NCT07074782">5</a></div>
+          <div class="cell">Not yet recruiting<a class="cite" href="https://clinicaltrials.gov/study/NCT07074782">5</a></div>
+          <div class="cell">Retinal ganglion cell neuroprotection under prostaglandin analogues; sponsor Association for Innovation and Biomedical Research on Light and Image.<a class="cite" href="https://clinicaltrials.gov/study/NCT07074782">5</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT07580014</strong></div>
+          <div class="cell">2026-05-12<a class="cite" href="https://clinicaltrials.gov/study/NCT07580014">6</a></div>
+          <div class="cell">Recruiting<a class="cite" href="https://clinicaltrials.gov/study/NCT07580014">6</a></div>
+          <div class="cell">Choroidal and retinal features in PACD and POAG on OCT and OCTA; sponsor Zhongshan Ophthalmic Center, Sun Yat-sen University.<a class="cite" href="https://clinicaltrials.gov/study/NCT07580014">6</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT06593405</strong></div>
+          <div class="cell">2026-05-12<a class="cite" href="https://clinicaltrials.gov/study/NCT06593405">7</a></div>
+          <div class="cell">Recruiting<a class="cite" href="https://clinicaltrials.gov/study/NCT06593405">7</a></div>
+          <div class="cell">Occupational therapy for medication management in persons with AMD, DR and glaucoma; sponsor MCPHS University.<a class="cite" href="https://clinicaltrials.gov/study/NCT06593405">7</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">04 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Sources</div>
+        <h2>References used in the report</h2>
+        <p>The source dates listed here are the visible Last Update Posted dates captured from ClinicalTrials.gov source pages.<a class="cite" href="https://clinicaltrials.gov/study/NCT07168902">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05523622">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07408154">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04702789">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07074782">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07580014">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06593405">7</a></p>
+      </div>
+      <div class="table">
+        <div class="row head source-row">
+          <div class="cell">Ref</div>
+          <div class="cell">Record</div>
+          <div class="cell">Date</div>
+          <div class="cell">Source</div>
+        </div>
+        <div class="row source-row">
+          <div class="cell">1</div>
+          <div class="cell">NCT07168902</div>
+          <div class="cell">2026-05-07<a class="cite" href="https://clinicaltrials.gov/study/NCT07168902">1</a></div>
+          <div class="cell"><a href="https://clinicaltrials.gov/study/NCT07168902">ClinicalTrials.gov: BL1107 Eye Drops vs. Timolol</a></div>
+        </div>
+        <div class="row source-row">
+          <div class="cell">2</div>
+          <div class="cell">NCT05523622</div>
+          <div class="cell">2026-05-06<a class="cite" href="https://clinicaltrials.gov/study/NCT05523622">2</a></div>
+          <div class="cell"><a href="https://clinicaltrials.gov/study/NCT05523622">ClinicalTrials.gov: TonoVera intraocular-pressure measurement</a></div>
+        </div>
+        <div class="row source-row">
+          <div class="cell">3</div>
+          <div class="cell">NCT07408154</div>
+          <div class="cell">2026-05-06<a class="cite" href="https://clinicaltrials.gov/study/NCT07408154">3</a></div>
+          <div class="cell"><a href="https://clinicaltrials.gov/study/NCT07408154">ClinicalTrials.gov: Direct vs Standard SLT for Glaucoma</a></div>
+        </div>
+        <div class="row source-row">
+          <div class="cell">4</div>
+          <div class="cell">NCT04702789</div>
+          <div class="cell">2026-05-07<a class="cite" href="https://clinicaltrials.gov/study/NCT04702789">4</a></div>
+          <div class="cell"><a href="https://clinicaltrials.gov/study/NCT04702789">ClinicalTrials.gov: Krytantek, Eliptic, and Gaap POAG/OHT study</a></div>
+        </div>
+        <div class="row source-row">
+          <div class="cell">5</div>
+          <div class="cell">NCT07074782</div>
+          <div class="cell">2026-05-06<a class="cite" href="https://clinicaltrials.gov/study/NCT07074782">5</a></div>
+          <div class="cell"><a href="https://clinicaltrials.gov/study/NCT07074782">ClinicalTrials.gov: Retinal ganglion cell neuroprotection</a></div>
+        </div>
+        <div class="row source-row">
+          <div class="cell">6</div>
+          <div class="cell">NCT07580014</div>
+          <div class="cell">2026-05-12<a class="cite" href="https://clinicaltrials.gov/study/NCT07580014">6</a></div>
+          <div class="cell"><a href="https://clinicaltrials.gov/study/NCT07580014">ClinicalTrials.gov: PACD and POAG OCT/OCTA features</a></div>
+        </div>
+        <div class="row source-row">
+          <div class="cell">7</div>
+          <div class="cell">NCT06593405</div>
+          <div class="cell">2026-05-12<a class="cite" href="https://clinicaltrials.gov/study/NCT06593405">7</a></div>
+          <div class="cell"><a href="https://clinicaltrials.gov/study/NCT06593405">ClinicalTrials.gov: Occupational therapy medication management</a></div>
+        </div>
+      </div>
+      <p class="source-note">A separate screenshot PDF in this run folder contains date-verification and evidence screenshots for every numbered reference.</p>
+    </div>
+    <div class="slide-num">05 / 05</div>
+  </article>
+</body>
+</html>

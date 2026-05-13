@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IgA Nephropathy Competitive Intelligence Update</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 36px 0 20px;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 850;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 82px; line-height: .93; letter-spacing: 0; font-weight: 560; max-width: 1280px; }
+    h2 { font-size: 54px; line-height: 1; letter-spacing: 0; font-weight: 560; max-width: 1300px; }
+    h3 { font-size: 29px; line-height: 1.05; letter-spacing: 0; font-weight: 650; }
+    .dek { margin-top: 18px; color: var(--muted); font-size: 27px; line-height: 1.24; max-width: 1290px; }
+    .section-head { margin-bottom: 20px; }
+    .section-head p { margin-top: 12px; color: var(--muted); font-size: 24px; line-height: 1.24; max-width: 1300px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .panel, .metric, .card, .table, .callout {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.88);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel { padding: 24px; }
+    .panel.dark, .callout { background: #11130f; color: var(--paper); border-color: #11130f; }
+    .panel.dark p, .panel.dark li, .callout p, .callout li { color: rgba(246,241,232,.86); }
+    .metric { padding: 22px; min-height: 148px; }
+    .num { font-size: 51px; line-height: .94; font-weight: 850; letter-spacing: 0; }
+    .label { margin-top: 12px; font-size: 18px; line-height: 1.25; color: var(--muted); }
+    .card { padding: 23px; min-height: 212px; }
+    .card p { color: var(--muted); font-size: 20px; line-height: 1.24; margin-top: 12px; }
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      white-space: nowrap;
+      margin-bottom: 12px;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .gray { background: var(--gray); }
+    .red { background: var(--red); }
+    .list { margin: 14px 0 0; padding: 0; list-style: none; display: grid; gap: 11px; }
+    .list li { position: relative; padding-left: 20px; color: var(--muted); font-size: 20px; line-height: 1.23; }
+    .list li::before { content: ""; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; border-radius: 50%; background: var(--lime); border: 1px solid var(--line); }
+    .table { display: grid; }
+    .row { display: grid; grid-template-columns: .82fr .88fr 1.8fr 1.58fr; border-bottom: 1px solid var(--line); min-height: 79px; }
+    .row:last-child { border-bottom: 0; }
+    .cell { padding: 13px 14px; border-right: 1px solid var(--line); font-size: 17px; line-height: 1.2; }
+    .cell:last-child { border-right: 0; }
+    .head .cell { background: #11130f; color: var(--paper); font-weight: 850; text-transform: uppercase; font-size: 12px; }
+    .callout { padding: 24px 28px; }
+    .callout h3 { font-size: 32px; }
+    .callout p { margin-top: 12px; font-size: 24px; line-height: 1.2; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .cite + .cite::before { content: ","; margin-right: 1px; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    .source-note { color: var(--muted); font-size: 15px; line-height: 1.25; margin-top: 10px; }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .wrap { width: 1360px; }
+      .panel, .metric, .card, .table, .callout { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) {
+      .slide { width: 1600px; height: 900px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">IgA nephropathy CI update | May 6-12, 2026 evidence window</div>
+      <h1>IgA nephropathy competitive intelligence update</h1>
+      <p class="dek">This report includes four primary-source items with visible publication or registry update dates from May 6, 2026 through May 12, 2026.<a class="cite" href="https://ir.veratx.com/news-releases/news-release-details/vera-therapeutics-provides-business-update-and-reports-first-3">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07498673">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06935357">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06963827">4</a></p>
+      <div class="grid-4" style="margin-top:34px;">
+        <div class="metric"><div class="num">4</div><div class="label">Primary sources were used in the report.<a class="cite" href="https://ir.veratx.com/news-releases/news-release-details/vera-therapeutics-provides-business-update-and-reports-first-3">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07498673">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06935357">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06963827">4</a></div></div>
+        <div class="metric"><div class="num">1</div><div class="label">Company business update reported atacicept regulatory and launch timing.<a class="cite" href="https://ir.veratx.com/news-releases/news-release-details/vera-therapeutics-provides-business-update-and-reports-first-3">1</a></div></div>
+        <div class="metric"><div class="num">3</div><div class="label">ClinicalTrials.gov study records had visible May 6 or May 12 last-update dates.<a class="cite" href="https://clinicaltrials.gov/study/NCT07498673">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06935357">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06963827">4</a></div></div>
+        <div class="metric"><div class="num">Jul 7</div><div class="label">Vera reported a PDUFA target action date for atacicept in IgAN.<a class="cite" href="https://ir.veratx.com/news-releases/news-release-details/vera-therapeutics-provides-business-update-and-reports-first-3">1</a></div></div>
+      </div>
+      <div class="callout" style="margin-top:24px;">
+        <h3>Factual scope</h3>
+        <p>The included sources document Vera's atacicept update and ClinicalTrials.gov records for YKST02, felzartamab, and mezagitamab in IgAN-related study titles.<a class="cite" href="https://ir.veratx.com/news-releases/news-release-details/vera-therapeutics-provides-business-update-and-reports-first-3">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07498673">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06935357">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06963827">4</a></p>
+      </div>
+    </div>
+    <div class="slide-num">01 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Atacicept | Vera Therapeutics</div>
+        <h2>Vera reported priority-review timing and mid-2026 launch preparation for atacicept in IgAN<a class="cite" href="https://ir.veratx.com/news-releases/news-release-details/vera-therapeutics-provides-business-update-and-reports-first-3">1</a></h2>
+        <p>Vera's May 7, 2026 business update is the only company press-release source included in this report.<a class="cite" href="https://ir.veratx.com/news-releases/news-release-details/vera-therapeutics-provides-business-update-and-reports-first-3">1</a></p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag lime">FDA timing</span>
+          <h3>PDUFA date</h3>
+          <p>Vera stated that FDA granted priority review to the atacicept BLA for accelerated approval in adult patients with IgAN and assigned a PDUFA date of July 7, 2026.<a class="cite" href="https://ir.veratx.com/news-releases/news-release-details/vera-therapeutics-provides-business-update-and-reports-first-3">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">Launch timing</span>
+          <h3>Mid-2026</h3>
+          <p>Vera stated that it was on track for a U.S. commercial launch of atacicept in mid-2026, pending regulatory approval.<a class="cite" href="https://ir.veratx.com/news-releases/news-release-details/vera-therapeutics-provides-business-update-and-reports-first-3">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag orange">Milestones</span>
+          <h3>Q2 and Q1</h3>
+          <p>Vera listed initial PIONEER results expected in Q2 2026 and pivotal two-year ORIGIN 3 eGFR data expected in Q1 2027.<a class="cite" href="https://ir.veratx.com/news-releases/news-release-details/vera-therapeutics-provides-business-update-and-reports-first-3">1</a></p>
+        </div>
+      </div>
+      <div class="panel dark" style="margin-top:24px;">
+        <h3>Additional source-stated context</h3>
+        <ul class="list">
+          <li>Vera stated that FDA granted priority review to the atacicept BLA for treatment of IgAN in adults and assigned a PDUFA target action date of July 7, 2026.<a class="cite" href="https://ir.veratx.com/news-releases/news-release-details/vera-therapeutics-provides-business-update-and-reports-first-3">1</a></li>
+          <li>Vera stated that the planned U.S. commercial launch of atacicept was expected mid-2026, pending FDA approval.<a class="cite" href="https://ir.veratx.com/news-releases/news-release-details/vera-therapeutics-provides-business-update-and-reports-first-3">1</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">02 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">ClinicalTrials.gov | Registry activity</div>
+        <h2>Three IgAN-related ClinicalTrials.gov records displayed last-update dates inside the evidence window<a class="cite" href="https://clinicaltrials.gov/study/NCT07498673">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06935357">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06963827">4</a></h2>
+        <p>The visible registry dates were May 12, 2026 for NCT07498673 and May 6, 2026 for NCT06935357 and NCT06963827.<a class="cite" href="https://clinicaltrials.gov/study/NCT07498673">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06935357">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06963827">4</a></p>
+      </div>
+      <div class="table">
+        <div class="row head">
+          <div class="cell">Reference</div>
+          <div class="cell">Visible update date</div>
+          <div class="cell">ClinicalTrials.gov record title</div>
+          <div class="cell">Record identifier</div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>Ref 2</strong></div>
+          <div class="cell">2026-05-12<a class="cite" href="https://clinicaltrials.gov/study/NCT07498673">2</a></div>
+          <div class="cell">A Study of YKST02 in Participants With Primary IgA Nephropathy<a class="cite" href="https://clinicaltrials.gov/study/NCT07498673">2</a></div>
+          <div class="cell">NCT07498673<a class="cite" href="https://clinicaltrials.gov/study/NCT07498673">2</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>Ref 3</strong></div>
+          <div class="cell">2026-05-06<a class="cite" href="https://clinicaltrials.gov/study/NCT06935357">3</a></div>
+          <div class="cell">A Study to Learn About the Effects of Felzartamab Infusions on Adults With Immunoglobulin A Nephropathy (IgAN)<a class="cite" href="https://clinicaltrials.gov/study/NCT06935357">3</a></div>
+          <div class="cell">NCT06935357<a class="cite" href="https://clinicaltrials.gov/study/NCT06935357">3</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>Ref 4</strong></div>
+          <div class="cell">2026-05-06<a class="cite" href="https://clinicaltrials.gov/study/NCT06963827">4</a></div>
+          <div class="cell">A Study of Mezagitamab in Adults With Kidney Condition Called IgA Nephropathy<a class="cite" href="https://clinicaltrials.gov/study/NCT06963827">4</a></div>
+          <div class="cell">NCT06963827<a class="cite" href="https://clinicaltrials.gov/study/NCT06963827">4</a></div>
+        </div>
+      </div>
+      <p class="source-note">Source note: the report uses visible ClinicalTrials.gov "Last Update Posted" dates, not search-result crawl dates.<a class="cite" href="https://clinicaltrials.gov/study/NCT07498673">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06935357">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06963827">4</a></p>
+    </div>
+    <div class="slide-num">03 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Evidence map</div>
+        <h2>The May 6-12 source set spans one regulatory/commercial update and three registry records<a class="cite" href="https://ir.veratx.com/news-releases/news-release-details/vera-therapeutics-provides-business-update-and-reports-first-3">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07498673">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06935357">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06963827">4</a></h2>
+        <p>No secondary news, search snippets, or sources without visible dates were used for report claims.<a class="cite" href="https://ir.veratx.com/news-releases/news-release-details/vera-therapeutics-provides-business-update-and-reports-first-3">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07498673">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06935357">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06963827">4</a></p>
+      </div>
+      <div class="grid-2">
+        <div class="panel">
+          <span class="tag lime">Regulatory and commercial timing</span>
+          <h3>Atacicept</h3>
+          <ul class="list">
+            <li>Vera reported FDA priority review for the atacicept BLA and a July 7, 2026 PDUFA date.<a class="cite" href="https://ir.veratx.com/news-releases/news-release-details/vera-therapeutics-provides-business-update-and-reports-first-3">1</a></li>
+            <li>Vera reported mid-2026 U.S. launch preparation, pending regulatory approval.<a class="cite" href="https://ir.veratx.com/news-releases/news-release-details/vera-therapeutics-provides-business-update-and-reports-first-3">1</a></li>
+            <li>Vera listed PIONEER initial results expected in Q2 2026 and ORIGIN 3 two-year eGFR data expected in Q1 2027.<a class="cite" href="https://ir.veratx.com/news-releases/news-release-details/vera-therapeutics-provides-business-update-and-reports-first-3">1</a></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="tag blue">Registry records</span>
+          <h3>YKST02, felzartamab, and mezagitamab</h3>
+          <ul class="list">
+            <li>ClinicalTrials.gov displayed NCT07498673 with the title "A Study of YKST02 in Participants With Primary IgA Nephropathy" and a May 12, 2026 last-update date.<a class="cite" href="https://clinicaltrials.gov/study/NCT07498673">2</a></li>
+            <li>ClinicalTrials.gov displayed NCT06935357 with a felzartamab IgAN title and a May 6, 2026 last-update date.<a class="cite" href="https://clinicaltrials.gov/study/NCT06935357">3</a></li>
+            <li>ClinicalTrials.gov displayed NCT06963827 with a mezagitamab IgAN title and a May 6, 2026 last-update date.<a class="cite" href="https://clinicaltrials.gov/study/NCT06963827">4</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:24px;">
+        <h3>Current evidence boundary</h3>
+        <p>All report claims are limited to the text boxed in the saved reference screenshots and to the visible source dates captured for references 1-4.<a class="cite" href="https://ir.veratx.com/news-releases/news-release-details/vera-therapeutics-provides-business-update-and-reports-first-3">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07498673">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06935357">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06963827">4</a></p>
+      </div>
+    </div>
+    <div class="slide-num">04 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">References</div>
+        <h2>Primary sources used in this report</h2>
+        <p>Each source below has a saved date-verification screenshot and at least one evidence screenshot in the companion screenshots PDF.<a class="cite" href="https://ir.veratx.com/news-releases/news-release-details/vera-therapeutics-provides-business-update-and-reports-first-3">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07498673">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06935357">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06963827">4</a></p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <span class="tag lime">Reference 1</span>
+          <h3>Vera Therapeutics</h3>
+          <p>Vera Therapeutics Provides Business Update and Reports First Quarter 2026 Financial Results; visible publication date: May 7, 2026.<a class="cite" href="https://ir.veratx.com/news-releases/news-release-details/vera-therapeutics-provides-business-update-and-reports-first-3">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">Reference 2</span>
+          <h3>ClinicalTrials.gov NCT07498673</h3>
+          <p>A Study of YKST02 in Participants With Primary IgA Nephropathy; visible last-update date: 2026-05-12.<a class="cite" href="https://clinicaltrials.gov/study/NCT07498673">2</a></p>
+        </div>
+        <div class="card">
+          <span class="tag orange">Reference 3</span>
+          <h3>ClinicalTrials.gov NCT06935357</h3>
+          <p>A Study to Learn About the Effects of Felzartamab Infusions on Adults With Immunoglobulin A Nephropathy (IgAN); visible last-update date: 2026-05-06.<a class="cite" href="https://clinicaltrials.gov/study/NCT06935357">3</a></p>
+        </div>
+        <div class="card">
+          <span class="tag pink">Reference 4</span>
+          <h3>ClinicalTrials.gov NCT06963827</h3>
+          <p>A Study of Mezagitamab in Adults With Kidney Condition Called IgA Nephropathy; visible last-update date: 2026-05-06.<a class="cite" href="https://clinicaltrials.gov/study/NCT06963827">4</a></p>
+        </div>
+      </div>
+      <div class="panel dark" style="margin-top:22px;">
+        <h3>Companion evidence file</h3>
+        <p style="font-size:23px;line-height:1.2;margin-top:12px;">The screenshots PDF labels every date-verification and evidence screenshot by reference number and contains the visible boxes used to support the report claims.<a class="cite" href="https://ir.veratx.com/news-releases/news-release-details/vera-therapeutics-provides-business-update-and-reports-first-3">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07498673">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06935357">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06963827">4</a></p>
+      </div>
+    </div>
+    <div class="slide-num">05 / 05</div>
+  </article>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <style>
+    :root {
+      --paper: #f6f1e8;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      width: 1600px;
+      height: 900px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top left, rgba(215,255,95,0.32), transparent 34rem),
+        radial-gradient(circle at 84% 12%, rgba(184,216,255,0.28), transparent 26rem),
+        var(--paper);
+    }
+    .slide {
+      width: 1600px;
+      height: 900px;
+      background:
+        radial-gradient(circle at top left, rgba(215,255,95,0.32), transparent 34rem),
+        radial-gradient(circle at 84% 12%, rgba(184,216,255,0.28), transparent 26rem),
+        var(--paper);
+    }
+    @page { size: 16.6666667in 9.375in; margin: 0; }
+    @media print {
+      body, *, *::before, *::after {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide"></article>
+</body>
+</html>

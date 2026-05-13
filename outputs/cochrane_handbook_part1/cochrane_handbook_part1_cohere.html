@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cochrane Handbook Part 1: About Cochrane Reviews</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 26px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.28;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    p, h1, h2, h3 { margin: 0; }
+
+    .slide {
+      position: relative;
+      width: 100vw;
+      min-height: 100vh;
+      height: 100vh;
+      overflow: hidden;
+      page-break-after: always;
+      break-after: page;
+      padding: 48px 0 34px;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .wrap {
+      width: min(1370px, calc(100vw - 56px));
+      height: 100%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 22px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .top {
+      position: relative;
+      display: block;
+      padding-right: 158px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 850;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      background: var(--lime);
+      margin-bottom: 16px;
+    }
+    .chapter {
+      position: absolute;
+      top: 12px;
+      right: 0;
+      font-size: 12px;
+      line-height: 1.05;
+      font-weight: 850;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(16,18,15,.50);
+      text-align: right;
+      white-space: nowrap;
+    }
+    h1 {
+      max-width: 1260px;
+      font-size: 58px;
+      line-height: .94;
+      font-weight: 560;
+      letter-spacing: 0;
+    }
+    .subhead {
+      margin-top: 12px;
+      max-width: 1120px;
+      color: var(--muted);
+      font-size: 22px;
+      line-height: 1.23;
+      font-weight: 520;
+    }
+
+    .content {
+      min-height: 0;
+      display: grid;
+      gap: 16px;
+    }
+    .grid-3 { grid-template-columns: 1.03fr 1fr 1fr; }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    .grid-main { grid-template-columns: .9fr 1.1fr; }
+
+    .panel,
+    .card,
+    .metric {
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,250,240,.84);
+      box-shadow: var(--shadow);
+      min-width: 0;
+    }
+    .panel { padding: 24px; }
+    .panel.dark,
+    .card.dark {
+      background: #11130f;
+      color: var(--paper);
+    }
+    .panel.dark .muted,
+    .panel.dark p,
+    .card.dark p,
+    .panel.dark li { color: rgba(246,241,232,.73); }
+    .card {
+      padding: 19px 20px 18px;
+      min-height: 156px;
+    }
+    .card h3,
+    .panel h3 {
+      font-size: 25px;
+      line-height: 1;
+      font-weight: 780;
+      letter-spacing: 0;
+    }
+    .card p {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.24;
+      font-weight: 520;
+    }
+    .metric {
+      padding: 18px 18px 17px;
+      min-height: 128px;
+    }
+    .metric .num {
+      font-size: 43px;
+      line-height: .9;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+    .metric .label {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.18;
+      font-weight: 760;
+    }
+    .metric.dark { background: #11130f; color: var(--paper); }
+    .metric.dark .label { color: rgba(246,241,232,.70); }
+
+    .pill-row { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 9px 5px;
+      background: var(--paper-2);
+      font-size: 11px;
+      line-height: 1;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      white-space: nowrap;
+    }
+    .pill.lime { background: var(--lime); }
+    .pill.blue { background: var(--blue); }
+    .pill.orange { background: var(--orange); }
+    .pill.pink { background: var(--pink); }
+    .pill.red { background: var(--red); }
+
+    .bars { display: grid; gap: 13px; }
+    .bar-row {
+      display: grid;
+      grid-template-columns: 128px 1fr 88px;
+      gap: 12px;
+      align-items: center;
+    }
+    .bar-label {
+      font-size: 13px;
+      font-weight: 850;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+    }
+    .track {
+      position: relative;
+      height: 25px;
+      border-radius: 999px;
+      border: 1px solid rgba(16,18,15,.25);
+      background: rgba(16,18,15,.08);
+      overflow: hidden;
+    }
+    .bar { position: absolute; inset: 0 auto 0 0; border-radius: 999px; }
+    .lime-fill { background: var(--lime); }
+    .blue-fill { background: var(--blue); }
+    .orange-fill { background: var(--orange); }
+    .pink-fill { background: var(--pink); }
+    .bar-val {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 850;
+      text-align: right;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+    .step {
+      position: relative;
+      border: 1.4px solid var(--line);
+      border-radius: 20px;
+      background: var(--card);
+      padding: 16px 15px;
+      min-height: 128px;
+    }
+    .step::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -9px;
+      width: 14px;
+      height: 14px;
+      border-top: 1.5px solid var(--line);
+      border-right: 1.5px solid var(--line);
+      transform: translateY(-50%) rotate(45deg);
+      background: var(--paper);
+      z-index: 2;
+    }
+    .step:last-child::after { display: none; }
+    .step .kicker {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1;
+      font-weight: 850;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .step strong {
+      display: block;
+      font-size: 20px;
+      line-height: 1;
+      font-weight: 850;
+      letter-spacing: 0;
+    }
+    .step p {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.22;
+      font-weight: 540;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 9px;
+      margin-top: 14px;
+    }
+    .check {
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      gap: 10px;
+      align-items: start;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.22;
+      font-weight: 560;
+    }
+    .check::before {
+      content: "";
+      display: block;
+      width: 16px;
+      height: 16px;
+      margin-top: 1px;
+      border: 1.4px solid var(--line);
+      border-radius: 50%;
+      background: var(--lime);
+    }
+    .dark .check { color: rgba(246,241,232,.73); }
+    .dark .check::before { border-color: rgba(246,241,232,.72); }
+
+    .mini-table {
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--line);
+      display: grid;
+      gap: 1px;
+      box-shadow: var(--shadow);
+    }
+    .mini-row {
+      display: grid;
+      grid-template-columns: .72fr 1fr 1fr;
+      gap: 1px;
+      background: var(--line);
+    }
+    .mini-row > div {
+      background: var(--card);
+      padding: 14px 15px;
+      min-height: 70px;
+      font-size: 14px;
+      line-height: 1.18;
+      color: var(--muted);
+      font-weight: 560;
+    }
+    .mini-row.head > div {
+      background: #11130f;
+      color: var(--paper);
+      min-height: 44px;
+      font-size: 11px;
+      font-weight: 850;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+    }
+    .mini-row .strong {
+      color: var(--ink);
+      font-weight: 850;
+      font-size: 16px;
+    }
+
+    .two-stack {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 16px;
+      min-height: 0;
+    }
+    .small-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .slide-reporting .content.grid-main,
+    .slide-overviews .content.grid-main {
+      align-items: stretch;
+    }
+    .slide-reporting .two-stack,
+    .slide-overviews .two-stack {
+      grid-template-rows: auto auto;
+      align-content: start;
+    }
+    .slide-reporting .mini-table,
+    .slide-overviews .mini-table {
+      align-self: start;
+    }
+    .slide-reporting .panel,
+    .slide-overviews .panel {
+      padding: 21px 24px;
+    }
+    .slide-reporting h1 {
+      font-size: 52px;
+      line-height: .93;
+    }
+    .slide-reporting .subhead {
+      font-size: 20px;
+      line-height: 1.2;
+    }
+    .slide-reporting .check,
+    .slide-overviews .check {
+      font-size: 13.5px;
+      line-height: 1.16;
+    }
+    .slide-reporting .card {
+      min-height: 112px;
+      padding: 15px 18px 14px;
+    }
+    .slide-reporting .card h3 {
+      font-size: 23px;
+    }
+    .slide-reporting .card p {
+      font-size: 13.4px;
+      line-height: 1.14;
+    }
+    .slide-reporting .mini-row > div {
+      min-height: 57px;
+      padding: 10px 14px;
+      font-size: 12.6px;
+      line-height: 1.14;
+    }
+    .slide-reporting .mini-row.head > div {
+      min-height: 40px;
+      font-size: 10px;
+    }
+    .slide-reporting .mini-row .strong {
+      font-size: 14.5px;
+    }
+    .slide-overviews .metric {
+      min-height: 286px;
+      padding: 15px 17px;
+    }
+    .slide-overviews .metric .num {
+      font-size: 36px;
+    }
+    .slide-overviews .metric .label {
+      font-size: 12.4px;
+      line-height: 1.14;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: end;
+      color: rgba(16,18,15,.52);
+      font-size: 11px;
+      line-height: 1.25;
+      font-weight: 760;
+      letter-spacing: .02em;
+    }
+    .footer a { color: rgba(16,18,15,.72); }
+
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      body, *, *::before, *::after {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      html, body { width: 1600px; height: auto; background: var(--paper); }
+      .slide {
+        width: 1600px;
+        height: 900px;
+        min-height: 900px;
+        padding: 48px 0 34px;
+      }
+      .wrap { width: 1370px; }
+      .panel, .card, .metric, .mini-table { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="cochrane_slide_bg.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <header class="top">
+        <div>
+          <div class="eyebrow">Part 1 / Cochrane reviews</div>
+          <h1>A Cochrane review is a protocol-driven synthesis for health and social care decisions.</h1>
+          <p class="subhead">Chapter I defines systematic reviews as explicit, systematic, protocol-documented work that collates evidence for a specific question while minimizing bias.</p>
+        </div>
+        <div class="chapter">Chapter I<br />Introduction</div>
+      </header>
+
+      <main class="content grid-main">
+        <section class="two-stack">
+          <div class="content grid-3">
+            <div class="metric dark">
+              <div class="num">1993</div>
+              <div class="label">Cochrane Collaboration founded after the first Colloquium in Oxford.</div>
+            </div>
+            <div class="metric">
+              <div class="num">130+</div>
+              <div class="label">Countries represented among Cochrane members and supporters by 2023.</div>
+            </div>
+            <div class="metric">
+              <div class="num">5</div>
+              <div class="label">Main types of Cochrane review: interventions, DTA, prognosis, overviews, methodology.</div>
+            </div>
+          </div>
+          <div class="panel dark">
+            <h3>What makes a Cochrane review distinct</h3>
+            <div class="checklist">
+              <div class="check">Pre-specified eligibility criteria are used to answer a specific research question.</div>
+              <div class="check">Explicit, systematic methods are documented in advance in a protocol to minimize bias.</div>
+              <div class="check">Cochrane Methods Groups and the Methods Executive support the development and adoption of review methods.</div>
+              <div class="check">Cochrane reviews are prepared, maintained and promoted to inform health and social care decisions.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="content grid-3">
+          <div class="card">
+            <h3>Principles guide review practice</h3>
+            <p>Collaboration, avoiding duplication, minimizing bias, keeping up-to-date, relevance, access, quality, continuity, and wide participation shape how Cochrane works.</p>
+            <div class="pill-row">
+              <span class="pill lime">bias</span>
+              <span class="pill blue">access</span>
+              <span class="pill orange">relevance</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Methods are regularly updated</h3>
+            <p>Edition 6 incorporates MECIR and expanded or new guidance on reporting, updating, risk of bias, network meta-analysis, synthesis without meta-analysis, missing results, and intervention complexity.</p>
+            <div class="pill-row">
+              <span class="pill pink">MECIR</span>
+              <span class="pill">ROB 2</span>
+              <span class="pill">GRADE</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>The field continues to evolve</h3>
+            <p>Rapid review methods, living systematic reviews, technological tools, complex public health questions, non-randomized studies, and broader data sources are active areas of methodological development.</p>
+            <div class="pill-row">
+              <span class="pill blue">living</span>
+              <span class="pill orange">automation</span>
+              <span class="pill red">complexity</span>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>Source synthesis: Cochrane Handbook for Systematic Reviews of Interventions, version 6.5, Chapter I.</span>
+        <span>01 / 05 · <a href="https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-i">cochrane.org/handbook/current/chapter-i</a></span>
+      </footer>
+    </div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="cochrane_slide_bg.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <header class="top">
+        <div>
+          <div class="eyebrow">From intent to protocol</div>
+          <h1>Planning a Cochrane review requires proposal, protocol, team, resources, and conflict checks.</h1>
+          <p class="subhead">Chapter II covers the additional organizational and practical considerations for author teams preparing a Cochrane review.</p>
+        </div>
+        <div class="chapter">Chapter II<br />Planning a Cochrane review</div>
+      </header>
+
+      <main class="content">
+        <section class="flow">
+          <div class="step">
+            <span class="kicker">01</span>
+            <strong>Check novelty</strong>
+            <p>Search the Cochrane Library and avoid duplicating an existing or overlapping review.</p>
+          </div>
+          <div class="step">
+            <span class="kicker">02</span>
+            <strong>Submit proposal</strong>
+            <p>Topic experts assess whether the proposed scope is appropriate and avoids duplication.</p>
+          </div>
+          <div class="step">
+            <span class="kicker">03</span>
+            <strong>Build the team</strong>
+            <p>Combine topic and methods expertise with stakeholder perspectives and needed specialist input.</p>
+          </div>
+          <div class="step">
+            <span class="kicker">04</span>
+            <strong>Write protocol</strong>
+            <p>Specify scope, outcomes, search, data collection, analysis, consumer involvement, and deviations handling.</p>
+          </div>
+          <div class="step">
+            <span class="kicker">05</span>
+            <strong>Plan delivery</strong>
+            <p>Budget time, tools, software, data access, search support, analysis support, and future updating.</p>
+          </div>
+        </section>
+
+        <section class="content grid-3">
+          <div class="panel">
+            <h3>Protocol as bias control</h3>
+            <div class="checklist">
+              <div class="check">Cochrane reviews must have written protocols.</div>
+              <div class="check">Changes to planned methods should be documented and reported in the completed review.</div>
+              <div class="check">Sensitivity analyses should test deviations when feasible.</div>
+              <div class="check">PROSPERO registration is recommended to support transparency and reduce duplication.</div>
+            </div>
+          </div>
+          <div class="panel dark">
+            <h3>Authorship follows ICMJE criteria</h3>
+            <div class="checklist">
+              <div class="check">Named authors should satisfy ICMJE criteria and list specific contributions.</div>
+              <div class="check">Information specialists and statisticians belong in the byline when they meet authorship criteria.</div>
+              <div class="check">Cochrane reviews cannot be funded or conducted by commercial sources with a real or potential vested interest in the findings.</div>
+            </div>
+          </div>
+          <div class="panel">
+            <h3>Software is part of the plan</h3>
+            <div class="checklist">
+              <div class="check">RevMan is the mandatory production tool for Cochrane authors.</div>
+              <div class="check">Covidence, EPPI-Reviewer, reference managers, R, Stata, GRADEpro GDT, and Screen4Me can support specific stages.</div>
+              <div class="check">New technologies should be assessed for cost, internet needs, stability, and validation before use.</div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>Source synthesis: Cochrane Handbook for Systematic Reviews of Interventions, version 6.5, Chapter II.</span>
+        <span>02 / 05 · <a href="https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-ii">cochrane.org/handbook/current/chapter-ii</a></span>
+      </footer>
+    </div>
+  </article>
+
+  <article class="slide slide-reporting">
+    <img class="slide-bg-img" src="cochrane_slide_bg.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <header class="top">
+        <div>
+          <div class="eyebrow">Transparent reporting</div>
+          <h1>Clear reporting lets readers assess methods, interpret findings, and use the review.</h1>
+          <p class="subhead">Chapter III aligns Cochrane protocols and reviews with PRISMA 2020, PRISMA for Protocols, plain language summaries, and consistency across all summary formats.</p>
+        </div>
+        <div class="chapter">Chapter III<br />Reporting the review</div>
+      </header>
+
+      <main class="content grid-main">
+        <section class="two-stack">
+          <div class="panel dark">
+            <h3>Core reporting elements</h3>
+            <div class="checklist">
+              <div class="check">Protocols are public records of the question and intended methods before study results are fully known.</div>
+              <div class="check">Completed reviews should be succinct, readable, and accessible to healthcare decision makers, consumers and policy makers.</div>
+              <div class="check">Abstracts should stand alone and include key methods, results, certainty, conclusions, funding and registration information.</div>
+              <div class="check">Plain language summaries should communicate the review question and findings in terms accessible to non-expert readers.</div>
+              <div class="check">Summary of findings tables should present important comparisons, patient-important outcomes, effects and GRADE certainty.</div>
+            </div>
+          </div>
+          <div class="small-grid">
+            <div class="card">
+              <h3>Conduct and reporting are separate</h3>
+              <p>MECIR guides conduct; PRISMA 2020 and PRISMA for Protocols guide reporting. Poor reporting can obscure what was done and what was found.</p>
+            </div>
+            <div class="card">
+              <h3>Consistency is essential</h3>
+              <p>Objectives, outcomes, results, caveats and conclusions should be consistent across the main text, abstract, plain language summary, tables, figures, and Summary of findings tables.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mini-table">
+          <div class="mini-row head">
+            <div>Section</div>
+            <div>What must be clear</div>
+            <div>Common failure to avoid</div>
+          </div>
+          <div class="mini-row">
+            <div class="strong">Methods</div>
+            <div>Eligibility criteria, sources, search dates, study selection, data collection, risk of bias, synthesis decisions, and deviations.</div>
+            <div>Vague methods that cannot be replicated or checked against the protocol.</div>
+          </div>
+          <div class="mini-row">
+            <div class="strong">Results</div>
+            <div>Included studies, participants, interventions, outcomes, missing data, effect direction, estimates, uncertainty, subgroup and sensitivity analyses.</div>
+            <div>Overstating nonsignificant findings as proof of no effect.</div>
+          </div>
+          <div class="mini-row">
+            <div class="strong">Discussion</div>
+            <div>Applicability, evidence limitations, review-process limitations, and agreement or disagreement with other reviews.</div>
+            <div>Repeating results without explaining what constrains interpretation.</div>
+          </div>
+          <div class="mini-row">
+            <div class="strong">Conclusions</div>
+            <div>Practical implications and research implications supported only by systematically compiled evidence.</div>
+            <div>Writing recommendations as if the review were a clinical guideline.</div>
+          </div>
+          <div class="mini-row">
+            <div class="strong">Information</div>
+            <div>Contributions, conflicts, funding, protocol/registration, and data, code, and materials availability.</div>
+            <div>Leaving users unable to audit provenance or reproduce analyses.</div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>Source synthesis: Cochrane Handbook for Systematic Reviews of Interventions, version 6.5, Chapter III.</span>
+        <span>03 / 05 · <a href="https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-iii">cochrane.org/handbook/current/chapter-iii</a></span>
+      </footer>
+    </div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="cochrane_slide_bg.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <header class="top">
+        <div>
+          <div class="eyebrow">Currency and change control</div>
+          <h1>Update when the question remains important and new information could affect findings.</h1>
+          <p class="subhead">Chapter IV treats updating as a structured judgement based on continuing relevance, newly available data, and methodological developments.</p>
+        </div>
+        <div class="chapter">Chapter IV<br />Updating a review</div>
+      </header>
+
+      <main class="content">
+        <section class="flow">
+          <div class="step">
+            <span class="kicker">Assess</span>
+            <strong>Still relevant?</strong>
+            <p>Check whether the review question still matters to current policy, practice, and users.</p>
+          </div>
+          <div class="step">
+            <span class="kicker">Audit</span>
+            <strong>Still adequate?</strong>
+            <p>Compare the existing question and methods with current standards and recommended approaches.</p>
+          </div>
+          <div class="step">
+            <span class="kicker">Scan</span>
+            <strong>New signals?</strong>
+            <p>Look for new studies, completed ongoing trials, new data, corrections, retractions, or new methods.</p>
+          </div>
+          <div class="step">
+            <span class="kicker">Judge</span>
+            <strong>Likely impact?</strong>
+            <p>Ask whether the new evidence or methods could meaningfully affect review findings.</p>
+          </div>
+          <div class="step">
+            <span class="kicker">Publish</span>
+            <strong>Report changes</strong>
+            <p>Integrate results, revise GRADE assessments when needed, and explain what changed.</p>
+          </div>
+        </section>
+
+        <section class="content grid-3">
+          <div class="panel">
+            <h3>Planning an update</h3>
+            <div class="checklist">
+              <div class="check">Reconsider PICO, eligibility criteria, comparisons, outcomes, and stakeholder priorities.</div>
+              <div class="check">Split large reviews or merge narrow ones when that better serves decisions.</div>
+              <div class="check">Consult an information specialist because databases, controlled vocabulary, and terms may have changed.</div>
+              <div class="check">Consider a complete, updated protocol when scope or methods change substantially.</div>
+            </div>
+          </div>
+          <div class="panel dark">
+            <h3>Conducting an update</h3>
+            <div class="checklist">
+              <div class="check">The search date should be within 12 months of publication of the update.</div>
+              <div class="check">New studies require eligibility assessment, data collection, risk-of-bias assessment, synthesis, and revised certainty assessment.</div>
+              <div class="check">Previously included studies must be checked for new data, corrections, retractions, or problematic-study signals.</div>
+            </div>
+          </div>
+          <div class="panel">
+            <h3>Reporting an update</h3>
+            <div class="checklist">
+              <div class="check">Signal clearly that this is an update in the abstract, background, protocol, and registration sections.</div>
+              <div class="check">Choose integrated, incremental, or replacement reporting for updated searches and PRISMA flow diagrams.</div>
+              <div class="check">Use “What’s new” to summarize new studies, participants, certainty changes, conclusion changes, and implications for practice.</div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>Source synthesis: Cochrane Handbook for Systematic Reviews of Interventions, version 6.5, Chapter IV.</span>
+        <span>04 / 05 · <a href="https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-iv">cochrane.org/handbook/current/chapter-iv</a></span>
+      </footer>
+    </div>
+  </article>
+
+  <article class="slide slide-overviews">
+    <img class="slide-bg-img" src="cochrane_slide_bg.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <header class="top">
+        <div>
+          <div class="eyebrow">Reviews of reviews</div>
+          <h1>Cochrane Overviews summarize evidence across multiple systematic reviews.</h1>
+          <p class="subhead">Chapter V defines when the unit of searching, inclusion and data analysis should be the systematic review rather than the primary study.</p>
+        </div>
+        <div class="chapter">Chapter V<br />Overviews of Reviews</div>
+      </header>
+
+      <main class="content grid-main">
+        <section class="two-stack">
+          <div class="panel dark">
+            <h3>Five core components of a Cochrane Overview</h3>
+            <div class="checklist">
+              <div class="check">A clearly formulated objective, usually about healthcare interventions.</div>
+              <div class="check">An intent to include systematic reviews, with or without meta-analyses.</div>
+              <div class="check">Explicit methods to identify, include, and appraise multiple reviews.</div>
+              <div class="check">Extraction and presentation of review characteristics, primary-study risk of bias, outcome data, and GRADE certainty.</div>
+              <div class="check">Discussion of completeness, applicability, quality, potential biases, and agreement with other evidence.</div>
+            </div>
+          </div>
+          <div class="content grid-4">
+            <div class="metric">
+              <div class="num">Unit</div>
+              <div class="label">Systematic reviews, not individual primary studies.</div>
+            </div>
+            <div class="metric">
+              <div class="num">Use</div>
+              <div class="label">Broad questions spanning related interventions, populations, outcomes, or conditions.</div>
+            </div>
+            <div class="metric">
+              <div class="num">Issues</div>
+              <div class="label">Overlapping primary studies, heterogeneous reviews, incomplete GRADE assessments, and missing outcome data.</div>
+            </div>
+            <div class="metric">
+              <div class="num">Not</div>
+              <div class="label">Primary-study searches, new reviews within the Overview, narrative reviews, or network meta-analysis.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="content">
+          <div class="mini-table">
+            <div class="mini-row head">
+              <div>Decision</div>
+              <div>Use an Overview when...</div>
+              <div>Prefer an intervention review when...</div>
+            </div>
+            <div class="mini-row">
+              <div class="strong">Scope</div>
+              <div>The question spans multiple related systematic reviews and decision makers need the breadth summarized.</div>
+              <div>Relevant primary studies are not already captured in reviews or must be extracted directly.</div>
+            </div>
+            <div class="mini-row">
+              <div class="strong">Analysis</div>
+              <div>Outcome data can be used as reported or re-analysed from included systematic reviews.</div>
+              <div>Analyses require standardized study-level data or network meta-analysis.</div>
+            </div>
+            <div class="mini-row">
+              <div class="strong">Methods</div>
+              <div>The team is prepared to manage review overlap, review quality, primary-study risk of bias, and GRADE limitations.</div>
+              <div>The review evidence is too outdated, too heterogeneous, too incomplete, or too thin to support a useful overview.</div>
+            </div>
+          </div>
+          <div class="panel">
+            <h3>Method sequence</h3>
+            <div class="pill-row">
+              <span class="pill lime">define question</span>
+              <span class="pill blue">set review criteria</span>
+              <span class="pill orange">search reviews</span>
+              <span class="pill pink">select reviews</span>
+              <span class="pill">manage overlap</span>
+              <span class="pill">appraise quality</span>
+              <span class="pill">extract outcomes</span>
+              <span class="pill">assess certainty</span>
+              <span class="pill red">report limits</span>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>Source synthesis: Cochrane Handbook for Systematic Reviews of Interventions, version 6.5, Chapter V.</span>
+        <span>05 / 05 · <a href="https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-v">cochrane.org/handbook/current/chapter-v</a></span>
+      </footer>
+    </div>
+  </article>
+</body>
+</html>

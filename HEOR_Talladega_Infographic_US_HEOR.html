@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>US HEOR — If Your HEOR Ain't First, It's Last</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;900&family=Instrument+Sans:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bone:    #f2ebdd;
+  --paper:   #ebe3d3;
+  --asphalt: #181818;
+  --ink:     #282624;
+  --red:     #d7261b;
+  --red-d:   #a01c14;
+  --yellow:  #f2b71d;
+  --gray:    #8a847a;
+  --gray-l:  #c8c0b2;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #1a1a1a; }
+body {
+  font-family: 'Instrument Sans', system-ui, sans-serif;
+  color: var(--ink);
+  display: flex;
+  justify-content: center;
+  padding: 32px;
+  min-height: 100vh;
+}
+.poster {
+  width: 1500px;
+  max-width: 100%;
+  background: var(--bone);
+  box-shadow: 0 12px 80px rgba(0, 0, 0, 0.55);
+  overflow: hidden;
+}
+
+/* ============================================================
+   2. HERO — headline + speedometer
+   ============================================================ */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 510px;
+  gap: 40px;
+  padding: 50px 60px 60px;
+  align-items: start;
+}
+.chevrons { display: flex; gap: 16px; margin-bottom: 30px; }
+.chevron {
+  width: 50px;
+  height: 70px;
+  background: var(--red);
+  clip-path: polygon(0 0, 100% 50%, 0 100%, 50% 50%);
+}
+.chevron.yellow { background: var(--yellow); }
+
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--red);
+  letter-spacing: 0.06em;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--asphalt);
+  display: inline-block;
+}
+
+.headline {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 900;
+  font-size: 180px;
+  line-height: 0.88;
+  color: var(--asphalt);
+  margin-top: 30px;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+}
+.headline .red {
+  display: block;
+  color: var(--red);
+  font-size: 168px;
+  line-height: 0.88;
+  margin-top: 4px;
+  white-space: nowrap;
+}
+.attribution {
+  font-style: italic;
+  color: var(--gray);
+  font-size: 24px;
+  margin-top: 28px;
+}
+
+/* SPEEDOMETER */
+.dial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 70px;
+}
+.dial svg {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+}
+.dial-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.06em;
+  color: var(--asphalt);
+  margin-top: 16px;
+}
+.dial-status {
+  display: block;
+  align-self: center;
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 900;
+  font-size: 56px;
+  color: var(--red);
+  letter-spacing: 0.02em;
+  margin-top: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1;
+  text-align: center;
+  text-wrap: balance;
+  width: min(100%, 460px);
+}
+.dial-stat {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  color: var(--gray);
+  margin-top: 12px;
+  letter-spacing: 0.06em;
+}
+
+/* HAIRLINE */
+.hairline {
+  height: 3px;
+  background: var(--asphalt);
+  margin: 0 60px;
+}
+
+/* ============================================================
+   3. SECTIONS
+   ============================================================ */
+.section { padding: 36px 60px 0; }
+
+.section-eyebrow {
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 0.06em;
+  color: var(--red);
+  display: inline-block;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--yellow);
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+.section-eyebrow.dark { color: var(--asphalt); border-bottom-color: var(--asphalt); }
+
+.brief p {
+  font-size: 28px;
+  line-height: 1.4;
+  color: var(--ink);
+  max-width: 1200px;
+}
+
+.racing-line { padding-top: 30px; }
+.racing-line .lap-header {
+  margin-bottom: 30px;
+}
+.racing-line .lap-header .sub {
+  font-size: 24px;
+  color: var(--gray);
+  margin-left: 14px;
+  letter-spacing: 0.04em;
+}
+
+/* ============================================================
+   4. LAP CARDS
+   ============================================================ */
+.lap-card {
+  border: 3px solid var(--asphalt);
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  margin-bottom: 18px;
+  height: 236px;
+  position: relative;
+  overflow: hidden;
+}
+.lap-card .num {
+  background: var(--asphalt);
+  color: var(--bone);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.lap-card .num .label {
+  position: absolute;
+  top: 22px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--yellow);
+  letter-spacing: 0.08em;
+}
+.lap-card .num .number {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 900;
+  font-size: 130px;
+  line-height: 1;
+  margin-top: 14px;
+  letter-spacing: 0.01em;
+}
+
+.lap-card .body {
+  padding: 22px 30px 0;
+  position: relative;
+}
+.lap-card .title {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 900;
+  font-size: 58px;
+  line-height: 0.95;
+  color: var(--asphalt);
+  letter-spacing: 0.005em;
+}
+.lap-card .punch {
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--red);
+  margin-top: 8px;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+.lap-card .desc {
+  font-size: 20px;
+  color: var(--ink);
+  line-height: 1.3;
+  margin-top: 6px;
+  max-width: calc(100% - 170px);
+}
+.lap-card .meta {
+  position: absolute;
+  top: 22px;
+  right: 30px;
+  text-align: right;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  color: var(--gray);
+  letter-spacing: 0.04em;
+}
+.lap-card .meta b {
+  display: block;
+  font-size: 18px;
+  color: var(--asphalt);
+  font-weight: 700;
+  margin-top: 4px;
+}
+.lap-card .progress {
+  position: absolute;
+  bottom: 22px;
+  left: 30px;
+  right: 30px;
+  height: 6px;
+  background: var(--gray-l);
+}
+.lap-card .progress span { display: block; height: 100%; background: var(--red); }
+.lap-card.done .progress span { background: var(--yellow); }
+.lap-card.done .accent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 11px;
+  background: var(--yellow);
+}
+
+/* ============================================================
+   5. LEADERBOARD
+   ============================================================ */
+.leaderboard {
+  border: 3px solid var(--asphalt);
+  margin-top: 36px;
+}
+.leaderboard h3 {
+  background: var(--asphalt);
+  color: var(--yellow);
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.06em;
+}
+.leaderboard h3 small {
+  color: var(--bone);
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+}
+.lb-row {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  align-items: center;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--gray-l);
+  gap: 22px;
+}
+.lb-row:last-child { border-bottom: none; }
+.lb-row .chip {
+  background: var(--red);
+  color: var(--bone);
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 900;
+  font-size: 40px;
+  text-align: center;
+  padding: 10px 0;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+.lb-row .chip.gray { background: var(--gray); }
+.lb-row .chip.dnf  { background: var(--asphalt); }
+.lb-row .text strong {
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--asphalt);
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin-bottom: 4px;
+}
+.lb-row .text span {
+  font-size: 19px;
+  color: var(--ink);
+}
+
+/* ============================================================
+   6. DASHBOARD
+   ============================================================ */
+.dashboard-wrap { margin-top: 36px; }
+.checker-band {
+  height: 22px;
+  background:
+    conic-gradient(
+      var(--asphalt) 0 25%,
+      var(--bone) 25% 50%,
+      var(--asphalt) 50% 75%,
+      var(--bone) 75% 100%
+    );
+  background-size: 44px 44px;
+}
+.checker-band.invert {
+  background:
+    conic-gradient(
+      var(--bone) 0 25%,
+      var(--asphalt) 25% 50%,
+      var(--bone) 50% 75%,
+      var(--asphalt) 75% 100%
+    );
+  background-size: 44px 44px;
+}
+.dashboard {
+  background: var(--asphalt);
+  padding: 40px 60px;
+}
+.dashboard .head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.dashboard .head .title {
+  color: var(--yellow);
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 0.06em;
+}
+.dashboard .head .sub {
+  color: var(--bone);
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.06em;
+}
+.kpis {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.kpi { padding: 0 30px; border-right: 1px solid var(--gray); }
+.kpi:first-child { padding-left: 0; }
+.kpi:last-child  { padding-right: 0; border-right: none; }
+.kpi h4 {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 900;
+  font-size: 100px;
+  line-height: 1;
+  color: var(--bone);
+  letter-spacing: 0.005em;
+}
+.kpi .sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--yellow);
+  margin-top: 8px;
+  letter-spacing: 0.08em;
+}
+.kpi .punch {
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--red);
+  margin-top: 10px;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+.kpi p {
+  font-size: 18px;
+  color: var(--bone);
+  margin-top: 14px;
+  line-height: 1.4;
+  max-width: 95%;
+}
+
+/* ============================================================
+   7. CTA
+   ============================================================ */
+.cta {
+  background: var(--red);
+  height: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+.cta-stripe {
+  position: absolute;
+  top: -80px;
+  width: 84px;
+  height: 330px;
+  background: var(--red-d);
+  transform: skewX(-42deg);
+  transform-origin: center;
+}
+.cta-plate {
+  background: var(--asphalt);
+  width: 80%;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.cta-plate .big {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 900;
+  font-size: 78px;
+  color: var(--bone);
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+.cta-plate .sub {
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--yellow);
+  letter-spacing: 0.06em;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+/* responsive scale-down: keep design language at any width */
+@media (max-width: 1500px) {
+  .poster { transform-origin: top center; }
+}
+</style>
+</head>
+<body>
+
+<article class="poster">
+
+  <!-- 2. HERO -->
+  <section class="hero">
+    <div>
+      <div class="chevrons">
+        <div class="chevron"></div>
+        <div class="chevron"></div>
+        <div class="chevron yellow"></div>
+      </div>
+      <div class="eyebrow">RULE №1 OF US MARKET ACCESS</div>
+      <h1 class="headline">
+        IF YOUR HEOR<br>
+        AIN'T FIRST,
+        <span class="red">YOU'RE LAST.</span>
+      </h1>
+      <div class="attribution">— Ricky Bobby (probably)</div>
+    </div>
+
+    <div class="dial">
+      <svg viewBox="0 0 460 270" xmlns="http://www.w3.org/2000/svg" aria-label="Value-O-Meter speedometer">
+        <g id="dial-content"></g>
+      </svg>
+      <div class="dial-label">VALUE-O-METER</div>
+      <div class="dial-status">MAXIMIZE VALUE, MAXIMIZE ACCESS</div>
+    </div>
+  </section>
+
+  <div class="hairline"></div>
+
+  <!-- 3. RACE BRIEF -->
+  <section class="section brief">
+    <div class="section-eyebrow">THE RACE BRIEF</div>
+    <p>Market access is a four-lap circuit. Clinical data gets you to FDA review; Health Economics &amp; Outcomes Research helps payers, P&amp;T committees, IDNs, and other decision-makers understand clinical value, budget impact, and real-world fit.</p>
+  </section>
+
+  <!-- 4. RACING LINE + LAPS -->
+  <section class="section racing-line">
+    <div class="lap-header">
+      <span class="section-eyebrow dark" style="margin-bottom: 0;">THE RACING LINE</span>
+      <span class="sub">/ FOUR LAPS TO US ACCESS VALUE</span>
+    </div>
+
+    <div class="lap-card">
+      <div class="num">
+        <div class="label">LAP</div>
+        <div class="number">01</div>
+      </div>
+      <div class="body">
+        <div class="title">POLE POSITION</div>
+        <div class="punch">LEAD WITH DECISION-GRADE EVIDENCE.</div>
+        <div class="desc">Map the value story before Phase III locks, ideally before Phase 2 if possible. Align endpoints, comparators, subgroups, and PROs with the questions US payers will actually ask.</div>
+        <div class="meta">LAP TIME<b>T-MINUS 36 MO.</b></div>
+        <div class="progress"><span style="width: 25%"></span></div>
+      </div>
+    </div>
+
+    <div class="lap-card">
+      <div class="num">
+        <div class="label">LAP</div>
+        <div class="number">02</div>
+      </div>
+      <div class="body">
+        <div class="title">THE PIT STOP</div>
+        <div class="punch">MAP US STAKEHOLDERS EARLY.</div>
+        <div class="desc">Understand key stakeholders (e.g., Commercial plans, Medicare plans, PBMs). Begin building the evidence package and pre-approval exchange plan.</div>
+        <div class="meta">LAP TIME<b>T-MINUS 18 MO.</b></div>
+        <div class="progress"><span style="width: 50%"></span></div>
+      </div>
+    </div>
+
+    <div class="lap-card">
+      <div class="num">
+        <div class="label">LAP</div>
+        <div class="number">03</div>
+      </div>
+      <div class="body">
+        <div class="title">PRE-LAUNCH BUILD</div>
+        <div class="punch">LOCK THE ACCESS TOOLKIT.</div>
+        <div class="desc">Burden-of-illness pubs, AMCP dossier, budget impact model, CEA if applicable, value-story deck, and field tools ready before launch.</div>
+        <div class="meta">LAP TIME<b>T-MINUS 12 MO.</b></div>
+        <div class="progress"><span style="width: 75%"></span></div>
+      </div>
+    </div>
+
+    <div class="lap-card done">
+      <div class="num">
+        <div class="label">LAP</div>
+        <div class="number">04</div>
+      </div>
+      <div class="body">
+        <div class="title">CHECKERED FLAG</div>
+        <div class="punch">SECURE ACCESS FOR PATIENTS.</div>
+        <div class="desc">Deliver the payer package: clinical evidence, target patient population, budget impact, and differentiated value story.</div>
+        <div class="meta">LAP TIME<b>LAUNCH + 90 D.</b></div>
+        <div class="progress"><span style="width: 100%"></span></div>
+      </div>
+      <div class="accent"></div>
+    </div>
+
+    <!-- LEADERBOARD -->
+    <div class="leaderboard">
+      <h3>
+        <span>THE LEADERBOARD</span>
+        <small>WHO FINISHES WHERE</small>
+      </h3>
+      <div class="lb-row">
+        <div class="chip">P1</div>
+        <div class="text">
+          <strong>The team that built HEOR into the evidence plan early.</strong>
+          <span>Payers can evaluate. Access teams can negotiate. Patients have a clearer path.</span>
+        </div>
+      </div>
+      <div class="lb-row">
+        <div class="chip gray">P2</div>
+        <div class="text">
+          <strong>The team that waited until pivotal trials were locked.</strong>
+          <span>Strong finish, but spent the race retrofitting the payer story.</span>
+        </div>
+      </div>
+      <div class="lb-row">
+        <div class="chip dnf">DNF</div>
+        <div class="text">
+          <strong>The team that assumed approval alone would secure access.</strong>
+          <span>Did not finish. Last place. Answered the wrong questions.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. DASHBOARD -->
+  <div class="dashboard-wrap">
+    <div class="checker-band invert"></div>
+    <div class="dashboard">
+      <div class="head">
+        <span class="title">THE DASHBOARD</span>
+        <span class="sub">WHAT US ACCESS DECISION MAKERS WATCH</span>
+      </div>
+      <div class="kpis">
+        <div class="kpi">
+          <h4>VALUE</h4>
+          <div class="sub">ALONE, VS COMPETITORS</div>
+          <div class="punch">DEFENSIBLE.</div>
+          <p>A value story that stands on its own and holds up against comparators, with transparency regarding clinical and economic data.</p>
+        </div>
+        <div class="kpi">
+          <h4>BIM</h4>
+          <div class="sub">BUDGET IMPACT</div>
+          <div class="punch">CREDIBLE.</div>
+          <p>PMPM and total budget impact from a US payer perspective, including eligible population, uptake, offsets, and uncertainty.</p>
+        </div>
+        <div class="kpi">
+          <h4>RWE</h4>
+          <div class="sub">REAL-WORLD</div>
+          <div class="punch">RELENTLESS.</div>
+          <p>Claims, EHR, and registry evidence that tracks utilization, outcomes, adherence, safety, and value after launch.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. CTA -->
+  <div class="cta">
+    <span class="cta-stripe" style="left: -90px;"></span>
+    <span class="cta-stripe" style="left: 150px;"></span>
+    <span class="cta-stripe" style="left: 390px;"></span>
+    <span class="cta-stripe" style="left: 630px;"></span>
+    <span class="cta-stripe" style="left: 870px;"></span>
+    <span class="cta-stripe" style="left: 1110px;"></span>
+    <span class="cta-stripe" style="left: 1350px;"></span>
+    <div class="cta-plate">
+      <div class="big">SHAKE &amp; BAKE.</div>
+      <div class="sub">BUILD US HEOR EARLY, OR RETROFIT THE VALUE STORY LATE.</div>
+    </div>
+  </div>
+
+  <!-- 8. CHECKER + COLOPHON -->
+  <div class="checker-band"></div>
+</article>
+
+<script>
+// ----- Build the speedometer dial in SVG -----
+(function () {
+  const NS = 'http://www.w3.org/2000/svg';
+  const g = document.getElementById('dial-content');
+  const cx = 230, cy = 240, R = 200;
+  const inset = 8;
+
+  function el(name, attrs) {
+    const e = document.createElementNS(NS, name);
+    for (const k in attrs) e.setAttribute(k, attrs[k]);
+    return e;
+  }
+
+  // outer arc (top semicircle)
+  g.appendChild(el('path', {
+    d: `M ${cx - R} ${cy} A ${R} ${R} 0 0 1 ${cx + R} ${cy}`,
+    stroke: '#181818', 'stroke-width': 8, fill: 'none'
+  }));
+  // inner arc
+  const innerR = R - 36;
+  g.appendChild(el('path', {
+    d: `M ${cx - innerR} ${cy} A ${innerR} ${innerR} 0 0 1 ${cx + innerR} ${cy}`,
+    stroke: '#181818', 'stroke-width': 2, fill: 'none'
+  }));
+  // redline arc segment (300° → 360°)
+  const a1 = 300 * Math.PI / 180, a2 = 360 * Math.PI / 180;
+  const rR = R - 4;
+  const xa = cx + rR * Math.cos(a1), ya = cy + rR * Math.sin(a1);
+  const xb = cx + rR * Math.cos(a2), yb = cy + rR * Math.sin(a2);
+  g.appendChild(el('path', {
+    d: `M ${xa} ${ya} A ${rR} ${rR} 0 0 1 ${xb} ${yb}`,
+    stroke: '#d7261b', 'stroke-width': 14, fill: 'none'
+  }));
+
+  // tick marks: 16 ticks across 180° → 360°
+  for (let i = 0; i < 16; i++) {
+    const ang = 180 + i * 12;
+    const a = ang * Math.PI / 180;
+    const isMajor = i % 3 === 0;
+    const isRed = ang >= 300;
+    const length = isMajor ? 28 : 14;
+    const x1 = cx + (R - inset) * Math.cos(a);
+    const y1 = cy + (R - inset) * Math.sin(a);
+    const x2 = cx + (R - inset - length) * Math.cos(a);
+    const y2 = cy + (R - inset - length) * Math.sin(a);
+    g.appendChild(el('line', {
+      x1, y1, x2, y2,
+      stroke: isRed ? '#d7261b' : '#181818',
+      'stroke-width': isMajor ? 5 : 2
+    }));
+  }
+
+  // labels at major ticks
+  const labels = [
+    [180, '0',    '#181818'],
+    [216, 'BOI',  '#181818'],
+    [252, 'BIM',  '#181818'],
+    [288, 'RWE',  '#181818'],
+    [324, 'WIN',  '#d7261b'],
+    [360, 'MAX',  '#d7261b'],
+  ];
+  labels.forEach(([ang, txt, color]) => {
+    const a = ang * Math.PI / 180;
+    const lx = cx + (R - 70) * Math.cos(a);
+    const ly = cy + (R - 70) * Math.sin(a);
+    const t = el('text', {
+      x: lx, y: ly,
+      'text-anchor': 'middle',
+      'dominant-baseline': 'central',
+      'font-family': 'JetBrains Mono, monospace',
+      'font-weight': 700,
+      'font-size': 18,
+      fill: color
+    });
+    t.textContent = txt;
+    g.appendChild(t);
+  });
+
+  // needle (triangle pointing past redline at 335°)
+  const nA = 335 * Math.PI / 180;
+  const nx = cx + (R - 50) * Math.cos(nA);
+  const ny = cy + (R - 50) * Math.sin(nA);
+  const perpW = 10;
+  const perp = nA + Math.PI / 2;
+  const ax = cx + perpW * Math.cos(perp), ay = cy + perpW * Math.sin(perp);
+  const bx = cx - perpW * Math.cos(perp), by = cy - perpW * Math.sin(perp);
+  g.appendChild(el('polygon', {
+    points: `${nx},${ny} ${ax},${ay} ${bx},${by}`,
+    fill: '#d7261b'
+  }));
+
+  // hub
+  g.appendChild(el('circle', { cx, cy, r: 18, fill: '#181818' }));
+  g.appendChild(el('circle', { cx, cy, r: 7,  fill: '#f2ebdd' }));
+})();
+</script>
+</body>
+</html>

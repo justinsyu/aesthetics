@@ -1,0 +1,882 @@
+- link "Skip to content":
+  - /url: "#lfg-main-content"
+- banner:
+  - link "Skip to main content":
+    - /url: "#main"
+  - navigation "Main Navigation":
+    - link "Recursion Pharmaceuticals, Inc. Logo":
+      - /url: https://www.recursion.com/
+      - img "Recursion Pharmaceuticals, Inc. Logo"
+    - list:
+      - link "Overview":
+        - /url: /investor-relations
+      - button "News & Events"
+      - button "Financials & Filings"
+      - button "Governance"
+      - button "Stock Information"
+      - button "Resources"
+  - heading "Release Details" [level=1]
+- main:
+  - article:
+    - heading "Recursion Reports First Quarter Financial Results and Provides Business Update" [level=1]:
+      - generic: Recursion Reports First Quarter Financial Results and Provides Business Update
+    - generic: May 6, 2026 at 6:30 AM EDT
+    - link " Download PDF":
+      - /url: /node/12621/pdf
+    - list:
+      - emphasis: Multiple milestones achieved or on track across wholly owned and partnered programs
+      - emphasis: "REC-1245 (RBM39 degrader): Early clinical data in solid tumors demonstrate a well-tolerated safety profile and predictable, dose-dependent pharmacokinetics; no DLTs observed to date, supporting ongoing dose escalation"
+      - emphasis: "REC-4881 (FAP / MEK1/2): Strong Phase 2 efficacy signals with FDA engagement initiated to define potential registrational pathway; update expected in 2H26"
+      - emphasis: "REC-4539 (LSD1 inhibitor): First patient dosed in Phase 1; platform-derived, selective, brain-penetrant profile, designed to have a reversible mechanism to reduce on-target platelet toxicity, supporting differentiation in solid tumors and AML"
+      - emphasis: "Disciplined capital execution: Reiterate 2026 guidance of <"
+      - emphasis: $390 million
+      - emphasis: operational cash burn, supporting runway into early 2028 without additional financing
+    - paragraph: "SALT LAKE CITY, May 06, 2026 (GLOBE NEWSWIRE) -- Recursion (Nasdaq: RXRX) a leading clinical stage TechBio company decoding biology to radically improve lives, today reported business updates highlighting strong continued pipeline execution, clinical progress and platform advancement, as well as financial results for its first quarter ended March 31, 2026."
+    - paragraph:
+      - text: Recursion will host an Earnings Call on May 6, 2026 at 8:00 am ET / 6:00 am MT / 1:00 pm BST from Recursion’s
+      - link "X":
+        - /url: https://www.globenewswire.com/Tracker?data=SzJPjzgKJkCeNlil6fpfixEOJKPT_zxd0DK0HBlDeEHtNojKFId5AzdxcC-lpIpYfqQPGYrQd1AX4YlycAdqOcMji9KbHhnAoLLzkP6EqZc=
+      - text: ","
+      - link "LinkedIn":
+        - /url: https://www.globenewswire.com/Tracker?data=sbhvIDdlXRN75TdmeDgaSJyVOxzh9hU2jVDzuBaiCNMbYqnb-AppKa4eZNjK7Ty4xzbpnQgRloZOb9XQeZ1prN_il1Q0JfTDyFAUUY73aIaJVUzz1heRg29IskcrPJ7L
+      - text: ", and"
+      - link "YouTube":
+        - /url: https://www.globenewswire.com/Tracker?data=6rNuyC-99NMeaA30ERuVOM2Ds_hfxEHrb7tq3gzhKjqwLjxzoWv5TAttHWYqxbL_DeUR0IfJAegT0LrUtiswhNubm1Tw3y0hUZHGPMpc1Gs=
+      - text: "accounts giving analysts, investors, and the public the opportunity to ask questions of the Company by submitting questions here:"
+      - link "https://forms.gle/TQ4vgUTLKsFmikcu6":
+        - /url: https://www.globenewswire.com/Tracker?data=vSrqLk6u7KWwG3Lz1c0WGONDq-T1_TWv-P4CGAtOagikDQYIzUEY5CvdRH7VkpZqdLYju_ujoEmAL8Cm1_T9M-Oo1vYRVTRTldRE-Tn14E0IOUFRu6LzCESA0Tsc5TEim2uZmP5XyUtUk3tD5C7CBQ==
+      - text: .
+    - paragraph: “We are seeing strong momentum and execution across our portfolio, with increasing evidence that our full stack platform can translate biological and chemical insights into differentiated clinical programs,” said Najat Khan, Ph.D., Chief Executive Officer and President of Recursion. “Recent progress, including encouraging initial safety and PK data in REC-1245 and the first patient dosed in REC-4539, represents a growing set of proof points that demonstrate our ability to translate platform insights into clinical programs. This momentum reflects the strength of our end-to-end AI platform, with multiple differentiated internal and partnered programs advancing into and through the clinic.”
+    - paragraph:
+      - emphasis:
+        - strong: Business Highlights
+    - paragraph:
+      - emphasis:
+        - strong: Wholly Owned Pipeline Updates
+    - figure "Translating insight into proof":
+      - img "earnings_pipeline"
+      - generic: Translating insight into proof
+    - paragraph
+    - paragraph:
+      - strong: Favorable Safety and
+      - strong: PK Data
+      - strong: "for REC-1245 (RBM39):"
+    - paragraph: Preliminary safety and pharmacokinetic (PK) data from REC-1245, a potential first-in-class RBM39 degrader discovered and developed using Recursion’s platform, highlight early clinical progress for a novel approach to targeting cancer vulnerabilities linked to replication stress and DNA repair.
+    - paragraph: REC-1245 advanced from biological discovery to development candidate in 18 months, more than twice as fast as the industry average, demonstrating Recursion’s ability to identify novel targets and design differentiated molecules using its integrated AI-enabled platform.
+    - paragraph:
+      - strong: "Early data from the ongoing Phase 1/2 DAHLIA study show:"
+    - list:
+      - listitem: REC-1245 was well-tolerated across select solid tumors (n=16)
+      - listitem: No dose-limiting toxicities (DLTs) have been observed to date, and the maximum tolerated dose has not yet been reached
+      - listitem: The majority of TRAEs were Grade 1 or 2, most common GI-related events were constipation, nausea, and vomiting
+      - listitem: Pharmacokinetic analysis demonstrates predictable, dose-dependent exposure across evaluated patients
+      - listitem: Pharmacodynamic assessments demonstrate target engagement
+      - listitem: Dose escalation is ongoing to determine the recommended Phase 2 dose for monotherapy expansion cohorts
+    - table:
+      - rowgroup:
+        - row "Treatment-Related Adverse Event (TRAE)":
+          - cell "Treatment-Related Adverse Event (TRAE)":
+            - strong: Treatment-Related Adverse Event (TRAE)
+        - row "Patients (n=16)":
+          - cell
+          - cell "Patients (n=16)"
+        - row "Patients with any TRAE 10 (62.5%)":
+          - cell "Patients with any TRAE":
+            - text: Patients with
+            - strong: any TRAE
+          - cell "10 (62.5%)":
+            - strong: 10 (62.5%)
+        - row "Grade 1-2 9 (56.3%)":
+          - cell "Grade 1-2"
+          - cell "9 (56.3%)"
+        - row "Grade 3 1 (6.2%)":
+          - cell "Grade 3"
+          - cell "1 (6.2%)"
+        - row "Grade 4-5 0 (0.0%)":
+          - cell "Grade 4-5"
+          - cell "0 (0.0%)"
+        - row:
+          - cell
+          - cell
+    - paragraph:
+      - strong: "Continued Momentum for REC-4881 (MEK1/2):"
+    - paragraph: "REC-4881 is an allosteric MEK1/2 inhibitor being developed for familial adenomatous polyposis (FAP), a genetically defined disease driven by APC loss. Based on platform insights into MAPK pathway modulation in APC-deficient systems, REC-4881 represents a targeted approach to addressing the underlying biology of disease progression:"
+    - list:
+      - listitem: Phase 2 positive proof-of-concept clinical data showed a median 43% reduction in polyp burden at Week 13, deepening to 53% at Week 25 following a treatment break, with 40% of patients demonstrating improvement in Spigelman stage, supporting a differentiated and durable profile in FAP.
+      - listitem: Safety was consistent with MEK1/2 inhibition, with mostly Grade 1-2 TRAEs, Grade 3 events in 15.8% of patients, no Grade ≥4 TRAEs, and commonly including dermatitis acneiform/rash and increased CPK.
+    - paragraph: Recursion has initiated FDA engagement to align on a potential registrational study design, with an update expected in the second half of 2026. Expansion of TUPELO to include patients aged 18+ to support a broader development strategy is also ongoing.
+    - paragraph:
+      - strong: "First Patient Dosed in REC-4539 (LSD1 inhibitor):"
+    - paragraph: REC-4539, an AI-designed, LSD1 inhibitor, highlights early progress for a differentiated approach to targeting epigenetic drivers in cancer. In April, the first patient was dosed in the ENLYGHT Phase 1 clinical study for solid tumors, including small cell lung cancer (SCLC).
+    - paragraph: REC-4539 was precision designed to have a reversible mechanism and shorter predicted human half-life to address treatment-limiting platelet toxicity observed with other LSD1 inhibitors, enabling a potentially differentiated profile across solid tumors and hematologic malignancies.
+    - paragraph: The differentiated, CNS-penetrant development candidate was delivered in approximately 20 months through Recursion’s AI-native design platform, demonstrating the Company’s ability to rapidly translate platform insights into optimized clinical candidates.
+    - paragraph: For the rest of the portfolio, programs continue to progress as planned.
+    - paragraph:
+      - strong: "Expected upcoming milestones across Recursion’s wholly-owned pipeline:"
+    - list:
+      - text: "REC-4881 (MEK1/2):"
+      - list:
+        - listitem: Regulatory update expected in 2H26
+        - listitem: Additional Phase 1b/2 clinical data expected in 1H27
+      - listitem: "REC-1245 (RBM39): Additional Phase 1 dose escalation data expected in 2H26"
+      - listitem: "REC-7735 (PI3Kα H1047R) and REC-102 (ENPP1): IND-enabling studies ongoing; data-driven go/no-go decision on Phase 1 initiation expected in 2H26"
+      - listitem: "REC-617 (CDK7): Early Phase 1 safety and PK combination data expected in 1H27"
+      - listitem: "REC-3565 (MALT1): Early Phase 1 safety and PK monotherapy data expected in 1H27"
+      - listitem: "REC-4539 (LSD1): Early Phase 1 safety and PK monotherapy data expected in 2H27"
+    - paragraph:
+      - strong: Advancing partnered discovery, with over
+      - strong: $500 million
+      - strong: "in milestone and upfront payments achieved to date:"
+    - figure "Advancing partnered discovery with meaningful upcoming milestones":
+      - img "earnings_partners"
+      - generic: Advancing partnered discovery with meaningful upcoming milestones
+    - paragraph
+    - paragraph:
+      - strong: "Meaningful upcoming milestones across partnered discovery:"
+    - paragraph: Recursion continues to advance partnered programs that leverage complementary strengths of the Recursion OS.
+    - paragraph: In AI-enabled chemistry, Sanofi and Recursion joint programs continue progressing toward development candidate designation and earlier-stage milestones over the next 12 months, including programs designed against challenging targets in immunology and oncology.
+    - paragraph: In AI-enabled biology, Recursion expects to continue jointly translating insights from its large-scale maps of biology delivered to Roche and Genentech into potential target validation milestones over the next 12 months. The maps, jointly built by Recursion, Roche and Genentech are disease-relevant high-content maps built at large scale, including a Neuron map generated from a subset of 1 trillion internally manufactured iPSC-derived neuronal cells and a Microglia map generated from more than 100 billion internally manufactured iPSC-derived microglial cells. Additionally, we are combining our phenomics dataset with Roche and Genentech’s proprietary transcriptomics data to build multi-modal maps designed to explore potential novel targets and pathways by systematically linking gene perturbations to cellular phenotypes.
+    - paragraph:
+      - strong: "Recursion OS Advances: Driving platform innovations, grounded in impact"
+    - paragraph:
+      - strong: "Full Stack AI-powered Platform:"
+      - text: The Recursion Operating System (OS) is continuing to drive program development by integrating AI across multimodal biology, precision design, and next-generation clinical development—enabling faster, more efficient, and more innovative drug discovery and development from biology to insight, insight to molecule, and molecule to patient.
+    - paragraph:
+      - strong: "State of the Art Transcriptomics Models:"
+      - text: "Built to better connect Recursion’s proprietary perturbational biology with patient biology to find novel insights and medicines, the integration of these models help bridge the translation gap between what we see in the lab and what matters in disease:"
+    - list:
+      - text: TxPert, recently featured in
+      - link "Nature Biotechnology":
+        - /url: https://www.nature.com/articles/s41587-026-03113-4
+      - text: ", is a proof-of-principle model for predicting transcriptomic responses to perturbations. The model can generalize beyond its training data, including predicting responses to unseen single-gene perturbations, novel combinations, and known perturbations in new cell types—enabling more efficient hypothesis generation and experimental prioritization, and laying the foundation for Recursion's Virtual Cell."
+      - link "TxFM":
+        - /url: https://openreview.net/pdf?id=NqZqClqtTK
+      - text: ", presented at the ICLR Workshop on Foundation Models for Science, is a transcriptomics foundation model designed to connect lab perturbations with patient biology within the Recursion OS. Trained on a large, curated dataset of public and proprietary data, it outperforms 16 leading foundation models and baselines, including models trained on datasets 10–100x larger. Beyond enabling target identification, mechanistic understanding, and patient stratification, TxFM's superior batch correction and denoising drive operational efficiency—reducing experimental re-runs, enabling cross-experiment comparisons, and increasing the value of every sequencing dollar spent."
+    - paragraph:
+      - strong: First Quarter 2026 Financial Results
+    - list:
+      - strong: "Cash Position:"
+      - text: Cash, cash equivalents and restricted cash were $665.2 million as of March 31, 2026 compared to $753.9 million as of December 31, 2025. Based on current operating plans and with no additional financing, the Company continues to expect its
+      - strong: cash runway to extend into early 2028
+      - text: .
+      - strong: "Revenue:"
+      - text: Total revenue, consisting primarily of revenue from collaboration agreements, was $6.5 million for the first quarter of 2026, compared to $14.7 million for the first quarter of 2025. Roche revenue recognized was less in the current period due to the successful completion of certain project phases in the prior period.
+      - strong: "Research and Development Expenses:"
+      - text: Research and development expenses decreased to $87.9 million for the first quarter of 2026, from $129.6 million for the first quarter of 2025. The decrease was primarily due to lower platform costs resulting from the timing of Tempus record purchases as well as lower costs due to improved operating efficiency. Specifically, the first quarter of 2025 included $27.1 million in non-cash expenses for the use of patient-centric multimodal oncology data within the Company’s R&D pipeline.
+      - strong: "General and Administrative Expenses:"
+      - text: General and administrative expenses were $34.6 million for the first quarter of 2026 compared to $54.7 million for the first quarter of 2025. The decrease of $20.1 million relative to the three months ended March 31, 2025, was primarily driven by a decrease in salaries and one-time transaction costs incurred in the prior year.
+      - strong: "Net Loss:"
+      - text: Net loss was $117.5 million for the first quarter of 2026, compared to a net loss of $202.5 million for the first quarter of 2025.
+      - strong: "Operational Cash Flows:"
+      - text: Net cash used in operating activities was $81.1 million for the three months ended March 31, 2026, compared to net cash used in operating activities of $132.0 million for the three months ended March 31, 2025. The decrease in cash used in operating activities was primarily driven by operating efficiencies across the company and the strategic reprioritization of our clinical portfolio.
+      - strong: Cash Operating Expense
+      - text: ": Cash operating expense, excluding partnership inflows and transaction costs, for the three months ended March 31, 2026 was $85.1 million compared to $120.2 million for the three months ended March 31, 2025."
+    - paragraph:
+      - strong: About Recursion
+      - text: "Recursion (NASDAQ: RXRX) is a clinical stage TechBio company decoding biology to radically improve lives. Recursion is advancing a portfolio of differentiated investigational medicines across its wholly owned and partnered pipeline in oncology, rare disease, neuroscience, immunology, and other therapeutic areas with significant unmet need. Enabling its mission is the Recursion OS, an AI-native, end-to-end drug discovery and development platform integrating biology, chemistry, and clinical development into a unified intelligence system. Powered by proprietary multimodal data, purpose-built AI models, and bilingual teams fluent in both science and AI, the Recursion OS is designed to translate complex science into medicines that matter — faster, better, and at scale — for patients who are waiting."
+    - paragraph:
+      - text: Recursion’s platform infrastructure is anchored in Salt Lake City, Utah and Milton Park, Oxfordshire, where its automated biology and chemistry laboratories generate proprietary data at industrial scale. Recursion also maintains offices in New York, Montréal, and London, three global hubs for talent and leadership at the intersection of AI and scientific innovation. Learn more at
+      - link "www.recursion.com":
+        - /url: https://www.globenewswire.com/Tracker?data=uQB9cygn4GyGsHbhB-vBfX8NB-LPGbRXzPjaztLN8gXl4HL-ZbqSo7wSyqB0ZZb0McLtFLlVqlE2YOPN-uL48ryQKfPBeWFSchu7zkpxZDU=
+      - text: ", or connect on"
+      - link "X":
+        - /url: https://www.globenewswire.com/Tracker?data=CwaEu1LIkLNELuYEbMPdmC2yyJ2oyVz1g4PFZ8YU5HgDha8_MfYRo_U7GOxIy1NiflGQNPC6Ax3gHjPzgEtfrg==
+      - text: and
+      - link "LinkedIn":
+        - /url: https://www.globenewswire.com/Tracker?data=sbhvIDdlXRN75TdmeDgaSD_z4U6rF6LkuWgkS90Pm9g_pxL9C6kWq34Pmpky9wbm6kSJ9R8LFUPgWUzly0GNddIR1lzBeXshZFUDlcge6RG1H_pmZUphfob1uLzA-YK-
+      - text: .
+    - paragraph:
+      - strong: Media Contact
+      - link "media@recursion.com":
+        - /url: https://www.globenewswire.com/Tracker?data=BI8q0y2ebYgFEo0VpIklqdeUrOz71gf8ckMFYuoyo5SrfYQrAFBkg5rNa8uc0isR34_6Hgzem4mOqjOs0GhVHeYQeCo2aPhKP-tuqKH-o5w=
+    - paragraph:
+      - strong: Investor Contact
+      - link "investor@recursion.com":
+        - /url: https://www.globenewswire.com/Tracker?data=JulGJZEWF9I4kVWPv6AMvRumVusL-q3hL4l9uTt5rXlyGMX6OH5VZUe6QO1q4x7NaFgT2JHRHSpbhXPgDuVVlnET3fyVpxbfutWMcT5LNt0=
+    - paragraph:
+      - strong: Recursion Pharmaceuticals Inc
+      - strong: Consolidated Statements of Operations (unaudited)
+      - emphasis:
+        - strong: (in thousands, except share and per share amounts)
+    - table:
+      - rowgroup:
+        - row "Three months ended March 31,":
+          - cell
+          - cell "Three months ended March 31,":
+            - strong: Three months ended
+            - strong: March 31
+            - strong: ","
+        - row "2026 2025":
+          - cell
+          - cell "2026":
+            - strong: "2026"
+          - cell "2025":
+            - strong: "2025"
+        - row "Revenue":
+          - cell "Revenue":
+            - strong: Revenue
+          - cell
+          - cell
+        - row "Operating revenue $ 6,301 $ 14,818":
+          - cell "Operating revenue"
+          - cell "$"
+          - cell "6,301"
+          - cell
+          - cell "$"
+          - cell "14,818"
+          - cell
+        - row "Grant revenue 171 (73 )":
+          - cell "Grant revenue"
+          - cell
+          - cell "171"
+          - cell
+          - cell
+          - cell "(73"
+          - cell ")"
+        - row "Total revenue 6,472 14,745":
+          - cell "Total revenue":
+            - strong: Total revenue
+          - cell
+          - cell "6,472"
+          - cell
+          - cell
+          - cell "14,745"
+          - cell
+        - row:
+          - cell
+          - cell
+          - cell
+        - row "Operating costs and expenses":
+          - cell "Operating costs and expenses":
+            - strong: Operating costs and expenses
+          - cell
+          - cell
+        - row "Cost of revenue 12,490 21,829":
+          - cell "Cost of revenue"
+          - cell
+          - cell "12,490"
+          - cell
+          - cell
+          - cell "21,829"
+          - cell
+        - row "Research and development 87,896 129,634":
+          - cell "Research and development"
+          - cell
+          - cell "87,896"
+          - cell
+          - cell
+          - cell "129,634"
+          - cell
+        - row "General and administrative 34,591 54,650":
+          - cell "General and administrative"
+          - cell
+          - cell "34,591"
+          - cell
+          - cell
+          - cell "54,650"
+          - cell
+        - row "Total operating costs and expenses 134,977 206,113":
+          - cell "Total operating costs and expenses":
+            - strong: Total operating costs and expenses
+          - cell
+          - cell "134,977"
+          - cell
+          - cell
+          - cell "206,113"
+          - cell
+        - row:
+          - cell
+          - cell
+          - cell
+        - row "Loss from operations (128,505 ) (191,368 )":
+          - cell "Loss from operations":
+            - strong: Loss from operations
+          - cell
+          - cell "(128,505"
+          - cell ")"
+          - cell
+          - cell "(191,368"
+          - cell ")"
+        - row "Other income (loss), net 6,397 (11,277 )":
+          - cell "Other income (loss), net"
+          - cell
+          - cell "6,397"
+          - cell
+          - cell
+          - cell "(11,277"
+          - cell ")"
+        - row "Loss before income tax benefit (122,108 ) (202,645 )":
+          - cell "Loss before income tax benefit":
+            - strong: Loss before income tax benefit
+          - cell
+          - cell "(122,108"
+          - cell ")"
+          - cell
+          - cell "(202,645"
+          - cell ")"
+        - row "Income tax benefit 4,604 158":
+          - cell "Income tax benefit"
+          - cell
+          - cell "4,604"
+          - cell
+          - cell
+          - cell "158"
+          - cell
+        - row "Net loss $ (117,504 ) $ (202,487 )":
+          - cell "Net loss":
+            - strong: Net loss
+          - cell "$"
+          - cell "(117,504"
+          - cell ")"
+          - cell "$"
+          - cell "(202,487"
+          - cell ")"
+        - row:
+          - cell
+          - cell
+          - cell
+        - row "Per share data":
+          - cell "Per share data":
+            - strong: Per share data
+          - cell
+          - cell
+        - row "Net loss per share of Class A, B and Exchangeable common stock, basic and diluted $ (0.22 ) $ (0.50 )":
+          - cell "Net loss per share of Class A, B and Exchangeable common stock, basic and diluted":
+            - strong: Net loss per share of Class A, B and Exchangeable common stock, basic and diluted
+          - cell "$"
+          - cell "(0.22"
+          - cell ")"
+          - cell "$"
+          - cell "(0.50"
+          - cell ")"
+        - row "Weighted-average shares (Class A, B and Exchangeable) outstanding, basic and diluted 529,303,984 402,771,972":
+          - cell "Weighted-average shares (Class A, B and Exchangeable) outstanding, basic and diluted":
+            - strong: Weighted-average shares (Class A, B and Exchangeable) outstanding, basic and diluted
+          - cell
+          - cell "529,303,984"
+          - cell
+          - cell
+          - cell "402,771,972"
+          - cell
+        - row:
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+    - paragraph:
+      - strong: Recursion Pharmaceuticals Inc
+      - strong: Consolidated Balance Sheets (unaudited)
+      - emphasis:
+        - strong: (in thousands)
+    - table:
+      - rowgroup:
+        - row "March 31 , December 31 ,":
+          - cell
+          - cell "March 31 ,":
+            - strong: March 31
+            - paragraph:
+              - strong: ","
+          - cell "December 31 ,":
+            - strong: December 31
+            - paragraph:
+              - strong: ","
+        - row "2026 2025":
+          - cell
+          - cell "2026":
+            - strong: "2026"
+          - cell "2025":
+            - strong: "2025"
+        - row "Assets":
+          - cell "Assets":
+            - strong: Assets
+          - cell
+          - cell
+        - row "Current assets":
+          - cell "Current assets":
+            - strong: Current assets
+          - cell
+          - cell
+        - row "Cash and cash equivalents $ 654,473 $ 743,294":
+          - cell "Cash and cash equivalents"
+          - cell "$"
+          - cell "654,473"
+          - cell
+          - cell "$"
+          - cell "743,294"
+          - cell
+        - row "Restricted cash 5,511 4,594":
+          - cell "Restricted cash"
+          - cell
+          - cell "5,511"
+          - cell
+          - cell
+          - cell "4,594"
+          - cell
+        - row "Other receivables 13,585 24,649":
+          - cell "Other receivables"
+          - cell
+          - cell "13,585"
+          - cell
+          - cell
+          - cell "24,649"
+          - cell
+        - row "Prepaid data assets 11,742 11,742":
+          - cell "Prepaid data assets"
+          - cell
+          - cell "11,742"
+          - cell
+          - cell
+          - cell "11,742"
+          - cell
+        - row "Other current assets 24,246 28,566":
+          - cell "Other current assets"
+          - cell
+          - cell "24,246"
+          - cell
+          - cell
+          - cell "28,566"
+          - cell
+        - row "Total current assets 709,557 812,845":
+          - cell "Total current assets":
+            - strong: Total current assets
+          - cell
+          - cell "709,557"
+          - cell
+          - cell
+          - cell "812,845"
+          - cell
+        - row:
+          - cell
+          - cell
+          - cell
+        - row "Restricted cash, non-current 5,196 6,033":
+          - cell "Restricted cash, non-current"
+          - cell
+          - cell "5,196"
+          - cell
+          - cell
+          - cell "6,033"
+          - cell
+        - row "Property and equipment, net 95,811 103,931":
+          - cell "Property and equipment, net"
+          - cell
+          - cell "95,811"
+          - cell
+          - cell
+          - cell "103,931"
+          - cell
+        - row "Operating lease right-of-use assets 42,816 45,339":
+          - cell "Operating lease right-of-use assets"
+          - cell
+          - cell "42,816"
+          - cell
+          - cell
+          - cell "45,339"
+          - cell
+        - row "Financing lease right-of-use assets 18,694 20,210":
+          - cell "Financing lease right-of-use assets"
+          - cell
+          - cell "18,694"
+          - cell
+          - cell
+          - cell "20,210"
+          - cell
+        - row "Intangible assets, net 294,073 309,903":
+          - cell "Intangible assets, net"
+          - cell
+          - cell "294,073"
+          - cell
+          - cell
+          - cell "309,903"
+          - cell
+        - row "Goodwill 160,170 162,158":
+          - cell "Goodwill"
+          - cell
+          - cell "160,170"
+          - cell
+          - cell
+          - cell "162,158"
+          - cell
+        - row "Deferred tax assets 957 957":
+          - cell "Deferred tax assets"
+          - cell
+          - cell "957"
+          - cell
+          - cell
+          - cell "957"
+          - cell
+        - row "Other assets, non-current 12,248 12,754":
+          - cell "Other assets, non-current"
+          - cell
+          - cell "12,248"
+          - cell
+          - cell
+          - cell "12,754"
+          - cell
+        - row "Total assets $ 1,339,522 $ 1,474,130":
+          - cell "Total assets":
+            - strong: Total assets
+          - cell "$"
+          - cell "1,339,522"
+          - cell
+          - cell "$"
+          - cell "1,474,130"
+          - cell
+        - row:
+          - cell
+          - cell
+          - cell
+        - row "Liabilities and stockholders’ equity":
+          - cell "Liabilities and stockholders’ equity":
+            - strong: Liabilities and stockholders’ equity
+          - cell
+          - cell
+        - row "Current liabilities":
+          - cell "Current liabilities":
+            - strong: Current liabilities
+          - cell
+          - cell
+        - row "Accounts payable $ 20,348 $ 18,118":
+          - cell "Accounts payable"
+          - cell "$"
+          - cell "20,348"
+          - cell
+          - cell "$"
+          - cell "18,118"
+          - cell
+        - row "Accrued expenses and other liabilities 54,205 70,230":
+          - cell "Accrued expenses and other liabilities"
+          - cell
+          - cell "54,205"
+          - cell
+          - cell
+          - cell "70,230"
+          - cell
+        - row "Unearned revenue 32,794 37,605":
+          - cell "Unearned revenue"
+          - cell
+          - cell "32,794"
+          - cell
+          - cell
+          - cell "37,605"
+          - cell
+        - row "Operating lease liabilities 13,087 12,663":
+          - cell "Operating lease liabilities"
+          - cell
+          - cell "13,087"
+          - cell
+          - cell
+          - cell "12,663"
+          - cell
+        - row "Notes payable and financing lease liabilities 9,265 9,091":
+          - cell "Notes payable and financing lease liabilities"
+          - cell
+          - cell "9,265"
+          - cell
+          - cell
+          - cell "9,091"
+          - cell
+        - row "Total current liabilities 129,699 147,707":
+          - cell "Total current liabilities":
+            - strong: Total current liabilities
+          - cell
+          - cell "129,699"
+          - cell
+          - cell
+          - cell "147,707"
+          - cell
+        - row:
+          - cell
+          - cell
+          - cell
+        - row "Unearned revenue, non-current 114,723 114,012":
+          - cell "Unearned revenue, non-current"
+          - cell
+          - cell "114,723"
+          - cell
+          - cell
+          - cell "114,012"
+          - cell
+        - row "Operating lease liabilities, non-current 42,842 46,647":
+          - cell "Operating lease liabilities, non-current"
+          - cell
+          - cell "42,842"
+          - cell
+          - cell
+          - cell "46,647"
+          - cell
+        - row "Notes payable and financing lease liabilities, non-current 7,181 9,564":
+          - cell "Notes payable and financing lease liabilities, non-current"
+          - cell
+          - cell "7,181"
+          - cell
+          - cell
+          - cell "9,564"
+          - cell
+        - row "Deferred tax liabilities 18,283 23,255":
+          - cell "Deferred tax liabilities"
+          - cell
+          - cell "18,283"
+          - cell
+          - cell
+          - cell "23,255"
+          - cell
+        - row "Other liabilities, non-current 2,025 2,080":
+          - cell "Other liabilities, non-current"
+          - cell
+          - cell "2,025"
+          - cell
+          - cell
+          - cell "2,080"
+          - cell
+        - row "Total liabilities 314,753 343,265":
+          - cell "Total liabilities":
+            - strong: Total liabilities
+          - cell
+          - cell "314,753"
+          - cell
+          - cell
+          - cell "343,265"
+          - cell
+        - row:
+          - cell
+          - cell
+          - cell
+        - row "Stockholders’ equity":
+          - cell "Stockholders’ equity":
+            - strong: Stockholders’ equity
+          - cell
+          - cell
+        - row "Common stock (Class A, B and Exchangeable) 5 5":
+          - cell "Common stock (Class A, B and Exchangeable)"
+          - cell
+          - cell "5"
+          - cell
+          - cell
+          - cell "5"
+          - cell
+        - row "Additional paid-in capital 3,191,608 3,170,145":
+          - cell "Additional paid-in capital"
+          - cell
+          - cell "3,191,608"
+          - cell
+          - cell
+          - cell "3,170,145"
+          - cell
+        - row "Accumulated deficit (2,193,506 ) (2,076,002 )":
+          - cell "Accumulated deficit"
+          - cell
+          - cell "(2,193,506"
+          - cell ")"
+          - cell
+          - cell "(2,076,002"
+          - cell ")"
+        - row "Accumulated other comprehensive income (loss) 26,662 36,717":
+          - cell "Accumulated other comprehensive income (loss)"
+          - cell
+          - cell "26,662"
+          - cell
+          - cell
+          - cell "36,717"
+          - cell
+        - row "Total stockholders’ equity 1,024,769 1,130,865":
+          - cell "Total stockholders’ equity":
+            - strong: Total stockholders’ equity
+          - cell
+          - cell "1,024,769"
+          - cell
+          - cell
+          - cell "1,130,865"
+          - cell
+        - row:
+          - cell
+          - cell
+          - cell
+        - row "Total liabilities and stockholders’ equity $ 1,339,522 $ 1,474,130":
+          - cell "Total liabilities and stockholders’ equity":
+            - strong: Total liabilities and stockholders’ equity
+          - cell "$"
+          - cell "1,339,522"
+          - cell
+          - cell "$"
+          - cell "1,474,130"
+          - cell
+        - row:
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+          - cell
+    - paragraph:
+      - strong: Recursion Pharmaceuticals Inc
+      - strong: Selected Cash Flow Information (unaudited)
+      - emphasis:
+        - strong: (in thousands)
+    - table:
+      - rowgroup:
+        - row "Three months ended March 31,":
+          - cell
+          - cell "Three months ended March 31,":
+            - strong: Three months ended
+            - strong: March 31
+            - strong: ","
+        - row "2026 2025":
+          - cell
+          - cell "2026":
+            - strong: "2026"
+          - cell "2025":
+            - strong: "2025"
+        - row "Net cash used in operating activities $ (81,101 ) $ (131,957 )":
+          - cell "Net cash used in operating activities"
+          - cell "$"
+          - cell "(81,101"
+          - cell ")"
+          - cell "$"
+          - cell "(131,957"
+          - cell ")"
+        - row "Net cash used in investing activities (338 ) (7,270 )":
+          - cell "Net cash used in investing activities"
+          - cell
+          - cell "(338"
+          - cell ")"
+          - cell
+          - cell "(7,270"
+          - cell ")"
+        - row "Net cash provided by (used in) financing activities (3,470 ) 40,527":
+          - cell "Net cash provided by (used in) financing activities"
+          - cell
+          - cell "(3,470"
+          - cell ")"
+          - cell
+          - cell "40,527"
+          - cell
+        - row "Effect of exchange rate changes on cash, cash equivalents and restricted cash (3,832 ) 4,833":
+          - cell "Effect of exchange rate changes on cash, cash equivalents and restricted cash"
+          - cell
+          - cell "(3,832"
+          - cell ")"
+          - cell
+          - cell "4,833"
+          - cell
+        - row "Cash, cash equivalents and restricted cash, beginning of period 753,921 603,024":
+          - cell "Cash, cash equivalents and restricted cash, beginning of period"
+          - cell
+          - cell "753,921"
+          - cell
+          - cell
+          - cell "603,024"
+          - cell
+        - row "Cash, cash equivalents and restricted cash, end of period $ 665,180 $ 509,157":
+          - cell "Cash, cash equivalents and restricted cash, end of period"
+          - cell "$"
+          - cell "665,180"
+          - cell
+          - cell "$"
+          - cell "509,157"
+          - cell
+    - paragraph:
+      - strong: Non-GAAP Financial Measure
+    - paragraph: "The reconciliation of operating cash expense to net cash used in operating activities is provided in the following tables:"
+    - table:
+      - rowgroup:
+        - row "Cash Operating Expense - Q1 2026 (in millions)":
+          - cell "Cash Operating Expense - Q1 2026":
+            - strong: Cash Operating Expense - Q1 2026
+          - cell "(in millions)":
+            - strong: (in millions)
+          - cell
+        - row "Net cash used in operating activities $ 81.1 *":
+          - cell "Net cash used in operating activities"
+          - cell "$"
+          - cell "81.1"
+          - cell "*"
+        - 'row "Add: partnership inflows 4.0"':
+          - 'cell "Add: partnership inflows"'
+          - cell
+          - cell "4.0"
+          - cell
+        - row "Cash Operating Expense - Q1 2026 $ 85.1":
+          - cell "Cash Operating Expense - Q1 2026":
+            - strong: Cash Operating Expense - Q1 2026
+          - cell "$"
+          - cell "85.1"
+          - cell
+    - paragraph:
+      - subscript: "*This is from the Recursion Inc Consolidated Statement of Cash Flows for the three months ended"
+      - subscript: March 31, 2026
+      - subscript: (see above)
+    - table:
+      - rowgroup:
+        - row "Cash Operating Expense - Q1 2025 (in millions)":
+          - cell "Cash Operating Expense - Q1 2025":
+            - strong: Cash Operating Expense - Q1 2025
+          - cell "(in millions)":
+            - strong: (in millions)
+        - row "Net cash used in operating activities $ 132.0 *":
+          - cell "Net cash used in operating activities"
+          - cell "$"
+          - cell "132.0"
+          - cell "*"
+        - 'row "Subtract: transaction costs (11.8 )"':
+          - 'cell "Subtract: transaction costs"'
+          - cell
+          - cell "(11.8"
+          - cell ")"
+        - row "Cash Operating Expense - Q1 2025 $ 120.2":
+          - cell "Cash Operating Expense - Q1 2025":
+            - strong: Cash Operating Expense - Q1 2025
+          - cell "$"
+          - cell "120.2"
+          - cell
+    - paragraph:
+      - subscript: "*This is from the Recursion Inc Consolidated Statement of Cash Flows for the three months ended"
+      - subscript: March 31, 2025
+      - subscript: (see above)
+    - paragraph: To supplement our financial statements prepared in accordance with U.S. GAAP, we monitor and consider operating cash expense, which is a non-GAAP financial measure. We define operating cash expense as the net cash used in operating activities, excluding non-ordinary course transaction costs and partnership cash inflows. This non-GAAP financial measure is not based on any standardized methodology prescribed by U.S. GAAP and is not necessarily comparable to similarly-titled measures presented by other companies. We believe operating cash expense to be a liquidity measure that provides useful information to management and investors about the amount of cash consumed by the operations of the business. A limitation of using this non-U.S. GAAP measure is that operating cash expense does not represent the total change in cash and cash equivalents for the period because it excludes cash provided by or used for other investing and financing activities. We account for this limitation by providing information about our capital expenditures and other investing and financing activities in the statements of cash flows in our financial statements. Additionally, we reconciled operating cash expense above to net cash used in operating activities, the most directly comparable U.S. GAAP financial measure. In addition, it is important to note that other companies, including companies in our industry, may not use operating cash expense, may calculate operating cash expense in a different manner than we do or may use other financial measures to evaluate their performance, all of which could reduce the usefulness of operating cash expense as a comparative measure. Because of these limitations, operating cash expense should not be considered in isolation from, or as a substitute for, financial information prepared in accordance with U.S. GAAP.
+    - paragraph:
+      - strong: Forward-Looking Statements
+      - text: "This document contains information that includes or is based upon “forward-looking statements” within the meaning of the Securities Litigation Reform Act of 1995, including, without limitation, those regarding the occurrence or realization of potential milestones; the timing of data readouts and other milestones; the impact of initial safety and PK data from the REC-1245 trial on the future success of the trial; the timing and outcome of anticipated engagement with the FDA; financial position, cash runway, and cash burn; Recursion’s ability to translate platform insights into tangible proof; the impact of preclinical data on trial outcomes; Recursion's future as a leader in TechBio and ability to deliver better treatments to patients faster; expectations relating to early and late stage discovery, preclinical, and clinical programs, including timelines for commencement of and enrollment in studies, data readouts, meetings with regulators, and progression toward IND-enabling studies; expectations and developments with respect to licenses and collaborations, including option exercises by partners and the amount and timing of potential milestone payments, and the acceleration of progress across multiple partnered programs; prospective products and their potential future indications and market opportunities; developments with Recursion OS, including achieving future returns on investment in the platform and the ability to discover and develop new medicines and provide insights into patient populations; and all other statements that are not historical facts. Forward-looking statements may or may not include identifying words such as “plan,” “will,” “expect,” “anticipate,” “intend,” “believe,” “potential,” “continue,” and similar terms. These statements are subject to known or unknown risks and uncertainties that could cause actual results to differ materially from those expressed or implied in such statements, including but not limited to: challenges inherent in pharmaceutical research and development, including the timing and results of preclinical and clinical programs, where the risk of failure is high and failure can occur at any stage prior to or after regulatory approval due to lack of sufficient efficacy, safety considerations, or other factors; our ability to leverage and enhance our drug discovery platform; our ability to obtain financing for development activities and other corporate purposes; the success of our collaboration activities; our ability to obtain regulatory approval of, and ultimately commercialize, drug candidates; our ability to obtain, maintain, and enforce intellectual property protections; cyberattacks or other disruptions to our technology systems; our ability to attract, motivate, and retain key employees and manage our growth; inflation and other macroeconomic issues; and other risks and uncertainties such as those described under the heading “Risk Factors” in our filings with the U.S. Securities and Exchange Commission, including our Annual Report on Form 10-K. All forward-looking statements are based on management’s current estimates, projections, and assumptions, and Recursion undertakes no obligation to correct or update any such statements, whether as a result of new information, future developments, or otherwise, except to the extent required by applicable law."
+    - paragraph:
+      - text: "Photos accompanying this announcement are available at:"
+      - link "https://www.globenewswire.com/NewsRoom/AttachmentNg/d2751ce2-f602-4ebf-b6b6-8acff83456f5":
+        - /url: https://www.globenewswire.com/Tracker?data=vSrqLk6u7KWwG3Lz1c0WGLDBBm_EcJpxQ_P3AZSj08oX5En2UHzJ-KdBCR-7SoWMMk1AQefJe-SBKHGEZkON32ks0YMiqzuqI6bgdMjJZNsjBKyl5nBrw7tCcMkExrtlh7yVGt3n9k_p1VD2Fd53A1C3Pi0T2zwgd1Te8mjtAjOG08MlvijIXKixup8Xl6lD1ULBb8NOoxjX89ttpJQxYj2LX3vJuf2EsVNCZK3vYJ-HvojmtYcwkTNxsZS0KmRgQnxg4MJ3qBRarYyvhh958w==
+      - link "https://www.globenewswire.com/NewsRoom/AttachmentNg/4ce21071-12a0-4234-b8c1-b5c0fd1d0e99":
+        - /url: https://www.globenewswire.com/Tracker?data=vSrqLk6u7KWwG3Lz1c0WGLDBBm_EcJpxQ_P3AZSj08oX5En2UHzJ-KdBCR-7SoWMG_5BBE1i669jDcUUvCon9BawbXp1ShgH7nf6wv8mO6RPfwYVH2UwAmAQmwgzjF-IUG-CdiTlktZ1ZITdEPr-0M7KYGwHdJzGoTlaYaAcfiQ4hGhFurVq8JaJ7PZwI1v7glOZg_-QtSF416aDhWe9FqHsCve8kQIfMLKxcQTF-ez4irhTBW30mbFzXTo0VYDhZ2P7yIf1lLN_nB9Z6rLZZA==
+    - paragraph
+    - paragraph:
+      - link "Primary Logo":
+        - /url: https://www.globenewswire.com/NewsRoom/AttachmentNg/9c3f7e67-3394-4aee-b77d-68f288ea03a7
+        - img "Primary Logo"
+    - heading "Recursion’s wholly owned pipeline:" [level=5]
+    - link:
+      - /url: https://www.globenewswire.com/NewsRoom/AttachmentNg/d2751ce2-f602-4ebf-b6b6-8acff83456f5/en
+    - paragraph
+    - heading "Translating insight into proof" [level=5]
+    - heading "Partners" [level=5]
+    - link:
+      - /url: https://www.globenewswire.com/NewsRoom/AttachmentNg/4ce21071-12a0-4234-b8c1-b5c0fd1d0e99/en
+    - paragraph
+    - heading "Advancing partnered discovery with meaningful upcoming milestones" [level=5]
+    - paragraph: "Source: Recursion Pharmaceuticals"
+- contentinfo:
+  - paragraph: Contact Investor Relations
+  - paragraph:
+    - link "investor@recursion.com":
+      - /url: mailto:Investor@Recursion.com
+  - generic: Request Email Alerts
+  - textbox "Request Email Alerts":
+    - /placeholder: Email
+  - button "submit form"
+  - navigation "Site - Footer Bottom":
+    - list:
+      - link "Terms of Use":
+        - /url: https://www.recursion.com/terms-of-use
+      - link "Privacy Policy":
+        - /url: https://www.recursion.com/privacy-notice
+  - list:
+    - listitem: © Recursion Pharmaceuticals, Inc. 2026

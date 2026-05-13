@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Evidence for Launch Success</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    html,
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.22;
+      scrollbar-width: none;
+    }
+
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+      display: none;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+    }
+
+    .sheet {
+      position: relative;
+      width: 1200px;
+      height: 1486px;
+      overflow: hidden;
+      padding: 46px 54px 16px;
+      background:
+        radial-gradient(circle at 7% 4%, rgba(215,255,95,0.33), transparent 28rem),
+        radial-gradient(circle at 94% 6%, rgba(184,216,255,0.35), transparent 27rem),
+        radial-gradient(circle at 88% 95%, rgba(255,184,107,0.25), transparent 22rem),
+        var(--paper);
+    }
+
+    .sheet::before {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border: 1.5px solid rgba(16, 18, 15, 0.18);
+      border-radius: 34px;
+      pointer-events: none;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: grid;
+      grid-template-rows: 132px 198px 478px 158px 294px 84px;
+      gap: 16px;
+    }
+
+    .header {
+      border-bottom: 1.5px solid rgba(16, 18, 15, 0.22);
+      display: grid;
+      grid-template-columns: 1fr 330px;
+      align-items: start;
+      gap: 36px;
+      padding-bottom: 18px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      border: 1.4px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: var(--lime);
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 850;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      white-space: nowrap;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 720px;
+      font-size: 58px;
+      line-height: 0.9;
+      letter-spacing: -0.047em;
+      font-weight: 540;
+    }
+
+    .subtitle {
+      margin: 34px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.18;
+      font-weight: 690;
+      letter-spacing: -0.025em;
+      text-align: right;
+    }
+
+    .panel {
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 250, 240, 0.88);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .panel.pad {
+      padding: 18px 22px;
+    }
+
+    .panel.dark {
+      background: #11130f;
+      color: var(--paper);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 11px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 27px;
+      line-height: 0.96;
+      letter-spacing: -0.037em;
+      font-weight: 770;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.4px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 10px;
+      min-height: 28px;
+      background: var(--blue);
+      color: var(--ink);
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 880;
+      letter-spacing: 0.045em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .questions {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .question-card {
+      min-height: 116px;
+      border: 1.5px solid rgba(16, 18, 15, 0.85);
+      border-radius: 20px;
+      background: var(--card);
+      padding: 13px 16px 13px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 8px;
+    }
+
+    .question-label {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 880;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .question-title {
+      font-size: 20px;
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+      font-weight: 840;
+    }
+
+    .question-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12.2px;
+      line-height: 1.1;
+      font-weight: 680;
+    }
+
+    .launch-plan {
+      height: 100%;
+      padding: 16px;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 14px;
+    }
+
+    .readiness-intro {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .readiness-intro p {
+      margin: 0;
+      max-width: 520px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.15;
+      font-weight: 700;
+      text-align: right;
+    }
+
+    .readiness-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      min-height: 0;
+    }
+
+    .readiness-card {
+      border: 1.5px solid var(--line);
+      border-radius: 22px;
+      background: var(--card);
+      padding: 16px;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 12px;
+      min-width: 0;
+      min-height: 0;
+    }
+
+    .readiness-card:nth-child(1) {
+      background: rgba(184, 216, 255, 0.28);
+    }
+
+    .readiness-card:nth-child(2) {
+      background: rgba(215, 255, 95, 0.24);
+    }
+
+    .readiness-card:nth-child(3) {
+      background: rgba(255, 184, 107, 0.22);
+    }
+
+    .readiness-title {
+      display: grid;
+      gap: 5px;
+      min-width: 0;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+      font-weight: 820;
+    }
+
+    .lane-sub {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.13;
+      font-weight: 690;
+    }
+
+    .stack {
+      display: grid;
+      grid-template-rows: repeat(4, 1fr);
+      gap: 9px;
+    }
+
+    .item {
+      border: 1.4px solid rgba(16, 18, 15, 0.74);
+      border-radius: 16px;
+      background: rgba(255, 250, 240, 0.78);
+      padding: 8px 10px;
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 10px;
+      align-items: center;
+      min-height: 0;
+    }
+
+    .num {
+      width: 28px;
+      height: 28px;
+      border: 1.4px solid var(--line);
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: var(--paper-2);
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 900;
+    }
+
+    .item-title {
+      font-size: 15px;
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      font-weight: 820;
+    }
+
+    .item-copy {
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 11.2px;
+      line-height: 1.05;
+      font-weight: 650;
+    }
+
+    .package {
+      padding: 15px 22px;
+    }
+
+    .package-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 11px;
+      height: 88px;
+    }
+
+    .package-card {
+      position: relative;
+      border: 1.5px solid var(--line);
+      border-radius: 19px;
+      background: var(--card);
+      padding: 14px 12px;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 7px;
+      min-width: 0;
+    }
+
+    .package-card::after {
+      content: "";
+      position: absolute;
+      right: -10px;
+      top: 50%;
+      width: 19px;
+      height: 2px;
+      background: rgba(16, 18, 15, 0.4);
+    }
+
+    .package-card:last-child::after {
+      display: none;
+    }
+
+    .package-step {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .package-title {
+      font-size: 14px;
+      line-height: 1.03;
+      letter-spacing: -0.02em;
+      font-weight: 850;
+    }
+
+    .cite {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      border: 1.3px solid rgba(16, 18, 15, 0.6);
+      border-radius: 999px;
+      padding: 4px 7px 4px;
+      background: var(--paper-2);
+      color: var(--ink);
+      font-size: 11px;
+      line-height: 1;
+      font-weight: 900;
+    }
+
+    .matrix {
+      padding: 15px 22px;
+    }
+
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 11px;
+      height: 222px;
+    }
+
+    .phase {
+      border: 1.5px solid var(--line);
+      border-radius: 20px;
+      background: var(--card);
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: 48px 1fr;
+      min-width: 0;
+    }
+
+    .phase-title {
+      display: flex;
+      align-items: center;
+      padding: 0 13px;
+      border-bottom: 1.3px solid rgba(16, 18, 15, 0.7);
+      background: var(--paper-2);
+      font-size: 18px;
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      font-weight: 880;
+    }
+
+    .phase:nth-child(1) .phase-title { background: var(--blue); }
+    .phase:nth-child(2) .phase-title { background: var(--pink); }
+    .phase:nth-child(3) .phase-title { background: var(--lime); }
+    .phase:nth-child(4) .phase-title { background: var(--orange); }
+
+    .phase-row {
+      padding: 12px 13px 10px;
+      display: grid;
+      gap: 5px;
+      align-content: start;
+      min-height: 0;
+    }
+
+    .role {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .phase-copy {
+      margin: 0;
+      color: var(--ink);
+      font-size: 12.5px;
+      line-height: 1.12;
+      font-weight: 690;
+      letter-spacing: -0.006em;
+    }
+
+    .sources {
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 14px 16px;
+      color: rgba(246, 241, 232, 0.82);
+    }
+
+    .sources h2 {
+      color: var(--paper);
+      font-size: 18px;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      padding-top: 2px;
+    }
+
+    .source-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px 18px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .source-list li {
+      font-size: 10.3px;
+      line-height: 1.14;
+      font-weight: 650;
+    }
+
+    .source-list a {
+      color: var(--paper);
+      text-decoration: none;
+      font-weight: 820;
+    }
+
+    @media screen and (max-width: 1240px) {
+      body {
+        place-items: start center;
+      }
+
+      .sheet {
+        transform: scale(calc((100vw - 24px) / 1200));
+        transform-origin: top center;
+        margin-bottom: calc(-1486px + (1486px * ((100vw - 24px) / 1200)));
+      }
+    }
+
+    @page {
+      size: 1200px 1486px;
+      margin: 0;
+    }
+
+    @media print {
+      html,
+      body {
+        width: 1200px;
+        height: 1486px;
+        display: block;
+        background: var(--paper);
+      }
+
+      .sheet {
+        width: 1200px;
+        height: 1486px;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="sheet" aria-label="Evidence for a successful launch">
+    <div class="content">
+      <header class="header">
+        <div>
+          <div class="eyebrow">Launch readiness</div>
+          <h1>Evidence for launch success</h1>
+        </div>
+        <p class="subtitle">Decision-ready evidence has to answer what payers, HTA bodies, clinicians, and patients actually need to know.</p>
+      </header>
+
+      <section class="panel pad">
+        <div class="section-head">
+          <h2>The shared decision problem</h2>
+          <div class="tag">Decision questions</div>
+        </div>
+        <div class="questions">
+          <div class="question-card">
+            <div class="question-label">Clinical value</div>
+            <div class="question-title">Does it improve outcomes for the right population?</div>
+            <p class="question-copy">Effectiveness and clinical utility sit at the center of HTA and value assessment. <span class="cite">1,3</span></p>
+          </div>
+          <div class="question-card">
+            <div class="question-label">Economic value</div>
+            <div class="question-title">Is the benefit worth the resources used?</div>
+            <p class="question-copy">Cost-effectiveness, budget impact, and economic models shape the decision frame. <span class="cite">2,3,4</span></p>
+          </div>
+          <div class="question-card">
+            <div class="question-label">Patient value</div>
+            <div class="question-title">Does it reflect quality of life and real-world use?</div>
+            <p class="question-copy">The value case includes patient quality of life, real-world evidence, and uncertainty. <span class="cite">1</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="launch-plan">
+          <div class="readiness-intro">
+            <h2>What needs to be ready before launch</h2>
+            <p>Clinical, economic, patient, and implementation evidence should be connected before formal review, pricing, coverage, and adoption decisions begin.</p>
+          </div>
+          <div class="readiness-grid">
+            <div class="readiness-card">
+              <div class="readiness-title">
+                <h3>Evidence foundation</h3>
+                <p class="lane-sub">Show who benefits, compared with what, and where uncertainty remains.</p>
+              </div>
+              <div class="stack">
+                <div class="item">
+                  <div class="num">01</div>
+                  <div><div class="item-title">Effectiveness</div><div class="item-copy">Effect, safety, comparator, uncertainty.</div></div>
+                </div>
+                <div class="item">
+                  <div class="num">02</div>
+                  <div><div class="item-title">Target population</div><div class="item-copy">Eligible patients, unmet need, endpoints.</div></div>
+                </div>
+                <div class="item">
+                  <div class="num">03</div>
+                  <div><div class="item-title">Patient value</div><div class="item-copy">Quality of life, burden, preference.</div></div>
+                </div>
+                <div class="item">
+                  <div class="num">04</div>
+                  <div><div class="item-title">Real-world plan</div><div class="item-copy">Utilization, outcomes, persistence, cost.</div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="readiness-card">
+              <div class="readiness-title">
+                <h3>Economic case</h3>
+                <p class="lane-sub">Quantify value, affordability, and resource consequences.</p>
+              </div>
+              <div class="stack">
+                <div class="item">
+                  <div class="num">01</div>
+                  <div><div class="item-title">Cost-effectiveness</div><div class="item-copy">Costs, outcomes, QALYs, scenarios.</div></div>
+                </div>
+                <div class="item">
+                  <div class="num">02</div>
+                  <div><div class="item-title">Budget impact</div><div class="item-copy">Uptake, price points, system spend.</div></div>
+                </div>
+                <div class="item">
+                  <div class="num">03</div>
+                  <div><div class="item-title">Affordability</div><div class="item-copy">Thresholds, risk signals, short-term impact.</div></div>
+                </div>
+                <div class="item">
+                  <div class="num">04</div>
+                  <div><div class="item-title">Sensitivity analysis</div><div class="item-copy">Subgroups, assumptions, uncertainty response.</div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="readiness-card">
+              <div class="readiness-title">
+                <h3>Decision package</h3>
+                <p class="lane-sub">Make the value case usable for review, coverage, and launch execution.</p>
+              </div>
+              <div class="stack">
+                <div class="item">
+                  <div class="num">01</div>
+                  <div><div class="item-title">Evidence dossier</div><div class="item-copy">Clinical and economic evidence for HCDMs.</div></div>
+                </div>
+                <div class="item">
+                  <div class="num">02</div>
+                  <div><div class="item-title">HTA and payer submission</div><div class="item-copy">Methods, comparators, decision criteria.</div></div>
+                </div>
+                <div class="item">
+                  <div class="num">03</div>
+                  <div><div class="item-title">Stakeholder plan</div><div class="item-copy">Payers, authorities, clinicians, patients.</div></div>
+                </div>
+                <div class="item">
+                  <div class="num">04</div>
+                  <div><div class="item-title">Coverage pathway</div><div class="item-copy">Policy, reimbursement, restrictions, reach.</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel package">
+        <div class="section-head">
+          <h2>What the evidence package has to do</h2>
+          <div class="tag">From research to reimbursement</div>
+        </div>
+        <div class="package-grid">
+          <div class="package-card">
+            <div class="package-step">Input</div>
+            <div class="package-title">Define population, comparator, endpoint, and unmet need.</div>
+          </div>
+          <div class="package-card">
+            <div class="package-step">Model</div>
+            <div class="package-title">Project clinical, cost, and quality-of-life outcomes.</div>
+          </div>
+          <div class="package-card">
+            <div class="package-step">Dossier</div>
+            <div class="package-title">Present objective clinical and economic evidence.</div>
+          </div>
+          <div class="package-card">
+            <div class="package-step">Review</div>
+            <div class="package-title">Translate evidence into coverage, policy, and payment.</div>
+          </div>
+          <div class="package-card">
+            <div class="package-step">Monitor</div>
+            <div class="package-title">Monitor affordability, uptake, and patient reach.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel matrix">
+        <div class="section-head">
+          <h2>What changes across the product lifecycle</h2>
+          <div class="tag">Launch work by phase</div>
+        </div>
+        <div class="matrix-grid">
+          <div class="phase">
+            <div class="phase-title">Pre-approval</div>
+            <div class="phase-row"><div class="role">Build</div><p class="phase-copy">Map evidence gaps, target populations, endpoints, comparators, payer needs, likely restrictions, and launch price corridor.</p></div>
+          </div>
+          <div class="phase">
+            <div class="phase-title">Submission</div>
+            <div class="phase-row"><div class="role">Package</div><p class="phase-copy">Finalize models, dossier evidence, sensitivity analyses, quality-of-life inputs, and the value narrative for HTA, formulary, coverage, and reimbursement criteria.</p></div>
+          </div>
+          <div class="phase">
+            <div class="phase-title">Launch</div>
+            <div class="phase-row"><div class="role">Execute</div><p class="phase-copy">Support budget impact, subgroup value, uncertainty responses, terms, restrictions, stakeholder sequencing, and access barrier removal.</p></div>
+          </div>
+          <div class="phase">
+            <div class="phase-title">Post-launch</div>
+            <div class="phase-row"><div class="role">Refresh</div><p class="phase-copy">Generate real-world evidence on utilization, outcomes, persistence, and total cost of care; refresh evidence, expand coverage, and maintain affordability arguments.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel dark sources">
+        <h2>Sources</h2>
+        <ul class="source-list">
+          <li><a href="https://www.ispor.org/heor-explained">1. ISPOR, HEOR Explained</a>: effectiveness, cost, and patient quality of life for decision making.</li>
+          <li><a href="https://www.amcp.org/resource/amcp-format-formulary-submissions-guidance">2. AMCP Format</a>: clinical and economic evidence for formulary, coverage, policy, and reimbursement decisions.</li>
+          <li><a href="https://www.nice.org.uk/process/pmg36/chapter/introduction-to-health-technology-evaluation">3. NICE PMG36</a>: technology appraisals use clinical utility and cost-effectiveness analysis.</li>
+          <li><a href="https://icer.org/our-approach/methods-process/value-assessment-framework/">4. ICER Value Framework</a>: budget impact, short-term affordability, and access challenges.</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

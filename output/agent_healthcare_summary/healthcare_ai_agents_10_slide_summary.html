@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Healthcare AI Agents in Production - 10 Slide Summary</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 26px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; scrollbar-width: none; }
+    body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; pointer-events: none; user-select: none; }
+    .wrap { position: relative; z-index: 1; width: min(1360px, calc(100vw - 48px)); margin: 0 auto; padding: 0; }
+    .slide-num { position: absolute; right: 40px; bottom: 28px; z-index: 3; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 850; }
+    .eyebrow { display: inline-flex; align-items: center; border: 1.4px solid var(--line); padding: 7px 10px; border-radius: 999px; font-size: 14px; font-weight: 850; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 14px; background: var(--lime); }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 82px; line-height: .92; letter-spacing: -0.045em; font-weight: 500; max-width: 1280px; }
+    h2 { font-size: 54px; line-height: .96; letter-spacing: -0.04em; font-weight: 500; max-width: 1260px; }
+    h3 { font-size: 27px; line-height: 1.02; letter-spacing: -0.035em; font-weight: 600; }
+    .lead { color: var(--muted); font-size: 25px; line-height: 1.22; max-width: 1180px; margin-top: 14px; }
+    .small { color: var(--muted); font-size: 20px; line-height: 1.14; text-wrap: balance; }
+    .muted { color: var(--muted); }
+    .section-head { margin-bottom: 18px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .panel, .card, .metric {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.86);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .panel { padding: 20px; }
+    .dark { background: #11130f; color: var(--paper); border-color: rgba(246,241,232,.22); }
+    .dark .muted, .dark p, .dark .small { color: rgba(246,241,232,.72); }
+    .card { padding: 17px; min-height: 132px; }
+    .card p { color: var(--muted); font-size: 21px; line-height: 1.14; margin-top: 8px; text-wrap: balance; }
+    .metric { padding: 17px; min-height: 126px; }
+    .metric .num { font-size: 52px; line-height: .95; font-weight: 800; letter-spacing: -0.055em; }
+    .metric .label { color: var(--muted); font-size: 22px; line-height: 1.12; margin-top: 10px; text-wrap: balance; }
+    .pill { display: inline-block; padding: 5px 9px; border: 1.2px solid var(--line); border-radius: 999px; font-size: 12px; font-weight: 850; letter-spacing: .03em; text-transform: uppercase; background: var(--paper-2); white-space: nowrap; }
+    .pill.lime { background: var(--lime); }
+    .pill.blue { background: var(--blue); }
+    .pill.orange { background: var(--orange); }
+    .pill.pink { background: var(--pink); }
+    .pill.red { background: var(--red); }
+    .flow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; align-items: stretch; }
+    .node { border: 1.5px solid var(--line); border-radius: 22px; background: var(--card); padding: 14px 14px; min-height: 106px; position: relative; }
+    .node strong { display: block; font-size: 26px; line-height: 1; letter-spacing: -0.035em; }
+    .node span { display: block; margin-top: 9px; color: var(--muted); font-size: 20px; line-height: 1.12; text-wrap: balance; }
+    .node:not(:last-child)::after { content: ""; position: absolute; right: -18px; top: 50%; width: 24px; border-top: 2px solid var(--line); transform: translateY(-50%); z-index: 3; }
+    .bar-row { display: grid; grid-template-columns: 230px 1fr 140px; gap: 14px; align-items: center; margin: 13px 0; }
+    .bar-label { font-size: 22px; font-weight: 850; }
+    .track { height: 32px; border: 1px solid rgba(16,18,15,.28); border-radius: 999px; background: rgba(16,18,15,.08); overflow: hidden; }
+    .bar { height: 100%; border-radius: 999px; }
+    .lime { background: var(--lime); }
+    .blue { background: var(--blue); }
+    .orange { background: var(--orange); }
+    .pink { background: var(--pink); }
+    .red { background: var(--red); }
+    .value { color: var(--muted); font-size: 21px; font-weight: 850; }
+    .dark .value { color: rgba(246,241,232,.74); }
+    svg { width: 100%; height: auto; display: block; }
+    .svg-label { font-family: Inter, ui-sans-serif, system-ui, sans-serif; fill: var(--ink); font-size: 22px; font-weight: 800; letter-spacing: -0.02em; }
+    .svg-small { font-family: Inter, ui-sans-serif, system-ui, sans-serif; fill: #5c6257; font-size: 15px; font-weight: 650; }
+    .dark .svg-label { fill: var(--paper); }
+    .dark .svg-small { fill: rgba(246,241,232,.72); }
+    .quote { font-size: 34px; line-height: 1.12; letter-spacing: -0.035em; font-weight: 500; }
+    .divider { height: 1.5px; background: var(--line); opacity: .9; margin: 16px 0; }
+    .timeline { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 18px; }
+    .step { padding: 14px; border: 1.4px solid var(--line); border-radius: 20px; background: rgba(255,250,240,.76); min-height: 122px; }
+    .step .kicker { font-size: 12px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+    .step h3 { font-size: 24px; margin-top: 8px; }
+    .step p { font-size: 17px; color: var(--muted); line-height: 1.16; margin-top: 8px; }
+    .matrix { display: grid; grid-template-columns: 1.05fr repeat(3, 1fr); border: 1.5px solid var(--line); border-radius: 24px; overflow: hidden; background: var(--line); gap: 1px; }
+    .matrix > div { background: var(--card); padding: 9px 13px; min-height: 68px; }
+    .matrix .head { background: #11130f; color: var(--paper); font-size: 14px; font-weight: 900; letter-spacing: .055em; text-transform: uppercase; }
+    .matrix .row { font-weight: 850; font-size: 21px; line-height: 1.08; }
+    .check { font-size: 28px; font-weight: 900; }
+    .warning { border-color: var(--line); background: var(--red); }
+    .footer-note { position: absolute; left: 40px; bottom: 28px; z-index: 2; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.4); font-weight: 850; }
+
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      .slide { width: 1600px; height: 900px; min-height: 900px; }
+      .wrap { width: 1360px; padding: 0; }
+      .panel, .card, .metric { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) {
+      h1 { font-size: 56px; }
+      h2 { font-size: 40px; }
+      .lead { font-size: 21px; }
+    }
+  </style>
+</head>
+<body>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Production AI agents</div>
+      <h1>Healthcare analytics agents require system-level architecture in which the LLM is one component</h1>
+      <p class="lead">Production healthcare analytics agents require governed data access, tool-mediated execution, evaluation infrastructure, security controls, and iterative system maintenance</p>
+      <div class="grid-4" style="margin-top:34px;">
+        <div class="metric"><div class="num" style="font-size:40px;">Data</div><div class="label">Analytics questions require authorized datasets</div></div>
+        <div class="metric"><div class="num" style="font-size:40px;">Tools</div><div class="label">LLM outputs should be grounded in executable system functions</div></div>
+        <div class="metric"><div class="num" style="font-size:40px;">Evidence</div><div class="label">Generated responses require auditable, testable artifacts</div></div>
+        <div class="metric"><div class="num" style="font-size:40px;">Controls</div><div class="label">Security guardrails must constrain prompts, tools, and data access</div></div>
+      </div>
+    </div>
+    <div class="slide-num">01 / 10</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">The starting constraint</div>
+        <h2>A healthcare assistant must answer data-dependent analytics questions, not solely generate fluent text</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="pill lime">Answerability</span>
+          <h3 style="margin-top:14px;">Questions require data access</h3>
+          <p>Representative tasks include patient counts, cohort definitions, code sets, and follow-up queries requiring live platform results</p>
+        </div>
+        <div class="card">
+          <span class="pill blue">Interoperability</span>
+          <h3 style="margin-top:14px;">The assistant must fit existing services</h3>
+          <p>A clinically useful system invokes product APIs, uses existing cohort tooling, and returns verifiable results</p>
+        </div>
+        <div class="card">
+          <span class="pill orange">Maintainability</span>
+          <h3 style="margin-top:14px;">It must be easy to extend</h3>
+          <p>Production systems need to accommodate additional tools, question types, models, and workflow changes without full redesign</p>
+        </div>
+      </div>
+      <div class="panel dark" style="margin-top:20px;">
+        <div class="quote" style="font-size:28px; line-height:1.12;">The principal failure mode is unsupported inference: confident text generated without authoritative data access, provenance, validation, or an auditable execution pathway</div>
+      </div>
+    </div>
+    <div class="slide-num">02 / 10</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Prompt-only baseline</div>
+        <h2>Simple prompting can structure a request but cannot answer proprietary analytics</h2>
+      </div>
+      <div class="grid-2">
+        <div class="panel">
+          <h3>Prompt-only pattern</h3>
+          <div style="margin-top:22px;">
+            <div class="flow" style="grid-template-columns:1fr 1fr 1fr;">
+              <div class="node"><strong>Query</strong><span>User asks a clinical question</span></div>
+              <div class="node"><strong>LLM</strong><span>Knowledge plus prompt context</span></div>
+              <div class="node"><strong>Answer</strong><span>Text response, often without validated data</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="panel warning">
+          <h3>Where it breaks</h3>
+          <div class="divider"></div>
+          <p style="font-size:26px; line-height:1.16; letter-spacing:-0.03em;">"How many eligible patients met the specified clinical criteria in a defined region last year?"</p>
+          <p style="font-size:24px; line-height:1.18; margin-top:16px;">A generic model can describe clinical criteria, but cohort counts require authorized data access, explicit filters, and a reproducible analytics workflow</p>
+        </div>
+      </div>
+      <div class="grid-3" style="margin-top:18px;">
+        <div class="card"><span class="pill red">Risk</span><p>May produce an unsupported answer when the relevant data asset is unavailable</p></div>
+        <div class="card"><span class="pill red">Risk</span><p>May fabricate a value or obscure uncertainty through fluent language generation</p></div>
+        <div class="card"><span class="pill red">Risk</span><p>Cannot create auditable artifacts such as cohort definitions or code lists</p></div>
+      </div>
+    </div>
+    <div class="slide-num">03 / 10</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Production pattern</div>
+        <h2>Tool execution creates governed analytics workflows</h2>
+      </div>
+      <div class="panel">
+        <div class="flow">
+          <div class="node"><strong>Question</strong><span>User asks in natural language</span></div>
+          <div class="node"><strong>Planner</strong><span>LLM maps intent to a structured request</span></div>
+          <div class="node"><strong>Tool</strong><span>Cohort, code, search, or analytics API executes</span></div>
+          <div class="node"><strong>Artifact</strong><span>Definition, count, table, graph, or code set</span></div>
+          <div class="node"><strong>Answer</strong><span>Plain text plus the supporting output</span></div>
+        </div>
+      </div>
+      <div class="grid-3" style="margin-top:20px;">
+        <div class="metric"><div class="num">1</div><div class="label">structured payloads instead of free text</div></div>
+        <div class="metric"><div class="num">2</div><div class="label">direct API output preserved for interpretability</div></div>
+        <div class="metric"><div class="num">3</div><div class="label">answer composed from auditable outputs</div></div>
+      </div>
+      <div class="panel dark" style="margin-top:16px; padding:18px 26px;">
+        <p class="lead" style="font-size:27px; margin-top:0; color:rgba(246,241,232,.78); max-width:1240px;">The architecture separates responsibilities: language interpretation and orchestration remain with the LLM, while authoritative facts remain in tools and data systems</p>
+      </div>
+    </div>
+    <div class="slide-num">04 / 10</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Architecture ladder</div>
+        <h2>Control and autonomy form a design spectrum</h2>
+      </div>
+      <div class="timeline">
+        <div class="step"><div class="kicker">Level 1</div><h3>Prompt</h3><p>Rapid implementation with reliance on model knowledge</p></div>
+        <div class="step"><div class="kicker">Level 2</div><h3>Chained tool call</h3><p>Defined flow from intent classification to API output</p></div>
+        <div class="step"><div class="kicker">Level 3</div><h3>Router</h3><p>Intent detection assigns work to a specialized chain</p></div>
+        <div class="step"><div class="kicker">Level 4</div><h3>ReAct agent</h3><p>Observation-action loops support iterative task execution</p></div>
+        <div class="step"><div class="kicker">Level 5</div><h3>Supervisor</h3><p>Coordination layer for specialist agents and tool groups</p></div>
+      </div>
+      <div class="panel dark" style="margin-top:24px; padding:22px 26px;">
+        <div class="bar-row"><div class="bar-label">Developer control</div><div class="track"><div class="bar lime" style="width:72%;"></div></div><div class="value">higher left</div></div>
+        <div class="bar-row"><div class="bar-label">System autonomy</div><div class="track"><div class="bar blue" style="width:76%; margin-left:24%;"></div></div><div class="value">higher right</div></div>
+        <p class="small" style="margin-top:8px;">Operational recommendation: use supervised orchestration and agentic behavior only where workflow complexity justifies the added cost and variability</p>
+      </div>
+    </div>
+    <div class="slide-num">05 / 10</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Agent design</div>
+        <h2>Feedback-loop architectures are useful for high-complexity workflows</h2>
+      </div>
+      <div class="grid-2">
+        <div class="panel">
+          <h3>ReAct loop</h3>
+          <svg viewBox="0 0 620 330" role="img" aria-label="ReAct agent loop diagram">
+            <defs>
+              <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#10120f"/></marker>
+            </defs>
+            <rect x="225" y="94" width="170" height="112" rx="26" fill="#fffaf0" stroke="#10120f" stroke-width="3"/>
+            <text x="310" y="156" text-anchor="middle" class="svg-label">Agent</text>
+            <path d="M310 88 C334 28 476 22 496 76" fill="none" stroke="#10120f" stroke-width="3"/>
+            <polygon points="486,76 506,76 496,92" fill="#10120f"/>
+            <text x="442" y="32" class="svg-small">actions</text>
+            <path d="M478 176 C520 230 410 286 340 218" fill="none" stroke="#10120f" stroke-width="3" marker-end="url(#arrow)"/>
+            <text x="445" y="275" class="svg-small">observations</text>
+            <path d="M210 160 C148 160 150 96 222 110" fill="none" stroke="#10120f" stroke-width="3" marker-end="url(#arrow)"/>
+            <text x="95" y="146" class="svg-small">goals</text>
+            <rect x="424" y="100" width="145" height="86" rx="30" fill="#ffd3e0" stroke="#10120f" stroke-width="3"/>
+            <text x="496" y="151" text-anchor="middle" class="svg-label" style="font-size:20px;">Environment</text>
+          </svg>
+        </div>
+        <div class="panel">
+          <h3>Supervisor pattern</h3>
+          <svg viewBox="0 0 620 330" role="img" aria-label="Supervisor routes work to specialist agents and tools">
+            <defs>
+              <marker id="arrow2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#10120f"/></marker>
+            </defs>
+            <rect x="46" y="126" width="145" height="76" rx="20" fill="#d7ff5f" stroke="#10120f" stroke-width="3"/>
+            <text x="118" y="171" text-anchor="middle" class="svg-label" style="font-size:20px;">Supervisor</text>
+            <g>
+              <rect x="292" y="42" width="124" height="60" rx="18" fill="#b8d8ff" stroke="#10120f" stroke-width="3"/><text x="354" y="80" text-anchor="middle" class="svg-label" style="font-size:18px;">LLM</text>
+              <rect x="470" y="42" width="104" height="60" rx="18" fill="#ffb86b" stroke="#10120f" stroke-width="3"/><text x="522" y="80" text-anchor="middle" class="svg-label" style="font-size:18px;">Tools</text>
+              <rect x="292" y="136" width="124" height="60" rx="18" fill="#b8d8ff" stroke="#10120f" stroke-width="3"/><text x="354" y="174" text-anchor="middle" class="svg-label" style="font-size:18px;">LLM</text>
+              <rect x="470" y="136" width="104" height="60" rx="18" fill="#ffb86b" stroke="#10120f" stroke-width="3"/><text x="522" y="174" text-anchor="middle" class="svg-label" style="font-size:18px;">Tools</text>
+              <rect x="292" y="230" width="124" height="60" rx="18" fill="#b8d8ff" stroke="#10120f" stroke-width="3"/><text x="354" y="268" text-anchor="middle" class="svg-label" style="font-size:18px;">LLM</text>
+              <rect x="470" y="230" width="104" height="60" rx="18" fill="#ffb86b" stroke="#10120f" stroke-width="3"/><text x="522" y="268" text-anchor="middle" class="svg-label" style="font-size:18px;">Tools</text>
+            </g>
+            <path d="M192 164 L288 72" stroke="#10120f" stroke-width="3" marker-end="url(#arrow2)"/>
+            <path d="M192 164 L288 166" stroke="#10120f" stroke-width="3" marker-end="url(#arrow2)"/>
+            <path d="M192 164 L288 260" stroke="#10120f" stroke-width="3" marker-end="url(#arrow2)"/>
+            <path d="M416 72 L466 72" stroke="#10120f" stroke-width="3" marker-end="url(#arrow2)"/>
+            <path d="M416 166 L466 166" stroke="#10120f" stroke-width="3" marker-end="url(#arrow2)"/>
+            <path d="M416 260 L466 260" stroke="#10120f" stroke-width="3" marker-end="url(#arrow2)"/>
+          </svg>
+        </div>
+      </div>
+      <div class="grid-3" style="margin-top:18px;">
+        <div class="card"><h3>Advantages</h3><p>Supports complex tasks, follow-up questions, and tool-failure recovery</p></div>
+        <div class="card"><h3>Limitations</h3><p>Increases cost and latency and reduces direct developer control</p></div>
+        <div class="card"><h3>Design implication</h3><p>Provide raw tool output alongside generated answers when interpretability is required</p></div>
+      </div>
+    </div>
+    <div class="slide-num">06 / 10</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Models and retrieval</div>
+        <h2>Model selection should follow task requirements rather than define architecture</h2>
+      </div>
+      <div class="matrix">
+        <div class="head">Need</div><div class="head">Prompt engineering</div><div class="head">RAG / retrieval</div><div class="head">Fine-tune</div>
+        <div class="row">Tell the model what to do</div><div class="check">++</div><div class="check">+</div><div class="check">+</div>
+        <div class="row">Give private facts or context</div><div class="check">+</div><div class="check">++</div><div class="check">+</div>
+        <div class="row">Change behavior reliably</div><div class="check">+</div><div class="check">+</div><div class="check">++</div>
+        <div class="row">Agentic search or code work</div><div class="check">+</div><div class="check">++</div><div class="check">+</div>
+      </div>
+      <div class="grid-3" style="margin-top:20px;">
+        <div class="card"><span class="pill lime">Fine-tuned</span><p>May improve chained approaches and domain-specific behavior, with added maintenance needs</p></div>
+        <div class="card"><span class="pill blue">Foundation</span><p>Useful for tool use and agentic workflows, although manual prompt optimization may increase maintenance burden</p></div>
+        <div class="card"><span class="pill orange">RAG plus agents</span><p>Retrieval remains relevant when the system can determine which search strategy to apply</p></div>
+      </div>
+    </div>
+    <div class="slide-num">07 / 10</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Evaluation and observability</div>
+        <h2>System performance should be evaluated through output tests and execution traces</h2>
+      </div>
+      <div class="grid-2">
+        <div class="panel">
+          <h3>Acceptance tests</h3>
+          <div class="flow" style="grid-template-columns:1fr 1fr 1fr; margin-top:20px;">
+            <div class="node"><strong>Question</strong><span>Generic diagnostic code request</span></div>
+            <div class="node"><strong>Plain text</strong><span>Validated text response</span></div>
+            <div class="node"><strong>JSON object</strong><span>Validated code object</span></div>
+          </div>
+          <p class="small" style="margin-top:12px;">Evaluation should assess narrative quality and structured outputs</p>
+        </div>
+        <div class="panel dark">
+          <h3>Production monitors</h3>
+          <div style="margin-top:20px;">
+            <div class="bar-row"><div class="bar-label">Task success</div><div class="track"><div class="bar lime" style="width:86%;"></div></div><div class="value">quality</div></div>
+            <div class="bar-row"><div class="bar-label">Latency</div><div class="track"><div class="bar orange" style="width:62%;"></div></div><div class="value">speed</div></div>
+            <div class="bar-row"><div class="bar-label">Tokens</div><div class="track"><div class="bar blue" style="width:58%;"></div></div><div class="value">cost</div></div>
+            <div class="bar-row"><div class="bar-label">Tool calls</div><div class="track"><div class="bar pink" style="width:72%;"></div></div><div class="value">trace</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="grid-3" style="margin-top:18px;">
+        <div class="card"><h3>Individual agents</h3><p>Measure sub-agent and chain performance in addition to final answer quality</p></div>
+        <div class="card"><h3>Execution graph</h3><p>Trace result generation, including routing decisions, tool calls, and retries</p></div>
+        <div class="card"><h3>Tooling</h3><p>LangSmith and LangFuse are practical resources for observability</p></div>
+      </div>
+    </div>
+    <div class="slide-num">08 / 10</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Model selection and security</div>
+        <h2>Operational model capability is defined by dependable behavior within clinical and business constraints</h2>
+      </div>
+      <div class="grid-2">
+        <div class="panel">
+          <h3>Marketing claim</h3>
+          <p class="quote" style="margin-top:14px;">"The world's most powerful model"</p>
+          <div class="divider"></div>
+          <h3>Operational requirements</h3>
+          <div class="grid-2" style="margin-top:16px;">
+            <div class="card"><span class="pill lime">Precision</span><p>Follows long prompts and explicit business rules</p></div>
+            <div class="card"><span class="pill blue">Context</span><p>Represents product and healthcare workflow context</p></div>
+            <div class="card"><span class="pill orange">Tool use</span><p>Selects appropriate tools and constructs valid arguments</p></div>
+            <div class="card"><span class="pill red">Grounding</span><p>Defers to system data when factual support is required</p></div>
+          </div>
+        </div>
+        <div class="panel warning">
+          <h3>Security threat model</h3>
+          <svg viewBox="0 0 600 320" role="img" aria-label="Prompt injection threat map">
+            <defs>
+              <marker id="arrow3" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#10120f"/></marker>
+            </defs>
+            <rect x="34" y="122" width="180" height="76" rx="20" fill="#ffd3e0" stroke="#10120f" stroke-width="3"/>
+            <text x="124" y="166" text-anchor="middle" class="svg-label" style="font-size:19px;">Prompt injection</text>
+            <path d="M216 160 L338 68" stroke="#10120f" stroke-width="3" marker-end="url(#arrow3)"/>
+            <path d="M216 160 L338 160" stroke="#10120f" stroke-width="3" marker-end="url(#arrow3)"/>
+            <path d="M216 160 L338 252" stroke="#10120f" stroke-width="3" marker-end="url(#arrow3)"/>
+            <text x="354" y="74" class="svg-label" style="font-size:20px;">Behavioral manipulation</text>
+            <text x="354" y="166" class="svg-label" style="font-size:20px;">System exposure</text>
+            <text x="354" y="258" class="svg-label" style="font-size:20px;">Unauthorized data access</text>
+          </svg>
+          <p style="font-size:25px; line-height:1.16;">Guardrails are required controls for instructions, sensitive capabilities, and data-modifying actions</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">09 / 10</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Final synthesis</div>
+        <h2>Primary implementation challenge is uncertainty in system requirements and data behavior</h2>
+      </div>
+      <div class="grid-2">
+        <div class="panel">
+          <h3>Data and terminology constraints</h3>
+          <p class="lead" style="font-size:23px;">Medical terminology, synonyms, code quality, unexpected database entries, and ambiguous user language limit language-model-only designs</p>
+          <div class="divider"></div>
+          <div class="grid-2">
+            <div><span class="pill blue">Search</span><p class="small" style="margin-top:8px; font-size:25px; line-height:1.12;">Improve terminology with full-text and selective vector search</p></div>
+            <div><span class="pill lime">Knowledge</span><p class="small" style="margin-top:8px; font-size:25px; line-height:1.12;">Add synonym resources and specialized web search</p></div>
+          </div>
+        </div>
+        <div class="panel dark">
+          <h3>Operating model</h3>
+          <div class="bar-row" style="margin-top:18px;"><div class="bar-label">Performance</div><div class="track"><div class="bar lime" style="width:78%;"></div></div><div class="value">optimize</div></div>
+          <div class="bar-row"><div class="bar-label">Cost</div><div class="track"><div class="bar orange" style="width:54%;"></div></div><div class="value">monitor</div></div>
+          <div class="bar-row"><div class="bar-label">Latency</div><div class="track"><div class="bar blue" style="width:66%;"></div></div><div class="value">balance</div></div>
+          <div class="bar-row"><div class="bar-label">Maintenance</div><div class="track"><div class="bar pink" style="width:70%;"></div></div><div class="value">maintain</div></div>
+          <p class="quote" style="font-size:26px; margin-top:18px;">Effective implementations combine methods, test empirically, and evolve as requirements and data behavior become observable</p>
+        </div>
+      </div>
+      <div class="panel" style="margin-top:20px; padding:22px 26px;">
+        <div class="flow" style="grid-template-columns:repeat(4,1fr);">
+          <div class="node"><strong>Build</strong><span>Start with the simplest chain that satisfies the use case</span></div>
+          <div class="node"><strong>Observe</strong><span>Trace outputs, latency, tokens, and tool behavior patterns</span></div>
+          <div class="node"><strong>Secure</strong><span>Add guardrails for prompts, tools, and data permissions</span></div>
+          <div class="node"><strong>Evolve</strong><span>Change models and patterns as requirements become clearer</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">10 / 10</div>
+  </article>
+
+</body>
+</html>

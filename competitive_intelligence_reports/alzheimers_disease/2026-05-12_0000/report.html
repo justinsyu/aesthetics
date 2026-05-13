@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alzheimer's Disease Competitive Intelligence Update</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 36px 0 20px;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 850;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 84px; line-height: .92; letter-spacing: 0; font-weight: 560; max-width: 1280px; }
+    h2 { font-size: 56px; line-height: .98; letter-spacing: 0; font-weight: 560; max-width: 1300px; }
+    h3 { font-size: 30px; line-height: 1.04; letter-spacing: 0; font-weight: 650; }
+    .dek { margin-top: 18px; color: var(--muted); font-size: 28px; line-height: 1.24; max-width: 1280px; }
+    .section-head { margin-bottom: 20px; }
+    .section-head p { margin-top: 12px; color: var(--muted); font-size: 25px; line-height: 1.24; max-width: 1300px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .panel, .metric, .card, .table, .callout {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.86);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel { padding: 26px; }
+    .panel.dark, .callout { background: #11130f; color: var(--paper); border-color: #11130f; }
+    .panel.dark p, .panel.dark li, .callout p, .callout li { color: rgba(246,241,232,.84); }
+    .metric { padding: 22px; min-height: 154px; }
+    .num { font-size: 52px; line-height: .92; font-weight: 850; letter-spacing: 0; }
+    .label { margin-top: 12px; font-size: 18px; line-height: 1.25; color: var(--muted); }
+    .card { padding: 24px; min-height: 208px; }
+    .card p { color: var(--muted); font-size: 20px; line-height: 1.24; margin-top: 12px; }
+    .card .tag { margin-bottom: 12px; }
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      white-space: nowrap;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .red { background: var(--red); }
+    .gray { background: var(--gray); }
+    .list { margin: 14px 0 0; padding: 0; list-style: none; display: grid; gap: 11px; }
+    .list li { position: relative; padding-left: 20px; color: var(--muted); font-size: 21px; line-height: 1.22; }
+    .list li::before { content: ""; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; border-radius: 50%; background: var(--lime); border: 1px solid var(--line); }
+    .table { display: grid; }
+    .row { display: grid; grid-template-columns: 1.1fr .7fr 1.45fr 1.45fr; border-bottom: 1px solid var(--line); min-height: 72px; }
+    .row:last-child { border-bottom: 0; }
+    .cell { padding: 13px 14px; border-right: 1px solid var(--line); font-size: 17px; line-height: 1.2; }
+    .cell:last-child { border-right: 0; }
+    .head .cell { background: #11130f; color: var(--paper); font-weight: 850; text-transform: uppercase; font-size: 12px; }
+    .callout { padding: 24px 28px; }
+    .callout h3 { font-size: 32px; }
+    .callout p { margin-top: 12px; font-size: 25px; line-height: 1.18; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .cite + .cite::before { content: ","; margin-right: 1px; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    .source-note { color: var(--muted); font-size: 16px; line-height: 1.25; margin-top: 12px; }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .wrap { width: 1360px; }
+      .panel, .metric, .card, .table, .callout { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) {
+      .slide { width: 1600px; height: 900px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Alzheimer's disease CI update | May 6-12, 2026 evidence window</div>
+      <h1>Alzheimer's disease competitive intelligence update</h1>
+      <p class="dek">This report includes primary-source items with visible publication or registry update dates from May 6, 2026 through May 11, 2026, all within the May 6-12, 2026 evidence window.<a class="cite" href="https://investors.biogen.com/news-releases/news-release-details/update-fda-priority-review-leqembir-iqliktm-lecanemab-irmb">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290530/0/en/alector-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289877/0/en/Annovis-CEO-to-Present-on-Multi-Protein-Model-of-Alzheimer-s-Disease-at-Fierce-Biotech-Week-2026.html">3</a><a class="cite" href="https://www.nature.com/articles/s41467-026-71448-2">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06709014">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06976216">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06126224">7</a><a class="cite" href="https://www.prnewswire.com/news-releases/alzheimers-association-launches-rethink-your-brain-to-drive-early-action-on-brain-health-302767721.html">8</a></p>
+      <div class="grid-4" style="margin-top:34px;">
+        <div class="metric"><div class="num">8</div><div class="label">Primary sources were used in the report.<a class="cite" href="https://investors.biogen.com/news-releases/news-release-details/update-fda-priority-review-leqembir-iqliktm-lecanemab-irmb">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290530/0/en/alector-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289877/0/en/Annovis-CEO-to-Present-on-Multi-Protein-Model-of-Alzheimer-s-Disease-at-Fierce-Biotech-Week-2026.html">3</a><a class="cite" href="https://www.nature.com/articles/s41467-026-71448-2">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06709014">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06976216">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06126224">7</a><a class="cite" href="https://www.prnewswire.com/news-releases/alzheimers-association-launches-rethink-your-brain-to-drive-early-action-on-brain-health-302767721.html">8</a></div></div>
+        <div class="metric"><div class="num">3</div><div class="label">ClinicalTrials.gov Phase 3 records had visible last-update dates in the evidence window.<a class="cite" href="https://clinicaltrials.gov/study/NCT06709014">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06976216">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06126224">7</a></div></div>
+        <div class="metric"><div class="num">1</div><div class="label">FDA review-extension update was identified in the window.<a class="cite" href="https://investors.biogen.com/news-releases/news-release-details/update-fda-priority-review-leqembir-iqliktm-lecanemab-irmb">1</a></div></div>
+        <div class="metric"><div class="num">1</div><div class="label">Peer-reviewed blood biomarker article was published in the window.<a class="cite" href="https://www.nature.com/articles/s41467-026-71448-2">4</a></div></div>
+      </div>
+      <div class="callout" style="margin-top:24px;">
+        <h3>Factual scope</h3>
+        <p>The included sources document regulatory timing, Phase 2 discontinuation, Phase 3 development, Phase 3 registry activity, blood biomarker evidence, and a public brain-health initiative.<a class="cite" href="https://investors.biogen.com/news-releases/news-release-details/update-fda-priority-review-leqembir-iqliktm-lecanemab-irmb">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290530/0/en/alector-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289877/0/en/Annovis-CEO-to-Present-on-Multi-Protein-Model-of-Alzheimer-s-Disease-at-Fierce-Biotech-Week-2026.html">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06709014">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06976216">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06126224">7</a><a class="cite" href="https://www.nature.com/articles/s41467-026-71448-2">4</a><a class="cite" href="https://www.prnewswire.com/news-releases/alzheimers-association-launches-rethink-your-brain-to-drive-early-action-on-brain-health-302767721.html">8</a></p>
+      </div>
+    </div>
+    <div class="slide-num">01 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Regulatory and pipeline events</div>
+        <h2>Company sources reported review timing and program-status changes<a class="cite" href="https://investors.biogen.com/news-releases/news-release-details/update-fda-priority-review-leqembir-iqliktm-lecanemab-irmb">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290530/0/en/alector-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289877/0/en/Annovis-CEO-to-Present-on-Multi-Protein-Model-of-Alzheimer-s-Disease-at-Fierce-Biotech-Week-2026.html">3</a></h2>
+        <p>All source dates on this page were visibly verified from open browser screenshots and fall between May 7 and May 8, 2026.<a class="cite" href="https://investors.biogen.com/news-releases/news-release-details/update-fda-priority-review-leqembir-iqliktm-lecanemab-irmb">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290530/0/en/alector-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289877/0/en/Annovis-CEO-to-Present-on-Multi-Protein-Model-of-Alzheimer-s-Disease-at-Fierce-Biotech-Week-2026.html">3</a></p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag lime">FDA review</span>
+          <h3>LEQEMBI IQLIK</h3>
+          <p>Biogen and Eisai stated that FDA extended the sBLA review period for once-weekly subcutaneous lecanemab-irmb as a starting dose by three months and set an August 24, 2026 PDUFA action date.<a class="cite" href="https://investors.biogen.com/news-releases/news-release-details/update-fda-priority-review-leqembir-iqliktm-lecanemab-irmb">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag orange">Phase 2</span>
+          <h3>PROGRESS-AD</h3>
+          <p>Alector stated that the PROGRESS-AD Phase 2 trial of nivisnebart in early Alzheimer’s disease was discontinued after a pre-specified interim futility analysis.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290530/0/en/alector-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">Phase 3</span>
+          <h3>Buntanetap</h3>
+          <p>Annovis described buntanetap as an investigational oral therapy for neurodegenerative diseases and stated that it was in a pivotal Phase 3 clinical trial.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289877/0/en/Annovis-CEO-to-Present-on-Multi-Protein-Model-of-Alzheimer-s-Disease-at-Fierce-Biotech-Week-2026.html">3</a></p>
+        </div>
+      </div>
+      <div class="panel dark" style="margin-top:22px;">
+        <h3>Additional recorded facts</h3>
+        <ul class="list">
+          <li>Biogen and Eisai stated that FDA requested additional information and determined that the information constituted a major amendment to the sBLA.<a class="cite" href="https://investors.biogen.com/news-releases/news-release-details/update-fda-priority-review-leqembir-iqliktm-lecanemab-irmb">1</a></li>
+          <li>Alector listed AL037/AL137 as an ABC-enabled antibody program for Alzheimer’s disease and AL064/AL164 as an ABC-enabled tau siRNA program for Alzheimer’s disease and other tauopathies.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290530/0/en/alector-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a></li>
+          <li>Annovis scheduled its Fierce Biotech Week presentation for Wednesday, May 13, 2026.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289877/0/en/Annovis-CEO-to-Present-on-Multi-Protein-Model-of-Alzheimer-s-Disease-at-Fierce-Biotech-Week-2026.html">3</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">02 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">ClinicalTrials.gov records</div>
+        <h2>Three Phase 3 Alzheimer’s-related records had visible updates inside the window<a class="cite" href="https://clinicaltrials.gov/study/NCT06709014">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06976216">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06126224">7</a></h2>
+        <p>The registry records below displayed last-update dates of May 7 or May 11, 2026.<a class="cite" href="https://clinicaltrials.gov/study/NCT06709014">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06976216">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06126224">7</a></p>
+      </div>
+      <div class="table">
+        <div class="row head">
+          <div class="cell">Record</div>
+          <div class="cell">Date</div>
+          <div class="cell">Condition or population</div>
+          <div class="cell">Intervention status in record</div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT06709014</strong><br />Buntanetap</div>
+          <div class="cell">2026-05-11<a class="cite" href="https://clinicaltrials.gov/study/NCT06709014">5</a></div>
+          <div class="cell">The record describes participants with early Alzheimer’s disease.<a class="cite" href="https://clinicaltrials.gov/study/NCT06709014">5</a></div>
+          <div class="cell">The record lists a recruiting Phase 3 study of buntanetap/Posiphen versus placebo.<a class="cite" href="https://clinicaltrials.gov/study/NCT06709014">5</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT06976216</strong><br />MINDSET 1</div>
+          <div class="cell">2026-05-07<a class="cite" href="https://clinicaltrials.gov/study/NCT06976216">6</a></div>
+          <div class="cell">The record describes cognitive impairment in mild to moderate Alzheimer’s disease.<a class="cite" href="https://clinicaltrials.gov/study/NCT06976216">6</a></div>
+          <div class="cell">The record lists a recruiting Phase 3 study of KarXT plus KarX-EC.<a class="cite" href="https://clinicaltrials.gov/study/NCT06976216">6</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT06126224</strong><br />ADEPT-2</div>
+          <div class="cell">2026-05-11<a class="cite" href="https://clinicaltrials.gov/study/NCT06126224">7</a></div>
+          <div class="cell">The record describes psychosis associated with Alzheimer’s disease.<a class="cite" href="https://clinicaltrials.gov/study/NCT06126224">7</a></div>
+          <div class="cell">The record lists a recruiting Phase 3 study of KarXT.<a class="cite" href="https://clinicaltrials.gov/study/NCT06126224">7</a></div>
+        </div>
+      </div>
+      <p class="source-note">Registry facts are limited to visible ClinicalTrials.gov record fields captured in saved browser screenshots.<a class="cite" href="https://clinicaltrials.gov/study/NCT06709014">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06976216">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06126224">7</a></p>
+      <div class="callout" style="margin-top:22px;">
+        <h3>Registry scope</h3>
+        <p>The three included registry records were limited to Phase 3 studies listed as recruiting and updated on May 7 or May 11, 2026.<a class="cite" href="https://clinicaltrials.gov/study/NCT06709014">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06976216">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06126224">7</a></p>
+      </div>
+    </div>
+    <div class="slide-num">03 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Diagnostics and public health</div>
+        <h2>Recent sources documented remote biomarker evidence and brain-health communication<a class="cite" href="https://www.nature.com/articles/s41467-026-71448-2">4</a><a class="cite" href="https://www.prnewswire.com/news-releases/alzheimers-association-launches-rethink-your-brain-to-drive-early-action-on-brain-health-302767721.html">8</a></h2>
+        <p>The two sources on this page displayed publication dates of May 6 and May 11, 2026.<a class="cite" href="https://www.nature.com/articles/s41467-026-71448-2">4</a><a class="cite" href="https://www.prnewswire.com/news-releases/alzheimers-association-launches-rethink-your-brain-to-drive-early-action-on-brain-health-302767721.html">8</a></p>
+      </div>
+      <div class="grid-2">
+        <div class="card" style="min-height:290px;">
+          <span class="tag lime">Peer-reviewed article</span>
+          <h3>Remote capillary biomarkers</h3>
+          <p>A Nature Communications article published on May 6, 2026 reported that self-administered fingerprick tests measuring p-tau217 and GFAP correlated with venous biomarkers and with cognition and function.<a class="cite" href="https://www.nature.com/articles/s41467-026-71448-2">4</a></p>
+          <p>The article stated that the cohort included 174 people who were cognitively normal or had mild cognitive impairment or Alzheimer’s disease.<a class="cite" href="https://www.nature.com/articles/s41467-026-71448-2">4</a></p>
+        </div>
+        <div class="card" style="min-height:290px;">
+          <span class="tag blue">Official organization release</span>
+          <h3>(re)think your brain</h3>
+          <p>The Alzheimer’s Association announced the launch of (re)think your brain on May 11, 2026 and described it as a science-based initiative intended to move people from brain health awareness to action.<a class="cite" href="https://www.prnewswire.com/news-releases/alzheimers-association-launches-rethink-your-brain-to-drive-early-action-on-brain-health-302767721.html">8</a></p>
+          <p>The same release stated that the initiative includes a 6-Step Challenge with practical actions to support brain health and cognitive function.<a class="cite" href="https://www.prnewswire.com/news-releases/alzheimers-association-launches-rethink-your-brain-to-drive-early-action-on-brain-health-302767721.html">8</a></p>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:24px;">
+        <h3>Evidence boundary</h3>
+        <p>Diagnostic and public-health statements in this report are restricted to the article and organization release captured in saved Chrome webpage screenshots.<a class="cite" href="https://www.nature.com/articles/s41467-026-71448-2">4</a><a class="cite" href="https://www.prnewswire.com/news-releases/alzheimers-association-launches-rethink-your-brain-to-drive-early-action-on-brain-health-302767721.html">8</a></p>
+      </div>
+    </div>
+    <div class="slide-num">04 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Validation record</div>
+        <h2>References</h2>
+        <p>Each source listed below has a saved date-verification screenshot and a saved highlighted evidence screenshot.<a class="cite" href="https://investors.biogen.com/news-releases/news-release-details/update-fda-priority-review-leqembir-iqliktm-lecanemab-irmb">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290530/0/en/alector-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289877/0/en/Annovis-CEO-to-Present-on-Multi-Protein-Model-of-Alzheimer-s-Disease-at-Fierce-Biotech-Week-2026.html">3</a><a class="cite" href="https://www.nature.com/articles/s41467-026-71448-2">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06709014">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06976216">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06126224">7</a><a class="cite" href="https://www.prnewswire.com/news-releases/alzheimers-association-launches-rethink-your-brain-to-drive-early-action-on-brain-health-302767721.html">8</a></p>
+      </div>
+      <div class="table">
+        <div class="row head">
+          <div class="cell">Source</div>
+          <div class="cell">Visible date</div>
+          <div class="cell">Source type</div>
+          <div class="cell">Evidence captured</div>
+        </div>
+        <div class="row"><div class="cell">Biogen/Eisai<a class="cite" href="https://investors.biogen.com/news-releases/news-release-details/update-fda-priority-review-leqembir-iqliktm-lecanemab-irmb">1</a></div><div class="cell">May 8, 2026<a class="cite" href="https://investors.biogen.com/news-releases/news-release-details/update-fda-priority-review-leqembir-iqliktm-lecanemab-irmb">1</a></div><div class="cell">Company press release</div><div class="cell">FDA priority-review extension, August 24, 2026 PDUFA date, and major-amendment language</div></div>
+        <div class="row"><div class="cell">Alector<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290530/0/en/alector-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a></div><div class="cell">May 07, 2026<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290530/0/en/alector-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a></div><div class="cell">Company press release</div><div class="cell">PROGRESS-AD discontinuation after interim futility analysis and listed ABC-enabled AD programs</div></div>
+        <div class="row"><div class="cell">Annovis<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289877/0/en/Annovis-CEO-to-Present-on-Multi-Protein-Model-of-Alzheimer-s-Disease-at-Fierce-Biotech-Week-2026.html">3</a></div><div class="cell">May 07, 2026<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289877/0/en/Annovis-CEO-to-Present-on-Multi-Protein-Model-of-Alzheimer-s-Disease-at-Fierce-Biotech-Week-2026.html">3</a></div><div class="cell">Company press release</div><div class="cell">Buntanetap investigational therapy, pivotal Phase 3 wording, and May 13 presentation details</div></div>
+        <div class="row"><div class="cell">Nature Communications<a class="cite" href="https://www.nature.com/articles/s41467-026-71448-2">4</a></div><div class="cell">06 May 2026<a class="cite" href="https://www.nature.com/articles/s41467-026-71448-2">4</a></div><div class="cell">Peer-reviewed article</div><div class="cell">Remote capillary biomarker methods and reported correlation with venous biomarkers and cognition/function</div></div>
+        <div class="row"><div class="cell">ClinicalTrials.gov records<a class="cite" href="https://clinicaltrials.gov/study/NCT06709014">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06976216">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06126224">7</a></div><div class="cell">May 7-11, 2026<a class="cite" href="https://clinicaltrials.gov/study/NCT06709014">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06976216">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06126224">7</a></div><div class="cell">Clinical trial registry</div><div class="cell">Recruiting status, Phase 3 designations, interventions, sponsors, and Alzheimer’s disease conditions</div></div>
+        <div class="row"><div class="cell">Alzheimer’s Association<a class="cite" href="https://www.prnewswire.com/news-releases/alzheimers-association-launches-rethink-your-brain-to-drive-early-action-on-brain-health-302767721.html">8</a></div><div class="cell">May 11, 2026<a class="cite" href="https://www.prnewswire.com/news-releases/alzheimers-association-launches-rethink-your-brain-to-drive-early-action-on-brain-health-302767721.html">8</a></div><div class="cell">Organization release</div><div class="cell">(re)think your brain launch and 6-Step Challenge language</div></div>
+      </div>
+    </div>
+    <div class="slide-num">05 / 05</div>
+  </article>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Primary CNS Lymphoma Competitive Intelligence Update</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 36px 0 20px;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 850;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 82px; line-height: .92; letter-spacing: 0; font-weight: 560; max-width: 1260px; }
+    h2 { font-size: 56px; line-height: .98; letter-spacing: 0; font-weight: 560; max-width: 1300px; }
+    h3 { font-size: 29px; line-height: 1.05; letter-spacing: 0; font-weight: 650; }
+    .dek { margin-top: 18px; color: var(--muted); font-size: 27px; line-height: 1.24; max-width: 1280px; }
+    .section-head { margin-bottom: 20px; }
+    .section-head p { margin-top: 12px; color: var(--muted); font-size: 24px; line-height: 1.24; max-width: 1300px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .panel, .metric, .card, .table, .callout {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.86);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel { padding: 24px; }
+    .panel.dark, .callout { background: #11130f; color: var(--paper); border-color: #11130f; }
+    .panel.dark p, .panel.dark li, .callout p, .callout li { color: rgba(246,241,232,.86); }
+    .metric { padding: 21px; min-height: 152px; }
+    .num { font-size: 52px; line-height: .92; font-weight: 850; letter-spacing: 0; }
+    .label { margin-top: 12px; font-size: 18px; line-height: 1.25; color: var(--muted); }
+    .card { padding: 22px; min-height: 224px; }
+    .card p { color: var(--muted); font-size: 19px; line-height: 1.25; margin-top: 12px; }
+    .card .tag { margin-bottom: 12px; }
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      white-space: nowrap;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .red { background: var(--red); }
+    .gray { background: var(--gray); }
+    .list { margin: 14px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+    .list li { position: relative; padding-left: 20px; color: var(--muted); font-size: 19px; line-height: 1.23; }
+    .list li::before { content: ""; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; border-radius: 50%; background: var(--lime); border: 1px solid var(--line); }
+    .table { display: grid; }
+    .row { display: grid; grid-template-columns: .82fr .88fr 1.4fr 1.42fr; border-bottom: 1px solid var(--line); min-height: 74px; }
+    .row:last-child { border-bottom: 0; }
+    .cell { padding: 13px 14px; border-right: 1px solid var(--line); font-size: 16px; line-height: 1.22; }
+    .cell:last-child { border-right: 0; }
+    .head .cell { background: #11130f; color: var(--paper); font-weight: 850; text-transform: uppercase; font-size: 12px; }
+    .callout { padding: 22px 26px; }
+    .callout h3 { font-size: 31px; }
+    .callout p { margin-top: 12px; font-size: 24px; line-height: 1.18; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .cite + .cite::before { content: ","; margin-right: 1px; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    .source-note { color: var(--muted); font-size: 15px; line-height: 1.25; margin-top: 12px; }
+    .source-card { padding: 18px; min-height: 134px; }
+    .source-card p { font-size: 16px; line-height: 1.23; margin-top: 8px; color: var(--muted); }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .wrap { width: 1360px; }
+      .panel, .metric, .card, .table, .callout { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) {
+      .slide { width: 1600px; height: 900px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Primary CNS lymphoma CI update | May 5-12, 2026 evidence window</div>
+      <h1>Primary CNS lymphoma competitive intelligence update</h1>
+      <p class="dek">This report includes four primary-source webpages with visible publication or registry update dates from May 5, 2026 through May 9, 2026, all inside the May 5-12, 2026 evidence window.<a class="cite" href="https://clinicaltrials.gov/study/NCT04870944">1</a><a class="cite" href="https://www.em-consulte.com/article/1808247/lymphome-cerebral-primitif-experience-de-treize-an">2</a><a class="cite" href="https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2026.1591328/full">3</a><a class="cite" href="https://link.springer.com/article/10.1007/s10072-026-09049-6">4</a></p>
+      <div class="grid-4" style="margin-top:34px;">
+        <div class="metric"><div class="num">4</div><div class="label">Cited primary-source webpages are included in this update.<a class="cite" href="https://clinicaltrials.gov/study/NCT04870944">1</a><a class="cite" href="https://www.em-consulte.com/article/1808247/lymphome-cerebral-primitif-experience-de-treize-an">2</a><a class="cite" href="https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2026.1591328/full">3</a><a class="cite" href="https://link.springer.com/article/10.1007/s10072-026-09049-6">4</a></div></div>
+        <div class="metric"><div class="num">1</div><div class="label">ClinicalTrials.gov record had a visible May 5, 2026 last-update date.<a class="cite" href="https://clinicaltrials.gov/study/NCT04870944">1</a></div></div>
+        <div class="metric"><div class="num">2</div><div class="label">PCNSL-focused publisher pages carried visible May 6 or May 7, 2026 dates.<a class="cite" href="https://www.em-consulte.com/article/1808247/lymphome-cerebral-primitif-experience-de-treize-an">2</a><a class="cite" href="https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2026.1591328/full">3</a></div></div>
+        <div class="metric"><div class="num">1</div><div class="label">Central nervous system Burkitt lymphoma article had a visible May 9, 2026 publication date.<a class="cite" href="https://link.springer.com/article/10.1007/s10072-026-09049-6">4</a></div></div>
+      </div>
+      <div class="callout" style="margin-top:24px;">
+        <h3>Factual scope</h3>
+        <p>The included sources document one relapsed/refractory pediatric solid tumor or lymphoma trial record, one retrospective primary cerebral lymphoma cohort, one PCNSL treatment review, and one CNS Burkitt lymphoma case report.<a class="cite" href="https://clinicaltrials.gov/study/NCT04870944">1</a><a class="cite" href="https://www.em-consulte.com/article/1808247/lymphome-cerebral-primitif-experience-de-treize-an">2</a><a class="cite" href="https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2026.1591328/full">3</a><a class="cite" href="https://link.springer.com/article/10.1007/s10072-026-09049-6">4</a></p>
+      </div>
+    </div>
+    <div class="slide-num">01 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Registry signal</div>
+        <h2>ClinicalTrials.gov listed an active CBL0137 Phase 1/2 record updated May 5, 2026<a class="cite" href="https://clinicaltrials.gov/study/NCT04870944">1</a></h2>
+        <p>The NCT04870944 record displayed Recruiting status, Children's Oncology Group sponsorship, and a Last Update Posted date of 2026-05-05.<a class="cite" href="https://clinicaltrials.gov/study/NCT04870944">1</a></p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag lime">Registry record</span>
+          <h3>NCT04870944</h3>
+          <p>The record title is CBL0137 for the Treatment of Relapsed or Refractory Solid Tumors, Including CNS Tumors and Lymphoma.<a class="cite" href="https://clinicaltrials.gov/study/NCT04870944">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">Design</span>
+          <h3>Phase 1 / Phase 2</h3>
+          <p>The record describes an interventional Phase 1 and Phase 2 trial with estimated enrollment of 63 participants.<a class="cite" href="https://clinicaltrials.gov/study/NCT04870944">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag orange">Population</span>
+          <h3>12 months to 21 years</h3>
+          <p>The participation criteria list ages eligible for study as 12 months to 21 years and sex eligibility as all.<a class="cite" href="https://clinicaltrials.gov/study/NCT04870944">1</a></p>
+        </div>
+      </div>
+      <div class="panel dark" style="margin-top:22px;">
+        <h3>Source-stated study scope</h3>
+        <ul class="list">
+          <li>The brief summary states that the Phase I/II trial evaluates dose, side effects, and possible benefit of CBL0137 in patients with solid tumors, including CNS tumors or lymphoma that has relapsed or is refractory.<a class="cite" href="https://clinicaltrials.gov/study/NCT04870944">1</a></li>
+          <li>The inclusion criteria state that Part A patients with relapsed or refractory solid tumors or lymphoma, including patients with CNS tumors or known CNS metastases, are eligible.<a class="cite" href="https://clinicaltrials.gov/study/NCT04870944">1</a></li>
+          <li>The record lists the lead sponsor as Children's Oncology Group and the intervention as FACT complex-targeting curaxin CBL0137 given IV.<a class="cite" href="https://clinicaltrials.gov/study/NCT04870944">1</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">02 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Retrospective cohort</div>
+        <h2>EM Consulte posted a Casablanca primary cerebral lymphoma cohort online on May 7, 2026<a class="cite" href="https://www.em-consulte.com/article/1808247/lymphome-cerebral-primitif-experience-de-treize-an">2</a></h2>
+        <p>The page title is Lymphome cerebral primitif: experience de treize ans d'un service d'hematologie et oncologie pediatrique a Casablanca, with the English subtitle Primary central nervous system lymphoma: A thirteen-year experience of a pediatric hematology and oncology department in Casablanca.<a class="cite" href="https://www.em-consulte.com/article/1808247/lymphome-cerebral-primitif-experience-de-treize-an">2</a></p>
+      </div>
+      <div class="grid-4">
+        <div class="metric"><div class="num">39</div><div class="label">The summary states that 39 primary cerebral lymphoma cases were collected.<a class="cite" href="https://www.em-consulte.com/article/1808247/lymphome-cerebral-primitif-experience-de-treize-an">2</a></div></div>
+        <div class="metric"><div class="num">13 yr</div><div class="label">The summary states that cases were collected over January 2011 to December 2023.<a class="cite" href="https://www.em-consulte.com/article/1808247/lymphome-cerebral-primitif-experience-de-treize-an">2</a></div></div>
+        <div class="metric"><div class="num">14 CR</div><div class="label">The source states that evaluation of the LCP protocol showed complete remission in 14 patients.<a class="cite" href="https://www.em-consulte.com/article/1808247/lymphome-cerebral-primitif-experience-de-treize-an">2</a></div></div>
+        <div class="metric"><div class="num">40.36%</div><div class="label">The source states that five-year overall survival was 40.36%.<a class="cite" href="https://www.em-consulte.com/article/1808247/lymphome-cerebral-primitif-experience-de-treize-an">2</a></div></div>
+      </div>
+      <div class="grid-2" style="margin-top:22px;">
+        <div class="panel">
+          <h3>Treatment protocol described</h3>
+          <p class="source-note">The summary states that all patients were included in the LCP protocol, described as polychemotherapy with high-dose methotrexate followed by consolidation with encephalic radiotherapy.<a class="cite" href="https://www.em-consulte.com/article/1808247/lymphome-cerebral-primitif-experience-de-treize-an">2</a></p>
+        </div>
+        <div class="panel">
+          <h3>Outcome counts described</h3>
+          <p class="source-note">The summary states that 10 patients relapsed, including eight brain relapses and two testicular relapses, and that the cohort included 16 deaths and nine patients lost to follow-up.<a class="cite" href="https://www.em-consulte.com/article/1808247/lymphome-cerebral-primitif-experience-de-treize-an">2</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">03 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Treatment review</div>
+        <h2>Frontiers in Oncology published a PCNSL treatment review dated May 6, 2026<a class="cite" href="https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2026.1591328/full">3</a></h2>
+        <p>The article is titled Translating advances in primary central nervous system lymphoma: from prognostic stratification to treatment innovation.<a class="cite" href="https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2026.1591328/full">3</a></p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag lime">Disease framing</span>
+          <h3>Rare aggressive DLBCL</h3>
+          <p>The abstract describes PCNSL as a rare but aggressive diffuse large B-cell lymphoma confined to the CNS.<a class="cite" href="https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2026.1591328/full">3</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">First line</span>
+          <h3>HD-MTX backbone</h3>
+          <p>The abstract states that HD-MTX-based induction regimens including MTR, R-MPV, MATRix, and R-MBVP are the standard first-line approach for fit patients.<a class="cite" href="https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2026.1591328/full">3</a></p>
+        </div>
+        <div class="card">
+          <span class="tag orange">Consolidation</span>
+          <h3>HDC-ASCT noted</h3>
+          <p>The abstract states that thiotepa-based high-dose chemotherapy and autologous stem-cell transplantation yields durable disease control in eligible patients.<a class="cite" href="https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2026.1591328/full">3</a></p>
+        </div>
+      </div>
+      <div class="panel dark" style="margin-top:22px;">
+        <h3>Relapsed and unresolved areas in the abstract</h3>
+        <ul class="list">
+          <li>The abstract states that, in relapsed disease, methotrexate rechallenge benefits prior responders, while BTK- or IMiD-based regimens, CAR-T therapy, and focal or whole-brain radiotherapy are under active investigation.<a class="cite" href="https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2026.1591328/full">3</a></li>
+          <li>The abstract states that maintenance with HD-MTX or targeted agents shows promise but requires validation.<a class="cite" href="https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2026.1591328/full">3</a></li>
+          <li>The abstract states that long-term survival for elderly and relapsed patients remains unsatisfactory.<a class="cite" href="https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2026.1591328/full">3</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">04 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Adjacent CNS lymphoma publication and source index</div>
+        <h2>SpringerLink published a CNS Burkitt lymphoma neuro-images case on May 9, 2026<a class="cite" href="https://link.springer.com/article/10.1007/s10072-026-09049-6">4</a></h2>
+        <p>The article is titled Central nervous system Burkitt lymphoma: fornix-to-ventricle dissemination and is indexed on the page with keywords including Primary central nervous system lymphoma and Burkitt lymphoma.<a class="cite" href="https://link.springer.com/article/10.1007/s10072-026-09049-6">4</a></p>
+      </div>
+      <div class="grid-2">
+        <div class="panel">
+          <h3>Case details stated in the abstract</h3>
+          <ul class="list">
+            <li>The abstract states that central nervous system Burkitt lymphoma is exceptionally rare in adolescents without systemic disease.<a class="cite" href="https://link.springer.com/article/10.1007/s10072-026-09049-6">4</a></li>
+            <li>The abstract states that the case involved a 16-year-old female with progressive headaches and isolated fornix lesions on MRI.<a class="cite" href="https://link.springer.com/article/10.1007/s10072-026-09049-6">4</a></li>
+            <li>The abstract states that follow-up MRI 50 days later showed multifocal ventricular dissemination and obstructive hydrocephalus, with histopathology and FISH confirming Burkitt lymphoma diagnosis.<a class="cite" href="https://link.springer.com/article/10.1007/s10072-026-09049-6">4</a></li>
+          </ul>
+        </div>
+        <div class="table">
+          <div class="row head">
+            <div class="cell">Ref</div>
+            <div class="cell">Source</div>
+            <div class="cell">Visible date</div>
+            <div class="cell">Cited content type</div>
+          </div>
+          <div class="row">
+            <div class="cell">1</div>
+            <div class="cell">ClinicalTrials.gov NCT04870944<a class="cite" href="https://clinicaltrials.gov/study/NCT04870944">1</a></div>
+            <div class="cell">Last Update Posted 2026-05-05<a class="cite" href="https://clinicaltrials.gov/study/NCT04870944">1</a></div>
+            <div class="cell">Trial status, design, enrollment, eligibility, intervention<a class="cite" href="https://clinicaltrials.gov/study/NCT04870944">1</a></div>
+          </div>
+          <div class="row">
+            <div class="cell">2</div>
+            <div class="cell">EM Consulte / Bulletin du Cancer<a class="cite" href="https://www.em-consulte.com/article/1808247/lymphome-cerebral-primitif-experience-de-treize-an">2</a></div>
+            <div class="cell">Thursday 07 May 2026<a class="cite" href="https://www.em-consulte.com/article/1808247/lymphome-cerebral-primitif-experience-de-treize-an">2</a></div>
+            <div class="cell">Retrospective cohort summary and outcomes<a class="cite" href="https://www.em-consulte.com/article/1808247/lymphome-cerebral-primitif-experience-de-treize-an">2</a></div>
+          </div>
+          <div class="row">
+            <div class="cell">3</div>
+            <div class="cell">Frontiers in Oncology<a class="cite" href="https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2026.1591328/full">3</a></div>
+            <div class="cell">Front. Oncol., 06 May 2026<a class="cite" href="https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2026.1591328/full">3</a></div>
+            <div class="cell">Treatment review abstract<a class="cite" href="https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2026.1591328/full">3</a></div>
+          </div>
+          <div class="row">
+            <div class="cell">4</div>
+            <div class="cell">SpringerLink / Neurological Sciences<a class="cite" href="https://link.springer.com/article/10.1007/s10072-026-09049-6">4</a></div>
+            <div class="cell">Published: 09 May 2026<a class="cite" href="https://link.springer.com/article/10.1007/s10072-026-09049-6">4</a></div>
+            <div class="cell">CNS Burkitt lymphoma case abstract<a class="cite" href="https://link.springer.com/article/10.1007/s10072-026-09049-6">4</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">05 / 05</div>
+  </article>
+</body>
+</html>

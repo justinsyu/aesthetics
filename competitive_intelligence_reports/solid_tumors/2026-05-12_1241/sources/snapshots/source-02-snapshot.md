@@ -1,0 +1,194 @@
+- text: 
+- banner:
+  - navigation "primary":
+    - list:
+      - link "Resources":
+        - /url: https://www.prnewswire.com/resources/
+      - link "Investor Relations":
+        - /url: https://www.prnewswire.com/ir-website/
+      - link "Journalists":
+        - /url: https://prnmedia.prnewswire.com/
+      - link "Agencies":
+        - /url: https://www.cision.com/agencies/?utm_medium=referral&utm_source=prnewswire&utm_content=product&utm_campaign=2023-prn-all-products-page
+    - list:
+      - link "Client Login":
+        - /url: https://app.prnewswire.com/login/auto
+      - link "Send a Release":
+        - /url: https://www.prnewswire.com/account/online-account-form/
+  - navigation "secondary":
+    - link "Return to PR Newswire homepage":
+      - /url: https://www.prnewswire.com/
+      - img "Return to PR Newswire homepage"
+    - list:
+      - link "News":
+        - /url: https://www.prnewswire.com/news-releases/
+      - link "Products":
+        - /url: https://www.prnewswire.com/amplify-platform/
+      - link "Contact":
+        - /url: https://www.prnewswire.com/contact-us/
+    - button "Search":
+      - text: Search
+      - generic: 
+    - text:  
+  - navigation "news":
+    - list:
+      - button "News in Focus"
+      - button "Business & Money"
+      - button "Science & Tech"
+      - button "Lifestyle & Health"
+      - button "Policy & Public Interest"
+      - button "People & Culture"
+- text:     
+- main:
+  - article:
+    - heading "Ranok Therapeutics Announces the Publication of Positive Phase 1a Clinical Results for KRAS G12D Inhibitor RNK08954 in Cancer Discovery" [level=1]
+    - separator
+    - heading "News provided by" [level=2]
+    - link "Ranok Therapeutics":
+      - /url: https://www.prnewswire.com/news/ranok-therapeutics/
+      - strong:
+        - text: Ranok Therapeutics
+        - generic: 
+    - paragraph: May 11, 2026, 09:00 ET
+    - heading "Share this article" [level=2]
+    - list:
+      - link "facebook sharing":
+        - /url: javascript:;
+        - generic: 
+      - link "twitter sharing":
+        - /url: javascript:;
+        - generic: 
+      - link "linkedin sharing":
+        - /url: javascript:;
+        - generic: 
+      - link "Whatsapp sharing":
+        - /url: javascript:;
+        - generic: 
+      - link "email sharing":
+        - /url: javascript:;
+        - generic: 
+    - text:      
+    - separator
+    - paragraph: BOSTON and HANGZHOU, China, May 11, 2026 /PRNewswire/ -- Ranok Therapeutics, a clinical-stage biotechnology company developing innovative therapies, today announced the publication of preliminary clinical results from its Phase 1a study of RNK08954 in the peer-reviewed journal Cancer Discovery. RNK08954 is a proprietary, highly selective, oral small-molecule inhibitor targeting KRAS G12D mutation in patients with advanced solid tumors.
+    - paragraph:
+      - text: The study evaluated the safety, tolerability, and clinical activity of RNK08954 in patients harboring KRAS G12D mutation across multiple sites in China. The study enrolled patients with advanced solid tumors, primarily focusing on safety and the determination of the Recommended Dose for Expansion. A total of 36 patients were evaluable for clinical activity. The overall objective response rate (ORR) was 28%, with a disease control rate (DCR) of 86%. Notably, patients with non-small cell lung cancer (NSCLC) achieved an ORR of 58.33% and a DCR of 100%. RNK08954 was generally well tolerated, with treatment-related adverse events consisting predominantly of Grade 1-2 gastrointestinal adverse events and decreased appetite. No dose-limiting toxicities were observed during the dose-escalation phase.
+      - superscript: "[1]"
+    - paragraph: "\"I am grateful that the editors of Cancer Discovery selected our study for publication,\" said Professor Song Zhengbo, Director of Phase I Clinical Trial Unit at Zhejiang Cancer Hospital, and the study's Principal Investigator. \"RNK08954 represents a critical step in advancing KRAS G12D-targeted therapy from concept to clinical validation. These findings not only accelerate the clinical translation of precision oncology but also lay a solid data foundation for subsequent pivotal clinical studies.\""
+    - paragraph: "\"The publication of these data underscores the potential for RNK08954 to provide a meaningful option for KRAS G12D-mutant cancers,\" commented Dr. Iman Elhariry, Chief Medical Officer at Ranok Therapeutics and co-author of the article. \"Seeing a 58.33% objective response rate in the NSCLC cohort is particularly encouraging as it validates our approach of targeting the Switch II pocket with high selectivity. Based on these strong signals of clinical activity and the clean safety profile, we have already initiated our Phase 1b expansion study to further explore the drug's potential as a monotherapy and in combination regimens across NSCLC, pancreatic and other indications.\""
+    - paragraph: "Dr. Weiwen, Founder and CEO of Ranok Therapeutics, added: \"The significant progress in KRAS inhibitors has been made possible by over a decade of accumulated knowledge in structural biology and medicinal chemistry. These clinical research achievements will inspire our team to further explore the clinical potential of RNK08954, fully unlocking its value for patients who currently lack effective targeted therapies.\""
+    - table:
+      - rowgroup:
+        - 'row "[1] Xie L, Xu C, Si H, et al. Preclinical characterization and clinical activity of RNK08954, a highly selective and orally bioavailable KRAS G12D inhibitor[J]. Cancer Discovery, 2026, 16(5): 895-910."':
+          - 'cell "[1] Xie L, Xu C, Si H, et al. Preclinical characterization and clinical activity of RNK08954, a highly selective and orally bioavailable KRAS G12D inhibitor[J]. Cancer Discovery, 2026, 16(5): 895-910."':
+            - paragraph: "[1] Xie L, Xu C, Si H, et al. Preclinical characterization and clinical activity of RNK08954, a highly selective and orally bioavailable KRAS G12D inhibitor[J]. Cancer Discovery, 2026, 16(5): 895-910."
+    - paragraph: About RNK08954 and KRAS G12D
+    - paragraph: KRAS G12D is one of the most prevalent oncogenic drivers in solid tumors, including pancreatic ductal adenocarcinoma (PDAC), colorectal cancer (CRC), and non-small cell lung cancer (NSCLC). For decades, this mutation was considered "undruggable". RNK08954 is designed to bind directly to the Switch II pocket of the KRAS G12D protein in its active and inactive states, effectively blocking downstream signaling pathways that drive tumor growth.
+    - paragraph: About Ranok Therapeutics
+    - paragraph:
+      - text: Ranok Therapeutics is a clinical stage biopharmaceutical company committed to discovering and developing breakthrough therapies for cancer patients. By leveraging deep expertise in protein regulation and medicinal chemistry, Ranok aims to address significant unmet medical needs in oncology. For more information, please visit
+      - link "www.ranoktherapeutics.com":
+        - /url: http://www.ranoktherapeutics.com/
+    - paragraph:
+      - text: For business development or media inquiries, please contact
+      - link "bd@ranoktherapeutics.com":
+        - /url: mailto:bd@ranoktherapeutics.com
+    - paragraph: Cautionary Statement Regarding Forward-Looking Statements
+    - paragraph: This press release contains forward-looking statements within the meaning of the Private Securities Litigation Reform Act. These statements are based on current expectations and involve risks and uncertainties. Actual results may differ materially from those expressed or implied due to various risks and uncertainties, including clinical development risks, regulatory approval uncertainties, and competitive factors. The investigational new drug referenced herein (IND 172260) has been authorized by the U.S. Food and Drug Administration (FDA) for clinical study purposes only; it has not been approved by the FDA for commercial marketing or sale. No representation is made that the product is safe or effective for any use not authorized under applicable law. These statements speak only as of the date hereof, and we undertake no obligation to update any forward-looking statement, whether as a result of new information, future events or otherwise, except as required by law.
+    - paragraph: SOURCE Ranok Therapeutics
+    - link "Request a Demo":
+      - /url: https://www.prnewswire.com/amplify-platform/?site_refer=press-release-widget
+      - heading "21%" [level=2]
+      - text: more press release views with
+      - text: Request a Demo
+- contentinfo:
+  - heading "Contact PR Newswire" [level=2]
+  - list:
+    - generic: 
+    - link "Call PR Newswire at 888-776-0942":
+      - /url: tel:Call%20PR%20Newswire%20at%20888-776-0942
+    - text: from 8 AM - 9 PM ET
+  - button "Contact Us":
+    - text: Contact Us
+    - generic: 
+  - link "Twitter":
+    - /url: https://twitter.com/PRNewswire
+    - generic: 
+  - link "Facebook":
+    - /url: https://www.facebook.com/PR-Newswire-26247320522/
+    - generic: 
+  - link "LinkedIn":
+    - /url: https://www.linkedin.com/company/pr-newswire/
+    - generic: 
+  - heading "Products" [level=2]
+  - list:
+    - link "For Marketers":
+      - /url: https://www.prnewswire.com/products/marketing/
+    - link "For Public Relations":
+      - /url: https://www.prnewswire.com/products/public-relations/
+    - link "For IR & Compliance":
+      - /url: https://www.prnewswire.com/products/ir-compliance/
+    - link "For Agency":
+      - /url: https://www.prnewswire.com/products/agency/
+    - link "All Products":
+      - /url: https://www.prnewswire.com/products/all-products/
+  - heading "About" [level=2]
+  - list:
+    - link "About PR Newswire":
+      - /url: https://www.prnewswire.com/about-pr-newswire/
+    - link "About Cision":
+      - /url: https://www.cision.com/us/?utm_medium=website&utm_source=prnewswire&utm_content=cishomepage&utm_campaign=prnewswire
+    - link "Become a Publishing Partner":
+      - /url: https://www.prnewswire.com/contact-us/prnewswire-partners/
+    - link "Become a Channel Partner":
+      - /url: https://www.prnewswire.com/contact-us/become-a-partner/
+    - link "Careers":
+      - /url: https://www.cision.com/careers/
+    - link "Accessibility Statement":
+      - /url: https://www.prnewswire.com/accessibility/
+  - button "Global Sites":
+    - text: Global Sites
+    - generic: 
+  - heading "My Services" [level=2]
+  - list:
+    - link "All New Releases":
+      - /url: https://www.prnewswire.com/news-releases/
+    - link "Platform Login":
+      - /url: https://app.prnewswire.com/login/auto
+    - link "ProfNet":
+      - /url: https://profnet.prnewswire.com/ProfNetHome/What-is-Profnet.aspx
+    - link "Data Privacy":
+      - /url: https://gdpr.cision.com/
+  - paragraph:
+    - link "Do not sell or share my personal information":
+      - /url: https://www.prnewswire.com/cookies/
+    - text: ":"
+  - list:
+    - text: Submit via
+    - link "privacy@cision.com":
+      - /url: mailto:privacy@cision.com
+    - text: "Call Privacy toll-free:"
+    - link "877-297-8921":
+      - /url: tel:+8772978921
+  - text:  
+  - list:
+    - link "Terms of Use":
+      - /url: https://www.prnewswire.com/terms-of-use/
+    - link "Privacy Policy":
+      - /url: https://www.cision.com/legal/privacy-policy/
+    - link "Information Security Policy":
+      - /url: https://www.prnewswire.com/prn-information-security-policy/
+    - link "Site Map":
+      - /url: https://www.prnewswire.com/sitemap/
+    - link "RSS":
+      - /url: https://www.prnewswire.com/rss/
+    - link "Cookies":
+      - /url: https://www.prnewswire.com/cookies/
+  - text: Copyright © 2026
+  - link "Cision":
+    - /url: https://www.cision.com/us/?utm_medium=website&utm_source=prnewswire&utm_content=cishomepage&utm_campaign=prnewswire
+  - text: US Inc.
+- text:            
+- link "Accessibility Statement":
+  - /url: https://www.cision.com/about/accessibility/
+- link "Skip Navigation":
+  - /url: https://www.prnewswire.com/news-releases/ranok-therapeutics-announces-the-publication-of-positive-phase-1a-clinical-results-for-kras-g12d-inhibitor-rnk08954-in-cancer-discovery-302767728.html#main

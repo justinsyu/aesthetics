@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Presbyopia Drops: Forecast vs Reality + HEOR Evidence Map</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --green: #324a2f;
+      --sage: #a6b696;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --unknown: #b65a8a;
+      --gray: #d6d0c2;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 26px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(215,255,95,0.32), transparent 34rem),
+        radial-gradient(circle at 84% 12%, rgba(184,216,255,0.28), transparent 26rem),
+        var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.38;
+    }
+
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .cite {
+      font-size: 0.62em;
+      vertical-align: super;
+      margin-left: 2px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .wrap { width: min(1360px, calc(100vw - 48px)); margin: 0 auto; }
+
+    header {
+      position: relative;
+      padding: 42px 0 26px;
+      border-bottom: 1.5px solid rgba(16,18,15,0.2);
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+    }
+    .dot-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 8px);
+      grid-template-rows: repeat(3, 8px);
+      gap: 3px;
+    }
+    .dot-grid span { width: 8px; height: 8px; border-radius: 50%; background: var(--ink); }
+    .nav-links { display: flex; gap: 18px; flex-wrap: wrap; justify-content: flex-end; }
+    .nav-links a { text-decoration: none; border-bottom: 1px solid transparent; }
+    .nav-links a:hover { border-color: var(--ink); }
+
+    .hero {
+      display: grid;
+      gap: 26px;
+      align-items: start;
+      padding: 0;
+    }
+    h1 {
+      font-size: clamp(44px, 4.7vw, 72px);
+      line-height: 0.92;
+      letter-spacing: -0.045em;
+      font-weight: 500;
+      margin: 0;
+      max-width: 100%;
+    }
+    .hero-card {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,0.72);
+      border-radius: var(--radius);
+      padding: 22px 26px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1.4px solid var(--line);
+      padding: 8px 11px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+    }
+    .hero-card p { margin: 0; color: var(--muted); font-size: 22px; }
+    .hero-card strong { color: var(--ink); }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin: 0 0 42px;
+    }
+    .metric {
+      border: 1.4px solid rgba(16,18,15,0.8);
+      border-radius: 22px;
+      background: rgba(255,250,240,0.65);
+      padding: 20px;
+      min-height: 150px;
+    }
+    .metric .num {
+      font-size: 50px;
+      line-height: 0.95;
+      font-weight: 900;
+      letter-spacing: -0.06em;
+    }
+    .metric .label { margin-top: 12px; font-size: 16px; color: var(--muted); }
+
+    section { padding: 34px 0; }
+    .section-head {
+      display: block;
+      margin: 0 0 28px;
+    }
+    .section-head h2 {
+      font-size: clamp(38px, 4.25vw, 62px);
+      line-height: 0.96;
+      letter-spacing: -0.04em;
+      font-weight: 500;
+      margin: 0;
+    }
+    .section-head p {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 21px;
+      max-width: none;
+      width: 100%;
+    }
+
+    .panel {
+      border: 1.5px solid var(--line);
+      border-radius: 32px;
+      background: rgba(255,250,240,0.86);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel.dark {
+      background: #11130f;
+      color: var(--paper);
+    }
+    .panel.dark .muted, .panel.dark p, .panel.dark td, .panel.dark th { color: rgba(246,241,232,0.72); }
+    .panel-pad { padding: 28px; }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0;
+      background: var(--line);
+    }
+    .time-item {
+      background: var(--card);
+      border-left: 2px solid var(--line);
+      padding: 28px 22px;
+      min-height: 205px;
+    }
+    .time-item:first-child { border-left: 0; }
+    .time-year { font-size: 14px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+    .time-title { margin-top: 14px; font-size: 26px; font-weight: 900; letter-spacing: -0.02em; }
+    .time-text { margin-top: 10px; font-size: 17px; color: var(--muted); }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 16px;
+    }
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      padding: 21px 18px;
+      border-bottom: 1px solid rgba(16,18,15,0.14);
+    }
+    th {
+      font-size: 12px;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: rgba(16,18,15,0.04);
+    }
+    tr:last-child td { border-bottom: 0; }
+    .product { font-weight: 900; font-size: 22px; letter-spacing: -0.03em; }
+    .sub { color: var(--muted); font-size: 15px; margin-top: 3px; }
+    .pill {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      margin: 2px 3px 2px 0;
+      white-space: nowrap;
+    }
+    .pill.lime { background: var(--lime); }
+    .pill.orange { background: var(--orange); }
+    .pill.blue { background: var(--blue); }
+    .pill.pink { background: var(--pink); }
+    .pill.gray { background: var(--gray); }
+
+    .chart-grid {
+      display: grid;
+      grid-template-columns: 330px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+    .legend { display: grid; gap: 11px; font-size: 15px; color: rgba(246,241,232,0.72); }
+    .legend-row { display: flex; align-items: center; gap: 10px; }
+    .key { width: 18px; height: 12px; border-radius: 4px; border: 1px solid rgba(246,241,232,0.4); }
+    .key.forecast { background: var(--lime); }
+    .key.actual { background: var(--blue); }
+    .key.unknown { background: var(--unknown); }
+    .bars { display: grid; gap: 20px; }
+    .bar-row {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 14px;
+      align-items: center;
+    }
+    .bar-label { font-size: 18px; font-weight: 900; color: var(--paper); }
+    .bar-wrap { display: grid; gap: 8px; }
+    .track {
+      position: relative;
+      height: 32px;
+      border: 1px solid rgba(246,241,232,0.28);
+      border-radius: 999px;
+      background: rgba(246,241,232,0.08);
+      overflow: hidden;
+    }
+    .bar {
+      position: absolute;
+      inset: 0 auto 0 0;
+      border-radius: 999px;
+      min-width: 6px;
+    }
+    .bar.forecast { background: var(--lime); }
+    .bar.actual { background: var(--blue); }
+    .bar.unknown { background: var(--unknown); width: 100%; }
+    .actual-marker {
+      position: absolute;
+      top: -4px;
+      bottom: -4px;
+      width: 7px;
+      border-radius: 999px;
+      background: var(--blue);
+      box-shadow: 0 0 0 2px #11130f;
+    }
+    .bar-note { font-size: 14px; color: rgba(246,241,232,0.68); display:flex; justify-content: space-between; gap: 12px; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .cards.two-up {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .evidence-card {
+      border: 1.5px solid var(--line);
+      border-radius: 26px;
+      background: var(--card);
+      padding: 22px;
+      min-height: 440px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .evidence-card h3 {
+      margin: 0;
+      font-size: 40px;
+      letter-spacing: -0.06em;
+      line-height: 0.96;
+    }
+    .evidence-card .company { color: var(--muted); font-size: 15px; margin-top: 5px; }
+    .evidence-card h4 {
+      margin: 0 0 7px;
+      font-size: 13px;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+    .evidence-card p { margin: 0; color: var(--muted); font-size: 16px; }
+    .evidence-card ul { margin: 0; padding-left: 21px; color: var(--muted); font-size: 16px; }
+    .evidence-card li { margin: 0 0 8px; }
+
+    .matrix {
+      display: grid;
+      grid-template-columns: 260px repeat(4, 1fr);
+      border: 1.5px solid var(--line);
+      border-radius: 30px;
+      overflow: hidden;
+      background: var(--line);
+      gap: 1px;
+    }
+    .matrix > div { background: var(--card); padding: 16px; min-height: 78px; }
+    .matrix .head { background: #11130f; color: var(--paper); font-weight: 900; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; }
+    .matrix .rowhead { font-weight: 800; font-size: 19px; }
+    .score { font-size: 15px; color: var(--muted); }
+    .signal { font-weight: 900; font-size: 24px; letter-spacing: -0.05em; }
+    .yes { color: #24522b; }
+    .partial { color: #8b5a00; }
+    .no { color: #6a6a62; }
+    .matrix-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      align-items: center;
+      margin: -12px 0 14px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+    .matrix-legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      white-space: nowrap;
+    }
+    .matrix-legend .signal {
+      font-size: 21px;
+      line-height: 1;
+    }
+
+    .strategy {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .strategy-card {
+      background: #11130f;
+      color: var(--paper);
+      border-radius: 26px;
+      padding: 32px;
+      min-height: 360px;
+      border: 1px solid rgba(246,241,232,0.2);
+    }
+    .strategy-card .step { font-size: 15px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--lime); font-weight: 850; }
+    .strategy-card h3 { margin: 22px 0 16px; font-size: 34px; letter-spacing: -0.04em; line-height: 1; font-weight: 750; }
+    .strategy-card p { margin: 0; color: rgba(246,241,232,0.72); font-size: 24px; }
+
+    .sources {
+      font-size: 21px;
+      color: var(--muted);
+      column-count: 2;
+      column-gap: 42px;
+    }
+    .sources p { break-inside: avoid; margin: 0 0 15px; }
+    sup { font-size: 10px; font-weight: 800; }
+    .caption { font-size: 14px; color: var(--muted); margin-top: 10px; }
+
+    @media (max-width: 1100px) {
+      .hero, .section-head, .chart-grid { grid-template-columns: 1fr; }
+      .metrics, .cards, .strategy { grid-template-columns: repeat(2, 1fr); }
+      .timeline { grid-template-columns: repeat(3, 1fr); }
+      .matrix { grid-template-columns: 210px repeat(4, minmax(120px, 1fr)); overflow-x: auto; }
+    }
+    @media (max-width: 760px) {
+      .wrap { width: min(100vw - 28px, 1360px); }
+      header { padding-top: 24px; }
+      .nav { align-items: flex-start; }
+      .nav-links { display: none; }
+      .metrics, .cards, .strategy, .timeline { grid-template-columns: 1fr; }
+      .panel-pad { padding: 20px; }
+      table { font-size: 13px; }
+      .table-scroll { overflow-x: auto; }
+      .bar-row { grid-template-columns: 1fr; }
+      .sources { column-count: 1; }
+    }
+
+
+    /* Slide deck wrappers: preserve existing component styles while separating content into pages. */
+    .slide-deck {
+      display: block;
+    }
+    .slide {
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      padding: 48px 0 32px;
+      page-break-after: always;
+      break-after: page;
+    }
+    .slide:last-child {
+      page-break-after: auto;
+      break-after: auto;
+    }
+    .slide > .wrap {
+      width: min(1360px, calc(100vw - 48px));
+      margin: 0 auto;
+    }
+    .slide header {
+      width: 100%;
+      border-bottom: 0;
+      padding: 0;
+    }
+    .slide header .metrics {
+      margin-top: 30px;
+    }
+    .slide-hero {
+      align-items: center;
+      padding: 0;
+    }
+    .slide-hero h1 {
+      font-size: 92px;
+      line-height: 0.9;
+      max-width: 1360px;
+    }
+    .slide-hero h1 span {
+      display: block;
+    }
+    .slide-hero .hero {
+      gap: 30px;
+    }
+    .slide-hero .eyebrow {
+      margin-top: 18px;
+      margin-bottom: 0;
+      font-size: 16px;
+    }
+    .slide-hero .hero-card {
+      max-width: none;
+      padding: 30px 32px;
+    }
+    .slide-hero .hero-card p {
+      font-size: 30px;
+      line-height: 1.28;
+    }
+    .slide .section-slide {
+      width: 100%;
+      padding: 0;
+    }
+    .slide .section-slide .section-head {
+      margin-top: 0;
+    }
+    .slide .metrics {
+      margin: 0;
+    }
+    .slide .panel + .section-head {
+      margin-top: 0;
+    }
+    .slide .sources {
+      column-count: 2;
+    }
+    .forecast-table-slide table {
+      font-size: 17px;
+    }
+    .forecast-table-slide th,
+    .forecast-table-slide td {
+      padding: 24px 18px;
+    }
+    .heor-slide .evidence-card {
+      min-height: 520px;
+      padding: 20px;
+      gap: 13px;
+    }
+    .heor-slide .evidence-card p,
+    .heor-slide .evidence-card ul {
+      font-size: 15.5px;
+    }
+
+    @media (max-width: 760px) {
+      .slide { align-items: flex-start; padding: 24px 0; }
+      .slide > .wrap { width: min(100vw - 28px, 1360px); }
+    }
+
+    @page {
+      size: 1600px 900px;
+      margin: 0;
+    }
+
+    @media print {
+      html, body {
+        width: 1600px;
+        min-height: 900px;
+      }
+      .slide {
+        display: flex;
+        align-items: start;
+        page-break-before: auto;
+        break-before: auto;
+        page-break-after: always;
+        break-after: page;
+        page-break-inside: avoid;
+        break-inside: avoid;
+        min-height: 900px;
+        height: 900px;
+        padding: 48px 0 32px;
+        overflow: hidden;
+      }
+      .slide:last-child {
+        page-break-after: auto;
+        break-after: auto;
+      }
+      .slide > .wrap {
+        width: 1360px;
+      }
+      .slide-hero {
+        align-items: center;
+        padding: 0;
+      }
+      .metrics {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .timeline {
+        grid-template-columns: repeat(6, 1fr);
+      }
+      .chart-grid {
+        grid-template-columns: 330px 1fr;
+      }
+      .cards {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .cards.two-up {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .matrix {
+        grid-template-columns: 260px repeat(4, 1fr);
+        overflow: hidden;
+      }
+      .strategy {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media print {
+      body { background: var(--paper); }
+      .panel, .metric, .hero-card, .evidence-card { box-shadow: none; }
+      a { text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="slide-deck">
+    <article class="slide slide-hero" aria-label="Slide 1: Presbyopia drops evidence gap">
+      <header>
+        <div class="wrap hero">
+          <div>
+            <h1><span>Presbyopia eye drops:</span> <span>evidence gaps and opportunities</span></h1>
+            <div class="eyebrow">Rx drops • evidence analysis • May 1, 2026</div>
+          </div>
+          <aside class="hero-card">
+            <p><strong>Scope:</strong> FDA-approved pharmaceutical eye-drop treatments for adult presbyopia in the United States: VUITY, QLOSI, VIZZ, and YUVEZZI.<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-2">[2]</a><a class="cite" href="#source-3">[3]</a><a class="cite" href="#source-4">[4]</a></p>
+          </aside>
+          <div class="metrics">
+            <div class="metric"><div class="num">4</div><div class="label">FDA-approved Rx eye-drop products in scope<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-2">[2]</a><a class="cite" href="#source-3">[3]</a><a class="cite" href="#source-4">[4]</a></div></div>
+            <div class="metric"><div class="num">1/4</div><div class="label">Products with disclosed full-year product sales<a class="cite" href="#source-5">[5]</a><a class="cite" href="#source-7">[7]</a><a class="cite" href="#source-8">[8]</a></div></div>
+            <div class="metric"><div class="num">$1.1B</div><div class="label">Most explicit disclosed product forecast: VIZZ peak global sales by 2038<a class="cite" href="#source-6">[6]</a></div></div>
+            <div class="metric"><div class="num">Limited</div><div class="label">Evidence base outside clinical outcomes and patient-experience work<a class="cite" href="#source-3">[3]</a><a class="cite" href="#source-6">[6]</a><a class="cite" href="#source-7">[7]</a><a class="cite" href="#source-10">[10]</a><a class="cite" href="#source-11">[11]</a><a class="cite" href="#source-15">[15]</a><a class="cite" href="#source-16">[16]</a></div></div>
+          </div>
+        </div>
+      </header>
+    </article>
+    <article class="slide" aria-label="Slide 2: Regulatory and launch sequence">
+      <div class="wrap">
+      <section class="section-slide">
+      <div class="section-head">
+        <h2>Regulatory and launch sequence</h2>
+        <p>Presbyopia drops entered as a large cash-pay consumer category, but product-level sales transparency remains limited. The market narrative has shifted from “first FDA-approved drop” to duration, tolerability, real-world usability, refill behavior, and willingness to pay.<a class="cite" href="#source-8">[8]</a><a class="cite" href="#source-9">[9]</a></p>
+      </div>
+      <div class="panel">
+        <div class="timeline">
+          <div class="time-item"><div class="time-year">Oct 2021</div><div class="time-title">VUITY approved<a class="cite" href="#source-1">[1]</a></div><div class="time-text">First FDA-approved eye drop for presbyopia, pilocarpine 1.25%.<a class="cite" href="#source-1">[1]</a></div></div>
+          <div class="time-item"><div class="time-year">Oct 2023</div><div class="time-title">QLOSI approved<a class="cite" href="#source-2">[2]</a></div><div class="time-text">Low-dose, preservative-free pilocarpine 0.4%; flexible use up to twice daily.<a class="cite" href="#source-2">[2]</a></div></div>
+          <div class="time-item"><div class="time-year">Apr-Nov 2025</div><div class="time-title">QLOSI rollout expanded<a class="cite" href="#source-12">[12]</a></div><div class="time-text">Commercial rollout later expanded with starter packs and DTC engagement.<a class="cite" href="#source-12">[12]</a><a class="cite" href="#source-13">[13]</a><a class="cite" href="#source-14">[14]</a></div></div>
+          <div class="time-item"><div class="time-year">Jul 2025</div><div class="time-title">VIZZ approved<a class="cite" href="#source-3">[3]</a></div><div class="time-text">First aceclidine-based drop, once daily, efficacy described up to 10 hours.<a class="cite" href="#source-3">[3]</a></div></div>
+          <div class="time-item"><div class="time-year">Oct 2025</div><div class="time-title">VIZZ sales begin<a class="cite" href="#source-7">[7]</a></div><div class="time-text">First commercial product sales initiated in October 2025.<a class="cite" href="#source-7">[7]</a></div></div>
+          <div class="time-item"><div class="time-year">Jan-Mar 2026</div><div class="time-title">YUVEZZI approved and launched<a class="cite" href="#source-4">[4]</a><a class="cite" href="#source-5">[5]</a></div><div class="time-text">First dual-agent once-daily option; nationwide availability announced March 2026.<a class="cite" href="#source-4">[4]</a><a class="cite" href="#source-5">[5]</a></div></div>
+        </div>
+      </div>
+    </section>
+      </div>
+    </article>
+    <article class="slide" aria-label="Slide 3: Disclosed forecast and sales benchmarks">
+      <div class="wrap">
+      <section class="section-slide" id="forecast">
+      <div class="section-head">
+        <h2>Disclosed forecast and sales benchmarks</h2>
+        <p>Only VIZZ currently permits a clean forecast-to-actual comparison because LENZ reports product sales. For AbbVie, Orasis, and Tenpoint, available disclosures are directionally useful but not sufficient for precise product-level sales benchmarking.<a class="cite" href="#source-4">[4]</a><a class="cite" href="#source-5">[5]</a><a class="cite" href="#source-6">[6]</a><a class="cite" href="#source-7">[7]</a><a class="cite" href="#source-8">[8]</a><a class="cite" href="#source-9">[9]</a></p>
+      </div>
+      <div class="panel dark">
+        <div class="panel-pad chart-grid">
+          <div>
+            <div class="eyebrow" style="background:transparent;color:var(--paper);border-color:rgba(246,241,232,0.35);">One row per product</div>
+            <div class="legend">
+              <div class="legend-row"><span class="key forecast"></span> Forecast or historical market-potential estimate</div>
+              <div class="legend-row"><span class="key actual"></span> Actual FY2025 sales marker where disclosed</div>
+              <div class="legend-row"><span class="key unknown"></span> Not disclosed or no completed sales year</div>
+            </div>
+          </div>
+          <div class="bars">
+            <div class="bar-row">
+              <div class="bar-label">VUITY</div>
+              <div class="bar-wrap">
+                <div class="track"><div class="bar forecast" style="width:10.6%"></div></div>
+                <div class="bar-note"><span>2026 forecast: $117M<a class="cite" href="#source-6">[6]</a></span><span>Actual: not separately disclosed<a class="cite" href="#source-8">[8]</a><a class="cite" href="#source-9">[9]</a></span></div>
+              </div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">QLOSI</div>
+              <div class="bar-wrap">
+                <div class="track"><div class="bar unknown"></div></div>
+                <div class="bar-note"><span>Product-level forecast: not located<a class="cite" href="#source-2">[2]</a><a class="cite" href="#source-8">[8]</a></span><span>Actual: private company, not disclosed<a class="cite" href="#source-2">[2]</a><a class="cite" href="#source-8">[8]</a></span></div>
+              </div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">VIZZ</div>
+              <div class="bar-wrap">
+                <div class="track"><div class="bar forecast" style="width:100%"></div><div class="actual-marker" style="left:0.5%"></div></div>
+                <div class="bar-note"><span>Peak forecast: $1.1B global sales by 2038<a class="cite" href="#source-6">[6]</a></span><span>Actual FY2025: $1.6M<a class="cite" href="#source-7">[7]</a></span></div>
+                <div class="bar-note"><span>Launch-year consensus: $3M in 2025; 2026 consensus: $45M<a class="cite" href="#source-6">[6]</a></span><span>Reported after October sales start<a class="cite" href="#source-7">[7]</a></span></div>
+              </div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">YUVEZZI</div>
+              <div class="bar-wrap">
+                <div class="track"><div class="bar unknown"></div></div>
+                <div class="bar-note"><span>Product-level forecast: not located<a class="cite" href="#source-4">[4]</a><a class="cite" href="#source-5">[5]</a><a class="cite" href="#source-8">[8]</a></span><span>Actual: no completed full sales year yet<a class="cite" href="#source-4">[4]</a><a class="cite" href="#source-5">[5]</a></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+      </div>
+    </article>
+    <article class="slide forecast-table-slide" aria-label="Slide 4: Forecast benchmarks for VUITY and QLOSI">
+      <div class="wrap">
+      <section class="section-slide">
+      <div class="section-head">
+        <h2>Forecast benchmarks: VUITY and QLOSI</h2>
+        <p>Product-level forecast and actual-sales disclosures remain uneven; the table separates visible benchmarks from missing product-level reporting instead of treating missing values as zero-dollar performance.<a class="cite" href="#source-8">[8]</a><a class="cite" href="#source-9">[9]</a></p>
+      </div>
+      <div class="panel">
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Treatment</th>
+                <th>Manufacturer / owner</th>
+                <th>Commercial status</th>
+                <th>Disclosed prelaunch or early-launch sales forecast</th>
+                <th>Target year</th>
+                <th>Most recent actual full-year sales</th>
+                <th>Interpretive caution</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="product">VUITY<a class="cite" href="#source-1">[1]</a></div><div class="sub">pilocarpine HCl 1.25%<a class="cite" href="#source-1">[1]</a></div></td>
+                <td>AbbVie / Allergan<a class="cite" href="#source-1">[1]</a></td>
+                <td><span class="pill lime">Approved 2021<a class="cite" href="#source-1">[1]</a></span></td>
+                <td>Visible Alpha forecast: <strong>$117M in 2026</strong>.<a class="cite" href="#source-6">[6]</a></td>
+                <td>2026<a class="cite" href="#source-6">[6]</a></td>
+                <td><strong>Not separately disclosed</strong> by AbbVie in product-level reporting.<a class="cite" href="#source-8">[8]</a><a class="cite" href="#source-9">[9]</a></td>
+                <td>No actual full-year sales figure was separately disclosed in the reviewed reporting.<a class="cite" href="#source-8">[8]</a><a class="cite" href="#source-9">[9]</a></td>
+              </tr>
+              <tr>
+                <td><div class="product">QLOSI<a class="cite" href="#source-2">[2]</a></div><div class="sub">pilocarpine HCl 0.4%<a class="cite" href="#source-2">[2]</a></div></td>
+                <td>Orasis Pharmaceuticals<a class="cite" href="#source-2">[2]</a></td>
+                <td><span class="pill lime">Approved 2023<a class="cite" href="#source-2">[2]</a></span><span class="pill blue">U.S. launch 2025<a class="cite" href="#source-12">[12]</a></span></td>
+                <td><strong>No product-specific forecast located</strong>.<a class="cite" href="#source-2">[2]</a><a class="cite" href="#source-8">[8]</a></td>
+                <td>N/A</td>
+                <td><strong>Not disclosed</strong>; Orasis is privately held. Company statements report adoption and refill rates but no sales figure.<a class="cite" href="#source-8">[8]</a><a class="cite" href="#source-12">[12]</a><a class="cite" href="#source-14">[14]</a></td>
+                <td>Adoption and refill claims are directional signals; they cannot substitute for revenue.<a class="cite" href="#source-8">[8]</a><a class="cite" href="#source-12">[12]</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+      </div>
+    </article>
+    <article class="slide forecast-table-slide" aria-label="Slide 5: Forecast benchmarks for VIZZ and YUVEZZI">
+      <div class="wrap">
+      <section class="section-slide">
+      <div class="section-head">
+        <h2>Forecast benchmarks: VIZZ and YUVEZZI</h2>
+        <p>VIZZ has the clearest disclosed forecast and actual-sales baseline, while YUVEZZI was too recently launched to have a completed full sales year as of May 1, 2026.<a class="cite" href="#source-4">[4]</a><a class="cite" href="#source-5">[5]</a><a class="cite" href="#source-6">[6]</a><a class="cite" href="#source-7">[7]</a></p>
+      </div>
+      <div class="panel">
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Treatment</th>
+                <th>Manufacturer / owner</th>
+                <th>Commercial status</th>
+                <th>Disclosed prelaunch or early-launch sales forecast</th>
+                <th>Target year</th>
+                <th>Most recent actual full-year sales</th>
+                <th>Interpretive caution</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="product">VIZZ<a class="cite" href="#source-3">[3]</a></div><div class="sub">aceclidine ophthalmic solution 1.44%<a class="cite" href="#source-3">[3]</a></div></td>
+                <td>LENZ Therapeutics<a class="cite" href="#source-3">[3]</a><a class="cite" href="#source-7">[7]</a></td>
+                <td><span class="pill lime">Approved 2025<a class="cite" href="#source-3">[3]</a></span><span class="pill blue">Sales started Oct 2025<a class="cite" href="#source-7">[7]</a></span></td>
+                <td>Visible Alpha consensus: <strong>$3M in 2025</strong>, <strong>$45M in 2026</strong>, and <strong>$1.1B peak global sales</strong>.<a class="cite" href="#source-6">[6]</a></td>
+                <td>2025, 2026, peak 2038<a class="cite" href="#source-6">[6]</a></td>
+                <td><strong>$1.6M</strong> net product sales for FY2025.<a class="cite" href="#source-7">[7]</a></td>
+                <td>FY2025 includes a partial launch year because commercial sales began in October.<a class="cite" href="#source-7">[7]</a></td>
+              </tr>
+              <tr>
+                <td><div class="product">YUVEZZI<a class="cite" href="#source-4">[4]</a></div><div class="sub">carbachol/brimonidine tartrate 2.75%/0.1%<a class="cite" href="#source-4">[4]</a><a class="cite" href="#source-5">[5]</a></div></td>
+                <td>Tenpoint Therapeutics / Visus<a class="cite" href="#source-4">[4]</a><a class="cite" href="#source-5">[5]</a><a class="cite" href="#source-15">[15]</a></td>
+                <td><span class="pill lime">Approved 2026<a class="cite" href="#source-4">[4]</a></span><span class="pill blue">Nationwide availability Mar 2026<a class="cite" href="#source-5">[5]</a></span></td>
+                <td><strong>No product-specific forecast located</strong> in the reviewed source set. Launch was supported by $235M Series B + credit facility.<a class="cite" href="#source-4">[4]</a><a class="cite" href="#source-5">[5]</a><a class="cite" href="#source-8">[8]</a></td>
+                <td>N/A</td>
+                <td><strong>N/A</strong>; no completed full sales year as of May 1, 2026.<a class="cite" href="#source-5">[5]</a></td>
+                <td>Commercial-readiness financing is not a sales forecast.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+      </div>
+    </article>
+    <article class="slide heor-slide" aria-label="Slide 6: Evidence summary for VUITY and QLOSI">
+      <div class="wrap">
+      <section class="section-slide" id="heor">
+      <div class="section-head">
+        <h2>Evidence summary: VUITY and QLOSI</h2>
+        <p>The identified evidence base is uneven. HEOR-adjacent signals are concentrated in patient-experience and quality-of-life work rather than formal cost-effectiveness or budget-impact evidence. The cash-pay context leaves evidence gaps around persistence, willingness to pay, Rx abandonment, and comparative patient preference.<a class="cite" href="#source-8">[8]</a><a class="cite" href="#source-9">[9]</a><a class="cite" href="#source-10">[10]</a><a class="cite" href="#source-11">[11]</a><a class="cite" href="#source-15">[15]</a></p>
+      </div>
+      <div class="cards two-up">
+        <article class="evidence-card">
+          <div>
+            <h3>VUITY</h3>
+            <div class="company">AbbVie / Allergan</div>
+          </div>
+          <div><span class="pill lime">Published patient-experience work<a class="cite" href="#source-10">[10]</a></span><span class="pill gray">Sales opacity<a class="cite" href="#source-8">[8]</a><a class="cite" href="#source-9">[9]</a></span></div>
+          <div>
+            <h4>Available evidence</h4>
+            <p>AbbVie funded a mixed-methods study using questionnaire, survey, and interviews from the VIRGO phase 3 program. It quantified negative impacts of presbyopia and reading glasses, including inconvenience and reliance, and reported satisfaction and willingness to use pilocarpine 1.25% if prescribed.<a class="cite" href="#source-10">[10]</a></p>
+          </div>
+          <div>
+            <h4>Current use</h4>
+            <p>Product positioning remains more clinical and lifestyle oriented than payer-oriented. The evidence supports the category claim that presbyopia creates daily functional burden, but it does not appear central to access arguments.<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-8">[8]</a><a class="cite" href="#source-9">[9]</a><a class="cite" href="#source-10">[10]</a></p>
+          </div>
+          <div>
+            <h4>Evidence opportunities</h4>
+            <ul>
+              <li>Real-world persistence and discontinuation reasons after the safety-label and adherence concerns around miotics.<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-9">[9]</a></li>
+              <li>Comparative patient preference versus newer longer-duration drops and flexible-dose QLOSI.<a class="cite" href="#source-3">[3]</a><a class="cite" href="#source-5">[5]</a><a class="cite" href="#source-13">[13]</a><a class="cite" href="#source-16">[16]</a></li>
+              <li>Work-productivity and task-completion time studies tied to real near-vision tasks.<a class="cite" href="#source-10">[10]</a></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="evidence-card">
+          <div>
+            <h3>QLOSI</h3>
+            <div class="company">Orasis Pharmaceuticals</div>
+          </div>
+          <div><span class="pill lime">QOL trial underway<a class="cite" href="#source-11">[11]</a></span><span class="pill blue">Commercial behavior signals<a class="cite" href="#source-12">[12]</a><a class="cite" href="#source-14">[14]</a></span></div>
+          <div>
+            <h4>Available evidence</h4>
+            <p>Orasis is sponsoring a phase 4 quality-of-life study evaluating QLOSI with validated and investigator-developed instruments, including NAVQ-P and VisQualT. It also promotes clinical data around preservative-free low-dose formulation, functional near vision, and pupil selectivity.<a class="cite" href="#source-11">[11]</a><a class="cite" href="#source-13">[13]</a></p>
+          </div>
+          <div>
+            <h4>Current use</h4>
+            <p>The ECP website uses patient-fit questions around readers, dim light, hobbies, and flexible dosing. The patient website adds savings, support, automatic refill prompts, story capture, and a 30-day satisfaction guarantee. Orasis also reports DTC engagement, starter packs, progress trackers, and refill rates exceeding expectations.<a class="cite" href="#source-12">[12]</a><a class="cite" href="#source-13">[13]</a><a class="cite" href="#source-14">[14]</a></p>
+          </div>
+          <div>
+            <h4>Evidence opportunities</h4>
+            <ul>
+              <li>Phase 4 QOL dataset publication, with links between changes and concrete tasks rather than generic satisfaction.<a class="cite" href="#source-11">[11]</a></li>
+              <li>Satisfaction-guarantee outcomes, refill conversion, and reasons for refund requests.<a class="cite" href="#source-12">[12]</a><a class="cite" href="#source-14">[14]</a></li>
+              <li>Patient segments that may value flexible as-needed dosing over once-daily duration.<a class="cite" href="#source-3">[3]</a><a class="cite" href="#source-5">[5]</a><a class="cite" href="#source-13">[13]</a><a class="cite" href="#source-16">[16]</a></li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+      </div>
+    </article>
+    <article class="slide heor-slide" aria-label="Slide 7: Evidence summary for VIZZ and YUVEZZI">
+      <div class="wrap">
+      <section class="section-slide">
+      <div class="section-head">
+        <h2>Evidence summary: VIZZ and YUVEZZI</h2>
+        <p>Newer launches have clearer differentiation stories around duration, reading speed, and access pathways, while published HEOR evidence remains limited around preference, persistence, and cash-pay friction studies.<a class="cite" href="#source-3">[3]</a><a class="cite" href="#source-5">[5]</a><a class="cite" href="#source-6">[6]</a><a class="cite" href="#source-7">[7]</a><a class="cite" href="#source-15">[15]</a><a class="cite" href="#source-16">[16]</a></p>
+      </div>
+      <div class="cards two-up">
+        <article class="evidence-card">
+          <div>
+            <h3>VIZZ</h3>
+            <div class="company">LENZ Therapeutics</div>
+          </div>
+          <div><span class="pill orange">Clinical differentiation<a class="cite" href="#source-3">[3]</a><a class="cite" href="#source-6">[6]</a></span><span class="pill gray">Limited HEOR publication set<a class="cite" href="#source-7">[7]</a></span></div>
+          <div>
+            <h4>Available evidence</h4>
+            <p>No standalone HEOR publication sponsored by LENZ was identified. Company materials emphasize once-daily dosing, aceclidine’s pupil-selective mechanism, up-to-10-hour effect, ECP uptake, and DTC awareness.<a class="cite" href="#source-3">[3]</a><a class="cite" href="#source-6">[6]</a><a class="cite" href="#source-7">[7]</a></p>
+          </div>
+          <div>
+            <h4>Current use</h4>
+            <p>LENZ is using a direct-to-ECP rollout plus a consumer campaign, including the “Make it VIZZable” campaign. Website traffic reportedly increased as much as 10x after national media activations.<a class="cite" href="#source-3">[3]</a><a class="cite" href="#source-7">[7]</a></p>
+          </div>
+          <div>
+            <h4>Evidence opportunities</h4>
+            <ul>
+              <li>Head-to-head patient preference research versus QLOSI and YUVEZZI focused on duration, dosing burden, and side-effect tradeoffs.</li>
+              <li>Cash-pay willingness-to-pay and prescription abandonment research.</li>
+              <li>Prospective workday evidence: duration of useful near vision, eye-strain, reading speed, device use, and patient-reported productivity.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="evidence-card">
+          <div>
+            <h3>YUVEZZI</h3>
+            <div class="company">Tenpoint Therapeutics / Visus</div>
+          </div>
+          <div><span class="pill lime">Reading-speed/QOL claims<a class="cite" href="#source-15">[15]</a><a class="cite" href="#source-16">[16]</a></span><span class="pill blue">Real-world needs framing<a class="cite" href="#source-5">[5]</a></span></div>
+          <div>
+            <h4>Available evidence</h4>
+            <p>Tenpoint has reported additional BRIO-II analyses showing significant reading-speed and NEI-Refractive Error QoL improvements, with more data expected. The patient website already uses reading-speed and long-duration safety framing.<a class="cite" href="#source-15">[15]</a><a class="cite" href="#source-16">[16]</a></p>
+          </div>
+          <div>
+            <h4>Current use</h4>
+            <p>Launch messaging stresses one-drop once-daily use, up to 8 hours of sharp close-up vision, 1-year safety evaluation, and broad access through PHILRx and retail pharmacies.<a class="cite" href="#source-5">[5]</a><a class="cite" href="#source-16">[16]</a></p>
+          </div>
+          <div>
+            <h4>Evidence opportunities</h4>
+            <ul>
+              <li>Complete NEI-RQL and reading-speed analyses, including baseline burden and responder definitions.</li>
+              <li>Comparative evidence versus VIZZ on duration, nighttime concerns, and one-drop convenience.</li>
+              <li>Access-pathway evidence: PHILRx versus retail conversion, fill rates, and out-of-pocket burden.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+      </div>
+    </article>
+    <article class="slide" aria-label="Slide 8: Evidence gap matrix">
+      <div class="wrap">
+      <section class="section-slide">
+      <div class="section-head">
+        <h2>Evidence gap matrix</h2>
+        <p>Potential HEOR priorities include evidence that supports ECP patient selection, patient assessment of cash-pay use, and manufacturer understanding of abandonment after the first prescription.<a class="cite" href="#source-8">[8]</a><a class="cite" href="#source-9">[9]</a><a class="cite" href="#source-10">[10]</a><a class="cite" href="#source-11">[11]</a><a class="cite" href="#source-12">[12]</a><a class="cite" href="#source-14">[14]</a><a class="cite" href="#source-15">[15]</a><a class="cite" href="#source-16">[16]</a></p>
+      </div>
+      <div class="matrix-legend" aria-label="Evidence matrix legend">
+        <span><span class="signal yes">●</span> Evidence identified</span>
+        <span><span class="signal partial">◐</span> Partial or emerging evidence</span>
+        <span><span class="signal no">○</span> Evidence gap</span>
+      </div>
+      <div class="matrix" role="table" aria-label="HEOR evidence whitespace matrix">
+        <div class="head">Evidence domain</div><div class="head">VUITY</div><div class="head">QLOSI</div><div class="head">VIZZ</div><div class="head">YUVEZZI</div>
+        <div class="rowhead">Validated QOL / patient burden</div><div><span class="signal yes">●</span><div class="score">Published mixed-methods patient-perspective work<a class="cite" href="#source-10">[10]</a></div></div><div><span class="signal partial">◐</span><div class="score">Phase 4 QOL study underway<a class="cite" href="#source-11">[11]</a></div></div><div><span class="signal no">○</span><div class="score">No standalone HEOR publication located<a class="cite" href="#source-3">[3]</a><a class="cite" href="#source-6">[6]</a><a class="cite" href="#source-7">[7]</a></div></div><div><span class="signal partial">◐</span><div class="score">NEI-RQL analyses reported, publication depth unclear<a class="cite" href="#source-15">[15]</a></div></div>
+        <div class="rowhead">Reading speed / task performance</div><div><span class="signal partial">◐</span><div class="score">Patient tasks captured qualitatively<a class="cite" href="#source-10">[10]</a></div></div><div><span class="signal no">○</span><div class="score">NAVQ-P task anchoring gap<a class="cite" href="#source-11">[11]</a></div></div><div><span class="signal no">○</span><div class="score">Evidence gap<a class="cite" href="#source-3">[3]</a><a class="cite" href="#source-6">[6]</a><a class="cite" href="#source-7">[7]</a></div></div><div><span class="signal yes">●</span><div class="score">Reading-speed improvement used on website<a class="cite" href="#source-15">[15]</a><a class="cite" href="#source-16">[16]</a></div></div>
+        <div class="rowhead">Real-world persistence/refills</div><div><span class="signal no">○</span><div class="score">Not located in reviewed sources<a class="cite" href="#source-8">[8]</a><a class="cite" href="#source-9">[9]</a></div></div><div><span class="signal partial">◐</span><div class="score">Refill rates described but not quantified<a class="cite" href="#source-12">[12]</a><a class="cite" href="#source-14">[14]</a></div></div><div><span class="signal partial">◐</span><div class="score">Prescriber/repeat-writer metrics disclosed<a class="cite" href="#source-6">[6]</a><a class="cite" href="#source-7">[7]</a></div></div><div><span class="signal no">○</span><div class="score">Too early<a class="cite" href="#source-4">[4]</a><a class="cite" href="#source-5">[5]</a></div></div>
+        <div class="rowhead">Preference / willingness to pay</div><div><span class="signal partial">◐</span><div class="score">Willingness to use if prescribed<a class="cite" href="#source-10">[10]</a></div></div><div><span class="signal no">○</span><div class="score">Evidence gap</div></div><div><span class="signal no">○</span><div class="score">Evidence gap</div></div><div><span class="signal no">○</span><div class="score">Evidence gap</div></div>
+        <div class="rowhead">Access pathway / cash-pay friction</div><div><span class="signal no">○</span><div class="score">Not located in reviewed sources<a class="cite" href="#source-8">[8]</a><a class="cite" href="#source-9">[9]</a></div></div><div><span class="signal partial">◐</span><div class="score">Savings, auto-refill, guarantee infrastructure<a class="cite" href="#source-13">[13]</a><a class="cite" href="#source-14">[14]</a></div></div><div><span class="signal partial">◐</span><div class="score">DTC traffic and prescriber base disclosed<a class="cite" href="#source-6">[6]</a><a class="cite" href="#source-7">[7]</a></div></div><div><span class="signal partial">◐</span><div class="score">PHILRx + retail channel emphasized<a class="cite" href="#source-5">[5]</a><a class="cite" href="#source-16">[16]</a></div></div>
+      </div>
+    </section>
+      </div>
+    </article>
+    <article class="slide" aria-label="Slide 9: Evidence generation considerations">
+      <div class="wrap">
+      <section class="section-slide" id="opportunities">
+      <div class="section-head">
+        <h2>Evidence generation considerations</h2>
+        <p>Because the category is mostly elective and cash-pay, potential evidence priorities may center on patient selection, adoption, and persistence while still using rigorous outcomes methodology.<a class="cite" href="#source-8">[8]</a><a class="cite" href="#source-9">[9]</a><a class="cite" href="#source-10">[10]</a><a class="cite" href="#source-11">[11]</a><a class="cite" href="#source-12">[12]</a><a class="cite" href="#source-13">[13]</a><a class="cite" href="#source-14">[14]</a><a class="cite" href="#source-15">[15]</a><a class="cite" href="#source-16">[16]</a></p>
+      </div>
+      <div class="strategy">
+        <div class="strategy-card">
+          <div class="step">Consideration 01</div>
+          <h3>Cash-pay funnel metrics</h3>
+          <p>Metrics to consider include prescription abandonment, first-fill conversion, refill conversion, discount-card dependency, refund requests, and discontinuation reasons. These measures may inform commercial execution and patient support design.<a class="cite" href="#source-6">[6]</a><a class="cite" href="#source-7">[7]</a><a class="cite" href="#source-12">[12]</a><a class="cite" href="#source-13">[13]</a><a class="cite" href="#source-14">[14]</a></p>
+        </div>
+        <div class="strategy-card">
+          <div class="step">Consideration 02</div>
+          <h3>Daily task outcomes</h3>
+          <p>Prospective observational designs could assess reading speed, smartphone use, workday near tasks, dim-light menus, medication-label reading, and validated instruments such as NAVQ-P and NEI-RQL.<a class="cite" href="#source-10">[10]</a><a class="cite" href="#source-11">[11]</a><a class="cite" href="#source-15">[15]</a><a class="cite" href="#source-16">[16]</a></p>
+        </div>
+        <div class="strategy-card">
+          <div class="step">Consideration 03</div>
+          <h3>Patient-treatment fit</h3>
+          <p>Discrete-choice experiments and conjoint studies may quantify tradeoffs among onset, duration, dosing frequency, comfort, dim/night vision caution, preservative-free formulation, out-of-pocket burden, and pharmacy channel.<a class="cite" href="#source-2">[2]</a><a class="cite" href="#source-3">[3]</a><a class="cite" href="#source-5">[5]</a><a class="cite" href="#source-13">[13]</a><a class="cite" href="#source-14">[14]</a><a class="cite" href="#source-16">[16]</a></p>
+        </div>
+      </div>
+    </section>
+      </div>
+    </article>
+    <article class="slide" aria-label="Slide 10: Interpretation">
+      <div class="wrap">
+      <section class="section-slide">
+      <div class="section-head">
+        <h2>Interpretation</h2>
+      </div>
+      <div class="panel">
+        <div class="panel-pad">
+          <p style="max-width:none;color:var(--muted);font-size:30px;line-height:1.3;margin:0;">The presbyopia-drop category has a large epidemiologic denominator but limited available evidence on persistent out-of-pocket use at scale. VIZZ has the clearest disclosed forecast and actual-sales baseline, QLOSI has the most visible near-term HEOR build through its phase 4 QOL study and patient-support programs, YUVEZZI has the most explicit reading-speed/QOL positioning at launch, and VUITY has the most mature but commercially opaque history. The main evidence gap appears centered on durable consumer value under real-world cash-pay conditions rather than payer-value demonstration.<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-5">[5]</a><a class="cite" href="#source-6">[6]</a><a class="cite" href="#source-7">[7]</a><a class="cite" href="#source-8">[8]</a><a class="cite" href="#source-9">[9]</a><a class="cite" href="#source-10">[10]</a><a class="cite" href="#source-11">[11]</a><a class="cite" href="#source-12">[12]</a><a class="cite" href="#source-13">[13]</a><a class="cite" href="#source-14">[14]</a><a class="cite" href="#source-15">[15]</a><a class="cite" href="#source-16">[16]</a></p>
+        </div>
+      </div>
+    </section>
+      </div>
+    </article>
+    <article class="slide" aria-label="Slide 11: Source key">
+      <div class="wrap">
+      <section class="section-slide" id="sources">
+      <div class="section-head">
+        <h2>References</h2>
+        <p>Sources reviewed through May 1, 2026. Forecasts and sales were included only when product-specific and attributable.</p>
+      </div>
+      <div class="sources">
+        <p id="source-1"><sup>1</sup> <a href="https://news.abbvie.com/2021-10-29-U-S-Food-and-Drug-Administration-Approves-VUITY-TM-pilocarpine-HCI-ophthalmic-solution-1-25-,-the-First-and-Only-Eye-Drop-to-Treat-Presbyopia-Age-Related-Blurry-Near-Vision" target="_blank" rel="noopener">AbbVie. FDA approval announcement for VUITY, Oct. 29, 2021.</a></p>
+        <p id="source-2"><sup>2</sup> <a href="https://www.orasis-pharma.com/orasis-pharmaceuticals-announces-fda-approval-of-qlosi-pilocarpine-hydrochloride-ophthalmic-solution-0-4-for-the-treatment-of-presbyopia/" target="_blank" rel="noopener">Orasis. FDA approval of QLOSI, Oct. 18, 2023.</a></p>
+        <p id="source-3"><sup>3</sup> <a href="https://ir.lenz-tx.com/news-events/press-releases/detail/39/lenz-therapeutics-announces-us-fda-approval-of-vizz-for-the-treatment-of-presbyopia" target="_blank" rel="noopener">LENZ Therapeutics. FDA approval of VIZZ, July 31, 2025.</a></p>
+        <p id="source-4"><sup>4</sup> <a href="https://www.businesswire.com/news/home/20260128574430/en/Tenpoint-Therapeutics-Secures-%24235-Million-through-Series-B-Stock-Financing-and-Credit-Facility-to-Accelerate-Commercialization-of-YUVEZZI" target="_blank" rel="noopener">Tenpoint / Business Wire. FDA approval and financing for YUVEZZI, Jan. 28, 2026.</a></p>
+        <p id="source-5"><sup>5</sup> <a href="https://www.businesswire.com/news/home/20260330960621/en/YUVEZZI-from-Tenpoint-Therapeutics-Ltd.-Is-Now-Available-Nationwide-Across-the-United-States" target="_blank" rel="noopener">Tenpoint / Business Wire. YUVEZZI nationwide availability, Mar. 30, 2026.</a></p>
+        <p id="source-6"><sup>6</sup> <a href="https://www.spglobal.com/market-intelligence/en/news-insights/research/2025/10/analysts-see-lenz-vizz-exceeding-usd1-billion-in-sales-by-2038" target="_blank" rel="noopener">S&amp;P Global Market Intelligence / Visible Alpha. VIZZ sales forecast, Oct. 28, 2025.</a></p>
+        <p id="source-7"><sup>7</sup> <a href="https://ir.lenz-tx.com/news-events/press-releases/detail/52/lenz-therapeutics-reports-fourth-quarter-and-full-year-2025-financial-results-and-recent-corporate-highlights" target="_blank" rel="noopener">LENZ Therapeutics. FY2025 financial results and VIZZ product sales, Mar. 2026.</a></p>
+        <p id="source-8"><sup>8</sup> <a href="https://pharmaphorum.com/news/tenpoint-eyes-presbyopia-drug-launch-after-fda-nod" target="_blank" rel="noopener">Pharmaphorum. Tenpoint launch context and public comments on Vuity/QLOSI sales disclosure, Jan. 29, 2026.</a></p>
+        <p id="source-9"><sup>9</sup> <a href="https://www.fiercepharma.com/pharma/lenzs-vizz-wins-fda-approval-crack-large-untapped-market-presbyopia" target="_blank" rel="noopener">Fierce Pharma. VIZZ approval and Vuity reporting context, July 2025.</a></p>
+        <p id="source-10"><sup>10</sup> <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11109051/" target="_blank" rel="noopener">Whyte J, et al. Understanding perspectives on presbyopia and use of pilocarpine HCl 1.25% twice daily from VIRGO.</a></p>
+        <p id="source-11"><sup>11</sup> <a href="https://clinicaltrials.gov/study/NCT07113210" target="_blank" rel="noopener">ClinicalTrials.gov. Quality of Life in Presbyopic Patients Who Are Treated With Qlosi, NCT07113210.</a></p>
+        <p id="source-12"><sup>12</sup> <a href="https://www.orasis-pharma.com/orasis-pharmaceuticals-expands-access-to-qlosi-with-new-starter-packs-for-eye-care-professionals-bolstering-commercial-rollout/" target="_blank" rel="noopener">Orasis. QLOSI starter packs and commercial rollout, Nov. 13, 2025.</a></p>
+        <p id="source-13"><sup>13</sup> <a href="https://qlosiecp.com/efficacy" target="_blank" rel="noopener">QLOSI ECP website, efficacy and patient-fit questions.</a></p>
+        <p id="source-14"><sup>14</sup> <a href="https://qlosi.com/support-and-resources" target="_blank" rel="noopener">QLOSI patient support and satisfaction guarantee.</a></p>
+        <p id="source-15"><sup>15</sup> <a href="https://glance.eyesoneyecare.com/stories/2025-01-15/tenpoint-reports-positive-topline-data-from-phase-3-presbyopia-eye-drop-study/" target="_blank" rel="noopener">Eyes On Eyecare / Glance. Tenpoint BRIO-II topline and reading-speed/QOL analyses, Jan. 15, 2025.</a></p>
+        <p id="source-16"><sup>16</sup> <a href="https://www.yuvezzi.com/" target="_blank" rel="noopener">YUVEZZI patient website, product positioning and reading-speed statement.</a></p>
+      </div>
+      <p class="caption">Design note: visual styling is inspired by the minimalist enterprise aesthetic of Cohere.com, using cream backgrounds, large typography, rounded modular cards, dark panels, and lime accents. No Cohere assets, logos, or proprietary templates are used.</p>
+    </section>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HEOR Spend Value Diagram</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --green: #324a2f;
+      --sage: #a6b696;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 26px;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background:
+        radial-gradient(circle at top left, rgba(215,255,95,0.32), transparent 34rem),
+        radial-gradient(circle at 84% 12%, rgba(184,216,255,0.28), transparent 26rem),
+        var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.28;
+    }
+
+    .slide {
+      width: 1600px;
+      height: 900px;
+      position: relative;
+      overflow: hidden;
+      padding: 42px 48px 42px;
+      background:
+        radial-gradient(circle at 12% 12%, rgba(215,255,95,0.26), transparent 28rem),
+        radial-gradient(circle at 86% 10%, rgba(184,216,255,0.24), transparent 24rem),
+        var(--paper);
+    }
+
+    .slide::before {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border: 1.5px solid rgba(16,18,15,0.18);
+      border-radius: 34px;
+      pointer-events: none;
+    }
+
+    .wrap {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .title-row {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 1080px;
+      font-size: 48px;
+      line-height: 0.95;
+      letter-spacing: -0.045em;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1.4px solid var(--line);
+      padding: 8px 11px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: var(--lime);
+      white-space: nowrap;
+      margin-top: 3px;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .subtitle {
+      margin: 10px 0 0;
+      max-width: 1210px;
+      color: var(--muted);
+      font-size: 20px;
+      line-height: 1.34;
+      white-space: nowrap;
+    }
+
+    .diagram-panel {
+      position: relative;
+      height: 660px;
+      border: 1.5px solid var(--line);
+      border-radius: 32px;
+      background: rgba(255,250,240,0.86);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .diagram {
+      position: absolute;
+      inset: 22px 22px 20px;
+    }
+
+    .connectors {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      z-index: 1;
+    }
+
+    .connector {
+      fill: none;
+      stroke: rgba(16,18,15,0.46);
+      stroke-width: 1.9;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      marker-end: url(#arrow);
+    }
+
+    .connector.touch {
+      marker-end: url(#arrow-touch);
+    }
+
+    .node {
+      position: absolute;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      border: 1.5px solid var(--line);
+      border-radius: 18px;
+      background: var(--card);
+      padding: 10px 14px;
+      box-shadow: 0 10px 24px rgba(16,18,15,0.06);
+      color: var(--ink);
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.12;
+      text-align: center;
+      letter-spacing: -0.01em;
+    }
+
+    .node.spend {
+      width: 178px;
+      height: 92px;
+      left: 8px;
+      top: 246px;
+      border-radius: 24px;
+      background: var(--lime);
+      font-size: 24px;
+      letter-spacing: -0.035em;
+    }
+
+    .node.activity {
+      width: 250px;
+      height: 48px;
+      background: #fffaf0;
+    }
+
+    .node.activity.wide {
+      width: 320px;
+    }
+
+    .node.activity.mid {
+      width: 290px;
+    }
+
+    .node.activity.tall {
+      height: 60px;
+    }
+
+    .node.mechanism {
+      width: 268px;
+      min-height: 54px;
+      background: #e9f1ef;
+      font-size: 16.5px;
+    }
+
+    .node.mechanism.wide {
+      width: 310px;
+    }
+
+    .node.mechanism.narrow {
+      width: 230px;
+    }
+
+    .node.mechanism.medium {
+      width: 250px;
+    }
+
+    .node.outcome {
+      width: 180px;
+      height: 104px;
+      left: 1050px;
+      top: 304px;
+      border-radius: 24px;
+      background: var(--orange);
+      padding: 8px 10px;
+      font-size: 19px;
+      letter-spacing: -0.03em;
+    }
+
+    .node.margin {
+      width: 180px;
+      height: 124px;
+      left: 1280px;
+      top: 294px;
+      border-radius: 24px;
+      background: var(--green);
+      color: var(--paper);
+      padding: 8px 10px;
+      font-size: 18px;
+      letter-spacing: -0.025em;
+    }
+
+    .label-band {
+      position: absolute;
+      z-index: 3;
+      left: 32px;
+      top: 0;
+      width: 1414px;
+      pointer-events: none;
+    }
+
+    .label-band span {
+      position: absolute;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .label-input { left: -24px; width: 178px; }
+    .label-work { left: 296px; width: 250px; }
+    .label-mechanism { left: 714px; width: 268px; }
+    .label-result { left: 1018px; width: 180px; }
+    .label-impact { left: 1248px; width: 180px; }
+
+    .a1 { left: 330px; top: 24px; }
+    .a2 { left: 360px; top: 94px; }
+    .a3 { left: 300px; top: 170px; }
+    .a4 { left: 360px; top: 250px; }
+    .a5 { left: 360px; top: 326px; }
+    .a6 { left: 360px; top: 402px; }
+    .a7 { left: 300px; top: 468px; }
+    .a8 { left: 300px; top: 532px; }
+
+    .node.mechanism.m1 { left: 738px; top: 74px; width: 200px; padding: 10px 8px; }
+    .m2 { left: 670px; top: 176px; }
+    .m3 { left: 684px; top: 250px; }
+    .node.mechanism.m4 { left: 710px; top: 352px; width: 220px; padding: 10px 8px; }
+    .node.mechanism.m5 { left: 740px; top: 460px; width: 220px; padding: 10px 8px; }
+    .m6 { left: 684px; top: 536px; }
+
+    .slide-num {
+      position: absolute;
+      right: 34px;
+      bottom: 24px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      color: rgba(16,18,15,0.42);
+      text-transform: uppercase;
+    }
+
+    @page {
+      size: 1600px 900px;
+      margin: 0;
+    }
+
+    @media print {
+      html,
+      body {
+        width: 1600px;
+        height: 900px;
+      }
+
+      .slide {
+        width: 1600px;
+        height: 900px;
+        page-break-after: always;
+        break-after: page;
+      }
+
+      .diagram-panel,
+      .node {
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="slide" aria-label="HEOR spend value diagram">
+    <div class="wrap">
+      <div class="title-row">
+        <div>
+          <h1>From HEOR investment to access advantage</h1>
+          <p class="subtitle">A structured pathway from evidence-generation investments to payer confidence, coverage outcomes, and economic upside.</p>
+        </div>
+        <div class="eyebrow">HEOR spend • access strategy • flow map</div>
+      </div>
+
+      <section class="diagram-panel" aria-label="Flowchart showing HEOR spend pathways to reimbursement and margin impact">
+        <div class="diagram">
+          <div class="label-band" aria-hidden="true">
+            <span class="label-input">Input</span>
+            <span class="label-work">HEOR work</span>
+            <span class="label-mechanism">Value mechanism</span>
+            <span class="label-result">Access result</span>
+            <span class="label-impact">Business impact</span>
+          </div>
+
+          <svg class="connectors" viewBox="0 0 1460 618" aria-hidden="true">
+            <defs>
+              <marker id="arrow" markerWidth="9" markerHeight="9" refX="7.4" refY="4.5" orient="auto" markerUnits="strokeWidth">
+                <path d="M0,0 L9,4.5 L0,9 z" fill="rgba(16,18,15,0.56)"></path>
+              </marker>
+              <marker id="arrow-touch" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto" markerUnits="strokeWidth">
+                <path d="M0,0 L9,4.5 L0,9 z" fill="rgba(16,18,15,0.56)"></path>
+              </marker>
+            </defs>
+
+            <path class="connector" d="M186 292 C244 292 246 48 330 48"></path>
+            <path class="connector" d="M186 292 C248 292 278 118 360 118"></path>
+            <path class="connector" d="M186 292 C250 292 248 194 300 194"></path>
+            <path class="connector" d="M186 292 C260 292 296 274 360 274"></path>
+            <path class="connector" d="M186 292 C264 292 298 350 360 350"></path>
+            <path class="connector" d="M186 292 C260 292 288 426 360 426"></path>
+            <path class="connector" d="M186 292 C244 292 250 492 300 492"></path>
+            <path class="connector" d="M186 292 C240 292 244 562 300 562"></path>
+
+            <path class="connector" d="M620 48 C660 48 700 101 734 101"></path>
+            <path class="connector" d="M610 118 C660 118 700 101 734 101"></path>
+            <path class="connector" d="M620 194 C642 194 646 203 666 203"></path>
+            <path class="connector" d="M610 274 C642 274 652 277 680 277"></path>
+            <path class="connector" d="M610 350 C656 350 690 379 706 379"></path>
+            <path class="connector" d="M610 426 C656 426 690 379 706 379"></path>
+            <path class="connector" d="M620 492 C660 492 696 487 736 487"></path>
+            <path class="connector" d="M620 562 C644 562 660 563 680 563"></path>
+
+            <path class="connector touch" d="M938 101 C1036 101 1110 236 1110 304"></path>
+            <path class="connector touch" d="M938 203 C1042 203 1140 264 1140 304"></path>
+            <path class="connector touch" d="M914 277 C982 277 1018 340 1053 340"></path>
+            <path class="connector touch" d="M930 379 C990 379 1030 378 1053 378"></path>
+            <path class="connector touch" d="M960 487 C1048 487 1110 450 1110 408"></path>
+            <path class="connector touch" d="M952 563 C1030 563 1150 456 1150 408"></path>
+            <path class="connector touch" d="M1230 356 L1283 356"></path>
+          </svg>
+
+          <div class="node spend">HEOR spend</div>
+
+          <div class="node activity mid a1">Economic models</div>
+          <div class="node activity a2">RWE studies</div>
+          <div class="node activity wide a3">Budget impact analyses</div>
+          <div class="node activity a4">PRO strategy</div>
+          <div class="node activity a5">HTA support</div>
+          <div class="node activity a6">Value dossier</div>
+          <div class="node activity wide a7">Pricing and access analytics</div>
+          <div class="node activity wide tall a8">Outcomes-based contract design</div>
+
+          <div class="node mechanism m1">Lower uncertainty</div>
+          <div class="node mechanism m2">Affordability case</div>
+          <div class="node mechanism narrow m3">Differentiation</div>
+          <div class="node mechanism medium m4">Faster or stronger appraisal</div>
+          <div class="node mechanism wide m5">Better launch sequencing and price</div>
+          <div class="node mechanism m6">Risk-sharing pathway</div>
+
+          <div class="node outcome">Coverage and reimbursement outcome</div>
+          <div class="node margin">Incremental margin,<br>avoided delay,<br>avoided rebate<br>leakage</div>
+        </div>
+      </section>
+
+      <div class="slide-num">01 / 01</div>
+    </div>
+  </main>
+</body>
+</html>

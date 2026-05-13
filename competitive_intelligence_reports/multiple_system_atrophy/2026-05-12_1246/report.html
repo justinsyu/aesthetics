@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Multiple System Atrophy Competitive Intelligence Update</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 36px 0 20px;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 850;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 82px; line-height: .92; letter-spacing: 0; font-weight: 560; max-width: 1290px; }
+    h2 { font-size: 54px; line-height: .99; letter-spacing: 0; font-weight: 560; max-width: 1320px; }
+    h3 { font-size: 28px; line-height: 1.06; letter-spacing: 0; font-weight: 650; }
+    .dek { margin-top: 18px; color: var(--muted); font-size: 27px; line-height: 1.24; max-width: 1280px; }
+    .section-head { margin-bottom: 20px; }
+    .section-head p { margin-top: 12px; color: var(--muted); font-size: 24px; line-height: 1.24; max-width: 1300px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .panel, .metric, .card, .table, .callout {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.86);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel { padding: 24px; }
+    .panel.dark, .callout { background: #11130f; color: var(--paper); border-color: #11130f; }
+    .panel.dark p, .panel.dark li, .callout p, .callout li { color: rgba(246,241,232,.86); }
+    .metric { padding: 20px; min-height: 148px; }
+    .num { font-size: 50px; line-height: .92; font-weight: 850; letter-spacing: 0; }
+    .label { margin-top: 12px; font-size: 18px; line-height: 1.25; color: var(--muted); }
+    .card { padding: 22px; min-height: 214px; }
+    .card p { color: var(--muted); font-size: 19px; line-height: 1.25; margin-top: 12px; }
+    .panel p { color: var(--muted); font-size: 20px; line-height: 1.25; margin-top: 12px; }
+    .card .tag, .panel .tag { margin-bottom: 12px; }
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      white-space: nowrap;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .red { background: var(--red); }
+    .gray { background: var(--gray); }
+    .list { margin: 14px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+    .list li { position: relative; padding-left: 20px; color: var(--muted); font-size: 20px; line-height: 1.22; }
+    .list li::before { content: ""; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; border-radius: 50%; background: var(--lime); border: 1px solid var(--line); }
+    .table { display: grid; border-radius: 18px; }
+    .row { display: grid; grid-template-columns: 1.05fr .58fr 1.55fr 1.45fr; border-bottom: 1px solid var(--line); min-height: 66px; }
+    .row:last-child { border-bottom: 0; }
+    .cell { padding: 12px 13px; border-right: 1px solid var(--line); font-size: 15px; line-height: 1.2; }
+    .cell:last-child { border-right: 0; }
+    .head .cell { background: #11130f; color: var(--paper); font-weight: 850; text-transform: uppercase; font-size: 12px; }
+    .callout { padding: 24px 28px; }
+    .callout h3 { font-size: 31px; }
+    .callout p { margin-top: 12px; font-size: 24px; line-height: 1.18; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .cite + .cite::before { content: ","; margin-right: 1px; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    .source-note { color: var(--muted); font-size: 15px; line-height: 1.25; margin-top: 12px; }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .wrap { width: 1360px; }
+      .panel, .metric, .card, .table, .callout { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) {
+      .slide { width: 1600px; height: 900px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Multiple system atrophy CI update | May 6-12, 2026 evidence window</div>
+      <h1>Multiple system atrophy competitive intelligence update</h1>
+      <p class="dek">This report includes seven primary-source or official biomedical-record items with visible source dates from May 6, 2026 through May 12, 2026.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289852/0/en/Alterity-Therapeutics-to-Deliver-Presentations-at-Multiple-Medical-Conferences-in-May-2026.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291770/0/en/Alterity-Therapeutics-Announces-Publication-Demonstrating-the-Utility-of-Quantitative-MRI-as-a-Biomarker-for-Multiple-System-Atrophy.html">2</a><a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">3</a><a class="cite" href="https://academic.oup.com/brain/advance-article/doi/10.1093/brain/awag160/8671783">4</a><a class="cite" href="https://ascpt.onlinelibrary.wiley.com/doi/10.1002/cpt.70315">5</a><a class="cite" href="https://pubmed.ncbi.nlm.nih.gov/42115350/">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT01577992">7</a></p>
+      <div class="grid-4" style="margin-top:34px;">
+        <div class="metric"><div class="num">7</div><div class="label">Cited sources had visibly verified dates in the evidence window.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289852/0/en/Alterity-Therapeutics-to-Deliver-Presentations-at-Multiple-Medical-Conferences-in-May-2026.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291770/0/en/Alterity-Therapeutics-Announces-Publication-Demonstrating-the-Utility-of-Quantitative-MRI-as-a-Biomarker-for-Multiple-System-Atrophy.html">2</a><a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">3</a><a class="cite" href="https://academic.oup.com/brain/advance-article/doi/10.1093/brain/awag160/8671783">4</a><a class="cite" href="https://ascpt.onlinelibrary.wiley.com/doi/10.1002/cpt.70315">5</a><a class="cite" href="https://pubmed.ncbi.nlm.nih.gov/42115350/">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT01577992">7</a></div></div>
+        <div class="metric"><div class="num">3</div><div class="label">Company sources described MSA-relevant programs or conference activity.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289852/0/en/Alterity-Therapeutics-to-Deliver-Presentations-at-Multiple-Medical-Conferences-in-May-2026.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291770/0/en/Alterity-Therapeutics-Announces-Publication-Demonstrating-the-Utility-of-Quantitative-MRI-as-a-Biomarker-for-Multiple-System-Atrophy.html">2</a><a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">3</a></div></div>
+        <div class="metric"><div class="num">3</div><div class="label">Peer-reviewed or indexed article records added prognostic, treatment-landscape, or neurobehavioral context.<a class="cite" href="https://academic.oup.com/brain/advance-article/doi/10.1093/brain/awag160/8671783">4</a><a class="cite" href="https://ascpt.onlinelibrary.wiley.com/doi/10.1002/cpt.70315">5</a><a class="cite" href="https://pubmed.ncbi.nlm.nih.gov/42115350/">6</a></div></div>
+        <div class="metric"><div class="num">1</div><div class="label">ClinicalTrials.gov MSA record had a last-update date inside the window.<a class="cite" href="https://clinicaltrials.gov/study/NCT01577992">7</a></div></div>
+      </div>
+      <div class="callout" style="margin-top:24px;">
+        <h3>Factual scope</h3>
+        <p>The included sources document ATH434 conference and biomarker disclosures, PMN442 alpha-synuclein antibody status, MSA prognostic markers, disease-modifying therapy review findings, cognitive and behavioral features, and one completed registry record.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289852/0/en/Alterity-Therapeutics-to-Deliver-Presentations-at-Multiple-Medical-Conferences-in-May-2026.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291770/0/en/Alterity-Therapeutics-Announces-Publication-Demonstrating-the-Utility-of-Quantitative-MRI-as-a-Biomarker-for-Multiple-System-Atrophy.html">2</a><a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">3</a><a class="cite" href="https://academic.oup.com/brain/advance-article/doi/10.1093/brain/awag160/8671783">4</a><a class="cite" href="https://ascpt.onlinelibrary.wiley.com/doi/10.1002/cpt.70315">5</a><a class="cite" href="https://pubmed.ncbi.nlm.nih.gov/42115350/">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT01577992">7</a></p>
+      </div>
+    </div>
+    <div class="slide-num">01 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">ATH434 and QSM</div>
+        <h2>Alterity reported May conference activity and a QSM biomarker publication for ATH434-related MSA development<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289852/0/en/Alterity-Therapeutics-to-Deliver-Presentations-at-Multiple-Medical-Conferences-in-May-2026.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291770/0/en/Alterity-Therapeutics-Announces-Publication-Demonstrating-the-Utility-of-Quantitative-MRI-as-a-Biomarker-for-Multiple-System-Atrophy.html">2</a></h2>
+        <p>The visible source dates for these company communications were May 7, 2026 and May 11, 2026.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289852/0/en/Alterity-Therapeutics-to-Deliver-Presentations-at-Multiple-Medical-Conferences-in-May-2026.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291770/0/en/Alterity-Therapeutics-Announces-Publication-Demonstrating-the-Utility-of-Quantitative-MRI-as-a-Biomarker-for-Multiple-System-Atrophy.html">2</a></p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag lime">Conference activity</span>
+          <h3>Three May events</h3>
+          <p>Alterity stated that presentations related to its MSA development program would be delivered at multiple medical conferences in May 2026.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289852/0/en/Alterity-Therapeutics-to-Deliver-Presentations-at-Multiple-Medical-Conferences-in-May-2026.html">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">Presentation titles</span>
+          <h3>QSM, CSF NfL, Phase 3 planning</h3>
+          <p>The listed titles included progressive iron accumulation in early MSA by QSM, randomized double-blind ATH434 data using CSF NfL as a covariate, and an ATH434 clinical update with Phase 3 planning.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289852/0/en/Alterity-Therapeutics-to-Deliver-Presentations-at-Multiple-Medical-Conferences-in-May-2026.html">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag orange">Publication</span>
+          <h3>QSM in MSA</h3>
+          <p>Alterity stated that a peer-reviewed NeuroImage study showed QSM MRI could detect MSA-specific iron accumulation, distinguish MSA from Parkinson's disease, and track clinical disease severity.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291770/0/en/Alterity-Therapeutics-Announces-Publication-Demonstrating-the-Utility-of-Quantitative-MRI-as-a-Biomarker-for-Multiple-System-Atrophy.html">2</a></p>
+        </div>
+      </div>
+      <div class="grid-2" style="margin-top:18px;">
+        <div class="panel">
+          <span class="tag pink">Study sample</span>
+          <h3>bioMUSE and cross-sectional data</h3>
+          <p>The QSM publication announcement said the study analyzed 10 MSA patients followed prospectively for 12 months, plus cross-sectional data from 28 MSA patients, 43 Parkinson's disease patients, and 23 age-matched healthy controls.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291770/0/en/Alterity-Therapeutics-Announces-Publication-Demonstrating-the-Utility-of-Quantitative-MRI-as-a-Biomarker-for-Multiple-System-Atrophy.html">2</a></p>
+        </div>
+        <div class="panel dark">
+          <span class="tag lime">Program status</span>
+          <h3>Phase 3 path described</h3>
+          <p>Alterity stated that it continued to advance ATH434 into a Phase 3 program for MSA and remained on track to hold an FDA End-of-Phase 2 meeting in mid-2026.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291770/0/en/Alterity-Therapeutics-Announces-Publication-Demonstrating-the-Utility-of-Quantitative-MRI-as-a-Biomarker-for-Multiple-System-Atrophy.html">2</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">02 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Alpha-synuclein pipeline</div>
+        <h2>ProMIS listed PMN442 under a PD, DLB, and MSA disease program on May 12, 2026<a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">3</a></h2>
+        <p>The company source identified PMN442 as an alpha-synuclein antibody candidate for synucleinopathies and included multiple system atrophy in the disease-program heading.<a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">3</a></p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag lime">Disease program</span>
+          <h3>PD, DLB, MSA</h3>
+          <p>ProMIS used the heading "Parkinson's Disease (PD), Dementia with Lewy Bodies and Multiple System Atrophy (MSA) Disease Program (PMN442)."<a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">3</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">Lead candidate</span>
+          <h3>PMN442</h3>
+          <p>ProMIS stated that it selected PMN442 as the lead candidate antibody for Parkinson's disease and other synucleinopathies based on selective binding and protective activity against pathogenic alpha-synuclein.<a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">3</a></p>
+        </div>
+        <div class="card">
+          <span class="tag orange">IND-enabling</span>
+          <h3>Humanized IgG1</h3>
+          <p>The same company update stated that PMN442 had been humanized in a human IgG1 framework for IND-enabling studies.<a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">3</a></p>
+        </div>
+      </div>
+      <div class="table" style="margin-top:22px;">
+        <div class="row head">
+          <div class="cell">Company item</div>
+          <div class="cell">Date</div>
+          <div class="cell">MSA-relevant text</div>
+          <div class="cell">Development wording</div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>Alterity ATH434</strong><br />Company communication</div>
+          <div class="cell">May 11, 2026<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291770/0/en/Alterity-Therapeutics-Announces-Publication-Demonstrating-the-Utility-of-Quantitative-MRI-as-a-Biomarker-for-Multiple-System-Atrophy.html">2</a></div>
+          <div class="cell">Alterity said QSM MRI detected disease-specific iron accumulation in MSA and tracked clinical severity.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291770/0/en/Alterity-Therapeutics-Announces-Publication-Demonstrating-the-Utility-of-Quantitative-MRI-as-a-Biomarker-for-Multiple-System-Atrophy.html">2</a></div>
+          <div class="cell">Alterity said ATH434 continued into a Phase 3 program and an End-of-Phase 2 FDA meeting was expected in mid-2026.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291770/0/en/Alterity-Therapeutics-Announces-Publication-Demonstrating-the-Utility-of-Quantitative-MRI-as-a-Biomarker-for-Multiple-System-Atrophy.html">2</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>ProMIS PMN442</strong><br />Company update</div>
+          <div class="cell">May 12, 2026<a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">3</a></div>
+          <div class="cell">ProMIS listed PMN442 under a disease program including PD, DLB, and MSA.<a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">3</a></div>
+          <div class="cell">ProMIS said PMN442 had been humanized in an IgG1 framework for IND-enabling studies.<a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">3</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">03 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Clinical literature</div>
+        <h2>New articles reported MSA prognostic markers and a broader treatment-landscape review<a class="cite" href="https://academic.oup.com/brain/advance-article/doi/10.1093/brain/awag160/8671783">4</a><a class="cite" href="https://ascpt.onlinelibrary.wiley.com/doi/10.1002/cpt.70315">5</a></h2>
+        <p>The Oxford Brain article displayed a publication date of May 7, 2026, and the Wiley systematic review displayed a first-published date of May 9, 2026.<a class="cite" href="https://academic.oup.com/brain/advance-article/doi/10.1093/brain/awag160/8671783">4</a><a class="cite" href="https://ascpt.onlinelibrary.wiley.com/doi/10.1002/cpt.70315">5</a></p>
+      </div>
+      <div class="grid-2">
+        <div class="panel">
+          <span class="tag lime">Brain | prognostic indicators</span>
+          <h3>555-patient MSA cohort</h3>
+          <p>The Brain article reported survival prognostic factors in a cohort of 555 MSA patients, including 254 post-mortem confirmed people and 318 clinically diagnosed PROSPECT-M-UK participants.<a class="cite" href="https://academic.oup.com/brain/advance-article/doi/10.1093/brain/awag160/8671783">4</a></p>
+          <ul class="list">
+            <li>The combined cohort had mean onset age of 58.7 +/- 9.0 years and median survival of 8.25 years.<a class="cite" href="https://academic.oup.com/brain/advance-article/doi/10.1093/brain/awag160/8671783">4</a></li>
+            <li>Median survival after indoor wheelchair use, gastrostomy insertion, or development of unintelligible speech was consistently less than 1.5 years.<a class="cite" href="https://academic.oup.com/brain/advance-article/doi/10.1093/brain/awag160/8671783">4</a></li>
+          </ul>
+        </div>
+        <div class="panel dark">
+          <span class="tag orange">CPT | systematic review</span>
+          <h3>Disease-modifying therapy landscape</h3>
+          <p>The Clinical Pharmacology &amp; Therapeutics review stated that parkinsonian disorders including MSA are progressive neurodegenerative conditions with no treatment options to slow disease progression.<a class="cite" href="https://ascpt.onlinelibrary.wiley.com/doi/10.1002/cpt.70315">5</a></p>
+          <ul class="list">
+            <li>The review stated that most clinical development has focused on Parkinson's disease, with limited progress in other parkinsonian disorders.<a class="cite" href="https://ascpt.onlinelibrary.wiley.com/doi/10.1002/cpt.70315">5</a></li>
+            <li>The review stated that no disease-modifying therapy had been approved for any parkinsonian disorder despite substantial research efforts.<a class="cite" href="https://ascpt.onlinelibrary.wiley.com/doi/10.1002/cpt.70315">5</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:16px; padding:20px 24px;">
+        <h3>Recorded endpoint and stratification context</h3>
+        <p>The Brain article said in-clinic rating scales and clinical milestone assessment can aid MSA prognostication, and the CPT review stated that biomarker-driven approaches and stratified trial designs are needed to demonstrate disease modification.<a class="cite" href="https://academic.oup.com/brain/advance-article/doi/10.1093/brain/awag160/8671783">4</a><a class="cite" href="https://ascpt.onlinelibrary.wiley.com/doi/10.1002/cpt.70315">5</a></p>
+      </div>
+    </div>
+    <div class="slide-num">04 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Disease characterization and registry update</div>
+        <h2>Indexed literature and ClinicalTrials.gov added neurobehavioral and study-record context<a class="cite" href="https://pubmed.ncbi.nlm.nih.gov/42115350/">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT01577992">7</a></h2>
+        <p>The PubMed record displayed a date of May 11, 2026, and the ClinicalTrials.gov record displayed a last-update date of May 6, 2026.<a class="cite" href="https://pubmed.ncbi.nlm.nih.gov/42115350/">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT01577992">7</a></p>
+      </div>
+      <div class="grid-2">
+        <div class="panel">
+          <span class="tag blue">Journal of Neural Transmission</span>
+          <h3>Cognitive and behavioral features</h3>
+          <p>The indexed abstract stated that cognitive and behavioral disturbances are increasingly recognized as core features of PSP and MSA.<a class="cite" href="https://pubmed.ncbi.nlm.nih.gov/42115350/">6</a></p>
+          <ul class="list">
+            <li>For MSA, the abstract stated that cognitive impairment is typically milder and more variable and most commonly involves executive dysfunction.<a class="cite" href="https://pubmed.ncbi.nlm.nih.gov/42115350/">6</a></li>
+            <li>The abstract stated that apathy and depression are frequent but underrecognized behavioral symptoms in MSA.<a class="cite" href="https://pubmed.ncbi.nlm.nih.gov/42115350/">6</a></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="tag pink">ClinicalTrials.gov</span>
+          <h3>NCT01577992</h3>
+          <p>The registry record title was "Evaluation of the Subjective and Objective Painful Threshold in Multiple System Atrophy Pain and Multiple System Atrophy."<a class="cite" href="https://clinicaltrials.gov/study/NCT01577992">7</a></p>
+          <ul class="list">
+            <li>The record displayed a completed overall status.<a class="cite" href="https://clinicaltrials.gov/study/NCT01577992">7</a></li>
+            <li>The record listed conditions as Pain Threshold and Multiple System Atrophy.<a class="cite" href="https://clinicaltrials.gov/study/NCT01577992">7</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="table" style="margin-top:22px;">
+        <div class="row head">
+          <div class="cell">Source item</div>
+          <div class="cell">Visible date</div>
+          <div class="cell">MSA-specific content</div>
+          <div class="cell">Category</div>
+        </div>
+        <div class="row">
+          <div class="cell">Cognitive and behavioral review<a class="cite" href="https://pubmed.ncbi.nlm.nih.gov/42115350/">6</a></div>
+          <div class="cell">2026 May 11<a class="cite" href="https://pubmed.ncbi.nlm.nih.gov/42115350/">6</a></div>
+          <div class="cell">MSA cognitive impairment and behavioral symptoms were described in the abstract.<a class="cite" href="https://pubmed.ncbi.nlm.nih.gov/42115350/">6</a></div>
+          <div class="cell">Clinical characterization<a class="cite" href="https://pubmed.ncbi.nlm.nih.gov/42115350/">6</a></div>
+        </div>
+        <div class="row">
+          <div class="cell">NCT01577992<a class="cite" href="https://clinicaltrials.gov/study/NCT01577992">7</a></div>
+          <div class="cell">2026-05-06<a class="cite" href="https://clinicaltrials.gov/study/NCT01577992">7</a></div>
+          <div class="cell">The record listed MSA and Pain Threshold as conditions.<a class="cite" href="https://clinicaltrials.gov/study/NCT01577992">7</a></div>
+          <div class="cell">Registry record update<a class="cite" href="https://clinicaltrials.gov/study/NCT01577992">7</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">05 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Source matrix</div>
+        <h2>All cited items had visible dates inside the May 6-12, 2026 window<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289852/0/en/Alterity-Therapeutics-to-Deliver-Presentations-at-Multiple-Medical-Conferences-in-May-2026.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291770/0/en/Alterity-Therapeutics-Announces-Publication-Demonstrating-the-Utility-of-Quantitative-MRI-as-a-Biomarker-for-Multiple-System-Atrophy.html">2</a><a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">3</a><a class="cite" href="https://academic.oup.com/brain/advance-article/doi/10.1093/brain/awag160/8671783">4</a><a class="cite" href="https://ascpt.onlinelibrary.wiley.com/doi/10.1002/cpt.70315">5</a><a class="cite" href="https://pubmed.ncbi.nlm.nih.gov/42115350/">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT01577992">7</a></h2>
+        <p>The source log in the run folder maps each reference to the saved date-verification and evidence screenshots.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289852/0/en/Alterity-Therapeutics-to-Deliver-Presentations-at-Multiple-Medical-Conferences-in-May-2026.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291770/0/en/Alterity-Therapeutics-Announces-Publication-Demonstrating-the-Utility-of-Quantitative-MRI-as-a-Biomarker-for-Multiple-System-Atrophy.html">2</a><a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">3</a><a class="cite" href="https://academic.oup.com/brain/advance-article/doi/10.1093/brain/awag160/8671783">4</a><a class="cite" href="https://ascpt.onlinelibrary.wiley.com/doi/10.1002/cpt.70315">5</a><a class="cite" href="https://pubmed.ncbi.nlm.nih.gov/42115350/">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT01577992">7</a></p>
+      </div>
+      <div class="table">
+        <div class="row head">
+          <div class="cell">Ref</div>
+          <div class="cell">Date</div>
+          <div class="cell">Source</div>
+          <div class="cell">Facts used in report</div>
+        </div>
+        <div class="row">
+          <div class="cell">1</div>
+          <div class="cell">May 7, 2026<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289852/0/en/Alterity-Therapeutics-to-Deliver-Presentations-at-Multiple-Medical-Conferences-in-May-2026.html">1</a></div>
+          <div class="cell">Alterity conference announcement<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289852/0/en/Alterity-Therapeutics-to-Deliver-Presentations-at-Multiple-Medical-Conferences-in-May-2026.html">1</a></div>
+          <div class="cell">MSA development program presentations; QSM, CSF NfL, and Phase 3 planning titles.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289852/0/en/Alterity-Therapeutics-to-Deliver-Presentations-at-Multiple-Medical-Conferences-in-May-2026.html">1</a></div>
+        </div>
+        <div class="row">
+          <div class="cell">2</div>
+          <div class="cell">May 11, 2026<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291770/0/en/Alterity-Therapeutics-Announces-Publication-Demonstrating-the-Utility-of-Quantitative-MRI-as-a-Biomarker-for-Multiple-System-Atrophy.html">2</a></div>
+          <div class="cell">Alterity QSM publication announcement<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291770/0/en/Alterity-Therapeutics-Announces-Publication-Demonstrating-the-Utility-of-Quantitative-MRI-as-a-Biomarker-for-Multiple-System-Atrophy.html">2</a></div>
+          <div class="cell">QSM biomarker claims, study sample, Phase 3 program, and mid-2026 End-of-Phase 2 timing.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291770/0/en/Alterity-Therapeutics-Announces-Publication-Demonstrating-the-Utility-of-Quantitative-MRI-as-a-Biomarker-for-Multiple-System-Atrophy.html">2</a></div>
+        </div>
+        <div class="row">
+          <div class="cell">3</div>
+          <div class="cell">May 12, 2026<a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">3</a></div>
+          <div class="cell">ProMIS first-quarter update<a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">3</a></div>
+          <div class="cell">PMN442 disease-program heading, lead-candidate wording, and IgG1 humanization for IND-enabling studies.<a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">3</a></div>
+        </div>
+        <div class="row">
+          <div class="cell">4-7</div>
+          <div class="cell">May 6-11, 2026<a class="cite" href="https://academic.oup.com/brain/advance-article/doi/10.1093/brain/awag160/8671783">4</a><a class="cite" href="https://ascpt.onlinelibrary.wiley.com/doi/10.1002/cpt.70315">5</a><a class="cite" href="https://pubmed.ncbi.nlm.nih.gov/42115350/">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT01577992">7</a></div>
+          <div class="cell">Brain, CPT, PubMed, and ClinicalTrials.gov records<a class="cite" href="https://academic.oup.com/brain/advance-article/doi/10.1093/brain/awag160/8671783">4</a><a class="cite" href="https://ascpt.onlinelibrary.wiley.com/doi/10.1002/cpt.70315">5</a><a class="cite" href="https://pubmed.ncbi.nlm.nih.gov/42115350/">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT01577992">7</a></div>
+          <div class="cell">Prognostic markers, disease-modifying treatment review findings, cognitive and behavioral features, and a completed MSA-related trial record.<a class="cite" href="https://academic.oup.com/brain/advance-article/doi/10.1093/brain/awag160/8671783">4</a><a class="cite" href="https://ascpt.onlinelibrary.wiley.com/doi/10.1002/cpt.70315">5</a><a class="cite" href="https://pubmed.ncbi.nlm.nih.gov/42115350/">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT01577992">7</a></div>
+        </div>
+      </div>
+      <p class="source-note">Source dates were verified from visible browser screenshots saved in the run folder; evidence text was boxed before screenshot capture.</p>
+    </div>
+    <div class="slide-num">06 / 06</div>
+  </article>
+</body>
+</html>

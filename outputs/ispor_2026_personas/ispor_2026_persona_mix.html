@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ISPOR 2026 Persona Mix by Affiliation Type</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: none;
+      --radius: 26px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    html {
+      background: var(--paper);
+    }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.28;
+    }
+
+    .wrap {
+      width: min(1360px, calc(100vw - 48px));
+      margin: 0 auto;
+      height: 100%;
+    }
+
+    .slide {
+      min-height: 100vh;
+      height: 100vh;
+      padding: 70px 0 54px;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 390px 1fr;
+      gap: 24px;
+      height: 100%;
+      align-items: stretch;
+    }
+
+    .left {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 28px;
+      min-height: 0;
+      min-width: 0;
+      width: 390px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      border: 1.4px solid var(--line);
+      padding: 8px 11px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 850;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      background: var(--lime);
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 390px;
+      font-size: 70px;
+      line-height: .9;
+      letter-spacing: -0.04em;
+      font-weight: 520;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      align-self: center;
+      width: 390px;
+    }
+
+    .metric {
+      min-height: 116px;
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      padding: 16px;
+    }
+
+    .metric.dark {
+      background: #11130f;
+      color: var(--paper);
+    }
+
+    .num {
+      font-size: 42px;
+      line-height: .92;
+      font-weight: 900;
+      letter-spacing: -0.055em;
+    }
+
+    .metric.dark .label { color: rgba(246,241,232,.74); }
+
+    .label {
+      margin-top: 11px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.22;
+      font-weight: 720;
+    }
+
+    .footnote {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.28;
+      font-weight: 720;
+      width: 760px;
+      max-width: none;
+      white-space: nowrap;
+    }
+
+    .chart-panel {
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius);
+      background: #11130f;
+      color: var(--paper);
+      box-shadow: var(--shadow);
+      padding: 26px 28px 24px;
+      min-height: 0;
+      align-self: start;
+      height: 642px;
+      display: grid;
+      grid-template-rows: auto auto;
+      gap: 18px;
+    }
+
+    .chart-head {
+      display: block;
+      border-bottom: 1px solid rgba(246,241,232,.24);
+      padding-bottom: 16px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 36px;
+      line-height: .95;
+      letter-spacing: -0.035em;
+      font-weight: 620;
+    }
+
+    .personas {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      min-height: 0;
+    }
+
+    .persona-card {
+      display: grid;
+      grid-template-rows: auto auto auto;
+      gap: 18px;
+      border: 1px solid rgba(246,241,232,.24);
+      border-radius: 22px;
+      padding: 18px 18px 16px;
+      min-height: 0;
+      background: #191b16;
+    }
+
+    .persona-kicker {
+      color: rgba(246,241,232,.68);
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .persona-title {
+      margin-top: 6px;
+      font-size: 29px;
+      line-height: .94;
+      letter-spacing: -0.04em;
+      font-weight: 820;
+    }
+
+    .persona-count {
+      color: rgba(246,241,232,.72);
+      font-size: 13px;
+      font-weight: 720;
+      margin-top: 9px;
+    }
+
+    .callout {
+      border: 1px solid rgba(16,18,15,.8);
+      border-radius: 18px;
+      background: var(--lime);
+      color: var(--ink);
+      padding: 13px 14px;
+      min-height: 104px;
+    }
+
+    .persona-card:nth-child(2) .callout { background: var(--orange); }
+    .persona-card:nth-child(3) .callout { background: var(--blue); }
+
+    .callout-number {
+      font-size: 44px;
+      line-height: .9;
+      font-weight: 900;
+      letter-spacing: -0.055em;
+    }
+
+    .callout-text {
+      margin-top: 8px;
+      font-size: 14px;
+      line-height: 1.15;
+      font-weight: 850;
+    }
+
+    .persona-bars {
+      display: grid;
+      align-content: start;
+      gap: 12px;
+      min-height: 0;
+    }
+
+    .persona-row {
+      display: grid;
+      gap: 6px;
+    }
+
+    .persona-label {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--paper);
+      font-size: 13px;
+      line-height: 1.08;
+      font-weight: 820;
+    }
+
+    .persona-label span:last-child {
+      color: rgba(246,241,232,.72);
+      white-space: nowrap;
+    }
+
+    .track {
+      position: relative;
+      height: 18px;
+      border: 1px solid #4e4e47;
+      border-radius: 999px;
+      background: #2d2f29;
+      overflow: hidden;
+    }
+
+    .fill {
+      position: absolute;
+      inset: 0 auto 0 0;
+      min-width: 7px;
+      border-radius: 999px;
+      background: var(--blue);
+    }
+
+    .persona-card:nth-child(1) .fill { background: var(--lime); }
+    .persona-card:nth-child(2) .fill { background: var(--orange); }
+    .persona-card:nth-child(3) .fill { background: var(--blue); }
+
+    .slide-num {
+      position: absolute;
+      right: 40px;
+      bottom: 24px;
+      color: rgba(16,18,15,.38);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    @page { size: 16.6666667in 9.375in; margin: 0; }
+    @media print {
+      body, *, *::before, *::after {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      html, body {
+        width: 1600px;
+        height: 900px;
+        background: var(--paper);
+      }
+      .slide {
+        width: 1600px;
+        height: 900px;
+        min-height: 900px;
+        padding: 70px 0 54px;
+        background: var(--paper);
+      }
+      .wrap { width: 1360px; height: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <div class="wrap layout">
+      <section class="left">
+        <div>
+          <div class="eyebrow">ISPOR 2026 attendee data</div>
+          <h1>ISPOR attendee profiles</h1>
+        </div>
+
+        <div class="metrics" aria-label="summary metrics">
+          <div class="metric dark">
+            <div class="num">3,264</div>
+            <div class="label">attendees across manufacturer, consulting, and academia groups</div>
+          </div>
+          <div class="metric">
+            <div class="num">31%</div>
+            <div class="label">manufacturer attendees with HEOR / outcomes titles</div>
+          </div>
+          <div class="metric">
+            <div class="num">20%</div>
+            <div class="label">consulting attendees with executive / leadership titles</div>
+          </div>
+          <div class="metric">
+            <div class="num">61%</div>
+            <div class="label">academia attendees who are students/fellows or professors</div>
+          </div>
+        </div>
+        <p class="footnote">613 attendees were not classified into manufacturer, consulting, or academia after category review.</p>
+      </section>
+
+      <section class="chart-panel">
+        <div class="chart-head">
+          <div>
+            <h2>Roles by affiliation type</h2>
+          </div>
+        </div>
+
+        <div class="personas" role="img" aria-label="Comparison of role signals for manufacturer, consulting, and academia attendees">
+          <div class="persona-card">
+            <div>
+              <div class="persona-kicker">Manufacturer</div>
+              <div class="persona-title">Evidence and access teams</div>
+              <div class="persona-count">1,088 attendees</div>
+            </div>
+            <div class="callout">
+              <div class="callout-number">31%</div>
+              <div class="callout-text">have HEOR / outcomes titles; another 5% signal market access or HTA.</div>
+            </div>
+            <div class="persona-bars">
+              <div class="persona-row"><div class="persona-label"><span>HEOR / outcomes</span><span>335</span></div><div class="track"><div class="fill" style="width:100%"></div></div></div>
+              <div class="persona-row"><div class="persona-label"><span>Market access / HTA</span><span>57</span></div><div class="track"><div class="fill" style="width:17%"></div></div></div>
+              <div class="persona-row"><div class="persona-label"><span>Data / analytics</span><span>50</span></div><div class="track"><div class="fill" style="width:15%"></div></div></div>
+              <div class="persona-row"><div class="persona-label"><span>Executive / leader</span><span>33</span></div><div class="track"><div class="fill" style="width:10%"></div></div></div>
+            </div>
+          </div>
+
+          <div class="persona-card">
+            <div>
+              <div class="persona-kicker">Consulting</div>
+              <div class="persona-title">Leadership, data, and client mix</div>
+              <div class="persona-count">1,488 attendees</div>
+            </div>
+            <div class="callout">
+              <div class="callout-number">20%</div>
+              <div class="callout-text">carry executive titles;<br>data and BD signals<br>also stand out.</div>
+            </div>
+            <div class="persona-bars">
+              <div class="persona-row"><div class="persona-label"><span>Executive / leader</span><span>303</span></div><div class="track"><div class="fill" style="width:90%"></div></div></div>
+              <div class="persona-row"><div class="persona-label"><span>HEOR / outcomes</span><span>114</span></div><div class="track"><div class="fill" style="width:34%"></div></div></div>
+              <div class="persona-row"><div class="persona-label"><span>Data / analytics</span><span>113</span></div><div class="track"><div class="fill" style="width:34%"></div></div></div>
+              <div class="persona-row"><div class="persona-label"><span>Commercial / BD</span><span>86</span></div><div class="track"><div class="fill" style="width:26%"></div></div></div>
+            </div>
+          </div>
+
+          <div class="persona-card">
+            <div>
+              <div class="persona-kicker">Academia</div>
+              <div class="persona-title">Students, fellows, and faculty</div>
+              <div class="persona-count">688 attendees</div>
+            </div>
+            <div class="callout">
+              <div class="callout-number">61%</div>
+              <div class="callout-text">are students/fellows or professors, the clearest talent pipeline.</div>
+            </div>
+            <div class="persona-bars">
+              <div class="persona-row"><div class="persona-label"><span>Student / fellow</span><span>236</span></div><div class="track"><div class="fill" style="width:70%"></div></div></div>
+              <div class="persona-row"><div class="persona-label"><span>Professor / academic</span><span>184</span></div><div class="track"><div class="fill" style="width:55%"></div></div></div>
+              <div class="persona-row"><div class="persona-label"><span>Executive / leader</span><span>13</span></div><div class="track"><div class="fill" style="width:4%"></div></div></div>
+              <div class="persona-row"><div class="persona-label"><span>HEOR / outcomes</span><span>6</span></div><div class="track"><div class="fill" style="width:2%"></div></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="slide-num">01 / 01</div>
+  </article>
+</body>
+</html>

@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI x Pharma Dealmaking Infographic</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 26px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(215,255,95,0.32), transparent 34rem),
+        radial-gradient(circle at 84% 12%, rgba(184,216,255,0.28), transparent 26rem),
+        var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.35;
+    }
+
+    .sheet {
+      width: 1200px;
+      height: 2402px;
+      margin: 0 auto;
+      background:
+        radial-gradient(circle at top left, rgba(215,255,95,0.26), transparent 30rem),
+        radial-gradient(circle at 88% 9%, rgba(184,216,255,0.24), transparent 25rem),
+        linear-gradient(90deg, rgba(16,18,15,.045) 1px, transparent 1px) 0 0 / 80px 80px,
+        linear-gradient(180deg, rgba(16,18,15,.045) 1px, transparent 1px) 0 0 / 80px 80px,
+        var(--paper);
+      padding: 58px 64px 46px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sheet::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 14px;
+      background: linear-gradient(90deg, var(--lime), var(--blue) 34%, var(--orange) 67%, var(--pink));
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 1fr 330px;
+      gap: 48px;
+      align-items: start;
+      padding-bottom: 30px;
+      border-bottom: 1.5px solid var(--line);
+    }
+
+    .kicker {
+      margin: 0 0 16px;
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      border: 1.4px solid var(--line);
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: var(--lime);
+      color: var(--ink);
+      font-size: 16px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 720px;
+      font-size: 78px;
+      line-height: .9;
+      letter-spacing: -0.045em;
+      font-weight: 500;
+    }
+
+    .subhead {
+      margin: 24px 0 0;
+      max-width: 780px;
+      color: var(--muted);
+      font-size: 25px;
+      line-height: 1.25;
+    }
+
+    .source-box {
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,250,240,.82);
+      box-shadow: var(--shadow);
+      padding: 24px 22px;
+      margin-top: 4px;
+    }
+
+    .source-box strong {
+      display: block;
+      font-size: 25px;
+      margin-bottom: 12px;
+      letter-spacing: -0.03em;
+    }
+
+    .source-box span {
+      display: block;
+      color: var(--muted);
+      font-size: 17px;
+      margin-top: 8px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin: 32px 0 32px;
+    }
+
+    .metric {
+      background: rgba(255,250,240,.86);
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px 20px 20px;
+      min-height: 152px;
+    }
+
+    .metric .value {
+      font-size: 50px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -0.055em;
+      color: var(--ink);
+    }
+
+    .metric .label {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .metric .accent {
+      color: var(--ink);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 44px;
+      align-items: start;
+    }
+
+    section {
+      background: rgba(255,250,240,.84);
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px 28px 28px;
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      margin: 0 0 20px;
+      font-size: 25px;
+      line-height: 1.04;
+      letter-spacing: -0.03em;
+      font-weight: 500;
+    }
+
+    .section-note {
+      margin: -8px 0 20px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .donut-wrap {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .donut text {
+      font-family: inherit;
+      fill: var(--ink);
+      text-anchor: middle;
+    }
+
+    .legend {
+      display: grid;
+      gap: 13px;
+      font-size: 19px;
+    }
+
+    .legend-row {
+      display: grid;
+      grid-template-columns: 18px 1fr auto;
+      gap: 11px;
+      align-items: center;
+    }
+
+    .swatch {
+      width: 18px;
+      height: 18px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+    }
+
+    .bar-list {
+      display: grid;
+      gap: 15px;
+    }
+
+    .partner-card {
+      min-height: 354px;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 220px 1fr 42px;
+      gap: 14px;
+      align-items: center;
+      font-size: 18px;
+    }
+
+    .bar-label {
+      color: var(--ink);
+      font-weight: 700;
+      min-width: 0;
+      overflow-wrap: anywhere;
+      line-height: 1.15;
+    }
+
+    .bar-track {
+      height: 18px;
+      border: 1px solid rgba(16,18,15,.24);
+      background: rgba(16,18,15,.07);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: var(--lime);
+    }
+
+    .bar-value {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(17, 1fr);
+      gap: 7px;
+      align-items: end;
+      min-height: 230px;
+      padding-top: 20px;
+    }
+
+    .month {
+      display: grid;
+      grid-template-rows: 164px auto;
+      gap: 10px;
+      align-items: end;
+      justify-items: center;
+    }
+
+    .month-bar {
+      width: 100%;
+      min-height: 10px;
+      border-radius: 6px 6px 2px 2px;
+      border: 1.2px solid var(--line);
+      background: linear-gradient(180deg, var(--blue), var(--lime));
+    }
+
+    .month-label {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 750;
+      text-align: center;
+      min-height: 32px;
+    }
+
+    .top-deals {
+      display: grid;
+      gap: 12px;
+    }
+
+    .deal {
+      display: grid;
+      grid-template-columns: 86px 1fr;
+      gap: 14px;
+      align-items: center;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .deal:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .deal-value {
+      color: var(--green);
+      font-size: 27px;
+      line-height: 1;
+      font-weight: 850;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .deal-title {
+      font-size: 18px;
+      line-height: 1.2;
+      font-weight: 800;
+    }
+
+    .deal-meta {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.2;
+    }
+
+    .deal-desc,
+    .deal-date {
+      display: block;
+    }
+
+    .deal-desc {
+      white-space: nowrap;
+    }
+
+    .callout {
+      background: #11130f;
+      color: var(--paper);
+      border-color: var(--line);
+      display: grid;
+      grid-template-columns: 135px 1fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    .callout .big {
+      color: var(--lime);
+      font-size: 70px;
+      font-weight: 900;
+      line-height: .9;
+      letter-spacing: -0.06em;
+    }
+
+    .callout p {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.28;
+    }
+
+    .area-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
+    }
+
+    .area {
+      background: var(--card);
+      border: 1.2px solid var(--line);
+      border-radius: 18px;
+      padding: 14px 15px 13px;
+      min-height: 82px;
+    }
+
+    .area strong {
+      display: block;
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .area span {
+      display: block;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.25;
+      margin-top: 2px;
+    }
+
+    @page {
+      size: 1200px 2402px;
+      margin: 0;
+    }
+
+    @media print {
+      .sheet { margin: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main class="sheet">
+    <header>
+      <div>
+        <p class="kicker">AI x drug companies</p>
+        <h1>AI is becoming core deal infrastructure for drug companies.</h1>
+        <p class="subhead">Publicly announced transactions from January 2025 through May 6, 2026 show drug companies using AI partners to find medicines, analyze patient data, support manufacturing, and improve research workflows.</p>
+      </div>
+      <div class="source-box">
+        <strong>What is counted</strong>
+        <span>77 public transactions involving an AI company and a drug company.</span>
+        <span>Dollar figures are maximum announced deal values in USD, including future payments if goals are met.</span>
+      </div>
+    </header>
+
+    <div class="metrics">
+      <div class="metric">
+        <div class="value">77</div>
+        <div class="label">public deals between AI companies and drug companies</div>
+      </div>
+      <div class="metric">
+        <div class="value accent">$87.7B</div>
+        <div class="label">maximum announced value across deals that reported a dollar figure</div>
+      </div>
+      <div class="metric">
+        <div class="value">42</div>
+        <div class="label">research partnerships, the most common deal type</div>
+      </div>
+      <div class="metric">
+        <div class="value">$2.1B</div>
+        <div class="label">average maximum value among deals that reported a dollar figure</div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div>
+        <section>
+          <h2>How Companies Are Working Together</h2>
+          <div class="donut-wrap">
+            <svg class="donut" width="250" height="250" viewBox="0 0 250 250" role="img" aria-label="Deal type mix donut chart">
+              <circle cx="125" cy="125" r="86" fill="none" stroke="#d6d0c2" stroke-width="38"></circle>
+              <circle cx="125" cy="125" r="86" fill="none" stroke="#d7ff5f" stroke-width="38" stroke-dasharray="288.5 251.8" stroke-dashoffset="0" transform="rotate(-90 125 125)"></circle>
+              <circle cx="125" cy="125" r="86" fill="none" stroke="#b8d8ff" stroke-width="38" stroke-dasharray="206.2 334.1" stroke-dashoffset="-288.5" transform="rotate(-90 125 125)"></circle>
+              <circle cx="125" cy="125" r="86" fill="none" stroke="#ffb86b" stroke-width="38" stroke-dasharray="27.5 512.8" stroke-dashoffset="-494.7" transform="rotate(-90 125 125)"></circle>
+              <circle cx="125" cy="125" r="86" fill="none" stroke="#ff8a76" stroke-width="38" stroke-dasharray="6.9 533.4" stroke-dashoffset="-522.2" transform="rotate(-90 125 125)"></circle>
+              <circle cx="125" cy="125" r="58" fill="#fffaf0"></circle>
+              <text x="125" y="119" font-size="42" font-weight="900">55%</text>
+              <text x="125" y="149" font-size="17" font-weight="750">research</text>
+            </svg>
+            <div class="legend">
+              <div class="legend-row"><span class="swatch" style="background:#d7ff5f"></span><span>Research partnership</span><strong>42</strong></div>
+              <div class="legend-row"><span class="swatch" style="background:#b8d8ff"></span><span>Licensing rights</span><strong>30</strong></div>
+              <div class="legend-row"><span class="swatch" style="background:#ffb86b"></span><span>Acquisition</span><strong>4</strong></div>
+              <div class="legend-row"><span class="swatch" style="background:#ff8a76"></span><span>Investment</span><strong>1</strong></div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>What the AI Is Being Used For</h2>
+          <p class="section-note">Broad AI platforms show up most often, followed by AI used to find new medicines.</p>
+          <div class="bar-list">
+            <div class="bar-row"><span class="bar-label">Broad AI platforms</span><span class="bar-track"><span class="bar-fill" style="width:100%"></span></span><span class="bar-value">29</span></div>
+            <div class="bar-row"><span class="bar-label">Finding new medicines</span><span class="bar-track"><span class="bar-fill" style="width:75.9%;background:#b8d8ff"></span></span><span class="bar-value">22</span></div>
+            <div class="bar-row"><span class="bar-label">Patient data and diagnostics</span><span class="bar-track"><span class="bar-fill" style="width:24.1%;background:#ffd3e0"></span></span><span class="bar-value">7</span></div>
+            <div class="bar-row"><span class="bar-label">Traditional small-molecule drugs</span><span class="bar-track"><span class="bar-fill" style="width:24.1%;background:#ffd3e0"></span></span><span class="bar-value">7</span></div>
+            <div class="bar-row"><span class="bar-label">Antibody medicines</span><span class="bar-track"><span class="bar-fill" style="width:20.7%;background:#ffb86b"></span></span><span class="bar-value">6</span></div>
+            <div class="bar-row"><span class="bar-label">Company acquisitions</span><span class="bar-track"><span class="bar-fill" style="width:10.3%;background:#ff8a76"></span></span><span class="bar-value">3</span></div>
+          </div>
+        </section>
+
+        <section>
+          <h2>When Deals Were Announced</h2>
+          <p class="section-note">Announcements increased in early 2026; January and March each had 10 transactions.</p>
+          <div class="timeline">
+            <div class="month"><div class="month-bar" style="height:49px"></div><div class="month-label">Jan<br>25</div></div>
+            <div class="month"><div class="month-bar" style="height:16px"></div><div class="month-label">Feb</div></div>
+            <div class="month"><div class="month-bar" style="height:33px"></div><div class="month-label">Mar</div></div>
+            <div class="month"><div class="month-bar" style="height:66px"></div><div class="month-label">Apr</div></div>
+            <div class="month"><div class="month-bar" style="height:16px"></div><div class="month-label">May</div></div>
+            <div class="month"><div class="month-bar" style="height:115px"></div><div class="month-label">Jun</div></div>
+            <div class="month"><div class="month-bar" style="height:66px"></div><div class="month-label">Jul</div></div>
+            <div class="month"><div class="month-bar" style="height:66px"></div><div class="month-label">Aug</div></div>
+            <div class="month"><div class="month-bar" style="height:33px"></div><div class="month-label">Sep</div></div>
+            <div class="month"><div class="month-bar" style="height:33px"></div><div class="month-label">Oct</div></div>
+            <div class="month"><div class="month-bar" style="height:49px"></div><div class="month-label">Nov</div></div>
+            <div class="month"><div class="month-bar" style="height:66px"></div><div class="month-label">Dec</div></div>
+            <div class="month"><div class="month-bar" style="height:164px;background:linear-gradient(180deg,#ffb86b,#d7ff5f)"></div><div class="month-label">Jan<br>26</div></div>
+            <div class="month"><div class="month-bar" style="height:148px"></div><div class="month-label">Feb</div></div>
+            <div class="month"><div class="month-bar" style="height:164px;background:linear-gradient(180deg,#ffb86b,#d7ff5f)"></div><div class="month-label">Mar</div></div>
+            <div class="month"><div class="month-bar" style="height:148px"></div><div class="month-label">Apr</div></div>
+            <div class="month"><div class="month-bar" style="height:33px"></div><div class="month-label">May</div></div>
+          </div>
+        </section>
+
+        <section class="partner-card">
+          <h2>Drug Companies Appearing Most Often</h2>
+          <div class="bar-list">
+            <div class="bar-row"><span class="bar-label">Eli Lilly</span><span class="bar-track"><span class="bar-fill" style="width:100%;background:#b8d8ff"></span></span><span class="bar-value">10</span></div>
+            <div class="bar-row"><span class="bar-label">AstraZeneca</span><span class="bar-track"><span class="bar-fill" style="width:70%"></span></span><span class="bar-value">7</span></div>
+            <div class="bar-row"><span class="bar-label">Novo Nordisk</span><span class="bar-track"><span class="bar-fill" style="width:60%;background:#ffd3e0"></span></span><span class="bar-value">6</span></div>
+            <div class="bar-row"><span class="bar-label">Daiichi Sankyo</span><span class="bar-track"><span class="bar-fill" style="width:50%;background:#ffb86b"></span></span><span class="bar-value">5</span></div>
+            <div class="bar-row"><span class="bar-label">Novartis</span><span class="bar-track"><span class="bar-fill" style="width:50%;background:#ff8a76"></span></span><span class="bar-value">5</span></div>
+            <div class="bar-row"><span class="bar-label">Merck &amp; Co.</span><span class="bar-track"><span class="bar-fill" style="width:40%;background:#d6d0c2"></span></span><span class="bar-value">4</span></div>
+          </div>
+        </section>
+      </div>
+
+      <div>
+        <section class="callout">
+          <div class="big">62%</div>
+          <p>of the AI partners focus on finding or designing medicines. Another 25% focus on patient data, clinical research, or diagnostics.</p>
+        </section>
+
+        <section>
+          <h2>Largest Announced Deal Values</h2>
+          <div class="top-deals">
+            <div class="deal"><div class="deal-value">$18.5B</div><div><div class="deal-title">CSPC Pharmaceuticals + AstraZeneca</div><div class="deal-meta"><span class="deal-desc">Weight loss and type 2 diabetes</span><span class="deal-date">Jan 30, 2026</span></div></div></div>
+            <div class="deal"><div class="deal-value">$8.9B</div><div><div class="deal-title">Innovent Biologics + Eli Lilly</div><div class="deal-meta"><span class="deal-desc">Immune disease and cancer</span><span class="deal-date">Feb 8, 2026</span></div></div></div>
+            <div class="deal"><div class="deal-value">$6.0B</div><div><div class="deal-title">XtalPi + DoveTree</div><div class="deal-meta"><span class="deal-desc">AI-designed medicines</span><span class="deal-date">Aug 6, 2025</span></div></div></div>
+            <div class="deal"><div class="deal-value">$5.7B</div><div><div class="deal-title">Monte Rosa Therapeutics + Novartis</div><div class="deal-meta"><span class="deal-desc">Protein-targeting medicines</span><span class="deal-date">Sep 15, 2025</span></div></div></div>
+            <div class="deal"><div class="deal-value">$5.3B</div><div><div class="deal-title">CSPC Pharmaceuticals + AstraZeneca</div><div class="deal-meta"><span class="deal-desc">Immune-system diseases</span><span class="deal-date">Jun 13, 2025</span></div></div></div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Diseases Getting the Most Attention</h2>
+          <p class="section-note">Cancer has the most deals. Heart and metabolic disease has the largest announced value because of one very large agreement.</p>
+          <div class="area-grid">
+            <div class="area"><strong>Cancer</strong><span>18 deals</span><span>$20.4B announced</span></div>
+            <div class="area"><strong>Multiple diseases</strong><span>15 deals</span><span>$15.4B announced</span></div>
+            <div class="area"><strong>Clinical data</strong><span>13 deals</span><span>$1.1B announced</span></div>
+            <div class="area"><strong>Medicine-making tech</strong><span>10 deals</span><span>$7.2B announced</span></div>
+            <div class="area"><strong>Heart, obesity, diabetes</strong><span>4 deals</span><span>$25.2B announced</span></div>
+            <div class="area"><strong>Immune disease</strong><span>5 deals</span><span>$8.7B announced</span></div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>

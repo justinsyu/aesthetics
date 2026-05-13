@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Start RWE Strategy Before Launch Pressure</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 26px;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: var(--paper-2);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.24;
+      scrollbar-width: none;
+    }
+
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar { display: none; }
+
+    body {
+      display: grid;
+      place-items: start center;
+    }
+
+    .sheet {
+      position: relative;
+      width: 1200px;
+      height: 1730px;
+      overflow: hidden;
+      padding: 46px 52px 42px;
+      background:
+        radial-gradient(circle at 9% 5%, rgba(215,255,95,.34), transparent 26rem),
+        radial-gradient(circle at 88% 7%, rgba(184,216,255,.32), transparent 26rem),
+        radial-gradient(circle at 16% 78%, rgba(255,184,107,.20), transparent 30rem),
+        radial-gradient(circle at 88% 92%, rgba(255,211,224,.22), transparent 24rem),
+        var(--paper);
+    }
+
+    .hairline {
+      position: absolute;
+      inset: 24px;
+      z-index: 4;
+      border: 1.5px solid rgba(16,18,15,.18);
+      border-radius: 34px;
+      pointer-events: none;
+    }
+
+    .sheet > :not(.hairline) {
+      position: relative;
+      z-index: 1;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.5px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--lime);
+      font-size: 14px;
+      font-weight: 850;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .note {
+      max-width: 430px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.25;
+      text-align: right;
+    }
+
+    h1 {
+      max-width: 1090px;
+      margin: 0;
+      font-size: 64px;
+      line-height: .91;
+      font-weight: 560;
+      letter-spacing: 0;
+    }
+
+    h1 span {
+      background: linear-gradient(180deg, transparent 58%, var(--lime) 58%);
+    }
+
+    .subtitle {
+      margin: 16px 0 0;
+      max-width: 1040px;
+      color: var(--muted);
+      font-size: 23px;
+      line-height: 1.25;
+    }
+
+    .timeline {
+      margin-top: 28px;
+      border: 1.6px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,250,240,.82);
+      box-shadow: var(--shadow);
+      padding: 23px 24px 21px;
+      overflow: hidden;
+    }
+
+    .timeline-track {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      min-height: 168px;
+    }
+
+    .timeline-track::before {
+      content: "";
+      position: absolute;
+      left: 6%;
+      right: 6%;
+      top: 55px;
+      height: 12px;
+      border: 1.2px solid rgba(16,18,15,.38);
+      border-radius: 999px;
+      background: rgba(16,18,15,.08);
+      z-index: 0;
+    }
+
+    .phase {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 16px;
+      min-width: 0;
+    }
+
+    .dot {
+      width: 88px;
+      height: 88px;
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      color: var(--ink);
+      font-size: 18px;
+      font-weight: 900;
+      background: var(--card);
+      box-shadow: 8px 10px 0 rgba(16,18,15,.08);
+    }
+
+    .phase:nth-child(1) .dot { background: var(--lime); }
+    .phase:nth-child(2) .dot { background: var(--orange); }
+    .phase:nth-child(3) .dot { background: var(--red); }
+
+    .phase-copy {
+      padding-right: 8px;
+    }
+
+    .phase-copy h2 {
+      margin: 0 0 7px;
+      font-size: 25px;
+      line-height: .96;
+      font-weight: 820;
+      letter-spacing: 0;
+    }
+
+    .phase-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.24;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .panel {
+      border: 1.6px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,250,240,.84);
+      box-shadow: var(--shadow);
+      padding: 24px;
+      min-height: 424px;
+    }
+
+    .panel.dark {
+      background: #11130f;
+      color: var(--paper);
+    }
+
+    .panel h2 {
+      margin: 0;
+      font-size: 38px;
+      line-height: .94;
+      font-weight: 760;
+      letter-spacing: 0;
+    }
+
+    .panel.dark h2,
+    .panel.dark .small-label { color: var(--paper); }
+
+    .panel .summary {
+      margin: 12px 0 19px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.27;
+    }
+
+    .panel.dark .summary { color: rgba(246,241,232,.72); }
+
+    .small-label {
+      display: inline-flex;
+      align-items: center;
+      border: 1.2px solid currentColor;
+      border-radius: 999px;
+      padding: 5px 9px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .lock-list,
+    .question-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .lock-item,
+    .question-item {
+      border: 1.35px solid var(--line);
+      border-radius: 18px;
+      background: var(--card);
+      padding: 14px 15px 14px 16px;
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 13px;
+      align-items: start;
+    }
+
+    .panel.dark .question-item {
+      background: rgba(246,241,232,.08);
+      border-color: rgba(246,241,232,.42);
+    }
+
+    .index {
+      height: 42px;
+      width: 42px;
+      border: 1.3px solid var(--line);
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: var(--red);
+      font-size: 17px;
+      font-weight: 900;
+    }
+
+    .question-item .index {
+      background: var(--blue);
+      color: var(--ink);
+      border-color: var(--line);
+    }
+
+    .item-copy h3 {
+      margin: 0 0 5px;
+      font-size: 21px;
+      line-height: 1;
+      font-weight: 820;
+      letter-spacing: 0;
+    }
+
+    .item-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14.8px;
+      line-height: 1.24;
+    }
+
+    .panel.dark .item-copy p { color: rgba(246,241,232,.68); }
+
+    .middle-band {
+      display: grid;
+      grid-template-columns: .86fr 1.14fr;
+      gap: 18px;
+      margin-top: 22px;
+      align-items: stretch;
+    }
+
+    .metric {
+      border: 1.6px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--lime);
+      box-shadow: var(--shadow);
+      padding: 22px 24px 20px;
+      min-height: 184px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .metric .kicker {
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .metric .big {
+      margin-top: 18px;
+      font-size: 45px;
+      line-height: .88;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .metric p {
+      margin: 13px 0 0;
+      font-size: 16px;
+      line-height: 1.22;
+      color: rgba(16,18,15,.74);
+    }
+
+    .flow {
+      border: 1.6px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,250,240,.84);
+      box-shadow: var(--shadow);
+      padding: 22px 23px;
+      min-height: 184px;
+    }
+
+    .flow-grid {
+      display: grid;
+      grid-template-columns: 1fr 42px 1fr;
+      align-items: center;
+      gap: 15px;
+      height: 100%;
+    }
+
+    .flow-card {
+      min-height: 134px;
+      border: 1.35px solid var(--line);
+      border-radius: 20px;
+      padding: 17px;
+      background: var(--paper-2);
+    }
+
+    .flow-card:last-child { background: var(--blue); }
+
+    .arrow {
+      height: 42px;
+      width: 42px;
+      border: 1.35px solid var(--line);
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      font-size: 25px;
+      font-weight: 900;
+      background: var(--orange);
+    }
+
+    .flow-card h3 {
+      margin: 0 0 9px;
+      font-size: 24px;
+      line-height: .98;
+      font-weight: 820;
+      letter-spacing: 0;
+    }
+
+    .flow-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.24;
+    }
+
+    .bottom {
+      margin-top: 22px;
+      border: 1.8px solid var(--line);
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: var(--card);
+    }
+
+    .bottom-head {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      border-bottom: 1.5px solid var(--line);
+      min-height: 88px;
+    }
+
+    .bottom-title {
+      background: #11130f;
+      color: var(--paper);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      font-size: 29px;
+      line-height: 1;
+      font-weight: 820;
+      letter-spacing: 0;
+    }
+
+    .bottom-copy {
+      padding: 19px 24px 18px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.25;
+      display: flex;
+      align-items: center;
+    }
+
+    .strategy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .strategy {
+      min-height: 166px;
+      padding: 21px 20px 20px;
+      border-right: 1.5px solid var(--line);
+      background: rgba(255,250,240,.7);
+    }
+
+    .strategy:last-child { border-right: 0; }
+
+    .strategy:nth-child(2) { background: rgba(184,216,255,.36); }
+    .strategy:nth-child(3) { background: rgba(215,255,95,.34); }
+
+    .strategy h3 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      line-height: .98;
+      font-weight: 830;
+      letter-spacing: 0;
+    }
+
+    .strategy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.25;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: flex-end;
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 13.5px;
+      line-height: 1.25;
+    }
+
+    .footer strong {
+      color: var(--ink);
+      font-weight: 850;
+    }
+
+    @page {
+      size: 1200px 1730px;
+      margin: 0;
+    }
+
+    @media print {
+      html,
+      body {
+        width: 1200px;
+        height: 1730px;
+        background: var(--paper);
+      }
+
+      .sheet {
+        margin: 0;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="sheet" aria-label="RWE strategy timing infographic">
+    <div class="hairline"></div>
+
+    <div class="topbar">
+      <div class="eyebrow">RWE strategy</div>
+      <div class="note">A launch evidence plan works best when payer objections are mapped before pivotal evidence is finalized</div>
+    </div>
+
+    <h1>Late RWE becomes <span>gap repair</span><br>Early RWE becomes gap prevention</h1>
+    <p class="subtitle">
+      If real-world evidence planning waits for the Phase III readout, the study can only work around choices that are already baked into the evidence package.
+    </p>
+
+    <section class="timeline" aria-label="Evidence timing">
+      <div class="timeline-track">
+        <div class="phase">
+          <div class="dot">Ph 2</div>
+          <div class="phase-copy">
+            <h2>Strategic questions are visible</h2>
+            <p>Payer comparisons, access risks, and real-world data gaps can be anticipated before launch pressure arrives.</p>
+          </div>
+        </div>
+        <div class="phase">
+          <div class="dot">Ph 3</div>
+          <div class="phase-copy">
+            <h2>Evidence architecture hardens</h2>
+            <p>Endpoints, comparators, and enrolled populations become difficult to change once pivotal evidence is complete.</p>
+          </div>
+        </div>
+        <div class="phase">
+          <div class="dot">Launch</div>
+          <div class="phase-copy">
+            <h2>Access teams need answers</h2>
+            <p>RWE is asked to support payer communication, often with less time than the question deserves.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="split" aria-label="Late start versus early start">
+      <div class="panel">
+        <div class="small-label">Starting after readout</div>
+        <h2>The common launch squeeze</h2>
+        <p class="summary">A short runway usually pushes teams toward fast, feasible evidence rather than evidence designed around the access problem.</p>
+        <div class="lock-list">
+          <div class="lock-item">
+            <div class="index">1</div>
+            <div class="item-copy">
+              <h3>Endpoint mismatch</h3>
+              <p>The trial may not capture the outcomes payers use to judge value in practice.</p>
+            </div>
+          </div>
+          <div class="lock-item">
+            <div class="index">2</div>
+            <div class="item-copy">
+              <h3>Comparator mismatch</h3>
+              <p>The treatment payers benchmark against may sit outside the pivotal trial design.</p>
+            </div>
+          </div>
+          <div class="lock-item">
+            <div class="index">3</div>
+            <div class="item-copy">
+              <h3>Population mismatch</h3>
+              <p>The enrolled population may not mirror who receives therapy after approval.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel dark">
+        <div class="small-label">Starting in Phase II</div>
+        <h2>The better planning window</h2>
+        <p class="summary">The data may not be mature yet, but the access questions can already be made explicit.</p>
+        <div class="question-list">
+          <div class="question-item">
+            <div class="index">?</div>
+            <div class="item-copy">
+              <h3>What will be the real benchmark</h3>
+              <p>Identify the comparator that will shape formulary and pathway conversations.</p>
+            </div>
+          </div>
+          <div class="question-item">
+            <div class="index">?</div>
+            <div class="item-copy">
+              <h3>Which outcomes will be challenged</h3>
+              <p>Map the practical, economic, and patient-centered outcomes the trial may not settle.</p>
+            </div>
+          </div>
+          <div class="question-item">
+            <div class="index">?</div>
+            <div class="item-copy">
+              <h3>Where will access narrow</h3>
+              <p>Pressure-test the evidence story against likely restrictions, subgroups, and treatment sequencing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="middle-band" aria-label="Timing implication">
+      <div class="metric">
+        <div>
+          <div class="kicker">Planning shift</div>
+          <div class="big">Start HEOR in Ph 2</div>
+        </div>
+        <p>Moving RWE strategy upstream changes the job from responding to objections to designing evidence around them.</p>
+      </div>
+
+      <div class="flow">
+        <div class="flow-grid">
+          <div class="flow-card">
+            <h3>Late request</h3>
+            <p>Retrospective study, quick poster, complete deck, limited strategic leverage.</p>
+          </div>
+          <div class="arrow" aria-hidden="true">&rarr;</div>
+          <div class="flow-card">
+            <h3>Early strategy</h3>
+            <p>Comparator logic, endpoint rationale, data-generation plan, payer-ready narrative.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bottom" aria-label="What early RWE planning changes">
+      <div class="bottom-head">
+        <div class="bottom-title">What changes when RWE starts in Phase 2</div>
+        <div class="bottom-copy">
+          HEOR is no longer asked to patch a launch story after the critical evidence choices have already been made.
+        </div>
+      </div>
+      <div class="strategy-grid">
+        <div class="strategy">
+          <h3>Trial design gets sharper</h3>
+          <p>Access-relevant outcomes and subgroup definitions are discussed while there is still room to influence evidence collection.</p>
+        </div>
+        <div class="strategy">
+          <h3>RWE studies get more purposeful</h3>
+          <p>Real-world analyses are tied to specific payer questions, not only to publication activity.</p>
+        </div>
+        <div class="strategy">
+          <h3>Launch teams get fewer surprises</h3>
+          <p>The payer evidence story has already been stress-tested before the first access objection arrives.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <div><strong>Core idea:</strong> evidence strategy should begin when the questions are clear, not when the deadline is close.</div>
+      <div>Phase II - Phase III - Launch</div>
+    </div>
+  </main>
+</body>
+</html>

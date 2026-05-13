@@ -1,0 +1,895 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FDA AI Early-Phase Trials RFI Comment Review - Fresh Tan</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--paper); color: var(--ink); }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+    .slide {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      background: var(--paper);
+    }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .slide > *:not(.slide-bg-img) {
+      position: relative;
+      z-index: 1;
+    }
+    .frame {
+      width: min(1440px, calc(100vw - 40px));
+      height: 100%;
+      margin: 0 auto;
+      padding: 36px 0 30px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 18px;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .09em;
+      font-weight: 950;
+      color: var(--muted);
+    }
+    .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--ink);
+    }
+    .label::before {
+      content: "";
+      width: 42px;
+      height: 12px;
+      border: 2px solid var(--line);
+      background: var(--lime);
+      border-radius: 99px;
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 {
+      font-size: 96px;
+      line-height: .9;
+      letter-spacing: 0;
+      font-weight: 540;
+    }
+    .hero-title {
+      font-size: 78px;
+      line-height: .92;
+      max-width: 980px;
+    }
+    h2 {
+      font-size: 55px;
+      line-height: .95;
+      letter-spacing: 0;
+      font-weight: 560;
+    }
+    h3 {
+      font-size: 25px;
+      line-height: 1.02;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+    .deck {
+      display: grid;
+      gap: 18px;
+      height: 100%;
+      min-height: 0;
+    }
+    .two { grid-template-columns: 1fr 1fr; }
+    .three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .hero {
+      display: grid;
+      grid-template-columns: 430px 1fr;
+      gap: 30px;
+      align-items: stretch;
+    }
+    .black {
+      background: var(--ink);
+      color: var(--paper);
+      border: 2px solid var(--line);
+      border-radius: 10px;
+    }
+    .cream {
+      background: rgba(255,250,240,.86);
+      border: 2px solid var(--line);
+      border-radius: 10px;
+    }
+    .plain {
+      border-top: 3px solid var(--line);
+      padding-top: 18px;
+    }
+    .muted { color: var(--muted); }
+    .small {
+      font-size: 17px;
+      line-height: 1.25;
+      font-weight: 650;
+      color: var(--muted);
+    }
+    .micro {
+      font-size: 12.5px;
+      line-height: 1.18;
+      font-weight: 780;
+      color: var(--muted);
+    }
+    .lede {
+      font-size: 28px;
+      line-height: 1.18;
+      font-weight: 650;
+      color: var(--muted);
+    }
+    .big-stat {
+      font-size: 96px;
+      line-height: .86;
+      font-weight: 950;
+      letter-spacing: 0;
+    }
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border: 2px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--card);
+    }
+    .stat-row > div {
+      padding: 18px 20px;
+      border-right: 2px solid var(--line);
+      min-height: 118px;
+    }
+    .stat-row > div:last-child { border-right: 0; }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 42px;
+      min-height: 27px;
+      padding: 4px 9px;
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 950;
+      background: var(--blue);
+      color: var(--ink);
+      white-space: nowrap;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .pink { background: var(--pink); }
+    .red { background: var(--red); }
+    .gray { background: var(--gray); }
+    .blue { background: var(--blue); }
+    .kicker {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .095em;
+      font-weight: 950;
+      color: var(--muted);
+      margin-bottom: 9px;
+    }
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      font-size: 11.5px;
+      line-height: 1.18;
+      font-weight: 780;
+      color: var(--muted);
+    }
+    .rfi-layout {
+      display: grid;
+      grid-template-columns: 1.06fr .94fr;
+      grid-template-rows: auto 1fr;
+      gap: 22px;
+    }
+    .wide-title { grid-column: 1 / -1; }
+    .quote-band {
+      padding: 26px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .quote {
+      font-size: 28px;
+      line-height: 1.06;
+      font-weight: 820;
+    }
+    .quote.smaller { font-size: 22px; line-height: 1.13; }
+    .rule-list {
+      display: grid;
+      gap: 0;
+      border-top: 2px solid var(--line);
+    }
+    .rule-item {
+      display: grid;
+      grid-template-columns: 74px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 15px 0;
+      border-bottom: 2px solid rgba(27,31,23,.24);
+    }
+    .rule-num {
+      font-size: 38px;
+      line-height: .9;
+      font-weight: 950;
+    }
+    .hero-stats .rule-item {
+      grid-template-columns: 148px 1fr !important;
+      gap: 30px;
+      padding: 18px 0;
+    }
+    .hero-stats .rule-num {
+      font-size: 52px;
+    }
+    .hero-stats .small {
+      font-size: 22px;
+      line-height: 1.12;
+    }
+    .rfi-layout .quote-band {
+      min-height: 496px;
+    }
+    .rfi-layout .quote {
+      font-size: 34px;
+      line-height: 1.04;
+    }
+    .rfi-layout .small {
+      font-size: 24px;
+      line-height: 1.12;
+    }
+    .rfi-layout .rule-item {
+      grid-template-columns: 66px 1fr;
+      padding: 17px 0;
+    }
+    .rfi-layout .rule-num {
+      font-size: 42px;
+    }
+    .matrix {
+      display: grid;
+      grid-template-columns: 108px 268px 1fr;
+      border: 2px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      background: rgba(255,250,240,.90);
+    }
+    .matrix > div {
+      min-height: 34px;
+      padding: 5px 10px;
+      display: flex;
+      align-items: center;
+      border-right: 2px solid var(--line);
+      border-bottom: 2px solid var(--line);
+      font-size: 15.1px;
+      line-height: 1.02;
+      font-weight: 430;
+    }
+    .matrix > div:nth-child(3n) { border-right: 0; }
+    .matrix > div:nth-last-child(-n+3) { border-bottom: 0; }
+    .matrix .head {
+      min-height: 32px;
+      background: var(--ink);
+      color: var(--paper);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: 11.5px;
+      font-weight: 950;
+    }
+    .matrix .tag {
+      font-weight: 950;
+    }
+    .map {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+    .axis {
+      position: relative;
+      padding: 26px;
+      min-height: 0;
+      isolation: isolate;
+    }
+    .axis::before, .axis::after {
+      content: "";
+      position: absolute;
+      background: var(--line);
+    }
+    .axis::before {
+      left: 66px;
+      right: 34px;
+      top: 50%;
+      height: 3px;
+    }
+    .axis::after {
+      top: 34px;
+      bottom: 66px;
+      left: 50%;
+      width: 3px;
+    }
+    .axis::before, .axis::after {
+      z-index: 0;
+    }
+    .bubble {
+      position: absolute;
+      z-index: 2;
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      padding: 9px 12px;
+      background: var(--card);
+      font-size: 13px;
+      font-weight: 950;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .b1 { left: 75px; top: 88px; background: var(--red); }
+    .b2 { right: 76px; top: 102px; background: var(--orange); }
+    .b3 { left: 115px; bottom: 96px; background: var(--blue); }
+    .b4 { right: 82px; bottom: 116px; background: var(--lime); }
+    .b5 { left: 50%; top: 48%; transform: translate(-50%, -50%); background: var(--pink); }
+    .axis-label {
+      position: absolute;
+      z-index: 2;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--muted);
+      font-weight: 950;
+    }
+    .axis-left { left: 26px; top: 49%; transform: rotate(-90deg); transform-origin: left center; }
+    .axis-bottom { bottom: 25px; left: 43%; }
+    .stack {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .stack > h2 {
+      margin-bottom: 18px;
+    }
+    .stripe {
+      display: grid;
+      grid-template-columns: 170px 1fr 122px;
+      gap: 18px;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 2px solid rgba(27,31,23,.22);
+    }
+    .stripe:first-child { border-top: 2px solid var(--line); }
+    .stripe-title {
+      font-size: 25px;
+      line-height: .98;
+      font-weight: 930;
+    }
+    .map .small {
+      font-size: 20.5px;
+      line-height: 1.16;
+    }
+    .tokenline {
+      display: flex;
+      gap: 7px;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+    .metric-board {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 0;
+      border: 2px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--card);
+    }
+    .metric-cell {
+      padding: 24px;
+      border-right: 2px solid var(--line);
+      border-bottom: 2px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .metric-cell h3 {
+      font-size: 28px;
+      line-height: 1.04;
+    }
+    .metric-cell .kicker {
+      font-size: 13px;
+    }
+    .metric-cell:nth-child(2n) { border-right: 0; }
+    .metric-cell:nth-last-child(-n+2) { border-bottom: 0; }
+    .gauge {
+      height: 18px;
+      border: 2px solid var(--line);
+      border-radius: 99px;
+      background: var(--paper-2);
+      overflow: hidden;
+    }
+    .gauge span {
+      display: block;
+      height: 100%;
+      border-right: 2px solid var(--line);
+    }
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      align-items: stretch;
+    }
+    .step {
+      position: relative;
+      padding: 24px 22px;
+      min-height: 360px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 116px;
+    }
+    .step::after {
+      content: "";
+      position: absolute;
+      right: -19px;
+      top: 50%;
+      width: 22px;
+      height: 3px;
+      background: var(--line);
+    }
+    .step:last-child::after { display: none; }
+    .step-number {
+      font-size: 74px;
+      line-height: .8;
+      font-weight: 950;
+    }
+    .step .small {
+      font-size: 26px;
+      line-height: 1.08;
+      font-weight: 760;
+    }
+    .ledger {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+    .ledger .black, .ledger .cream {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 26px;
+    }
+    .ledger .rule-item {
+      grid-template-columns: 72px 1fr;
+      padding: 22px 0;
+    }
+    .ledger .rule-num {
+      font-size: 54px;
+    }
+    .ledger .rule-list .small {
+      font-size: 24px;
+      line-height: 1.16;
+    }
+    .quote-wall {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-rows: 1fr 1fr;
+      gap: 16px;
+    }
+    .quote-tile {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .quote-tile.large { grid-row: 1 / -1; }
+    .quote-wall .quote {
+      font-size: 30px;
+      line-height: 1.07;
+    }
+    .architecture-quotes {
+      gap: 18px;
+      padding: 30px;
+    }
+    .architecture-quotes .quote {
+      font-size: 30px;
+      line-height: 1.06;
+    }
+    .architecture-list .rule-item {
+      grid-template-columns: 88px 1fr;
+      padding: 18px 0;
+    }
+    .architecture-list .rule-num {
+      font-size: 58px;
+    }
+    .architecture-list h3 {
+      font-size: 34px;
+      line-height: 1;
+    }
+    .architecture-list .small {
+      font-size: 25px;
+      line-height: 1.1;
+      font-weight: 690;
+    }
+    .architecture-quotes .quote.smaller {
+      font-size: 24px;
+      line-height: 1.12;
+    }
+    .architecture-quotes .mini-quote {
+      border-top: 2px solid rgba(246, 241, 232, .22);
+      padding-top: 18px;
+    }
+    .source-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px 36px;
+      font-size: 18px;
+      line-height: 1.18;
+      font-weight: 760;
+    }
+    .source-grid div {
+      border-top: 2px solid rgba(27,31,23,.22);
+      padding-top: 8px;
+    }
+
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; break-after: page; }
+      .frame { width: 1440px; padding-top: 36px; padding-bottom: 30px; }
+    }
+  </style>
+</head>
+<body>
+
+<article class="slide">
+  <img class="slide-bg-img" src="assets/fda_ai_trials_fresh/tan_diagonal_bg.png" alt="" aria-hidden="true" />
+  <div class="frame">
+    <div class="nav"><span class="label">FDA‑2026‑N‑4390</span><span>01 / 10</span></div>
+    <div class="hero">
+      <div class="black" style="padding:30px; display:flex; flex-direction:column; justify-content:space-between;">
+        <div>
+          <div class="kicker" style="color:var(--lime);">Public record snapshot</div>
+          <div class="big-stat">15</div>
+          <p class="lede" style="color:rgba(246,241,232,.78);">public comments posted as of May 11, 2026</p>
+        </div>
+        <div class="rule-list hero-stats" style="border-color:rgba(246,241,232,.32);">
+          <div class="rule-item" style="border-color:rgba(246,241,232,.18); grid-template-columns:82px 1fr;"><div class="rule-num">10</div><p class="small" style="color:rgba(246,241,232,.76);">comments included one or more attachments</p></div>
+          <div class="rule-item" style="border-color:rgba(246,241,232,.18); grid-template-columns:82px 1fr;"><div class="rule-num">2</div><p class="small" style="color:rgba(246,241,232,.76);">posting dates represented: May 4 and May 7</p></div>
+          <div class="rule-item" style="border-bottom:0; grid-template-columns:82px 1fr;"><div class="rule-num">5/29</div><p class="small" style="color:rgba(246,241,232,.76);">comment deadline in the Federal Register notice</p></div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; justify-content:space-between;">
+        <div>
+          <h1 class="hero-title">AI in early‑phase trials: initial comments emphasize governance</h1>
+          <p class="lede" style="margin-top:24px; max-width:930px;">Synthesis of FDA’s RFI on AI‑enabled optimization of early‑phase clinical trials and the 15 public submissions posted to Regulations.gov as of May 11, 2026</p>
+        </div>
+        <div class="stat-row">
+          <div><div class="kicker">Common rec</div><h3>Human‑reviewed decisions</h3></div>
+          <div><div class="kicker">Recurring metric</div><h3>Audit‑ready evidence</h3></div>
+          <div><div class="kicker">Key concern</div><h3>Site burden and access gaps</h3></div>
+          <div><div class="kicker">Use case cluster</div><h3>Oncology dose escalation</h3></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><span>Source base: FDA RFI 91 FR 23100 and comments C02–C16</span><span>Prepared May 11, 2026</span></div>
+  </div>
+</article>
+
+<article class="slide">
+  <img class="slide-bg-img" src="assets/fda_ai_trials_fresh/tan_diagonal_bg.png" alt="" aria-hidden="true" />
+  <div class="frame">
+    <div class="nav"><span class="label">RFI Frame</span><span>02 / 10</span></div>
+    <div class="rfi-layout">
+      <div class="wide-title">
+        <h2>FDA’s RFI asks whether AI can improve early‑phase trial operations while preserving regulatory standards</h2>
+      </div>
+      <div class="cream quote-band">
+        <div>
+          <div class="kicker">RFI aim</div>
+          <p class="quote">“can improve efficiency, speed, and quality of decision‑making in early phase clinical trials.”</p>
+        </div>
+        <div class="rule-list">
+          <div class="rule-item"><div class="rule-num">A</div><p class="small">Trial efficiency, safety monitoring, dose selection, and early go/no‑go decisions</p></div>
+          <div class="rule-item"><div class="rule-num">B</div><p class="small">Pilot design, collaboration models, operational structure, and participant selection</p></div>
+          <div class="rule-item" style="border-bottom:0;"><div class="rule-num">C</div><p class="small">Evaluation metrics aligned with NIST AI RMF principles</p></div>
+        </div>
+      </div>
+      <div class="black quote-band">
+        <div>
+          <div class="kicker" style="color:var(--lime);">Program lane</div>
+          <p class="quote">CDER, CBER, and OCE; early‑phase sponsors and investigators; comments due May 29, 2026</p>
+        </div>
+        <div class="rule-list" style="border-color:rgba(246,241,232,.28);">
+          <div class="rule-item" style="grid-template-columns:58px 1fr; border-color:rgba(246,241,232,.18);"><div class="rule-num">01</div><p class="small" style="color:rgba(246,241,232,.76);">Use cases that can be evaluated in early clinical development</p></div>
+          <div class="rule-item" style="grid-template-columns:58px 1fr; border-bottom:0;"><div class="rule-num">02</div><p class="small" style="color:rgba(246,241,232,.76);">Measures for reliability, safety, trustworthiness, and comparative performance</p></div>
+        </div>
+        <div class="tokenline" style="justify-content:flex-start;"><span class="tag lime">Efficiency</span><span class="tag blue">Safety</span><span class="tag orange">Dosing</span><span class="tag pink">Trustworthiness</span></div>
+      </div>
+    </div>
+    <div class="footer"><span>Reviewed document: “AI‑Enabled Optimization of Early‑Phase Clinical Trials Pilot Program; Request for Information”</span><span>91 FR 23100–23102</span></div>
+  </div>
+</article>
+
+<article class="slide">
+  <img class="slide-bg-img" src="assets/fda_ai_trials_fresh/tan_diagonal_bg.png" alt="" aria-hidden="true" />
+  <div class="frame">
+    <div class="nav"><span class="label">Comment Ledger</span><span>03 / 10</span></div>
+    <div class="deck" style="grid-template-rows:auto 1fr;">
+      <h2>All 15 comments summarized by proposed operational test</h2>
+      <div class="matrix">
+        <div class="head">ID</div><div class="head">Submitter</div><div class="head">Practical ask</div>
+        <div><span class="tag lime">C02</span></div><div>Paul Sargent</div><div>Prioritize Alzheimer’s and evaluate FLAV‑27 / P7C3‑A20 in adaptive biomarker studies.</div>
+        <div><span class="tag blue">C03</span></div><div>Massive Bio</div><div>Test AI trial orchestration embedded in workflows, not isolated model performance.</div>
+        <div><span class="tag orange">C04</span></div><div>Moral Clarity AI / Solace</div><div>Add execution admissibility before an AI output becomes an action.</div>
+        <div><span class="tag blue">C05</span></div><div>IRB Trials Link</div><div>Use AI for secure self‑screening, education, recruitment, and regulatory safe harbors.</div>
+        <div><span class="tag gray">C06</span></div><div>Steven Zecola</div><div>Define technical interfaces and implementation plans; consider economic impact.</div>
+        <div><span class="tag pink">C07</span></div><div>SunGlow Innovations</div><div>Allow sponsor‑specific modular AI architectures by therapeutic modality.</div>
+        <div><span class="tag red">C08</span></div><div>Solaris / ClearAE</div><div>Prioritize oncology dose‑escalation safety interpretation with staged validation.</div>
+        <div><span class="tag blue">C09</span></div><div>Dan Sfera</div><div>Include site‑level operational data and site burden metrics.</div>
+        <div><span class="tag lime">C10</span></div><div>Paul Sargent</div><div>Encourage academia to run AI‑assisted Phase 0/1 Alzheimer’s studies.</div>
+        <div><span class="tag blue">C11</span></div><div>Pi Health</div><div>Make data integrity, audit readiness, and GxP compliance core metrics.</div>
+        <div><span class="tag orange">C12</span></div><div>WorldMind</div><div>Validate individual claims with traceable evidence and false‑acceptance measurement.</div>
+        <div><span class="tag red">C13</span></div><div>Veritas Healthcare Insights</div><div>Make representation, subgroup performance, and public dashboards primary outputs.</div>
+        <div><span class="tag orange">C14</span></div><div>Implementation Alpha AI</div><div>Use forensic envelopes, hard gates, and signed human actions.</div>
+        <div><span class="tag pink">C15</span></div><div>Nexus Concordat</div><div>Test enforced PCCPs, deterministic lineage, and mechanistic in‑silico emulation.</div>
+        <div><span class="tag gray">C16</span></div><div>Anonymous</div><div>Use fit‑for‑purpose measures and require human review for high‑impact outputs.</div>
+      </div>
+    </div>
+    <div class="footer"><span>Comment IDs map to source links on slide 10</span><span>Portal comments plus attachments were reviewed where available</span></div>
+  </div>
+</article>
+
+<article class="slide">
+  <img class="slide-bg-img" src="assets/fda_ai_trials_fresh/tan_diagonal_bg.png" alt="" aria-hidden="true" />
+  <div class="frame">
+    <div class="nav"><span class="label">Signal Map</span><span>04 / 10</span></div>
+    <div class="map">
+      <div class="cream axis">
+        <span class="axis-label axis-left">Governance intensity</span>
+        <span class="axis-label axis-bottom">Operational proximity</span>
+        <span class="bubble b1">C08 / C14 safety gates</span>
+        <span class="bubble b2">C12 / C15 evidence architecture</span>
+        <span class="bubble b3">C05 / C09 site operations</span>
+        <span class="bubble b4">C02 / C10 Alzheimer’s studies</span>
+        <span class="bubble b5">C03 orchestration</span>
+      </div>
+      <div class="stack">
+        <h2>Submissions cluster into five pilotable domains</h2>
+        <div class="stripe"><div class="stripe-title">Oncology dose decisions</div><p class="small">First‑in‑human and oncology dose‑escalation studies are repeatedly identified as safety‑relevant pilot use cases.</p><div class="tokenline"><span class="tag red">C08</span><span class="tag orange">C14</span><span class="tag blue">C03</span></div></div>
+        <div class="stripe"><div class="stripe-title">Execution gates</div><p class="small">State, authority, evidence, and qualified human review should be checked before high‑impact action.</p><div class="tokenline"><span class="tag orange">C04</span><span class="tag orange">C14</span><span class="tag gray">C16</span></div></div>
+        <div class="stripe"><div class="stripe-title">Access + site burden</div><p class="small">AI can reinforce historic enrollment patterns unless community sites and subgroup behavior are measured.</p><div class="tokenline"><span class="tag blue">C09</span><span class="tag red">C13</span><span class="tag blue">C05</span></div></div>
+        <div class="stripe"><div class="stripe-title">Alzheimer’s translation</div><p class="small">Caregiver comments ask FDA and academia to move emerging compounds into AI‑optimized Phase 0/1 evaluation.</p><div class="tokenline"><span class="tag lime">C02</span><span class="tag lime">C10</span></div></div>
+        <div class="stripe"><div class="stripe-title">Architecture evidence</div><p class="small">Modularity, claim validation, deterministic lineage, and controlled evolution become review artifacts.</p><div class="tokenline"><span class="tag pink">C07</span><span class="tag orange">C12</span><span class="tag pink">C15</span></div></div>
+      </div>
+    </div>
+    <div class="footer"><span>The map is interpretive and based on reviewed comment text and attachments</span><span>Domains are grouped by proposed use case and governance intensity</span></div>
+  </div>
+</article>
+
+<article class="slide">
+  <img class="slide-bg-img" src="assets/fda_ai_trials_fresh/tan_diagonal_bg.png" alt="" aria-hidden="true" />
+  <div class="frame">
+    <div class="nav"><span class="label">Success Metrics</span><span>05 / 10</span></div>
+    <div class="deck" style="grid-template-columns:.8fr 1.2fr; align-items:stretch;">
+      <div class="black" style="padding:32px; display:flex; flex-direction:column; justify-content:space-between;">
+        <div>
+          <div class="kicker" style="color:var(--lime);">Metric shift</div>
+          <h2 style="font-size:56px;">Operational speed requires complementary validity measures</h2>
+        </div>
+        <p class="quote smaller" style="font-size:25px; line-height:1.08;">“A pipeline that moves data faster is necessary but not sufficient; the data must be complete, validated, and audit‑ready from the point of capture to have regulatory meaning.” <span class="tag blue">C11</span></p>
+      </div>
+      <div class="metric-board">
+        <div class="metric-cell">
+          <div><div class="kicker">Operations</div><h3>Enrollment speed, first‑dose timing, query resolution, data entry‑to‑lock latency</h3></div>
+          <div class="gauge"><span style="width:100%; background:var(--lime);"></span></div>
+        </div>
+        <div class="metric-cell">
+          <div><div class="kicker">Safety signal quality</div><h3>Sensitivity, specificity, false positives, false negatives, alert fatigue, signal latency</h3></div>
+          <div class="gauge"><span style="width:100%; background:var(--red);"></span></div>
+        </div>
+        <div class="metric-cell">
+          <div><div class="kicker">Evidence integrity</div><h3>Traceability, claim validation precision, false acceptance, version lineage, audit trails</h3></div>
+          <div class="gauge"><span style="width:100%; background:var(--blue);"></span></div>
+        </div>
+        <div class="metric-cell">
+          <div><div class="kicker">Equity and generalization</div><h3>Subgroup performance, drift, site‑level reporting, external dataset tests, fairness floors</h3></div>
+          <div class="gauge"><span style="width:100%; background:var(--orange);"></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><span>Metric examples are drawn from C05, C08, C09, C11, C12, C13, C14, C15, and C16</span><span>Bars are visual grouping cues, not quantitative scores</span></div>
+  </div>
+</article>
+
+<article class="slide">
+  <img class="slide-bg-img" src="assets/fda_ai_trials_fresh/tan_diagonal_bg.png" alt="" aria-hidden="true" />
+  <div class="frame">
+    <div class="nav"><span class="label">Decision Control</span><span>06 / 10</span></div>
+    <div class="deck" style="grid-template-rows:auto 1fr;">
+      <h2>For high‑impact AI outputs, commenters propose a staged authorization sequence before clinical reliance</h2>
+      <div class="flow">
+        <div class="cream step"><div><div class="step-number">01</div><h3>Fresh state</h3></div><p class="small">Confirm that patient data, cohort state, dose rules, and trial conditions still match the recommendation context.</p></div>
+        <div class="cream step"><div><div class="step-number">02</div><h3>Evidence threshold</h3></div><p class="small">Require traceable evidence, uncertainty bounds, and claim‑level validation before the output can move forward.</p></div>
+        <div class="cream step"><div><div class="step-number">03</div><h3>Authority check</h3></div><p class="small">Document qualified human review, identity, and accountability before dosing, eligibility, endpoint, or safety reliance.</p></div>
+        <div class="black step"><div><div class="step-number">04</div><h3>Allow, hold, or deny</h3></div><p class="small" style="color:rgba(246,241,232,.76);">Create an audit record explaining why the action was permitted, delayed, or blocked.</p></div>
+      </div>
+    </div>
+    <div class="footer"><span>Derived from C04 execution admissibility, C14 forensic governance, and C16 fit‑for‑purpose human review</span><span>Clinical reliance remains bounded by documented review</span></div>
+  </div>
+</article>
+
+<article class="slide">
+  <img class="slide-bg-img" src="assets/fda_ai_trials_fresh/tan_diagonal_bg.png" alt="" aria-hidden="true" />
+  <div class="frame">
+    <div class="nav"><span class="label">Access + Sites</span><span>07 / 10</span></div>
+    <div class="ledger">
+      <div class="cream">
+        <div>
+          <div class="kicker">Site reality</div>
+          <h2 style="font-size:50px;">Sponsor‑level datasets may incompletely capture site operations</h2>
+          <div class="rule-list" style="margin-top:18px;">
+            <div class="rule-item"><div class="rule-num">1</div><p class="small">Screen‑fail rates by criterion, referral‑to‑dose intervals, and source documentation burden</p></div>
+            <div class="rule-item" style="border-bottom:0;"><div class="rule-num">2</div><p class="small">Staff bandwidth, protocol amendment burden, and site‑reported operational feasibility</p></div>
+          </div>
+        </div>
+        <p class="quote smaller">“A pilot that draws only from sponsor and EHR data will optimize for sponsor convenience and produce predictions that fail at sites.” <span class="tag blue">C09</span></p>
+      </div>
+      <div class="black">
+        <div>
+          <div class="kicker" style="color:var(--lime);">Representation</div>
+          <h2 style="font-size:50px;">Equity assessment should be prespecified in the pilot protocol</h2>
+          <div class="rule-list" style="margin-top:18px; border-color:rgba(246,241,232,.28);">
+            <div class="rule-item" style="grid-template-columns:58px 1fr; border-color:rgba(246,241,232,.18);"><div class="rule-num">1</div><p class="small" style="color:rgba(246,241,232,.76);">Subgroup performance by age, sex, race, ethnicity, language, insurance status, rurality, and comorbidity</p></div>
+            <div class="rule-item" style="grid-template-columns:58px 1fr; border-bottom:0;"><div class="rule-num">2</div><p class="small" style="color:rgba(246,241,232,.76);">Public reporting of drift, failure modes, and plain‑language participant disclosures</p></div>
+          </div>
+        </div>
+        <p class="quote smaller">“Trust is downstream of transparency, not upstream.” <span class="tag red">C13</span></p>
+      </div>
+    </div>
+    <div class="stat-row">
+      <div><div class="kicker">Site measures</div><h3>Screen‑fail causes, staffing capacity, referral‑to‑dose time</h3></div>
+      <div><div class="kicker">Access measures</div><h3>Rurality, language, insurance, safety‑net settings</h3></div>
+      <div><div class="kicker">Disclosure</div><h3>Plain‑language participant artifacts and comprehension testing</h3></div>
+      <div><div class="kicker">Governance</div><h3>Voting roles for patient and investigator representatives</h3></div>
+    </div>
+  </div>
+</article>
+
+<article class="slide">
+  <img class="slide-bg-img" src="assets/fda_ai_trials_fresh/tan_diagonal_bg.png" alt="" aria-hidden="true" />
+  <div class="frame">
+    <div class="nav"><span class="label">Architecture</span><span>08 / 10</span></div>
+    <div class="deck" style="grid-template-columns:1.1fr .9fr;">
+      <div>
+        <h2>System architecture is framed as evidence when AI informs clinical decision pathways</h2>
+        <div class="rule-list architecture-list" style="margin-top:26px;">
+          <div class="rule-item"><div class="rule-num">A</div><div><h3>Modular by modality</h3><p class="small">A systemic oncology drug, cell therapy, gene therapy, local ablative therapy, and intratumoral treatment may require distinct AI‑supported workflows.</p></div></div>
+          <div class="rule-item"><div class="rule-num">B</div><div><h3>Claim‑level proof</h3><p class="small">Regulatory interpretability is framed as evidence traceability for individual claims, not only model‑level performance.</p></div></div>
+          <div class="rule-item"><div class="rule-num">C</div><div><h3>Controlled evolution</h3><p class="small">Architecturally enforced PCCPs, deterministic lineage, and trajectory hashes make model change auditable.</p></div></div>
+          <div class="rule-item"><div class="rule-num">D</div><div><h3>Mechanistic emulation</h3><p class="small">One comment proposes mechanistic in‑silico trial emulation as a complementary evidentiary substrate.</p></div></div>
+        </div>
+      </div>
+      <div class="black quote-band architecture-quotes">
+        <div>
+          <div class="kicker" style="color:var(--lime);">Quote of interest</div>
+          <p class="quote">“The architectural framing of regulated AI matters more at this RFI stage than after the resulting rule is drafted.”</p>
+          <div style="margin-top:12px;"><span class="tag pink">C15</span></div>
+        </div>
+        <div class="mini-quote">
+          <p class="quote smaller">“Validity must be established at the level of individual claims that contribute to regulatory conclusions.”</p>
+          <div style="margin-top:10px;"><span class="tag orange">C12</span></div>
+        </div>
+        <div class="mini-quote">
+          <p class="quote smaller">“Explainability shouldn’t be a post‑hoc ‘narrative,’ but a pre‑requisite for execution.”</p>
+          <div style="margin-top:10px;"><span class="tag orange">C14</span></div>
+        </div>
+        <div class="mini-quote">
+          <p class="quote smaller">“The system would not replace physician judgment; it would generate structured outputs for physician confirmation and regulatory‑quality data capture.”</p>
+          <div style="margin-top:10px;"><span class="tag pink">C07</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><span>Architecture themes drawn from SunGlow, WorldMind, Implementation Alpha AI, and Nexus Concordat</span><span>System-level controls are treated as review artifacts</span></div>
+  </div>
+</article>
+
+<article class="slide">
+  <img class="slide-bg-img" src="assets/fda_ai_trials_fresh/tan_diagonal_bg.png" alt="" aria-hidden="true" />
+  <div class="frame">
+    <div class="nav"><span class="label">Quotes</span><span>09 / 10</span></div>
+    <div class="deck" style="grid-template-rows:auto 1fr;">
+      <h2>Selected comment excerpts relevant to pilot design</h2>
+      <div class="quote-wall">
+        <div class="black quote-tile"><p class="quote">“Can AI‑enabled clinical trial systems produce faster, safer, more equitable, more auditable early‑phase decisions when embedded in real workflows with human accountability?”</p><div><span class="tag blue">C03</span><p class="micro" style="margin-top:8px; color:rgba(246,241,232,.70);">Massive Bio</p></div></div>
+        <div class="cream quote-tile"><p class="quote">“In MedTech, AI cannot operate in a black box.”</p><div><span class="tag blue">C05</span><p class="micro" style="margin-top:8px;">IRB Trials Link</p></div></div>
+        <div class="cream quote-tile"><p class="quote">“Every month matters.”</p><div><span class="tag lime">C02</span><p class="micro" style="margin-top:8px;">Paul Sargent</p></div></div>
+        <div class="cream quote-tile"><p class="quote">“Validity must be established at the level of individual claims that contribute to regulatory conclusions.”</p><div><span class="tag orange">C12</span><p class="micro" style="margin-top:8px;">WorldMind</p></div></div>
+        <div class="cream quote-tile"><p class="quote">“Technology should not automate away clinical judgment.”</p><div><span class="tag blue">C05</span><p class="micro" style="margin-top:8px;">IRB Trials Link</p></div></div>
+        <div class="black quote-tile"><p class="quote">“A trial that publishes inequitable performance and continues anyway is worse than one that never measured it.”</p><div><span class="tag red">C13</span><p class="micro" style="margin-top:8px; color:rgba(246,241,232,.70);">Veritas Healthcare Insights</p></div></div>
+      </div>
+    </div>
+    <div class="footer"><span>Quotes are excerpted for fit; source comment IDs are shown</span><span>Excerpts emphasize safety, evidence, equity, and clinical judgment</span></div>
+  </div>
+</article>
+
+<article class="slide">
+  <img class="slide-bg-img" src="assets/fda_ai_trials_fresh/tan_diagonal_bg.png" alt="" aria-hidden="true" />
+  <div class="frame">
+    <div class="nav"><span class="label">Source Links</span><span>10 / 10</span></div>
+    <div class="deck" style="grid-template-rows:auto 1fr auto;">
+      <h2>Source documents and analytic summary</h2>
+      <div class="cream" style="padding:26px 30px; display:flex; flex-direction:column; justify-content:center;">
+        <div class="source-grid">
+          <div><b>RFI</b> <a href="https://www.regulations.gov/document/FDA-2026-N-4390-0001">FDA‑2026‑N‑4390‑0001</a> / <a href="https://regulations.justia.com/regulations/fedreg/2026/04/29/2026-08281.html">91 FR 23100</a></div>
+          <div><b>C02</b> <a href="https://www.regulations.gov/document/FDA-2026-N-4390-0002">Paul Sargent</a></div>
+          <div><b>C03</b> <a href="https://www.regulations.gov/document/FDA-2026-N-4390-0003">Massive Bio, Inc.</a></div>
+          <div><b>C04</b> <a href="https://www.regulations.gov/document/FDA-2026-N-4390-0004">Moral Clarity AI / Solace</a></div>
+          <div><b>C05</b> <a href="https://www.regulations.gov/document/FDA-2026-N-4390-0005">IRB Trials Link LLC</a></div>
+          <div><b>C06</b> <a href="https://www.regulations.gov/document/FDA-2026-N-4390-0006">Steven Zecola</a></div>
+          <div><b>C07</b> <a href="https://www.regulations.gov/document/FDA-2026-N-4390-0007">SunGlow Innovations, LLC</a></div>
+          <div><b>C08</b> <a href="https://www.regulations.gov/document/FDA-2026-N-4390-0008">Solaris Innovations Canada Inc.</a></div>
+          <div><b>C09</b> <a href="https://www.regulations.gov/document/FDA-2026-N-4390-0009">Dan Sfera</a></div>
+          <div><b>C10</b> <a href="https://www.regulations.gov/document/FDA-2026-N-4390-0010">Paul Sargent</a></div>
+          <div><b>C11</b> <a href="https://www.regulations.gov/document/FDA-2026-N-4390-0011">Pi Health, Inc.</a></div>
+          <div><b>C12</b> <a href="https://www.regulations.gov/document/FDA-2026-N-4390-0012">WorldMind Inc.</a></div>
+          <div><b>C13</b> <a href="https://www.regulations.gov/document/FDA-2026-N-4390-0013">Veritas Healthcare Insights, LLC</a></div>
+          <div><b>C14</b> <a href="https://www.regulations.gov/document/FDA-2026-N-4390-0014">Implementation Alpha AI</a></div>
+          <div><b>C15</b> <a href="https://www.regulations.gov/document/FDA-2026-N-4390-0015">Nexus Concordat Inc.</a></div>
+          <div><b>C16</b> <a href="https://www.regulations.gov/document/FDA-2026-N-4390-0016">Anonymous</a></div>
+        </div>
+      </div>
+      <div class="stat-row">
+        <div><div class="kicker">Overall pattern</div><h3>Submissions generally favor AI evaluation with explicit clinical boundaries</h3></div>
+        <div><div class="kicker">Candidate focus</div><h3>Oncology dose escalation plus safety interpretation</h3></div>
+        <div><div class="kicker">Primary risk</div><h3>Sponsor‑level speed gains without corresponding site or access metrics</h3></div>
+        <div><div class="kicker">Design implication</div><h3>Measure trustworthiness through observable system behavior</h3></div>
+      </div>
+    </div>
+    <div class="footer"><span>All links point to Regulations.gov or Federal Register source mirrors</span><span>Prepared May 11, 2026</span></div>
+  </div>
+</article>
+
+</body>
+</html>

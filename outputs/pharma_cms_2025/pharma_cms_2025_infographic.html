@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2025 Pharma Net Income vs CMS Improper Payments</title>
+  <style>
+    :root {
+      --ink:#10120f; --muted:#5c6257; --paper:#f6f1e8; --paper2:#ebe4d6;
+      --card:#fffaf0; --line:#1b1f17; --lime:#d7ff5f; --orange:#ffb86b;
+      --blue:#b8d8ff; --pink:#ffd3e0; --gray:#d6d0c2; --red:#ff8a76;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper2); color:var(--ink); font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .sheet { width:1200px; height:2245px; margin:0 auto; overflow:hidden; position:relative; padding:54px; background:var(--paper); }
+    .sheet-bg { position:absolute; inset:0; z-index:0; width:100%; height:100%; object-fit:cover; pointer-events:none; user-select:none; }
+    .sheet > *:not(.sheet-bg):not(.sources) { position:relative; z-index:1; }
+    .eyebrow { display:inline-flex; align-items:center; gap:10px; padding:10px 18px; border:2px solid var(--line); border-radius:999px; background:var(--lime); font-weight:900; font-size:18px; letter-spacing:.02em; text-transform:uppercase; }
+    h1 { margin:30px 0 24px; font-size:64px; line-height:1.02; letter-spacing:-.02em; font-weight:650; max-width:1092px; }
+    .sub { max-width:1092px; color:var(--muted); font-size:24px; line-height:1.22; margin:0 0 32px; }
+    .hero-grid { display:grid; grid-template-columns:1fr 1fr; gap:22px; margin:28px 0 26px; }
+    .metric { border:3px solid var(--line); border-radius:24px; padding:28px; min-height:245px; background:var(--card); box-shadow:0 18px 48px rgba(16,18,15,.08); }
+    .metric.dark { background:var(--ink); color:var(--paper); }
+    .metric .label { font-size:20px; color:var(--muted); line-height:1.25; font-weight:750; text-transform:uppercase; letter-spacing:.03em; }
+    .metric.dark .label { color:rgba(246,241,232,.68); }
+    .metric .value { margin-top:18px; font-size:86px; line-height:.88; letter-spacing:-.025em; font-weight:500; }
+    .metric .caption { margin-top:18px; color:var(--muted); font-size:20px; line-height:1.3; }
+    .metric.dark .caption { color:rgba(246,241,232,.78); }
+    .ratio-strip { border:3px solid var(--line); border-radius:24px; overflow:hidden; background:var(--card); display:grid; grid-template-columns:63.25% 1fr; height:76px; margin-bottom:28px; }
+    .ratio-strip div { display:flex; align-items:center; padding:0 24px; font-weight:900; font-size:22px; }
+    .ratio-strip .left { background:var(--lime); border-right:3px solid var(--line); }
+    .ratio-strip .right { background:var(--pink); justify-content:flex-end; }
+    .content { display:grid; grid-template-columns: 1.2fr .8fr; gap:24px; }
+    .panel { border:3px solid var(--line); border-radius:24px; background:rgba(255,250,240,.86); overflow:hidden; }
+    .panel h2 { margin:0; padding:20px 22px; background:var(--ink); color:var(--paper); font-size:30px; line-height:1; letter-spacing:-.02em; }
+    table { width:100%; border-collapse:collapse; }
+    td { border-top:2px solid var(--line); padding:10px 12px; vertical-align:middle; font-size:18px; }
+    td.rank { width:42px; text-align:center; font-weight:900; background:var(--blue); }
+    td span { display:block; margin-top:3px; color:var(--muted); font-size:13px; line-height:1.15; }
+    td.money { width:112px; text-align:right; font-weight:900; }
+    .bar-track { width:148px; height:18px; border:2px solid var(--line); border-radius:999px; background:var(--paper2); overflow:hidden; }
+    .bar-fill { height:100%; background:var(--lime); }
+    .bar-fill.negative { background:var(--red); }
+    .cms-body { padding:20px; }
+    .cms-row { margin-bottom:20px; }
+    .cms-row div:first-child { display:flex; justify-content:space-between; gap:16px; font-size:20px; }
+    .cms-row span { font-weight:900; }
+    .cms-track { margin-top:8px; height:22px; border:2px solid var(--line); border-radius:999px; background:var(--paper2); overflow:hidden; }
+    .cms-track div { height:100%; background:var(--orange); }
+    .callout { margin-top:22px; border:3px solid var(--line); border-radius:22px; background:var(--blue); padding:28px 22px; }
+    .callout strong { display:block; font-size:48px; line-height:.95; letter-spacing:-.02em; margin-bottom:12px; }
+    .callout p { margin:0; font-size:24px; line-height:1.22; }
+    .logo-wall { margin-top:28px; display:grid; grid-template-columns:repeat(4, 1fr); gap:24px 12px; width:100%; }
+    .logo-cell { height:76px; border:2px solid rgba(16,18,15,.28); border-radius:12px; background:rgba(255,250,240,.72); display:flex; align-items:center; justify-content:center; padding:10px; }
+    .logo-cell img { width:90px; height:44px; object-fit:contain; display:block; }
+    .sources { position:absolute; left:54px; right:54px; bottom:32px; border-top:3px solid var(--line); padding-top:14px; color:var(--muted); font-size:14px; line-height:1.35; }
+    @page { size:1200px 2245px; margin:0; }
+    @media print { body { background:var(--paper); } .sheet { margin:0; } * { -webkit-print-color-adjust:exact; print-color-adjust:exact; } }
+  </style>
+</head>
+<body>
+  <main class="sheet">
+    <img class="sheet-bg" src="pharma_cms_2025_background.png" alt="" aria-hidden="true">
+    <div class="eyebrow">SEC annual reports · CMS FY2025</div>
+    <h1>CMS improper payments approached a major share of top pharma profits</h1>
+    <p class="sub">For the 20 largest SEC-reporting pharma/biopharma companies ranked by 2025 revenue, aggregate net income was 1.7x the CMS FY2025 improper-payment estimate.</p>
+    <section class="hero-grid">
+      <div class="metric dark">
+        <div class="label">Top 20 pharma net income</div>
+        <div class="value">$165.5B</div>
+        <div class="caption">Sum of 2025 net income from SEC annual report XBRL facts</div>
+      </div>
+      <div class="metric">
+        <div class="label">CMS estimated improper payments</div>
+        <div class="value">$96.1B</div>
+        <div class="caption">Medicare FFS, Part C, Part D, Medicaid, CHIP,<br>and APTC</div>
+      </div>
+    </section>
+    <div class="ratio-strip"><div class="left">Pharma net income $165.5B</div><div class="right">CMS $96.1B</div></div>
+    <section class="content">
+      <div class="panel">
+        <h2>Net income by company</h2>
+        <table>
+          <tr>
+            <td class="rank">1</td>
+            <td><strong>Johnson &amp; Johnson</strong><span>JNJ · revenue $94.2B</span></td>
+            <td class="money">$26.8B</td>
+            <td><div class="bar-track"><div class="bar-fill positive" style="width:100%"></div></div></td>
+          </tr>
+        
+          <tr>
+            <td class="rank">2</td>
+            <td><strong>Eli Lilly</strong><span>LLY · revenue $65.2B</span></td>
+            <td class="money">$20.6B</td>
+            <td><div class="bar-track"><div class="bar-fill positive" style="width:77%"></div></div></td>
+          </tr>
+        
+          <tr>
+            <td class="rank">3</td>
+            <td><strong>Merck &amp; Co.</strong><span>MRK · revenue $65.0B</span></td>
+            <td class="money">$18.3B</td>
+            <td><div class="bar-track"><div class="bar-fill positive" style="width:68%"></div></div></td>
+          </tr>
+        
+          <tr>
+            <td class="rank">4</td>
+            <td><strong>Pfizer</strong><span>PFE · revenue $62.6B</span></td>
+            <td class="money">$7.8B</td>
+            <td><div class="bar-track"><div class="bar-fill positive" style="width:29%"></div></div></td>
+          </tr>
+        
+          <tr>
+            <td class="rank">5</td>
+            <td><strong>AbbVie</strong><span>ABBV · revenue $61.2B</span></td>
+            <td class="money">$4.2B</td>
+            <td><div class="bar-track"><div class="bar-fill positive" style="width:16%"></div></div></td>
+          </tr>
+        
+          <tr>
+            <td class="rank">6</td>
+            <td><strong>AstraZeneca</strong><span>AZN · revenue $58.7B</span></td>
+            <td class="money">$10.2B</td>
+            <td><div class="bar-track"><div class="bar-fill positive" style="width:38%"></div></div></td>
+          </tr>
+        
+          <tr>
+            <td class="rank">7</td>
+            <td><strong>Novartis</strong><span>NVS · revenue $54.5B</span></td>
+            <td class="money">$14.0B</td>
+            <td><div class="bar-track"><div class="bar-fill positive" style="width:52%"></div></div></td>
+          </tr>
+        
+          <tr>
+            <td class="rank">8</td>
+            <td><strong>Sanofi</strong><span>SNY · revenue $49.2B</span></td>
+            <td class="money">$8.8B</td>
+            <td><div class="bar-track"><div class="bar-fill positive" style="width:33%"></div></div></td>
+          </tr>
+        
+          <tr>
+            <td class="rank">9</td>
+            <td><strong>Bristol Myers Squibb</strong><span>BMY · revenue $48.2B</span></td>
+            <td class="money">$7.1B</td>
+            <td><div class="bar-track"><div class="bar-fill positive" style="width:26%"></div></div></td>
+          </tr>
+        
+          <tr>
+            <td class="rank">10</td>
+            <td><strong>Novo Nordisk</strong><span>NVO · revenue $46.7B</span></td>
+            <td class="money">$15.5B</td>
+            <td><div class="bar-track"><div class="bar-fill positive" style="width:58%"></div></div></td>
+          </tr>
+        
+          <tr>
+            <td class="rank">11</td>
+            <td><strong>GSK</strong><span>GSK · revenue $43.0B</span></td>
+            <td class="money">$7.5B</td>
+            <td><div class="bar-track"><div class="bar-fill positive" style="width:28%"></div></div></td>
+          </tr>
+        
+          <tr>
+            <td class="rank">12</td>
+            <td><strong>Amgen</strong><span>AMGN · revenue $36.8B</span></td>
+            <td class="money">$7.7B</td>
+            <td><div class="bar-track"><div class="bar-fill positive" style="width:29%"></div></div></td>
+          </tr>
+        
+          <tr>
+            <td class="rank">13</td>
+            <td><strong>Takeda</strong><span>TAK · revenue $30.6B</span></td>
+            <td class="money">$0.7B</td>
+            <td><div class="bar-track"><div class="bar-fill positive" style="width:3%"></div></div></td>
+          </tr>
+        
+          <tr>
+            <td class="rank">14</td>
+            <td><strong>Gilead</strong><span>GILD · revenue $29.4B</span></td>
+            <td class="money">$8.5B</td>
+            <td><div class="bar-track"><div class="bar-fill positive" style="width:32%"></div></div></td>
+          </tr>
+        
+          <tr>
+            <td class="rank">15</td>
+            <td><strong>Teva</strong><span>TEVA · revenue $17.3B</span></td>
+            <td class="money">$1.4B</td>
+            <td><div class="bar-track"><div class="bar-fill positive" style="width:5%"></div></div></td>
+          </tr>
+        
+          <tr>
+            <td class="rank">16</td>
+            <td><strong>Regeneron</strong><span>REGN · revenue $14.3B</span></td>
+            <td class="money">$4.5B</td>
+            <td><div class="bar-track"><div class="bar-fill positive" style="width:17%"></div></div></td>
+          </tr>
+        
+          <tr>
+            <td class="rank">17</td>
+            <td><strong>Viatris</strong><span>VTRS · revenue $14.3B</span></td>
+            <td class="money">$-3.5B</td>
+            <td><div class="bar-track"><div class="bar-fill negative" style="width:13%"></div></div></td>
+          </tr>
+        
+          <tr>
+            <td class="rank">18</td>
+            <td><strong>Vertex</strong><span>VRTX · revenue $12.0B</span></td>
+            <td class="money">$4.0B</td>
+            <td><div class="bar-track"><div class="bar-fill positive" style="width:15%"></div></div></td>
+          </tr>
+        
+          <tr>
+            <td class="rank">19</td>
+            <td><strong>Bausch Health</strong><span>BHC · revenue $10.3B</span></td>
+            <td class="money">$0.1B</td>
+            <td><div class="bar-track"><div class="bar-fill positive" style="width:2%"></div></div></td>
+          </tr>
+        
+          <tr>
+            <td class="rank">20</td>
+            <td><strong>Biogen</strong><span>BIIB · revenue $9.9B</span></td>
+            <td class="money">$1.3B</td>
+            <td><div class="bar-track"><div class="bar-fill positive" style="width:5%"></div></div></td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <div class="panel">
+          <h2>CMS estimate by program</h2>
+          <div class="cms-body">
+          <div class="cms-row">
+            <div><strong>Medicare FFS</strong><span>$28.83B</span></div>
+            <div class="cms-track"><div style="width:77.1%"></div></div>
+          </div>
+        
+          <div class="cms-row">
+            <div><strong>Medicare Advantage Part C</strong><span>$23.67B</span></div>
+            <div class="cms-track"><div style="width:63.3%"></div></div>
+          </div>
+        
+          <div class="cms-row">
+            <div><strong>Medicare Part D</strong><span>$4.23B</span></div>
+            <div class="cms-track"><div style="width:11.3%"></div></div>
+          </div>
+        
+          <div class="cms-row">
+            <div><strong>Medicaid</strong><span>$37.39B</span></div>
+            <div class="cms-track"><div style="width:100.0%"></div></div>
+          </div>
+        
+          <div class="cms-row">
+            <div><strong>CHIP</strong><span>$1.37B</span></div>
+            <div class="cms-track"><div style="width:3.7%"></div></div>
+          </div>
+        
+          <div class="cms-row">
+            <div><strong>APTC</strong><span>$0.66B</span></div>
+            <div class="cms-track"><div style="width:1.8%"></div></div>
+          </div>
+        </div>
+        </div>
+        <div class="callout">
+          <strong>$823B</strong>
+          <p>Total 2025 revenue represented by the top 20 list. Revenue ranks the companies; net income powers the comparison.</p>
+        </div>
+        <div class="logo-wall" aria-label="Company logos">
+          <div class="logo-cell">
+            <img src="logos/JNJ.svg" alt="Johnson &amp; Johnson logo">
+          </div>
+        
+          <div class="logo-cell">
+            <img src="logos/LLY.svg" alt="Eli Lilly logo">
+          </div>
+        
+          <div class="logo-cell">
+            <img src="logos/MRK.svg" alt="Merck &amp; Co. logo">
+          </div>
+        
+          <div class="logo-cell">
+            <img src="logos/PFE.svg" alt="Pfizer logo">
+          </div>
+        
+          <div class="logo-cell">
+            <img src="logos/ABBV.svg" alt="AbbVie logo">
+          </div>
+        
+          <div class="logo-cell">
+            <img src="logos/AZN.svg" alt="AstraZeneca logo">
+          </div>
+        
+          <div class="logo-cell">
+            <img src="logos/NVS.svg" alt="Novartis logo">
+          </div>
+        
+          <div class="logo-cell">
+            <img src="logos/SNY.svg" alt="Sanofi logo">
+          </div>
+        
+          <div class="logo-cell">
+            <img src="logos/BMY.svg" alt="Bristol Myers Squibb logo">
+          </div>
+        
+          <div class="logo-cell">
+            <img src="logos/NVO.png" alt="Novo Nordisk logo">
+          </div>
+        
+          <div class="logo-cell">
+            <img src="logos/GSK.svg" alt="GSK logo">
+          </div>
+        
+          <div class="logo-cell">
+            <img src="logos/AMGN.svg" alt="Amgen logo">
+          </div>
+        
+          <div class="logo-cell">
+            <img src="logos/TAK.svg" alt="Takeda logo">
+          </div>
+        
+          <div class="logo-cell">
+            <img src="logos/GILD.svg" alt="Gilead logo">
+          </div>
+        
+          <div class="logo-cell">
+            <img src="logos/TEVA.svg" alt="Teva logo">
+          </div>
+        
+          <div class="logo-cell">
+            <img src="logos/REGN.svg" alt="Regeneron logo">
+          </div>
+        
+          <div class="logo-cell">
+            <img src="logos/VTRS.svg" alt="Viatris logo">
+          </div>
+        
+          <div class="logo-cell">
+            <img src="logos/VRTX.svg" alt="Vertex logo">
+          </div>
+        
+          <div class="logo-cell">
+            <img src="logos/BHC.svg" alt="Bausch Health logo">
+          </div>
+        
+          <div class="logo-cell">
+            <img src="logos/BIIB.svg" alt="Biogen logo">
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="sources">
+      Sources: SEC EDGAR XBRL annual-report facts for each company; IRS 2025 yearly average currency exchange rates; CMS Fiscal Year 2025 Improper Payments Fact Sheet. SEC data are EDGAR XBRL facts from 2025 annual reports; top 20 are the largest SEC-reporting pharma/biopharma companies found in the candidate set, ranked by revenue alone. Non-USD filings are translated with IRS 2025 yearly average exchange rates. CMS says improper payments are not a fraud measure; this compares the government estimate commonly used as a waste/error proxy with pharma net income.
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Idiopathic Pulmonary Fibrosis Competitive Intelligence Update</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 36px 0 20px;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 850;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 82px; line-height: .92; letter-spacing: 0; font-weight: 560; max-width: 1280px; }
+    h2 { font-size: 52px; line-height: .98; letter-spacing: 0; font-weight: 560; max-width: 1320px; }
+    h3 { font-size: 28px; line-height: 1.04; letter-spacing: 0; font-weight: 650; }
+    .dek { margin-top: 18px; color: var(--muted); font-size: 27px; line-height: 1.24; max-width: 1280px; }
+    .section-head { margin-bottom: 20px; }
+    .section-head p { margin-top: 12px; color: var(--muted); font-size: 23px; line-height: 1.24; max-width: 1300px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .panel, .metric, .card, .table, .callout {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.86);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel { padding: 24px; }
+    .panel.dark, .callout { background: #11130f; color: var(--paper); border-color: #11130f; }
+    .panel.dark p, .panel.dark li, .callout p, .callout li { color: rgba(246,241,232,.84); }
+    .metric { padding: 21px; min-height: 150px; }
+    .num { font-size: 52px; line-height: .92; font-weight: 850; letter-spacing: 0; }
+    .label { margin-top: 12px; font-size: 18px; line-height: 1.24; color: var(--muted); }
+    .card { padding: 23px; min-height: 230px; }
+    .card p { color: var(--muted); font-size: 19px; line-height: 1.25; margin-top: 12px; }
+    .card .tag, .panel .tag { margin-bottom: 12px; }
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      white-space: nowrap;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .red { background: var(--red); }
+    .gray { background: var(--gray); }
+    .list { margin: 14px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+    .list li { position: relative; padding-left: 20px; color: var(--muted); font-size: 20px; line-height: 1.22; }
+    .list li::before { content: ""; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; border-radius: 50%; background: var(--lime); border: 1px solid var(--line); }
+    .table { display: grid; }
+    .row { display: grid; grid-template-columns: .56fr 1.18fr .92fr 1.28fr; border-bottom: 1px solid var(--line); min-height: 66px; }
+    .row:last-child { border-bottom: 0; }
+    .cell { padding: 12px 13px; border-right: 1px solid var(--line); font-size: 15.8px; line-height: 1.18; }
+    .cell:last-child { border-right: 0; }
+    .head .cell { background: #11130f; color: var(--paper); font-weight: 850; text-transform: uppercase; font-size: 12px; }
+    .callout { padding: 24px 28px; }
+    .callout h3 { font-size: 30px; }
+    .callout p { margin-top: 12px; font-size: 23px; line-height: 1.18; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .cite + .cite::before { content: ","; margin-right: 1px; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    .source-note { color: var(--muted); font-size: 16px; line-height: 1.25; margin-top: 12px; }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .wrap { width: 1360px; }
+      .panel, .metric, .card, .table, .callout { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) {
+      .slide { width: 1600px; height: 900px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">IPF CI update | May 6-12, 2026</div>
+      <h1>Idiopathic pulmonary fibrosis competitive intelligence update</h1>
+      <p class="dek">This report uses three IPF ClinicalTrials.gov source records with visible Last Update Posted dates from May 6, 2026 through May 12, 2026.<a class="cite" href="https://clinicaltrials.gov/study/NCT06968845">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06967805">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT03865927">3</a></p>
+      <div class="grid-3" style="margin-top:34px;">
+        <div class="metric"><div class="num">3</div><div class="label">IPF source records were included in the report.<a class="cite" href="https://clinicaltrials.gov/study/NCT06968845">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06967805">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT03865927">3</a></div></div>
+        <div class="metric"><div class="num">2</div><div class="label">Recruiting Phase 2 IPF interventional records were identified.<a class="cite" href="https://clinicaltrials.gov/study/NCT06968845">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06967805">2</a></div></div>
+        <div class="metric"><div class="num">1</div><div class="label">Completed Phase 2 IPF interventional record was identified.<a class="cite" href="https://clinicaltrials.gov/study/NCT03865927">3</a></div></div>
+      </div>
+      <div class="callout" style="margin-top:24px;">
+        <h3>Updates found</h3>
+        <p>Updated IPF records were found for LTI-03, MTX-463, and GKT137831.<a class="cite" href="https://clinicaltrials.gov/study/NCT06968845">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06967805">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT03865927">3</a></p>
+      </div>
+    </div>
+    <div class="slide-num">01 / 03</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">IPF-specific clinical records</div>
+        <h2>Three IPF interventional records had visible updates<a class="cite" href="https://clinicaltrials.gov/study/NCT06968845">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06967805">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT03865927">3</a></h2>
+        <p>The records describe LTI-03, MTX-463, and GKT137831.<a class="cite" href="https://clinicaltrials.gov/study/NCT06968845">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06967805">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT03865927">3</a></p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag lime">Recruiting</span>
+          <h3>LTI-03</h3>
+          <p>ClinicalTrials.gov listed the Rein Therapeutics record titled "A Phase 2 Study of LTI-03 in Patients With Idiopathic Pulmonary Fibrosis" as Recruiting, with Last Update Posted 2026-05-07.<a class="cite" href="https://clinicaltrials.gov/study/NCT06968845">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">Recruiting</span>
+          <h3>MTX-463</h3>
+          <p>ClinicalTrials.gov listed the Mediar Therapeutics record titled "WISPer: Evaluation of MTX-463 in Participants With Idiopathic Pulmonary Fibrosis (IPF)" as Recruiting, with Last Update Posted 2026-05-06.<a class="cite" href="https://clinicaltrials.gov/study/NCT06967805">2</a></p>
+        </div>
+        <div class="card">
+          <span class="tag orange">Completed</span>
+          <h3>GKT137831</h3>
+          <p>ClinicalTrials.gov listed the University of Alabama at Birmingham record "GKT137831 in IPF Patients With Idiopathic Pulmonary Fibrosis" as Completed, with Last Update Posted 2026-05-11.<a class="cite" href="https://clinicaltrials.gov/study/NCT03865927">3</a></p>
+        </div>
+      </div>
+      <div class="panel dark" style="margin-top:22px;">
+        <h3>Additional record details</h3>
+        <ul class="list">
+          <li>ClinicalTrials.gov listed the Rein Therapeutics LTI-03 record and the Mediar Therapeutics MTX-463 record as Recruiting.<a class="cite" href="https://clinicaltrials.gov/study/NCT06968845">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06967805">2</a></li>
+          <li>The GKT137831 brief summary describes a placebo-controlled, multicenter, randomized trial in ambulatory patients with IPF and describes GKT137831 as an NADPH oxidase inhibitor.<a class="cite" href="https://clinicaltrials.gov/study/NCT03865927">3</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">02 / 03</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">References</div>
+        <h2>References</h2>
+        <p>The table lists each cited source, visible source date, source owner, and the evidence used in the report.<a class="cite" href="https://clinicaltrials.gov/study/NCT06968845">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06967805">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT03865927">3</a></p>
+      </div>
+      <div class="table">
+        <div class="row head">
+          <div class="cell">Ref</div>
+          <div class="cell">Source</div>
+          <div class="cell">Date / status / source owner</div>
+          <div class="cell">Evidence used in report</div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>1</strong></div>
+          <div class="cell">NCT06968845, LTI-03 in IPF<a class="cite" href="https://clinicaltrials.gov/study/NCT06968845">1</a></div>
+          <div class="cell">2026-05-07; Recruiting; Rein Therapeutics<a class="cite" href="https://clinicaltrials.gov/study/NCT06968845">1</a></div>
+          <div class="cell">IPF interventional study title and status<a class="cite" href="https://clinicaltrials.gov/study/NCT06968845">1</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>2</strong></div>
+          <div class="cell">NCT06967805, WISPer MTX-463 in IPF<a class="cite" href="https://clinicaltrials.gov/study/NCT06967805">2</a></div>
+          <div class="cell">2026-05-06; Recruiting; Mediar Therapeutics<a class="cite" href="https://clinicaltrials.gov/study/NCT06967805">2</a></div>
+          <div class="cell">IPF interventional study title and status<a class="cite" href="https://clinicaltrials.gov/study/NCT06967805">2</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>3</strong></div>
+          <div class="cell">NCT03865927, GKT137831 in IPF<a class="cite" href="https://clinicaltrials.gov/study/NCT03865927">3</a></div>
+          <div class="cell">2026-05-11; Completed; University of Alabama at Birmingham<a class="cite" href="https://clinicaltrials.gov/study/NCT03865927">3</a></div>
+          <div class="cell">Completed IPF trial and NADPH oxidase mechanism text<a class="cite" href="https://clinicaltrials.gov/study/NCT03865927">3</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">03 / 03</div>
+  </article>
+</body>
+</html>

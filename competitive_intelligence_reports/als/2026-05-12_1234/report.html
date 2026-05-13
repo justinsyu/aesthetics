@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ALS Competitive Intelligence Update</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 36px 0 20px;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 850;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 84px; line-height: .92; letter-spacing: 0; font-weight: 560; max-width: 1280px; }
+    h2 { font-size: 54px; line-height: .98; letter-spacing: 0; font-weight: 560; max-width: 1300px; }
+    h3 { font-size: 28px; line-height: 1.04; letter-spacing: 0; font-weight: 650; }
+    .dek { margin-top: 18px; color: var(--muted); font-size: 27px; line-height: 1.22; max-width: 1280px; }
+    .section-head { margin-bottom: 18px; }
+    .section-head p { margin-top: 11px; color: var(--muted); font-size: 23px; line-height: 1.22; max-width: 1300px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .grid-sources { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .panel, .metric, .card, .table, .callout {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.86);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel { padding: 24px; }
+    .panel.dark, .callout { background: #11130f; color: var(--paper); border-color: #11130f; }
+    .panel.dark p, .panel.dark li, .callout p, .callout li { color: rgba(246,241,232,.84); }
+    .metric { padding: 22px; min-height: 154px; }
+    .num { font-size: 52px; line-height: .92; font-weight: 850; letter-spacing: 0; }
+    .label { margin-top: 12px; font-size: 18px; line-height: 1.25; color: var(--muted); }
+    .card { padding: 22px; min-height: 214px; }
+    .card p { color: var(--muted); font-size: 19px; line-height: 1.22; margin-top: 11px; }
+    .card.compact { min-height: 124px; padding: 14px 16px; }
+    .card.compact p { font-size: 14px; line-height: 1.15; margin-top: 6px; }
+    .card .tag { margin-bottom: 10px; }
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      white-space: nowrap;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .red { background: var(--red); }
+    .gray { background: var(--gray); }
+    .list { margin: 13px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+    .list li { position: relative; padding-left: 20px; color: var(--muted); font-size: 20px; line-height: 1.2; }
+    .list li::before { content: ""; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; border-radius: 50%; background: var(--lime); border: 1px solid var(--line); }
+    .table { display: grid; border-radius: 22px; }
+    .row { display: grid; grid-template-columns: .9fr .62fr 1.12fr 1.75fr; border-bottom: 1px solid var(--line); min-height: 78px; }
+    .row:last-child { border-bottom: 0; }
+    .cell { padding: 12px 13px; border-right: 1px solid var(--line); font-size: 16px; line-height: 1.18; }
+    .cell:last-child { border-right: 0; }
+    .head .cell { background: #11130f; color: var(--paper); font-weight: 850; text-transform: uppercase; font-size: 12px; }
+    .callout { padding: 24px 28px; }
+    .callout h3 { font-size: 31px; }
+    .callout p { margin-top: 12px; font-size: 24px; line-height: 1.17; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .cite + .cite::before { content: ","; margin-right: 1px; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    .source-note { color: var(--muted); font-size: 15px; line-height: 1.22; margin-top: 10px; }
+    .source-card { display: grid; grid-template-columns: 48px 1fr; gap: 10px; align-items: start; min-height: 110px; }
+    .source-id { display: grid; place-items: center; width: 36px; height: 36px; border: 1.2px solid var(--line); border-radius: 999px; background: var(--lime); font-weight: 900; }
+    .source-card h3 { font-size: 18px; line-height: 1.05; }
+    .source-card p { font-size: 14px; line-height: 1.15; }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .wrap { width: 1360px; }
+      .panel, .metric, .card, .table, .callout { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) {
+      .slide { width: 1600px; height: 900px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Amyotrophic lateral sclerosis CI update | May 6-12, 2026 evidence window</div>
+      <h1>ALS competitive intelligence update</h1>
+      <p class="dek">This report includes primary-source company disclosures and ClinicalTrials.gov records with visible publication or last-update dates from May 6, 2026 through May 12, 2026.<a class="cite" href="https://www.amylyx.com/news/amylyx-pharmaceuticals-reports-first-quarter-2026-financial-results">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290601/0/en/leonabio-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a><a class="cite" href="https://investor.insmed.com/2026-05-07-Insmed-Reports-First-Quarter-2026-Financial-Results-and-Provides-Business-Update">3</a><a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07571174">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07571486">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04297683">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05568615">8</a></p>
+      <div class="grid-4" style="margin-top:34px;">
+        <div class="metric"><div class="num">8</div><div class="label">Primary-source items are cited in this report.<a class="cite" href="https://www.amylyx.com/news/amylyx-pharmaceuticals-reports-first-quarter-2026-financial-results">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290601/0/en/leonabio-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a><a class="cite" href="https://investor.insmed.com/2026-05-07-Insmed-Reports-First-Quarter-2026-Financial-Results-and-Provides-Business-Update">3</a><a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07571174">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07571486">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04297683">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05568615">8</a></div></div>
+        <div class="metric"><div class="num">4</div><div class="label">Company disclosures reported ALS-relevant pipeline or program facts.<a class="cite" href="https://www.amylyx.com/news/amylyx-pharmaceuticals-reports-first-quarter-2026-financial-results">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290601/0/en/leonabio-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a><a class="cite" href="https://investor.insmed.com/2026-05-07-Insmed-Reports-First-Quarter-2026-Financial-Results-and-Provides-Business-Update">3</a><a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">4</a></div></div>
+        <div class="metric"><div class="num">4</div><div class="label">ClinicalTrials.gov records had visible last-update dates in the window.<a class="cite" href="https://clinicaltrials.gov/study/NCT07571174">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07571486">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04297683">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05568615">8</a></div></div>
+        <div class="metric"><div class="num">3</div><div class="label">Clinical-stage source items named Phase 1, Phase 1/2, or Phase 2/3 ALS studies.<a class="cite" href="https://www.amylyx.com/news/amylyx-pharmaceuticals-reports-first-quarter-2026-financial-results">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07571174">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07571486">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04297683">7</a></div></div>
+      </div>
+      <div class="callout" style="margin-top:24px;">
+        <h3>Factual scope</h3>
+        <p>The cited evidence documents AMX0114, ATH-1105, INS1202, PMN267, LY4256984, Son-ALS, HEALEY ALS Platform Trial, and an oral edaravone extension record.<a class="cite" href="https://www.amylyx.com/news/amylyx-pharmaceuticals-reports-first-quarter-2026-financial-results">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290601/0/en/leonabio-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a><a class="cite" href="https://investor.insmed.com/2026-05-07-Insmed-Reports-First-Quarter-2026-Financial-Results-and-Provides-Business-Update">3</a><a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07571174">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07571486">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04297683">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05568615">8</a></p>
+      </div>
+    </div>
+    <div class="slide-num">01 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Company disclosures</div>
+        <h2>Four company sources reported ALS pipeline or program status in the window<a class="cite" href="https://www.amylyx.com/news/amylyx-pharmaceuticals-reports-first-quarter-2026-financial-results">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290601/0/en/leonabio-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a><a class="cite" href="https://investor.insmed.com/2026-05-07-Insmed-Reports-First-Quarter-2026-Financial-Results-and-Provides-Business-Update">3</a><a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">4</a></h2>
+        <p>The visible source dates on this page were May 7, 2026 and May 12, 2026.<a class="cite" href="https://www.amylyx.com/news/amylyx-pharmaceuticals-reports-first-quarter-2026-financial-results">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290601/0/en/leonabio-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a><a class="cite" href="https://investor.insmed.com/2026-05-07-Insmed-Reports-First-Quarter-2026-Financial-Results-and-Provides-Business-Update">3</a><a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">4</a></p>
+      </div>
+      <div class="grid-4">
+        <div class="card">
+          <span class="tag lime">AMX0114</span>
+          <h3>Amylyx</h3>
+          <p>Amylyx stated that Cohort 2 enrollment was complete in the Phase 1 LUMINA clinical trial of AMX0114, an investigational ASO targeting calpain-2 for potential ALS treatment.<a class="cite" href="https://www.amylyx.com/news/amylyx-pharmaceuticals-reports-first-quarter-2026-financial-results">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag orange">ATH-1105</span>
+          <h3>LeonaBio</h3>
+          <p>LeonaBio stated that ATH-1105 was on track to initiate a Phase 2 proof-of-concept study in ALS patients in the second half of 2026.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290601/0/en/leonabio-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">INS1202</span>
+          <h3>Insmed</h3>
+          <p>Insmed stated that it continued to enroll patients in the Phase 1 ARMOR study of INS1202, an intrathecally delivered gene therapy for patients with ALS.<a class="cite" href="https://investor.insmed.com/2026-05-07-Insmed-Reports-First-Quarter-2026-Financial-Results-and-Provides-Business-Update">3</a></p>
+        </div>
+        <div class="card">
+          <span class="tag pink">PMN267</span>
+          <h3>ProMIS</h3>
+          <p>ProMIS identified PMN267 as a lead preclinical candidate antibody directed against toxic misfolded TDP-43 for ALS and other TDP-43 proteinopathies.<a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">4</a></p>
+        </div>
+      </div>
+      <div class="panel dark" style="margin-top:22px;">
+        <h3>Recorded facts from the same sources</h3>
+        <ul class="list">
+          <li>LUMINA was described as evaluating safety, tolerability, pharmacokinetics, pharmacodynamics, and ALS biomarkers including NfL.<a class="cite" href="https://www.amylyx.com/news/amylyx-pharmaceuticals-reports-first-quarter-2026-financial-results">1</a></li>
+          <li>The Insmed disclosure named INS1202 under "Neuro & Other Rare" and described the ARMOR study as Phase 1.<a class="cite" href="https://investor.insmed.com/2026-05-07-Insmed-Reports-First-Quarter-2026-Financial-Results-and-Provides-Business-Update">3</a></li>
+          <li>The ProMIS disclosure listed PMN267 under an "Amyotrophic Lateral Sclerosis Disease Program" heading.<a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">4</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">02 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">ClinicalTrials.gov records</div>
+        <h2>Four ALS records had visible last-update dates inside the evidence window<a class="cite" href="https://clinicaltrials.gov/study/NCT07571174">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07571486">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04297683">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05568615">8</a></h2>
+        <p>The selected registry records displayed last-update dates of 2026-05-06 or 2026-05-08.<a class="cite" href="https://clinicaltrials.gov/study/NCT07571174">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07571486">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04297683">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05568615">8</a></p>
+      </div>
+      <div class="table">
+        <div class="row head">
+          <div class="cell">Record</div>
+          <div class="cell">Date</div>
+          <div class="cell">Status or phase</div>
+          <div class="cell">Visible record text used</div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT07571174</strong><br />LY4256984</div>
+          <div class="cell">2026-05-06<a class="cite" href="https://clinicaltrials.gov/study/NCT07571174">5</a></div>
+          <div class="cell">Not yet recruiting; Phase 1.<a class="cite" href="https://clinicaltrials.gov/study/NCT07571174">5</a></div>
+          <div class="cell">The record states that the substudy assesses long-term safety and tolerability of LY4256984 in participants with ALS.<a class="cite" href="https://clinicaltrials.gov/study/NCT07571174">5</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT07571486</strong><br />Son-ALS</div>
+          <div class="cell">2026-05-06<a class="cite" href="https://clinicaltrials.gov/study/NCT07571486">6</a></div>
+          <div class="cell">Not yet recruiting; Phase 1/2.<a class="cite" href="https://clinicaltrials.gov/study/NCT07571486">6</a></div>
+          <div class="cell">The record describes repeated ultrasound transient disruption of the blood-brain barrier in ALS, Phase 1 safety assessment, and Phase 2a NfL-based efficacy-signal assessment.<a class="cite" href="https://clinicaltrials.gov/study/NCT07571486">6</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT04297683</strong><br />HEALEY ALS Platform</div>
+          <div class="cell">2026-05-08<a class="cite" href="https://clinicaltrials.gov/study/NCT04297683">7</a></div>
+          <div class="cell">Recruiting; Phase 2/3.<a class="cite" href="https://clinicaltrials.gov/study/NCT04297683">7</a></div>
+          <div class="cell">The record describes a perpetual multi-center, multi-regimen trial evaluating investigational products for ALS.<a class="cite" href="https://clinicaltrials.gov/study/NCT04297683">7</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT05568615</strong><br />Oral edaravone</div>
+          <div class="cell">2026-05-08<a class="cite" href="https://clinicaltrials.gov/study/NCT05568615">8</a></div>
+          <div class="cell">Completed; Phase 3.<a class="cite" href="https://clinicaltrials.gov/study/NCT05568615">8</a></div>
+          <div class="cell">The record title describes an open-label extension evaluating safety of oral edaravone in subjects with ALS.<a class="cite" href="https://clinicaltrials.gov/study/NCT05568615">8</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">03 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Program mechanisms and stages</div>
+        <h2>The cited sources recorded multiple ALS modalities and development stages<a class="cite" href="https://www.amylyx.com/news/amylyx-pharmaceuticals-reports-first-quarter-2026-financial-results">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290601/0/en/leonabio-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a><a class="cite" href="https://investor.insmed.com/2026-05-07-Insmed-Reports-First-Quarter-2026-Financial-Results-and-Provides-Business-Update">3</a><a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07571174">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07571486">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04297683">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05568615">8</a></h2>
+        <p>This slide only restates source-described modality, stage, and record-status facts.<a class="cite" href="https://www.amylyx.com/news/amylyx-pharmaceuticals-reports-first-quarter-2026-financial-results">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290601/0/en/leonabio-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a><a class="cite" href="https://investor.insmed.com/2026-05-07-Insmed-Reports-First-Quarter-2026-Financial-Results-and-Provides-Business-Update">3</a><a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07571174">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07571486">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04297683">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05568615">8</a></p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag lime">RNA / ASO</span>
+          <h3>AMX0114 and LY4256984</h3>
+          <p>Amylyx described AMX0114 as an investigational ASO targeting calpain-2 in the Phase 1 LUMINA trial.<a class="cite" href="https://www.amylyx.com/news/amylyx-pharmaceuticals-reports-first-quarter-2026-financial-results">1</a> ClinicalTrials.gov listed Lilly's LY4256984 ALS substudy as Phase 1 and not yet recruiting.<a class="cite" href="https://clinicaltrials.gov/study/NCT07571174">5</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">Gene therapy</span>
+          <h3>INS1202</h3>
+          <p>Insmed stated that the Phase 1 ARMOR study of INS1202, an intrathecally delivered gene therapy for ALS, continued to enroll patients.<a class="cite" href="https://investor.insmed.com/2026-05-07-Insmed-Reports-First-Quarter-2026-Financial-Results-and-Provides-Business-Update">3</a></p>
+        </div>
+        <div class="card">
+          <span class="tag pink">Antibody / TDP-43</span>
+          <h3>PMN267</h3>
+          <p>ProMIS listed PMN267 as a preclinical antibody directed against toxic misfolded TDP-43 as a potential therapeutic target for ALS and TDP-43 proteinopathies.<a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">4</a></p>
+        </div>
+      </div>
+      <div class="grid-3" style="margin-top:16px;">
+        <div class="card">
+          <span class="tag orange">Small molecule / trial timing</span>
+          <h3>ATH-1105</h3>
+          <p>LeonaBio stated that ATH-1105 was on track for a Phase 2 proof-of-concept study initiation in ALS patients in 2H 2026.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290601/0/en/leonabio-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a></p>
+        </div>
+        <div class="card">
+          <span class="tag gray">Procedure / biomarker</span>
+          <h3>Son-ALS</h3>
+          <p>The Son-ALS registry record describes repeated transient blood-brain barrier opening and a Phase 2a objective assessing a signal of efficacy by change in blood NfL levels.<a class="cite" href="https://clinicaltrials.gov/study/NCT07571486">6</a></p>
+        </div>
+        <div class="card">
+          <span class="tag red">Platform / extension</span>
+          <h3>HEALEY and edaravone</h3>
+          <p>ClinicalTrials.gov listed HEALEY as a recruiting Phase 2/3 platform trial and listed the oral edaravone safety extension as completed Phase 3.<a class="cite" href="https://clinicaltrials.gov/study/NCT04297683">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05568615">8</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">04 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Reference index</div>
+        <h2>Sources used in the report</h2>
+        <p>Each reference below has a visible-date screenshot and an evidence screenshot in the accompanying labeled screenshots PDF.<a class="cite" href="https://www.amylyx.com/news/amylyx-pharmaceuticals-reports-first-quarter-2026-financial-results">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290601/0/en/leonabio-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a><a class="cite" href="https://investor.insmed.com/2026-05-07-Insmed-Reports-First-Quarter-2026-Financial-Results-and-Provides-Business-Update">3</a><a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07571174">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07571486">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04297683">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05568615">8</a></p>
+      </div>
+      <div class="grid-sources">
+        <div class="card compact source-card"><div class="source-id">1</div><div><h3>Amylyx, May 07, 2026</h3><p>Q1 2026 update reporting Cohort 2 completion in Phase 1 LUMINA for AMX0114.<a class="cite" href="https://www.amylyx.com/news/amylyx-pharmaceuticals-reports-first-quarter-2026-financial-results">1</a></p></div></div>
+        <div class="card compact source-card"><div class="source-id">2</div><div><h3>LeonaBio, May 07, 2026</h3><p>Q1 2026 update reporting ATH-1105 Phase 2 proof-of-concept timing in ALS.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290601/0/en/leonabio-reports-first-quarter-2026-financial-results-and-provides-business-update.html">2</a></p></div></div>
+        <div class="card compact source-card"><div class="source-id">3</div><div><h3>Insmed, May 7, 2026</h3><p>Q1 2026 update reporting continued enrollment in the Phase 1 ARMOR study of INS1202.<a class="cite" href="https://investor.insmed.com/2026-05-07-Insmed-Reports-First-Quarter-2026-Financial-Results-and-Provides-Business-Update">3</a></p></div></div>
+        <div class="card compact source-card"><div class="source-id">4</div><div><h3>ProMIS, May 12, 2026</h3><p>Q1 2026 update identifying PMN267 as the ALS lead preclinical antibody candidate.<a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">4</a></p></div></div>
+        <div class="card compact source-card"><div class="source-id">5</div><div><h3>NCT07571174, 2026-05-06</h3><p>Lilly LY4256984 long-term safety and tolerability substudy in sporadic ALS.<a class="cite" href="https://clinicaltrials.gov/study/NCT07571174">5</a></p></div></div>
+        <div class="card compact source-card"><div class="source-id">6</div><div><h3>NCT07571486, 2026-05-06</h3><p>Son-ALS repeated transient blood-brain barrier opening proof-of-concept study.<a class="cite" href="https://clinicaltrials.gov/study/NCT07571486">6</a></p></div></div>
+        <div class="card compact source-card"><div class="source-id">7</div><div><h3>NCT04297683, 2026-05-08</h3><p>HEALEY ALS Platform Trial master protocol, listed as recruiting Phase 2/3.<a class="cite" href="https://clinicaltrials.gov/study/NCT04297683">7</a></p></div></div>
+        <div class="card compact source-card"><div class="source-id">8</div><div><h3>NCT05568615, 2026-05-08</h3><p>Completed Phase 3 oral edaravone safety extension record in ALS.<a class="cite" href="https://clinicaltrials.gov/study/NCT05568615">8</a></p></div></div>
+      </div>
+    </div>
+    <div class="slide-num">05 / 05</div>
+  </article>
+</body>
+</html>

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Finding Access: Why HEOR Starts in Phase 2</title>
+  <style>
+    :root {
+      --deep: #073b4c;
+      --ocean: #0a6f83;
+      --reef: #18a7b5;
+      --surface: #c9f3f8;
+      --foam: #f7fbfb;
+      --sand: #ffe2a8;
+      --coral: #ff7a1a;
+      --coral-dark: #d94f00;
+      --black: #101316;
+      --muted: #45656d;
+      --line: #0d2027;
+      --shadow: 0 18px 46px rgba(4, 31, 42, .18);
+      --radius: 26px;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #062d3d;
+      color: var(--black);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.24;
+      scrollbar-width: none;
+    }
+
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar { display: none; }
+
+    body {
+      display: grid;
+      place-items: start center;
+    }
+
+    .sheet {
+      position: relative;
+      width: 1200px;
+      height: 1840px;
+      overflow: hidden;
+      padding: 44px 52px 38px;
+      background:
+        radial-gradient(circle at 12% 5%, rgba(255,122,26,.28), transparent 22rem),
+        radial-gradient(circle at 94% 8%, rgba(201,243,248,.34), transparent 26rem),
+        linear-gradient(180deg, #0a6f83 0%, #0b5b73 44%, #073b4c 100%);
+    }
+
+    .sheet::before {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border: 1.5px solid rgba(247,251,251,.36);
+      border-radius: 34px;
+      pointer-events: none;
+    }
+
+    .sheet::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 230px;
+      background:
+        radial-gradient(ellipse at 18% 100%, rgba(255,226,168,.90), transparent 28rem),
+        radial-gradient(ellipse at 75% 100%, rgba(255,122,26,.22), transparent 24rem),
+        linear-gradient(180deg, rgba(255,226,168,0), rgba(255,226,168,.82));
+      pointer-events: none;
+    }
+
+    .sheet > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 22px;
+      margin-bottom: 18px;
+      color: var(--foam);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 2px solid var(--black);
+      border-radius: 999px;
+      padding: 9px 13px;
+      background: var(--coral);
+      color: var(--black);
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .note {
+      max-width: 480px;
+      color: rgba(247,251,251,.84);
+      font-size: 14px;
+      line-height: 1.25;
+      text-align: right;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 1100px;
+      color: var(--foam);
+      font-size: 80px;
+      line-height: .88;
+      font-weight: 850;
+      letter-spacing: 0;
+    }
+
+    h1 .highlight {
+      color: var(--black);
+      background: var(--coral);
+      box-shadow: 0 .08em 0 var(--foam);
+      padding: 0 .05em;
+    }
+
+    .subtitle {
+      max-width: 1060px;
+      margin: 18px 0 0;
+      color: rgba(247,251,251,.86);
+      font-size: 24px;
+      line-height: 1.26;
+    }
+
+    .route {
+      margin-top: 28px;
+      border: 2px solid var(--line);
+      border-radius: 30px;
+      background: rgba(247,251,251,.92);
+      box-shadow: var(--shadow);
+      padding: 24px;
+    }
+
+    .route-track {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      min-height: 172px;
+    }
+
+    .route-track::before {
+      content: "";
+      position: absolute;
+      left: 7%;
+      right: 7%;
+      top: 48px;
+      height: 18px;
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      background:
+        repeating-linear-gradient(90deg, var(--foam) 0 48px, var(--coral) 48px 88px, var(--black) 88px 102px),
+        var(--foam);
+      z-index: 0;
+    }
+
+    .stage {
+      position: relative;
+      z-index: 1;
+      min-width: 0;
+    }
+
+    .marker {
+      width: 88px;
+      height: 88px;
+      border: 2px solid var(--black);
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: var(--coral);
+      color: var(--black);
+      box-shadow: 8px 10px 0 rgba(16,19,22,.13);
+      font-size: 18px;
+      font-weight: 950;
+    }
+
+    .stage:nth-child(2) .marker { background: var(--sand); }
+    .stage:nth-child(3) .marker { background: var(--surface); }
+
+    .stage h2 {
+      margin: 16px 0 7px;
+      font-size: 27px;
+      line-height: .96;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .stage p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16.5px;
+      line-height: 1.25;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .panel {
+      border: 2px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(247,251,251,.94);
+      box-shadow: var(--shadow);
+      padding: 24px;
+      min-height: 438px;
+    }
+
+    .panel.dark {
+      background: #092634;
+      color: var(--foam);
+      border-color: rgba(247,251,251,.82);
+    }
+
+    .tag {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      border: 1.5px solid currentColor;
+      border-radius: 999px;
+      padding: 6px 10px;
+      margin-bottom: 13px;
+      font-size: 11px;
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: var(--foam);
+    }
+
+    .panel.dark .tag {
+      color: var(--black);
+      background: var(--surface);
+      border-color: var(--black);
+    }
+
+    .panel h2 {
+      margin: 0;
+      font-size: 38px;
+      line-height: .94;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .panel .summary {
+      margin: 12px 0 18px;
+      color: var(--muted);
+      font-size: 17.5px;
+      line-height: 1.28;
+    }
+
+    .panel.dark .summary { color: rgba(247,251,251,.78); }
+
+    .list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .item {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 13px;
+      align-items: start;
+      border: 1.5px solid var(--line);
+      border-radius: 18px;
+      background: var(--foam);
+      padding: 14px 15px;
+    }
+
+    .panel.dark .item {
+      background: rgba(247,251,251,.08);
+      border-color: rgba(247,251,251,.55);
+    }
+
+    .num {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1.5px solid var(--black);
+      border-radius: 999px;
+      background: var(--coral);
+      color: var(--black);
+      font-size: 17px;
+      font-weight: 950;
+    }
+
+    .panel.dark .num { background: var(--surface); }
+
+    .item h3 {
+      margin: 0 0 5px;
+      font-size: 21px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14.8px;
+      line-height: 1.24;
+    }
+
+    .panel.dark .item p { color: rgba(247,251,251,.72); }
+
+    .current {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: .88fr 1.12fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .callout {
+      border: 2px solid var(--black);
+      border-radius: var(--radius);
+      background: var(--coral);
+      box-shadow: var(--shadow);
+      padding: 22px 24px;
+      min-height: 186px;
+    }
+
+    .callout .kicker {
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .callout .big {
+      margin-top: 18px;
+      font-size: 47px;
+      line-height: .88;
+      font-weight: 950;
+      letter-spacing: 0;
+    }
+
+    .callout p {
+      margin: 13px 0 0;
+      color: rgba(16,19,22,.78);
+      font-size: 16px;
+      line-height: 1.22;
+    }
+
+    .comparison {
+      border: 2px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(247,251,251,.94);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      min-height: 186px;
+      display: grid;
+      grid-template-columns: 1fr 48px 1fr;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .mini {
+      min-height: 136px;
+      border: 1.5px solid var(--line);
+      border-radius: 20px;
+      padding: 17px;
+      background: #f1f7f7;
+    }
+
+    .mini:last-child {
+      background: var(--surface);
+    }
+
+    .connector {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border: 1.5px solid var(--black);
+      border-radius: 999px;
+      background: var(--sand);
+      font-size: 23px;
+      font-weight: 950;
+    }
+
+    .mini h3 {
+      margin: 0 0 9px;
+      font-size: 25px;
+      line-height: .98;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .mini p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.24;
+    }
+
+    .bottom {
+      margin-top: 22px;
+      border: 2px solid var(--line);
+      border-radius: 30px;
+      overflow: hidden;
+      background: rgba(247,251,251,.96);
+      box-shadow: var(--shadow);
+    }
+
+    .bottom-head {
+      display: grid;
+      grid-template-columns: .83fr 1.17fr;
+      border-bottom: 2px solid var(--line);
+      min-height: 92px;
+    }
+
+    .bottom-title {
+      display: flex;
+      align-items: center;
+      padding: 20px 24px;
+      background: var(--black);
+      color: var(--foam);
+      font-size: 29px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .bottom-copy {
+      display: flex;
+      align-items: center;
+      padding: 19px 24px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.25;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .tile {
+      min-height: 162px;
+      padding: 21px 20px;
+      border-right: 2px solid var(--line);
+      background: var(--foam);
+    }
+
+    .tile:nth-child(2) { background: var(--surface); }
+    .tile:nth-child(3) { background: var(--sand); border-right: 0; }
+
+    .tile h3 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      line-height: .98;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .tile p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.25;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: flex-end;
+      margin-top: 19px;
+      color: rgba(247,251,251,.84);
+      font-size: 13.5px;
+      line-height: 1.25;
+    }
+
+    .footer strong {
+      color: var(--foam);
+      font-weight: 900;
+    }
+
+    @page {
+      size: 1200px 1840px;
+      margin: 0;
+    }
+
+    @media print {
+      html,
+      body {
+        width: 1200px;
+        height: 1840px;
+      }
+
+      .sheet {
+        margin: 0;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="sheet" aria-label="Finding Access HEOR infographic">
+    <div class="topbar">
+      <div class="eyebrow">Access evidence route</div>
+      <div class="note">A Finding Nemo-inspired evidence journey: possible to reach the destination, much harder without the map</div>
+    </div>
+
+    <h1>Finding Access gets harder when HEOR joins the journey late</h1>
+    <p class="subtitle">
+      It is not impossible. But without the right evidence questions in Phase 2, launch can turn into an open-water search for endpoints, comparators, and populations that should have been mapped earlier.
+    </p>
+
+    <section class="route" aria-label="Evidence journey">
+      <div class="route-track">
+        <div class="stage">
+          <div class="marker">Ph 2</div>
+          <h2>Plot the route</h2>
+          <p>Payer comparisons, access risks, and real-world gaps are visible before the pivotal evidence package hardens.</p>
+        </div>
+        <div class="stage">
+          <div class="marker">Ph 3</div>
+          <h2>The current gets stronger</h2>
+          <p>Endpoints, comparators, and enrolled populations become difficult to change once the trial is complete.</p>
+        </div>
+        <div class="stage">
+          <div class="marker">Launch</div>
+          <h2>Find the access path</h2>
+          <p>Teams need payer-ready answers, often with less time than the problem requires.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="split" aria-label="Late HEOR versus early HEOR">
+      <div class="panel">
+        <div class="tag">When planning starts after readout</div>
+        <h2>The access journey turns into a search</h2>
+        <p class="summary">Late RWE can still help, but it is often asked to rescue choices that are already locked in.</p>
+        <div class="list">
+          <div class="item">
+            <div class="num">1</div>
+            <div>
+              <h3>Endpoint mismatch</h3>
+              <p>The trial may not capture outcomes payers use to judge value in practice.</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="num">2</div>
+            <div>
+              <h3>Comparator mismatch</h3>
+              <p>The benchmark payers care about may sit outside the pivotal trial design.</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="num">3</div>
+            <div>
+              <h3>Population mismatch</h3>
+              <p>The enrolled population may not mirror who receives therapy after approval.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel dark">
+        <div class="tag">When HEOR starts in Phase 2</div>
+        <h2>The route is still open</h2>
+        <p class="summary">The data may not be mature yet, but the strategic questions can already guide evidence planning.</p>
+        <div class="list">
+          <div class="item">
+            <div class="num">?</div>
+            <div>
+              <h3>What will payers compare us to</h3>
+              <p>Identify the access benchmark before it becomes an objection.</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="num">?</div>
+            <div>
+              <h3>Which outcomes will be challenged</h3>
+              <p>Map practical, economic, and patient-centered outcomes the trial may not settle.</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="num">?</div>
+            <div>
+              <h3>Where will access narrow</h3>
+              <p>Stress-test likely restrictions, subgroups, and treatment sequencing early.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="current" aria-label="Planning shift">
+      <div class="callout">
+        <div class="kicker">Planning shift</div>
+        <div class="big">Start HEOR in Ph 2</div>
+        <p>Early input changes RWE from a rescue mission into a planned route to access.</p>
+      </div>
+
+      <div class="comparison">
+        <div class="mini">
+          <h3>Late request</h3>
+          <p>Retrospective study, quick poster, complete deck, limited strategic leverage.</p>
+        </div>
+        <div class="connector" aria-hidden="true">vs</div>
+        <div class="mini">
+          <h3>Early route</h3>
+          <p>Comparator logic, endpoint rationale, data-generation plan, payer-ready narrative.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bottom" aria-label="What early HEOR changes">
+      <div class="bottom-head">
+        <div class="bottom-title">The lesson: do not start the search at launch</div>
+        <div class="bottom-copy">
+          HEOR should not be asked to patch the access story after the critical evidence choices have already been made.
+        </div>
+      </div>
+      <div class="grid">
+        <div class="tile">
+          <h3>Trial design gets sharper</h3>
+          <p>Access-relevant outcomes and subgroup definitions are discussed while there is still room to influence evidence collection.</p>
+        </div>
+        <div class="tile">
+          <h3>RWE studies get more purposeful</h3>
+          <p>Real-world analyses are tied to specific payer questions, not only to publication activity.</p>
+        </div>
+        <div class="tile">
+          <h3>Launch teams get fewer surprises</h3>
+          <p>The payer evidence story has already been stress-tested before the first access objection arrives.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <div><strong>Core idea:</strong> finding access is easier when the evidence route is mapped before Phase 3 locks in the path.</div>
+      <div>Phase 2 - Phase 3 - Launch</div>
+    </div>
+  </main>
+</body>
+</html>

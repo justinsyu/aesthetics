@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Major Depressive Disorder Competitive Intelligence Update</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 36px 0 20px;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 850;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 82px; line-height: .92; letter-spacing: 0; font-weight: 560; max-width: 1320px; }
+    h2 { font-size: 54px; line-height: .98; letter-spacing: 0; font-weight: 560; max-width: 1300px; }
+    h3 { font-size: 29px; line-height: 1.04; letter-spacing: 0; font-weight: 650; }
+    .dek { margin-top: 18px; color: var(--muted); font-size: 27px; line-height: 1.24; max-width: 1280px; }
+    .section-head { margin-bottom: 20px; }
+    .section-head p { margin-top: 12px; color: var(--muted); font-size: 24px; line-height: 1.24; max-width: 1300px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .panel, .metric, .card, .table, .callout {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.86);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel { padding: 24px; }
+    .panel.dark, .callout { background: #11130f; color: var(--paper); border-color: #11130f; }
+    .panel.dark p, .panel.dark li, .callout p, .callout li { color: rgba(246,241,232,.84); }
+    .metric { padding: 22px; min-height: 150px; }
+    .num { font-size: 52px; line-height: .92; font-weight: 850; letter-spacing: 0; }
+    .label { margin-top: 12px; font-size: 18px; line-height: 1.25; color: var(--muted); }
+    .card { padding: 22px; min-height: 208px; }
+    .card p { color: var(--muted); font-size: 19px; line-height: 1.24; margin-top: 11px; }
+    .card .tag { margin-bottom: 12px; }
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      white-space: nowrap;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .red { background: var(--red); }
+    .gray { background: var(--gray); }
+    .list { margin: 14px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+    .list li { position: relative; padding-left: 20px; color: var(--muted); font-size: 19px; line-height: 1.24; }
+    .list li::before { content: ""; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; border-radius: 50%; background: var(--lime); border: 1px solid var(--line); }
+    .table { display: grid; }
+    .row { display: grid; grid-template-columns: 1.15fr .7fr 1.3fr 1.55fr; border-bottom: 1px solid var(--line); min-height: 76px; }
+    .row:last-child { border-bottom: 0; }
+    .cell { padding: 13px 14px; border-right: 1px solid var(--line); font-size: 16px; line-height: 1.22; }
+    .cell:last-child { border-right: 0; }
+    .head .cell { background: #11130f; color: var(--paper); font-weight: 850; text-transform: uppercase; font-size: 12px; }
+    .callout { padding: 24px 28px; }
+    .callout h3 { font-size: 32px; }
+    .callout p { margin-top: 12px; font-size: 24px; line-height: 1.18; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .cite + .cite::before { content: ","; margin-right: 1px; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    .source-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 22px; }
+    .source-item { border-top: 1.3px solid rgba(16,18,15,.35); padding-top: 12px; }
+    .source-item p { font-size: 15px; color: var(--muted); line-height: 1.24; margin-top: 6px; }
+    .source-item strong { font-size: 17px; line-height: 1.1; }
+    .timeline { display: grid; grid-template-columns: .72fr 1fr 1fr; gap: 16px; }
+    .event { border: 1.5px solid var(--line); background: rgba(255,250,240,.86); border-radius: var(--radius); padding: 22px; min-height: 312px; box-shadow: var(--shadow); }
+    .event strong { display: block; font-size: 31px; line-height: 1.02; }
+    .event p { color: var(--muted); font-size: 19px; line-height: 1.25; margin-top: 12px; }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .wrap { width: 1360px; }
+      .panel, .metric, .card, .table, .callout, .event { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) {
+      .slide { width: 1600px; height: 900px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Major depressive disorder CI update | May 6-12, 2026 evidence window</div>
+      <h1>Major depressive disorder current-source update</h1>
+      <p class="dek">This report includes primary-source items with visible publication or ClinicalTrials.gov update dates from May 7, 2026 through May 11, 2026, all within the May 6-12, 2026 evidence window.<a class="cite" href="https://www.jnj.com/media-center/press-releases/johnson-johnson-reinforces-its-leadership-in-advancing-neuropsychiatry-with-new-portfolio-and-pipeline-data-at-apa-and-ascp">1</a><a class="cite" href="https://ir.neumoratx.com/news-releases/news-release-details/neumora-therapeutics-reports-first-quarter-2026-financial">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290503/0/en/xenon-reports-q1-2026-financial-results-and-provides-business-update.html">3</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289939/0/en/nrx-pharmaceuticals-nasdaq-nrxp-announces-fda-clearance-to-proceed-with-clinical-trial-of-nrx-101-in-combination-with-robotic-enabled-transcranial-magnetic-stimulation-in-patients-.html">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06793397">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06559306">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06524830">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07227454">8</a></p>
+      <div class="grid-4" style="margin-top:34px;">
+        <div class="metric"><div class="num">8</div><div class="label">Primary sources were used in the report.<a class="cite" href="https://www.jnj.com/media-center/press-releases/johnson-johnson-reinforces-its-leadership-in-advancing-neuropsychiatry-with-new-portfolio-and-pipeline-data-at-apa-and-ascp">1</a><a class="cite" href="https://ir.neumoratx.com/news-releases/news-release-details/neumora-therapeutics-reports-first-quarter-2026-financial">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290503/0/en/xenon-reports-q1-2026-financial-results-and-provides-business-update.html">3</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289939/0/en/nrx-pharmaceuticals-nasdaq-nrxp-announces-fda-clearance-to-proceed-with-clinical-trial-of-nrx-101-in-combination-with-robotic-enabled-transcranial-magnetic-stimulation-in-patients-.html">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06793397">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06559306">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06524830">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07227454">8</a></div></div>
+        <div class="metric"><div class="num">4</div><div class="label">Company releases were included from Johnson &amp; Johnson, Neumora, Xenon, and NRx.<a class="cite" href="https://www.jnj.com/media-center/press-releases/johnson-johnson-reinforces-its-leadership-in-advancing-neuropsychiatry-with-new-portfolio-and-pipeline-data-at-apa-and-ascp">1</a><a class="cite" href="https://ir.neumoratx.com/news-releases/news-release-details/neumora-therapeutics-reports-first-quarter-2026-financial">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290503/0/en/xenon-reports-q1-2026-financial-results-and-provides-business-update.html">3</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289939/0/en/nrx-pharmaceuticals-nasdaq-nrxp-announces-fda-clearance-to-proceed-with-clinical-trial-of-nrx-101-in-combination-with-robotic-enabled-transcranial-magnetic-stimulation-in-patients-.html">4</a></div></div>
+        <div class="metric"><div class="num">4</div><div class="label">ClinicalTrials.gov records were included for CYB003, seltorexant, VLS-01, and esketamine.<a class="cite" href="https://clinicaltrials.gov/study/NCT06793397">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06559306">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06524830">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07227454">8</a></div></div>
+        <div class="metric"><div class="num">2</div><div class="label">Janssen-sponsored ClinicalTrials.gov records were included for seltorexant and esketamine.<a class="cite" href="https://clinicaltrials.gov/study/NCT06559306">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07227454">8</a></div></div>
+      </div>
+      <div class="callout" style="margin-top:24px;">
+        <h3>Factual scope</h3>
+        <p>The included sources document conference abstracts, MDD topline-readout timing, Phase 3 MDD program timing, FDA clearance for an NRX-101 plus TMS trial, and updated registry records for psychedelic, orexin, and esketamine-related MDD/TRD studies.<a class="cite" href="https://www.jnj.com/media-center/press-releases/johnson-johnson-reinforces-its-leadership-in-advancing-neuropsychiatry-with-new-portfolio-and-pipeline-data-at-apa-and-ascp">1</a><a class="cite" href="https://ir.neumoratx.com/news-releases/news-release-details/neumora-therapeutics-reports-first-quarter-2026-financial">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290503/0/en/xenon-reports-q1-2026-financial-results-and-provides-business-update.html">3</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289939/0/en/nrx-pharmaceuticals-nasdaq-nrxp-announces-fda-clearance-to-proceed-with-clinical-trial-of-nrx-101-in-combination-with-robotic-enabled-transcranial-magnetic-stimulation-in-patients-.html">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06793397">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06559306">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06524830">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07227454">8</a></p>
+      </div>
+    </div>
+    <div class="slide-num">01 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Company-reported items</div>
+        <h2>Four company sources reported MDD or TRD portfolio activity inside the evidence window<a class="cite" href="https://www.jnj.com/media-center/press-releases/johnson-johnson-reinforces-its-leadership-in-advancing-neuropsychiatry-with-new-portfolio-and-pipeline-data-at-apa-and-ascp">1</a><a class="cite" href="https://ir.neumoratx.com/news-releases/news-release-details/neumora-therapeutics-reports-first-quarter-2026-financial">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290503/0/en/xenon-reports-q1-2026-financial-results-and-provides-business-update.html">3</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289939/0/en/nrx-pharmaceuticals-nasdaq-nrxp-announces-fda-clearance-to-proceed-with-clinical-trial-of-nrx-101-in-combination-with-robotic-enabled-transcranial-magnetic-stimulation-in-patients-.html">4</a></h2>
+        <p>The visible dates on these releases were May 7, 2026 and May 11, 2026.<a class="cite" href="https://www.jnj.com/media-center/press-releases/johnson-johnson-reinforces-its-leadership-in-advancing-neuropsychiatry-with-new-portfolio-and-pipeline-data-at-apa-and-ascp">1</a><a class="cite" href="https://ir.neumoratx.com/news-releases/news-release-details/neumora-therapeutics-reports-first-quarter-2026-financial">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290503/0/en/xenon-reports-q1-2026-financial-results-and-provides-business-update.html">3</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289939/0/en/nrx-pharmaceuticals-nasdaq-nrxp-announces-fda-clearance-to-proceed-with-clinical-trial-of-nrx-101-in-combination-with-robotic-enabled-transcranial-magnetic-stimulation-in-patients-.html">4</a></p>
+      </div>
+      <div class="grid-4">
+        <div class="card">
+          <span class="tag lime">Conference data</span>
+          <h3>J&amp;J</h3>
+          <p>Johnson &amp; Johnson announced 18 abstracts for APA and ASCP and stated that presentations would highlight MDD, TRD, and schizophrenia.<a class="cite" href="https://www.jnj.com/media-center/press-releases/johnson-johnson-reinforces-its-leadership-in-advancing-neuropsychiatry-with-new-portfolio-and-pipeline-data-at-apa-and-ascp">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">Readout timing</span>
+          <h3>Neumora</h3>
+          <p>Neumora stated that KOASTAL-2 and KOASTAL-3 evaluating navacaprant in MDD were fully enrolled and on track for a joint topline readout in Q2 2026.<a class="cite" href="https://ir.neumoratx.com/news-releases/news-release-details/neumora-therapeutics-reports-first-quarter-2026-financial">2</a></p>
+        </div>
+        <div class="card">
+          <span class="tag orange">Phase 3</span>
+          <h3>Xenon</h3>
+          <p>Xenon stated that azetukalner Phase 3 studies continue to enroll in epilepsy and depression indications and that X-NOVA2 MDD topline data are expected in H1 2027.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290503/0/en/xenon-reports-q1-2026-financial-results-and-provides-business-update.html">3</a></p>
+        </div>
+        <div class="card">
+          <span class="tag pink">FDA clearance</span>
+          <h3>NRx</h3>
+          <p>NRx stated that FDA cleared initiation of an NRX-101 versus placebo trial in patients with depression and suicidality treated with robotic-assisted or sham TMS.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289939/0/en/nrx-pharmaceuticals-nasdaq-nrxp-announces-fda-clearance-to-proceed-with-clinical-trial-of-nrx-101-in-combination-with-robotic-enabled-transcranial-magnetic-stimulation-in-patients-.html">4</a></p>
+        </div>
+      </div>
+      <div class="panel dark" style="margin-top:22px;">
+        <h3>Additional company-source facts</h3>
+        <ul class="list">
+          <li>J&amp;J stated that oral presentations include new seltorexant analyses in MDD with insomnia symptoms.<a class="cite" href="https://www.jnj.com/media-center/press-releases/johnson-johnson-reinforces-its-leadership-in-advancing-neuropsychiatry-with-new-portfolio-and-pipeline-data-at-apa-and-ascp">1</a></li>
+          <li>Neumora stated that each of KOASTAL-2 and KOASTAL-3 enrolled more than 400 patients.<a class="cite" href="https://ir.neumoratx.com/news-releases/news-release-details/neumora-therapeutics-reports-first-quarter-2026-financial">2</a></li>
+          <li>Xenon stated that $1.3 billion in cash, cash equivalents, and marketable securities extended cash runway into 2029.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290503/0/en/xenon-reports-q1-2026-financial-results-and-provides-business-update.html">3</a></li>
+          <li>NRx identified the MIND1 study as a placebo-controlled Phase 2/3 trial in adults with treatment-resistant MDD.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289939/0/en/nrx-pharmaceuticals-nasdaq-nrxp-announces-fda-clearance-to-proceed-with-clinical-trial-of-nrx-101-in-combination-with-robotic-enabled-transcranial-magnetic-stimulation-in-patients-.html">4</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">02 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">ClinicalTrials.gov updates</div>
+        <h2>Four registry records showed visible last-update dates from May 8 to May 11<a class="cite" href="https://clinicaltrials.gov/study/NCT06793397">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06559306">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06524830">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07227454">8</a></h2>
+        <p>The records list recruiting studies across CYB003, adjunctive seltorexant, VLS-01 buccal film, and intranasal esketamine.<a class="cite" href="https://clinicaltrials.gov/study/NCT06793397">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06559306">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06524830">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07227454">8</a></p>
+      </div>
+      <div class="table">
+        <div class="row head">
+          <div class="cell">Record</div>
+          <div class="cell">Visible date</div>
+          <div class="cell">Sponsor</div>
+          <div class="cell">Registry-listed study description</div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT06793397</strong><br />CYB003 EMBRACE</div>
+          <div class="cell">2026-05-11<a class="cite" href="https://clinicaltrials.gov/study/NCT06793397">5</a></div>
+          <div class="cell">Cybin IRL Limited<a class="cite" href="https://clinicaltrials.gov/study/NCT06793397">5</a></div>
+          <div class="cell">The record lists a recruiting study of deuterated psilocin analog CYB003 in humans with MDD.<a class="cite" href="https://clinicaltrials.gov/study/NCT06793397">5</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT06559306</strong><br />Seltorexant adjunctive</div>
+          <div class="cell">2026-05-08<a class="cite" href="https://clinicaltrials.gov/study/NCT06559306">6</a></div>
+          <div class="cell">Janssen Research &amp; Development, LLC<a class="cite" href="https://clinicaltrials.gov/study/NCT06559306">6</a></div>
+          <div class="cell">The record lists a recruiting Phase 3 adjunctive seltorexant study in MDD with insomnia symptoms.<a class="cite" href="https://clinicaltrials.gov/study/NCT06559306">6</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT06524830</strong><br />VLS-01 ELUMINA</div>
+          <div class="cell">2026-05-11<a class="cite" href="https://clinicaltrials.gov/study/NCT06524830">7</a></div>
+          <div class="cell">atai Therapeutics, Inc.<a class="cite" href="https://clinicaltrials.gov/study/NCT06524830">7</a></div>
+          <div class="cell">The record lists a recruiting VLS-01 buccal film study compared with placebo in treatment-resistant depression.<a class="cite" href="https://clinicaltrials.gov/study/NCT06524830">7</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT07227454</strong><br />Esketamine AVENUE</div>
+          <div class="cell">2026-05-08<a class="cite" href="https://clinicaltrials.gov/study/NCT07227454">8</a></div>
+          <div class="cell">Janssen Research &amp; Development, LLC<a class="cite" href="https://clinicaltrials.gov/study/NCT07227454">8</a></div>
+          <div class="cell">The record lists a recruiting esketamine study for reduction of MDD symptoms.<a class="cite" href="https://clinicaltrials.gov/study/NCT07227454">8</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">03 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Development-status details</div>
+        <h2>Included sources identify late-stage, Phase 2/3, and registry-listed MDD/TRD programs<a class="cite" href="https://ir.neumoratx.com/news-releases/news-release-details/neumora-therapeutics-reports-first-quarter-2026-financial">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290503/0/en/xenon-reports-q1-2026-financial-results-and-provides-business-update.html">3</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289939/0/en/nrx-pharmaceuticals-nasdaq-nrxp-announces-fda-clearance-to-proceed-with-clinical-trial-of-nrx-101-in-combination-with-robotic-enabled-transcranial-magnetic-stimulation-in-patients-.html">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06793397">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06559306">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06524830">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07227454">8</a></h2>
+        <p>The table below reports only statuses and descriptions stated by the cited primary sources.<a class="cite" href="https://ir.neumoratx.com/news-releases/news-release-details/neumora-therapeutics-reports-first-quarter-2026-financial">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290503/0/en/xenon-reports-q1-2026-financial-results-and-provides-business-update.html">3</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289939/0/en/nrx-pharmaceuticals-nasdaq-nrxp-announces-fda-clearance-to-proceed-with-clinical-trial-of-nrx-101-in-combination-with-robotic-enabled-transcranial-magnetic-stimulation-in-patients-.html">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06793397">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06559306">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06524830">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07227454">8</a></p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag lime">Navacaprant</span>
+          <h3>KOASTAL-2 and -3</h3>
+          <p>Neumora stated that the two MDD studies had full enrollment with more than 400 patients per study and a joint Q2 2026 topline readout.<a class="cite" href="https://ir.neumoratx.com/news-releases/news-release-details/neumora-therapeutics-reports-first-quarter-2026-financial">2</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">Azetukalner</span>
+          <h3>X-NOVA2 timing</h3>
+          <p>Xenon stated that Phase 3 X-NOVA2 MDD topline data are expected in H1 2027 and that additional Phase 3 azetukalner studies continue to enroll.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290503/0/en/xenon-reports-q1-2026-financial-results-and-provides-business-update.html">3</a></p>
+        </div>
+        <div class="card">
+          <span class="tag orange">NRX-101 plus TMS</span>
+          <h3>MIND1</h3>
+          <p>NRx described MIND1 as a placebo-controlled Phase 2/3 trial of NRX-101 adjunctive to active or sham TMS in adults with treatment-resistant MDD.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289939/0/en/nrx-pharmaceuticals-nasdaq-nrxp-announces-fda-clearance-to-proceed-with-clinical-trial-of-nrx-101-in-combination-with-robotic-enabled-transcranial-magnetic-stimulation-in-patients-.html">4</a></p>
+        </div>
+      </div>
+      <div class="grid-4" style="margin-top:18px;">
+        <div class="card" style="min-height:186px;">
+          <span class="tag pink">CYB003</span>
+          <h3>Adjunctive MDD</h3>
+          <p>ClinicalTrials.gov states that CYB003 is being compared with matching placebo as adjunctive treatment in patients with MDD.<a class="cite" href="https://clinicaltrials.gov/study/NCT06793397">5</a></p>
+        </div>
+        <div class="card" style="min-height:186px;">
+          <span class="tag lime">Seltorexant</span>
+          <h3>MDDIS</h3>
+          <p>ClinicalTrials.gov describes adjunctive seltorexant versus placebo in MDD with insomnia symptoms after inadequate SSRI or SNRI response.<a class="cite" href="https://clinicaltrials.gov/study/NCT06559306">6</a></p>
+        </div>
+        <div class="card" style="min-height:186px;">
+          <span class="tag blue">VLS-01</span>
+          <h3>TRD</h3>
+          <p>ClinicalTrials.gov describes VLS-01 transmucosal buccal film versus placebo in treatment-resistant major depressive disorder.<a class="cite" href="https://clinicaltrials.gov/study/NCT06524830">7</a></p>
+        </div>
+        <div class="card" style="min-height:186px;">
+          <span class="tag orange">Esketamine</span>
+          <h3>Adolescent ASIB</h3>
+          <p>ClinicalTrials.gov describes intranasal esketamine 84 mg with standard of care in adolescent MDD participants with acute suicidal ideation or behavior.<a class="cite" href="https://clinicaltrials.gov/study/NCT07227454">8</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">04 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Visible-date timeline</div>
+        <h2>The source dates cluster on May 7, May 8, and May 11<a class="cite" href="https://www.jnj.com/media-center/press-releases/johnson-johnson-reinforces-its-leadership-in-advancing-neuropsychiatry-with-new-portfolio-and-pipeline-data-at-apa-and-ascp">1</a><a class="cite" href="https://ir.neumoratx.com/news-releases/news-release-details/neumora-therapeutics-reports-first-quarter-2026-financial">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290503/0/en/xenon-reports-q1-2026-financial-results-and-provides-business-update.html">3</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289939/0/en/nrx-pharmaceuticals-nasdaq-nrxp-announces-fda-clearance-to-proceed-with-clinical-trial-of-nrx-101-in-combination-with-robotic-enabled-transcranial-magnetic-stimulation-in-patients-.html">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06793397">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06559306">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06524830">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07227454">8</a></h2>
+        <p>Each date shown below was captured from visible source-page text in the saved date-verification screenshots.<a class="cite" href="https://www.jnj.com/media-center/press-releases/johnson-johnson-reinforces-its-leadership-in-advancing-neuropsychiatry-with-new-portfolio-and-pipeline-data-at-apa-and-ascp">1</a><a class="cite" href="https://ir.neumoratx.com/news-releases/news-release-details/neumora-therapeutics-reports-first-quarter-2026-financial">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290503/0/en/xenon-reports-q1-2026-financial-results-and-provides-business-update.html">3</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289939/0/en/nrx-pharmaceuticals-nasdaq-nrxp-announces-fda-clearance-to-proceed-with-clinical-trial-of-nrx-101-in-combination-with-robotic-enabled-transcranial-magnetic-stimulation-in-patients-.html">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06793397">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06559306">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06524830">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07227454">8</a></p>
+      </div>
+      <div class="timeline">
+        <div class="event">
+          <span class="tag orange">May 7</span>
+          <strong>Three company releases</strong>
+          <p>Neumora reported KOASTAL-2 and -3 MDD readout timing, Xenon reported X-NOVA2 MDD topline timing, and NRx reported FDA clearance for NRX-101 plus TMS trial initiation.<a class="cite" href="https://ir.neumoratx.com/news-releases/news-release-details/neumora-therapeutics-reports-first-quarter-2026-financial">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290503/0/en/xenon-reports-q1-2026-financial-results-and-provides-business-update.html">3</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289939/0/en/nrx-pharmaceuticals-nasdaq-nrxp-announces-fda-clearance-to-proceed-with-clinical-trial-of-nrx-101-in-combination-with-robotic-enabled-transcranial-magnetic-stimulation-in-patients-.html">4</a></p>
+        </div>
+        <div class="event">
+          <span class="tag blue">May 8</span>
+          <strong>Two Janssen registry records</strong>
+          <p>ClinicalTrials.gov showed May 8 updates for the adjunctive seltorexant MDD with insomnia symptoms record and the esketamine AVENUE MDD record.<a class="cite" href="https://clinicaltrials.gov/study/NCT06559306">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07227454">8</a></p>
+        </div>
+        <div class="event">
+          <span class="tag lime">May 11</span>
+          <strong>J&amp;J plus two registry records</strong>
+          <p>Johnson &amp; Johnson published its APA/ASCP neuropsychiatry abstract release, and ClinicalTrials.gov showed May 11 updates for CYB003 EMBRACE and VLS-01 ELUMINA.<a class="cite" href="https://www.jnj.com/media-center/press-releases/johnson-johnson-reinforces-its-leadership-in-advancing-neuropsychiatry-with-new-portfolio-and-pipeline-data-at-apa-and-ascp">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06793397">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06524830">7</a></p>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:22px;">
+        <h3>Source-window boundary</h3>
+        <p>No report claim uses sources outside the May 6-12, 2026 inclusive evidence window.<a class="cite" href="https://www.jnj.com/media-center/press-releases/johnson-johnson-reinforces-its-leadership-in-advancing-neuropsychiatry-with-new-portfolio-and-pipeline-data-at-apa-and-ascp">1</a><a class="cite" href="https://ir.neumoratx.com/news-releases/news-release-details/neumora-therapeutics-reports-first-quarter-2026-financial">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290503/0/en/xenon-reports-q1-2026-financial-results-and-provides-business-update.html">3</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289939/0/en/nrx-pharmaceuticals-nasdaq-nrxp-announces-fda-clearance-to-proceed-with-clinical-trial-of-nrx-101-in-combination-with-robotic-enabled-transcranial-magnetic-stimulation-in-patients-.html">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06793397">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06559306">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06524830">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07227454">8</a></p>
+      </div>
+    </div>
+    <div class="slide-num">05 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Reference map</div>
+        <h2>Eight cited primary sources support the report facts<a class="cite" href="https://www.jnj.com/media-center/press-releases/johnson-johnson-reinforces-its-leadership-in-advancing-neuropsychiatry-with-new-portfolio-and-pipeline-data-at-apa-and-ascp">1</a><a class="cite" href="https://ir.neumoratx.com/news-releases/news-release-details/neumora-therapeutics-reports-first-quarter-2026-financial">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290503/0/en/xenon-reports-q1-2026-financial-results-and-provides-business-update.html">3</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289939/0/en/nrx-pharmaceuticals-nasdaq-nrxp-announces-fda-clearance-to-proceed-with-clinical-trial-of-nrx-101-in-combination-with-robotic-enabled-transcranial-magnetic-stimulation-in-patients-.html">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06793397">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06559306">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06524830">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07227454">8</a></h2>
+        <p>The separate screenshots PDF contains date-verification and evidence screenshots for each reference listed below.<a class="cite" href="https://www.jnj.com/media-center/press-releases/johnson-johnson-reinforces-its-leadership-in-advancing-neuropsychiatry-with-new-portfolio-and-pipeline-data-at-apa-and-ascp">1</a><a class="cite" href="https://ir.neumoratx.com/news-releases/news-release-details/neumora-therapeutics-reports-first-quarter-2026-financial">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290503/0/en/xenon-reports-q1-2026-financial-results-and-provides-business-update.html">3</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289939/0/en/nrx-pharmaceuticals-nasdaq-nrxp-announces-fda-clearance-to-proceed-with-clinical-trial-of-nrx-101-in-combination-with-robotic-enabled-transcranial-magnetic-stimulation-in-patients-.html">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06793397">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06559306">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06524830">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07227454">8</a></p>
+      </div>
+      <div class="source-grid">
+        <div class="source-item"><strong>1. Johnson &amp; Johnson</strong><p>Visible date: May 11, 2026. Source: neuropsychiatry portfolio and pipeline data at APA and ASCP.<a class="cite" href="https://www.jnj.com/media-center/press-releases/johnson-johnson-reinforces-its-leadership-in-advancing-neuropsychiatry-with-new-portfolio-and-pipeline-data-at-apa-and-ascp">1</a></p></div>
+        <div class="source-item"><strong>2. Neumora Therapeutics</strong><p>Visible date: May 7, 2026. Source: Q1 2026 financial results and business update.<a class="cite" href="https://ir.neumoratx.com/news-releases/news-release-details/neumora-therapeutics-reports-first-quarter-2026-financial">2</a></p></div>
+        <div class="source-item"><strong>3. Xenon Pharmaceuticals</strong><p>Visible date: May 07, 2026. Source: Q1 2026 financial results and business update.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290503/0/en/xenon-reports-q1-2026-financial-results-and-provides-business-update.html">3</a></p></div>
+        <div class="source-item"><strong>4. NRx Pharmaceuticals</strong><p>Visible date: May 07, 2026. Source: FDA clearance to proceed with NRX-101 plus TMS trial.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3289939/0/en/nrx-pharmaceuticals-nasdaq-nrxp-announces-fda-clearance-to-proceed-with-clinical-trial-of-nrx-101-in-combination-with-robotic-enabled-transcranial-magnetic-stimulation-in-patients-.html">4</a></p></div>
+        <div class="source-item"><strong>5. ClinicalTrials.gov NCT06793397</strong><p>Visible date: Last Update Posted 2026-05-11. Source: CYB003 EMBRACE record.<a class="cite" href="https://clinicaltrials.gov/study/NCT06793397">5</a></p></div>
+        <div class="source-item"><strong>6. ClinicalTrials.gov NCT06559306</strong><p>Visible date: Last Update Posted 2026-05-08. Source: adjunctive seltorexant MDD with insomnia symptoms record.<a class="cite" href="https://clinicaltrials.gov/study/NCT06559306">6</a></p></div>
+        <div class="source-item"><strong>7. ClinicalTrials.gov NCT06524830</strong><p>Visible date: Last Update Posted 2026-05-11. Source: VLS-01 ELUMINA record.<a class="cite" href="https://clinicaltrials.gov/study/NCT06524830">7</a></p></div>
+        <div class="source-item"><strong>8. ClinicalTrials.gov NCT07227454</strong><p>Visible date: Last Update Posted 2026-05-08. Source: esketamine AVENUE record.<a class="cite" href="https://clinicaltrials.gov/study/NCT07227454">8</a></p></div>
+      </div>
+    </div>
+    <div class="slide-num">06 / 06</div>
+  </article>
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Geographic Atrophy Competitive Intelligence Update</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 36px 0 20px;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 850;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 82px; line-height: .92; letter-spacing: 0; font-weight: 560; max-width: 1280px; }
+    h2 { font-size: 54px; line-height: .98; letter-spacing: 0; font-weight: 560; max-width: 1320px; }
+    h3 { font-size: 28px; line-height: 1.04; letter-spacing: 0; font-weight: 650; }
+    .dek { margin-top: 18px; color: var(--muted); font-size: 27px; line-height: 1.24; max-width: 1260px; }
+    .section-head { margin-bottom: 20px; }
+    .section-head p { margin-top: 12px; color: var(--muted); font-size: 24px; line-height: 1.22; max-width: 1300px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .panel, .metric, .card, .table, .callout {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.86);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel { padding: 24px; }
+    .panel.dark, .callout { background: #11130f; color: var(--paper); border-color: #11130f; }
+    .panel.dark p, .panel.dark li, .callout p, .callout li { color: rgba(246,241,232,.86); }
+    .metric { padding: 22px; min-height: 154px; }
+    .num { font-size: 50px; line-height: .92; font-weight: 850; letter-spacing: 0; }
+    .label { margin-top: 12px; font-size: 17px; line-height: 1.25; color: var(--muted); }
+    .card { padding: 22px; min-height: 212px; }
+    .card p { color: var(--muted); font-size: 19px; line-height: 1.24; margin-top: 12px; }
+    .card .tag { margin-bottom: 12px; }
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      white-space: nowrap;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .red { background: var(--red); }
+    .gray { background: var(--gray); }
+    .list { margin: 14px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+    .list li { position: relative; padding-left: 20px; color: var(--muted); font-size: 19px; line-height: 1.2; }
+    .panel.dark .list li { color: rgba(246,241,232,.86); }
+    .list li::before { content: ""; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; border-radius: 50%; background: var(--lime); border: 1px solid var(--line); }
+    .table { display: grid; border-radius: 22px; }
+    .row { display: grid; grid-template-columns: .82fr .72fr 1.08fr 1.1fr .62fr; border-bottom: 1px solid var(--line); min-height: 84px; }
+    .row:last-child { border-bottom: 0; }
+    .cell { padding: 12px 13px; border-right: 1px solid var(--line); font-size: 15px; line-height: 1.18; }
+    .cell:last-child { border-right: 0; }
+    .head .cell { background: #11130f; color: var(--paper); font-weight: 850; text-transform: uppercase; font-size: 12px; }
+    .callout { padding: 24px 28px; }
+    .callout h3 { font-size: 31px; }
+    .callout p { margin-top: 12px; font-size: 24px; line-height: 1.18; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .cite + .cite::before { content: ","; margin-right: 1px; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    .source-note { color: var(--muted); font-size: 15px; line-height: 1.25; margin-top: 12px; }
+    .source-card { min-height: 170px; }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .wrap { width: 1360px; }
+      .panel, .metric, .card, .table, .callout { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) {
+      .slide { width: 1600px; height: 900px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Geographic atrophy CI update | May 5-12, 2026 evidence window</div>
+      <h1>Geographic atrophy competitive intelligence update</h1>
+      <p class="dek">This report includes company and registry primary sources with visible publication or update dates from May 5, 2026 through May 12, 2026.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287702/0/en/Ocugen-Provides-Business-Update-with-First-Quarter-2026-Financial-Results.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290509/0/en/Annexon-Reports-First-Quarter-2026-Financial-Results-Portfolio-Progress-and-Key-Anticipated-Milestones.html">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07441642">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06541704">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06635148">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06961370">6</a></p>
+      <div class="grid-4" style="margin-top:34px;">
+        <div class="metric"><div class="num">6</div><div class="label">Primary sources were used in the report.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287702/0/en/Ocugen-Provides-Business-Update-with-First-Quarter-2026-Financial-Results.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290509/0/en/Annexon-Reports-First-Quarter-2026-Financial-Results-Portfolio-Progress-and-Key-Anticipated-Milestones.html">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07441642">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06541704">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06635148">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06961370">6</a></div></div>
+        <div class="metric"><div class="num">2</div><div class="label">Company releases documented OCU410 and vonaprument GA updates.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287702/0/en/Ocugen-Provides-Business-Update-with-First-Quarter-2026-Financial-Results.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290509/0/en/Annexon-Reports-First-Quarter-2026-Financial-Results-Portfolio-Progress-and-Key-Anticipated-Milestones.html">2</a></div></div>
+        <div class="metric"><div class="num">4</div><div class="label">ClinicalTrials.gov records for industry-sponsored GA studies had visible updates from May 7-12, 2026.<a class="cite" href="https://clinicaltrials.gov/study/NCT07441642">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06541704">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06635148">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06961370">6</a></div></div>
+        <div class="metric"><div class="num">1</div><div class="label">Included Phase 3 registry record listed a May 7, 2026 update date.<a class="cite" href="https://clinicaltrials.gov/study/NCT06541704">4</a></div></div>
+      </div>
+      <div class="callout" style="margin-top:24px;">
+        <h3>Factual scope</h3>
+        <p>The included sources document 12-month OCU410 Phase 2 ArMaDa data, a vonaprument Phase 3 timing statement, and active GA registry activity for FWY003, pozelimab/cemdisiran, JNJ-81201887, and RO7669330.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287702/0/en/Ocugen-Provides-Business-Update-with-First-Quarter-2026-Financial-Results.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290509/0/en/Annexon-Reports-First-Quarter-2026-Financial-Results-Portfolio-Progress-and-Key-Anticipated-Milestones.html">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07441642">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06541704">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06635148">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06961370">6</a></p>
+      </div>
+    </div>
+    <div class="slide-num">01 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Company primary sources</div>
+        <h2>Two company releases reported GA program updates inside the evidence window<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287702/0/en/Ocugen-Provides-Business-Update-with-First-Quarter-2026-Financial-Results.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290509/0/en/Annexon-Reports-First-Quarter-2026-Financial-Results-Portfolio-Progress-and-Key-Anticipated-Milestones.html">2</a></h2>
+        <p>Ocugen displayed a May 5, 2026 release date, and Annexon displayed a May 7, 2026 release date.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287702/0/en/Ocugen-Provides-Business-Update-with-First-Quarter-2026-Financial-Results.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290509/0/en/Annexon-Reports-First-Quarter-2026-Financial-Results-Portfolio-Progress-and-Key-Anticipated-Milestones.html">2</a></p>
+      </div>
+      <div class="grid-2">
+        <div class="card" style="min-height:388px;">
+          <span class="tag lime">Ocugen | OCU410</span>
+          <h3>12-month ArMaDa data statement</h3>
+          <p>Ocugen stated that positive 12-month data from the OCU410 Phase 2 ArMaDa clinical trial for GA indicated a statistically significant 31% reduction in lesion size and 27% EZ preservation in the optimal dose for Phase 3.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287702/0/en/Ocugen-Provides-Business-Update-with-First-Quarter-2026-Financial-Results.html">1</a></p>
+          <p>Ocugen stated that about 20% of patients demonstrated no disease progression and that 75% of subjects showed more than 30% reduction in lesion growth versus control.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287702/0/en/Ocugen-Provides-Business-Update-with-First-Quarter-2026-Financial-Results.html">1</a></p>
+          <p>Ocugen stated that the data allow a potential combined U.S./EU registrational Phase 3 trial with 300 subjects and adaptive design powered at over 95%.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287702/0/en/Ocugen-Provides-Business-Update-with-First-Quarter-2026-Financial-Results.html">1</a></p>
+        </div>
+        <div class="card" style="min-height:388px;">
+          <span class="tag blue">Annexon | Vonaprument</span>
+          <h3>Phase 3 timing statement</h3>
+          <p>Annexon stated that topline pivotal Phase 3 data for vonaprument for the treatment of GA are expected in Q4 2026.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290509/0/en/Annexon-Reports-First-Quarter-2026-Financial-Results-Portfolio-Progress-and-Key-Anticipated-Milestones.html">2</a></p>
+          <p>Annexon stated that its cash, cash equivalents, and short-term investments were approximately $225 million as of March 31, 2026 and that anticipated runway extended into the second half of 2027.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290509/0/en/Annexon-Reports-First-Quarter-2026-Financial-Results-Portfolio-Progress-and-Key-Anticipated-Milestones.html">2</a></p>
+        </div>
+      </div>
+      <div class="panel dark" style="margin-top:22px;">
+        <h3>Company-source boundary</h3>
+        <ul class="list">
+          <li>The OCU410 and vonaprument statements above are reported as company-disclosed facts from the cited releases.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287702/0/en/Ocugen-Provides-Business-Update-with-First-Quarter-2026-Financial-Results.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290509/0/en/Annexon-Reports-First-Quarter-2026-Financial-Results-Portfolio-Progress-and-Key-Anticipated-Milestones.html">2</a></li>
+          <li>No efficacy comparison between OCU410, vonaprument, or marketed GA products is made from these releases.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287702/0/en/Ocugen-Provides-Business-Update-with-First-Quarter-2026-Financial-Results.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290509/0/en/Annexon-Reports-First-Quarter-2026-Financial-Results-Portfolio-Progress-and-Key-Anticipated-Milestones.html">2</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">02 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">ClinicalTrials.gov records</div>
+        <h2>Four industry-sponsored GA records showed updates from May 7-12, 2026<a class="cite" href="https://clinicaltrials.gov/study/NCT07441642">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06541704">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06635148">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06961370">6</a></h2>
+        <p>The registry fields below were read from ClinicalTrials.gov records with visible last-update dates inside the evidence window.<a class="cite" href="https://clinicaltrials.gov/study/NCT07441642">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06541704">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06635148">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06961370">6</a></p>
+      </div>
+      <div class="table">
+        <div class="row head">
+          <div class="cell">Record</div>
+          <div class="cell">Visible update</div>
+          <div class="cell">Sponsor and status</div>
+          <div class="cell">Intervention / trial field</div>
+          <div class="cell">Phase</div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT07441642</strong><br />FWY003</div>
+          <div class="cell">2026-05-12<a class="cite" href="https://clinicaltrials.gov/study/NCT07441642">3</a></div>
+          <div class="cell">The record lists Novartis Pharmaceuticals as sponsor and recruiting status.<a class="cite" href="https://clinicaltrials.gov/study/NCT07441642">3</a></div>
+          <div class="cell">The record lists FWY003 and placebo, and describes a dose-response study in GA secondary to AMD.<a class="cite" href="https://clinicaltrials.gov/study/NCT07441642">3</a></div>
+          <div class="cell">Phase 2<a class="cite" href="https://clinicaltrials.gov/study/NCT07441642">3</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT06541704</strong><br />SIENNA</div>
+          <div class="cell">2026-05-07<a class="cite" href="https://clinicaltrials.gov/study/NCT06541704">4</a></div>
+          <div class="cell">The record lists Regeneron Pharmaceuticals as sponsor and recruiting status.<a class="cite" href="https://clinicaltrials.gov/study/NCT06541704">4</a></div>
+          <div class="cell">The record lists pozelimab, cemdisiran, and placebo, and describes GA progression versus placebo.<a class="cite" href="https://clinicaltrials.gov/study/NCT06541704">4</a></div>
+          <div class="cell">Phase 3<a class="cite" href="https://clinicaltrials.gov/study/NCT06541704">4</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT06635148</strong><br />JNJ-81201887</div>
+          <div class="cell">2026-05-08<a class="cite" href="https://clinicaltrials.gov/study/NCT06635148">5</a></div>
+          <div class="cell">The record lists Janssen Research & Development, LLC as sponsor and recruiting status.<a class="cite" href="https://clinicaltrials.gov/study/NCT06635148">5</a></div>
+          <div class="cell">The record lists JNJ-81201887 and sham procedure in a long-term extension study.<a class="cite" href="https://clinicaltrials.gov/study/NCT06635148">5</a></div>
+          <div class="cell">Phase 2<a class="cite" href="https://clinicaltrials.gov/study/NCT06635148">5</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT06961370</strong><br />RO7669330</div>
+          <div class="cell">2026-05-07<a class="cite" href="https://clinicaltrials.gov/study/NCT06961370">6</a></div>
+          <div class="cell">The record lists Hoffmann-La Roche as sponsor and active, not recruiting status.<a class="cite" href="https://clinicaltrials.gov/study/NCT06961370">6</a></div>
+          <div class="cell">The record lists RO7669330, Syfovre, and Izervay in a GA safety and tolerability study.<a class="cite" href="https://clinicaltrials.gov/study/NCT06961370">6</a></div>
+          <div class="cell">Phase 1<a class="cite" href="https://clinicaltrials.gov/study/NCT06961370">6</a></div>
+        </div>
+      </div>
+      <p class="source-note">Registry facts are limited to visible ClinicalTrials.gov fields captured in the saved evidence screenshots.<a class="cite" href="https://clinicaltrials.gov/study/NCT07441642">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06541704">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06635148">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06961370">6</a></p>
+    </div>
+    <div class="slide-num">03 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Development activity</div>
+        <h2>The registry records list GA studies spanning systemic, intravitreal, and comparator-controlled designs<a class="cite" href="https://clinicaltrials.gov/study/NCT07441642">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06541704">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06635148">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06961370">6</a></h2>
+        <p>The statements on this slide describe only the intervention and study-purpose fields visible in the cited records.<a class="cite" href="https://clinicaltrials.gov/study/NCT07441642">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06541704">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06635148">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06961370">6</a></p>
+      </div>
+      <div class="grid-4">
+        <div class="card" style="min-height:318px;">
+          <span class="tag lime">FWY003</span>
+          <h3>Novartis Phase 2</h3>
+          <p>The FWY003 record describes a randomized, double-masked, placebo-controlled dose-range study to assess efficacy and safety in GA secondary to AMD.<a class="cite" href="https://clinicaltrials.gov/study/NCT07441642">3</a></p>
+        </div>
+        <div class="card" style="min-height:318px;">
+          <span class="tag orange">Pozelimab / Cemdisiran</span>
+          <h3>Regeneron Phase 3</h3>
+          <p>The SIENNA record describes subcutaneously administered pozelimab with cemdisiran or cemdisiran alone compared with placebo in participants with GA secondary to AMD.<a class="cite" href="https://clinicaltrials.gov/study/NCT06541704">4</a></p>
+        </div>
+        <div class="card" style="min-height:318px;">
+          <span class="tag blue">JNJ-81201887</span>
+          <h3>Janssen extension</h3>
+          <p>The JNJ-81201887 record describes a long-term extension study assessing safety and tolerability after an intravitreal injection administered in parent clinical studies.<a class="cite" href="https://clinicaltrials.gov/study/NCT06635148">5</a></p>
+        </div>
+        <div class="card" style="min-height:318px;">
+          <span class="tag pink">RO7669330</span>
+          <h3>Roche Phase 1</h3>
+          <p>The RO7669330 record describes ocular and systemic safety and tolerability assessment after multiple unilateral intravitreal doses, and lists Syfovre and Izervay in the intervention field.<a class="cite" href="https://clinicaltrials.gov/study/NCT06961370">6</a></p>
+        </div>
+      </div>
+      <div class="grid-2" style="margin-top:22px;">
+        <div class="panel">
+          <h3>Visible enrollment fields</h3>
+          <ul class="list">
+            <li>NCT07441642 lists estimated enrollment of 272 participants.<a class="cite" href="https://clinicaltrials.gov/study/NCT07441642">3</a></li>
+            <li>NCT06541704 lists estimated enrollment of 975 participants.<a class="cite" href="https://clinicaltrials.gov/study/NCT06541704">4</a></li>
+            <li>NCT06635148 lists estimated enrollment of 274 participants.<a class="cite" href="https://clinicaltrials.gov/study/NCT06635148">5</a></li>
+            <li>NCT06961370 lists actual enrollment of 27 participants.<a class="cite" href="https://clinicaltrials.gov/study/NCT06961370">6</a></li>
+          </ul>
+        </div>
+        <div class="panel dark">
+          <h3>Visible status fields</h3>
+          <ul class="list">
+            <li>The Novartis, Regeneron, and Janssen records list recruiting status.<a class="cite" href="https://clinicaltrials.gov/study/NCT07441642">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06541704">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06635148">5</a></li>
+            <li>The Roche record lists active, not recruiting status.<a class="cite" href="https://clinicaltrials.gov/study/NCT06961370">6</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">04 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Source register</div>
+        <h2>Reference sources and visible dates</h2>
+        <p>Each source below has a saved visible-date screenshot and a saved evidence screenshot in the companion reference PDF.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287702/0/en/Ocugen-Provides-Business-Update-with-First-Quarter-2026-Financial-Results.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290509/0/en/Annexon-Reports-First-Quarter-2026-Financial-Results-Portfolio-Progress-and-Key-Anticipated-Milestones.html">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07441642">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06541704">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06635148">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06961370">6</a></p>
+      </div>
+      <div class="grid-3">
+        <div class="card source-card">
+          <span class="tag lime">Reference 1</span>
+          <h3>Ocugen</h3>
+          <p>Visible release date:<br />May 05, 2026 08:32 ET.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287702/0/en/Ocugen-Provides-Business-Update-with-First-Quarter-2026-Financial-Results.html">1</a></p>
+        </div>
+        <div class="card source-card">
+          <span class="tag blue">Reference 2</span>
+          <h3>Annexon</h3>
+          <p>Visible release date:<br />May 07, 2026 16:01 ET.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290509/0/en/Annexon-Reports-First-Quarter-2026-Financial-Results-Portfolio-Progress-and-Key-Anticipated-Milestones.html">2</a></p>
+        </div>
+        <div class="card source-card">
+          <span class="tag orange">Reference 3</span>
+          <h3>NCT07441642</h3>
+          <p>Visible last update posted date:<br />2026-05-12.<a class="cite" href="https://clinicaltrials.gov/study/NCT07441642">3</a></p>
+        </div>
+        <div class="card source-card">
+          <span class="tag pink">Reference 4</span>
+          <h3>NCT06541704</h3>
+          <p>Visible last update posted date:<br />2026-05-07.<a class="cite" href="https://clinicaltrials.gov/study/NCT06541704">4</a></p>
+        </div>
+        <div class="card source-card">
+          <span class="tag gray">Reference 5</span>
+          <h3>NCT06635148</h3>
+          <p>Visible last update posted date:<br />2026-05-08.<a class="cite" href="https://clinicaltrials.gov/study/NCT06635148">5</a></p>
+        </div>
+        <div class="card source-card">
+          <span class="tag red">Reference 6</span>
+          <h3>NCT06961370</h3>
+          <p>Visible last update posted date:<br />2026-05-07.<a class="cite" href="https://clinicaltrials.gov/study/NCT06961370">6</a></p>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:22px;">
+        <h3>Evidence handling</h3>
+        <p>The report includes only cited facts supported by primary webpages or registry records whose visible source dates fall within May 5-12, 2026.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/05/3287702/0/en/Ocugen-Provides-Business-Update-with-First-Quarter-2026-Financial-Results.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290509/0/en/Annexon-Reports-First-Quarter-2026-Financial-Results-Portfolio-Progress-and-Key-Anticipated-Milestones.html">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07441642">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06541704">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06635148">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06961370">6</a></p>
+      </div>
+    </div>
+    <div class="slide-num">05 / 05</div>
+  </article>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Polycythemia Vera Competitive Intelligence Update</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 36px 0 20px;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 850;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 82px; line-height: .92; letter-spacing: 0; font-weight: 560; max-width: 1300px; }
+    h2 { font-size: 56px; line-height: .98; letter-spacing: 0; font-weight: 560; max-width: 1300px; }
+    h3 { font-size: 30px; line-height: 1.04; letter-spacing: 0; font-weight: 650; }
+    .dek { margin-top: 18px; color: var(--muted); font-size: 28px; line-height: 1.24; max-width: 1280px; }
+    .section-head { margin-bottom: 20px; }
+    .section-head p { margin-top: 12px; color: var(--muted); font-size: 25px; line-height: 1.24; max-width: 1300px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .metric, .card, .table, .callout {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.86);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .metric { padding: 22px; min-height: 154px; }
+    .num { font-size: 52px; line-height: .92; font-weight: 850; letter-spacing: 0; }
+    .label { margin-top: 12px; font-size: 18px; line-height: 1.25; color: var(--muted); }
+    .card { padding: 24px; min-height: 222px; }
+    .card p { color: var(--muted); font-size: 20px; line-height: 1.24; margin-top: 12px; }
+    .card.tight p { font-size: 18px; line-height: 1.22; }
+    .card .tag { margin-bottom: 12px; }
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      white-space: nowrap;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .red { background: var(--red); }
+    .gray { background: var(--gray); }
+    .list { margin: 14px 0 0; padding: 0; list-style: none; display: grid; gap: 11px; }
+    .list li { position: relative; padding-left: 20px; color: var(--muted); font-size: 21px; line-height: 1.22; }
+    .list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .55em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--lime);
+      border: 1px solid var(--line);
+    }
+    .callout { padding: 24px 28px; background: #11130f; color: var(--paper); border-color: #11130f; }
+    .callout p { margin-top: 12px; font-size: 25px; line-height: 1.18; color: rgba(246,241,232,.86); }
+    .callout .list li { color: rgba(246,241,232,.86); }
+    .table { display: grid; }
+    .row { display: grid; grid-template-columns: 1.08fr .7fr 1.2fr 1.85fr; border-bottom: 1px solid var(--line); min-height: 84px; }
+    .row:last-child { border-bottom: 0; }
+    .cell { padding: 13px 14px; border-right: 1px solid var(--line); font-size: 17px; line-height: 1.2; color: var(--muted); }
+    .cell strong { color: var(--ink); }
+    .cell:last-child { border-right: 0; }
+    .head .cell { background: #11130f; color: var(--paper); font-weight: 850; text-transform: uppercase; font-size: 12px; }
+    .source-table .row { grid-template-columns: .52fr .9fr .86fr 1.22fr 2.2fr; min-height: 65px; }
+    .source-table .cell { font-size: 14.8px; line-height: 1.18; padding: 10px 12px; }
+    .source-table .head .cell { font-size: 11px; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .cite + .cite::before { content: ","; margin-right: 1px; }
+    .slide-num {
+      position: absolute;
+      right: 40px;
+      bottom: 24px;
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(16,18,15,.38);
+      font-weight: 800;
+      z-index: 2;
+    }
+    .source-note { color: var(--muted); font-size: 16px; line-height: 1.25; margin-top: 12px; }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .wrap { width: 1360px; }
+      .metric, .card, .table, .callout { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) {
+      .slide { width: 1600px; height: 900px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Polycythemia vera CI update | May 7-12, 2026 source dates</div>
+      <h1>Polycythemia vera competitive intelligence update</h1>
+      <p class="dek">This report includes six primary-source items with visible publication, SEC filing, or registry update dates from May 7 through May 12, 2026, all inside the May 6-12, 2026 evidence window.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1678660/000119312526218162/prld-ex99_1.htm">1</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1479615/000119312526210428/sln-ex99_1.htm">2</a><a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT05558696?format=json">3</a><a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT06343805?format=json">4</a><a class="cite" href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=42118306&amp;rettype=abstract&amp;retmode=text">5</a><a class="cite" href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&amp;id=13153272&amp;retmode=xml">6</a></p>
+      <div class="grid-4" style="margin-top:34px;">
+        <div class="metric"><div class="num">6</div><div class="label">Primary sources support this report.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1678660/000119312526218162/prld-ex99_1.htm">1</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1479615/000119312526210428/sln-ex99_1.htm">2</a><a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT05558696?format=json">3</a><a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT06343805?format=json">4</a><a class="cite" href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=42118306&amp;rettype=abstract&amp;retmode=text">5</a><a class="cite" href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&amp;id=13153272&amp;retmode=xml">6</a></div></div>
+        <div class="metric"><div class="num">2</div><div class="label">Company pipeline updates were captured from SEC exhibits.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1678660/000119312526218162/prld-ex99_1.htm">1</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1479615/000119312526210428/sln-ex99_1.htm">2</a></div></div>
+        <div class="metric"><div class="num">2</div><div class="label">ClinicalTrials.gov records were visibly updated in the window.<a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT05558696?format=json">3</a><a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT06343805?format=json">4</a></div></div>
+        <div class="metric"><div class="num">2</div><div class="label">Publication records or full-text sources were included.<a class="cite" href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=42118306&amp;rettype=abstract&amp;retmode=text">5</a><a class="cite" href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&amp;id=13153272&amp;retmode=xml">6</a></div></div>
+      </div>
+      <div class="callout" style="margin-top:24px;">
+        <h3>Factual scope</h3>
+        <p>The sources document mutant-selective JAK2V617F and siRNA pipeline activity, registry updates for bomedemstat and AJ1-11095, ruxolitinib real-world evidence, and thrombosis outcome data in PV.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1678660/000119312526218162/prld-ex99_1.htm">1</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1479615/000119312526210428/sln-ex99_1.htm">2</a><a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT05558696?format=json">3</a><a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT06343805?format=json">4</a><a class="cite" href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=42118306&amp;rettype=abstract&amp;retmode=text">5</a><a class="cite" href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&amp;id=13153272&amp;retmode=xml">6</a></p>
+      </div>
+    </div>
+    <div class="slide-num">01 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Company pipeline updates</div>
+        <h2>SEC exhibits described PV-directed JAK2V617F and siRNA programs<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1678660/000119312526218162/prld-ex99_1.htm">1</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1479615/000119312526210428/sln-ex99_1.htm">2</a></h2>
+        <p>Both company sources were filed or dated inside the May 6-12, 2026 evidence window.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1678660/000119312526218162/prld-ex99_1.htm">1</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1479615/000119312526210428/sln-ex99_1.htm">2</a></p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <span class="tag lime">Prelude</span>
+          <h3>PRT12396 Phase 1 enrollment initiated</h3>
+          <p>Prelude stated that it initiated enrollment of a Phase 1 study of PRT12396, a mutant-selective JAK2V617F inhibitor, in patients with polycythemia vera and myelofibrosis.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1678660/000119312526218162/prld-ex99_1.htm">1</a></p>
+          <p>The same release states that the JAK2V617F mutation impacts approximately 95% of PV patients and that Prelude's JAK2V617F inhibitor program is subject to an exclusive option agreement with Incyte.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1678660/000119312526218162/prld-ex99_1.htm">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">Silence</span>
+          <h3>SANRECO divesiran topline guided for August 2026</h3>
+          <p>Silence stated that its Phase 2 SANRECO trial of divesiran, described by the company as a first-in-class siRNA for PV, remained on track for topline results in August 2026.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1479615/000119312526210428/sln-ex99_1.htm">2</a></p>
+          <p>The release describes SANRECO as a double-blind, placebo-controlled Phase 2 study evaluating divesiran 6 mg Q6W and Q12W in 48 phlebotomy-dependent PV patients.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1479615/000119312526210428/sln-ex99_1.htm">2</a></p>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:22px;">
+        <h3>Additional pipeline fact</h3>
+        <p>Silence also stated that a Phase 1 SANRECO abstract was accepted as a poster presentation at the EHA 2026 Congress on June 12, 2026.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1479615/000119312526210428/sln-ex99_1.htm">2</a></p>
+      </div>
+    </div>
+    <div class="slide-num">02 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">ClinicalTrials.gov records</div>
+        <h2>Registry updates covered bomedemstat in PV and AJ1-11095 in myelofibrosis after PV<a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT05558696?format=json">3</a><a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT06343805?format=json">4</a></h2>
+        <p>The visible registry update dates were May 7, 2026 for NCT05558696 and May 12, 2026 for NCT06343805.<a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT05558696?format=json">3</a><a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT06343805?format=json">4</a></p>
+      </div>
+      <div class="table">
+        <div class="row head">
+          <div class="cell">Record</div>
+          <div class="cell">Date</div>
+          <div class="cell">Status</div>
+          <div class="cell">Key registry facts</div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT05558696</strong><br />Bomedemstat</div>
+          <div class="cell">2026-05-07<a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT05558696?format=json">3</a></div>
+          <div class="cell">Completed Phase 2; actual enrollment 20.<a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT05558696?format=json">3</a></div>
+          <div class="cell">The record identifies the sponsor as Imago BioSciences, a subsidiary of Merck &amp; Co., Inc.; condition as PV; intervention as bomedemstat; and a primary efficacy outcome of sustained 12-week hematocrit less than 45% without phlebotomy by Week 36.<a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT05558696?format=json">3</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>NCT06343805</strong><br />AJ1-11095</div>
+          <div class="cell">2026-05-12<a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT06343805?format=json">4</a></div>
+          <div class="cell">Recruiting Phase 1; estimated enrollment 76.<a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT06343805?format=json">4</a></div>
+          <div class="cell">The record lists Ajax Therapeutics as sponsor and includes primary myelofibrosis, post-polycythemia vera myelofibrosis, PPV-MF, and PET-MF; its summary describes orally administered AJ1-11095 as a type II JAK2 inhibitor in primary or secondary MF after at least one type I JAK2 inhibitor.<a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT06343805?format=json">4</a></div>
+        </div>
+      </div>
+      <p class="source-note">Registry facts are limited to visible ClinicalTrials.gov API fields captured in the dated records.</p>
+    </div>
+    <div class="slide-num">03 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Publications and real-world evidence</div>
+        <h2>Recent literature records addressed ruxolitinib use and thrombosis outcomes in PV<a class="cite" href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=42118306&amp;rettype=abstract&amp;retmode=text">5</a><a class="cite" href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&amp;id=13153272&amp;retmode=xml">6</a></h2>
+        <p>The publication records carried visible dates of May 12, 2026 and May 7, 2026.<a class="cite" href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=42118306&amp;rettype=abstract&amp;retmode=text">5</a><a class="cite" href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&amp;id=13153272&amp;retmode=xml">6</a></p>
+      </div>
+      <div class="grid-2">
+        <div class="card tight">
+          <span class="tag orange">PaVe study</span>
+          <h3>Ruxolitinib German real-world data</h3>
+          <p>The PubMed record identifies the Annals of Hematology article as a prospective, non-interventional study of ruxolitinib therapy in patients with polycythaemia vera using German PaVe study data.<a class="cite" href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=42118306&amp;rettype=abstract&amp;retmode=text">5</a></p>
+          <p>The abstract reports 433 PV patients, with 62% JAK-inhibitor pretreated and 38% not JAK-inhibitor pretreated, and states that no new safety concerns were observed.<a class="cite" href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=42118306&amp;rettype=abstract&amp;retmode=text">5</a></p>
+        </div>
+        <div class="card tight">
+          <span class="tag pink">Thrombosis outcomes</span>
+          <h3>Blood Cancer Journal PV cohort</h3>
+          <p>The PMC XML for the Blood Cancer Journal article gives an epub date of May 7, 2026 and describes an ET/PV thrombosis analysis; the PV cohort included 2,302 patients with median follow-up of 5.7 years.<a class="cite" href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&amp;id=13153272&amp;retmode=xml">6</a></p>
+          <p>In the PV cohort, the article reports 318 thrombotic events in 252 of 2,302 patients, or 10.9%, and reports that arterial thrombosis was associated with increased risk of death, HR 1.47, 95% CI 1.12-1.92, p=0.005.<a class="cite" href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&amp;id=13153272&amp;retmode=xml">6</a></p>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:22px;">
+        <h3>Additional outcome facts</h3>
+        <ul class="list">
+          <li>The Blood Cancer Journal article reports post-PV myelofibrosis in 147 patients, or 6.4%, and second cancers after PV in 206 patients, or 8.9%.<a class="cite" href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&amp;id=13153272&amp;retmode=xml">6</a></li>
+          <li>The article states that thrombotic events were associated with increased probability of second cancer in patients with PV.<a class="cite" href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&amp;id=13153272&amp;retmode=xml">6</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">04 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Source log</div>
+        <h2>Primary-source reference map</h2>
+        <p>Each cited source has separate date-verification and evidence screenshots assembled in the accompanying reference-screenshots PDF.</p>
+      </div>
+      <div class="table source-table">
+        <div class="row head">
+          <div class="cell">Ref</div>
+          <div class="cell">Source</div>
+          <div class="cell">Visible date</div>
+          <div class="cell">Type</div>
+          <div class="cell">Evidence captured</div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>1</strong></div>
+          <div class="cell">Prelude Therapeutics SEC exhibit<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1678660/000119312526218162/prld-ex99_1.htm">1</a></div>
+          <div class="cell">2026-05-12<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1678660/000119312526218162/prld-ex99_1.htm">1</a></div>
+          <div class="cell">Company SEC exhibit</div>
+          <div class="cell">PRT12396 Phase 1 enrollment, mutant-selective JAK2V617F description, PV/MF population, and Incyte option agreement.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1678660/000119312526218162/prld-ex99_1.htm">1</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>2</strong></div>
+          <div class="cell">Silence Therapeutics SEC exhibit<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1479615/000119312526210428/sln-ex99_1.htm">2</a></div>
+          <div class="cell">2026-05-07<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1479615/000119312526210428/sln-ex99_1.htm">2</a></div>
+          <div class="cell">Company SEC exhibit</div>
+          <div class="cell">SANRECO Phase 2 status, August 2026 topline timing, 48-patient design, and EHA 2026 abstract acceptance.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1479615/000119312526210428/sln-ex99_1.htm">2</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>3</strong></div>
+          <div class="cell">ClinicalTrials.gov NCT05558696<a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT05558696?format=json">3</a></div>
+          <div class="cell">2026-05-07<a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT05558696?format=json">3</a></div>
+          <div class="cell">Registry API record</div>
+          <div class="cell">Bomedemstat Phase 2 PV record status, enrollment, sponsor, intervention, and hematocrit outcome field.<a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT05558696?format=json">3</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>4</strong></div>
+          <div class="cell">ClinicalTrials.gov NCT06343805<a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT06343805?format=json">4</a></div>
+          <div class="cell">2026-05-12<a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT06343805?format=json">4</a></div>
+          <div class="cell">Registry API record</div>
+          <div class="cell">AJ1-11095 Phase 1 recruiting status, Ajax sponsorship, post-PV MF inclusion, and type II JAK2 inhibitor summary.<a class="cite" href="https://clinicaltrials.gov/api/v2/studies/NCT06343805?format=json">4</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>5</strong></div>
+          <div class="cell">PubMed efetch PMID 42118306<a class="cite" href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=42118306&amp;rettype=abstract&amp;retmode=text">5</a></div>
+          <div class="cell">2026-05-12<a class="cite" href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=42118306&amp;rettype=abstract&amp;retmode=text">5</a></div>
+          <div class="cell">Publication abstract</div>
+          <div class="cell">PaVe ruxolitinib study title, 433 PV patients, JAK-inhibitor pretreatment split, and stated safety observation.<a class="cite" href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=42118306&amp;rettype=abstract&amp;retmode=text">5</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>6</strong></div>
+          <div class="cell">NCBI PMC efetch PMC13153272<a class="cite" href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&amp;id=13153272&amp;retmode=xml">6</a></div>
+          <div class="cell">2026-05-07<a class="cite" href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&amp;id=13153272&amp;retmode=xml">6</a></div>
+          <div class="cell">Full-text XML</div>
+          <div class="cell">PV thrombosis counts, death hazard ratio, post-PV MF count, second cancer count, and second cancer association statement.<a class="cite" href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&amp;id=13153272&amp;retmode=xml">6</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">05 / 05</div>
+  </article>
+</body>
+</html>

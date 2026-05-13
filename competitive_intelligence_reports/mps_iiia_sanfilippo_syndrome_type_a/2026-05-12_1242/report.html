@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MPS IIIA Competitive Intelligence Update</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 36px 0 20px;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 850;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 82px; line-height: .92; letter-spacing: 0; font-weight: 560; max-width: 1290px; }
+    h2 { font-size: 54px; line-height: .98; letter-spacing: 0; font-weight: 560; max-width: 1290px; }
+    h3 { font-size: 28px; line-height: 1.04; letter-spacing: 0; font-weight: 650; }
+    .dek { margin-top: 18px; color: var(--muted); font-size: 27px; line-height: 1.24; max-width: 1260px; }
+    .section-head { margin-bottom: 20px; }
+    .section-head p { margin-top: 12px; color: var(--muted); font-size: 24px; line-height: 1.24; max-width: 1260px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .panel, .metric, .card, .table, .callout {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.88);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel { padding: 24px; }
+    .panel.dark, .callout { background: #11130f; color: var(--paper); border-color: #11130f; }
+    .panel.dark p, .panel.dark li, .callout p, .callout li { color: rgba(246,241,232,.84); }
+    .metric { padding: 20px; min-height: 142px; }
+    .num { font-size: 50px; line-height: .92; font-weight: 850; letter-spacing: 0; }
+    .label { margin-top: 12px; font-size: 18px; line-height: 1.25; color: var(--muted); }
+    .card { padding: 22px; min-height: 218px; }
+    .card p { color: var(--muted); font-size: 19px; line-height: 1.24; margin-top: 12px; }
+    .card .tag { margin-bottom: 12px; }
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      white-space: nowrap;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .red { background: var(--red); }
+    .gray { background: var(--gray); }
+    .list { margin: 14px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+    .list li { position: relative; padding-left: 20px; color: var(--muted); font-size: 20px; line-height: 1.22; }
+    .list li::before { content: ""; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; border-radius: 50%; background: var(--lime); border: 1px solid var(--line); }
+    .table { display: grid; }
+    .row { display: grid; grid-template-columns: 1.06fr 1.08fr 1.1fr 1.35fr; border-bottom: 1px solid var(--line); min-height: 70px; }
+    .row:last-child { border-bottom: 0; }
+    .cell { padding: 12px 14px; border-right: 1px solid var(--line); font-size: 16px; line-height: 1.2; }
+    .cell:last-child { border-right: 0; }
+    .head .cell { background: #11130f; color: var(--paper); font-weight: 850; text-transform: uppercase; font-size: 12px; }
+    .callout { padding: 22px 26px; }
+    .callout h3 { font-size: 30px; }
+    .callout p { margin-top: 12px; font-size: 24px; line-height: 1.18; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .cite + .cite::before { content: ","; margin-right: 1px; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    .source-note { color: var(--muted); font-size: 15px; line-height: 1.25; margin-top: 10px; }
+    .source-grid { display: grid; grid-template-columns: .45fr .75fr .95fr .95fr; border-top: 1px solid var(--line); }
+    .source-grid div { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 12px; font-size: 15px; line-height: 1.2; }
+    .source-grid div:nth-child(4n) { border-right: 0; }
+    .source-grid .source-head { background: #11130f; color: var(--paper); text-transform: uppercase; font-size: 12px; font-weight: 850; }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .wrap { width: 1360px; }
+      .panel, .metric, .card, .table, .callout { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) {
+      .slide { width: 1600px; height: 900px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">MPS IIIA CI update | May 5-12, 2026 evidence window</div>
+      <h1>MPS IIIA competitive intelligence update</h1>
+      <p class="dek">This report uses three primary sources with visible publication or filing dates from May 5, May 6, and May 7, 2026: an Ultragenyx quarterly update, an Ultragenyx Form 10-Q, and a Denali quarterly update.<a class="cite" href="https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-reports-first-quarter-2026-financial-results-and">1</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1515673/000119312526206960/rare-20260331.htm">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290512/0/en/Denali-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Business-Highlights.html">3</a></p>
+      <div class="grid-4" style="margin-top:34px;">
+        <div class="metric"><div class="num">2</div><div class="label">MPS IIIA programs were described by the current sources: UX111 and DNL126.<a class="cite" href="https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-reports-first-quarter-2026-financial-results-and">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290512/0/en/Denali-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Business-Highlights.html">3</a></div></div>
+        <div class="metric"><div class="num">09.19.26</div><div class="label">Ultragenyx stated that FDA assigned this PDUFA action date for UX111.<a class="cite" href="https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-reports-first-quarter-2026-financial-results-and">1</a></div></div>
+        <div class="metric"><div class="num">2027</div><div class="label">Denali stated that it expects BLA submission and potential accelerated approval for DNL126 in 2027.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290512/0/en/Denali-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Business-Highlights.html">3</a></div></div>
+        <div class="metric"><div class="num">3k-5k</div><div class="label">Ultragenyx estimated 3,000 to 5,000 developed-world patients affected by Sanfilippo syndrome type A.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1515673/000119312526206960/rare-20260331.htm">2</a></div></div>
+      </div>
+      <div class="callout" style="margin-top:24px;">
+        <h3>Factual scope</h3>
+        <p>The evidence set documents UX111 regulatory review, UX111 program and manufacturing disclosures, DNL126 clinical-development status, Denali platform context, and cash balances disclosed in current sponsor materials.<a class="cite" href="https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-reports-first-quarter-2026-financial-results-and">1</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1515673/000119312526206960/rare-20260331.htm">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290512/0/en/Denali-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Business-Highlights.html">3</a></p>
+      </div>
+    </div>
+    <div class="slide-num">01 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">UX111 regulatory status</div>
+        <h2>Ultragenyx reported FDA acceptance of the UX111 resubmitted BLA and a September 2026 action date<a class="cite" href="https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-reports-first-quarter-2026-financial-results-and">1</a></h2>
+        <p>Ultragenyx described UX111 as rebisufligene etisparvovec, an AAV9 gene therapy for Sanfilippo syndrome type A, and stated that FDA accepted the resubmitted BLA seeking accelerated approval in April 2026.<a class="cite" href="https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-reports-first-quarter-2026-financial-results-and">1</a></p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag lime">BLA review</span>
+          <h3>FDA accepted the resubmission</h3>
+          <p>Ultragenyx stated that FDA accepted for review the resubmitted BLA seeking accelerated approval for UX111 as a treatment for MPS IIIA.<a class="cite" href="https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-reports-first-quarter-2026-financial-results-and">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag orange">PDUFA</span>
+          <h3>September 19, 2026</h3>
+          <p>Ultragenyx stated that FDA granted BLA Priority Review in February 2025 and assigned a PDUFA action date of September 19, 2026 in April 2026.<a class="cite" href="https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-reports-first-quarter-2026-financial-results-and">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">Disease scope</span>
+          <h3>No approved underlying therapy cited</h3>
+          <p>Ultragenyx's Form 10-Q described MPS IIIA as a rare lysosomal storage disease with no approved treatment that primarily affects the central nervous system.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1515673/000119312526206960/rare-20260331.htm">2</a></p>
+        </div>
+      </div>
+      <div class="panel dark" style="margin-top:22px;">
+        <h3>Program profile recorded in Form 10-Q</h3>
+        <ul class="list">
+          <li>Ultragenyx described UX111 as an AAV9 gene therapy product candidate administered by one-time IV infusion.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1515673/000119312526206960/rare-20260331.htm">2</a></li>
+          <li>Ultragenyx stated that the UX111 program had RMAT, Fast Track, Rare Pediatric Disease, and Orphan Drug designations in the United States, and PRIME and Orphan Medicinal Product designations in the European Union.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1515673/000119312526206960/rare-20260331.htm">2</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">02 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">UX111 evidence and operations</div>
+        <h2>Ultragenyx linked the resubmission to longer-term data and disclosed launch-preparation manufacturing costs<a class="cite" href="https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-reports-first-quarter-2026-financial-results-and">1</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1515673/000119312526206960/rare-20260331.htm">2</a></h2>
+        <p>Ultragenyx stated that the resubmitted BLA included longer-term data presented at WORLD Symposium 2026 and included up to eight years of follow-up.<a class="cite" href="https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-reports-first-quarter-2026-financial-results-and">1</a></p>
+      </div>
+      <div class="grid-2">
+        <div class="card" style="min-height:300px;">
+          <span class="tag lime">Clinical evidence</span>
+          <h3>Longer-term follow-up in the resubmission</h3>
+          <p>Ultragenyx stated that the data showed further clinical improvement relative to natural-history decline, durable treatment effect across clinical evaluations and multiple biomarkers, and an acceptable safety profile.<a class="cite" href="https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-reports-first-quarter-2026-financial-results-and">1</a></p>
+          <p>The current report does not add efficacy interpretation beyond the sponsor statement in the cited source.<a class="cite" href="https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-reports-first-quarter-2026-financial-results-and">1</a></p>
+        </div>
+        <div class="card" style="min-height:300px;">
+          <span class="tag orange">Operating disclosure</span>
+          <h3>Manufacturing costs identified</h3>
+          <p>Ultragenyx stated that the increase in gene therapy research and development expenses was primarily due to UX111 and DTX401 manufacturing costs in preparation for commercial launch.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1515673/000119312526206960/rare-20260331.htm">2</a></p>
+          <p>Ultragenyx reported cash, cash equivalents, and marketable securities of $534 million as of March 31, 2026.<a class="cite" href="https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-reports-first-quarter-2026-financial-results-and">1</a></p>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:22px;">
+        <h3>Recorded facts</h3>
+        <p>The same current source set ties UX111 to a regulatory-review event, a September 19, 2026 PDUFA action date, longer-term follow-up in the resubmission, and manufacturing costs described as commercial launch preparation.<a class="cite" href="https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-reports-first-quarter-2026-financial-results-and">1</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1515673/000119312526206960/rare-20260331.htm">2</a></p>
+      </div>
+    </div>
+    <div class="slide-num">03 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">DNL126 clinical path</div>
+        <h2>Denali described DNL126 as an IV ETV-enabled SGSH replacement therapy with Phase 3 start-up underway<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290512/0/en/Denali-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Business-Highlights.html">3</a></h2>
+        <p>Denali stated that DNL126 is designed to deliver SGSH into the brain and body with the goal of addressing behavioral, cognitive, and physical manifestations of Sanfilippo syndrome type A.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290512/0/en/Denali-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Business-Highlights.html">3</a></p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag blue">Modality</span>
+          <h3>ETV-enabled SGSH</h3>
+          <p>Denali described DNL126 as an investigational, intravenously administered Enzyme TransportVehicle-enabled SGSH replacement therapy.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290512/0/en/Denali-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Business-Highlights.html">3</a></p>
+        </div>
+        <div class="card">
+          <span class="tag lime">Current trial</span>
+          <h3>Phase 1/2 ongoing</h3>
+          <p>Denali stated that the Phase 1/2 trial of DNL126 is ongoing.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290512/0/en/Denali-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Business-Highlights.html">3</a></p>
+        </div>
+        <div class="card">
+          <span class="tag orange">Confirmatory study</span>
+          <h3>Global Phase 3 start-up</h3>
+          <p>Denali stated that start-up activities are underway for a global Phase 3 confirmatory study.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290512/0/en/Denali-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Business-Highlights.html">3</a></p>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:22px;">
+        <h3>2027 regulatory expectation</h3>
+        <p>Denali stated that it expects a BLA submission and potential accelerated approval for DNL126 for Sanfilippo syndrome type A in 2027.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290512/0/en/Denali-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Business-Highlights.html">3</a></p>
+      </div>
+    </div>
+    <div class="slide-num">04 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Side-by-side current facts</div>
+        <h2>Current sources place UX111 in FDA BLA review and DNL126 in Phase 1/2 with Phase 3 start-up underway<a class="cite" href="https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-reports-first-quarter-2026-financial-results-and">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290512/0/en/Denali-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Business-Highlights.html">3</a></h2>
+        <p>The comparison below is limited to claims supported by the May 5-7, 2026 source set used in this report.<a class="cite" href="https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-reports-first-quarter-2026-financial-results-and">1</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1515673/000119312526206960/rare-20260331.htm">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290512/0/en/Denali-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Business-Highlights.html">3</a></p>
+      </div>
+      <div class="table">
+        <div class="row head">
+          <div class="cell">Program</div>
+          <div class="cell">Sponsor</div>
+          <div class="cell">Modality described in current source</div>
+          <div class="cell">Current public milestone described in source</div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>UX111</strong><br />rebisufligene etisparvovec</div>
+          <div class="cell">Ultragenyx<a class="cite" href="https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-reports-first-quarter-2026-financial-results-and">1</a></div>
+          <div class="cell">AAV9 gene therapy product candidate administered by one-time IV infusion.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1515673/000119312526206960/rare-20260331.htm">2</a></div>
+          <div class="cell">FDA accepted the resubmitted BLA, and Ultragenyx stated that FDA assigned a September 19, 2026 PDUFA action date.<a class="cite" href="https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-reports-first-quarter-2026-financial-results-and">1</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>DNL126</strong><br />ETV:SGSH</div>
+          <div class="cell">Denali Therapeutics<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290512/0/en/Denali-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Business-Highlights.html">3</a></div>
+          <div class="cell">Intravenously administered ETV-enabled SGSH replacement therapy designed to deliver SGSH into the brain and body.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290512/0/en/Denali-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Business-Highlights.html">3</a></div>
+          <div class="cell">Phase 1/2 trial ongoing, global Phase 3 confirmatory start-up underway, and BLA submission with potential accelerated approval expected in 2027.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290512/0/en/Denali-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Business-Highlights.html">3</a></div>
+        </div>
+      </div>
+      <div class="grid-2" style="margin-top:20px;">
+        <div class="card">
+          <span class="tag pink">Ultragenyx capital</span>
+          <h3>$534 million</h3>
+          <p>Ultragenyx reported cash, cash equivalents, and marketable securities of $534 million as of March 31, 2026.<a class="cite" href="https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-reports-first-quarter-2026-financial-results-and">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">Denali capital</span>
+          <h3>$1.05 billion</h3>
+          <p>Denali reported cash, cash equivalents, and marketable securities of approximately $1.05 billion as of March 31, 2026.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290512/0/en/Denali-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Business-Highlights.html">3</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">05 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Evidence ledger</div>
+        <h2>Every cited source has date-verification and evidence screenshots saved in the companion appendix<a class="cite" href="https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-reports-first-quarter-2026-financial-results-and">1</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1515673/000119312526206960/rare-20260331.htm">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290512/0/en/Denali-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Business-Highlights.html">3</a></h2>
+        <p>The reference list below shows source names, visible source dates, and source roles without local file paths.<a class="cite" href="https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-reports-first-quarter-2026-financial-results-and">1</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1515673/000119312526206960/rare-20260331.htm">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290512/0/en/Denali-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Business-Highlights.html">3</a></p>
+      </div>
+      <div class="panel">
+        <div class="source-grid">
+          <div class="source-head">Ref</div>
+          <div class="source-head">Source</div>
+          <div class="source-head">Visible date</div>
+          <div class="source-head">Facts used</div>
+          <div><strong>1</strong></div>
+          <div>Ultragenyx Q1 2026 financial results and corporate update</div>
+          <div>May 5, 2026</div>
+          <div>UX111 BLA review, PDUFA action date, longer-term follow-up, March 31 cash balance<a class="cite" href="https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-reports-first-quarter-2026-financial-results-and">1</a></div>
+          <div><strong>2</strong></div>
+          <div>Ultragenyx Form 10-Q for quarter ended March 31, 2026</div>
+          <div>Filing date 2026-05-06</div>
+          <div>UX111 modality, patient-estimate statement, designations, manufacturing-cost disclosure<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1515673/000119312526206960/rare-20260331.htm">2</a></div>
+          <div><strong>3</strong></div>
+          <div>Denali Q1 2026 financial results and business highlights</div>
+          <div>May 07, 2026</div>
+          <div>DNL126 modality, Phase 1/2 status, Phase 3 start-up, 2027 regulatory expectation, TV platform statement, March 31 cash balance<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290512/0/en/Denali-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Business-Highlights.html">3</a></div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:22px;">
+        <h3>Report boundary</h3>
+        <p>This deck contains no recommendations and limits the MPS IIIA update to the three primary sources with visible dates inside the May 5-12, 2026 evidence window.<a class="cite" href="https://ir.ultragenyx.com/news-releases/news-release-details/ultragenyx-reports-first-quarter-2026-financial-results-and">1</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1515673/000119312526206960/rare-20260331.htm">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290512/0/en/Denali-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Business-Highlights.html">3</a></p>
+      </div>
+    </div>
+    <div class="slide-num">06 / 06</div>
+  </article>
+</body>
+</html>

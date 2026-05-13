@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hepatocellular Carcinoma Competitive Intelligence Report</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--paper); color: var(--ink); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    .slide { width: 100vw; height: 100vh; min-height: 100vh; position: relative; overflow: hidden; padding: 36px 0 20px; page-break-after: always; }
+    .slide-bg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+    .wrap { position: relative; z-index: 1; width: min(1360px, calc(100vw - 56px)); height: calc(100vh - 64px); margin: 0 auto; display: flex; flex-direction: column; gap: 22px; }
+    .eyebrow { display: inline-flex; align-self: flex-start; background: var(--lime); border: 1.5px solid var(--line); border-radius: 999px; padding: 8px 12px; font-size: 15px; font-weight: 850; line-height: 1; text-transform: uppercase; }
+    h1, h2, h3, p { margin: 0; letter-spacing: 0; }
+    h1 { font-size: 84px; line-height: .92; font-weight: 560; max-width: 1060px; }
+    h2 { font-size: 52px; line-height: .98; font-weight: 560; max-width: 1120px; }
+    h3 { font-size: 28px; line-height: 1.04; font-weight: 700; }
+    .dek { font-size: 27px; line-height: 1.23; max-width: 1120px; color: #242820; }
+    .muted { color: var(--muted); }
+    .grid { display: grid; gap: 18px; }
+    .grid.two { grid-template-columns: 1fr 1fr; }
+    .grid.three { grid-template-columns: repeat(3, 1fr); }
+    .grid.four { grid-template-columns: repeat(4, 1fr); }
+    .card { background: rgba(255,250,240,.86); border: 1.5px solid var(--line); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); }
+    .card.compact { padding: 18px; }
+    .dark { background: #11130f; color: var(--paper); border-color: #11130f; }
+    .dark .muted { color: #d6d0c2; }
+    .tag { display: inline-flex; border: 1.3px solid var(--line); border-radius: 999px; padding: 5px 9px; font-size: 12px; font-weight: 850; text-transform: uppercase; line-height: 1; margin-bottom: 10px; }
+    .tag.blue { background: var(--blue); }
+    .tag.orange { background: var(--orange); }
+    .tag.pink { background: var(--pink); }
+    .tag.gray { background: var(--gray); }
+    .tag.red { background: var(--red); }
+    .tag.lime { background: var(--lime); }
+    .body { font-size: 19px; line-height: 1.27; }
+    .body.small { font-size: 16px; line-height: 1.24; }
+    .body.large { font-size: 24px; line-height: 1.18; }
+    .metric { font-size: 58px; line-height: .95; font-weight: 680; }
+    .metric-label { font-size: 15px; line-height: 1.2; color: var(--muted); margin-top: 6px; }
+    .split { display: grid; grid-template-columns: 1.08fr .92fr; gap: 20px; align-items: stretch; }
+    .bullets { display: grid; gap: 14px; }
+    .bullet { position: relative; padding-left: 20px; }
+    .bullet::before { content: ""; position: absolute; left: 0; top: .52em; width: 8px; height: 8px; border-radius: 50%; background: var(--lime); border: 1px solid var(--line); }
+    table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.18; }
+    th, td { border-bottom: 1.2px solid rgba(16,18,15,.35); padding: 10px 8px; vertical-align: top; text-align: left; }
+    th { font-size: 12px; text-transform: uppercase; color: var(--muted); letter-spacing: 0; }
+    td:first-child, th:first-child { padding-left: 0; }
+    td:last-child, th:last-child { padding-right: 0; }
+    .timeline { display: grid; grid-template-columns: 180px 1fr; gap: 10px 18px; align-items: start; }
+    .date-chip { border: 1.4px solid var(--line); border-radius: 999px; background: var(--blue); padding: 7px 10px; font-size: 13px; font-weight: 850; text-transform: uppercase; justify-self: start; }
+    .source-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 22px; }
+    .source-item { font-size: 14px; line-height: 1.22; border-top: 1px solid rgba(16,18,15,.25); padding-top: 9px; }
+    .source-item b { font-size: 15px; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; color: var(--ink); }
+    h1 .cite, h2 .cite, h3 .cite { font-size: .34em; margin-left: 3px; }
+    .dark .cite { color: var(--lime); }
+    .slide-num { position: absolute; z-index: 2; right: 34px; bottom: 20px; font-size: 12px; font-weight: 850; text-transform: uppercase; color: var(--muted); }
+    .footer-note { position: absolute; z-index: 2; left: 120px; bottom: 22px; font-size: 13px; color: var(--muted); }
+    .tight { gap: 14px; }
+    .headline-row { display: flex; justify-content: space-between; gap: 24px; align-items: end; }
+    .headline-row .dek { max-width: 660px; font-size: 22px; }
+    @media print {
+      @page { size: 1600px 900px; margin: 0; }
+      html, body { width: 1600px; background: var(--paper); }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .wrap { width: 1360px; height: 836px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide" aria-label="Slide 1">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Hepatocellular carcinoma | May 6-12, 2026</div>
+      <h1>Primary-source HCC updates clustered around designations, readouts, and registry movement</h1>
+      <p class="dek">Eight dated primary sources posted or updated during May 6-12, 2026 show FDA designations for RZ-001 and BGB-B2033, company-reported HCC readout timing for casdozokitug and TTI-101, and ClinicalTrials.gov updates for Bayer, AstraZeneca, Bristol Myers Squibb, and Wondercel HCC studies<a class="cite" href="https://www.prnewswire.com/news-releases/rznomics-announces-us-fda-regenerative-medicine-advanced-therapy-designation-granted-to-rz-001-for-hepatocellular-carcinoma-302766762.html">1</a>,<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1651308/000162828026030866/exhibit991-q12026earningsr.htm">2</a>,<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1512762/000110465926058666/chrs-20260511xex99d1.htm">3</a>,<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1346830/000110465926057524/tm2613977d1_ex99-1.htm">4</a>,<a class="cite" href="https://clinicaltrials.gov/study/NCT06117891">5</a>,<a class="cite" href="https://clinicaltrials.gov/study/NCT06921785">6</a>,<a class="cite" href="https://clinicaltrials.gov/study/NCT07291076">7</a>,<a class="cite" href="https://clinicaltrials.gov/study/NCT06653023">8</a></p>
+      <div class="grid four" style="margin-top:auto;">
+        <div class="card compact">
+          <span class="tag lime">Regulatory</span>
+          <div class="metric">2</div>
+          <div class="metric-label">FDA designation items: Rznomics RMAT for RZ-001 and BeOne ODD for BGB-B2033<a class="cite" href="https://www.prnewswire.com/news-releases/rznomics-announces-us-fda-regenerative-medicine-advanced-therapy-designation-granted-to-rz-001-for-hepatocellular-carcinoma-302766762.html">1</a>,<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1651308/000162828026030866/exhibit991-q12026earningsr.htm">2</a></div>
+        </div>
+        <div class="card compact">
+          <span class="tag orange">Company updates</span>
+          <div class="metric">2</div>
+          <div class="metric-label">HCC development timing items: Coherus casdozokitug accrual complete and Tvardi TTI-101 topline data on track for 2H 2026<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1512762/000110465926058666/chrs-20260511xex99d1.htm">3</a>,<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1346830/000110465926057524/tm2613977d1_ex99-1.htm">4</a></div>
+        </div>
+        <div class="card compact">
+          <span class="tag blue">Registry updates</span>
+          <div class="metric">4</div>
+          <div class="metric-label">ClinicalTrials.gov HCC records used here carried last-update dates from May 7, May 8, May 11, and May 12, 2026<a class="cite" href="https://clinicaltrials.gov/study/NCT06653023">8</a>,<a class="cite" href="https://clinicaltrials.gov/study/NCT07291076">7</a>,<a class="cite" href="https://clinicaltrials.gov/study/NCT06921785">6</a>,<a class="cite" href="https://clinicaltrials.gov/study/NCT06117891">5</a></div>
+        </div>
+        <div class="card compact dark">
+          <span class="tag gray">Evidence base</span>
+          <div class="metric">23</div>
+          <div class="metric-label">Saved screenshots verify visible dates and highlighted evidence for the cited source pages</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">01 / 08</div>
+  </article>
+
+  <article class="slide" aria-label="Slide 2">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="headline-row">
+        <div>
+          <div class="eyebrow">Date-ordered source record</div>
+          <h2>Seven-day evidence map</h2>
+        </div>
+        <p class="dek">Each row below is limited to a dated primary source page captured with a highlighted date and highlighted supporting text</p>
+      </div>
+      <div class="card" style="flex:1;">
+        <div class="timeline body">
+          <div class="date-chip">May 6</div>
+          <div>BeOne stated BGB-B2033 received FDA Orphan Drug Designation for HCC and that a potentially registrational HCC study had been initiated<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1651308/000162828026030866/exhibit991-q12026earningsr.htm">2</a></div>
+          <div class="date-chip">May 7</div>
+          <div>ClinicalTrials.gov posted a Wondercel record update for a universal CAR-T cell study titled for advanced HCC and lung cancer<a class="cite" href="https://clinicaltrials.gov/study/NCT06653023">8</a></div>
+          <div class="date-chip">May 8</div>
+          <div>Rznomics announced FDA RMAT designation for RZ-001 in HCC; Tvardi stated TTI-101 HCC topline data remained on track for 2H 2026; Bristol Myers Squibb's ROSETTA HCC-206 record carried a May 8 last-update date<a class="cite" href="https://www.prnewswire.com/news-releases/rznomics-announces-us-fda-regenerative-medicine-advanced-therapy-designation-granted-to-rz-001-for-hepatocellular-carcinoma-302766762.html">1</a>,<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1346830/000110465926057524/tm2613977d1_ex99-1.htm">4</a>,<a class="cite" href="https://clinicaltrials.gov/study/NCT07291076">7</a></div>
+          <div class="date-chip">May 11</div>
+          <div>Coherus reported completed patient accrual for its first-line HCC Phase 2 randomized casdozokitug trial; AstraZeneca's Phase III rilvegostomig/bevacizumab with or without tremelimumab record carried a May 11 last-update date<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1512762/000110465926058666/chrs-20260511xex99d1.htm">3</a>,<a class="cite" href="https://clinicaltrials.gov/study/NCT06921785">6</a></div>
+          <div class="date-chip">May 12</div>
+          <div>ClinicalTrials.gov posted a Bayer record update for an observational unresectable HCC study following atezolizumab plus bevacizumab or another approved first-line IO checkpoint-inhibitor combination<a class="cite" href="https://clinicaltrials.gov/study/NCT06117891">5</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">02 / 08</div>
+  </article>
+
+  <article class="slide" aria-label="Slide 3">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Regulatory designations</div>
+      <h2>Two FDA designation updates named HCC assets<a class="cite" href="https://www.prnewswire.com/news-releases/rznomics-announces-us-fda-regenerative-medicine-advanced-therapy-designation-granted-to-rz-001-for-hepatocellular-carcinoma-302766762.html">1</a>,<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1651308/000162828026030866/exhibit991-q12026earningsr.htm">2</a></h2>
+      <div class="grid two" style="flex:1;">
+        <div class="card">
+          <span class="tag lime">RZ-001</span>
+          <h3>Rznomics reported FDA RMAT designation for RZ-001 in HCC</h3>
+          <div class="bullets body" style="margin-top:18px;">
+            <p class="bullet">The source states FDA granted Regenerative Medicine Advanced Therapy designation to RZ-001, the company's lead investigational candidate for HCC<a class="cite" href="https://www.prnewswire.com/news-releases/rznomics-announces-us-fda-regenerative-medicine-advanced-therapy-designation-granted-to-rz-001-for-hepatocellular-carcinoma-302766762.html">1</a></p>
+            <p class="bullet">The source states RZ-001 previously received Orphan Drug Designation in 2024 and Fast Track Designation in 2025 for HCC<a class="cite" href="https://www.prnewswire.com/news-releases/rznomics-announces-us-fda-regenerative-medicine-advanced-therapy-designation-granted-to-rz-001-for-hepatocellular-carcinoma-302766762.html">1</a></p>
+          </div>
+        </div>
+        <div class="card">
+          <span class="tag blue">BGB-B2033</span>
+          <h3>BeOne reported FDA Orphan Drug Designation and study initiation for BGB-B2033</h3>
+          <div class="bullets body" style="margin-top:18px;">
+            <p class="bullet">The SEC exhibit states BGB-B2033 received FDA Orphan Drug Designation for HCC<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1651308/000162828026030866/exhibit991-q12026earningsr.htm">2</a></p>
+            <p class="bullet">The same source states BeOne initiated a potentially registrational study in HCC for BGB-B2033<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1651308/000162828026030866/exhibit991-q12026earningsr.htm">2</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="card dark">
+        <p class="body large">The two designation items were posted on May 8 for RZ-001 and May 6 for BGB-B2033, respectively<a class="cite" href="https://www.prnewswire.com/news-releases/rznomics-announces-us-fda-regenerative-medicine-advanced-therapy-designation-granted-to-rz-001-for-hepatocellular-carcinoma-302766762.html">1</a>,<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1651308/000162828026030866/exhibit991-q12026earningsr.htm">2</a></p>
+      </div>
+    </div>
+    <div class="slide-num">03 / 08</div>
+  </article>
+
+  <article class="slide" aria-label="Slide 4">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Company-reported development timing</div>
+      <h2>Two SEC exhibits updated HCC trial timing<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1512762/000110465926058666/chrs-20260511xex99d1.htm">3</a>,<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1346830/000110465926057524/tm2613977d1_ex99-1.htm">4</a></h2>
+      <div class="grid two" style="flex:1;">
+        <div class="card">
+          <span class="tag orange">Casdozokitug</span>
+          <h3>Coherus reported completed accrual in first-line HCC</h3>
+          <p class="body" style="margin-top:16px;">Coherus stated patient accrual was complete for its first-line HCC Phase 2 randomized clinical trial of anti-IL27 casdozokitug, and the same release stated timing for data readouts was tracking to projections<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1512762/000110465926058666/chrs-20260511xex99d1.htm">3</a></p>
+        </div>
+        <div class="card">
+          <span class="tag pink">TTI-101</span>
+          <h3>Tvardi kept TTI-101 HCC topline timing at 2H 2026</h3>
+          <p class="body" style="margin-top:16px;">Tvardi stated topline data from its Phase 2 TTI-101 HCC trial remained on track for 2H 2026, and the SEC exhibit also states the Phase 1b/2 REVERT LIVER CANCER study remained on track to report topline results in 2H 2026<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1346830/000110465926057524/tm2613977d1_ex99-1.htm">4</a></p>
+        </div>
+      </div>
+      <div class="grid three">
+        <div class="card compact">
+          <div class="metric">May 11</div>
+          <div class="metric-label">Coherus release date shown in the SEC exhibit<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1512762/000110465926058666/chrs-20260511xex99d1.htm">3</a></div>
+        </div>
+        <div class="card compact">
+          <div class="metric">May 8</div>
+          <div class="metric-label">Tvardi release date shown in the SEC exhibit<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1346830/000110465926057524/tm2613977d1_ex99-1.htm">4</a></div>
+        </div>
+        <div class="card compact dark">
+          <div class="metric">2H 2026</div>
+          <div class="metric-label">Tvardi's stated TTI-101 HCC topline window<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1346830/000110465926057524/tm2613977d1_ex99-1.htm">4</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">04 / 08</div>
+  </article>
+
+  <article class="slide" aria-label="Slide 5">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">ClinicalTrials.gov records</div>
+      <h2>Four registry records showed dated updates in HCC populations<a class="cite" href="https://clinicaltrials.gov/study/NCT06117891">5</a>,<a class="cite" href="https://clinicaltrials.gov/study/NCT06921785">6</a>,<a class="cite" href="https://clinicaltrials.gov/study/NCT07291076">7</a>,<a class="cite" href="https://clinicaltrials.gov/study/NCT06653023">8</a></h2>
+      <div class="card" style="flex:1;">
+        <table>
+          <thead>
+            <tr>
+              <th>Record</th>
+              <th>Sponsor / setting</th>
+              <th>Intervention focus</th>
+              <th>Enrollment / timing</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>NCT06117891<br><span class="muted">Last update 2026-05-12</span></td>
+              <td>Bayer observational study in unresectable HCC after atezolizumab plus bevacizumab or another approved first-line IO checkpoint-inhibitor combination<a class="cite" href="https://clinicaltrials.gov/study/NCT06117891">5</a></td>
+              <td>Routine-care treatment sequencing after first-line IO combination therapy<a class="cite" href="https://clinicaltrials.gov/study/NCT06117891">5</a></td>
+              <td>Estimated enrollment 300<a class="cite" href="https://clinicaltrials.gov/study/NCT06117891">5</a></td>
+            </tr>
+            <tr>
+              <td>NCT06921785<br><span class="muted">Last update 2026-05-11</span></td>
+              <td>AstraZeneca Phase III advanced-HCC first-line study<a class="cite" href="https://clinicaltrials.gov/study/NCT06921785">6</a></td>
+              <td>Rilvegostomig plus bevacizumab with or without tremelimumab<a class="cite" href="https://clinicaltrials.gov/study/NCT06921785">6</a></td>
+              <td>Estimated enrollment 1,220; estimated primary completion 2029-03-16<a class="cite" href="https://clinicaltrials.gov/study/NCT06921785">6</a></td>
+            </tr>
+            <tr>
+              <td>NCT07291076<br><span class="muted">Last update 2026-05-08</span></td>
+              <td>Bristol Myers Squibb ROSETTA HCC-206 in first-line advanced or unresectable HCC<a class="cite" href="https://clinicaltrials.gov/study/NCT07291076">7</a></td>
+              <td>Pumitamig alone or in combination with ipilimumab<a class="cite" href="https://clinicaltrials.gov/study/NCT07291076">7</a></td>
+              <td>Estimated enrollment 129; estimated primary completion 2029-10-15<a class="cite" href="https://clinicaltrials.gov/study/NCT07291076">7</a></td>
+            </tr>
+            <tr>
+              <td>NCT06653023<br><span class="muted">Last update 2026-05-07</span></td>
+              <td>Wondercel study title for advanced HCC and lung cancer<a class="cite" href="https://clinicaltrials.gov/study/NCT06653023">8</a></td>
+              <td>Universal CAR-T cells, REVO-UWD-03<a class="cite" href="https://clinicaltrials.gov/study/NCT06653023">8</a></td>
+              <td>ClinicalTrials.gov lists estimated enrollment of 60 and Early Phase 1 in the study record<a class="cite" href="https://clinicaltrials.gov/study/NCT06653023">8</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="slide-num">05 / 08</div>
+  </article>
+
+  <article class="slide" aria-label="Slide 6">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Modalities and regimens named in sources</div>
+      <h2>Named HCC assets span RNA editing, bispecific, cytokine biology, STAT3 inhibition, and cellular therapy<a class="cite" href="https://www.prnewswire.com/news-releases/rznomics-announces-us-fda-regenerative-medicine-advanced-therapy-designation-granted-to-rz-001-for-hepatocellular-carcinoma-302766762.html">1</a>,<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1651308/000162828026030866/exhibit991-q12026earningsr.htm">2</a>,<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1512762/000110465926058666/chrs-20260511xex99d1.htm">3</a>,<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1346830/000110465926057524/tm2613977d1_ex99-1.htm">4</a>,<a class="cite" href="https://clinicaltrials.gov/study/NCT06653023">8</a></h2>
+      <div class="grid three" style="flex:1;">
+        <div class="card compact">
+          <span class="tag lime">RNA editing</span>
+          <h3>RZ-001</h3>
+          <p class="body small" style="margin-top:10px;">Rznomics describes RZ-001 as oncology therapeutics based on its trans-splicing ribozyme technology platform and reported RMAT designation for HCC<a class="cite" href="https://www.prnewswire.com/news-releases/rznomics-announces-us-fda-regenerative-medicine-advanced-therapy-designation-granted-to-rz-001-for-hepatocellular-carcinoma-302766762.html">1</a></p>
+        </div>
+        <div class="card compact">
+          <span class="tag blue">GPC3 / 4-1BB</span>
+          <h3>BGB-B2033</h3>
+          <p class="body small" style="margin-top:10px;">BeOne lists BGB-B2033 as a GPC3x4-1BB bispecific antibody and states it received FDA Orphan Drug Designation for HCC<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1651308/000162828026030866/exhibit991-q12026earningsr.htm">2</a></p>
+        </div>
+        <div class="card compact">
+          <span class="tag orange">Anti-IL27</span>
+          <h3>Casdozokitug</h3>
+          <p class="body small" style="margin-top:10px;">Coherus identifies casdozokitug as anti-IL27 and states patient accrual was complete in its first-line HCC Phase 2 randomized trial<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1512762/000110465926058666/chrs-20260511xex99d1.htm">3</a></p>
+        </div>
+        <div class="card compact">
+          <span class="tag pink">STAT3</span>
+          <h3>TTI-101</h3>
+          <p class="body small" style="margin-top:10px;">Tvardi describes TTI-101 as a STAT3 inhibitor and states its HCC trial topline data remained on track for 2H 2026<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1346830/000110465926057524/tm2613977d1_ex99-1.htm">4</a></p>
+        </div>
+        <div class="card compact">
+          <span class="tag gray">IO combinations</span>
+          <h3>Post-first-line sequencing</h3>
+          <p class="body small" style="margin-top:10px;">Bayer's observational registry record covers unresectable HCC following atezolizumab plus bevacizumab or another approved first-line IO checkpoint-inhibitor combination<a class="cite" href="https://clinicaltrials.gov/study/NCT06117891">5</a></p>
+        </div>
+        <div class="card compact">
+          <span class="tag red">Cell therapy</span>
+          <h3>REVO-UWD-03</h3>
+          <p class="body small" style="margin-top:10px;">ClinicalTrials.gov identifies Wondercel's study as universal CAR-T cells REVO-UWD-03 for advanced HCC and lung cancer<a class="cite" href="https://clinicaltrials.gov/study/NCT06653023">8</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">06 / 08</div>
+  </article>
+
+  <article class="slide" aria-label="Slide 7">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Forward-dated items recorded by sources</div>
+      <h2>Source-stated timing items concentrate in 2026 and long-running first-line studies<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1512762/000110465926058666/chrs-20260511xex99d1.htm">3</a>,<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1346830/000110465926057524/tm2613977d1_ex99-1.htm">4</a>,<a class="cite" href="https://clinicaltrials.gov/study/NCT06117891">5</a>,<a class="cite" href="https://clinicaltrials.gov/study/NCT06921785">6</a>,<a class="cite" href="https://clinicaltrials.gov/study/NCT07291076">7</a></h2>
+      <div class="split" style="flex:1;">
+        <div class="card">
+          <h3>2026 timing items</h3>
+          <div class="bullets body" style="margin-top:18px;">
+            <p class="bullet">Tvardi stated topline data from its TTI-101 HCC Phase 2 trial remained on track for 2H 2026<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1346830/000110465926057524/tm2613977d1_ex99-1.htm">4</a></p>
+            <p class="bullet">Coherus stated timing for casdozokitug HCC data readouts was tracking to projections after reporting complete patient accrual<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1512762/000110465926058666/chrs-20260511xex99d1.htm">3</a></p>
+            <p class="bullet">Bayer's observational registry record lists study completion as estimated 2026-12-10<a class="cite" href="https://clinicaltrials.gov/study/NCT06117891">5</a></p>
+          </div>
+        </div>
+        <div class="grid two tight">
+          <div class="card compact">
+            <span class="tag blue">AstraZeneca</span>
+            <div class="metric">1,220</div>
+            <div class="metric-label">Estimated enrollment for NCT06921785; estimated primary completion 2029-03-16<a class="cite" href="https://clinicaltrials.gov/study/NCT06921785">6</a></div>
+          </div>
+          <div class="card compact">
+            <span class="tag orange">BMS</span>
+            <div class="metric">129</div>
+            <div class="metric-label">Estimated enrollment for NCT07291076; estimated primary completion 2029-10-15<a class="cite" href="https://clinicaltrials.gov/study/NCT07291076">7</a></div>
+          </div>
+          <div class="card compact">
+            <span class="tag gray">Bayer</span>
+            <div class="metric">300</div>
+            <div class="metric-label">Estimated enrollment for the post-first-line IO observational uHCC study<a class="cite" href="https://clinicaltrials.gov/study/NCT06117891">5</a></div>
+          </div>
+          <div class="card compact dark">
+            <span class="tag lime">Wondercel</span>
+            <div class="metric">60</div>
+            <div class="metric-label">Estimated enrollment shown for the universal CAR-T cells REVO-UWD-03 record<a class="cite" href="https://clinicaltrials.gov/study/NCT06653023">8</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">07 / 08</div>
+  </article>
+
+  <article class="slide" aria-label="Slide 8">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">References</div>
+      <h2>Primary sources used in this report<a class="cite" href="https://www.prnewswire.com/news-releases/rznomics-announces-us-fda-regenerative-medicine-advanced-therapy-designation-granted-to-rz-001-for-hepatocellular-carcinoma-302766762.html">1</a>,<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1651308/000162828026030866/exhibit991-q12026earningsr.htm">2</a>,<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1512762/000110465926058666/chrs-20260511xex99d1.htm">3</a>,<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1346830/000110465926057524/tm2613977d1_ex99-1.htm">4</a>,<a class="cite" href="https://clinicaltrials.gov/study/NCT06117891">5</a>,<a class="cite" href="https://clinicaltrials.gov/study/NCT06921785">6</a>,<a class="cite" href="https://clinicaltrials.gov/study/NCT07291076">7</a>,<a class="cite" href="https://clinicaltrials.gov/study/NCT06653023">8</a></h2>
+      <div class="card" style="flex:1;">
+        <div class="source-grid">
+          <div class="source-item"><b>1. Rznomics PRNewswire release</b><br>Visible date: May 08, 2026<br><a href="https://www.prnewswire.com/news-releases/rznomics-announces-us-fda-regenerative-medicine-advanced-therapy-designation-granted-to-rz-001-for-hepatocellular-carcinoma-302766762.html">RZ-001 RMAT designation release</a></div>
+          <div class="source-item"><b>2. BeOne Medicines SEC Exhibit 99.1</b><br>Visible date: May 6, 2026<br><a href="https://www.sec.gov/Archives/edgar/data/1651308/000162828026030866/exhibit991-q12026earningsr.htm">Q1 2026 financial results exhibit</a></div>
+          <div class="source-item"><b>3. Coherus Oncology SEC Exhibit 99.1</b><br>Visible date: May 11, 2026<br><a href="https://www.sec.gov/Archives/edgar/data/1512762/000110465926058666/chrs-20260511xex99d1.htm">Q1 2026 financial results exhibit</a></div>
+          <div class="source-item"><b>4. Tvardi Therapeutics SEC Exhibit 99.1</b><br>Visible date: May 8, 2026<br><a href="https://www.sec.gov/Archives/edgar/data/1346830/000110465926057524/tm2613977d1_ex99-1.htm">Q1 2026 results exhibit</a></div>
+          <div class="source-item"><b>5. ClinicalTrials.gov NCT06117891</b><br>Visible date: Last Update Posted 2026-05-12<br><a href="https://clinicaltrials.gov/study/NCT06117891">Bayer observational uHCC study record</a></div>
+          <div class="source-item"><b>6. ClinicalTrials.gov NCT06921785</b><br>Visible date: Last Update Posted 2026-05-11<br><a href="https://clinicaltrials.gov/study/NCT06921785">AstraZeneca ARTEMIDE-HCC01 study record</a></div>
+          <div class="source-item"><b>7. ClinicalTrials.gov NCT07291076</b><br>Visible date: Last Update Posted 2026-05-08<br><a href="https://clinicaltrials.gov/study/NCT07291076">Bristol Myers Squibb ROSETTA HCC-206 study record</a></div>
+          <div class="source-item"><b>8. ClinicalTrials.gov NCT06653023</b><br>Visible date: Last Update Posted 2026-05-07<br><a href="https://clinicaltrials.gov/study/NCT06653023">Wondercel REVO-UWD-03 study record</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-note" style="bottom:30px;">Separate screenshots PDF contains the labeled date-verification and evidence screenshots for these references</div>
+    <div class="slide-num">08 / 08</div>
+  </article>
+</body>
+</html>

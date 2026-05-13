@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MASH Competitive Intelligence Update</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 36px 0 20px;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 850;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 82px; line-height: .92; letter-spacing: 0; font-weight: 560; max-width: 1280px; }
+    h2 { font-size: 54px; line-height: .98; letter-spacing: 0; font-weight: 560; max-width: 1320px; }
+    h3 { font-size: 28px; line-height: 1.05; letter-spacing: 0; font-weight: 650; }
+    .dek { margin-top: 18px; color: var(--muted); font-size: 27px; line-height: 1.24; max-width: 1280px; }
+    .section-head { margin-bottom: 20px; }
+    .section-head p { margin-top: 12px; color: var(--muted); font-size: 23px; line-height: 1.24; max-width: 1300px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .panel, .metric, .card, .table, .callout {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.86);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel { padding: 23px; }
+    .panel.dark, .callout { background: #11130f; color: var(--paper); border-color: #11130f; }
+    .panel.dark p, .panel.dark li, .callout p, .callout li { color: rgba(246,241,232,.86); }
+    .metric { padding: 20px; min-height: 142px; }
+    .num { font-size: 50px; line-height: .92; font-weight: 850; letter-spacing: 0; }
+    .label { margin-top: 11px; font-size: 18px; line-height: 1.23; color: var(--muted); }
+    .card { padding: 22px; min-height: 210px; }
+    .card p { color: var(--muted); font-size: 19px; line-height: 1.24; margin-top: 12px; }
+    .card .tag { margin-bottom: 12px; }
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      white-space: nowrap;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .red { background: var(--red); }
+    .gray { background: var(--gray); }
+    .list { margin: 14px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+    .list li { position: relative; padding-left: 20px; color: var(--muted); font-size: 20px; line-height: 1.22; }
+    .panel.dark .list li { color: rgba(246,241,232,.88); }
+    .list li::before { content: ""; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; border-radius: 50%; background: var(--lime); border: 1px solid var(--line); }
+    .table { display: grid; }
+    .row { display: grid; border-bottom: 1px solid var(--line); min-height: 70px; }
+    .row:last-child { border-bottom: 0; }
+    .row.phase3 { grid-template-columns: .82fr .84fr 1.25fr .8fr .76fr; }
+    .row.midstage { grid-template-columns: .9fr .95fr 1.35fr .82fr .72fr; }
+    .row.rollup { grid-template-columns: .72fr .86fr 1.15fr .92fr .65fr .62fr; min-height: 62px; }
+    .row.sources { grid-template-columns: .36fr 1.25fr .65fr 1.7fr; min-height: 56px; }
+    .cell { padding: 12px 13px; border-right: 1px solid var(--line); font-size: 16px; line-height: 1.18; }
+    .cell:last-child { border-right: 0; }
+    .head .cell { background: #11130f; color: var(--paper); font-weight: 850; text-transform: uppercase; font-size: 11px; }
+    .callout { padding: 22px 26px; }
+    .callout h3 { font-size: 31px; }
+    .callout p { margin-top: 11px; font-size: 24px; line-height: 1.17; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .cite + .cite::before { content: ","; margin-right: 1px; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    .source-note { color: var(--muted); font-size: 15px; line-height: 1.24; margin-top: 12px; }
+    strong { font-weight: 820; }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .wrap { width: 1360px; }
+      .panel, .metric, .card, .table, .callout { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) {
+      .slide { width: 1600px; height: 900px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">MASH CI update | May 6-12, 2026 evidence window</div>
+      <h1>MASH competitive intelligence update</h1>
+      <p class="dek">This report includes primary-source items with visible publication or registry update dates from May 6, 2026 through May 12, 2026, all inside the May 6-12, 2026 evidence window.<a class="cite" href="https://ir.madrigalpharma.com/news-releases/news-release-details/madrigal-pharmaceuticals-reports-first-quarter-2026-financial">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07581951">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06419374">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05519475">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06108219">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT03884075">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05370053">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06884293">8</a></p>
+      <div class="grid-4" style="margin-top:34px;">
+        <div class="metric"><div class="num">8</div><div class="label">Primary sources were used in the report.<a class="cite" href="https://ir.madrigalpharma.com/news-releases/news-release-details/madrigal-pharmaceuticals-reports-first-quarter-2026-financial">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07581951">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06419374">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05519475">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06108219">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT03884075">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05370053">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06884293">8</a></div></div>
+        <div class="metric"><div class="num">7</div><div class="label">ClinicalTrials.gov records had visible update dates in the window.<a class="cite" href="https://clinicaltrials.gov/study/NCT07581951">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06419374">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05519475">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06108219">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT03884075">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05370053">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06884293">8</a></div></div>
+        <div class="metric"><div class="num">3</div><div class="label">Phase 3 registry records were included: HSK31679, pegozafermin, and IBI362 versus semaglutide.<a class="cite" href="https://clinicaltrials.gov/study/NCT07581951">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06419374">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06884293">8</a></div></div>
+        <div class="metric"><div class="num">1</div><div class="label">Company commercial and pipeline update was included: Madrigal's first-quarter 2026 release.<a class="cite" href="https://ir.madrigalpharma.com/news-releases/news-release-details/madrigal-pharmaceuticals-reports-first-quarter-2026-financial">1</a></div></div>
+      </div>
+      <div class="callout" style="margin-top:24px;">
+        <h3>Factual scope</h3>
+        <p>The included sources document Rezdiffra revenue and patient count, Madrigal pipeline timing, Phase 3 MASH or MAFLD registry activity, Phase 2 or Phase 2b therapeutic registry activity, and ELF test diagnostic registry activity.<a class="cite" href="https://ir.madrigalpharma.com/news-releases/news-release-details/madrigal-pharmaceuticals-reports-first-quarter-2026-financial">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07581951">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06419374">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05519475">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06108219">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT03884075">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05370053">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06884293">8</a></p>
+      </div>
+    </div>
+    <div class="slide-num">01 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Madrigal commercial and pipeline update</div>
+        <h2>Madrigal reported first-quarter Rezdiffra sales and pipeline timing<a class="cite" href="https://ir.madrigalpharma.com/news-releases/news-release-details/madrigal-pharmaceuticals-reports-first-quarter-2026-financial">1</a></h2>
+        <p>Madrigal's release displayed a May 6, 2026 publication date and reported first-quarter 2026 financial results and corporate updates.<a class="cite" href="https://ir.madrigalpharma.com/news-releases/news-release-details/madrigal-pharmaceuticals-reports-first-quarter-2026-financial">1</a></p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag lime">Commercial</span>
+          <h3>Rezdiffra sales</h3>
+          <p>Madrigal reported first-quarter 2026 Rezdiffra net sales of $311.3 million, representing year-over-year growth of 127%.<a class="cite" href="https://ir.madrigalpharma.com/news-releases/news-release-details/madrigal-pharmaceuticals-reports-first-quarter-2026-financial">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">Patient count</span>
+          <h3>Patients on therapy</h3>
+          <p>Madrigal stated that more than 42,250 patients were on Rezdiffra as of March 31, 2026, up 2.5x from the first quarter of 2025.<a class="cite" href="https://ir.madrigalpharma.com/news-releases/news-release-details/madrigal-pharmaceuticals-reports-first-quarter-2026-financial">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag orange">Pipeline</span>
+          <h3>Clinical-stage siRNA</h3>
+          <p>Madrigal said it advanced its pipeline with a global licensing agreement for a clinical-stage siRNA asset targeting a PNPLA3 gene mutation described as a genetically validated driver of MASH.<a class="cite" href="https://ir.madrigalpharma.com/news-releases/news-release-details/madrigal-pharmaceuticals-reports-first-quarter-2026-financial">1</a></p>
+        </div>
+      </div>
+      <div class="panel dark" style="margin-top:22px;">
+        <h3>Additional recorded pipeline timing</h3>
+        <ul class="list">
+          <li>Madrigal stated that the MGL-2086 oral GLP-1 Phase 1 trial was on track to initiate in the second quarter of 2026.<a class="cite" href="https://ir.madrigalpharma.com/news-releases/news-release-details/madrigal-pharmaceuticals-reports-first-quarter-2026-financial">1</a></li>
+          <li>Madrigal stated that an ervogastat/resmetirom drug-drug interaction study was on track to initiate in the fourth quarter of 2026.<a class="cite" href="https://ir.madrigalpharma.com/news-releases/news-release-details/madrigal-pharmaceuticals-reports-first-quarter-2026-financial">1</a></li>
+          <li>Madrigal reported cash, cash equivalents, restricted cash, and marketable securities of $817.9 million as of March 31, 2026.<a class="cite" href="https://ir.madrigalpharma.com/news-releases/news-release-details/madrigal-pharmaceuticals-reports-first-quarter-2026-financial">1</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">02 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Phase 3 registry activity</div>
+        <h2>Three Phase 3 registry records showed May 2026 updates<a class="cite" href="https://clinicaltrials.gov/study/NCT07581951">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06419374">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06884293">8</a></h2>
+        <p>The records below displayed last-update dates from May 6, 2026 through May 12, 2026.<a class="cite" href="https://clinicaltrials.gov/study/NCT07581951">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06419374">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06884293">8</a></p>
+      </div>
+      <div class="table">
+        <div class="row phase3 head">
+          <div class="cell">Record</div>
+          <div class="cell">Sponsor</div>
+          <div class="cell">Study description</div>
+          <div class="cell">Status</div>
+          <div class="cell">Update</div>
+        </div>
+        <div class="row phase3">
+          <div class="cell"><strong>NCT07581951</strong><br />HSK31679</div>
+          <div class="cell">Haisco Pharmaceutical Group Co., Ltd.<a class="cite" href="https://clinicaltrials.gov/study/NCT07581951">2</a></div>
+          <div class="cell">The registry describes a Phase 3 randomized, double-blind, placebo-controlled HSK31679 study in patients with MASH.<a class="cite" href="https://clinicaltrials.gov/study/NCT07581951">2</a></div>
+          <div class="cell">Not yet recruiting.<a class="cite" href="https://clinicaltrials.gov/study/NCT07581951">2</a></div>
+          <div class="cell">2026-05-12<a class="cite" href="https://clinicaltrials.gov/study/NCT07581951">2</a></div>
+        </div>
+        <div class="row phase3">
+          <div class="cell"><strong>NCT06419374</strong><br />Pegozafermin</div>
+          <div class="cell">89bio, Inc.<a class="cite" href="https://clinicaltrials.gov/study/NCT06419374">3</a></div>
+          <div class="cell">The registry describes a Phase 3 pegozafermin study in participants with compensated cirrhosis due to MASH.<a class="cite" href="https://clinicaltrials.gov/study/NCT06419374">3</a></div>
+          <div class="cell">Recruiting.<a class="cite" href="https://clinicaltrials.gov/study/NCT06419374">3</a></div>
+          <div class="cell">2026-05-06<a class="cite" href="https://clinicaltrials.gov/study/NCT06419374">3</a></div>
+        </div>
+        <div class="row phase3">
+          <div class="cell"><strong>NCT06884293</strong><br />IBI362 vs semaglutide</div>
+          <div class="cell">Innovent Biologics (Suzhou) Co. Ltd.<a class="cite" href="https://clinicaltrials.gov/study/NCT06884293">8</a></div>
+          <div class="cell">The registry describes a Phase 3 study comparing IBI362 versus semaglutide in Chinese overweight or obese adults with MAFLD.<a class="cite" href="https://clinicaltrials.gov/study/NCT06884293">8</a></div>
+          <div class="cell">Active, not recruiting.<a class="cite" href="https://clinicaltrials.gov/study/NCT06884293">8</a></div>
+          <div class="cell">2026-05-12<a class="cite" href="https://clinicaltrials.gov/study/NCT06884293">8</a></div>
+        </div>
+      </div>
+      <p class="source-note">The HSK31679 and pegozafermin records list placebo-controlled interventional study designs, and the IBI362 record lists semaglutide as a comparator.<a class="cite" href="https://clinicaltrials.gov/study/NCT07581951">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06419374">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06884293">8</a></p>
+    </div>
+    <div class="slide-num">03 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Phase 2 and Phase 2b records</div>
+        <h2>Mid-stage registry updates included gene silencing, miricorilant, and semaglutide records<a class="cite" href="https://clinicaltrials.gov/study/NCT05519475">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06108219">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT03884075">6</a></h2>
+        <p>The records below displayed last-update dates from May 7, 2026 through May 12, 2026.<a class="cite" href="https://clinicaltrials.gov/study/NCT05519475">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06108219">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT03884075">6</a></p>
+      </div>
+      <div class="table">
+        <div class="row midstage head">
+          <div class="cell">Record</div>
+          <div class="cell">Sponsor</div>
+          <div class="cell">Study description</div>
+          <div class="cell">Status</div>
+          <div class="cell">Update</div>
+        </div>
+        <div class="row midstage">
+          <div class="cell"><strong>NCT05519475</strong><br />ALN-HSD</div>
+          <div class="cell">Regeneron Pharmaceuticals.<a class="cite" href="https://clinicaltrials.gov/study/NCT05519475">4</a></div>
+          <div class="cell">The registry describes a Phase 2 siRNA gene-silencing study for MASH in participants with genetic risk factors.<a class="cite" href="https://clinicaltrials.gov/study/NCT05519475">4</a></div>
+          <div class="cell">Recruiting.<a class="cite" href="https://clinicaltrials.gov/study/NCT05519475">4</a></div>
+          <div class="cell">2026-05-07<a class="cite" href="https://clinicaltrials.gov/study/NCT05519475">4</a></div>
+        </div>
+        <div class="row midstage">
+          <div class="cell"><strong>NCT06108219</strong><br />Miricorilant</div>
+          <div class="cell">Corcept Therapeutics.<a class="cite" href="https://clinicaltrials.gov/study/NCT06108219">5</a></div>
+          <div class="cell">The registry describes the Phase 2b MONARCH study evaluating miricorilant in adult patients with NASH/MASH.<a class="cite" href="https://clinicaltrials.gov/study/NCT06108219">5</a></div>
+          <div class="cell">Active, not recruiting.<a class="cite" href="https://clinicaltrials.gov/study/NCT06108219">5</a></div>
+          <div class="cell">2026-05-08<a class="cite" href="https://clinicaltrials.gov/study/NCT06108219">5</a></div>
+        </div>
+        <div class="row midstage">
+          <div class="cell"><strong>NCT03884075</strong><br />Semaglutide</div>
+          <div class="cell">NIDDK.<a class="cite" href="https://clinicaltrials.gov/study/NCT03884075">6</a></div>
+          <div class="cell">The NAFLD HEROES registry record lists semaglutide in a Phase 2 study of NAFLD, oral glucose response, and semaglutide effect.<a class="cite" href="https://clinicaltrials.gov/study/NCT03884075">6</a></div>
+          <div class="cell">Recruiting.<a class="cite" href="https://clinicaltrials.gov/study/NCT03884075">6</a></div>
+          <div class="cell">2026-05-12<a class="cite" href="https://clinicaltrials.gov/study/NCT03884075">6</a></div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:22px;">
+        <h3>Recorded enrollment fields</h3>
+        <p>The registry detail sections list estimated enrollment of 120 for ALN-HSD, actual enrollment of 175 for miricorilant, and estimated enrollment of 84 for the semaglutide NAFLD HEROES record.<a class="cite" href="https://clinicaltrials.gov/study/NCT05519475">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06108219">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT03884075">6</a></p>
+      </div>
+    </div>
+    <div class="slide-num">04 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Registry detail rollup</div>
+        <h2>Intervention and enrollment fields varied across updated records<a class="cite" href="https://clinicaltrials.gov/study/NCT07581951">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06419374">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05519475">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06108219">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT03884075">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05370053">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06884293">8</a></h2>
+        <p>All rows below are taken from visible ClinicalTrials.gov record fields captured from the open source pages.<a class="cite" href="https://clinicaltrials.gov/study/NCT07581951">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06419374">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05519475">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06108219">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT03884075">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05370053">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06884293">8</a></p>
+      </div>
+      <div class="table">
+        <div class="row rollup head">
+          <div class="cell">Record</div>
+          <div class="cell">Phase/type</div>
+          <div class="cell">Intervention field</div>
+          <div class="cell">Population term</div>
+          <div class="cell">Enroll.</div>
+          <div class="cell">Status</div>
+        </div>
+        <div class="row rollup">
+          <div class="cell">NCT07581951</div>
+          <div class="cell">Phase 3 interventional.<a class="cite" href="https://clinicaltrials.gov/study/NCT07581951">2</a></div>
+          <div class="cell">HSK31679 and placebo.<a class="cite" href="https://clinicaltrials.gov/study/NCT07581951">2</a></div>
+          <div class="cell">MASH/NASH.<a class="cite" href="https://clinicaltrials.gov/study/NCT07581951">2</a></div>
+          <div class="cell">400 est.<a class="cite" href="https://clinicaltrials.gov/study/NCT07581951">2</a></div>
+          <div class="cell">Not yet recruiting.<a class="cite" href="https://clinicaltrials.gov/study/NCT07581951">2</a></div>
+        </div>
+        <div class="row rollup">
+          <div class="cell">NCT06419374</div>
+          <div class="cell">Phase 3 interventional.<a class="cite" href="https://clinicaltrials.gov/study/NCT06419374">3</a></div>
+          <div class="cell">Pegozafermin and placebo.<a class="cite" href="https://clinicaltrials.gov/study/NCT06419374">3</a></div>
+          <div class="cell">MASH/NASH with compensated cirrhosis.<a class="cite" href="https://clinicaltrials.gov/study/NCT06419374">3</a></div>
+          <div class="cell">762 est.<a class="cite" href="https://clinicaltrials.gov/study/NCT06419374">3</a></div>
+          <div class="cell">Recruiting.<a class="cite" href="https://clinicaltrials.gov/study/NCT06419374">3</a></div>
+        </div>
+        <div class="row rollup">
+          <div class="cell">NCT05519475</div>
+          <div class="cell">Phase 2 interventional.<a class="cite" href="https://clinicaltrials.gov/study/NCT05519475">4</a></div>
+          <div class="cell">ALN-HSD and placebo.<a class="cite" href="https://clinicaltrials.gov/study/NCT05519475">4</a></div>
+          <div class="cell">MASH with genetic risk factors.<a class="cite" href="https://clinicaltrials.gov/study/NCT05519475">4</a></div>
+          <div class="cell">120 est.<a class="cite" href="https://clinicaltrials.gov/study/NCT05519475">4</a></div>
+          <div class="cell">Recruiting.<a class="cite" href="https://clinicaltrials.gov/study/NCT05519475">4</a></div>
+        </div>
+        <div class="row rollup">
+          <div class="cell">NCT06108219</div>
+          <div class="cell">Phase 2 interventional.<a class="cite" href="https://clinicaltrials.gov/study/NCT06108219">5</a></div>
+          <div class="cell">Miricorilant and placebo cohorts.<a class="cite" href="https://clinicaltrials.gov/study/NCT06108219">5</a></div>
+          <div class="cell">NASH/MASH.<a class="cite" href="https://clinicaltrials.gov/study/NCT06108219">5</a></div>
+          <div class="cell">175 actual.<a class="cite" href="https://clinicaltrials.gov/study/NCT06108219">5</a></div>
+          <div class="cell">Active, not recruiting.<a class="cite" href="https://clinicaltrials.gov/study/NCT06108219">5</a></div>
+        </div>
+        <div class="row rollup">
+          <div class="cell">NCT03884075</div>
+          <div class="cell">Phase 2 interventional.<a class="cite" href="https://clinicaltrials.gov/study/NCT03884075">6</a></div>
+          <div class="cell">Semaglutide.<a class="cite" href="https://clinicaltrials.gov/study/NCT03884075">6</a></div>
+          <div class="cell">NAFLD/NASH.<a class="cite" href="https://clinicaltrials.gov/study/NCT03884075">6</a></div>
+          <div class="cell">84 est.<a class="cite" href="https://clinicaltrials.gov/study/NCT03884075">6</a></div>
+          <div class="cell">Recruiting.<a class="cite" href="https://clinicaltrials.gov/study/NCT03884075">6</a></div>
+        </div>
+        <div class="row rollup">
+          <div class="cell">NCT05370053</div>
+          <div class="cell">Interventional diagnostic test record.<a class="cite" href="https://clinicaltrials.gov/study/NCT05370053">7</a></div>
+          <div class="cell">ELF Test.<a class="cite" href="https://clinicaltrials.gov/study/NCT05370053">7</a></div>
+          <div class="cell">NASH with fibrosis diagnosis in hepatology referral.<a class="cite" href="https://clinicaltrials.gov/study/NCT05370053">7</a></div>
+          <div class="cell">450 actual.<a class="cite" href="https://clinicaltrials.gov/study/NCT05370053">7</a></div>
+          <div class="cell">Completed.<a class="cite" href="https://clinicaltrials.gov/study/NCT05370053">7</a></div>
+        </div>
+        <div class="row rollup">
+          <div class="cell">NCT06884293</div>
+          <div class="cell">Phase 3 interventional.<a class="cite" href="https://clinicaltrials.gov/study/NCT06884293">8</a></div>
+          <div class="cell">IBI362 and semaglutide.<a class="cite" href="https://clinicaltrials.gov/study/NCT06884293">8</a></div>
+          <div class="cell">Overweight or obese adults with MAFLD.<a class="cite" href="https://clinicaltrials.gov/study/NCT06884293">8</a></div>
+          <div class="cell">479 actual.<a class="cite" href="https://clinicaltrials.gov/study/NCT06884293">8</a></div>
+          <div class="cell">Active, not recruiting.<a class="cite" href="https://clinicaltrials.gov/study/NCT06884293">8</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">05 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Source register</div>
+        <h2>Primary sources used in this report<a class="cite" href="https://ir.madrigalpharma.com/news-releases/news-release-details/madrigal-pharmaceuticals-reports-first-quarter-2026-financial">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07581951">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06419374">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05519475">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06108219">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT03884075">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05370053">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06884293">8</a></h2>
+        <p>The visible dates listed below were verified from open webpage screenshots and are within the May 6-12, 2026 evidence window.<a class="cite" href="https://ir.madrigalpharma.com/news-releases/news-release-details/madrigal-pharmaceuticals-reports-first-quarter-2026-financial">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07581951">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06419374">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05519475">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06108219">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT03884075">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05370053">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06884293">8</a></p>
+      </div>
+      <div class="table">
+        <div class="row sources head">
+          <div class="cell">Ref</div>
+          <div class="cell">Source</div>
+          <div class="cell">Visible date</div>
+          <div class="cell">Included content</div>
+        </div>
+        <div class="row sources">
+          <div class="cell">1</div>
+          <div class="cell">Madrigal Pharmaceuticals first-quarter 2026 release<a class="cite" href="https://ir.madrigalpharma.com/news-releases/news-release-details/madrigal-pharmaceuticals-reports-first-quarter-2026-financial">1</a></div>
+          <div class="cell">May 6, 2026<a class="cite" href="https://ir.madrigalpharma.com/news-releases/news-release-details/madrigal-pharmaceuticals-reports-first-quarter-2026-financial">1</a></div>
+          <div class="cell">Rezdiffra sales, patient count, pipeline licensing, and trial-timing statements.<a class="cite" href="https://ir.madrigalpharma.com/news-releases/news-release-details/madrigal-pharmaceuticals-reports-first-quarter-2026-financial">1</a></div>
+        </div>
+        <div class="row sources">
+          <div class="cell">2</div>
+          <div class="cell">ClinicalTrials.gov NCT07581951<a class="cite" href="https://clinicaltrials.gov/study/NCT07581951">2</a></div>
+          <div class="cell">2026-05-12<a class="cite" href="https://clinicaltrials.gov/study/NCT07581951">2</a></div>
+          <div class="cell">HSK31679 Phase 3 MASH/NASH registry details.<a class="cite" href="https://clinicaltrials.gov/study/NCT07581951">2</a></div>
+        </div>
+        <div class="row sources">
+          <div class="cell">3</div>
+          <div class="cell">ClinicalTrials.gov NCT06419374<a class="cite" href="https://clinicaltrials.gov/study/NCT06419374">3</a></div>
+          <div class="cell">2026-05-06<a class="cite" href="https://clinicaltrials.gov/study/NCT06419374">3</a></div>
+          <div class="cell">Pegozafermin Phase 3 compensated-cirrhosis MASH/NASH registry details.<a class="cite" href="https://clinicaltrials.gov/study/NCT06419374">3</a></div>
+        </div>
+        <div class="row sources">
+          <div class="cell">4</div>
+          <div class="cell">ClinicalTrials.gov NCT05519475<a class="cite" href="https://clinicaltrials.gov/study/NCT05519475">4</a></div>
+          <div class="cell">2026-05-07<a class="cite" href="https://clinicaltrials.gov/study/NCT05519475">4</a></div>
+          <div class="cell">ALN-HSD Phase 2 MASH gene-silencing registry details.<a class="cite" href="https://clinicaltrials.gov/study/NCT05519475">4</a></div>
+        </div>
+        <div class="row sources">
+          <div class="cell">5</div>
+          <div class="cell">ClinicalTrials.gov NCT06108219<a class="cite" href="https://clinicaltrials.gov/study/NCT06108219">5</a></div>
+          <div class="cell">2026-05-08<a class="cite" href="https://clinicaltrials.gov/study/NCT06108219">5</a></div>
+          <div class="cell">Miricorilant Phase 2b MONARCH NASH/MASH registry details.<a class="cite" href="https://clinicaltrials.gov/study/NCT06108219">5</a></div>
+        </div>
+        <div class="row sources">
+          <div class="cell">6</div>
+          <div class="cell">ClinicalTrials.gov NCT03884075<a class="cite" href="https://clinicaltrials.gov/study/NCT03884075">6</a></div>
+          <div class="cell">2026-05-12<a class="cite" href="https://clinicaltrials.gov/study/NCT03884075">6</a></div>
+          <div class="cell">Semaglutide NAFLD HEROES registry details.<a class="cite" href="https://clinicaltrials.gov/study/NCT03884075">6</a></div>
+        </div>
+        <div class="row sources">
+          <div class="cell">7</div>
+          <div class="cell">ClinicalTrials.gov NCT05370053<a class="cite" href="https://clinicaltrials.gov/study/NCT05370053">7</a></div>
+          <div class="cell">2026-05-11<a class="cite" href="https://clinicaltrials.gov/study/NCT05370053">7</a></div>
+          <div class="cell">ELF Test diagnostic registry details for NASH with fibrosis diagnosis.<a class="cite" href="https://clinicaltrials.gov/study/NCT05370053">7</a></div>
+        </div>
+        <div class="row sources">
+          <div class="cell">8</div>
+          <div class="cell">ClinicalTrials.gov NCT06884293<a class="cite" href="https://clinicaltrials.gov/study/NCT06884293">8</a></div>
+          <div class="cell">2026-05-12<a class="cite" href="https://clinicaltrials.gov/study/NCT06884293">8</a></div>
+          <div class="cell">IBI362 versus semaglutide Phase 3 MAFLD registry details.<a class="cite" href="https://clinicaltrials.gov/study/NCT06884293">8</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">06 / 06</div>
+  </article>
+</body>
+</html>

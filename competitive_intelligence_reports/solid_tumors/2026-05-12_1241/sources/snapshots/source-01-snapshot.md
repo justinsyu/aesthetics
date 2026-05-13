@@ -1,0 +1,244 @@
+- list:
+  - link "Skip to main content":
+    - /url: "#main-content"
+  - link "Skip to FDA Search":
+    - /url: "#search-form"
+  - link "Skip to in this section menu":
+    - /url: "#section-nav"
+  - link "Skip to footer links":
+    - /url: "#footer"
+- banner:
+  - img "U.S. flag"
+  - text: An official website of the United States government
+  - button "Here’s how you know "
+  - link "U.S. Food and Drug Administration logo":
+    - /url: /
+    - img "U.S. Food and Drug Administration logo"
+  - list:
+    - button "Search":
+      - generic: 
+      - text: Search
+    - button "Menu" [expanded]:
+      - generic: 
+      - text: Menu
+  - search:
+    - generic: Search FDA
+    - textbox:
+      - /placeholder: Search FDA
+    - button:
+      - text: 
+      - generic: Submit search
+- list:
+  - text: 
+  - link "Home":
+    - /url: /
+  - text: /
+  - link "Drugs":
+    - /url: /drugs
+  - text: /
+  - link "Development & Approval Process | Drugs":
+    - /url: /drugs/development-approval-process-drugs
+  - text: /
+  - link "Drug Approvals and Databases":
+    - /url: /drugs/development-approval-process-drugs/drug-approvals-and-databases
+  - text: /
+  - link "Resources for Information | Approved Drugs":
+    - /url: /drugs/drug-approvals-and-databases/resources-information-approved-drugs
+  - listitem: / FDA approves zenocutuzumab-zbco for advanced, unresectable or metastatic cholangiocarcinoma
+- text: 
+- generic: 
+- main:
+  - article:
+    - heading "FDA approves zenocutuzumab-zbco for advanced, unresectable or metastatic cholangiocarcinoma" [level=1]
+    - complementary:
+      - navigation:
+        - list:
+          - link "Resources for Information | Approved Drugs":
+            - /url: /drugs/drug-approvals-and-databases/resources-information-approved-drugs
+          - list:
+            - link "Oncology (Cancer)/Hematologic Malignancies Approval Notifications":
+              - /url: /drugs/resources-information-approved-drugs/oncology-cancerhematologic-malignancies-approval-notifications
+            - link "Ongoing | Cancer Accelerated Approvals":
+              - /url: /drugs/resources-information-approved-drugs/ongoing-cancer-accelerated-approvals
+            - link "Verified Clinical Benefit | Cancer Accelerated Approvals":
+              - /url: /drugs/resources-information-approved-drugs/verified-clinical-benefit-cancer-accelerated-approvals
+            - link "Withdrawn | Cancer Accelerated Approvals":
+              - /url: /drugs/resources-information-approved-drugs/withdrawn-cancer-accelerated-approvals
+            - link "Other | Cancer Accelerated Approvals":
+              - /url: /drugs/resources-information-approved-drugs/other-cancer-accelerated-approvals
+    - main:
+      - paragraph: On May 8, 2026, the Food and Drug Administration approved zenocutuzumab-zbco (Bizengri, Partner Therapeutics, Inc.) for adults with advanced, unresectable or metastatic cholangiocarcinoma harboring a neuregulin 1 (NRG1) gene fusion with disease progression on or after prior systemic therapy. NRG1-fusion positive cholangiocarcinoma is an extremely rare, life-threatening malignancy.
+      - paragraph:
+        - text: This application is part of the
+        - link "FDA Commissioner’s National Priority Review Voucher (CNPV) pilot program":
+          - /url: /industry/commissioners-national-priority-voucher-cnpv-pilot-program
+        - text: ", which is designed to accelerate the review of products with the potential to address key national priorities."
+      - paragraph:
+        - text: Full prescribing information for Bizengri will be posted on
+        - link "Drugs@FDA":
+          - /url: https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm
+      - heading "Safety and Efficacy" [level=2]
+      - paragraph: The safety and efficacy of Bizengri were evaluated in eNRGy (NCT02912949), a multicenter, open-label, multi-cohort clinical trial in adults with advanced solid tumors. A total of 22 patients with unresectable or metastatic NRG1 fusion-positive cholangiocarcinoma were enrolled in the eNRGy trial with 19 evaluable for efficacy.
+      - paragraph: "The major efficacy outcome measures were confirmed overall response rate (ORR) and duration of response (DOR) as determined by a blinded independent central review according to RECIST v1.1. ORR was 36.8% (95% CI: 16.3, 61.6) and the DOR ranged from 2.8 to 12.9 months."
+      - paragraph: The prescribing information includes warnings and precautions for infusion-related reactions / hypersensitivity / anaphylactic reactions, interstitial lung disease (ILD)/pneumonitis, left ventricular dysfunction, and embryo-fetal toxicity. The most common adverse reactions of zenocutuzumab-zbco include diarrhea musculoskeletal pain, fatigue, nausea, infusion-related reactions (IRR), dyspnea, rash, constipation, vomiting, abdominal pain, and edema.
+      - heading "Recommended Dosage" [level=2]
+      - paragraph: The recommended zenocutuzumab-zbco dose is 750 mg as an intravenous infusion every two weeks until disease progression or unacceptable toxicity.
+      - paragraph:
+        - text: This review used the
+        - link "Assessment Aid":
+          - /url: /about-fda/oncology-center-excellence/assessment-aid
+        - text: ", a voluntary submission from the applicant to facilitate the assessment. The FDA approved this application over 5 months ahead of the FDA goal date."
+      - paragraph:
+        - text: This application was granted priority review. Zenocutuzumab-zbco received breakthrough designation and orphan drug designation. FDA expedited programs are described in the
+        - 'link "Guidance for Industry: Expedited Programs for Serious Conditions-Drugs and Biologics"':
+          - /url: /regulatory-information/search-fda-guidance-documents/expedited-programs-serious-conditions-drugs-and-biologics
+        - text: .
+      - paragraph:
+        - text: Healthcare professionals should report all serious adverse events suspected to be associated with the use of any medicine and device to FDA’s
+        - link "MedWatch Reporting System":
+          - /url: https://www.accessdata.fda.gov/scripts/medwatch/index.cfm
+        - text: or by calling 1-800-FDA-1088.
+      - paragraph:
+        - text: For assistance with single-patient INDs for investigational oncology products, healthcare professionals may contact OCE’s
+        - link "Project Facilitate":
+          - /url: /about-fda/oncology-center-excellence/project-facilitate
+        - text: at 240-402-0004 or email
+        - link "OncProjectFacilitate@fda.hhs.gov":
+          - /url: mailto:OncProjectFacilitate@fda.hhs.gov
+        - text: .
+      - paragraph:
+        - text: Follow the
+        - link "Oncology Center of Excellence":
+          - /url: /about-fda/fda-organization/oncology-center-excellence
+        - text: "on X:"
+        - link "@FDAOncology":
+          - /url: http://www.twitter.com/@fdaoncology
+        - link "External Link Disclaimer":
+          - /url: http://www.fda.gov/about-fda/website-policies/website-disclaimer
+          - generic: 
+          - generic: External Link Disclaimer
+        - text: .
+    - complementary:
+      - complementary:
+        - menu:
+          - 'menuitem "Content current as of: 05/08/2026"':
+            - heading "Content current as of:" [level=2]
+            - paragraph:
+              - time: 05/08/2026
+          - menuitem "Regulated Product(s)":
+            - heading "Regulated Product(s)" [level=2]
+            - menu:
+              - menuitem "Drugs"
+              - menuitem "Oncology"
+- banner:
+  - heading "Feedback form" [level=1]:
+    - generic: Feedback form
+- group "Was this page helpful? *":
+  - generic: Was this page helpful? *
+  - radio "Yes"
+  - generic: "Yes"
+  - radio "No"
+  - generic: "No"
+- button "Submit"
+- region "footer An official website of the United States government":
+  - paragraph:
+    - text: An official form of the United States government. Provided by
+    - link "External, opens in a new tab. Touchpoints":
+      - /url: https://touchpoints.digital.gov
+- button "Feedback"
+- contentinfo:
+  - navigation:
+    - list:
+      - link "FDA Archive":
+        - /url: /about-fda/about-website/fdagov-archive
+      - link "About FDA":
+        - /url: /about-fda
+      - link "Accessibility":
+        - /url: /about-fda/about-website/internet-accessibility
+    - list:
+      - link "Visitor Information":
+        - /url: /about-fda/visitor-information
+      - link "Website Policies / Privacy":
+        - /url: /about-fda/about-website/website-policies
+      - link "No FEAR Act":
+        - /url: /about-fda/jobs-and-training-fda/no-fear-act
+      - link "Vulnerability Disclosure Policy":
+        - /url: https://www.hhs.gov/vulnerability-disclosure-policy/index.html
+    - list:
+      - link "FOIA":
+        - /url: /regulatory-information/freedom-information
+      - link "HHS.gov":
+        - /url: https://www.hhs.gov/
+      - link "USA.gov":
+        - /url: https://www.usa.gov/
+  - link "Contact FDA":
+    - /url: /about-fda/contact-fda
+  - link "Follow FDA on Facebook":
+    - /url: https://www.facebook.com/FDA
+    - text: 
+    - generic: Follow FDA on Facebook
+  - link "Follow FDA on X":
+    - /url: https://x.com/US_FDA
+    - generic: Follow FDA on X
+  - link "Follow FDA on Instagram":
+    - /url: https://instagram.com/FDA
+    - text: 
+    - generic: Follow FDA on Instagram
+  - link "Follow FDA on LinkedIn":
+    - /url: https://www.linkedin.com/company/fda/
+    - text: 
+    - generic: Follow FDA on LinkedIn
+  - link "View FDA videos on YouTube":
+    - /url: https://youtube.com/@US_FDA
+    - text: 
+    - generic: View FDA videos on YouTube
+  - link "Subscribe to FDA RSS feeds":
+    - /url: /about-fda/contact-fda/subscribe-podcasts-and-news-feeds
+    - text: 
+    - generic: Subscribe to FDA RSS feeds
+  - link "Food and Drug Administration Logo":
+    - /url: /
+    - img "Food and Drug Administration Logo"
+  - generic: 
+  - generic: Contact Number
+  - text: 1-888-INFO-FDA (1-888-463-6332)
+- option "Select one" [selected]
+- option "Food"
+- option "Drugs"
+- option "Medical Devices"
+- option "Radiation-Emitting Products"
+- option "Vaccines, Blood & Biologics"
+- option "Animal & Veterinary"
+- option "Cosmetics"
+- option "Tobacco Products"
+- option "Other"
+- option "Select one" [selected]
+- option "Recall or foodborne illness outbreak information"
+- option "Warning letters or enforcement actions"
+- option "Report a problem (adverse event) with a product"
+- option "Dispose of drugs or sharps"
+- option "Product approvals"
+- option "Drug labels"
+- option "Side effects of a product"
+- option "Contact an FDA office or staff member"
+- option "Complete or check registration for a product or facility"
+- option "Get FDA organizational information"
+- option "Import or export a product (including Prior Notice)"
+- option "Get a job with FDA"
+- option "Get training"
+- option "Get a form"
+- option "Comment on a proposed guidance or rule"
+- option "Check a regulation, rule, or guidance (for regulated industry)"
+- option "COVID-19 information"
+- option "Advice/information about a medical device, drug, food, or other FDA-regulated product"
+- option "Other"
+- option "Select one" [selected]
+- option "Consumer, patient, or patient’s caregiver"
+- option "Regulated industry or business"
+- option "Healthcare professional (includes physician, nurse, physician’s assistant, nurse practitioner, or pharmacist)"
+- option "Public health/Policy professional"
+- option "Scientist, researcher"
+- option "Educator, professor, teacher, or student"
+- option "Media/Journalist"
+- option "FDA Employee/Contractors"
+- option "Other"
