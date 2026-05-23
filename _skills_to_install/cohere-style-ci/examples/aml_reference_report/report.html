@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Acute Myeloid Leukemia Competitive Intelligence Update</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 36px 0 20px;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 850;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 76px; line-height: .94; letter-spacing: 0; font-weight: 560; max-width: 1320px; }
+    h2 { font-size: 52px; line-height: .98; letter-spacing: 0; font-weight: 560; max-width: 1300px; }
+    h3 { font-size: 28px; line-height: 1.04; letter-spacing: 0; font-weight: 650; }
+    .dek { margin-top: 18px; color: var(--muted); font-size: 27px; line-height: 1.22; max-width: 1260px; }
+    .section-head { margin-bottom: 18px; }
+    .section-head p { margin-top: 12px; color: var(--muted); font-size: 24px; line-height: 1.18; max-width: 1280px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-2-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .program-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .panel, .metric, .card, .table, .callout {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.88);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel { padding: 22px; }
+    .panel.dark, .callout { background: #11130f; color: var(--paper); border-color: #11130f; }
+    .panel.dark p, .panel.dark li, .callout p, .callout li { color: rgba(246,241,232,.86); }
+    .metric { padding: 21px; min-height: 166px; }
+    .num { font-size: 50px; line-height: .92; font-weight: 850; letter-spacing: 0; }
+    .label { margin-top: 12px; font-size: 24px; line-height: 1.12; color: var(--muted); }
+    .card { padding: 24px; min-height: 276px; }
+    .card.compact { min-height: 230px; }
+    .program-card { padding: 24px; min-height: 326px; }
+    .program-card h3 { font-size: 28px; }
+    .program-card p { font-size: 24px; line-height: 1.12; }
+    .card p { color: var(--muted); font-size: 24px; line-height: 1.12; margin-top: 12px; }
+    .card .tag { margin-bottom: 11px; }
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      white-space: nowrap;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .red { background: var(--red); }
+    .gray { background: var(--gray); }
+    .table { display: grid; }
+    .row { display: grid; border-bottom: 1px solid var(--line); min-height: 70px; }
+    .row:last-child { border-bottom: 0; }
+    .row.metrics { grid-template-columns: .82fr 1.25fr 1.6fr 1.62fr; }
+    .row.refs { grid-template-columns: .34fr .95fr 1.05fr 1.75fr; }
+    .cell { padding: 16px 16px; border-right: 1px solid var(--line); font-size: 24px; line-height: 1.12; }
+    .cell:last-child { border-right: 0; }
+    .head .cell {
+      background: #11130f;
+      color: var(--paper);
+      font-weight: 850;
+      text-transform: uppercase;
+      font-size: 20px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .row.refs { min-height: 0; }
+    .refs .cell { font-size: 18px; line-height: 1.08; padding: 11px 12px; }
+    .refs.head .cell { font-size: 18px; line-height: 1; padding: 11px 12px; white-space: nowrap; }
+    .row.refs .cell:first-child { text-align: center; }
+    .references-slide .section-head { margin-bottom: 14px; }
+    .references-slide h2 { font-size: 48px; }
+    .callout { padding: 22px 26px; }
+    .callout h3 { font-size: 31px; }
+    .callout p { margin-top: 10px; font-size: 23px; line-height: 1.17; }
+    .summary-list { margin: 12px 0 0; padding-left: 22px; display: grid; gap: 8px; }
+    .summary-list li { color: rgba(246,241,232,.86); font-size: 24px; line-height: 1.12; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .cite + .cite::before { content: ","; margin-right: 1px; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    .source-note { color: var(--muted); font-size: 15px; line-height: 1.22; margin-top: 12px; }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .wrap { width: 1360px; }
+      .panel, .metric, .card, .table, .callout { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) {
+      .slide { width: 1600px; height: 900px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Acute myeloid leukemia CI update | May 6-12, 2026</div>
+      <h1>Acute myeloid leukemia competitive intelligence update</h1>
+      <div class="grid-4" style="margin-top:30px;">
+        <div class="metric"><div class="num">6</div><div class="label">Company release pages cited as primary sources.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293092/0/en/syndax-highlights-12-revuforj-revumenib-abstracts-accepted-for-eha-2026-advancing-leadership-in-menin-inhibition.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293020/35186/en/kura-oncology-and-kyowa-kirin-to-present-updated-frontline-ziftomenib-7-3-combination-data-at-eha-2026-congress.html">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3292992/0/en/blossomhill-therapeutics-to-present-initial-clinical-dose-escalation-data-from-the-phase-1-1b-trial-of-bh-30236-in-patients-with-r-r-aml-or-hr-mds-at-eha2026.html">3</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293002/0/en/independent-cleveland-clinic-review-finds-no-clinically-significant-cardiotoxicity-with-moleculin-s-annamycin-in-r-r-aml-patients-dosed-beyond-conventional-anthracycline-limits.html">4</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293006/0/en/evaxion-to-present-new-data-for-evx-04-an-off-the-shelf-therapeutic-vaccine-for-acute-myeloid-leukemia-at-the-eha-2026-congress.html">5</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291858/0/en/cero-therapeutics-completes-second-ascending-dose-cohort-of-phase-1-cer-1236-trial.html">6</a></div></div>
+        <div class="metric"><div class="num">5</div><div class="label">EHA 2026-related abstracts, posters, or presentations.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293092/0/en/syndax-highlights-12-revuforj-revumenib-abstracts-accepted-for-eha-2026-advancing-leadership-in-menin-inhibition.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293020/35186/en/kura-oncology-and-kyowa-kirin-to-present-updated-frontline-ziftomenib-7-3-combination-data-at-eha-2026-congress.html">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3292992/0/en/blossomhill-therapeutics-to-present-initial-clinical-dose-escalation-data-from-the-phase-1-1b-trial-of-bh-30236-in-patients-with-r-r-aml-or-hr-mds-at-eha2026.html">3</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293002/0/en/independent-cleveland-clinic-review-finds-no-clinically-significant-cardiotoxicity-with-moleculin-s-annamycin-in-r-r-aml-patients-dosed-beyond-conventional-anthracycline-limits.html">4</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293006/0/en/evaxion-to-present-new-data-for-evx-04-an-off-the-shelf-therapeutic-vaccine-for-acute-myeloid-leukemia-at-the-eha-2026-congress.html">5</a></div></div>
+        <div class="metric"><div class="num">4</div><div class="label">Programs with clinical or cardiac-safety datapoints.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293020/35186/en/kura-oncology-and-kyowa-kirin-to-present-updated-frontline-ziftomenib-7-3-combination-data-at-eha-2026-congress.html">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3292992/0/en/blossomhill-therapeutics-to-present-initial-clinical-dose-escalation-data-from-the-phase-1-1b-trial-of-bh-30236-in-patients-with-r-r-aml-or-hr-mds-at-eha2026.html">3</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293002/0/en/independent-cleveland-clinic-review-finds-no-clinically-significant-cardiotoxicity-with-moleculin-s-annamycin-in-r-r-aml-patients-dosed-beyond-conventional-anthracycline-limits.html">4</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291858/0/en/cero-therapeutics-completes-second-ascending-dose-cohort-of-phase-1-cer-1236-trial.html">6</a></div></div>
+        <div class="metric"><div class="num">2</div><div class="label">Menin-inhibitor programs represented: Revuforj and ziftomenib.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293092/0/en/syndax-highlights-12-revuforj-revumenib-abstracts-accepted-for-eha-2026-advancing-leadership-in-menin-inhibition.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293020/35186/en/kura-oncology-and-kyowa-kirin-to-present-updated-frontline-ziftomenib-7-3-combination-data-at-eha-2026-congress.html">2</a></div></div>
+      </div>
+      <div class="callout" style="margin-top:24px;">
+        <h3>Executive summary</h3>
+        <ul class="summary-list">
+          <li>Kura and Kyowa Kirin reported 99 frontline ziftomenib plus 7+3 patients, CRc rates of 96% in NPM1-mutant AML and 90% in KMT2A-rearranged AML, and MRD-negativity among CRc responders of 83% and 82%, respectively.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293020/35186/en/kura-oncology-and-kyowa-kirin-to-present-updated-frontline-ziftomenib-7-3-combination-data-at-eha-2026-congress.html">2</a></li>
+          <li>BlossomHill reported BH-30236 activity signals: 29% of evaluable monotherapy patients and 55% of evaluable venetoclax-combination patients had at least 50% bone marrow blast reductions, including one MRD-negative complete remission.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3292992/0/en/blossomhill-therapeutics-to-present-initial-clinical-dose-escalation-data-from-the-phase-1-1b-trial-of-bh-30236-in-patients-with-r-r-aml-or-hr-mds-at-eha2026.html">3</a></li>
+          <li>Moleculin reported no clinically significant left ventricular dysfunction among 78 verified ejection-fraction assessments; CERo reported second-cohort CER-1236 completion with no DLTs through the assessment period; Evaxion reported EVX-04 immune-response and tumor-growth-prevention data.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293002/0/en/independent-cleveland-clinic-review-finds-no-clinically-significant-cardiotoxicity-with-moleculin-s-annamycin-in-r-r-aml-patients-dosed-beyond-conventional-anthracycline-limits.html">4</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291858/0/en/cero-therapeutics-completes-second-ascending-dose-cohort-of-phase-1-cer-1236-trial.html">6</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293006/0/en/evaxion-to-present-new-data-for-evx-04-an-off-the-shelf-therapeutic-vaccine-for-acute-myeloid-leukemia-at-the-eha-2026-congress.html">5</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">01 / 07</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">EHA 2026 updates</div>
+        <h2>Five included sources described AML presentations or abstracts at EHA 2026<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293092/0/en/syndax-highlights-12-revuforj-revumenib-abstracts-accepted-for-eha-2026-advancing-leadership-in-menin-inhibition.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293020/35186/en/kura-oncology-and-kyowa-kirin-to-present-updated-frontline-ziftomenib-7-3-combination-data-at-eha-2026-congress.html">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3292992/0/en/blossomhill-therapeutics-to-present-initial-clinical-dose-escalation-data-from-the-phase-1-1b-trial-of-bh-30236-in-patients-with-r-r-aml-or-hr-mds-at-eha2026.html">3</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293002/0/en/independent-cleveland-clinic-review-finds-no-clinically-significant-cardiotoxicity-with-moleculin-s-annamycin-in-r-r-aml-patients-dosed-beyond-conventional-anthracycline-limits.html">4</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293006/0/en/evaxion-to-present-new-data-for-evx-04-an-off-the-shelf-therapeutic-vaccine-for-acute-myeloid-leukemia-at-the-eha-2026-congress.html">5</a></h2>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag lime">Menin inhibition</span>
+          <h3>Revuforj</h3>
+          <p>Syndax reported the release of 12 Revuforj (revumenib) abstracts on the EHA website before the EHA 2026 Congress, which it described as taking place June 11-14, 2026 in Stockholm.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293092/0/en/syndax-highlights-12-revuforj-revumenib-abstracts-accepted-for-eha-2026-advancing-leadership-in-menin-inhibition.html">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag orange">Frontline AML</span>
+          <h3>Ziftomenib + 7+3</h3>
+          <p>Kura and Kyowa Kirin reported that an oral presentation would include updated frontline KOMET-007 results in 99 newly diagnosed NPM1-mutant or KMT2A-rearranged AML patients treated with ziftomenib plus 7+3.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293020/35186/en/kura-oncology-and-kyowa-kirin-to-present-updated-frontline-ziftomenib-7-3-combination-data-at-eha-2026-congress.html">2</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">CLK inhibitor</span>
+          <h3>BH-30236</h3>
+          <p>BlossomHill announced initial dose-escalation data from a Phase 1/1b trial of BH-30236 in relapsed/refractory AML and higher-risk MDS for EHA 2026.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3292992/0/en/blossomhill-therapeutics-to-present-initial-clinical-dose-escalation-data-from-the-phase-1-1b-trial-of-bh-30236-in-patients-with-r-r-aml-or-hr-mds-at-eha2026.html">3</a></p>
+        </div>
+        <div class="card compact">
+          <span class="tag pink">Anthracycline</span>
+          <h3>Annamycin</h3>
+          <p>Moleculin announced an EHA 2026 abstract on the cardiac safety profile of Annamycin in relapsed/refractory AML.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293002/0/en/independent-cleveland-clinic-review-finds-no-clinically-significant-cardiotoxicity-with-moleculin-s-annamycin-in-r-r-aml-patients-dosed-beyond-conventional-anthracycline-limits.html">4</a></p>
+        </div>
+        <div class="card compact">
+          <span class="tag gray">Vaccine</span>
+          <h3>EVX-04</h3>
+          <p>Evaxion reported that it would present functional characterization of EVX-04, an off-the-shelf therapeutic AML vaccine, in an EHA 2026 poster.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293006/0/en/evaxion-to-present-new-data-for-evx-04-an-off-the-shelf-therapeutic-vaccine-for-acute-myeloid-leukemia-at-the-eha-2026-congress.html">5</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">02 / 07</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Clinical data extracts</div>
+        <h2>Response and MRD datapoints were reported for ziftomenib and BH-30236<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293020/35186/en/kura-oncology-and-kyowa-kirin-to-present-updated-frontline-ziftomenib-7-3-combination-data-at-eha-2026-congress.html">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3292992/0/en/blossomhill-therapeutics-to-present-initial-clinical-dose-escalation-data-from-the-phase-1-1b-trial-of-bh-30236-in-patients-with-r-r-aml-or-hr-mds-at-eha2026.html">3</a></h2>
+        <p>Kura and Kyowa Kirin reported ziftomenib-plus-chemotherapy CRc and MRD data, while BlossomHill reported BH-30236 blast-reduction and MRD-negative complete-remission findings.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293020/35186/en/kura-oncology-and-kyowa-kirin-to-present-updated-frontline-ziftomenib-7-3-combination-data-at-eha-2026-congress.html">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3292992/0/en/blossomhill-therapeutics-to-present-initial-clinical-dose-escalation-data-from-the-phase-1-1b-trial-of-bh-30236-in-patients-with-r-r-aml-or-hr-mds-at-eha2026.html">3</a></p>
+      </div>
+      <div class="table">
+        <div class="row metrics head">
+          <div class="cell">Program</div>
+          <div class="cell">Population or data set</div>
+          <div class="cell">Clinical datapoint</div>
+          <div class="cell">Additional reported detail</div>
+        </div>
+        <div class="row metrics">
+          <div class="cell"><strong>Ziftomenib + 7+3</strong></div>
+          <div class="cell">99 newly diagnosed NPM1-mutant or KMT2A-rearranged AML patients; ziftomenib 600 mg once daily plus 7+3.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293020/35186/en/kura-oncology-and-kyowa-kirin-to-present-updated-frontline-ziftomenib-7-3-combination-data-at-eha-2026-congress.html">2</a></div>
+          <div class="cell">CRc rates: 96% (47/49) for NPM1-mutant AML and 90% (45/50) for KMT2A-rearranged AML.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293020/35186/en/kura-oncology-and-kyowa-kirin-to-present-updated-frontline-ziftomenib-7-3-combination-data-at-eha-2026-congress.html">2</a></div>
+          <div class="cell">MRD-negativity among CRc responders: 83% (39/47) and 82% (32/39), respectively.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293020/35186/en/kura-oncology-and-kyowa-kirin-to-present-updated-frontline-ziftomenib-7-3-combination-data-at-eha-2026-congress.html">2</a></div>
+        </div>
+        <div class="row metrics">
+          <div class="cell"><strong>BH-30236</strong></div>
+          <div class="cell">January 23, 2026 cutoff: 28 monotherapy patients and 11 patients receiving BH-30236 with venetoclax.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3292992/0/en/blossomhill-therapeutics-to-present-initial-clinical-dose-escalation-data-from-the-phase-1-1b-trial-of-bh-30236-in-patients-with-r-r-aml-or-hr-mds-at-eha2026.html">3</a></div>
+          <div class="cell">29% of evaluable monotherapy patients achieved at least 50% bone marrow blast reduction.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3292992/0/en/blossomhill-therapeutics-to-present-initial-clinical-dose-escalation-data-from-the-phase-1-1b-trial-of-bh-30236-in-patients-with-r-r-aml-or-hr-mds-at-eha2026.html">3</a></div>
+          <div class="cell">55% of evaluable venetoclax-combination patients had at least 50% blast reduction; one MRD-negative CR was reported.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3292992/0/en/blossomhill-therapeutics-to-present-initial-clinical-dose-escalation-data-from-the-phase-1-1b-trial-of-bh-30236-in-patients-with-r-r-aml-or-hr-mds-at-eha2026.html">3</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">03 / 07</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Clinical data extracts</div>
+        <h2>Cardiac-safety and CER-1236 dose-escalation data were reported<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293002/0/en/independent-cleveland-clinic-review-finds-no-clinically-significant-cardiotoxicity-with-moleculin-s-annamycin-in-r-r-aml-patients-dosed-beyond-conventional-anthracycline-limits.html">4</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291858/0/en/cero-therapeutics-completes-second-ascending-dose-cohort-of-phase-1-cer-1236-trial.html">6</a></h2>
+        <p>Moleculin reported an independent cardiac-safety review for Annamycin, and CERo reported second-cohort completion in the Phase 1 CER-1236 study.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293002/0/en/independent-cleveland-clinic-review-finds-no-clinically-significant-cardiotoxicity-with-moleculin-s-annamycin-in-r-r-aml-patients-dosed-beyond-conventional-anthracycline-limits.html">4</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291858/0/en/cero-therapeutics-completes-second-ascending-dose-cohort-of-phase-1-cer-1236-trial.html">6</a></p>
+      </div>
+      <div class="table">
+        <div class="row metrics head">
+          <div class="cell">Program</div>
+          <div class="cell">Population or data set</div>
+          <div class="cell">Clinical or safety datapoint</div>
+          <div class="cell">Additional reported detail</div>
+        </div>
+        <div class="row metrics">
+          <div class="cell"><strong>Annamycin</strong></div>
+          <div class="cell">Pooled cardiac-safety analysis of 90 subjects across five trials.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293002/0/en/independent-cleveland-clinic-review-finds-no-clinically-significant-cardiotoxicity-with-moleculin-s-annamycin-in-r-r-aml-patients-dosed-beyond-conventional-anthracycline-limits.html">4</a></div>
+          <div class="cell">Among 78 patients with verified pre- and post-treatment ejection fraction assessments, no patients met criteria for clinically significant left ventricular dysfunction.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293002/0/en/independent-cleveland-clinic-review-finds-no-clinically-significant-cardiotoxicity-with-moleculin-s-annamycin-in-r-r-aml-patients-dosed-beyond-conventional-anthracycline-limits.html">4</a></div>
+          <div class="cell">Mean ejection fraction remained stable, and no association was observed between cumulative dose and cardiac-function decline.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293002/0/en/independent-cleveland-clinic-review-finds-no-clinically-significant-cardiotoxicity-with-moleculin-s-annamycin-in-r-r-aml-patients-dosed-beyond-conventional-anthracycline-limits.html">4</a></div>
+        </div>
+        <div class="row metrics">
+          <div class="cell"><strong>CER-1236</strong></div>
+          <div class="cell">All three second-cohort patients completed dosing and the 28-day DLT assessment period.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291858/0/en/cero-therapeutics-completes-second-ascending-dose-cohort-of-phase-1-cer-1236-trial.html">6</a></div>
+          <div class="cell">CER-1236 dose: 4 x 10^6 cells/kg as a split dose on Day 0 and Day 2; no DLTs were observed.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291858/0/en/cero-therapeutics-completes-second-ascending-dose-cohort-of-phase-1-cer-1236-trial.html">6</a></div>
+          <div class="cell">CERo reported escalation to a planned 1 x 10^7 cells/kg split-dose cohort and continued patient screening.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291858/0/en/cero-therapeutics-completes-second-ascending-dose-cohort-of-phase-1-cer-1236-trial.html">6</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">04 / 07</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Program map</div>
+        <h2>Menin and CLK inhibitor programs were reported across three included sources<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293092/0/en/syndax-highlights-12-revuforj-revumenib-abstracts-accepted-for-eha-2026-advancing-leadership-in-menin-inhibition.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293020/35186/en/kura-oncology-and-kyowa-kirin-to-present-updated-frontline-ziftomenib-7-3-combination-data-at-eha-2026-congress.html">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3292992/0/en/blossomhill-therapeutics-to-present-initial-clinical-dose-escalation-data-from-the-phase-1-1b-trial-of-bh-30236-in-patients-with-r-r-aml-or-hr-mds-at-eha2026.html">3</a></h2>
+      </div>
+      <div class="grid-3">
+        <div class="card program-card">
+          <span class="tag lime">Revumenib</span>
+          <h3>Acute leukemia continuum</h3>
+          <p>Syndax listed key revumenib data accepted for EHA 2026, including real-world evidence, frontline data, post-HSCT maintenance, relapsed/refractory combination data, and NUP98-rearranged acute leukemia results.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293092/0/en/syndax-highlights-12-revuforj-revumenib-abstracts-accepted-for-eha-2026-advancing-leadership-in-menin-inhibition.html">1</a></p>
+        </div>
+        <div class="card program-card">
+          <span class="tag orange">Ziftomenib</span>
+          <h3>Frontline intensive chemotherapy</h3>
+          <p>Kura and Kyowa Kirin reported updated KOMET-007 results for ziftomenib 600 mg once daily with cytarabine plus daunorubicin in newly diagnosed NPM1-mutant or KMT2A-rearranged AML.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293020/35186/en/kura-oncology-and-kyowa-kirin-to-present-updated-frontline-ziftomenib-7-3-combination-data-at-eha-2026-congress.html">2</a></p>
+        </div>
+        <div class="card program-card">
+          <span class="tag blue">BH-30236</span>
+          <h3>Dose escalation and venetoclax combination</h3>
+          <p>BlossomHill reported BH-30236 monotherapy and venetoclax-combination evaluation, with 28 monotherapy patients and 11 combination patients as of the January 23, 2026 cutoff.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3292992/0/en/blossomhill-therapeutics-to-present-initial-clinical-dose-escalation-data-from-the-phase-1-1b-trial-of-bh-30236-in-patients-with-r-r-aml-or-hr-mds-at-eha2026.html">3</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">05 / 07</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Program map</div>
+        <h2>Anthracycline, vaccine, and cellular-therapy programs also reported AML updates<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293002/0/en/independent-cleveland-clinic-review-finds-no-clinically-significant-cardiotoxicity-with-moleculin-s-annamycin-in-r-r-aml-patients-dosed-beyond-conventional-anthracycline-limits.html">4</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293006/0/en/evaxion-to-present-new-data-for-evx-04-an-off-the-shelf-therapeutic-vaccine-for-acute-myeloid-leukemia-at-the-eha-2026-congress.html">5</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291858/0/en/cero-therapeutics-completes-second-ascending-dose-cohort-of-phase-1-cer-1236-trial.html">6</a></h2>
+      </div>
+      <div class="grid-3">
+        <div class="card program-card">
+          <span class="tag pink">Annamycin</span>
+          <h3>Cardiac-safety analysis</h3>
+          <p>Moleculin reported that an independent cardiac review analyzed monitoring data from 90 Annamycin-treated patients and found no clinically significant left ventricular dysfunction among 78 verified ejection-fraction assessments.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293002/0/en/independent-cleveland-clinic-review-finds-no-clinically-significant-cardiotoxicity-with-moleculin-s-annamycin-in-r-r-aml-patients-dosed-beyond-conventional-anthracycline-limits.html">4</a></p>
+        </div>
+        <div class="card program-card">
+          <span class="tag gray">EVX-04</span>
+          <h3>Preclinical vaccine package</h3>
+          <p>Evaxion reported that all 16 ERV fragments in EVX-04 elicit a specific immune response, that EVX-04 prevents tumor growth in preclinical models, and that a clinical trial application was planned for the second half of 2026.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293006/0/en/evaxion-to-present-new-data-for-evx-04-an-off-the-shelf-therapeutic-vaccine-for-acute-myeloid-leukemia-at-the-eha-2026-congress.html">5</a></p>
+        </div>
+        <div class="card program-card">
+          <span class="tag red">CER-1236</span>
+          <h3>Cellular immunotherapy dose escalation</h3>
+          <p>CERo reported escalation to a planned 1 x 10^7 cells/kg split-dose cohort and expected the next cohort to include patients with MDS and myelofibrosis.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291858/0/en/cero-therapeutics-completes-second-ascending-dose-cohort-of-phase-1-cer-1236-trial.html">6</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">06 / 07</div>
+  </article>
+
+  <article class="slide references-slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">References 1-6</div>
+        <h2>References</h2>
+      </div>
+      <div class="table">
+        <div class="row refs head">
+          <div class="cell">Ref</div>
+          <div class="cell">Source</div>
+          <div class="cell">Date / Status / Source Owner</div>
+          <div class="cell">Evidence Used in Report</div>
+        </div>
+        <div class="row refs">
+          <div class="cell">1</div>
+          <div class="cell">Syndax Pharmaceuticals<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293092/0/en/syndax-highlights-12-revuforj-revumenib-abstracts-accepted-for-eha-2026-advancing-leadership-in-menin-inhibition.html">1</a></div>
+          <div class="cell">May 12, 2026 10:31 ET / company release / Syndax Pharmaceuticals<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293092/0/en/syndax-highlights-12-revuforj-revumenib-abstracts-accepted-for-eha-2026-advancing-leadership-in-menin-inhibition.html">1</a></div>
+          <div class="cell">Release of 12 Revuforj abstracts accepted for EHA 2026.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293092/0/en/syndax-highlights-12-revuforj-revumenib-abstracts-accepted-for-eha-2026-advancing-leadership-in-menin-inhibition.html">1</a></div>
+        </div>
+        <div class="row refs">
+          <div class="cell">2</div>
+          <div class="cell">Kura Oncology / Kyowa Kirin<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293020/35186/en/kura-oncology-and-kyowa-kirin-to-present-updated-frontline-ziftomenib-7-3-combination-data-at-eha-2026-congress.html">2</a></div>
+          <div class="cell">May 12, 2026 09:40 ET / company release / Kura Oncology and Kyowa Kirin<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293020/35186/en/kura-oncology-and-kyowa-kirin-to-present-updated-frontline-ziftomenib-7-3-combination-data-at-eha-2026-congress.html">2</a></div>
+          <div class="cell">Updated frontline ziftomenib plus 7+3 combination data accepted for EHA 2026 oral presentation.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293020/35186/en/kura-oncology-and-kyowa-kirin-to-present-updated-frontline-ziftomenib-7-3-combination-data-at-eha-2026-congress.html">2</a></div>
+        </div>
+        <div class="row refs">
+          <div class="cell">3</div>
+          <div class="cell">BlossomHill Therapeutics<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3292992/0/en/blossomhill-therapeutics-to-present-initial-clinical-dose-escalation-data-from-the-phase-1-1b-trial-of-bh-30236-in-patients-with-r-r-aml-or-hr-mds-at-eha2026.html">3</a></div>
+          <div class="cell">May 12, 2026 09:30 ET / company release / BlossomHill Therapeutics<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3292992/0/en/blossomhill-therapeutics-to-present-initial-clinical-dose-escalation-data-from-the-phase-1-1b-trial-of-bh-30236-in-patients-with-r-r-aml-or-hr-mds-at-eha2026.html">3</a></div>
+          <div class="cell">Initial BH-30236 Phase 1/1b dose-escalation data in R/R AML or HR-MDS accepted for EHA 2026.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3292992/0/en/blossomhill-therapeutics-to-present-initial-clinical-dose-escalation-data-from-the-phase-1-1b-trial-of-bh-30236-in-patients-with-r-r-aml-or-hr-mds-at-eha2026.html">3</a></div>
+        </div>
+        <div class="row refs">
+          <div class="cell">4</div>
+          <div class="cell">Moleculin Biotech<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293002/0/en/independent-cleveland-clinic-review-finds-no-clinically-significant-cardiotoxicity-with-moleculin-s-annamycin-in-r-r-aml-patients-dosed-beyond-conventional-anthracycline-limits.html">4</a></div>
+          <div class="cell">May 12, 2026 09:30 ET / company release / Moleculin Biotech<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293002/0/en/independent-cleveland-clinic-review-finds-no-clinically-significant-cardiotoxicity-with-moleculin-s-annamycin-in-r-r-aml-patients-dosed-beyond-conventional-anthracycline-limits.html">4</a></div>
+          <div class="cell">Independent Cleveland Clinic cardiac-safety review of Annamycin in R/R AML.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293002/0/en/independent-cleveland-clinic-review-finds-no-clinically-significant-cardiotoxicity-with-moleculin-s-annamycin-in-r-r-aml-patients-dosed-beyond-conventional-anthracycline-limits.html">4</a></div>
+        </div>
+        <div class="row refs">
+          <div class="cell">5</div>
+          <div class="cell">Evaxion<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293006/0/en/evaxion-to-present-new-data-for-evx-04-an-off-the-shelf-therapeutic-vaccine-for-acute-myeloid-leukemia-at-the-eha-2026-congress.html">5</a></div>
+          <div class="cell">May 12, 2026 09:30 ET / company release / Evaxion<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293006/0/en/evaxion-to-present-new-data-for-evx-04-an-off-the-shelf-therapeutic-vaccine-for-acute-myeloid-leukemia-at-the-eha-2026-congress.html">5</a></div>
+          <div class="cell">EVX-04 off-the-shelf therapeutic AML vaccine data accepted for EHA 2026 poster presentation.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293006/0/en/evaxion-to-present-new-data-for-evx-04-an-off-the-shelf-therapeutic-vaccine-for-acute-myeloid-leukemia-at-the-eha-2026-congress.html">5</a></div>
+        </div>
+        <div class="row refs">
+          <div class="cell">6</div>
+          <div class="cell">CERo Therapeutics<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291858/0/en/cero-therapeutics-completes-second-ascending-dose-cohort-of-phase-1-cer-1236-trial.html">6</a></div>
+          <div class="cell">May 11, 2026 08:15 ET / company release / CERo Therapeutics<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291858/0/en/cero-therapeutics-completes-second-ascending-dose-cohort-of-phase-1-cer-1236-trial.html">6</a></div>
+          <div class="cell">Completion of the second ascending-dose cohort in the Phase 1 CER-1236 trial.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3291858/0/en/cero-therapeutics-completes-second-ascending-dose-cohort-of-phase-1-cer-1236-trial.html">6</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">07 / 07</div>
+  </article>
+</body>
+</html>

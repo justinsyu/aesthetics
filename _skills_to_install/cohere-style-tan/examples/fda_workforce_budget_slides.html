@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FDA Workforce and Operating Budget Trends</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 26px;
+      --slide-pad-top: 72px;
+      --slide-pad-bottom: 32px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    html, body { scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.38;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .cite { font-size: .62em; vertical-align: super; margin-left: 2px; font-weight: 800; text-decoration: none; }
+    .wrap { width: min(1360px, calc(100vw - 48px)); margin: 0 auto; }
+    .slide {
+      min-height: 100vh;
+      height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      padding: var(--slide-pad-top) 0 var(--slide-pad-bottom);
+      position: relative;
+      page-break-after: always;
+      break-after: page;
+      overflow: hidden;
+      background: var(--paper);
+    }
+    .slide > * { position: relative; z-index: 1; }
+    .slide > .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-hero { align-items: flex-start; }
+    h1 {
+      font-size: 92px;
+      line-height: .9;
+      letter-spacing: -0.045em;
+      font-weight: 500;
+      margin: 0;
+      max-width: 1320px;
+    }
+    h1 span { display: block; }
+    .slide-hero .eyebrow {
+      margin-top: 24px;
+    }
+    h2 {
+      font-size: 60px;
+      line-height: .96;
+      letter-spacing: -0.04em;
+      font-weight: 500;
+      margin: 0;
+    }
+    h3 { margin: 0; font-size: 30px; line-height: 1.02; letter-spacing: -0.04em; font-weight: 500; }
+    p { margin: 0; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 11px;
+      border-radius: 999px;
+      font-size: 16px;
+      font-weight: 850;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+    }
+    .hero { display: grid; gap: 30px; align-items: start; }
+    .hero-card, .panel, .metric, .card {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.82);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-card { padding: 30px 32px; }
+    .hero-card p { color: var(--muted); font-size: 30px; line-height: 1.28; }
+    .hero-card strong { color: var(--ink); }
+    .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 0; }
+    .metric { padding: 20px; min-height: 150px; }
+    .num { font-size: 50px; line-height: .95; font-weight: 500; letter-spacing: -0.055em; }
+    .label { margin-top: 12px; font-size: 16px; color: var(--muted); }
+    .section-head { margin-bottom: 28px; }
+    .section-head p { margin-top: 14px; color: var(--muted); font-size: 23px; max-width: 1320px; }
+    .panel { overflow: hidden; }
+    .panel.dark { background: #11130f; color: var(--paper); }
+    .panel.dark p, .panel.dark .muted { color: rgba(246,241,232,.72); }
+    .panel-pad { padding: 28px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .card { padding: 22px; min-height: 188px; }
+    .card.dark { background: #11130f; color: var(--paper); border-color: rgba(246,241,232,.22); }
+    .card p { color: var(--muted); font-size: 17px; margin-top: 12px; }
+    .card.dark p { color: rgba(246,241,232,.72); }
+    .pill {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+      margin: 2px 3px 2px 0;
+      white-space: nowrap;
+      background: var(--paper-2);
+    }
+    .pill.lime { background: var(--lime); }
+    .pill.orange { background: var(--orange); }
+    .pill.blue { background: var(--blue); }
+    .pill.pink { background: var(--pink); }
+    .pill.gray { background: var(--gray); }
+    .bars { display: grid; gap: 18px; }
+    .bar-row { display: grid; grid-template-columns: 175px 1fr 160px; gap: 16px; align-items: center; }
+    .bar-label { font-size: 18px; font-weight: 900; letter-spacing: -0.02em; }
+    .track {
+      position: relative;
+      height: 34px;
+      border: 1px solid rgba(16,18,15,.24);
+      border-radius: 999px;
+      background: rgba(16,18,15,.07);
+      overflow: hidden;
+    }
+    .panel.dark .track { border-color: rgba(246,241,232,.28); background: rgba(246,241,232,.08); }
+    .bar { position: absolute; inset: 0 auto 0 0; border-radius: 999px; min-width: 6px; }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .gray { background: var(--gray); }
+    .red { background: var(--red); }
+    .bar-value { color: var(--muted); font-size: 17px; font-weight: 850; }
+    .panel.dark .bar-value, .panel.dark .bar-label { color: var(--paper); }
+    .panel.dark .bar-note { color: rgba(246,241,232,.72); }
+    .bar-note { font-size: 14px; color: var(--muted); margin-top: 6px; display: flex; justify-content: space-between; gap: 10px; }
+    .stack { display: flex; height: 52px; border: 1.4px solid var(--line); border-radius: 999px; overflow: hidden; background: var(--card); }
+    .stack > div { display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 14px; }
+    .ba { width: 50.9%; background: var(--blue); }
+    .uf { width: 49.1%; background: var(--lime); }
+    .sources { font-size: 23px; color: var(--muted); column-count: 2; column-gap: 42px; }
+    .sources p { break-inside: avoid; margin: 0 0 15px; }
+    sup { font-size: 10px; font-weight: 800; }
+    .slide-num { position: absolute; right: 40px; bottom: 28px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; }
+    .big-text { color: var(--muted); font-size: 30px; line-height: 1.3; }
+    .note { margin-top: 14px; font-size: 15px; color: var(--muted); }
+    .table {
+      display: grid;
+      grid-template-columns: 1.05fr .8fr .8fr .8fr .8fr .9fr;
+      border: 1.5px solid var(--line);
+      border-radius: 30px;
+      overflow: hidden;
+      background: var(--line);
+      gap: 1px;
+    }
+    .table > div { background: var(--card); padding: 15px; min-height: 76px; }
+    .table .head { background: #11130f; color: var(--paper); font-weight: 900; font-size: 13px; letter-spacing: .05em; text-transform: uppercase; }
+    .rowhead { font-weight: 900; font-size: 19px; }
+    .small { font-size: 14px; color: var(--muted); }
+    .slide-workforce .grid-2 { grid-template-columns: .95fr 1fr; }
+    .occupation-list { display: grid; gap: 10px; margin-top: 16px; }
+    .occupation-item {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 14px;
+      align-items: center;
+      border: 1.3px solid rgba(16,18,15,.76);
+      border-radius: 18px;
+      background: var(--card);
+      padding: 12px 14px;
+    }
+    .occupation-name {
+      font-size: 19px;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      font-weight: 900;
+    }
+    .occupation-code {
+      margin-top: 3px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .occupation-count {
+      font-size: 26px;
+      line-height: .95;
+      letter-spacing: -0.055em;
+      font-weight: 900;
+      text-align: right;
+      white-space: nowrap;
+    }
+    .occupation-share {
+      margin-top: 3px;
+      font-size: 12px;
+      color: var(--muted);
+      text-align: right;
+      white-space: nowrap;
+    }
+    @media screen and (max-width: 900px) {
+      .slide-employees { padding: 30px 0 18px; }
+      .slide-employees h2 { font-size: 43px; line-height: .94; }
+      .slide-employees .section-head { margin-bottom: 18px; }
+      .slide-employees .section-head p { margin-top: 10px; font-size: 18px; line-height: 1.22; }
+      .slide-employees .panel-pad { padding: 18px 20px; }
+      .slide-employees .bars { gap: 9px; }
+      .slide-employees .bar-row { grid-template-columns: 128px 1fr 72px; gap: 10px; }
+      .slide-employees .bar-label { font-size: 16px; }
+      .slide-employees .track { height: 24px; }
+      .slide-employees .bar-note { margin-top: 4px; font-size: 12px; line-height: 1.16; }
+      .slide-employees .bar-value { font-size: 15px; }
+      .slide-workforce { padding: 28px 0 18px; }
+      .slide-workforce h2 { font-size: 46px; line-height: .94; }
+      .slide-workforce .section-head { margin-bottom: 20px; }
+      .slide-workforce .section-head p { margin-top: 10px; font-size: 19px; line-height: 1.24; }
+      .slide-workforce .grid-2 { gap: 14px; }
+      .slide-workforce .panel-pad { padding: 20px 18px; }
+      .slide-workforce h3 { font-size: 26px; }
+      .slide-workforce .note { margin-top: 8px; font-size: 14px; line-height: 1.22; }
+      .slide-workforce .occupation-list { gap: 7px; margin-top: 10px; }
+      .slide-workforce .occupation-item { gap: 8px; border-radius: 14px; padding: 8px 10px; }
+      .slide-workforce .occupation-name { font-size: 17px; }
+      .slide-workforce .occupation-code { font-size: 12px; }
+      .slide-workforce .occupation-count { font-size: 23px; }
+      .slide-workforce .occupation-share { font-size: 10px; }
+      .slide-workforce .card { min-height: 156px; padding: 18px; }
+      .slide-workforce .card .num { font-size: 42px; }
+      .slide-workforce .card p { font-size: 15px; line-height: 1.24; margin-top: 10px; }
+    }
+
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; min-height: 900px; }
+      body, *, *::before, *::after {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      body { background: var(--paper) !important; }
+      .slide {
+        height: 900px;
+        min-height: 900px;
+        padding: var(--slide-pad-top) 0 var(--slide-pad-bottom);
+        page-break-after: always;
+        break-after: page;
+        background: var(--paper) !important;
+      }
+      .wrap { width: 1360px; }
+      .slide-employees h2,
+      .slide-workforce h2 { font-size: 60px; line-height: .96; }
+      .slide-employees .section-head,
+      .slide-workforce .section-head { margin-bottom: 28px; }
+      .slide-employees .section-head p,
+      .slide-workforce .section-head p { margin-top: 14px; font-size: 23px; line-height: 1.22; max-width: 1320px; }
+      .slide-employees .panel-pad,
+      .slide-workforce .panel-pad { padding: 28px; }
+      .slide-employees .bars { gap: 20px; }
+      .slide-employees .bar-row { grid-template-columns: 175px 1fr 160px; gap: 16px; }
+      .slide-employees .bar-label { font-size: 20px; }
+      .slide-employees .track { height: 36px; }
+      .slide-employees .bar-note { margin-top: 7px; font-size: 15px; line-height: 1.18; }
+      .slide-employees .bar-value { font-size: 19px; }
+      .slide-workforce .grid-2 { grid-template-columns: .95fr 1fr; gap: 18px; }
+      .slide-workforce h3 { font-size: 30px; font-weight: 500; }
+      .slide-workforce .note { margin-top: 14px; font-size: 15px; line-height: 1.3; }
+      .slide-workforce .occupation-list { gap: 10px; margin-top: 16px; }
+      .slide-workforce .occupation-item { gap: 14px; border-radius: 18px; padding: 12px 14px; }
+      .slide-workforce .occupation-name { font-size: 19px; }
+      .slide-workforce .occupation-code { font-size: 13px; }
+      .slide-workforce .occupation-count { font-size: 26px; }
+      .slide-workforce .occupation-share { font-size: 12px; }
+      .slide-workforce .card { min-height: 188px; padding: 22px; }
+      .slide-workforce .card .num { font-size: 50px; }
+      .slide-workforce .card p { font-size: 17px; line-height: 1.38; margin-top: 12px; }
+      .panel, .metric, .hero-card, .card { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <article class="slide slide-hero" aria-label="Slide 1: FDA workforce and budget overview">
+      <div class="wrap hero">
+        <div>
+          <h1><span>FDA workforce and</span><span>operating budget</span></h1>
+          <div class="eyebrow">Government data • workforce and budget view • May 2026</div>
+        </div>
+        <aside class="hero-card">
+          <p><strong>Question:</strong> Is FDA capacity keeping pace with the agency's operating budget, workforce needs, and regulated-product footprint? OPM's Feb. 2026 employment file reports 16,389 FDA active employees; FDA's FY2027 request totals $7.23B, and oversight reports identify staffing constraints in inspection and recall functions.<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-3">[3]</a><a class="cite" href="#source-8">[8]</a></p>
+        </aside>
+        <div class="metrics">
+          <div class="metric"><div class="num">16,389</div><div class="label">FDA active employees in OPM Federal Workforce Data, captured Feb. 28, 2026<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-2">[2]</a></div></div>
+          <div class="metric"><div class="num">-21.6%</div><div class="label">Change from the Sep. 2024 annual FedScope snapshot to Feb. 2026 FWD current data<a class="cite" href="#source-1">[1]</a></div></div>
+          <div class="metric"><div class="num">$7.23B</div><div class="label">FDA FY2027 requested total program level, post-transfer<a class="cite" href="#source-3">[3]</a></div></div>
+          <div class="metric"><div class="num">54%</div><div class="label">Share of FY2027 requested total program level funded by user fees<a class="cite" href="#source-3">[3]</a></div></div>
+        </div>
+      </div>
+      <div class="slide-num">01 / 10</div>
+    </article>
+
+    <article class="slide slide-employees" aria-label="Slide 2: Annual employee trend">
+      <div class="wrap">
+        <section>
+          <div class="section-head">
+            <h2>OPM data show a sharp 2026 workforce drop</h2>
+            <p>FedScope snapshots show FDA headcount rising from 19,082 in Sep. 2020 to 20,912 in Sep. 2024. OPM's Feb. 28, 2026 employment file, published Mar. 30, 2026, reports 16,389 FDA employees.<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-2">[2]</a></p>
+          </div>
+          <div class="panel dark">
+            <div class="panel-pad">
+              <div class="bars">
+                <div class="bar-row"><div class="bar-label">Sep 2020</div><div><div class="track"><div class="bar blue" style="width:91.2%"></div></div><div class="bar-note"><span>Annual snapshot</span><span>19,082 employees</span></div></div><div class="bar-value">baseline</div></div>
+                <div class="bar-row"><div class="bar-label">Sep 2021</div><div><div class="track"><div class="bar blue" style="width:94.0%"></div></div><div class="bar-note"><span>+571 vs. 2020</span><span>19,653 employees</span></div></div><div class="bar-value">+3.0%</div></div>
+                <div class="bar-row"><div class="bar-label">Sep 2022</div><div><div class="track"><div class="bar blue" style="width:94.4%"></div></div><div class="bar-note"><span>+78 vs. 2021</span><span>19,731 employees</span></div></div><div class="bar-value">+0.4%</div></div>
+                <div class="bar-row"><div class="bar-label">Sep 2023</div><div><div class="track"><div class="bar blue" style="width:96.7%"></div></div><div class="bar-note"><span>+496 vs. 2022</span><span>20,227 employees</span></div></div><div class="bar-value">+2.5%</div></div>
+                <div class="bar-row"><div class="bar-label">Sep 2024</div><div><div class="track"><div class="bar lime" style="width:100%"></div></div><div class="bar-note"><span>Annual September snapshot</span><span>20,912 employees</span></div></div><div class="bar-value">+3.4%</div></div>
+                <div class="bar-row"><div class="bar-label">Mar 2025</div><div><div class="track"><div class="bar gray" style="width:99.1%"></div></div><div class="bar-note"><span>Interim summary, not annual September cube</span><span>20,721 employees</span></div></div><div class="bar-value">-0.9%</div></div>
+                <div class="bar-row"><div class="bar-label">Feb 2026</div><div><div class="track"><div class="bar red" style="width:78.4%"></div></div><div class="bar-note"><span>Current FWD monthly raw data</span><span>16,389 employees</span></div></div><div class="bar-value">-20.9%</div></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="slide-num">02 / 10</div>
+    </article>
+
+    <article class="slide slide-workforce" aria-label="Slide 3: Workforce composition">
+      <div class="wrap">
+        <section>
+          <div class="section-head">
+            <h2>The workforce is technical, not just administrative</h2>
+            <p>OPM's Feb. 2026 occupation mix shows FDA capacity depends on scientific, inspection, medical, and regulatory program roles. Total headcount alone can miss whether the right specialized roles are filled.<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-5">[5]</a></p>
+          </div>
+          <div class="grid-2">
+            <div class="panel">
+              <div class="panel-pad">
+                <h3>Top FDA occupations</h3>
+                <p class="note">Feb. 2026 OPM FWD active employees by occupation series.<a class="cite" href="#source-1">[1]</a></p>
+                <div class="occupation-list">
+                  <div class="occupation-item"><div><div class="occupation-name">Consumer safety</div><div class="occupation-code">GS-0696</div></div><div><div class="occupation-count">3,073</div><div class="occupation-share">18.8% of FDA</div></div></div>
+                  <div class="occupation-item"><div><div class="occupation-name">Medical officer</div><div class="occupation-code">GS-0602</div></div><div><div class="occupation-count">1,714</div><div class="occupation-share">10.5% of FDA</div></div></div>
+                  <div class="occupation-item"><div><div class="occupation-name">Biological science</div><div class="occupation-code">GS-0401</div></div><div><div class="occupation-count">1,594</div><div class="occupation-share">9.7% of FDA</div></div></div>
+                  <div class="occupation-item"><div><div class="occupation-name">Health science</div><div class="occupation-code">GS-0601</div></div><div><div class="occupation-count">1,573</div><div class="occupation-share">9.6% of FDA</div></div></div>
+                  <div class="occupation-item"><div><div class="occupation-name">Admin / program</div><div class="occupation-code">GS-0301</div></div><div><div class="occupation-count">1,551</div><div class="occupation-share">9.5% of FDA</div></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="grid-2">
+              <div class="card dark"><div class="num">$159K</div><p>Average FDA annualized adjusted basic pay in Feb. 2026 OPM FWD, excluding redacted pay rows.<a class="cite" href="#source-1">[1]</a></p></div>
+              <div class="card dark"><div class="num">13.1</div><p>Average length of service in Feb. 2026, underscoring the value of specialized experience.<a class="cite" href="#source-1">[1]</a></p></div>
+              <div class="card"><div class="num">16%</div><p>GAO reported the drug investigator vacancy rate rose to 16% by Jun. 2024.<a class="cite" href="#source-5">[5]</a></p></div>
+              <div class="card"><div class="num">75%</div><p>GAO noted drug investigators may travel up to 75% of the time, a retention challenge.<a class="cite" href="#source-5">[5]</a></p></div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="slide-num">03 / 10</div>
+    </article>
+
+    <article class="slide" aria-label="Slide 4: Operating budget trend">
+      <div class="wrap">
+        <section>
+          <div class="section-head">
+            <h2>FY2027 budget request totals $7.23B</h2>
+            <p>FDA's FY2027 Congressional Justification requests a $7.23B total program level. FDA reports FY2026 enacted funding as $7.00B post-transfer and $7.07B when FY2026 is shown with NCTR for comparability.<a class="cite" href="#source-3">[3]</a><a class="cite" href="#source-9">[9]</a></p>
+          </div>
+          <div class="panel dark">
+            <div class="panel-pad">
+              <div class="bars">
+                <div class="bar-row"><div class="bar-label">FY2021</div><div><div class="track"><div class="bar lime" style="width:83.7%"></div></div><div class="bar-note"><span>Final total program level</span><span>$6.05B</span></div></div><div class="bar-value">baseline</div></div>
+                <div class="bar-row"><div class="bar-label">FY2022</div><div><div class="track"><div class="bar lime" style="width:86.5%"></div></div><div class="bar-note"><span>Final total program level</span><span>$6.25B</span></div></div><div class="bar-value">+3.3%</div></div>
+                <div class="bar-row"><div class="bar-label">FY2023</div><div><div class="track"><div class="bar lime" style="width:93.0%"></div></div><div class="bar-note"><span>Enacted total program level</span><span>$6.72B</span></div></div><div class="bar-value">+7.5%</div></div>
+                <div class="bar-row"><div class="bar-label">FY2024</div><div><div class="track"><div class="bar lime" style="width:95.1%"></div></div><div class="bar-note"><span>Final total program level</span><span>$6.87B</span></div></div><div class="bar-value">+2.3%</div></div>
+                <div class="bar-row"><div class="bar-label">FY2025</div><div><div class="track"><div class="bar blue" style="width:97.2%"></div></div><div class="bar-note"><span>Enacted incl. NCTR</span><span>$7.03B</span></div></div><div class="bar-value">+2.2%</div></div>
+                <div class="bar-row"><div class="bar-label">FY2026</div><div><div class="track"><div class="bar blue" style="width:96.8%"></div></div><div class="bar-note"><span>Enacted post-transfer</span><span>$7.00B</span></div></div><div class="bar-value">-0.4%</div></div>
+                <div class="bar-row"><div class="bar-label">FY2027 request</div><div><div class="track"><div class="bar orange" style="width:100%"></div></div><div class="bar-note"><span>President's Budget request</span><span>$7.23B</span></div></div><div class="bar-value">+3.3%</div></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="slide-num">04 / 10</div>
+    </article>
+
+    <article class="slide" aria-label="Slide 5: Funding mix">
+      <div class="wrap">
+        <section>
+          <div class="section-head">
+            <h2>User fees are almost half of FDA funding</h2>
+            <p>FDA's total program level combines congressional budget authority and industry user fees. User fees generally support product-review programs; broader public-health and inspection functions rely more on budget authority.<a class="cite" href="#source-3">[3]</a><a class="cite" href="#source-8">[8]</a></p>
+          </div>
+          <div class="grid-2">
+            <div class="panel">
+              <div class="panel-pad">
+                <h3>FY2027 request funding mix</h3>
+                <p class="note">Total program level: $7.23B</p>
+                <div class="stack" style="margin-top:20px;"><div class="ba" style="width:45.7%">Budget authority 45.7%</div><div class="uf" style="width:54.3%">User fees 54.3%</div></div>
+                <div class="grid-2" style="margin-top:20px;">
+                  <div class="card"><div class="num">$3.31B</div><p>Budget authority, FY2027 requested post-transfer.<a class="cite" href="#source-3">[3]</a></p></div>
+                  <div class="card"><div class="num">$3.92B</div><p>User fees, FY2027 requested.<a class="cite" href="#source-3">[3]</a></p></div>
+                </div>
+              </div>
+            </div>
+            <div class="panel dark">
+              <div class="panel-pad">
+                <h3>FY2027 request shifts the mix</h3>
+                <div class="grid-2" style="margin-top:22px;">
+                  <div class="card dark"><div class="num">-$48M</div><p>Budget authority change versus FY2026 enacted post-transfer.<a class="cite" href="#source-3">[3]</a></p></div>
+                  <div class="card dark"><div class="num">+$280M</div><p>User fee increase versus FY2026 enacted.<a class="cite" href="#source-3">[3]</a></p></div>
+                </div>
+                <p class="note" style="color:rgba(246,241,232,.72);">User fee continuity can protect review programs. Budget authority levels also affect inspections, labs, policy, enforcement, and cross-agency support.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="slide-num">05 / 10</div>
+    </article>
+
+    <article class="slide" aria-label="Slide 6: Budget per employee and labor pressure">
+      <div class="wrap">
+        <section>
+          <div class="section-head">
+            <h2>Budget grew, but labor pressure also rose</h2>
+            <p>Total program dollars per active employee rise when the FY2027 budget request is paired with OPM's Feb. 2026 workforce file. This is not a productivity measure, but it shows how budget levels and staffing capacity can diverge.<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-3">[3]</a></p>
+          </div>
+          <div class="grid-2">
+            <div class="panel">
+              <div class="panel-pad">
+                <h3>Approximate program dollars per employee</h3>
+                <div class="bars" style="margin-top:18px;">
+                  <div class="bar-row"><div class="bar-label" style="color:var(--ink)">FY2021</div><div class="track"><div class="bar blue" style="width:69.8%"></div></div><div class="bar-value">$308K</div></div>
+                  <div class="bar-row"><div class="bar-label" style="color:var(--ink)">FY2022</div><div class="track"><div class="bar blue" style="width:71.9%"></div></div><div class="bar-value">$317K</div></div>
+                  <div class="bar-row"><div class="bar-label" style="color:var(--ink)">FY2023</div><div class="track"><div class="bar blue" style="width:75.3%"></div></div><div class="bar-value">$332K</div></div>
+                  <div class="bar-row"><div class="bar-label" style="color:var(--ink)">FY2024</div><div class="track"><div class="bar blue" style="width:74.5%"></div></div><div class="bar-value">$329K</div></div>
+                  <div class="bar-row"><div class="bar-label" style="color:var(--ink)">FY2025</div><div class="track"><div class="bar lime" style="width:76.9%"></div></div><div class="bar-value">$339K</div></div>
+                  <div class="bar-row"><div class="bar-label" style="color:var(--ink)">FY2027 request</div><div class="track"><div class="bar orange" style="width:100%"></div></div><div class="bar-value">$441K</div></div>
+                </div>
+                <p class="note">The FY2027 request row pairs FDA's requested program level with OPM's Feb. 2026 FWD active employee count; it is directional, not a productivity metric.</p>
+              </div>
+            </div>
+            <div class="grid-2">
+              <div class="card dark"><div class="num">+43%</div><p>Approximate increase in program dollars per employee from FY2021 to the FY2027 request and Feb. 2026 workforce pairing.</p></div>
+              <div class="card dark"><div class="num">$159K</div><p>Average FDA annualized adjusted basic pay in the Feb. 2026 FWD employment file.<a class="cite" href="#source-1">[1]</a></p></div>
+              <div class="card"><div class="num">18,174</div><p>FDA FY2027 requested FTE, versus 18,057 enacted for FY2026.<a class="cite" href="#source-3">[3]</a></p></div>
+              <div class="card"><div class="num">13.1</div><p>Average FDA length of service in Feb. 2026; specialized experience remains a capacity asset.<a class="cite" href="#source-1">[1]</a></p></div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="slide-num">06 / 10</div>
+    </article>
+
+    <article class="slide" aria-label="Slide 7: Workload footprint">
+      <div class="wrap">
+        <section>
+          <div class="section-head">
+            <h2>The job is broad, global, and inspection-heavy</h2>
+            <p>FDA's capacity covers the regulated market, product review, manufacturing oversight, food safety, imports, recalls, and enforcement. OPM's Feb. 2026 active-employee count should be read against this broad workload footprint.<a class="cite" href="#source-4">[4]</a></p>
+          </div>
+          <div class="grid-4">
+            <div class="card"><div class="num">$4.1T</div><p>Food, tobacco, and medical products under FDA oversight in the U.S. and abroad.<a class="cite" href="#source-4">[4]</a></p></div>
+            <div class="card"><div class="num">276K</div><p>FDA-registered facilities listed in FDA at a Glance.<a class="cite" href="#source-4">[4]</a></p></div>
+            <div class="card"><div class="num">60%</div><p>Share of registered facilities that are foreign, based on 164,403 of 276,206 facilities.<a class="cite" href="#source-4">[4]</a></p></div>
+            <div class="card"><div class="num">78%</div><p>Active pharmaceutical ingredient manufacturers based outside the United States.<a class="cite" href="#source-4">[4]</a></p></div>
+          </div>
+          <div class="grid-3" style="margin-top:18px;">
+            <div class="card dark"><div class="num">24K+</div><p>Approved prescription drug products.<a class="cite" href="#source-4">[4]</a></p></div>
+            <div class="card dark"><div class="num">130K+</div><p>Medical device products under FDA oversight.<a class="cite" href="#source-4">[4]</a></p></div>
+            <div class="card dark"><div class="num">77%</div><p>Share of U.S. food supply regulated by FDA, excluding USDA areas.<a class="cite" href="#source-4">[4]</a></p></div>
+          </div>
+        </section>
+      </div>
+      <div class="slide-num">07 / 10</div>
+    </article>
+
+    <article class="slide" aria-label="Slide 8: Capacity stress signals">
+      <div class="wrap">
+        <section>
+          <div class="section-head">
+            <h2>Oversight reports identify capacity stress</h2>
+            <p>Headcount and budget growth do not prove that FDA has sufficient capacity. GAO and HHS OIG connect staffing, funding-model limits, data quality, training, travel burden, and resource constraints to inspection and recall gaps.<a class="cite" href="#source-5">[5]</a><a class="cite" href="#source-6">[6]</a><a class="cite" href="#source-7">[7]</a><a class="cite" href="#source-8">[8]</a></p>
+          </div>
+          <div class="grid-3">
+            <div class="card">
+              <span class="pill orange">Drug inspections</span>
+              <div class="num">-36%</div>
+              <p>GAO found FY2023 drug manufacturer inspections were 36% below FY2019, due in part to reduced investigator capacity. Investigator vacancy reached 16% in Jun. 2024.<a class="cite" href="#source-5">[5]</a></p>
+            </div>
+            <div class="card">
+              <span class="pill blue">Food inspections</span>
+              <div class="num">3-5 yr</div>
+              <p>HHS OIG found FDA was not inspecting enough domestic food facilities to meet required future timeframes and had data-quality issues in its facility inventory.<a class="cite" href="#source-6">[6]</a></p>
+            </div>
+            <div class="card">
+              <span class="pill pink">Device recalls</span>
+              <div class="num">3,934</div>
+              <p>GAO found FDA oversaw 3,934 medical device recalls from FY2020 to FY2024 and could not meet its 3-month termination goal due to resource constraints.<a class="cite" href="#source-7">[7]</a></p>
+            </div>
+          </div>
+          <div class="panel dark" style="margin-top:20px;"><div class="panel-pad"><p class="big-text" style="color:rgba(246,241,232,.78)">Role mix matters: losing experienced inspectors, reviewers, recall staff, scientists, or lab personnel can affect capacity more than the same aggregate headcount change in lower-criticality roles. GAO's 2026 review also identifies user-fee dependence as a constraint on flexible oversight funding decisions.</p></div></div>
+        </section>
+      </div>
+      <div class="slide-num">08 / 10</div>
+    </article>
+
+    <article class="slide" aria-label="Slide 9: Interpretation">
+      <div class="wrap">
+        <section>
+          <div class="section-head"><h2>Interpretation</h2></div>
+          <div class="panel">
+            <div class="panel-pad">
+              <p class="big-text">The official data point to a mixed FDA capacity picture. FDA's requested program level rises in FY2027, while OPM's Feb. 2026 active-employee file is materially below the Sep. 2024 count. FTE requests, user fee continuity, and process modernization can support key work. Capacity risk remains because FDA's budget is split across restricted funding streams, salary costs remain high, global facility oversight remains large, and GAO/OIG reports identify inspection and recall gaps. A useful dashboard should track total employees, dollars, vacancies, role mix, inspection completion, recall termination, review timelines, and foreign oversight workload.<a class="cite" href="#source-1">[1]</a><a class="cite" href="#source-3">[3]</a><a class="cite" href="#source-4">[4]</a><a class="cite" href="#source-5">[5]</a><a class="cite" href="#source-6">[6]</a><a class="cite" href="#source-7">[7]</a><a class="cite" href="#source-8">[8]</a></p>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="slide-num">09 / 10</div>
+    </article>
+
+    <article class="slide" aria-label="Slide 10: References">
+      <div class="wrap">
+        <section>
+          <div class="section-head">
+            <h2>References</h2>
+            <p>Government sources used for the employee, budget, workload, and oversight-capacity figures.</p>
+          </div>
+          <div class="sources">
+            <p id="source-1"><sup>1</sup> <a href="https://data.opm.gov/explore-data/data/data-downloads" target="_blank" rel="noopener">OPM Federal Workforce Data. Employment raw data, Feb. 2026 current file; FDA extracted as agency subelement HE36.</a></p>
+            <p id="source-2"><sup>2</sup> <a href="https://data.opm.gov/info-and-help/release-notes" target="_blank" rel="noopener">OPM Federal Workforce Data. Release 1.6.0 notes, Apr. 1, 2026; Feb. 2026 datasets complete.</a></p>
+            <p id="source-3"><sup>3</sup> <a href="https://www.fda.gov/media/191778/download?attachment" target="_blank" rel="noopener">FDA. Fiscal Year 2027 Justification of Estimates for Appropriations Committees.</a></p>
+            <p id="source-4"><sup>4</sup> <a href="https://www.fda.gov/media/154548/download" target="_blank" rel="noopener">FDA Office of Economics and Analysis. FDA at a Glance, Jan. 2026.</a></p>
+            <p id="source-5"><sup>5</sup> <a href="https://www.gao.gov/products/gao-25-106775" target="_blank" rel="noopener">GAO. Drug Safety: FDA Should Implement Strategies to Retain Its Inspection Workforce, GAO-25-106775.</a></p>
+            <p id="source-6"><sup>6</sup> <a href="https://oig.hhs.gov/reports/all/2025/fda-food-safety-inspections-of-domestic-food-facilities/" target="_blank" rel="noopener">HHS OIG. FDA Food Safety Inspections of Domestic Food Facilities, OEI-02-23-00300.</a></p>
+            <p id="source-7"><sup>7</sup> <a href="https://www.gao.gov/products/gao-26-107619" target="_blank" rel="noopener">GAO. Medical Device Recalls: HHS and FDA Should Address Limitations in Oversight of Recall Process, GAO-26-107619.</a></p>
+            <p id="source-8"><sup>8</sup> <a href="https://www.gao.gov/products/gao-26-107779" target="_blank" rel="noopener">GAO. Food and Drug Administration: Oversight Responsibilities and Funding, GAO-26-107779.</a></p>
+            <p id="source-9"><sup>9</sup> <a href="https://www.fda.gov/about-fda/reports/budgets" target="_blank" rel="noopener">FDA. Budgets page, current FY2027 budget-document portal and historical budget documents.</a></p>
+          </div>
+        </section>
+      </div>
+      <div class="slide-num">10 / 10</div>
+    </article>
+  </main>
+  <script>
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    slides.forEach(slide => {
+      if (!slide.querySelector(':scope > .slide-bg-img')) {
+        const img = document.createElement('img');
+        img.className = 'slide-bg-img';
+        img.src = 'fda_workforce_budget_slide_bg.png';
+        img.alt = '';
+        img.setAttribute('aria-hidden', 'true');
+        slide.prepend(img);
+      }
+    });
+    let cur = 0;
+    const go = i => {
+      cur = Math.max(0, Math.min(slides.length - 1, i));
+      slides[cur].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    };
+    document.addEventListener('keydown', e => {
+      if (['ArrowRight', 'ArrowDown', ' ', 'PageDown'].includes(e.key)) {
+        e.preventDefault();
+        go(cur + 1);
+      } else if (['ArrowLeft', 'ArrowUp', 'PageUp'].includes(e.key)) {
+        e.preventDefault();
+        go(cur - 1);
+      } else if (e.key === 'Home') {
+        e.preventDefault();
+        go(0);
+      } else if (e.key === 'End') {
+        e.preventDefault();
+        go(slides.length - 1);
+      }
+    });
+  </script>
+</body>
+</html>
