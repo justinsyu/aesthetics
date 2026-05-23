@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RWE Signal Terms Infographic</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --blue: #3860be;
+      --cyan: #0dcaf0;
+      --pink: #d83a83;
+      --orange: #ff6900;
+      --cream: #fff7e8;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+    }
+    @page { size: 1200px 2260px; margin: 0; }
+    .sheet {
+      position: relative;
+      width: 1200px;
+      height: 2260px;
+      overflow: hidden;
+      margin: 0 auto;
+      background: var(--paper);
+    }
+    .bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      pointer-events: none;
+      user-select: none;
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      padding: 58px 60px 40px;
+      display: grid;
+      grid-template-rows: auto auto auto 1fr auto;
+      gap: 24px;
+    }
+    .pill {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      border: 3px solid var(--line);
+      border-radius: 999px;
+      background: var(--lime);
+      padding: 11px 24px 10px;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+      font-weight: 520;
+    }
+    h1, h2, h3, p { margin: 0; }
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+    h1 {
+      font-size: 68px;
+      line-height: 1.02;
+      font-weight: 500;
+      letter-spacing: 0;
+      max-width: 1080px;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 28px;
+      line-height: 1.15;
+      max-width: 1080px;
+      width: 100%;
+      margin-left: 0;
+      padding-bottom: 8px;
+      font-weight: 400;
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .metric {
+      border: 3px solid var(--line);
+      border-radius: 26px;
+      background: rgba(255,250,240,.9);
+      padding: 25px 26px;
+      min-height: 150px;
+    }
+    .metric.dark {
+      background: var(--ink);
+      color: var(--cream);
+    }
+    .number {
+      font-size: 58px;
+      line-height: .9;
+      font-weight: 500;
+      margin-bottom: 13px;
+    }
+    .metric .label {
+      color: var(--muted);
+      font-size: 20px;
+      line-height: 1.08;
+      font-weight: 400;
+    }
+    .metric.dark .label { color: rgba(255,247,232,.76); }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      grid-template-rows: auto 1fr;
+      gap: 26px;
+      align-content: stretch;
+    }
+    .panel {
+      border: 3px solid var(--line);
+      border-radius: 28px;
+      background: rgba(255,250,240,.9);
+      padding: 34px;
+      overflow: hidden;
+    }
+    .panel.dark {
+      background: var(--ink);
+      color: var(--cream);
+    }
+    .panel h2 {
+      font-size: 43px;
+      line-height: .98;
+      font-weight: 500;
+      margin-bottom: 24px;
+      letter-spacing: 0;
+    }
+    .bar-list { display: grid; gap: 34px; }
+    .bar-row {
+      display: grid;
+      grid-template-columns: 178px 1fr 68px;
+      gap: 14px;
+      align-items: center;
+      font-size: 21px;
+      line-height: 1.06;
+    }
+    .track {
+      height: 38px;
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,250,240,.65);
+      overflow: hidden;
+    }
+    .fill { height: 100%; border-right: 2px solid var(--line); }
+    .pct {
+      text-align: right;
+      font-size: 22px;
+      font-weight: 500;
+    }
+    .small-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.22;
+    }
+
+    .density {
+      display: grid;
+      gap: 32px;
+    }
+    .density-row {
+      display: grid;
+      grid-template-columns: 142px 1fr;
+      gap: 38px;
+      align-items: start;
+      padding-bottom: 32px;
+      border-bottom: 2px solid rgba(255,247,232,.18);
+    }
+    .density-row:last-child { border-bottom: 0; padding-bottom: 0; }
+    .density-num {
+      color: var(--lime);
+      font-size: 54px;
+      line-height: .92;
+      font-weight: 500;
+    }
+    .density-copy {
+      color: rgba(255,247,232,.92);
+      font-size: 27px;
+      line-height: 1.09;
+    }
+    .density-copy span {
+      display: block;
+      color: rgba(255,247,232,.66);
+      margin-top: 7px;
+      font-size: 21px;
+      line-height: 1.2;
+    }
+
+    .term-panel {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+    }
+    .term-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 14px;
+      align-items: stretch;
+      height: auto;
+    }
+    .term-col {
+      height: 100%;
+      display: grid;
+      grid-template-rows: 1fr auto auto;
+      gap: 9px;
+      align-items: stretch;
+    }
+    .term-bar-wrap {
+      height: 274px;
+      border: 2px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,250,240,.66);
+      display: flex;
+      align-items: end;
+      height: auto;
+      overflow: hidden;
+    }
+    .term-bar {
+      width: 100%;
+      border-top: 2px solid var(--line);
+    }
+    .term-value {
+      font-size: 38px;
+      line-height: .94;
+      font-weight: 500;
+    }
+    .term-label {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.05;
+      min-height: 44px;
+    }
+    .term-panel .small-note {
+      font-size: 20px;
+      line-height: 1.18;
+      white-space: nowrap;
+    }
+    .footer {
+      border-top: 2px solid rgba(27,31,23,.24);
+      padding-top: 12px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.2;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+    }
+  </style>
+</head>
+<body>
+  <main class="sheet">
+    <img class="bg" src="rwe_signal_background.png" alt="" aria-hidden="true" />
+    <section class="content">
+      <div class="pill">681 HCP drug websites evaluated</div>
+
+      <header class="hero">
+        <h1>Real-world evidence terminology in<br />HCP drug website content</h1>
+        <p class="subtitle">Across evaluated HCP drug websites, real-world evidence terminology appears as page-level signals, most often through postmarketing, registry, observational, claims/database, and Phase 4 language.</p>
+      </header>
+
+      <section class="metrics">
+        <div class="metric dark">
+          <div class="number">149</div>
+          <div class="label">site rows had confirmed RWE signal terms in the audit</div>
+        </div>
+        <div class="metric">
+          <div class="number">21.9%</div>
+          <div class="label">of all audited URLs were RWE-positive signal rows</div>
+        </div>
+        <div class="metric">
+          <div class="number">264</div>
+          <div class="label">normalized RWE signal-term hits across those rows</div>
+        </div>
+      </section>
+
+      <section class="main-grid">
+        <div class="panel">
+          <h2>Signal families found on RWE-positive pages</h2>
+          <div class="bar-list">
+            <div class="bar-row">
+              <div>Postmarketing</div>
+              <div class="track"><div class="fill" style="width: 100%; background: var(--blue);"></div></div>
+              <div class="pct">36.9%</div>
+            </div>
+            <div class="bar-row">
+              <div>Real-world / RWE</div>
+              <div class="track"><div class="fill" style="width: 91%; background: var(--lime);"></div></div>
+              <div class="pct">33.6%</div>
+            </div>
+            <div class="bar-row">
+              <div>Registries</div>
+              <div class="track"><div class="fill" style="width: 82%; background: var(--cyan);"></div></div>
+              <div class="pct">30.2%</div>
+            </div>
+            <div class="bar-row">
+              <div>Observational / retrospective</div>
+              <div class="track"><div class="fill" style="width: 71%; background: var(--pink);"></div></div>
+              <div class="pct">26.2%</div>
+            </div>
+            <div class="bar-row">
+              <div>Claims / EHR / database</div>
+              <div class="track"><div class="fill" style="width: 51%; background: var(--orange);"></div></div>
+              <div class="pct">18.8%</div>
+            </div>
+            <div class="bar-row">
+              <div>Phase 4 / extension</div>
+              <div class="track"><div class="fill" style="width: 18%; background: #8a6d3b;"></div></div>
+              <div class="pct">6.7%</div>
+            </div>
+          </div>
+          <p class="small-note">Percentages use the 149 RWE-positive site rows. A page can contain more than one signal family.</p>
+        </div>
+
+        <div class="panel dark">
+          <h2>RWE language is layered</h2>
+          <div class="density">
+            <div class="density-row">
+              <div class="density-num">1.77</div>
+              <div class="density-copy">signal terms per RWE-positive page<span>264 normalized term hits across 149 positive rows.</span></div>
+            </div>
+            <div class="density-row">
+              <div class="density-num">48.3%</div>
+              <div class="density-copy">had two or more RWE terms<span>Many pages combine evidence-source vocabulary rather than using one label.</span></div>
+            </div>
+            <div class="density-row">
+              <div class="density-num">20.8%</div>
+              <div class="density-copy">had three or more RWE terms<span>Dense pages often stack real-world, registry, claims, and postmarketing language.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel term-panel">
+          <h2>The term vocabulary is concentrated</h2>
+          <div class="term-grid">
+            <div class="term-col">
+              <div class="term-bar-wrap"><div class="term-bar" style="height: 100%; background: var(--blue);"></div></div>
+              <div class="term-value">51</div>
+              <div class="term-label">postmarketing</div>
+            </div>
+            <div class="term-col">
+              <div class="term-bar-wrap"><div class="term-bar" style="height: 88%; background: var(--cyan);"></div></div>
+              <div class="term-value">45</div>
+              <div class="term-label">registry</div>
+            </div>
+            <div class="term-col">
+              <div class="term-bar-wrap"><div class="term-bar" style="height: 84%; background: var(--lime);"></div></div>
+              <div class="term-value">43</div>
+              <div class="term-label">real-world</div>
+            </div>
+            <div class="term-col">
+              <div class="term-bar-wrap"><div class="term-bar" style="height: 53%; background: var(--pink);"></div></div>
+              <div class="term-value">27</div>
+              <div class="term-label">observational</div>
+            </div>
+            <div class="term-col">
+              <div class="term-bar-wrap"><div class="term-bar" style="height: 51%; background: #be2bbb;"></div></div>
+              <div class="term-value">26</div>
+              <div class="term-label">real-world evidence</div>
+            </div>
+            <div class="term-col">
+              <div class="term-bar-wrap"><div class="term-bar" style="height: 37%; background: var(--orange);"></div></div>
+              <div class="term-value">19</div>
+              <div class="term-label">retrospective</div>
+            </div>
+            <div class="term-col">
+              <div class="term-bar-wrap"><div class="term-bar" style="height: 29%; background: #8a6d3b;"></div></div>
+              <div class="term-value">15</div>
+              <div class="term-label">claims</div>
+            </div>
+          </div>
+          <p class="small-note">Top three terms account for 139 of 264 normalized term hits, or 52.7% of the detected RWE vocabulary.</p>
+        </div>
+      </section>
+      <footer class="footer">
+        <div>Source: corrected site-level RWE signal review from 681 HCP/drug URLs. Counts are observed page-language signals, not validation of clinical evidence.</div>
+        <div>149 RWE-positive rows</div>
+      </footer>
+    </section>
+  </main>
+</body>
+</html>

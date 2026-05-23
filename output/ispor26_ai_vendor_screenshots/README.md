@@ -1,0 +1,4045 @@
+# ISPOR 2026 Exhibitor AI Offering Screenshot Index
+
+- Exhibitors in GoExpo roster: 117
+- Crawl chunk files assembled: 3
+- Vendors with completed crawl records: 117
+- Vendors with AI-related pages captured: 88
+- AI-related pages/screenshots detected after dedupe: 1368
+- Screenshots with visible highlighted AI/ML text: 1256
+
+## Method Notes
+
+- Roster source: ISPOR 2026 GoExpo exhibitor list and profile pages.
+- Website domains were validated by parallel subagents and stored in `website_overrides.json`; uncertain entries remain marked through the crawler summary/errors.
+- The crawler visits same-site pages discovered from the homepage, same-domain links, and sitemap URLs whose URL/text matches AI, machine learning, automation, platform, analytics, RWE, HEOR, or evidence-discovery terms.
+- Screenshots are full-page captures with DOM-injected yellow highlights around matched AI/ML terms.
+- Public websites can block automation, require JavaScript flows, hide pages behind forms, or omit sitemaps; those limitations are retained in the `errors` column.
+
+## Captured AI Offering Pages With Visible Highlights
+
+
+### Access Infinity Ltd
+
+- [3 ways AI will influence market access](https://accessinfinity.com/webinar/3-ways-ai-will-influence-market-access/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/access-infinity-ltd/09e602da48.png`
+  - Highlight count: 1; score: 36
+- [3 ways AI will influence market access - Access Infinity](https://accessinfinity.com/resources/3-ways-ai-will-influence-market-access-superheroes/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/access-infinity-ltd/85918f221e.png`
+  - Highlight count: 1; score: 46
+- [Access Infinity Launches Game-Changing AI-Powered Price & HTA Predictions Feature on Nuro Platform](https://accessinfinity.com/news/access-infinity-launches-game-changing-ai-powered-price-hta-predictions-feature-on-nuro-platform/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/access-infinity-ltd/91ea24d5db.png`
+  - Highlight count: 7; score: 116
+- [Access Infinity Launches JCA Navigator: The AI-Powered Solution to Transform Joint Clinical Assessment (JCA) Strategy](https://accessinfinity.com/news/access-infinity-launches-jca-navigator-the-ai-powered-solution-to-transform-joint-clinical-assessment-jca-strategy/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/access-infinity-ltd/92e9ed894c.png`
+  - Highlight count: 5; score: 78
+- [AI Evidence Management for Market Access | Case study](https://accessinfinity.com/case-studies/ai-evidence-management-market-access/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/access-infinity-ltd/9c0bbf2c87.png`
+  - Highlight count: 2; score: 37
+- [AI for Market Access in 2025 | Blog](https://accessinfinity.com/blogs/ai-for-market-access-in-2025-whats-working-and-whats-next/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/access-infinity-ltd/aed22a47d2.png`
+  - Highlight count: 5; score: 236
+- [AI in Market Access: Solving Key Challenges](https://accessinfinity.com/blogs/ai-in-market-access/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/access-infinity-ltd/fee5b6f005.png`
+  - Highlight count: 11; score: 424
+- [AI-powered Price & HTA Predictions: Live Nuro Demo](https://offers.accessinfinity.com/ai-powered-price-hta-predictions-live-nuro-demo)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/access-infinity-ltd/7b6e1a1859.png`
+  - Highlight count: 3; score: 64
+- [Analyst/ Senior Analyst | Join us | Access Infinity](https://accessinfinity.com/join-us/client-success-analyst-for-digital-solutions/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/access-infinity-ltd/cd22d7a837.png`
+  - Highlight count: 2; score: 29
+- [Digital Solutions - Access Infinity](https://accessinfinity.com/digital-solutions/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/access-infinity-ltd/aeb3c057c8.png`
+  - Highlight count: 1; score: 22
+- [Home | Access Infinity](https://accessinfinity.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/access-infinity-ltd/15a60e01b6.png`
+  - Highlight count: 1; score: 21
+- [Preparing for JCA: AI could be the key to pharma's success in the EU's HTA framework](https://accessinfinity.com/blogs/preparing-for-jca-ai-could-be-the-key-to-pharmas-success-in-the-eus-hta-framework/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/access-infinity-ltd/8eb292ccb2.png`
+  - Highlight count: 4; score: 155
+- [Real life demonstrations of AI in practice for Market Access & HEOR teams](https://accessinfinity.com/webinar/real-life-demonstrations-of-ai-in-practice-for-market-access-heor-teams/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/access-infinity-ltd/ed770748c2.png`
+  - Highlight count: 1; score: 79
+- [Revolutionising Evidence Management: Access Infinity Launches Evidence Hub, the AI-Powered Solution for HEOR, Value and Access Teams](https://accessinfinity.com/news/revolutionising-evidence-management-access-infinity-launches-evidence-hub-the-ai-powered-solution-for-heor-value-and-access-teams/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/access-infinity-ltd/5b43f7d7f7.png`
+  - Highlight count: 3; score: 57
+- [The Four Pillars of Evidence Management for HEOR Teams](https://offers.accessinfinity.com/the-four-pillars-of-evidence-management-for-heor-teams)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/access-infinity-ltd/324adc1500.png`
+  - Highlight count: 1; score: 35
+
+### Acumetis
+
+- [AI vs Model Builder: Are Economic Models HTA-Ready?](https://acumetisglobal.com/resource/assessing-payer-ready-economic-model-quality-in-bespoke-model-builder-vs-ai-in-a-time-bound-experiment/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/acumetis/4b9dc1eeec.png`
+  - Highlight count: 5; score: 495
+- [Generative AI in Medical Publications: Innovation with Oversight](https://acumetisglobal.com/resource/generative-ai-in-publications-development-innovation-with-oversight/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/acumetis/6bdac7a0cd.png`
+  - Highlight count: 10; score: 201
+
+### Amaris Consulting
+
+- [AI on Ice: Transforming the Cold Chain for a Smarter, Safer Future - Amaris Consulting](https://amaris.com/insights/viewpoint/ai-transformation-in-cold-chain/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/amaris-consulting/5a0dedf59a.png`
+  - Highlight count: 3; score: 187
+- [AI: The New Pillar of Telecommunications](https://amaris.com/insights/viewpoint/ai-telecommunications/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/amaris-consulting/6ccd7c1431.png`
+  - Highlight count: 6; score: 232
+- [Amaris Consulting - Make it happen, together.](https://amaris.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/amaris-consulting/ea6bde37c9.png`
+  - Highlight count: 2; score: 28
+- [Building Trust in AI: What You Need to Know - Amaris Consulting](https://amaris.com/insights/viewpoint/building-trust-in-ai-what-you-need-to-know/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/amaris-consulting/f8f435021a.png`
+  - Highlight count: 4; score: 354
+- [Demystifying AI: A Comprehensive Guide For Businesses](https://amaris.com/insights/news/ai-comprehensive-guide-for-businesses/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/amaris-consulting/60583c6214.png`
+  - Highlight count: 6; score: 120
+- [Drive Operational Success: The Essential Role of AI Companions in Modern Business Practices - Amaris Consulting](https://amaris.com/insights/news/ai-companions-in-business-practices/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/amaris-consulting/78d7c5515c.png`
+  - Highlight count: 15; score: 364
+- [Exploring AI's Revolution: Breakthroughs & 2024 Trends](https://amaris.com/insights/news/ai-trends-2024/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/amaris-consulting/fdf096e5e9.png`
+  - Highlight count: 22; score: 374
+- [From Hype to Impact: 5 Strategies for Successful AI Integration in 2025 - Amaris Consulting](https://amaris.com/insights/news/strategies-for-successful-ai-integration/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/amaris-consulting/abc46c7c42.png`
+  - Highlight count: 2; score: 265
+- [Generative AI in Cybersecurity: Built to Protect. Used to Attack.](https://amaris.com/insights/viewpoint/generative-ai-in-cybersecurity/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/amaris-consulting/cc664d0a56.png`
+  - Highlight count: 6; score: 197
+- [Harnessing AI for Enhanced Biomarker Development in Healthcare](https://amaris.com/insights/news/ai-for-biomarker-development/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/amaris-consulting/32496e741b.png`
+  - Highlight count: 2; score: 200
+- [Hidden Challenges of IT Maintenance in the Age of AI and Cybersecurity](https://amaris.com/insights/viewpoint/challenges-of-it-maintenance/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/amaris-consulting/86eacbea2a.png`
+  - Highlight count: 7; score: 168
+- [How AI is Redefining Software Engineering for a Digital Future - Amaris Consulting](https://amaris.com/insights/amaris-in-action/how-ai-is-redefining-software-engineering-for-a-digital-future/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/amaris-consulting/9d5b31eb13.png`
+  - Highlight count: 6; score: 294
+- [How Enterprises Can Make Web3 and Blockchain Work at Scale](https://amaris.com/insights/news/make-web3-and-blockchain-work-at-scale/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/amaris-consulting/5928c923dc.png`
+  - Highlight count: 1; score: 17
+- [Next-Gen FinTech: The Integration of AI in Financial Services](https://amaris.com/insights/viewpoint/next-gen-fintech-integration-of-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/amaris-consulting/b2e468be1f.png`
+  - Highlight count: 13; score: 299
+- [Optimizing Software Testing with Amar-AI: A Faster, Smarter Approach](https://amaris.com/insights/amaris-in-action/amar-faster-software-testing/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/amaris-consulting/3ce4a24ce6.png`
+  - Highlight count: 4; score: 155
+- [Precision in Life Sciences: Companion AI's Impact on Minimizing Human Errors](https://amaris.com/insights/news/precision-life-sciences-companion-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/amaris-consulting/08890883ac.png`
+  - Highlight count: 8; score: 293
+- [Revolutionizing Evidence-Based Research: A Pioneering Project](https://amaris.com/insights/amaris-in-action/evidence-based-research/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/amaris-consulting/f735056e1d.png`
+  - Highlight count: 10; score: 84
+- [Revolutionizing Quality Assurance through AI - Amaris Consulting](https://amaris.com/insights/amaris-in-action/ai-4-quality-assurance/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/amaris-consulting/f5f4ba0fa6.png`
+  - Highlight count: 11; score: 66
+- [RPA and AI: Welcome to Smart Automation](https://amaris.com/insights/spotlight/rpa-ai-welcome-smart-automation/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/amaris-consulting/2d7767b6eb.png`
+  - Highlight count: 12; score: 153
+- [Smart, Responsible, Real: The New Face of AI in Telecommunications - Amaris Consulting](https://amaris.com/insights/viewpoint/ai-in-telecommunications/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/amaris-consulting/ed881f8e2c.png`
+  - Highlight count: 7; score: 231
+- [The Power of AI in Project Management: Unlocking Success](https://amaris.com/insights/viewpoint/ai-in-project-management/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/amaris-consulting/1903ac7714.png`
+  - Highlight count: 1; score: 287
+- [The rise of Open-Source Software - Amaris Consulting](https://amaris.com/insights/spotlight/the-rise-of-open-source-software/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/amaris-consulting/4164938258.png`
+  - Highlight count: 1; score: 22
+- [The start of a new era in Banking: Generative AI's Resonance in Banking Today - Amaris Consulting](https://amaris.com/insights/viewpoint/generative-ais-in-banking/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/amaris-consulting/ee932b0fbc.png`
+  - Highlight count: 10; score: 254
+- [When Employees Connect, Customers Stay: Building Omni-Connected Retail Teams - Amaris Consulting](https://amaris.com/insights/news/omni-connected-retail-teams/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/amaris-consulting/f5ba69cf96.png`
+  - Highlight count: 2; score: 39
+
+### American Association for Cancer Research (AACR)
+
+- [How Cancer Patients Can Manage Pain - American Association for Cancer Research (AACR)](https://www.aacr.org/blog/2016/05/09/cancer-patients-can-manage-pain/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/american-association-for-cancer-research-aacr/93999e2a28.png`
+  - Highlight count: 1; score: 22
+- [Meet Anna Barker, PhD, Chair of the AACR Scientist↔Survivor Program - American Association for Cancer Research (AACR)](https://www.aacr.org/blog/2016/03/28/meet-the-chairs-anna-barker/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/american-association-for-cancer-research-aacr/d4788ff659.png`
+  - Highlight count: 1; score: 14
+- [Tailoring Cancer Prevention Strategies to Different Populations - American Association for Cancer Research (AACR)](https://www.aacr.org/blog/2016/10/11/tailoring-cancer-prevention-strategies-to-different-populations/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/american-association-for-cancer-research-aacr/7088be8427.png`
+  - Highlight count: 1; score: 15
+
+### Analysis Group
+
+- [A Real-World View of the Health Care Costs of Air Pollution - Analysis Group](https://www.analysisgroup.com/Insights/ag-feature/health-care-bulletin/2021/a-real-world-view-of-the-health-care-costs-of-air-pollution/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/701c7c8cde.png`
+  - Highlight count: 2; score: 19
+- [ABA Mock Trial: Would a Merger of Online Platforms Lessen Competition? - Analysis Group](https://www.analysisgroup.com/Insights/ag-feature/analysis-group-forum/forum-2022/aba-mock-trial-would-a-merger-of-online-platforms-lessen-competition/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/5c913ac7ea.png`
+  - Highlight count: 2; score: 21
+- [Analysis Group Co-launches Consortium to Advance AI-Driven Precision Health and Evidenced Medicine Research in Cardiometabolic Conditions - Analysis Group](https://www.analysisgroup.com/news-and-events/news/analysis-group-co-launches-consortium-to-advance-ai-driven-precision-health-and-evidenced-medicine-research-in-cardiometabolic-conditions/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/234e8c25d2.png`
+  - Highlight count: 7; score: 156
+- [Analysis Group Launches Experts’ Table Series with a Discussion on AI and Competition in Europe - Analysis Group](https://www.analysisgroup.com/news-and-events/news/analysis-group-launches-experts-table-series-with-a-discussion-on-ai-and-competition-in-europe/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/303657d3ce.png`
+  - Highlight count: 5; score: 105
+- [Analytics - Analysis Group](https://www.analysisgroup.com/practices/strategy-policy-and-analytics/analytics/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/e4609aa477.png`
+  - Highlight count: 3; score: 20
+- [Artificial Intelligence and Real-World Evidence in Oncology Research - Analysis Group](https://www.analysisgroup.com/Insights/ag-feature/health-care-bulletin/2023/artificial-intelligence-and-real-world-evidence-in-oncology-research/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/2e1988d4a6.png`
+  - Highlight count: 11; score: 105
+- [Confusing? Funny? Just Plain Bad? Surveys and Trademark Litigation After Jack Daniel’s - Analysis Group](https://www.analysisgroup.com/Insights/ag-feature/analysis-group-forum/forum-2023/confusing-funny-just-plain-bad-surveys-and-trademark-litigation-after-jack-daniels/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/4e93aa2752.png`
+  - Highlight count: 2; score: 19
+- [Data Science, AI & Statistical Modeling - Analysis Group](https://www.analysisgroup.com/practices/data-science-ai-statistical-modeling/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/ebc0532f88.png`
+  - Highlight count: 30; score: 98
+- [Economic Consulting & Strategy - Analysis Group](https://www.analysisgroup.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/286a05a65b.png`
+  - Highlight count: 30; score: 38
+- [Economic Solutions to Water Conflicts - Analysis Group](https://www.analysisgroup.com/Insights/ag-feature/analysis-group-forum/analysis-group-forum/economic-solutions-to-water-conflicts/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/f55261151c.png`
+  - Highlight count: 2; score: 19
+- [Epidemiology Capabilities & Services - Analysis Group](https://www.analysisgroup.com/practices/heor-epidemiology-and-market-access/epidemiology-biostatistics/epidemiology-capabilities-and-services/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/9dfa858b15.png`
+  - Highlight count: 3; score: 22
+- [Exclusionary Abuses and Multi-sided Platforms - Analysis Group](https://www.analysisgroup.com/Insights/ag-feature/analysis-group-forum/summer-2018/exclusionary-abuses-and-multi-sided-platforms/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/e66e775cc2.png`
+  - Highlight count: 2; score: 25
+- [Forecasting Corporate Failure: A Look at Statistical and Theoretical Approaches - Analysis Group](https://www.analysisgroup.com/Insights/ag-feature/analysis-group-forum/2015-year-in-review/forecasting-corporate-failure--a-look-at-statistical-and-theoretical-approaches/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/df4c0095ea.png`
+  - Highlight count: 3; score: 27
+- [Forecasting Corporate Failure: Understanding Statistical and Theoretical Approaches to Bankruptcy Prediction - Analysis Group](https://www.analysisgroup.com/Insights/publishing/forecasting-corporate-failure--understanding-statistical-and-theoretical-approaches-to-bankruptcy-prediction/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/c5b4977934.png`
+  - Highlight count: 3; score: 27
+- [From Tool Access to Workflow Advantage: A Q&A with Professor Timothy DeStefano on Making GenAI Work in Companies - Analysis Group](https://www.analysisgroup.com/Insights/ag-feature/analysis-group-forum/forum-2026/from-tool-access-to-workflow-advantage-a-qa-with-professor-timothy-destefano-on-making-genai-work-in-companies/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/b412c83763.png`
+  - Highlight count: 23; score: 279
+- [How Does Your Business Grow? The Importance of Growth Assumptions in Delaware Appraisal Rulings - Analysis Group](https://www.analysisgroup.com/Insights/ag-feature/analysis-group-forum/forum-2024/how-does-your-business-grow-the-importance-of-growth-assumptions-in-delaware-appraisal-rulings/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/e36146c00b.png`
+  - Highlight count: 2; score: 17
+- [Innovation, Drug Pricing, and the Pandemic: A Q&A with Craig Garthwaite - Analysis Group](https://www.analysisgroup.com/Insights/ag-feature/analysis-group-forum/forum-2020/innovation-drug-pricing-and-the-pandemic-a-qa-with-craig-garthwaite/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/c69fdf1e9a.png`
+  - Highlight count: 2; score: 21
+- [Machine Learning Algorithms in Health Care Litigation - Analysis Group](https://www.analysisgroup.com/Insights/ag-feature/health-care-bulletin/fall-2016/machine-learning-algorithms-in-health-care-litigation/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/5c98a9f8d0.png`
+  - Highlight count: 22; score: 190
+- [Media, Entertainment & Communications - Analysis Group](https://www.analysisgroup.com/practices/media-entertainment-and-communications/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/cb73d57b8c.png`
+  - Highlight count: 2; score: 19
+- [OpenAI’s Trademark Win Supported by Rebuttal Expert Joel Steckel and Analysis Group Team - Analysis Group](https://www.analysisgroup.com/news-and-events/news/openais-trademark-win-supported-by-rebuttal-expert-joel-steckel-and-analysis-group-team/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/bdd3be4b97.png`
+  - Highlight count: 4; score: 89
+- [Platforms, Competition, and the Crisis: Arun Sundararajan on How Restaurants Have Adapted During the Pandemic - Analysis Group](https://www.analysisgroup.com/Insights/ag-feature/analysis-group-forum/forum-2020/platforms-competition-and-the-crisis-arun-sundararajan-on-how-restaurants-have-adapted-during-the-pandemic/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/7ac8abcb28.png`
+  - Highlight count: 3; score: 31
+- [Quantitative Approaches to Stress-Testing Scientific Claims in Health Care - Analysis Group](https://www.analysisgroup.com/Insights/ag-feature/health-care-bulletin/2023/quantitative-approaches-to-stress-testing-scientific-claims-in-health-care/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/2df2ad39ad.png`
+  - Highlight count: 4; score: 21
+- [SEC Voluntarily Dismisses Negligence Claims Against Analysis Group Client in Accounting Litigation - Analysis Group](https://www.analysisgroup.com/news-and-events/news/sec-voluntarily-dismisses-negligence-claims-against-analysis-group-client-in-accounting-litigation/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/4ae9705bcf.png`
+  - Highlight count: 2; score: 25
+- [Shared Learning Without Waiting for Shared Data - Analysis Group](https://www.analysisgroup.com/Insights/ag-feature/health-care-bulletin/2023/shared-learning-without-waiting-for-shared-data-using-federated-analytics-for-health-care-research-across-multiple-institutions-and-countries/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/32e723bcff.png`
+  - Highlight count: 3; score: 30
+- [Steering Through Uncertainty: Antitrust Regimes on Both Sides of the Atlantic - Analysis Group](https://www.analysisgroup.com/Insights/ag-feature/analysis-group-forum/forum-2026/steering-through-uncertainty-antitrust-regimes-on-both-sides-of-the-atlantic/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/daa0878560.png`
+  - Highlight count: 2; score: 23
+- [Strategy, Policy & Analytics - Analysis Group](https://www.analysisgroup.com/practices/strategy-policy-and-analytics/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/a8fe3f7083.png`
+  - Highlight count: 2; score: 17
+- [Thank you for your interest in AGHealth.ai - Analysis Group](https://www.analysisgroup.com/Insights/ag-feature/landing-page/thank-you-for-your-interest-in-aghealth-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/bb0c8e93d8.png`
+  - Highlight count: 9; score: 125
+- [The Art of AI: Using Large Language Models in Economic Consulting - Analysis Group](https://www.analysisgroup.com/Insights/ag-feature/analysis-group-forum/forum-2024/the-art-of-ai-using-large-language-models-in-economic-consulting/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/365285c5b6.png`
+  - Highlight count: 41; score: 350
+- [The Economic Burden of Depression: Finding Hope Amid Despair - Analysis Group](https://www.analysisgroup.com/Insights/ag-feature/health-care-bulletin/2021/the-economic-burden-of-depression-finding-hope-amid-despair/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/3b6cb9365c.png`
+  - Highlight count: 4; score: 57
+- [Tracking the Path of COVID-19 in Haiti - Analysis Group](https://www.analysisgroup.com/Insights/ag-feature/analysis-group-forum/forum-2021/tracking-the-path-of-covid-19--in-haiti/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/a427ee6945.png`
+  - Highlight count: 4; score: 46
+- [Using Canadian Provincial Health Plan Claims - Analysis Group](https://www.analysisgroup.com/Insights/ag-feature/health-care-bulletin/fall-2013/using-canadian-provincial-health-plan-claims/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/c56cc1f09f.png`
+  - Highlight count: 2; score: 21
+- [Venture Debt and the Failure of Silicon Valley Bank: A Q&A with Yael Hochberg and Sabrina Howell - Analysis Group](https://www.analysisgroup.com/Insights/ag-feature/analysis-group-forum/forum-2023/venture-debt-and-the-failure-of-silicon-valley-bank-a-qa-with-yael-hochberg-and-sabrina-howell/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/b7825e8537.png`
+  - Highlight count: 2; score: 17
+- [Vertical Restraints - Analysis Group](https://www.analysisgroup.com/practices/antitrust-competition/vertical-restraints/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/2bd8797b8f.png`
+  - Highlight count: 2; score: 17
+- [When Code Becomes Evidence: Untangling Software and Algorithms in Litigation - Analysis Group](https://www.analysisgroup.com/Insights/ag-feature/analysis-group-forum/forum-2026/when-code-becomes-evidence-untangling-software-and-algorithms-in-litigation/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/5b2347f434.png`
+  - Highlight count: 4; score: 77
+- [Will Retail Debt and Financial Distress Continue to Grow? - Analysis Group](https://www.analysisgroup.com/Insights/ag-feature/analysis-group-forum/summer-2018/will-retail-debt-and-financial-distress-continue-to-grow-/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/analysis-group/3cb17af095.png`
+  - Highlight count: 2; score: 20
+
+### Arcadia.io
+
+- [10 Value-Based Care Software Solutions to Consider in 2026](https://arcadia.io/resources/value-based-care-software)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/arcadia-io/4cc9a96f9f.png`
+  - Highlight count: 5; score: 45
+- [5 questions to ask before you use predictive algorithms in healthcare](https://arcadia.io/resources/5-questions-to-ask-before-you-use-predictive-algorithms-in-healthcare)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/arcadia-io/7282ac97f8.png`
+  - Highlight count: 13; score: 61
+- [A Complete Guide to Healthcare Contract Management Software](https://arcadia.io/resources/healthcare-contract-management-software)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/arcadia-io/83c792ce51.png`
+  - Highlight count: 6; score: 68
+- [Advanced Healthcare Payer Analytics | Arcadia Analytics](https://arcadia.io/healthcare-payer-analytics)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/arcadia-io/e18eb455e5.png`
+  - Highlight count: 5; score: 46
+- [Arcadia Best in KLAS for VBC Managed Services for 2nd Straight Year](https://arcadia.io/resources/arcadia-ranked-best-klas-value-based-care-managed-services-2020)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/arcadia-io/89631b0c52.png`
+  - Highlight count: 1; score: 29
+- [Arcadia statement on predictive analytics and bias](https://arcadia.io/resources/arcadia-statement-on-predictive-analytics-and-bias)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/arcadia-io/3ec832a200.png`
+  - Highlight count: 3; score: 33
+- [Arcadia | Healthcare analytics company driving outcomes](https://arcadia.io/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/arcadia-io/1ed2f9c411.png`
+  - Highlight count: 1; score: 58
+- [Arcadia’s Care Management lauded for identifying and closing care gaps](https://arcadia.io/resources/klas-research-arcadias-care-management-solution-scores-highly-for-identifying-and-closing-care-gaps-1)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/arcadia-io/66a29271d6.png`
+  - Highlight count: 4; score: 33
+- [Building the newest value-based care analytics software](https://arcadia.io/resources/vista-analytics)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/arcadia-io/2120cfb158.png`
+  - Highlight count: 1; score: 29
+- [COVID-19 vaccines may reduce long-COVID before and after diagnosis](https://arcadia.io/resources/vaccination-effective-against-long-covid)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/arcadia-io/0b58797ab6.png`
+  - Highlight count: 2; score: 34
+- [Healthcare Analytics content from Arcadia](https://arcadia.io/resources/topic-healthcare-analytics)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/arcadia-io/c0aa2c9667.png`
+  - Highlight count: 5; score: 77
+- [Healthcare Analytics Software | Arcadia Use Cases](https://arcadia.io/healthcare-analytics)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/arcadia-io/987bc160ac.png`
+  - Highlight count: 1; score: 37
+- [Healthcare BI Data Platform | Arcadia](https://arcadia.io/platform)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/arcadia-io/c5c1ec713a.png`
+  - Highlight count: 1; score: 43
+- [Healthcare BI Data Platform | Arcadia](https://arcadia.io/platform/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/arcadia-io/d225727fc6.png`
+  - Highlight count: 1; score: 43
+- [Healthcare data drives operational, financial, and clinical strategies](https://arcadia.io/resources/practical-analytics-using-data-to-drive-operational-financial-and-clinical-strategies)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/arcadia-io/ebf263ba92.png`
+  - Highlight count: 1; score: 29
+- [How data analytics pave ACOs’ path to success](https://arcadia.io/resources/data-analytics-pave-acos-path-to-success)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/arcadia-io/bc8072d05a.png`
+  - Highlight count: 1; score: 30
+- [How to use healthcare payer analytics for financial success](https://arcadia.io/resources/healthcare-payer-analytics-guide)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/arcadia-io/dbb8e0cddb.png`
+  - Highlight count: 12; score: 74
+- [Identify and use SDoH data for managing vulnerable populations](https://arcadia.io/resources/sdoh-medicaid)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/arcadia-io/74d9dc9303.png`
+  - Highlight count: 1; score: 29
+- [Medical Cost Containment content from Arcadia](https://arcadia.io/resources/topic-medical-cost-containment)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/arcadia-io/eee08153c3.png`
+  - Highlight count: 6; score: 48
+- [Medical Cost Containment | Arcadia Use Cases](https://arcadia.io/medical-cost-containment)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/arcadia-io/63eee32c48.png`
+  - Highlight count: 5; score: 59
+- [Predictive analytics in healthcare: A comprehensive guide](https://arcadia.io/resources/predictive-analytics-healthcare)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/arcadia-io/355d742a65.png`
+  - Highlight count: 58; score: 78
+- [Reducing implicit bias in predictive healthcare analytics](https://arcadia.io/resources/implicit-bias-in-healthcare-analytics)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/arcadia-io/0219f91af9.png`
+  - Highlight count: 17; score: 131
+- [Top 8 Healthcare Analytics Tools and Tips for Selecting One](https://arcadia.io/resources/healthcare-analytics-tools)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/arcadia-io/95133b61e0.png`
+  - Highlight count: 12; score: 216
+- [Top 8 Healthcare Analytics Tools and Tips for Selecting One](https://arcadia.io/resources/healthcare-analytics-tools?utm_source=direct&utm_medium=direct&utm_content=relatedcontent)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/arcadia-io/d629330689.png`
+  - Highlight count: 12; score: 216
+- [Using post-acute analytics to drive patient-centered care](https://arcadia.io/resources/video-using-analytics-to-drive-patient-centered-post-acute-care)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/arcadia-io/0d1d62f3c2.png`
+  - Highlight count: 1; score: 29
+- [Weaving Hospital Variation, Explained](https://arcadia.io/resources/weaving-hospital-variation-explained)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/arcadia-io/dfa73951e2.png`
+  - Highlight count: 1; score: 26
+
+### Arcturis Data (UK) Ltd
+
+- [Arcturis | Advancing Insights Using Real-World Data](https://www.arcturisdata.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/arcturis-data-uk-ltd/76e934337a.png`
+  - Highlight count: 1; score: 17
+
+### Avalere Health LLC
+
+- [Medical communications has a new job: make evidence AI-visible | Avalere Health](https://avalerehealth.com/thought-leadership/if-ai-cant-surface-it-it-doesnt-shape-practice-the-new-role-of-medical-communications/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/avalere-health-llc/9d730e3655.png`
+  - Highlight count: 4; score: 273
+- [The AI reckoning for healthcare communications: adapt, scale or become irrelevant | Avalere Health](https://avalerehealth.com/thought-leadership/the-ai-reckoning-for-healthcare-communications-adapt-scale-or-become-irrelevant/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/avalere-health-llc/3e84084395.png`
+  - Highlight count: 1; score: 273
+
+### Barrington James
+
+- [AI Podcast |](https://www.barringtonjames.com/resources/category/ai-podcast/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/barrington-james/d3a4e1649c.png`
+  - Highlight count: 2; score: 84
+- [Contract Recruitment | Barrington James](https://www.barringtonjames.com/recruitment-services/contract-recruitment/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/barrington-james/96e3733e96.png`
+  - Highlight count: 5; score: 62
+- [Executive Buildout for AI-Driven Drug Discovery Biotechnology |](https://www.barringtonjames.com/resources/casestudy/chief-operating-officer-and-chief-technology-officer-nasdaq-listed-ai-drug-discovery-or-case-study/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/barrington-james/0ac7aab148.png`
+  - Highlight count: 2; score: 60
+- [Executive Search | Barrington James](https://www.barringtonjames.com/recruitment-services/executive-search/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/barrington-james/3fcfd3a58b.png`
+  - Highlight count: 2; score: 30
+- [How AI Is Reshaping Medical Affairs in 2026 and What It Means for Executive Leadership | Barrington James](https://www.barringtonjames.com/resources/blog/how-ai-is-reshaping-medical-affairs-in-2026-and-what-it-means-for-executive-leadership/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/barrington-james/e8bf09c0e1.png`
+  - Highlight count: 10; score: 226
+- [Life Science Recruitment Recruitment Experts | Barrington James](https://www.barringtonjames.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/barrington-james/570c5328b6.png`
+  - Highlight count: 5; score: 76
+- [Looking to Hire | Barrington James](https://www.barringtonjames.com/looking-to-hire/?specialisms=Professional%20Services)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/barrington-james/69b3764209.png`
+  - Highlight count: 2; score: 21
+- [Looking to Hire | Barrington James](https://www.barringtonjames.com/looking-to-hire/?specialisms=Medical%20Affairs)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/barrington-james/df5469b1ea.png`
+  - Highlight count: 2; score: 21
+- [Looking to Hire | Barrington James](https://www.barringtonjames.com/looking-to-hire/?specialisms=Regulatory%20Affairs)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/barrington-james/4068987e3c.png`
+  - Highlight count: 2; score: 21
+- [Resources - Search Results | Barrington James](https://www.barringtonjames.com/resources/search-results/?tag=medical-affairs)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/barrington-james/8c0fbf9f75.png`
+  - Highlight count: 3; score: 47
+- [Resources - Search Results | Barrington James](https://www.barringtonjames.com/resources/search-results/?tag=regulatory-affairs)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/barrington-james/62ac5e925e.png`
+  - Highlight count: 2; score: 36
+- [Resources - Search Results | Barrington James](https://www.barringtonjames.com/resources/search-results/?tag=ai)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/barrington-james/d988a49416.png`
+  - Highlight count: 3; score: 78
+- [Resources - Search Results | Barrington James](https://www.barringtonjames.com/resources/search-results/?tag=medical-affairs&page=1)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/barrington-james/d805a0dfd3.png`
+  - Highlight count: 3; score: 47
+- [Resources - Search Results | Barrington James](https://www.barringtonjames.com/resources/search-results/?tag=medical-affairs&page=2)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/barrington-james/b100e2f079.png`
+  - Highlight count: 2; score: 28
+- [Strategic Solutions Group |](https://www.barringtonjames.com/resources/category/strategic-solutions-group/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/barrington-james/fdbf181611.png`
+  - Highlight count: 2; score: 30
+- [The Next Frontier in Asia-Pacific Regulatory Affairs: AI as Co-Regulator | Barrington James](https://www.barringtonjames.com/resources/blog/the-next-frontier-in-asia-pacific-regulatory-affairs--ai-as-co-regulator/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/barrington-james/f4f91be9ab.png`
+  - Highlight count: 2; score: 93
+
+### BRG
+
+- [Advanced AI & Decision Intelligence | AI & Innovation | BRG](https://www.thinkbrg.com/ai-innovation/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/brg/738784c91a.png`
+  - Highlight count: 5; score: 267
+- [AI in Energy: A New Imperative | Insights | BRG](https://www.thinkbrg.com/insights/publications/ai-in-energy-a-new-imperative/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/brg/e541819c8f.png`
+  - Highlight count: 3; score: 155
+- [Antitrust Litigation | Antitrust Policy | BRG | Services | BRG](https://www.thinkbrg.com/services/economic-consulting/antitrust-competition/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/brg/5cf2be6a16.png`
+  - Highlight count: 1; score: 32
+- [Beyond the Hype: How to Make Responsible Bets on AI | Insights | BRG](https://www.thinkbrg.com/insights/publications/beyond-the-hype-how-to-make-responsible-bets-on-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/brg/faf6fe1a41.png`
+  - Highlight count: 6; score: 132
+- [BRG Economic Consulting | Services | BRG](https://www.thinkbrg.com/services/economic-consulting/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/brg/aeda825ca8.png`
+  - Highlight count: 1; score: 30
+- [BRG Global Infrastructure Series: Transport | Risk of Derailment: What Is Driving Disputes in Global Railway Projects? | Insights | BRG](https://www.thinkbrg.com/insights/publications/risk-of-derailment-what-is-driving-disputes-in-global-railway-projects/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/brg/54ca6ad287.png`
+  - Highlight count: 1; score: 17
+- [BRG | Global Consulting Firm | BRG](https://www.thinkbrg.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/brg/a1b2076118.png`
+  - Highlight count: 2; score: 36
+- [Consumer Protection, Product Liability & Environment | Services | BRG](https://www.thinkbrg.com/services/consumer-protection-product-liability/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/brg/e64a61c67b.png`
+  - Highlight count: 1; score: 40
+- [Economic Regulation | Competition | Regulatory | Services | BRG](https://www.thinkbrg.com/services/economic-consulting/economic-regulation/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/brg/b9ca4d6205.png`
+  - Highlight count: 1; score: 25
+- [Employment Experts | Class Action Labor Experts | BRG | Services | BRG](https://www.thinkbrg.com/services/economic-consulting/labor-employment/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/brg/14797447c7.png`
+  - Highlight count: 2; score: 49
+- [Performance Improvement | Services | BRG](https://www.thinkbrg.com/services/performance-improvement/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/brg/35d48d27c1.png`
+  - Highlight count: 1; score: 28
+- [Retail & Consumer Products | Industries | BRG](https://www.thinkbrg.com/industries/retail-consumer/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/brg/4ee8527372.png`
+  - Highlight count: 1; score: 52
+
+### Carelon Research
+
+- [Background Incidence Rates and Vaccine Safety | Carelon Research](https://www.carelonresearch.com/perspectives/using-background-incidence-rates-to-inform-vaccine-safety)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/carelon-research/c97678e3e3.png`
+  - Highlight count: 1; score: 19
+- [From algorithms to agreements: Why life sciences must rethink the evidence framework](https://www.carelonresearch.com/perspectives/from-algorithms-agreements-why-life-sciences-must-rethink-evidence-framework)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/carelon-research/0dcb2b0fa0.png`
+  - Highlight count: 12; score: 149
+- [Predictive Modeling and Machine Learning | Carelon Research](https://www.carelonresearch.com/perspectives/predictive-modeling-and-machine-learning-sharpening-the-focus-of-real-world-evidence-in-the-age-of-precision-medicine)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/carelon-research/e76f8fa8f7.png`
+  - Highlight count: 9; score: 83
+- [Safety & Epidemiology Research | Carelon Research](https://www.carelonresearch.com/our-services/safety-and-epidemiology-research)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/carelon-research/8379e1d6ef.png`
+  - Highlight count: 2; score: 26
+- [Validation of Integrated Claims and Data | Carelon Research](https://www.carelonresearch.com/perspectives/validation-of-integrated-claims-and-clinical-oncology-data)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/carelon-research/3821e421a3.png`
+  - Highlight count: 1; score: 27
+
+### Castor
+
+- [Accelerating AI Innovation in Pharma: Collaboration vs. Competition](https://www.castoredc.com/blog/accelerating-ai-innovation-in-pharma-collaboration-vs-competition/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/castor/d430be937d.png`
+  - Highlight count: 6; score: 268
+- [Accelerating medical device research with Decentralized Trials](https://www.castoredc.com/news/castor-is-accelerating-global-medical-device-research-with-decentralized-clinical-trials-platform/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/castor/461adefddf.png`
+  - Highlight count: 3; score: 48
+- [Accessibility in Clinical Trials: Insights from Joost Rigter](https://www.castoredc.com/blog/new-perspective-clinical-research-accessibility-innovation/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/castor/e65090cbe4.png`
+  - Highlight count: 1; score: 85
+- [Castor EDC raises $6.25M seed round to accelerate research](https://www.castoredc.com/press/castor-edc-raises-6-25m-seed-round/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/castor/a110610d69.png`
+  - Highlight count: 3; score: 74
+- [Castor Expands Advisory Board to Support US Growth Platform](https://www.castoredc.com/news/castor-expands-advisory-board-to-support-us-growth-of-decentralized-clinical-trial-platform/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/castor/2668f6231f.png`
+  - Highlight count: 2; score: 72
+- [Castor Expands Leadership Team to Scale Clinical Trial Technology](https://www.castoredc.com/news/castor-expands-executive-leadership-team-to-scale-clinical-trial-platform-technology/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/castor/2d1c7dcd9f.png`
+  - Highlight count: 2; score: 56
+- [Castor Expands Platform Capabilities with Virtual Visit Feature](https://www.castoredc.com/news/castor-expands-platform-capabilities-with-virtual-visit-feature/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/castor/1612f25eb1.png`
+  - Highlight count: 2; score: 56
+- [Castor Launches Castor CoPilot: A Novel AI tool](https://www.castoredc.com/news/castor-introduces-castor-copilot-a-novel-ai-solution-for-clinical-trials/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/castor/8e400764cd.png`
+  - Highlight count: 1; score: 145
+- [Castor Launches Real-World Evidence Offering](https://www.castoredc.com/news/castor-launches-real-world-evidence-offering-to-simplify-post-marketing-clinical-trials/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/castor/fe78fb6124.png`
+  - Highlight count: 2; score: 48
+- [Castor Launches Scalable Decentralized Trial Platform](https://www.castoredc.com/news/castor-launches-decentralized-trial-platform/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/castor/9527414b47.png`
+  - Highlight count: 2; score: 56
+- [Castor Launches Scalable Patient Enrollment & eConsent Platform](https://www.castoredc.com/news/castor-launches-econsent-platform/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/castor/11e845ae99.png`
+  - Highlight count: 10; score: 40
+- [Castor Raises $45 Million Series B Funding | Castor Blog](https://www.castoredc.com/news/castor-raises-45m-series-b/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/castor/77bbf89bf8.png`
+  - Highlight count: 2; score: 68
+- [Castor Raises a $12M Series A to Support COVID-19 Research](https://www.castoredc.com/press/castor-raises-12m-series-a/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/castor/29bcc04622.png`
+  - Highlight count: 3; score: 73
+- [Castor's COVID-19 monitoring and research platform](https://www.castoredc.com/press/covid-19-monitoring-and-research-platform/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/castor/9176ab976c.png`
+  - Highlight count: 2; score: 48
+- [Clinical Research in 2035](https://www.castoredc.com/blog/clinical-research-2035/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/castor/2eb9c91eb4.png`
+  - Highlight count: 3; score: 88
+- [Common shortcomings of clinical research data for PMCF](https://www.castoredc.com/blog/common-shortcomings-of-clinical-research-data-for-pmcf/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/castor/50a53f698c.png`
+  - Highlight count: 1; score: 51
+- [Direct Data Capture With eSource to Train an AI Algorithm](https://www.castoredc.com/blog/data-capture-to-train-an-ai-algorithm-with-castors-esource/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/castor/70fa6fa955.png`
+  - Highlight count: 1; score: 126
+- [eCRF in Clinical Trials: Shifting to a Modern Research Paradigm](https://www.castoredc.com/blog/ecrf-clinical-trials-modern-research-paradigm/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/castor/fea9bc83fd.png`
+  - Highlight count: 4; score: 92
+- [Electronic Data Capture (EDC) in Clinical Trials: Essential Guide](https://www.castoredc.com/blog/essential-guide-to-electronic-data-capture-in-clinical-research/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/castor/4b7eeaf475.png`
+  - Highlight count: 1; score: 67
+- [FAIR Data: 7 initiatives you should know about - Castor](https://www.castoredc.com/blog/fair-data-7-initiatives-you-should-know-about/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/castor/3f551d3008.png`
+  - Highlight count: 4; score: 84
+- [FDA Guidance for Clinical Trials During COVID-19 Pandemic](https://www.castoredc.com/blog/coronavirus-covid19-fda-guidance-clinical-research/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/castor/f9f8cd962b.png`
+  - Highlight count: 2; score: 45
+- [GCP compliance statement obtained! - Castor](https://www.castoredc.com/news/gcp-compliance-statement-obtained/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/castor/ac5d4d7225.png`
+  - Highlight count: 1; score: 53
+- [Glasgow mini-seminar about the future of FAIR data sharing - Castor](https://www.castoredc.com/news/glasgow-mini-seminar-about-the-future-of-fair-data-sharing-2/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/castor/e0b654016d.png`
+  - Highlight count: 1; score: 53
+- [How Castor Does Software Release Versioning](https://www.castoredc.com/blog/whats-in-the-footer-a-quick-guide-to-software-versioning-and-how-castor-does-it/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/castor/89ff80892a.png`
+  - Highlight count: 1; score: 64
+- [Improving Your Consent Process with Generative AI](https://www.castoredc.com/video/improving-your-consent-process-with-generative-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/castor/e09c056836.png`
+  - Highlight count: 6; score: 105
+- [Replication Crisis in Clinical Trials for Medical Research - Castor](https://www.castoredc.com/blog/replication-crisis-in-clinical-research/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/castor/291be9aad3.png`
+  - Highlight count: 1; score: 61
+- [Research Protocol: 5 Tips on How to Write It Well for Your Study](https://www.castoredc.com/blog/clinical-research-protocol/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/castor/e52c7f9cd1.png`
+  - Highlight count: 1; score: 61
+- [The Automation Engine is now available as a beta feature! - Castor](https://www.castoredc.com/blog/the-automation-engine-is-now-available-as-a-beta-feature/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/castor/601ceceb77.png`
+  - Highlight count: 8; score: 67
+- [Trial Enrollment & Engagement in a Socially-Distanced World?](https://www.castoredc.com/blog/trial-enrollment-social-distancing/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/castor/73ece3c046.png`
+  - Highlight count: 6; score: 56
+- [Trialbee Partner to Democratize Access and Simplify Recruitment](https://www.castoredc.com/news/trialbee-and-castor-partner-to-democratize-access-and-simplify-enrollment-to-clinical-trials-globally/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/castor/86a2932819.png`
+  - Highlight count: 15; score: 48
+- [Understanding Waiver of Consent vs Waiver of Written Consent](https://www.castoredc.com/blog/waiver-of-consent-vs-waiver-of-written-consent/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/castor/324aa40332.png`
+  - Highlight count: 1; score: 56
+
+### Cencora
+
+- [TMF Software & Services | Cencora](https://www.cencora.com/our-capabilities/drug-research-and-clinical-development-support/tmf-software-and-services)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cencora/6cd79e78ce.png`
+  - Highlight count: 3; score: 68
+
+### Certara, L.P.
+
+- [AI-Enhanced Model-Informed Drug Development (MIDD) webinar recap](https://www.certara.com/blog/certara-webinar-on-artificial-intelligence-ai-powered-model-informed-drug-development-midd/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/certara-l-p/d5e93dbe73.png`
+  - Highlight count: 17; score: 369
+- [CERTARA & CLOUDSCIENTIFIC ACCELERATE AI FOR DRUG DEVELOPMENT IN CHINA | Certara](https://www.certara.com/announcement/certara-cloud-scientific-accelerate-ai-for-drug-development-in-china/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/certara-l-p/88bbd6679d.png`
+  - Highlight count: 5; score: 74
+- [CERTARA BRINGS ASIA-PACIFIC DRUG DEVELOPMENT LEADERS TOGETHER AT CERTAINTY Conference. | Certara](https://www.certara.com/announcement/certara-brings-asia-pacific-drug-development-leaders-together-at-certainty-conference/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/certara-l-p/e8539c3ac5.png`
+  - Highlight count: 8; score: 50
+- [Certara CODEX and MBMA for Trial Decisions | Article](https://www.certara.com/article/adopting-the-power-of-ai-to-drug-development-projects-with-mbma-and-codex-clinical-outcome-database/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/certara-l-p/3e16a31e6e.png`
+  - Highlight count: 5; score: 42
+- [Certara enhances CODEX Clinical Outcome Analytics Platform with AI | Certara](https://www.certara.com/announcement/certara-enhances-codex-clinical-outcome-analytics-platform-with-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/certara-l-p/786be46267.png`
+  - Highlight count: 11; score: 140
+- [Certara Establishes Certainty Conference in Europe, Creating Space for Drug Development Leaders to Convene | Certara](https://www.certara.com/announcement/certara-establishes-certainty-conference-in-europe-creating-space-for-drug-development-leaders-to-convene/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/certara-l-p/05d6e9d426.png`
+  - Highlight count: 9; score: 38
+- [Certara Head of AI Recognized in PharmaVoice 100 | Certara](https://www.certara.com/announcement/certara-head-of-ai-recognized-in-pharmavoice-100/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/certara-l-p/d45667846b.png`
+  - Highlight count: 8; score: 124
+- [Certara Introduces Certara.AI, the Life Sciences Specialized GPT Platform | Certara](https://www.certara.com/announcement/certara-introduces-certara-ai-the-life-sciences-specialized-gpt-platform/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/certara-l-p/18e9377633.png`
+  - Highlight count: 5; score: 122
+- [Certara | Drug Development Solutions](https://www.certara.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/certara-l-p/0ea496f27d.png`
+  - Highlight count: 5; score: 53
+- [Certara’s AI Answer to Medical Writing Challenges in Pharma | Certara](https://www.certara.com/article/certaras-ai-answer-to-medical-writing-challenges-in-pharma/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/certara-l-p/d35504c58f.png`
+  - Highlight count: 7; score: 51
+- [Certara’s Synchrogenix Writer now enhanced with AI Layar | Certara](https://www.certara.com/announcement/certaras-synchrogenix-writer-now-enhanced-with-ai-layar/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/certara-l-p/2a257cadbb.png`
+  - Highlight count: 11; score: 98
+- [Drug Discovery Platform Unlocks Scientific Data Access](https://www.certara.com/blog/drug-discovery-platform-unlocks-scientific-data-access/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/certara-l-p/dee5523cd4.png`
+  - Highlight count: 8; score: 49
+- [Gain Nonclinical Drug Safety Insights with Real-Time Data Analysis](https://www.certara.com/blog/gain-nonclinical-drug-safety-insights-with-real-time-data-analysis/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/certara-l-p/50afef36a6.png`
+  - Highlight count: 7; score: 29
+- [How AI Tech Is Changing Regulatory Writing | Certara](https://www.certara.com/blog/how-ai-tech-is-changing-regulatory-writing/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/certara-l-p/e507676769.png`
+  - Highlight count: 16; score: 443
+- [Major Release of Certara GlobalSubmit™ Software Enhances the Regulatory Submission Process | Certara](https://www.certara.com/announcement/major-release-of-certara-globalsubmit-software-enhances-the-regulatory-submission-process/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/certara-l-p/c06e035824.png`
+  - Highlight count: 6; score: 27
+- [Pharma Focus Europe - Issue 03 - Using AI to Accelerate Drug Development | Certara](https://www.certara.com/article/pharma-focus-europe-issue-03-using-ai-to-accelerate-drug-development/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/certara-l-p/ab6f01eaa6.png`
+  - Highlight count: 7; score: 81
+- [The Challenging Road to Developing an Integrated Platform for Drug Discovery and Precision Medicine Using the Power of Pharmacometrics | Certara](https://www.certara.com/article/the-challenging-road-to-developing-an-integrated-platform-for-drug-discovery-and-precision-medicine-using-the-power-of-pharmacometrics/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/certara-l-p/b10973df14.png`
+  - Highlight count: 8; score: 66
+- [Using AI to Accelerate Drug Discovery | Certara](https://www.certara.com/article/using-ai-to-accelerate-drug-discovery/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/certara-l-p/161e2aa4a7.png`
+  - Highlight count: 6; score: 87
+
+### Clarivate
+
+- [A new healthcare frontier: Maintaining momentum and innovation | Clarivate](https://clarivate.com/blog/a-new-healthcare-frontier-maintaining-momentum-and-innovation/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/clarivate/416163f1a8.png`
+  - Highlight count: 11; score: 26
+- [Artificial intelligence in pharmacovigilance: using AI to detect ICSRs in scientific literature | Clarivate](https://clarivate.com/blog/artificial-intelligence-in-pharmacovigilance-using-ai-to-detect-icsrs-in-scientific-literature/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/clarivate/4bd66d95b1.png`
+  - Highlight count: 20; score: 145
+- [Clarivate - Leading Global Transformative Intelligence](https://clarivate.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/clarivate/f1978149b2.png`
+  - Highlight count: 15; score: 104
+- [For ASIST&T/Clarivate Analytics-award-winning teacher Hazel Hall, a close knit(ting) bond with students | Clarivate](https://clarivate.com/blog/for-assistt-clarivate-analytics-award-winning-teacher-hazel-hall-a-close-knitting-bond-with-students/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/clarivate/cf2a9f1f95.png`
+  - Highlight count: 10; score: 32
+- [JCR Webcast Recordings and Training Session Registration | Clarivate](https://clarivate.com/blog/jcr-webcast-recordings-training-session-registration/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/clarivate/63d7a6995f.png`
+  - Highlight count: 9; score: 29
+
+### CMap
+
+- [5 ways boutiques can win against the Big Four](https://www.cmap.io/blog/5-ways-boutique-firms-can-win-against-the-big-four)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/cd0151ec9a.png`
+  - Highlight count: 4; score: 37
+- [6 Reasons Why You Should Invest in Project Management Software for Architects](https://www.cmap.io/blog/6-reasons-why-you-should-invest-in-project-management-software-for-architects)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/74f1da1268.png`
+  - Highlight count: 4; score: 46
+- [AI in architectural practice: real projects, real impact](https://www.cmap.io/blog/ai-in-architectural-practice-real-projects-real-impact)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/5572acdb74.png`
+  - Highlight count: 11; score: 361
+- [Atvero | AI and Architecture: What does the future hold?](https://www.cmap.io/blog/ai-and-architecture-what-does-the-future-hold)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/49429ba9bd.png`
+  - Highlight count: 5; score: 317
+- [Atvero | Behind the scenes at Atvero: Marcus Roberts & Atvero Mail](https://www.cmap.io/blog/behind-the-scenes-at-atvero-marcus-roberts-atvero-mail)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/43e0c5697a.png`
+  - Highlight count: 4; score: 46
+- [Atvero | Building the perfect system: the benefits of a centralized document, drawing, and email management solution](https://www.cmap.io/blog/building-the-perfect-system-the-benefits-of-a-centralized-document-drawing-and-email-management-solution)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/2e066b3776.png`
+  - Highlight count: 4; score: 46
+- [Atvero | From on-premises solutions to the cloud: How SharePoint and Teams support remote working architects](https://www.cmap.io/blog/from-on-premises-solutions-to-the-cloud-how-sharepoint-and-teams-support-remote-working-architects)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/0e5b33fda5.png`
+  - Highlight count: 4; score: 47
+- [Atvero | How email filing has become the backbone of quality management](https://www.cmap.io/blog/how-email-filing-has-become-the-backbone-of-quality-management)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/a6a2ba4e68.png`
+  - Highlight count: 4; score: 45
+- [Atvero | How small architectural practices can benefit from a document management software solution](https://www.cmap.io/blog/how-small-architectural-practices-can-benefit-from-a-document-management-software-solution)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/d0b7b047e6.png`
+  - Highlight count: 5; score: 50
+- [Atvero | Introducing Atvero Mail: Email management solution designed for the AEC industry](https://www.cmap.io/blog/introducing-atvero-mail-email-management-solution-aec)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/fe7615c716.png`
+  - Highlight count: 5; score: 49
+- [Atvero | Streamlining Revit workflows with Atvero's automation](https://www.cmap.io/blog/streamlining-revit-workflows-with-atveros-automation)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/8507cce8c9.png`
+  - Highlight count: 8; score: 51
+- [Atvero | The AI hype: can consulting firms trust it?](https://www.cmap.io/blog/the-ai-hype-can-consulting-firms-trust-it)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/d865df7392.png`
+  - Highlight count: 11; score: 262
+- [Best resource scheduling methods, practices and tools for professional services firms](https://www.cmap.io/blog/best-resource-scheduling-methods-practices-tools-professional-services-firms)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/81afaca4d9.png`
+  - Highlight count: 6; score: 36
+- [Best Software for Consultants: 6 Software Types to Consider (2025 Guide)](https://www.cmap.io/blog/software-for-consultants)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/b4964ec43d.png`
+  - Highlight count: 21; score: 118
+- [CMap Announces Leadership Transition and Accelerated Focus on AI](https://www.cmap.io/blog/cmap-announces-leadership-transition-and-accelerated-focus-on-ai)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/ee533baaa7.png`
+  - Highlight count: 4; score: 173
+- [CMap | CMap is once again the #1 project-based ERP for Ease of Use](https://www.cmap.io/blog/cmap-once-again-recognized-as-the-1-project-based-erp-for-ease-of-use-by-g2)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/d77160e441.png`
+  - Highlight count: 4; score: 37
+- [CMap | CMap Software integrates with Sage Intacct](https://www.cmap.io/blog/cmap-software-integrates-project-management-system-with-sage-intacct)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/1df2238b9e.png`
+  - Highlight count: 4; score: 39
+- [CMap | How content marketing can turbo charge lead generation](https://www.cmap.io/blog/content-marketing-for-professional-services)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/e3582e67ce.png`
+  - Highlight count: 4; score: 39
+- [CMap | How to attract, develop, and retain your talent](https://www.cmap.io/blog/attracting-developing-and-retaining-talent)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/51822add62.png`
+  - Highlight count: 4; score: 46
+- [CMap | How to remain profitable while scaling your consultancy](https://www.cmap.io/blog/how-to-remain-profitable-while-scaling-your-consultancy)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/3dc0ce4eaa.png`
+  - Highlight count: 5; score: 35
+- [CMap | Joe Emanuele joins CMap Software as Head of AEC](https://www.cmap.io/blog/joe-emanuele-joins-cmap-software-as-head-of-aec)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/17c3409f0b.png`
+  - Highlight count: 4; score: 46
+- [CMap | Operations & Intelligence Engine for Service Firms](https://www.cmap.io/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/ef2421cff8.png`
+  - Highlight count: 5; score: 41
+- [CMap | Professional services software: best-of-breed or all-in-one?](https://www.cmap.io/blog/professional-services-software-best-of-breed-or-all-in-one)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/23606e8ffe.png`
+  - Highlight count: 4; score: 39
+- [CMap | Top 8 ways professional services companies increase profits](https://www.cmap.io/blog/how-professional-services-companies-achieve-great-profitability)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/3c255484bf.png`
+  - Highlight count: 4; score: 37
+- [How AEC Leaders are regaining control with CMap](https://www.cmap.io/blog/how-aec-leaders-are-regaining-control-with-cmap)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/bff7616e86.png`
+  - Highlight count: 4; score: 45
+- [How boutique firms are winning the tech revolution](https://www.cmap.io/blog/how-boutique-firms-are-winning-the-ai-revolution)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/7309bf6c49.png`
+  - Highlight count: 6; score: 309
+- [How CRM Software for Professional Services Can Transform Your Firm](https://www.cmap.io/blog/how-crm-software-for-professional-services-can-transform-your-firm)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/07a0e8ca84.png`
+  - Highlight count: 7; score: 38
+- [How to Use Resource Planning Software to Optimize Your Projects](https://www.cmap.io/blog/how-to-use-resource-planning-software-to-optimize-your-projects)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/c3c704391e.png`
+  - Highlight count: 4; score: 30
+- [If AI can do 50% of your delivery work, what should your consultants do instead?](https://www.cmap.io/blog/ai-can-do-50-of-your-delivery-work)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/b5e0005fa7.png`
+  - Highlight count: 4; score: 166
+- [Introducing CMap Mail and CMap PIM: Atvero integrates with CMap branding](https://www.cmap.io/blog/introducing-cmap-mail-and-cmap-pim)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/4bf8e4de07.png`
+  - Highlight count: 4; score: 47
+- [Professional Services Automation (PSA) users see 19% increase in gross margins, new research shows](https://www.cmap.io/blog/professional-services-automation-psa-users-see-19-increase-in-gross-margins)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/0abf735588.png`
+  - Highlight count: 6; score: 34
+- [ROI of PSA: free measurement framework to maximize your PSA software investment](https://www.cmap.io/blog/roi-of-psa-free-measurement-framework-to-maximize-your-psa-software-investment)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/b6305866eb.png`
+  - Highlight count: 9; score: 36
+- [Sustainable success: Navigating growth vs profitability in AEC](https://www.cmap.io/blog/sustainable-success-navigating-growth-profitability-aec)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/61f9184636.png`
+  - Highlight count: 4; score: 46
+- [The 2026 Consulting AI Stack Guide: What to Build, What to Buy, What to Ignore](https://www.cmap.io/blog/the-2026-consulting-ai-stack)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/2553b6202a.png`
+  - Highlight count: 14; score: 282
+- [The 4 key benefits of Professional Services Automation Software](https://www.cmap.io/blog/benefits-of-psa-software-for-consulting-firms)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/cmap/17b99020ab.png`
+  - Highlight count: 13; score: 35
+
+### Columbia Data Analytics
+
+- [Advanced Statistical Models - HEOR - Why Choose Columbia Data Analytics](https://columbiadataanalytics.com/advanced-statistical-models/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/columbia-data-analytics/b24f0f64f5.png`
+  - Highlight count: 2; score: 40
+- [News - 17 Presentations @ISPOR Philadelphia! - Columbia Data Analytics](https://columbiadataanalytics.com/news/17-presentations-ispor-philadelphia/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/columbia-data-analytics/286a6d4cb7.png`
+  - Highlight count: 1; score: 20
+- [News - CDA 2025 Year in Review - Columbia Data Analytics](https://columbiadataanalytics.com/news/cda-2025-year-in-review/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/columbia-data-analytics/1d2e3b12b8.png`
+  - Highlight count: 1; score: 27
+- [News - CDA @ISPOR Annual 2026 - Columbia Data Analytics](https://columbiadataanalytics.com/news/cda-ispor-annual-2026/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/columbia-data-analytics/6c210b456c.png`
+  - Highlight count: 1; score: 20
+- [News - ISPOR Annual Meeting: CDA Exhibit, 6 Presentations - Columbia Data Analytics](https://columbiadataanalytics.com/news/ispor-annual-meeting-cda-exhibit-6-presentations/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/columbia-data-analytics/81dfd3e78c.png`
+  - Highlight count: 1; score: 20
+- [Publications - HEOR - Epidemiology - Market Access](https://columbiadataanalytics.com/heor-publications/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/columbia-data-analytics/3ad60e7d59.png`
+  - Highlight count: 4; score: 57
+- [Value - Access - Outcomes - Consulting](https://columbiadataanalytics.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/columbia-data-analytics/2154b766ca.png`
+  - Highlight count: 2; score: 40
+
+### ConnectHEOR
+
+- [CONNECT AI : HEOR THINKING FOR AN AI-ENABLED ERA - ConnectHEOR](https://connectheor.com/connect-ai-heor-thinking-for-an-ai-enabled-era/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/connectheor/0af430310c.png`
+  - Highlight count: 1; score: 87
+- [Efficient and Innovative HEOR Consultancy | ConnectHEOR](https://connectheor.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/connectheor/2009b0c56d.png`
+  - Highlight count: 7; score: 87
+
+### Costello Medical
+
+- [Data Extraction in Literature Reviews Using an Artificial Intelligence Model: Prompt Development and Testing](https://www.costellomedical.com/research/articles-publications/ai-data-extraction-literature-reviews/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/costello-medical/f402b962ce.png`
+  - Highlight count: 1; score: 26
+
+### Datavant
+
+- [AHIMA Announces Addition of Ciox HealthSource Gym to AHIMA VLab™ Platform | Datavant](https://www.datavant.com/press-release/ahima-announces-addition-of-ciox-healthsource-gym-to-ahima-vlab-tm-platform)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/205efc5d80.png`
+  - Highlight count: 3; score: 78
+- [BHI and Datavant Enter Partnership to Enable Big Data and Analytics to Improve Healthcare | Datavant](https://www.datavant.com/press-release/bhi-and-datavant-enter-partnership-to-enable-big-data-and-analytics-to-improve-healthcare)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/214361f0f1.png`
+  - Highlight count: 3; score: 78
+- [Ciox Expands Work with Ardent Health Services | Datavant](https://www.datavant.com/press-release/ciox-expands-work-with-ardent-health-services)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/ca8b03c244.png`
+  - Highlight count: 4; score: 96
+- [Ciox Health creates platform for providers to offer patients immediate access to their medical records | Datavant](https://www.datavant.com/press-release/ciox-health-creates-platform-for-providers-to-offer-patients-immediate-access-to-their-medical-records)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/415b9c7fa4.png`
+  - Highlight count: 3; score: 78
+- [Ciox Health’s Retrieval Solutions Business Unit Achieves HITRUST CSF Certification | Datavant](https://www.datavant.com/press-release/ciox-healths-retrieval-solutions-business-unit-achieves-hitrust-csf-certification)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/afd3d336cd.png`
+  - Highlight count: 3; score: 78
+- [Ciox Launches HealthSource Gym to Train and Assess Medical Coders | Datavant](https://www.datavant.com/press-release/ciox-launches-healthsource-gym-to-train-and-assess-medical-coders)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/fae56d2036.png`
+  - Highlight count: 4; score: 90
+- [Claire Manneh | Datavant](https://www.datavant.com/author/claire-manneh)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/438223ea6e.png`
+  - Highlight count: 2; score: 62
+- [Datavant Achieves Milestone as Only Data Logistics Organization to Attain NCQA Data Aggregator Validator Program | Datavant](https://www.datavant.com/press-release/datavant-achieves-milestone-data-logistics-organization-attain-ncqa-data-aggregator-validator-program)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/2f81bd3b51.png`
+  - Highlight count: 4; score: 94
+- [Datavant and Kythera Increase the Value Of Healthcare Data Through Expanded Data Science Platform Partnership | Datavant](https://www.datavant.com/press-release/datavant-and-kythera-increase-the-value-of-healthcare-data-through-expanded-data-science-platform-partnership)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/95c2a128fe.png`
+  - Highlight count: 9; score: 106
+- [Datavant Launches Record Request Automation for Healthcare Organizations to Streamline Health Plan Requests | Datavant](https://www.datavant.com/press-release/datavant-launches-record-request-automation-healthcare-organizations-streamline-health-plan-requests)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/eb824111c6.png`
+  - Highlight count: 8; score: 81
+- [Datavant Named 2026 Best in KLAS Award Winner for Risk Adjustment | Datavant](https://www.datavant.com/press-release/datavant-named-2026-best-in-klas-award-winner-for-risk-adjustment-coding-retrieval-compliance-solutions-and-outsourced-coding)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/9e7703408a.png`
+  - Highlight count: 3; score: 102
+- [Datavant Partners with Premier’s PINC AI™ Applied Sciences Division to Deliver Meaningful Insights to Improve Quality of Care | Datavant](https://www.datavant.com/press-release/datavant-partners-with-premiers-pinc-ai-tm-applied-sciences-division-to-deliver-meaningful-insights-to-improve-quality-of-care)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/9696d8ad0a.png`
+  - Highlight count: 3; score: 150
+- [Datavant partners with the People-Centered Research Foundation to de-identify and link data across national clinical research network | Datavant](https://www.datavant.com/press-release/datavant-partners-with-the-people-centered-research-foundation-to-de-identify-and-link-data-across-national-clinical-research-network)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/549f9feb9a.png`
+  - Highlight count: 3; score: 78
+- [Datavant partners with Veradigm to enable digital EHR connections to patient-mediated medical records for clinical research | Datavant](https://www.datavant.com/press-release/datavant-partners-with-veradigm-to-enable-digital-ehr-connections-to-patient-mediated-medical-records-for-clinical-research)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/917a9661b9.png`
+  - Highlight count: 3; score: 78
+- [Datavant Raises $40 Million in Series B Financing to Expand Open Health Data Ecosystem | Datavant](https://www.datavant.com/press-release/datavant-raises-40-million-in-series-b-financing-to-expand-open-health-data-ecosystem)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/7f1e92970a.png`
+  - Highlight count: 3; score: 81
+- [Datavant Signs Strategic Collaboration Agreement With Amazon Web Services To Power Cloud-First Healthcare Data Discovery and Assessment | Datavant](https://www.datavant.com/press-release/datavant-signs-strategic-collaboration-agreement-amazon-web-services-power-cloud-first-healthcare-data-discovery-assessment)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/b646c3a8aa.png`
+  - Highlight count: 3; score: 78
+- [Datavant to Acquire Aetion, Empowering Healthcare and Life Sciences Organizations to Generate High-Quality, Scalable Real-World Evidence from Connected, Privacy-Protected Data | Datavant](https://www.datavant.com/press-release/datavant-to-acquire-leading-real-world-evidence-rwe-platform-aetion)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/a0d608d59e.png`
+  - Highlight count: 4; score: 91
+- [Datavant to Acquire Ontellus to Transform Medical Record Retrieval with Tech-Enabled Health Records Retrieval and Claims Intelligence Solutions | Datavant](https://www.datavant.com/press-release/datavant-to-acquire-ontellus-to-transform-medical-record-retrieval-with-tech-enabled-health-records-retrieval-and-claims-intelligence-solutions)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/1602dfd3ee.png`
+  - Highlight count: 4; score: 82
+- [Datavant to Showcase AI Innovations in Clinical Trials at AI Demonstration Day on Capitol Hill | Datavant](https://www.datavant.com/press-release/datavant-showcase-ai-innovations-clinical-trials-ai-demonstration-day-capitol-hill)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/0494e75b0c.png`
+  - Highlight count: 6; score: 192
+- [Datavant Unveils Enhanced Clinical Insights Platform to Transform Data Intelligence for Payers and Providers | Datavant](https://www.datavant.com/press-release/datavant-unveils-enhanced-clinical-insights-platform-to-transform-data-intelligence-for-payers-and-providers)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/fc82bda652.png`
+  - Highlight count: 5; score: 96
+- [Datavant | The Data Collaboration Platform Trusted for Healthcare](https://www.datavant.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/018f88c62d.png`
+  - Highlight count: 3; score: 80
+- [EVERSANA Streamlines Data Connectivity and Strengthens Predictive Commercialization Solutions with Datavant Partnership | Datavant](https://www.datavant.com/press-release/eversana-streamlines-data-connectivity-and-strengthens-predictive-commercialization-solutions-with-datavant-partnership)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/ba10c4a210.png`
+  - Highlight count: 5; score: 91
+- [IntegriChain Partners with Datavant for Improved Patient Journey Visibility | Datavant](https://www.datavant.com/press-release/integrichain-partners-with-datavant-for-improved-patient-journey-visibility)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/010112e37f.png`
+  - Highlight count: 6; score: 81
+- [Komodo Health and Datavant Expand Partnership To Enrich Clinical Research and Commercial Life Sciences With Real-World Data | Datavant](https://www.datavant.com/press-release/komodo-health-and-datavant-expand-partnership-to-enrich-clinical-research-and-commercial-life-sciences-with-real-world-data)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/916ffe5289.png`
+  - Highlight count: 5; score: 100
+- [Labcorp Introduces AI-Powered Real-World Data Platform with AWS and Datavant to Accelerate Alzheimer's Research | Datavant](https://www.datavant.com/press-release/labcorp-introduces-ai-powered-real-world-data-platform-with-aws-and-datavant-to-accelerate-alzheimers-research)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/d8e144d873.png`
+  - Highlight count: 7; score: 166
+- [Massive Bio and Datavant Expand Partnership to Integrate Datavant’s Medical Record Retrieval Capabilities to Revolutionize Patient Care and Clinical Research | Datavant](https://www.datavant.com/press-release/massive-bio-datavant-partnership-medical-record-retrieval-revolutionize-patient-care-clinical-research)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/a4ff5db533.png`
+  - Highlight count: 5; score: 124
+- [Mirador Analytics Partners with Datavant to Create Step Change in Industry’s Approach to HIPAA De-identification and Certification | Datavant](https://www.datavant.com/press-release/mirador-analytics-partners-with-datavant-to-create-step-change-in-industrys-approach-to-hipaa-de-identification-and-certification)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/1f5613e85c.png`
+  - Highlight count: 5; score: 83
+- [Nashville Biosciences Collaborates with Datavant to Accelerate Life Sciences Drug Discovery and Clinical Research | Datavant](https://www.datavant.com/press-release/nashville-biosciences-collaborates-with-datavant-to-accelerate-life-sciences-drug-discovery-and-clinical-research)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/c322161b1a.png`
+  - Highlight count: 3; score: 78
+- [New Mountain Capital and Ciox Health Announce Acquisition of ArroHealth | Datavant](https://www.datavant.com/press-release/new-mountain-capital-and-ciox-health-announce-acquisition-of-arrohealth)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/f21bd4716e.png`
+  - Highlight count: 3; score: 78
+- [OMNY Health and Datavant Announce Alliance to Accelerate Delivery of Real-World Data Between Healthcare Stakeholders to Enhance Clinical Research and Drug Development | Datavant](https://www.datavant.com/press-release/omny-health-and-datavant-announce-alliance-to-accelerate-delivery-of-real-world-data-between-healthcare-stakeholders-to-enhance-clinical-research-and-drug-development)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/6d43b6fb74.png`
+  - Highlight count: 3; score: 78
+- [OMNY Health Becomes the First EHR Dataset Available on Datavant Connect Powered by AWS Clean Rooms | Datavant](https://www.datavant.com/press-release/omny-health-becomes-the-first-ehr-dataset-available-on-datavant-connect-powered-by-aws-clean-rooms)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/60bf0237a4.png`
+  - Highlight count: 3; score: 78
+- [Oscar Health Renews and Expands Relationship with Digital Solutions Platform Provider Ciox Health | Datavant](https://www.datavant.com/press-release/oscar-health-renews-and-expands-relationship-with-digital-solutions-platform-provider-ciox-health)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/8f299b5c93.png`
+  - Highlight count: 3; score: 78
+- [Parexel Adds APANDEMIC and Datavant to Lead Ongoing Advancement of #KeepingPatientsFirst Platform | Datavant](https://www.datavant.com/press-release/parexel-adds-apandemic-and-datavant-to-lead-ongoing-advancement-of-keepingpatientsfirst-platform)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/ac50d95248.png`
+  - Highlight count: 5; score: 100
+- [PAREXEL and Datavant Partner to Deliver Advanced Data and Real-World Evidence Analytics to Enhance Drug Development and Commercialization | Datavant](https://www.datavant.com/press-release/parexel-and-datavant-partner-to-deliver-advanced-data-and-real-world-evidence-analytics-to-enhance-drug-development-and-commercialization)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/18f60777c4.png`
+  - Highlight count: 4; score: 84
+- [PathAI Partners with Datavant to enable Biopharma Companies to Connect Digital Pathology Data for Research | Datavant](https://www.datavant.com/press-release/pathai-partners-with-datavant-to-enable-biopharma-companies-to-connect-digital-pathology-data-for-research)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/datavant/3d03b676e2.png`
+  - Highlight count: 7; score: 130
+
+### DistillerSR Inc.
+
+- [Buyer’s Guide to Systematic Review Software - DistillerSR](https://www.distillersr.com/resources/guides-white-papers/buyers-guide-to-systematic-review-software)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/distillersr-inc/ea85b9abb6.png`
+  - Highlight count: 3; score: 37
+- [DistillerSR Adopts NIST AI Risk Management Framework (RMF) to Ensure the Continued Development of Trustworthy AI Solutions - DistillerSR](https://www.distillersr.com/distillersr-adopts-nist-ai-risk-management-framework-rmf-to-ensure-the-continued-development-of-trustworthy-ai-solutions)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/distillersr-inc/b913751709.png`
+  - Highlight count: 8; score: 248
+- [DistillerSR and Elsevier to Collaborate on the Integration of Elsevier's Embase and DistillerSR's Evidence Management Platform - DistillerSR](https://www.distillersr.com/distillersr-and-elsevier-to-collaborate-on-the-integration-of-elseviers-embase-and-distillersrs-evidence-management-platform)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/distillersr-inc/7761d80936.png`
+  - Highlight count: 3; score: 60
+- [DistillerSR Appoints New Board Members to Accelerate Scaleup and Healthcare Analytics Domain Expertise - DistillerSR](https://www.distillersr.com/distillersr-appoints-new-board-members-to-accelerate-scaleup-and-healthcare-analytics-domain-expertise)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/distillersr-inc/4bfd491c47.png`
+  - Highlight count: 3; score: 57
+- [DistillerSR Integrates with RightFind Enterprise to Enable the Purchase of Scientific References Through its Evidence Management Platform - DistillerSR](https://www.distillersr.com/distillersr-integrates-with-rightfind-enterprise-to-enable-the-purchase-of-scientific-references-through-its-evidence-management-platform)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/distillersr-inc/13d2901035.png`
+  - Highlight count: 2; score: 47
+- [DistillerSR Launches First-of-its-Kind Agentic AI Capabilities to Eliminate Evidence Silos and Accelerate Time to Market - DistillerSR](https://www.distillersr.com/distillersr-launches-first-of-its-kind-agentic-ai-capabilities-to-eliminate-evidence-silos-and-accelerate-time-to-market)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/distillersr-inc/19411941f5.png`
+  - Highlight count: 9; score: 176
+- [DistillerSR Launches Industry’s First Purpose-built GenAI Solution for Literature Reviews - DistillerSR](https://www.distillersr.com/distillersr-launches-industrys-first-purpose-built-genai-solution-for-literature-reviews)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/distillersr-inc/9bfcee36af.png`
+  - Highlight count: 14; score: 219
+- [DistillerSR Launches New CuratorCR Capabilities to More Dynamically Manage and Re-Use Evidence-Based Research - DistillerSR](https://www.distillersr.com/distillersr-launches-new-curatorcr-capabilities-to-more-dynamically-manage-and-re-use-evidence-based-research)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/distillersr-inc/d7e3f46773.png`
+  - Highlight count: 3; score: 44
+- [DistillerSR Launches New Library Services to Streamline Literature Search Strategies for Regulatory Submissions - DistillerSR](https://www.distillersr.com/distillersr-launches-new-library-services-to-streamline-literature-search-strategies-for-regulatory-submissions)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/distillersr-inc/56d0680b8d.png`
+  - Highlight count: 4; score: 52
+- [DistillerSR Launches Online Courseware for the Pragmatic Application of Scientifically Validated AI to Literature Reviews - DistillerSR](https://www.distillersr.com/distillersr-launches-online-courseware-for-the-pragmatic-application-of-scientifically-validated-ai-to-literature-reviews)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/distillersr-inc/8a01c34932.png`
+  - Highlight count: 3; score: 172
+- [DistillerSR Launches the Industry’s First Dedicated Managed Service Offering for its AI-enabled Evidence Management Platform - DistillerSR](https://www.distillersr.com/distillersr-launches-the-industrys-first-dedicated-managed-service-offering-for-its-ai-enabled-evidence-management-platform)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/distillersr-inc/225767daac.png`
+  - Highlight count: 3; score: 52
+- [DistillerSR Launches the Industry’s Most Advanced GenAI Capabilities for Extracting Scientific Literature Evidence - DistillerSR](https://www.distillersr.com/distillersr-launches-the-industrys-most-advanced-genai-capabilities-for-extracting-scientific-literature-evidence)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/distillersr-inc/d42c7cda69.png`
+  - Highlight count: 10; score: 161
+- [DistillerSR Recognized Among the Top 35% of Global Organizations Rated by EcoVadis for Business Sustainability - DistillerSR](https://www.distillersr.com/distillersr-recognized-among-the-top-35-of-global-organizations-rated-by-ecovadis-for-business-sustainability)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/distillersr-inc/0be9c4d1b5.png`
+  - Highlight count: 3; score: 67
+- [DistillerSR: AI-Enabled Literature Review Software](https://www.distillersr.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/distillersr-inc/7e04fda2de.png`
+  - Highlight count: 14; score: 110
+- [Evidence Partners Launches New Literature Review Automation, Data Integration and Project Dashboarding Capabilities for DistillerSR - DistillerSR](https://www.distillersr.com/evidence-partners-launches-new-literature-review-automation-data-integration-and-project-dashboarding-capabilities-for-distillersr)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/distillersr-inc/7995ab6aab.png`
+  - Highlight count: 7; score: 83
+- [Evidence Partners Names Mark Priatel as Vice President, Software Engineering - DistillerSR](https://www.distillersr.com/evidence-partners-names-mark-priatel-as-vice-president-software-engineering)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/distillersr-inc/fb4f57c226.png`
+  - Highlight count: 1; score: 36
+- [Evidence Partners Raises $20 Million in Growth Financing to Fuel Global Expansion and Talent Acquisition - DistillerSR](https://www.distillersr.com/evidence-partners-raises-20-million-in-growth-financing-to-fuel-global-expansion-and-talent-acquisition)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/distillersr-inc/7a542a05c1.png`
+  - Highlight count: 5; score: 60
+- [Evidence Partners Rebrands as DistillerSR to Leverage Market Awareness of Its Core Literature Review Platform - DistillerSR](https://www.distillersr.com/evidence-partners-rebrands-as-distillersr-to-leverage-market-awareness-of-its-core-literature-review-platform)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/distillersr-inc/4aa76a7da4.png`
+  - Highlight count: 3; score: 44
+- [Health Agency Uses AI to Reduce COVID-19 Citation Screening and Data Extraction By 50% - DistillerSR](https://www.distillersr.com/resources/case-studies/health-agency-uses-ai-to-reduce-covid-19-citation-screening-and-data-extraction-by-50)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/distillersr-inc/683c26ef18.png`
+  - Highlight count: 2; score: 116
+- [How Literature Review Automation Improves CER and PER Program Management - DistillerSR](https://www.distillersr.com/resources/guides-white-papers/how-literature-review-automation-improves-cer-and-per-program-management)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/distillersr-inc/4d5cd04069.png`
+  - Highlight count: 13; score: 31
+- [Improve Cost-Effectiveness Analysis and Budget Impact Modeling Using Literature Review Automation Software - DistillerSR](https://www.distillersr.com/resources/guides-white-papers/improve-cost-effectiveness-analysis-and-budget-impact-modeling-using-literature-review-automation-software)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/distillersr-inc/601384bf6c.png`
+  - Highlight count: 11; score: 87
+- [Learn How the Leading Provider of Commercialization Services to the Life Sciences Industry Leveraged DistillerSR Automation to Achieve Faster and Smarter Systematic Reviews - DistillerSR](https://www.distillersr.com/resources/case-studies/learn-how-the-leading-provider-of-commercialization-services-to-the-life-sciences-industry-leveraged-distillersr-automation-to-achieve-faster-and-smarter-systematic-reviews)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/distillersr-inc/ef4df3c28e.png`
+  - Highlight count: 3; score: 30
+- [Platform 2025 - DistillerSR](https://www.distillersr.com/platform)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/distillersr-inc/a682a7a77c.png`
+  - Highlight count: 4; score: 61
+- [Pulse of the Medical Devices Market Report Literature Review Automation Adoption Insights and Trends - DistillerSR](https://www.distillersr.com/resources/surveys/pulse-of-the-medical-devices-market-report-literature-review-automation-adoption-insights-and-trends)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/distillersr-inc/4c3795f6c4.png`
+  - Highlight count: 8; score: 54
+- [Purpose-built GenAI for Literature Reviews - DistillerSR](https://www.distillersr.com/resources/guides-white-papers/purpose-built-genai-for-literature-reviews)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/distillersr-inc/25a6992c9f.png`
+  - Highlight count: 58; score: 670
+- [Smart Automation of SLRs for GVDs: Faster Market Access for New Drugs - DistillerSR](https://www.distillersr.com/resources/guides-white-papers/smart-automation-of-slrs-for-gvds-faster-market-access-for-new-drugs)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/distillersr-inc/666a48f274.png`
+  - Highlight count: 6; score: 41
+- [The Buyer's Guide to Literature Review Software - DistillerSR](https://www.distillersr.com/resources/guides-white-papers/the-buyers-guide-to-literature-review-software)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/distillersr-inc/bacfbcca70.png`
+  - Highlight count: 3; score: 38
+- [What Is the Main Purpose of the MDR? - DistillerSR](https://www.distillersr.com/resources/meddev-literature-review/what-is-the-main-purpose-of-the-mdr)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/distillersr-inc/1b018ec65c.png`
+  - Highlight count: 1; score: 35
+
+### EasySLR
+
+- [AI as the Only Reviewer | EasySLR](https://www.easyslr.com/changelog/ai-as-the-only-reviewer)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/easyslr/9252bc50aa.png`
+  - Highlight count: 2; score: 127
+- [AI Credit Controls at Organisation and Project Levels | EasySLR](https://www.easyslr.com/changelog/ai-credit-controls-at-organisation-and-project-levels)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/easyslr/bc29a86e84.png`
+  - Highlight count: 1; score: 154
+- [AI for Mini Data Extraction at Full-Text Stage | EasySLR](https://www.easyslr.com/changelog/ai-for-mini-data-extraction-at-full-text-stage)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/easyslr/4e0514e9cf.png`
+  - Highlight count: 1; score: 154
+- [AI in Title-Abstract Mini Data Extraction (Mini DE) – Now Available | EasySLR](https://www.easyslr.com/changelog/ai-in-title-abstract-mini-data-extraction-mini-de-now-available)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/easyslr/f4008d7acf.png`
+  - Highlight count: 1; score: 130
+- [AI Powered Smart Tags, Filters & Visualisation in EasySLR | EasySLR](https://www.easyslr.com/changelog/ai-powered-smart-tags-filters-visualisation-in-easyslr)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/easyslr/8a130123b3.png`
+  - Highlight count: 3; score: 163
+- [AI Support for Multi-Row Data Extraction | EasySLR](https://www.easyslr.com/changelog/ai-support-for-multi-row-data-extraction)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/easyslr/e405a5ae95.png`
+  - Highlight count: 1; score: 114
+- [AI Systematic Review Software for Faster Evidence Synthesis](https://www.easyslr.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/easyslr/e7365c0c97.png`
+  - Highlight count: 8; score: 223
+- [Automatic TIab AI Run Added for Bulk Unmark Duplicate | EasySLR](https://www.easyslr.com/changelog/automatic-tiab-ai-run-added-for-bulk-unmark-duplicate)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/easyslr/07d0b9ca82.png`
+  - Highlight count: 1; score: 53
+- [Embracing AI in Health Technology Assessment - Insights from NICE’s Guidance | EasySLR](https://www.easyslr.com/blog/embracing-ai-in-health-technology-assessment-insights-from-nices-guidance)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/easyslr/2869598d4d.png`
+  - Highlight count: 2; score: 423
+- [Fully Automated TLR Workflow | EasySLR](https://www.easyslr.com/changelog/automated-ai-powered-tlr-workflow)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/easyslr/6104493061.png`
+  - Highlight count: 9; score: 134
+- [OpenAlex Integration in AI-Powered TLR Workflow | EasySLR](https://www.easyslr.com/changelog/openalex-integration-in-ai-powered-tlr-workflow)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/easyslr/794a31bd83.png`
+  - Highlight count: 2; score: 43
+- [Systematic Literature Reviews in HEOR : Inevitability of AI | EasySLR](https://www.easyslr.com/blog/systematic-literature-reviews-in-heor-inevitability-of-ai)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/easyslr/9e15812ef9.png`
+  - Highlight count: 7; score: 289
+- [The Role of AI in Evidence Synthesis: Augmentation or Replacement? | EasySLR](https://www.easyslr.com/blog/role-of-ai-in-evidence-synthesis)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/easyslr/d8396d2cc5.png`
+  - Highlight count: 6; score: 349
+
+### Elicit
+
+- [Library | Elicit: Al for scientific research](https://elicit.com/solutions/library)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/elicit/8a03eb38da.png`
+  - Highlight count: 1; score: 28
+- [Paper Search | Elicit: Al for scientific research](https://elicit.com/solutions/search)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/elicit/90e81bb6e4.png`
+  - Highlight count: 2; score: 54
+- [Systematic Literature Reviews | Elicit: Al for scientific research](https://elicit.com/solutions/systematic-review)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/elicit/935beeb1c2.png`
+  - Highlight count: 2; score: 98
+
+### eMAX Health Systems
+
+- [AI & Predictive Modeling Are Transforming HEOR | eMAX Health](https://emaxhealth.net/2025/12/04/ai-predictive-modeling-are-transforming-heor/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/emax-health-systems/cac3fac851.png`
+  - Highlight count: 2; score: 81
+- [Rethinking AI and Efficiency in Patient Services: A Call for Smarter Systems | eMAX Health](https://emaxhealth.net/2025/08/06/rethinking-ai-and-efficiency-in-patient-services-a-call-for-smarter-systems/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/emax-health-systems/124691d5c8.png`
+  - Highlight count: 1; score: 44
+
+### EntityRisk, Inc.
+
+- [EntityRisk - EntityRisk](https://entityrisk.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/entityrisk-inc/3fb7757dd4.png`
+  - Highlight count: 4; score: 30
+- [EntityRisk Launches PROVEN™ Platform - EntityRisk](https://entityrisk.com/proven-perspectives/entityrisk-launches-proven-platform/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/entityrisk-inc/3dae22032a.png`
+  - Highlight count: 1; score: 26
+
+### EVERSANA
+
+- [Affordability | Co-Pay & Patient Assistance Programs | EVERSANA](https://www.eversana.com/our-services/patient-services/affordability-co-pay-and-pap/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/955a4d906d.png`
+  - Highlight count: 4; score: 148
+- [AI Accelerator | EVERSANA](https://www.eversana.com/our-expertise/ai-accelerator/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/0a4e2c4369.png`
+  - Highlight count: 6; score: 463
+- [Digital Transformation & Innovation | EVERSANA](https://www.eversana.com/our-services/marketing/digital-transformation-and-innovation/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/189ca13228.png`
+  - Highlight count: 6; score: 195
+- [Direct-to-Participant Dispensing for Clinical Trials | EVERSANA](https://www.eversana.com/our-services/patient-services/clinical-trial-programs/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/982c59ca08.png`
+  - Highlight count: 2; score: 144
+- [Distribution & Channel Management | EVERSANA](https://www.eversana.com/our-services/distribution-channel-management/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/4902d82195.png`
+  - Highlight count: 2; score: 144
+- [e-Commerce | EVERSANA](https://www.eversana.com/our-services/distribution-channel-management/e-commerce/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/3095cbc1d1.png`
+  - Highlight count: 2; score: 144
+- [Field Deployment Solutions | Pharmaceutical Sales Outsourcing](https://www.eversana.com/our-services/field-deployment/field-deployment-solutions/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/a62c800434.png`
+  - Highlight count: 3; score: 144
+- [Field Deployment | EVERSANA](https://www.eversana.com/our-services/field-deployment/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/196fe1b0fc.png`
+  - Highlight count: 2; score: 144
+- [Global Channel Management & 3PL | EVERSANA](https://www.eversana.com/our-services/distribution-channel-management/global-channel-management-3pl/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/c929ba940c.png`
+  - Highlight count: 4; score: 171
+- [HEOR, Value & Evidence | EVERSANA](https://www.eversana.com/our-services/market-access-and-value/heor-value-evidence/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/f58a0558d4.png`
+  - Highlight count: 2; score: 144
+- [Home | EVERSANA](https://www.eversana.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/50511c44f7.png`
+  - Highlight count: 2; score: 144
+- [Integrated Compliance Solutions | EVERSANA](https://www.eversana.com/our-services/medical-affairs/integrated-compliance-solutions/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/b0be60fa8a.png`
+  - Highlight count: 2; score: 144
+- [Learning & Performance Services | EVERSANA](https://www.eversana.com/our-services/field-deployment/learning-and-performance-services/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/d50429ea1a.png`
+  - Highlight count: 2; score: 144
+- [Leverage Data, AI & Technology | EVERSANA](https://www.eversana.com/i-want-to/leverage-date-ai-technology/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/80bd8fae77.png`
+  - Highlight count: 5; score: 195
+- [Literature Monitoring & Aggregate Authoring | EVERSANA](https://www.eversana.com/our-expertise/ai-accelerator/orchestrate-operating-system/literature-monitoring-and-aggregate-authoring/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/867752936c.png`
+  - Highlight count: 14; score: 287
+- [Market Access & Reimbursement | EVERSANA](https://www.eversana.com/our-services/market-access-and-value/market-access-reimbursement/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/98aafa4aad.png`
+  - Highlight count: 2; score: 144
+- [Market Access & Value | EVERSANA](https://www.eversana.com/our-services/market-access-and-value/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/67d82fd958.png`
+  - Highlight count: 2; score: 144
+- [Market Access Strategies | EVERSANA](https://www.eversana.com/our-services/market-access-and-value/market-access-strategies/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/873a842f8f.png`
+  - Highlight count: 2; score: 144
+- [Market Shaping Activation Model | EVERSANA](https://www.eversana.com/our-services/market-access-and-value/activate-market-shaping/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/e6ecc43b57.png`
+  - Highlight count: 2; score: 144
+- [Marketing | EVERSANA](https://www.eversana.com/our-services/marketing/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/a69acd708d.png`
+  - Highlight count: 2; score: 144
+- [Medical Affairs Strategy | EVERSANA](https://www.eversana.com/our-services/medical-affairs/medical-affairs-strategy/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/91ca58fa16.png`
+  - Highlight count: 4; score: 144
+- [Medical Deployment | EVERSANA](https://www.eversana.com/our-services/field-deployment/medical-deployment/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/b3de900349.png`
+  - Highlight count: 2; score: 144
+- [Medical Information | EVERSANA](https://www.eversana.com/our-services/medical-affairs/medical-information/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/567a329fc5.png`
+  - Highlight count: 5; score: 152
+- [Medical, Legal, Reviews | EVERSANA](https://www.eversana.com/our-expertise/ai-accelerator/orchestrate-operating-system/medical-legal-reviews/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/da6d162074.png`
+  - Highlight count: 11; score: 259
+- [Omnichannel | EVERSANA](https://www.eversana.com/our-expertise/ai-accelerator/orchestrate-operating-system/omnichannel/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/8deef2cd9e.png`
+  - Highlight count: 4; score: 196
+- [Orchestrate Operating System | EVERSANA](https://www.eversana.com/our-expertise/ai-accelerator/orchestrate-operating-system/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/f9686d6314.png`
+  - Highlight count: 6; score: 179
+- [Our Services | EVERSANA](https://www.eversana.com/our-services/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/551dd6c891.png`
+  - Highlight count: 2; score: 144
+- [Patient Services | EVERSANA](https://www.eversana.com/our-services/patient-services/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/a75127efde.png`
+  - Highlight count: 2; score: 144
+- [Patient Support Programs | Access & Hub | EVERSANA](https://www.eversana.com/our-services/patient-services/access-and-hub/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/7a2eaed747.png`
+  - Highlight count: 5; score: 149
+- [Patient, Payer & Provider Marketing | EVERSANA](https://www.eversana.com/our-services/marketing/patient-payer-and-provider-marketing/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/515f3e896d.png`
+  - Highlight count: 2; score: 144
+- [Personalized Patient Adherence and Support | EVERSANA](https://www.eversana.com/our-services/patient-services/adherence-solutions/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/84588bc924.png`
+  - Highlight count: 4; score: 154
+- [Pharmacovigilance | EVERSANA](https://www.eversana.com/our-services/medical-affairs/pharmacovigilance/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/11f94fc9a3.png`
+  - Highlight count: 9; score: 213
+- [Pricing & Revenue Management | EVERSANA](https://www.eversana.com/our-services/market-access-and-value/pricing-revenue-management/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/eb25f5a005.png`
+  - Highlight count: 2; score: 144
+- [Quality Assurance / Quality Management Systems | EVERSANA](https://www.eversana.com/our-services/medical-affairs/quality-assurance-quality-management-systems/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/b8075b8cf1.png`
+  - Highlight count: 2; score: 146
+- [Regulatory Medical Affairs | EVERSANA](https://www.eversana.com/our-services/medical-affairs/regulatory-medical-affairs/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/eversana/4ce4ba5386.png`
+  - Highlight count: 5; score: 180
+
+### Flatiron
+
+- [A framework for evaluating performance of LLM-based extraction from the electronic health record across different healthcare systems](https://resources.flatiron.com/publications/a-framework-for-evaluating-performance-of-llm-based-extraction-from-the-electronic-health-record-across-different-healthcare-systems)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/flatiron/a785c1e7c3.png`
+  - Highlight count: 20; score: 178
+- [A pan-tumor and pan-country approach to LLM-based extraction of systemic therapies from the electronic health record](https://resources.flatiron.com/publications/a-pan-tumor-and-pan-country-approach-to-llm-based-extraction-of-systemic-therapies-from-the-electronic-health-record)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/flatiron/f317b460c5.png`
+  - Highlight count: 18; score: 166
+- [Assessing quality of a LLM-derived prostate cancer (PC) real-world dataset: an application of the validation of accuracy for LLM/ML-extracted information and data (VALID) framework](https://resources.flatiron.com/publications/assessing-quality-of-a-llm-derived-prostate-cancer-pc-real-world-dataset-an-application-of-the-validation-of-accuracy-for-llm/ml-extracted-informati-1775759390034)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/flatiron/8c9b4f2dd2.png`
+  - Highlight count: 25; score: 237
+- [Bigger, deeper, faster real-world data opens new horizons in hematologic oncology research](https://resources.flatiron.com/real-world-evidence/bigger-deeper-faster-real-world-data-opens-new-horizons-in-hematologic-oncology-research)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/flatiron/bfd85a93a6.png`
+  - Highlight count: 16; score: 152
+- [Can You Trust Real-World Data Extracted by a Large Language Model (LLM)?](https://resources.flatiron.com/real-world-evidence/can-you-trust-real-world-data-extracted-by-a-large-language-model-llm)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/flatiron/6b14e2bf5d.png`
+  - Highlight count: 37; score: 318
+- [Contact Us | Evidence Solutions | Flatiron Health](https://flatiron.com/contact/real-world-evidence-solutions)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/flatiron/c94981b421.png`
+  - Highlight count: 1; score: 20
+- [Contact Us | Evidence Solutions | Flatiron Health](https://flatiron.com/contact/real-world-evidence-solutions-0)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/flatiron/00b5684319.png`
+  - Highlight count: 1; score: 20
+- [Contact Us | RWE Services | Flatiron Health](https://flatiron.com/contact/real-world-evidence-solutions/services)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/flatiron/92258153f3.png`
+  - Highlight count: 1; score: 20
+- [Data You Can Trust: Setting the Bar for ML/LLM-Extracted RWD](https://resources.flatiron.com/real-world-evidence/data-you-can-trust-setting-the-bar-for-mlllm-extracted-rwd)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/flatiron/328e9f9409.png`
+  - Highlight count: 19; score: 171
+- [Ensuring reliability of curated EHR-derived data: The Validation of Accuracy for LLM/ML-Extracted Information and Data (VALID) Framework](https://resources.flatiron.com/publications/ensuring-reliability-of-curated-ehr-derived-data-the-validation-of-accuracy-for-llm/ml-extracted-information-and-data-valid-framework)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/flatiron/424fa7a3b1.png`
+  - Highlight count: 25; score: 225
+- [Flatiron Health announces research to be presented at the 2025 European Society For Medical Oncology AI & Digital Oncology Congress](https://resources.flatiron.com/press/flatiron-health-announces-research-to-be-presented-at-the-2025-european-society-for-medical-oncology-ai-digital-oncology-congress)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/flatiron/f9af3ac8f2.png`
+  - Highlight count: 31; score: 270
+- [Flatiron Health at ESMO AI 2025 | Real-world Evidence Research](https://events.flatiron.com/esmo-ai-2025)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/flatiron/d239c3b4c7.png`
+  - Highlight count: 26; score: 241
+- [Flatiron Health launches six new hematology AI-powered longitudinal datasets](https://resources.flatiron.com/press/flatiron-health-launches-six-new-hematology-ai-powered-longitudinal-datasets)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/flatiron/b01cb39f34.png`
+  - Highlight count: 11; score: 119
+- [Flatiron Health publishes first peer-reviewed validation framework for AI-extracted real-world oncology data in Journal of Clinical Oncology](https://resources.flatiron.com/press/flatiron-health-publishes-first-peer-reviewed-validation-framework-for-ai-extracted-real-world-oncology-data-in-journal-of-clinical-oncology)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/flatiron/753e4e5d81.png`
+  - Highlight count: 23; score: 208
+- [Flatiron Health | Reimagining the infrastructure of cancer care](https://flatiron.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/flatiron/fd41fd3222.png`
+  - Highlight count: 2; score: 37
+- [Flatiron launches first-of-its-kind AI-powered global prostate cancer datasets](https://resources.flatiron.com/press/flatiron-launches-first-of-its-kind-ai-powered-global-prostate-cancer-datasets)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/flatiron/879d136f10.png`
+  - Highlight count: 11; score: 111
+- [From entry to insights: How AI is transforming the clinical data journey](https://resources.flatiron.com/real-world-evidence/how-ai-is-transforming-the-clinical-data-journey)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/flatiron/385b899a9b.png`
+  - Highlight count: 43; score: 373
+- [High-quality, validated AI-enabled research: Insights from recent prostate cancer research](https://resources.flatiron.com/real-world-evidence/high-quality-validated-ai-enabled-research-insights-from-recent-prostate-cancer-research)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/flatiron/7d6c62e152.png`
+  - Highlight count: 35; score: 304
+- [Japanese language EHR LLM extraction of longitudinal unstructured ECOG performance status](https://resources.flatiron.com/publications/japanese-language-ehr-llm-extraction-of-longitudinal-unstructured-ecog-performance-status)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/flatiron/6e695fac6b.png`
+  - Highlight count: 20; score: 183
+- [Responsible AI in action: Flatiron's approach to AI fairness and bias assessment](https://resources.flatiron.com/real-world-evidence/responsible-ai-in-action-flatirons-approach-to-ai-fairness-and-bias-assessment)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/flatiron/241968c49c.png`
+  - Highlight count: 48; score: 420
+- [Structuring GDPR-compliant private networks to enable LLM-Extracted oncology data on pseudonymized patient EHR data in Europe](https://resources.flatiron.com/publications/structuring-gdpr-compliant-private-networks-to-enable-llm-extracted-oncology-data-on-pseudonymized-patient-ehr-data-in-europe)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/flatiron/a4d41c493d.png`
+  - Highlight count: 22; score: 180
+- [Survival prediction in advanced NSCLC (aNSCLC) amid evolving standards of care (SOC): Digital twin modeling incorporating LLM-extracted clinical context](https://resources.flatiron.com/publications/survival-prediction-in-advanced-nsclc-ansclc-amid-evolving-standards-of-care-soc-digital-twin-modeling-incorporating-llm-extracted-clinical-context)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/flatiron/71a7c29ec1.png`
+  - Highlight count: 15; score: 150
+- [The next level in RWE: Flatiron decodes the “why” behind physician decisions for HEOR teams](https://resources.flatiron.com/real-world-evidence/the-next-level-in-rwe-flatiron-decodes-the-why-behind-physician-decisions-for-heor-teams)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/flatiron/db7c0c9b16.png`
+  - Highlight count: 11; score: 114
+- [What predictive modeling actually means for cancer research—and why this moment matters](https://resources.flatiron.com/real-world-evidence/what-predictive-modeling-actually-means-for-cancer-research-and-why-this-moment-matters)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/flatiron/57199b79d9.png`
+  - Highlight count: 20; score: 176
+
+### Folia Health
+
+- [6 years later and AI is here: Revisiting Blog Post 1 "What we're missing" — Folia Health](https://www.foliahealth.com/blog/why-home-reported-outcomes-matter-for-ai)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/folia-health/f134a123eb.png`
+  - Highlight count: 18; score: 160
+
+### Frekil
+
+- [Frekil - Real-World Evidence Infrastructure](https://www.frekil.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/frekil/d9a71a3356.png`
+  - Highlight count: 5; score: 60
+- [Why Real-World Evidence Needs More Than a Chatbot | Frekil](https://www.frekil.com/blog/why-rwe-needs-multi-agent-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/frekil/c628c2a2b4.png`
+  - Highlight count: 28; score: 246
+
+### GeneDx
+
+- [Genetic Testing for Rare Disease Diagnosis | GeneDx](https://www.genedx.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/genedx/ceb13feef0.png`
+  - Highlight count: 1; score: 13
+
+### Genesis Research Group
+
+- [AI for HTA: What, how, and why? - Genesis Research Group](https://genesisrg.com/ai-for-hta-what-how-and-why/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/genesis-research-group/0c277222d9.png`
+  - Highlight count: 7; score: 82
+- [EVID AI | Evidence Intelligence Platform | Genesis RG](https://genesisrg.com/technology/evid-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/genesis-research-group/efa1fc11b4.png`
+  - Highlight count: 18; score: 170
+- [EVID AI: An introduction - Genesis Research Group](https://genesisrg.com/evid-ai-an-introduction/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/genesis-research-group/67e6cca256.png`
+  - Highlight count: 8; score: 92
+- [Evidence Synthesis Services | Genesis Research Group](https://genesisrg.com/evidence-solutions/evidence-synthesis/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/genesis-research-group/1aaea8b7c7.png`
+  - Highlight count: 3; score: 45
+- [HEOR & real-world evidence solutions | Genesis Research Group](https://genesisrg.com/evidence-solutions/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/genesis-research-group/27dbf8208c.png`
+  - Highlight count: 2; score: 35
+- [HEOR and Health Economics Consulting | Genesis RG](https://genesisrg.com/evidence-solutions/health-economics-outcomes-research-consulting/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/genesis-research-group/3938e77d0c.png`
+  - Highlight count: 2; score: 39
+- [ISPOR's 2026–2027 HEOR Trends report: The Era of Evidence Judgment - Genesis Research Group](https://genesisrg.com/ispors-2026-2027-heor-trends-report-the-era-of-evidence-judgment/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/genesis-research-group/8c27dcdc4a.png`
+  - Highlight count: 2; score: 32
+- [Life Sciences Consulting Firm | Genesis Research Group](https://genesisrg.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/genesis-research-group/2245863233.png`
+  - Highlight count: 1; score: 30
+- [Market Access Strategy and Consulting | Genesis RG](https://genesisrg.com/evidence-solutions/market-access-value-strategy/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/genesis-research-group/480c676137.png`
+  - Highlight count: 1; score: 31
+- [Shining a light on rare disease: evidence challenges and solutions - Genesis Research Group](https://genesisrg.com/shining-a-light-on-rare-disease-evidence-challenges-and-solutions/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/genesis-research-group/e874888007.png`
+  - Highlight count: 4; score: 54
+
+### Guardian Research Network
+
+- [Guardian Research](https://www.guardianresearch.org/guardian-research-network-appoints-clinical-trial-and-healthcare-industry-executive-shirley-trainor-thomas-as-vice-president-network-partners/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guardian-research-network/74205eaf5e.png`
+  - Highlight count: 1; score: 22
+
+### Guidehouse
+
+- [4 ways to reduce cybersecurity risks with AI and ML | Guidehouse](https://guidehouse.com/insights/defense-and-security/2025/reduce-cyber-risks-with-aiml)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/acc825140b.png`
+  - Highlight count: 29; score: 225
+- [A clean energy supply chain strategy for UK manufacturing | Guidehouse](https://guidehouse.com/insights/united-kingdom/communities-energy-infrastructure/2026/uk-energy-supply-chain)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/38717ae2b2.png`
+  - Highlight count: 3; score: 24
+- [Adversarial AI preparedness in defense and national security | Guidehouse](https://guidehouse.com/insights/defense-and-security/2025/adversarial-ai-preparedness)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/143270d94d.png`
+  - Highlight count: 45; score: 340
+- [Advisory, Technology & Managed Services | Guidehouse](https://guidehouse.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/66ac9188fd.png`
+  - Highlight count: 7; score: 51
+- [AI & Data Services | Guidehouse](https://guidehouse.com/services/ai-and-data)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/a1fa6758d0.png`
+  - Highlight count: 23; score: 126
+- [AI-Native Utilities: The Future of Energy | Guidehouse](https://guidehouse.com/insights/communities-energy-infrastructure/2025/ai-native-utility-2035)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/e4bb41a61b.png`
+  - Highlight count: 46; score: 372
+- [Beyond the Electron: Sustainability | Podcast | Guidehouse](https://guidehouse.com/insights/communities-energy-infrastructure/2021/beyond-the-electron-sustainability)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/dbb684baf1.png`
+  - Highlight count: 3; score: 23
+- [Bolstering Climate Resilience on Public Lands Through Data-Driven Solutions | Guidehouse](https://guidehouse.com/insights/communities-energy-infrastructure/2023/bolstering-climate-resilience-on-public-lands-through-data-driven-solutions)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/fdc0685b45.png`
+  - Highlight count: 3; score: 26
+- [Capturing value at the AI inflection point | Guidehouse](https://guidehouse.com/insights/communities-energy-infrastructure/2025/capturing-value-at-the-ai-inflection-point)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/84f079764e.png`
+  - Highlight count: 59; score: 484
+- [Care Delivery Consulting & Technology | Healthcare Advisory | Guidehouse](https://guidehouse.com/services/care-delivery)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/bc2cd19b69.png`
+  - Highlight count: 5; score: 26
+- [Change Adoption & Transformation: (re)VisionTM | Guidehouse](https://guidehouse.com/services/change-management/revision)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/85e6b081fa.png`
+  - Highlight count: 3; score: 25
+- [Change Management Services | Guidehouse](https://guidehouse.com/services/change-management)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/3b83d94112.png`
+  - Highlight count: 6; score: 25
+- [Cloud & App Development Services | Guidehouse](https://guidehouse.com/services/cloud-and-app-development)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/1df47e78af.png`
+  - Highlight count: 7; score: 50
+- [Energy workers in the AI era: From operators to orchestrators | Guidehouse](https://guidehouse.com/insights/communities-energy-infrastructure/2026/energy-workers-ai-era)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/02c4c6152f.png`
+  - Highlight count: 47; score: 358
+- [Explore Our Services | Guidehouse](https://guidehouse.com/services)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/065ef6a330.png`
+  - Highlight count: 5; score: 44
+- [Federal News Network's AI & Data Exchange 2025 | Guidehouse](https://guidehouse.com/events/2025/02/25/fnn-ai-data-exchange-2025)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/f0bbccdaaf.png`
+  - Highlight count: 18; score: 142
+- [Financial Services Advisory, Technology & Managed Services | Guidehouse](https://guidehouse.com/industries/financial-services)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/5646bf794e.png`
+  - Highlight count: 8; score: 54
+- [From Compliance to Strategy | Guidehouse](https://guidehouse.com/insights/communities-energy-infrastructure/2023/corporate-sustainability-reporting-directive)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/52ad79596a.png`
+  - Highlight count: 4; score: 28
+- [Guidehouse (in)Sight Health™ | Guidehouse](https://guidehouse.com/services/ai-and-data/insight-health)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/8953168981.png`
+  - Highlight count: 7; score: 50
+- [Harnessing AI in aiding with emergency alerts and warnings | Guidehouse](https://guidehouse.com/insights/defense-and-security/2024/harnessing-ai-with-emergency-alerts-and-warnings)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/5a388e599b.png`
+  - Highlight count: 53; score: 431
+- [How AI can power seamless utility CX | Guidehouse](https://guidehouse.com/insights/communities-energy-infrastructure/2026/ai-power-utility-cx)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/58718ab59b.png`
+  - Highlight count: 31; score: 235
+- [How AI is transforming threats to federal identity security | Guidehouse](https://guidehouse.com/insights/defense-and-security/2026/ai-risks-for-federal-agencies)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/453af1a694.png`
+  - Highlight count: 38; score: 304
+- [Human Services Finance Officers | Guidehouse](https://guidehouse.com/events/2025/08/04/human-services-finance-officers)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/eaf5a01f3a.png`
+  - Highlight count: 3; score: 18
+- [Identity security in the age of AI | Guidehouse](https://guidehouse.com/insights/defense-and-security/2026/identity-and-ai-security)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/e118251595.png`
+  - Highlight count: 29; score: 223
+- [Integrate and Survive the Supply Chain Disruption Effect | Guidehouse](https://guidehouse.com/insights/communities-energy-infrastructure/2023/supply-chain-disruption-effect)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/7d91ac4038.png`
+  - Highlight count: 3; score: 23
+- [Intelligent, predictive, autonomous tech operations for national security | Guidehouse](https://guidehouse.com/insights/defense-and-security/2026/aiops-roadmap)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/8054c1fe29.png`
+  - Highlight count: 29; score: 145
+- [Powering the AI century: Why utilities must lead | Guidehouse](https://guidehouse.com/insights/communities-energy-infrastructure/2025/powering-the-ai-century)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/ec22629770.png`
+  - Highlight count: 16; score: 134
+- [Putting AI to work for state government | Guidehouse](https://guidehouse.com/insights/communities-energy-infrastructure/2025/ai-in-state-government)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/713360da3c.png`
+  - Highlight count: 49; score: 369
+- [Regional Direct Air Capture | Guidehouse](https://guidehouse.com/insights/communities-energy-infrastructure/2023/regional-direct-air-capture)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/f40a62185e.png`
+  - Highlight count: 3; score: 25
+- [Revised Thresholds to Determine the Size Category of a Company and the Impact on Corporate Sustainability Reporting | Guidehouse](https://guidehouse.com/insights/communities-energy-infrastructure/2023/corporate-sustainability-reporting-size-thresholds)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/608cce7868.png`
+  - Highlight count: 3; score: 23
+- [Sustainability Reporting: An Opportunity for Business Transformation | Guidehouse](https://guidehouse.com/insights/communities-energy-infrastructure/2024/sustainability-reporting-for-business-transformation)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/26ec03f965.png`
+  - Highlight count: 3; score: 23
+- [The AI utility: A roadmap for transformation | Guidehouse](https://guidehouse.com/insights/communities-energy-infrastructure/2025/ai-utility)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/e9b9336132.png`
+  - Highlight count: 67; score: 536
+- [The future of state and local courts: AI-powered and people-centric | Guidehouse](https://guidehouse.com/insights/communities-energy-infrastructure/2025/human-centered-ai-in-state-and-local-courts)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/9752fd736f.png`
+  - Highlight count: 54; score: 403
+- [Transforming your organization's ability to leverage a holistic supply chain | Guidehouse](https://guidehouse.com/insights/communities-energy-infrastructure/2024/transforming-your-organizations-ability-to-leverage-a-holistic-supply-chain)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/f179b9f5bd.png`
+  - Highlight count: 3; score: 30
+- [Working smarter – leveraging AI for Monitoring & Evaluation | Guidehouse](https://guidehouse.com/insights/defense-and-security/2025/leveraging-ai-for-me)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/guidehouse/1416f72954.png`
+  - Highlight count: 66; score: 539
+
+### Health Analytics LLC
+
+- [Expertise Hub - Health Analytics](https://healthanalytics.com/expertise/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/health-analytics-llc/bb43a30e41.png`
+  - Highlight count: 1; score: 21
+- [Publications - New - Health Analytics](https://healthanalytics.com/publications/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/health-analytics-llc/ec98e9fffc.png`
+  - Highlight count: 3; score: 45
+
+### Health Catalyst
+
+- [AI in Healthcare: Hype, Hope, and Missed Opportunities](https://healthcatalyst.com/learn/webinars/ai-in-healthcare-hype-hope-and-missed-opportunities)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/health-catalyst/771e9501bd.png`
+  - Highlight count: 6; score: 71
+- [Clinical Quality Improvement Solutions | Health Catalyst](https://healthcatalyst.com/healthcare-analytics/clinical-quality)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/health-catalyst/0bf66a74ff.png`
+  - Highlight count: 2; score: 30
+- [Driving Strategic Advantage Through Widespread Analytics Adoption](https://healthcatalyst.com/learn/success-stories/analytics-adoption-partners-healthcare)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/health-catalyst/769325ac6f.png`
+  - Highlight count: 2; score: 32
+- [Healthcare Analytics Solutions | Health Catalyst](https://healthcatalyst.com/healthcare-analytics)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/health-catalyst/37c8e63d4e.png`
+  - Highlight count: 2; score: 29
+- [Healthcare Analytics | Healthcare Solutions and Technology | Health Catalyst](https://www.healthcatalyst.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/health-catalyst/4e58c26efb.png`
+  - Highlight count: 5; score: 48
+- [Healthcare Data Analytics | Health Catalyst](https://healthcatalyst.com/healthcare-analytics/data-analytics)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/health-catalyst/c7adf0065d.png`
+  - Highlight count: 9; score: 71
+- [Healthcare Regulatory Compliance Solutions | Health Catalyst](https://healthcatalyst.com/healthcare-analytics/regulatory-compliance)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/health-catalyst/37a7a1de82.png`
+  - Highlight count: 1; score: 22
+- [Healthcare Tech Insights: AI, Trends, and Platforms Demystified](https://healthcatalyst.com/learn/webinars/healthcare-tech-insights-ai-trends-and-platforms-demystified)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/health-catalyst/430c6c7084.png`
+  - Highlight count: 7; score: 79
+- [Improving Hospital Flow with Machine Learning](https://healthcatalyst.com/learn/videos/an-analytics-foundation-fosters-products-that-improve-healthcare)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/health-catalyst/ff56e49d73.png`
+  - Highlight count: 2; score: 31
+- [Multi-year Data and Analytics Journey Yields Significant Improvements in Organizational Performance and Patient Outcomes](https://healthcatalyst.com/learn/success-stories/analytics-cost-effectiveness-unitypoint-health)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/health-catalyst/f86b38bdfb.png`
+  - Highlight count: 14; score: 111
+- [Part 1: How AI and Data Can Streamline Healthcare](https://healthcatalyst.com/learn/videos/part-1-how-ai-and-data-can-streamline-healthcare)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/health-catalyst/57f8d7e096.png`
+  - Highlight count: 17; score: 157
+- [Part 2: How AI and Data Can Streamline Healthcare](https://healthcatalyst.com/learn/videos/part-2-how-ai-and-data-can-streamline-healthcare)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/health-catalyst/ef3f442178.png`
+  - Highlight count: 16; score: 147
+- [Population Health and Value-Based Care Solutions | Health Catalyst](https://healthcatalyst.com/healthcare-analytics/population-health-value-based-care)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/health-catalyst/ccb84b5e6c.png`
+  - Highlight count: 2; score: 29
+- [Redefining Value: How Analytics and AI Can Transform the Payor–Hospital Relationship in Asia Pacific](https://healthcatalyst.com/learn/webinars/asia-pacific-redefining-value-analytics)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/health-catalyst/dba5c1ec1f.png`
+  - Highlight count: 3; score: 37
+- [Revenue Cycle Integrity | Health Catalyst](https://healthcatalyst.com/healthcare-analytics/healthcare-revenue-cost)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/health-catalyst/60264e68bd.png`
+  - Highlight count: 1; score: 21
+
+### HealthVerity
+
+- [Accelerating real-world evidence with agentic AI](https://blog.healthverity.com/accelerating-real-world-evidence-with-agentic-ai)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/healthverity/958f249888.png`
+  - Highlight count: 19; score: 178
+- [Axtria and HealthVerity Announce Strategic Partnership to Enable Next-Gen Real-World Data, Analytics, and Campaign Optimization Solutions for Life Sciences Organizations - HealthVerity](https://healthverity.com/news/axtria-and-healthverity-announce-strategic-partnership-to-enable-next-gen-real-world-data-analytics-and-campaign-optimization-solutions-for-life-sciences-organizations/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/healthverity/ab1ba71d79.png`
+  - Highlight count: 5; score: 46
+- [HealthVerity & Medeloop Partner on AI-Driven RWE](https://healthverity.com/news/healthverity-and-medeloop-announce-strategic-partnership-to-enhance-real-world-evidence-insights-with-ai-driven-analytics/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/healthverity/7d071492b1.png`
+  - Highlight count: 10; score: 72
+- [HealthVerity Blog | AI](https://blog.healthverity.com/tag/ai)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/healthverity/bbb9ea1aeb.png`
+  - Highlight count: 31; score: 279
+- [HealthVerity Blog | Solutions & Best Practices](https://blog.healthverity.com/tag/solutions-best-practices)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/healthverity/fb0e3e5556.png`
+  - Highlight count: 9; score: 90
+- [HealthVerity Partners with Recursion to Enhance Clinical Trial Analytics with Real-World Data - HealthVerity](https://healthverity.com/news/healthverity-partners-with-recursion-to-enhance-clinical-trial-analytics-with-real-world-data/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/healthverity/1cc20c618b.png`
+  - Highlight count: 6; score: 45
+- [Introducing HealthVerity Notes: Verified clinical narratives now available for real-world research and commercial use - HealthVerity](https://healthverity.com/news/introducing-healthverity-notes-verified-clinical-narratives-now-available-for-real-world-research-and-commercial-use/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/healthverity/21eae3749c.png`
+  - Highlight count: 4; score: 34
+- [Measuring cost savings of virtual PT with HealthVerity Marketplace closed claims](https://blog.healthverity.com/measuring-cost-savings-of-virtual-pt-with-healthverity-marketplace-closed-claims)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/healthverity/743ced42f7.png`
+  - Highlight count: 5; score: 40
+- [Open claims vs closed claims in healthcare data: What’s the difference](https://blog.healthverity.com/open-claims-vs-closed-payer-claims)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/healthverity/e1e543e9eb.png`
+  - Highlight count: 3; score: 46
+- [Thermo Fisher Scientific’s PPD clinical research business collaborates with HealthVerity to expand real-world data capabilities](https://healthverity.com/news/thermo-fisher-scientifics-ppd-clinical-research-business-collaborates-with-healthverity-to-expand-real-world-data-capabilities/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/healthverity/1b5c379169.png`
+  - Highlight count: 5; score: 45
+- [Unlock open and closed claims data with taXOnomy: Claim better outreach](https://blog.healthverity.com/claim-better-outreach)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/healthverity/243aef1783.png`
+  - Highlight count: 3; score: 41
+- [Unlocking the possibilities of closed and open claims data](https://blog.healthverity.com/unlocking-the-possibilities-of-closed-and-open-claims-data)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/healthverity/c9ca043624.png`
+  - Highlight count: 3; score: 49
+- [What everyone’s missing about data quality for AI and FDA readiness](https://blog.healthverity.com/what-everyones-missing-about-data-quality-for-ai-and-fda-readiness)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/healthverity/c42d2c0ff4.png`
+  - Highlight count: 45; score: 395
+
+### Icon Clinical Research, LLC
+
+- [AI at ICON | ICON plc](https://www.iconplc.com/solutions/technologies/ai)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/icon-clinical-research-llc/454cf9602f.png`
+  - Highlight count: 46; score: 299
+- [Artificial Intelligence to Transform Clinical Trials | ICON plc](https://www.iconplc.com/insights/blog/2018/05/18/the-power-of-ai-to-transform-clinical-trials)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/icon-clinical-research-llc/3f5c74ea00.png`
+  - Highlight count: 26; score: 159
+- [Blog | The rise and role of AI in medical imaging](https://www.iconplc.com/insights/blog/2024/06/14/rise-and-role-ai-medical-imaging)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/icon-clinical-research-llc/91047b5394.png`
+  - Highlight count: 57; score: 314
+- [Can AI improve pharma R&D productivity?](https://www.iconplc.com/insights/blog/2019/09/19/can-ai-improve-rd-productivity)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/icon-clinical-research-llc/ffaa22a9d4.png`
+  - Highlight count: 51; score: 249
+- [Continuing the fight against AMR with new tools](https://www.iconplc.com/insights/blog/2023/11/16/continuing-fight-against-amr-new-tools-diagnosis-and-treatment)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/icon-clinical-research-llc/327833ea97.png`
+  - Highlight count: 16; score: 73
+- [Data-driven Site Selection | Accelerated Study Start-Up | ICON plc](https://www.iconplc.com/insights/blog/2018/05/18/data-driven-site-selection-aids-accelerated-study-start-up)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/icon-clinical-research-llc/c34e353153.png`
+  - Highlight count: 16; score: 54
+- [Developing AI in software as a medical device (SaMD)](https://www.iconplc.com/insights/digital-disruption/software-medical-device-samd/developing-ai-in-samd)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/icon-clinical-research-llc/8f5dba88ba.png`
+  - Highlight count: 13; score: 125
+- [Enhancing diversity in clinical trials with AI and human expertise | ICON plc](https://www.iconplc.com/insights/blog/2024/08/19/enhancing-diversity-clinical-trials-ai-and-human-expertise)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/icon-clinical-research-llc/79e01adad9.png`
+  - Highlight count: 21; score: 114
+- [How AI could transform literature surveillance for pharmacovigilance | ICON plc](https://www.iconplc.com/insights/blog/2024/04/26/how-ai-could-transform-literature-surveillance-pharmacovigilance)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/icon-clinical-research-llc/da7d125353.png`
+  - Highlight count: 38; score: 254
+- [How human-enabled AI is creating a new map for navigating site selection | ICON plc](https://www.iconplc.com/insights/blog/2024/07/02/how-human-enabled-ai-creating-new-map-navigating-site-selection)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/icon-clinical-research-llc/0a25310e34.png`
+  - Highlight count: 30; score: 184
+- [ICON plc | Clinical Research Organisation (CRO) for Drug Development](https://www.iconplc.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/icon-clinical-research-llc/a10978302f.png`
+  - Highlight count: 4; score: 48
+- [Insights from the 2024 ISCR Annual Conference: India’s evolving clinical research arena](https://www.iconplc.com/insights/blog/2024/02/13/insights-2024-iscr-annual-conference-indias-evolving-clinical-research)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/icon-clinical-research-llc/604095454a.png`
+  - Highlight count: 24; score: 62
+- [Tested, tried and true: Why digital biomarkers are the AI & ML strategy pharma should prioritise | ICON plc](https://www.iconplc.com/insights/blog/2024/08/02/tested-tried-and-true-why-digital-biomarkers-are-ai-ml-strategy-pharma)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/icon-clinical-research-llc/bb07012c27.png`
+  - Highlight count: 33; score: 212
+- [The impact of AI on the evolution of machine translation | ICON plc](https://www.iconplc.com/insights/blog/2024/07/24/impact-ai-evolution-machine-translation)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/icon-clinical-research-llc/a1ea8d2f10.png`
+  - Highlight count: 27; score: 166
+- [Understanding FDA regulations for AI in SaMD | ICON plc](https://www.iconplc.com/insights/blog/2025/06/24/fda-regulations-ai-medical-devices)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/icon-clinical-research-llc/a8bc162c66.png`
+  - Highlight count: 44; score: 295
+
+### IMO Health
+
+- [Accelerate Scale Your Health Tech Solutions | IMO Health](https://www.imohealth.com/accelerate-and-scale-your-health-tech-solutions-abm/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/8f7d4a0830.png`
+  - Highlight count: 8; score: 65
+- [Accelerating rare disease diagnosis and drug development with better data and AI](https://www.imohealth.com/resources/accelerating-rare-disease-diagnosis-and-drug-development-with-better-data-and-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/70d7675ebd.png`
+  - Highlight count: 16; score: 142
+- [Achieving reliable, explainable AI with a clinically grounded knowledge graph](https://www.imohealth.com/resources/achieving-reliable-explainable-ai-with-a-clinically-grounded-knowledge-graph/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/bbb57c2bbf.png`
+  - Highlight count: 11; score: 97
+- [Advancing clinical AI in healthcare at AMIA 2024 | IMO Health](https://www.imohealth.com/resources/advancing-clinical-ai-in-healthcare-at-amia-2024/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/58f4f06f0f.png`
+  - Highlight count: 27; score: 228
+- [Advancing precision medicine and life sciences with NLP | IMO Health](https://www.imohealth.com/resources/advancing-precision-medicine-and-life-sciences-nlp-and-clinical-trials/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/0a0142edba.png`
+  - Highlight count: 34; score: 282
+- [AI, ML & NLP in Healthcare: What to Know for 2025](https://www.imohealth.com/resources/ai-in-healthcare-101-the-role-of-clinical-ai-ml-and-nlp-in-2025-and-beyond/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/9d6c36fcd4.png`
+  - Highlight count: 88; score: 716
+- [AI-Native Clinical Data Intelligence | IMO Health](https://www.imohealth.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/a6f875590e.png`
+  - Highlight count: 19; score: 128
+- [Beyond dictation: Boosting clinical workflows with ambient AI | IMO Health](https://www.imohealth.com/resources/beyond-dictation-boosting-clinical-workflows-with-ambient-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/5446b9943e.png`
+  - Highlight count: 16; score: 135
+- [Can AI automate scientific literature review? Meet ASCOmind | IMO Health](https://www.imohealth.com/resources/can-ai-automate-scientific-literature-review-meet-ascomind/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/c678f04ab1.png`
+  - Highlight count: 18; score: 151
+- [Case study: Accelerating literature review with AI-assisted precision](https://www.imohealth.com/resources/case-study-accelerating-literature-review-with-ai-assisted-precision/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/38b80af562.png`
+  - Highlight count: 19; score: 162
+- [Case study: Enhancing NLP with clinical terminology | IMO Health](https://www.imohealth.com/resources/case-study-enhancing-nlp-with-clinical-terminology/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/c1679fb648.png`
+  - Highlight count: 18; score: 153
+- [Clinical AI: Improving Documentation with Ambient Technology](https://www.imohealth.com/resources/clinical-ai-enhancing-documentation-accuracy-with-ambient-technology/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/10afa49e73.png`
+  - Highlight count: 21; score: 175
+- [Clinical Decision Support That Improves Outcomes](https://www.imohealth.com/resources/clinical-ai-in-action-clinical-decision-support-that-improves-outcomes/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/2f44eba99c.png`
+  - Highlight count: 30; score: 249
+- [Customer Spotlight: Dr. Jeffrey Hoffman – Elevating pediatric informatics and predictive care | IMO Health](https://www.imohealth.com/resources/customer-spotlight-dr-jeffrey-hoffman-elevating-pediatric-informatics-and-predictive-care/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/d503c010b2.png`
+  - Highlight count: 13; score: 94
+- [Decentralizing clinical AI value creation with MCP](https://www.imohealth.com/resources/decentralizing-clinical-ai-value-creation-with-mcp/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/6552c2d5f8.png`
+  - Highlight count: 27; score: 235
+- [EHRs and Point of Care Solutions | IMO Health](https://www.imohealth.com/ehrs-and-point-of-care-solutions/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/318c9ad34d.png`
+  - Highlight count: 4; score: 30
+- [FDA issues first guidance on AI in drug development | IMO Health](https://www.imohealth.com/resources/fda-issues-first-guidance-on-ai-in-drug-development/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/5416cb6cd2.png`
+  - Highlight count: 29; score: 239
+- [Graph to graph: How clinical semantics power real clinical AI](https://www.imohealth.com/resources/graph-to-graph-how-clinical-semantics-power-real-clinical-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/a4c5d4090d.png`
+  - Highlight count: 19; score: 165
+- [Grounding clinical AI with knowledge graphs](https://www.imohealth.com/resources/grounding-clinical-ai-with-knowledge-graphs/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/7098a99ca6.png`
+  - Highlight count: 41; score: 337
+- [How agentic AI accelerates clinical terminology migration](https://www.imohealth.com/resources/how-agentic-ai-accelerates-clinical-terminology-migration/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/647a933b36.png`
+  - Highlight count: 19; score: 152
+- [How can ambient AI scribes capture clinical nuance? | IMO Health](https://www.imohealth.com/resources/how-can-ambient-ai-scribes-capture-clinical-nuance/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/72daff74cd.png`
+  - Highlight count: 16; score: 135
+- [How Clinical AI Can Improve Data Quality in Healthcare](https://www.imohealth.com/resources/ask-an-expert-how-clinical-ai-can-amplify-data-quality-across-healthcare/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/f5f98f7db6.png`
+  - Highlight count: 39; score: 332
+- [How the IMO Health Platform structures clinical data across healthcare | IMO Health](https://www.imohealth.com/resources/how-the-imo-health-platform-structures-clinical-data-across-healthcare/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/e3ee4c3356.png`
+  - Highlight count: 12; score: 107
+- [IMO Health Platform: Clinical data for health tech](https://www.imohealth.com/imo-health-platform/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/05e8ff02ce.png`
+  - Highlight count: 9; score: 73
+- [IMO Health's LLM | IMO Health](https://www.imohealth.com/imo-healths-llm/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/6c35613311.png`
+  - Highlight count: 18; score: 154
+- [IMO Health's NLP Development Toolkit | IMO Health](https://www.imohealth.com/imo-healths-nlp-development-toolkit/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/22fe92f521.png`
+  - Highlight count: 29; score: 243
+- [Life Science and Clinical Research | IMO Health](https://www.imohealth.com/life-science-and-clinical-research/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/bac1d9d3fb.png`
+  - Highlight count: 12; score: 103
+- [LLMs excel in medical coding with terminology, clinical AI | IMO Health](https://www.imohealth.com/resources/can-llms-excel-in-medical-coding-yes-with-rich-semantics-and-clinical-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/3d1050d9a8.png`
+  - Highlight count: 94; score: 758
+- [NLP pipelines | IMO Health](https://www.imohealth.com/nlp-pipelines/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/5ffce36805.png`
+  - Highlight count: 4; score: 35
+- [Rely On Accountable AI And Precise, Clinical Detail | IMO Health](https://www.imohealth.com/imo-clinical-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/8d19ee373b.png`
+  - Highlight count: 26; score: 216
+- [SLR 101: A guide to AI in systematic literature review](https://www.imohealth.com/resources/a-guide-to-ai-in-systematic-literature-review/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/440a12f04b.png`
+  - Highlight count: 33; score: 269
+- [Why drug repurposing requires biomedical NLP and AI | IMO Health](https://www.imohealth.com/resources/from-data-to-discovery-nlp-and-ai-in-drug-repurposing/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/imo-health/7863ef27e9.png`
+  - Highlight count: 49; score: 395
+
+### Initiate Consultancy
+
+- [A RAISE New World: The new ‘best practice’ in the age of AI – Initiate Consultancy](https://www.initiateconsultancy.com/leadership-blog/a-raise-new-world-the-new-best-practice-in-the-age-of-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/initiate-consultancy/5245fcb9b3.png`
+  - Highlight count: 21; score: 199
+- [AI – Initiate Consultancy](https://www.initiateconsultancy.com/tag/ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/initiate-consultancy/79834db60f.png`
+  - Highlight count: 3; score: 48
+- [Validation of Artificial Intelligence (AI) Tool to Identify PICO Questions for EU Joint Clinical Assessment (JCA) – Initiate Consultancy](https://www.initiateconsultancy.com/ic_work/validation-of-artificial-intelligence-ai-tool-to-identify-pico-questions-for-eu-joint-clinical-assessment-jca/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/initiate-consultancy/df449cbc81.png`
+  - Highlight count: 2; score: 39
+- [Value demonstration and health economic modelling for AI cardiac CT interpretation tool – Initiate Consultancy](https://www.initiateconsultancy.com/ic_case_study/value-demonstration-and-health-economic-modelling-for-ai-cardiac-ct-interpretation-tool/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/initiate-consultancy/844fb4a183.png`
+  - Highlight count: 1; score: 31
+
+### Inovalon Inc.
+
+- [AI in Healthcare: Core Principles, Real Impact, and What’s Next](https://www.inovalon.com/resource/ai-in-healthcare-core-principles-real-impact-and-whats-next/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/inovalon-inc/d60394c702.png`
+  - Highlight count: 33; score: 255
+- [AI in Healthcare: Key Principles, Myths, & the Human Touch - Inovalon](https://www.inovalon.com/resource/ai-in-healthcare-key-principles-misconceptions-and-the-human-touch/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/inovalon-inc/e34595dfc8.png`
+  - Highlight count: 15; score: 111
+- [Clinical Analytics - Inovalon](https://www.inovalon.com/products/data-cloud/data-solutions/real-world-patient-insights-to-optimize-clinical-trials/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/inovalon-inc/105ce9856e.png`
+  - Highlight count: 5; score: 34
+- [Clinical Research Patient Finder - Clinical Trial Recruitment Software](https://www.inovalon.com/products/data-cloud/data-solutions/real-world-patient-insights-to-optimize-clinical-trials/patient-finder/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/inovalon-inc/c46631fb34.png`
+  - Highlight count: 6; score: 32
+- [Clinical Trial Eligibility Screener - Inovalon](https://www.inovalon.com/products/data-cloud/data-solutions/clinical-trial-eligibility-screener/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/inovalon-inc/405eb42635.png`
+  - Highlight count: 6; score: 44
+- [Encounter Submissions Software - Inovalon](https://www.inovalon.com/products/payer-cloud/encounter-submissions-software/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/inovalon-inc/be9bb95c35.png`
+  - Highlight count: 6; score: 39
+- [Exploring AI‚ Role in Revenue Cycle Management: - Inovalon](https://www.inovalon.com/resource/exploring-ais-role-in-revenue-cycle-management/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/inovalon-inc/8a15f274fc.png`
+  - Highlight count: 62; score: 462
+- [Healthcare Data and Analytics - Life Sciences - Inovalon](https://www.inovalon.com/products/life-sciences/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/inovalon-inc/71a6de73d9.png`
+  - Highlight count: 8; score: 60
+- [Inovalon](https://pages.inovalon.com/Webinar-On-DemandClaimsDenialsCausesImpactandAI-EnabledPreventionStrategiesPROV_LP.html?utm_medium=salesloft&utm_source=-sales-webinar-od-&utm_campaign=RH242235-&utm_content=LPID24516-&utm_term=link)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/inovalon-inc/371c34dad2.png`
+  - Highlight count: 9; score: 51
+- [Inovalon - Healthcare Software & Analytics Solutions](https://www.inovalon.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/inovalon-inc/8dd10b768e.png`
+  - Highlight count: 11; score: 62
+- [Inovalon - Quality Measurement Software](https://www.inovalon.com/products/payer-cloud/quality-measurement-software/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/inovalon-inc/428efa92d0.png`
+  - Highlight count: 7; score: 43
+- [Inovalon - Risk Adjustment Software](https://www.inovalon.com/products/payer-cloud/risk-adjustment-software/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/inovalon-inc/da156eb2fb.png`
+  - Highlight count: 6; score: 41
+- [Inovalon’s Converged Quality Solution Achieves Best in KLAS For Quality Measurement and Reporting Analytics - Inovalon](https://www.inovalon.com/news/inovalons-converged-quality-solution-achieves-best-in-klas-for-quality-measurement-and-reporting-analytics/?utm_campaign=26-PAY-PRE-OTH-KLASWebBanners&utm_medium=press-release&utm_source=&utm_content=press-release)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/inovalon-inc/3f2dd36729.png`
+  - Highlight count: 5; score: 29
+- [Member Outreach Software - Inovalon Payer Cloud](https://www.inovalon.com/products/payer-cloud/member-outreach-software/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/inovalon-inc/aab1e3e843.png`
+  - Highlight count: 6; score: 41
+- [Monthly Benchmarking Software for Quality Measurement - Inovalon](https://www.inovalon.com/products/payer-cloud/converged-analytics-benchmarking/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/inovalon-inc/9a1720308f.png`
+  - Highlight count: 6; score: 39
+- [What Could AI-Driven Healthcare Actually Look Like? - Inovalon](https://www.inovalon.com/resource/what-could-ai-driven-healthcare-actually-look-like/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/inovalon-inc/62803be46c.png`
+  - Highlight count: 15; score: 111
+
+### IQVIA
+
+- [AI Driven Alerts | IQVIA](https://www.iqvia.com/solutions/commercialization/commercial-analytics/omnichannel-engagement-and-insights/patient-insights-for-hcp-engagement/ai-driven-alerts)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/iqvia/57ee777896.png`
+  - Highlight count: 113; score: 64
+- [Artificial Intelligence and Machine Learning careers](https://jobs.iqvia.com/en/ai-and-machine-learning?utm_source=iqvia.com&utm_medium=referral&utm_campaign=careersnav)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/iqvia/3132488a44.png`
+  - Highlight count: 33; score: 184
+- [Brand and Portfolio Strategy | IQVIA](https://www.iqvia.com/solutions/commercialization/brand-and-portfolio-strategy)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/iqvia/beb9f1b5b9.png`
+  - Highlight count: 125; score: 125
+- [Careers Blog](https://jobs.iqvia.com/en/blog?utm_source=iqvia.com&utm_medium=referral&utm_campaign=careersnav)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/iqvia/770ac23a83.png`
+  - Highlight count: 3; score: 13
+- [Commercial Analytics | IQVIA](https://www.iqvia.com/solutions/commercialization/commercial-analytics)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/iqvia/afc983540e.png`
+  - Highlight count: 130; score: 142
+- [Commercialization | IQVIA](https://www.iqvia.com/solutions/commercialization)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/iqvia/08d729303c.png`
+  - Highlight count: 127; score: 175
+- [Data and Information Management | IQVIA](https://www.iqvia.com/solutions/commercialization/data-and-information-management)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/iqvia/bd0d4b6c7d.png`
+  - Highlight count: 115; score: 71
+- [Enterprise Information Management | IQVIA](https://www.iqvia.com/solutions/commercialization/data-and-information-management/information-management)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/iqvia/c5db3b18a9.png`
+  - Highlight count: 118; score: 62
+- [España | IQVIA](https://www.iqvia.com/es-es/locations/spain)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/iqvia/0a2160a255.png`
+  - Highlight count: 108; score: 14
+- [Established Brands Optimization | IQVIA](https://www.iqvia.com/solutions/commercialization/established-brands-optimization)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/iqvia/5d7fa01373.png`
+  - Highlight count: 110; score: 25
+- [Field Force Agent | IQVIA](https://www.iqvia.com/solutions/commercialization/commercial-analytics/omnichannel-engagement-and-insights/field-force-agent)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/iqvia/5ecbf61d42.png`
+  - Highlight count: 127; score: 173
+- [HCP Engagement | IQVIA](https://www.iqvia.com/solutions/commercialization/hcp-engagement)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/iqvia/6baec1dcf9.png`
+  - Highlight count: 123; score: 104
+- [IQVIA Global Market Insights Agent | IQVIA](https://www.iqvia.com/solutions/commercialization/data-and-information-management/iqvia-global-market-insights-agent)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/iqvia/011e4daae6.png`
+  - Highlight count: 128; score: 137
+- [IQVIA launches new AI agents for life sciences and healthcare | IQVIA](https://www.iqvia.com/newsroom/2025/06/iqvia-launches-new-ai-agents-for-life-sciences-and-healthcare)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/iqvia/8ad04cf47a.png`
+  - Highlight count: 124; score: 153
+- [IQVIA Ukraine | IQVIA](https://www.iqvia.com/locations/ukraine)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/iqvia/9b9cb6fb38.png`
+  - Highlight count: 108; score: 18
+- [Next Best Action | IQVIA](https://www.iqvia.com/solutions/commercialization/commercial-analytics/orchestrated-analytics/next-best)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/iqvia/616add134b.png`
+  - Highlight count: 125; score: 148
+- [Omnichannel Engagement and Insights | IQVIA](https://www.iqvia.com/solutions/commercialization/commercial-analytics/omnichannel-engagement-and-insights)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/iqvia/b182abcf0a.png`
+  - Highlight count: 119; score: 95
+- [Orchestrated Analytics | IQVIA](https://www.iqvia.com/solutions/commercialization/commercial-analytics/orchestrated-analytics)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/iqvia/5e3f8e7c1f.png`
+  - Highlight count: 169; score: 410
+- [Our Company](https://jobs.iqvia.com/en/company?utm_source=iqvia.com&utm_medium=referral&utm_campaign=careersnav)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/iqvia/956365220d.png`
+  - Highlight count: 4; score: 29
+- [Page Not Found | IQVIA](https://www.iqvia.com/solutions/commercialization/commercial-analytics-and-consulting/omnichannel-engagement-and-insights/patient-insights-for-hcp-engagement)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/iqvia/fbe276321a.png`
+  - Highlight count: 108; score: 17
+- [Patient Insights for HCP Engagement | IQVIA](https://www.iqvia.com/solutions/commercialization/commercial-analytics/omnichannel-engagement-and-insights/patient-insights-for-hcp-engagement)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/iqvia/17399ba07e.png`
+  - Highlight count: 124; score: 134
+- [Pricing and Market Access | IQVIA](https://www.iqvia.com/solutions/commercialization/commercial-analytics/pricing-and-market-access)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/iqvia/cac7ec38f1.png`
+  - Highlight count: 108; score: 22
+- [Sustainability | IQVIA](https://www.iqvia.com/about-us/sustainability)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/iqvia/76ee548833.png`
+  - Highlight count: 116; score: 86
+- [Technology and Analytics Careers at IQVIA](https://jobs.iqvia.com/en/technology-and-analytics?utm_source=iqvia.com&utm_medium=referral&utm_campaign=careersnav)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/iqvia/69174e9d78.png`
+  - Highlight count: 26; score: 136
+- [Transforming Life Sciences with Data, Technology & Human Science | IQVIA](https://www.iqvia.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/iqvia/a8a9ad7956.png`
+  - Highlight count: 126; score: 149
+- [Working at IQVIA | Jobs and Careers at IQVIA](https://jobs.iqvia.com/en/jobs?utm_source=iqvia.com&utm_medium=referral&utm_campaign=careersnav)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/iqvia/5ca8f8b128.png`
+  - Highlight count: 4; score: 30
+
+### ISPOR
+
+- [ISPOR - AI Policy](https://www.ispor.org/ai-policy)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/23ed4999fc.png`
+  - Highlight count: 21; score: 175
+- [ISPOR - All Webinars](https://www.ispor.org/education-training/webinars/all-webinars/-in-category/categories/clinical-outcomes)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/b4f886d47b.png`
+  - Highlight count: 7; score: 62
+- [ISPOR - All Webinars](https://www.ispor.org/education-training/webinars/all-webinars/-in-category/categories/epidemiology-public-health)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/7be6aa7512.png`
+  - Highlight count: 3; score: 21
+- [ISPOR - All Webinars](https://www.ispor.org/education-training/webinars/all-webinars/-in-category/categories/medical-technologies)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/4f17120e38.png`
+  - Highlight count: 3; score: 21
+- [ISPOR - All Webinars](https://www.ispor.org/education-training/webinars/all-webinars/-in-category/categories/specialized-treatment-areas)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/b10085520f.png`
+  - Highlight count: 3; score: 24
+- [ISPOR - All Webinars](https://www.ispor.org/education-training/webinars/all-webinars/-in-category/categories/specific-diseases-conditions)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/e3dca1f55c.png`
+  - Highlight count: 3; score: 20
+- [ISPOR - All Webinars](https://www.ispor.org/education-training/webinars/all-webinars/-in-category/categories/economic-evaluation)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/3fe5440a4e.png`
+  - Highlight count: 3; score: 30
+- [ISPOR - All Webinars](https://www.ispor.org/education-training/webinars/all-webinars/-in-category/categories/health-policy-regulatory)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/0b00735e2a.png`
+  - Highlight count: 3; score: 25
+- [ISPOR - All Webinars](https://www.ispor.org/education-training/webinars/all-webinars/-in-category/categories/health-technology-assessment)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/65cbe19550.png`
+  - Highlight count: 8; score: 69
+- [ISPOR - Beyond the Research Assistant: Innovative Uses of AI in Health Preference Research](https://www.ispor.org/conferences-education/calendar/event/2026/06/25/default-calendar/beyond-the-research-assistant--innovative-uses-of-ai-in-health-preference-research)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/68c9bfa72f.png`
+  - Highlight count: 20; score: 155
+- [ISPOR - Clinical Outcomes](https://www.ispor.org/heor-resources/heor-by-topic-new/clinical-outcomes)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/39452bfa62.png`
+  - Highlight count: 3; score: 22
+- [ISPOR - Education](https://www.ispor.org/education-training)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/899862232f.png`
+  - Highlight count: 13; score: 111
+- [ISPOR - From Evidence to Access: Applying HEOR and Economic Evaluation in Healthcare Decision-Making](https://www.ispor.org/conferences-education/calendar/event/2026/06/17/default-calendar/from-evidence-to-access--applying-heor-and-economic-evaluation-in-healthcare-decision-making)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/d38da44f62.png`
+  - Highlight count: 3; score: 20
+- [ISPOR - From Promise to Proof: Strengthening the Evidence Base for Digital Health Technologies](https://www.ispor.org/heor-resources/news-top/news/view/2026/04/29/from-promise-to-proof--strengthening-the-evidence-base-for-digital-health-technologies)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/c7b6c56d8d.png`
+  - Highlight count: 4; score: 33
+- [ISPOR - GenAI for HEOR SLRs Task Force](https://www.ispor.org/member-groups/task-forces/genai-for-heor-slrs-task-force)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/0c7a7b8822.png`
+  - Highlight count: 12; score: 109
+- [ISPOR - Harnessing AI to Transform HEOR and Real‑World Evidence Generation in Rare Diseases: Regulatory Expectations, Opportunities, and Practical Use Cases](https://www.ispor.org/conferences-education/calendar/event/2026/07/16/default-calendar/harnessing-ai-to-transform-heor-and-real-world-evidence-generation-in-rare-diseases--regulatory-expectations--opportunities--and-practical-use-cases)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/0898ed422d.png`
+  - Highlight count: 19; score: 159
+- [ISPOR - HEOR Explained](https://www.ispor.org/heor-explained)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/1682a8939c.png`
+  - Highlight count: 7; score: 47
+- [ISPOR - HEOR Learning Lab](https://www.ispor.org/education-training/learning-lab)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/8b79751ddb.png`
+  - Highlight count: 7; score: 60
+- [ISPOR - Home](https://www.ispor.org/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/7c2dbee913.png`
+  - Highlight count: 3; score: 19
+- [ISPOR - Legal Disclaimer](https://www.ispor.org/legal-disclaimer)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/a205cd7233.png`
+  - Highlight count: 3; score: 18
+- [ISPOR - Patient-Centered Research](https://www.ispor.org/heor-resources/heor-by-topic-new/patient-centered-research)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/fef7f2c61e.png`
+  - Highlight count: 5; score: 41
+- [ISPOR - Short Courses](https://www.ispor.org/education-training/short-courses)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/90c5eead40.png`
+  - Highlight count: 6; score: 52
+- [ISPOR - Short Courses](https://www.ispor.org/education-training/short-courses/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/043d107612.png`
+  - Highlight count: 6; score: 52
+- [ISPOR - Value Assessment in the Age of COVID-19- Meeting the Challenges](https://www.ispor.org/education-training/webinars/value-assessment-in-the-age-of-covid-19-meeting-the-challenges)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/31ac23878d.png`
+  - Highlight count: 3; score: 22
+- [ISPOR - Valuing Future Alzheimer-s Disease Medicines- Extending the Traditional Paradigm](https://www.ispor.org/education-training/webinars/value-assessment-in-alzheimers-disease-a-focus-on-equity)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/87b6fe6380.png`
+  - Highlight count: 3; score: 19
+- [ISPOR - Webinars](https://www.ispor.org/education-training/webinars)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/698dd9f9f8.png`
+  - Highlight count: 22; score: 190
+- [ISPOR - Welcome to the HEOR Learning Lab](https://www.ispor.org/welcome-HEOR-Learning-Lab)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/46e1b13343.png`
+  - Highlight count: 5; score: 41
+- [ISPOR Announces 2026 Health Economics and Outcomes Research Award Honorees](https://www.ispor.org/heor-resources/news-top/news/view/2026/04/21/ispor-announces-2026-health-economics-and-outcomes-research-award-honorees)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/21fae96545.png`
+  - Highlight count: 3; score: 19
+- [ISPOR Education Catalog](https://www.ispor.org/education-training/ispor-education-center/ispor-education-catalog?filter=%28categories%253A%2522Economic%2520Evaluation%2522%29)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/7bc34ae525.png`
+  - Highlight count: 6; score: 48
+- [ISPOR Education Center](https://www.ispor.org/education-training/ispor-education-center)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/bca152dfa3.png`
+  - Highlight count: 3; score: 22
+- [May 17: Applied Generative AI for HEOR: Advanced Architectures - In Person at ISPOR 2026](https://www.ispor.org/conferences-education/event/2026/05/17/default-calendar/may-17--applied-generative-ai-for-heor--advanced-architectures----in-person-at-ispor-2026)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/f6789540f0.png`
+  - Highlight count: 23; score: 193
+- [May 17: Applied Generative AI for HEOR: Introduction - In Person at ISPOR 2026](https://www.ispor.org/conferences-education/event/2026/05/17/default-calendar/may-17--introduction-to-applied-generative-ai-for-heor---in-person-at-ispor-2026)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/c5a6e1ca87.png`
+  - Highlight count: 24; score: 206
+- [May 17: PROs in Clinical Trials: Endpoint Selection, Regulatory Strategy and Label Claims - In Person at ISPOR 2026](https://www.ispor.org/conferences-education/event/2026/05/17/default-calendar/may-17--pros-in-clinical-trials--endpoint-selection--regulatory-strategy-and-label-claims---in-person-at-ispor-2026)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ispor/a755767c9d.png`
+  - Highlight count: 3; score: 22
+
+### Keiji.AI
+
+- [Adapting Large Language Models for Systematic Literature Review of Clinical Trials: Workflow versus AI Agents | Keiji AI Blog | Keiji AI](https://keiji.ai/blog/adapting-llms-systematic-literature-review-clinical-trials)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/511d96eaa2.png`
+  - Highlight count: 34; score: 298
+- [Analysis - TrialMind | Keiji AI | Keiji AI](https://keiji.ai/product/analysis)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/ab8c88568e.png`
+  - Highlight count: 10; score: 71
+- [Beyond the Prompt: The System Design Engineering Behind Production-Grade Agents | Keiji AI Blog | Keiji AI](https://keiji.ai/blog/beyond-the-prompt-system-design-engineering-production-grade-agents)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/617b183305.png`
+  - Highlight count: 24; score: 214
+- [Biostat Analysis & Programming - TrialMind | Keiji AI | Keiji AI](https://keiji.ai/product/analysis/biostat-analysis-programming)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/d6a89f1e16.png`
+  - Highlight count: 13; score: 91
+- [Building AI for Drafting Clinical Trial Documents: RAG, Fine-tuning and Agentic AI Workflow | Keiji AI Blog | Keiji AI](https://keiji.ai/blog/building-ai-drafting-clinical-trial-documents-rag-fine-tuning-agentic-workflow)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/c30076c349.png`
+  - Highlight count: 27; score: 244
+- [Clinical Trials Demystified: An AI Researcher's Guide (Part 2) — Clinical Trial Software & Vendors | Keiji AI Blog | Keiji AI](https://keiji.ai/blog/clinical-trials-demystified-part-2-software-vendors)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/8764f09a3a.png`
+  - Highlight count: 25; score: 188
+- [Clinical Trials Demystified: An AI Researcher's Guide (Part 3) — Clinical Trial Data & Standards | Keiji AI Blog | Keiji AI](https://keiji.ai/blog/clinical-trials-demystified-part-3-data-standards)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/30eb4277c6.png`
+  - Highlight count: 58; score: 484
+- [Clinical Trials Demystified: An AI Researcher's Guide (Part 4) — AI Models in Clinical Trials | Keiji AI Blog | Keiji AI](https://keiji.ai/blog/clinical-trials-demystified-part-4-ai-models)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/e19cee802c.png`
+  - Highlight count: 105; score: 866
+- [Clinical Trials Demystified: An AI Researcher’s Guide (Part 1) — Workflow for Clinical Trials | Keiji AI Blog | Keiji AI](https://keiji.ai/blog/ai-clinical-trials-primer-for-researchers)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/c49f8d99bf.png`
+  - Highlight count: 58; score: 504
+- [Data Monitoring - TrialMind | Keiji AI | Keiji AI](https://keiji.ai/product/execution/data-monitoring)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/cbe6b55afa.png`
+  - Highlight count: 11; score: 96
+- [DeepEvidence: Empowering Biomedical Discovery with Deep Knowledge Graph Research | Keiji AI Blog | Keiji AI](https://keiji.ai/blog/deepevidence-empowering-biomedical-discovery-deep-knowledge-graph-research)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/da67bf9214.png`
+  - Highlight count: 26; score: 223
+- [Developing Generative AI for Clinical Trial Recruitment: From Patient to Trials | Keiji AI Blog | Keiji AI](https://keiji.ai/blog/generative-ai-clinical-trial-recruitment-patient-to-trials)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/cb4a174f8c.png`
+  - Highlight count: 15; score: 144
+- [Discovery - TrialMind | Keiji AI | Keiji AI](https://keiji.ai/product/discovery)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/95a6f01897.png`
+  - Highlight count: 8; score: 82
+- [Don't Delegate, Do It Yourself — The New Way to Work in the Age of AI | Keiji AI Blog | Keiji AI](https://keiji.ai/blog/dont-delegate-do-it-yourself-new-way-work-age-of-ai)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/3d8e02b1a4.png`
+  - Highlight count: 32; score: 280
+- [Execution - TrialMind | Keiji AI | Keiji AI](https://keiji.ai/product/execution)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/2e125c2be7.png`
+  - Highlight count: 8; score: 79
+- [Human–AI collaboration in medical literature mining: what role for proprietary data and domain workflow? | Keiji AI Blog | Keiji AI](https://keiji.ai/blog/human-ai-collaboration-medical-literature-mining-leads-nature-communications)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/7ee5be813e.png`
+  - Highlight count: 37; score: 317
+- [Keiji AI — AI Agents for Clinical Research](https://keiji.ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/5f65ab1a4c.png`
+  - Highlight count: 15; score: 141
+- [Keiji AI — AI Agents for Clinical Research](https://keiji.ai/about)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/5b33957324.png`
+  - Highlight count: 12; score: 120
+- [Keiji AI — AI Agents for Clinical Research](https://keiji.ai/accessibility)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/78eb1aeb0d.png`
+  - Highlight count: 11; score: 103
+- [Keiji AI — AI Agents for Clinical Research](https://keiji.ai/blog)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/ff5080c755.png`
+  - Highlight count: 46; score: 393
+- [Keiji AI — AI Agents for Clinical Research](https://keiji.ai/compliance)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/859bb87565.png`
+  - Highlight count: 14; score: 129
+- [Keiji AI — AI Agents for Clinical Research](https://keiji.ai/contact)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/be7a3ccee9.png`
+  - Highlight count: 10; score: 96
+- [Keiji AI — AI Agents for Clinical Research](https://keiji.ai/demo)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/b06ebff918.png`
+  - Highlight count: 7; score: 69
+- [Keiji AI — AI Agents for Clinical Research](https://keiji.ai/for-academics)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/737ba0dbb4.png`
+  - Highlight count: 14; score: 119
+- [Nat Biomed Eng | Making LLMs Reliable Data Science Copilots for Biomedical Research | Keiji AI Blog | Keiji AI](https://keiji.ai/blog/making-llms-reliable-data-science-copilots-biomedical-research-nature-bme)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/b498bfb102.png`
+  - Highlight count: 74; score: 514
+- [Outcome Prediction - TrialMind | Keiji AI | Keiji AI](https://keiji.ai/product/analysis/outcome-prediction)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/a3a33e375e.png`
+  - Highlight count: 9; score: 85
+- [Powering the Next Generation of Clinical Research: How MCP Unleashes TrialMind Agents | Keiji AI Blog | Keiji AI](https://keiji.ai/blog/powering-next-generation-clinical-research-mcp-trialmind-agents)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/f2eb81073b.png`
+  - Highlight count: 61; score: 499
+- [Predicting Clinical Trial Success: From Machine Learning to Agentic AI and Beyond | Keiji AI Blog | Keiji AI](https://keiji.ai/blog/predicting-clinical-trial-success-with-ai-from-hint-to-spot-and-beyond)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/af25b76cfd.png`
+  - Highlight count: 25; score: 226
+- [Target & Mechanism Discovery - TrialMind | Keiji AI | Keiji AI](https://keiji.ai/product/discovery/target-mechanism-discovery)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/1f27c76047.png`
+  - Highlight count: 10; score: 89
+- [The AI Regulation Revolution: How New FDA and EMA Guidance Opens the Clinical Trials Market | Keiji AI Blog | Keiji AI](https://keiji.ai/blog/ai-regulation-revolution-fda-ema-guidance-clinical-trials)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/9010acda0d.png`
+  - Highlight count: 61; score: 511
+- [Training Agentic AI Searcher for Biomedical Literature: Supervised Fine-Tuning and Reinforcement Learning | Keiji AI Blog | Keiji AI](https://keiji.ai/blog/training-llms-agentic-ai-searcher-biomedical-literature)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/7f76db245c.png`
+  - Highlight count: 31; score: 284
+- [Trial Intelligence - TrialMind | Keiji AI | Keiji AI](https://keiji.ai/product/analysis/trial-intelligence)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/57315bfc54.png`
+  - Highlight count: 7; score: 69
+- [TrialMind - AI Agents for Clinical Trial Lifecycle | Keiji AI | Keiji AI](https://keiji.ai/product)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/7fdfc7d5ce.png`
+  - Highlight count: 14; score: 130
+- [Understanding AI's New Power Duo: MCP and Agent Skills in TrialMind | Keiji AI Blog | Keiji AI](https://keiji.ai/blog/understanding-ai-new-power-duo-mcp-and-agent-skills)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/fe4a5769d3.png`
+  - Highlight count: 70; score: 580
+- [Why Prototyping AI Agents Should Be Easier - Vibe Engineered 8 Agents in 1 day | Keiji AI Blog | Keiji AI](https://keiji.ai/blog/why-prototyping-ai-agents-should-be-easier-reproducing-eight-biomedical-agents)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/keiji-ai/5122dd5298.png`
+  - Highlight count: 34; score: 280
+
+### KMK Consulting Inc.
+
+- [Capturing Promotion Response with Healthcare Predictive Analysis | KMK](https://kmkconsultinginc.com/capturing-promotion-response-how-panel-analysis-can-improve-the-accuracy-of-predictive-analysis/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/kmk-consulting-inc/8c239256a7.png`
+  - Highlight count: 6; score: 45
+- [Commercial Operations Consulting for Pharmaceutical Industry](https://kmkconsultinginc.com/solutions/commercial-operation/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/kmk-consulting-inc/70f7ced22f.png`
+  - Highlight count: 7; score: 42
+- [Incentive Compensation Plans | Pharmaceutical Sales | KMK Consulting](https://kmkconsultinginc.com/solutions/commercial-analytics/pharma-sales-operation/incentive-compensation/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/kmk-consulting-inc/2a6fa75ae9.png`
+  - Highlight count: 3; score: 42
+- [Pharmaceutical Sales Force Structure Consulting | KMK](https://kmkconsultinginc.com/solutions/commercial-analytics/sales-force-optimisation/sales-force-structure/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/kmk-consulting-inc/d8586f8945.png`
+  - Highlight count: 6; score: 66
+- [Quarterly Pharmaceutical Sales Targeting | KMK Consulting](https://kmkconsultinginc.com/solutions/commercial-analytics/pharma-sales-operation/quarterly-targeting/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/kmk-consulting-inc/60b13de58e.png`
+  - Highlight count: 6; score: 66
+
+### Komodo Health
+
+- [4 Steps for Evaluating AI Reliability for Life Sciences | Komodo Health](https://www.komodohealth.com/evaluating-ai-reliability-for-life-sciences/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/daa3b28795.png`
+  - Highlight count: 9; score: 78
+- [A Peek Behind the Curtain: The Values That Drive Our Culture | Komodo Health](https://www.komodohealth.com/perspectives/2019-12-a-peek-behind-the-curtain-the-inspiring-values-that-drive-our-unique-culture/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/ec70b0e059.png`
+  - Highlight count: 2; score: 17
+- [Adding New Dimensions to HEOR Research With Linked RWE Datasets | Komodo Health](https://www.komodohealth.com/perspectives/adding-new-dimensions-to-heor-research-with-linked-rwe-datasets/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/dc1330f1a3.png`
+  - Highlight count: 2; score: 26
+- [AI Comparison Guide for Life Sciences | Komodo Health](https://www.komodohealth.com/ai-comparison-guide/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/188d5cae45.png`
+  - Highlight count: 11; score: 89
+- [AI for Healthcare Analytics | Life Sciences | Komodo Health](https://www.komodohealth.com/ai-for-healthcare-analytics/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/3393ec7cc6.png`
+  - Highlight count: 24; score: 205
+- [AI is revolutionizing early diagnosis of rare disease](https://www.komodohealth.com/perspectives/ai-early-detection-rare-disease/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/64ba4320e9.png`
+  - Highlight count: 13; score: 118
+- [Casting a Wider Net: How Real-World Evidence Is Transforming Medical Affairs](https://www.komodohealth.com/perspectives/casting-a-wider-net-how-real-world-evidence-is-transforming-medical-affairs/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/656cf9ff05.png`
+  - Highlight count: 2; score: 19
+- [Does your data support the use of AI? Find out | Komodo Health](https://www.komodohealth.com/perspectives/is-your-data-ai-grade/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/19a8011a08.png`
+  - Highlight count: 23; score: 201
+- [Enrich OTC Pain Med Insights With Patient Journey Claims Data](https://www.komodohealth.com/perspectives/enrich-otc-pain-med-insights-with-patient-journey-claims-data/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/fd8073ee67.png`
+  - Highlight count: 3; score: 28
+- [From Data to Discovery: How AI Is Accelerating Progress in Oncology](https://www.komodohealth.com/perspectives/from-data-to-discovery-how-ai-is-accelerating-progress-in-oncology/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/123aa05809.png`
+  - Highlight count: 14; score: 126
+- [Harnessing AI for Early Commercialization in Life Sciences | Komodo Health](https://www.komodohealth.com/perspectives/ai-accelerates-early-commercialization/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/75b44f01ee.png`
+  - Highlight count: 28; score: 234
+- [Healthcare AI & Real-World Data Analytics for Life Sciences | Komodo Health](https://www.komodohealth.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/36bb37086a.png`
+  - Highlight count: 4; score: 36
+- [Healthcare Analytics | Komodo Analytics | Komodo Health](https://www.komodohealth.com/komodo-healthcare-analytics/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/cc66ea3171.png`
+  - Highlight count: 3; score: 35
+- [How the Evidentiary Standard Is Transforming Healthcare Decision-Making: Part 2 | Komodo Health](https://www.komodohealth.com/perspectives/evolution-of-healthcare-analytics-part-2/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/713b4de5c1.png`
+  - Highlight count: 2; score: 27
+- [In the Two Years Since Dobbs v Jackson, Vasectomies Have Maintained Their Newfound Popularity](https://www.komodohealth.com/perspectives/in-the-two-years-since-dobbs-v-jackson-vasectomies-have-maintained-their-newfound-popularity/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/37e3b5ddf2.png`
+  - Highlight count: 2; score: 17
+- [Infographic: Healthcare AI Built to Be Your Thought Partner | Komodo Health](https://www.komodohealth.com/infographic-your-heathcare-ai-thought-partner/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/d6f6511855.png`
+  - Highlight count: 4; score: 38
+- [Komodo Health Sets Its Sights on Enterprise Life Sciences Transformation With Enhanced Workflow Tools and Consulting Services](https://www.komodohealth.com/perspectives/komodo-health-sets-its-sights-on-enterprise-life-sciences-transformation-with-enhanced-workflow-tools-and-consulting-services/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/0fce1c8a1f.png`
+  - Highlight count: 5; score: 53
+- [Komodo Medical Affairs External Content Hub](https://knowledge.komodohealth.com/medaffairs-external-hub)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/e3f675339e.png`
+  - Highlight count: 3; score: 31
+- [Komodo Patient Insurance: A Reimagined Approach to Payer Analytics](https://www.komodohealth.com/perspectives/komodo-patient-insurance-a-reimagined-approach-to-payer-analytics/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/bcb7ebc220.png`
+  - Highlight count: 2; score: 20
+- [Lost in Transition: Despite Growing Awareness, Perimenopause Remains Vastly Underrecognized and Undertreated | Komodo Health](https://www.komodohealth.com/perspectives/lost-in-transition-despite-growing-awareness-perimenopause-remains-vastly-underrecognized-and-undertreated/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/57d70839a7.png`
+  - Highlight count: 2; score: 22
+- [MapAI is the latest innovation in our quest to democratize data analytics](https://www.komodohealth.com/perspectives/new-gen-ai-assistant-empowers-the-enterprise/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/7d030aff4f.png`
+  - Highlight count: 16; score: 147
+- [MapLab Enterprise: Industry’s First Unified Healthcare Analytics Platform for All Users | Komodo Health](https://www.komodohealth.com/perspectives/maplab-enterprise-industrys-first-unified-healthcare-analytics-platform/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/ba04ccf6d6.png`
+  - Highlight count: 4; score: 38
+- [MapLab: The Next-Generation Analytics and Insights Platform For Life Sciences](https://www.komodohealth.com/perspectives/maplab-the-next-generation-analytics-and-insights-platform-for-life-sciences/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/2348be85c1.png`
+  - Highlight count: 8; score: 78
+- [Meet a Dragon: Matt Texeira on Talent, AI, and the Future of Work | Komodo Health](https://www.komodohealth.com/perspectives/meet-a-dragon-matt-texeira-on-talent-ai-and-the-future-of-work/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/5f7132f158.png`
+  - Highlight count: 29; score: 244
+- [Modeling Inclusion/Exclusion Criteria for Impact: Use Race and Ethnicity Data to Align Trial Enrollment With Most-Affected Patient Populations | Komodo Health](https://www.komodohealth.com/perspectives/modeling-inclusion-exclusion-criteria-race-ethnicity-data-to-align-trial-enrollment/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/d61dd0c53d.png`
+  - Highlight count: 2; score: 17
+- [One Day, AI Will Unlock Deeper Insights at Scale Into Rare Disease | Komodo Health](https://www.komodohealth.com/perspectives/ai-will-unlock-deeper-insights/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/17bb413f63.png`
+  - Highlight count: 11; score: 108
+- [Predictive Alerting: Leveraging Novel AI Approaches for the Early Detection of Patients With Rare Disease](https://www.komodohealth.com/perspectives/predictive-alerting-leveraging-novel-ai-approaches-for-the-early-detection-of-patients-with-rare-diseases/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/a6f81a7745.png`
+  - Highlight count: 10; score: 87
+- [Raise Your Hand If You’re Attending MASS West! | Komodo Health](https://www.komodohealth.com/perspectives/2019-09-raise-your-hand-if-youre-attending-mass-west/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/7e2621c598.png`
+  - Highlight count: 2; score: 17
+- [Taking the Long-Term View To Leverage the Power of AI in Healthcare Today](https://www.komodohealth.com/perspectives/taking-the-long-term-view-to-leverage-the-power-of-ai-in-healthcare-today/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/702588c189.png`
+  - Highlight count: 11; score: 90
+- [The Evolution of Healthcare Analytics: Three Eras That Shaped Modern Healthcare Intelligence: Part 1 | Komodo Health](https://www.komodohealth.com/perspectives/evolution-of-healthcare-analytics-part-1/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/bfe17a4c9f.png`
+  - Highlight count: 8; score: 76
+- [Transparent and auditable agentic AI for Life Sciences | Komodo Health](https://www.komodohealth.com/perspectives/five-critical-components-biopharma-needs-from-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/a86b5af59a.png`
+  - Highlight count: 20; score: 171
+- [Trends to Watch at ASCO 2024: A Conversation With Komodo’s Head of Analytics, Usha Periyanayagam, MD, MPH](https://www.komodohealth.com/perspectives/trends-to-watch-at-asco-2024-a-conversation-with-komodos-head-of-analytics-usha-periyanayagam-md-mph/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/207289017e.png`
+  - Highlight count: 7; score: 62
+- [Unifying the Enterprise: A Shared Healthcare Analytics Platform and Innovative Technology Accelerate the Product Life Cycle | Komodo Health](https://www.komodohealth.com/perspectives/healthcare-analytics-platform-innovative-technology-accelerate-product-life-cycle/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/3bd688bf13.png`
+  - Highlight count: 9; score: 88
+- [Unlocking the Intersectionality of RWE: How Combining Claims, EHR, and Genomics Data Can Transform Life Sciences](https://www.komodohealth.com/perspectives/unlocking-the-intersectionality-of-rwe-how-combining-claims-ehr-and-genomics-data-can-transform-life-sciences/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/komodo-health/6ca1ae2508.png`
+  - Highlight count: 4; score: 42
+
+### Limina
+
+- [https://www.getlimina.ai/en/blog/1332](https://www.getlimina.ai/en/blog/1332)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/d374a678d1.png`
+  - Highlight count: 24; score: 212
+- [https://www.getlimina.ai/en/blog/aida-chatgpt](https://www.getlimina.ai/en/blog/aida-chatgpt)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/05656b47ec.png`
+  - Highlight count: 36; score: 298
+- [https://www.getlimina.ai/en/blog/brazils-lgpd](https://www.getlimina.ai/en/blog/brazils-lgpd)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/967b82d62d.png`
+  - Highlight count: 7; score: 74
+- [https://www.getlimina.ai/en/blog/cybersecurity-government](https://www.getlimina.ai/en/blog/cybersecurity-government)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/c4937b0bae.png`
+  - Highlight count: 6; score: 48
+- [https://www.getlimina.ai/en/blog/data-integrity-security-cybersecurity](https://www.getlimina.ai/en/blog/data-integrity-security-cybersecurity)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/73b992a62a.png`
+  - Highlight count: 3; score: 36
+- [https://www.getlimina.ai/en/blog/data-types](https://www.getlimina.ai/en/blog/data-types)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/f547748f1e.png`
+  - Highlight count: 13; score: 118
+- [https://www.getlimina.ai/en/blog/discussing-ml-model-evaluations-multimodal-learning](https://www.getlimina.ai/en/blog/discussing-ml-model-evaluations-multimodal-learning)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/16169339eb.png`
+  - Highlight count: 21; score: 183
+- [About Us | Turning Sensitive Data into Secure Intelligence](https://www.getlimina.ai/en/about-us)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/e4c4afcc0d.png`
+  - Highlight count: 2; score: 34
+- [Acceptable Use Policy | Guidelines & Terms | Private AI](https://www.getlimina.ai/en/blog/acceptable-use-policy)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/fcc15e7505.png`
+  - Highlight count: 6; score: 66
+- [Australia’s Plan to Regulate High-Risk AI](https://www.getlimina.ai/en/blog/australia-regulate-ai)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/7dedab31e0.png`
+  - Highlight count: 31; score: 271
+- [Belgium DPA on EU AI Act and GDPR: What Organisations Need to Know](https://www.getlimina.ai/en/blog/belgium-dpa-eu-ai-act-gdpr-compliance)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/19d30f8e18.png`
+  - Highlight count: 123; score: 979
+- [CCPA and CPRA: California's Data Privacy Laws Explained (2024 Guide)](https://www.getlimina.ai/en/blog/ccpa-cpra)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/06b3070ceb.png`
+  - Highlight count: 5; score: 34
+- [Co-Reference Resolution: How AI Accurately Links Entity Names While Protecting Privacy](https://www.getlimina.ai/en/blog/ai-accuracy-co-reference-resolution)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/4dad707509.png`
+  - Highlight count: 44; score: 384
+- [Colorado Privacy Act vs. Connecticut Data Privacy Act: A Complete Comparison](https://www.getlimina.ai/en/blog/cpa-cdpa)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/d9262403f9.png`
+  - Highlight count: 5; score: 62
+- [Data Tokenization vs PII Redaction: Which Fits Your Use Case?](https://www.getlimina.ai/en/blog/data-tokenization-vs-pii-redaction)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/f9fb4c5ed0.png`
+  - Highlight count: 15; score: 146
+- [De-identification for AI Training Data: A Complete Guide](https://www.getlimina.ai/en/blog/de-identification-for-ai-training-data)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/eb3db531ea.png`
+  - Highlight count: 48; score: 420
+- [De-identification vs Anonymization vs Pseudonymization Explained](https://www.getlimina.ai/en/blog/de-identification-vs-anonymization-vs-pseudonymization)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/ec380a1662.png`
+  - Highlight count: 7; score: 72
+- [Does De-identification Hurt AI Accuracy? Research and Evidence | Limina](https://www.getlimina.ai/en/blog/de-identification-ai-accuracy-research-evidence)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/05edb93f98.png`
+  - Highlight count: 36; score: 307
+- [EDPB Pseudonymization Guidelines and the Challenge of Unstructured Data](https://www.getlimina.ai/en/blog/edpb-pseudonymization-unstructured-data)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/ad2792973f.png`
+  - Highlight count: 6; score: 47
+- [Enhancing Data Lake Security: A Guide to PII Scanning in S3 buckets](https://www.getlimina.ai/en/blog/data-lake-security-s3)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/992922308d.png`
+  - Highlight count: 21; score: 176
+- [Exciting Updates in 3.7](https://www.getlimina.ai/en/blog/3-7-updates)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/82b569274d.png`
+  - Highlight count: 2; score: 36
+- [How to Create De-Identified Embeddings | Limina](https://www.getlimina.ai/en/blog/de-identified-embeddings)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/ac8690c530.png`
+  - Highlight count: 12; score: 106
+- [Independent Review Certifies Limina’s PII Identification Model as Secure and Reliable](https://www.getlimina.ai/en/blog/armilla-certifies-privateai)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/273200bb28.png`
+  - Highlight count: 8; score: 78
+- [Is Consent Required for Processing Personal Data via LLMs?](https://www.getlimina.ai/en/blog/consent-llms-gdpr-guide)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/9e77b01a2a.png`
+  - Highlight count: 19; score: 179
+- [Leveraging ChatGPT and other AI tools for HR](https://www.getlimina.ai/en/blog/chatgpt-hr)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/8a29ba72c4.png`
+  - Highlight count: 26; score: 215
+- [Leveraging ChatGPT and other AI Tools for Legal Services](https://www.getlimina.ai/en/blog/chatgpt-law)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/ecb5514e66.png`
+  - Highlight count: 30; score: 253
+- [Leveraging ChatGPT in the Banking Industry](https://www.getlimina.ai/en/blog/chatgpt-banking)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/eba5109c75.png`
+  - Highlight count: 28; score: 233
+- [Limina AI | Identify, Redact & Replace PII](https://www.getlimina.ai/en)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/9a8678bf2b.png`
+  - Highlight count: 5; score: 67
+- [Migrating Your Privacy Workflows from Amazon Comprehend to Private AI](https://www.getlimina.ai/en/blog/aws-comprehend-private-ai)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/3a4409cd38.png`
+  - Highlight count: 56; score: 473
+- [Natural Language v. Regex: The Context wars](https://www.getlimina.ai/en/blog/1412)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/5f476443c8.png`
+  - Highlight count: 22; score: 197
+- [Protecting Confidential Corporate Information from Generative AI | Limina](https://www.getlimina.ai/en/blog/confidential-corporate-information-chatgpt)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/3e4ae83469.png`
+  - Highlight count: 44; score: 376
+- [The American Privacy Rights Act: What APRA Means for Your Business](https://www.getlimina.ai/en/blog/apra-compliance)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/708a83cdb1.png`
+  - Highlight count: 11; score: 106
+- [What Does a Data Breach Actually Cost? | Limina](https://www.getlimina.ai/en/blog/data-breach-cost)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/26a4eb4fd4.png`
+  - Highlight count: 4; score: 50
+- [What It Really Takes to Build an AI System | Limina](https://www.getlimina.ai/en/blog/1342)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/limina/1515bbfb09.png`
+  - Highlight count: 24; score: 216
+
+### Lumanity
+
+- [2026 Medical Affairs Professional Society Americas - Lumanity](https://lumanity.com/events/medical-affairs-professional-society-americas-maps-2026/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/d6a45325d6.png`
+  - Highlight count: 7; score: 24
+- [2026 Medical Affairs Professional Society EMEA - Lumanity](https://lumanity.com/events/medical-affairs-professional-society-maps-emea-2026/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/cac6002862.png`
+  - Highlight count: 7; score: 22
+- [AI in Life Sciences Without Governance Is a House of Cards - Lumanity](https://lumanity.com/perspectives/ai-in-life-sciences-without-governance-is-a-house-of-cards/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/83e8782727.png`
+  - Highlight count: 15; score: 95
+- [AI Search Optimization and Digital Visibility - Lumanity](https://lumanity.com/perspectives/ai-search-optimization-the-new-battleground-for-digital-visibility/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/d35a52650c.png`
+  - Highlight count: 34; score: 252
+- [AI-Driven Synthetic Personas Further Your Insights - Lumanity](https://lumanity.com/perspectives/using-ai-driven-synthetic-personas-to-take-your-insights-further/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/b44313914e.png`
+  - Highlight count: 10; score: 52
+- [Bringing Segmentation to Life with EMULaiTOR - Lumanity](https://lumanity.com/perspectives/bringing-segmentation-to-life-with-emulaitor/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/3ced9024af.png`
+  - Highlight count: 7; score: 19
+- [CMO Playbook from Pre-IND to Launch in Biotech - Lumanity](https://lumanity.com/perspectives/medical-affairs-unscripted-building-the-cmo-playbook-from-pre-ind-to-launch-in-early-stage-biotech/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/ec94c853c5.png`
+  - Highlight count: 7; score: 19
+- [COA in Integrated Evidence Generation Planning - Lumanity](https://lumanity.com/perspectives/the-role-of-clinical-outcomes-assessments-in-integrated-evidence-generation-planning/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/c03677486e.png`
+  - Highlight count: 7; score: 27
+- [Digital Narrative Intelligence - Lumanity](https://lumanity.com/perspectives/digital-narrative-intelligence-dni-seeing-the-full-story-across-social-search-and-generative-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/5e9ad7f4c3.png`
+  - Highlight count: 17; score: 113
+- [Early Commercial Strategy Solutions - Lumanity](https://lumanity.com/perspectives/early-commercial-strategy-solutions/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/1e50298968.png`
+  - Highlight count: 7; score: 21
+- [EMULaiTOR - Lumanity](https://lumanity.com/products/emulaitor/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/b552a1659b.png`
+  - Highlight count: 12; score: 59
+- [Expert Directed AI: Redefining AI in Life Sciences - Lumanity](https://lumanity.com/perspectives/expert-directed-applied-intelligence-redefining-ai-in-life-sciences/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/5d062ce155.png`
+  - Highlight count: 15; score: 95
+- [Expert-Directed AI - Lumanity](https://lumanity.com/technology-and-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/fd26368974.png`
+  - Highlight count: 32; score: 240
+- [Have Cancer Vaccines Come of Age? - Lumanity](https://lumanity.com/events/have-cancer-vaccines-come-of-age-or-do-they-remain-the-unruly-adolescent/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/f254cc407b.png`
+  - Highlight count: 7; score: 22
+- [Have Cancer Vaccines Come of Age? - Lumanity](https://lumanity.com/perspectives/have-cancer-vaccines-come-of-age-or-do-they-remain-the-unruly-adolescent/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/367089beb6.png`
+  - Highlight count: 7; score: 22
+- [How an Expert CMO Builds a Successful TPP - Lumanity](https://lumanity.com/perspectives/medical-affairs-unscripted-it-doesnt-take-months-how-an-expert-cmo-builds-a-tpp-that-drives-success-with-jeff-humphrey-md/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/0add60048d.png`
+  - Highlight count: 8; score: 27
+- [Leveraging Social Media for Medical Affairs Insights - Lumanity](https://lumanity.com/perspectives/medical-affairs-unscripted-podcast-bytes-from-tweets-to-trends-leveraging-social-media-for-medical-affairs-insights-with-jamie-doggett/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/ca91f30a49.png`
+  - Highlight count: 7; score: 27
+- [Lumanity and Sorcero Announce Partnership to Deliver AI-Powered Medical Strategy and Communications - Lumanity](https://lumanity.com/lumanity-and-sorcero-announce-global-partnership-to-deliver-ai-powered-medical-strategy-and-communications/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/fedc1e18b3.png`
+  - Highlight count: 25; score: 182
+- [Lumanity at ACAAIC 2025 Annual Scientific Meeting - Lumanity](https://lumanity.com/events/american-college-of-allergy-asthma-and-immunology-acaai-2025-annual-scientific-meeting/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/c1c4cb468e.png`
+  - Highlight count: 7; score: 19
+- [Lumanity’s EMULaiTOR Synthetic Persona Platform - Lumanity](https://lumanity.com/lumanity-launches-emulaitor-an-ai-powered-synthetic-persona-platform-transforming-stakeholder-engagement-in-life-sciences/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/aa68f9c039.png`
+  - Highlight count: 22; score: 159
+- [Marketing Claim Support & Compliance](https://lumanity.com/perspectives/marketing-claim-support-compliance-for-fda-regulated-products/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/e87670cc52.png`
+  - Highlight count: 7; score: 19
+- [Medical Affairs as the Throughline - Lumanity](https://lumanity.com/perspectives/medical-affairs-unscripted-from-first-patient-enrolled-to-first-script-medical-affairs-as-the-throughline/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/e9b1075753.png`
+  - Highlight count: 8; score: 34
+- [Medical Affairs Consulting & Strategy - Lumanity](https://lumanity.com/capabilities/medical-affairs/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/057b2d942e.png`
+  - Highlight count: 10; score: 31
+- [Medical Affairs Pulse | Issue 01 - Lumanity](https://lumanity.com/perspectives/medical-affairs-pulse-issue-01/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/b660a710d4.png`
+  - Highlight count: 8; score: 32
+- [Medical Affairs Unscripted - Lumanity](https://lumanity.com/medical-affairs-unscripted/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/ef17fe2b95.png`
+  - Highlight count: 9; score: 39
+- [Medical Affairs Unscripted | Creating Synergies by Integrating Across Medical Affairs with Caroline Ojaimi, PhD - Lumanity](https://lumanity.com/perspectives/medical-affairs-unscripted-creating-synergies-by-integrating-across-medical-affairs-with-caroline-ojaimi-phd/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/60594f1f48.png`
+  - Highlight count: 7; score: 20
+- [Medical Affairs: De-Risking Biotech Development - Lumanity](https://lumanity.com/perspectives/medical-affairs-unscripted-medical-affairs-as-a-strategic-engine-de-risking-biotech-development-and-driving-commercial-success/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/368db10348.png`
+  - Highlight count: 7; score: 21
+- [Medical Affairs: Support Function to Strategic Lever - Lumanity](https://lumanity.com/perspectives/medical-affairs-unscripted-medical-affairs-leadership-from-support-function-to-strategic-lever-with-greg-carpenter-mba/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/a69f5eee0e.png`
+  - Highlight count: 10; score: 43
+- [Patients as Partners in Clinical Research 2026 - Lumanity](https://lumanity.com/events/patients-as-partners-in-clinical-research-2026/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/51c8d06954.png`
+  - Highlight count: 7; score: 20
+- [The Medical Affairs Blueprint for Biotech - Lumanity](https://lumanity.com/perspectives/the-medical-affairs-blueprint-for-biotech/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/231c24a771.png`
+  - Highlight count: 7; score: 21
+- [The Power of Medical-Commercial Collaboration - Lumanity](https://lumanity.com/perspectives/medical-affairs-unscripted-podcast-bytes-bridging-science-and-strategy-the-power-of-medical-commercial-collaboration/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/57e42c485d.png`
+  - Highlight count: 7; score: 19
+- [Training and Empowerment - Lumanity](https://lumanity.com/capabilities/market-access/training-and-empowerment/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/3afc7da75c.png`
+  - Highlight count: 7; score: 19
+- [Turning Cancer Insights into Autoimmune Disease Solutions](https://lumanity.com/perspectives/turning-cancer-insights-into-autoimmune-disease-solutions/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/4802678546.png`
+  - Highlight count: 7; score: 23
+- [We Engineer Breakthrough Value | Lumanity](https://lumanity.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/lumanity/067ae8814e.png`
+  - Highlight count: 17; score: 108
+
+### MadeAi
+
+- [2026 Prediction #1: AI Enters the Core of Life Sciences](https://madeai.com/resources/blog/2026-prediction-1-no-more-sandboxes-ai-enters-the-core-of-life-sciences/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/madeai/70c611cbc0.png`
+  - Highlight count: 38; score: 325
+- [2026 Prediction #2: Agentic AI in Life Sciences](https://madeai.com/resources/blog/2026-prediction-2-agentic-ai-takes-the-lead-in-life-sciences/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/madeai/b3ac52541a.png`
+  - Highlight count: 42; score: 340
+- [About - MadeAi](https://madeai.com/company/about/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/madeai/6297eb467a.png`
+  - Highlight count: 14; score: 84
+- [Adopt AI for Literature Reviews in Regulated Environments](https://madeai.com/resources/blog/a-smarter-way-to-adopt-ai-for-literature-reviews-in-regulated-environments/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/madeai/122bea1998.png`
+  - Highlight count: 33; score: 292
+- [AI Agents Transform Regulatory Content in 2026](https://madeai.com/resources/blog/ai-agents-transform-regulatory-content/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/madeai/f67866a591.png`
+  - Highlight count: 30; score: 247
+- [AI in Action: Insights from CapeStart’s 2024 Report](https://madeai.com/resources/blog/ai-initiatives-in-action-insights-from-capestarts-life-science-ai-research-report/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/madeai/b3bc6fb3e2.png`
+  - Highlight count: 55; score: 452
+- [AI in Action: Real Results from Real Reviews | CapeStart](https://madeai.com/resources/blog/ai-in-action-real-results-from-real-reviews/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/madeai/583fe420d7.png`
+  - Highlight count: 28; score: 244
+- [AI-Powered Solutions for Pharma & Life Sciences | MadeAi™](https://madeai.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/madeai/058f9c56e1.png`
+  - Highlight count: 22; score: 172
+- [Contact MadeAi | AI Solutions & Support](https://madeai.com/contact/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/madeai/d08edebc9a.png`
+  - Highlight count: 2; score: 28
+- [Continuous Evidence Generation with AI in Pharma](https://madeai.com/resources/blog/2026-prediction-4-agentic-ai-and-continuous-evidence-generation-in-pharma/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/madeai/91e2e498af.png`
+  - Highlight count: 26; score: 225
+- [Data Appraisal Demo Video - MadeAi](https://madeai.com/data-appraisal-demo-video/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/madeai/be39c2e9e7.png`
+  - Highlight count: 2; score: 28
+- [Footer Style - 1 - MadeAi](https://madeai.com/layouts/footer-style-1/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/madeai/d98dd5b5e3.png`
+  - Highlight count: 1; score: 20
+- [Get Careers In AI & Life Sciences | MadeAi](https://madeai.com/company/careers/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/madeai/ffe9483f08.png`
+  - Highlight count: 11; score: 109
+- [Header Dark - MadeAi](https://madeai.com/layouts/header-dark/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/madeai/ca8513267f.png`
+  - Highlight count: 1; score: 12
+- [Health Economics Outcomes Research - MadeAi](https://madeai.com/by-need/health-economics-outcomes-research/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/madeai/4aed75ff15.png`
+  - Highlight count: 16; score: 118
+- [Join Life Sciences Events, Conferences & Summits | MadeAi](https://madeai.com/company/events/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/madeai/381cd11427.png`
+  - Highlight count: 5; score: 54
+- [Join Our Talent Network - MadeAi](https://madeai.com/company/careers/join-our-talent-network/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/madeai/6ff1942efb.png`
+  - Highlight count: 3; score: 41
+- [Life Sciences Consultant - MadeAi](https://madeai.com/company/careers/life-sciences-consultant/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/madeai/e9d5f575aa.png`
+  - Highlight count: 2; score: 33
+- [Literature Review - MadeAi](https://madeai.com/products/literature-review/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/madeai/b82ded94a2.png`
+  - Highlight count: 29; score: 195
+- [MadeAi Spring 2026 Highlights - MadeAi](https://madeai.com/madeai-spring-2026-highlights/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/madeai/b07cd3f49b.png`
+  - Highlight count: 2; score: 28
+- [MadeAi-Literature Review Trial - MadeAi](https://madeai.com/madeai-literature-review-trial/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/madeai/93bc64ca2e.png`
+  - Highlight count: 6; score: 63
+- [MadeAi-LR Trial - MadeAi](https://madeai.com/madeai-lr-trial/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/madeai/7e1ae05bec.png`
+  - Highlight count: 6; score: 65
+- [Market Access - MadeAi](https://madeai.com/by-need/market-access/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/madeai/f572802e81.png`
+  - Highlight count: 13; score: 94
+- [Medical Affairs - MadeAi](https://madeai.com/by-need/medical-affairs/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/madeai/0f059ce91e.png`
+  - Highlight count: 16; score: 108
+- [Post an Event - MadeAi](https://madeai.com/post-an-event/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/madeai/a0ec543d09.png`
+  - Highlight count: 2; score: 28
+- [Proactive Pharmacovigilance with AI in 2026](https://madeai.com/resources/blog/2026-prediction-5-from-reactive-to-proactive-pharmacovigilance-with-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/madeai/e4e542f0ac.png`
+  - Highlight count: 55; score: 405
+- [Quick Research - MadeAi](https://madeai.com/products/quick-research/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/madeai/3e013ce7e3.png`
+  - Highlight count: 25; score: 151
+- [Read AI & Life Sciences Blogs | MadeAI™](https://madeai.com/resources/blog/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/madeai/c2a0c19b61.png`
+  - Highlight count: 15; score: 104
+- [Request Demo - MadeAi](https://madeai.com/request-demo/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/madeai/fcb39172e9.png`
+  - Highlight count: 2; score: 30
+- [Role-Based Tool Isolation for Agentic AI | 2026 Guide](https://madeai.com/resources/blog/2026-prediction-3-role-based-tool-isolation-the-gold-standard-for-secure-pharma-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/madeai/40dafc81d9.png`
+  - Highlight count: 37; score: 319
+- [Senior Life Science Research Analyst - MadeAi](https://madeai.com/company/careers/senior-life-science-research-analyst/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/madeai/c2c19060f2.png`
+  - Highlight count: 2; score: 32
+
+### MarketScan by Merative
+
+- [[updated 4/2/2026] Unlocking real-time insights: how on-demand analytics reduces latency for faster decision-making](https://www.merative.com/blog/healthcare-analytics-on-demand)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/marketscan-by-merative/3b9c8143a1.png`
+  - Highlight count: 6; score: 34
+- [Conversational AI in healthcare: Innovation in action](https://www.merative.com/blog/conversational-ai-in-healthcare)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/marketscan-by-merative/e52b84f497.png`
+  - Highlight count: 65; score: 508
+- [Cúram and AI: unlocking the future of artificial intelligence in government agencies](https://www.merative.com/documents/curam-and-ai-unlocking-the-future-of-artificial-intelligence-in-government-agencies)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/marketscan-by-merative/b85b48896a.png`
+  - Highlight count: 8; score: 71
+- [Dr. Harvey Castro brings the future of AI in imaging to Merge LIVE 2026](https://www.merative.com/blog/harvey-castro-ai-merge-live)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/marketscan-by-merative/112b753e16.png`
+  - Highlight count: 14; score: 114
+- [Healthcare Data, Technology and Analytics | Merative](https://www.merative.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/marketscan-by-merative/4c8595ea2e.png`
+  - Highlight count: 56; score: 55
+- [How SaaS platforms are breaking the mold for clinical trials](https://www.merative.com/blog/saas-platforms-clinical-trials)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/marketscan-by-merative/bdc8762763.png`
+  - Highlight count: 3; score: 28
+- [Integrated Eligibility and Enrollment | Merative](https://www.merative.com/curam/integrated-eligibility-enrollment)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/marketscan-by-merative/b36689046c.png`
+  - Highlight count: 10; score: 50
+- [MarketScan Research & Analytics Team | Merative](https://www.merative.com/marketscan/research-and-analytics-team)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/marketscan-by-merative/938492c804.png`
+  - Highlight count: 3; score: 28
+- [Real-world data trends 2026: The shift to quality and AI precision](https://www.merative.com/blog/real-world-data-trends-2026-the-shift-to-quality-and-ai-precision)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/marketscan-by-merative/6c4804e4cf.png`
+  - Highlight count: 23; score: 194
+- [The 4 imaging AI questions we all need to be asking](https://www.merative.com/blog/asking-right-ai-questions)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/marketscan-by-merative/6ee7797d27.png`
+  - Highlight count: 47; score: 374
+- [The Zelta way on AI and supervised machine learning](https://www.merative.com/documents/the-zelta-way-on-ai-and-supervised-machine-learning)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/marketscan-by-merative/16540b6e35.png`
+  - Highlight count: 8; score: 74
+- [Three ways AI can enhance radiology imaging workflows – right now](https://www.merative.com/blog/ai-enhance-imaging-workflows)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/marketscan-by-merative/cb34abd52d.png`
+  - Highlight count: 49; score: 353
+
+### MArS Market Access & Pricing Strategy GmbH
+
+- [Are Primary Research Platforms Defining a New Era, Shrutya Bhalla? - Marketaccess & Pricingstrategy](https://marketaccess4-0.com/continuous-insight-not-one-off-studies-are-primary-research-platforms-defining-a-new-era-shrutya-bhalla/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/mars-market-access-pricing-strategy-gmbh/791ecf1749.png`
+  - Highlight count: 4; score: 44
+- [Are We Ready for a Cultural Shift Toward AI in Pharma, Elizabeth Shanahan? - Marketaccess & Pricingstrategy](https://marketaccess4-0.com/cultural-shift-toward-ai-pharma/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/mars-market-access-pricing-strategy-gmbh/1e056cc873.png`
+  - Highlight count: 6; score: 73
+- [Can Innovative Contracting Turn High‑Cost Therapies into Sustainable Deals, Omar Ali? - Marketaccess & Pricingstrategy](https://marketaccess4-0.com/can-innovative-contracting-turn-high-cost-therapies-into-sustainable-deals-omar-ali/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/mars-market-access-pricing-strategy-gmbh/03962fa6c8.png`
+  - Highlight count: 1; score: 22
+- [CoDesk.AI - Marketaccess & Pricingstrategy](https://marketaccess4-0.com/cooperation/codesk-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/mars-market-access-pricing-strategy-gmbh/5b0b94143f.png`
+  - Highlight count: 5; score: 47
+- [Do Swiss Reimbursement Reforms Open Doors—or Raise New Barriers, Petra Erni? - Marketaccess & Pricingstrategy](https://marketaccess4-0.com/do-swiss-reimbursement-reforms-open-doors-or-raise-new-barriers-petra-erni/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/mars-market-access-pricing-strategy-gmbh/f77a1705cf.png`
+  - Highlight count: 1; score: 21
+- [From Necessary Tasks to New Insights: How Can AI Act as a Sparring Partner in Market Access, Helmut Butscher? - Marketaccess & Pricingstrategy](https://marketaccess4-0.com/from-necessary-tasks-to-new-insights-how-can-ai-act-as-a-sparring-partner-in-market-access-helmut-butscher/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/mars-market-access-pricing-strategy-gmbh/17263deb2a.png`
+  - Highlight count: 8; score: 92
+- [Home - Marketaccess & Pricingstrategy](https://marketaccess4-0.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/mars-market-access-pricing-strategy-gmbh/465639336b.png`
+  - Highlight count: 12; score: 114
+- [How can AI unlock the potential of Market Access, Sandip Shah? - Marketaccess & Pricingstrategy](https://marketaccess4-0.com/how-can-ai-unlock-the-potential-of-market-access-sandip-shah/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/mars-market-access-pricing-strategy-gmbh/1395a1d395.png`
+  - Highlight count: 8; score: 84
+- [How can Virtual Reality become a game-changer in Healthcare Training, Rodrigo Silva? - Marketaccess & Pricingstrategy](https://marketaccess4-0.com/how-can-virtual-reality-become-a-game-changer-in-healthcare-training-rodrigo-silva/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/mars-market-access-pricing-strategy-gmbh/219b2d015c.png`
+  - Highlight count: 2; score: 28
+- [How can we navigate the complexities of Medical Devices Market Access in Spain, Sergio Gil? - Marketaccess & Pricingstrategy](https://marketaccess4-0.com/how-can-we-navigate-the-complexities-of-medical-devices-market-access-in-spain-sergio-gil/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/mars-market-access-pricing-strategy-gmbh/8fcc55fe92.png`
+  - Highlight count: 1; score: 20
+- [How should market access and medical affairs work together, Dr. Mike Rosenblatt? (Repost) - Marketaccess & Pricingstrategy](https://marketaccess4-0.com/how-should-market-access-and-medical-affairs-work-together-dr-mike-rosenblatt-repost/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/mars-market-access-pricing-strategy-gmbh/7f9953613a.png`
+  - Highlight count: 1; score: 20
+- [How will AI shape the future of Market Access and Systematic Reviews, Jeffrey Johnson and Kevin Kallmes? (Repost) - Marketaccess & Pricingstrategy](https://marketaccess4-0.com/how-will-ai-shape-the-future-of-market-access-and-systematic-reviews-jeffrey-johnson-and-kevin-kallmes-repost/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/mars-market-access-pricing-strategy-gmbh/52db2ab5a7.png`
+  - Highlight count: 7; score: 82
+- [How will AI shape the future of Market Access and Systematic Reviews, Jeffrey Johnson and Kevin Kallmes? - Marketaccess & Pricingstrategy](https://marketaccess4-0.com/how-will-ai-shape-the-future-of-market-access-and-systematic-reviews-jeffrey-johnson-and-kevin-kallmes/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/mars-market-access-pricing-strategy-gmbh/c368a55e9a.png`
+  - Highlight count: 7; score: 82
+- [Launching Healthmind: Your Daily Healthcare and Pharma Digest - Marketaccess & Pricingstrategy](https://marketaccess4-0.com/launching-healthmind-your-daily-healthcare-and-pharma-digest/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/mars-market-access-pricing-strategy-gmbh/2aa817fc53.png`
+  - Highlight count: 1; score: 20
+- [Puraite - Marketaccess & Pricingstrategy](https://marketaccess4-0.com/cooperation/puraite/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/mars-market-access-pricing-strategy-gmbh/33b2939b42.png`
+  - Highlight count: 2; score: 23
+- [Remo Christen – Early paid access in Switzerland – Switzerland, wonderland? (Repost) - Marketaccess & Pricingstrategy](https://marketaccess4-0.com/remo-christen-early-paid-access-in-switzerland-switzerland-wonderland-repost/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/mars-market-access-pricing-strategy-gmbh/94835e33c8.png`
+  - Highlight count: 1; score: 20
+- [What Are the Biggest Challenges in Implementing AI in Pharma, Jan Kroschinski? - Marketaccess & Pricingstrategy](https://marketaccess4-0.com/what-are-the-biggest-challenges-in-implementing-ai-in-pharma-jan-kroschinski/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/mars-market-access-pricing-strategy-gmbh/06b08dca38.png`
+  - Highlight count: 8; score: 84
+- [What are the main obstacles in oncology market access, Ed Schoonveld? (Repost) - Marketaccess & Pricingstrategy](https://marketaccess4-0.com/what-are-the-main-obstacles-in-oncology-market-access-ed-schoonveld-repost/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/mars-market-access-pricing-strategy-gmbh/49479c3062.png`
+  - Highlight count: 1; score: 23
+- [What does environmental sustainability mean for Market Access, Gerdi Strydom? - Marketaccess & Pricingstrategy](https://marketaccess4-0.com/what-does-environmental-sustainability-mean-for-market-access-gerdi-strydom/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/mars-market-access-pricing-strategy-gmbh/a808c02a36.png`
+  - Highlight count: 1; score: 20
+- [What does the future hold for AI in Healthcare, Aleksey Zavgorodniy? - Marketaccess & Pricingstrategy](https://marketaccess4-0.com/what-does-the-future-hold-for-ai-in-healthcare-aleksey-zavgorodniy/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/mars-market-access-pricing-strategy-gmbh/a85780e0c4.png`
+  - Highlight count: 13; score: 122
+- [What happens, when negotiations fail, Prof. Dr. Jürgen Wasem? (Repost) - Marketaccess & Pricingstrategy](https://marketaccess4-0.com/what-happens-when-negotiations-fail-prof-dr-jurgen-wasem-repost/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/mars-market-access-pricing-strategy-gmbh/f4268b3ed4.png`
+  - Highlight count: 1; score: 20
+- [Will AI and Living Reviews Define the Next Era of Health Policy, Anna Forsythe? - Marketaccess & Pricingstrategy](https://marketaccess4-0.com/will-ai-and-living-reviews-define-the-next-era-of-health-policy-anna-forsythe/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/mars-market-access-pricing-strategy-gmbh/5cf86277af.png`
+  - Highlight count: 6; score: 70
+
+### Model N
+
+- [5 Reasons Why Rainmaker23 Is the Must-Attend Celebration of the Year - Model N](https://www.modeln.com/blog/5-reasons-why-rainmaker23-is-the-must-attend-celebration-of-the-year/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/model-n/61421cee4a.png`
+  - Highlight count: 1; score: 24
+- [AI Automation - The Game Changer in High Tech Pricing - Model N](https://www.modeln.com/blog/ai-automation-the-game-changer-in-high-tech-pricing/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/model-n/1ae06d1e35.png`
+  - Highlight count: 12; score: 112
+- [AI Requires an Analytics-Ready Revenue Data Foundation - Model N](https://www.modeln.com/blog/ai-requires-an-analytics-ready-revenue-data-foundation/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/model-n/b873ae5cdb.png`
+  - Highlight count: 14; score: 137
+- [Business Services: Expert Support for Every Stage of Business Growth - Model N](https://www.modeln.com/blog/model-n-business-services-expert-support-for-every-stage-of-business-growth/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/model-n/650c73a14a.png`
+  - Highlight count: 1; score: 24
+- [Considering the interactions of CPQ, QTC and Order Management Solutions - Model N](https://www.modeln.com/blog/considering-interactions-cpq-qtc-order-management-solutions/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/model-n/af4119d1cc.png`
+  - Highlight count: 1; score: 26
+- [Deciphering Rebate Impact: Pharma Post-Deal Analytics - Model N](https://www.modeln.com/blog/pharma-post-deal-analytics/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/model-n/23acb714b1.png`
+  - Highlight count: 4; score: 35
+- [Electronic component manufacturers can accelerate channel growth through software automation - Model N](https://www.modeln.com/blog/how-electronic-component-manufacturers-can-accelerate-channel-growth-through-software-automation/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/model-n/04b30e278a.png`
+  - Highlight count: 9; score: 30
+- [Empowering teams with accessible analytics - Model N](https://www.modeln.com/blog/empowering-teams-with-accessible-analytics-a-perspective-for-life-sciences-it-leaders/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/model-n/d9d4e53ca4.png`
+  - Highlight count: 2; score: 27
+- [Expert Services - Model N](https://www.modeln.com/expert-services/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/model-n/34e0bdb687.png`
+  - Highlight count: 2; score: 23
+- [Exploring Generative AI in Life Sciences with Ujjwal Ratan: Highlights from Rainmaker 2025 - Model N](https://www.modeln.com/blog/exploring-generative-ai-in-life-sciences-with-ujjwal-ratan-highlights-from-rainmaker2025/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/model-n/239c85895d.png`
+  - Highlight count: 29; score: 254
+- [Five More Reasons You Should Attend Rainmaker - Model N](https://www.modeln.com/blog/five-more-reasons-you-should-attend-rainmaker/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/model-n/4de9de079c.png`
+  - Highlight count: 1; score: 24
+- [Five Reasons You Should Attend Rainmaker - Model N](https://www.modeln.com/blog/five-reasons-you-should-attend-rainmaker/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/model-n/dab7311114.png`
+  - Highlight count: 2; score: 26
+- [Five Ways to Improve Your Business With Business Services - Model N](https://www.modeln.com/blog/five-ways-to-improve-your-business-with-business-services/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/model-n/17f8f6ac55.png`
+  - Highlight count: 1; score: 24
+- [Harnessing the power of AI and automation to help streamline operations and optimize revenue - Model N](https://www.modeln.com/blog/harnessing-the-power-of-ai-and-automation-to-help-streamline-operations-and-optimize-revenue/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/model-n/a8de925a2f.png`
+  - Highlight count: 23; score: 148
+- [Medicaid and 340B duplicate discounts: Avoiding the “double dip"](https://www.modeln.com/medicaid-and-340b-duplicate-discounts-db/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/model-n/bcc703dc84.png`
+  - Highlight count: 1; score: 23
+- [Model N Acquires Deloitte’s Life Sciences Pricing and Contracting Solutions Business - Model N](https://www.modeln.com/blog/model-n-acquires-deloittes-life-sciences-pricing-and-contracting-solutions-business/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/model-n/bf8021d73f.png`
+  - Highlight count: 1; score: 24
+- [Navigating New Pharma Pricing Models: DTC, MFN, and Medicaid - Model N](https://www.modeln.com/blog/navigating-new-pharma-pricing-models-dtc-mfn-and-medicaid/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/model-n/4b61038613.png`
+  - Highlight count: 1; score: 24
+- [Rainmaker 2015 Video Gallery - Model N](https://www.modeln.com/gallery/rainmaker-2015-video-gallery/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/model-n/be50963e06.png`
+  - Highlight count: 1; score: 23
+- [Revenue Management Software Solutions for High Tech & Life Sciences | Model N](https://www.modeln.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/model-n/f189313693.png`
+  - Highlight count: 5; score: 37
+- [Revenue Recap: Rainmaker24’s High Tech Industry Keynote - Model N](https://www.modeln.com/blog/revenue-recap-rainmaker24-high-tech-industry-keynote/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/model-n/06da6af1ac.png`
+  - Highlight count: 1; score: 25
+- [Segmenting Solutions that improve the Quote-to-Cash Process - Model N](https://www.modeln.com/blog/segmenting-solutions-improve-quote-cash-process/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/model-n/67ed7174a9.png`
+  - Highlight count: 3; score: 46
+- [Simplify the Medicaid Invoice Retrieval Process - Model N](https://www.modeln.com/blog/simplify-the-medicaid-invoice-retrieval-process/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/model-n/11b542b427.png`
+  - Highlight count: 10; score: 30
+- [Streamline Rebate Management for Sizable Financial Gain - Model N](https://www.modeln.com/blog/streamline-rebate-management-for-sizable-financial-gain/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/model-n/6df8fc1007.png`
+  - Highlight count: 13; score: 30
+- [Taking Channel Incentive Strategies and Automation to a New Level - New Partnership Announcement - Model N](https://www.modeln.com/blog/taking-channel-incentive-strategies-and-automation-to-a-new-level-new-partnership-announcement/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/model-n/219e76fe7a.png`
+  - Highlight count: 3; score: 27
+- [The Value of Predictive Channel Intelligence - Model N](https://www.modeln.com/blog/the-value-of-predictive-channel-intelligence/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/model-n/c7c090e544.png`
+  - Highlight count: 3; score: 42
+- [Top 5 Reasons Why In-App Learning Is A Must for Revenue Management Software - Model N](https://www.modeln.com/blog/top-5-reasons-why-in-app-learning-is-a-must-for-revenue-management-software/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/model-n/f07e551b5b.png`
+  - Highlight count: 1; score: 25
+- [Turbocharge Revenue Management with Mobility Solutions - Model N](https://www.modeln.com/blog/turbo-charge-revenue-management-with-mobility-solutions/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/model-n/c349c99121.png`
+  - Highlight count: 1; score: 25
+- [Using automation to do more for your channel partners with less - Model N](https://www.modeln.com/blog/using-automation-to-do-more-for-your-channel-partners-with-less/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/model-n/95e6b19d66.png`
+  - Highlight count: 18; score: 30
+- [Why Aggregation and Automation Are Now Table Stakes for Tender Management - Model N](https://www.modeln.com/blog/aggregation-and-automation-for-tender-management/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/model-n/64e97a0430.png`
+  - Highlight count: 4; score: 33
+- [Why Pharma Needs to Calculate the Impact of New CMS Rules on Their Medicaid Best Price Strategies - Model N](https://www.modeln.com/blog/medicaid-best-price-strategies/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/model-n/a42a43b554.png`
+  - Highlight count: 1; score: 29
+
+### ModMed
+
+- [ACG-South Florida to Honor Ultimate Software, Modernizing Medicine and the Acquisition of Simply Healthcare by Anthem | ModMed](https://www.modmed.com/press-release/acg-south-florida-to-honor-ultimate-software-modernizing-medicine-and-the-acquisition-of-simply-healthcare-by-anthem/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/dfce8cf0dc.png`
+  - Highlight count: 18; score: 154
+- [AI-Enhanced Faxing for Medical Practices | ModMed](https://www.modmed.com/solutions/ai/enhanced-faxing/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/9e89c14561.png`
+  - Highlight count: 17; score: 52
+- [ASC Software for Ambulatory Surgery Centers | ModMed](https://www.modmed.com/what-we-do/asc-software/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/86b90d692a.png`
+  - Highlight count: 15; score: 32
+- [Busy Pain Management Specialists Need Simple EHR Software Solutions | ModMed](https://www.modmed.com/specialties/pain-management/time-to-switch/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/55378888c4.png`
+  - Highlight count: 16; score: 31
+- [Choose the best GI software solution for your practice. | ModMed](https://www.modmed.com/solutions/gastroenterology/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/ea52ce9350.png`
+  - Highlight count: 18; score: 35
+- [Choosing the right specialty-specific EHR and all-in-one solution. | ModMed](https://www.modmed.com/ehr-sellsheet-modmed-solutions-thank-you/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/b040fc3e3a.png`
+  - Highlight count: 15; score: 29
+- [Choosing the right specialty-specific EHR and all-in-one solution. | ModMed](https://www.modmed.com/ehr-sellsheet-modmed-solutions/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/05d0fb2fc6.png`
+  - Highlight count: 15; score: 28
+- [Client Services | EMA EMR Software Support from modmed](https://www.modmed.com/services/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/fbe484ac9c.png`
+  - Highlight count: 16; score: 133
+- [Compare Your Pain Management Software Options | ModMed](https://www.modmed.com/pain-management-new-normal-checklist-challenge-thank-you/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/dd7e0d9484.png`
+  - Highlight count: 15; score: 32
+- [Comprehensive EHR Solutions | ModMed ®](https://www.modmed.com/solutions/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/3c16e5d55d.png`
+  - Highlight count: 29; score: 35
+- [EMA Dermatology from Modernizing Medicine Ranked #1 on Black Book Market Research List for Top EHR Vendors Again in 2015 | ModMed](https://www.modmed.com/press-release/ema-dermatology-from-modernizing-medicine-ranked-1-on-black-book-market-research-list-for-top-ehr-vendors-again-in-2015/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/ca67e4621c.png`
+  - Highlight count: 18; score: 155
+- [How Modernizing Medicine’s EHR Compares to Other Software Vendors | ModMed](https://www.modmed.com/derm-software-challenge/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/f30684ae51.png`
+  - Highlight count: 15; score: 28
+- [MIPS Advising | Specialist Support to Improve MACRA Performance](https://www.modmed.com/services/mips-advising/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/a84af306ea.png`
+  - Highlight count: 16; score: 133
+- [Modernizing Medicine Announces Client Services Program | ModMed](https://www.modmed.com/press-release/modernizing-medicine-announces-client-services-program/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/01305a9ff1.png`
+  - Highlight count: 18; score: 154
+- [Modernizing Medicine raises $12M with equity capital investors | ModMed](https://www.modmed.com/press-release/modernizing-medicine-raises-12m-with-equity-capital-investors/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/4e1402f408.png`
+  - Highlight count: 18; score: 154
+- [Modernizing Medicine Showcases Key Dermatology-specific Products and Services at the American Academy of Dermatology Annual Meeting 2015 | ModMed](https://www.modmed.com/press-release/modernizing-medicine-showcases-key-dermatology-specific-products-and-services-at-the-american-academy-of-dermatology-annual-meeting-2015/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/03e6406855.png`
+  - Highlight count: 20; score: 159
+- [Modernizing Medicine’s Director of Mobile Development, Mihai Fonoage, Named One of South Florida Business Journal’s ‘40 Under 40’ | ModMed](https://www.modmed.com/press-release/modernizing-medicines-director-of-mobile-development-mihai-fonoage-named-one-of-south-florida-business-journals-40-under-40/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/5b8904976a.png`
+  - Highlight count: 18; score: 155
+- [ModMed®: Cloud-Based EHR & Services for Specialty Practices](https://www.modmed.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/5e743b9cf1.png`
+  - Highlight count: 26; score: 112
+- [OBGYN Data Analytics | ModMed](https://www.modmed.com/specialties/obgyn/analytics/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/a668a18713.png`
+  - Highlight count: 15; score: 32
+- [Pain Management blog | ModMed](https://www.modmed.com/specialties/pain-management/blog/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/654b113402.png`
+  - Highlight count: 27; score: 217
+- [Pain Management EHRs: Cloud vs. On-Premise | ModMed](https://www.modmed.com/specialties/pain-management/cloud-vs-on-premise/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/c2c19d6bb6.png`
+  - Highlight count: 15; score: 31
+- [Pain Management events | ModMed](https://www.modmed.com/specialties/pain-management/events/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/959b17a0d9.png`
+  - Highlight count: 16; score: 133
+- [Pain Management videos | ModMed](https://www.modmed.com/specialties/pain-management/videos/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/9150d011f3.png`
+  - Highlight count: 16; score: 133
+- [PatientNOW and Modernizing Medicine Join Forces To Offer Plastic and Cosmetic Surgery Practices Best-In-Class Solutions for Practice Management and Electronic Medical Records | ModMed](https://www.modmed.com/press-release/patientnow-and-modernizing-medicine-join-forces-to-offer-plastic-and-cosmetic-surgery-practices-best-in-class-solutions-for-practice-management-and-electronic-medical-records/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/56e33f9af1.png`
+  - Highlight count: 19; score: 157
+- [Products and Services | ModMed](https://www.modmed.com/what-we-do/products-services/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/1c41a1cb75.png`
+  - Highlight count: 41; score: 133
+- [Quantum Foundation & Modernizing Medicine Host Code4Good Hackathon to Inspire Health Solutions in Palm Beach County | ModMed](https://www.modmed.com/press-release/quantum-foundation-modernizing-medicine-host-code4good-hackathon-to-inspire-health-solutions-in-palm-beach-county/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/5a34c9ba8b.png`
+  - Highlight count: 18; score: 155
+- [See how Telehealth-enabled EHR, patient engagement tools and practice management software can help your practice during this time. | ModMed](https://www.modmed.com/5solutions/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/43853325f8.png`
+  - Highlight count: 16; score: 136
+- [See ModMed at AAAAI, Feb 26-28, 2022 | ModMed](https://www.modmed.com/aaaai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/52893b1843.png`
+  - Highlight count: 17; score: 41
+- [See ModMedⓇ at Hawaiian Eye and Retina 2022, Jan. 16-21 | ModMed](https://www.modmed.com/hawaiian-eye-2022/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/5422445ed5.png`
+  - Highlight count: 15; score: 29
+- [synapSYS Solutions | ModMed](https://www.modmed.com/what-we-do/integrations/synapsys/solutions/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/07bc2ec9b1.png`
+  - Highlight count: 15; score: 28
+- [Texas Allergy, Asthma, & Immunology Annual Meeting (TAAIS) Annual Meeting | ModMed](https://www.modmed.com/event/texas-allergy-asthma-immunology-annual-meeting-taais-annual-meeting/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/ce448c222d.png`
+  - Highlight count: 16; score: 133
+- [The Healthcare IT Suite of EHR, Analytics, Practice Management and More | ModMed](https://www.modmed.com/solutions-renewal/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/2978444fc3.png`
+  - Highlight count: 19; score: 35
+- [What Patients Think About AI at the Doctor’s Office | ModMed](https://www.modmed.com/solutions/ai/what-patients-think-about-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/modmed/19412f14c6.png`
+  - Highlight count: 11; score: 94
+
+### Natera, Inc.
+
+- [Driving clinical trial strategy with MRD-powered RWD and AI](https://info.natera.com/Driving-Clinical-Trial-Strategy-Reg-Page/?utm_source=tile&utm_campaign=1600178683&utm_medium=web)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/natera-inc/442f410a3b.png`
+  - Highlight count: 12; score: 115
+- [Natera Implements First Wave of Panorama® AI Improvements With Immediate Impact on Patient Experience and COGS | Natera](https://www.natera.com/company/news/natera-implements-first-wave-of-panorama-ai-improvements-with-immediate-impact-on-patient-experience-and-cogs-2/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/natera-inc/ae62542df3.png`
+  - Highlight count: 7; score: 69
+- [NateraCore Services | Natera](https://www.natera.com/womens-health/core-services/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/natera-inc/61c0213227.png`
+  - Highlight count: 1; score: 13
+- [Real World Data | Natera](https://www.natera.com/oncology/signatera-advanced-cancer-detection/research-pipeline/real-world-data/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/natera-inc/d33b452f64.png`
+  - Highlight count: 3; score: 40
+
+### Nested Knowledge
+
+- [13 Rapid Reviews in Record Time: Inside the AI-Powered Case Study – Nested Knowledge](https://about.nested-knowledge.com/2025/11/28/13-rapid-reviews-in-record-time-inside-the-ai-powered-case-study/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nested-knowledge/d1194e8fb0.png`
+  - Highlight count: 25; score: 212
+- [AI for Screening: How is it used, and how can we tell how accurate it is? – Nested Knowledge](https://about.nested-knowledge.com/2024/08/02/ai-for-screening-how-is-it-used-and-how-can-we-tell-how-accurate-it-is/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nested-knowledge/c72acf4398.png`
+  - Highlight count: 32; score: 286
+- [AI – Nested Knowledge](https://about.nested-knowledge.com/tag/ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nested-knowledge/de222e65b0.png`
+  - Highlight count: 5; score: 62
+- [Best Practices for NKs AI Tools – Nested Knowledge](https://about.nested-knowledge.com/docs-category/best-practices-for-nks-ai-tools/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nested-knowledge/d15b2c9730.png`
+  - Highlight count: 15; score: 147
+- [Canada’s AI Guidance for Systematic Reviews: What CDA’s Position Means for Researchers and HTA Submissions – Nested Knowledge](https://about.nested-knowledge.com/2025/07/28/canadas-ai-guidance-for-systematic-reviews-what-cdas-position-means-for-researchers-and-hta-submissions/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nested-knowledge/7d137c5649.png`
+  - Highlight count: 52; score: 441
+- [Crafting the Perfect Prompts for Nested Knowledge’s AI Tools – Nested Knowledge](https://about.nested-knowledge.com/docs/crafting-the-perfect-prompts-for-nested-knowledges-ai-tools/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nested-knowledge/f601443560.png`
+  - Highlight count: 37; score: 296
+- [Cytel Partners with Nested Knowledge to Power the Next Generation of AI-Enhanced LiveSLR® for HEOR and HTA – Nested Knowledge](https://about.nested-knowledge.com/2025/05/09/cytel-and-nested-knowledge-announce-strategic-partnership-to-transform-evidence-synthesis-for-heor-and-hta-stakeholders/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nested-knowledge/639bacb2a6.png`
+  - Highlight count: 11; score: 109
+- [Disclosure of AI Systems in Nested Knowledge – Nested Knowledge](https://about.nested-knowledge.com/docs/disclosure-of-ai-systems-in-nested-knowledge/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nested-knowledge/ce406b883a.png`
+  - Highlight count: 31; score: 174
+- [Evidence Synthesis Services – Nested Knowledge](https://about.nested-knowledge.com/evidence-synthesis-services/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nested-knowledge/2845a897d7.png`
+  - Highlight count: 7; score: 82
+- [FIECON and Nested Knowledge Partner to Transform evidence synthesis with AI – Nested Knowledge](https://about.nested-knowledge.com/2024/02/27/fiecon-and-nested-knowledge-partner-to-transform-evidence-synthesis-with-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nested-knowledge/ca91f97568.png`
+  - Highlight count: 8; score: 94
+- [From Evidence to Insight — Without Losing the Trail – Nested Knowledge](https://about.nested-knowledge.com/2026/04/10/from-evidence-to-insight-without-losing-the-trail/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nested-knowledge/2b993fda93.png`
+  - Highlight count: 16; score: 147
+- [Fulfillment Policy – Nested Knowledge](https://about.nested-knowledge.com/docs/fulfillment-policy/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nested-knowledge/1e550dd718.png`
+  - Highlight count: 8; score: 23
+- [Guidance on using AI in Nested Knowledge – Nested Knowledge](https://about.nested-knowledge.com/docs/guidance-on-using-ai-in-nested-knowledge/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nested-knowledge/e3b9a64803.png`
+  - Highlight count: 12; score: 94
+- [IEGPs: The Bridge Between Medical Affairs and HEOR – Nested Knowledge](https://about.nested-knowledge.com/2025/10/02/iegps-the-bridge-between-medical-affairs-and-heor/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nested-knowledge/255ebb927c.png`
+  - Highlight count: 2; score: 37
+- [Join Nested Knowledge at ISPOR EU 2024: AI-Powered Solutions for the HTAR Era – Nested Knowledge](https://about.nested-knowledge.com/2024/11/11/join-nested-knowledge-at-ispor-eu-2024-ai-powered-solutions-for-the-htar-era/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nested-knowledge/8ba1b47623.png`
+  - Highlight count: 24; score: 209
+- [Medlior and Nested Knowledge Partner to Provide High-Quality Evidence Synthesis That Support the HEOR- And RWE-Focused Activities of Life Sciences Organizations – Nested Knowledge](https://about.nested-knowledge.com/2024/03/12/medlior-and-nested-knowledge-partner-to-provide-high-quality-evidence-synthesis-that-support-the-heor-and-rwe-focused-activities-of-life-sciences-organizations/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nested-knowledge/a8d82b7d8e.png`
+  - Highlight count: 5; score: 66
+- [Meet Smart Critical Appraisal – Your AI-Powered Bias Reviewer – Nested Knowledge](https://about.nested-knowledge.com/2026/02/23/meet-smart-critical-appraisal-your-ai-powered-bias-reviewer/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nested-knowledge/9eaa331c0e.png`
+  - Highlight count: 10; score: 102
+- [Nested Knowledge and Elsevier Announce Partnership to Advance AI-Enabled Literature Search and Evidence Synthesis – Nested Knowledge](https://about.nested-knowledge.com/2026/04/21/nested-knowledge-and-elsevier-announce-partnership-to-advance-ai-enabled-literature-search-and-evidence-synthesis/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nested-knowledge/099f6a1a11.png`
+  - Highlight count: 10; score: 115
+- [Nested Knowledge and OPEN Health announce strategic research collaboration to leverage AI technologies for evidence synthesis – Nested Knowledge](https://about.nested-knowledge.com/2023/12/11/open-health-and-nested-knowledge-announce-strategic-research-collaboration-to-leverage-ai-technologies-for-evidence-synthesis/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nested-knowledge/d717f5af66.png`
+  - Highlight count: 6; score: 81
+- [Nested Knowledge Awarded NIH SBIR Grant to Advance AI-Powered Quantitative Data Extraction – Nested Knowledge](https://about.nested-knowledge.com/2024/11/05/nested-knowledge-awarded-nih-sbir-grant-to-advance-ai-powered-quantitative-data-extraction/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nested-knowledge/9d843141c7.png`
+  - Highlight count: 10; score: 81
+- [Nested Knowledge Partners with Research Solutions To Provide Full Texts Faster – Nested Knowledge](https://about.nested-knowledge.com/2024/01/24/nested-knowledge-partners-with-research-solutions-to-provide-full-texts-faster/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nested-knowledge/85271dabe3.png`
+  - Highlight count: 4; score: 54
+- [Nested Knowledge – The Standard in Evidence Synthesis](https://about.nested-knowledge.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nested-knowledge/c7ac7297f9.png`
+  - Highlight count: 2; score: 35
+- [NICE Guidelines for AI Methods: The Nested Knowledge Approach – Nested Knowledge](https://about.nested-knowledge.com/2024/09/01/nice-guidelines-for-ai-methods-the-nested-knowledge-approach/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nested-knowledge/d170165c5d.png`
+  - Highlight count: 76; score: 638
+- [No Trial Left Behind: Streamlining Clinical Trial Evidence for Systematic Review – Nested Knowledge](https://about.nested-knowledge.com/2025/09/17/no-trial-left-behind-streamlining-clinical-trial-evidence-for-systematic-review/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nested-knowledge/fecb4846a3.png`
+  - Highlight count: 5; score: 57
+- [Responsible AI in Evidence Synthesis: How Nested Knowledge Meets the New Standards from Cochrane Joint Statement and RAISE Guidelines – Nested Knowledge](https://about.nested-knowledge.com/2025/12/08/responsible-ai-in-evidence-synthesis-how-nested-knowledge-meets-the-new-standards-from-cochrane-joint-statement-and-raise-guidelines/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nested-knowledge/6f03a1b8df.png`
+  - Highlight count: 27; score: 239
+- [RTI International and Nested Knowledge announce collaboration to enhance life science and healthcare research with Gen AI – Nested Knowledge](https://about.nested-knowledge.com/2024/04/24/rti-international-and-nested-knowledge-announce-collaboration-to-enhance-life-science-and-healthcare-research-with-gen-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nested-knowledge/e61bc7ebed.png`
+  - Highlight count: 9; score: 110
+- [Smart Tag Recommendations Explained: How GPT-4 Extracts Data From Full Texts – Nested Knowledge](https://about.nested-knowledge.com/2023/08/24/smart-tag-recommendations-explained/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nested-knowledge/c8f7a26075.png`
+  - Highlight count: 6; score: 70
+- [Tag Tables, Explained – Nested Knowledge](https://about.nested-knowledge.com/2023/07/10/tag-tables-explained/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nested-knowledge/50d1161889.png`
+  - Highlight count: 5; score: 46
+
+### nference
+
+- [nference - Agentic AI Platform for Healthcare Research](https://nference.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nference/09eddd7ab1.png`
+  - Highlight count: 8; score: 74
+- [nference | Collaborations](https://nference.com/solutions)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nference/55c8a19e3a.png`
+  - Highlight count: 2; score: 33
+- [nference | Development of a multiomics model for identification of predictive biomarkers for COVID-19 severity: a retrospective cohort study](https://nference.com/publications/Ys4TlxAAACEA1yH8/Development-of-a-multiomics-model-for-identification-of-predictive-biomarkers-for-COVID-19-severity)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nference/5aa9d54d77.png`
+  - Highlight count: 1; score: 22
+- [nference | Real-time analysis of a mass vaccination effort via an Artificial Intelligence platform confirms the safety of FDA-authorized COVID-19 vaccines](https://nference.com/publications/YWLrfRIAAC0AzpgZ/Real-time-analysis-of-a-mass-vaccination-effort-via-an-Artificial-Intelligence-platform-confirms-the)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nference/71b9c56666.png`
+  - Highlight count: 3; score: 37
+- [nSights for Clinical Researchers](https://nference.com/nsights-for-clinical-researchers)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/nference/7113ad6508.png`
+  - Highlight count: 12; score: 109
+
+### OM1
+
+- [Bringing Treatment-Resistant Depression to Light: AI-Driven Patient Discovery in Real-World Data](https://www.om1.com/resources/case-studies/ai/bringing-treatment-resistant-depression-to-light-ai-driven-patient-discovery-in-real-world-data/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/om1/872f2d656e.png`
+  - Highlight count: 21; score: 211
+- [Browse all AI topics](https://www.om1.com/resources/case-studies/ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/om1/e57a614711.png`
+  - Highlight count: 9; score: 96
+- [Browse all AI topics](https://www.om1.com/resources/news-and-articles/ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/om1/ba7d32db5b.png`
+  - Highlight count: 134; score: 162
+- [Browse all AI topics](https://www.om1.com/resources/publications/ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/om1/b0a85958dc.png`
+  - Highlight count: 49; score: 182
+- [Browse all AI topics](https://www.om1.com/topics/ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/om1/9b7b1a47fe.png`
+  - Highlight count: 217; score: 174
+- [Clinical Datasets & Insights](https://www.om1.com/our-solutions/clinical-datasets-insights/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/om1/a6df4abf95.png`
+  - Highlight count: 12; score: 114
+- [Clinical registries](https://www.om1.com/our-solutions/clinical-registries/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/om1/473a3169d1.png`
+  - Highlight count: 11; score: 65
+- [Consulting Services](https://www.om1.com/our-solutions/consulting-services/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/om1/f34236ba96.png`
+  - Highlight count: 4; score: 40
+- [Enhancing Patient Journeys in Clinical Research with AI-Phenotyping](https://www.om1.com/resources/blogs/other/enhancing-patient-journeys-in-clinical-research-with-ai-phenotyping/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/om1/0f2a46597a.png`
+  - Highlight count: 11; score: 110
+- [Leveraging AI to Amplify PHQ-9 Endpoint Availability for Improving Depression Research](https://www.om1.com/resources/blogs/other/leveraging-ai-to-amplify-phq-9-endpoint-availability-for-improving-depression-research/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/om1/51f0d5a20f.png`
+  - Highlight count: 12; score: 113
+- [Mapping the full patient journey in rheumatology: RWD and AI in Action](https://www.om1.com/resources/blogs/other/mapping-the-full-patient-journey-in-rheumatology-rwd-and-ai-in-action/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/om1/21f6a61162.png`
+  - Highlight count: 11; score: 114
+- [OM1](https://www.om1.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/om1/d93c66cca3.png`
+  - Highlight count: 22; score: 171
+- [Our Platform](https://www.om1.com/our-platform/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/om1/ff3e442aaa.png`
+  - Highlight count: 14; score: 79
+- [Our solutions](https://www.om1.com/our-solutions/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/om1/93c9e49fac.png`
+  - Highlight count: 11; score: 77
+- [Patient Finding](https://www.om1.com/our-solutions/patient-finding/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/om1/3a7b5316ee.png`
+  - Highlight count: 6; score: 59
+- [Patient Identification in Rare Diseases](https://www.om1.com/resources/case-studies/ai/patient-identification-in-rare-diseases/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/om1/e38c102b72.png`
+  - Highlight count: 7; score: 85
+- [Precision Targeting: Uncovering High-Value HCPs with AI](https://www.om1.com/resources/case-studies/ai/precision-targeting-uncovering-high-value-hcps-with-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/om1/85c124fd08.png`
+  - Highlight count: 7; score: 88
+- [Using Artificial Intelligence to Find Undiagnosed Generalized Pustular Psoriasis Patients](https://www.om1.com/resources/case-studies/ai/using-artificial-intelligence-to-find-undiagnosed-generalized-pustular/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/om1/5c012140d4.png`
+  - Highlight count: 5; score: 69
+- [Using Real-World Data and AI to Phenotype HFpEF Patients and Advance HF Research](https://www.om1.com/resources/blogs/other/using-real-world-data-and-ai-to-phenotype-hfpef-patients-and-advance-hf-research/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/om1/bce42941bc.png`
+  - Highlight count: 9; score: 85
+
+### OMNY Health
+
+- [$17 Million Raise to Lead the Next Generation of Real-World Data | OMNY Health](https://omnyhealth.com/omny-health-announces-17-million-raise-to-lead-the-next-generation-of-real-world-data-driven-decision-making-and-collaboration-across-healthcare/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/omny-health/2eac185e55.png`
+  - Highlight count: 12; score: 50
+- [4 Ways to Create Knowledge and Value from Healthcare Data | OMNY Health](https://omnyhealth.com/four-ways-to-create-knowledge-and-value-from-healthcare-data-using-analytics-and-data-science/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/omny-health/082c4f09e9.png`
+  - Highlight count: 22; score: 99
+- [ai Archives - OMNY Health](https://omnyhealth.com/tag/ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/omny-health/857e11b03f.png`
+  - Highlight count: 68; score: 500
+- [Cognitive Impairment in Alzheimer’s Disease | OMNY Health](https://omnyhealth.com/cognitive-impairment-in-alzheimers-disease-patient-characteristics-and-treatments-in-the-real-world-setting/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/omny-health/5cb0adcdba.png`
+  - Highlight count: 11; score: 34
+- [EHR Data and Analytics | OMNY Health](https://omnyhealth.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/omny-health/14261739ca.png`
+  - Highlight count: 15; score: 57
+- [Extracting FEV1/FVC with LLMs for Scalable RWE | OMNY Health](https://omnyhealth.com/mining-the-clinical-note-extracting-fev1-fvc-with-llms-for-scalable-rwe/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/omny-health/ff0bdb4a4c.png`
+  - Highlight count: 17; score: 97
+- [From Raw Data to Actionable Wisdom —Leveraging OMNY Health’s RWD Platform toTransform Healthcare - OMNY Health](https://omnyhealth.com/whitepaper/from-raw-data-toactionable-wisdom-leveraging-omny-healths-rwd-platform-totransform-healthcare/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/omny-health/48f2abc17a.png`
+  - Highlight count: 12; score: 46
+- [ISPOR Europe 2023 | Real-World Data Platform Powering HEOR | OMNY Health](https://omnyhealth.com/ispor-europe-2023-omny-health-real-world-data-platform-powering-heor/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/omny-health/478b04de95.png`
+  - Highlight count: 15; score: 75
+- [Milestone of 50 Million Patient with Expanded Provider Network | OMNY Health](https://omnyhealth.com/omny-health-platform-surpasses-50-million-patient-lives-after-recent-expansion-in-provider-system-network-coverage/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/omny-health/b4abcbd2cb.png`
+  - Highlight count: 11; score: 37
+- [OMNY Health and Datavant Announce Alliance | OMNY Health](https://omnyhealth.com/omny-health-and-datavant-announce-alliance-to-accelerate-delivery-of-real-world-data-between-healthcare-stakeholders-to-enhance-clinical-research-and-drug-development/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/omny-health/b82ba48149.png`
+  - Highlight count: 11; score: 42
+- [OMNY Health Launches Data Platform for AI-Driven Heath Tech](https://omnyhealth.com/omny-health-launches-data-platform-designed-to-power-ai-driven-health-tech-companies/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/omny-health/02a3b3471f.png`
+  - Highlight count: 26; score: 157
+- [OMNY Health Launches Data-Driven Platform for Innovation | OMNY Health](https://omnyhealth.com/omny-health-launches-platform-to-accelerate-life-changing-innovations-through-data-driven-insights/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/omny-health/c60a4c9237.png`
+  - Highlight count: 11; score: 38
+- [OMNY Health Launches Dynamic GLP-1 Network](https://omnyhealth.com/omny-health-launches-dynamic-glp-1-network-of-600k-patients-to-fuel-clinical-research/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/omny-health/4a00261508.png`
+  - Highlight count: 15; score: 72
+- [OMNY Health launches new GI real-world data solutions](https://omnyhealth.com/omny-health-launches-new-gi-real-world-data-solutions-in-partnership-with-leading-us-gastroenterology-practices/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/omny-health/2855e838c9.png`
+  - Highlight count: 11; score: 40
+- [OMNY Platform Archives - OMNY Health](https://omnyhealth.com/tag/omny-platform/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/omny-health/91bb3ab322.png`
+  - Highlight count: 37; score: 256
+- [OMNY Platform Archives - Page 2 of 3 - OMNY Health](https://omnyhealth.com/tag/omny-platform/page/2/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/omny-health/0d00765da2.png`
+  - Highlight count: 35; score: 232
+- [OMNY Platform Archives - Page 3 of 3 - OMNY Health](https://omnyhealth.com/tag/omny-platform/page/3/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/omny-health/cf1adc8b5b.png`
+  - Highlight count: 24; score: 123
+- [OMNY Surveys, Questionnaires, and Scores | OMNY Health](https://omnyhealth.com/surveys-questionnaires-scores/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/omny-health/6dbb9c1d0d.png`
+  - Highlight count: 9; score: 12
+- [Ophthalmology Centric Real-World Data Platform | OMNY Health](https://omnyhealth.com/omny-health-launches-ophthalmology-centric-real-world-data-platform-in-partnership-with-leading-ophthalmology-practices-focused-on-improving-patient-outcomes/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/omny-health/1ce0eafecb.png`
+  - Highlight count: 11; score: 40
+- [Powering Research with LLMs and De-identified Clinical Notes | OMNY Health](https://omnyhealth.com/powering-research-with-llms-and-omny-healths-de-identified-clinical-notes-in-cystic-fibrosis/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/omny-health/afd51a1a8e.png`
+  - Highlight count: 14; score: 84
+- [SDoH research with unstructured clinical notes - OMNY Health](https://omnyhealth.com/advancing-sdoh-research-with-unstructured-clinical-notes-to-improve-patient-care/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/omny-health/dc8f08efc7.png`
+  - Highlight count: 15; score: 75
+- [Sensyne Health and OMNY Health Sign Teaming Agreement |OMNY Health](https://omnyhealth.com/sensyne-health-and-omny-health-sign-teaming-agreement-to-support-breakthrough-research-through-the-power-of-real-world-data-and-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/omny-health/6c3fca7737.png`
+  - Highlight count: 17; score: 93
+- [Transforming AI Healthcare with Rich Clinical Data - OMNY Health](https://omnyhealth.com/ai-healthcare-companies/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/omny-health/3d197ae67b.png`
+  - Highlight count: 15; score: 77
+- [Unlocking the Hidden Details: Why Unstructured Clinical Notes Are Crucial for Life Sciences - OMNY Health](https://omnyhealth.com/unlocking-the-hidden-details-why-unstructured-clinical-notes-are-crucial-for-life-sciences/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/omny-health/cb0d432ef5.png`
+  - Highlight count: 19; score: 102
+
+### OneMedNet
+
+- [Homepage - OneMedNet](https://www.onemednet.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/onemednet/8c8af43c08.png`
+  - Highlight count: 45; score: 38
+- [Inka Health Selected by OneMedNet to Lead AI-Driven Oncology Project Using Real-World Data for External Control Arms - OneMedNet](https://www.onemednet.com/news/inka-health-selected-by-onemednet-to-lead-ai-driven-oncology-project-using-real-world-data-for-external-control-arms/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/onemednet/e4513073f8.png`
+  - Highlight count: 13; score: 101
+- [OneMedNet and Protege Partner to Advance the Future of AI-Driven Healthcare with Real-Time, Multimodal Data - OneMedNet](https://www.onemednet.com/news/onemednet-and-protege-partner-to-advance-the-future-of-ai-driven-healthcare-with-real-time-multimodal-data/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/onemednet/b3c029da43.png`
+  - Highlight count: 22; score: 161
+- [OneMedNet Announces Exciting New Collaboration with Bayer's AI Innovation Platform to Help Accelerate Healthcare AI Development - OneMedNet](https://www.onemednet.com/news/onemednet-announces-exciting-new-collaboration-with-bayers-ai-innovation-platform-to-help-accelerate-healthcare-ai-development/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/onemednet/c644e6f99d.png`
+  - Highlight count: 13; score: 102
+- [OneMedNet Announces New Breast Imaging Dataset Delivering Detailed Insight on Breast Cancer Screening Across a Diverse US Patient Population - OneMedNet](https://www.onemednet.com/news/onemednet-announces-new-breast-imaging-dataset-delivering-detailed-insight-on-breast-cancer-screening-across-a-diverse-us-patient-population/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/onemednet/836e00959e.png`
+  - Highlight count: 5; score: 15
+- [OneMedNet Announces Next Phase of Commercial Launch with its Real-World Data (RWD) Platform powered by Palantir Foundry. - OneMedNet](https://www.onemednet.com/news/onemednet-announces-next-phase-of-commercial-launch-with-its-real-world-data-rwd-platform-powered-by-palantir-foundry/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/onemednet/0a88559fc9.png`
+  - Highlight count: 14; score: 91
+- [OneMedNet Announces Strong 2025 Financials and Advances AI-Driven iRWD™ powered by Palantir Foundry enabling Conversational Search on Real-Time Medical Data - OneMedNet](https://www.onemednet.com/news/onemednet-announces-strong-2025-financials-and-advances-ai-driven-irwd-powered-by-palantir-foundry-enabling-conversational-search-on-real-time-medical-data/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/onemednet/0314cd87f4.png`
+  - Highlight count: 9; score: 54
+- [OneMedNet Delivers on Revenue Model Promise with Palantir-Powered RWD Subscriptions: Live Feeds & AI Search - OneMedNet](https://www.onemednet.com/news/onemednet-delivers-on-revenue-model-promise-with-palantir-powered-rwd-subscriptions-live-feeds-ai-search/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/onemednet/99692c969e.png`
+  - Highlight count: 15; score: 106
+- [OneMedNet Enhances Data Discovery and Analytics with the Datavant Connect platform and Amazon Web Services (AWS) Clean Rooms - OneMedNet](https://www.onemednet.com/news/onemednet-enhances-data-discovery-and-analytics-with-the-datavant-connect-platform-and-amazon-web-services-aws-clean-room-technology/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/onemednet/1f9bac772d.png`
+  - Highlight count: 6; score: 29
+- [OneMedNet iRWD(TM) Now Available on AWS Data Exchange - OneMedNet](https://www.onemednet.com/news/onemednet-irwdtm-now-available-on-aws-data-exchange/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/onemednet/bae9531201.png`
+  - Highlight count: 7; score: 38
+- [OneMedNet Partners with Arterys to Accelerate Access to World Class Clinical AI products and Solutions - OneMedNet](https://www.onemednet.com/news/onemednet-partners-with-arterys-to-accelerate-access-to-world-class-clinical-ai-products-and-solutions/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/onemednet/2d554d3f35.png`
+  - Highlight count: 8; score: 53
+- [OneMedNet Partners with Flywheel to Provide Leading Healthcare Imaging Data and Data Management Solutions - OneMedNet](https://www.onemednet.com/news/onemednet-partners-with-flywheel-to-provide-leading-healthcare-imaging-data-and-data-management-solutions/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/onemednet/3b2f30aceb.png`
+  - Highlight count: 8; score: 43
+- [OneMedNet Partners with Leading Clinical Trial Design and Software Company in Significant Data License Agreement - OneMedNet](https://www.onemednet.com/news/onemednet-partners-with-leading-clinical-trial-design-and-software-company-in-significant-data-license-agreement/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/onemednet/849c5f192d.png`
+  - Highlight count: 5; score: 22
+- [OneMedNet Partners with ViuHealth to Enhance Autoimmune Dataset Scale, Accelerating Recurring Revenue from Life Sciences and AI Customers - OneMedNet](https://www.onemednet.com/news/onemednet-partners-with-viuhealth-to-enhance-autoimmune-dataset-scale-accelerating-recurring-revenue-from-life-sciences-and-ai-customers/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/onemednet/17408464e6.png`
+  - Highlight count: 14; score: 96
+- [OneMedNet Real-World Data Supports FDA 510(k) Clearance of AI-Powered Scaida BrainCT-ICH Software - OneMedNet](https://www.onemednet.com/news/onemednet-real-world-data-supports-fda-510k-clearance-of-ai-powered-scaida-brainct-ich-software/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/onemednet/8d62aa1044.png`
+  - Highlight count: 17; score: 123
+- [OneMedNet Regains Compliance with NASDAQ Listing Requirements - OneMedNet](https://www.onemednet.com/news/onemednet-regains-compliance-with-nasdaq-listing-requirements/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/onemednet/7847eb3159.png`
+  - Highlight count: 7; score: 37
+- [OneMedNet Regains Compliance with NASDAQ Minimum Bid Price Requirements - OneMedNet](https://www.onemednet.com/news/onemednet-regains-compliance-with-nasdaq-minimum-bid-price-requirements/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/onemednet/233afa7f02.png`
+  - Highlight count: 7; score: 37
+- [OneMedNet Regains Compliance with NASDAQ Periodic Filing Requirements - OneMedNet](https://www.onemednet.com/news/onemednet-regains-compliance-with-nasdaq-periodic-filing-requirements/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/onemednet/9dbc0d3504.png`
+  - Highlight count: 7; score: 37
+- [OneMedNet Reports Greater than Five-Fold Expansion of iRWD™ Network and Platform - OneMedNet](https://www.onemednet.com/news/onemednet-reports-greater-than-five-fold-expansion-of-irwd-network-and-platform/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/onemednet/82fc2bccd0.png`
+  - Highlight count: 5; score: 19
+- [OneMedNet Revolutionizes Data Curation with AI, Boosting Efficiency up to 5X - OneMedNet](https://www.onemednet.com/news/onemednet-revolutionizes-data-curation-with-ai-boosting-efficiency-up-to-5x/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/onemednet/2f7a45c16f.png`
+  - Highlight count: 11; score: 75
+- [OneMedNet Selects Palantir to Advance Healthcare AI and Data Analytics - OneMedNet](https://www.onemednet.com/news/onemednet-selects-palantir-to-advance-healthcare-ai-and-data-analytics/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/onemednet/6840a92077.png`
+  - Highlight count: 22; score: 168
+- [OneMedNet Significantly Expands Industry Access to Proprietary iRWD™ Network and Platform by Joining AWS Partner Network - OneMedNet](https://www.onemednet.com/news/onemednet-significantly-expands-industry-access-to-proprietary-irwd-network-and-platform-by-joining-aws-partner-network/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/onemednet/8a8339397e.png`
+  - Highlight count: 5; score: 19
+- [OneMedNet to Showcase Transformative New Platform at RSNA 2025 - OneMedNet](https://www.onemednet.com/news/onemednet-to-showcase-transformative-new-platform-at-rsna-2025/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/onemednet/fe4e03d9c4.png`
+  - Highlight count: 9; score: 52
+- [OneMedNet, An Expert and Leader in Clinical Imaging Innovation and Data Solutions, to Become Publicly Traded Via Combination with Data Knights Acquisition Corp. - OneMedNet](https://www.onemednet.com/news/onemednet-an-expert-and-leader-in-clinical-imaging-innovation-and-data-solutions-to-become-publicly-traded-via-combination-with-data-knights-acquisition-corp/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/onemednet/7e28e4d82e.png`
+  - Highlight count: 6; score: 29
+- [OneMedNet, Onco-Innovations and Inka Health Announces Collaboration Aimed to Accelerate Potential for Oncology Drug Development Using Real-World Data and AI - OneMedNet](https://www.onemednet.com/news/onemednet-onco-innovations-and-inka-health-announces-collaboration-aimed-to-accelerate-potential-for-oncology-drug-development-using-real-world-data-and-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/onemednet/e6c455d9ff.png`
+  - Highlight count: 11; score: 79
+- [OneMedNet’s regulatory-grade imaging Real-World Data (iRWD) now available in HealthVerity Marketplace™ - OneMedNet](https://www.onemednet.com/news/onemednets-regulatory-grade-imaging-real-world-data-irwd-now-available-in-healthverity-marketplace/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/onemednet/56691c416f.png`
+  - Highlight count: 6; score: 29
+- [Project Manager – iRWD Deployments & Solutions Delivery & Internal Programs - OneMedNet](https://www.onemednet.com/jobs/project-manager-irwd-deployments-solutions-delivery-internal-programs/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/onemednet/6b10582ac7.png`
+  - Highlight count: 5; score: 13
+- [Staff Software Engineer - OneMedNet](https://www.onemednet.com/jobs/staff-software-engineer/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/onemednet/70d8ff8572.png`
+  - Highlight count: 8; score: 48
+
+### Ontada
+
+- [iKnowMed: Precision Point-of-Care Technology for Oncology | Ontada](https://www.ontada.com/point-of-care-solutions/iknowmed/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ontada/5b925001e7.png`
+  - Highlight count: 2; score: 35
+- [Oncology Data Solutions for HEOR & Research | Ontada](https://www.ontada.com/life-science/oncology-data-for-heor-research/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ontada/cdf580b016.png`
+  - Highlight count: 2; score: 33
+- [Oncology Insights & Real-World Data Solutions | Ontada](https://www.ontada.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ontada/15e8e2d059.png`
+  - Highlight count: 1; score: 25
+- [Ontada Collaborates with Microsoft to Transform Unstructured Oncology Data with Azure OpenAI Technology | Ontada](https://www.ontada.com/news-events/press-releases/ontada-collaborates-with-microsoft-to-transform-unstructured-oncology-data-with-azure-openai-technology/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/ontada/80d3efcce2.png`
+  - Highlight count: 8; score: 81
+
+### OPEN Health
+
+- [AI at ESMO 2025: Many Advances, Much Promise](https://www.openhealthgroup.com/news/16-12-2025/ai-at-esmo-2025-many-advances-much-promise/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/open-health/34d29a3db6.png`
+  - Highlight count: 27; score: 245
+- [AI in Action: Revolutionizing Scientific Congresses | OPEN Health](https://www.openhealthgroup.com/news/26-06-2025/ai-in-action-revolutionizing-scientific-congresses-from-concept-to-conclusion/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/open-health/1f7f332333.png`
+  - Highlight count: 9; score: 87
+- [AI in Evidence Synthesis Webinar | July 10 | OPEN Health](https://www.openhealthgroup.com/news/18-06-2025/ispor-webinar-ai-in-evidence-synthesis-are-the-robots-taking-over/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/open-health/195f6533c7.png`
+  - Highlight count: 19; score: 177
+- [AI in Market Access: From Hype to Real-World Impact](https://www.openhealthgroup.com/news/10-04-2026/ai-in-market-access-from-hype-to-real-world-impact/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/open-health/0e975c5ee7.png`
+  - Highlight count: 22; score: 194
+- [AI in Market Access: From Hype to Real-World Impact](https://www.openhealthgroup.com/news/16-04-2026/make-the-most-of-ai-in-heor/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/open-health/222d897ddc.png`
+  - Highlight count: 11; score: 84
+- [AI, Storytelling, and the Future of Medical Publishing](https://www.openhealthgroup.com/news/20-05-2024/ai-storytelling-and-the-future-of-medical-publishing-highlights-from-ismpps-20th-annual-meeting/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/open-health/81b8f214c1.png`
+  - Highlight count: 24; score: 217
+- [Cell and Gene Therapies: Disruptors in Pharma at eyeforpharma](https://www.openhealthgroup.com/news/21-03-2019/disruptors-enablers-and-real-world-evidence-solutions-at-17th-annual-eyeforpharma-conference-barcelona/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/open-health/779e074d03.png`
+  - Highlight count: 4; score: 49
+- [Evidence Generation for JCAs | OPEN Health](https://www.openhealthgroup.com/news/12-11-2024/evidence-generation-for-jcas-how-can-ai-boost-efficiency-and-maintain-quality/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/open-health/58d19fcfc6.png`
+  - Highlight count: 17; score: 162
+- [Evolving Role of Medical Affairs: Insights from MAPS 2019](https://www.openhealthgroup.com/news/20-03-2019/the-critical-role-of-medical-affairs-getting-fit-for-the-future/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/open-health/5aea3f4f31.png`
+  - Highlight count: 3; score: 40
+- [Expanding Role of Medical Affairs: A focus on Omnichannel](https://www.openhealthgroup.com/news/06-04-2023/expanding-the-role-of-medical-affairs-a-focus-on-omnichannel-execution-artificial-intelligence-and-health-equality/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/open-health/196a2b0649.png`
+  - Highlight count: 9; score: 87
+- [Harnessing AI to develop an SLR program | OPEN Health](https://www.openhealthgroup.com/news/05-09-2025/harnessing-ai-to-develop-an-slr-program/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/open-health/79074e3587.png`
+  - Highlight count: 7; score: 71
+- [How AI is transforming the healthcare sector | OPEN Health](https://www.openhealthgroup.com/news/22-07-2019/the-ai-revolution-how-artificial-intelligence-is-transforming-the-healthcare-sector/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/open-health/33a43c11e7.png`
+  - Highlight count: 45; score: 385
+- [Innovation in Oncology Clinical Trials | OPEN Health](https://www.openhealthgroup.com/news/29-05-2024/innovation-in-oncology-clinical-trials-transforming-research-with-cutting-edge-clinical-trial-designs-and-technologies/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/open-health/3281e0d465.png`
+  - Highlight count: 14; score: 135
+- [ISPOR publication features OPEN Health authors on AI in HEOR](https://www.openhealthgroup.com/news/22-12-2025/ispor-publication-features-open-health-authors-on-ai-in-heor/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/open-health/8da9a603f1.png`
+  - Highlight count: 15; score: 135
+- [Join OPEN Health at the HTAi 2025 Annual Meeting](https://www.openhealthgroup.com/events/htai-2025-annual-meeting/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/open-health/64fb3f945d.png`
+  - Highlight count: 1; score: 17
+- [MAPS 2022: Omnichannel Communications for Medical Affairs](https://www.openhealthgroup.com/news/06-04-2022/maps-2022-omnichannel-communications-are-a-popular-topic-for-medical-affairs-with-many-looking-to-the-experts-for-how-to-make-it-work/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/open-health/834ac56afb.png`
+  - Highlight count: 3; score: 32
+- [MedAffairs Leaders Forum, 26-28 February, London OPEN Vie](https://www.openhealthgroup.com/news/06-03-2019/medaffairs-leaders-forum-26-28-february-london-how-patient-centred-outcomes-can-enhance-your-evidence-strategy/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/open-health/fe0d507b7f.png`
+  - Highlight count: 3; score: 39
+- [Meet Craig Ornstein, an OPEN Health Scientific Trailblazer](https://www.openhealthgroup.com/news/04-09-2024/meet-craig-ornstein-an-open-health-scientific-trailblazer/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/open-health/b2096e8432.png`
+  - Highlight count: 3; score: 32
+- [Meet Eleanor Lucas, an OPEN Health Scientific Trailblazer](https://www.openhealthgroup.com/news/21-03-2025/meet-eleanor-lucas-an-open-health-scientific-trailblazer/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/open-health/a957db9f23.png`
+  - Highlight count: 3; score: 34
+- [Meet Florentin Köhnemann, PhD, LLM Shaping Strategic Market Access Across Europe](https://www.openhealthgroup.com/news/06-11-2025/meet-florentin-kohnemann-phd-llm-shaping-strategic-market-access-across-europe/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/open-health/6fd9841e6a.png`
+  - Highlight count: 7; score: 77
+- [Meet Jennifer Stephens, an OPEN Health Scientific Trailblazer](https://www.openhealthgroup.com/news/23-05-2024/meet-jennifer-stephens-an-open-health-scientific-trailblazer/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/open-health/10604a0e23.png`
+  - Highlight count: 3; score: 33
+- [Omnichannel Medical Affairs: Implementation Guide | OPEN Health](https://www.openhealthgroup.com/news/01-12-2023/introducing-an-omnichannel-approach-in-medical-affairs/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/open-health/de2905ab3b.png`
+  - Highlight count: 8; score: 82
+- [OPEN Health is excited to welcome Wenjie Zhang to the team](https://www.openhealthgroup.com/news/22-04-2024/meet-wenjie-zhang-an-open-health-scientific-trailblazer/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/open-health/47459517ad.png`
+  - Highlight count: 3; score: 32
+- [OPEN Health | Market Access, HEOR, & Medical Communications](https://www.openhealthgroup.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/open-health/b911fc1fb3.png`
+  - Highlight count: 3; score: 33
+- [Strategic Leadership, Medical Omnichannel, and AI in Medical Affairs](https://www.openhealthgroup.com/news/23-05-2024/strategic-leadership-medical-omnichannel-and-ai-in-medical-affairs-highlights-from-the-maps-emea-annual-meeting/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/open-health/ef75527db2.png`
+  - Highlight count: 11; score: 112
+- [Webinar: AI in Evidence Synthesis: Are the Robots Taking Over?](https://www.openhealthgroup.com/events/ispor-webinar-ai-in-evidence-synthesis-are-the-robots-taking-over/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/open-health/f1b90ed9cb.png`
+  - Highlight count: 13; score: 127
+
+### Oracle Health and Life Sciences
+
+- [AI Agents for Fusion Applications | Oracle](https://www.oracle.com/applications/fusion-ai/ai-agents/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/oracle-health-and-life-sciences/45bf01eba9.png`
+  - Highlight count: 63; score: 454
+- [Behavioral intelligence solution for retail | Oracle](https://www.oracle.com/cx/marketing/digital-intelligence/retail/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/oracle-health-and-life-sciences/05a1a45bbd.png`
+  - Highlight count: 6; score: 50
+- [Customer data platform for banking | CX | Oracle](https://www.oracle.com/cx/customer-data-platform/banking-datasheet/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/oracle-health-and-life-sciences/7b78dc27f5.png`
+  - Highlight count: 3; score: 22
+- [Customer data platform integrations | Oracle](https://www.oracle.com/cx/customer-data-platform/unity-integrations/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/oracle-health-and-life-sciences/6e64917f30.png`
+  - Highlight count: 9; score: 34
+- [Eloqua Guided Campaigns | Oracle](https://www.oracle.com/cx/marketing/eloqua-guided-campaigns/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/oracle-health-and-life-sciences/fb3b11cc00.png`
+  - Highlight count: 14; score: 21
+- [Eloqua Marketing Automation | Oracle](https://www.oracle.com/cx/marketing/automation/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/oracle-health-and-life-sciences/35f020911d.png`
+  - Highlight count: 24; score: 70
+- [Embarking on a New Era of AI | Oracle](https://www.oracle.com/applications/embarking-on-a-new-era-of-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/oracle-health-and-life-sciences/ed55125593.png`
+  - Highlight count: 27; score: 223
+- [Fusion Application AI Agent Marketplace](https://www.oracle.com/applications/fusion-ai/ai-agent-marketplace/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/oracle-health-and-life-sciences/8fc3e1b3e8.png`
+  - Highlight count: 108; score: 113
+- [Fusion Applications AI Strategy Continues with Custom AI | Oracle](https://www.oracle.com/applications/fusion-ai/custom-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/oracle-health-and-life-sciences/4dad504b7f.png`
+  - Highlight count: 87; score: 693
+- [Harnessing the AI Advantage in Finance | Oracle](https://www.oracle.com/applications/finance-ai-advantage/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/oracle-health-and-life-sciences/c5f3835462.png`
+  - Highlight count: 35; score: 288
+- [How to Create an AI Agent in 7 Steps](https://www.oracle.com/applications/fusion-ai/how-to-create-ai-agent/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/oracle-health-and-life-sciences/60a9e4a92a.png`
+  - Highlight count: 52; score: 441
+- [Introducing Oracle AI Agent Studio for Fusion Applications | Oracle](https://www.oracle.com/applications/dawn-of-ai-enterprise-agent-workforce/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/oracle-health-and-life-sciences/69f85fc2b9.png`
+  - Highlight count: 27; score: 225
+- [On-premise limitations, cloud possibilities: AI Strategies for Leaders | Oracle](https://www.oracle.com/applications/effective-ai-strategies/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/oracle-health-and-life-sciences/193d47275d.png`
+  - Highlight count: 108; score: 886
+- [Oracle AI Agents](https://www.oracle.com/applications/fusion-ai/steve-miranda-ai-agents-business-productivity/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/oracle-health-and-life-sciences/c1df1a36ba.png`
+  - Highlight count: 35; score: 304
+- [Oracle AI for CX | Oracle Fusion Cloud Customer Experience Apps](https://www.oracle.com/cx/ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/oracle-health-and-life-sciences/022dae91a0.png`
+  - Highlight count: 110; score: 530
+- [Oracle AI for Fusion Applications | Oracle](https://www.oracle.com/applications/fusion-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/oracle-health-and-life-sciences/5e2bc10475.png`
+  - Highlight count: 141; score: 477
+- [Oracle Unity CDP | Oracle Fusion Cloud Customer Experience Applications](https://www.oracle.com/cx/customer-data-platform/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/oracle-health-and-life-sciences/b91f4f3eb8.png`
+  - Highlight count: 23; score: 122
+- [Oracle Unity Customer Data Platform intelligence workbench models catalog](https://www.oracle.com/cx/customer-data-platform/use-cases/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/oracle-health-and-life-sciences/0278b7b170.png`
+  - Highlight count: 18; score: 48
+- [Responsys Campaign Management | Marketing | Oracle](https://www.oracle.com/cx/marketing/campaign-management/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/oracle-health-and-life-sciences/f17a2b6f83.png`
+  - Highlight count: 16; score: 100
+- [The Rise of the Autonomous Enterprise](https://www.oracle.com/applications/fusion-ai/rise-of-autonomous-enterprise/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/oracle-health-and-life-sciences/7d7a56a500.png`
+  - Highlight count: 5; score: 43
+- [Unleashing the Potential of Generative AI Directly Within Oracle](https://www.oracle.com/applications/fusion-ai/generative-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/oracle-health-and-life-sciences/c55a7c9ac2.png`
+  - Highlight count: 32; score: 276
+- [What Is Campaign Management?](https://www.oracle.com/cx/marketing/campaign-management/what-is-campaign-management/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/oracle-health-and-life-sciences/e633979a58.png`
+  - Highlight count: 3; score: 22
+- [What Is CDP?](https://www.oracle.com/cx/customer-data-platform/what-is-cdp/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/oracle-health-and-life-sciences/6c5a0209ec.png`
+  - Highlight count: 10; score: 42
+- [What Is Robotic Process Automation (RPA)?](https://www.oracle.com/applications/robotic-process-automation-rpa/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/oracle-health-and-life-sciences/ef8d07db0e.png`
+  - Highlight count: 109; score: 529
+- [Why Business Leaders Need an AI-First Mindset | Oracle](https://www.oracle.com/applications/ai-now-mindset/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/oracle-health-and-life-sciences/dd9ae65358.png`
+  - Highlight count: 27; score: 220
+- [Why Native AI in Oracle Fusion Applications Changes the Game | Oracle](https://www.oracle.com/applications/fusion-ai/native-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/oracle-health-and-life-sciences/2aafb61b40.png`
+  - Highlight count: 15; score: 137
+
+### Panalgo
+
+- [Healthcare Analytics Platform | Panalgo](https://panalgo.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/panalgo/c0fb52475b.png`
+  - Highlight count: 17; score: 69
+- [Healthcare Analytics Software Solution | Panalgo](https://panalgo.com/ihd-analytics/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/panalgo/30991e1db1.png`
+  - Highlight count: 14; score: 45
+- [Healthcare Analytics Training and Support | Panalgo](https://panalgo.com/ihd-analytics/training-support/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/panalgo/7965a2dfc5.png`
+  - Highlight count: 6; score: 30
+- [Machine Learning Software for Healthcare | Panalgo](https://panalgo.com/ihd-analytics/ihd-data-science/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/panalgo/20026eb34f.png`
+  - Highlight count: 13; score: 26
+- [Panalgo Revolutionizes Real-World Data with Launch of LinQ Notes and Ella AI - Panalgo](https://panalgo.com/press-release/panalgo-revolutionizes-real-world-data-with-launch-linqnotes-and-ella-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/panalgo/c08663e9c5.png`
+  - Highlight count: 15; score: 116
+
+### PAREXEL
+
+- [Approval and Access | Parexel](https://www.parexel.com/solutions/approval-and-access)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/parexel/b045ccb997.png`
+  - Highlight count: 3; score: 23
+- [Clinical Development Technology Optimization | Parexel](https://www.parexel.com/solutions/integrated-clinical-development/clinical-development-technology-optimization)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/parexel/3cff55e1c3.png`
+  - Highlight count: 3; score: 15
+- [Global Regulatory Submissions and Outsourcing | Parexel](https://www.parexel.com/solutions/approval-and-access/global-regulatory-submissions-and-outsourcing)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/parexel/30593c4497.png`
+  - Highlight count: 4; score: 27
+- [GxP Compliance Consulting | RBQM in Clinical Trials | Parexel](https://www.parexel.com/solutions/approval-and-access/compliance-and-risk-management)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/parexel/d59d29785b.png`
+  - Highlight count: 3; score: 20
+- [Integrated Clinical Development Services | Parexel](https://www.parexel.com/solutions/integrated-clinical-development)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/parexel/c14eb570f5.png`
+  - Highlight count: 3; score: 23
+- [Market Access Consulting, Strategy, and Delivery | Parexel](https://www.parexel.com/solutions/early-development-and-innovation/market-access-consulting-strategy)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/parexel/b03f5036f6.png`
+  - Highlight count: 13; score: 104
+- [Market Access Strategy | Parexel](https://www.parexel.com/solutions/approval-and-access/market-access-strategy-and-delivery)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/parexel/93d9771ee8.png`
+  - Highlight count: 12; score: 96
+- [Operational Excellence | Parexel](https://www.parexel.com/solutions/operational-excellence)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/parexel/e3e70ba2bc.png`
+  - Highlight count: 8; score: 52
+- [Regulatory Strategy in Clinical Trials | Parexel](https://www.parexel.com/solutions/early-development-and-innovation/regulatory-strategy)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/parexel/0b5f4c5418.png`
+  - Highlight count: 4; score: 15
+
+### Peritia
+
+- [How Regulatory Affairs Professionals Navigate the FDA - Peritia](https://peritia.com/blog/regulatoryaffairsprofessionals/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/peritia/861929f6a6.png`
+  - Highlight count: 1; score: 14
+- [Software, AI, and the Digital Health Explosion - Peritia](https://peritia.com/blog/software-ai-and-the-digital-health-explosion/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/peritia/1233fdecf5.png`
+  - Highlight count: 12; score: 117
+
+### Petauri
+
+- [Bridging the gap between AI principles and practice: A comparative evaluation of AI position statements and frameworks for responsible use - Petauri](https://petauri.com/evidence-frameworks-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/petauri/309a5a6c08.png`
+  - Highlight count: 34; score: 290
+- [Insights From ISPOR 2025: Breaking the Data Barrier in Rare Diseases – Can AI Bridge the Gap?](https://petauri.com/insights/ispor-2025-rare-disease-data-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/petauri/2037256d38.png`
+  - Highlight count: 10; score: 109
+- [Population Health Leaders Network Insights Into AI in Healthcare - Petauri](https://petauri.com/insights/population-health-leaders-network-insights-into-ai-in-healthcare/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/petauri/1574724bbe.png`
+  - Highlight count: 37; score: 319
+- [Traditional versus generative AI: A rapid systematic review assessing accuracy and efficiency of AI in title/abstract screening - Petauri](https://petauri.com/accuracy-efficiency-ai-slr/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/petauri/18ae3f93e4.png`
+  - Highlight count: 9; score: 107
+
+### PhaseV
+
+- [Clinical Operations](https://www.phasevtrials.com/solutions/clinical-operations)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/phasev/dd71394530.png`
+  - Highlight count: 2; score: 23
+- [Driving Better Trial Outcomes Through AI & ML-Optimized Clinical Development](https://www.phasevtrials.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/phasev/1903528813.png`
+  - Highlight count: 9; score: 90
+- [Enhancing clinical trials: The case for algorithmic prespecification in subgroup analysis](https://www.phasevtrials.com/post/enhancing-clinical-trials-the-case-for-algorithmic-prespecification-in-subgroup-analysis)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/phasev/f416d2992b.png`
+  - Highlight count: 5; score: 19
+- [Every trial is different. Now the software can be too](https://www.phasevtrials.com/post/every-trial-has-its-own-logic-now-the-software-can-too)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/phasev/9cab46085c.png`
+  - Highlight count: 13; score: 85
+- [HTE](https://www.phasevtrials.com/solutions/response-optimizer)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/phasev/083389e22a.png`
+  - Highlight count: 1; score: 22
+- [New page](https://www.phasevtrials.com/solutions/clinops-optimizer)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/phasev/bb28d5aa23.png`
+  - Highlight count: 2; score: 23
+- [PhaseV](https://www.phasevtrials.com/careers/applied-ai-engineer)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/phasev/87758e4b1a.png`
+  - Highlight count: 33; score: 215
+- [Solutions](https://www.phasevtrials.com/solutions)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/phasev/2045eaeeba.png`
+  - Highlight count: 24; score: 114
+- [The future of drug development: Integrating open source and commercial software](https://www.phasevtrials.com/post/the-future-of-drug-development-integrating-open-source-and-commercial-software)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/phasev/4d7157e5ec.png`
+  - Highlight count: 6; score: 32
+- [Trial Optimizer](https://www.phasevtrials.com/solutions/trial-optimizer)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/phasev/a51dd6ba82.png`
+  - Highlight count: 3; score: 32
+
+### Pienomial Inc
+
+- [Avant & Ainnova Boost Diabetic Retinopathy AI Trial Recruitment | Pienomial](https://www.pienomial.com/clinical-trial-intelligen/avant-technologies-and-ainnova-tech-enhance-patient-recruitment-for-diabetic-retinopathy-ai-platform-clinical-trial)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pienomial-inc/b793fbb4f1.png`
+  - Highlight count: 19; score: 177
+- [Avant & AiNNOVA Complete FDA Meeting for AI Diabetic Retinopathy Platform | Pienomial](https://www.pienomial.com/clinical-trial-intelligen/avant-technologies-and-ainnova-complete-pivotal-fda-meeting-for-vision-ai-diabetic-retinopathy-platform)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pienomial-inc/8452ad76ee.png`
+  - Highlight count: 19; score: 152
+- [Enterprise AI Platform | Trusted, Explainable Intelligence | Pienomial](https://www.pienomial.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pienomial-inc/eab7a3572f.png`
+  - Highlight count: 57; score: 413
+- [Gain Therapeutics GT-02287 Phase 1b Extension for PD | Pienomial](https://www.pienomial.com/clinical-trial-intelligen/gain-therapeutics-receives-approval-for-phase-1b-dosing-extension-of-gt-02287-for-parkinsons-disease)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pienomial-inc/fa63e21a91.png`
+  - Highlight count: 1; score: 26
+- [GSK-Partnered Alector's Nivinebart Fails Phase 2 Alzheimer's Trial](https://www.pienomial.com/clinical-trial-intelligen/gsk-partnered-alector-hit-with-third-neuro-failure-as-alzheimers-asset-disappoints)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pienomial-inc/4a2dd488d6.png`
+  - Highlight count: 1; score: 21
+- [Multi-Site Clinical Data for IMVARIA's Fibresolve AI in IPF at ATS 2025 | Pienomial](https://www.pienomial.com/clinical-trial-intelligen/imvaria-presents-multi-site-clinical-data-on-ai-diagnostic-service-for-idiopathic-pulmonary-fibrosis-at-ats-2025)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pienomial-inc/cc50bc32d3.png`
+  - Highlight count: 6; score: 71
+
+### PointClickCare
+
+- [3 Ways a CRM Can Build Occupancy in Senior Living | PointClickCare](https://pointclickcare.com/blog/our-markets/senior-living/3-ways-crm-solutions-help-build-occupancy-senior-living/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/7ac19b0649.png`
+  - Highlight count: 7; score: 21
+- [4 Ways to Explain the Benefits of an LTC Pharmacy to AL Community Members | PointClickCare](https://pointclickcare.com/blog/our-markets/pharmacy/4-ways-explain-benefits-ltc-pharmacy-al-community-members/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/a912a3dce5.png`
+  - Highlight count: 7; score: 22
+- [5 Reasons to Investigate Your Skilled Nursing Software | PointClickCare](https://pointclickcare.com/blog/our-markets/skilled-nursing-facility-snf/investigate-your-current-skilled-nursing-snf-software/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/1362e816f9.png`
+  - Highlight count: 7; score: 25
+- [5 Tips for Conquering Your Unbilled Services | PointClickCare](https://pointclickcare.com/blog/our-markets/senior-living/5-tips-for-conquering-your-unbilled-services-in-your-senior-living-community/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/fde487ef12.png`
+  - Highlight count: 7; score: 21
+- [Ancillary Services: How They Create a Competitive Edge](https://pointclickcare.com/blog/our-markets/senior-living/competitive-edge-ancillary-services/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/ec3bc704aa.png`
+  - Highlight count: 7; score: 24
+- [Care Collaboration for Health Plans | PointClickCare](https://pointclickcare.com/industry-solutions/health-plans/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/cc2cdffd7b.png`
+  - Highlight count: 7; score: 22
+- [Care Coordination Solutions for ACOs & RBPs | PointClickCare](https://pointclickcare.com/industry-solutions/acos-accountable-care-organizations/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/cb11c26406.png`
+  - Highlight count: 7; score: 22
+- [Continuing Care Retirement Communities Software | PointClickCare](https://pointclickcare.com/industry-solutions/continuing-care-retirement-communities/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/67f130d342.png`
+  - Highlight count: 7; score: 24
+- [Discover Healthcare Software Solutions | PointClickCare](https://pointclickcare.com/discover-pcc-healthcare-software-solutions/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/deb0adbddc.png`
+  - Highlight count: 8; score: 32
+- [Federal Government Healthcare Solutions | PointClickCare | PointClickCare](https://pointclickcare.com/industry-solutions/federal-government/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/0743178d89.png`
+  - Highlight count: 7; score: 24
+- [Fulfilling the ‘Quadruple Aim’ of Healthcare | PointClickCare](https://pointclickcare.com/blog/better-clinical-outcomes/fulfilling-quadruple-aim-healthcare-investment-implementation-education/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/81bd3a54c5.png`
+  - Highlight count: 7; score: 26
+- [Health Economics and Outcomes Research Data | PointClickCare](https://pointclickcare.com/industry-solutions/life-sciences/real-world-data/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/dcc4544c9b.png`
+  - Highlight count: 10; score: 56
+- [Health Information Exchange Solutions for HIEs | PointClickCare](https://pointclickcare.com/industry-solutions/health-information-exchange/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/412ef612a6.png`
+  - Highlight count: 7; score: 25
+- [Healthcare Software for Smarter Care Delivery | PointClickCare](https://pointclickcare.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/b6f51075c3.png`
+  - Highlight count: 9; score: 33
+- [Healthcare Solutions for Hospitals and Health Systems | PointClickCare](https://pointclickcare.com/industry-solutions/hospitals-health-systems/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/c7d7429c61.png`
+  - Highlight count: 7; score: 21
+- [Hospital Association Care Coordination | PointClickCare](https://pointclickcare.com/industry-solutions/hospitals-associations/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/1ed213f32e.png`
+  - Highlight count: 8; score: 27
+- [Industry Solutions for Healthcare Organizations | PointClickCare](https://pointclickcare.com/industry-solutions/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/301c22fb35.png`
+  - Highlight count: 10; score: 21
+- [Life @ PointClickCare: Hailey Cortina | PointClickCare](https://pointclickcare.com/blog/life-at-pointclickcare/life-pointclickcare-hailey-cortina/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/5995529221.png`
+  - Highlight count: 7; score: 21
+- [Long Term Care Pharmacy Solutions | PointClickCare](https://pointclickcare.com/industry-solutions/long-term-care-ltc-pharmacy-software/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/9cb9d334ef.png`
+  - Highlight count: 9; score: 27
+- [Medication Management Software for Group Homes | PointClickCare](https://pointclickcare.com/industry-solutions/group-home-behavioral-health-software/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/fd3b38ec45.png`
+  - Highlight count: 7; score: 25
+- [People of PointClickCare: Alexis Aipperspach | PointClickCare](https://pointclickcare.com/blog/life-at-pointclickcare/people-of-pointclickcare/alexis-aipperspach/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/b3dbd648ab.png`
+  - Highlight count: 7; score: 21
+- [People of PointClickCare: Amandeep Vaid | PointClickCare](https://pointclickcare.com/blog/life-at-pointclickcare/people-of-pointclickcare/amandeep-vaid/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/7f1209044b.png`
+  - Highlight count: 7; score: 26
+- [People of PointClickCare: Claire Stephens | PointClickCare](https://pointclickcare.com/blog/life-at-pointclickcare/people-of-pointclickcare/claire-stephens/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/07ef6b280e.png`
+  - Highlight count: 7; score: 21
+- [People of PointClickCare: Gabe Paine | PointClickCare](https://pointclickcare.com/blog/life-at-pointclickcare/people-of-pointclickcare/gabe-paine/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/5c8103356f.png`
+  - Highlight count: 7; score: 21
+- [People of PointClickCare: Hamad Husainy | PointClickCare](https://pointclickcare.com/blog/life-at-pointclickcare/people-of-pointclickcare/hamad-husainy/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/78a5295094.png`
+  - Highlight count: 7; score: 25
+- [Practice Groups | PointClickCare](https://pointclickcare.com/industry-solutions/practice-groups/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/1ca18dafd1.png`
+  - Highlight count: 7; score: 22
+- [Senior Living Software Solutions | PointClickCare](https://pointclickcare.com/industry-solutions/senior-living/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/314536ed8f.png`
+  - Highlight count: 9; score: 32
+- [Senior Living Technology Trends: How Tech Helps Manage Acuity Levels](https://pointclickcare.com/blog/our-markets/senior-living/caring-acuity-levels-tech-eases-pain/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/65dcdf22bf.png`
+  - Highlight count: 7; score: 25
+- [Smallest Details Have the Biggest Senior Living Impact | PointClickCare](https://pointclickcare.com/blog/our-markets/senior-living/details-have-senior-living-impact/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/a13be278d5.png`
+  - Highlight count: 7; score: 24
+- [SNF Software | PointClickCare](https://pointclickcare.com/industry-solutions/skilled-nursing/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/eff5bd9f51.png`
+  - Highlight count: 7; score: 26
+- [SNF Staff Shortage Solution | PointClickCare](https://pointclickcare.com/industry-solutions/skilled-nursing/adopting-technology-manage-staffing-shortage/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/5285c5d96c.png`
+  - Highlight count: 11; score: 24
+- [The Advantages of Analytics in Senior Living | PointClickCare Blog](https://pointclickcare.com/blog/innovation/advantages-of-analytics-in-assisted-living/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/c1aa73be09.png`
+  - Highlight count: 7; score: 27
+- [Value Based Care Solutions for ACOs | PointClickCare](https://pointclickcare.com/industry-solutions/provider/acos-risk-bearing-providers/value-based-care-acos/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/20679547a5.png`
+  - Highlight count: 7; score: 24
+- [What the End of the PHE Means for ACOs and the SNF 3-Day Waiver | PointClickCare](https://pointclickcare.com/blog/our-markets/providers/acos/end-of-phe-impact-acos-snf-three-day-waiver/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/8a4fe1b52f.png`
+  - Highlight count: 7; score: 21
+- [Why Risk-Bearing Entities Need Strong Health IT Solutions for Value-Based Care | PointClickCare](https://pointclickcare.com/blog/our-markets/providers/acos/why-risk-bearing-entities-need-strong-health-it-solutions-value-based-care/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/pointclickcare/276f4eb855.png`
+  - Highlight count: 8; score: 26
+
+### PolicyMap
+
+- [PolicyMap | Mapping, Analytics, and Data Visualization](https://www.policymap.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/policymap/7861b8e693.png`
+  - Highlight count: 1; score: 18
+
+### Precision AQ
+
+- [AI in the EHR: What's in Use Today, What's Emerging And How Pharma Can Respond](https://www.precisionaq.com/reports/ai-in-the-ehr-whats-in-use-today-whats-emerging-and-how-pharma-can-respond)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/precision-aq/337052827e.png`
+  - Highlight count: 9; score: 95
+- [Chart of the Month – AI’s role in pharma–HCP interactions: perception vs reality](https://www.precisionaq.com/en-gb/blog/chart-of-the-month-ais-role-in-pharma-hcp-interactions-perception-vs-reality)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/precision-aq/991f206414.png`
+  - Highlight count: 6; score: 56
+- [How Health Systems Are Using AI In Clinical Decision-Making](https://www.precisionaq.com/reports/how-health-systems-are-using-ai-in-clinical-decision-making)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/precision-aq/497c12f3af.png`
+  - Highlight count: 21; score: 189
+- [Impact of Proposed Medicaid Cuts on Health Care Stakeholders](https://www.precisionaq.com/blog/impact-of-proposed-medicaid-cuts-on-health-care-stakeholders)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/precision-aq/2530592bfc.png`
+  - Highlight count: 2; score: 26
+- [Innovation, Personalization, and the Future of Oncology: How AI Is Transforming Cancer Care](https://www.precisionaq.com/blog/innovation-personalization-and-the-future-of-oncology-how-ai-is-transforming-cancer-care)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/precision-aq/bc36b223ec.png`
+  - Highlight count: 39; score: 333
+- [Lessons From MAPS 2026 On Turning AI Into Action](https://www.precisionaq.com/blog/lessons-from-maps-2026-ai)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/precision-aq/ae71f4217f.png`
+  - Highlight count: 9; score: 96
+- [Navigating 340B and Rebates: Challenges, Solutions, and the Path Forward](https://www.precisionaq.com/blog/navigating-340b-and-rebates-challenges-solutions-and-the-path-forward)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/precision-aq/cdf38bd581.png`
+  - Highlight count: 3; score: 34
+- [The Price Reckoning Series Part 2: How Patient Services Became Pharma’s Lifeline](https://www.precisionaq.com/blog/patient-services-pharma-revenue)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/precision-aq/811cd57858.png`
+  - Highlight count: 14; score: 86
+
+### Premier Applied Sciences
+
+- [AP Automation: Driving Savings, Revenue and More in Healthcare Supply Chain](https://premierinc.com/newsroom/ap-automation-driving-savings-revenue-and-more-in-healthcare-supply-chain)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/premier-applied-sciences/59c3e4a4c8.png`
+  - Highlight count: 28; score: 37
+- [Cracking the HCC Code: Sparrow Health Utilizes Premier's Stanson Health to Improve Risk Scores and Engage Providers in the EHR Workflow](https://premierinc.com/newsroom/cracking-the-hcc-code-sparrow-health-utilizes-pinc-ai-stanson-to-improve-risk-scores-and-engage-providers-in-the-ehr-workflow)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/premier-applied-sciences/99ed9f2b0c.png`
+  - Highlight count: 5; score: 39
+- [Driving Sustainable Clinical Transformation with Artificial Intelligence](https://premierinc.com/newsroom/driving-sustainable-clinical-transformation-with-artificial-intelligence)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/premier-applied-sciences/52b40bd511.png`
+  - Highlight count: 34; score: 275
+- [From Recapture to Revalidation: Premier Stanson’s Trailblazing Approach to HCC Coding](https://premierinc.com/newsroom/from-recapture-to-revalidation-pinc-ai-stansons-trailblazing-approach-to-hcc-coding)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/premier-applied-sciences/2b43820d10.png`
+  - Highlight count: 7; score: 47
+- [How Payer-Provider Collaboration Can be Improved with Premier Stanson Technology](https://premierinc.com/newsroom/how-payer-provider-collaboration-can-be-improved-with-pinc-ai-stanson-technology)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/premier-applied-sciences/c6b9b6a8d0.png`
+  - Highlight count: 6; score: 63
+- [Premier Advocates for Improved Supply Chain Cybersecurity](https://premierinc.com/newsroom/premier-advocates-for-improved-supply-chain-cybersecurity)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/premier-applied-sciences/88f7a36d3b.png`
+  - Highlight count: 2; score: 31
+- [Premier Launches Large-Scale, Multi-Year Technology Investment Program to Build an Intelligent Healthcare Supply Chain of the Future](https://premierinc.com/newsroom/premier-launches-large-scale-multi-year-technology-investment-program-to-build-an-intelligent-healthcare-supply-chain-of-the-future-)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/premier-applied-sciences/77cfae1222.png`
+  - Highlight count: 6; score: 64
+- [Premier Offers AI Policy Recommendations to House Health Subcommittee](https://premierinc.com/newsroom/premier-offers-ai-policy-recommendations-to-house-subcommittee)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/premier-applied-sciences/ad9dbda6c9.png`
+  - Highlight count: 11; score: 108
+- [Premier Weighs in with Senate Committee on White House AI Action Plan](https://premierinc.com/newsroom/premier-weighs-in-with-senate-committee-on-white-house-ai-action-plan)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/premier-applied-sciences/a4aafa784c.png`
+  - Highlight count: 11; score: 108
+- [Technology-Driven Healthcare Performance Improvement](https://premierinc.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/premier-applied-sciences/b26b47ab45.png`
+  - Highlight count: 4; score: 29
+
+### Red Nucleus
+
+- [Value & Evidence | Red Nucleus](https://rednucleus.com/heor-and-rwe-solutions/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/red-nucleus/09463a06c3.png`
+  - Highlight count: 2; score: 39
+
+### RTI Health Solutions
+
+- [Health Outcomes Research and Real-World Evidence](https://www.rtihs.org/value-access-and-heor/outcomes-research)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/rti-health-solutions/f63ea7dced.png`
+  - Highlight count: 1; score: 25
+- [Life Science Consulting Services: RTI Health Solutions](https://www.rtihs.org/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/rti-health-solutions/a2993c451c.png`
+  - Highlight count: 5; score: 50
+- [Using AI to Advance Evidence Synthesis](https://www.rtihs.org/resource/insight/evidence-synthesis-ai-tools)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/rti-health-solutions/d1f6ee19f3.png`
+  - Highlight count: 43; score: 361
+
+### SimulStat
+
+- [Senior/Principal Platform Engineer (Clinical Analytics) - Remote](https://www.simulstat.com/job/1050-senior-principal-platform-engineer-clinical-analytics-remote/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/simulstat/40221b79e8.png`
+  - Highlight count: 6; score: 53
+- [Staffing Solutions | Biostatistics Jobs | Epidemiologist Jobs | Simulstat](https://www.simulstat.com/staffing-solutions/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/simulstat/188d7e3a35.png`
+  - Highlight count: 3; score: 31
+
+### Stage Analytics
+
+- [Life Science Data Analytics Solutions | Stage Analytics](https://stageanalytics.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/stage-analytics/a095c5e2e4.png`
+  - Highlight count: 5; score: 24
+- [Publications | Stage Analytics](https://stageanalytics.com/publications)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/stage-analytics/cc44f54afa.png`
+  - Highlight count: 4; score: 24
+
+### Target RWE
+
+- [Publications](https://www.targetrwe.com/research/publications/?accid=a1117&dataid=c5264)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/target-rwe/d3c18e6463.png`
+  - Highlight count: 6; score: 23
+
+### Tempus
+
+- [CancerLinQ Engages Leading Technology Companies Tempus and Precision HealthAI to Accelerate Data-Driven Insights to Oncologists and the Cancer Care Community - Tempus](https://www.tempus.com/news/pr/cancerlinq-engages-leading-technology-companies-tempus-and-precision-healthai-to-accelerate-data-driven-insights-to-oncologists-and-the-cancer-care-community/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/tempus/f7c0328a10.png`
+  - Highlight count: 11; score: 66
+- [FDA Grants Breakthrough Device Designation To Tempus' Atrial Fibrillation ECG Analysis Platform, Developed in Collaboration With Geisinger - Tempus](https://www.tempus.com/news/pr/fda-grants-breakthrough-device-designation-to-tempus-atrial-fibrillation-ecg-analysis-platform-developed-in-collaboration-with-geisinger/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/tempus/9bc670ea3c.png`
+  - Highlight count: 10; score: 50
+- [Researchers Find AI Can Predict New Atrial Fibrillation, Stroke Risk - Tempus](https://www.tempus.com/news/pr/researchers-find-ai-can-predict-new-atrial-fibrillation-stroke-risk/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/tempus/4cfa48439c.png`
+  - Highlight count: 12; score: 62
+- [Tempus and Feist-Weiller Cancer Center at LSU Health Shreveport Announce Brain Cancer Research Collaboration - Tempus](https://www.tempus.com/news/pr/tempus-and-feist-weiller-cancer-center-at-lsu-health-shreveport-announce-brain-cancer-research-collaboration/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/tempus/7f3554ee7c.png`
+  - Highlight count: 6; score: 21
+- [Tempus and Geisinger Find ECG-Based AI Model Can Predict Undiagnosed Structural Heart Disease - Tempus](https://www.tempus.com/news/pr/tempus-and-geisinger-find-ecg-based-ai-model-can-predict-undiagnosed-structural-heart-disease/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/tempus/cab38593ee.png`
+  - Highlight count: 16; score: 108
+- [Tempus Announces $130M Raised - Tempus](https://www.tempus.com/news/pr/tempus-announces-130m-raised/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/tempus/94e6449dd7.png`
+  - Highlight count: 8; score: 42
+- [Tempus Announces (TIME) Trial Service, a New Integrated Molecular Evaluation that Leverages Artificial Intelligence to Rapidly Match Cancer Patients to Clinical Trials - Tempus](https://www.tempus.com/news/pr/tempus-announces-time-trial-service-a-new-integrated-molecular-evaluation-that-leverages-artificial-intelligence-to-rapidly-match-cancer-patients-to-clinical-trials/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/tempus/58d33fe2f5.png`
+  - Highlight count: 7; score: 31
+- [Tempus Announces Agreement with Janssen R&D to Leverage AI/ML and Real-World Evidence to Enhance the Discovery and Development of Oncology Therapies - Tempus](https://www.tempus.com/news/pr/tempus-announces-agreement-with-janssen-rd-to-leverage-ai-ml-and-real-world-evidence-to-enhance-the-discovery-and-development-of-oncology-therapies/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/tempus/23b9cfdc6f.png`
+  - Highlight count: 15; score: 111
+- [Tempus Announces Agreement With the United States Department of Veterans Affairs National Precision Oncology Program To Expand Access to Genomic Testing for Veterans With Cancer - Tempus](https://www.tempus.com/news/pr/tempus-announces-agreement-with-the-united-states-department-of-veterans-affairs-national-precision-oncology-program-to-expand-access-to-genomic-testing-for-veterans-with-cancer/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/tempus/36dadc3fc2.png`
+  - Highlight count: 8; score: 34
+- [Tempus Announces New Subscription Service for Pharma, Biotech and Academic Researchers - Tempus](https://www.tempus.com/news/pr/tempus-announces-new-subscription-service-for-pharma-biotech-and-academic-researchers/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/tempus/a1883a9d49.png`
+  - Highlight count: 8; score: 42
+- [Tempus Announces Open Enrollment for Study in Collaboration with GSK to Evaluate Niraparib in Advanced Solid Tumor Patients with PALB2 Mutations - Tempus](https://www.tempus.com/news/pr/tempus-announces-open-enrollment-for-study-in-collaboration-with-gsk-to-evaluate-niraparib-in-advanced-solid-tumor-patients-with-palb2-mutations/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/tempus/2cd5d0797d.png`
+  - Highlight count: 7; score: 31
+- [Tempus Announces Research Collaboration with Intermountain Healthcare to Advance Precision Oncology Research - Tempus](https://www.tempus.com/news/pr/tempus-announces-research-collaboration-with-intermountain-healthcare-to-advance-precision-oncology-research/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/tempus/9de202c903.png`
+  - Highlight count: 7; score: 29
+- [Tempus Announces the Addition of Dr. Kimberly Blackwell as Chief Medical Officer and Dr. Kenneth Carson as Vice President of Clinical Solutions - Tempus](https://www.tempus.com/news/pr/tempus-announces-the-addition-of-dr-kimberly-blackwell-as-chief-medical-officer-and-dr-kenneth-carson-as-vice-president-of-clinical-solutions/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/tempus/82e41746f6.png`
+  - Highlight count: 7; score: 29
+- [Tempus CE Marks Its Broad-Panel Genomic Sequencing and Algorithmic Diagnostic Tests - Tempus](https://www.tempus.com/news/pr/tempus-ce-marks-its-broad-panel-genomic-sequencing-and-algorithmic-diagnostic-tests/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/tempus/1627ec7c48.png`
+  - Highlight count: 7; score: 33
+- [Tempus Expands Its Management Team with the Appointment of Lauren Silvis as Senior Vice President of External Affairs - Tempus](https://www.tempus.com/news/pr/tempus-expands-its-management-team-with-the-appointment-of-lauren-silvis-as-senior-vice-president-of-external-affairs/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/tempus/ad6fe68ab3.png`
+  - Highlight count: 8; score: 39
+- [Tempus Introduces A New, Predictive Diagnostic Test to its Growing Collection of Algorithms - Tempus](https://www.tempus.com/news/pr/tempus-introduces-a-new-predictive-diagnostic-test-to-its-growing-collection-of-algorithms/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/tempus/d6db520437.png`
+  - Highlight count: 7; score: 33
+- [Tempus Launches COVID-19-Specific Clinical and Research Initiatives for Oncology - Tempus](https://www.tempus.com/news/pr/tempus-launches-covid-19-specific-clinical-and-research-initiatives-for-oncology/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/tempus/616df8d1ae.png`
+  - Highlight count: 7; score: 26
+- [Tempus Selected as Sequencing and Analytics Provider by the Prostate Cancer Clinical Trials Consortium forPhase II Clinical Trial - Tempus](https://www.tempus.com/news/pr/tempus-selected-as-sequencing-and-analytics-provider-by-the-prostate-cancer-clinical-trials-consortium-forphase-ii-clinical-trial/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/tempus/22678db74b.png`
+  - Highlight count: 6; score: 25
+- [Tempus Teams with Major Academic Medical Center to Advance Treatment Options for Patients Diagnosed with Aggressive Brain Cancer - Tempus](https://www.tempus.com/news/pr/tempus-teams-with-major-academic-medical-center-to-advance-treatment-options-for-patients-diagnosed-with-aggressive-brain-cancer/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/tempus/3376576fec.png`
+  - Highlight count: 6; score: 21
+- [Tempus to Launch Largest Clinically Available Liquid Biopsy Panel, xF+ - Tempus](https://www.tempus.com/news/pr/tempus-to-launch-largest-clinically-available-liquid-biopsy-panel-xf/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/tempus/c82f9340ae.png`
+  - Highlight count: 7; score: 28
+- [Tempus Unveils A Breakthrough in AI for Oncologists: Tempus ONE - Tempus](https://www.tempus.com/news/pr/tempus-unveils-a-breakthrough-in-ai-for-oncologists-tempus-one/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/tempus/c503fe8519.png`
+  - Highlight count: 10; score: 61
+- [Tempus Unveils AI-Enabled Smart Tests Across Disease Types - Tempus](https://www.tempus.com/news/pr/tempus-unveils-ai-enabled-smart-tests-across-disease-types/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/tempus/69a98a98b1.png`
+  - Highlight count: 11; score: 74
+- [Tempus Unveils Its Lens Platform, Offering Unparalleled Access to One of the World's Largest De-Identified Clinical and Molecular Datasets - Tempus](https://www.tempus.com/news/pr/tempus-unveils-its-lens-platform-offering-unparalleled-access-to-one-of-the-worlds-largest-de-identified-clinical-and-molecular-datasets/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/tempus/0be82bcaca.png`
+  - Highlight count: 10; score: 50
+- [Tempus Unveils Tempus O, a Platform to Structure and Annotate Clinical Data at Scale - Tempus](https://www.tempus.com/news/pr/tempus-unveils-tempus-o-a-platform-to-structure-and-annotate-clinical-data-at-scale/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/tempus/8211c75f60.png`
+  - Highlight count: 7; score: 34
+- [Tempus Unveils Tempus xT, 595 Gene Panel Aimed at Empowering Data-Driven Cancer Care - Tempus](https://www.tempus.com/news/pr/tempus-unveils-tempus-xt-595-gene-panel-aimed-at-empowering-data-driven-cancer-care/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/tempus/9a81a67958.png`
+  - Highlight count: 6; score: 27
+- [Tempus | AI-Powered Precision Medicine & Genomic Testing](https://www.tempus.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/tempus/9a605748ac.png`
+  - Highlight count: 12; score: 58
+- [Tempus' Edge Platform Leverages Data & AI to Identify Therapeutic Options for Patients Earlier in the Treatment Journey - Tempus](https://www.tempus.com/news/pr/tempus-edge-platform-leverages-data-ai-to-identify-therapeutic-options-for-patients-earlier-in-the-treatment-journey/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/tempus/3fdf561f90.png`
+  - Highlight count: 18; score: 121
+
+### Thermo Fisher Scientific
+
+- [Digital Services & Support Ecosystem | Thermo Fisher Scientific - US](https://www.thermofisher.com/us/en/home/products-and-services/services/services-support-life-sciences-instruments/digital-service-innovations.html)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/thermo-fisher-scientific/0271d80532.png`
+  - Highlight count: 1; score: 17
+
+### Trinity Life Sciences
+
+- [AI for Market Access: ISPOR 2023 Takeaways & Future Opportunities](https://trinitylifesciences.com/blog/the-future-of-ai-for-market-access-an-ispor-us-2023-recap/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/trinity-life-sciences/a9af5466b2.png`
+  - Highlight count: 32; score: 277
+- [AI Readiness Benchmark for Life Sciences | TGaS Advisors](https://trinitylifesciences.com/ai-readiness-benchmark-tgas-advisors/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/trinity-life-sciences/ca9adad234.png`
+  - Highlight count: 14; score: 118
+- [AI-Driven Call Planning: Boosting Pharma Field Team Impact](https://trinitylifesciences.com/blog/field-teams-ai-driven-call-planning/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/trinity-life-sciences/5770780338.png`
+  - Highlight count: 19; score: 164
+- [AI-Ready Data and the Life Sciences Context Layer](https://trinitylifesciences.com/blog/ai-context-layer-ai-ready-data/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/trinity-life-sciences/1b554c2c6f.png`
+  - Highlight count: 54; score: 455
+- [AIML Patient Finding: Accelerating Rare Disease Diagnosis & Access](https://trinitylifesciences.com/blog/aiml-based-patient-finding-threading-the-needle-in-the-haystack/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/trinity-life-sciences/9f4e07e9fe.png`
+  - Highlight count: 6; score: 54
+- [Biotech Solutions | Strategy & Analytics for Growth | Trinity](https://trinitylifesciences.com/services/industry/biotech/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/trinity-life-sciences/6545c1e772.png`
+  - Highlight count: 7; score: 63
+- [Brand Optimization Solutions | Trinity Life Sciences](https://trinitylifesciences.com/services/commercialization-stage/brand-optimization/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/trinity-life-sciences/d0175c61ff.png`
+  - Highlight count: 7; score: 56
+- [Can GenAI Improve Data Operations Efficiency in Life Sciences?](https://trinitylifesciences.com/blog/can-genai-be-used-to-improve-data-operations-efficiency/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/trinity-life-sciences/f2554fb13b.png`
+  - Highlight count: 18; score: 132
+- [Climate Resilience in Life Sciences: 2025 Insights & Sustainability Trends](https://trinitylifesciences.com/blog/learnings-to-kick-start-2025-climate-resilience-and-environmental-sustainability/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/trinity-life-sciences/badce51ecc.png`
+  - Highlight count: 4; score: 33
+- [Corporate & Portfolio Strategy | Maximize Market Impact | Trinity Life Sciences](https://trinitylifesciences.com/services/corporate-and-portfolio-strategy/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/trinity-life-sciences/204d457f81.png`
+  - Highlight count: 5; score: 40
+- [Early China Launch of PIASKY®: PNH Market Entry and Access Trends](https://trinitylifesciences.com/blog/early-china-launch-of-piasky-in-the-fight-against-pnh/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/trinity-life-sciences/6d7e4711a7.png`
+  - Highlight count: 4; score: 33
+- [FDA Approves Paige Prostate: AI-Driven Cancer Diagnosis Tool](https://trinitylifesciences.com/blog/ai-paige-prostate-granted-fda-approval/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/trinity-life-sciences/6aa7082fad.png`
+  - Highlight count: 8; score: 75
+- [GenAI for Insights & Analytics: Future-Proofing Pharma Research](https://trinitylifesciences.com/blog/insights-analytics-in-life-sciences-how-to-embrace-a-future-with-generative-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/trinity-life-sciences/3ab709ba5c.png`
+  - Highlight count: 29; score: 244
+- [Global AI Medical Devices: 2025 Innovation Trends & Clinical Impact](https://trinitylifesciences.com/blog/the-next-wave-of-global-ai-medical-devices-innovation-in-action/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/trinity-life-sciences/4af1f43e27.png`
+  - Highlight count: 40; score: 328
+- [How Agentic AI Will Reshape Life Sciences by 2028](https://trinitylifesciences.com/agentic-ai-reshaping-life-sciences/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/trinity-life-sciences/778ab4135e.png`
+  - Highlight count: 22; score: 187
+- [IRA Maximum Fair Price: Round 2 Trends and Implications for Pharma](https://trinitylifesciences.com/blog/maximum-fair-price-round-2-passing-the-baton/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/trinity-life-sciences/2134a3c1ed.png`
+  - Highlight count: 4; score: 30
+- [Italy 2024: AIFA Restructuring & Budget Reforms for Pharma Access](https://trinitylifesciences.com/blog/rise-with-the-waves-italy-aifa-restructuring-and-budget-reforms/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/trinity-life-sciences/9aa9b092ea.png`
+  - Highlight count: 4; score: 31
+- [Kaiser Adds Digital Therapeutics to Behavioral Health—No Extra Cost](https://trinitylifesciences.com/blog/kaiser-integrates-dtx-into-the-behavioral-health-treatment-paradigm/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/trinity-life-sciences/bcc842845c.png`
+  - Highlight count: 4; score: 30
+- [Life Sciences Launch Solutions | Trinity Life Sciences](https://trinitylifesciences.com/services/commercialization-stage/launch/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/trinity-life-sciences/31fa7e26f8.png`
+  - Highlight count: 6; score: 53
+- [Medical Affairs Engagement: Omnichannel Strategies for Life Sciences](https://trinitylifesciences.com/blog/medical-affairs-ce-whats-next/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/trinity-life-sciences/89c59a6733.png`
+  - Highlight count: 6; score: 39
+- [Operationalizing GenAI: Everest Group Highlights Trinity’s Expertise](https://trinitylifesciences.com/blog/operationalizing-genai-everest-group/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/trinity-life-sciences/822cb14fa7.png`
+  - Highlight count: 37; score: 306
+- [Pipeline & Pre-Commercial Solutions | Trinity Life Sciences](https://trinitylifesciences.com/services/commercialization-stage/pipeline-and-precommercial/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/trinity-life-sciences/7de34cb40a.png`
+  - Highlight count: 7; score: 58
+- [Trinity Named Everest Group Leader in 2025 Life Sciences AI](https://trinitylifesciences.com/blog/leader-everest-group-2025-ai-analytics/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/trinity-life-sciences/348b0b8909.png`
+  - Highlight count: 19; score: 167
+- [Trinity | Powering Life Sciences Commercialization](https://trinitylifesciences.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/trinity-life-sciences/1d098af513.png`
+  - Highlight count: 7; score: 61
+- [Verily Acquires SignalPath: Advancing Clinical Research Platforms](https://trinitylifesciences.com/blog/verily-to-acquire-signalpath-expanding-the-companys-clinical-research-capabilities/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/trinity-life-sciences/fa574629bc.png`
+  - Highlight count: 4; score: 38
+
+### Truveta
+
+- [A pragmatic suggestion for medical AI regulation | Truveta](https://www.truveta.com/blog/news/medical-ai-regulation/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/truveta/b4e18ff755.png`
+  - Highlight count: 26; score: 223
+- [Advancing clinical information extraction with LLM-Augmenter | Truveta](https://www.truveta.com/blog/research/advancing-clinical-information-extraction-with-llm-augmenter/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/truveta/7fdbbc845f.png`
+  - Highlight count: 17; score: 159
+- [Advancing research with detailed clinical notes and medical images](https://www.truveta.com/blog/news/expanded-clinical-notes-medical-images-clinical-led-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/truveta/1e6d5e15df.png`
+  - Highlight count: 4; score: 47
+- [AI and imaging improve body composition research | Truveta](https://www.truveta.com/blog/research/ai-imaging-body-composition-research/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/truveta/ad8cffb9be.png`
+  - Highlight count: 8; score: 77
+- [Benchmarking AI Model Quality for Clinical Concept Extraction](https://www.truveta.com/blog/news/ai-quality-clinical-concept-extraction/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/truveta/c590d33c29.png`
+  - Highlight count: 9; score: 90
+- [Early cancer detection and real-world data](https://www.truveta.com/blog/news/pancreatic-cancer-early-detection-real-world-data-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/truveta/8b1cb56f0b.png`
+  - Highlight count: 1; score: 21
+- [EHR data and analytics | Truveta](https://www.truveta.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/truveta/0dbfe9587a.png`
+  - Highlight count: 1; score: 18
+- [Enhancing BERT with LLM-generated annotations | Truveta](https://www.truveta.com/blog/research/ai-enhancing-bert-llms/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/truveta/928741b18e.png`
+  - Highlight count: 41; score: 354
+- [Introducing the Truveta platform and new COVID-19 insights | Truveta](https://www.truveta.com/blog/news/introducing-the-truveta-platform-and-new-covid-19-insights/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/truveta/286b26ebea.png`
+  - Highlight count: 2; score: 26
+- [Our journey of applying generative AI to advance healthcare | Truveta](https://www.truveta.com/blog/news/applying-generative-ai-to-advance-healthcare/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/truveta/f1c14fec2c.png`
+  - Highlight count: 27; score: 242
+- [Revolutionizing patient care with AI in healthcare | Truveta](https://www.truveta.com/blog/news/ai-in-healthcare-revolutionizing-patient-care/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/truveta/155eba5a49.png`
+  - Highlight count: 14; score: 130
+- [Scaling AI models for growth | Truveta](https://www.truveta.com/blog/news/scaling-ai-models-for-growth/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/truveta/7e7fe7ba9b.png`
+  - Highlight count: 9; score: 89
+- [Truveta named SXSW Innovation Award finalist for AI-enabled health research](https://www.truveta.com/blog/news/sxsw-innovation-awards-ai-finalist-2024/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/truveta/0a0a34a4b0.png`
+  - Highlight count: 15; score: 142
+- [Truveta wins SXSW Innovation Award for Artificial Intelligence | Truveta](https://www.truveta.com/blog/news/truveta-wins-sxsw-innovation-awards-ai/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/truveta/c9fd37fc20.png`
+  - Highlight count: 5; score: 55
+- [Why health AI must be grounded in patient outcomes](https://www.truveta.com/blog/news/intelligence-evidence-health-ai-grounded-in-outcomes/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/truveta/e6c14e2786.png`
+  - Highlight count: 14; score: 128
+
+### United BioSource LLC (UBC)
+
+- [AI Evolution in Patient Access & Support Services - UBC](https://ubc.com/resources/how-ai-could-impact-patient-services/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/united-biosource-llc-ubc/92c042e0ba.png`
+  - Highlight count: 26; score: 235
+- [Evidence Development Resources - UBC](https://ubc.com/evidence-development-solutions-resources/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/united-biosource-llc-ubc/eba1d900c3.png`
+  - Highlight count: 3; score: 37
+- [Principles for Tailored Patient Access – White Paper – UBC](https://ubc.com/resources/tailored-patient-access-whitepaper/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/united-biosource-llc-ubc/e126f9dece.png`
+  - Highlight count: 4; score: 49
+- [The Future of AI in Pharmacovigilance (PV) | UBC Blog](https://ubc.com/insights/the-future-of-ai-in-pv/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/united-biosource-llc-ubc/94095af314.png`
+  - Highlight count: 18; score: 137
+- [UBC Acquires Evidinno to Expand Real-World Evidence | UBC](https://ubc.com/news/ubc-acquires-evidinno-outcomes-research-expanding-real-world-evidence-and-heor-capabilities/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/united-biosource-llc-ubc/2d0a0cb751.png`
+  - Highlight count: 1; score: 33
+- [Uniting Evidence and Access - UBC](https://ubc.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/united-biosource-llc-ubc/1b01451c0c.png`
+  - Highlight count: 1; score: 31
+
+### Value Analytics Labs
+
+- [A Showcase of Innovation and Excellence at ISPOR Europe 2024 – Value Analytics Labs](https://www.valueanalyticslabs.com/a-showcase-of-innovation-and-excellence-at-ispor-europe-2024-5221/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/value-analytics-labs/c115705ae3.png`
+  - Highlight count: 33; score: 290
+- [America’s COVID Deaths May Be Equivalent to a 9/11 Every Day by Christmas – Value Analytics Labs](https://www.valueanalyticslabs.com/americas-covid-deaths-may-be-equivalent-to-a-9-11-every-day-by-christmas-4981/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/value-analytics-labs/b4d1ddd079.png`
+  - Highlight count: 2; score: 29
+- [Application Form – Value Analytics Labs](https://www.valueanalyticslabs.com/careers/application-form/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/value-analytics-labs/ef11c5085b.png`
+  - Highlight count: 2; score: 30
+- [Application of Machine Learning Methodologies – Value Analytics Labs](https://www.valueanalyticslabs.com/application-of-machine-learning-methodologies/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/value-analytics-labs/c0c7fdc151.png`
+  - Highlight count: 14; score: 132
+- [As Cancer Drugs’ Prices Skyrocket, Experts Worry About Burden On Patients, Health Systems – Value Analytics Labs](https://www.valueanalyticslabs.com/as-cancer-drugs-prices-skyrocket-experts-worry-about-burden-on-patients-health-systems-4987/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/value-analytics-labs/24f43ab023.png`
+  - Highlight count: 2; score: 29
+- [Blog – Value Analytics Labs](https://www.valueanalyticslabs.com/blog/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/value-analytics-labs/82f84f54e7.png`
+  - Highlight count: 17; score: 162
+- [Blog – Value Analytics Labs](https://www.valueanalyticslabs.com/category/blog/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/value-analytics-labs/a33dc9874f.png`
+  - Highlight count: 22; score: 202
+- [Can Generative AI Rebuild Health Economic Models? Insights from an Ulcerative Colitis Case Study – Value Analytics Labs](https://www.valueanalyticslabs.com/can-generative-ai-rebuild-health-economic-models-5270/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/value-analytics-labs/7a829664e6.png`
+  - Highlight count: 22; score: 209
+- [Careers – Value Analytics Labs](https://www.valueanalyticslabs.com/careers/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/value-analytics-labs/d18a88a8f4.png`
+  - Highlight count: 2; score: 33
+- [CC Geo-Analyzer – Value Analytics Labs](https://www.valueanalyticslabs.com/cc-geo-analyzer/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/value-analytics-labs/9f25690619.png`
+  - Highlight count: 2; score: 30
+- [Clinical Trial Support – Value Analytics Labs](https://www.valueanalyticslabs.com/clinical-trial-support/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/value-analytics-labs/dce79603fb.png`
+  - Highlight count: 5; score: 53
+- [Colleges Need to Look Beyond Stopping Parties to Safely Reopen in Spring 2021 – Value Analytics Labs](https://www.valueanalyticslabs.com/colleges-need-to-look-beyond-stopping-parties-to-safely-reopen-in-spring-2021-5003/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/value-analytics-labs/0b54a07e1a.png`
+  - Highlight count: 2; score: 30
+- [Comparative Effectiveness Studies – Value Analytics Labs](https://www.valueanalyticslabs.com/comparative-effectiveness-studies/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/value-analytics-labs/942792d515.png`
+  - Highlight count: 5; score: 58
+- [Contact – Value Analytics Labs](https://www.valueanalyticslabs.com/contact/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/value-analytics-labs/c050c7ff9c.png`
+  - Highlight count: 2; score: 29
+- [Cost-Effectiveness Analysis – Value Analytics Labs](https://www.valueanalyticslabs.com/cost-effectiveness-analysis/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/value-analytics-labs/8da6fe8b88.png`
+  - Highlight count: 2; score: 29
+- [Critical Reports Mount On Hepatitis C Pill Costs – Value Analytics Labs](https://www.valueanalyticslabs.com/critical-reports-mount-on-hepatitis-c-pill-costs-5000/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/value-analytics-labs/46cd0f823a.png`
+  - Highlight count: 2; score: 30
+- [Cutting Prison Hepatitis C Rates: Costly, But Worth It? – Value Analytics Labs](https://www.valueanalyticslabs.com/cutting-prison-hepatitis-c-rates-costly-but-worth-it-4993/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/value-analytics-labs/c11e3b148c.png`
+  - Highlight count: 2; score: 29
+- [EARTH-HCM – Value Analytics Labs](https://www.valueanalyticslabs.com/earth-hcm/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/value-analytics-labs/884845b707.png`
+  - Highlight count: 2; score: 30
+- [Events – Value Analytics Labs](https://www.valueanalyticslabs.com/category/events/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/value-analytics-labs/adc4b6bf8f.png`
+  - Highlight count: 10; score: 98
+- [Featured – Value Analytics Labs](https://www.valueanalyticslabs.com/category/featured/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/value-analytics-labs/d869716f4e.png`
+  - Highlight count: 18; score: 167
+- [Fighting COVID-19 in A Spirit of Solidarity – Value Analytics Labs](https://www.valueanalyticslabs.com/fighting-covid-19-in-a-spirit-of-solidarity/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/value-analytics-labs/a1b6052a9a.png`
+  - Highlight count: 2; score: 30
+- [Footer – Value Analytics Labs](https://www.valueanalyticslabs.com/footer/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/value-analytics-labs/65c7b1536b.png`
+  - Highlight count: 3; score: 37
+- [General – Value Analytics Labs](https://www.valueanalyticslabs.com/category/general/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/value-analytics-labs/b3d7a022e8.png`
+  - Highlight count: 7; score: 73
+- [News – Value Analytics Labs](https://www.valueanalyticslabs.com/category/news/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/value-analytics-labs/11d092dd84.png`
+  - Highlight count: 7; score: 73
+- [Value Analytics Labs](https://www.valueanalyticslabs.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/value-analytics-labs/c79638b6d9.png`
+  - Highlight count: 25; score: 227
+
+### Veradigm
+
+- [5 Domains of the Social Determinants of Health (SDoH) | Veradigm](https://veradigm.com/veradigm-news/5-domains-social-determinants-of-health-sdoh/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/veradigm/9545150f9e.png`
+  - Highlight count: 17; score: 40
+- [Enhancing Clinical Research at the Point of Care | Veradigm](https://veradigm.com/enhancing-clinical-research-at-the-point-of-care/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/veradigm/71aa221a33.png`
+  - Highlight count: 20; score: 64
+- [Health Economics Outcomes Research Improves Care | Veradigm](https://veradigm.com/veradigm-news/health-economics-outcomes-research-heor-improves-patient-care/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/veradigm/a04e4d2f15.png`
+  - Highlight count: 16; score: 38
+- [Identifying Lupus Flares in an EMR-Claims Dataset | Veradigm](https://veradigm.com/veradigm-news/identifying-lupus-flares-in-emr-claims-dataset/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/veradigm/6bbe48b565.png`
+  - Highlight count: 18; score: 48
+- [ISPOR 2020 - Veradigm Examines Care Gaps in Heart Failure | Veradigm News](https://veradigm.com/veradigm-news/ispor-2020-care-gaps-in-heart-failures/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/veradigm/0320ac5b8c.png`
+  - Highlight count: 23; score: 99
+- [RPM Devices: What’s Available and How They Differ | Veradigm](https://veradigm.com/veradigm-news/available-rpm-devices/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/veradigm/29f392bd36.png`
+  - Highlight count: 15; score: 20
+- [Using AI to Improve Patient Care & Clinical Research | Veradigm](https://veradigm.com/veradigm-news/ai-to-improve-patient-care-and-clinical-research/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/veradigm/4d5234e2c5.png`
+  - Highlight count: 56; score: 361
+- [Veradigm® | Data-driven Healthcare Solutions & Insights](https://veradigm.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/veradigm/e6e7f5f7a2.png`
+  - Highlight count: 15; score: 18
+
+### Verana Health
+
+- [A Case Study of How Verana Health Can Help Streamline Patient Recruitment With Data-Driven, AI-Powered Technology | veranahealth.com](https://veranahealth.com/a-case-study-of-how-verana-health-can-help-streamline-patient-recruitment-with-data-driven-ai-powered-technology/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/verana-health/33824a4366.png`
+  - Highlight count: 48; score: 356
+- [Automated machine learning for diagnosis of geographic atrophy and subfoveal involvement using real-world fundus autofluorescence and infrared reflectance images | veranahealth.com](https://veranahealth.com/automated-machine-learning-for-diagnosis-of-geographic-atrophy-and-subfoveal-involvement-using-real-world-fundus-autofluorescence-and-infrared-reflectance-images/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/verana-health/35aad72424.png`
+  - Highlight count: 2; score: 23
+- [EHR data vs. claims data and the power of combining the two real-world data sources | veranahealth.com](https://veranahealth.com/ehr-data-vs-claims-data-and-the-power-of-combining-the-two-real-world-data-sources/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/verana-health/e8f2a5337c.png`
+  - Highlight count: 52; score: 382
+- [Embracing Progress in Health Care Delivery and Clinical Research | veranahealth.com](https://veranahealth.com/embracing-progress-in-health-care-delivery-and-clinical-research/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/verana-health/21a7551ac1.png`
+  - Highlight count: 50; score: 364
+- [Engineering at Work: Verana Health’s New Self-service Platform for Data Labeling to Help Improve Efficiency and Data Quality for Clinical Research | veranahealth.com](https://veranahealth.com/engineering-at-work-verana-healths-new-self-service-platform-for-data-labeling-to-help-improve-efficiency-and-data-quality-for-clinical-research/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/verana-health/4e0be5d015.png`
+  - Highlight count: 62; score: 401
+- [Get to Know Our Quantitative Sciences Team: The Brains Behind Our Data (Aracelis Torres) | veranahealth.com](https://veranahealth.com/get-to-know-our-quantitative-sciences-team-the-brains-behind-our-data-aracelis-torres/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/verana-health/a77c5ba2a5.png`
+  - Highlight count: 50; score: 364
+- [Get to Know Our Quantitative Sciences Team: The Brains Behind Our Data (Derek Lee) | veranahealth.com](https://veranahealth.com/get-to-know-our-quantitative-sciences-team-the-brains-behind-our-data-derek-lee/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/verana-health/8b8215fd70.png`
+  - Highlight count: 49; score: 351
+- [Get to Know Our Quantitative Sciences Team: The Brains Behind Our Data (Iris Chin) | veranahealth.com](https://veranahealth.com/get-to-know-our-quantitative-sciences-team-the-brains-behind-our-data-iris-chin/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/verana-health/cd5236a40d.png`
+  - Highlight count: 50; score: 364
+- [Get to Know Our Quantitative Sciences Team: The Brains Behind Our Data (Kim Le) | veranahealth.com](https://veranahealth.com/get-to-know-our-quantitative-sciences-team-the-brains-behind-our-data-kim-le/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/verana-health/a9e6f85e1b.png`
+  - Highlight count: 52; score: 372
+- [Get to Know Our Quantitative Sciences Team: The Brains Behind Our Data (Kristin Arkin-Leydig) | veranahealth.com](https://veranahealth.com/get-to-know-our-quantitative-sciences-team-the-brains-behind-our-data-kristin-arkin-leydig/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/verana-health/7759addb80.png`
+  - Highlight count: 48; score: 348
+- [Get to Know Our Quantitative Sciences Team: The Brains Behind Our Data (Monica Gierada) | veranahealth.com](https://veranahealth.com/get-to-know-our-quantitative-sciences-team-the-brains-behind-our-data-monica-gierada/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/verana-health/73421469ed.png`
+  - Highlight count: 49; score: 356
+- [How AI is Unlocking Unstructured Healthcare Data to Transform Prostate Cancer Treatment | veranahealth.com](https://veranahealth.com/how-ai-is-unlocking-unstructured-healthcare-data-to-transform-prostate-cancer-treatment/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/verana-health/6fe5f700c4.png`
+  - Highlight count: 7; score: 82
+- [How AI-Powered Analytics and Real-World Evidence Can Improve the Precision of Prostate Cancer Treatment | veranahealth.com](https://veranahealth.com/how-ai-powered-analytics-and-real-world-evidence-can-improve-the-precision-of-prostate-cancer-treatment/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/verana-health/fa4d387e84.png`
+  - Highlight count: 53; score: 396
+- [How Real-World Evidence Can Help Increase Diversity in Clinical Trials | veranahealth.com](https://veranahealth.com/how-real-world-evidence-can-help-increase-diversity-in-clinical-trials/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/verana-health/dd390771a6.png`
+  - Highlight count: 47; score: 340
+- [If AI is a Body, the Data That Powers it is the Blood | veranahealth.com](https://veranahealth.com/if-ai-is-a-body-the-data-that-powers-it-is-the-blood/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/verana-health/59541820da.png`
+  - Highlight count: 59; score: 438
+- [Linking Curated IRIS Registry Data with Claims Data Gives Trial Sponsor Insights into Healthcare Utilization, Global Burden of Rare Eye Disease | veranahealth.com](https://veranahealth.com/linking-curated-iris-registry-data-with-claims-data-gives-trial-sponsor-insights-into-healthcare-utilization-global-burden-of-rare-eye-disease/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/verana-health/055d9c046a.png`
+  - Highlight count: 47; score: 340
+- [Ophthalmic Images Now Available through the Academy IRIS® Registry, Curated at Scale by Verana Health’s VeraQ Engine | veranahealth.com](https://veranahealth.com/ophthalmic-images-now-available-through-the-academy-iris-registry-curated-at-scale-by-verana-healths-veraq-engine/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/verana-health/c1630e4085.png`
+  - Highlight count: 54; score: 396
+- [Qdata® Thyroid Eye Disease Provides Real-World Evidence Analytics to Help Improve Understanding of Rare Condition | veranahealth.com](https://veranahealth.com/qdata-thyroid-eye-disease-provides-real-world-evidence-analytics-to-help-improve-understanding-of-rare-condition/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/verana-health/75e565f9d0.png`
+  - Highlight count: 50; score: 364
+- [The Future of Clinical Development: Verana Health Presents Groundbreaking Research Demonstrating the Use of Real-world Data to Replicate Primary Outcomes Measures | veranahealth.com](https://veranahealth.com/the-future-of-clinical-development-verana-health-presents-groundbreaking-research-demonstrating-the-use-of-real-world-data-to-replicate-primary-outcomes-measures/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/verana-health/ea6d733c4b.png`
+  - Highlight count: 47; score: 340
+- [Using Big Data Analytics to Improve Clinical Trial Recruitment | veranahealth.com](https://veranahealth.com/using-big-data-analytics-to-improve-clinical-trial-recruitment/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/verana-health/85205a51f2.png`
+  - Highlight count: 47; score: 340
+- [Verana Health](https://veranahealth.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/verana-health/b3a6bc640e.png`
+  - Highlight count: 9; score: 84
+- [Verana Health and HealthVerity Partner to Advance Use of Real-World Evidence in Research | veranahealth.com](https://veranahealth.com/verana-health-and-healthverity-partner-to-advance-use-of-real-world-evidence-in-research/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/verana-health/127c430671.png`
+  - Highlight count: 48; score: 348
+- [Verana Health Launches Population Health Data Engine to Accelerate Clinical Research, Advance Medical Care, and Improve Patient Outcomes | veranahealth.com](https://veranahealth.com/verana-health-launches-population-health-data-engine-to-accelerate-clinical-research-advance-medical-care-and-improve-patient-outcomes/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/verana-health/068d77e868.png`
+  - Highlight count: 55; score: 406
+- [Verana Health Partners with Foundation Fighting Blindness to Integrate Genetic Testing Data into Real-World Evidence Research | veranahealth.com](https://veranahealth.com/verana-health-partners-with-foundation-fighting-blindness-to-integrate-genetic-testing-data-into-real-world-evidence-research/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/verana-health/e696b156da.png`
+  - Highlight count: 47; score: 341
+- [Verana Health Partners with Komodo Health to Give Clinical Researchers Deeper Insight into Real-World Patient Journeys | veranahealth.com](https://veranahealth.com/verana-health-partners-with-komodo-health-to-give-clinical-researchers-deeper-insight-into-real-world-patient-journeys-2/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/verana-health/7dc48d3b84.png`
+  - Highlight count: 49; score: 348
+
+### Verantos, Inc.
+
+- [Verantos work in migraine RWE extends lead in AI for neurology](https://verantos.com/news/migraine-manuscripts/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/verantos-inc/f03128bde4.png`
+  - Highlight count: 8; score: 77
+
+### Viver Health LLC
+
+- [ViverHealth | Enhance Patient Engagement Today](https://www.viverhealth.com/)
+  - Screenshot: `ispor26_ai_vendor_screenshots/screenshots/viver-health-llc/25dac07b79.png`
+  - Highlight count: 4; score: 23

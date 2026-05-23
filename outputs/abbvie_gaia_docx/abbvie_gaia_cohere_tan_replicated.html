@@ -1,0 +1,1163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Automated Clinical Document Generation Platform for Pharmaceutical R&amp;D - Rebuilt DOCX Graphics</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    :root {
+      --bg: #050a17;
+      --panel: #07111f;
+      --panel-2: #0a1628;
+      --line: #2c8cff;
+      --line-soft: rgba(44, 140, 255, 0.48);
+      --cyan: #22d4d0;
+      --cyan-soft: rgba(34, 212, 208, 0.72);
+      --magenta: #dc29d9;
+      --purple: #7b4dff;
+      --text: #ffffff;
+      --muted: #c7d3e4;
+      --dim: #8ba2bd;
+      --green: #53d769;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 1600px;
+      min-width: 1600px;
+      background: var(--bg);
+      font-family: "Aptos", "Segoe UI", Arial, Helvetica, sans-serif;
+      scrollbar-width: none;
+    }
+
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+      display: none;
+    }
+
+    .slide {
+      position: relative;
+      width: 1600px;
+      height: 900px;
+      min-height: 900px;
+      overflow: hidden;
+      background: var(--bg);
+      color: var(--text);
+      page-break-after: always;
+      break-after: page;
+    }
+
+    .slide:last-child {
+      page-break-after: auto;
+      break-after: auto;
+    }
+
+    .frame {
+      position: absolute;
+      left: 61px;
+      top: 36px;
+      width: 1478px;
+      height: 828px;
+      background: #050a17;
+      overflow: hidden;
+    }
+
+    .frame.narrow {
+      left: 63px;
+      top: 38px;
+      width: 1474px;
+      height: 824px;
+    }
+
+    .header {
+      position: absolute;
+      left: 54px;
+      top: 33px;
+      right: 44px;
+      height: 58px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      z-index: 5;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--text);
+      font-size: 48px;
+      line-height: 1.02;
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin-top: 13px;
+      color: #3d8cff;
+      font-size: 22px;
+      line-height: 1.18;
+      font-weight: 600;
+    }
+
+    article.slide:nth-of-type(2) .header h1 {
+      font-size: 50px;
+      line-height: 1.04;
+    }
+
+    article.slide:nth-of-type(2) .subtitle {
+      margin-top: 13px;
+      font-size: 23px;
+      line-height: 1.18;
+    }
+
+    svg {
+      display: block;
+    }
+
+    .lucide-icon {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.25;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .lucide-icon use {
+      fill: none;
+      stroke: currentColor;
+    }
+
+    .lucide-sprite {
+      position: absolute;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .icon-circle {
+      width: 78px;
+      height: 78px;
+      border: 2px solid var(--cyan);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--cyan);
+      flex: 0 0 auto;
+    }
+
+    .icon-circle.blue {
+      border-color: #347dff;
+      color: #74a4ff;
+    }
+
+    .icon-circle .lucide-icon {
+      width: 43px;
+      height: 43px;
+    }
+
+    .tiny-icon {
+      width: 48px;
+      height: 48px;
+      color: #ffffff;
+    }
+
+    .thin {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .fill-current {
+      fill: currentColor;
+    }
+
+    .arrow-layer {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    article.slide:nth-of-type(2) .arrow-layer {
+      z-index: 3;
+    }
+
+    .card {
+      border: 2px solid var(--line);
+      border-radius: 9px;
+      background: #06101d;
+    }
+
+    .browser {
+      position: relative;
+      background: #f8fafc;
+      border: 2px solid #24384f;
+      box-shadow: 0 14px 0 rgba(160, 43, 192, 0.86);
+      color: #1a2440;
+      overflow: hidden;
+    }
+
+    .browser::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      height: 24px;
+      background: #f2f5f9;
+      border-bottom: 1px solid #d7dde8;
+    }
+
+    .dots {
+      position: absolute;
+      left: 13px;
+      top: 8px;
+      display: flex;
+      gap: 5px;
+      z-index: 1;
+    }
+
+    .dots span {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #8a95a5;
+    }
+
+    .browser-title {
+      position: absolute;
+      top: 37px;
+      left: 25px;
+      right: 25px;
+      color: #1d2a44;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .screen-line {
+      height: 5px;
+      background: #d5dfef;
+      border-radius: 3px;
+      margin-bottom: 8px;
+    }
+
+    .screen-line.blue {
+      background: #4f8df8;
+    }
+
+    .screen-line.purple {
+      background: #9b4dec;
+    }
+
+    .pill-label {
+      position: relative;
+      min-height: 54px;
+      border: 2px solid var(--magenta);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      padding: 7px 32px 7px 62px;
+      color: #ffffff;
+      font-size: 24px;
+      line-height: 1.05;
+      font-weight: 700;
+      background: #090e1b;
+    }
+
+    .pill-label .badge {
+      position: absolute;
+      right: -15px;
+      top: -20px;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--magenta);
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .pill-label svg {
+      position: absolute;
+      left: 18px;
+      top: 10px;
+      width: 31px;
+      height: 31px;
+      color: #f1f4f9;
+    }
+
+    .bullet {
+      margin: 0;
+      padding-left: 22px;
+      color: #ffffff;
+      font-size: 18px;
+      line-height: 1.22;
+    }
+
+    .bullet li {
+      margin-bottom: 4px;
+    }
+
+    .small-copy {
+      color: #ffffff;
+      font-size: 12px;
+      line-height: 1.32;
+      font-weight: 500;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    @page {
+      size: 1600px 900px;
+      margin: 0;
+    }
+
+    @media print {
+      html,
+      body,
+      .slide {
+        width: 1600px;
+        min-width: 1600px;
+        height: 900px;
+      }
+    }
+
+    /* Cover */
+    .cover-frame {
+      position: absolute;
+      inset: 0;
+      background: #050a17;
+      overflow: hidden;
+    }
+
+    .cover-background {
+      position: absolute;
+      inset: 0;
+      width: 1600px;
+      height: 900px;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+
+    .cover-grid {
+      position: absolute;
+      inset: 0;
+      opacity: 0.32;
+      width: 1600px;
+      height: 900px;
+      }
+
+    .cover-content {
+      position: absolute;
+      left: 118px;
+      top: 128px;
+      width: 1180px;
+      z-index: 3;
+    }
+
+    .cover-kicker {
+      margin-bottom: 42px;
+      color: var(--cyan);
+      font-size: 17px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .cover-title {
+      margin: 0;
+      color: #ffffff;
+      font-size: 82px;
+      line-height: 0.98;
+      font-weight: 500;
+      letter-spacing: 0;
+      max-width: 1120px;
+    }
+
+    .cover-subtitle {
+      width: 790px;
+      margin: 36px 0 0;
+      color: #c7d3e4;
+      font-size: 27px;
+      line-height: 1.32;
+      font-weight: 500;
+    }
+
+    .cover-accent {
+      position: absolute;
+      left: 118px;
+      bottom: 92px;
+      display: grid;
+      grid-template-columns: repeat(3, 286px);
+      gap: 24px;
+      z-index: 3;
+    }
+
+    .cover-chip {
+      min-height: 92px;
+      border: 2px solid rgba(44, 140, 255, 0.74);
+      border-radius: 9px;
+      background: rgba(7, 17, 31, 0.82);
+      padding: 18px 22px;
+      color: #ffffff;
+    }
+
+    .cover-chip strong {
+      display: block;
+      color: #22d4d0;
+      font-size: 15px;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .cover-chip span {
+      display: block;
+      margin-top: 11px;
+      font-size: 19px;
+      line-height: 1.14;
+      font-weight: 700;
+    }
+
+    .cover-rule {
+      position: absolute;
+      left: 118px;
+      top: 114px;
+      width: 92px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--magenta), var(--cyan));
+      z-index: 3;
+    }
+
+    /* Slide 1 */
+    .process-grid {
+      position: absolute;
+      left: 76px;
+      top: 224px;
+      width: 1322px;
+      display: grid;
+      grid-template-columns: repeat(4, 278px);
+      gap: 70px;
+      z-index: 2;
+    }
+
+    .process-card {
+      height: 308px;
+      padding: 28px 22px;
+      text-align: center;
+    }
+
+    .process-card .icon-box {
+      width: 75px;
+      height: 75px;
+      margin: 0 auto 22px;
+      border: 2px solid #e5efff;
+      display: grid;
+      place-items: center;
+      background: #f5f7fb;
+      color: #183b82;
+    }
+
+    .process-card .icon-box .lucide-icon {
+      color: #183b82;
+      stroke-width: 2.75;
+    }
+
+    .process-card h2 {
+      margin: 0 0 13px;
+      color: #ffffff;
+      font-size: 30px;
+      line-height: 1.1;
+      font-weight: 800;
+    }
+
+    .process-card p {
+      margin: 0;
+      color: #ffffff;
+      font-size: 21px;
+      line-height: 1.16;
+      font-weight: 600;
+    }
+
+    /* Slide 2 */
+    .author-flow {
+      position: absolute;
+      left: 60px;
+      top: 126px;
+      right: 60px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+    }
+
+    .author-stage {
+      min-width: 0;
+    }
+
+    .author-stage .browser {
+      width: 318px;
+      height: 214px;
+      margin: 26px auto 0;
+    }
+
+    .author-stage .caption {
+      width: 420px;
+      margin: 48px auto 0;
+      text-align: center;
+      color: #ffffff;
+      font-size: 24px;
+      line-height: 1.18;
+      font-weight: 600;
+    }
+
+    .screen-body {
+      position: absolute;
+      left: 27px;
+      top: 69px;
+      right: 27px;
+    }
+
+    .doc-preview {
+      position: absolute;
+      left: 77px;
+      top: 66px;
+      width: 164px;
+      height: 116px;
+      background: #ffffff;
+      border: 1px solid #d7dce8;
+      box-shadow: 0 0 0 1px #eef2f8 inset;
+      padding: 15px 18px;
+    }
+
+    .pink-note {
+      position: absolute;
+      left: 58px;
+      right: 58px;
+      bottom: 72px;
+      color: #f14feb;
+      font-size: 17px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    /* Slide 3 */
+    .building-grid {
+      position: absolute;
+      left: 64px;
+      top: 122px;
+      right: 48px;
+      bottom: 42px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 58px;
+      row-gap: 18px;
+    }
+
+    .building-item {
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      gap: 24px;
+      align-items: start;
+      min-height: 152px;
+    }
+
+    .building-item h2 {
+      margin: 0 0 8px;
+      color: #ffffff;
+      font-size: 25px;
+      line-height: 1.1;
+      font-weight: 800;
+    }
+
+    /* Slide 4 */
+    .arch-svg {
+      position: absolute;
+      inset: 0;
+      width: 1478px;
+      height: 828px;
+      z-index: 2;
+    }
+
+    .arch-svg text {
+      fill: #ffffff;
+      font-family: "Aptos", "Segoe UI", Arial, Helvetica, sans-serif;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .arch-title-text {
+      font-size: 50px;
+      font-weight: 500;
+    }
+
+    .arch-small {
+      font-size: 15px;
+      line-height: 1.1;
+    }
+
+    .arch-tiny {
+      font-size: 10px;
+    }
+
+    .arch-mini {
+      font-size: 8px;
+    }
+
+    /* Slide 5 */
+    .growth-title {
+      position: absolute;
+      left: 62px;
+      top: 244px;
+      width: 430px;
+      color: #ffffff;
+      font-size: 52px;
+      line-height: 1.04;
+      font-weight: 500;
+    }
+
+    .growth-list {
+      position: absolute;
+      left: 500px;
+      top: 70px;
+      width: 964px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .growth-row {
+      min-height: 111px;
+      border: 2px solid var(--magenta);
+      border-radius: 6px;
+      background: #070d1a;
+      display: grid;
+      grid-template-columns: 86px 1fr;
+      align-items: center;
+      padding: 13px 24px 13px 16px;
+      color: #ffffff;
+    }
+
+    .growth-row svg {
+      width: 45px;
+      height: 45px;
+      margin: 0 auto;
+      color: #ffffff;
+    }
+
+    .arch-icon {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .growth-row p {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.16;
+      font-weight: 700;
+    }
+
+    /* Slide 6 */
+    .lesson-grid {
+      position: absolute;
+      left: 57px;
+      top: 176px;
+      right: 63px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 58px;
+      row-gap: 24px;
+    }
+
+    .lesson {
+      display: grid;
+      grid-template-columns: 78px 1fr;
+      gap: 20px;
+      align-items: start;
+      min-height: 178px;
+    }
+
+    .lesson h2 {
+      margin: 0 0 9px;
+      color: #4a8cff;
+      font-size: 25px;
+      line-height: 1.1;
+      font-weight: 800;
+    }
+
+    .lesson p {
+      margin: 0;
+      color: #ffffff;
+      font-size: 18px;
+      line-height: 1.18;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <svg class="lucide-sprite" aria-hidden="true" focusable="false">
+    <symbol id="icon-settings-2" viewBox="0 0 24 24"><path d="M20 7h-9" /><path d="M14 17H5" /><circle cx="17" cy="17" r="3" /><circle cx="7" cy="7" r="3" /></symbol>
+    <symbol id="icon-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3" /><path d="M3 5V19A9 3 0 0 0 21 19V5" /><path d="M3 12A9 3 0 0 0 21 12" /></symbol>
+    <symbol id="icon-wand-sparkles" viewBox="0 0 24 24"><path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72" /><path d="m14 7 3 3" /><path d="M5 6v4" /><path d="M19 14v4" /><path d="M10 2v2" /><path d="M7 8H3" /><path d="M21 16h-4" /><path d="M11 3H9" /></symbol>
+    <symbol id="icon-file-down" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M12 18v-6" /><path d="m9 15 3 3 3-3" /></symbol>
+    <symbol id="icon-folders" viewBox="0 0 24 24"><path d="M20 17a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3.9a2 2 0 0 1-1.69-.9l-.81-1.2a2 2 0 0 0-1.67-.9H8a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2Z" /><path d="M2 8v11a2 2 0 0 0 2 2h14" /></symbol>
+    <symbol id="icon-messages-square" viewBox="0 0 24 24"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z" /><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1" /></symbol>
+    <symbol id="icon-file-text" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></symbol>
+    <symbol id="icon-layout-dashboard" viewBox="0 0 24 24"><rect width="7" height="9" x="3" y="3" rx="1" /><rect width="7" height="5" x="14" y="3" rx="1" /><rect width="7" height="9" x="14" y="12" rx="1" /><rect width="7" height="5" x="3" y="16" rx="1" /></symbol>
+    <symbol id="icon-plug" viewBox="0 0 24 24"><path d="M12 22v-5" /><path d="M9 8V2" /><path d="M15 8V2" /><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z" /></symbol>
+    <symbol id="icon-workflow" viewBox="0 0 24 24"><rect width="8" height="8" x="3" y="3" rx="2" /><path d="M7 11v4a2 2 0 0 0 2 2h4" /><rect width="8" height="8" x="13" y="13" rx="2" /></symbol>
+    <symbol id="icon-boxes" viewBox="0 0 24 24"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z" /><path d="m7 16.5-4.74-2.85" /><path d="m7 16.5 5-3" /><path d="M7 16.5v5.17" /><path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z" /><path d="m17 16.5-5-3" /><path d="m17 16.5 4.74-2.85" /><path d="M17 16.5v5.17" /><path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z" /><path d="M12 8 7.26 5.15" /><path d="m12 8 4.74-2.85" /><path d="M12 13.5V8" /></symbol>
+    <symbol id="icon-library" viewBox="0 0 24 24"><path d="m16 6 4 14" /><path d="M12 6v14" /><path d="M8 8v12" /><path d="M4 4v16" /></symbol>
+    <symbol id="icon-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="3" /><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15" /><circle cx="18" cy="5" r="3" /></symbol>
+    <symbol id="icon-cloud-cog" viewBox="0 0 24 24"><circle cx="12" cy="17" r="3" /><path d="M4.2 15.1A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.2" /><path d="m15.7 18.4-.9-.3" /><path d="m9.2 15.9-.9-.3" /><path d="m10.6 20.7.3-.9" /><path d="m13.1 14.2.3-.9" /><path d="m13.6 20.7-.4-1" /><path d="m10.8 14.3-.4-1" /><path d="m8.3 18.6 1-.4" /><path d="m14.7 15.8 1-.4" /></symbol>
+    <symbol id="icon-bot" viewBox="0 0 24 24"><path d="M12 8V4H8" /><rect width="16" height="12" x="4" y="8" rx="2" /><path d="M2 14h2" /><path d="M20 14h2" /><path d="M15 13v2" /><path d="M9 13v2" /></symbol>
+    <symbol id="icon-brain-circuit" viewBox="0 0 24 24"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z" /><path d="M9 13a4.5 4.5 0 0 0 3-4" /><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5" /><path d="M3.477 10.896a4 4 0 0 1 .585-.396" /><path d="M6 18a4 4 0 0 1-1.967-.516" /><path d="M12 13h4" /><path d="M12 18h6a2 2 0 0 1 2 2v1" /><path d="M12 8h8" /><path d="M16 8V5a2 2 0 0 1 2-2" /><circle cx="16" cy="13" r=".5" /><circle cx="18" cy="3" r=".5" /><circle cx="20" cy="21" r=".5" /><circle cx="20" cy="8" r=".5" /></symbol>
+    <symbol id="icon-network" viewBox="0 0 24 24"><rect x="16" y="16" width="6" height="6" rx="1" /><rect x="2" y="16" width="6" height="6" rx="1" /><rect x="9" y="2" width="6" height="6" rx="1" /><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3" /><path d="M12 12V8" /></symbol>
+    <symbol id="icon-repeat-2" viewBox="0 0 24 24"><path d="m2 9 3-3 3 3" /><path d="M13 18H7a2 2 0 0 1-2-2V6" /><path d="m22 15-3 3-3-3" /><path d="M11 6h6a2 2 0 0 1 2 2v10" /></symbol>
+    <symbol id="icon-chart-combined" viewBox="0 0 24 24"><path d="M12 16v5" /><path d="M16 14v7" /><path d="M20 10v11" /><path d="m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15" /><path d="M4 18v3" /><path d="M8 14v7" /></symbol>
+    <symbol id="icon-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></symbol>
+    <symbol id="icon-languages" viewBox="0 0 24 24"><path d="m5 8 6 6" /><path d="m4 14 6-6 2-3" /><path d="M2 5h12" /><path d="M7 2h1" /><path d="m22 22-5-10-5 10" /><path d="M14 18h6" /></symbol>
+    <symbol id="icon-scan-search" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2" /><path d="M17 3h2a2 2 0 0 1 2 2v2" /><path d="M21 17v2a2 2 0 0 1-2 2h-2" /><path d="M7 21H5a2 2 0 0 1-2-2v-2" /><circle cx="12" cy="12" r="3" /><path d="m16 16-1.9-1.9" /></symbol>
+    <symbol id="icon-package" viewBox="0 0 24 24"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z" /><path d="M12 22V12" /><polyline points="3.29 7 12 12 20.71 7" /><path d="m7.5 4.27 9 5.15" /></symbol>
+    <symbol id="icon-atom" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1" /><path d="M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9-4.54-4.52-9.87-6.54-11.9-4.5-2.04 2.03-.02 7.36 4.5 11.9 4.54 4.52 9.87 6.54 11.9 4.5Z" /><path d="M15.7 15.7c4.52-4.54 6.54-9.87 4.5-11.9-2.03-2.04-7.36-.02-11.9 4.5-4.52 4.54-6.54 9.87-4.5 11.9 2.03 2.04 7.36.02 11.9-4.5Z" /></symbol>
+  </svg>
+  <article class="slide" aria-label="Automated clinical document generation platform for pharmaceutical R&D">
+    <section class="cover-frame">
+      <img class="cover-background" src="abbvie_gaia_slide1_background.png" alt="" aria-hidden="true" />
+      <div class="cover-rule"></div>
+      <div class="cover-content">
+        <div class="cover-kicker">GAIA platform (AbbVie) overview</div>
+        <h1 class="cover-title">Automated Clinical Document Generation Platform for Pharmaceutical R&amp;D</h1>
+        <p class="cover-subtitle">First-draft automation that connects approved data sources, deterministic orchestration, and generative AI into review-ready clinical documents.</p>
+      </div>
+      <div class="cover-accent" aria-hidden="true">
+        <div class="cover-chip"><strong>Data</strong><span>Approved source integration</span></div>
+        <div class="cover-chip"><strong>AI</strong><span>Prompted content generation</span></div>
+        <div class="cover-chip"><strong>Review</strong><span>Draft-ready document output</span></div>
+      </div>
+    </section>
+  </article>
+
+  <article class="slide" aria-label="How GAIA delivers first-draft automation">
+    <section class="frame narrow">
+      <div class="header">
+        <div>
+          <h1>How GAIA Delivers First-Draft Automation</h1>
+          <div class="subtitle">GAIA connects data, AI, and document structure to generate first drafts ready for review.</div>
+        </div>
+      </div>
+      <svg class="arrow-layer" viewBox="0 0 1474 824" aria-hidden="true">
+        <defs>
+          <marker id="arrow-blue-1" viewBox="0 0 12 10" markerWidth="12" markerHeight="10" refX="11.2" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L12,5 L0,10 Z" fill="#2c8cff" /></marker>
+        </defs>
+        <path d="M354 378 H424" stroke="#2c8cff" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-blue-1)" />
+        <path d="M702 378 H772" stroke="#2c8cff" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-blue-1)" />
+        <path d="M1050 378 H1120" stroke="#2c8cff" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-blue-1)" />
+      </svg>
+      <div class="process-grid">
+        <div class="process-card card">
+          <div class="icon-box">
+            <svg class="tiny-icon lucide-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-settings-2" /></svg>
+          </div>
+          <h2>Setup</h2>
+          <p>Document type and scope defined to initiate generation</p>
+        </div>
+        <div class="process-card card">
+          <div class="icon-box">
+            <svg class="tiny-icon lucide-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-database" /></svg>
+          </div>
+          <h2>Ingestion</h2>
+          <p>Data automatically retrieved and organized from approved sources</p>
+        </div>
+        <div class="process-card card">
+          <div class="icon-box">
+            <svg class="tiny-icon lucide-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-wand-sparkles" /></svg>
+          </div>
+          <h2>Transformation</h2>
+          <p>AI interprets data and applies business logic to create draft-ready content</p>
+        </div>
+        <div class="process-card card">
+          <div class="icon-box">
+            <svg class="tiny-icon lucide-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-file-down" /></svg>
+          </div>
+          <h2>Generation</h2>
+          <p>Draft compiled and provided for download, review and refinement through existing workflows</p>
+        </div>
+      </div>
+    </section>
+  </article>
+
+  <article class="slide" aria-label="GAIA is transforming document authoring">
+    <section class="frame">
+      <div class="header">
+        <h1>GAIA Is Transforming Document Authoring</h1>
+      </div>
+      <div class="author-flow">
+        <div class="author-stage">
+          <div class="pill-label">
+            <svg class="lucide-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-folders" /></svg>
+            Document Selection <span class="badge">1</span>
+          </div>
+          <div class="browser">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <div class="browser-title">New PSUR Document</div>
+            <div class="screen-body">
+              <div class="screen-line blue" style="width: 66px;"></div>
+              <div class="screen-line" style="width: 205px;"></div>
+              <div class="screen-line" style="width: 178px;"></div>
+              <div class="screen-line blue" style="width: 52px; margin-top: 24px;"></div>
+              <div class="screen-line" style="width: 215px;"></div>
+              <div class="screen-line" style="width: 188px;"></div>
+            </div>
+          </div>
+          <p class="caption">Users select from library of possible clinical documents</p>
+        </div>
+        <div class="author-stage">
+          <div class="pill-label">
+            <svg class="lucide-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-messages-square" /></svg>
+            User Prompts <span class="badge">2</span>
+          </div>
+          <div class="browser">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <div class="browser-title">New PSUR Document</div>
+            <div class="screen-body">
+              <div class="screen-line blue" style="width: 74px;"></div>
+              <div class="screen-line" style="width: 228px;"></div>
+              <div class="screen-line" style="width: 180px;"></div>
+              <div class="screen-line purple" style="width: 170px; margin-top: 22px; margin-left: 44px;"></div>
+              <div class="screen-line purple" style="width: 106px; margin-left: 108px;"></div>
+              <div class="screen-line" style="width: 216px; margin-top: 18px;"></div>
+            </div>
+          </div>
+          <p class="caption">Intuitive and prompt-based interface to specify the parameters</p>
+        </div>
+        <div class="author-stage">
+          <div class="pill-label">
+            <svg class="lucide-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-file-down" /></svg>
+            Document Generation <span class="badge">3</span>
+          </div>
+          <div class="browser">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <div class="browser-title">Download Document</div>
+            <div class="doc-preview">
+              <div class="screen-line" style="width: 70px; height: 4px; margin-left: 28px;"></div>
+              <div class="screen-line" style="width: 112px; height: 3px; margin-top: 14px;"></div>
+              <div class="screen-line" style="width: 120px; height: 3px;"></div>
+              <div class="screen-line" style="width: 98px; height: 3px;"></div>
+              <div class="screen-line" style="width: 114px; height: 3px; margin-top: 16px;"></div>
+              <div class="screen-line purple" style="width: 94px; height: 4px; margin-left: 20px;"></div>
+            </div>
+          </div>
+          <p class="caption">GenAI generated text and figures in AbbVie specific templates</p>
+        </div>
+      </div>
+      <div class="pink-note">Note: GAIA functionality shown above uses representative screens from a generated document workflow.</div>
+    </section>
+  </article>
+
+  <article class="slide" aria-label="Key building blocks of GAIA">
+    <section class="frame narrow">
+      <div class="header">
+        <h1>Key Building Blocks of GAIA</h1>
+      </div>
+      <div class="building-grid">
+        <div class="building-item">
+          <div class="icon-circle"><svg class="lucide-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-layout-dashboard" /></svg></div>
+          <div><h2>User Interface Layer</h2><ul class="bullet"><li>Role-based security that provides access to the appropriate documents</li><li>Supports in-browser rendering and downloads</li></ul></div>
+        </div>
+        <div class="building-item">
+          <div class="icon-circle"><svg class="lucide-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-plug" /></svg></div>
+          <div><h2>Integration Layer</h2><ul class="bullet"><li>API Hub that supports secure integration with upstream and downstream systems</li></ul></div>
+        </div>
+        <div class="building-item">
+          <div class="icon-circle"><svg class="lucide-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-workflow" /></svg></div>
+          <div><h2>Document Orchestrator</h2><ul class="bullet"><li>Core Component configured for every document that defines the order of operations for how a document is generated</li><li>Supports full document, partial document, and package of documents generation</li></ul></div>
+        </div>
+        <div class="building-item">
+          <div class="icon-circle"><svg class="lucide-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-boxes" /></svg></div>
+          <div><h2>Feature Catalog</h2><ul class="bullet"><li>Common functions used to generate documents</li><li>Services include data extraction, data manipulation, document builder, table creation</li></ul></div>
+        </div>
+        <div class="building-item">
+          <div class="icon-circle"><svg class="lucide-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-library" /></svg></div>
+          <div><h2>Prompt Library</h2><ul class="bullet"><li>Centralized prompt library that stores prompts by document and section</li><li>Built for reuse as additional documents are added to the platform</li></ul></div>
+        </div>
+        <div class="building-item">
+          <div class="icon-circle"><svg class="lucide-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-route" /></svg></div>
+          <div><h2>LLM Router and Garden</h2><ul class="bullet"><li>Integration with AbbVie's LLM garden of cloud-hosted and privately-hosted LLMs</li><li>Centralized tracking of pricing and token usage</li></ul></div>
+        </div>
+        <div class="building-item">
+          <div class="icon-circle"><svg class="lucide-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-cloud-cog" /></svg></div>
+          <div><h2>AWS Serverless Infrastructure</h2><ul class="bullet"><li>Built primarily with native AWS serverless infrastructure, to better support availability and auto-scaling</li></ul></div>
+        </div>
+        <div class="building-item">
+          <div class="icon-circle"><svg class="lucide-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-bot" /></svg></div>
+          <div><h2>Agentic Catalog</h2><ul class="bullet"><li>Agent and MCP tools to simplify the design and development required to add documents to the GAIA platform</li></ul></div>
+        </div>
+      </div>
+    </section>
+  </article>
+
+  <article class="slide" aria-label="GAIA AbbVie AWS Accenture platform architecture">
+    <section class="frame">
+      <svg class="arch-svg" viewBox="0 0 1478 828" role="img" aria-label="GAIA AbbVie AWS Accenture platform architecture diagram">
+        <defs>
+          <marker id="arch-arrow-end" markerWidth="3.5" markerHeight="2.8" refX="3.2" refY="1.4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L3.5,1.4 L0,2.8 Z" fill="#ffffff" /></marker>
+          <marker id="arch-arrow-start" markerWidth="3.5" markerHeight="2.8" refX="0.3" refY="1.4" orient="auto" markerUnits="strokeWidth"><path d="M3.5,0 L0,1.4 L3.5,2.8 Z" fill="#ffffff" /></marker>
+        </defs>
+
+        <text class="arch-title-text" x="56" y="56">GAIA : The AbbVie, AWS &amp; Accenture Platform</text>
+
+        <rect x="199" y="83" width="1010" height="724" fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="7 5" opacity="0.9" />
+        <line x1="924" y1="83" x2="924" y2="807" stroke="#ffffff" stroke-width="2" stroke-dasharray="7 5" opacity="0.75" />
+
+        <g stroke="#ffffff" stroke-width="2.4" fill="none">
+          <path d="M178 244 H236" marker-end="url(#arch-arrow-end)" />
+          <path d="M459 134 V170" marker-start="url(#arch-arrow-start)" marker-end="url(#arch-arrow-end)" />
+          <path d="M715 134 V170" marker-start="url(#arch-arrow-start)" marker-end="url(#arch-arrow-end)" />
+          <path d="M955 134 V170" marker-start="url(#arch-arrow-start)" marker-end="url(#arch-arrow-end)" />
+          <path d="M489 367 H590" marker-end="url(#arch-arrow-end)" />
+          <path d="M840 522 H919" marker-start="url(#arch-arrow-start)" marker-end="url(#arch-arrow-end)" />
+          <path d="M481 616 V664" marker-start="url(#arch-arrow-start)" marker-end="url(#arch-arrow-end)" />
+          <path d="M525 751 H574" marker-start="url(#arch-arrow-start)" marker-end="url(#arch-arrow-end)" />
+          <path d="M734 628 V664" marker-start="url(#arch-arrow-start)" marker-end="url(#arch-arrow-end)" />
+          <path d="M855 734 H905" marker-start="url(#arch-arrow-start)" marker-end="url(#arch-arrow-end)" />
+          <path d="M1045 616 V627" marker-start="url(#arch-arrow-start)" marker-end="url(#arch-arrow-end)" />
+          <path d="M1169 392 H1214" marker-start="url(#arch-arrow-start)" marker-end="url(#arch-arrow-end)" />
+          <path d="M1339 791 V561" marker-end="url(#arch-arrow-end)" />
+          <path d="M1339 791 H862" marker-end="url(#arch-arrow-end)" />
+        </g>
+
+        <g stroke="#ffffff" stroke-width="3" fill="none">
+          <circle cx="109" cy="245" r="60" />
+          <use class="arch-icon" href="#icon-users" x="76" y="212" width="66" height="66" color="#ffffff" />
+        </g>
+
+        <g>
+          <rect x="17" y="345" width="183" height="357" fill="none" stroke="#00a8ff" stroke-width="2.2" />
+          <rect x="33" y="361" width="147" height="36" rx="3" fill="#17212c" stroke="#dc29d9" stroke-width="2.4" />
+          <text x="106" y="385" text-anchor="middle" font-size="15">UI</text>
+          <rect x="33" y="413" width="147" height="36" rx="3" fill="#17212c" stroke="#7b4dff" stroke-width="2.4" />
+          <text x="106" y="437" text-anchor="middle" font-size="15">Services</text>
+          <rect x="33" y="455" width="147" height="61" rx="5" fill="#17212c" stroke="#d9e93a" stroke-width="2.4" />
+          <text x="106" y="481" text-anchor="middle" font-size="15"><tspan x="106">Agentic</tspan><tspan x="106" dy="19">Components</tspan></text>
+          <rect x="33" y="524" width="147" height="59" rx="5" fill="#17212c" stroke="#22d4d0" stroke-width="2.4" />
+          <text x="106" y="550" text-anchor="middle" font-size="14"><tspan x="106">Configuration</tspan><tspan x="106" dy="18">and Objects</tspan></text>
+          <rect x="33" y="594" width="147" height="36" rx="3" fill="#17212c" stroke="#d7dde8" stroke-width="2.4" />
+          <text x="106" y="618" text-anchor="middle" font-size="14">External Systems</text>
+          <rect x="33" y="646" width="147" height="36" rx="3" fill="#17212c" stroke="#0a7dff" stroke-width="2.4" />
+          <text x="106" y="670" text-anchor="middle" font-size="15">Reporting</text>
+        </g>
+
+        <g>
+          <rect x="240" y="174" width="250" height="437" rx="8" fill="#27323d" />
+          <g fill="#15202b" stroke="#dc29d9" stroke-width="2.4">
+            <rect x="255" y="178" width="215" height="28" rx="3" />
+            <rect x="255" y="222" width="215" height="28" rx="3" />
+            <rect x="255" y="265" width="215" height="28" rx="3" />
+            <rect x="255" y="309" width="215" height="28" rx="3" />
+            <rect x="255" y="352" width="215" height="28" rx="3" />
+            <rect x="255" y="396" width="215" height="28" rx="3" />
+            <rect x="255" y="439" width="215" height="28" rx="3" />
+            <rect x="255" y="483" width="215" height="28" rx="3" />
+            <rect x="255" y="526" width="215" height="28" rx="3" />
+          </g>
+          <g text-anchor="middle" font-size="13">
+            <text x="362" y="197">User Login</text>
+            <text x="362" y="241">Select Document</text>
+            <text x="362" y="284">Select Document Options</text>
+            <text x="362" y="328">Upload Documents</text>
+            <text x="362" y="371">Generate Documents</text>
+            <text x="362" y="415">Return Document Status</text>
+            <text x="362" y="458">Download Document</text>
+            <text x="362" y="502">Render Document</text>
+            <text x="362" y="545">Regenerate Document</text>
+          </g>
+          <text x="260" y="581" font-size="14"><tspan x="260">React UI and</tspan><tspan x="260" dy="18">UI Lambdas</tspan></text>
+          <rect x="376" y="568" width="36" height="36" fill="#243744" stroke="#5fd2ff" stroke-width="2" />
+          <use class="arch-icon" href="#icon-layout-dashboard" x="383" y="575" width="22" height="22" color="#5fd2ff" />
+          <rect x="422" y="568" width="36" height="36" fill="#f58420" />
+          <use class="arch-icon" href="#icon-cloud-cog" x="429" y="575" width="22" height="22" color="#ffffff" />
+        </g>
+
+        <g>
+          <rect x="442" y="92" width="523" height="37" rx="3" fill="#151c27" stroke="#7b4dff" stroke-width="2.6" />
+          <text x="690" y="116" text-anchor="middle" font-size="15">&quot;Deterministic&quot; Orchestrator</text>
+          <rect x="911" y="95" width="36" height="31" fill="#ff8a21" />
+          <use class="arch-icon" href="#icon-workflow" x="918" y="99" width="22" height="22" color="#ffd9a8" />
+        </g>
+
+        <g>
+          <rect x="591" y="174" width="249" height="237" rx="8" fill="#27323d" />
+          <g fill="#17242f" stroke="#22d4d0" stroke-width="2.4">
+            <rect x="608" y="178" width="212" height="28" rx="3" />
+            <rect x="608" y="222" width="212" height="28" rx="3" />
+            <rect x="608" y="266" width="212" height="28" rx="3" />
+          </g>
+          <g text-anchor="middle" font-size="13">
+            <text x="714" y="197">Orchestrator Store</text>
+            <text x="714" y="241">Template Library</text>
+            <text x="714" y="285">Feature Configuration Store</text>
+          </g>
+          <text x="608" y="322" font-size="15"><tspan x="608">Stores, Configuration,</tspan><tspan x="608" dy="20">and Libraries</tspan></text>
+          <rect x="610" y="360" width="36" height="36" fill="#d914d6" />
+          <use class="arch-icon" href="#icon-database" x="617" y="367" width="22" height="22" color="#ffffff" />
+          <rect x="653" y="360" width="36" height="36" fill="#87b51e" />
+          <use class="arch-icon" href="#icon-folders" x="660" y="367" width="22" height="22" color="#d7ff91" />
+
+          <rect x="591" y="423" width="249" height="200" rx="8" fill="#27323d" />
+          <g fill="#17242f" stroke="#22d4d0" stroke-width="2.4">
+            <rect x="608" y="440" width="212" height="28" rx="3" />
+            <rect x="608" y="486" width="212" height="28" rx="3" />
+            <rect x="608" y="529" width="212" height="28" rx="3" />
+          </g>
+          <g text-anchor="middle" font-size="13">
+            <text x="714" y="459">Interim Documents</text>
+            <text x="714" y="505">Final Documents</text>
+            <text x="714" y="548">Uploaded Files</text>
+          </g>
+          <text x="608" y="585" font-size="15"><tspan x="608">Transient</tspan><tspan x="608" dy="20">Storage</tspan></text>
+          <rect x="708" y="572" width="36" height="36" fill="#87b51e" />
+          <use class="arch-icon" href="#icon-database" x="715" y="579" width="22" height="22" color="#d7ff91" />
+        </g>
+
+        <g>
+          <rect x="920" y="174" width="249" height="437" rx="8" fill="#27323d" />
+          <g fill="#1b2531" stroke="#7b4dff" stroke-width="2.4">
+            <rect x="935" y="178" width="215" height="28" rx="3" />
+            <rect x="935" y="222" width="215" height="28" rx="3" />
+            <rect x="935" y="265" width="215" height="28" rx="3" />
+            <rect x="935" y="309" width="215" height="28" rx="3" />
+            <rect x="935" y="353" width="215" height="28" rx="3" />
+            <rect x="935" y="396" width="215" height="28" rx="3" />
+            <rect x="935" y="440" width="215" height="28" rx="3" />
+            <rect x="935" y="483" width="215" height="28" rx="3" />
+            <rect x="935" y="527" width="215" height="28" rx="3" />
+          </g>
+          <g text-anchor="middle" font-size="13">
+            <text x="1042" y="197">SQL Service</text>
+            <text x="1042" y="241">API Service</text>
+            <text x="1042" y="284">S3 Service</text>
+            <text x="1042" y="328">SharePoint Service</text>
+            <text x="1042" y="372">Pandas Service</text>
+            <text x="1042" y="415">Extraction Service</text>
+            <text x="1042" y="459">LLM Router</text>
+            <text x="1042" y="502">Prompt Library Wrapper</text>
+            <text x="1042" y="546">Document Builder</text>
+          </g>
+          <text x="936" y="584" font-size="15"><tspan x="936">Feature Catalog</tspan><tspan x="936" dy="20">Services</tspan></text>
+          <rect x="1093" y="570" width="36" height="36" fill="#ff8a21" />
+          <use class="arch-icon" href="#icon-boxes" x="1100" y="577" width="22" height="22" color="#ffd9a8" />
+        </g>
+
+        <g>
+          <rect x="300" y="668" width="225" height="133" rx="8" fill="#27323d" />
+          <text x="306" y="692" font-size="15"><tspan x="306">Bedrock</tspan><tspan x="306" dy="20">AgentCore</tspan><tspan x="306" dy="20">Runtime</tspan></text>
+          <rect x="402" y="693" width="110" height="61" rx="5" fill="#27323d" stroke="#d9e93a" stroke-width="2.4" />
+          <text x="457" y="717" text-anchor="middle" font-size="14"><tspan x="457">Orchestrator</tspan><tspan x="457" dy="19">Agent</tspan></text>
+          <rect x="307" y="766" width="36" height="36" fill="#15b7aa" />
+          <use class="arch-icon" href="#icon-bot" x="314" y="773" width="22" height="22" color="#ccfff8" />
+
+          <rect x="575" y="667" width="280" height="135" rx="8" fill="#27323d" />
+          <text x="592" y="692" font-size="15">MCP Server</text>
+          <rect x="591" y="702" width="36" height="36" fill="#ff8a21" />
+          <use class="arch-icon" href="#icon-network" x="598" y="709" width="22" height="22" color="#ffd9a8" />
+          <g fill="#27323d" stroke="#d9e93a" stroke-width="2.4">
+            <rect x="690" y="674" width="145" height="36" rx="4" />
+            <rect x="690" y="717" width="145" height="36" rx="4" />
+            <rect x="690" y="760" width="145" height="36" rx="4" />
+          </g>
+          <g text-anchor="middle" font-size="13">
+            <text x="762" y="697">Data Integration</text>
+            <text x="762" y="740">Quality Checker</text>
+            <text x="762" y="783">Entity Extraction</text>
+          </g>
+
+          <rect x="906" y="631" width="263" height="116" rx="8" fill="#27323d" />
+          <text x="918" y="652" font-size="15">Reporting &amp; Auditing</text>
+          <g fill="#27323d" stroke="#0a7dff" stroke-width="2.4">
+            <rect x="935" y="662" width="214" height="29" rx="3" />
+            <rect x="935" y="703" width="214" height="29" rx="3" />
+          </g>
+          <g text-anchor="middle" font-size="13">
+            <text x="1042" y="681">Generation Status</text>
+            <text x="1042" y="722">Operational Reporting</text>
+          </g>
+          <rect x="1133" y="714" width="36" height="36" fill="#d914d6" />
+          <use class="arch-icon" href="#icon-chart-combined" x="1140" y="721" width="22" height="22" color="#ffffff" />
+        </g>
+
+        <g>
+          <rect x="1215" y="162" width="250" height="399" rx="8" fill="#27323d" />
+          <g fill="#27323d" stroke="#d7dde8" stroke-width="2">
+            <rect x="1231" y="176" width="213" height="31" rx="2" />
+            <rect x="1231" y="220" width="213" height="31" rx="2" />
+            <rect x="1231" y="263" width="213" height="31" rx="2" />
+            <rect x="1231" y="307" width="213" height="31" rx="2" />
+            <rect x="1231" y="351" width="213" height="31" rx="2" />
+            <rect x="1231" y="394" width="213" height="31" rx="2" />
+            <rect x="1231" y="438" width="213" height="31" rx="2" />
+            <rect x="1231" y="481" width="213" height="31" rx="2" />
+          </g>
+          <g text-anchor="middle" font-size="13">
+            <text x="1338" y="196">Document Repository</text>
+            <text x="1338" y="239">Literature</text>
+            <text x="1338" y="283">Product MDM</text>
+            <text x="1338" y="327">Data Lake</text>
+            <text x="1338" y="371">Regulatory Information</text>
+            <text x="1338" y="414">Management System</text>
+            <text x="1338" y="458">LLM Garden</text>
+            <text x="1338" y="501">Prompt Library</text>
+          </g>
+          <text x="1231" y="544" font-size="15">External Systems</text>
+        </g>
+      </svg>
+    </section>
+  </article>
+
+  <article class="slide" aria-label="What are we doing to unlock additional growth">
+    <section class="frame">
+      <div class="growth-title">What Are<br>We Doing To<br>Unlock<br>Additional<br>Growth</div>
+      <div class="growth-list">
+        <div class="growth-row"><svg class="lucide-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-bot" /></svg><p>Adding agents and tools to accelerate the document design and development process.</p></div>
+        <div class="growth-row"><svg class="lucide-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-brain-circuit" /></svg><p>Leveraging context engineering solutions, such as vector and graph databases, to identify and include deeper insights in document drafts.</p></div>
+        <div class="growth-row"><svg class="lucide-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-repeat-2" /></svg><p>Designing a self-learning platform, informed by human feedback, to improve draft generation.</p></div>
+        <div class="growth-row"><svg class="lucide-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-network" /></svg><p>Enable enterprise-wide utilization by enabling GAIA for other parts of the enterprise.</p></div>
+        <div class="growth-row"><svg class="lucide-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-database" /></svg><p>Integrating 90+ data sources to fuel platform growth and innovation such as headless document generation based on external systems and processes.</p></div>
+        <div class="growth-row"><svg class="lucide-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-atom" /></svg><p>Investigating how domain-specific language models can power smarter, context-aware automation.</p></div>
+      </div>
+    </section>
+  </article>
+
+  <article class="slide" aria-label="What we have learned on our journey">
+    <section class="frame">
+      <h1 style="position:absolute; left:58px; top:82px; font-size:52px; z-index:3;">What We Have Learned On Our Journey</h1>
+      <div class="lesson-grid">
+        <div class="lesson"><div class="icon-circle blue"><svg class="lucide-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-users" /></svg></div><div><h2>Organizational Change Management</h2><p>AI solutions require new ways of working. Organizational change management plays a key role in readying the business to adopt GenAI, alleviating unspoken concerns related to job security.</p></div></div>
+        <div class="lesson"><div class="icon-circle blue"><svg class="lucide-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-chart-combined" /></svg></div><div><h2>Everyone Works In The New</h2><p>Generative AI can be used to accelerate and optimize project delivery work. Agents and automation can eliminate manual work from PMO, SLC documentation, testing, and writing code or prompts.</p></div></div>
+        <div class="lesson"><div class="icon-circle blue"><svg class="lucide-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-route" /></svg></div><div><h2>Value Realization Strategy</h2><p>Top-level stakeholders need clarity and alignment on baseline assumptions, relevant KPIs, and how results will be measured. This will help to ensure that decisions are made with an eye towards value creation and realization.</p></div></div>
+        <div class="lesson"><div class="icon-circle blue"><svg class="lucide-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-messages-square" /></svg></div><div><h2>Business Participation in Development</h2><p>Development teams must have access to medical writers that can provide feedback quickly and iteratively. Prompt-tuning is an art and a science, and it takes technical expertise and business participation.</p></div></div>
+        <div class="lesson"><div class="icon-circle blue"><svg class="lucide-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-languages" /></svg></div><div><h2>Establish a team that's done this before</h2><p>As with all new leading technologies, there is a learning curve for everyone. Stack the project with people who bring a mix of industry, data, AI/GenAI, and quality compliance to bridge learning gaps.</p></div></div>
+        <div class="lesson"><div class="icon-circle blue"><svg class="lucide-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-scan-search" /></svg></div><div><h2>Define Accuracy, Writing Style, and Formatting Early</h2><p>Generated outputs are never the same twice. It's important to align on the acceptance criteria for accuracy, writing style, and formatting to ensure the development team tests against the right expectations.</p></div></div>
+      </div>
+    </section>
+  </article>
+</body>
+</html>

@@ -1,0 +1,864 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI cost-effectiveness model review infographic</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --green: #58b368;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: var(--paper-2);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      display: grid;
+      place-items: start center;
+      gap: 24px;
+      padding: 24px;
+    }
+
+    .sheet {
+      position: relative;
+      width: 1200px;
+      height: 1650px;
+      overflow: hidden;
+      background: var(--paper) url("assets/page-background.png") center / 100% 100% no-repeat;
+      border: 2px solid var(--line);
+      box-shadow: var(--shadow);
+      break-after: page;
+      page-break-after: always;
+    }
+
+    .sheet:last-of-type {
+      break-after: auto;
+      page-break-after: auto;
+    }
+
+    .inner {
+      position: relative;
+      z-index: 1;
+      padding: 54px 58px 50px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 10px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px 8px;
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      background: var(--lime);
+      font-size: 16px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 16px;
+      font-weight: 650;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    strong {
+      font-weight: 800;
+    }
+
+    h1 {
+      max-width: 1084px;
+      font-size: 54px;
+      line-height: 0.96;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .dek {
+      max-width: 1000px;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 20px;
+      line-height: 1.28;
+      font-weight: 500;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.04fr 0.96fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .hero-panel,
+    .stat-panel,
+    .step-card,
+    .finding-card,
+    .evidence-card {
+      border: 2px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 250, 240, 0.92);
+    }
+
+    .hero-panel {
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 22px;
+      min-height: 178px;
+    }
+
+    .large-number {
+      display: grid;
+      place-items: center;
+      align-content: center;
+      gap: 5px;
+      width: 140px;
+      height: 140px;
+      border: 2px solid var(--line);
+      border-radius: 20px;
+      background: var(--ink);
+      color: var(--paper);
+      text-align: center;
+    }
+
+    .large-number .num {
+      font-size: 62px;
+      line-height: 0.92;
+      font-weight: 800;
+    }
+
+    .large-number .label {
+      max-width: 100px;
+      color: rgba(246, 241, 232, 0.84);
+      font-size: 16px;
+      line-height: 1.05;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .hero-panel h2 {
+      font-size: 32px;
+      line-height: 1.02;
+      font-weight: 760;
+      letter-spacing: 0;
+      margin-bottom: 10px;
+    }
+
+    .hero-panel p {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.32;
+      font-weight: 400;
+    }
+
+    .stat-panel {
+      padding: 22px;
+      background: var(--ink);
+      color: var(--paper);
+      display: grid;
+      gap: 14px;
+      align-content: center;
+    }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: 94px 1fr;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .stat-value {
+      display: grid;
+      place-items: center;
+      height: 58px;
+      border-radius: 16px;
+      border: 2px solid rgba(246, 241, 232, 0.82);
+      background: var(--lime);
+      color: var(--ink);
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .stat-text {
+      font-size: 16.5px;
+      line-height: 1.25;
+      color: rgba(246, 241, 232, 0.84);
+      font-weight: 600;
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: 0.93fr 1.07fr;
+      gap: 20px;
+      min-height: 0;
+      align-items: stretch;
+    }
+
+    .main-grid > div {
+      min-height: 0;
+    }
+
+    .main-grid > div:last-child {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .section-label h2 {
+      font-size: 27px;
+      line-height: 1;
+      font-weight: 760;
+      letter-spacing: 0;
+    }
+
+    .tag {
+      padding: 7px 10px 6px;
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      background: var(--blue);
+      font-size: 16px;
+      line-height: 1;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: minmax(204px, auto);
+      gap: 12px;
+    }
+
+    .step-card {
+      position: relative;
+      min-height: 204px;
+      padding: 16px 16px 15px;
+      display: grid;
+      align-content: start;
+      gap: 8px;
+    }
+
+    .step-card:nth-child(2),
+    .step-card:nth-child(5) {
+      background: rgba(184, 216, 255, 0.34);
+    }
+
+    .step-card:nth-child(3),
+    .step-card:nth-child(6) {
+      background: rgba(255, 184, 107, 0.24);
+    }
+
+    .step-num {
+      display: inline-grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      border: 2px solid var(--line);
+      border-radius: 10px;
+      background: var(--paper);
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 2px;
+    }
+
+    .step-card h3 {
+      font-size: 19px;
+      line-height: 1.08;
+      font-weight: 760;
+      letter-spacing: 0;
+    }
+
+    .step-card p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.25;
+      font-weight: 400;
+    }
+
+    .code-pill {
+      display: inline-flex;
+      width: fit-content;
+      margin-top: 2px;
+      padding: 5px 8px 4px;
+      border: 1.5px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .findings {
+      display: grid;
+      gap: 12px;
+      flex: 1;
+      grid-template-rows: repeat(4, 1fr);
+    }
+
+    .finding-card {
+      display: grid;
+      grid-template-columns: 8px 1fr;
+      overflow: hidden;
+      min-height: 0;
+    }
+
+    .finding-bar {
+      background: var(--orange);
+      border-right: 2px solid var(--line);
+    }
+
+    .finding-card.critical .finding-bar {
+      background: var(--red);
+    }
+
+    .finding-card.ok .finding-bar {
+      background: var(--green);
+    }
+
+    .finding-body {
+      padding: 16px 18px 15px;
+    }
+
+    .finding-kicker {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+      font-size: 16px;
+      line-height: 1;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .finding-body h3 {
+      font-size: 21px;
+      line-height: 1.08;
+      font-weight: 760;
+      letter-spacing: 0;
+      margin-bottom: 7px;
+    }
+
+    .finding-body p {
+      font-size: 16px;
+      line-height: 1.28;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .evidence-card {
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: 268px auto;
+      min-height: 384px;
+    }
+
+    .evidence-image {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 2px solid var(--line);
+      background: var(--paper-2);
+    }
+
+    .evidence-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
+      display: block;
+    }
+
+    .evidence-image.right img {
+      object-position: center center;
+    }
+
+    .evidence-image.left img {
+      object-position: center center;
+    }
+
+    .evidence-caption {
+      padding: 10px 13px 11px;
+      display: grid;
+      gap: 4px;
+    }
+
+    .evidence-caption h3 {
+      font-size: 16px;
+      line-height: 1.08;
+      font-weight: 760;
+      letter-spacing: 0;
+    }
+
+    .evidence-caption p {
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.14;
+      font-weight: 400;
+    }
+
+    .evidence-sheet .inner {
+      padding: 44px 36px 40px;
+      gap: 20px;
+    }
+
+    .evidence-sheet .section-label {
+      margin-bottom: 10px;
+    }
+
+    .evidence-sheet .evidence-grid {
+      gap: 12px;
+    }
+
+    .evidence-sheet .evidence-card {
+      grid-template-rows: 256px auto;
+      min-height: 346px;
+    }
+
+    .evidence-sheet .evidence-caption {
+      padding: 10px 12px 10px;
+      gap: 5px;
+    }
+
+    .evidence-sheet .evidence-caption h3 {
+      font-size: 19px;
+      line-height: 1.08;
+    }
+
+    .evidence-sheet .evidence-caption p {
+      font-size: 17.2px;
+      line-height: 1.18;
+    }
+
+    .method-band {
+      display: grid;
+      grid-template-columns: 1.04fr 0.96fr;
+      gap: 20px;
+      align-items: stretch;
+      margin-top: 8px;
+    }
+
+    .evidence-sheet .method-band {
+      flex: 0 0 390px;
+      min-height: 0;
+    }
+
+    .prompt-panel {
+      border: 2px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--ink);
+      color: var(--paper);
+      padding: 24px;
+      display: grid;
+      align-content: start;
+      gap: 20px;
+    }
+
+    .prompt-panel h2 {
+      font-size: 31px;
+      line-height: 1.02;
+      font-weight: 760;
+      letter-spacing: 0;
+    }
+
+    .prompt-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 11px;
+    }
+
+    .prompt-item {
+      padding: 13px 14px;
+      border: 1.5px solid rgba(246, 241, 232, 0.56);
+      border-radius: 13px;
+      background: rgba(246, 241, 232, 0.08);
+      font-size: 20px;
+      line-height: 1.16;
+      color: rgba(246, 241, 232, 0.88);
+      font-weight: 500;
+    }
+
+    .prompt-item strong {
+      color: var(--lime);
+      font-weight: 800;
+    }
+
+    .audit-table {
+      border: 2px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--card);
+      display: grid;
+      grid-template-rows: auto 1fr;
+    }
+
+    .audit-table h2 {
+      padding: 17px 18px 15px;
+      border-bottom: 2px solid var(--line);
+      background: var(--blue);
+      font-size: 23px;
+      line-height: 1;
+      font-weight: 760;
+      letter-spacing: 0;
+    }
+
+    .audit-row {
+      display: grid;
+      grid-template-columns: 126px 1fr;
+      gap: 12px;
+      padding: 14px 16px;
+      border-bottom: 1.5px solid rgba(16, 18, 15, 0.32);
+      font-size: 17px;
+      line-height: 1.28;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .audit-row span:first-child {
+      color: var(--ink);
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .audit-row:last-child {
+      border-bottom: 0;
+    }
+
+    .audit-row strong {
+      color: var(--ink);
+      font-size: 17px;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .evidence-sheet .audit-table > div {
+      display: grid;
+      grid-template-rows: repeat(4, 1fr);
+    }
+
+    .evidence-sheet .audit-row {
+      align-content: center;
+    }
+
+    @page {
+      size: 1200px 1650px;
+      margin: 0;
+    }
+
+    @media print {
+      body {
+        display: block;
+        gap: 0;
+        padding: 0;
+        background: var(--paper);
+      }
+
+      .sheet {
+        border: 0;
+        box-shadow: none;
+        break-after: auto;
+        page-break-after: auto;
+      }
+    }
+
+    @media screen and (max-width: 1248px) {
+      body {
+        padding: 0;
+      }
+
+      .sheet {
+        transform-origin: top center;
+        transform: scale(calc(100vw / 1200));
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="sheet" aria-label="How to evaluate a cost-effectiveness model using AI">
+    <div class="inner">
+      <header>
+        <div class="topline">
+          <div class="eyebrow">HEOR workbook validation</div>
+          <div class="meta">Evidence-led AI audit loop</div>
+        </div>
+        <h1>How to evaluate a cost-effectiveness model using AI</h1>
+        <p class="dek">Use AI as a structured reviewer: first map the full workbook, then run targeted edge-case tests, then confirm the model returns to its baseline ICER before interpreting any defect.</p>
+      </header>
+
+      <section class="hero-grid" aria-label="Model context and review principle">
+        <div class="hero-panel">
+          <div class="large-number">
+            <span class="num">58</span>
+            <span class="label">workbook sheets</span>
+          </div>
+          <div>
+            <h2>Do not audit only the visible sheet</h2>
+            <p>The model shown is a multi-sheet .xlsm Markov/cohort cost-effectiveness workbook with PSA, DSA, cost, QALY, and summary outputs. Scope clarification matters before AI starts editing or testing formulas.</p>
+          </div>
+        </div>
+        <div class="stat-panel">
+          <div class="stat-row">
+            <div class="stat-value">1</div>
+            <div class="stat-text">Enable Claude in Excel and select a relevant model cell or range, such as the ICER output cell.</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-value">2</div>
+            <div class="stat-text">Run /audit-xls, choose full workbook audit, then let the assistant inspect dependencies.</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-value">3</div>
+            <div class="stat-text">Ask for edge-case stress tests and interpret findings against HEOR model logic.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="main-grid" aria-label="Workflow steps and findings">
+        <div>
+          <div class="section-label">
+            <h2>Audit workflow</h2>
+            <span class="tag">Prompt path</span>
+          </div>
+          <div class="steps">
+            <article class="step-card">
+              <span class="step-num">01</span>
+              <h3>Enable Claude in Excel</h3>
+              <p>Open the side panel in the workbook. The enabled state shows skill buttons and a reply box beside the spreadsheet.</p>
+              <span class="code-pill">/audit-xls</span>
+            </article>
+            <article class="step-card">
+              <span class="step-num">02</span>
+              <h3>Start the workbook audit</h3>
+              <p>Use the audit skill on the selected model output. The assistant should ask for scope if the request is ambiguous.</p>
+            </article>
+            <article class="step-card">
+              <span class="step-num">03</span>
+              <h3>Select full workbook audit</h3>
+              <p>For cost-effectiveness models, cross-sheet formulas drive outcomes. Pick the full workbook option, not only the current PSA sheet.</p>
+            </article>
+            <article class="step-card">
+              <span class="step-num">04</span>
+              <h3>Prompt for edge cases</h3>
+              <p>After the structural audit, ask for edge-case tests so the model is exercised at biologically and economically unusual inputs.</p>
+              <span class="code-pill">EDGE CASE TESTS</span>
+            </article>
+            <article class="step-card">
+              <span class="step-num">05</span>
+              <h3>Choose stress categories</h3>
+              <p>Select boundary values, degenerate cases, sign-flip cases, and extreme inputs. These reveal logic defects that normal PSA may miss.</p>
+            </article>
+            <article class="step-card">
+              <span class="step-num">06</span>
+              <h3>Restore and interpret</h3>
+              <p>Require baseline restoration after tests. Findings are useful only if the model returns to the original state and ICER.</p>
+            </article>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-label">
+            <h2>What the AI found</h2>
+            <span class="tag">Model signals</span>
+          </div>
+          <div class="findings">
+            <article class="finding-card critical">
+              <div class="finding-bar"></div>
+              <div class="finding-body">
+                <div class="finding-kicker"><span>Finding 01</span><span>Most material</span></div>
+                <h3>Time-horizon cap</h3>
+                <p>A 10-year horizon cap affects every long-horizon analysis. Treat this as a decision point: confirm whether the cap is intended, documented, and aligned to the base-case horizon.</p>
+              </div>
+            </article>
+            <article class="finding-card">
+              <div class="finding-bar"></div>
+              <div class="finding-body">
+                <div class="finding-kicker"><span>Finding 02</span><span>Lookup integrity</span></div>
+                <h3>Age-QALY lookup failure</h3>
+                <p>The age-0 QALY lookup failed under stress testing. Check table bounds, interpolation logic, and whether pediatric or degenerate ages should return valid utilities.</p>
+              </div>
+            </article>
+            <article class="finding-card">
+              <div class="finding-bar"></div>
+              <div class="finding-body">
+                <div class="finding-kicker"><span>Finding 03</span><span>Face validity</span></div>
+                <h3>Residual incremental cost under 100% mortality</h3>
+                <p>The stress run still showed about &pound;1.8M residual incremental cost under 100% mortality. Investigate death costs, fixed treatment costs, and state-cost timing.</p>
+              </div>
+            </article>
+            <article class="finding-card ok">
+              <div class="finding-bar"></div>
+              <div class="finding-body">
+                <div class="finding-kicker"><span>Control check</span><span>Restored state</span></div>
+                <h3>Baseline ICER restored</h3>
+                <p>The assistant reported the baseline restored after testing: ICER &pound;4,950.80 with horizon = 10. This protects the audit trail from stress-test artifacts.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <main class="sheet evidence-sheet" aria-label="How to evaluate a cost-effectiveness model using AI - evidence and interpretation">
+    <div class="inner">
+      <section aria-label="Screenshot evidence">
+        <div class="section-label">
+          <h2>Visual evidence from the workbook session</h2>
+          <span class="tag">Screenshots</span>
+        </div>
+        <div class="evidence-grid">
+          <article class="evidence-card">
+            <div class="evidence-image right">
+              <img src="screenshots/00-claude-addin-enabled.png" alt="Claude enabled in Excel with audit skills visible">
+            </div>
+            <div class="evidence-caption">
+              <h3>Claude enabled in Excel</h3>
+              <p>Workbook, formulas, sheets, and Claude side-panel context stay visible together.</p>
+            </div>
+          </article>
+          <article class="evidence-card">
+            <div class="evidence-image right">
+              <img src="screenshots/01-audit-xls-response-complete.png" alt="Full workbook audit option presented by Claude">
+            </div>
+            <div class="evidence-caption">
+              <h3>Full workbook audit selected</h3>
+              <p>The audit asks whether to inspect the PSA sheet, PSA-related tabs, or full workbook.</p>
+            </div>
+          </article>
+          <article class="evidence-card">
+            <div class="evidence-image right">
+              <img src="screenshots/02-edge-case-stress-test-response-latest.png" alt="Stress-test category selection in Claude">
+            </div>
+            <div class="evidence-caption">
+              <h3>Stress-test categories</h3>
+              <p>Boundary, degenerate, sign-flip, and extreme-input options create test scenarios.</p>
+            </div>
+          </article>
+          <article class="evidence-card">
+            <div class="evidence-image right">
+              <img src="screenshots/01-audit-response-latest.png" alt="Audit checklist progressing in Claude">
+            </div>
+            <div class="evidence-caption">
+              <h3>Workbook audit checklist</h3>
+              <p>The assistant scans formula errors, references, logic issues, and cost/QALY tie-outs.</p>
+            </div>
+          </article>
+          <article class="evidence-card">
+            <div class="evidence-image right">
+              <img src="screenshots/02-edge-case-findings-complete.png" alt="Claude running edge-case stress tests">
+            </div>
+            <div class="evidence-caption">
+              <h3>Edge-case run in progress</h3>
+              <p>The AI saves originals, changes inputs, captures outputs, and restores the workbook.</p>
+            </div>
+          </article>
+          <article class="evidence-card">
+            <div class="evidence-image right">
+              <img src="screenshots/03-validation-checklist-recovered-status.png" alt="Final model findings in Claude">
+            </div>
+            <div class="evidence-caption">
+              <h3>Interpretable findings</h3>
+              <p>Final triage separates model behavior from restored-baseline status.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="method-band" aria-label="Prompting discipline and interpretation rules">
+        <div class="prompt-panel">
+          <h2>Prompting pattern for HEOR teams</h2>
+          <div class="prompt-list">
+            <div class="prompt-item"><strong>Scope first:</strong> "Audit the full workbook, not only the current sheet."</div>
+            <div class="prompt-item"><strong>Trace outputs:</strong> "Map inputs, dependencies, and ICER-driving cells."</div>
+            <div class="prompt-item"><strong>Stress deliberately:</strong> "Run boundary, degenerate, sign-flip, and extreme-input tests."</div>
+            <div class="prompt-item"><strong>Protect baseline:</strong> "Restore all changed values and confirm the original ICER."</div>
+          </div>
+        </div>
+        <div class="audit-table">
+          <h2>How to read AI findings</h2>
+          <div>
+            <div class="audit-row">
+              <span>Materiality</span>
+              <span>Prioritize defects that affect every long-horizon analysis or the base-case ICER.</span>
+            </div>
+            <div class="audit-row">
+              <span>Mechanism</span>
+              <span>Ask which formulas, lookup tables, or state costs produced the observed behavior.</span>
+            </div>
+            <div class="audit-row">
+              <span>Replicate</span>
+              <span>Re-run the stress case manually or with a test log before changing the model.</span>
+            </div>
+            <div class="audit-row">
+              <span>Document</span>
+              <span>Capture screenshots, original values, changed values, outputs, and restoration status.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

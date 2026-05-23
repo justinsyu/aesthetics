@@ -1,0 +1,181 @@
+# HEOR Vendor Candidate Research - 2026
+
+Scope: extracted candidates from the ISPOR attendee workbook using `Affiliation`, `Affiliation short name`, and `Affiliation Type`, with Consulting affiliations prioritized; then checked official 2026 ISPOR and AMCP exhibitor sources for vendor exhibitors not obvious from the sheet.
+
+Primary sources:
+- ISPOR 2026 exhibitor directory: https://n1b.goexposoftware.com/events/ispor26/goExpo/exhibitor/listExhibitorProfiles.php
+- ISPOR 2026 exhibitor resources page: https://www.ispor.org/conferences-education/conferences/upcoming-conferences/ispor-2026/exhibits---sponsorship/exhibitor-resources
+- AMCP 2026 official exhibitor page: https://amcp.my.site.com/amcp26/exhibitors
+- AMCP 2026 exhibit info page: https://amcpannual.org/expo/exhibitors
+- AMCP 2026 sponsors page: https://amcpannual.org/sponsorship/sponsors
+
+## Sheet readout
+- Attendee rows reviewed: 3877
+- Consulting rows: 1370
+- Unique Consulting `Affiliation short name` values: 340
+- Affiliation type counts: Consulting: 1370, Manufacturer: 1065, Other: 744, Academia: 698
+
+Top Consulting affiliations by `Affiliation short name`:
+- ISPOR: 63
+- Analysis Group: 52
+- Thermo Fisher Scientific: 48
+- Flatiron Health: 35
+- IQVIA: 30
+- Lumanity: 29
+- Datavant: 27
+- OPEN Health: 24
+- Precision: 22
+- Carelon Research: 20
+- Panalgo: 20
+- Cardinal Health: 19
+- RTI Health Solutions: 18
+- Cytel: 17
+- AESARA: 16
+- Genesis Research Group: 16
+- EntityRisk, Inc.: 15
+- Inovalon: 14
+- MarketScan by Merative: 14
+- Ontada: 14
+- Stratevi: 14
+- Truveta: 14
+- Costello Medical: 13
+- EVERSANA: 13
+- Integra PrecisionQ, LLC: 13
+
+## Major Candidates
+- **Analysis Group** (major): sheet consulting rows 52, all attendee rows 52; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 605.
+- **Thermo Fisher Scientific** (major): sheet consulting rows 50, all attendee rows 50; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 611.
+- **Flatiron Health** (major): sheet consulting rows 39, all attendee rows 39; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 316.
+- **Precision AQ** (major): sheet consulting rows 36, all attendee rows 36; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 610.
+- **IQVIA** (major): sheet consulting rows 35, all attendee rows 35; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 531.
+- **Lumanity** (major): sheet consulting rows 29, all attendee rows 29; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 624.
+- **Datavant** (major): sheet consulting rows 27, all attendee rows 27; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 617.
+- **OPEN Health** (major): sheet consulting rows 26, all attendee rows 26; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 717.
+- **Panalgo** (major): sheet consulting rows 25, all attendee rows 25; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 711.
+- **Inovalon** (major): sheet consulting rows 23, all attendee rows 23; source_basis: `attendee_sheet, ispor_exhibitor_2026, amcp_exhibitor_2026`; ISPOR booth 311; AMCP booth 1223.
+- **Optum** (major): sheet consulting rows 23, all attendee rows 23; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 731.
+- **Cardinal Health** (major): sheet consulting rows 20, all attendee rows 20; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 325.
+- **Carelon Research** (major): sheet consulting rows 20, all attendee rows 20; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 925.
+- **MarketScan by Merative** (major): sheet consulting rows 19, all attendee rows 19; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 411.
+- **Ontada** (major): sheet consulting rows 19, all attendee rows 19; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 410.
+- **RTI Health Solutions** (major): sheet consulting rows 19, all attendee rows 19; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 516.
+- **Cytel** (major): sheet consulting rows 18, all attendee rows 18; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 1036.
+- **Genesis Research Group** (major): sheet consulting rows 18, all attendee rows 18; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 725.
+- **Premier Applied Sciences** (major): sheet consulting rows 18, all attendee rows 18; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 824.
+- **Adelphi Real World and Adelphi Values** (major): sheet consulting rows 17, all attendee rows 19; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 525.
+- **TriNetX** (major): sheet consulting rows 15, all attendee rows 15; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 817.
+- **Truveta** (major): sheet consulting rows 14, all attendee rows 14; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 505.
+- **Costello Medical** (major): sheet consulting rows 13, all attendee rows 13; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 440.
+- **EVERSANA** (major): sheet consulting rows 13, all attendee rows 14; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 417.
+- **PAREXEL** (major): sheet consulting rows 11, all attendee rows 11; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 716.
+- **Avalere Health** (major): sheet consulting rows 10, all attendee rows 10; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 938.
+- **Clarivate** (major): sheet consulting rows 10, all attendee rows 10; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 1042.
+- **HealthVerity** (major): sheet consulting rows 10, all attendee rows 10; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 1004.
+- **Trinity Life Sciences** (major): sheet consulting rows 10, all attendee rows 10; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 1117.
+- **ICON** (major): sheet consulting rows 9, all attendee rows 9; source_basis: `attendee_sheet, ispor_exhibitor_2026, amcp_exhibitor_2026`; ISPOR booth 1017; AMCP booth 1412.
+- **Komodo Health** (major): sheet consulting rows 9, all attendee rows 9; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 504.
+- **Certara** (major): sheet consulting rows 7, all attendee rows 7; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 911.
+- **OM1** (major): sheet consulting rows 7, all attendee rows 7; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 1025.
+- **Red Nucleus** (major): sheet consulting rows 7, all attendee rows 7; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 916.
+- **Cencora/FormularyDecisions** (major): sheet consulting rows 0, all attendee rows 8; source_basis: `attendee_sheet, ispor_exhibitor_2026, amcp_exhibitor_2026`; ISPOR booth 517; AMCP booth 1500.
+- **CVS Healthspire Life Sciences Solutions** (major): sheet consulting rows 0, all attendee rows 3; source_basis: `attendee_sheet, ispor_exhibitor_2026, amcp_exhibitor_2026`; ISPOR booth 1016; AMCP booth 1209.
+- **Oracle Health and Life Sciences** (major): sheet consulting rows 0, all attendee rows 8; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 633.
+- **United BioSource (UBC)** (major): sheet consulting rows 0, all attendee rows 10; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 317.
+
+## Minor / Specialist Candidates
+- **Medicus Economics** (minor): sheet consulting rows 23, all attendee rows 23; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 827.
+- **AESARA** (minor): sheet consulting rows 16, all attendee rows 16; source_basis: `attendee_sheet`.
+- **EntityRisk** (minor): sheet consulting rows 15, all attendee rows 15; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 805.
+- **Stratevi** (minor): sheet consulting rows 14, all attendee rows 14; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 737.
+- **Curta** (minor): sheet consulting rows 12, all attendee rows 12; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 904.
+- **Columbia Data Analytics** (minor): sheet consulting rows 11, all attendee rows 11; source_basis: `attendee_sheet, ispor_exhibitor_2026, amcp_exhibitor_2026`; ISPOR booth 511; AMCP booth 1019.
+- **Health Analytics LLC** (minor): sheet consulting rows 10, all attendee rows 10; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 536.
+- **Petauri** (minor): sheet consulting rows 10, all attendee rows 10; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 804.
+- **Veradigm** (minor): sheet consulting rows 10, all attendee rows 10; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 742.
+- **OMNY Health** (minor): sheet consulting rows 9, all attendee rows 9; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 435.
+- **Apperture Health** (minor): sheet consulting rows 8, all attendee rows 8; source_basis: `attendee_sheet`.
+- **Decisive Consulting** (minor): sheet consulting rows 8, all attendee rows 8; source_basis: `attendee_sheet`.
+- **Nested Knowledge** (minor): sheet consulting rows 7, all attendee rows 7; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 427.
+- **Peritia** (minor): sheet consulting rows 7, all attendee rows 7; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 540.
+- **Target RWE** (minor): sheet consulting rows 7, all attendee rows 7; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 1111.
+- **Verana Health** (minor): sheet consulting rows 7, all attendee rows 7; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 1005.
+- **ADVI Health** (minor): sheet consulting rows 6, all attendee rows 6; source_basis: `attendee_sheet`.
+- **ConnectHEOR** (minor): sheet consulting rows 6, all attendee rows 6; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 705.
+- **Elicit** (minor): sheet consulting rows 6, all attendee rows 6; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 1116.
+- **Kielo Research** (minor): sheet consulting rows 6, all attendee rows 6; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 636.
+- **KMK Consulting** (minor): sheet consulting rows 6, all attendee rows 6; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 217.
+- **Pharmacoevidence** (minor): sheet consulting rows 6, all attendee rows 7; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 841.
+- **PharmaQuant** (minor): sheet consulting rows 6, all attendee rows 6; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 405.
+- **Value Analytics Labs** (minor): sheet consulting rows 6, all attendee rows 6; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 917.
+- **Amaris Consulting** (minor): sheet consulting rows 5, all attendee rows 5; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 539.
+- **Stage Analytics** (minor): sheet consulting rows 5, all attendee rows 5; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 833.
+- **Wickenstones** (minor): sheet consulting rows 5, all attendee rows 5; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 840.
+- **Indence Research** (minor): sheet consulting rows 4, all attendee rows 4; source_basis: `attendee_sheet`.
+- **Core Clinical Sciences** (minor): sheet consulting rows 3, all attendee rows 3; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 537.
+- **eMAX Health Systems** (minor): sheet consulting rows 3, all attendee rows 3; source_basis: `attendee_sheet, ispor_exhibitor_2026, amcp_exhibitor_2026`; ISPOR booth 310; AMCP booth 1409.
+- **Initiate Consultancy** (minor): sheet consulting rows 3, all attendee rows 3; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 810.
+- **Pienomial** (minor): sheet consulting rows 3, all attendee rows 3; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 907.
+- **EBM Health Consultants** (minor): sheet consulting rows 2, all attendee rows 2; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 643.
+- **Loopback Health** (minor): sheet consulting rows 2, all attendee rows 2; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 943.
+- **Mapi Research Trust** (minor): sheet consulting rows 1, all attendee rows 1; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 1112.
+- **MArS Market Access & Pricing Strategy** (minor): sheet consulting rows 1, all attendee rows 1; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 926.
+- **Access Infinity** (minor): sheet consulting rows 0, all attendee rows 3; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 305.
+- **Acumetis** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `ispor_exhibitor_2026, general_knowledge`; ISPOR booth 811.
+- **Arcturis Data** (minor): sheet consulting rows 0, all attendee rows 2; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 937.
+- **Arine** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `amcp_exhibitor_2026, general_knowledge`; AMCP booth 1307.
+- **Asepha** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `amcp_exhibitor_2026, general_knowledge`; AMCP booth 1201.
+- **ATHAGORAS** (minor): sheet consulting rows 0, all attendee rows 4; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 436.
+- **Clinigma** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `ispor_exhibitor_2026, general_knowledge`; ISPOR booth 441.
+- **Close-Up CRM** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `amcp_exhibitor_2026, general_knowledge`; AMCP booth 1015.
+- **DistillerSR** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `ispor_exhibitor_2026, general_knowledge`; ISPOR booth 1031.
+- **EasySLR** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `ispor_exhibitor_2026, general_knowledge`; ISPOR booth 543.
+- **Evidencia Life Sciences** (minor): sheet consulting rows 0, all attendee rows 1; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 528.
+- **ForHealth Consulting at UMass Chan Medical School** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `amcp_exhibitor_2026, general_knowledge`; AMCP booth 1414.
+- **Forian** (minor): sheet consulting rows 0, all attendee rows 10; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 638.
+- **Gemini Health** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `amcp_exhibitor_2026, general_knowledge`; AMCP booth 1309.
+- **Guardian Research Network** (minor): sheet consulting rows 0, all attendee rows 2; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 835.
+- **Health Catalyst** (minor): sheet consulting rows 0, all attendee rows 3; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 934.
+- **Innovaccer** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `amcp_exhibitor_2026, general_knowledge`; AMCP booth 1004.
+- **Keiji.AI** (minor): sheet consulting rows 0, all attendee rows 1; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 213.
+- **Limina** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `ispor_exhibitor_2026, general_knowledge`; ISPOR booth 1038.
+- **MDI Health** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `amcp_exhibitor_2026, general_knowledge`; AMCP booth 907.
+- **MGB HIRO** (minor): sheet consulting rows 0, all attendee rows 4; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 932.
+- **nference** (minor): sheet consulting rows 0, all attendee rows 4; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 312.
+- **Novellia** (minor): sheet consulting rows 0, all attendee rows 2; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 939.
+- **OneMedNet** (minor): sheet consulting rows 0, all attendee rows 2; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 526.
+- **PearlDiver Technologies** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `ispor_exhibitor_2026, general_knowledge`; ISPOR booth 534.
+- **PhaseV** (minor): sheet consulting rows 0, all attendee rows 1; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 306.
+- **PolicyMap** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `ispor_exhibitor_2026, general_knowledge`; ISPOR booth 438.
+- **Scripta Insights** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `amcp_exhibitor_2026, general_knowledge`; AMCP booth 909.
+- **SmartStep Consulting** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `ispor_exhibitor_2026, general_knowledge`; ISPOR booth 942.
+- **STATinMed Research** (minor): sheet consulting rows 0, all attendee rows 1; source_basis: `attendee_sheet, amcp_exhibitor_2026`; AMCP booth 1202.
+- **TreeAge Software** (minor): sheet consulting rows 0, all attendee rows 2; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 743.
+- **Verantos** (minor): sheet consulting rows 0, all attendee rows 3; source_basis: `attendee_sheet, ispor_exhibitor_2026`; ISPOR booth 406.
+- **Viver Health** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `ispor_exhibitor_2026, general_knowledge`; ISPOR booth 1104.
+- **Wolters Kluwer** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `amcp_exhibitor_2026, general_knowledge`; AMCP booth 1106.
+
+## Exhibitor-Only Additions To Notice
+These were not obvious from attendee-sheet counts but appeared in official ISPOR or AMCP exhibitor evidence and are plausibly relevant to HEOR, RWE, evidence synthesis, value/access, or managed-care analytics:
+- **Acumetis** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `ispor_exhibitor_2026, general_knowledge`; ISPOR booth 811.
+- **Arine** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `amcp_exhibitor_2026, general_knowledge`; AMCP booth 1307.
+- **Asepha** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `amcp_exhibitor_2026, general_knowledge`; AMCP booth 1201.
+- **Clinigma** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `ispor_exhibitor_2026, general_knowledge`; ISPOR booth 441.
+- **Close-Up CRM** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `amcp_exhibitor_2026, general_knowledge`; AMCP booth 1015.
+- **DistillerSR** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `ispor_exhibitor_2026, general_knowledge`; ISPOR booth 1031.
+- **EasySLR** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `ispor_exhibitor_2026, general_knowledge`; ISPOR booth 543.
+- **ForHealth Consulting at UMass Chan Medical School** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `amcp_exhibitor_2026, general_knowledge`; AMCP booth 1414.
+- **Gemini Health** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `amcp_exhibitor_2026, general_knowledge`; AMCP booth 1309.
+- **Innovaccer** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `amcp_exhibitor_2026, general_knowledge`; AMCP booth 1004.
+- **Limina** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `ispor_exhibitor_2026, general_knowledge`; ISPOR booth 1038.
+- **MDI Health** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `amcp_exhibitor_2026, general_knowledge`; AMCP booth 907.
+- **PearlDiver Technologies** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `ispor_exhibitor_2026, general_knowledge`; ISPOR booth 534.
+- **PolicyMap** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `ispor_exhibitor_2026, general_knowledge`; ISPOR booth 438.
+- **Scripta Insights** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `amcp_exhibitor_2026, general_knowledge`; AMCP booth 909.
+- **SmartStep Consulting** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `ispor_exhibitor_2026, general_knowledge`; ISPOR booth 942.
+- **Viver Health** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `ispor_exhibitor_2026, general_knowledge`; ISPOR booth 1104.
+- **Wolters Kluwer** (minor): sheet consulting rows 0, all attendee rows 0; source_basis: `amcp_exhibitor_2026, general_knowledge`; AMCP booth 1106.
+
+## Caveats
+- `general_knowledge` is used only to mark the judgment that a listed company is HEOR/RWE/value-access relevant or to classify scale; booth/list evidence remains separately captured under ISPOR or AMCP source fields.
+- The attendee workbook has OCR/normalization variance, so aliases were used for obvious variants such as `RTI- Health Solutions`, `Analysis Group Inc.`, and `Precision AQ`/`Precision Medicine Group`; broad aliases were avoided when they would overmatch common substrings.
+- Major/minor is a pragmatic sizing and market-presence classification for candidate prioritization, not a quality ranking.

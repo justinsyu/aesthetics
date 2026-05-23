@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Generic vs Brand-Only Medication Use in the U.S.</title>
+<style>
+  :root {
+    --ink: #10120f;
+    --muted: #5c6257;
+    --paper: #f6f1e8;
+    --paper-2: #ebe4d6;
+    --card: #fffaf0;
+    --line: #1b1f17;
+    --lime: #d7ff5f;
+    --orange: #ffb86b;
+    --blue: #b8d8ff;
+    --pink: #ffd3e0;
+    --gray: #d6d0c2;
+    --red: #ff8a76;
+    --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+    --radius: 24px;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  html {
+    background: #141510;
+  }
+
+  body {
+    min-height: 100vh;
+    display: grid;
+    place-items: start center;
+    padding: 32px;
+    background: #141510;
+    color: var(--ink);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1.5px solid currentColor;
+  }
+
+  sup a {
+    border-bottom: 0;
+  }
+
+  .sheet {
+    width: 1200px;
+    height: 1840px;
+    overflow: hidden;
+    position: relative;
+    background:
+      radial-gradient(circle at 5% 2%, rgba(215, 255, 95, 0.34), transparent 370px),
+      radial-gradient(circle at 92% 5%, rgba(184, 216, 255, 0.38), transparent 330px),
+      radial-gradient(circle at 88% 98%, rgba(255, 184, 107, 0.26), transparent 380px),
+      linear-gradient(90deg, rgba(16, 18, 15, 0.035) 1px, transparent 1px),
+      linear-gradient(0deg, rgba(16, 18, 15, 0.03) 1px, transparent 1px),
+      var(--paper);
+    background-size: auto, auto, auto, 34px 34px, 34px 34px, auto;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+  }
+
+  .sheet::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(135deg, rgba(16, 18, 15, 0.05), transparent 28%, transparent 76%, rgba(16, 18, 15, 0.04)),
+      repeating-linear-gradient(0deg, rgba(16, 18, 15, 0.014) 0 1px, transparent 1px 8px);
+    mix-blend-mode: multiply;
+  }
+
+  .wrap {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    padding: 62px 68px 54px;
+    display: grid;
+    grid-template-rows: auto auto auto 1fr auto;
+    gap: 28px;
+  }
+
+  .topline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 28px;
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: var(--muted);
+  }
+
+  .topline .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    border: 2px solid var(--line);
+    border-radius: 999px;
+    background: var(--lime);
+    color: var(--ink);
+    box-shadow: 5px 5px 0 var(--line);
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--ink);
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 36px;
+    align-items: end;
+    padding-bottom: 4px;
+  }
+
+  h1 {
+    font-size: 82px;
+    line-height: 0.9;
+    letter-spacing: 0;
+    font-weight: 900;
+    max-width: 690px;
+  }
+
+  h1 span {
+    display: block;
+    color: #26405c;
+  }
+
+  .hero-copy {
+    border-left: 5px solid var(--line);
+    padding-left: 22px;
+    color: var(--muted);
+    font-size: 21px;
+    line-height: 1.35;
+    font-weight: 650;
+  }
+
+  .hero-copy b {
+    color: var(--ink);
+  }
+
+  .answer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .panel {
+    border: 3px solid var(--line);
+    border-radius: var(--radius);
+    background: rgba(255, 250, 240, 0.92);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  .panel.dark {
+    background: #11130f;
+    color: var(--paper);
+  }
+
+  .panel-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    align-items: center;
+    padding: 18px 22px;
+    border-bottom: 3px solid var(--line);
+    background: var(--card);
+    color: var(--ink);
+  }
+
+  .panel.dark .panel-head {
+    background: var(--blue);
+  }
+
+  .kicker {
+    font-size: 13px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+
+  .denominator {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #44536a;
+    font-weight: 900;
+    white-space: nowrap;
+  }
+
+  .current-body {
+    padding: 28px 28px 30px;
+  }
+
+  .big-stat {
+    display: grid;
+    grid-template-columns: 208px 1fr;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .donut {
+    width: 208px;
+    height: 208px;
+    border-radius: 50%;
+    background: conic-gradient(var(--lime) 0 90%, var(--red) 90% 100%);
+    border: 3px solid var(--line);
+    position: relative;
+    box-shadow: 7px 7px 0 rgba(16, 18, 15, 0.16);
+  }
+
+  .donut::after {
+    content: "";
+    position: absolute;
+    inset: 36px;
+    border-radius: 50%;
+    background: #11130f;
+    border: 3px solid var(--line);
+  }
+
+  .donut-label {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    color: var(--paper);
+    z-index: 1;
+    text-align: center;
+    font-weight: 950;
+    line-height: 0.85;
+    font-size: 56px;
+  }
+
+  .donut-label span {
+    display: block;
+    margin-top: 8px;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    line-height: 1.1;
+    text-transform: uppercase;
+  }
+
+  .stat-text h2 {
+    font-size: 34px;
+    line-height: 1.02;
+    letter-spacing: 0;
+    font-weight: 900;
+    margin-bottom: 14px;
+  }
+
+  .stat-text p {
+    color: rgba(246, 241, 232, 0.78);
+    font-size: 18px;
+    line-height: 1.38;
+    font-weight: 620;
+  }
+
+  .legend {
+    display: grid;
+    gap: 10px;
+    margin-top: 24px;
+    font-size: 16px;
+    line-height: 1.25;
+    color: rgba(246, 241, 232, 0.82);
+    font-weight: 750;
+  }
+
+  .legend-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .swatch {
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+    border: 2px solid var(--paper);
+    flex: 0 0 auto;
+  }
+
+  .swatch.lime { background: var(--lime); }
+  .swatch.red { background: var(--red); }
+
+  .person-body {
+    padding: 28px;
+  }
+
+  .person-intro {
+    display: grid;
+    grid-template-columns: 132px 1fr;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  .year {
+    width: 132px;
+    height: 132px;
+    border-radius: 20px;
+    border: 3px solid var(--line);
+    background: var(--orange);
+    display: grid;
+    place-items: center;
+    font-weight: 950;
+    font-size: 42px;
+    box-shadow: 7px 7px 0 var(--line);
+  }
+
+  .person-intro p {
+    font-size: 18px;
+    line-height: 1.37;
+    color: var(--muted);
+    font-weight: 650;
+  }
+
+  .stacked {
+    height: 88px;
+    border: 3px solid var(--line);
+    border-radius: 20px;
+    display: flex;
+    overflow: hidden;
+    background: var(--gray);
+  }
+
+  .segment {
+    min-width: 0;
+    height: 100%;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    text-align: center;
+    border-right: 3px solid var(--line);
+    font-weight: 950;
+    line-height: 1;
+    color: var(--ink);
+  }
+
+  .segment:last-child {
+    border-right: 0;
+  }
+
+  .generic-only { width: 17.1%; background: var(--lime); }
+  .both { width: 54.3%; background: var(--blue); }
+  .brand-only { width: 28.6%; background: var(--red); }
+
+  .segment strong {
+    font-size: 28px;
+    letter-spacing: 0;
+  }
+
+  .segment span {
+    display: none;
+  }
+
+  .bar-key {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 950;
+  }
+
+  .bar-key span {
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .calc {
+    margin-top: 18px;
+    padding: 15px 17px;
+    border: 2px solid var(--line);
+    border-radius: 18px;
+    background: rgba(235, 228, 214, 0.72);
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.35;
+    font-weight: 700;
+  }
+
+  .evidence-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .mini {
+    padding: 22px 22px 20px;
+    min-height: 196px;
+  }
+
+  .mini h3 {
+    font-size: 18px;
+    line-height: 1.05;
+    font-weight: 950;
+    margin-bottom: 14px;
+  }
+
+  .mini .metric {
+    font-size: 54px;
+    line-height: 0.88;
+    font-weight: 950;
+    letter-spacing: 0;
+    margin-bottom: 12px;
+  }
+
+  .mini .metric.blue { color: #284c78; }
+  .mini .metric.orange { color: #9d4f13; }
+  .mini .metric.red {
+    color: #9c2e1c;
+    font-size: 46px;
+  }
+
+  .mini p {
+    font-size: 15px;
+    line-height: 1.34;
+    color: var(--muted);
+    font-weight: 650;
+  }
+
+  .bottom-grid {
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    gap: 20px;
+    align-items: stretch;
+  }
+
+  .takeaway {
+    padding: 24px 26px 24px;
+    background: #11130f;
+    color: var(--paper);
+  }
+
+  .takeaway h3 {
+    font-size: 25px;
+    line-height: 1.05;
+    font-weight: 950;
+    margin-bottom: 14px;
+    color: var(--lime);
+  }
+
+  .takeaway p {
+    font-size: 19px;
+    line-height: 1.34;
+    font-weight: 700;
+    color: rgba(246, 241, 232, 0.82);
+  }
+
+  .sources {
+    padding: 22px 24px 20px;
+  }
+
+  .sources h3 {
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 950;
+    margin-bottom: 12px;
+  }
+
+  .sources ol {
+    padding-left: 18px;
+    display: grid;
+    gap: 7px;
+  }
+
+  .sources li {
+    font-size: 12.5px;
+    line-height: 1.32;
+    color: var(--muted);
+    font-weight: 650;
+  }
+
+  .sources a {
+    color: var(--ink);
+    font-weight: 850;
+    border-bottom: 1px solid rgba(16, 18, 15, 0.38);
+  }
+
+  @page {
+    size: 1200px 1840px;
+    margin: 0;
+  }
+
+  @media print {
+    html, body {
+      width: 1200px;
+      height: 1840px;
+      padding: 0;
+      background: var(--paper);
+    }
+
+    .sheet {
+      box-shadow: none;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    body {
+      padding: 0;
+    }
+
+    .sheet {
+      transform-origin: top center;
+      transform: scale(calc(100vw / 1200));
+    }
+  }
+</style>
+</head>
+<body>
+  <main class="sheet">
+    <div class="wrap">
+      <header class="topline">
+        <div class="pill"><span class="dot"></span> Evidence check</div>
+        <div>U.S. outpatient prescription medications</div>
+      </header>
+
+      <section class="hero" aria-labelledby="title">
+        <h1 id="title">Generic drugs dominate prescriptions <span>but “Americans only” needs a caveat</span></h1>
+        <p class="hero-copy">
+          Current national sources support a <b>prescription-fill</b> split. The clean public <b>person-level</b> split for “only generic” versus “only brand-name” is older MEPS evidence, so it should not be presented as current.
+        </p>
+      </section>
+
+      <section class="answer-grid" aria-label="Main evidence">
+        <article class="panel dark">
+          <div class="panel-head">
+            <div class="kicker">Current answer</div>
+            <div class="denominator">2024 fills</div>
+          </div>
+          <div class="current-body">
+            <div class="big-stat">
+              <div class="donut" role="img" aria-label="90 percent generic and biosimilar prescription fills, 10 percent brand prescription fills">
+                <div class="donut-label">90%<span>generic<br />or biosimilar</span></div>
+              </div>
+              <div class="stat-text">
+                <h2>9 in 10 U.S. prescriptions are filled as generic or biosimilar medicines</h2>
+                <p>
+                  AAM/IQVIA report 3.9B generic fills versus 435M brand fills in 2024.<sup><a href="https://accessiblemeds.org/resources/press-releases/generic-and-biosimilar-medicines-save-467-billion-in-2024/">1</a></sup> FDA separately summarizes the U.S. market as 9 out of 10 prescriptions filled for generics.<sup><a href="https://www.fda.gov/drugs/buying-using-medicine-safely/generic-drugs">2</a></sup>
+                </p>
+              </div>
+            </div>
+            <div class="legend" aria-label="Current prescription fill legend">
+              <div class="legend-row"><span class="swatch lime"></span> 90% generic or biosimilar prescription fills</div>
+              <div class="legend-row"><span class="swatch red"></span> 10% brand medicine prescription fills</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <div class="kicker">Older derived person split</div>
+            <div class="denominator">MEPS 2003</div>
+          </div>
+          <div class="person-body">
+            <div class="person-intro">
+              <div class="year">2003</div>
+              <p>
+                Among people with outpatient prescription drug expense, a derived split is <b>17.1% generic-only</b>, <b>54.3% both</b>, and <b>28.6% brand-only</b>.<sup><a href="https://meps.ahrq.gov/mepsweb/data_files/publications/st144/stat144.shtml">3</a>,<a href="https://meps.ahrq.gov/data_files/publications/cb16/cb16.shtml">4</a></sup>
+              </p>
+            </div>
+            <div class="stacked" role="img" aria-label="Among 2003 outpatient prescription users, 17.1 percent used generics only, 54.3 percent used both brand and generic medicines, and 28.6 percent used brand-name medicines only">
+              <div class="segment generic-only"><strong>17.1%</strong><span>generic-only</span></div>
+              <div class="segment both"><strong>54.3%</strong><span>both</span></div>
+              <div class="segment brand-only"><strong>28.6%</strong><span>brand-only</span></div>
+            </div>
+            <div class="bar-key" aria-hidden="true">
+              <span>generic-only</span>
+              <span>both</span>
+              <span>brand-only</span>
+            </div>
+            <p class="calc">
+              Derived estimate, not a directly published cross-tab: AHRQ reported 53.4% of the community population purchased a brand-name medicine and 46.0% purchased a generic medicine in 2003; 64.4% had any outpatient prescription drug expense. The implied overlap is 35.0 points, leaving 11.0 points generic-only and 18.4 points brand-only in the full population; dividing by 64.4 gives the user-level split shown here.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section class="evidence-row" aria-label="Context evidence">
+        <article class="panel mini">
+          <h3>Most adults are in the prescription market</h3>
+          <div class="metric blue">66%</div>
+          <p>KFF polling in March 2026 found that two-thirds of U.S. adults currently take at least one prescription drug.<sup><a href="https://www.kff.org/health-costs/public-opinion-on-prescription-drugs-and-their-prices/">5</a></sup></p>
+        </article>
+        <article class="panel mini">
+          <h3>Generic volume does not mean generic spending</h3>
+          <div class="metric orange">12%</div>
+          <p>Generic and biosimilar medicines represented 90% of fills but only 12% of prescription drug spending in 2024.<sup><a href="https://accessiblemeds.org/resources/press-releases/generic-and-biosimilar-medicines-save-467-billion-in-2024/">1</a></sup></p>
+        </article>
+        <article class="panel mini">
+          <h3>Regulatory meaning of “generic”</h3>
+          <div class="metric red">matched</div>
+          <p>FDA says approved generics match brand-name medicines in active ingredient, dosage form, strength, route, quality, performance, and intended use; inactive ingredients or appearance may differ.<sup><a href="https://www.fda.gov/drugs/frequently-asked-questions-popular-topics/generic-drugs-questions-answers">6</a></sup></p>
+        </article>
+      </section>
+
+      <section class="bottom-grid" aria-label="Bottom line and sources">
+        <article class="panel takeaway">
+          <h3>Bottom line</h3>
+          <p>
+            If the claim is about today’s medication use, say <b>about 90% of prescriptions filled are generic or biosimilar</b>. If the claim is about <b>Americans using only generics versus only brand-name drugs</b>, label it as an older person-level MEPS estimate rather than a current national fact.
+          </p>
+        </article>
+        <aside class="panel sources" aria-label="Sources">
+          <h3>Sources</h3>
+          <ol>
+            <li><a href="https://accessiblemeds.org/resources/press-releases/generic-and-biosimilar-medicines-save-467-billion-in-2024/">AAM/IQVIA, 2025 U.S. Generic & Biosimilar Medicines Savings Report press release</a></li>
+            <li><a href="https://www.fda.gov/drugs/buying-using-medicine-safely/generic-drugs">FDA, Generic Drugs</a></li>
+            <li><a href="https://meps.ahrq.gov/mepsweb/data_files/publications/st144/stat144.shtml">AHRQ MEPS Statistical Brief #144</a></li>
+            <li><a href="https://meps.ahrq.gov/data_files/publications/cb16/cb16.shtml">AHRQ MEPS Chartbook #16</a></li>
+            <li><a href="https://www.kff.org/health-costs/public-opinion-on-prescription-drugs-and-their-prices/">KFF, Public Opinion on Prescription Drugs and Their Prices</a></li>
+            <li><a href="https://www.fda.gov/drugs/frequently-asked-questions-popular-topics/generic-drugs-questions-answers">FDA, Generic Drugs: Questions & Answers</a></li>
+          </ol>
+        </aside>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

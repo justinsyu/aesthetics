@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SYNGAP1-Related Disorder Competitive Intelligence Update</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 36px 0 20px;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 850;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 74px; line-height: .94; letter-spacing: 0; font-weight: 560; max-width: 1320px; }
+    h2 { font-size: 52px; line-height: .98; letter-spacing: 0; font-weight: 560; max-width: 1300px; }
+    h3 { font-size: 28px; line-height: 1.04; letter-spacing: 0; font-weight: 650; }
+    .dek { margin-top: 18px; color: var(--muted); font-size: 26px; line-height: 1.22; max-width: 1260px; }
+    .section-head { margin-bottom: 18px; }
+    .section-head p { margin-top: 12px; color: var(--muted); font-size: 24px; line-height: 1.18; max-width: 1280px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .panel, .metric, .card, .table, .callout {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.88);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel { padding: 24px; }
+    .panel.dark, .callout { background: #11130f; color: var(--paper); border-color: #11130f; }
+    .panel.dark p, .panel.dark li, .callout p, .callout li { color: rgba(246,241,232,.88); }
+    .metric { padding: 20px; min-height: 162px; }
+    .num { font-size: 48px; line-height: .92; font-weight: 820; letter-spacing: 0; }
+    .label { margin-top: 12px; font-size: 23px; line-height: 1.12; color: var(--muted); }
+    .card { padding: 24px; min-height: 244px; }
+    .card.tall { min-height: 330px; }
+    .card p, .panel p { color: var(--muted); font-size: 23px; line-height: 1.14; margin-top: 12px; }
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      white-space: nowrap;
+      margin-bottom: 11px;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .gray { background: var(--gray); }
+    .callout { padding: 22px 26px; }
+    .callout h3 { font-size: 31px; }
+    .summary-list { margin: 12px 0 0; padding-left: 22px; display: grid; gap: 8px; }
+    .summary-list li { color: rgba(246,241,232,.88); font-size: 23px; line-height: 1.13; }
+    .table { display: grid; }
+    .row { display: grid; border-bottom: 1px solid var(--line); min-height: 74px; }
+    .row:last-child { border-bottom: 0; }
+    .row.trial { grid-template-columns: .95fr 1.2fr 1.35fr 1.35fr; }
+    .row.trial.head { min-height: 0; }
+    .row.refs { grid-template-columns: .34fr .98fr 1.06fr 1.78fr; min-height: 0; }
+    .cell { padding: 15px 16px; border-right: 1px solid var(--line); font-size: 22px; line-height: 1.13; }
+    .cell:last-child { border-right: 0; }
+    .head .cell {
+      background: #11130f;
+      color: var(--paper);
+      font-weight: 850;
+      text-transform: uppercase;
+      font-size: 18px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .refs .cell { font-size: 18px; line-height: 1.1; padding: 12px 12px; }
+    .trial.head .cell { padding: 11px 12px; }
+    .refs.head .cell { font-size: 18px; line-height: 1; padding: 11px 12px; white-space: nowrap; }
+    .row.refs .cell:first-child { text-align: center; }
+    .references-slide .section-head { margin-bottom: 14px; }
+    .references-slide h2 { font-size: 48px; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .cite + .cite::before { content: ","; margin-right: 1px; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .wrap { width: 1360px; }
+      .panel, .metric, .card, .table, .callout { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) {
+      .slide { width: 1600px; height: 900px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">SYNGAP1 CI update | May 8-14, 2026</div>
+      <h1>SYNGAP1-related disorder competitive intelligence update</h1>
+      <div class="grid-4" style="margin-top:30px;">
+        <div class="metric"><div class="num">1</div><div class="label">CMP-002 disclosure centered on preclinical seizure data<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1736730/000173673026000033/a20260514exhibit991.htm">1</a></div></div>
+        <div class="metric"><div class="num">2</div><div class="label">Seizure endpoints reported: threshold and severity<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1736730/000173673026000033/a20260514exhibit991.htm">1</a></div></div>
+        <div class="metric"><div class="num">1</div><div class="label">TIDES agenda session explicitly referenced CMP-002<a class="cite" href="https://informaconnect.com/tides/agenda/4/">3</a></div></div>
+        <div class="metric"><div class="num">2H26</div><div class="label">Stated timing for planned Phase 1/2 trial initiation<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1736730/000173673026000033/a20260514exhibit991.htm">1</a></div></div>
+      </div>
+      <div class="callout" style="margin-top:24px;">
+        <h3>Executive summary</h3>
+        <ul class="summary-list">
+          <li>CAMP4 reported May 14 preclinical data for CMP-002, its lead investigational ASO therapeutic candidate for SYNGAP1-related disorder, at the TIDES Oligonucleotide &amp; Peptide Therapeutics conference.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1736730/000173673026000033/a20260514exhibit991.htm">1</a></li>
+          <li>CMP-002 administration was reported to produce statistically significant improvement in seizure threshold and severity in chemically induced tonic-clonic seizures in SYNGAP1 haploinsufficient mice.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1736730/000173673026000033/a20260514exhibit991.htm">1</a></li>
+          <li>CAMP4 furnished the press release and an updated May 2026 corporate slide presentation in an 8-K, while the TIDES agenda listed a Dan Tardiff presentation stating that CMP-002 is advancing toward clinic for SYNGAP1-related disorder.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1736730/000173673026000033/camp-20260514.htm">2</a><a class="cite" href="https://informaconnect.com/tides/agenda/4/">3</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">01 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">CMP-002 preclinical seizure update</div>
+        <h2>CMP-002 was reported to improve seizure threshold and seizure severity in a SYNGAP1 haploinsufficient mouse model<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1736730/000173673026000033/a20260514exhibit991.htm">1</a></h2>
+      </div>
+      <div class="table">
+        <div class="row trial head">
+          <div class="cell">Model</div>
+          <div class="cell">Intervention</div>
+          <div class="cell">Assay design</div>
+          <div class="cell">Reported readout</div>
+        </div>
+        <div class="row trial">
+          <div class="cell">SYNGAP1 haploinsufficient mice were described as having greater seizure burden than wild-type mice after PTZ induction.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1736730/000173673026000033/a20260514exhibit991.htm">1</a></div>
+          <div class="cell">A single dose of CMP-002 was administered before PTZ challenge in juvenile mice.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1736730/000173673026000033/a20260514exhibit991.htm">1</a></div>
+          <div class="cell">Pentylenetetrazol was used to induce tonic-clonic seizures one month after CMP-002 administration.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1736730/000173673026000033/a20260514exhibit991.htm">1</a></div>
+          <div class="cell">CAMP4 reported statistically significant resistance to seizure onset and a statistically significant decrease in seizure severity.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1736730/000173673026000033/a20260514exhibit991.htm">1</a></div>
+        </div>
+      </div>
+      <div class="grid-2" style="margin-top:20px;">
+        <div class="panel">
+          <span class="tag orange">Assay constraint</span>
+          <h3>Induced-seizure model</h3>
+          <p>CAMP4 reported using PTZ after noting that SYNGAP1 haploinsufficient mice do not exhibit spontaneous and readily countable seizures.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1736730/000173673026000033/a20260514exhibit991.htm">1</a></p>
+        </div>
+        <div class="panel dark">
+          <h3>Clinical-development timing</h3>
+          <p>CAMP4 stated that it expects to advance CMP-002 into a Phase 1/2 clinical trial in individuals with SYNGAP1-related disorder in the second half of 2026.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1736730/000173673026000033/a20260514exhibit991.htm">1</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">02 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Asset and disease profile</div>
+        <h2>CMP-002 is described as an intrathecal ASO designed to increase SYNGAP1 gene expression<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1736730/000173673026000033/a20260514exhibit991.htm">1</a></h2>
+      </div>
+      <div class="grid-3">
+        <div class="card tall">
+          <span class="tag lime">Mechanism</span>
+          <h3>RegRNA targeting</h3>
+          <p>CMP-002 is described as binding a SYNGAP1-specific regulatory RNA to increase SYNGAP1 gene expression and restore SYNGAP protein toward near wild-type levels.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1736730/000173673026000033/a20260514exhibit991.htm">1</a></p>
+        </div>
+        <div class="card tall">
+          <span class="tag blue">Route and prior evidence</span>
+          <h3>Intrathecal ASO</h3>
+          <p>CAMP4 reported intrathecal administration and described prior evidence across patient-derived neurons, a humanized haploinsufficient mouse model, a chemically induced seizure mouse model, and non-human primates.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1736730/000173673026000033/a20260514exhibit991.htm">1</a></p>
+        </div>
+        <div class="card tall">
+          <span class="tag pink">Unmet need</span>
+          <h3>SRD profile</h3>
+          <p>SYNGAP1-related disorder is described as a rare haploinsufficient CNS disorder caused by SYNGAP1 mutations, resulting in approximately 50% of normal SYNGAP protein levels, with no approved disease-modifying therapies.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1736730/000173673026000033/a20260514exhibit991.htm">1</a></p>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:22px;">
+        <h3>Population statement from the cited source</h3>
+        <p style="margin-top:10px; font-size:24px; line-height:1.16;">CAMP4 described SYNGAP1-related disorder as affecting over 10,000 individuals in the United States and characterized it with intellectual disability, epilepsy, severe behavioral problems, sleep problems, and limited communication.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1736730/000173673026000033/a20260514exhibit991.htm">1</a></p>
+      </div>
+    </div>
+    <div class="slide-num">03 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Disclosure and conference context</div>
+        <h2>The same-day disclosure package tied the CMP-002 update to SEC filing materials and the TIDES agenda<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1736730/000173673026000033/camp-20260514.htm">2</a><a class="cite" href="https://informaconnect.com/tides/agenda/4/">3</a></h2>
+      </div>
+      <div class="grid-3">
+        <div class="card tall">
+          <span class="tag gray">SEC filing</span>
+          <h3>8-K furnished materials</h3>
+          <p>CAMP4's May 14 Form 8-K reported that the company issued the CMP-002 press release and updated its corporate slide presentation, with the press release furnished as Exhibit 99.1 and the slide presentation furnished as Exhibit 99.2.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1736730/000173673026000033/camp-20260514.htm">2</a></p>
+        </div>
+        <div class="card tall">
+          <span class="tag orange">TIDES session</span>
+          <h3>RegRNA presentation</h3>
+          <p>The TIDES May 14 agenda listed a session titled "Targeting Noncoding Regulatory RNAs with Antisense Oligonucleotides to Increase Gene Expression for the Potential Treatment of Haploinsufficient Diseases."<a class="cite" href="https://informaconnect.com/tides/agenda/4/">3</a></p>
+        </div>
+        <div class="card tall">
+          <span class="tag blue">Speaker and asset</span>
+          <h3>CAMP4 scientific lead</h3>
+          <p>The TIDES agenda listed Dan Tardiff, PhD, Chief Scientific Officer at CAMP4 Therapeutics, and stated that CMP-002 is advancing toward clinic for potential treatment of SYNGAP1-related disorder.<a class="cite" href="https://informaconnect.com/tides/agenda/4/">3</a></p>
+        </div>
+      </div>
+      <div class="panel dark" style="margin-top:22px;">
+        <h3>Same-day source alignment</h3>
+        <p>The cited source set documents the same May 14 CMP-002 update through a CAMP4 press-release exhibit, CAMP4's Form 8-K disclosure package, and the official TIDES agenda entry for Dan Tardiff's regRNA presentation.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1736730/000173673026000033/a20260514exhibit991.htm">1</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1736730/000173673026000033/camp-20260514.htm">2</a><a class="cite" href="https://informaconnect.com/tides/agenda/4/">3</a></p>
+      </div>
+    </div>
+    <div class="slide-num">04 / 05</div>
+  </article>
+
+  <article class="slide references-slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">References 1-3</div>
+        <h2>References</h2>
+      </div>
+      <div class="table">
+        <div class="row refs head">
+          <div class="cell">Ref</div>
+          <div class="cell">Source</div>
+          <div class="cell">Date / Status / Source Owner</div>
+          <div class="cell">Evidence Used in Report</div>
+        </div>
+        <div class="row refs">
+          <div class="cell">1</div>
+          <div class="cell"><a href="https://www.sec.gov/Archives/edgar/data/1736730/000173673026000033/a20260514exhibit991.htm">CAMP4 Exhibit 99.1 press release</a></div>
+          <div class="cell">May 14, 2026 / SEC-furnished company press release / CAMP4 Therapeutics</div>
+          <div class="cell">CMP-002 preclinical seizure-threshold and severity data, PTZ model details, ASO mechanism, SRD profile, unmet-need statement, and stated Phase 1/2 timing</div>
+        </div>
+        <div class="row refs">
+          <div class="cell">2</div>
+          <div class="cell"><a href="https://www.sec.gov/Archives/edgar/data/1736730/000173673026000033/camp-20260514.htm">CAMP4 Form 8-K</a></div>
+          <div class="cell">May 14, 2026 / Current report / CAMP4 Therapeutics</div>
+          <div class="cell">Disclosure package identifying Exhibit 99.1 press release and Exhibit 99.2 May 2026 corporate slide presentation</div>
+        </div>
+        <div class="row refs">
+          <div class="cell">3</div>
+          <div class="cell"><a href="https://informaconnect.com/tides/agenda/4/">TIDES USA agenda</a></div>
+          <div class="cell">Thursday, 14 May 2026 / official conference agenda / Informa Connect</div>
+          <div class="cell">May 14 session title, Dan Tardiff speaker listing, and agenda description stating that CMP-002 is advancing toward clinic for SYNGAP1-related disorder</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">05 / 05</div>
+  </article>
+</body>
+</html>

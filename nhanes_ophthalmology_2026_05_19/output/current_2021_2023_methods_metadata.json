@@ -1,0 +1,20 @@
+{
+  "scope": "NHANES August 2021-August 2023 public files only",
+  "files": {
+    "DEMO_L": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DEMO_L.xpt",
+    "FNQ_L": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/FNQ_L.xpt",
+    "BAQ_L": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/BAQ_L.xpt",
+    "DIQ_L": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DIQ_L.xpt",
+    "DPQ_L": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DPQ_L.xpt"
+  },
+  "methods": [
+    "Linked records by SEQN",
+    "Used WTINT2YR for interview/questionnaire outcomes",
+    "Used WTMEC2YR for PHQ-9 estimates because DPQ is an examination-component questionnaire",
+    "Estimated weighted proportions with Taylor-linearized standard errors over SDMVSTRA and SDMVPSU",
+    "Defined adult severe seeing difficulty as FNQ410 in {3, 4}; some-or-more as FNQ410 in {2, 3, 4}",
+    "Defined blurred vision with head movement as BAQ321B = 1 among participants aged 20-69 years",
+    "Defined PHQ-9 score >=10 from DPQ010-DPQ090 values 0-3"
+  ],
+  "limitation": "The public 2021-August 2023 release does not include ophthalmology examination, visual acuity, retinal imaging, visual-field, cataract, glaucoma, AMD, or diabetic-retinopathy outcomes."
+}

@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MFN drug pricing pros and cons</title>
+  <link rel="icon" href="data:," />
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body,
+    *,
+    *::before,
+    *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #141510;
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: geometricPrecision;
+      scrollbar-width: none;
+    }
+
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+      display: none;
+    }
+
+    body {
+      display: grid;
+      place-items: start center;
+      padding: 28px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 3px;
+    }
+
+    .cite {
+      display: inline-block;
+      margin-left: 2px;
+      color: var(--ink);
+      font-size: 0.67em;
+      font-weight: 400;
+      line-height: 1;
+      text-decoration: none;
+      vertical-align: super;
+      white-space: nowrap;
+    }
+
+    .dark .cite,
+    .takeaway .cite {
+      color: var(--paper);
+    }
+
+    .sheet {
+      position: relative;
+      width: 1200px;
+      height: 1900px;
+      overflow: hidden;
+      background: var(--paper);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+    }
+
+    .sheet-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .hairline {
+      position: absolute;
+      inset: 22px;
+      z-index: 1;
+      border: 1.5px solid rgba(16, 18, 15, 0.18);
+      border-radius: 32px;
+      pointer-events: none;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      padding: 50px 58px 46px;
+      display: grid;
+      grid-template-rows: auto auto auto auto 1fr auto auto;
+      gap: 20px;
+    }
+
+    .topline {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 28px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.25;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      background: var(--lime);
+      color: var(--ink);
+      padding: 10px 15px 9px;
+      line-height: 1;
+      box-shadow: 5px 5px 0 var(--line);
+      white-space: nowrap;
+      font-weight: 850;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--ink);
+    }
+
+    .date {
+      max-width: 520px;
+      text-align: right;
+    }
+
+    h1 {
+      max-width: 1060px;
+      margin: 0;
+      font-size: 62px;
+      line-height: 0.95;
+      font-weight: 400;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    h1 .soft {
+      color: #26405c;
+      display: inline;
+    }
+
+    .subtitle {
+      max-width: 1010px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 18.8px;
+      line-height: 1.34;
+      font-weight: 400;
+    }
+
+    .takeaway {
+      display: grid;
+      grid-template-columns: 230px 1fr;
+      gap: 22px;
+      align-items: center;
+      border: 3px solid var(--line);
+      border-radius: var(--radius);
+      background: #11130f;
+      color: var(--paper);
+      padding: 18px 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .takeaway .label {
+      color: var(--lime);
+      font-size: 27px;
+      line-height: 1.05;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+
+    .takeaway p {
+      margin: 0;
+      color: rgba(246, 241, 232, 0.9);
+      font-size: 21px;
+      line-height: 1.25;
+      font-weight: 400;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+    }
+
+    .metric {
+      min-height: 132px;
+      border: 2.5px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 250, 240, 0.9);
+      padding: 17px 18px 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .metric:nth-child(2) {
+      background: rgba(184, 216, 255, 0.9);
+    }
+
+    .metric:nth-child(3) {
+      background: rgba(255, 211, 224, 0.88);
+    }
+
+    .metric .label {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.15;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+
+    .metric .value {
+      margin: 10px 0 0;
+      font-size: 48px;
+      line-height: 0.92;
+      font-weight: 400;
+    }
+
+    .metric .note {
+      margin: 10px 0 0;
+      color: #373c33;
+      font-size: 13.5px;
+      line-height: 1.25;
+      font-weight: 400;
+    }
+
+    .compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      min-height: 0;
+    }
+
+    .side {
+      display: grid;
+      grid-template-rows: auto repeat(4, 1fr);
+      gap: 12px;
+      min-height: 0;
+    }
+
+    .side-title {
+      border: 3px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      min-height: 68px;
+    }
+
+    .side-title.good {
+      background: var(--lime);
+    }
+
+    .side-title.bad {
+      background: var(--orange);
+    }
+
+    .side-title h2 {
+      margin: 0;
+      font-size: 29px;
+      line-height: 0.95;
+      font-weight: 850;
+    }
+
+    .side-title span {
+      color: #30352e;
+      font-size: 11.6px;
+      line-height: 1.15;
+      font-weight: 850;
+      text-align: right;
+      text-transform: uppercase;
+      max-width: 190px;
+      white-space: nowrap;
+    }
+
+    .card {
+      border: 2.5px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 250, 240, 0.92);
+      box-shadow: var(--shadow);
+      padding: 16px 17px;
+      min-height: 0;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 9px;
+    }
+
+    .card.warning {
+      background: rgba(255, 250, 240, 0.78);
+    }
+
+    .card h3 {
+      margin: 0;
+      color: var(--ink);
+      font-size: 20px;
+      line-height: 1.05;
+      font-weight: 850;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16.2px;
+      line-height: 1.24;
+      font-weight: 400;
+    }
+
+    .card b {
+      color: var(--ink);
+      font-weight: 400;
+    }
+
+    .confidence {
+      border: 2.5px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(235, 228, 214, 0.9);
+      box-shadow: var(--shadow);
+      padding: 16px;
+    }
+
+    .confidence h2 {
+      margin: 0 0 12px;
+      font-size: 28px;
+      line-height: 1;
+      font-weight: 850;
+    }
+
+    .confidence-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+    }
+
+    .confidence-card {
+      border: 2px solid var(--line);
+      border-radius: 18px;
+      background: var(--card);
+      padding: 12px 13px;
+    }
+
+    .confidence-card strong {
+      display: inline-block;
+      margin-bottom: 8px;
+      padding: 5px 9px;
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      background: var(--blue);
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .confidence-card:nth-child(1) strong {
+      background: var(--lime);
+    }
+
+    .confidence-card:nth-child(3) strong {
+      background: var(--red);
+    }
+
+    .confidence-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15.4px;
+      line-height: 1.23;
+      font-weight: 400;
+    }
+
+    .footer {
+      display: grid;
+      grid-template-columns: 1.52fr 0.98fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .plain {
+      border: 2.5px solid var(--line);
+      border-radius: var(--radius);
+      background: #11130f;
+      color: var(--paper);
+      padding: 16px 18px;
+    }
+
+    .plain h2 {
+      margin: 0 0 9px;
+      color: var(--lime);
+      font-size: 29px;
+      line-height: 1;
+      font-weight: 850;
+    }
+
+    .plain p {
+      margin: 0;
+      color: rgba(246, 241, 232, 0.88);
+      font-size: 18.2px;
+      line-height: 1.24;
+      font-weight: 400;
+    }
+
+    .sources {
+      border: 2.5px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 250, 240, 0.88);
+      padding: 14px 16px;
+    }
+
+    .sources h2 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      line-height: 1;
+      font-weight: 400;
+    }
+
+    .source-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 12px;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.22;
+      font-weight: 400;
+      white-space: nowrap;
+    }
+
+    .source-list a {
+      border-bottom: 1px solid rgba(16, 18, 15, 0.35);
+    }
+
+    @page {
+      size: 1200px 1900px;
+      margin: 0;
+    }
+
+    @media print {
+      html,
+      body {
+        width: 1200px;
+        height: 1900px;
+        background: var(--paper);
+        padding: 0;
+      }
+
+      .sheet {
+        width: 1200px;
+        height: 1900px;
+        box-shadow: none;
+      }
+    }
+
+    @media screen and (max-width: 1260px) {
+      body {
+        padding: 0;
+        background: var(--paper);
+      }
+
+      .sheet {
+        transform-origin: top center;
+        width: 1200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="sheet" aria-label="Infographic comparing pros and cons of Most Favored Nation drug pricing policy">
+    <img class="sheet-bg-img" src="assets/mfn_policy_sheet_background.png" alt="" aria-hidden="true" />
+    <div class="hairline"></div>
+    <div class="wrap">
+      <header class="topline">
+        <div class="pill"><span class="dot"></span> MFN drug pricing policy</div>
+      </header>
+
+      <section>
+        <h1>MFN drug pricing policy: <span class="soft">pros and cons</span></h1>
+        <p class="subtitle">Policy definition: MFN refers to using prices in wealthy peer countries as a benchmark so U.S. prices move closer to those paid abroad for the same branded drugs. The current HHS target is the lowest price in an OECD country with GDP per person at least 60% of the U.S. level for brand products without generic or biosimilar competition.<a class="cite" href="https://www.whitehouse.gov/presidential-actions/2025/05/delivering-most-favored-nation-prescription-drug-pricing-to-american-patients/">[1]</a><a class="cite" href="https://www.hhs.gov/press-room/cms-mfn-lower-us-drug-prices.html">[2]</a></p>
+      </section>
+
+      <section class="takeaway">
+        <div class="label">Evidence summary</div>
+        <p>The sections below separate potential benefits from implementation risks. MFN may lower prices where U.S. payments are substantially higher, while outcomes depend on enforceable rules, net-price data, and safeguards for access to medicines.<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611303/">[3]</a><a class="cite" href="https://www.commonwealthfund.org/publications/issue-briefs/2021/may/external-reference-pricing-drug-pricing-reform-america-needs">[7]</a><a class="cite" href="https://www.cbo.gov/system/files/2024-10/58793-rx-drug-prices.pdf">[8]</a></p>
+      </section>
+
+      <section class="metrics" aria-label="Key evidence snapshots">
+        <div class="metric">
+          <p class="label">U.S. prices vs 33 OECD countries</p>
+          <p class="value">278%</p>
+          <p class="note">U.S. manufacturer gross prices across all prescription drugs in 2022, where peer-country prices equal 100%.<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611303/">[3]</a></p>
+        </div>
+        <div class="metric">
+          <p class="label">Brand-originator gap</p>
+          <p class="value">422%</p>
+          <p class="note">U.S. gross prices for branded originator drugs; RAND/ASPE reported that adjusted U.S. brand prices remained more than 3x higher.<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611303/">[3]</a></p>
+        </div>
+        <div class="metric">
+          <p class="label">Affordability pressure</p>
+          <p class="value">43%</p>
+          <p class="note">Share of U.S. adults reporting cost-related medication nonadherence in a 2026 KFF poll.<a class="cite" href="https://www.kff.org/public-opinion/public-views-on-prescription-drug-costs-regulation-affordability-and-trumprx/">[4]</a></p>
+        </div>
+      </section>
+
+      <section class="compare" aria-label="Pros and cons comparison">
+        <div class="side">
+          <div class="side-title good">
+            <h2>Potential benefits</h2>
+            <span>Policy rationale</span>
+          </div>
+          <article class="card">
+            <h3>Targets a documented price gap</h3>
+            <p>MFN focuses on branded drugs where the U.S. gap is largest: RAND/ASPE found U.S. brand-originator prices were 422% of prices in 33 OECD comparison countries in 2022.<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611303/">[3]</a></p>
+          </article>
+          <article class="card">
+            <h3>May lower some patient bills</h3>
+            <p>Patient costs are relevant because 59% of adults reported concern about affording prescriptions and 43% reported skipping or changing medicines because of cost; the White House projects large savings for some cash-pay GLP-1 and IVF users.<a class="cite" href="https://www.kff.org/public-opinion/public-views-on-prescription-drug-costs-regulation-affordability-and-trumprx/">[4]</a><a class="cite" href="https://www.whitehouse.gov/research/2026/05/savings-from-most-favored-nation-drug-pricing-policy/">[10]</a></p>
+          </article>
+          <article class="card">
+            <h3>May reduce public spending</h3>
+            <p>CMS states that its proposed GLOBE model is intended to reduce Medicare Part B spending; the White House projects $529B in 10-year domestic savings and $64.3B in federal and state Medicaid savings under its MFN framework.<a class="cite" href="https://www.cms.gov/newsroom/press-releases/cms-proposes-new-mandatory-globe-model">[5]</a><a class="cite" href="https://www.whitehouse.gov/research/2026/05/savings-from-most-favored-nation-drug-pricing-policy/">[10]</a></p>
+          </article>
+          <article class="card">
+            <h3>Provides an external benchmark</h3>
+            <p>Rather than using U.S. list prices alone, policymakers can use peer-country prices as a ceiling, negotiation input, or transparency tool.<a class="cite" href="https://www.brookings.edu/articles/international-reference-pricing-for-prescription-drugs/">[9]</a></p>
+          </article>
+        </div>
+
+        <div class="side">
+          <div class="side-title bad">
+            <h2>Potential limitations</h2>
+            <span>Implementation risks</span>
+          </div>
+          <article class="card warning">
+            <h3>Coverage may remain unclear</h3>
+            <p>KFF notes that many MFN agreement details remain confidential, including which drugs are covered, the exact prices, and how MFN prices are determined.<a class="cite" href="https://www.kff.org/quick-insights/president-trump-proposes-codifying-mfn-drug-pricing-deals-but-key-details-are-missing/">[6]</a></p>
+          </article>
+          <article class="card warning">
+            <h3>Manufacturer responses may reduce savings</h3>
+            <p>Reference-pricing savings may erode if companies raise public list prices, use confidential rebates, or delay launches in lower-price countries so those prices are not used as U.S. benchmarks.<a class="cite" href="https://www.commonwealthfund.org/publications/issue-briefs/2021/may/external-reference-pricing-drug-pricing-reform-america-needs">[7]</a><a class="cite" href="https://www.brookings.edu/articles/international-reference-pricing-for-prescription-drugs/">[9]</a></p>
+          </article>
+          <article class="card warning">
+            <h3>Access effects require monitoring</h3>
+            <p>The 2020 MFN rule stated that if providers cannot obtain drugs at the lower price, patients could need different providers, alternate medicines, delayed care, or no treatment; that earlier model was never implemented.<a class="cite" href="https://www.federalregister.gov/documents/2020/11/27/2020-26037/most-favored-nation-mfn-model">[11]</a></p>
+          </article>
+          <article class="card warning">
+            <h3>Future R&D incentives may be affected</h3>
+            <p>CBO describes a policy balance: lower brand prices can improve access today, but lower expected global profits can reduce incentives to develop some future drugs.<a class="cite" href="https://www.cbo.gov/system/files/2024-10/58793-rx-drug-prices.pdf">[8]</a></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="confidence" aria-label="Evidence confidence">
+        <h2>How strong is the evidence?</h2>
+        <div class="confidence-grid">
+          <div class="confidence-card">
+            <strong>Strong</strong>
+            <p>U.S. branded drug prices are much higher than peer-country prices, and prescription costs are associated with reported affordability barriers for many adults.<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611303/">[3]</a><a class="cite" href="https://www.kff.org/public-opinion/public-views-on-prescription-drug-costs-regulation-affordability-and-trumprx/">[4]</a></p>
+          </div>
+          <div class="confidence-card">
+            <strong>Medium</strong>
+            <p>Reference pricing can reduce spending when it has clear authority, good data, and enforcement; CMS and CBO describe savings pathways, but results depend on design.<a class="cite" href="https://www.cms.gov/newsroom/press-releases/cms-proposes-new-mandatory-globe-model">[5]</a><a class="cite" href="https://www.cbo.gov/system/files/2024-10/58793-rx-drug-prices.pdf">[8]</a></p>
+          </div>
+          <div class="confidence-card">
+            <strong>Uncertain</strong>
+            <p>The exact savings, covered drugs, foreign-price response, access effects, and innovation impact remain uncertain under voluntary or partly confidential MFN arrangements.<a class="cite" href="https://www.kff.org/quick-insights/president-trump-proposes-codifying-mfn-drug-pricing-deals-but-key-details-are-missing/">[6]</a><a class="cite" href="https://www.commonwealthfund.org/publications/issue-briefs/2021/may/external-reference-pricing-drug-pricing-reform-america-needs">[7]</a></p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <section class="plain">
+          <h2>TAKEAWAY</h2>
+          <p>MFN is most likely to produce predictable results when it is transparent, applies to drugs with limited competition, uses net-price evidence, and includes access protections. Results are less certain when arrangements are confidential, policy claims are broad, or manufacturers can avoid benchmark prices.<a class="cite" href="https://www.kff.org/quick-insights/president-trump-proposes-codifying-mfn-drug-pricing-deals-but-key-details-are-missing/">[6]</a><a class="cite" href="https://www.commonwealthfund.org/publications/issue-briefs/2021/may/external-reference-pricing-drug-pricing-reform-america-needs">[7]</a><a class="cite" href="https://www.brookings.edu/articles/international-reference-pricing-for-prescription-drugs/">[9]</a></p>
+        </section>
+        <section class="sources" aria-label="Sources">
+          <h2>Sources</h2>
+          <div class="source-list">
+            <div>[1] <a href="https://www.whitehouse.gov/presidential-actions/2025/05/delivering-most-favored-nation-prescription-drug-pricing-to-american-patients/">White House EO, 2025</a></div>
+            <div>[2] <a href="https://www.hhs.gov/press-room/cms-mfn-lower-us-drug-prices.html">HHS MFN targets, 2025</a></div>
+            <div>[3] <a href="https://www.ncbi.nlm.nih.gov/books/NBK611303/">RAND/ASPE prices, 2022</a></div>
+            <div>[4] <a href="https://www.kff.org/public-opinion/public-views-on-prescription-drug-costs-regulation-affordability-and-trumprx/">KFF drug-cost poll, 2026</a></div>
+            <div>[5] <a href="https://www.cms.gov/newsroom/press-releases/cms-proposes-new-mandatory-globe-model">CMS GLOBE model, 2025</a></div>
+            <div>[6] <a href="https://www.kff.org/quick-insights/president-trump-proposes-codifying-mfn-drug-pricing-deals-but-key-details-are-missing/">KFF MFN details, 2026</a></div>
+            <div>[7] <a href="https://www.commonwealthfund.org/publications/issue-briefs/2021/may/external-reference-pricing-drug-pricing-reform-america-needs">Commonwealth Fund ERP</a></div>
+            <div>[8] <a href="https://www.cbo.gov/system/files/2024-10/58793-rx-drug-prices.pdf">CBO drug-pricing report, 2024</a></div>
+            <div>[9] <a href="https://www.brookings.edu/articles/international-reference-pricing-for-prescription-drugs/">Brookings IRP, 2025</a></div>
+            <div>[10] <a href="https://www.whitehouse.gov/research/2026/05/savings-from-most-favored-nation-drug-pricing-policy/">White House savings, 2026</a></div>
+            <div>[11] <a href="https://www.federalregister.gov/documents/2020/11/27/2020-26037/most-favored-nation-mfn-model">Federal Register MFN, 2020</a></div>
+          </div>
+        </section>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>

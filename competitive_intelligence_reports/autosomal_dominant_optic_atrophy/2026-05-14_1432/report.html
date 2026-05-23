@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Autosomal Dominant Optic Atrophy Competitive Intelligence Update</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 36px 0 20px;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 850;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 72px; line-height: .95; letter-spacing: 0; font-weight: 560; max-width: 1280px; }
+    h2 { font-size: 52px; line-height: .98; letter-spacing: 0; font-weight: 560; max-width: 1280px; }
+    h3 { font-size: 29px; line-height: 1.04; letter-spacing: 0; font-weight: 650; }
+    .dek { margin-top: 16px; color: var(--muted); font-size: 25px; line-height: 1.2; max-width: 1210px; }
+    .section-head { margin-bottom: 18px; }
+    .section-head p { margin-top: 10px; color: var(--muted); font-size: 23px; line-height: 1.18; max-width: 1260px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .metric, .card, .table, .callout {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.88);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .metric { padding: 20px; min-height: 154px; }
+    .num { font-size: 48px; line-height: .92; font-weight: 820; letter-spacing: 0; }
+    .label { margin-top: 11px; font-size: 22px; line-height: 1.12; color: var(--muted); }
+    .card { padding: 24px; min-height: 260px; }
+    .card.tight { min-height: 220px; }
+    .card p { color: var(--muted); font-size: 23px; line-height: 1.14; margin-top: 12px; }
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      white-space: nowrap;
+      margin-bottom: 11px;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .gray { background: var(--gray); }
+    .callout { padding: 22px 26px; background: #11130f; color: var(--paper); border-color: #11130f; }
+    .callout h3 { font-size: 31px; }
+    .summary-list { margin: 12px 0 0; padding-left: 22px; display: grid; gap: 9px; }
+    .summary-list li { color: rgba(246,241,232,.88); font-size: 23px; line-height: 1.14; }
+    .table { display: grid; }
+    .row { display: grid; border-bottom: 1px solid var(--line); min-height: 74px; }
+    .row:last-child { border-bottom: 0; }
+    .row.pipeline { grid-template-columns: .86fr 1.2fr 1.18fr 1.4fr; }
+    .row.refs { grid-template-columns: .34fr .95fr 1.05fr 1.75fr; min-height: 0; }
+    .cell { padding: 15px 16px; border-right: 1px solid var(--line); font-size: 22px; line-height: 1.12; }
+    .cell:last-child { border-right: 0; }
+    .head .cell {
+      background: #11130f;
+      color: var(--paper);
+      font-weight: 850;
+      text-transform: uppercase;
+      font-size: 17px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .row.pipeline.head { min-height: 0; }
+    .pipeline.head .cell { padding: 11px 16px; }
+    .refs .cell { font-size: 18px; line-height: 1.08; padding: 11px 12px; }
+    .refs.head .cell { font-size: 18px; line-height: 1; padding: 11px 12px; white-space: nowrap; }
+    .refs a { text-decoration: none; font-weight: 400; }
+    .row.refs .cell:first-child { text-align: center; }
+    .references-slide .section-head { margin-bottom: 14px; }
+    .references-slide h2 { font-size: 48px; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .cite + .cite::before { content: ","; margin-right: 1px; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .wrap { width: 1360px; }
+      .metric, .card, .table, .callout { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) {
+      .slide { width: 1600px; height: 900px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Autosomal dominant optic atrophy | May 7-14, 2026</div>
+      <h1>Autosomal Dominant Optic Atrophy competitive intelligence update</h1>
+      <p class="dek">Primary-source update focused on ADOA and OPA1-directed clinical development activity reported during the cited period.</p>
+      <div class="grid-4" style="margin-top:28px;">
+        <div class="metric"><div class="num">2</div><div class="label">STK-002 patients dosed as of May 2026<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1623526/000119312526212020/stok-ex99_1.htm">1</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1623526/000119312526211874/stok-20260331.htm">2</a></div></div>
+        <div class="metric"><div class="num">7</div><div class="label">OSPREY recruiting sites across four European countries<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1623526/000119312526212020/stok-ex99_1.htm">1</a></div></div>
+        <div class="metric"><div class="num">4</div><div class="label">Initial OSPREY cohorts with dose escalation planned into early 2027<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1623526/000119312526212020/stok-ex99_1.htm">1</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1623526/000119312526211874/stok-20260331.htm">2</a></div></div>
+        <div class="metric"><div class="num">1</div><div class="label">Named RNA-based ADOA competitor in Stoke's 10-Q risk discussion<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1623526/000119312526211874/stok-20260331.htm">2</a></div></div>
+      </div>
+      <div class="callout" style="margin-top:24px;">
+        <h3>Executive summary</h3>
+        <ul class="summary-list">
+          <li>Stoke reported that STK-002, an antisense oligonucleotide for OPA1-associated ADOA, was in the Phase 1 OSPREY study; the May 7 release states that the first patient was dosed in February, two patients had been dosed to date, and recruitment was ongoing at seven sites across the UK, Germany, Denmark, and Austria.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1623526/000119312526212020/stok-ex99_1.htm">1</a></li>
+          <li>The OSPREY study is described as a dose-escalating open-label Phase 1 study in children and adults ages 6 to 55 with an established ADOA diagnosis and a confirmed disease-causing OPA1 variant.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1623526/000119312526212020/stok-ex99_1.htm">1</a></li>
+          <li>Stoke's 10-Q identifies PYC Therapeutics as a potential competitor that initiated a dose-escalation study for an RNA-based therapy in ADOA; the same 10-Q states that no ADOA treatments were approved at the time of filing.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1623526/000119312526211874/stok-20260331.htm">2</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">01 / 04</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">STK-002 clinical development</div>
+        <h2>OSPREY is described as an OPA1-confirmed ADOA dose-escalation study</h2>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <span class="tag lime">Study design</span>
+          <h3>Phase 1, open label</h3>
+          <p>OSPREY is reported as a Phase 1, dose-escalating open-label study of children and adults ages 6 to 55 with established ADOA and a confirmed disease-causing OPA1 variant.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1623526/000119312526212020/stok-ex99_1.htm">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag orange">Development status</span>
+          <h3>Two patients dosed</h3>
+          <p>Stoke reported that the first patient was dosed in February 2026 and that two patients had been dosed as of the May 7 update.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1623526/000119312526212020/stok-ex99_1.htm">1</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1623526/000119312526211874/stok-20260331.htm">2</a></p>
+        </div>
+        <div class="card tight">
+          <span class="tag blue">Geography</span>
+          <h3>United Kingdom, Germany, Denmark, Austria</h3>
+          <p>The May 7 release states that recruitment was ongoing at seven sites across the UK, Germany, Denmark, and Austria; the 10-Q lists recruiting sites in the United Kingdom, Germany, Austria, and Denmark.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1623526/000119312526212020/stok-ex99_1.htm">1</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1623526/000119312526211874/stok-20260331.htm">2</a></p>
+        </div>
+        <div class="card tight">
+          <span class="tag pink">Dose escalation</span>
+          <h3>Initial four cohorts</h3>
+          <p>Dose escalation for the first four OSPREY cohorts is described as continuing through 2026 and early 2027, pending safety and tolerability assessments.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1623526/000119312526212020/stok-ex99_1.htm">1</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">02 / 04</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">ADOA landscape signal</div>
+        <h2>Stoke's filing names PYC as RNA-based ADOA competition</h2>
+        <p>The cited filing language supports only the presence of a named competitor and the broad modality class; it does not provide PYC study details.</p>
+      </div>
+      <div class="table">
+        <div class="row pipeline head">
+          <div class="cell">Program</div>
+          <div class="cell">Company</div>
+          <div class="cell">Current status in cited source</div>
+          <div class="cell">Evidence-bound interpretation</div>
+        </div>
+        <div class="row pipeline">
+          <div class="cell">STK-002</div>
+          <div class="cell">Stoke Therapeutics</div>
+          <div class="cell">Phase 1 OSPREY; two patients dosed; recruitment ongoing in four named European countries<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1623526/000119312526211874/stok-20260331.htm">2</a></div>
+          <div class="cell">The filing documents active early clinical development for an OPA1-directed ADOA program.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1623526/000119312526211874/stok-20260331.htm">2</a></div>
+        </div>
+        <div class="row pipeline">
+          <div class="cell">RNA-based ADOA therapy</div>
+          <div class="cell">PYC Therapeutics</div>
+          <div class="cell">The 10-Q states that PYC initiated a dose-escalation study for an RNA-based therapy in ADOA.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1623526/000119312526211874/stok-20260331.htm">2</a></div>
+          <div class="cell">The source supports competitor presence but does not provide patient counts, sites, endpoints, or timing for PYC.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1623526/000119312526211874/stok-20260331.htm">2</a></div>
+        </div>
+        <div class="row pipeline">
+          <div class="cell">Approved therapies</div>
+          <div class="cell">N/A</div>
+          <div class="cell">Stoke's 10-Q states that no ADOA treatments were approved at the time of filing.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1623526/000119312526211874/stok-20260331.htm">2</a></div>
+          <div class="cell">The cited statement frames ADOA as an early-development competitive setting with no approved treatment named in the filing.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1623526/000119312526211874/stok-20260331.htm">2</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">03 / 04</div>
+  </article>
+
+  <article class="slide references-slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">References 1-2</div>
+        <h2>References</h2>
+      </div>
+      <div class="table">
+        <div class="row refs head">
+          <div class="cell">Ref</div>
+          <div class="cell">Source</div>
+          <div class="cell">Date / Status / Source Owner</div>
+          <div class="cell">Evidence Used in Report</div>
+        </div>
+        <div class="row refs">
+          <div class="cell">1</div>
+          <div class="cell"><a href="https://www.sec.gov/Archives/edgar/data/1623526/000119312526212020/stok-ex99_1.htm">Stoke Therapeutics Exhibit 99.1</a></div>
+          <div class="cell">May 7, 2026; company press release filed with SEC</div>
+          <div class="cell">STK-002 first-patient, two-patient, seven-site, OSPREY design, and dose-escalation details.</div>
+        </div>
+        <div class="row refs">
+          <div class="cell">2</div>
+          <div class="cell"><a href="https://www.sec.gov/Archives/edgar/data/1623526/000119312526211874/stok-20260331.htm">Stoke Therapeutics Form 10-Q</a></div>
+          <div class="cell">May 7, 2026; SEC quarterly report</div>
+          <div class="cell">STK-002 May 2026 status, recruiting geography, dose-escalation timing, no-approved-treatment statement, and PYC competition statement.</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">04 / 04</div>
+  </article>
+</body>
+</html>

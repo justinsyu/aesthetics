@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Medicare Plan Finder Part D Data Signals, April 2026</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 26px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.34;
+    }
+    body, *, *::before, *::after { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw;
+      min-height: 100vh;
+      height: 100vh;
+      padding: 68px 0 34px;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; user-select: none; }
+    .slide > *:not(.slide-bg-img) { position: relative; z-index: 1; }
+    .wrap { width: min(1360px, calc(100vw - 48px)); margin: 0 auto; }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 88px; line-height: .92; letter-spacing: -0.045em; font-weight: 500; max-width: 1300px; }
+    h2 { font-size: 58px; line-height: .96; letter-spacing: -0.04em; font-weight: 500; }
+    h3 { font-size: 29px; line-height: 1.02; letter-spacing: -0.035em; font-weight: 550; }
+    .eyebrow {
+      display: inline-flex; align-items: center; border: 1.4px solid var(--line); padding: 8px 12px;
+      border-radius: 999px; font-size: 15px; font-weight: 850; letter-spacing: .06em; text-transform: uppercase;
+      margin-bottom: 18px; background: var(--lime);
+    }
+    .section-head { margin-bottom: 26px; }
+    .section-head p { margin-top: 13px; color: var(--muted); font-size: 22px; max-width: 1280px; }
+    .hero-grid { display: grid; grid-template-columns: 1fr; gap: 28px; }
+    .hero-note {
+      width: 1120px; border: 1.5px solid var(--line); border-radius: var(--radius); background: rgba(255,250,240,.84);
+      padding: 26px 30px; box-shadow: var(--shadow);
+    }
+    .hero-note p { color: var(--muted); font-size: 27px; line-height: 1.28; }
+    .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .metric, .panel, .card {
+      border: 1.5px solid var(--line); border-radius: var(--radius); background: rgba(255,250,240,.84); box-shadow: var(--shadow);
+    }
+    .metric { min-height: 142px; padding: 18px 20px; }
+    .num { font-size: 48px; line-height: .95; letter-spacing: -0.055em; font-weight: 600; }
+    .label { margin-top: 10px; color: var(--muted); font-size: 15px; line-height: 1.25; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .panel { overflow: hidden; }
+    .panel.dark { background: #11130f; color: var(--paper); }
+    .panel.dark p, .panel.dark .muted, .panel.dark .label { color: rgba(246,241,232,.72); }
+    .panel-pad { padding: 26px; }
+    .card { padding: 22px; min-height: 174px; }
+    .card p { color: var(--muted); margin-top: 10px; font-size: 17px; }
+    .big-text { color: var(--muted); font-size: 29px; line-height: 1.3; }
+    .bars { display: grid; gap: 16px; }
+    .bar-row { display: grid; grid-template-columns: 210px 1fr 118px; gap: 15px; align-items: center; }
+    .bar-label { font-weight: 850; font-size: 17px; letter-spacing: -0.02em; }
+    .track { position: relative; height: 32px; border: 1px solid rgba(16,18,15,.25); border-radius: 999px; background: rgba(16,18,15,.07); overflow: hidden; }
+    .track.slim { height: 18px; }
+    .panel.dark .track { border-color: rgba(246,241,232,.28); background: rgba(246,241,232,.08); }
+    .bar { position: absolute; inset: 0 auto 0 0; border-radius: 999px; min-width: 6px; }
+    .lime { background: var(--lime); } .orange { background: var(--orange); } .blue { background: var(--blue); }
+    .pink { background: var(--pink); } .gray { background: var(--gray); } .red { background: var(--red); }
+    .bar-value { color: var(--muted); font-weight: 850; font-size: 17px; }
+    .panel.dark .bar-value, .panel.dark .bar-label { color: var(--paper); }
+    .bar-note { margin-top: 5px; color: var(--muted); font-size: 13px; }
+    .hbar { display: grid; gap: 8px; margin-bottom: 14px; }
+    .hbar-top { display: flex; justify-content: space-between; gap: 16px; color: var(--muted); font-size: 16px; }
+    .hbar-top strong { color: var(--ink); }
+    .table { border: 1.5px solid var(--line); border-radius: 24px; overflow: hidden; background: var(--line); display: grid; gap: 1px; }
+    .table-row { display: grid; gap: 1px; background: var(--line); }
+    .table-row.three { grid-template-columns: 1.2fr .55fr .75fr; }
+    .table-row.four { grid-template-columns: 1.35fr .48fr 1fr .72fr; }
+    .table-row > div { background: var(--card); padding: 13px 15px; min-height: 58px; font-size: 16px; }
+    .table-row.head > div { background: #11130f; color: var(--paper); font-size: 12px; letter-spacing: .055em; text-transform: uppercase; font-weight: 850; min-height: auto; }
+    .table-row span { display: block; color: var(--muted); margin-top: 4px; font-size: 13px; line-height: 1.2; }
+    .cite { font-size: .62em; vertical-align: super; margin-left: 2px; font-weight: 800; text-decoration: none; }
+    .note { margin-top: 13px; color: var(--muted); font-size: 14px; }
+    .source-list { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 26px; }
+    .source-list p { color: var(--muted); font-size: 18px; margin-bottom: 13px; break-inside: avoid; }
+    .method-list { display: grid; gap: 12px; }
+    .method-item { display: grid; grid-template-columns: 170px 1fr; gap: 18px; border-top: 1px solid rgba(16,18,15,.22); padding-top: 12px; }
+    .method-item strong { font-size: 16px; }
+    .method-item p { color: var(--muted); font-size: 16px; line-height: 1.34; }
+    .slide-geography h2 { font-size: 54px; }
+    .slide-geography .section-head { margin-bottom: 18px; }
+    .slide-geography .section-head p { font-size: 20px; }
+    .slide-geography .table-row > div { min-height: 50px; padding: 10px 13px; font-size: 15px; }
+    .slide-geography .note { margin-top: 8px; font-size: 12px; }
+    .slide-num { position: absolute; left: auto; right: 40px; bottom: 28px; width: max-content; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 68px 0 34px; box-shadow: none; }
+      .wrap { width: 1360px; }
+      .metric, .panel, .card, .hero-note { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">CMS Plan Finder PUF · April 2026 release</div>
+        <h1>Medicare Part D plan data reveal formulary, cost-sharing, and access-management signals</h1>
+      </div>
+      <div class="hero-note">
+        <p>Analysis of the latest available CMS monthly Plan Finder public use file as of May 19, 2026: release dated April 22, 2026, for contract year 2026. Estimates are unweighted and should be interpreted as plan, formulary, or plan-pharmacy record summaries rather than enrollment-weighted exposure measures.<a class="cite" href="#source-1">1</a></p>
+      </div>
+      <div class="metrics">
+        <div class="metric"><div class="num">5,528</div><div class="label">unique plan-segments after deduplicating service-area rows</div></div>
+        <div class="metric"><div class="num">329</div><div class="label">active formularies in the basic formulary file</div></div>
+        <div class="metric"><div class="num">1.12M</div><div class="label">basic formulary rows with tier and utilization-management fields</div></div>
+        <div class="metric"><div class="num">2.1 GB</div><div class="label">compressed CMS ZIP, SHA-256 recorded for replication</div></div>
+      </div>
+    </div>
+    
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Methods</div>
+        <h2>Plan-level inference required deduplication before cross-file joins</h2>
+        <p>CMS publishes plan information at the service-area row level. Analyses used the plan-segment key defined in the record layout and retained service-area expansion only for county or region availability measures.<a class="cite" href="#source-2">2</a></p>
+      </div>
+      <div class="grid-2">
+        <div class="panel"><div class="panel-pad method-list">
+          <div class="method-item"><strong>Source</strong><p>Downloaded CMS Monthly Prescription Drug Plan Formulary and Pharmacy Network Information titled 2026-04-22; direct file <code>2026_20260415.zip</code>.</p></div>
+          <div class="method-item"><strong>Unit</strong><p>Plans were uniquely identified by <code>CONTRACT_ID</code>, <code>PLAN_ID</code>, and <code>SEGMENT_ID</code>; plan-county rows were not counted as separate plans.</p></div>
+          <div class="method-item"><strong>Joins</strong><p>Plan information was joined to formulary summaries by <code>FORMULARY_ID</code>; cost-sharing analyses used plan-tier-days-supply-channel rows.</p></div>
+          <div class="method-item"><strong>Interpretation</strong><p>No estimates are weighted by enrollment, utilization, claims volume, net price, rebates, or spending.</p></div>
+        </div></div>
+        <div class="panel dark"><div class="panel-pad">
+          <h3>Record linkage used in the analysis</h3>
+          <p class="big-text" style="margin-top:18px">Plan information defines the plan universe; the basic formulary file defines formulary entries and restrictions; beneficiary cost and insulin files define tier-level cost sharing; pharmacy-network files define plan-pharmacy attributes and dispensing fees.<a class="cite" href="#source-2">2</a></p>
+          <p class="note" style="color:rgba(246,241,232,.72)">CMS notes that pharmacy network and drug pricing data are updated on Medicare Plan Finder every two weeks, so a monthly PUF may not exactly match the current Medicare.gov display.<a class="cite" href="#source-3">3</a></p>
+        </div></div>
+      </div>
+    </div>
+    
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Plan universe</div>
+        <h2>MA-PD plan-segments dominate the file; stand-alone PDPs have higher median premiums</h2>
+        <p>The file contained 112,635 plan information rows but 5,528 unique plan-segments after deduplication.</p>
+      </div>
+      <div class="grid-2">
+        <div class="panel"><div class="panel-pad bars">
+          
+      <div class="bar-row">
+        <div class="bar-label">Local MA-PD</div>
+        <div>
+          <div class="track"><span class="bar lime" style="width:100.0%"></span></div>
+          <div class="bar-note">median premium $0; zero-premium 70.6%</div>
+        </div>
+        <div class="bar-value">5133</div>
+      </div>
+    
+          
+      <div class="bar-row">
+        <div class="bar-label">Stand-alone PDP</div>
+        <div>
+          <div class="track"><span class="bar blue" style="width:7.1%"></span></div>
+          <div class="bar-note">median premium $61.70; zero-premium 19.1%</div>
+        </div>
+        <div class="bar-value">367</div>
+      </div>
+    
+          
+      <div class="bar-row">
+        <div class="bar-label">Regional MA-PD</div>
+        <div>
+          <div class="track"><span class="bar orange" style="width:3.0%"></span></div>
+          <div class="bar-note">median premium $53.50; zero-premium 7.1%</div>
+        </div>
+        <div class="bar-value">28</div>
+      </div>
+    
+        </div></div>
+        <div class="grid-2" style="grid-template-columns:1fr 1fr">
+          <div class="metric"><div class="num">66.9%</div><div class="label">of all unique plan-segments had $0 listed premium</div></div>
+          <div class="metric"><div class="num">$61.70</div><div class="label">median stand-alone PDP monthly premium</div></div>
+          <div class="metric"><div class="num">$605</div><div class="label">median annual deductible across unique plan-segments</div></div>
+          <div class="metric"><div class="num">69.8%</div><div class="label">of stand-alone PDPs had deductible at or above $615</div></div>
+        </div>
+      </div>
+    </div>
+    
+  </article>
+
+  <article class="slide slide-geography">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Geography</div>
+        <h2>Local MA-PD plan availability varied widely across counties</h2>
+        <p>County availability counts were based on unsuppressed local MA-PD plan-segments in the plan information file. These are offer counts, not enrollment-weighted access measures.</p>
+      </div>
+      <div class="grid-2">
+        <div class="panel dark"><div class="panel-pad">
+          <div class="metrics" style="grid-template-columns:repeat(2,1fr)">
+            <div><div class="num">36</div><div class="label">median local MA-PD plans per county</div></div>
+            <div><div class="num">1-117</div><div class="label">observed county range</div></div>
+          </div>
+          <div style="margin-top:28px">
+            
+      <div class="hbar">
+        <div class="hbar-top"><span>25th percentile</span><strong>16.2393</strong></div>
+        <div class="track slim"><span class="bar blue" style="width:16.2%"></span></div>
+      </div>
+    
+            
+      <div class="hbar">
+        <div class="hbar-top"><span>median</span><strong>30.7692</strong></div>
+        <div class="track slim"><span class="bar lime" style="width:30.8%"></span></div>
+      </div>
+    
+            
+      <div class="hbar">
+        <div class="hbar-top"><span>75th percentile</span><strong>41.8803</strong></div>
+        <div class="track slim"><span class="bar orange" style="width:41.9%"></span></div>
+      </div>
+    
+          </div>
+        </div></div>
+        <div class="panel"><div class="panel-pad">
+          <h3>Highest and lowest county examples</h3>
+          <div class="table" style="margin-top:16px">
+            <div class="table-row head three"><div>County</div><div>Plans</div><div>State name</div></div>
+            
+        <div class="table-row three">
+          <div>Hillsborough, FL</div>
+          <div>117</div>
+          <div>Florida</div>
+        </div>
+        
+
+        <div class="table-row three">
+          <div>Los Angeles, CA</div>
+          <div>115</div>
+          <div>California</div>
+        </div>
+        
+
+        <div class="table-row three">
+          <div>Pinellas, FL</div>
+          <div>113</div>
+          <div>Florida</div>
+        </div>
+        
+            
+        <div class="table-row three">
+          <div>Lake, CA</div>
+          <div>1</div>
+          <div>California</div>
+        </div>
+        
+
+        <div class="table-row three">
+          <div>Lassen, CA</div>
+          <div>1</div>
+          <div>California</div>
+        </div>
+        
+
+        <div class="table-row three">
+          <div>Sierra, CA</div>
+          <div>1</div>
+          <div>California</div>
+        </div>
+        
+          </div>
+          <p class="note">County examples are descriptive and are not adjusted for population, Medicare Advantage penetration, plan enrollment, or county-level morbidity.</p>
+        </div></div>
+      </div>
+    </div>
+    
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Formulary management</div>
+        <h2>More than half of formulary entries had at least one utilization-management flag</h2>
+        <p>Across plan-linked formularies, the median formulary contained 3,477 NDC/RxCUI entries. The following percentages are median within-formulary shares across plan-segments.</p>
+      </div>
+      <div class="grid-2">
+        <div class="panel"><div class="panel-pad">
+          
+      <div class="hbar">
+        <div class="hbar-top"><span>Any utilization-management flag</span><strong>51.8%</strong></div>
+        <div class="track slim"><span class="bar lime" style="width:51.8%"></span></div>
+      </div>
+    
+          
+      <div class="hbar">
+        <div class="hbar-top"><span>Quantity limit</span><strong>41.5%</strong></div>
+        <div class="track slim"><span class="bar blue" style="width:41.5%"></span></div>
+      </div>
+    
+          
+      <div class="hbar">
+        <div class="hbar-top"><span>Prior authorization</span><strong>26.6%</strong></div>
+        <div class="track slim"><span class="bar orange" style="width:26.6%"></span></div>
+      </div>
+    
+          
+      <div class="hbar">
+        <div class="hbar-top"><span>Step therapy</span><strong>0.9%</strong></div>
+        <div class="track slim"><span class="bar pink" style="width:3.0%"></span></div>
+      </div>
+    
+          <p class="note">Utilization-management flags were calculated at the formulary-entry level. A flag does not imply a beneficiary-level restriction rate.</p>
+        </div></div>
+        <div class="panel dark"><div class="panel-pad">
+          <h3>Analytic implication</h3>
+          <p class="big-text" style="margin-top:18px">The Plan Finder PUF can support repeated monitoring of formulary design, but observed restriction rates should be interpreted as design attributes and not as measures of treatment access, abandonment, or health outcomes.</p>
+          <p class="note" style="color:rgba(246,241,232,.72)">The basic formulary file includes NDC/RxCUI, tier, quantity limit, prior authorization, step therapy, and selected-drug indicators.<a class="cite" href="#source-2">2</a></p>
+        </div></div>
+      </div>
+    </div>
+    
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Selected drugs</div>
+        <h2>The 2026 selected-drug flag enables monitoring of formulary placement and restrictions</h2>
+        <p>All active formularies included entries flagged as selected drugs. Examples below are descriptive RxCUI-level summaries for selected products with high formulary coverage.</p>
+      </div>
+      <div class="panel"><div class="panel-pad">
+        <div class="table">
+          <div class="table-row head four"><div>Selected-drug product group</div><div>Median tier</div><div>Observed UM pattern</div><div>Coverage in file</div></div>
+          
+        <div class="table-row four">
+          <div><strong>Etanercept products</strong><span>Enbrel RXCUIs</span></div>
+          <div>Tier 5</div>
+          <div>QL 81%; PA 98.5%</div>
+          <div>329 formularies</div>
+        </div>
+        
+
+        <div class="table-row four">
+          <div><strong>Apixaban tablets</strong><span>Eliquis 2.5 mg and 5 mg</span></div>
+          <div>Tier 3</div>
+          <div>QL 90.6%-92.4%; PA 0%</div>
+          <div>329 formularies</div>
+        </div>
+        
+
+        <div class="table-row four">
+          <div><strong>SGLT2 inhibitors</strong><span>Dapagliflozin and empagliflozin</span></div>
+          <div>Tier 3</div>
+          <div>QL 94.8%-98.2%; PA 0%</div>
+          <div>329 formularies</div>
+        </div>
+        
+
+        <div class="table-row four">
+          <div><strong>Ibrutinib products</strong><span>Imbruvica capsule/tablet</span></div>
+          <div>Tier 5</div>
+          <div>QL 92.4%-94.8%; PA 99.1%</div>
+          <div>329 formularies</div>
+        </div>
+        
+        </div>
+        <p class="note">Selected-drug analyses used RxNorm names only for labeling. The PUF does not contain manufacturer discounts, rebates, net prices, utilization, or beneficiary spending.</p>
+      </div></div>
+    </div>
+    
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Specialty tiers</div>
+        <h2>Specialty-tier cost sharing was commonly subject to the deductible and often expressed as coinsurance</h2>
+        <p>The beneficiary cost file was restricted to initial coverage, 30-day supply rows with <code>TIER_SPECIALTY_YN = Y</code>.</p>
+      </div>
+      <div class="grid-3">
+        <div class="metric"><div class="num">5,201</div><div class="label">plan-segments with at least one specialty-tier row</div></div>
+        <div class="metric"><div class="num">85.4%</div><div class="label">specialty-tier rows where deductible applies</div></div>
+        <div class="metric"><div class="num">79.2%</div><div class="label">stand-alone PDP specialty rows using preferred-retail coinsurance</div></div>
+      </div>
+      <div class="grid-2" style="margin-top:18px">
+        <div class="panel"><div class="panel-pad">
+          
+      <div class="hbar">
+        <div class="hbar-top"><span>All plan-segments: preferred-retail coinsurance</span><strong>41.4%</strong></div>
+        <div class="track slim"><span class="bar lime" style="width:41.4%"></span></div>
+      </div>
+    
+          
+      <div class="hbar">
+        <div class="hbar-top"><span>Stand-alone PDPs: preferred-retail coinsurance</span><strong>79.2%</strong></div>
+        <div class="track slim"><span class="bar blue" style="width:79.2%"></span></div>
+      </div>
+    
+          
+      <div class="hbar">
+        <div class="hbar-top"><span>All plan-segments: deductible applies</span><strong>85.4%</strong></div>
+        <div class="track slim"><span class="bar orange" style="width:85.4%"></span></div>
+      </div>
+    
+        </div></div>
+        <div class="panel dark"><div class="panel-pad">
+          <h3>Observed coinsurance level</h3>
+          <p class="big-text" style="margin-top:18px">Among rows using coinsurance, the median preferred-retail specialty-tier coinsurance was 26% overall and 25% in stand-alone PDPs.</p>
+        </div></div>
+      </div>
+    </div>
+    
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Insulin</div>
+        <h2>Insulin cost-sharing fields show the policy cap structure but require the statutory lesser-of interpretation</h2>
+        <p>For 2026, CMS states that the applicable beneficiary amount for Part D-covered insulin is the lesser of the copay cap, a maximum-fair-price-based amount when applicable, or a negotiated-price-based amount.<a class="cite" href="#source-3">3</a></p>
+      </div>
+      <div class="grid-2">
+        <div class="grid-2" style="grid-template-columns:1fr 1fr">
+          <div class="metric"><div class="num">5,509</div><div class="label">plan-segments with insulin cost-sharing rows</div></div>
+          <div class="metric"><div class="num">$35</div><div class="label">median populated preferred-retail 30-day insulin copay</div></div>
+          <div class="metric"><div class="num">100.0%</div><div class="label">populated preferred-retail copay rows at or below $35</div></div>
+          <div class="metric"><div class="num">25%</div><div class="label">median populated preferred-retail insulin coinsurance</div></div>
+        </div>
+        <div class="panel"><div class="panel-pad">
+          
+      <div class="hbar">
+        <div class="hbar-top"><span>All plans: preferred-retail copay populated</span><strong>35.9%</strong></div>
+        <div class="track slim"><span class="bar lime" style="width:35.9%"></span></div>
+      </div>
+    
+          
+      <div class="hbar">
+        <div class="hbar-top"><span>PDPs: preferred-retail copay populated</span><strong>77.7%</strong></div>
+        <div class="track slim"><span class="bar blue" style="width:77.7%"></span></div>
+      </div>
+    
+          
+      <div class="hbar">
+        <div class="hbar-top"><span>All plans: preferred-retail coinsurance populated</span><strong>35.9%</strong></div>
+        <div class="track slim"><span class="bar orange" style="width:35.9%"></span></div>
+      </div>
+    
+          <p class="note">Blank fields should not be interpreted as zero cost sharing. Analyses should stratify by channel and days supply.</p>
+        </div></div>
+      </div>
+    </div>
+    
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Supplemental coverage</div>
+        <h2>Excluded-drug and indication-based coverage files identify narrower benefit-design signals</h2>
+        <p>These files are smaller than the basic formulary file but are useful for tracking supplemental and indication-specific coverage policies.</p>
+      </div>
+      <div class="grid-2">
+        <div class="panel"><div class="panel-pad">
+          <h3>Excluded drugs</h3>
+          <div class="metrics" style="grid-template-columns:repeat(2,1fr); margin-top:18px">
+            <div><div class="num">2,021</div><div class="label">contract-plan pairs with excluded-drug entries</div></div>
+            <div><div class="num">44</div><div class="label">distinct RxCUI values in the excluded-drug file</div></div>
+          </div>
+          
+      <div class="hbar">
+        <div class="hbar-top"><span>Quantity-limit rows</span><strong>57.8%</strong></div>
+        <div class="track slim"><span class="bar blue" style="width:57.8%"></span></div>
+      </div>
+    
+          
+      <div class="hbar">
+        <div class="hbar-top"><span>Capped-benefit rows</span><strong>10.9%</strong></div>
+        <div class="track slim"><span class="bar orange" style="width:10.9%"></span></div>
+      </div>
+    
+        </div></div>
+        <div class="panel dark"><div class="panel-pad">
+          <h3>Indication-based coverage</h3>
+          <p class="big-text" style="margin-top:18px">The indication-based coverage file contained 367 rows across 31 contract-plan pairs. The most frequent examples included ixekizumab, dupilumab, pitolisant, rimegepant, and anakinra indication entries.</p>
+          <p class="note" style="color:rgba(246,241,232,.72)">Interpretation should remain product- and indication-specific because the file is sparse relative to the full formulary universe.</p>
+        </div></div>
+      </div>
+    </div>
+    
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Regional PDP premiums</div>
+        <h2>Stand-alone PDP premium distributions varied by region</h2>
+        <p>PDP region summaries were based on unique stand-alone PDP plan-segments, not county-expanded rows. Region names are available in the geographic locator file.</p>
+      </div>
+      <div class="grid-2">
+        <div class="panel"><div class="panel-pad">
+          <h3>Highest median premium regions</h3>
+          <div class="table" style="margin-top:16px">
+            <div class="table-row head three"><div>PDP region</div><div>Plans</div><div>Median premium</div></div>
+            
+        <div class="table-row three">
+          <div>39</div>
+          <div>1</div>
+          <div>$114.80</div>
+        </div>
+        
+
+        <div class="table-row three">
+          <div>03</div>
+          <div>10</div>
+          <div>$110.90</div>
+        </div>
+        
+
+        <div class="table-row three">
+          <div>32</div>
+          <div>12</div>
+          <div>$107</div>
+        </div>
+        
+
+        <div class="table-row three">
+          <div>11</div>
+          <div>10</div>
+          <div>$98.45</div>
+        </div>
+        
+
+        <div class="table-row three">
+          <div>09</div>
+          <div>11</div>
+          <div>$98.40</div>
+        </div>
+        
+
+        <div class="table-row three">
+          <div>22</div>
+          <div>12</div>
+          <div>$92</div>
+        </div>
+        
+          </div>
+        </div></div>
+        <div class="panel dark"><div class="panel-pad">
+          <h3>Distribution across 39 PDP regions</h3>
+          <div class="metrics" style="grid-template-columns:repeat(2,1fr); margin-top:18px">
+            <div><div class="num">$54.40</div><div class="label">median of regional median premiums</div></div>
+            <div><div class="num">$0-$114.80</div><div class="label">range of regional median premiums</div></div>
+          </div>
+          <p class="note" style="color:rgba(246,241,232,.72)">Regional comparisons are descriptive. They are not adjusted for benefit design, low-income premium subsidy benchmarks, enrollment, or formulary differences.</p>
+        </div></div>
+      </div>
+    </div>
+    
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Interpretation</div>
+        <h2>Signals worth monitoring for HEOR and market access research</h2>
+        <p>The PUF is best suited to transparent, repeated measurement of benefit design. It should be paired with enrollment, claims, outcomes, and net-cost data for causal or budget-impact interpretation.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card"><h3>Formulary design</h3><p>Track tier placement and utilization-management changes, particularly for selected drugs, high-cost specialty products, and products with indication-based coverage.</p></div>
+        <div class="card"><h3>Patient affordability</h3><p>Use beneficiary cost files to describe plan-level cost-sharing structures, while separating copay and coinsurance and avoiding claims about realized out-of-pocket spending.</p></div>
+        <div class="card"><h3>Market access comparators</h3><p>Compare plan types and regions descriptively, with clear denominators and without conflating plan availability with beneficiary enrollment or use.</p></div>
+      </div>
+      <div class="panel dark" style="margin-top:18px"><div class="panel-pad">
+        <p class="big-text">A conservative interpretation is that April 2026 Plan Finder data show broad formulary standardization, frequent formulary-entry utilization management, and clearly observable IRA-related data fields, but not beneficiary-level access, net prices, manufacturer discounts, or clinical outcomes.</p>
+      </div></div>
+    </div>
+    
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Sources and replication</div>
+        <h2>Primary sources and reproducible files</h2>
+        <p>Full methods, commands, file hashes, and generated summary tables are documented in the companion methods note in the same output directory.</p>
+      </div>
+      <div class="panel"><div class="panel-pad source-list">
+        <div>
+          <p id="source-1"><strong>1. CMS/data.gov dataset.</strong> Monthly Prescription Drug Plan Formulary and Pharmacy Network Information. Latest available distribution used: 2026-04-22. <a href="https://catalog.data.gov/dataset/monthly-prescription-drug-plan-formulary-and-pharmacy-network-information">catalog.data.gov</a></p>
+          <p id="source-2"><strong>2. CMS record layout.</strong> Prescription Drug Plan Formulary and Pharmacy Network Public Use File Record Layout, 2026. <a href="https://data.cms.gov/sites/default/files/2025-10/0564eb37-402d-4110-bd98-2d5399dc30e7/PUFRecordLayout-2026.pdf">PDF</a></p>
+        </div>
+        <div>
+          <p id="source-3"><strong>3. CMS methodology.</strong> Prescription Drug Plan Formulary and Pharmacy Network Public Use File Methodology, 2026. <a href="https://data.cms.gov/sites/default/files/2025-10/8f1d8b42-bfd1-4f9c-b86d-b92af0c6f3d5/Methodology-PUF-2026.pdf">PDF</a></p>
+          <p><strong>Local reproducibility.</strong> Analysis script: <code>scripts/analyze_plan_finder.py</code>; deck builder: <code>scripts/build_deck.py</code>; source ZIP SHA-256: <code>b9d7c523f9b92c67a39e5eccf7e1609a5a1ed11a7fe6f39af4e05fd568a4f223</code>.</p>
+        </div>
+      </div></div>
+    </div>
+    
+  </article>
+</body>
+</html>

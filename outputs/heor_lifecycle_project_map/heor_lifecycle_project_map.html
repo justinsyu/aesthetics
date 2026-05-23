@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HEOR project types across the product life cycle</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 26px;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: var(--paper-2);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.22;
+      scrollbar-width: none;
+    }
+
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar { display: none; }
+
+    body {
+      display: grid;
+      place-items: start center;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .slide {
+      position: relative;
+      width: 1600px;
+      height: 900px;
+      overflow: hidden;
+      padding: 36px 50px 30px;
+      background: var(--paper);
+    }
+
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr) auto auto;
+      gap: 11px;
+    }
+
+    .header {
+      display: grid;
+      grid-template-columns: minmax(0, 1090px) 372px;
+      align-items: start;
+      gap: 26px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      border: 1.5px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--lime);
+      font-size: 13px;
+      font-weight: 850;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      max-width: 1088px;
+      margin: 0;
+      font-size: 62px;
+      line-height: .92;
+      letter-spacing: 0;
+      font-weight: 540;
+    }
+
+    h1 em {
+      position: relative;
+      font-style: normal;
+      z-index: 0;
+      padding: 0 .03em;
+      background: linear-gradient(to top, var(--lime) 0 .36em, transparent .36em);
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+
+    h1 em::before {
+      content: none;
+    }
+
+    .subtitle {
+      margin: 10px 0 0;
+      max-width: 1088px;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.25;
+    }
+
+    .operating-model {
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,250,240,.86);
+      box-shadow: var(--shadow);
+      padding: 16px 20px;
+    }
+
+    .operating-model .label {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+
+    .operating-model .chain {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      align-items: center;
+      gap: 11px;
+      min-height: 31px;
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1.05;
+    }
+
+    .step span:first-child {
+      position: relative;
+      width: 12px;
+      height: 12px;
+      margin-left: 3px;
+      display: grid;
+      place-items: center;
+      border: 1.2px solid rgba(16,18,15,.62);
+      border-radius: 999px;
+      background: rgba(255,250,240,.92);
+      box-shadow: 0 0 0 4px rgba(16,18,15,.04);
+    }
+
+    .step + .step span:first-child::before {
+      content: "";
+      position: absolute;
+      width: 1.4px;
+      height: 15px;
+      transform: translateY(-17px);
+      background: rgba(16,18,15,.32);
+    }
+
+    .lifecycle {
+      border: 1.5px solid var(--line);
+      border-radius: 30px;
+      background: rgba(255,250,240,.80);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: 66px minmax(0, 1fr);
+      min-height: 0;
+    }
+
+    .track {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      align-items: center;
+      padding: 10px 28px 5px;
+      --track-pad: 28px;
+      --dot-size: 42px;
+      --dot-label-gap: 10px;
+      --label-width: 174px;
+      --segment-inset: 9px;
+      --track-cell: calc((100% - (var(--track-pad) * 2)) / 5);
+    }
+
+    .track-segment {
+      position: absolute;
+      top: 31px;
+      height: 3px;
+      border-radius: 999px;
+      background: rgba(16,18,15,.28);
+      z-index: 0;
+    }
+
+    .track-segment:nth-child(1) { left: calc(var(--track-pad) + var(--dot-size) + var(--dot-label-gap) + var(--label-width) + var(--segment-inset)); width: calc(var(--track-cell) - var(--dot-size) - var(--dot-label-gap) - var(--label-width) - (var(--segment-inset) * 2)); }
+    .track-segment:nth-child(2) { left: calc(var(--track-pad) + var(--track-cell) + var(--dot-size) + var(--dot-label-gap) + var(--label-width) + var(--segment-inset)); width: calc(var(--track-cell) - var(--dot-size) - var(--dot-label-gap) - var(--label-width) - (var(--segment-inset) * 2)); }
+    .track-segment:nth-child(3) { left: calc(var(--track-pad) + (var(--track-cell) * 2) + var(--dot-size) + var(--dot-label-gap) + var(--label-width) + var(--segment-inset)); width: calc(var(--track-cell) - var(--dot-size) - var(--dot-label-gap) - var(--label-width) - (var(--segment-inset) * 2)); }
+    .track-segment:nth-child(4) { left: calc(var(--track-pad) + (var(--track-cell) * 3) + var(--dot-size) + var(--dot-label-gap) + var(--label-width) + var(--segment-inset)); width: calc(var(--track-cell) - var(--dot-size) - var(--dot-label-gap) - var(--label-width) - (var(--segment-inset) * 2)); }
+
+    .milestone {
+      position: relative;
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      align-items: center;
+      gap: 9px;
+      min-width: 0;
+      z-index: 1;
+    }
+
+    .dot {
+      width: 42px;
+      height: 42px;
+      border: 1.7px solid var(--line);
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: var(--card);
+      font-size: 18px;
+      font-weight: 900;
+      box-shadow: 5px 6px 0 rgba(16,18,15,.08);
+    }
+
+    .milestone.stage-1 .dot { background: var(--lime); }
+    .milestone.stage-2 .dot { background: var(--blue); }
+    .milestone.stage-3 .dot { background: var(--orange); }
+    .milestone.stage-4 .dot { background: var(--pink); }
+    .milestone.stage-5 .dot { background: var(--red); }
+
+    .milestone b {
+      display: block;
+      font-size: 15px;
+      line-height: 1.03;
+      font-weight: 900;
+      max-width: 174px;
+    }
+
+    .stage-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      min-height: 0;
+      border-top: 1.5px solid var(--line);
+    }
+
+    .stage {
+      padding: 12px 15px 12px;
+      min-width: 0;
+      border-right: 1.5px solid rgba(16,18,15,.42);
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 7px;
+    }
+
+    .stage:last-child {
+      border-right: 0;
+    }
+
+    .stage-kicker {
+      min-height: 34px;
+      color: var(--muted);
+      font-size: 11.5px;
+      font-weight: 900;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      line-height: 1.16;
+    }
+
+    .items {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 5px;
+    }
+
+    .items li {
+      position: relative;
+      min-height: 32px;
+      padding: 6px 8px 6px 13px;
+      border: 1.2px solid rgba(16,18,15,.42);
+      border-radius: 14px;
+      background: rgba(255,250,240,.72);
+      font-size: 13.45px;
+      line-height: 1.13;
+      font-weight: 760;
+    }
+
+    .items li::before {
+      content: "";
+      position: absolute;
+      left: -1px;
+      top: 7px;
+      bottom: 7px;
+      width: 5px;
+      border-radius: 999px;
+      background: var(--blue);
+    }
+
+    .stage:nth-child(1) .items li::before { background: var(--lime); }
+    .stage:nth-child(2) .items li::before { background: var(--blue); }
+    .stage:nth-child(3) .items li::before { background: var(--orange); }
+    .stage:nth-child(4) .items li::before { background: var(--pink); }
+    .stage:nth-child(5) .items li::before { background: var(--red); }
+
+    sup {
+      font-size: .62em;
+      line-height: 0;
+      vertical-align: super;
+      font-weight: 900;
+    }
+
+    sup a {
+      border-bottom: 1px solid currentColor;
+    }
+
+    .synthesis {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .synthesis-title {
+      border: 1.5px solid var(--line);
+      border-radius: 22px;
+      background: var(--ink);
+      color: var(--paper);
+      padding: 12px 18px;
+    }
+
+    .synthesis-title .small {
+      color: rgba(246,241,232,.62);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+
+    .synthesis-title .large {
+      margin-top: 7px;
+      font-size: 22px;
+      line-height: .98;
+      font-weight: 860;
+      letter-spacing: 0;
+    }
+
+    .vendor-strip {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 8px;
+      align-items: stretch;
+    }
+
+    .vendor {
+      border: 1.2px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,250,240,.82);
+      padding: 10px 9px 9px;
+      min-width: 0;
+      display: grid;
+      align-content: center;
+      text-align: center;
+      box-shadow: 0 10px 28px rgba(16,18,15,.05);
+    }
+
+    .vendor b {
+      display: block;
+      font-size: 15px;
+      line-height: 1.05;
+      font-weight: 900;
+    }
+
+    .vendor span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 10.2px;
+      line-height: 1.12;
+      font-weight: 760;
+    }
+
+    .references {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      align-items: start;
+      color: var(--muted);
+      font-size: 9.8px;
+      line-height: 1.25;
+    }
+
+    .references b {
+      color: var(--ink);
+      font-size: 11px;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+
+    .references a {
+      color: var(--muted);
+      border-bottom: 1px solid rgba(92,98,87,.45);
+    }
+
+    @page {
+      size: 1600px 900px;
+      margin: 0;
+    }
+
+    @media print {
+      html,
+      body {
+        width: 1600px;
+        height: 900px;
+        background: var(--paper);
+      }
+
+      .slide {
+        width: 1600px;
+        height: 900px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide" aria-label="HEOR project types across the product life cycle">
+    <img class="slide-bg-img" src="assets/heor_lifecycle_bg.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <header class="header">
+        <div>
+          <div class="eyebrow">HEOR operating map</div>
+          <h1>HEOR project types across the <em>product life cycle</em></h1>
+          <p class="subtitle">Vendor service pages converge on a simple operating model: define value and pre-launch RWE needs early, build integrated evidence before launch, translate it for HTA/payers at launch, and refresh it with observed RWE after uptake.</p>
+        </div>
+        <aside class="operating-model" aria-label="Operating model">
+          <div class="label">Lifecycle logic</div>
+          <div class="chain">
+            <div class="step"><span aria-hidden="true"></span><span>Define value early</span></div>
+            <div class="step"><span aria-hidden="true"></span><span>Build payer-relevant evidence</span></div>
+            <div class="step"><span aria-hidden="true"></span><span>Translate for HTA and access</span></div>
+            <div class="step"><span aria-hidden="true"></span><span>Refresh with RWE after uptake</span></div>
+          </div>
+        </aside>
+      </header>
+
+      <section class="lifecycle">
+        <div class="track" aria-hidden="true">
+          <span class="track-segment"></span>
+          <span class="track-segment"></span>
+          <span class="track-segment"></span>
+          <span class="track-segment"></span>
+          <div class="milestone stage-1"><div class="dot">1</div><b>Early asset / indication strategy</b></div>
+          <div class="milestone stage-2"><div class="dot">2</div><b>Clinical development</b></div>
+          <div class="milestone stage-3"><div class="dot">3</div><b>Pre-launch access readiness</b></div>
+          <div class="milestone stage-4"><div class="dot">4</div><b>Launch / HTA submission</b></div>
+          <div class="milestone stage-5"><div class="dot">5</div><b>Post-launch optimization</b></div>
+        </div>
+
+        <div class="stage-grid">
+          <section class="stage">
+            <div class="stage-kicker">Set access hypotheses before evidence is locked</div>
+            <ul class="items">
+              <li>Landscape review and reimbursement roadmap<sup><a href="https://lumanity.com/capabilities/heor/">1</a>,<a href="https://cytel.com/solutions/commercialization/market-access/">12</a></sup></li>
+              <li>Unmet need, epidemiology, and burden-of-illness RWE<sup><a href="https://www.openhealthgroup.com/what-we-do/heor-market-access/">8</a>,<a href="https://www.iqvia.com/-/media/iqvia/pdfs/library/fact-sheets/generating-rwe-across-the-total-product-lifecycle.pdf">10</a></sup></li>
+              <li>Early value assessment and portfolio prioritization<sup><a href="https://lumanity.com/capabilities/heor/">1</a>,<a href="https://lumanity.com/our-approach/">11</a></sup></li>
+              <li>Evidence gap analysis and integrated evidence plan<sup><a href="https://www.cencora.com/resources/pharma/answering-the-challenges-of-rare-disease-market-access-with-heor">5</a>,<a href="https://cytel.com/solutions/commercialization/market-access/">12</a>,<a href="https://heor.co.uk/services/">9</a></sup></li>
+              <li>Endpoint, COA, PRO, and utility strategy<sup><a href="https://www.iconplc.com/solutions/consulting/commercial-positioning-consulting/health-economics?Language=en">6</a></sup></li>
+            </ul>
+          </section>
+
+          <section class="stage">
+            <div class="stage-kicker">Make trials usable for market access and HTA</div>
+            <ul class="items">
+              <li>Trial design for market access / HTA requirements<sup><a href="https://lumanity.com/capabilities/heor/">1</a>,<a href="https://www.worldcourier.com/jp/sitecore/%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84/xcenda/english/home/solutions-global-market-access-consulting">14</a></sup></li>
+              <li>Evidence synthesis plus ITC / NMA feasibility<sup><a href="https://heor.co.uk/services/">9</a></sup></li>
+              <li>Early economic model to inform price and evidence needs<sup><a href="https://lumanity.com/capabilities/heor/">1</a>,<a href="https://www.worldcourier.com/jp/sitecore/%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84/xcenda/english/home/solutions-global-market-access-consulting">14</a></sup></li>
+              <li>Utility, HRQoL, and patient-preference studies<sup><a href="https://www.iconplc.com/solutions/consulting/commercial-positioning-consulting/health-economics?Language=en">6</a></sup></li>
+              <li>RWE protocol or external-control feasibility<sup><a href="https://cytel.com/solutions/phase-i-iii/real-world-evidence/">3</a>,<a href="https://www.cencora.com/resources/pharma/answering-the-challenges-of-rare-disease-market-access-with-heor">5</a>,<a href="https://www.iqvia.com/-/media/iqvia/pdfs/library/fact-sheets/generating-rwe-across-the-total-product-lifecycle.pdf">10</a></sup></li>
+            </ul>
+          </section>
+
+          <section class="stage">
+            <div class="stage-kicker">Assemble the evidence package and payer story</div>
+            <ul class="items">
+              <li>Core value story and product value proposition<sup><a href="https://lumanity.com/capabilities/heor/">1</a>,<a href="https://lumanity.com/our-approach/">11</a>,<a href="https://cytel.com/solutions/commercialization/market-access/">12</a></sup></li>
+              <li>Cost-effectiveness and budget impact models<sup><a href="https://cytel.com/solutions/commercialization/health-economics-and-outcomes-research-heor/">2</a>,<a href="https://www.cencora.com/our-capabilities/commercialization-support/health-economics-outcomes-research">4</a></sup></li>
+              <li>SLR, NMA, MAIC, ITC, and meta-analysis workstream<sup><a href="https://lumanity.com/capabilities/heor/">1</a>,<a href="https://www.cencora.com/our-capabilities/commercialization-support/health-economics-outcomes-research">4</a>,<a href="https://cytel.com/solutions/commercialization/market-access/">12</a></sup></li>
+              <li>AMCP, PIE, GVD, and HTA dossier planning<sup><a href="https://lumanity.com/capabilities/heor/">1</a>,<a href="https://www.iconplc.com/solutions/consulting/commercial-positioning-consulting/health-economics?Language=en">6</a>,<a href="https://www.worldcourier.com/jp/sitecore/%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84/xcenda/english/home/solutions-global-market-access-consulting">14</a></sup></li>
+              <li>Pre-launch RWE evidence package and message testing<sup><a href="https://cytel.com/solutions/phase-i-iii/real-world-evidence/">3</a>,<a href="https://www.cencora.com/our-capabilities/commercialization-support/market-access-strategy">13</a>,<a href="https://www.worldcourier.com/jp/sitecore/%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84/xcenda/english/home/solutions-global-market-access-consulting">14</a></sup></li>
+            </ul>
+          </section>
+
+          <section class="stage">
+            <div class="stage-kicker">Convert evidence into access decisions</div>
+            <ul class="items">
+              <li>HTA and reimbursement submissions<sup><a href="https://www.iconplc.com/solutions/consulting/commercial-positioning-consulting/health-economics?Language=en">6</a>,<a href="https://www.cencora.com/our-capabilities/commercialization-support/market-access-strategy">13</a>,<a href="https://www.worldcourier.com/jp/sitecore/%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84/xcenda/english/home/solutions-global-market-access-consulting">14</a></sup></li>
+              <li>Global-to-local model adaptations<sup><a href="https://lumanity.com/capabilities/heor/">1</a>,<a href="https://heor.co.uk/services/">9</a>,<a href="https://www.worldcourier.com/jp/sitecore/%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84/xcenda/english/home/solutions-global-market-access-consulting">14</a></sup></li>
+              <li>Payer tools, field materials, and objection handlers<sup><a href="https://lumanity.com/capabilities/heor/">1</a>,<a href="https://heor.co.uk/services/">9</a></sup></li>
+              <li>Appraisal, hearing, and post-submission support<sup><a href="https://lumanity.com/capabilities/heor/">1</a>,<a href="https://cytel.com/solutions/commercialization/market-access/">12</a></sup></li>
+              <li>Publication and affiliate / field training<sup><a href="https://www.ipsos.com/en/healthcare/market-access-heor">7</a>,<a href="https://heor.co.uk/services/">9</a></sup></li>
+            </ul>
+          </section>
+
+          <section class="stage">
+            <div class="stage-kicker">Refresh value with observed use and outcomes</div>
+            <ul class="items">
+              <li>Observed uptake: database, chart review, and survey studies<sup><a href="https://cytel.com/solutions/phase-i-iii/real-world-evidence/">3</a>,<a href="https://www.worldcourier.com/jp/sitecore/%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84/xcenda/english/home/solutions-global-market-access-consulting">14</a></sup></li>
+              <li>Treatment patterns, HCRU, adherence, and costs<sup><a href="https://www.openhealthgroup.com/what-we-do/heor-market-access/">8</a></sup></li>
+              <li>Comparative effectiveness and safety analyses<sup><a href="https://www.cencora.com/our-capabilities/commercialization-support/health-economics-outcomes-research">4</a></sup></li>
+              <li>Registries, post-market follow-up, and commitments<sup><a href="https://www.iqvia.com/-/media/iqvia/pdfs/library/fact-sheets/generating-rwe-across-the-total-product-lifecycle.pdf">10</a></sup></li>
+              <li>Label expansion, LOE, and mature evidence refresh<sup><a href="https://www.ipsos.com/en/healthcare/market-access-heor">7</a>,<a href="https://www.cencora.com/our-capabilities/commercialization-support/market-access-strategy">13</a>,<a href="https://www.worldcourier.com/jp/sitecore/%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84/xcenda/english/home/solutions-global-market-access-consulting">14</a></sup></li>
+            </ul>
+          </section>
+        </div>
+      </section>
+
+      <section class="synthesis" aria-label="Vendor synthesis strip">
+        <div class="synthesis-title">
+          <div class="small">Vendor synthesis</div>
+          <div class="large">Service taxonomies cluster around Evidence, Value, Access, and RWE.</div>
+        </div>
+        <div class="vendor-strip">
+          <div class="vendor"><b>Lumanity</b><span>4 value inflection points; strategy, evidence, engagement</span></div>
+          <div class="vendor"><b>Cytel</b><span>roadmap, IEP + SLR, Evidence Hub, value comms</span></div>
+          <div class="vendor"><b>Cencora</b><span>pre-launch to maturity access, HTA, HEOR, LOE</span></div>
+          <div class="vendor"><b>ICON</b><span>lifecycle HEOR, COA, preference, HTA</span></div>
+          <div class="vendor"><b>Xcenda</b><span>global/local access, payer insights, GVDs, RWE</span></div>
+          <div class="vendor"><b>OPEN Health</b><span>market access, PCO, RWE, modeling</span></div>
+          <div class="vendor"><b>HEOR Ltd</b><span>development-to-commercial services</span></div>
+          <div class="vendor"><b>IQVIA</b><span>RWE across pre- and post-approval</span></div>
+        </div>
+      </section>
+
+      <footer class="references">
+        <b>Sources</b>
+        <div>
+          <a href="https://lumanity.com/capabilities/heor/">1 Lumanity HEOR</a> ·
+          <a href="https://cytel.com/solutions/commercialization/health-economics-and-outcomes-research-heor/">2 Cytel HEOR</a> ·
+          <a href="https://cytel.com/solutions/phase-i-iii/real-world-evidence/">3 Cytel RWE</a> ·
+          <a href="https://www.cencora.com/our-capabilities/commercialization-support/health-economics-outcomes-research">4 Cencora HEOR</a> ·
+          <a href="https://www.cencora.com/resources/pharma/answering-the-challenges-of-rare-disease-market-access-with-heor">5 Cencora rare disease HEOR</a> ·
+          <a href="https://www.iconplc.com/solutions/consulting/commercial-positioning-consulting/health-economics?Language=en">6 ICON HEOR</a> ·
+          <a href="https://www.ipsos.com/en/healthcare/market-access-heor">7 Ipsos Market Access &amp; HEOR</a> ·
+          <a href="https://www.openhealthgroup.com/what-we-do/heor-market-access/">8 OPEN Health</a> ·
+          <a href="https://heor.co.uk/services/">9 HEOR Ltd</a> ·
+          <a href="https://www.iqvia.com/-/media/iqvia/pdfs/library/fact-sheets/generating-rwe-across-the-total-product-lifecycle.pdf">10 IQVIA RWE lifecycle</a> ·
+          <a href="https://lumanity.com/our-approach/">11 Lumanity Approach</a> ·
+          <a href="https://cytel.com/solutions/commercialization/market-access/">12 Cytel Market Access</a> ·
+          <a href="https://www.cencora.com/our-capabilities/commercialization-support/market-access-strategy">13 Cencora Market Access Strategy</a> ·
+          <a href="https://www.worldcourier.com/jp/sitecore/%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84/xcenda/english/home/solutions-global-market-access-consulting">14 Xcenda global MA</a>. Stage labels are transparent synthesis, not a vendor-endorsed taxonomy.
+        </div>
+      </footer>
+    </div>
+  </article>
+</body>
+</html>

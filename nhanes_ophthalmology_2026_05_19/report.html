@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NHANES ophthalmology outcomes</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --line: #1b1f17;
+      --dark: #11130f;
+      --radius: 26px;
+    }
+    @page { size: 1600px 900px; margin: 0; }
+    * { box-sizing: border-box; }
+    body, *::before, *::after { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    html, body { margin: 0; width: 100%; background: var(--paper); color: var(--ink); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    body { overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    .slide { position: relative; width: 100vw; height: 100vh; min-height: 100vh; overflow: hidden; display: flex; align-items: center; justify-content: center; page-break-after: always; }
+    .slide-bg-img { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; user-select: none; pointer-events: none; }
+    .wrap { position: relative; z-index: 1; width: 1360px; height: 780px; display: flex; flex-direction: column; }
+    .topline { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; }
+    .eyebrow { display: inline-flex; width: fit-content; align-items: center; gap: 10px; padding: 10px 18px; border: 2px solid var(--line); border-radius: 999px; background: var(--lime); color: var(--ink); font-size: 15px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .page { color: var(--muted); font-size: 15px; font-weight: 700; }
+    h1, h2, h3, p { margin: 0; }
+    h1 { max-width: 1120px; font-size: 88px; line-height: .93; font-weight: 520; letter-spacing: 0; }
+    h2 { font-size: 58px; line-height: .98; font-weight: 540; letter-spacing: 0; }
+    h3 { font-size: 22px; line-height: 1.12; font-weight: 760; letter-spacing: 0; }
+    p { font-size: 24px; line-height: 1.36; color: var(--muted); }
+    .subhead { max-width: 980px; margin-top: 24px; font-size: 27px; line-height: 1.32; color: var(--muted); }
+    .grid { display: grid; gap: 18px; }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .card { border: 2px solid var(--line); border-radius: var(--radius); background: rgba(255, 250, 240, .86); padding: 24px; box-shadow: 0 18px 48px rgba(16, 18, 15, .08); }
+    .dark { background: var(--dark); color: var(--paper); border-color: var(--dark); }
+    .dark p, .dark .small, .dark .label { color: rgba(246, 241, 232, .74); }
+    .metric { font-size: 58px; line-height: .9; font-weight: 860; letter-spacing: 0; color: var(--ink); }
+    .dark .metric { color: var(--lime); }
+    .label { margin-top: 12px; font-size: 18px; line-height: 1.25; color: var(--muted); font-weight: 650; }
+    .small { font-size: 15px; line-height: 1.32; color: var(--muted); }
+    .tiny { font-size: 12px; line-height: 1.25; color: var(--muted); }
+    .title-row { display: grid; grid-template-columns: 1.05fr .95fr; gap: 32px; align-items: end; }
+    .hero-metrics { margin-top: auto; }
+    .callout { padding: 26px 28px; border: 2px solid var(--line); border-radius: var(--radius); background: var(--dark); color: var(--paper); }
+    .callout p { color: rgba(246, 241, 232, .78); font-size: 22px; }
+    .bar-list { display: grid; gap: 13px; margin-top: 22px; }
+    .bar-row { display: grid; grid-template-columns: 410px 1fr 86px; align-items: center; gap: 16px; }
+    .bar-label { font-size: 17px; line-height: 1.18; font-weight: 720; }
+    .bar-track { height: 28px; border: 2px solid var(--line); border-radius: 999px; background: rgba(16,18,15,.08); overflow: hidden; }
+    .bar { height: 100%; border-right: 2px solid var(--line); }
+    .bar-value { font-size: 18px; font-weight: 820; text-align: right; }
+    .lime { background: var(--lime); }
+    .blue { background: var(--blue); }
+    .orange { background: var(--orange); }
+    .pink { background: var(--pink); }
+    .red { background: var(--red); }
+    .table { width: 100%; border-collapse: collapse; margin-top: 22px; font-size: 17px; line-height: 1.18; overflow: hidden; border: 2px solid var(--line); border-radius: 18px; }
+    .table th { background: var(--dark); color: var(--paper); text-align: left; padding: 12px 14px; font-size: 15px; white-space: nowrap; }
+    .table td { background: rgba(255, 250, 240, .88); border-top: 2px solid var(--line); padding: 12px 14px; vertical-align: top; }
+    .table td.num { text-align: right; font-weight: 760; white-space: nowrap; }
+    .note { margin-top: auto; display: flex; justify-content: space-between; gap: 24px; align-items: end; }
+    .source { max-width: 1080px; font-size: 13px; line-height: 1.25; color: var(--muted); }
+    .cite { vertical-align: super; font-size: .62em; font-weight: 820; padding-left: 1px; }
+    .split { display: grid; grid-template-columns: .94fr 1.06fr; gap: 26px; flex: 1; min-height: 0; }
+    .stack { display: grid; gap: 18px; }
+    .timeline { display: grid; grid-template-columns: 1fr; gap: 18px; margin-top: 28px; }
+    .lane { border: 2px solid var(--line); background: rgba(255,250,240,.84); border-radius: 22px; padding: 18px 20px; display: grid; grid-template-columns: 230px 1fr 180px; align-items: center; gap: 18px; }
+    .rule { height: 26px; border: 2px solid var(--line); border-radius: 999px; background: rgba(16,18,15,.08); overflow: hidden; }
+    .rule-fill { height: 100%; border-right: 2px solid var(--line); }
+    .methods-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px; }
+    .method-card { min-height: 144px; }
+    .method-card h3 { margin-bottom: 10px; }
+    .refs { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 18px; margin-top: 20px; }
+    .ref { display: grid; grid-template-columns: 42px 1fr; gap: 10px; padding: 12px 14px; border: 2px solid var(--line); border-radius: 16px; background: rgba(255,250,240,.88); }
+    .ref-num { width: 28px; height: 28px; border-radius: 999px; background: var(--lime); border: 2px solid var(--line); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 850; }
+    .ref p { font-size: 14px; line-height: 1.24; color: var(--ink); }
+    @media print {
+      .slide { width: 1600px; height: 900px; min-height: 900px; }
+      .wrap { width: 1360px; height: 780px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" />
+    <div class="wrap">
+      <div class="topline"><div class="eyebrow">NHANES ophthalmology outcomes</div><div class="page">01 / 09</div></div>
+      <div class="title-row">
+        <div>
+          <h1>Ophthalmology outcomes in public NHANES data</h1>
+          <p class="subhead">A descriptive analysis of disease prevalence, patient-reported functioning, visual acuity, retinal imaging, and visual-field outcomes using the latest public NHANES release and the most recent ophthalmology-specific modules.</p>
+        </div>
+        <div class="callout">
+          <h3>Scope distinction</h3>
+          <p style="margin-top:14px">The latest public cycle, August 2021-August 2023, supports current estimates for vision difficulty and blurred-vision symptoms. Public NHANES ophthalmology examination measures for cataract, glaucoma, AMD, diabetic retinopathy, visual acuity, retinal imaging, and FDT visual fields are historical, with the most recent disease-specific modules in 2005-2008.<a class="cite" href="https://wwwn.cdc.gov/nchs/nhanes/ContinuousNhanes/releasenotes.aspx?Cycle=2021-2023">1</a><a class="cite" href="https://www.cdc.gov/vision-health-data/data-sources/national-health-nutrition-examination-survey.html">2</a></p>
+        </div>
+      </div>
+      <div class="grid grid-3 hero-metrics">
+        <div class="card"><div class="metric">2021-2023</div><div class="label">Latest public NHANES cycle used for current eye-related functioning and symptom measures</div></div>
+        <div class="card"><div class="metric">2005-2008</div><div class="label">Most recent public NHANES cycles with retinal imaging and FDT visual-field components</div></div>
+        <div class="card"><div class="metric">18 files</div><div class="label">CDC XPT files downloaded for demographics, questionnaires, vision examination, retinal imaging, and visual fields</div></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" />
+    <div class="wrap">
+      <div class="topline"><div class="eyebrow">Data availability</div><div class="page">02 / 09</div></div>
+      <h2>Current public NHANES no longer contains dedicated eye-exam modules</h2>
+      <div class="timeline">
+        <div class="lane">
+          <h3>Vision questionnaire and examination</h3>
+          <div class="rule"><div class="rule-fill blue" style="width:70%"></div></div>
+          <p class="small">1999-2008</p>
+        </div>
+        <div class="lane">
+          <h3>Retinal imaging and FDT visual fields</h3>
+          <div class="rule"><div class="rule-fill orange" style="width:28%"></div></div>
+          <p class="small">2005-2008</p>
+        </div>
+        <div class="lane">
+          <h3>Current functioning and symptom items</h3>
+          <div class="rule"><div class="rule-fill lime" style="width:100%"></div></div>
+          <p class="small">2021-2023</p>
+        </div>
+      </div>
+      <div class="grid grid-3" style="margin-top:26px">
+        <div class="card"><h3>Current-cycle measures</h3><p class="small" style="margin-top:10px">Washington Group seeing difficulty, adult disability indicators, blurred vision with head movement, diabetes status, and PHQ-9 depression screener variables.<a class="cite" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/FNQ_L.htm">3</a><a class="cite" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/BAQ_L.htm">4</a></p></div>
+        <div class="card"><h3>Historical disease measures</h3><p class="small" style="margin-top:10px">Self-reported cataract surgery, glaucoma, AMD, diabetic retinopathy, visual-function limitations, visual acuity, retinal lesions, and FDT visual-field status.<a class="cite" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2007/DataFiles/VIQ_E.htm">5</a><a class="cite" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2007/DataFiles/OPXRET_E.htm">7</a></p></div>
+        <div class="dark card"><h3>Interpretive consequence</h3><p class="small" style="margin-top:10px">The latest public release should not be interpreted as a current national prevalence source for glaucoma, AMD, cataract, diabetic retinopathy, or visual acuity impairment.</p></div>
+      </div>
+      <div class="note"><p class="source">Sources: CDC NHANES release notes and VEHSS NHANES data-source documentation.</p></div>
+    </div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" />
+    <div class="wrap">
+      <div class="topline"><div class="eyebrow">Latest public cycle</div><div class="page">03 / 09</div></div>
+      <h2>Current eye-related measures describe functioning and symptoms, not ophthalmic diagnoses</h2>
+      <div class="split" style="margin-top:22px">
+        <div class="card">
+          <h3>Weighted estimates from August 2021-August 2023</h3>
+          <div class="bar-list">
+            <div class="bar-row"><div class="bar-label">Adult seeing difficulty, some or more</div><div class="bar-track"><div class="bar lime" style="width:37.1%"></div></div><div class="bar-value">37.1%</div></div>
+            <div class="bar-row"><div class="bar-label">Adult WG Short Set disability</div><div class="bar-track"><div class="bar blue" style="width:16.5%"></div></div><div class="bar-value">16.5%</div></div>
+            <div class="bar-row"><div class="bar-label">Blurred vision with head movement, age 20-69</div><div class="bar-track"><div class="bar orange" style="width:10.1%"></div></div><div class="bar-value">10.1%</div></div>
+            <div class="bar-row"><div class="bar-label">Diagnosed diabetes, adults</div><div class="bar-track"><div class="bar pink" style="width:11.2%"></div></div><div class="bar-value">11.2%</div></div>
+            <div class="bar-row"><div class="bar-label">Adult seeing difficulty, severe</div><div class="bar-track"><div class="bar red" style="width:3.7%"></div></div><div class="bar-value">3.7%</div></div>
+            <div class="bar-row"><div class="bar-label">Youth severe seeing difficulty, age 5-17</div><div class="bar-track"><div class="bar gray" style="width:1.1%"></div></div><div class="bar-value">1.1%</div></div>
+          </div>
+        </div>
+        <div class="stack">
+          <div class="dark card">
+            <h3>Patient-reported outcome signal</h3>
+            <p style="margin-top:10px">Among adults with severe seeing difficulty, the weighted prevalence of PHQ-9 score ≥10 was 32.0% (95% CI, 25.5%-38.6%); among adults without severe seeing difficulty, it was 12.0% (95% CI, 10.4%-13.6%).</p>
+          </div>
+          <div class="card">
+            <h3>Measurement interpretation</h3>
+            <p class="small" style="margin-top:10px">The functioning questionnaire measures activity difficulty even with glasses or contact lenses. It does not distinguish refractive error, cataract, retinal disease, glaucoma, or neurologic causes. The balance item asks about blurred vision with head movement, a vestibular-symptom context rather than an ophthalmology diagnosis.<a class="cite" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/FNQ_L.htm">3</a><a class="cite" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/BAQ_L.htm">4</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="note"><p class="source">Estimates use `WTINT2YR` for interview measures and `WTMEC2YR` for PHQ-9 estimates, with `SDMVSTRA` and `SDMVPSU` for variance estimation.</p></div>
+    </div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" />
+    <div class="wrap">
+      <div class="topline"><div class="eyebrow">Disease prevalence</div><div class="page">04 / 09</div></div>
+      <h2>Historical NHANES modules support national estimates for multiple ophthalmic conditions</h2>
+      <table class="table">
+        <thead><tr><th>Outcome</th><th>Component</th><th>Denominator</th><th>Weighted prevalence</th><th>95% CI</th><th>Unweighted n</th></tr></thead>
+        <tbody>
+          <tr><td>Any retinopathy in the worse eye</td><td>Retinal imaging</td><td>Age 40+, gradable outcome</td><td class="num">9.75%</td><td>8.78%-10.71%</td><td class="num">5,704</td></tr>
+          <tr><td>Mild non-proliferative retinopathy</td><td>Retinal imaging</td><td>Age 40+, gradable outcome</td><td class="num">8.40%</td><td>7.51%-9.29%</td><td class="num">5,704</td></tr>
+          <tr><td>Moderate/severe non-proliferative retinopathy</td><td>Retinal imaging</td><td>Age 40+, gradable outcome</td><td class="num">1.09%</td><td>0.82%-1.36%</td><td class="num">5,704</td></tr>
+          <tr><td>Proliferative retinopathy</td><td>Retinal imaging</td><td>Age 40+, gradable outcome</td><td class="num">0.26%</td><td>0.17%-0.35%</td><td class="num">5,704</td></tr>
+          <tr><td>Large drusen ≥125 microns in the worse eye</td><td>Retinal imaging</td><td>Age 40+, gradable outcome</td><td class="num">8.29%</td><td>7.24%-9.34%</td><td class="num">5,614</td></tr>
+          <tr><td>Geographic atrophy or exudative ARM signs</td><td>Retinal imaging</td><td>Age 40+, gradable outcome</td><td class="num">0.79%</td><td>0.49%-1.09%</td><td class="num">5,648</td></tr>
+          <tr><td>Ever told by an eye doctor had glaucoma</td><td>Vision questionnaire</td><td>Age 40+</td><td class="num">5.06%</td><td>4.40%-5.73%</td><td class="num">7,042</td></tr>
+          <tr><td>Ever told had age-related macular degeneration</td><td>Vision questionnaire</td><td>Age 40+</td><td class="num">3.38%</td><td>2.98%-3.78%</td><td class="num">7,011</td></tr>
+        </tbody>
+      </table>
+      <div class="note"><p class="source">Disease estimates use 2005-2008 public ophthalmology-specific modules. Retinal imaging estimates use MEC weights; questionnaire estimates are shown from the same age-40+ analytic frame for comparability.<a class="cite" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2007/DataFiles/VIQ_E.htm">5</a><a class="cite" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2007/DataFiles/OPXRET_E.htm">7</a></p></div>
+    </div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" />
+    <div class="wrap">
+      <div class="topline"><div class="eyebrow">Examination outcomes</div><div class="page">05 / 09</div></div>
+      <h2>Visual acuity and FDT outcomes quantify functional impairment beyond self-report</h2>
+      <div class="grid grid-4" style="margin-top:28px">
+        <div class="card"><div class="metric">7.15%</div><div class="label">Presenting visual acuity worse than 20/40 in the better-seeing eye, age 40+</div><p class="tiny" style="margin-top:14px">95% CI, 6.43%-7.88%; n=6,364</p></div>
+        <div class="card"><div class="metric">2.73%</div><div class="label">Objective-refraction acuity worse than 20/40 in the better-seeing eye, age 40+</div><p class="tiny" style="margin-top:14px">95% CI, 2.35%-3.12%; n=6,364</p></div>
+        <div class="card"><div class="metric">7.10%</div><div class="label">FDT 2-2-1 visual-field loss in either eye, age 40+</div><p class="tiny" style="margin-top:14px">95% CI, 6.21%-7.99%; n=5,407</p></div>
+        <div class="card"><div class="metric">86.6%</div><div class="label">FDT visual-field exam complete among adults aged 40+</div><p class="tiny" style="margin-top:14px">95% CI, 85.44%-87.82%; n=6,797</p></div>
+      </div>
+      <div class="split" style="margin-top:28px">
+        <div class="dark card">
+          <h3>Correctable impairment signal</h3>
+          <p style="margin-top:12px">Presenting acuity impairment was 7.15%, compared with 2.73% after objective refraction. This contrast is consistent with a measurable correctable component, but the analysis is descriptive and does not assign cause.</p>
+        </div>
+        <div class="card">
+          <h3>Field-test interpretation</h3>
+          <p class="small" style="margin-top:12px">The FDT component used a Humphrey Matrix N-30-5 screening protocol with two tests per eye and a final 2-2-1 algorithm incorporating reliability indicators. Positive FDT status should be interpreted as visual-field loss by protocol, not as a standalone clinical diagnosis of glaucoma.<a class="cite" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2005/DataFiles/OPXFDT_D.htm">8</a></p>
+        </div>
+      </div>
+      <div class="note"><p class="source">Visual acuity estimates use NHANES vision examination variables for presenting acuity and objective-refraction acuity.<a class="cite" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2007/DataFiles/VIX_E.htm">6</a></p></div>
+    </div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" />
+    <div class="wrap">
+      <div class="topline"><div class="eyebrow">Patient-reported outcomes</div><div class="page">06 / 09</div></div>
+      <h2>Vision-related activities and concern were commonly reported in the 2005-2008 module</h2>
+      <div class="card" style="margin-top:24px">
+        <div class="bar-list">
+          <div class="bar-row"><div class="bar-label">Difficulty reading ordinary newsprint</div><div class="bar-track"><div class="bar lime" style="width:26.7%"></div></div><div class="bar-value">26.7%</div></div>
+          <div class="bar-row"><div class="bar-label">Worries about eyesight some, most, or all of the time</div><div class="bar-track"><div class="bar blue" style="width:23.7%"></div></div><div class="bar-value">23.7%</div></div>
+          <div class="bar-row"><div class="bar-label">Difficulty seeing steps or curbs in dim light</div><div class="bar-track"><div class="bar orange" style="width:19.8%"></div></div><div class="bar-value">19.8%</div></div>
+          <div class="bar-row"><div class="bar-label">Self-rated eyesight fair, poor, or very poor</div><div class="bar-track"><div class="bar pink" style="width:18.7%"></div></div><div class="bar-value">18.7%</div></div>
+          <div class="bar-row"><div class="bar-label">Vision limits duration of activities at least a little</div><div class="bar-track"><div class="bar red" style="width:12.3%"></div></div><div class="bar-value">12.3%</div></div>
+          <div class="bar-row"><div class="bar-label">Ever had cataract surgery</div><div class="bar-track"><div class="bar gray" style="width:11.1%"></div></div><div class="bar-value">11.1%</div></div>
+        </div>
+      </div>
+      <div class="grid grid-3" style="margin-top:24px">
+        <div class="card"><h3>Outcome type</h3><p class="small" style="margin-top:10px">These are participant-reported activity and concern outcomes, not utility measures or preference-based health-state values.</p></div>
+        <div class="card"><h3>Denominator</h3><p class="small" style="margin-top:10px">The displayed estimates use adults aged 40 years or older to align with the retinal imaging and FDT analytic frame.</p></div>
+        <div class="dark card"><h3>Use in value research</h3><p class="small" style="margin-top:10px">The items can support burden-of-illness context, but comparisons across eye diseases require prespecified disease definitions and complete-case handling.</p></div>
+      </div>
+      <div class="note"><p class="source">Vision questionnaire items were administered in the household interview and include eyesight rating, worry, activity difficulty, cataract operation, glaucoma, and AMD history.<a class="cite" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2007/DataFiles/VIQ_E.htm">5</a></p></div>
+    </div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" />
+    <div class="wrap">
+      <div class="topline"><div class="eyebrow">Methods</div><div class="page">07 / 09</div></div>
+      <h2>Methods were specified to preserve NHANES design and component denominators</h2>
+      <div class="methods-grid">
+        <div class="card method-card"><h3>Data acquisition</h3><p class="small">Public CDC XPT files were downloaded from NHANES for August 2021-August 2023 and for the 2005-2006 and 2007-2008 ophthalmology cycles. Files were linked by `SEQN`.</p></div>
+        <div class="card method-card"><h3>Weights and variance</h3><p class="small">Interview outcomes used `WTINT2YR`; examination outcomes used `WTMEC2YR`. For 2005-2008, two-year weights were divided by 2. Standard errors were Taylor-linearized with `SDMVSTRA` and `SDMVPSU`.<a class="cite" href="https://wwwn.cdc.gov/nchs/nhanes/AnalyticGuidelines.aspx">9</a></p></div>
+        <div class="card method-card"><h3>Outcome definitions</h3><p class="small">Visual acuity impairment was defined as better-seeing-eye Snellen denominator >40. FDT visual-field loss used the NHANES final eye status positive category. Retinopathy and ARM estimates used worse-eye derived retinal-imaging variables.</p></div>
+        <div class="card method-card"><h3>Eligibility and missingness</h3><p class="small">Analyses used component-eligible age groups and non-missing outcome data. Ungradable, insufficient, unreliable, and missing records were not coded as disease-negative unless the NHANES derived variable represented a valid negative state.</p></div>
+        <div class="card method-card"><h3>Current-cycle constraints</h3><p class="small">The August 2021-August 2023 public release was used only for measures available in that release: seeing difficulty, disability indicators, blurred vision with head movement, diabetes status, and PHQ-9.</p></div>
+        <div class="card method-card"><h3>Replication files</h3><p class="small">The analysis folder includes scripts for historical ophthalmology modules and current-cycle eye-related measures, raw downloaded XPT files, output CSVs, and this HTML report.</p></div>
+      </div>
+      <div class="note"><p class="source">Estimates are weighted percentages with 95% confidence intervals using a normal 1.96 multiplier. The analysis is descriptive and cross-sectional.</p></div>
+    </div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" />
+    <div class="wrap">
+      <div class="topline"><div class="eyebrow">Interpretation</div><div class="page">08 / 09</div></div>
+      <h2>Findings are nationally representative within component-specific historical frames</h2>
+      <div class="grid grid-3" style="margin-top:28px">
+        <div class="card">
+          <h3>Supports</h3>
+          <p class="small" style="margin-top:12px">Descriptive national estimates for selected ophthalmology outcomes among the US civilian, noninstitutionalized population within age-eligible NHANES components.</p>
+        </div>
+        <div class="card">
+          <h3>Requires caution</h3>
+          <p class="small" style="margin-top:12px">Historical data years, noninstitutionalized sampling, nonmydriatic imaging, gradability, reliability, and component-specific exclusions may affect interpretation.</p>
+        </div>
+        <div class="dark card">
+          <h3>Should not imply</h3>
+          <p class="small" style="margin-top:12px">Current prevalence of ophthalmic disease, causal relationships, clinical diagnosis from screening findings alone, or longitudinal progression.</p>
+        </div>
+      </div>
+      <div class="grid grid-2" style="margin-top:26px">
+        <div class="card">
+          <h3>Scientific interpretation</h3>
+          <p class="small" style="margin-top:10px">Retinopathy and ARM estimates are examination-based historical measures. Self-reported glaucoma and AMD reflect prior communication from an eye doctor and may differ from examination-based case definitions. FDT visual-field loss is a protocol-defined functional outcome.</p>
+        </div>
+        <div class="card">
+          <h3>Value and outcomes research relevance</h3>
+          <p class="small" style="margin-top:10px">The data support burden and outcomes context across disease domains, including prevalence, visual function, activity limitation, concern about eyesight, depression screening among severe seeing difficulty, and measurement constraints relevant to real-world evidence synthesis.</p>
+        </div>
+      </div>
+      <div class="note"><p class="source">CDC notes that NHANES stopped collecting vision and eye health data in 2008 and that ophthalmologic exams were limited and did not use gold-standard dilated examinations.<a class="cite" href="https://www.cdc.gov/vision-health-data/data-sources/national-health-nutrition-examination-survey.html">2</a></p></div>
+    </div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" />
+    <div class="wrap">
+      <div class="topline"><div class="eyebrow">References 1-9</div><div class="page">09 / 09</div></div>
+      <h2>References</h2>
+      <div class="refs">
+        <a class="ref" href="https://wwwn.cdc.gov/nchs/nhanes/ContinuousNhanes/releasenotes.aspx?Cycle=2021-2023"><div class="ref-num">1</div><p>CDC/NCHS. NHANES August 2021-August 2023 release notes. Used to identify the latest public release and release-scope limitations.</p></a>
+        <a class="ref" href="https://www.cdc.gov/vision-health-data/data-sources/national-health-nutrition-examination-survey.html"><div class="ref-num">2</div><p>CDC VEHSS. NHANES data source page. Used for vision module years, ophthalmology component years, and limitations.</p></a>
+        <a class="ref" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/FNQ_L.htm"><div class="ref-num">3</div><p>CDC/NCHS. Functioning questionnaire, August 2021-August 2023. Used for seeing difficulty and disability indicators.</p></a>
+        <a class="ref" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/BAQ_L.htm"><div class="ref-num">4</div><p>CDC/NCHS. Balance questionnaire, August 2021-August 2023. Used for blurred vision with head movement.</p></a>
+        <a class="ref" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2007/DataFiles/VIQ_E.htm"><div class="ref-num">5</div><p>CDC/NCHS. Vision questionnaire, 2007-2008. Used for self-reported glaucoma, AMD, cataract surgery, and vision-related outcomes.</p></a>
+        <a class="ref" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2007/DataFiles/VIX_E.htm"><div class="ref-num">6</div><p>CDC/NCHS. Vision examination, 2007-2008. Used for visual acuity and objective-refraction acuity definitions.</p></a>
+        <a class="ref" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2007/DataFiles/OPXRET_E.htm"><div class="ref-num">7</div><p>CDC/NCHS. Ophthalmology retinal imaging, 2007-2008. Used for retinopathy, ARM, and retinal imaging methods.</p></a>
+        <a class="ref" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2005/DataFiles/OPXFDT_D.htm"><div class="ref-num">8</div><p>CDC/NCHS. Ophthalmology FDT visual fields, 2005-2006. Used for the visual-field protocol and final eye status definition.</p></a>
+        <a class="ref" href="https://wwwn.cdc.gov/nchs/nhanes/AnalyticGuidelines.aspx"><div class="ref-num">9</div><p>CDC/NCHS. NHANES analytic guidelines. Used for weights, masked variance strata, pseudo-PSUs, and survey design handling.</p></a>
+      </div>
+    </div>
+  </article>
+</body>
+</html>

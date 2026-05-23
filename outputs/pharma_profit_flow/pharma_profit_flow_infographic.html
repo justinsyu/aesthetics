@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Who Keeps the Retail Prescription Dollar?</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5d6258;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-weight: 400;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #ded7ca;
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      padding: 28px;
+    }
+
+    .sheet {
+      width: 1200px;
+      height: 1578px;
+      overflow: hidden;
+      position: relative;
+      isolation: isolate;
+      padding: 54px;
+      background:
+        radial-gradient(circle at 8% 4%, rgba(215,255,95,0.34), transparent 370px),
+        radial-gradient(circle at 91% 6%, rgba(184,216,255,0.30), transparent 310px),
+        radial-gradient(circle at 78% 88%, rgba(255,184,107,0.18), transparent 390px),
+        var(--paper);
+      box-shadow: 0 24px 90px rgba(16,18,15,0.22);
+    }
+
+    .sheet::before {
+      content: "";
+      position: absolute;
+      inset: 26px;
+      border: 1.5px solid rgba(16,18,15,0.20);
+      border-radius: 34px;
+      pointer-events: none;
+    }
+
+    .pdf-bg {
+      display: none;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+
+    .sheet > :not(.pdf-bg) {
+      position: relative;
+      z-index: 1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .cite {
+      display: inline-block;
+      position: relative;
+      top: -0.7em;
+      vertical-align: baseline;
+      margin-left: 2px;
+      padding: 0;
+      font-size: 0.6em;
+      line-height: 1;
+      font-weight: 400;
+      color: #171a13;
+      border-bottom: 0;
+      text-decoration: none;
+    }
+
+    .dark .cite {
+      color: var(--card);
+    }
+
+    .metric .cite,
+    .share-value .cite,
+    .bar-value .cite,
+    .year-value .cite {
+      top: -1.16em;
+      margin-left: 3px;
+      font-size: 0.36em;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      border: 1.5px solid var(--line);
+      border-radius: 999px;
+      padding: 9px 14px 8px;
+      background: var(--lime);
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 400;
+      letter-spacing: 0.075em;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 325px;
+      gap: 32px;
+      align-items: end;
+    }
+
+    h1 {
+      margin: 18px 0 0;
+      max-width: 790px;
+      font-size: 65px;
+      line-height: 1.03;
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+
+    h1 span {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .subtitle {
+      margin: 18px 0 0;
+      max-width: 800px;
+      color: var(--muted);
+      font-size: 20.5px;
+      line-height: 1.23;
+      font-weight: 400;
+    }
+
+    .hero-card {
+      border: 1.5px solid var(--line);
+      border-radius: 28px;
+      background: #11130f;
+      color: var(--card);
+      padding: 24px;
+      min-height: 228px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card .kicker {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      font-weight: 400;
+      color: rgba(255,250,240,0.72);
+    }
+
+    .hero-card .metric {
+      margin-top: 10px;
+      font-size: 82px;
+      line-height: 0.88;
+      font-weight: 400;
+      letter-spacing: 0;
+      color: var(--lime);
+    }
+
+    .hero-card p {
+      margin: 12px 0 0;
+      font-size: 16px;
+      line-height: 1.2;
+      color: rgba(255,250,240,0.80);
+      font-weight: 400;
+    }
+
+    .panel {
+      margin-top: 30px;
+      border: 1.5px solid var(--line);
+      border-radius: 30px;
+      background: rgba(255,250,240,0.88);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .panel-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 22px;
+      align-items: center;
+      padding: 23px 28px 17px;
+      border-bottom: 1.5px solid rgba(16,18,15,0.18);
+    }
+
+    .panel-title {
+      margin: 0;
+      font-size: 29px;
+      line-height: 1.02;
+      font-weight: 400;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .panel-title span {
+      display: inline;
+    }
+
+    .panel-note {
+      max-width: 480px;
+      color: var(--muted);
+      text-align: right;
+      font-size: 13.6px;
+      line-height: 1.18;
+      font-weight: 400;
+    }
+
+    .panel-footer-note {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.2;
+      font-weight: 400;
+    }
+
+    .retained .panel-footer-note {
+      margin-top: 16px;
+    }
+
+    .trend-grid + .panel-footer-note {
+      margin: 0 28px 24px;
+    }
+
+    .retained {
+      padding: 28px;
+      position: relative;
+    }
+
+    .stack {
+      height: 150px;
+      display: flex;
+      overflow: hidden;
+      border: 1.5px solid var(--line);
+      border-radius: 24px;
+      background: var(--paper-2);
+      position: relative;
+    }
+
+    .seg {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 8px;
+      padding: 17px;
+      color: var(--ink);
+      border-right: 1.5px solid rgba(16,18,15,0.42);
+      font-weight: 400;
+    }
+
+    .seg:last-child {
+      border-right: 0;
+    }
+
+    .seg .share-value {
+      font-size: 39px;
+      line-height: 0.92;
+      font-weight: 400;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .seg .share-label {
+      font-size: 15px;
+      line-height: 1.1;
+      font-weight: 400;
+    }
+
+    .manufacturer { width: 59%; background: var(--lime); }
+    .pbm { width: 25.8%; background: var(--orange); }
+    .wholesaler { width: 10%; background: var(--blue); }
+    .pharmacy { width: 5.2%; background: var(--pink); }
+
+    .wholesaler {
+      align-items: flex-start;
+      padding: 17px 6px 17px 9px;
+      text-align: left;
+    }
+
+    .wholesaler .share-value {
+      font-size: 26px;
+      line-height: 0.96;
+    }
+
+    .wholesaler .share-value .cite {
+      top: -1.08em;
+      margin-left: 1px;
+      font-size: 0.38em;
+    }
+
+    .wholesaler .share-label {
+      font-size: 10.6px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .pharmacy {
+      padding: 17px 8px 17px 9px;
+    }
+
+    .pharmacy .share-value {
+      display: none;
+    }
+
+    .pharmacy .share-value .cite {
+      font-size: 0.42em;
+      margin-left: 1px;
+    }
+
+    .pharmacy .share-label {
+      font-size: 0;
+      line-height: 0;
+    }
+
+    .pharmacy-note {
+      position: absolute;
+      right: 86px;
+      top: 188px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1;
+    }
+
+    .pharmacy-note::before {
+      content: "";
+      width: 15px;
+      height: 15px;
+      border: 1.2px solid rgba(16,18,15,0.56);
+      border-radius: 999px;
+      background: var(--pink);
+    }
+
+    .drug-type-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 34px;
+    }
+
+    .type-card {
+      border: 1.5px solid rgba(16,18,15,0.38);
+      border-radius: 24px;
+      padding: 20px;
+      background: rgba(235,228,214,0.62);
+      min-height: 177px;
+    }
+
+    .type-card h3 {
+      margin: 0 0 15px;
+      font-size: 23px;
+      line-height: 1.03;
+      font-weight: 400;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .type-row {
+      display: grid;
+      grid-template-columns: 235px minmax(116px, 1fr) 76px;
+      gap: 12px;
+      align-items: center;
+      margin-top: 11px;
+    }
+
+    .type-row .name {
+      font-size: 14.5px;
+      line-height: 1.08;
+      color: var(--muted);
+      font-weight: 400;
+      white-space: nowrap;
+    }
+
+    .mini-bar {
+      height: 18px;
+      border: 1.5px solid rgba(16,18,15,0.70);
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(16,18,15,0.08);
+    }
+
+    .mini-fill {
+      height: 100%;
+      border-radius: 999px;
+    }
+
+    .type-row .pct {
+      text-align: right;
+      font-size: 14.5px;
+      line-height: 1;
+      font-weight: 400;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .retained-table {
+      display: grid;
+      gap: 17px;
+    }
+
+    .retained-year {
+      display: grid;
+      grid-template-columns: 48px 1fr 94px;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .retained-year .year-name {
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1;
+      font-weight: 400;
+    }
+
+    .retained-year .summary {
+      text-align: right;
+      font-size: 14.5px;
+      line-height: 1;
+      font-weight: 400;
+      white-space: nowrap;
+    }
+
+    .mini-stack {
+      display: flex;
+      height: 18px;
+      overflow: hidden;
+      border: 1.5px solid rgba(16,18,15,0.70);
+      border-radius: 999px;
+      background: rgba(16,18,15,0.08);
+    }
+
+    .mini-stack span {
+      height: 100%;
+      border-right: 1px solid rgba(16,18,15,0.35);
+    }
+
+    .mini-stack span:last-child {
+      border-right: 0;
+    }
+
+    .mix-note {
+      margin-top: 15px;
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.22;
+      font-weight: 400;
+    }
+
+    .brand-mfr { width: 73.6%; background: var(--lime); }
+    .brand-pbm { width: 18.3%; background: var(--orange); }
+    .brand-other { width: 8.1%; background: var(--blue); }
+    .generic-mfr { width: 21.1%; background: var(--lime); }
+    .generic-pbm { width: 45.5%; background: var(--orange); }
+    .generic-other { width: 33.5%; background: var(--blue); }
+
+    .trend-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 18px;
+      padding: 28px;
+    }
+
+    .trend-card {
+      border: 1.5px solid rgba(16,18,15,0.38);
+      border-radius: 24px;
+      padding: 20px 20px 18px;
+      background: var(--card);
+      min-height: 278px;
+    }
+
+    .trend-card.dark {
+      background: #11130f;
+      color: var(--card);
+    }
+
+    .trend-card h3 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.03;
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+
+    .trend-card .descriptor {
+      margin-top: 8px;
+      min-height: 36px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.2;
+      font-weight: 400;
+    }
+
+    .dark .descriptor {
+      color: rgba(255,250,240,0.72);
+    }
+
+    .year-bars {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      align-items: end;
+      height: 128px;
+      margin-top: 19px;
+      padding-bottom: 3px;
+    }
+
+    .year {
+      display: grid;
+      grid-template-rows: 1fr auto auto;
+      align-items: end;
+      gap: 8px;
+      height: 100%;
+    }
+
+    .column {
+      width: 100%;
+      min-height: 12px;
+      border: 1.5px solid rgba(16,18,15,0.72);
+      border-radius: 13px 13px 5px 5px;
+      background: var(--blue);
+    }
+
+    .dark .column {
+      border-color: rgba(255,250,240,0.30);
+    }
+
+    .pbm-col { background: var(--orange); }
+    .whl-col { background: var(--blue); }
+    .pharm-col { background: var(--pink); }
+
+    .year-value {
+      text-align: center;
+      font-size: 22px;
+      line-height: 1;
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+
+    .year-label {
+      color: var(--muted);
+      text-align: center;
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 400;
+    }
+
+    .dark .year-label {
+      color: rgba(255,250,240,0.64);
+    }
+
+    .dollars {
+      margin-top: 18px;
+      padding-top: 15px;
+      border-top: 1.5px solid rgba(16,18,15,0.14);
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.22;
+      font-weight: 400;
+    }
+
+    .dark .dollars {
+      color: rgba(255,250,240,0.76);
+      border-color: rgba(255,250,240,0.16);
+    }
+
+    .callouts {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 18px;
+      padding: 0 28px 28px;
+    }
+
+    .callout {
+      border: 1.5px solid rgba(16,18,15,0.38);
+      border-radius: 22px;
+      padding: 18px;
+      background: rgba(235,228,214,0.62);
+      min-height: 141px;
+    }
+
+    .callout .metric {
+      font-size: 38px;
+      line-height: 0.94;
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+
+    .callout .label {
+      margin-top: 11px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.2;
+      font-weight: 400;
+    }
+
+    @page {
+      size: 1200px 1578px;
+      margin: 0;
+    }
+
+    @media print {
+      html,
+      body {
+        width: 1200px;
+        height: 1578px;
+        background: var(--paper);
+      }
+
+      body {
+        padding: 0;
+      }
+
+      .pdf-bg {
+        display: block;
+      }
+
+      .sheet {
+        background: transparent !important;
+        box-shadow: none;
+      }
+
+      .sheet::before {
+        display: none;
+      }
+
+      .eyebrow,
+      .hero-card,
+      .panel,
+      .type-card,
+      .trend-card,
+      .callout,
+      .stack,
+      .seg,
+      .mini-bar,
+      .mini-fill,
+      .column {
+        background: transparent !important;
+        box-shadow: none !important;
+      }
+
+      .eyebrow,
+      .hero-card,
+      .panel,
+      .type-card,
+      .trend-card,
+      .callout,
+      .stack,
+      .seg,
+      .mini-bar,
+      .column {
+        border-color: transparent !important;
+      }
+
+      .panel-head,
+      .dollars {
+        border-color: transparent !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="sheet">
+    <img class="pdf-bg" src="./pharma_profit_flow_background.png" alt="" aria-hidden="true" />
+
+    <section class="hero" aria-labelledby="title">
+      <div>
+        <div class="eyebrow">HHS/ASPE retail-channel estimates, 2020-2022</div>
+        <h1 id="title"><span>Who keeps the retail</span><span>prescription dollar?</span></h1>
+        <p class="subtitle">HHS/ASPE modeled retail-channel prescription spending captured in retail pharmacy transactions, including patient and insurance payments. ASPE excludes mail pharmacy sales and does not measure physician-administered drugs sold to offices or provider markups<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611832/">1</a>.</p>
+      </div>
+      <aside class="hero-card dark">
+        <div class="kicker">2022 all retail drugs</div>
+        <div class="metric">59%<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611838/">2</a></div>
+        <p>Spending left with manufacturers after retail-chain payments, not profit after expenses</p>
+      </aside>
+    </section>
+
+    <section class="panel" aria-labelledby="retained-share">
+      <div class="panel-head">
+        <h2 class="panel-title" id="retained-share">What each participant keeps after chain payments, 2022</h2>
+      </div>
+      <div class="retained">
+        <div class="stack" aria-label="2022 retained shares: manufacturers 59.0%, PBMs 25.8%, wholesalers 10.0%, pharmacies 5.2%">
+          <div class="seg manufacturer">
+            <div class="share-value">59.0%<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611838/">2</a></div>
+            <div class="share-label">Manufacturers</div>
+          </div>
+          <div class="seg pbm">
+            <div class="share-value">25.8%<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611838/">2</a></div>
+            <div class="share-label">PBMs</div>
+          </div>
+          <div class="seg wholesaler">
+            <div class="share-value">10.0%<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611838/">2</a></div>
+            <div class="share-label">Wholesalers</div>
+          </div>
+          <div class="seg pharmacy">
+            <div class="share-value">5.2%<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611838/">2</a></div>
+            <div class="share-label">Pharmacies</div>
+          </div>
+        </div>
+        <div class="pharmacy-note">Pharmacies 5.2%<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611838/">2</a></div>
+
+        <div class="drug-type-grid">
+          <div class="type-card">
+            <h3>All-drug shares kept over time</h3>
+            <div class="retained-table" aria-label="All-drug retained shares in 2020, 2021, and 2022">
+              <div class="retained-year">
+                <div class="year-name">2020</div>
+                <div class="mini-stack">
+                  <span style="width: 62.4%; background: var(--lime);"></span>
+                  <span style="width: 19.4%; background: var(--orange);"></span>
+                  <span style="width: 7.6%; background: var(--blue);"></span>
+                  <span style="width: 10.7%; background: var(--pink);"></span>
+                </div>
+                <div class="summary">62.4% mfr<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611845/figure/ch4.fig3/">3</a></div>
+              </div>
+              <div class="retained-year">
+                <div class="year-name">2021</div>
+                <div class="mini-stack">
+                  <span style="width: 63.9%; background: var(--lime);"></span>
+                  <span style="width: 20.7%; background: var(--orange);"></span>
+                  <span style="width: 7.9%; background: var(--blue);"></span>
+                  <span style="width: 7.6%; background: var(--pink);"></span>
+                </div>
+                <div class="summary">20.7% PBM<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611845/figure/ch4.fig3/">3</a></div>
+              </div>
+              <div class="retained-year">
+                <div class="year-name">2022</div>
+                <div class="mini-stack">
+                  <span style="width: 58.9%; background: var(--lime);"></span>
+                  <span style="width: 25.9%; background: var(--orange);"></span>
+                  <span style="width: 10.0%; background: var(--blue);"></span>
+                  <span style="width: 5.2%; background: var(--pink);"></span>
+                </div>
+                <div class="summary">25.9% PBM<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611845/figure/ch4.fig3/">3</a></div>
+              </div>
+            </div>
+            <div class="mix-note">Color order: manufacturer, PBM, wholesaler, pharmacy. ASPE states 2020 and 2021 were relatively similar before the PBM retained share increased in 2022<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611845/">3</a>.</div>
+          </div>
+
+          <div class="type-card">
+            <h3>2022 brand/generic shares kept</h3>
+            <div class="type-row">
+              <div class="name">Brand manufacturer</div>
+              <div class="mini-bar"><div class="mini-fill brand-mfr"></div></div>
+              <div class="pct">73.6%<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611845/">3</a></div>
+            </div>
+            <div class="type-row">
+              <div class="name">Brand PBM</div>
+              <div class="mini-bar"><div class="mini-fill brand-pbm"></div></div>
+              <div class="pct">18.3%<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611845/">3</a></div>
+            </div>
+            <div class="type-row">
+              <div class="name">Generic PBM</div>
+              <div class="mini-bar"><div class="mini-fill generic-pbm"></div></div>
+              <div class="pct">45.5%<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611838/">2</a></div>
+            </div>
+            <div class="type-row">
+              <div class="name">Generic wholesaler/pharmacy</div>
+              <div class="mini-bar"><div class="mini-fill generic-other"></div></div>
+              <div class="pct">33.5%<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611845/">3</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer-note">In plain English, ASPE's retained share is modeled retail prescription spending that remains with each group after retail pharmacy chain payments and pass-throughs; it is spending left with the group, not net profit or profit after expenses, and values may not add to 100% due to rounding<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611838/">2</a></div>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="margin-trend">
+      <div class="panel-head">
+        <h2 class="panel-title" id="margin-trend">Intermediary margin percentages, 2020-2022</h2>
+      </div>
+      <div class="trend-grid">
+        <div class="trend-card dark">
+          <h3>PBM margin rose</h3>
+          <div class="descriptor">Population estimate across all retail drugs</div>
+          <div class="year-bars" aria-label="PBM margin percentage 23.1% in 2020, 24.5% in 2021, 31.2% in 2022">
+            <div class="year">
+              <div class="column pbm-col" style="height: 74%;"></div>
+              <div class="year-value">23.1%<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611845/table/ch4.tab4/?report=objectonly">4</a></div>
+              <div class="year-label">2020</div>
+            </div>
+            <div class="year">
+              <div class="column pbm-col" style="height: 79%;"></div>
+              <div class="year-value">24.5%<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611845/table/ch4.tab4/?report=objectonly">4</a></div>
+              <div class="year-label">2021</div>
+            </div>
+            <div class="year">
+              <div class="column pbm-col" style="height: 100%;"></div>
+              <div class="year-value">31.2%<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611845/table/ch4.tab4/?report=objectonly">4</a></div>
+              <div class="year-label">2022</div>
+            </div>
+          </div>
+          <div class="dollars">2022 total PBM margin: $60.6B across all modeled retail drugs<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611845/">3</a></div>
+        </div>
+
+        <div class="trend-card">
+          <h3>Low wholesaler margin</h3>
+          <div class="descriptor">Population estimate across all retail drugs</div>
+          <div class="year-bars" aria-label="Wholesaler margin percentage 5.6% in 2020, 5.4% in 2021, 6.3% in 2022">
+            <div class="year">
+              <div class="column whl-col" style="height: 89%;"></div>
+              <div class="year-value">5.6%<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611845/table/ch4.tab4/?report=objectonly">4</a></div>
+              <div class="year-label">2020</div>
+            </div>
+            <div class="year">
+              <div class="column whl-col" style="height: 86%;"></div>
+              <div class="year-value">5.4%<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611845/table/ch4.tab4/?report=objectonly">4</a></div>
+              <div class="year-label">2021</div>
+            </div>
+            <div class="year">
+              <div class="column whl-col" style="height: 100%;"></div>
+              <div class="year-value">6.3%<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611845/table/ch4.tab4/?report=objectonly">4</a></div>
+              <div class="year-label">2022</div>
+            </div>
+          </div>
+          <div class="dollars">2022 total wholesaler margin: $23.4B across all modeled retail drugs<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611838/">2</a></div>
+        </div>
+
+        <div class="trend-card">
+          <h3>Pharmacy margin fell</h3>
+          <div class="descriptor">Population estimate across all retail drugs</div>
+          <div class="year-bars" aria-label="Pharmacy margin percentage 7.3% in 2020, 5.0% in 2021, 3.2% in 2022">
+            <div class="year">
+              <div class="column pharm-col" style="height: 100%;"></div>
+              <div class="year-value">7.3%<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611845/table/ch4.tab4/?report=objectonly">4</a></div>
+              <div class="year-label">2020</div>
+            </div>
+            <div class="year">
+              <div class="column pharm-col" style="height: 68%;"></div>
+              <div class="year-value">5.0%<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611845/table/ch4.tab4/?report=objectonly">4</a></div>
+              <div class="year-label">2021</div>
+            </div>
+            <div class="year">
+              <div class="column pharm-col" style="height: 44%;"></div>
+              <div class="year-value">3.2%<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611845/table/ch4.tab4/?report=objectonly">4</a></div>
+              <div class="year-label">2022</div>
+            </div>
+          </div>
+          <div class="dollars">2022 total pharmacy margin: $12.2B across all modeled retail drugs<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611838/">2</a></div>
+        </div>
+      </div>
+      <div class="panel-footer-note">ASPE defines margin percentage as total weighted margin divided by total weighted net sales; these intermediary margins are not manufacturer net profit<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611845/table/ch4.tab4/?report=objectonly">4</a></div>
+
+    </section>
+  </main>
+</body>
+</html>

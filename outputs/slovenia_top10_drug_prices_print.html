@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Top 10 Highest-Priced Medicines in Slovenia</title>
+  <style>
+    :root {
+      --ink: #151515;
+      --muted: #62615c;
+      --paper: #f8f5ee;
+      --panel: #fffdf8;
+      --line: #d8d0c2;
+      --teal: #066b69;
+      --blue: #244f8f;
+      --red: #b63f2b;
+      --amber: #c9891b;
+      --green: #4f7d38;
+      --violet: #72558a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+
+    .page {
+      width: 1600px;
+      min-height: 2160px;
+      margin: 0 auto;
+      padding: 76px 88px 64px;
+      background:
+        linear-gradient(90deg, rgba(21, 21, 21, 0.04) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(21, 21, 21, 0.035) 1px, transparent 1px),
+        var(--paper);
+      background-size: 40px 40px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 410px;
+      gap: 44px;
+      align-items: end;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 36px;
+    }
+
+    .eyebrow {
+      color: var(--red);
+      font-size: 24px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: 84px;
+      line-height: 0.94;
+      max-width: 970px;
+      margin: 0;
+      font-weight: 900;
+    }
+
+    .subhead {
+      margin: 24px 0 0;
+      max-width: 980px;
+      font-size: 28px;
+      line-height: 1.28;
+      color: #3f3d39;
+      font-weight: 540;
+    }
+
+    .source-card {
+      background: var(--ink);
+      color: #fffaf0;
+      padding: 24px 26px;
+      border-radius: 8px;
+    }
+
+    .source-card .label {
+      color: #f1bd4d;
+      font-size: 18px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 14px;
+    }
+
+    .source-card p {
+      margin: 0;
+      font-size: 21px;
+      line-height: 1.35;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin: 34px 0 34px;
+    }
+
+    .metric {
+      min-height: 132px;
+      padding: 22px 24px;
+      border: 1px solid var(--line);
+      background: rgba(255, 253, 248, 0.78);
+      border-radius: 8px;
+    }
+
+    .metric .number {
+      font-size: 44px;
+      line-height: 1;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .metric .text {
+      font-size: 20px;
+      line-height: 1.24;
+      color: var(--muted);
+      font-weight: 620;
+    }
+
+    .rankings {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 92px 430px 1fr 292px;
+      min-height: 138px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .rank {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--ink);
+      color: #fffaf0;
+      font-size: 38px;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .drug {
+      padding: 20px 24px;
+      border-right: 1px solid var(--line);
+    }
+
+    .drug h2 {
+      margin: 0 0 8px;
+      font-size: 32px;
+      line-height: 1.02;
+      font-weight: 900;
+    }
+
+    .drug .generic {
+      margin: 0;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.24;
+      font-weight: 640;
+    }
+
+    .drug .unit {
+      margin: 9px 0 0;
+      color: #3f3d39;
+      font-size: 16px;
+      line-height: 1.22;
+      font-weight: 760;
+    }
+
+    .bar-area {
+      padding: 24px 30px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .bar-shell {
+      height: 34px;
+      width: 100%;
+      border: 1px solid #c9c0b2;
+      background: #f0eadf;
+      border-radius: 999px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .bar {
+      height: 100%;
+      width: var(--w);
+      background: var(--c);
+      border-radius: 999px;
+    }
+
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.22;
+      font-weight: 630;
+    }
+
+    .price {
+      padding: 22px 26px;
+      border-left: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      text-align: right;
+      background: #fbf8f1;
+    }
+
+    .price .amount {
+      font-size: 30px;
+      line-height: 1;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .price .caption {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.2;
+      font-weight: 660;
+    }
+
+    .row:first-child {
+      min-height: 154px;
+      border-color: #8e3425;
+      background: #fffaf2;
+    }
+
+    .row:first-child .rank {
+      background: var(--red);
+    }
+
+    .row:first-child .drug h2 {
+      font-size: 40px;
+    }
+
+    .row:first-child .price .amount {
+      font-size: 32px;
+      color: var(--red);
+    }
+
+    .notes {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      margin-top: 34px;
+      padding-top: 28px;
+      border-top: 2px solid var(--ink);
+    }
+
+    .note {
+      font-size: 22px;
+      line-height: 1.36;
+      color: #403d38;
+      margin: 0;
+      font-weight: 560;
+    }
+
+    .note strong {
+      color: var(--ink);
+      font-weight: 850;
+    }
+
+    .legend {
+      display: flex;
+      gap: 18px;
+      justify-content: flex-end;
+      align-items: center;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 19px;
+      font-weight: 700;
+    }
+
+    .legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .swatch {
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    footer {
+      margin-top: 28px;
+      color: #5d5a55;
+      font-size: 16px;
+      line-height: 1.36;
+      font-weight: 560;
+    }
+  
+
+    @page {
+      size: 1600px 2609px;
+      margin: 0;
+    }
+
+    html,
+    body {
+      width: 1600px;
+      min-height: 2609px;
+      background: transparent !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      position: relative;
+      width: 1600px;
+      height: 2609px;
+      min-height: 2609px;
+      overflow: hidden;
+      background: transparent !important;
+      isolation: isolate;
+    }
+
+    .pdf-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .page > :not(.pdf-bg) {
+      position: relative;
+      z-index: 1;
+    }
+
+  </style>
+</head>
+<body>
+  <main class="page" aria-label="Top 10 highest-priced medicines in Slovenia's May 2026 regulated price list">
+    <img class="pdf-bg" src="./slovenia_top10_drug_prices_background.png" alt="" aria-hidden="true">
+    <header>
+      <section>
+        <div class="eyebrow">Slovenia regulated medicines price list</div>
+        <h1>Top 10 highest-priced<br>medicines in Slovenia</h1>
+        <p class="subhead">Ranked by the highest listed wholesale regulated price per distinct drug family in JAZMP's 01.05.2026 workbook.</p>
+      </section>
+      <aside class="source-card">
+        <div class="label">Pricing context</div>
+        <p>JAZMP publishes maximum allowed prices and exceptional higher allowed prices. MAPs apply to publicly financed medicines and are formulated from the manufacturer's price element plus wholesale margin.</p>
+      </aside>
+    </header>
+
+    <section class="metrics" aria-label="Dataset summary">
+      <div class="metric">
+        <div class="number">4,750</div>
+        <div class="text">medicine-package rows in the workbook</div>
+      </div>
+      <div class="metric">
+        <div class="number">4,364</div>
+        <div class="text">rows with a listed wholesale price</div>
+      </div>
+      <div class="metric">
+        <div class="number">37</div>
+        <div class="text">Zolgensma package rows share the top price</div>
+      </div>
+      <div class="metric">
+        <div class="number">€1.39M</div>
+        <div class="text">highest listed regulated wholesale price</div>
+      </div>
+    </section>
+
+    <section class="rankings" aria-label="Top 10 ranking">
+      <article class="row">
+        <div class="rank">1</div>
+        <div class="drug">
+          <h2>Zolgensma</h2>
+          <p class="generic">onasemnogen abeparvovek</p>
+          <p class="unit">Examples: 2 x 10^13 vector genomes/mL; 5.5 and 8.3 mL vials</p>
+        </div>
+        <div class="bar-area">
+          <div class="bar-shell"><div class="bar" style="--w: 100%; --c: var(--red);"></div></div>
+          <div class="meta"><span>Novartis Europharm Limited</span><span>M09AX09 · 37 listed packages</span></div>
+        </div>
+        <div class="price">
+          <div class="amount">€1,385,027.50</div>
+          <div class="caption">row 4673 · NDC</div>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="rank">2</div>
+        <div class="drug">
+          <h2>Kymriah</h2>
+          <p class="generic">tisagenleklevcel</p>
+          <p class="unit">Strength: 1.2 x 10^6-6 x 10^8 cells; 10-50 mL infusion bags</p>
+        </div>
+        <div class="bar-area">
+          <div class="bar-shell"><div class="bar" style="--w: 79.5%; --c: var(--teal);"></div></div>
+          <div class="meta"><span>Novartis Europharm Limited</span><span>L01XL04 · 1 listed package</span></div>
+        </div>
+        <div class="price">
+          <div class="amount">€239,027.50</div>
+          <div class="caption">row 2184 · NDC</div>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="rank">3</div>
+        <div class="drug">
+          <h2>(177Lu)Lutecijev klorid Billev</h2>
+          <p class="generic">Drugi radioterapevtiki</p>
+          <p class="unit">Examples: 51.8 GBq/mL; 5 mL or 10 mL vial</p>
+        </div>
+        <div class="bar-area">
+          <div class="bar-shell"><div class="bar" style="--w: 71.2%; --c: var(--blue);"></div></div>
+          <div class="meta"><span>Billev Pharma Aps</span><span>V10X · 2 listed packages</span></div>
+        </div>
+        <div class="price">
+          <div class="amount">€123,227.50</div>
+          <div class="caption">row 3 · NDC</div>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="rank">4</div>
+        <div class="drug">
+          <h2>Spinraza</h2>
+          <p class="generic">nusinersen</p>
+          <p class="unit">Examples: 12, 28, or 50 mg; 5 mL vial</p>
+        </div>
+        <div class="bar-area">
+          <div class="bar-shell"><div class="bar" style="--w: 70.2%; --c: var(--amber);"></div></div>
+          <div class="meta"><span>Biogen Netherlands B.V.</span><span>M09AX07 · 3 listed packages</span></div>
+        </div>
+        <div class="price">
+          <div class="amount">€116,989.00</div>
+          <div class="caption">row 3872 · NDC</div>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="rank">5</div>
+        <div class="drug">
+          <h2>Skyclarys</h2>
+          <p class="generic">omaveloksolon</p>
+          <p class="unit">Examples: 50 mg capsules; 90 or 270 capsule packs</p>
+        </div>
+        <div class="bar-area">
+          <div class="bar-shell"><div class="bar" style="--w: 59.3%; --c: var(--green);"></div></div>
+          <div class="meta"><span>Biogen Netherlands B.V.</span><span>N07XX25 · 2 listed packages</span></div>
+        </div>
+        <div class="price">
+          <div class="amount">€68,503.25</div>
+          <div class="caption">row 3782 · NDC</div>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="rank">6</div>
+        <div class="drug">
+          <h2>Myalepta</h2>
+          <p class="generic">metreleptin</p>
+          <p class="unit">Examples: 3, 5.8, or 11.3 mg powder vials; 30 vial packs</p>
+        </div>
+        <div class="bar-area">
+          <div class="bar-shell"><div class="bar" style="--w: 52.4%; --c: var(--violet);"></div></div>
+          <div class="meta"><span>Chiesi Farmaceutici S.p.A.</span><span>A16AA07 · 3 listed packages</span></div>
+        </div>
+        <div class="price">
+          <div class="amount">€49,498.13</div>
+          <div class="caption">row 2721 · NDC</div>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="rank">7</div>
+        <div class="drug">
+          <h2>Beromun</h2>
+          <p class="generic">tazonermin</p>
+          <p class="unit">Strength: 1 mg powder for infusion; 4 powder vials</p>
+        </div>
+        <div class="bar-area">
+          <div class="bar-shell"><div class="bar" style="--w: 43.8%; --c: var(--teal);"></div></div>
+          <div class="meta"><span>BELPHARMA s.a.</span><span>L03AX11 · 1 listed package</span></div>
+        </div>
+        <div class="price">
+          <div class="amount">€34,527.50</div>
+          <div class="caption">row 499 · NDC</div>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="rank">8</div>
+        <div class="drug">
+          <h2>EndolucinBeta</h2>
+          <p class="generic">Drugi radioterapevtiki</p>
+          <p class="unit">Strength: 40 GBq/mL; 2 mL vial</p>
+        </div>
+        <div class="bar-area">
+          <div class="bar-shell"><div class="bar" style="--w: 41.0%; --c: var(--blue);"></div></div>
+          <div class="meta"><span>ITM Medical Isotopes GmbH</span><span>V10X · 1 listed package</span></div>
+        </div>
+        <div class="price">
+          <div class="amount">€31,509.50</div>
+          <div class="caption">row 1252 · NDC</div>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="rank">9</div>
+        <div class="drug">
+          <h2>Pyrukynd</h2>
+          <p class="generic">mitapivat</p>
+          <p class="unit">Examples: 5, 20, or 50 mg tablets; 7 or 56 tablet packs</p>
+        </div>
+        <div class="bar-area">
+          <div class="bar-shell"><div class="bar" style="--w: 39.1%; --c: var(--amber);"></div></div>
+          <div class="meta"><span>Agios Netherlands B.V.</span><span>B06AX04 · 6 listed packages</span></div>
+        </div>
+        <div class="price">
+          <div class="amount">€29,849.48</div>
+          <div class="caption">row 3418 · NDC</div>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="rank">10</div>
+        <div class="drug">
+          <h2>FABHALTA</h2>
+          <p class="generic">iptakopan</p>
+          <p class="unit">Strength: 200 mg capsules; 56 capsule blister pack</p>
+        </div>
+        <div class="bar-area">
+          <div class="bar-shell"><div class="bar" style="--w: 37.4%; --c: var(--green);"></div></div>
+          <div class="meta"><span>Novartis Europharm Limited</span><span>L04AJ08 · 1 listed package</span></div>
+        </div>
+        <div class="price">
+          <div class="amount">€28,459.29</div>
+          <div class="caption">row 1554 · NDC</div>
+        </div>
+      </article>
+    </section>
+
+    <section class="notes">
+      <p class="note"><strong>Methodology:</strong> rows were grouped by drug family, active substance/class, and applicant; each family is represented by its maximum listed package price. NDC = najvišja dovoljena cena (maximum allowed price). If ranked strictly by worksheet row, the first ten positions are Zolgensma package variants at €1,385,027.50.</p>
+      <div class="legend" aria-label="Legend">
+        <span><i class="swatch" style="background: var(--red);"></i>highest family</span>
+        <span><i class="swatch" style="background: var(--teal);"></i>log-scaled bar</span>
+        <span><i class="swatch" style="background: var(--ink);"></i>rank</span>
+      </div>
+    </section>
+
+    <footer>
+      Source workbook: slovenia_cene_20260501.xlsx, sheet cene. Regulatory context reviewed from JAZMP's List of regulated prices and Maximum allowed prices of medicinal products pages. Prices shown are listed wholesale regulated prices from the workbook column "Cena na debelo €"; they are not patient out-of-pocket prices.
+    </footer>
+  </main>
+</body>
+</html>

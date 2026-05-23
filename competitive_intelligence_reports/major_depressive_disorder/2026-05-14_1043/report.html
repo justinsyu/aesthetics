@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Major Depressive Disorder Competitive Intelligence Update</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 36px 0 20px;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 850;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 74px; line-height: .94; letter-spacing: 0; font-weight: 560; max-width: 1320px; }
+    h2 { font-size: 49px; line-height: .98; letter-spacing: 0; font-weight: 560; max-width: 1300px; }
+    h3 { font-size: 27px; line-height: 1.04; letter-spacing: 0; font-weight: 650; }
+    .dek { margin-top: 16px; color: var(--muted); font-size: 25px; line-height: 1.22; max-width: 1240px; }
+    .section-head { margin-bottom: 18px; }
+    .section-head p { margin-top: 11px; color: var(--muted); font-size: 22px; line-height: 1.2; max-width: 1280px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .panel, .metric, .card, .table, .callout {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.88);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel { padding: 22px; }
+    .panel.dark, .callout { background: #11130f; color: var(--paper); border-color: #11130f; }
+    .panel.dark p, .panel.dark li, .callout p, .callout li { color: rgba(246,241,232,.86); }
+    .metric { padding: 20px; min-height: 144px; }
+    .num { font-size: 50px; line-height: .92; font-weight: 850; letter-spacing: 0; }
+    .label { margin-top: 10px; font-size: 20px; line-height: 1.16; color: var(--muted); }
+    .card { padding: 22px; min-height: 236px; }
+    .card p { color: var(--muted); font-size: 20px; line-height: 1.2; margin-top: 10px; }
+    .card .tag { margin-bottom: 10px; }
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      white-space: nowrap;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .red { background: var(--red); }
+    .gray { background: var(--gray); }
+    .callout { padding: 22px 26px; }
+    .callout h3 { font-size: 31px; }
+    .summary-list { margin: 12px 0 0; padding-left: 22px; display: grid; gap: 8px; }
+    .summary-list li { color: rgba(246,241,232,.86); font-size: 23px; line-height: 1.12; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .cite + .cite::before { content: ","; margin-right: 1px; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    .table { display: grid; }
+    .row { display: grid; border-bottom: 1px solid var(--line); min-height: 76px; }
+    .row:last-child { border-bottom: 0; }
+    .row.pipeline { grid-template-columns: .9fr .88fr 1.34fr 1.2fr; }
+    .row.access { grid-template-columns: .92fr 1.18fr 1.18fr 1.12fr; }
+    .row.refs { grid-template-columns: .34fr 1fr 1.04fr 1.74fr; min-height: 0; }
+    .cell { padding: 12px 14px; border-right: 1px solid var(--line); font-size: 18px; line-height: 1.16; }
+    .cell:last-child { border-right: 0; }
+    .row.head { min-height: 0; }
+    .head .cell {
+      background: #11130f;
+      color: var(--paper);
+      font-weight: 850;
+      text-transform: uppercase;
+      font-size: 16px;
+      line-height: 1.08;
+      padding: 10px 12px;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+    }
+    .refs .cell { font-size: 19px; line-height: 1.08; padding: 10px 12px; }
+    .refs.head .cell { font-size: 18px; line-height: 1.08; padding: 10px 12px; white-space: nowrap; }
+    .row.refs .cell:first-child { text-align: center; justify-content: center; }
+    .references-slide .section-head { margin-bottom: 12px; }
+    .references-slide h2 { font-size: 47px; }
+    .meeting-slide .card { padding: 18px 20px; min-height: 292px; }
+    .meeting-slide .card p { font-size: 21px; line-height: 1.16; }
+    .meeting-slide .card h3 { font-size: 29px; }
+    .meeting-slide .metric { min-height: 136px; }
+    .meeting-slide .num { font-weight: 520; }
+    .meeting-slide .label { font-size: 20px; line-height: 1.16; }
+    .small-note { color: var(--muted); font-size: 14px; line-height: 1.22; margin-top: 12px; }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .wrap { width: 1360px; }
+      .panel, .metric, .card, .table, .callout { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) {
+      .slide { width: 1600px; height: 900px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Major depressive disorder CI update | May 8-14, 2026</div>
+      <h1>Major depressive disorder competitive intelligence update</h1>
+      <div class="grid-4" style="margin-top:30px;">
+        <div class="metric"><div class="num">7</div><div class="label">Primary company or issuer disclosures supporting this MDD update<a class="cite" href="https://ir.definiumtx.com/news-events/press-releases/detail/227/definium-therapeutics-announces-first-patient-dosed-in-ascend-the-second-phase-3-pivotal-study-of-dt120-odt-in-major-depressive-disorder">1</a><a class="cite" href="https://finance.yahoo.com/news/compass-pathways-announces-first-quarter-103000764.html">2</a><a class="cite" href="https://investors.altoneuroscience.com/news/news-details/2026/Alto-Neuroscience-Reports-First-Quarter-2026-Financial-Results-and-Recent-Business-Highlights/default.aspx">3</a><a class="cite" href="https://www.jnj.com/media-center/press-releases/johnson-johnson-reinforces-its-leadership-in-advancing-neuropsychiatry-with-new-portfolio-and-pipeline-data-at-apa-and-ascp">4</a><a class="cite" href="https://www.prnewswire.com/news-releases/neurolief-to-showcase-prolivrx-at-apa-2026-highlighting-fda-approved-physician-directed-at-home-brain-stimulation-for-major-depressive-disorder-302769004.html">5</a><a class="cite" href="https://finance.yahoo.com/news/aytu-biopharma-reports-fiscal-2026-200500565.html">6</a><a class="cite" href="https://www.brainsway.com/news_events/brainsway-reports-first-quarter-2026-financial-results-and-operational-highlights/">7</a></div></div>
+        <div class="metric"><div class="num">3</div><div class="label">Clinical-development updates across Definium, Compass, and Alto programs<a class="cite" href="https://ir.definiumtx.com/news-events/press-releases/detail/227/definium-therapeutics-announces-first-patient-dosed-in-ascend-the-second-phase-3-pivotal-study-of-dt120-odt-in-major-depressive-disorder">1</a><a class="cite" href="https://finance.yahoo.com/news/compass-pathways-announces-first-quarter-103000764.html">2</a><a class="cite" href="https://investors.altoneuroscience.com/news/news-details/2026/Alto-Neuroscience-Reports-First-Quarter-2026-Financial-Results-and-Recent-Business-Highlights/default.aspx">3</a></div></div>
+        <div class="metric"><div class="num">2</div><div class="label">Psychiatry-meeting disclosures involving MDD, TRD, or device therapy<a class="cite" href="https://www.jnj.com/media-center/press-releases/johnson-johnson-reinforces-its-leadership-in-advancing-neuropsychiatry-with-new-portfolio-and-pipeline-data-at-apa-and-ascp">4</a><a class="cite" href="https://www.prnewswire.com/news-releases/neurolief-to-showcase-prolivrx-at-apa-2026-highlighting-fda-approved-physician-directed-at-home-brain-stimulation-for-major-depressive-disorder-302769004.html">5</a></div></div>
+        <div class="metric"><div class="num">2</div><div class="label">Marketed-intervention signals covering EXXUA and Deep TMS<a class="cite" href="https://finance.yahoo.com/news/aytu-biopharma-reports-fiscal-2026-200500565.html">6</a><a class="cite" href="https://www.brainsway.com/news_events/brainsway-reports-first-quarter-2026-financial-results-and-operational-highlights/">7</a></div></div>
+      </div>
+      <div class="callout" style="margin-top:24px;">
+        <h3>Executive summary</h3>
+        <ul class="summary-list">
+          <li>Ascend became Definium's second Phase 3 DT120 ODT study with first patient dosing in MDD; planned enrollment is 175 U.S. participants and 12-week double-blind topline data are anticipated in 2027<a class="cite" href="https://ir.definiumtx.com/news-events/press-releases/detail/227/definium-therapeutics-announces-first-patient-dosed-in-ascend-the-second-phase-3-pivotal-study-of-dt120-odt-in-major-depressive-disorder">1</a></li>
+          <li>COMP360 advanced under FDA-granted rolling NDA submission and review in TRD, with submitted NDA sections, a CNPV award, COMP006 Part B data expected in early Q3 2026, and final NDA submission targeted for Q4 2026<a class="cite" href="https://finance.yahoo.com/news/compass-pathways-announces-first-quarter-103000764.html">2</a></li>
+          <li>ALTO-207 entered Phase 2b adjunctive evaluation in approximately 178 adults with TRD, while May psychiatry-meeting activity included J&amp;J MDD/TRD portfolio data and Neurolief ProlivRx MDD device visibility<a class="cite" href="https://investors.altoneuroscience.com/news/news-details/2026/Alto-Neuroscience-Reports-First-Quarter-2026-Financial-Results-and-Recent-Business-Highlights/default.aspx">3</a><a class="cite" href="https://www.jnj.com/media-center/press-releases/johnson-johnson-reinforces-its-leadership-in-advancing-neuropsychiatry-with-new-portfolio-and-pipeline-data-at-apa-and-ascp">4</a><a class="cite" href="https://www.prnewswire.com/news-releases/neurolief-to-showcase-prolivrx-at-apa-2026-highlighting-fda-approved-physician-directed-at-home-brain-stimulation-for-major-depressive-disorder-302769004.html">5</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">01 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Drug development</div>
+        <h2>Late-stage and mid-stage TRD/MDD programs advanced across enrollment, regulatory, and trial-initiation milestones<a class="cite" href="https://ir.definiumtx.com/news-events/press-releases/detail/227/definium-therapeutics-announces-first-patient-dosed-in-ascend-the-second-phase-3-pivotal-study-of-dt120-odt-in-major-depressive-disorder">1</a><a class="cite" href="https://finance.yahoo.com/news/compass-pathways-announces-first-quarter-103000764.html">2</a><a class="cite" href="https://investors.altoneuroscience.com/news/news-details/2026/Alto-Neuroscience-Reports-First-Quarter-2026-Financial-Results-and-Recent-Business-Highlights/default.aspx">3</a></h2>
+      </div>
+      <div class="table">
+        <div class="row pipeline head"><div class="cell">Sponsor</div><div class="cell">Program</div><div class="cell">Milestone</div><div class="cell">Next marker</div></div>
+        <div class="row pipeline"><div class="cell">Definium</div><div class="cell">DT120 ODT in MDD</div><div class="cell">The company announced first patient dosing in Ascend, its second Phase 3 study evaluating DT120 ODT for MDD<a class="cite" href="https://ir.definiumtx.com/news-events/press-releases/detail/227/definium-therapeutics-announces-first-patient-dosed-in-ascend-the-second-phase-3-pivotal-study-of-dt120-odt-in-major-depressive-disorder">1</a></div><div class="cell">Ascend is expected to enroll 175 U.S. participants and report 12-week double-blind topline data in 2027<a class="cite" href="https://ir.definiumtx.com/news-events/press-releases/detail/227/definium-therapeutics-announces-first-patient-dosed-in-ascend-the-second-phase-3-pivotal-study-of-dt120-odt-in-major-depressive-disorder">1</a></div></div>
+        <div class="row pipeline"><div class="cell">Compass</div><div class="cell">COMP360 in TRD</div><div class="cell">FDA granted an NDA rolling submission and review request based on positive Phase 3 data, and rolling submission and review are underway<a class="cite" href="https://finance.yahoo.com/news/compass-pathways-announces-first-quarter-103000764.html">2</a></div><div class="cell">COMP006 26-week Part B data are expected in early Q3 2026 and final NDA submission remains on track for Q4 2026<a class="cite" href="https://finance.yahoo.com/news/compass-pathways-announces-first-quarter-103000764.html">2</a></div></div>
+        <div class="row pipeline"><div class="cell">Alto</div><div class="cell">ALTO-207 in TRD</div><div class="cell">Alto initiated a randomized, double-blind, placebo-controlled Phase 2b trial of adjunctive ALTO-207 in approximately 178 adults with TRD<a class="cite" href="https://investors.altoneuroscience.com/news/news-details/2026/Alto-Neuroscience-Reports-First-Quarter-2026-Financial-Results-and-Recent-Business-Highlights/default.aspx">3</a></div><div class="cell">The trial enrolls adults with two to five prior treatment failures and uses MADRS as the primary endpoint<a class="cite" href="https://investors.altoneuroscience.com/news/news-details/2026/Alto-Neuroscience-Reports-First-Quarter-2026-Financial-Results-and-Recent-Business-Highlights/default.aspx">3</a></div></div>
+      </div>
+      <div class="panel dark" style="margin-top:22px;">
+        <p style="font-size:27px; line-height:1.14;">The clinical-development activity spans three differentiated therapeutic approaches: lysergide tartrate ODT in Phase 3 MDD, synthetic psilocybin in TRD NDA preparation, and adjunctive ALTO-207 in Phase 2b TRD<a class="cite" href="https://ir.definiumtx.com/news-events/press-releases/detail/227/definium-therapeutics-announces-first-patient-dosed-in-ascend-the-second-phase-3-pivotal-study-of-dt120-odt-in-major-depressive-disorder">1</a><a class="cite" href="https://finance.yahoo.com/news/compass-pathways-announces-first-quarter-103000764.html">2</a><a class="cite" href="https://investors.altoneuroscience.com/news/news-details/2026/Alto-Neuroscience-Reports-First-Quarter-2026-Financial-Results-and-Recent-Business-Highlights/default.aspx">3</a></p>
+      </div>
+    </div>
+    <div class="slide-num">02 / 05</div>
+  </article>
+
+  <article class="slide meeting-slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Scientific meetings</div>
+        <h2>May psychiatry-meeting activity includes MDD portfolio data and FDA-approved home brain-stimulation therapy visibility<a class="cite" href="https://www.jnj.com/media-center/press-releases/johnson-johnson-reinforces-its-leadership-in-advancing-neuropsychiatry-with-new-portfolio-and-pipeline-data-at-apa-and-ascp">4</a><a class="cite" href="https://www.prnewswire.com/news-releases/neurolief-to-showcase-prolivrx-at-apa-2026-highlighting-fda-approved-physician-directed-at-home-brain-stimulation-for-major-depressive-disorder-302769004.html">5</a></h2>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <span class="tag lime">Portfolio data</span>
+          <h3>Johnson &amp; Johnson</h3>
+          <p>Eighteen APA and ASCP abstracts feature neuropsychiatry portfolio and pipeline data, including presentations involving MDD, TRD, and schizophrenia<a class="cite" href="https://www.jnj.com/media-center/press-releases/johnson-johnson-reinforces-its-leadership-in-advancing-neuropsychiatry-with-new-portfolio-and-pipeline-data-at-apa-and-ascp">4</a></p>
+          <p>The MDD/TRD set includes seltorexant presentations in adults with MDD and insomnia symptoms, CAPLYTA MDD analyses, and SPRAVATO post-hoc analyses in TRD responders or remitters<a class="cite" href="https://www.jnj.com/media-center/press-releases/johnson-johnson-reinforces-its-leadership-in-advancing-neuropsychiatry-with-new-portfolio-and-pipeline-data-at-apa-and-ascp">4</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">Brain stimulation</span>
+          <h3>Neurolief</h3>
+          <p>ProlivRx is described as an FDA-approved prescription brain stimulation therapy for adults with MDD and is slated for APA 2026 showcase activity<a class="cite" href="https://www.prnewswire.com/news-releases/neurolief-to-showcase-prolivrx-at-apa-2026-highlighting-fda-approved-physician-directed-at-home-brain-stimulation-for-major-depressive-disorder-302769004.html">5</a></p>
+          <p>The intended adjunctive-treatment population is adults with MDD who have not achieved satisfactory improvement from at least one previous antidepressant medication<a class="cite" href="https://www.prnewswire.com/news-releases/neurolief-to-showcase-prolivrx-at-apa-2026-highlighting-fda-approved-physician-directed-at-home-brain-stimulation-for-major-depressive-disorder-302769004.html">5</a></p>
+        </div>
+      </div>
+      <div class="grid-3" style="margin-top:18px;">
+        <div class="metric"><div class="num">18</div><div class="label">J&amp;J abstracts across APA and ASCP<a class="cite" href="https://www.jnj.com/media-center/press-releases/johnson-johnson-reinforces-its-leadership-in-advancing-neuropsychiatry-with-new-portfolio-and-pipeline-data-at-apa-and-ascp">4</a></div></div>
+        <div class="metric"><div class="num">3</div><div class="label">J&amp;J named MDD/TRD assets in the meeting list: seltorexant, CAPLYTA, and SPRAVATO<a class="cite" href="https://www.jnj.com/media-center/press-releases/johnson-johnson-reinforces-its-leadership-in-advancing-neuropsychiatry-with-new-portfolio-and-pipeline-data-at-apa-and-ascp">4</a></div></div>
+        <div class="metric"><div class="num">1+</div><div class="label">Prior antidepressant medication response threshold in Neurolief's stated ProlivRx indication language<a class="cite" href="https://www.prnewswire.com/news-releases/neurolief-to-showcase-prolivrx-at-apa-2026-highlighting-fda-approved-physician-directed-at-home-brain-stimulation-for-major-depressive-disorder-302769004.html">5</a></div></div>
+      </div>
+    </div>
+    <div class="slide-num">03 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Commercial and access signals</div>
+        <h2>Marketed-product and device activity includes launch metrics, care-setting flexibility, payer coverage, and a planned FDA filing<a class="cite" href="https://www.prnewswire.com/news-releases/neurolief-to-showcase-prolivrx-at-apa-2026-highlighting-fda-approved-physician-directed-at-home-brain-stimulation-for-major-depressive-disorder-302769004.html">5</a><a class="cite" href="https://finance.yahoo.com/news/aytu-biopharma-reports-fiscal-2026-200500565.html">6</a><a class="cite" href="https://www.brainsway.com/news_events/brainsway-reports-first-quarter-2026-financial-results-and-operational-highlights/">7</a></h2>
+      </div>
+      <div class="table">
+        <div class="row access head"><div class="cell">Company</div><div class="cell">Intervention</div><div class="cell">Commercial/access detail</div><div class="cell">MDD scope</div></div>
+        <div class="row access"><div class="cell">Neurolief</div><div class="cell">ProlivRx</div><div class="cell">ProlivRx can be delivered at home or in a clinic through a structured, physician-supervised program<a class="cite" href="https://www.prnewswire.com/news-releases/neurolief-to-showcase-prolivrx-at-apa-2026-highlighting-fda-approved-physician-directed-at-home-brain-stimulation-for-major-depressive-disorder-302769004.html">5</a></div><div class="cell">FDA-approved prescription brain stimulation therapy for adults with MDD<a class="cite" href="https://www.prnewswire.com/news-releases/neurolief-to-showcase-prolivrx-at-apa-2026-highlighting-fda-approved-physician-directed-at-home-brain-stimulation-for-major-depressive-disorder-302769004.html">5</a></div></div>
+        <div class="row access"><div class="cell">Aytu</div><div class="cell">EXXUA</div><div class="cell">EXXUA generated $2.4 million in fiscal Q3 2026 net revenue and more than 1,300 prescriptions from more than 450 unique prescribers<a class="cite" href="https://finance.yahoo.com/news/aytu-biopharma-reports-fiscal-2026-200500565.html">6</a></div><div class="cell">Launch investment is positioned within the U.S. prescription MDD market<a class="cite" href="https://finance.yahoo.com/news/aytu-biopharma-reports-fiscal-2026-200500565.html">6</a></div></div>
+        <div class="row access"><div class="cell">BrainsWay</div><div class="cell">Deep TMS</div><div class="cell">Accelerated SWIFT Deep TMS obtained first-insurer coverage after FDA clearance, with growing payer support for psychiatric mental health nurse practitioner-administered TMS<a class="cite" href="https://www.brainsway.com/news_events/brainsway-reports-first-quarter-2026-financial-results-and-operational-highlights/">7</a></div><div class="cell">A Q2 2026 FDA filing is planned for Deep TMS in treating PTSD symptoms in patients with MDD<a class="cite" href="https://www.brainsway.com/news_events/brainsway-reports-first-quarter-2026-financial-results-and-operational-highlights/">7</a></div></div>
+      </div>
+      <div class="panel dark" style="margin-top:22px;">
+        <p style="font-size:27px; line-height:1.14;">The marketed-intervention updates connect near-term product visibility with access and adoption signals: ProlivRx care-setting flexibility, EXXUA launch traction, and Deep TMS payer coverage plus filing activity<a class="cite" href="https://www.prnewswire.com/news-releases/neurolief-to-showcase-prolivrx-at-apa-2026-highlighting-fda-approved-physician-directed-at-home-brain-stimulation-for-major-depressive-disorder-302769004.html">5</a><a class="cite" href="https://finance.yahoo.com/news/aytu-biopharma-reports-fiscal-2026-200500565.html">6</a><a class="cite" href="https://www.brainsway.com/news_events/brainsway-reports-first-quarter-2026-financial-results-and-operational-highlights/">7</a></p>
+      </div>
+    </div>
+    <div class="slide-num">04 / 05</div>
+  </article>
+
+  <article class="slide references-slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">References 1-7</div>
+        <h2>References</h2>
+      </div>
+      <div class="table">
+        <div class="row refs head"><div class="cell">Ref</div><div class="cell">Source</div><div class="cell">Date / Status / Owner</div><div class="cell">Evidence Used</div></div>
+        <div class="row refs"><div class="cell">1</div><div class="cell">Definium Therapeutics press release</div><div class="cell">May 12, 2026; issuer IR page</div><div class="cell">Ascend first patient dosing, second Phase 3 MDD study, expected enrollment, and topline timing</div></div>
+        <div class="row refs"><div class="cell">2</div><div class="cell">Compass Pathways press release</div><div class="cell">May 13, 2026; company-sourced Business Wire page</div><div class="cell">COMP360 rolling NDA submission/review, CNPV award, Part B data timing, and final NDA submission timing</div></div>
+        <div class="row refs"><div class="cell">3</div><div class="cell">Alto Neuroscience press release</div><div class="cell">May 13, 2026; issuer IR page</div><div class="cell">ALTO-207 Phase 2b TRD initiation, approximate enrollment, prior-failure eligibility, and MADRS endpoint</div></div>
+        <div class="row refs"><div class="cell">4</div><div class="cell">Johnson &amp; Johnson press release</div><div class="cell">May 11, 2026; company press release</div><div class="cell">APA and ASCP neuropsychiatry abstracts and MDD/TRD asset presentation list</div></div>
+        <div class="row refs"><div class="cell">5</div><div class="cell">Neurolief press release</div><div class="cell">May 12, 2026; company-sourced PRNewswire page</div><div class="cell">ProlivRx APA showcase, FDA-approved MDD therapy description, and adjunctive-treatment indication language</div></div>
+        <div class="row refs"><div class="cell">6</div><div class="cell">Aytu BioPharma press release</div><div class="cell">May 13, 2026; company-sourced Access Newswire page</div><div class="cell">EXXUA fiscal Q3 net revenue, prescription and prescriber counts, and MDD market launch context</div></div>
+        <div class="row refs"><div class="cell">7</div><div class="cell">BrainsWay press release</div><div class="cell">May 13, 2026; issuer website</div><div class="cell">SWIFT coverage, payer support for nurse practitioner-administered TMS, and Q2 2026 filing plan for PTSD symptoms in MDD</div></div>
+      </div>
+    </div>
+    <div class="slide-num">05 / 05</div>
+  </article>
+</body>
+</html>

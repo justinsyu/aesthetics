@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NHANES 2021-2023 ophthalmology-related findings</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --card: #fffaf0;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --line: #1b1f17;
+      --dark: #11130f;
+      --radius: 24px;
+    }
+    @page { size: 1600px 900px; margin: 0; }
+    * { box-sizing: border-box; }
+    body, *::before, *::after { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    html, body { margin: 0; width: 100%; background: var(--paper); color: var(--ink); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    body { overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    .slide { position: relative; width: 100vw; height: 100vh; min-height: 100vh; overflow: hidden; display: flex; justify-content: center; align-items: center; page-break-after: always; }
+    .slide-bg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; user-select: none; pointer-events: none; }
+    .wrap { position: relative; z-index: 1; width: 1360px; height: 780px; display: flex; flex-direction: column; }
+    .topline { display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; }
+    .eyebrow { display: inline-flex; width: fit-content; align-items: center; padding: 10px 18px; border-radius: 999px; border: 2px solid var(--line); background: var(--lime); font-size: 15px; line-height: 1; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    .page { font-size: 15px; color: var(--muted); font-weight: 760; }
+    h1, h2, h3, p { margin: 0; letter-spacing: 0; }
+    h1 { font-size: 84px; line-height: .93; font-weight: 530; max-width: 1110px; }
+    h2 { font-size: 56px; line-height: .98; font-weight: 540; max-width: 1260px; }
+    h3 { font-size: 21px; line-height: 1.12; font-weight: 760; }
+    p { font-size: 22px; line-height: 1.35; color: var(--muted); }
+    .subhead { max-width: 1010px; margin-top: 22px; font-size: 27px; line-height: 1.32; color: var(--muted); }
+    .grid { display: grid; gap: 18px; }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    .split { display: grid; grid-template-columns: .96fr 1.04fr; gap: 24px; flex: 1; min-height: 0; }
+    .split-tight { flex: 0 0 auto; align-items: start; }
+    .stack-tight { grid-template-rows: auto auto; align-content: start; }
+    .card { background: rgba(255, 250, 240, .88); border: 2px solid var(--line); border-radius: var(--radius); padding: 22px 24px; box-shadow: 0 18px 48px rgba(16, 18, 15, .08); }
+    .dark { background: var(--dark); border-color: var(--dark); color: var(--paper); }
+    .dark p, .dark .small, .dark .label, .dark .source { color: rgba(246, 241, 232, .76); }
+    .metric { font-size: 60px; line-height: .92; font-weight: 560; }
+    .metric.smallish { font-size: 48px; }
+    .dark .metric { color: var(--lime); }
+    .label { margin-top: 10px; font-size: 18px; line-height: 1.25; color: var(--muted); font-weight: 650; }
+    .small { font-size: 17px; line-height: 1.32; color: var(--muted); }
+    .tiny { font-size: 14px; line-height: 1.25; color: var(--muted); }
+    .hero-metrics { margin-top: auto; }
+    .bar-list { display: grid; gap: 14px; margin-top: 20px; }
+    .bar-row { display: grid; grid-template-columns: 390px 1fr 88px; align-items: center; gap: 16px; }
+    .bar-row.compact { grid-template-columns: 310px 1fr 78px; gap: 12px; }
+    .bar-label { font-size: 18px; line-height: 1.18; font-weight: 720; }
+    .bar-track { height: 30px; border-radius: 999px; border: 2px solid var(--line); background: rgba(16,18,15,.08); overflow: hidden; }
+    .bar { height: 100%; border-right: 2px solid var(--line); }
+    .bar-value { text-align: right; font-size: 18px; font-weight: 820; }
+    .lime { background: var(--lime); }
+    .blue { background: var(--blue); }
+    .orange { background: var(--orange); }
+    .pink { background: var(--pink); }
+    .red { background: var(--red); }
+    .gray { background: var(--gray); }
+    .note { margin-top: auto; display: flex; align-items: end; justify-content: space-between; gap: 22px; }
+    .source { max-width: 1160px; font-size: 13px; line-height: 1.25; color: var(--muted); }
+    .cite { vertical-align: super; font-size: .62em; font-weight: 820; padding-left: 1px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; border: 2px solid var(--line); border-radius: 18px; overflow: hidden; font-size: 16px; line-height: 1.18; }
+    th { background: var(--dark); color: var(--paper); text-align: left; padding: 11px 12px; font-size: 14px; white-space: nowrap; }
+    td { background: rgba(255,250,240,.88); border-top: 2px solid var(--line); padding: 11px 12px; vertical-align: top; }
+    td.num { text-align: right; font-weight: 800; white-space: nowrap; }
+    .method-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 18px; }
+    .method-grid .card { min-height: 133px; }
+    .method-grid h3 { margin-bottom: 9px; }
+    .refs { display: grid; grid-template-columns: 1fr 1fr; gap: 13px 18px; margin-top: 20px; }
+    .ref { display: grid; grid-template-columns: 42px 1fr; gap: 10px; padding: 12px 14px; border: 2px solid var(--line); border-radius: 16px; background: rgba(255,250,240,.88); min-height: 72px; }
+    .ref-num { width: 28px; height: 28px; border-radius: 999px; border: 2px solid var(--line); background: var(--lime); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 860; }
+    .ref p { font-size: 15px; line-height: 1.24; color: var(--ink); }
+    .slide-02 .grid-3 .card { padding: 21px 23px; }
+    .slide-02 h2 { max-width: 1320px; font-size: 53px; line-height: 1; }
+    .slide-02 .grid-3 .small, .slide-02 .grid-2 .card:not(.dark) .small { font-size: 19px; line-height: 1.32; }
+    .slide-02 .dark p { font-size: 22px; line-height: 1.33; }
+    .slide-02 .source { max-width: none; font-size: 12.5px; white-space: nowrap; }
+    .slide-01 .subhead { max-width: 1360px; margin-top: 34px; }
+    .slide-01 .hero-metrics { margin-top: 34px; }
+    .slide-03 h2 { max-width: 1360px; font-size: 55px; line-height: .98; text-wrap: balance; }
+    .slide-03 .split { flex: 0 0 auto; margin-bottom: 22px; }
+    .slide-03 .bar-list { gap: 30px; margin-top: 26px; }
+    .slide-03 .bar-row { grid-template-columns: 350px 1fr 78px; gap: 14px; }
+    .slide-03 .bar-label, .slide-03 .bar-value { font-weight: 400; }
+    .slide-03 .bar-track { height: 42px; }
+    .slide-03 .grid-2 .card { padding: 20px 22px; }
+    .slide-03 .label { font-size: 19px; line-height: 1.25; }
+    .slide-03 .tiny { font-size: 15px; }
+    .slide-04 .split, .slide-05 .split, .slide-08 .split { align-items: stretch; }
+    .slide-04 .split > .card, .slide-05 .split > .card, .slide-08 .split > .card { height: 100%; }
+    .slide-04 .stack-tight, .slide-05 .stack-tight, .slide-08 .stack-tight { height: 100%; align-content: stretch; }
+    .slide-04 .stack-tight .card, .slide-05 .stack-tight .card, .slide-08 .stack-tight .card { min-height: 0; }
+    .slide-04 h3 { font-size: 26px; line-height: 1.08; }
+    .slide-04 .bar-list { height: calc(100% - 68px); align-content: space-between; gap: 24px; margin-top: 32px; }
+    .slide-04 .bar-row { grid-template-columns: 210px minmax(270px, 1fr) 82px; gap: 14px; }
+    .slide-04 .bar-label { font-size: 23px; font-weight: 400; }
+    .slide-04 .bar { min-width: 20%; }
+    .slide-04 .bar-value { font-size: 23px; font-weight: 400; }
+    .slide-04 .bar-track { height: 40px; }
+    .slide-04 .card p, .slide-05 .card p, .slide-08 .card p { font-size: 22px; line-height: 1.35; }
+    .slide-04 .source { max-width: none; font-size: 12.5px; line-height: 1.2; white-space: nowrap; }
+    .slide-05 .grid.stack-tight { grid-template-rows: 1fr auto; }
+    .slide-05 .grid.stack-tight .card:last-child { align-self: end; }
+    .slide-05 th, .slide-05 td, .slide-05 td.num { text-align: left; }
+    .slide-05 tbody td, .slide-05 td.num { font-weight: 400; }
+    .slide-05 table { font-size: 17px; line-height: 1.16; }
+    .slide-05 th { font-size: 15px; }
+    .slide-05 .grid.stack-tight h3 { font-size: 26px; line-height: 1.08; }
+    .slide-05 .grid.stack-tight .small { font-size: 20px; line-height: 1.34; }
+    .slide-06 .grid-3 .label { font-size: 19px; line-height: 1.22; }
+    .slide-06 .grid-3 .tiny { font-size: 18.5px; line-height: 1.2; }
+    .slide-06 .grid-2 .card h3 { font-size: 26px; line-height: 1.08; }
+    .slide-06 .grid-2 .card:first-child .small { font-size: 22px; line-height: 1.27; }
+    .slide-07 .split { align-items: start; flex: 0 0 auto; margin-bottom: 0; }
+    .slide-07 .grid-2 { height: auto; grid-template-rows: 160px 160px; align-content: start; }
+    .slide-07 .grid-2 .card { display: flex; flex-direction: column; min-height: 0; padding: 15px 19px 18px; }
+    .slide-07 .grid-2 .card:nth-child(n+3) { align-self: stretch; }
+    .slide-07 .grid-2 .metric { font-size: 50px; }
+    .slide-07 .grid-2 .label { margin-top: 8px; font-size: 15.5px; line-height: 1.12; text-wrap: balance; }
+    .slide-07 .grid-2 .tiny { margin-top: auto !important; padding-top: 8px; font-size: 15.5px; line-height: 1.18; }
+    .slide-07 .split > .card { height: 338px; padding: 21px 25px 28px; }
+    .slide-07 .split > .card p { font-size: 19.5px; line-height: 1.24; }
+    .slide-07 .split > .card .bar-list { gap: 16px; margin-top: 26px !important; }
+    .slide-07 .bar-row.compact { grid-template-columns: 250px 1fr 78px; gap: 10px; }
+    .slide-07 .bar-row.compact .bar-label { font-size: 18px; line-height: 1.08; font-weight: 400; }
+    .slide-07 .bar-row.compact .bar-value { font-size: 18px; font-weight: 400; }
+    .slide-07 .bar-track { height: 28px; }
+    .slide-08 .split { gap: 34px; }
+    .slide-08 .split > .card:first-child > h3, .slide-08 .grid.stack-tight .card:last-child h3 { font-size: 26px; line-height: 1.08; }
+    .slide-08 .bar-list { height: calc(100% - 56px); align-content: space-between; gap: 18px; margin-top: 22px; }
+    .slide-08 .bar-row { grid-template-columns: 290px 1fr 92px; gap: 18px; }
+    .slide-08 .bar-label { font-size: 21.5px; font-weight: 400; }
+    .slide-08 .bar-value { font-size: 21.5px; font-weight: 400; }
+    .slide-08 .bar-track { height: 36px; }
+    .slide-08 .grid.stack-tight { grid-template-rows: 1fr auto; }
+    .slide-08 .grid.stack-tight .card:last-child { align-self: end; }
+    .slide-08 .grid.stack-tight .small { font-size: 19px; line-height: 1.34; }
+    .slide-09 .grid-2 { gap: 16px 18px; }
+    .slide-09 .card { padding: 20px 22px; }
+    .slide-09 .small { font-size: 17px; line-height: 1.3; }
+    .slide-10 .method-grid { gap: 15px; }
+    .slide-10 .method-grid .card { min-height: 138px; padding: 20px 22px; }
+    .slide-10 .method-grid .small { font-size: 17px; line-height: 1.3; }
+    .slide-11 .refs, .slide-12 .refs { gap: 10px 14px; margin-top: 16px; }
+    .slide-11 .ref, .slide-12 .ref { min-height: 78px; padding: 10px 14px; align-items: center; }
+    .slide-11 .ref p { font-size: 16px; line-height: 1.22; }
+    .slide-12 .ref p { font-size: 15.6px; line-height: 1.18; }
+    @media print {
+      .slide { width: 1600px; height: 900px; min-height: 900px; }
+      .wrap { width: 1360px; height: 780px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide slide-01">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" />
+    <div class="wrap">
+      <div class="topline"><div class="eyebrow">NHANES 2021-August 2023</div><div class="page">01 / 12</div></div>
+      <h1>Ophthalmology-related findings from NHANES 2021-August 2023 public data</h1>
+      <p class="subhead">Public 2021-August 2023 data support a current, nationally representative view of seeing difficulty, blurred-vision symptoms, diabetes risk context, disability indicators, and depression screening outcomes.</p>
+      <div class="grid grid-4 hero-metrics">
+        <div class="card"><div class="metric">37.1%</div><div class="label">Adults reported at least some difficulty seeing even with glasses or contact lenses</div></div>
+        <div class="card"><div class="metric">3.7%</div><div class="label">Adults reported severe seeing difficulty, equivalent to 9.4 million weighted adults</div></div>
+        <div class="card"><div class="metric">10.1%</div><div class="label">Adults aged 20-69 reported blurred vision with head movement</div></div>
+        <div class="dark card"><div class="metric">32.0%</div><div class="label">Adults with severe seeing difficulty had PHQ-9 score ≥10</div></div>
+      </div>
+      <div class="note"><p class="source">Analysis used public NHANES August 2021-August 2023 files and survey design variables. Estimates are weighted percentages unless otherwise noted.</p></div>
+    </div>
+  </article>
+
+  <article class="slide slide-02">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" />
+    <div class="wrap">
+      <div class="topline"><div class="eyebrow">What is measured</div><div class="page">02 / 12</div></div>
+      <h2>The 2021-August 2023 public files capture eye-related function and symptoms, not diagnoses</h2>
+      <div class="grid grid-3" style="margin-top:28px">
+        <div class="card">
+          <h3>Functioning questionnaire</h3>
+          <p class="small" style="margin-top:12px">The adult item asks whether participants have difficulty seeing even with glasses or contact lenses. The file also includes Washington Group disability indicators for adults and children.<a class="cite" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/FNQ_L.htm">2</a></p>
+        </div>
+        <div class="card">
+          <h3>Balance questionnaire</h3>
+          <p class="small" style="margin-top:12px">The blurred-vision item asks about blurring of vision when moving the head in the context of dizziness, light-headedness, or balance symptoms among participants aged 20-69 years.<a class="cite" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/BAQ_L.htm">3</a></p>
+        </div>
+        <div class="card">
+          <h3>Diabetes and depression</h3>
+          <p class="small" style="margin-top:12px">The diabetes questionnaire provides diagnosed diabetes status. The DPQ file supports PHQ-9 scoring among adults with public examination-component data.<a class="cite" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DIQ_L.htm">4</a><a class="cite" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DPQ_L.htm">5</a></p>
+        </div>
+      </div>
+      <div class="grid grid-2" style="margin-top:28px">
+        <div class="dark card">
+          <h3>Not publicly available in 2021-August 2023</h3>
+          <p style="margin-top:12px">Visual acuity, retinal imaging, FDT visual fields, cataract operation history, glaucoma, age-related macular degeneration, and diabetic retinopathy are not available as current public ophthalmology outcomes in this release.<a class="cite" href="https://www.cdc.gov/vision-health-data/data-sources/national-health-nutrition-examination-survey.html">1</a></p>
+        </div>
+        <div class="card">
+          <h3>Analytic implication</h3>
+          <p class="small" style="margin-top:12px">The findings should be interpreted as patient-reported seeing function, symptom burden, risk context, and co-occurring patient-reported outcomes. Prior work comparing national survey sources found that self-reported and exam-based vision estimates can differ, supporting cautious interpretation.<a class="cite" href="https://doi.org/10.1016/j.ophtha.2020.06.064">14</a></p>
+        </div>
+      </div>
+      <div class="note"><p class="source">CDC VEHSS documents that NHANES collected vision and eye-health data through 2008; the 2021-2023 public release contains functioning and symptom measures but not ophthalmology examination modules.</p></div>
+    </div>
+  </article>
+
+  <article class="slide slide-03">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" />
+    <div class="wrap">
+      <div class="topline"><div class="eyebrow">Current burden</div><div class="page">03 / 12</div></div>
+      <h2>Seeing difficulty was common, while severe seeing difficulty identified a smaller high-burden subgroup</h2>
+      <div class="split" style="margin-top:24px">
+        <div class="card">
+          <h3>Weighted adult estimates</h3>
+          <div class="bar-list">
+            <div class="bar-row"><div class="bar-label">Seeing difficulty: some difficulty or worse</div><div class="bar-track"><div class="bar lime" style="width:37.1%"></div></div><div class="bar-value">37.1%</div></div>
+            <div class="bar-row"><div class="bar-label">Washington Group Short Set disability</div><div class="bar-track"><div class="bar blue" style="width:16.5%"></div></div><div class="bar-value">16.5%</div></div>
+            <div class="bar-row"><div class="bar-label">Washington Group Enhanced disability</div><div class="bar-track"><div class="bar orange" style="width:20.9%"></div></div><div class="bar-value">20.9%</div></div>
+            <div class="bar-row"><div class="bar-label">Diagnosed diabetes</div><div class="bar-track"><div class="bar pink" style="width:11.2%"></div></div><div class="bar-value">11.2%</div></div>
+            <div class="bar-row"><div class="bar-label">Seeing difficulty: a lot or cannot do</div><div class="bar-track"><div class="bar red" style="width:3.7%"></div></div><div class="bar-value">3.7%</div></div>
+          </div>
+        </div>
+        <div class="grid grid-2">
+          <div class="card"><div class="metric">93.7M</div><div class="label">Weighted adults with at least some difficulty seeing even with glasses or contact lenses</div><p class="tiny" style="margin-top:12px">95% CI for prevalence, 34.6%-39.6%</p></div>
+          <div class="dark card"><div class="metric">9.4M</div><div class="label">Weighted adults with severe seeing difficulty</div><p class="tiny" style="margin-top:12px">95% CI for prevalence, 3.1%-4.4%</p></div>
+          <div class="card"><div class="metric">0.6M</div><div class="label">Weighted children and adolescents aged 5-17 years with severe seeing difficulty</div><p class="tiny" style="margin-top:12px">Prevalence, 1.1%; 95% CI, 0.8%-1.4%</p></div>
+          <div class="card"><div class="metric">21.1M</div><div class="label">Weighted adults aged 20-69 years with blurred vision with head movement</div><p class="tiny" style="margin-top:12px">Prevalence, 10.1%; 95% CI, 9.1%-11.2%</p></div>
+        </div>
+      </div>
+      <div class="note"><p class="source">Seeing difficulty: `FNQ410`; youth seeing difficulty: `FNQ021`; disability indicators: `FNDADI` and `FNDAEDI`; diabetes: `DIQ010`; blurred vision: `BAQ321B`. Historical NHANES visual-acuity analyses estimated a clinically measured visual-impairment burden of similar order but not identical construct.<a class="cite" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/FNQ_L.htm">2</a><a class="cite" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/BAQ_L.htm">3</a><a class="cite" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DIQ_L.htm">4</a><a class="cite" href="https://doi.org/10.1001/jama.295.18.2158">15</a></p></div>
+    </div>
+  </article>
+
+  <article class="slide slide-04">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" />
+    <div class="wrap">
+      <div class="topline"><div class="eyebrow">Age gradient</div><div class="page">04 / 12</div></div>
+      <h2>Severe seeing difficulty increased with age and was highest among adults aged 80 years or older</h2>
+      <div class="split split-tight" style="margin-top:24px">
+        <div class="card">
+          <h3>Severe seeing difficulty by age</h3>
+          <div class="bar-list">
+            <div class="bar-row"><div class="bar-label">18-39 years</div><div class="bar-track"><div class="bar blue" style="width:26%"></div></div><div class="bar-value">2.1%</div></div>
+            <div class="bar-row"><div class="bar-label">40-64 years</div><div class="bar-track"><div class="bar lime" style="width:54%"></div></div><div class="bar-value">4.4%</div></div>
+            <div class="bar-row"><div class="bar-label">65-79 years</div><div class="bar-track"><div class="bar orange" style="width:54%"></div></div><div class="bar-value">4.4%</div></div>
+            <div class="bar-row"><div class="bar-label">80 years or older</div><div class="bar-track"><div class="bar red" style="width:100%"></div></div><div class="bar-value">8.2%</div></div>
+          </div>
+        </div>
+        <div class="stack grid stack-tight">
+          <div class="dark card">
+            <h3>Contrast</h3>
+            <p style="margin-top:12px">The weighted prevalence of severe seeing difficulty was 8.23% among adults aged 80 years or older and 2.13% among adults aged 18-39 years, an absolute difference of 6.10 percentage points (95% CI, 3.79-8.42).</p>
+          </div>
+          <div class="card">
+            <h3>Interpretation</h3>
+            <p class="small" style="margin-top:12px">The age gradient is consistent with seeing difficulty as a population-level functional measure. A nationally representative NHATS study also found a high objective vision-impairment burden among US adults aged 71 years or older.<a class="cite" href="https://doi.org/10.1001/jamaophthalmol.2022.5840">16</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="note"><p class="source">Age estimates use adults with valid `FNQ410` responses and `WTINT2YR`. Adult age ≥80 is top-coded in NHANES 2021-August 2023; the weighted mean age for the top-coded group is documented by NCHS.<a class="cite" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DEMO_L.htm">6</a></p></div>
+    </div>
+  </article>
+
+  <article class="slide slide-05">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" />
+    <div class="wrap">
+      <div class="topline"><div class="eyebrow">Subgroups</div><div class="page">05 / 12</div></div>
+      <h2>Subgroup estimates suggest heterogeneity in severe seeing difficulty</h2>
+      <div class="split split-tight" style="margin-top:24px">
+        <div class="card">
+          <h3>Severe seeing difficulty by sex and race/ethnicity</h3>
+          <table>
+            <thead><tr><th>Group</th><th>Estimate</th><th>95% CI</th><th>n</th></tr></thead>
+            <tbody>
+              <tr><td>Female</td><td class="num">4.57%</td><td>3.76%-5.38%</td><td class="num">4,487</td></tr>
+              <tr><td>Male</td><td class="num">2.81%</td><td>2.16%-3.46%</td><td class="num">3,649</td></tr>
+              <tr><td>Other or multiracial</td><td class="num">5.77%</td><td>3.86%-7.69%</td><td class="num">543</td></tr>
+              <tr><td>Other Hispanic</td><td class="num">5.20%</td><td>3.27%-7.14%</td><td class="num">816</td></tr>
+              <tr><td>Non-Hispanic Black</td><td class="num">4.02%</td><td>2.68%-5.36%</td><td class="num">1,042</td></tr>
+              <tr><td>Non-Hispanic White</td><td class="num">3.42%</td><td>2.83%-4.01%</td><td class="num">4,696</td></tr>
+              <tr><td>Non-Hispanic Asian</td><td class="num">1.62%</td><td>0.39%-2.84%</td><td class="num">442</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="grid stack-tight">
+          <div class="dark card">
+            <h3>Sex contrast</h3>
+            <p style="margin-top:12px">Severe seeing difficulty was 4.57% among female adults and 2.81% among male adults, an absolute difference of 1.77 percentage points (95% CI, 1.05-2.49). Prior US survey studies similarly reported sociodemographic patterning in vision difficulty.<a class="cite" href="https://doi.org/10.1016/j.ajo.2023.06.015">8</a><a class="cite" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9634598/">9</a></p>
+          </div>
+          <div class="card">
+            <h3>Race/ethnicity interpretation</h3>
+            <p class="small" style="margin-top:12px">Race/ethnicity estimates are descriptive and should be interpreted with attention to sample size and confidence intervals. The current public dataset does not identify the underlying ophthalmic disease process for observed functional differences.</p>
+          </div>
+        </div>
+      </div>
+      <div class="note"><p class="source">Race/ethnicity categories use `RIDRETH3`; estimates use `FNQ410`, `WTINT2YR`, `SDMVSTRA`, and `SDMVPSU`.</p></div>
+    </div>
+  </article>
+
+  <article class="slide slide-06">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" />
+    <div class="wrap">
+      <div class="topline"><div class="eyebrow">Patient-reported outcomes</div><div class="page">06 / 12</div></div>
+      <h2>Adults with severe seeing difficulty had higher depression-screening burden</h2>
+      <div class="grid grid-3" style="margin-top:28px">
+        <div class="dark card"><div class="metric">32.0%</div><div class="label">PHQ-9 score ≥10 among adults with severe seeing difficulty</div><p class="tiny" style="margin-top:12px">95% CI, 25.5%-38.6%; n=211</p></div>
+        <div class="card"><div class="metric">12.0%</div><div class="label">PHQ-9 score ≥10 among adults without severe seeing difficulty</div><p class="tiny" style="margin-top:12px">95% CI, 10.4%-13.6%; n=5,238</p></div>
+        <div class="card"><div class="metric">+20.0</div><div class="label">Percentage-point difference in PHQ-9 ≥10 by severe seeing difficulty status</div><p class="tiny" style="margin-top:12px">95% CI, 13.1-27.0; prevalence ratio, 2.66</p></div>
+      </div>
+      <div class="grid grid-2" style="margin-top:28px">
+        <div class="card">
+          <h3>Functional-affect items showed similar direction</h3>
+          <p class="small" style="margin-top:12px">Daily depressed feelings with intensity reported as a lot were 14.94% with severe seeing difficulty and 3.82% without severe seeing difficulty. Daily worried, nervous, or anxious feelings with intensity reported as a lot were 26.06% and 6.40%, respectively.</p>
+        </div>
+        <div class="dark card">
+          <h3>Interpretation</h3>
+          <p style="margin-top:12px">These are cross-sectional associations between patient-reported seeing function and patient-reported mental-health outcomes. Published NHANES and NHIS studies have reported similar associations between self-reported vision impairment or visual function loss and depression or psychological distress.<a class="cite" href="https://pubmed.ncbi.nlm.nih.gov/23471505/">10</a><a class="cite" href="https://doi.org/10.1080/09286586.2021.1918177">11</a></p>
+        </div>
+      </div>
+      <div class="note"><p class="source">PHQ-9 score was calculated from `DPQ010`-`DPQ090`; estimates use `WTMEC2YR`. Functional affect items use `FNQ510`-`FNQ540` and `WTINT2YR`.<a class="cite" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DPQ_L.htm">5</a><a class="cite" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/FNQ_L.htm">2</a></p></div>
+    </div>
+  </article>
+
+  <article class="slide slide-07">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" />
+    <div class="wrap">
+      <div class="topline"><div class="eyebrow">Risk context</div><div class="page">07 / 12</div></div>
+      <h2>Diagnosed diabetes was more common among adults with severe seeing difficulty</h2>
+      <div class="split split-tight" style="margin-top:24px">
+        <div class="grid grid-2">
+          <div class="dark card"><div class="metric">25.0%</div><div class="label">Diagnosed diabetes among adults with severe seeing difficulty</div><p class="tiny" style="margin-top:12px">n=355</p></div>
+          <div class="card"><div class="metric">10.6%</div><div class="label">Diagnosed diabetes among adults without severe seeing difficulty</div><p class="tiny" style="margin-top:12px">n=7,507</p></div>
+          <div class="card"><div class="metric">+14.3</div><div class="label">Percentage-point difference in diagnosed diabetes</div><p class="tiny" style="margin-top:12px">95% CI, 8.5-20.1</p></div>
+          <div class="card"><div class="metric">2.35</div><div class="label">Prevalence ratio for diagnosed diabetes</div><p class="tiny" style="margin-top:12px">Severe seeing difficulty vs no severe seeing difficulty</p></div>
+        </div>
+        <div class="card">
+          <h3>Ophthalmology relevance</h3>
+          <p style="margin-top:12px">Diagnosed diabetes is a clinically relevant ophthalmology risk context. Earlier NHANES analyses found higher visual impairment among adults with diabetes and estimated diabetic retinopathy in 28.5% of adults aged 40 years or older with diabetes in 2005-2008; a 2021 multisource study estimated continuing US burden.<a class="cite" href="https://doi.org/10.1001/archopht.126.10.1421">17</a><a class="cite" href="https://doi.org/10.1001/jama.2010.1111">12</a><a class="cite" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10273133/">13</a></p>
+          <div class="bar-list" style="margin-top:24px">
+            <div class="bar-row compact"><div class="bar-label">With severe seeing difficulty</div><div class="bar-track"><div class="bar red" style="width:25%"></div></div><div class="bar-value">25.0%</div></div>
+            <div class="bar-row compact"><div class="bar-label">Without severe seeing difficulty</div><div class="bar-track"><div class="bar blue" style="width:10.6%"></div></div><div class="bar-value">10.6%</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="note"><p class="source">Diagnosed diabetes: `DIQ010`; severe seeing difficulty: `FNQ410` values 3 or 4. Estimates use `WTINT2YR` and NHANES masked variance strata and PSUs.<a class="cite" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DIQ_L.htm">4</a></p></div>
+    </div>
+  </article>
+
+  <article class="slide slide-08">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" />
+    <div class="wrap">
+      <div class="topline"><div class="eyebrow">Blurred vision symptom</div><div class="page">08 / 12</div></div>
+      <h2>Blurred vision with head movement showed sex and race/ethnicity differences</h2>
+      <div class="split split-tight" style="margin-top:24px">
+        <div class="card">
+          <h3>Prevalence by selected subgroups, age 20-69</h3>
+          <div class="bar-list">
+            <div class="bar-row"><div class="bar-label">Female</div><div class="bar-track"><div class="bar pink" style="width:50%"></div></div><div class="bar-value">12.6%</div></div>
+            <div class="bar-row"><div class="bar-label">Male</div><div class="bar-track"><div class="bar blue" style="width:30%"></div></div><div class="bar-value">7.6%</div></div>
+            <div class="bar-row"><div class="bar-label">Other Hispanic</div><div class="bar-track"><div class="bar red" style="width:71%"></div></div><div class="bar-value">17.8%</div></div>
+            <div class="bar-row"><div class="bar-label">Mexican American</div><div class="bar-track"><div class="bar orange" style="width:48%"></div></div><div class="bar-value">11.9%</div></div>
+            <div class="bar-row"><div class="bar-label">Non-Hispanic Black</div><div class="bar-track"><div class="bar lime" style="width:41%"></div></div><div class="bar-value">10.3%</div></div>
+            <div class="bar-row"><div class="bar-label">Non-Hispanic White</div><div class="bar-track"><div class="bar gray" style="width:33%"></div></div><div class="bar-value">8.4%</div></div>
+          </div>
+        </div>
+        <div class="grid stack-tight">
+          <div class="dark card">
+            <h3>Key contrasts</h3>
+            <p style="margin-top:12px">Blurred vision with head movement was 12.58% among female participants and 7.61% among male participants, an absolute difference of 4.96 percentage points. It was 17.79% among Other Hispanic participants and 8.37% among non-Hispanic White participants.</p>
+          </div>
+          <div class="card">
+            <h3>Measurement caveat</h3>
+            <p class="small" style="margin-top:12px">This item is embedded in the balance questionnaire and refers to blurring of vision when moving the head. Earlier national studies used related symptoms to characterize vestibular and balance disorders, so the item is best framed as a balance-context visual symptom.<a class="cite" href="https://doi.org/10.1001/archinternmed.2009.66">18</a><a class="cite" href="https://doi.org/10.1001/jamaoto.2013.3913">19</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="note"><p class="source">Blurred vision with head movement: `BAQ321B`; eligible participants were aged 20-69 years. Estimates use `WTINT2YR`.<a class="cite" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/BAQ_L.htm">3</a></p></div>
+    </div>
+  </article>
+
+  <article class="slide slide-09">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" />
+    <div class="wrap">
+      <div class="topline"><div class="eyebrow">Literature context</div><div class="page">09 / 12</div></div>
+      <h2>Published studies corroborate the direction of the current-cycle signals</h2>
+      <div class="grid grid-2" style="margin-top:28px">
+        <div class="card">
+          <h3>Vision difficulty and mental health</h3>
+          <p class="small" style="margin-top:12px">In NHANES 2005-2008, PHQ-9 depression was 11.3% among adults with self-reported visual function loss and 4.8% among those without; visual function loss remained associated with depression after adjustment.<a class="cite" href="https://pubmed.ncbi.nlm.nih.gov/23471505/">10</a></p>
+        </div>
+        <div class="card">
+          <h3>Self-reported impairment and distress</h3>
+          <p class="small" style="margin-top:12px">Using 2016-2017 NHIS data, a CDC-authored study found that adults with general vision impairment had higher adjusted odds of mild/moderate and serious psychological distress than adults without general vision impairment.<a class="cite" href="https://doi.org/10.1080/09286586.2021.1918177">11</a></p>
+        </div>
+        <div class="card">
+          <h3>Subgroup patterning</h3>
+          <p class="small" style="margin-top:12px">A 2021 NHIS analysis reported that self-reported vision difficulty was associated with multiple sociodemographic factors, including female sex in univariable analysis and non-Hispanic Black race in multivariable analysis.<a class="cite" href="https://doi.org/10.1016/j.ajo.2023.06.015">8</a></p>
+        </div>
+        <div class="card">
+          <h3>Severe visual impairment</h3>
+          <p class="small" style="margin-top:12px">A BRFSS analysis reported that 5.17% of respondents self-identified as blind or having serious difficulty seeing even with glasses, supporting that severe self-reported vision difficulty is a measurable US population-health construct.<a class="cite" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9634598/">9</a></p>
+        </div>
+        <div class="dark card">
+          <h3>Diabetes context</h3>
+          <p class="small" style="margin-top:12px">NHANES visual-acuity and retinal-image studies support diabetes as an ophthalmology-relevant risk context, even though the current public NHANES files do not measure diabetic retinopathy.<a class="cite" href="https://doi.org/10.1001/archopht.126.10.1421">17</a><a class="cite" href="https://doi.org/10.1001/jama.2010.1111">12</a><a class="cite" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10273133/">13</a></p>
+        </div>
+        <div class="card">
+          <h3>Interpretive use</h3>
+          <p class="small" style="margin-top:12px">The literature does not validate the current AI-generated analysis directly. It provides external consistency checks for the observed directions: vision difficulty co-occurs with mental-health burden, subgroup heterogeneity is expected, diabetes remains clinically relevant, and head-movement blurred vision has a balance-symptom literature.<a class="cite" href="https://doi.org/10.1001/jamaoto.2013.3913">19</a></p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="slide slide-10">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" />
+    <div class="wrap">
+      <div class="topline"><div class="eyebrow">Methods</div><div class="page">10 / 12</div></div>
+      <h2>Detailed methods for replication</h2>
+      <div class="method-grid">
+        <div class="card"><h3>Data files</h3><p class="small">Downloaded public CDC XPT files: `DEMO_L`, `FNQ_L`, `BAQ_L`, `DIQ_L`, and `DPQ_L`. Records were linked by `SEQN`.</p></div>
+        <div class="card"><h3>Population and denominators</h3><p class="small">Adult seeing difficulty and disability estimates used adults aged ≥18 years. Youth seeing difficulty used ages 5-17. Blurred vision with head movement used ages 20-69. PHQ-9 analyses used adults with public DPQ data.</p></div>
+        <div class="card"><h3>Outcome definitions</h3><p class="small">Adult severe seeing difficulty: `FNQ410` = 3 or 4. Some-or-more seeing difficulty: `FNQ410` = 2, 3, or 4. Youth severe seeing difficulty: `FNQ021` = 3 or 4. Blurred vision: `BAQ321B` = 1.</p></div>
+        <div class="card"><h3>Clinical context variables</h3><p class="small">Diagnosed diabetes: `DIQ010` = 1. PHQ-9 score was summed from `DPQ010`-`DPQ090` using values 0-3; PHQ-9 ≥10 was used as the moderate-or-greater depression-screening threshold.</p></div>
+        <div class="card"><h3>Survey design</h3><p class="small">Interview outcomes used `WTINT2YR`; PHQ-9 estimates used `WTMEC2YR`. Standard errors were Taylor-linearized over `SDMVSTRA` and `SDMVPSU`; 95% CIs used a normal 1.96 multiplier.<a class="cite" href="https://wwwn.cdc.gov/nchs/nhanes/AnalyticGuidelines.aspx">7</a></p></div>
+        <div class="card"><h3>Missing data and scope</h3><p class="small">Refused, do not know, missing, and invalid response values were excluded from each outcome-specific denominator. The analysis does not impute missing values and does not estimate disease prevalence for unavailable ophthalmology diagnoses.</p></div>
+      </div>
+      <div class="note"><p class="source">Replication scripts: `scripts/analyze_nhanes_current_eye_related.py` and `scripts/analyze_nhanes_2021_2023_deep_dive.py`. Output tables: `output/current_eye_related_estimates.csv`, `output/current_2021_2023_deep_dive_estimates.csv`, and `output/current_2021_2023_key_contrasts.csv`.</p></div>
+    </div>
+  </article>
+
+  <article class="slide slide-11">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" />
+    <div class="wrap">
+      <div class="topline"><div class="eyebrow">References 1-7</div><div class="page">11 / 12</div></div>
+      <h2>Data and methods references</h2>
+      <div class="refs">
+        <a class="ref" href="https://www.cdc.gov/vision-health-data/data-sources/national-health-nutrition-examination-survey.html"><div class="ref-num">1</div><p>CDC VEHSS. NHANES data source page. Used for vision and eye-health module years and limitations.</p></a>
+        <a class="ref" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/FNQ_L.htm"><div class="ref-num">2</div><p>CDC/NCHS. Functioning questionnaire, August 2021-August 2023. Used for seeing difficulty, affect-functioning items, and disability indicators.</p></a>
+        <a class="ref" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/BAQ_L.htm"><div class="ref-num">3</div><p>CDC/NCHS. Balance questionnaire, August 2021-August 2023. Used for blurred vision with head movement.</p></a>
+        <a class="ref" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DIQ_L.htm"><div class="ref-num">4</div><p>CDC/NCHS. Diabetes questionnaire, August 2021-August 2023. Used for diagnosed diabetes status.</p></a>
+        <a class="ref" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DPQ_L.htm"><div class="ref-num">5</div><p>CDC/NCHS. Depression screener, August 2021-August 2023. Used to derive PHQ-9 score and PHQ-9 ≥10.</p></a>
+        <a class="ref" href="https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DEMO_L.htm"><div class="ref-num">6</div><p>CDC/NCHS. Demographics file, August 2021-August 2023. Used for age, sex, race/ethnicity, weights, strata, and PSUs.</p></a>
+        <a class="ref" href="https://wwwn.cdc.gov/nchs/nhanes/AnalyticGuidelines.aspx"><div class="ref-num">7</div><p>CDC/NCHS. NHANES analytic guidelines. Used for sample weights and complex survey design handling.</p></a>
+      </div>
+    </div>
+  </article>
+
+  <article class="slide slide-12">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" />
+    <div class="wrap">
+      <div class="topline"><div class="eyebrow">References 8-19</div><div class="page">12 / 12</div></div>
+      <h2>Published literature references</h2>
+      <div class="refs">
+        <a class="ref" href="https://doi.org/10.1016/j.ajo.2023.06.015"><div class="ref-num">8</div><p>Moayad L, Zajner C, Popovic MM, et al. Association between sociodemographic factors and vision difficulty in the NHIS. Am J Ophthalmol. 2023.</p></a>
+        <a class="ref" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9634598/"><div class="ref-num">9</div><p>Varadaraj V, et al. Association of socioeconomic, demographic, and health care access disparities with severe visual impairment in the US. JAMA Ophthalmol. 2022.</p></a>
+        <a class="ref" href="https://pubmed.ncbi.nlm.nih.gov/23471505/"><div class="ref-num">10</div><p>Zhang X, Bullard KM, Cotch MF, et al. Depression and functional vision loss in US adults, NHANES 2005-2008. JAMA Ophthalmol. 2013.</p></a>
+        <a class="ref" href="https://doi.org/10.1080/09286586.2021.1918177"><div class="ref-num">11</div><p>Lundeen EA, Saydah S, Ehrlich JR, Saaddine J. Self-reported vision impairment and psychological distress in US adults. Ophthalmic Epidemiol. 2022.</p></a>
+        <a class="ref" href="https://doi.org/10.1001/jama.2010.1111"><div class="ref-num">12</div><p>Zhang X, Saaddine JB, Chou CF, et al. Prevalence of diabetic retinopathy in the United States, 2005-2008. JAMA. 2010.</p></a>
+        <a class="ref" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10273133/"><div class="ref-num">13</div><p>Lundeen EA, Burke-Conte Z, Rein DB, et al. Prevalence of diabetic retinopathy in the US in 2021. JAMA Ophthalmol. 2023.</p></a>
+        <a class="ref" href="https://doi.org/10.1016/j.ophtha.2020.06.064"><div class="ref-num">14</div><p>Rein DB, Lamuda PA, Wittenborn JS, et al. Vision impairment and blindness prevalence in the US: variability across national surveys. Ophthalmology. 2021.</p></a>
+        <a class="ref" href="https://doi.org/10.1001/jama.295.18.2158"><div class="ref-num">15</div><p>Vitale S, Cotch MF, Sperduto RD. Prevalence of visual impairment in the United States. JAMA. 2006.</p></a>
+        <a class="ref" href="https://doi.org/10.1001/jamaophthalmol.2022.5840"><div class="ref-num">16</div><p>Killeen OJ, De Lott LB, Zhou Y, et al. Population prevalence of vision impairment in US adults 71 years and older. JAMA Ophthalmol. 2023.</p></a>
+        <a class="ref" href="https://doi.org/10.1001/archopht.126.10.1421"><div class="ref-num">17</div><p>Zhang X, Gregg EW, Cheng YJ, et al. Diabetes mellitus and visual impairment: NHANES 1999-2004. Arch Ophthalmol. 2008.</p></a>
+        <a class="ref" href="https://doi.org/10.1001/archinternmed.2009.66"><div class="ref-num">18</div><p>Agrawal Y, Carey JP, Della Santina CC, Schubert MC, Minor LB. Disorders of balance and vestibular function in US adults: NHANES 2001-2004. Arch Intern Med. 2009.</p></a>
+        <a class="ref" href="https://doi.org/10.1001/jamaoto.2013.3913"><div class="ref-num">19</div><p>Ward BK, Agrawal Y, Hoffman HJ, Carey JP, Della Santina CC. Prevalence and impact of bilateral vestibular hypofunction: 2008 NHIS. JAMA Otolaryngol Head Neck Surg. 2013.</p></a>
+      </div>
+    </div>
+  </article>
+</body>
+</html>

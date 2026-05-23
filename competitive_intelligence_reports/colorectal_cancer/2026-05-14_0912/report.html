@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Colorectal Cancer competitive intelligence update</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--paper); color: var(--ink); }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .slide {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      padding: 36px 0 20px;
+      page-break-after: always;
+      background: var(--paper);
+    }
+
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      width: min(1360px, calc(100vw - 56px));
+      margin: 0 auto;
+      height: 100%;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      padding: 8px 12px;
+      border: 1.5px solid var(--line);
+      border-radius: 999px;
+      background: var(--lime);
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1;
+      text-transform: uppercase;
+      font-weight: 760;
+      letter-spacing: 0;
+      margin-bottom: 24px;
+    }
+
+    h1, h2, h3, p { margin: 0; }
+    h1 {
+      max-width: 1110px;
+      font-size: 82px;
+      line-height: .94;
+      font-weight: 560;
+      letter-spacing: 0;
+      margin-bottom: 22px;
+    }
+
+    h2 {
+      max-width: 1220px;
+      font-size: 52px;
+      line-height: 1;
+      font-weight: 560;
+      letter-spacing: 0;
+      margin-bottom: 22px;
+    }
+
+    h3 {
+      font-size: 28px;
+      line-height: 1.08;
+      font-weight: 650;
+      letter-spacing: 0;
+    }
+
+    .dek {
+      max-width: 1080px;
+      font-size: 28px;
+      line-height: 1.24;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .cite {
+      color: inherit;
+      text-decoration: none;
+      font-size: .58em;
+      vertical-align: super;
+      margin-left: 2px;
+      font-weight: 900;
+    }
+    .cite + .cite {
+      margin-left: 0;
+    }
+    .cite + .cite::before {
+      content: ",";
+    }
+
+    .grid { display: grid; gap: 18px; }
+    .two-col { grid-template-columns: 1fr 1fr; }
+    .three-col { grid-template-columns: repeat(3, 1fr); }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .summary-grid { grid-template-columns: 1.5fr .95fr; align-items: stretch; margin-top: 18px; }
+
+    .panel {
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 250, 240, .88);
+      box-shadow: var(--shadow);
+      padding: 24px 26px;
+    }
+
+    .panel.tight { padding: 20px 22px; }
+    .panel h3 { margin-bottom: 14px; }
+    .panel p, .panel li {
+      font-size: 20px;
+      line-height: 1.28;
+      color: var(--ink);
+    }
+
+    .dark {
+      background: #11130f;
+      color: var(--paper);
+      border-color: #11130f;
+    }
+    .dark h3, .dark p, .dark li { color: var(--paper); }
+
+    ul.clean {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 12px;
+    }
+    ul.clean li {
+      position: relative;
+      padding-left: 20px;
+    }
+    ul.clean li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .62em;
+      width: 8px;
+      height: 8px;
+      background: var(--lime);
+      border: 1.3px solid var(--line);
+      border-radius: 50%;
+    }
+
+    .metric-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .metric {
+      border: 1.5px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255, 250, 240, .85);
+      padding: 18px 18px 16px;
+      min-height: 145px;
+    }
+    .metric .value {
+      display: block;
+      font-size: 50px;
+      line-height: .95;
+      font-weight: 620;
+      margin-bottom: 12px;
+    }
+    .metric .label {
+      display: block;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.18;
+      font-weight: 560;
+    }
+    .num {
+      font-size: 50px;
+      line-height: .92;
+      font-weight: 850;
+      letter-spacing: 0;
+    }
+    .label {
+      margin-top: 12px;
+      font-size: 22px;
+      line-height: 1.12;
+      color: var(--muted);
+      font-weight: 560;
+    }
+
+    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 16px; }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      padding: 6px 9px;
+      border: 1.3px solid var(--line);
+      border-radius: 999px;
+      background: var(--gray);
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 760;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+    .tag.blue { background: var(--blue); }
+    .tag.orange { background: var(--orange); }
+    .tag.pink { background: var(--pink); }
+    .tag.lime { background: var(--lime); }
+
+    .source-card {
+      display: grid;
+      grid-template-rows: auto auto 1fr;
+      gap: 10px;
+      min-height: 286px;
+    }
+    .source-card p { font-size: 19px; }
+
+    .mini-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      overflow: hidden;
+      border: 1.5px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255, 250, 240, .9);
+      box-shadow: var(--shadow);
+    }
+    .mini-table th, .mini-table td {
+      border-bottom: 1.3px solid rgba(27,31,23,.32);
+      border-right: 1.3px solid rgba(27,31,23,.32);
+      padding: 13px 14px;
+      text-align: left;
+      vertical-align: top;
+      font-size: 16px;
+      line-height: 1.21;
+    }
+    .mini-table th {
+      background: #11130f;
+      color: var(--paper);
+      font-size: 15px;
+      line-height: 1.1;
+      font-weight: 760;
+      white-space: nowrap;
+    }
+    .mini-table td:last-child, .mini-table th:last-child { border-right: 0; }
+    .mini-table tr:last-child td { border-bottom: 0; }
+    .mini-table td strong { font-weight: 720; }
+
+    .table {
+      display: grid;
+      overflow: hidden;
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.88);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .row {
+      display: grid;
+      border-bottom: 1px solid var(--line);
+      min-height: 70px;
+    }
+    .row:last-child { border-bottom: 0; }
+    .row.refs { grid-template-columns: .34fr .95fr 1.05fr 1.75fr; min-height: 0; }
+    .cell {
+      padding: 16px;
+      border-right: 1px solid var(--line);
+      font-size: 22px;
+      line-height: 1.12;
+    }
+    .cell:last-child { border-right: 0; }
+    .head .cell {
+      background: #11130f;
+      color: var(--paper);
+      font-weight: 850;
+      text-transform: uppercase;
+      font-size: 18px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .row.refs .cell {
+      font-size: 18px;
+      line-height: 1.08;
+      padding: 11px 12px;
+    }
+    .row.refs.head .cell {
+      font-size: 18px;
+      line-height: 1;
+      padding: 11px 12px;
+      white-space: nowrap;
+    }
+    .row.refs .cell:first-child { text-align: center; font-weight: 780; }
+    .references-slide .eyebrow { margin-bottom: 18px; }
+    .references-slide h2 { font-size: 48px; margin-bottom: 14px; }
+
+    .refs th, .refs td {
+      font-size: 13px;
+      line-height: 1.16;
+      padding: 10px 10px;
+    }
+    .refs th { font-size: 12px; }
+    .refs th:first-child, .refs td:first-child {
+      width: 52px;
+      text-align: center;
+      font-weight: 780;
+    }
+    .refs td:nth-child(2) { width: 320px; }
+    .refs td:nth-child(3) { width: 285px; }
+
+    .callout {
+      margin-top: 18px;
+      padding: 24px 28px;
+      border-radius: var(--radius);
+      border: 1.5px solid var(--line);
+      background: #11130f;
+      color: var(--paper);
+      box-shadow: var(--shadow);
+    }
+    .callout p {
+      font-size: 25px;
+      line-height: 1.18;
+      color: var(--paper);
+    }
+    .callout h3 {
+      color: var(--paper);
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+    .callout li {
+      color: rgba(246,241,232,.9);
+    }
+    .summary-list {
+      margin: 12px 0 0;
+      padding-left: 22px;
+      display: grid;
+      gap: 8px;
+    }
+    .summary-list li {
+      font-size: 22px;
+      line-height: 1.12;
+    }
+
+    .slide-num {
+      position: absolute;
+      z-index: 2;
+      right: 34px;
+      bottom: 20px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1;
+      text-transform: uppercase;
+      font-weight: 760;
+      letter-spacing: 0;
+    }
+
+    .spacer-sm { height: 8px; }
+    .spacer-md { height: 16px; }
+
+    .cover h1 {
+      font-size: 78px;
+      margin-bottom: 18px;
+    }
+    .cover .dek {
+      font-size: 25px;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+    .cover .summary-grid {
+      margin-top: 8px;
+    }
+    .cover .panel {
+      padding: 20px 22px;
+    }
+    .cover .panel h3 {
+      margin-bottom: 10px;
+    }
+    .cover .panel li {
+      font-size: 18px;
+      line-height: 1.22;
+    }
+    .cover ul.clean {
+      gap: 9px;
+    }
+    .cover .metric {
+      min-height: 138px;
+      padding: 18px 16px 15px;
+    }
+    .cover .label,
+    .cover .metric .label {
+      font-size: 17px;
+      line-height: 1.12;
+    }
+    .cover .callout { margin-top: 22px; padding: 22px 26px; }
+    .cover .summary-list li { font-size: 22px; line-height: 1.12; }
+
+    @media print {
+      @page { size: 1600px 900px; margin: 0; }
+      html, body { width: 1600px; height: auto; background: var(--paper); }
+      .slide {
+        width: 1600px;
+        height: 900px;
+        min-height: 900px;
+      }
+      .wrap { width: 1360px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide cover">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Colorectal cancer | May 8-14, 2026</div>
+      <h1>Colorectal Cancer competitive intelligence update</h1>
+      <p class="dek">Primary sources published or first posted between May 8, 2026 and May 14, 2026 document late-line immunology and RAS-pathway company disclosures plus first-posted registry records across neoadjuvant, second-line metastatic, and total neoadjuvant rectal-cancer settings.</p>
+      <div class="grid-4" style="margin-top:24px;">
+        <div class="metric">
+          <div class="num">6</div>
+          <div class="label">primary sources in this update<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3292299/0/en/Coherus-Oncology-Reports-First-Quarter-2026-Financial-Results-and-Provides-Business-Update.html">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07581626">6</a></div>
+        </div>
+        <div class="metric">
+          <div class="num">4</div>
+          <div class="label">first-posted registry records<a class="cite" href="https://clinicaltrials.gov/study/NCT07581912">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07580339">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07585279">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07581626">6</a></div>
+        </div>
+        <div class="metric">
+          <div class="num">3</div>
+          <div class="label">neoadjuvant-oriented records or updates<a class="cite" href="https://clinicaltrials.gov/study/NCT07581912">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07580339">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07581626">6</a></div>
+        </div>
+        <div class="metric">
+          <div class="num">2</div>
+          <div class="label">company disclosures with colorectal-relevant development findings<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3292299/0/en/Coherus-Oncology-Reports-First-Quarter-2026-Financial-Results-and-Provides-Business-Update.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293527/0/en/bbot-reports-first-quarter-2026-financial-results-and-update-on-corporate-progress.html">2</a></div>
+        </div>
+      </div>
+      <div class="callout">
+        <h3>Executive summary</h3>
+        <ul class="summary-list">
+          <li>Coherus reported enrollment of a Phase 1b/2a tagmokitug/toripalimab study in 4L+ colorectal cancer with initial data expected in 2H 2026; BBOT reported BBO-10203 clinical benefit in colorectal cancer patients described as more than 80% third line or later.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3292299/0/en/Coherus-Oncology-Reports-First-Quarter-2026-Financial-Results-and-Provides-Business-Update.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293527/0/en/bbot-reports-first-quarter-2026-financial-results-and-update-on-corporate-progress.html">2</a></li>
+          <li>First-posted registry records during the reporting period document neoadjuvant-intent studies of fulzerasib plus cetuximab N01 for KRAS G12C-mutated locally advanced colorectal cancer and DCSZ11 with radiation plus CAPOX for pMMR high-risk locally advanced rectal cancer.<a class="cite" href="https://clinicaltrials.gov/study/NCT07581912">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07580339">4</a></li>
+          <li>Additional first-posted registry records document liposomal irinotecan-based second-line metastatic colorectal cancer evaluation and a short-course online adaptive radiotherapy total neoadjuvant regimen combining chemotherapy, targeted therapy, and sintilimab in locally advanced rectal cancer.<a class="cite" href="https://clinicaltrials.gov/study/NCT07585279">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07581626">6</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">01 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Colorectal cancer | May 8-14, 2026</div>
+      <h2>CCR8 and RAS-PI3K disclosures define late-line colorectal cancer readout cadence for 2026</h2>
+      <div class="grid two-col">
+        <section class="panel source-card">
+          <h3>Tagmokitug plus toripalimab</h3>
+          <div class="tag-row">
+            <span class="tag lime">CCR8</span>
+            <span class="tag blue">4L+ CRC</span>
+            <span class="tag orange">2H 2026 data</span>
+          </div>
+          <p>Coherus described tagmokitug as a selective cytolytic CCR8 antibody and reported that the tagmokitug/toripalimab Phase 1b/2a combination study in 4L+ colorectal cancer is enrolling, with initial data expected in 2H 2026.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3292299/0/en/Coherus-Oncology-Reports-First-Quarter-2026-Financial-Results-and-Provides-Business-Update.html">1</a></p>
+        </section>
+        <section class="panel source-card">
+          <h3>BBO-10203</h3>
+          <div class="tag-row">
+            <span class="tag lime">RAS-PI3Kα</span>
+            <span class="tag blue">CRC & HR+ BC</span>
+            <span class="tag orange">2H 2026 update</span>
+          </div>
+          <p>BBOT described BBO-10203 as an orally bioavailable molecule designed to block the RAS-PI3Kα interaction and reported clinical benefit in colorectal cancer patients described as more than 80% third line or later, with tumor reductions observed in some patients.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293527/0/en/bbot-reports-first-quarter-2026-financial-results-and-update-on-corporate-progress.html">2</a></p>
+        </section>
+      </div>
+      <div class="callout">
+        <p>The cited disclosures identify one immunology combination and one RAS-pathway program with colorectal-relevant clinical data timing in 2H 2026. BBOT's mixed-tumor disclosure is cited only for the colorectal cancer population explicitly named in the source.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3292299/0/en/Coherus-Oncology-Reports-First-Quarter-2026-Financial-Results-and-Provides-Business-Update.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293527/0/en/bbot-reports-first-quarter-2026-financial-results-and-update-on-corporate-progress.html">2</a></p>
+      </div>
+    </div>
+    <div class="slide-num">02 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Colorectal cancer | May 8-14, 2026</div>
+      <h2>First-posted neoadjuvant registry records describe KRAS G12C colorectal cancer and pMMR rectal cancer studies</h2>
+      <table class="mini-table">
+        <thead>
+          <tr>
+            <th>Record</th>
+            <th>Population and setting</th>
+            <th>Intervention</th>
+            <th>Status and design facts</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>NCT07581912</strong><br />FALCO</td>
+            <td>KRAS G12C-mutated locally advanced colorectal cancer with or without resectable metastases; the methods text specifies pMMR/MSS and NRAS/BRAF wild-type eligibility.<a class="cite" href="https://clinicaltrials.gov/study/NCT07581912">3</a></td>
+            <td>Neoadjuvant fulzerasib plus cetuximab N01 for two months before radical surgery or watchful waiting in complete clinical responders.<a class="cite" href="https://clinicaltrials.gov/study/NCT07581912">3</a></td>
+            <td>First posted May 12, 2026; recruiting; single-arm multicenter Phase 2 with estimated enrollment of 40.<a class="cite" href="https://clinicaltrials.gov/study/NCT07581912">3</a></td>
+          </tr>
+          <tr>
+            <td><strong>NCT07580339</strong><br />Johns Hopkins</td>
+            <td>High-risk mismatch repair proficient locally advanced rectal cancer; the record lists rectal cancer as the condition.<a class="cite" href="https://clinicaltrials.gov/study/NCT07580339">4</a></td>
+            <td>DCSZ11 with short-course radiation and capecitabine/oxaliplatin as part of total neoadjuvant treatment.<a class="cite" href="https://clinicaltrials.gov/study/NCT07580339">4</a></td>
+            <td>First posted May 12, 2026; not yet recruiting; Phase 2 with estimated enrollment of 30.<a class="cite" href="https://clinicaltrials.gov/study/NCT07580339">4</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="callout">
+        <p>The neoadjuvant registry set spans biomarker-defined colorectal cancer and pMMR rectal cancer: NCT07581912 evaluates KRAS G12C inhibition with EGFR targeting, and NCT07580339 evaluates CD93 inhibition within radiation and CAPOX-based TNT.<a class="cite" href="https://clinicaltrials.gov/study/NCT07581912">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07580339">4</a></p>
+      </div>
+    </div>
+    <div class="slide-num">03 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Colorectal cancer | May 8-14, 2026</div>
+      <h2>First-posted second-line metastatic and adaptive TNT records describe regimen-level evaluation</h2>
+      <div class="grid two-col">
+        <section class="panel source-card">
+          <h3>Liposomal irinotecan in second-line mCRC</h3>
+          <div class="tag-row">
+            <span class="tag lime">Phase 2/3</span>
+            <span class="tag blue">Second line</span>
+            <span class="tag orange">408 estimated enrollment</span>
+          </div>
+          <p>NCT07585279 was first posted on May 13, 2026 and lists a randomized Phase II/III study comparing liposomal irinotecan combination regimens versus irinotecan combination regimens in second-line metastatic colorectal cancer.<a class="cite" href="https://clinicaltrials.gov/study/NCT07585279">5</a></p>
+        </section>
+        <section class="panel source-card">
+          <h3>Adaptive short-course TNT in LARC</h3>
+          <div class="tag-row">
+            <span class="tag lime">Phase 2</span>
+            <span class="tag blue">pMMR/MSS LARC</span>
+            <span class="tag orange">60 estimated enrollment</span>
+          </div>
+          <p>NCT07581626 was first posted on May 12, 2026 and lists a Phase 2 locally advanced rectal cancer regimen comprising short-course radiotherapy, chemotherapy, cetuximab for wild-type RAS/BRAF or bevacizumab for mutant RAS/BRAF, and sintilimab.<a class="cite" href="https://clinicaltrials.gov/study/NCT07581626">6</a></p>
+        </section>
+      </div>
+      <div class="callout">
+        <p>The metastatic record evaluates comparative chemotherapy backbones with liposomal irinotecan, while the rectal-cancer TNT record combines radiation, chemotherapy, biomarker-directed targeted therapy, and PD-1 blockade within one investigational regimen.<a class="cite" href="https://clinicaltrials.gov/study/NCT07585279">5</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07581626">6</a></p>
+      </div>
+    </div>
+    <div class="slide-num">04 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Colorectal cancer | May 8-14, 2026</div>
+      <h2>Competitive landscape map distinguishes late-line immunology, RAS signaling, and neoadjuvant modality development</h2>
+      <table class="mini-table">
+        <thead>
+          <tr>
+            <th>Segment</th>
+            <th>Cited update</th>
+            <th>Visible design or status fact</th>
+            <th>Documented competitive intelligence finding</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Late-line immunology</td>
+            <td>Tagmokitug/toripalimab in 4L+ colorectal cancer<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3292299/0/en/Coherus-Oncology-Reports-First-Quarter-2026-Financial-Results-and-Provides-Business-Update.html">1</a></td>
+            <td>Enrolling Phase 1b/2a combination with initial data expected in 2H 2026<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3292299/0/en/Coherus-Oncology-Reports-First-Quarter-2026-Financial-Results-and-Provides-Business-Update.html">1</a></td>
+            <td>CCR8 Treg-depleting antibody combination is identified as a late-line colorectal cancer development program<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3292299/0/en/Coherus-Oncology-Reports-First-Quarter-2026-Financial-Results-and-Provides-Business-Update.html">1</a></td>
+          </tr>
+          <tr>
+            <td>RAS pathway</td>
+            <td>BBO-10203 clinical benefit observed in CRC patients described as more than 80% third line or later<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293527/0/en/bbot-reports-first-quarter-2026-financial-results-and-update-on-corporate-progress.html">2</a></td>
+            <td>Program update includes full target engagement and no hyperglycemia in patients without baseline HbA1c or glucose restrictions<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293527/0/en/bbot-reports-first-quarter-2026-financial-results-and-update-on-corporate-progress.html">2</a></td>
+            <td>RAS-PI3Kα interaction blockade is identified as a colorectal-relevant RAS-pathway approach<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293527/0/en/bbot-reports-first-quarter-2026-financial-results-and-update-on-corporate-progress.html">2</a></td>
+          </tr>
+          <tr>
+            <td>KRAS G12C neoadjuvant</td>
+            <td>Fulzerasib plus cetuximab N01 in KRAS G12C-mutated locally advanced colorectal cancer<a class="cite" href="https://clinicaltrials.gov/study/NCT07581912">3</a></td>
+            <td>Recruiting Phase 2, single-arm multicenter, estimated enrollment 40<a class="cite" href="https://clinicaltrials.gov/study/NCT07581912">3</a></td>
+            <td>KRAS G12C inhibitor plus anti-EGFR regimen is under evaluation in neoadjuvant colorectal cancer<a class="cite" href="https://clinicaltrials.gov/study/NCT07581912">3</a></td>
+          </tr>
+          <tr>
+            <td>pMMR rectal TNT</td>
+            <td>DCSZ11 with radiation and CAPOX in high-risk pMMR locally advanced rectal cancer<a class="cite" href="https://clinicaltrials.gov/study/NCT07580339">4</a></td>
+            <td>Not yet recruiting Phase 2, estimated enrollment 30<a class="cite" href="https://clinicaltrials.gov/study/NCT07580339">4</a></td>
+            <td>CD93 inhibition is under evaluation within a radiation and chemotherapy neoadjuvant rectal-cancer regimen<a class="cite" href="https://clinicaltrials.gov/study/NCT07580339">4</a></td>
+          </tr>
+          <tr>
+            <td>Second-line mCRC</td>
+            <td>Liposomal irinotecan-based regimen versus irinotecan-based regimen<a class="cite" href="https://clinicaltrials.gov/study/NCT07585279">5</a></td>
+            <td>Not yet recruiting Phase 2/3, estimated enrollment 408<a class="cite" href="https://clinicaltrials.gov/study/NCT07585279">5</a></td>
+            <td>Comparative irinotecan-backbone regimen selection and confirmation are documented in one record<a class="cite" href="https://clinicaltrials.gov/study/NCT07585279">5</a></td>
+          </tr>
+          <tr>
+            <td>Adaptive rectal TNT</td>
+            <td>Short-course online adaptive radiotherapy with chemotherapy, targeted therapy, and immunotherapy<a class="cite" href="https://clinicaltrials.gov/study/NCT07581626">6</a></td>
+            <td>Not yet recruiting Phase 2, estimated enrollment 60<a class="cite" href="https://clinicaltrials.gov/study/NCT07581626">6</a></td>
+            <td>Online adaptive radiotherapy is combined with RAS/BRAF-directed targeted therapy selection and sintilimab<a class="cite" href="https://clinicaltrials.gov/study/NCT07581626">6</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="slide-num">05 / 06</div>
+  </article>
+
+  <article class="slide references-slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">References 1-6</div>
+      <h2>References</h2>
+      <div class="table">
+        <div class="row refs head">
+          <div class="cell">Ref</div>
+          <div class="cell">Source</div>
+          <div class="cell">Date / Status / Source Owner</div>
+          <div class="cell">Evidence Used in Report</div>
+        </div>
+        <div class="row refs">
+          <div class="cell">1</div>
+          <div class="cell"><a href="https://www.globenewswire.com/news-release/2026/05/11/3292299/0/en/Coherus-Oncology-Reports-First-Quarter-2026-Financial-Results-and-Provides-Business-Update.html">Coherus Oncology first-quarter 2026 business update</a></div>
+          <div class="cell">May 11, 2026 16:05 ET / company release / Coherus Oncology, Inc.</div>
+          <div class="cell">Tagmokitug described as a selective cytolytic CCR8 antibody; Phase 1b/2a tagmokitug/toripalimab in 4L+ colorectal cancer is enrolling with initial data expected in 2H 2026</div>
+        </div>
+        <div class="row refs">
+          <div class="cell">2</div>
+          <div class="cell"><a href="https://www.globenewswire.com/news-release/2026/05/12/3293527/0/en/bbot-reports-first-quarter-2026-financial-results-and-update-on-corporate-progress.html">BBOT first-quarter 2026 business update</a></div>
+          <div class="cell">May 12, 2026 17:03 ET / company release / TheRas, Inc. d/b/a BBOT</div>
+          <div class="cell">BBO-10203 RAS-PI3Kα mechanism; clinical benefit observed in colorectal cancer patients described as more than 80% third line or later, with tumor reductions in some patients</div>
+        </div>
+        <div class="row refs">
+          <div class="cell">3</div>
+          <div class="cell"><a href="https://clinicaltrials.gov/study/NCT07581912">ClinicalTrials.gov NCT07581912</a></div>
+          <div class="cell">First posted May 12, 2026 / recruiting / Zhejiang University</div>
+          <div class="cell">Phase 2 FALCO record for neoadjuvant fulzerasib plus cetuximab N01 in KRAS G12C-mutated locally advanced colorectal cancer with or without resectable metastases</div>
+        </div>
+        <div class="row refs">
+          <div class="cell">4</div>
+          <div class="cell"><a href="https://clinicaltrials.gov/study/NCT07580339">ClinicalTrials.gov NCT07580339</a></div>
+          <div class="cell">First posted May 12, 2026 / not yet recruiting / Johns Hopkins</div>
+          <div class="cell">Phase 2 DCSZ11 with radiation and capecitabine/oxaliplatin as neoadjuvant treatment for pMMR high-risk locally advanced rectal cancer</div>
+        </div>
+        <div class="row refs">
+          <div class="cell">5</div>
+          <div class="cell"><a href="https://clinicaltrials.gov/study/NCT07585279">ClinicalTrials.gov NCT07585279</a></div>
+          <div class="cell">First posted May 13, 2026 / not yet recruiting / Hebei Medical University Fourth Hospital</div>
+          <div class="cell">Randomized Phase II/III liposomal irinotecan-based regimen versus irinotecan-based regimen in second-line metastatic colorectal cancer</div>
+        </div>
+        <div class="row refs">
+          <div class="cell">6</div>
+          <div class="cell"><a href="https://clinicaltrials.gov/study/NCT07581626">ClinicalTrials.gov NCT07581626</a></div>
+          <div class="cell">First posted May 12, 2026 / not yet recruiting / Chinese PLA General Hospital</div>
+          <div class="cell">Phase 2 short-course online adaptive radiotherapy with chemotherapy, targeted therapy, and immunotherapy as TNT for locally advanced rectal cancer</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">06 / 06</div>
+  </article>
+</body>
+</html>

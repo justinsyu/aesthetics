@@ -1,0 +1,870 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI cost effectiveness model validation</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+
+    @page {
+      size: 1600px 900px;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      scrollbar-width: none;
+    }
+
+    body::-webkit-scrollbar {
+      display: none;
+    }
+
+    .slide {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      page-break-after: always;
+      background: var(--paper);
+    }
+
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .slide > *:not(.slide-bg-img) {
+      position: relative;
+      z-index: 1;
+    }
+
+    .wrap {
+      width: 1360px;
+      height: 900px;
+      margin: 0 auto;
+      padding: 48px 0 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      min-height: 34px;
+      padding: 8px 16px 7px;
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      background: var(--lime);
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .page {
+      font-size: 13px;
+      font-weight: 800;
+      color: rgba(16, 18, 15, 0.54);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      max-width: 1120px;
+      font-size: 84px;
+      line-height: 0.92;
+      font-weight: 560;
+      letter-spacing: -0.035em;
+    }
+
+    h2 {
+      max-width: 1110px;
+      font-size: 61px;
+      line-height: 0.96;
+      font-weight: 560;
+      letter-spacing: -0.03em;
+    }
+
+    h3 {
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 860;
+      letter-spacing: -0.015em;
+    }
+
+    .lead {
+      max-width: 910px;
+      color: var(--muted);
+      font-size: 25px;
+      line-height: 1.22;
+      font-weight: 560;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.35;
+      font-weight: 560;
+    }
+
+    .title-grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 26px;
+    }
+
+    .hero-proof {
+      border: 2px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      min-height: 0;
+    }
+
+    .proof-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 22px;
+      border-bottom: 2px solid var(--line);
+      background: var(--ink);
+      color: var(--paper);
+      font-weight: 850;
+    }
+
+    .proof-head span:last-child {
+      color: rgba(246, 241, 232, 0.68);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .shot {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .shot.contain {
+      object-fit: contain;
+      background: #f5f5f2;
+    }
+
+    .metric-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .metric {
+      min-height: 148px;
+      border: 2px solid var(--line);
+      border-radius: 22px;
+      padding: 22px;
+      background: var(--card);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .metric b {
+      font-size: 38px;
+      line-height: 0.94;
+      letter-spacing: -0.035em;
+    }
+
+    .metric p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.28;
+      font-weight: 600;
+    }
+
+    .map-grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 26px;
+      min-height: 0;
+    }
+
+    .panel {
+      border: 2px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      min-height: 0;
+    }
+
+    .panel.pad {
+      padding: 26px;
+    }
+
+    .dark {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .dark .small,
+    .dark p {
+      color: rgba(246, 241, 232, 0.74);
+    }
+
+    .validation-lanes {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      height: 100%;
+    }
+
+    .lane {
+      border: 2px solid var(--line);
+      border-radius: 20px;
+      background: var(--paper);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      min-height: 0;
+    }
+
+    .lane:nth-child(2) {
+      background: var(--blue);
+    }
+
+    .lane:nth-child(3) {
+      background: var(--orange);
+    }
+
+    .lane:nth-child(4) {
+      background: var(--pink);
+    }
+
+    .lane h3 {
+      font-size: 22px;
+    }
+
+    .lane ul,
+    .prompt-card ul,
+    .checklist {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .lane li,
+    .prompt-card li,
+    .checklist li {
+      position: relative;
+      padding-left: 19px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.28;
+      font-weight: 650;
+    }
+
+    .lane li::before,
+    .prompt-card li::before,
+    .checklist li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.58em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--ink);
+    }
+
+    .workflow-grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 26px;
+      min-height: 0;
+    }
+
+    .workflow-shot {
+      border: 2px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: #f5f5f2;
+      min-height: 0;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      height: 100%;
+    }
+
+    .step {
+      flex: 1;
+      border: 2px solid var(--line);
+      border-radius: 20px;
+      padding: 19px;
+      background: var(--card);
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .step-num {
+      width: 42px;
+      height: 42px;
+      border: 2px solid var(--line);
+      border-radius: 50%;
+      background: var(--lime);
+      display: grid;
+      place-items: center;
+      font-weight: 950;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.3;
+      font-weight: 600;
+      margin-top: 7px;
+    }
+
+    .prompt-grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 24px;
+      min-height: 0;
+    }
+
+    .prompt-stack {
+      display: grid;
+      gap: 15px;
+      grid-template-rows: repeat(3, 1fr);
+      min-height: 0;
+    }
+
+    .prompt-card {
+      border: 2px solid var(--line);
+      border-radius: 20px;
+      padding: 20px;
+      background: var(--card);
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+      min-height: 0;
+    }
+
+    .prompt-card.accent-blue {
+      background: var(--blue);
+    }
+
+    .prompt-card.accent-orange {
+      background: var(--orange);
+    }
+
+    .prompt-card.accent-pink {
+      background: var(--pink);
+    }
+
+    .prompt-card h3 {
+      font-size: 22px;
+    }
+
+    .prompt-box {
+      border: 2px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--ink);
+      color: var(--paper);
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      min-height: 0;
+    }
+
+    .prompt {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 20px;
+      line-height: 1.36;
+      color: #fffaf0;
+    }
+
+    .prompt mark {
+      background: var(--lime);
+      color: var(--ink);
+      padding: 1px 5px 2px;
+      border-radius: 6px;
+    }
+
+    .two-up {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      min-height: 0;
+    }
+
+    .audit-grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 0.94fr 1.06fr;
+      gap: 24px;
+      min-height: 0;
+    }
+
+    .signoff {
+      display: grid;
+      gap: 16px;
+      grid-template-rows: auto 1fr;
+      min-height: 0;
+    }
+
+    .status {
+      border: 2px solid var(--line);
+      border-radius: 22px;
+      padding: 24px;
+      background: var(--lime);
+    }
+
+    .status strong {
+      display: block;
+      font-size: 37px;
+      line-height: 0.98;
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 13px;
+    }
+
+    .checklist li {
+      padding-left: 25px;
+      font-size: 18px;
+      color: rgba(246, 241, 232, 0.78);
+    }
+
+    .checklist li::before {
+      top: 0.42em;
+      width: 12px;
+      height: 12px;
+      background: var(--lime);
+    }
+
+    .foot {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      border-top: 2px solid rgba(16, 18, 15, 0.16);
+      padding-top: 14px;
+      color: rgba(16, 18, 15, 0.56);
+      font-size: 12px;
+      font-weight: 760;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    @media print {
+      html,
+      body {
+        width: 1600px;
+        height: auto;
+      }
+
+      .slide {
+        width: 1600px;
+        height: 900px;
+        min-height: 900px;
+        box-shadow: none;
+      }
+
+      .panel,
+      .metric,
+      .hero-proof,
+      .workflow-shot {
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true">
+    <main class="wrap">
+      <div class="topline">
+        <span class="eyebrow">AI model validation</span>
+        <span class="page">01 / 07</span>
+      </div>
+      <section class="title-grid">
+        <div class="hero-copy">
+          <div>
+            <h1>Using AI to evaluate a cost effectiveness model</h1>
+            <p class="lead" style="margin-top: 26px">A practical validation workflow for an Excel health economic model: map the workbook, audit formulas, isolate defects, and keep the human decision loop intact.</p>
+          </div>
+          <div class="metric-row">
+            <div class="metric">
+              <b>Read only</b>
+              <p>Claude reviewed the workbook in Chrome through the Excel add-in and generated findings rather than editing the model.</p>
+            </div>
+            <div class="metric">
+              <b>Whole model</b>
+              <p>The audit scope moved beyond a selected cell to workbook-level formula and output validation.</p>
+            </div>
+            <div class="metric">
+              <b>Signoff led</b>
+              <p>Formula changes were held for analyst confirmation where the intended anchor could not be known with certainty.</p>
+            </div>
+          </div>
+        </div>
+        <aside class="hero-proof">
+          <div class="proof-head">
+            <span>Starting point in Chrome and Claude</span>
+            <span>Excel web workbook</span>
+          </div>
+          <img class="shot" src="screenshots/00-claude-addin-ready.png" alt="Excel workbook in Chrome with the Claude add-in ready">
+        </aside>
+      </section>
+      <div class="foot">
+        <span>Workbook validation report only</span>
+        <span>No direct formula changes</span>
+      </div>
+    </main>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true">
+    <main class="wrap">
+      <div class="topline">
+        <span class="eyebrow">Validation map</span>
+        <span class="page">02 / 07</span>
+      </div>
+      <h2>Turn an opaque workbook into a bounded review surface</h2>
+      <section class="map-grid">
+        <div class="panel pad">
+          <div class="validation-lanes">
+            <div class="lane">
+              <h3>Workbook structure</h3>
+              <ul>
+                <li>Identify input, calculation, DSA, PSA, and summary sheets</li>
+                <li>Map named ranges, protected tabs, and key output cells</li>
+                <li>Separate editable assumptions from generated results</li>
+              </ul>
+            </div>
+            <div class="lane">
+              <h3>Formula integrity</h3>
+              <ul>
+                <li>Scan for broken references, deleted anchors, and hardcodes</li>
+                <li>Trace dependent output cells back to assumptions</li>
+                <li>Compare repeated formulas across row and column blocks</li>
+              </ul>
+            </div>
+            <div class="lane">
+              <h3>Model behavior</h3>
+              <ul>
+                <li>Stress test boundary values and unlikely combinations</li>
+                <li>Check monotonicity for cost, utility, and risk drivers</li>
+                <li>Validate deterministic and probabilistic result coherence</li>
+              </ul>
+            </div>
+            <div class="lane">
+              <h3>Audit trail</h3>
+              <ul>
+                <li>Classify findings by severity, evidence, and reproducibility</li>
+                <li>Record questions that require human model owner judgment</li>
+                <li>Keep recommendations separate from implemented fixes</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="panel" style="display: grid; grid-template-rows: auto 1fr">
+          <div class="proof-head">
+            <span>Claude context capture</span>
+            <span>Selected cell E19</span>
+          </div>
+          <img class="shot" src="screenshots/01-validation-map-complete.png" alt="Claude add-in showing selected E19 in the Excel workbook">
+        </div>
+      </section>
+      <div class="foot">
+        <span>The map decides what AI can verify directly</span>
+        <span>Human review owns interpretation</span>
+      </div>
+    </main>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true">
+    <main class="wrap">
+      <div class="topline">
+        <span class="eyebrow">Actual workflow</span>
+        <span class="page">03 / 07</span>
+      </div>
+      <h2>Claude asked for scope before auditing the workbook</h2>
+      <section class="workflow-grid">
+        <div class="workflow-shot">
+          <img class="shot" src="screenshots/01-audit-xls-response.png" alt="Claude asking what scope to audit in the Excel workbook">
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div>
+              <h3>Open workbook in Chrome</h3>
+              <p>The Excel web workbook was loaded with the Claude side panel visible, giving the AI model workbook context plus the active cell state.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div>
+              <h3>Request an XLS audit</h3>
+              <p>Claude offered scope choices: selected cell, current sheet, whole model, or a custom area. Whole-model scope was chosen for validation.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div>
+              <h3>Keep a report-only boundary</h3>
+              <p>When Claude later asked whether to fix formulas, the workbook was not changed. The deliverable stayed a validation report and signoff queue.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="foot">
+        <span>Chrome supplied the workbook surface</span>
+        <span>Claude supplied audit prompts and findings</span>
+      </div>
+    </main>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true">
+    <main class="wrap">
+      <div class="topline">
+        <span class="eyebrow">Prompt playbook</span>
+        <span class="page">04 / 07</span>
+      </div>
+      <h2>Accuracy validation starts with explicit invariants</h2>
+      <section class="prompt-grid">
+        <div class="prompt-stack">
+          <div class="prompt-card accent-blue">
+            <h3>Recalculate targets</h3>
+            <ul>
+              <li>Ask for independent recomputation of headline costs, QALYs, ICERs, and net monetary benefit</li>
+              <li>Require a source cell and dependency path for every number cited</li>
+            </ul>
+          </div>
+          <div class="prompt-card">
+            <h3>Check formula families</h3>
+            <ul>
+              <li>Compare adjacent formulas across model blocks</li>
+              <li>Flag formulas that break row, column, or scenario patterns</li>
+            </ul>
+          </div>
+          <div class="prompt-card accent-pink">
+            <h3>Verify assumptions</h3>
+            <ul>
+              <li>Separate clinical inputs, utilities, costs, discounting, and cycle logic</li>
+              <li>List assumptions that are missing units or provenance</li>
+            </ul>
+          </div>
+        </div>
+        <div class="prompt-box">
+          <h3>Reusable prompt</h3>
+          <p class="prompt">Audit this cost effectiveness workbook for <mark>calculation accuracy</mark>. First map the sheets and key outputs. Then independently recompute the base-case ICER and probabilistic summary from source inputs where possible. For every discrepancy, return the cell, formula, expected behavior, observed behavior, and whether it is confirmed or requires human interpretation.</p>
+          <p class="small">Why it works: the prompt asks the AI to show provenance and separate confirmed arithmetic issues from judgment calls. That makes the output reviewable instead of merely plausible.</p>
+        </div>
+      </section>
+      <div class="foot">
+        <span>Accuracy checks need traceable evidence</span>
+        <span>Do not accept uncited numeric conclusions</span>
+      </div>
+    </main>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true">
+    <main class="wrap">
+      <div class="topline">
+        <span class="eyebrow">Prompt playbook</span>
+        <span class="page">05 / 07</span>
+      </div>
+      <h2>Edge cases test whether the model behaves clinically</h2>
+      <section class="two-up">
+        <div class="prompt-box">
+          <h3>Reusable prompt</h3>
+          <p class="prompt">Stress test the model with <mark>edge-case assumptions</mark> without editing the workbook. Propose boundary scenarios for treatment cost, comparator cost, discontinuation, mortality, adverse events, utilities, and discount rates. For each scenario, state the expected direction of change and the output cells that should move.</p>
+          <p class="small">The goal is not to invent clinical evidence. The goal is to verify that model mechanics respond in the direction a health economist would expect.</p>
+        </div>
+        <div class="panel pad">
+          <div class="validation-lanes" style="grid-template-columns: 1fr; grid-template-rows: repeat(4, 1fr)">
+            <div class="lane" style="background: var(--card)">
+              <h3>Dominance and extended dominance</h3>
+              <ul>
+                <li>Check whether rankings change plausibly as incremental costs and effects cross zero</li>
+              </ul>
+            </div>
+            <div class="lane">
+              <h3>Zero and extreme costs</h3>
+              <ul>
+                <li>Confirm cost drivers never create impossible negative totals unless explicitly modeled</li>
+              </ul>
+            </div>
+            <div class="lane">
+              <h3>Utility bounds</h3>
+              <ul>
+                <li>Verify utilities remain interpretable and QALYs stay consistent with cycle length</li>
+              </ul>
+            </div>
+            <div class="lane">
+              <h3>PSA stability</h3>
+              <ul>
+                <li>Check whether simulation outputs collapse to errors, blanks, or nonrandom duplicates</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="foot">
+        <span>Boundary tests expose silent spreadsheet logic failures</span>
+        <span>Clinical plausibility remains a human review step</span>
+      </div>
+    </main>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true">
+    <main class="wrap">
+      <div class="topline">
+        <span class="eyebrow">Prompt playbook</span>
+        <span class="page">06 / 07</span>
+      </div>
+      <h2>Error triage turns AI output into a worklist</h2>
+      <section class="workflow-grid">
+        <div class="workflow-shot">
+          <img class="shot" src="screenshots/02-findings-report-response.png" alt="Claude findings report identifying formula issues and asking before fixing formulas">
+        </div>
+        <div class="prompt-box">
+          <h3>Reusable prompt</h3>
+          <p class="prompt">Convert the audit findings into a <mark>triage table</mark> with severity, affected outputs, reproducibility, root-cause hypothesis, confidence, and recommended next action. Separate confirmed formula errors from missing source data, clinical assumptions, and fixes that require model owner approval.</p>
+          <p class="small">In the observed workflow, Claude identified real workbook defects, including deleted anchor cells affecting DSA formulas and a downstream PSA issue. It also asked whether to fix formulas, which is where the validation-only boundary matters.</p>
+        </div>
+      </section>
+      <div class="foot">
+        <span>Findings become decisions only after ownership is assigned</span>
+        <span>Report first, modify later</span>
+      </div>
+    </main>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true">
+    <main class="wrap">
+      <div class="topline">
+        <span class="eyebrow">Audit trail</span>
+        <span class="page">07 / 07</span>
+      </div>
+      <h2>Human signoff is the control point</h2>
+      <section class="audit-grid">
+        <div class="signoff">
+          <div class="status">
+            <strong>Workbook not changed</strong>
+            <p class="small" style="color: rgba(16, 18, 15, 0.78)">Claude asked whether to fix the formulas, but the workflow intentionally stopped at validation. The report preserves the evidence trail and requires the model owner to approve any formula edit.</p>
+          </div>
+          <div class="panel dark pad">
+            <h3 style="margin-bottom: 22px">Signoff checklist</h3>
+            <ul class="checklist">
+              <li>Confirm each finding against the workbook and source specification</li>
+              <li>Classify whether the issue changes base-case or scenario conclusions</li>
+              <li>Document accepted fixes, rejected fixes, and unresolved questions</li>
+              <li>Version the corrected workbook separately from the validation report</li>
+              <li>Rerun deterministic, DSA, and PSA outputs after approved edits</li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel" style="display: grid; grid-template-rows: auto 1fr">
+          <div class="proof-head">
+            <span>Formula fix request held for review</span>
+            <span>Report-only workflow</span>
+          </div>
+          <img class="shot" src="screenshots/01-full-model-audit-poll.png" alt="Claude asking whether to fix formulas after the model audit">
+        </div>
+      </section>
+      <div class="foot">
+        <span>AI accelerates detection</span>
+        <span>Humans approve changes</span>
+      </div>
+    </main>
+  </article>
+</body>
+</html>

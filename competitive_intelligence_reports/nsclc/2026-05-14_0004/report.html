@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Non-small cell lung cancer competitive intelligence update</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 36px 0 20px;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 78px; line-height: .94; letter-spacing: 0; font-weight: 560; max-width: 1290px; }
+    h2 { font-size: 51px; line-height: 1.0; letter-spacing: 0; font-weight: 560; max-width: 1320px; }
+    h3 { font-size: 28px; line-height: 1.05; letter-spacing: 0; font-weight: 650; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 850;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+    }
+    .dek {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 27px;
+      line-height: 1.22;
+      max-width: 1260px;
+    }
+    .section-head { margin-bottom: 22px; }
+    .section-head p { margin-top: 13px; color: var(--muted); font-size: 23px; line-height: 1.22; max-width: 1260px; }
+    .hero-grid { display: grid; grid-template-columns: 1.35fr .9fr; gap: 18px; margin-top: 28px; align-items: stretch; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .panel, .card, .table {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.88);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel { padding: 24px 26px; }
+    .panel.dark { background: #11130f; color: var(--paper); border-color: #11130f; }
+    .panel.dark .list li, .panel.dark p { color: rgba(246,241,232,.88); }
+    .panel h3 { font-size: 31px; }
+    .panel.dark h3 { font-size: 38px; }
+    .panel.dark .list { gap: 16px; margin-top: 19px; }
+    .panel.dark .list li { font-size: 24px; line-height: 1.2; padding-left: 26px; }
+    .panel.dark .list li::before { width: 10px; height: 10px; top: .48em; }
+    .card { padding: 22px; min-height: 220px; }
+    .card.tall { min-height: 268px; }
+    .card p { color: var(--muted); font-size: 22px; line-height: 1.2; margin-top: 13px; }
+    .card .tag { margin-bottom: 12px; }
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      white-space: nowrap;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .red { background: var(--red); }
+    .gray { background: var(--gray); }
+    .list { margin: 14px 0 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+    .list li { position: relative; padding-left: 20px; color: var(--muted); font-size: 21px; line-height: 1.23; }
+    .list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .58em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--lime);
+      border: 1px solid var(--line);
+    }
+    .mechanism-list { display: grid; gap: 10px; margin-top: 16px; }
+    .mechanism-row {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 10px;
+      align-items: center;
+      border-top: 1px solid rgba(16,18,15,.22);
+      padding-top: 10px;
+      font-size: 17px;
+      line-height: 1.18;
+      color: var(--muted);
+    }
+    .mechanism-row:first-child { border-top: 0; padding-top: 0; }
+    .mechanism-row strong { color: var(--ink); font-weight: 760; }
+    .table { display: grid; border-radius: 18px; }
+    .row { display: grid; grid-template-columns: .34fr 1.24fr 1.05fr 2.22fr; border-bottom: 1px solid var(--line); min-height: 69px; }
+    .row:last-child { border-bottom: 0; }
+    .cell { display: flex; align-items: center; padding: 7px 12px; border-right: 1px solid var(--line); font-size: 14.3px; line-height: 1.12; color: var(--muted); }
+    .cell:first-child { text-align: center; color: var(--ink); font-weight: 850; }
+    .cell:last-child { border-right: 0; }
+    .head { min-height: 62px; }
+    .head .cell { background: #11130f; color: var(--paper); font-weight: 850; text-transform: uppercase; font-size: 15.4px; line-height: 1; white-space: nowrap; padding-top: 14px; padding-bottom: 14px; }
+    .head .cell:first-child { text-align: center; }
+    .source-name { color: var(--ink); font-weight: 400; text-decoration: none; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .cite + .cite::before { content: ","; margin-right: 1px; }
+    .slide-num {
+      position: absolute;
+      right: 40px;
+      bottom: 24px;
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(16,18,15,.38);
+      font-weight: 800;
+      z-index: 2;
+    }
+    strong { color: var(--ink); }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .wrap { width: 1360px; }
+      .panel, .card, .table { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) {
+      .slide { width: 1600px; height: 900px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Non-small cell lung cancer | May 8-14, 2026</div>
+      <h1>Non-small cell lung cancer competitive intelligence update</h1>
+      <p class="dek">This update covers EGFR-mutant, KRAS G12C, TROP2-directed, immune agonist, cell-cycle, and virotherapy programs in NSCLC, with cited activity dated May 11-13, 2026<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3292281/0/en/arrivent-biopharma-reports-first-quarter-2026-financial-results.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3292291/0/en/eikon-therapeutics-reports-first-quarter-2026-financial-results-and-provides-clinical-updates.html">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3292648/0/en/c4-therapeutics-reports-first-quarter-2026-financial-results-and-recent-business-highlights.html">3</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293527/0/en/BBOT-Reports-First-Quarter-2026-Financial-Results-and-Update-on-Corporate-Progress.html">4</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/13/3294440/0/en/Acrivon-Reports-First-Quarter-2026-Financial-Results-and-Highlights-Progress-Towards-Key-2026-Clinical-Catalysts.html">5</a><a class="cite" href="https://www.merck.com/news/merck-highlights-new-long-term-data-and-advancements-across-broad-oncology-portfolio-and-pipeline-research-at-asco-2026/">6</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/13/3293935/0/en/calidi-biotherapeutics-confirms-featured-speaker-presentation-tomorrow-at-the-asgct-conference-in-boston.html">7</a></p>
+      <div class="hero-grid">
+        <div class="panel dark">
+          <h3>Executive summary</h3>
+          <ul class="list">
+            <li>ArriVent’s firmonertinib program remained centered on uncommon EGFR-mutant NSCLC, with FURVENT topline monotherapy data projected for mid-2026 and ALPACCA continuing global enrollment<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3292281/0/en/arrivent-biopharma-reports-first-quarter-2026-financial-results.html">1</a></li>
+            <li>Eikon’s EIK1001 program included ASCO abstracts and a Phase 2/3 stage 4 NSCLC initiation; Merck listed OptiTROP-Lung05 sac-TMT plus KEYTRUDA data in advanced NSCLC for ASCO 2026<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3292291/0/en/eikon-therapeutics-reports-first-quarter-2026-financial-results-and-provides-clinical-updates.html">2</a><a class="cite" href="https://www.merck.com/news/merck-highlights-new-long-term-data-and-advancements-across-broad-oncology-portfolio-and-pipeline-research-at-asco-2026/">6</a></li>
+            <li>C4 Therapeutics did not advance CFT8919 outside Greater China; BBOT reported BBO-8520 KRAS G12C NSCLC ORR and PFS results; Acrivon and Calidi documented early NSCLC-relevant programs<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3292648/0/en/c4-therapeutics-reports-first-quarter-2026-financial-results-and-recent-business-highlights.html">3</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293527/0/en/BBOT-Reports-First-Quarter-2026-Financial-Results-and-Update-on-Corporate-Progress.html">4</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/13/3294440/0/en/Acrivon-Reports-First-Quarter-2026-Financial-Results-and-Highlights-Progress-Towards-Key-2026-Clinical-Catalysts.html">5</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/13/3293935/0/en/calidi-biotherapeutics-confirms-featured-speaker-presentation-tomorrow-at-the-asgct-conference-in-boston.html">7</a></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Mechanism coverage</h3>
+          <div class="mechanism-list">
+            <div class="mechanism-row"><strong>EGFR</strong><span>firmonertinib and CFT8919<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3292281/0/en/arrivent-biopharma-reports-first-quarter-2026-financial-results.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3292648/0/en/c4-therapeutics-reports-first-quarter-2026-financial-results-and-recent-business-highlights.html">3</a></span></div>
+            <div class="mechanism-row"><strong>TLR7/8</strong><span>EIK1001 plus pembrolizumab and chemotherapy<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3292291/0/en/eikon-therapeutics-reports-first-quarter-2026-financial-results-and-provides-clinical-updates.html">2</a></span></div>
+            <div class="mechanism-row"><strong>KRAS G12C</strong><span>BBO-8520 monotherapy and pembrolizumab combination<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293527/0/en/BBOT-Reports-First-Quarter-2026-Financial-Results-and-Update-on-Corporate-Progress.html">4</a></span></div>
+            <div class="mechanism-row"><strong>TROP2 ADC</strong><span>sac-TMT plus KEYTRUDA in OptiTROP-Lung05<a class="cite" href="https://www.merck.com/news/merck-highlights-new-long-term-data-and-advancements-across-broad-oncology-portfolio-and-pipeline-research-at-asco-2026/">6</a></span></div>
+            <div class="mechanism-row"><strong>WEE1/PKMYT1</strong><span>ACR-2316 in AP3-prioritized tumors including squamous NSCLC<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/13/3294440/0/en/Acrivon-Reports-First-Quarter-2026-Financial-Results-and-Highlights-Progress-Towards-Key-2026-Clinical-Catalysts.html">5</a></span></div>
+            <div class="mechanism-row"><strong>Virotherapy</strong><span>CLD-401 RedTail candidate in IND-enabling studies<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/13/3293935/0/en/calidi-biotherapeutics-confirms-featured-speaker-presentation-tomorrow-at-the-asgct-conference-in-boston.html">7</a></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">01 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">EGFR-mutant NSCLC</div>
+        <h2>Firmonertinib pivotal trials advanced. CFT8919 was not moved forward outside Greater China<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3292281/0/en/arrivent-biopharma-reports-first-quarter-2026-financial-results.html">1</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3292648/0/en/c4-therapeutics-reports-first-quarter-2026-financial-results-and-recent-business-highlights.html">3</a></h2>
+      </div>
+      <div class="grid-3">
+        <div class="card tall">
+          <span class="tag lime">EGFR exon 20 insertion</span>
+          <h3>FURVENT</h3>
+          <p>FURVENT is a global pivotal three-arm Phase 3 trial of firmonertinib in first-line nonsquamous locally advanced or metastatic NSCLC with EGFR exon 20 insertion mutations, and the study enrolled 398 patients globally<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3292281/0/en/arrivent-biopharma-reports-first-quarter-2026-financial-results.html">1</a></p>
+          <p>Top-line monotherapy data from FURVENT were projected for mid-2026<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3292281/0/en/arrivent-biopharma-reports-first-quarter-2026-financial-results.html">1</a></p>
+        </div>
+        <div class="card tall">
+          <span class="tag blue">EGFR PACC</span>
+          <h3>ALPACCA</h3>
+          <p>ALPACCA is a global pivotal two-arm Phase 3 trial of firmonertinib in first-line nonsquamous locally advanced or metastatic NSCLC with EGFR PACC mutations<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3292281/0/en/arrivent-biopharma-reports-first-quarter-2026-financial-results.html">1</a></p>
+          <p>The ALPACCA study continued to enroll patients globally and evaluates firmonertinib 240 mg once daily versus investigator’s choice of osimertinib or afatinib<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3292281/0/en/arrivent-biopharma-reports-first-quarter-2026-financial-results.html">1</a></p>
+        </div>
+        <div class="card tall">
+          <span class="tag orange">EGFR L858R degrader</span>
+          <h3>CFT8919</h3>
+          <p>C4 Therapeutics made the decision not to advance CFT8919, an EGFR L858R degrader, into the next phase of clinical development outside Greater China at this time<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3292648/0/en/c4-therapeutics-reports-first-quarter-2026-financial-results-and-recent-business-highlights.html">3</a></p>
+          <p>The cited rationale included the evolving EGFR-mutated NSCLC treatment landscape, capital priorities, and available clinical data to date<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3292648/0/en/c4-therapeutics-reports-first-quarter-2026-financial-results-and-recent-business-highlights.html">3</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">02 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">ASCO 2026</div>
+        <h2>EIK1001 and sac-TMT plus KEYTRUDA were positioned around NSCLC data presentations<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3292291/0/en/eikon-therapeutics-reports-first-quarter-2026-financial-results-and-provides-clinical-updates.html">2</a><a class="cite" href="https://www.merck.com/news/merck-highlights-new-long-term-data-and-advancements-across-broad-oncology-portfolio-and-pipeline-research-at-asco-2026/">6</a></h2>
+      </div>
+      <div class="grid-2">
+        <div class="card tall">
+          <span class="tag pink">TLR7/8 agonist</span>
+          <h3>EIK1001 plus pembrolizumab and chemotherapy</h3>
+          <p>EIK1001 is a systemically administered dual agonist of Toll-like receptors 7 and 8 designed to stimulate innate and adaptive immune responses, and the program continues across melanoma and NSCLC trials<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3292291/0/en/eikon-therapeutics-reports-first-quarter-2026-financial-results-and-provides-clinical-updates.html">2</a></p>
+          <p>Three ASCO abstracts were accepted, including updated data from a fully enrolled Phase 2 trial evaluating EIK1001 with pembrolizumab and chemotherapy for NSCLC; Eikon also documented initiation of a Phase 2/3 trial in stage 4 NSCLC with pembrolizumab and chemotherapy<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/11/3292291/0/en/eikon-therapeutics-reports-first-quarter-2026-financial-results-and-provides-clinical-updates.html">2</a></p>
+        </div>
+        <div class="card tall">
+          <span class="tag blue">TROP2-directed ADC</span>
+          <h3>OptiTROP-Lung05</h3>
+          <p>Merck listed Phase 3 OptiTROP-Lung05 data from China, led by Kelun-Biotech, evaluating sacituzumab tirumotecan plus KEYTRUDA in advanced non-small cell lung cancer for the ASCO 2026 lung cancer metastatic oral abstract session<a class="cite" href="https://www.merck.com/news/merck-highlights-new-long-term-data-and-advancements-across-broad-oncology-portfolio-and-pipeline-research-at-asco-2026/">6</a></p>
+          <p>Sacituzumab tirumotecan was described as an investigational TROP2-directed antibody-drug conjugate with ongoing research in non-small cell lung cancer<a class="cite" href="https://www.merck.com/news/merck-highlights-new-long-term-data-and-advancements-across-broad-oncology-portfolio-and-pipeline-research-at-asco-2026/">6</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">03 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Additional mechanisms</div>
+        <h2>KRAS, cell-cycle, and virotherapy programs documented NSCLC-relevant activity or development status<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293527/0/en/BBOT-Reports-First-Quarter-2026-Financial-Results-and-Update-on-Corporate-Progress.html">4</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/13/3294440/0/en/Acrivon-Reports-First-Quarter-2026-Financial-Results-and-Highlights-Progress-Towards-Key-2026-Clinical-Catalysts.html">5</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/13/3293935/0/en/calidi-biotherapeutics-confirms-featured-speaker-presentation-tomorrow-at-the-asgct-conference-in-boston.html">7</a></h2>
+      </div>
+      <div class="grid-3">
+        <div class="card tall">
+          <span class="tag lime">KRAS G12C</span>
+          <h3>BBO-8520</h3>
+          <p>BBO-8520 is an orally bioavailable small-molecule direct inhibitor targeting both the ON and OFF states of KRAS<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293527/0/en/BBOT-Reports-First-Quarter-2026-Financial-Results-and-Update-on-Corporate-Progress.html">4</a></p>
+          <p>As of November 15, 2025, BBO-8520 monotherapy in KRAS G12C NSCLC showed a 65% ORR and 68% six-month PFS, with 83% of patients eligible for six-month follow-up remaining on treatment for at least six months<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/12/3293527/0/en/BBOT-Reports-First-Quarter-2026-Financial-Results-and-Update-on-Corporate-Progress.html">4</a></p>
+        </div>
+        <div class="card tall">
+          <span class="tag red">WEE1 / PKMYT1</span>
+          <h3>ACR-2316</h3>
+          <p>Initial Phase 1 monotherapy dose-escalation data for ACR-2316 demonstrated a favorable safety profile primarily limited to transient neutropenia, and clinical activity included tumor shrinkage, prolonged clinical benefit, partial responses, and strong disease control in SCLC and squamous NSCLC<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/13/3294440/0/en/Acrivon-Reports-First-Quarter-2026-Financial-Results-and-Highlights-Progress-Towards-Key-2026-Clinical-Catalysts.html">5</a></p>
+          <p>AP3-based AACR data documented a mechanistic rationale for potential combinations with immune checkpoint inhibitors<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/13/3294440/0/en/Acrivon-Reports-First-Quarter-2026-Financial-Results-and-Highlights-Progress-Towards-Key-2026-Clinical-Catalysts.html">5</a></p>
+        </div>
+        <div class="card tall">
+          <span class="tag orange">Systemic virotherapy</span>
+          <h3>CLD-401</h3>
+          <p>CLD-401 is the first lead candidate from Calidi’s RedTail platform, a systemically delivered virotherapy platform engineered to selectively target tumors, remodel the tumor microenvironment, and enable high-level expression of therapeutic genetic payloads directly within tumors<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/13/3293935/0/en/calidi-biotherapeutics-confirms-featured-speaker-presentation-tomorrow-at-the-asgct-conference-in-boston.html">7</a></p>
+          <p>CLD-401 was in IND-enabling studies and targeted non-small cell lung cancer, head and neck cancer, and other tumor types with high unmet medical need<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/13/3293935/0/en/calidi-biotherapeutics-confirms-featured-speaker-presentation-tomorrow-at-the-asgct-conference-in-boston.html">7</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">04 / 05</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Non-small cell lung cancer | May 8-14, 2026</div>
+        <h2>References</h2>
+      </div>
+      <div class="table">
+        <div class="row head">
+          <div class="cell">Ref</div>
+          <div class="cell">Source</div>
+          <div class="cell">Date / Source Owner</div>
+          <div class="cell">Evidence Used in Report</div>
+        </div>
+        <div class="row">
+          <div class="cell">1</div>
+          <div class="cell"><a class="source-name" href="https://www.globenewswire.com/news-release/2026/05/11/3292281/0/en/arrivent-biopharma-reports-first-quarter-2026-financial-results.html">ArriVent BioPharma Q1 2026 financial results</a></div>
+          <div class="cell">May 11, 2026 16:01 ET<br />ArriVent BioPharma, Inc.</div>
+          <div class="cell">Firmonertinib pivotal-trial status, FURVENT topline timing, ALPACCA enrollment, and FURVENT / ALPACCA phase and population details</div>
+        </div>
+        <div class="row">
+          <div class="cell">2</div>
+          <div class="cell"><a class="source-name" href="https://www.globenewswire.com/news-release/2026/05/11/3292291/0/en/eikon-therapeutics-reports-first-quarter-2026-financial-results-and-provides-clinical-updates.html">Eikon Therapeutics Q1 2026 financial results and clinical updates</a></div>
+          <div class="cell">May 11, 2026 16:01 ET<br />Eikon Therapeutics, Inc.</div>
+          <div class="cell">EIK1001 mechanism, ASCO NSCLC abstracts, fully enrolled Phase 2 NSCLC trial data update, and Phase 2/3 stage 4 NSCLC initiation</div>
+        </div>
+        <div class="row">
+          <div class="cell">3</div>
+          <div class="cell"><a class="source-name" href="https://www.globenewswire.com/news-release/2026/05/12/3292648/0/en/c4-therapeutics-reports-first-quarter-2026-financial-results-and-recent-business-highlights.html">C4 Therapeutics Q1 2026 financial results and business highlights</a></div>
+          <div class="cell">May 12, 2026 07:00 ET<br />C4 Therapeutics, Inc.</div>
+          <div class="cell">CFT8919 EGFR L858R degrader non-advancement outside Greater China and stated rationale</div>
+        </div>
+        <div class="row">
+          <div class="cell">4</div>
+          <div class="cell"><a class="source-name" href="https://www.globenewswire.com/news-release/2026/05/12/3293527/0/en/BBOT-Reports-First-Quarter-2026-Financial-Results-and-Update-on-Corporate-Progress.html">BBOT Q1 2026 financial results and corporate progress</a></div>
+          <div class="cell">May 12, 2026 17:03 ET<br />TheRas, Inc. d/b/a BBOT</div>
+          <div class="cell">BBO-8520 KRAS-targeting description, KRAS G12C NSCLC ORR, six-month PFS, follow-up treatment duration, and pembrolizumab-combination statement</div>
+        </div>
+        <div class="row">
+          <div class="cell">5</div>
+          <div class="cell"><a class="source-name" href="https://www.globenewswire.com/news-release/2026/05/13/3294440/0/en/Acrivon-Reports-First-Quarter-2026-Financial-Results-and-Highlights-Progress-Towards-Key-2026-Clinical-Catalysts.html">Acrivon Q1 2026 financial results and clinical catalysts</a></div>
+          <div class="cell">May 13, 2026 16:10 ET<br />Acrivon Therapeutics, Inc.</div>
+          <div class="cell">ACR-2316 safety profile, tumor shrinkage and clinical-benefit statements, sqNSCLC disease-control statement, and ICI-combination rationale</div>
+        </div>
+        <div class="row">
+          <div class="cell">6</div>
+          <div class="cell"><a class="source-name" href="https://www.merck.com/news/merck-highlights-new-long-term-data-and-advancements-across-broad-oncology-portfolio-and-pipeline-research-at-asco-2026/">Merck oncology portfolio and ASCO 2026 research update</a></div>
+          <div class="cell">May 12, 2026 6:45 am EDT<br />Merck &amp; Co., Inc.</div>
+          <div class="cell">OptiTROP-Lung05 sacituzumab tirumotecan plus KEYTRUDA advanced NSCLC ASCO listing and sac-TMT TROP2-directed ADC description</div>
+        </div>
+        <div class="row">
+          <div class="cell">7</div>
+          <div class="cell"><a class="source-name" href="https://www.globenewswire.com/news-release/2026/05/13/3293935/0/en/calidi-biotherapeutics-confirms-featured-speaker-presentation-tomorrow-at-the-asgct-conference-in-boston.html">Calidi Biotherapeutics ASGCT speaker presentation update</a></div>
+          <div class="cell">May 13, 2026 08:00 ET<br />Calidi Biotherapeutics, Inc.</div>
+          <div class="cell">RedTail platform description, CLD-401 first-lead status, IND-enabling status, and non-small cell lung cancer targeting statement</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">05 / 05</div>
+  </article>
+</body>
+</html>

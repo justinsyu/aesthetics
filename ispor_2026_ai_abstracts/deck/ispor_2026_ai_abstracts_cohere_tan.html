@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ISPOR 2026 AI and Predictive Analytics Abstracts</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 26px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.34;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .cite { font-size: .62em; vertical-align: super; margin-left: 2px; font-weight: 800; text-decoration: none; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      break-after: page;
+      display: flex;
+      align-items: flex-start;
+      padding: 62px 0 34px;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .slide > *:not(.slide-bg-img) { position: relative; z-index: 1; }
+    .wrap { width: min(1360px, calc(100vw - 48px)); margin: 0 auto; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      background: var(--lime);
+      padding: 9px 16px 8px;
+      font-size: 15px;
+      line-height: 1;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .slide-num {
+      position: absolute;
+      right: 72px;
+      bottom: 34px;
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 800;
+    }
+    h1, h2, h3, p { margin: 0; letter-spacing: 0; }
+    h1 {
+      max-width: 1290px;
+      margin-top: 22px;
+      font-size: 82px;
+      line-height: .94;
+      font-weight: 600;
+    }
+    h2 {
+      font-size: 56px;
+      line-height: .98;
+      font-weight: 600;
+      max-width: 1220px;
+      margin-top: 18px;
+    }
+    h3 {
+      font-size: 23px;
+      line-height: 1.08;
+      font-weight: 900;
+    }
+    .lede {
+      max-width: 980px;
+      margin-top: 24px;
+      font-size: 24px;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr .9fr;
+      gap: 28px;
+      margin-top: 34px;
+    }
+    .metric-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .metric {
+      background: var(--card);
+      border: 2px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px 22px 20px;
+      min-height: 142px;
+    }
+    .metric .value {
+      font-size: 54px;
+      line-height: .9;
+      font-weight: 950;
+    }
+    .metric .label {
+      margin-top: 13px;
+      color: var(--muted);
+      font-size: 17px;
+      font-weight: 760;
+    }
+    article.slide:nth-of-type(1) .metric .label {
+      font-size: 20px;
+      line-height: 1.28;
+      font-weight: 400;
+    }
+    .panel {
+      background: var(--card);
+      border: 2px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px;
+    }
+    .panel.dark {
+      background: #11130f;
+      color: var(--paper);
+      box-shadow: none;
+    }
+    .panel.dark p,
+    .panel.dark li { color: rgba(246,241,232,.84); }
+    .panel p {
+      color: var(--muted);
+      font-size: 20px;
+      line-height: 1.36;
+    }
+    .small-note {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.35;
+      font-weight: 650;
+    }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 28px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 26px; }
+    .content-grid {
+      display: grid;
+      grid-template-columns: .98fr 1.02fr;
+      gap: 28px;
+      margin-top: 28px;
+    }
+    .bar-list { display: grid; gap: 13px; margin-top: 18px; }
+    .bar-item { display: grid; grid-template-columns: 330px 1fr 54px; gap: 16px; align-items: center; }
+    .bar-label { font-size: 17px; font-weight: 850; line-height: 1.14; }
+    .bar-track { height: 28px; border: 2px solid var(--line); border-radius: 999px; background: var(--paper-2); overflow: hidden; }
+    .bar-fill { height: 100%; border-right: 2px solid var(--line); border-radius: 999px; background: var(--blue); }
+    .bar-fill.lime { background: var(--lime); }
+    .bar-fill.orange { background: var(--orange); }
+    .bar-fill.pink { background: var(--pink); }
+    .bar-fill.red { background: var(--red); }
+    .bar-value { font-size: 20px; font-weight: 950; text-align: right; }
+    article.slide:nth-of-type(2) .bar-label {
+      font-weight: 400;
+    }
+    .callout {
+      margin-top: 24px;
+      padding: 20px 24px;
+      border: 2px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--lime);
+      font-size: 24px;
+      line-height: 1.22;
+      font-weight: 850;
+    }
+    article.slide:nth-of-type(3) .grid-3 .panel h3,
+    article.slide:nth-of-type(7) .grid-3 .panel h3 {
+      font-size: 27px;
+      line-height: 1.06;
+    }
+    article.slide:nth-of-type(3) .grid-3 .panel p,
+    article.slide:nth-of-type(7) .grid-3 .panel p {
+      font-size: 23px;
+      line-height: 1.31;
+    }
+    article.slide:nth-of-type(3) .callout,
+    article.slide:nth-of-type(7) .callout {
+      font-size: 28px;
+      line-height: 1.18;
+      font-weight: 400;
+    }
+    article.slide:nth-of-type(4) .grid-2 .panel h3 {
+      font-size: 29px;
+      line-height: 1.06;
+    }
+    article.slide:nth-of-type(4) .grid-2 ul.clean {
+      gap: 13px;
+    }
+    article.slide:nth-of-type(4) .grid-2 ul.clean li {
+      font-size: 23px;
+      line-height: 1.28;
+    }
+    ul.clean {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+    ul.clean li {
+      font-size: 20px;
+      line-height: 1.34;
+      color: var(--muted);
+      padding-left: 24px;
+      position: relative;
+    }
+    ul.clean li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 11px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--line);
+    }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .pill {
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      background: var(--paper-2);
+      padding: 8px 12px;
+      font-size: 14px;
+      line-height: 1;
+      font-weight: 850;
+    }
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 18px;
+      border: 2px solid var(--line);
+      background: var(--card);
+      font-size: 16px;
+    }
+    .table th {
+      background: var(--line);
+      color: var(--paper);
+      text-align: left;
+      font-size: 14px;
+      line-height: 1.1;
+      padding: 10px 12px;
+      white-space: nowrap;
+    }
+    .table td {
+      border-top: 2px solid var(--line);
+      padding: 11px 12px;
+      vertical-align: top;
+      color: var(--muted);
+      line-height: 1.25;
+      font-weight: 620;
+    }
+    .source-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 28px;
+    }
+    .source-card {
+      border: 2px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      padding: 22px;
+      min-height: 178px;
+    }
+    .source-card p { font-size: 17px; color: var(--muted); line-height: 1.38; margin-top: 10px; }
+    .foot {
+      position: absolute;
+      left: 120px;
+      right: 120px;
+      bottom: 34px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      body, *, *::before, *::after { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding-top: 62px; }
+      .wrap { width: 1360px; }
+      .metric, .panel, .source-card { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">ISPOR 2026 abstracts | AI, machine learning, predictive analytics</div>
+      <h1>Artificial intelligence methods in HEOR abstracts</h1>
+      <p class="lede">A descriptive synthesis of citable ISPOR 2026 records in the Methodological & Statistical Research subcategory for artificial intelligence, machine learning, and predictive analytics</p>
+      <div class="metric-row">
+        <div class="metric">
+          <div class="value">146</div>
+          <div class="label">records returned by the live SearchBlox API using the exact user filter</div>
+        </div>
+        <div class="metric">
+          <div class="value">134</div>
+          <div class="label">records referenced human oversight, validation, reporting quality, or governance language</div>
+        </div>
+        <div class="metric">
+          <div class="value">82</div>
+          <div class="label">records described LLM or generative-AI evaluation and workflow support</div>
+        </div>
+        <div class="metric">
+          <div class="value">70</div>
+          <div class="label">records addressed evidence synthesis or literature-review automation</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">01 / 07</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Non-exclusive methodological domains</div>
+      <h2>Validation language and LLM methods appeared across multiple HEOR workflows</h2>
+      <div class="panel" style="margin-top:26px">
+        <div class="bar-list">
+          <div class="bar-item"><div class="bar-label">Human oversight, validation, reporting quality, or governance</div><div class="bar-track"><div class="bar-fill lime" style="width:100%"></div></div><div class="bar-value">134</div></div>
+          <div class="bar-item"><div class="bar-label">LLM or generative-AI evaluation and workflow support</div><div class="bar-track"><div class="bar-fill blue" style="width:61%"></div></div><div class="bar-value">82</div></div>
+          <div class="bar-item"><div class="bar-label">Prediction, classification, or risk modeling</div><div class="bar-track"><div class="bar-fill orange" style="width:58%"></div></div><div class="bar-value">78</div></div>
+          <div class="bar-item"><div class="bar-label">Real-world data, EHR, claims, or registry analytics</div><div class="bar-track"><div class="bar-fill pink" style="width:54%"></div></div><div class="bar-value">72</div></div>
+          <div class="bar-item"><div class="bar-label">Evidence synthesis and literature-review automation</div><div class="bar-track"><div class="bar-fill" style="width:52%"></div></div><div class="bar-value">70</div></div>
+          <div class="bar-item"><div class="bar-label">HTA, value assessment, payer, or regulatory decision processes</div><div class="bar-track"><div class="bar-fill red" style="width:48%"></div></div><div class="bar-value">64</div></div>
+          <div class="bar-item"><div class="bar-label">Economic-modeling or cost-analysis applications</div><div class="bar-track"><div class="bar-fill orange" style="width:25%"></div></div><div class="bar-value">33</div></div>
+          <div class="bar-item"><div class="bar-label">Safety, pharmacovigilance, or adverse-event detection</div><div class="bar-track"><div class="bar-fill blue" style="width:13%"></div></div><div class="bar-value">17</div></div>
+        </div>
+      </div>
+      <p class="small-note" style="margin-top:14px">Domain assignment used keyword rules over titles and abstract text; categories are intended for descriptive synthesis, not formal topic modeling</p>
+    </div>
+    <div class="slide-num">02 / 07</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Evidence synthesis</div>
+      <h2>Literature-review abstracts described AI use in screening, extraction, assessment, and synthesis tasks</h2>
+      <div class="grid-3">
+        <div class="panel">
+          <h3>Screening and triage</h3>
+          <p style="margin-top:14px">Several records evaluated large language models or machine-learning classifiers for title and abstract screening, prioritization, citation triage, and reviewer workload reduction within systematic or targeted literature reviews</p>
+        </div>
+        <div class="panel">
+          <h3>Structured extraction</h3>
+          <p style="margin-top:14px">Data-extraction abstracts focused on converting narrative evidence into structured fields, including study characteristics, comparator information, outcomes, quality-assessment inputs, and economic claims</p>
+        </div>
+        <div class="panel">
+          <h3>Synthesis workflows</h3>
+          <p style="margin-top:14px">Some studies described AI-mediated support for indirect treatment comparisons, network meta-analysis feasibility checks, citation-chain assessment, and evidence-synthesis reporting</p>
+        </div>
+      </div>
+      <div class="callout">Across these records, human review and expert adjudication were commonly described as safeguards for model-generated screening, extraction, or synthesis outputs</div>
+    </div>
+    <div class="slide-num">03 / 07</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Predictive analytics and real-world data</div>
+      <h2>Predictive modeling abstracts used heterogeneous data sources and endpoints</h2>
+      <div class="grid-2">
+        <div class="panel">
+          <h3>Data sources and populations</h3>
+          <ul class="clean">
+            <li>Real-world evidence records described claims data, electronic health records, registries, patient journeys, hospital data, administrative data, or literature-derived datasets</li>
+            <li>Disease-specific examples included oncology, cardiovascular disease, metabolic disease, respiratory conditions, neurological disorders, rare diseases, and urinary or kidney disorders</li>
+            <li>Some abstracts addressed cross-disease methodological questions rather than a single clinical population</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Endpoints and evaluation</h3>
+          <ul class="clean">
+            <li>Prediction tasks included adherence, treatment outcomes, disease progression, biopsy decisions, safety events, regulatory approval, and patient-risk stratification</li>
+            <li>Model-performance reporting commonly referenced accuracy, sensitivity, specificity, precision, recall, F1 score, AUC, expert review, or comparison against human or conventional methods</li>
+            <li>Several abstracts treated model outputs as inputs requiring validation rather than as standalone evidence</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">04 / 07</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">HTA and economic evaluation</div>
+      <h2>Decision-context abstracts emphasized evidence processing, model inputs, and assessment documentation</h2>
+      <div class="content-grid">
+        <div class="panel dark">
+          <h3>Observed use contexts</h3>
+          <ul class="clean">
+            <li>HTA and payer-oriented abstracts addressed joint clinical assessment, NICE technology appraisal content, value assessment, reimbursement-relevant evidence, and medical or economic claim evaluation</li>
+            <li>Economic-modeling records referenced cost-effectiveness, budget impact, health economic models, QALYs, Markov or survival modeling, and source traceability</li>
+            <li>Regulatory or access-adjacent abstracts generally framed AI as a method for evidence processing or prediction rather than as a replacement for formal assessment procedures</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Recurring methodological constraints</h3>
+          <table class="table">
+            <thead><tr><th>Constraint</th><th>How it appeared in abstracts</th></tr></thead>
+            <tbody>
+              <tr><td>Traceability</td><td>Source attribution, citation chains, structured extraction fields, and reproducible evidence tables</td></tr>
+              <tr><td>Review burden</td><td>Automation of screening, extraction, appraisal, summarization, or report-generation components</td></tr>
+              <tr><td>Model uncertainty</td><td>Human review, validation against reference standards, error analysis, and performance metric reporting</td></tr>
+              <tr><td>Generalizability</td><td>Population, setting, comparator, and endpoint comparability in applied HEOR contexts</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">05 / 07</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Disease and treatment-area tagging</div>
+      <h2>Most records were tagged as methodological or cross-disease rather than disease-specific</h2>
+      <div class="content-grid">
+        <div class="panel">
+          <h3>Top disease or treatment-area tags</h3>
+          <div class="bar-list">
+            <div class="bar-item"><div class="bar-label">No additional disease / specialized area</div><div class="bar-track"><div class="bar-fill lime" style="width:100%"></div></div><div class="bar-value">94</div></div>
+            <div class="bar-item"><div class="bar-label">Oncology</div><div class="bar-track"><div class="bar-fill blue" style="width:23%"></div></div><div class="bar-value">22</div></div>
+            <div class="bar-item"><div class="bar-label">Cardiovascular disorders</div><div class="bar-track"><div class="bar-fill orange" style="width:9%"></div></div><div class="bar-value">8</div></div>
+            <div class="bar-item"><div class="bar-label">Rare and orphan diseases</div><div class="bar-track"><div class="bar-fill pink" style="width:6%"></div></div><div class="bar-value">6</div></div>
+            <div class="bar-item"><div class="bar-label">Diabetes / endocrine / metabolic</div><div class="bar-track"><div class="bar-fill" style="width:5%"></div></div><div class="bar-value">5</div></div>
+            <div class="bar-item"><div class="bar-label">Neurological disorders</div><div class="bar-track"><div class="bar-fill red" style="width:5%"></div></div><div class="bar-value">5</div></div>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Interpretation of tags</h3>
+          <ul class="clean">
+            <li>Tag counts are not mutually exclusive because some records contained multiple disease or treatment-area classifications</li>
+            <li>The dominant tag indicates that many abstracts were framed as methodological contributions applicable across diseases or HEOR tasks</li>
+            <li>Oncology was the most common disease-specific tag among returned records, followed by cardiovascular and rare-disease categories</li>
+            <li>Several applied abstracts used disease-specific examples to evaluate methods that may have broader methodological relevance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">06 / 07</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Validation and governance language</div>
+      <h2>Abstracts frequently described human review, performance measurement, or quality controls</h2>
+      <div class="grid-3">
+        <div class="panel">
+          <h3>Human review</h3>
+          <p style="margin-top:14px">Records commonly described expert review, reviewer adjudication, human-in-the-loop workflows, or comparison of AI-assisted outputs with human-generated reference outputs</p>
+        </div>
+        <div class="panel">
+          <h3>Performance metrics</h3>
+          <p style="margin-top:14px">Reported evaluation measures included conventional classification and prediction metrics, agreement statistics, usability assessments, processing-time comparisons, and error analyses</p>
+        </div>
+        <div class="panel">
+          <h3>Responsible use themes</h3>
+          <p style="margin-top:14px">Some abstracts explicitly addressed bias, fairness, equity, transparency, explainability, hallucination risk, reproducibility, and alignment with HTA expectations</p>
+        </div>
+      </div>
+      <div class="callout">The extracted abstracts generally presented AI systems as tools requiring evaluation within defined data, task, and review contexts</div>
+    </div>
+    <div class="slide-num">07 / 07</div>
+  </article>
+</body>
+</html>

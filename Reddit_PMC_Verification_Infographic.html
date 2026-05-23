@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Patient Case Ascertainment in Reddit-Based Patient Experience Research: A Methodological Review of PMC-Indexed Studies, 2021–2026</title>
+<style>
+:root {
+  --ink: #10120f;
+  --muted: #5c6257;
+  --paper: #f6f1e8;
+  --paper-2: #ebe4d6;
+  --card: #fffaf0;
+  --line: #1b1f17;
+  --lime: #d7ff5f;
+  --green: #324a2f;
+  --sage: #a6b696;
+  --orange: #ffb86b;
+  --blue: #b8d8ff;
+  --pink: #ffd3e0;
+  --rose: #f4a6a6;
+  --plum: #b65a8a;
+  --gray: #d6d0c2;
+  --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+  --radius: 26px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(215,255,95,0.32), transparent 34rem),
+    radial-gradient(circle at 84% 12%, rgba(184,216,255,0.28), transparent 26rem),
+    var(--paper);
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.38;
+}
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.wrap { width: min(1360px, calc(100vw - 48px)); margin: 0 auto; }
+h1 {
+  font-size: clamp(44px, 4.7vw, 72px);
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+  font-weight: 500;
+  margin: 0;
+}
+h1 span { display: block; }
+.hero { display: grid; gap: 26px; align-items: start; }
+.hero-title { width: 100%; }
+.hero-title h1 {
+  width: 100%;
+  font-size: clamp(34px, 5.4vw, 72px);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+.hero-card {
+  border: 1.5px solid var(--line);
+  background: rgba(255,250,240,0.72);
+  border-radius: var(--radius);
+  padding: 22px 26px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+}
+.hero-card p { margin: 0; color: var(--muted); font-size: 22px; }
+.hero-card strong { color: var(--ink); }
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1.4px solid var(--line);
+  padding: 8px 11px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  background: var(--lime);
+}
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 30px;
+}
+.metric {
+  border: 1.4px solid rgba(16,18,15,0.8);
+  border-radius: 22px;
+  background: rgba(255,250,240,0.65);
+  padding: 20px;
+  min-height: 150px;
+}
+.metric .num {
+  font-size: 50px;
+  line-height: 0.95;
+  font-weight: 400;
+  letter-spacing: -0.06em;
+}
+.metric .label { margin-top: 12px; font-size: 16px; color: var(--muted); }
+.section-head { margin: 0 0 28px; }
+.section-head h2 {
+  font-size: clamp(38px, 4.25vw, 62px);
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+  margin: 0;
+}
+.section-head p {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 21px;
+}
+.panel {
+  border: 1.5px solid var(--line);
+  border-radius: 32px;
+  background: rgba(255,250,240,0.86);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.panel.dark { background: #11130f; color: var(--paper); }
+.panel.dark p, .panel.dark td, .panel.dark th { color: rgba(246,241,232,0.78); }
+.panel.dark .quote-meta { color: rgba(246,241,232,0.55); }
+.panel-pad { padding: 28px; }
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  background: var(--line);
+}
+.time-item {
+  background: var(--card);
+  border-left: 2px solid var(--line);
+  padding: 28px 22px;
+  min-height: 230px;
+}
+.time-item:first-child { border-left: 0; }
+.time-stage { font-size: 13px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.time-title { margin-top: 14px; font-size: 24px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.1; }
+.time-text { margin-top: 10px; font-size: 16px; color: var(--muted); }
+.pill {
+  display: inline-block;
+  padding: 5px 9px;
+  border: 1.2px solid var(--line);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  background: var(--paper-2);
+  margin: 2px 3px 2px 0;
+  white-space: nowrap;
+}
+.pill.lime { background: var(--lime); }
+.pill.orange { background: var(--orange); }
+.pill.blue { background: var(--blue); }
+.pill.pink { background: var(--pink); }
+.pill.rose { background: var(--rose); }
+.pill.plum { background: var(--plum); color: #fff; }
+.pill.gray { background: var(--gray); }
+.chart-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+.legend { display: grid; gap: 11px; font-size: 15px; color: rgba(246,241,232,0.78); }
+.legend-row { display: flex; align-items: center; gap: 10px; }
+.key { width: 18px; height: 12px; border-radius: 4px; border: 1px solid rgba(246,241,232,0.4); }
+.key.lime { background: var(--lime); }
+.key.blue { background: var(--blue); }
+.key.pink { background: var(--pink); }
+.key.orange { background: var(--orange); }
+.bars { display: grid; gap: 16px; }
+.bar-row {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 14px;
+  align-items: center;
+}
+.bar-label { font-size: 17px; font-weight: 900; color: var(--paper); line-height: 1.2; }
+.bar-wrap { display: grid; gap: 6px; }
+.track {
+  position: relative;
+  height: 28px;
+  border: 1px solid rgba(246,241,232,0.28);
+  border-radius: 999px;
+  background: rgba(246,241,232,0.08);
+  overflow: hidden;
+}
+.bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  inset: 0 auto 0 0;
+  border-radius: 999px;
+  min-width: 6px;
+}
+.bar.lime { background: var(--lime); }
+.bar.blue { background: var(--blue); }
+.bar.pink { background: var(--pink); }
+.bar.orange { background: var(--orange); }
+.bar.rose { background: var(--rose); }
+.bar-note { font-size: 13px; color: rgba(246,241,232,0.7); }
+.quotes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+.quote-card {
+  border: 1.5px solid var(--line);
+  border-radius: 26px;
+  background: var(--card);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.quote-card .pill-row { margin-top: -4px; }
+.quote-card blockquote {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.45;
+  color: var(--ink);
+  border-left: 4px solid var(--lime);
+  padding: 4px 0 4px 18px;
+  font-style: italic;
+}
+.quote-card blockquote::before { content: "\201C"; font-size: 36px; color: var(--muted); margin-right: 4px; line-height: 0; vertical-align: -4px; }
+.quote-card blockquote::after { content: "\201D"; font-size: 36px; color: var(--muted); margin-left: 2px; line-height: 0; vertical-align: -4px; }
+.quote-meta {
+  font-size: 14px;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+.quote-meta a { font-weight: 700; }
+.signal-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.signal-card {
+  border: 1.5px solid var(--line);
+  border-radius: 24px;
+  background: var(--card);
+  padding: 24px;
+  min-height: 220px;
+}
+.signal-card h3 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+.signal-card p { margin: 0; color: var(--muted); font-size: 15.5px; line-height: 1.45; }
+.signal-card .pill-row { margin-bottom: 14px; }
+.caption { font-size: 14px; color: var(--muted); margin-top: 10px; }
+.slide-deck { display: block; }
+.slide {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  padding: 60px 0 40px;
+  page-break-after: always;
+  break-after: page;
+  border-bottom: 1px dashed rgba(16,18,15,0.12);
+}
+.slide:last-child { page-break-after: auto; break-after: auto; border-bottom: 0; }
+.slide > .wrap { width: min(1360px, calc(100vw - 48px)); margin: 0 auto; }
+.slide-hero { align-items: center; padding: 60px 0; }
+.slide-hero h1 { font-size: clamp(34px, 5.4vw, 72px); line-height: 0.95; }
+@media (max-width: 1100px) {
+  .metrics { grid-template-columns: repeat(2, 1fr); }
+  .timeline { grid-template-columns: repeat(3, 1fr); }
+  .quotes { grid-template-columns: 1fr; }
+  .signal-row { grid-template-columns: 1fr; }
+  .chart-grid { grid-template-columns: 1fr; }
+  .hero-title h1 { white-space: normal; font-size: clamp(40px, 5.6vw, 64px); }
+}
+@media (max-width: 760px) {
+  .wrap { width: min(100vw - 28px, 1360px); }
+  .slide { padding: 32px 0; }
+  .metrics, .timeline { grid-template-columns: 1fr; }
+  .panel-pad { padding: 20px; }
+  .bar-row { grid-template-columns: 1fr; }
+  .bar-label { color: var(--ink); }
+  .hero-title h1 { white-space: normal; font-size: clamp(34px, 8.5vw, 56px); }
+}
+@page { size: 1600px 900px; margin: 0; }
+@media print {
+  html, body {
+    width: 1600px;
+    min-height: 900px;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  *, *::before, *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  body {
+    background:
+      radial-gradient(circle at top left, rgba(215,255,95,0.32), transparent 34rem),
+      radial-gradient(circle at 84% 12%, rgba(184,216,255,0.28), transparent 26rem),
+      var(--paper) !important;
+  }
+  .panel, .metric, .hero-card, .quote-card, .signal-card { box-shadow: none; }
+  a { text-decoration: none; }
+  .slide {
+    display: flex;
+    align-items: flex-start;
+    page-break-after: always;
+    break-after: page;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    min-height: 900px;
+    height: 900px;
+    padding: 48px 0 32px;
+    overflow: hidden;
+    border-bottom: 0;
+  }
+  .slide-hero { align-items: center; }
+  .wrap {
+    width: 1480px !important;
+    max-width: 1480px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .slide > .wrap {
+    width: 1480px !important;
+    max-width: 1480px !important;
+    margin: 0 auto !important;
+  }
+  .slide {
+    padding-left: 60px !important;
+    padding-right: 60px !important;
+    width: 1600px !important;
+    max-width: 1600px !important;
+    box-sizing: border-box !important;
+  }
+  .hero-title h1 {
+    font-size: 78px !important;
+    line-height: 0.95 !important;
+  }
+  .metrics { grid-template-columns: repeat(4, 1fr) !important; }
+  .timeline { grid-template-columns: repeat(6, 1fr) !important; }
+  .quotes { grid-template-columns: repeat(2, 1fr) !important; }
+  .signal-row { grid-template-columns: repeat(3, 1fr) !important; }
+  .chart-grid { grid-template-columns: 320px 1fr !important; }
+  .bar-row { grid-template-columns: 280px 1fr !important; }
+  .bar-label { color: var(--paper) !important; }
+  .legend { color: rgba(246,241,232,0.78) !important; }
+  .panel.dark { background: #11130f !important; color: var(--paper) !important; }
+  .pill.lime { background: var(--lime) !important; }
+  .pill.orange { background: var(--orange) !important; }
+  .pill.blue { background: var(--blue) !important; }
+  .pill.pink { background: var(--pink) !important; }
+  .pill.rose { background: var(--rose) !important; }
+  .pill.plum { background: var(--plum) !important; color: #fff !important; }
+  .pill.gray { background: var(--gray) !important; }
+  .bar.lime { background: var(--lime) !important; }
+  .bar.blue { background: var(--blue) !important; }
+  .bar.pink { background: var(--pink) !important; }
+  .bar.orange { background: var(--orange) !important; }
+  .bar.rose { background: var(--rose) !important; }
+  .eyebrow { background: var(--lime) !important; }
+  .section-head { margin: 0 0 22px !important; }
+  .section-head h2 { font-size: 46px !important; line-height: 1 !important; margin-bottom: 0 !important; }
+  .section-head p { font-size: 17px !important; margin: 22px 0 0 !important; line-height: 1.4 !important; }
+  .panel.dark .panel-pad { padding: 22px !important; }
+  .panel.dark .bars { gap: 9px !important; }
+  .panel.dark .bar-row { grid-template-columns: 260px 1fr !important; gap: 10px !important; }
+  .panel.dark .track { height: 22px !important; }
+  .panel.dark .bar-label { font-size: 14px !important; line-height: 1.15 !important; }
+  .panel.dark .bar-note { font-size: 11.5px !important; }
+  .panel.dark .legend { font-size: 13px !important; gap: 8px !important; }
+  .panel.dark .eyebrow { font-size: 12px !important; padding: 6px 10px !important; }
+  .quotes { gap: 14px !important; }
+  .quote-card { padding: 18px !important; gap: 10px !important; }
+  .quote-card blockquote {
+    font-size: 14.5px !important;
+    line-height: 1.4 !important;
+    padding: 2px 0 2px 14px !important;
+    border-left-width: 3px !important;
+  }
+  .quote-card blockquote::before,
+  .quote-card blockquote::after {
+    font-size: 26px !important;
+    vertical-align: -2px !important;
+  }
+  .quote-meta { font-size: 12.5px !important; line-height: 1.35 !important; }
+  .pill { font-size: 11px !important; padding: 4px 8px !important; }
+  .signal-card { padding: 22px !important; min-height: 0 !important; }
+  .signal-card h3 { font-size: 22px !important; line-height: 1.2 !important; margin-bottom: 12px !important; }
+  .signal-card p { font-size: 16.5px !important; line-height: 1.5 !important; }
+  .signal-card .pill { font-size: 12.5px !important; padding: 5px 10px !important; }
+  .time-item { padding: 22px 18px !important; min-height: 0 !important; }
+  .time-title { font-size: 22px !important; line-height: 1.15 !important; margin-top: 12px !important; }
+  .time-text { font-size: 16px !important; line-height: 1.45 !important; margin-top: 10px !important; }
+  .time-stage { font-size: 12.5px !important; }
+  .panel-pad p[style*="font-size:18px"] { font-size: 20px !important; line-height: 1.5 !important; }
+}
+</style>
+</head>
+<body>
+<main class="slide-deck">
+
+<!-- ===== SLIDE 1: HERO ===== -->
+<article class="slide slide-hero" aria-label="Hero: Patient case ascertainment in Reddit-based patient experience research">
+  <div class="wrap">
+    <div class="hero">
+      <div class="hero-title">
+        <div class="eyebrow">Reddit &middot; PMC-indexed studies &middot; 2021&ndash;2026 &middot; case ascertainment</div>
+        <h1>Patient case ascertainment in Reddit-based patient experience research</h1>
+      </div>
+      <aside class="hero-card">
+        <p><strong>Objective.</strong> Characterize the methods used to ascertain patient case status in social-media&ndash;based patient experience research. <strong>Design.</strong> Targeted methodological review of 50 peer-reviewed studies indexed in PubMed Central (January 2021&ndash;May 2026) that used Reddit as the primary data source to characterize lived experience for a defined disease state. Each <em>Methods</em> section was reviewed to abstract the procedure(s) used to establish that an included post or comment originated from an individual with the index condition. Studies were stratified by therapeutic area: mental health, oncology, chronic physical disease, and other (neurology, rare disease, women&rsquo;s and reproductive health, dermatology, sleep).</p>
+      </aside>
+      <div class="metrics">
+        <div class="metric"><div class="num">50</div><div class="label">Eligible Reddit-based patient experience studies indexed in PMC</div></div>
+        <div class="metric"><div class="num">9</div><div class="label">Distinct case-ascertainment approaches abstracted from included studies</div></div>
+        <div class="metric"><div class="num">0</div><div class="label">Studies employing clinician adjudication or clinical-record linkage</div></div>
+        <div class="metric"><div class="num">1</div><div class="label">Study applying convergent biomarker validation (Whitaker 2023, PCOS)</div></div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- ===== SLIDE 2: DISEASE-CATEGORY MIX ===== -->
+<article class="slide" aria-label="Distribution of included studies by therapeutic area">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Distribution of included studies by therapeutic area</h2>
+      <p>Eligible studies were concentrated in mental health, chronic physical disease, and oncology. The neurology / rare-disease and reproductive-health categories are less heavily represented but growing year-on-year across the observation window.</p>
+    </div>
+    <div class="panel">
+      <div class="timeline">
+        <div class="time-item">
+          <div class="time-stage">Category 01</div>
+          <div class="time-title">Mental health</div>
+          <div class="time-text">Depression, obsessive-compulsive disorder, eating disorders, autism spectrum, ADHD, opioid use disorder, suicidal ideation, paternal postpartum depression. Predominantly reliant on disease-specific subreddit membership as the case-defining variable.</div>
+          <div style="margin-top:14px"><span class="pill lime">n = 12</span></div>
+        </div>
+        <div class="time-item">
+          <div class="time-stage">Category 02</div>
+          <div class="time-title">Oncology</div>
+          <div class="time-text">Breast, bladder, brain, prostate, and adolescent-and-young-adult (AYA) cancers; cancer-related pain; clinical-trial participation; post-cancer fertility. Contains the most stringent self-identification screens observed in the corpus.</div>
+          <div style="margin-top:14px"><span class="pill orange">n = 10</span></div>
+        </div>
+        <div class="time-item">
+          <div class="time-stage">Category 03</div>
+          <div class="time-title">Chronic physical disease</div>
+          <div class="time-text">Long COVID, inflammatory bowel disease, type 1 diabetes, polycystic ovary syndrome, fibromyalgia, systemic lupus erythematosus, rheumatoid arthritis, psoriasis, atopic dermatitis, obesity / GLP-1 receptor agonists, Crohn&rsquo;s anti-TNF therapy.</div>
+          <div style="margin-top:14px"><span class="pill blue">n = 16</span></div>
+        </div>
+        <div class="time-item">
+          <div class="time-stage">Category 04</div>
+          <div class="time-title">Neurology &amp; rare disease</div>
+          <div class="time-text">Migraine, Alzheimer&rsquo;s disease and related dementias, dementia caregivers, cystic fibrosis, endometriosis, insomnia, hidradenitis suppurativa.</div>
+          <div style="margin-top:14px"><span class="pill rose">n = 8</span></div>
+        </div>
+        <div class="time-item">
+          <div class="time-stage">Category 05</div>
+          <div class="time-title">Women&rsquo;s &amp; reproductive health</div>
+          <div class="time-text">PCOS in transgender and nonbinary populations, self-managed abortion, scarring following gender-affirming care. Identity-specific eligibility criteria are layered upon disease-status criteria.</div>
+          <div style="margin-top:14px"><span class="pill pink">n = 3</span></div>
+        </div>
+        <div class="time-item">
+          <div class="time-stage">Category 06</div>
+          <div class="time-title">Cross-condition / network</div>
+          <div class="time-text">ME/CFS &harr; Long COVID co-participation studies; diabetes multimorbidity network analyses, in which the subreddit-user bipartite graph itself serves as the unit of analysis.</div>
+          <div style="margin-top:14px"><span class="pill gray">n = 2</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- ===== SLIDE 3: METHODS FREQUENCY (DARK BAR CHART) ===== -->
+<article class="slide" aria-label="Frequency of case-ascertainment approaches">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Frequency of case-ascertainment approaches across included studies</h2>
+      <p>Distribution of the case-ascertainment procedures abstracted from the 50 included studies. Categories are non-mutually exclusive: a single study may combine, for example, subreddit-based eligibility with a lexical filter and a manual first-person screen. Sub-community membership remains the predominant procedure; all other approaches are applied as additive layers.</p>
+    </div>
+    <div class="panel dark">
+      <div class="panel-pad chart-grid">
+        <div>
+          <div class="eyebrow" style="background:transparent;color:var(--paper);border-color:rgba(246,241,232,0.35);">Method frequency</div>
+          <div class="legend">
+            <div class="legend-row"><span class="key lime"></span> Community-membership proxy</div>
+            <div class="legend-row"><span class="key blue"></span> Lexical / keyword filter</div>
+            <div class="legend-row"><span class="key orange"></span> Self-identification screen</div>
+            <div class="legend-row"><span class="key pink"></span> Algorithmic / metadata-based</div>
+          </div>
+          <p style="margin:18px 0 0;font-size:14px;color:rgba(246,241,232,0.55)">Bar length is scaled to the most prevalent procedure (subreddit-based eligibility alone). Categories are non-mutually exclusive; counts may sum to &gt;50.</p>
+        </div>
+        <div class="bars">
+          <div class="bar-row"><div class="bar-label">Subreddit-based eligibility (sole criterion)</div><div class="bar-wrap"><div class="track"><div class="bar lime" style="width:100.0%"></div></div><div class="bar-note">n &asymp; 28 (predominant procedure)</div></div></div>
+          <div class="bar-row"><div class="bar-label">Subreddit + lexical / keyword filter</div><div class="bar-wrap"><div class="track"><div class="bar blue" style="width:53.6%"></div></div><div class="bar-note">n &asymp; 15 &middot; brand-name pharmaceuticals, MeSH terms, symptom regex</div></div></div>
+          <div class="bar-row"><div class="bar-label">Subreddit + first-person diagnosis statement</div><div class="bar-wrap"><div class="track"><div class="bar orange" style="width:35.7%"></div></div><div class="bar-note">n &asymp; 10 &middot; explicit self-reported diagnosis required</div></div></div>
+          <div class="bar-row"><div class="bar-label">Subreddit + manual reviewer adjudication</div><div class="bar-wrap"><div class="track"><div class="bar lime" style="width:28.6%"></div></div><div class="bar-note">n &asymp; 8 &middot; exclusion of third-party / proxy-reported posts</div></div></div>
+          <div class="bar-row"><div class="bar-label">Poster-role classification (patient vs. caregiver)</div><div class="bar-wrap"><div class="track"><div class="bar orange" style="width:17.9%"></div></div><div class="bar-note">n &asymp; 5 &middot; predominant in oncology studies</div></div></div>
+          <div class="bar-row"><div class="bar-label">Mapping to formal diagnostic criteria (DSM-5, APA IGD)</div><div class="bar-wrap"><div class="track"><div class="bar orange" style="width:7.1%"></div></div><div class="bar-note">n = 2 &middot; Sowles 2024, Roxas 2025</div></div></div>
+          <div class="bar-row"><div class="bar-label">Platform-native user flair / tag</div><div class="bar-wrap"><div class="track"><div class="bar pink" style="width:3.6%"></div></div><div class="bar-note">n = 1 &middot; Khashei 2022 (FDA) &mdash; &ldquo;Tested Positive&rdquo; flair</div></div></div>
+          <div class="bar-row"><div class="bar-label">Supervised classifier for first-person experience</div><div class="bar-wrap"><div class="track"><div class="bar pink" style="width:3.6%"></div></div><div class="bar-note">n = 1 &middot; Ayadi 2023 &mdash; fine-tuned BERTweet</div></div></div>
+          <div class="bar-row"><div class="bar-label">Regex self-declaration with manual validation</div><div class="bar-wrap"><div class="track"><div class="bar pink" style="width:3.6%"></div></div><div class="bar-note">n = 1 &middot; Segneri 2024 &mdash; 500-post adjudication</div></div></div>
+          <div class="bar-row"><div class="bar-label">Rule-based criteria + platform metadata</div><div class="bar-wrap"><div class="track"><div class="bar pink" style="width:3.6%"></div></div><div class="bar-note">n = 1 &middot; Ma 2025 &mdash; T1DM identification using profile age</div></div></div>
+          <div class="bar-row"><div class="bar-label">Convergent biomarker validation (cohort-level)</div><div class="bar-wrap"><div class="track"><div class="bar rose" style="width:3.6%"></div></div><div class="bar-note">n = 1 &middot; Whitaker 2023 &mdash; TOST equivalence vs. clinical cohorts</div></div></div>
+          <div class="bar-row"><div class="bar-label">Clinician adjudication or clinical-record linkage</div><div class="bar-wrap"><div class="track"><div class="bar" style="width:0.5%;background:rgba(246,241,232,0.4)"></div></div><div class="bar-note">n = 0 &middot; not employed in any included study</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- ===== SLIDE 4: VERIFICATION LADDER ===== -->
+<article class="slide" aria-label="Hierarchy of case-ascertainment rigor">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>A proposed hierarchy of case-ascertainment rigor</h2>
+      <p>The abstracted procedures define a six-tier hierarchy of methodological rigor, ranging from community-membership proxy to cohort-level biomarker validation. The majority of included studies apply only tiers I&ndash;II, while a small minority advance to algorithmic or metadata-augmented procedures; clinical-record linkage was not employed in any included study.</p>
+    </div>
+    <div class="panel">
+      <div class="timeline">
+        <div class="time-item">
+          <div class="time-stage">Tier I &middot; Lowest rigor</div>
+          <div class="time-title">Community-membership proxy</div>
+          <div class="time-text">Eligibility is conferred by participation in a disease-specific online community (e.g., r/OCD, r/CysticFibrosis). The community is treated as the case-defining variable; no individual-level verification is performed. Applied as the sole procedure in approximately 28 of 50 studies.</div>
+          <div style="margin-top:14px"><span class="pill lime">Predominant tier</span></div>
+        </div>
+        <div class="time-item">
+          <div class="time-stage">Tier II</div>
+          <div class="time-title">+ Lexical filter</div>
+          <div class="time-text">Posts must additionally contain disease-, treatment-, or symptom-related terminology (e.g., &ldquo;BCG,&rdquo; &ldquo;infliximab,&rdquo; &ldquo;hematuria&rdquo;). Narrows the corpus but does not establish individual case status.</div>
+          <div style="margin-top:14px"><span class="pill blue">n &asymp; 15</span></div>
+        </div>
+        <div class="time-item">
+          <div class="time-stage">Tier III</div>
+          <div class="time-title">+ Self-reported diagnosis</div>
+          <div class="time-text">Inclusion requires an explicit first-person diagnostic disclosure (e.g., &ldquo;I was diagnosed with stage 3 cervical cancer&rdquo;); higher-rigor implementations additionally require age and disease stage.</div>
+          <div style="margin-top:14px"><span class="pill orange">n &asymp; 10</span></div>
+        </div>
+        <div class="time-item">
+          <div class="time-stage">Tier IV</div>
+          <div class="time-title">+ Independent reviewer adjudication</div>
+          <div class="time-text">Two independent reviewers adjudicate first-person experience and exclude proxy-reported posts. Inter-rater agreement (Cohen&rsquo;s &kappa;) is reported, with values in the corpus ranging from 0.81 to 1.00.</div>
+          <div style="margin-top:14px"><span class="pill lime">n &asymp; 8</span></div>
+        </div>
+        <div class="time-item">
+          <div class="time-stage">Tier V</div>
+          <div class="time-title">+ Algorithmic / metadata augmentation</div>
+          <div class="time-text">Supervised classifiers, self-declaration regex with manual validation, platform-native user flair, or profile metadata (e.g., user-reported age). Scales tier-III criteria to corpora of &gt;10<sup>4</sup> posts.</div>
+          <div style="margin-top:14px"><span class="pill pink">n = 4</span></div>
+        </div>
+        <div class="time-item">
+          <div class="time-stage">Tier VI &middot; Highest rigor</div>
+          <div class="time-title">+ Convergent biomarker validation</div>
+          <div class="time-text">The subreddit-derived cohort is benchmarked against clinical-literature values for diagnostic biomarkers (e.g., FSH, AMH, fasting insulin) using equivalence testing. Validates the cohort in aggregate; does not confirm individual case status.</div>
+          <div style="margin-top:14px"><span class="pill rose">n = 1</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- ===== SLIDE 5: EXEMPLAR STUDIES (QUOTE CARDS) ===== -->
+<article class="slide" id="exemplars" aria-label="Exemplar case-ascertainment methods">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Exemplar case-ascertainment procedures, verbatim from source publications</h2>
+      <p>Six exemplar studies, spanning the proposed hierarchy from tier-III self-reported diagnosis to tier-VI convergent biomarker validation. Excerpts are reproduced verbatim from the Methods sections of the source publications; the applicable procedure is indicated in the lead pill.</p>
+    </div>
+    <div class="quotes">
+      <article class="quote-card">
+        <div class="pill-row"><span class="pill orange">Tier III &middot; Self-reported diagnosis + age + stage</span><span class="pill gray">Bhurosy 2026 &middot; AYA cancer &middot; BMC Cancer</span></div>
+        <blockquote>Age at diagnosis from posts and comments were ascertained by whether a Reddit user explicitly disclosed their age at diagnosis through statements such as &ldquo;I was diagnosed with stage 3 cervical in August of 2015. I was 39 years old&rdquo;&hellip; &ldquo;33F diagnosed with Ewing&rsquo;s sarcoma Feb of this year.&rdquo;</blockquote>
+        <div class="quote-meta">26 oncology subreddits &middot; two-reviewer adjudication &middot; <a href="https://doi.org/10.1186/s12885-026-15751-7" target="_blank" rel="noopener">PMC13020257</a></div>
+      </article>
+      <article class="quote-card">
+        <div class="pill-row"><span class="pill pink">Tier V &middot; Supervised classifier</span><span class="pill gray">Ayadi 2023 &middot; Long COVID &middot; Front Public Health</span></div>
+        <blockquote>We built a classifier that identifies sentences with explicit mentions of personally having or suspecting to have Long COVID&hellip; 1,395 text samples manually labeled; 402 annotated as related to personal PASC experiences. The classifier filtered out irrelevant posts; 20,377 of 27,216 posts (74.9%) were retained.</blockquote>
+        <div class="quote-meta">r/covidlonghaulers &middot; fine-tuned BERTweet model &middot; <a href="https://doi.org/10.3389/fpubh.2023.1227807" target="_blank" rel="noopener">PMC10470115</a></div>
+      </article>
+      <article class="quote-card">
+        <div class="pill-row"><span class="pill pink">Tier V &middot; Platform-native flair</span><span class="pill gray">Khashei 2022 &middot; COVID-19 &middot; US FDA &middot; PDS</span></div>
+        <blockquote>We selected users tagged as &ldquo;Tested Positive&rdquo; or &ldquo;Tested Positive&ndash; Me&rdquo; flair and who posted at least thirty times in any calendar month. 1,296 users met criteria.</blockquote>
+        <div class="quote-meta">r/COVID19positive &middot; US FDA pharmacoepidemiology &middot; <a href="https://doi.org/10.1002/pds.5564" target="_blank" rel="noopener">PMC9877633</a></div>
+      </article>
+      <article class="quote-card">
+        <div class="pill-row"><span class="pill pink">Tier V &middot; Regex + manual validation</span><span class="pill gray">Segneri 2024 &middot; Long COVID &middot; PLOS ONE</span></div>
+        <blockquote>The criteria for categorizing a user as COVID-positive are the active participation in a subforum dedicated to COVID-19-positive patients AND a user&rsquo;s explicit declaration of being infected with COVID-19&hellip; 500 posts were manually reviewed to refine the regular expression (excluding, e.g., &ldquo;My father was infected&rdquo;).</blockquote>
+        <div class="quote-meta">r/covidlonghaulers and r/COVID19positive &middot; <a href="https://doi.org/10.1371/journal.pone.0308340" target="_blank" rel="noopener">PMC11302924</a></div>
+      </article>
+      <article class="quote-card">
+        <div class="pill-row"><span class="pill rose">Tier VI &middot; Convergent biomarker validation</span><span class="pill gray">Whitaker 2023 &middot; PCOS &middot; JMIR Form Res</span></div>
+        <blockquote>Participation within the PCOS subreddit does not require confirmation of a diagnosis&hellip; we validated the approach of extracting PCOS subreddit data by testing equivalence of self-reported laboratory values (FSH, AMH, fasting insulin) against 10 published Rotterdam-criteria cohorts using two one-sided test (TOST) equivalence tests.</blockquote>
+        <div class="quote-meta">r/PCOS &middot; cohort-level validation against clinical literature &middot; <a href="https://doi.org/10.2196/44810" target="_blank" rel="noopener">PMC10492173</a></div>
+      </article>
+      <article class="quote-card">
+        <div class="pill-row"><span class="pill lime">Tier IV &middot; Independent reviewer adjudication</span><span class="pill gray">Ward 2026 &middot; Autistic inertia &middot; Commun Psychol</span></div>
+        <blockquote>To be eligible, the content of posts needed to be (1) relevant to Autistic inertia; (2) authored by a user aged 18 or above; and (3) discuss the user&rsquo;s own Autistic experience. We excluded posts that were written by a third-party (e.g., parent, researcher) or clearly stated the author was not Autistic.</blockquote>
+        <div class="quote-meta">5 autism-related subreddits &middot; 99% inter-reviewer agreement &middot; <a href="https://doi.org/10.1038/s44271-025-00386-4" target="_blank" rel="noopener">PMC12873400</a></div>
+      </article>
+    </div>
+  </div>
+</article>
+
+<!-- ===== SLIDE 6: RECURRENT LIMITATIONS ===== -->
+<article class="slide" id="caveats" aria-label="Recurrent methodological limitations">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Recurrent methodological limitations across the corpus</h2>
+      <p>Three limitations were declared with near-universal frequency across the 50 included studies, reflecting the inherent trade-off between methodological rigor and the ecological reach into undiagnosed and otherwise unobserved patient phenotypes that social-media data afford.</p>
+    </div>
+    <div class="signal-row">
+      <div class="signal-card">
+        <div class="pill-row"><span class="pill orange">Limitation 01</span></div>
+        <h3>Absence of diagnostic confirmation</h3>
+        <p>The pseudonymity of Reddit precludes confirmation of diagnosis at the individual user level. Authors uniformly identify this as an inherent ceiling: poster status is self-reported, and the investigators cannot perform clinical-record linkage or exclude content authored by non-patients or automated accounts. Davidson <em>et al.</em> (2024, breast cancer): &ldquo;While users self-identified as patients with breast cancer, it was not possible to validate this.&rdquo;</p>
+      </div>
+      <div class="signal-card">
+        <div class="pill-row"><span class="pill blue">Limitation 02</span></div>
+        <h3>Incomplete sociodemographic and clinical characterization</h3>
+        <p>Age, sex, race/ethnicity, geography, and disease subtype are largely unavailable. Eschliman <em>et al.</em> (2024, opioid use): &ldquo;The anonymity of Reddit obfuscates the sociodemographic characteristics of Redditors.&rdquo; Clinically relevant subtype information is also frequently absent &mdash; Wong <em>et al.</em> (2025, bladder cancer) report that no included post disclosed muscle-invasive versus non-muscle-invasive disease status.</p>
+      </div>
+      <div class="signal-card">
+        <div class="pill-row"><span class="pill pink">Limitation 03</span></div>
+        <h3>Selection bias and limited generalizability</h3>
+        <p>Reddit&rsquo;s user base skews younger, English-speaking, and digitally engaged, with a documented male-skewed demographic profile in many communities. Tripathi <em>et al.</em> (2022, brain tumors): demographics &ldquo;skew towards young males.&rdquo; Khene <em>et al.</em> (2024, BCG therapy): &ldquo;Representativeness may be skewed toward younger, more tech-savvy users.&rdquo; Findings are best interpreted as reflective of the engaged online subpopulation rather than the broader disease population.</p>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- ===== SLIDE 7: DATA-SOURCE FOOTPRINT ===== -->
+<article class="slide" id="footprint" aria-label="Subreddit data sources by therapeutic area">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Subreddit data sources by therapeutic area</h2>
+      <p>The corpus is concentrated in a relatively small number of large, condition-specific online communities. Communities most frequently queried across the 50 included studies are enumerated below, stratified by therapeutic area. Single-community sampling predominates; the AYA-cancer study by Bhurosy <em>et al.</em> (2026) sampled the largest number of distinct sources (26 subreddits).</p>
+    </div>
+    <div class="signal-row">
+      <div class="signal-card">
+        <div class="pill-row"><span class="pill lime">Mental health</span></div>
+        <h3>Mental-health data sources</h3>
+        <p style="margin-bottom:12px">High-volume disease-specific communities serve as the principal data sources, including dedicated subreddits for obsessive-compulsive disorder, ADHD, autism spectrum, eating disorders, and opioid use disorder.</p>
+        <div>
+          <span class="pill">r/OCD</span><span class="pill">r/ADHD</span><span class="pill">r/depression</span><span class="pill">r/autism</span><span class="pill">r/aspergers</span><span class="pill">r/autisminwomen</span><span class="pill">r/EatingDisorders</span><span class="pill">r/AnorexiaNervosa</span><span class="pill">r/StopGaming</span><span class="pill">r/opiates</span><span class="pill">r/postpartum_depression</span>
+        </div>
+      </div>
+      <div class="signal-card">
+        <div class="pill-row"><span class="pill orange">Oncology</span></div>
+        <h3>Oncology data sources</h3>
+        <p style="margin-bottom:12px">General oncology and tumor-site&ndash;specific communities predominate, supplemented by behaviorally focused subreddits (r/stopsmoking) for treatment- and risk-factor&ndash;specific studies.</p>
+        <div>
+          <span class="pill">r/cancer</span><span class="pill">r/breastcancer</span><span class="pill">r/braincancer</span><span class="pill">r/BladderCancer</span><span class="pill">r/lymphoma</span><span class="pill">r/leukemia</span><span class="pill">r/Cancersurvivors</span><span class="pill">r/YoungAdultCancer</span><span class="pill">r/ProstateCancer</span><span class="pill">r/CervicalCancer</span><span class="pill">r/stopsmoking</span><span class="pill">r/infertility</span>
+        </div>
+      </div>
+      <div class="signal-card">
+        <div class="pill-row"><span class="pill blue">Chronic &amp; other conditions</span></div>
+        <h3>Chronic-disease &amp; other data sources</h3>
+        <p style="margin-bottom:12px">Disease-specific support communities predominate across chronic conditions. Long COVID was the most frequently studied indication in the corpus, anchored by r/covidlonghaulers.</p>
+        <div>
+          <span class="pill">r/covidlonghaulers</span><span class="pill">r/PCOS</span><span class="pill">r/IBD</span><span class="pill">r/CrohnsDisease</span><span class="pill">r/UlcerativeColitis</span><span class="pill">r/diabetes_t1</span><span class="pill">r/MultipleSclerosis</span><span class="pill">r/rheumatoidarthritis</span><span class="pill">r/Psoriasis</span><span class="pill">r/eczema</span><span class="pill">r/Migraine</span><span class="pill">r/Alzheimers</span><span class="pill">r/CysticFibrosis</span><span class="pill">r/Endo</span><span class="pill">r/insomnia</span><span class="pill">r/Hidradenitis</span><span class="pill">r/WegovyWeightLoss</span><span class="pill">r/abortion</span><span class="pill">r/FtM</span><span class="pill">r/MtF</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- ===== SLIDE 8: IMPLICATIONS ===== -->
+<article class="slide" aria-label="Implications for study design and appraisal">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Implications for the design and appraisal of Reddit-based patient experience studies</h2>
+      <p>The empirical distribution of methods across the corpus supports three recommendations for the design, conduct, and peer review of social-media&ndash;based patient experience research, particularly as such evidence is increasingly considered in regulatory and health technology assessment (HTA) contexts.</p>
+    </div>
+    <div class="signal-row">
+      <div class="signal-card">
+        <div class="pill-row"><span class="pill lime">Minimum standard</span></div>
+        <h3>Community membership is necessary but insufficient</h3>
+        <p>Subreddit-based eligibility is a reasonable starting point but should not be the sole case-defining criterion. A defensible methodological standard combines, at minimum, (i) subreddit-based eligibility, (ii) a disease-, treatment-, or symptom-specific lexical filter, and (iii) a documented first-person screen with explicit exclusion criteria for proxy-reported and non-experiential content.</p>
+      </div>
+      <div class="signal-card">
+        <div class="pill-row"><span class="pill orange">Exemplar practice</span></div>
+        <h3>Self-report + role classification + inter-rater agreement</h3>
+        <p>The most methodologically rigorous studies require explicit first-person diagnostic statements (with age and disease stage where available), classify each post by author role (patient, caregiver, healthcare professional), use dual independent reviewers, and report Cohen&rsquo;s &kappa;. Bhurosy <em>et al.</em> (2026), Ward <em>et al.</em> (2026), Pierce <em>et al.</em> (2024; &kappa; = 0.81), and Filipponi <em>et al.</em> (2023; &kappa; = 1.00) are recommended templates.</p>
+      </div>
+      <div class="signal-card">
+        <div class="pill-row"><span class="pill rose">Emerging standard</span></div>
+        <h3>Cohort-level convergent validation</h3>
+        <p>Whitaker <em>et al.</em> (2023) is the only study in the corpus to treat the subreddit-as-cohort assumption as a testable empirical claim, benchmarking self-reported biomarkers against published clinical-criteria&ndash;defined cohorts. As social-media&ndash;derived evidence is increasingly considered in regulatory and HTA contexts, convergent-validity assessment is likely to become an expected methodological standard.</p>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- ===== SLIDE 9: METHODS & DATA SOURCES ===== -->
+<article class="slide" aria-label="Methods and data sources">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Methods &amp; data sources</h2>
+      <p>All 50 included studies are indexed in PubMed Central with assigned PMID, PMCID, and DOI. Case-ascertainment procedures and quoted material were abstracted from the <em>Methods</em> and <em>Limitations</em> sections of each source publication. A complete article-level data table is provided in the accompanying spreadsheet.</p>
+    </div>
+    <div class="panel">
+      <div class="panel-pad">
+        <p style="margin:0 0 14px;font-size:18px;color:var(--muted)"><strong style="color:var(--ink)">Eligibility criteria.</strong> Peer-reviewed primary research articles published between January 2021 and May 2026, indexed in PubMed Central with full text available, employing Reddit as the primary data source, and addressing patient lived experience for a defined disease state (qualitative, lived-experience, or mixed-methods designs). Excluded were studies whose primary objective was natural language processing classification or sentiment analysis without a patient-experience focus, survey-based studies using Reddit solely as a recruitment channel (one exception, Fusco <em>et al.</em> 2024 [SLE], was retained as a hybrid design), and multi-platform studies in which Reddit was not the principal data source.</p>
+        <p style="margin:0 0 14px;font-size:18px;color:var(--muted)"><strong style="color:var(--ink)">Case-ascertainment taxonomy.</strong> Nine procedures were abstracted from the author-reported methods of the included studies. Categories are non-mutually exclusive; an individual study may apply multiple procedures (e.g., subreddit-based eligibility combined with a lexical filter and independent reviewer adjudication), and frequencies therefore sum to &gt;50. No study (n = 0/50) employed clinician adjudication or clinical-record linkage.</p>
+        <p style="margin:0;font-size:18px;color:var(--muted)"><strong style="color:var(--ink)">Supplementary data.</strong> <em>Reddit_Patient_Experience_PMC_Studies.xlsx</em> &mdash; complete 50-row data extraction including title, authors, journal, PMID, PMCID, DOI, subreddit data sources, case-ascertainment procedure (summary and verbatim excerpt), and author-reported limitations.</p>
+      </div>
+    </div>
+    <p class="caption">Compiled 13 May 2026 &middot; All bibliographic data from PubMed / PubMed Central.</p>
+  </div>
+</article>
+
+</main>
+</body>
+</html>

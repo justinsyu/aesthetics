@@ -1,0 +1,4085 @@
+# 1. FROM FEASIBILITY TO FINDINGS: SUPPORTING INDIRECT TREATMENT COMPARISONS WITH GENERATIVE AI
+
+- Session code: MSR114
+- Authors: Barinder Singh, RPh 1, Akanksha Sharma, MSc2, Rajdeep Kaur, PhD2. 1Pharmacoevidence Pvt. Ltd., London, United Kingdom, 2Pharmacoevidence Pvt. Ltd., Mohali, India.
+- Disease: SDC: Oncology
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-3-3/from-feasibility-to-findings-supporting-indirect-treatment-comparisons-with-generative-ai
+
+## Objectives
+
+Indirect treatment comparisons (ITCs) are essential when head-to-head trials are unavailable but require substantial effort for feasibility assessment, selection of appropriate analyses, and clear interpretation of results. This study evaluated the use of Generative Artificial Intelligence (GenAI) to support the ITC workflow from feasibility assessment through analysis planning and result interpretation in first-line hepatocellular carcinoma (HCC). Statistical analyses were conducted using an R Shiny-based platform supporting Bayesian and frequentist network meta-analysis (NMA).
+
+## Methods
+
+Published randomized controlled trials in first line HCC were included and data was extracted in structured Excel format capturing trial design, treatments, patient characteristics, and outcomes. GenAI was first applied to assess ITC feasibility by evaluating network connectivity, availability of common comparators, and similarity of trial populations and endpoints. Based on the feasibility assessment, GenAI then recommended appropriate analytical approaches. NMA were conducted using an in-house R Shiny tool with predefined model settings. Finally, GenAI was used to interpret the statistical outputs and support structured reporting of comparative effectiveness results. All GenAI-generated feasibility assessments and reports were reviewed by experienced ITC experts to evaluate usability and accuracy.
+
+## Results
+
+GenAI identified a connected evidence network of 12 trials and confirmed the feasibility for the Bayesian NMA. Bayesian NMA results showed significant overall survival benefits for sintilimab plus bevacizumab (HR 0.38; 95% CrI 0.21-0.79), camrelizumab plus rivoceranib (HR 0.42; 0.21-0.82), and atezolizumab plus bevacizumab (HR 0.45; 0.23-0.87) compared with placebo. Treatment rankings favored combination immunotherapy-antiangiogenic regimens. Expert review indicated that GenAI-generated feasibility assessments and reports were 80-90% usable, with approximately 10% requiring human refinement, mainly for clinical nuance and contextual interpretation.
+
+## Conclusions
+
+GenAI can streamline ITC workflows by supporting feasibility assessment, analysis planning, and result interpretation, and when combined with standard NMA tools and expert review enhances efficiency while preserving rigor and enabling faster evidence generation for HTA and JCA use cases.
+
+---
+
+# 2. A COMPARATIVE ANALYSIS OF LARGE LANGUAGE MODELS IN TITLE AND ABSTRACT SCREENING GUIDED BY HUMAN OVERSIGHT
+
+- Session code: MSR106
+- Authors: Ankita Sood, PharmD, Ritesh Dubey, PharmD, Sunil Kumar, M.Pharm, Marjana Bharali, B.E., Gagandeep Kaur, M.Pharm, Rajdeep Kaur, PhD, Barinder Singh, RPh. Pharmacoevidence, Mohali, India.
+- Disease: Not specified
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-3-3/a-comparative-analysis-of-large-language-models-in-title-and-abstract-screening-guided-by-human-oversight
+
+## Objectives
+
+Systematic literature reviews (SLRs) are considered the gold standard in evidence-based medicine; however, the process of conducting them is very resource-intensive, expensive, and time-consuming. This study aims to evaluate the relative efficiency of large language models (LLMs) to automate the title and abstract screening process in SLRs in alignment with the NICE and CDA-AMC guidelines.
+
+## Methods
+
+EMBASE®, Medline®, and Cochrane were searched to identify relevant randomized controlled trials (RCTs) related to a psychiatric disorder. A Python-based interface was developed to support automated title and abstract screening using multiple LLMs (Claude Sonnet 3.7, Gemini Flash 2.5, and GPT4-o-mini), guided by predefined inclusion and exclusion criteria. Screening decisions were finalized when all models agreed; records with discordant outputs were escalated for manual review. A subject matter expert (SME) with over a decade of domain knowledge optimized, fine-tuned the final prompt, and conducted quality control on a sample of artificial intelligence (AI)-processed records to ensure accuracy and assess overall model performance.
+
+## Results
+
+Overall, all three AI models performed exceptionally well in screening based on titles and abstracts. While there were no significant differences in accuracy rates, Claude Sonnet 3.7 exhibited the highest accuracy rate at 97.34%, followed by Gemini Flash 2.5 at 95.05% and GPT4-o-mini at 93.48%. In terms of sensitivity, Claude Sonnet 3.7 suggested better results, attaining 98.79% of sensitivity, followed by Gemini Flash 2.5 with 94.86% and GPT4-o-mini with 93.66%.
+
+## Conclusions
+
+This study demonstrates that AI can be effectively incorporated into the SLR process to facilitate title and abstract screening. All evaluated LLMs achieved accuracy rates exceeding 90%, thereby suggesting that the combined use of AI automation and expert oversight significantly reduces manual effort, while maintaining accuracy and without compromising the quality of review outcomes.
+
+---
+
+# 3. ACCELERATING LITERATURE REVIEWS WITH LARGE LANGUAGE MODELS (LLMS): AN EVALUATION OF PERFORMANCE AND EFFICIENCY
+
+- Session code: MSR190
+- Authors: Raju Gautam, PhD 1, Saeed Anwar, MSc2, Tushar Srivastava, MSc1, Ratna Pandey, MSc2; 1ConnectHEOR, London, United Kingdom, 2ConnectHEOR, Delhi, India
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/accelerating-literature-reviews-with-large-language-models-llms--an-evaluation-of-performance-and-efficiency
+
+## Objectives
+
+Systematic/Literature reviews (SLRs/LRs) are crucial for health research and evidence-based decision making but are often time-and labor-intensive. Artificial intelligence (AI) tools like LLMs have shown promising ways to automate these processes. The aim of this research was to evaluate the performance and efficiency of an AI-SLR tool.
+
+## Methods
+
+A retrospective analysis was conducted to evaluate the performance and efficiency of a web-based AI-SLR tool (EasySLR™) across four LRs (2 targeted, 2 SLRs; 2 clinical, 2 economic). AI performance (accuracy, sensitivity and specificity) was assessed for title/abstract screening, full-text screening and data-extraction. An AI-only approach was used for title/abstract screening in targeted reviews and for data-extraction in all reviews, while a hybrid AI-human reviewer approach was applied for all other review stages. AI-only and AI-human hybrid performance were compared with retrospectively completed human-only reviews.
+
+## Results
+
+Sample size comprised 794−1,594 studies (title/abstract screening), 12−92 (full-text screening), and 5−92 (data extraction). Across all four LRs, AI-human accuracy ranged from 84%-100% for title/abstract screening, 60%-92% for full-text screening and 9%-60% for data-extraction. Sensitivity (correct inclusion by AI) varied from 70%-97% for title/abstract screening and 90-100% for full-text screening. Specificity (correct exclusion by AI) ranged from 84%-100% for title/abstract and 70%-88% for full-text screening. Performance for clinical review was considerably poorer versus economic review. Compared to human-only LRs, AI-only reviewers improve efficiency by 100%-150% for title/abstract screening, and 300%-500% for data-extraction but with low accuracy. Whereas a hybrid approach improves efficiency by 40%-60% for title/abstract screening and 12%-20% for full-text screening.
+
+## Conclusions
+
+The used AI-SLR tool appears to be a promising tool for straightforward reviews, and it saved considerable time in title/abstract screening and data-extraction using AI-only reviewer feature. The performance for complex reviews and data-extraction requires further improvements. Nevertheless, ongoing and future model developments may improve suitability for data-extraction and complex reviews.
+
+---
+
+# 4. VALIDATION OF AN AI-ASSISTED EVIDENCE SYNTHESIS IN HEOR
+
+- Session code: MSR181
+- Authors: Cyrus Nouroozi, . 1, Amir Saeidmehr, MSc2, Bright Huo, BSc3, Josh L. Howard, PhD4; 1The Synthesis Company of California Ltd., CEO, San Francisco, CA, USA, 2The Synthesis Company of California, Ltd., San Francisco, CA, USA, 3McMaster University, Department of Surgery, Hamilton, ON, Canada, 4Monash University, Melbourne, Australia
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/validation-of-an-ai-assisted-evidence-synthesis-in-heor
+
+## Objectives
+
+HEOR decisions increasingly require rapid, reproducible evidence synthesis, yet conventional systematic review workflows remain slow and resource-intensive. We develop an AI-assisted workflow and validate its ability to conduct screening and extraction functions while preserving traceability to source documents.
+
+## Methods
+
+We validated an AI-assisted screening and extraction pipeline across two systematic review datasets of RCTs spanning clinical psychology and medicine. In total, 2924 pieces of information were compared between human and AI procedures. The AI title and abstract screening was compared against gold standard dual-human processes, and evaluated using sensitivity, specificity, and F1 scores. AI automated extraction of PDF documents was evaluated against two different human-coded datasets to establish accuracy. Extraction included verbatim reproduction of study figures, basic calculation of effect sizes, categorization tasks, as well as inferential tasks including Risk of Bias assessment.
+
+## Results
+
+Across datasets, AI screening achieved 97.1% sensitivity and 98.1% specificity, outperforming human performance (89.3% & 97.6% respectively). AI screening was approximately 90% more time efficient. AI data extraction achieved a mean of 95.5% accuracy across datasets, exceeding human extraction accuracy (92.1%). The majority of errors occurred in effect size calculations and occasionally in Risk of Bias assessments, indicating areas for further refinement. The AI procedure was again significantly more time efficient.
+
+## Conclusions
+
+AI-assisted evidence synthesis can deliver large reductions in time-to-dataset while maintaining high screening and extraction accuracy with auditable traceability. This capability supports faster systematic review cycles, more frequent evidence updates, and more scalable foundations for HEOR decision-making.
+
+---
+
+# 5. REAL-WORLD EFFECTIVENESS OF STATIN THERAPY AND PREDICTIVE MODELING OF ADHERENCE AMONG PATIENTS WITH SEVERE HYPERCHOLESTEROLEMIA
+
+- Session code: MSR100
+- Authors: Vikash K. Verma, MBA, PharmD1, Louis Brooks Jr, MS2, Marissa Seligman, PharmD3, Abhimanyu Roy, MBA4, Abhinav Nayyar, MBA, MBBS5, Ankitkumar Arora, MPharm6, Nandana Acharjee, Other7, Saba Wajih, BDS8, Anuj Gupta, MSc 8, Vishan Khatavkar, MBA9, Gargi Mahashay, BTech5, Arunima Sachdev, MA4, Aamir Bashir, PhD10, Pankaj Bhardwaj, MBA, RPh9; 1Optum Lifesciences, Boston, MA, USA, 2Optum, Bloomsbury, NJ, USA, 3Optum, Winchester, MA, USA, 4Optum, Gurgaon, India, 5Optum Life Sciences, Gurugram, India, 6Optum Global Solutions, Gurgaon, India, 7Optum, Gurugram, India, 8Optum Lifesciences, Noida, India, 9Optum Lifesciences, Gurugram, India, 10Optum Global Solutions, Gurugram, India
+- Disease: SDC: Cardiovascular Disorders (including MI, Stroke, Circulatory)
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-3-3/real-world-effectiveness-of-statin-therapy-and-predictive-modeling-of-adherence-among-patients-with-severe-hypercholesterolemia
+
+## Objectives
+
+To assess the real-world effectiveness of high- and moderate-intensity statins on low‑density lipoprotein cholesterol (LDL‑C) reduction among statin-naïve adults with severe hypercholesterolemia (LDL-C ≥190 mg/dL) and to develop predictive model for statin adherence.
+
+## Methods
+
+A retrospective new-user cohort study was conducted using Optum® Market Clarity data (01/01/2016-03/31/2025). Eligible adults (≥20 years) had (1) baseline LDL‑C ≥190 mg/dL, (2) no statin use during a 6‑month baseline period, and (3) continuous medical and pharmacy enrollment ≥12 months pre‑index and ≥6 months post‑index. The index date was the first statin fill within 90 days of the qualifying LDL‑C value. Patients were required to have ≥1 LDL‑C measurement at 3, 6, or 12 months post‑index. Outcomes included absolute and percent LDL‑C change, adherence (proportion of days covered [PDC] ≥80%), discontinuation, adverse effects (30-60 days), and cardiovascular (CV) events. Multiple machine‑learning algorithms (logistic regression, random forest, gradient boosting) identified predictors of non‑adherence.
+
+## Results
+
+Among 639,861 patients screened, 5,904 met inclusion criteria. High‑intensity statins were initiated in 2,678 patients (45.3%), producing mean LDL‑C reductions of 101.2 mg/dL (43.5%) at 6 months and 100.2 mg/dL (43.0%) at 12 months. Moderate‑intensity statins (n=3,177; 53.8%) achieved smaller reductions: 30.5 mg/dL (18.7%) and 26.7 mg/dL (16.4%) at 6 and 12 months, respectively. Adherence declined over follow‑up (n=5,291 at 1-3 months; 1,920 at 3-6 months; 1,711 at 6-12 months), and ~25% discontinued therapy. A total of 766 CV events and 942 adverse effects occurred within 30-60 days. The predictive models showed strong performance (AUC range 0.75-0.80) and identified key predictors of non‑adherence including demographic, clinical, treatment-related, and behavioral factors.
+
+## Conclusions
+
+High‑intensity statins produced substantial LDL‑C reductions in routine clinical practice, but declining adherence, discontinuation, and early adverse effects may limit long‑term effectiveness. Machine‑learning models accurately identified patients at elevated risk for non‑adherence, supporting opportunities for proactive, personalized lipid‑lowering interventions to optimize outcomes.
+
+---
+
+# 6. RESPONSIBLE AI ADOPTION IN HEOR THROUGH HUMAN-IN-THE-LOOP (HITL) FRAMEWORKS ALIGNING WITH GLOBAL HTA EXPECTATIONS
+
+- Session code: MSR184
+- Authors: Inderpreet S. Marwaha, MSc, RPh1, Rajdeep Kaur, PhD 1, Shubhram Pandey, MSc1, Barinder Singh, RPh2, Gagandeep Kaur, M.Pharm1. 1Pharmacoevidence Pvt. Ltd., SAS Nagar, Mohali, India, 2Pharmacoevidence Pvt. Ltd., SAS Nagar Mohali, India.
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/responsible-ai-adoption-in-heor-through-human-in-the-loop-hitl-frameworks-aligning-with-global-hta-expectations
+
+## Objectives
+
+Despite emerging AI position statements and initial momentum, Generative AI (GenAI) adoption in HEOR remains limited due to inherent uncertainties. To address the lack of practical guidance, we detail the implementation of a comprehensive Human-in-the-Loop (HITL) framework for HEOR workstreams in alignment with global HTA expectations.
+
+## Methods
+
+We implemented a governance architecture integrating mandatory HITL checkpoints across four workflows: (i) Literature screening (GenAI as a second reviewer for inclusion decisions, generating diagnostic confidence scores and rationales), (ii) Data extraction and quality appraisal (GenAI as a second reviewer, or AI as augmentation tool), (iii) Evidence synthesis and reporting (automated reports and global value dossiers [GVDs]), and (iv) Analytical workstreams (automated insights, visualizations and statistical analysis code). AI outputs remained advisory, with predefined and decision rules triggering expert validation before integration into the evidence chain.
+
+## Results
+
+Across multiple reviews, literature screening achieved a mean agreement of 95% (range: 89% to 99%), with mandatory human arbitration of low-confidence outputs and discordant decisions affecting 5% of records. While automated extraction and quality appraisal reached expert concordance of 95% and 78% respectively, expert adjudication remained mandatory to validate judgment-based assessments, contextual interpretations, and resolve the AI's conservative risk bias. Furthermore, GenAI-enabled workflows delivered 90% submission-ready GVD outputs and achieved 92% alignment with expert-approved narratives. Expert review was utilized to finalize contextual framing, interpretive accuracy, and adherence to regulatory standards. For analytical workstreams, expert review of AI-generated insights, visual outputs, and statistical code was required by design to ensure defensible claims, logical consistency and alignment with the underlying research methodology.
+
+## Conclusions
+
+This implementation confirms that HITL-enabled GenAI augments rather than replaces expert oversight. By embedding mandatory checkpoints, HEOR teams can harness efficiency while preserving decision provenance and alignment with global HTA expectations. Ultimately, this supports responsible adoption, enabling researchers to focus on high-value activities while ensuring evidence integrity.
+
+---
+
+# 7. GIVE ME THE NUMBERS: FINE-GRAINED, STRUCTURED DATA EXTRACTION BEYOND NARRATIVE LLM OUTPUTS
+
+- Session code: MSR179
+- Authors: Artur Nowak, MSc, Monika Opalek, PhD, Ewa Borowiack, MSc, Ewelina Sadowska, MPharm, Joanna Konieczna, MSc, Damian Stachura, MSc; Evidence Prime, Krakow, Poland
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/give-me-the-numbers-fine-grained-structured-data-extraction-beyond-narrative-llm-outputs
+
+## Objectives
+
+Assess feasibility of specialized, fine-grained LLMs to extract highly contextual patient-flow data, and develop a framework for high-quality domain datasets, including annotation guidelines and field definitions, to support later stages. Three patient-flow variables provided a controlled testbed to refine dataset design. Generative LLMs capture high-level insights but often miss the precise structure needed for evidence synthesis. Laser AI uses domain-specific agents to produce structured, vocabulary-mappable, analysis-ready outputs stored directly in databases for downstream teams and scalable analytics workflows, with traceability for quality control.
+
+## Methods
+
+Clinically relevant patient categories were selected: number of patients assessed for eligibility (per study), and the numbers of patients randomized and lost to follow-up (per study arm). Datasets were created and annotated by trained reviewers within the Laser AI environment. The training set was used to develop LLM prompts. AI agents were executed as an extraction pipeline, producing one structured record per study (and arm where applicable). In addition to structured numeric outputs, agents returned an audit trail including supporting text quotes with document location and a brief rationale for each extracted value. Accuracy assessment included F1 scores and qualitative error analysis to categorize and interpret discrepancies.
+
+## Results
+
+A total of 160 studies were included, with separate training and test sets for each extraction field. LLM-based agents demonstrated strong extraction performance across the patient-flow variables (macro-averaged F1 score: 90%). Qualitative review further assessed correctness, consistency, and acceptability of both extracted values and their supporting evidence (quotes and brief rationale), informing refinement of guidelines and field definitions.
+
+## Conclusions
+
+Specialized agents can reliably extract highly contextual patient-flow information. Subsequent project stages will extend these capabilities to multilingual extraction, multimodal input processing, and ontology-based vocabulary mapping, ultimately supporting granular evidence extraction for drug and medical device effectiveness, safety, burden of disease (economic, humanistic, epidemiological point of view), and health-state utility outcomes.
+
+---
+
+# 8. DEVELOPMENT AND VALIDATION OF AN AI-POWERED CLINICAL PHARMACIST ASSISTANT FOR PREDICTING ADVERSE DRUG REACTIONS IN INDIAN HOSPITALS
+
+- Session code: MSR185
+- Authors: Kabeer H. Twaseen meem, PharmD, Manoj Kumar Mudigubba, MPH, PharmD, PhD; Raghavendra Institute of Pharmaceutical Education and Research (RIPER), Pharmacy Practice, Anantapur, India
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/development-and-validation-of-an-ai-powered-clinical-pharmacist-assistant-for-predicting-adverse-drug-reactions-in-indian-hospitals
+
+## Objectives
+
+Adverse drug reactions (ADRs) are preventable cause of morbidity, prolonged hospitalization, and increased healthcare costs in Indian hospitals. This study aimed to develop and validate an explainable, AI-powered Clinical Pharmacist Assistant (AI-CPA) to predict patient-level ADR-risk using large-scale clinical data and to support proactive pharmacist-led interventions.
+
+## Methods
+
+A supervised ML model based on XGBoost was trained on approximately 20.3 million de-identified inpatient records derived from MIMIC-IV clinical data, the FAERS, and a synthetic Indian-hospital dataset. Rigorous preprocessing included drug-normalization, clinically informed imputation, and feature encoding. Data were split into training (70%), validation (15%), and a held-out test set (15%). AUC-ROC with 95% CIs, sensitivity, specificity, precision, F1 score, and accuracy were calculated for all models. Model interpretability was provided using SHAP, and the system was designed to be HL7 FHIR-compliant.
+
+## Results
+
+On the held-out test-set, the model demonstrated excellent discrimination with an AUC-ROC of 0.99923 (95% CI: 0.99915-0.99931; p<0.0001). Sensitivity was 99.3%, specificity 98.7%, precision 85.4%, F1 score 91.8%, and overall accuracy approximately 98.8%. Performance remained stable across training, validation, and test splits. Key-predictors of ADRs were AKI, certain medications and their modes of administration, serum-creatinine and urea nitrogen-levels, diabetes, and duration of hospital stay. SHAP analysis provided transparent, patient-specific insights into the driving factors behind ADR-risk.
+
+## Conclusions
+
+The AI-CPA showed exceptional predictive performance and transparency in a large, independent test set. Interoperable design coupled with clinician-interpretable outputs could make this tool very useful for the ADR-risk assessment tasks of pharmacists to support proactive pharmacovigilance in Indian-hospitals. Its impact on workflow-efficiency and burden of preventable ADRs should be measured in a real-world, prospective study.
+
+---
+
+# 9. REPORTING OF STUDY DETAILS IN ABSTRACTS: INFORMATIVE FOR ARTIFICIAL INTELLIGENCE (AI) OR UNDERWHELMING?
+
+- Session code: MSR177
+- Authors: Allie Cichewicz, MSc 1, Marius Sauca, BSc, MSc2, Kevin Kallmes, BS, MA, JD3; 1Nested Knowledge, Boston, MA, USA, 2Nested Knowledge, UTRECHT, Netherlands, 3Nested Knowledge, St. Paul, MN, USA
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/reporting-of-study-details-in-abstracts-informative-for-artificial-intelligence-ai-or-underwhelming
+
+## Objectives
+
+Advancements in AI, particularly large language models, streamline the initial review phase to help researchers quickly identify relevant studies. However, accuracy is limited by study information described in abstracts. Checklists like CONSORT-A, PRISMA-A, and STARD have helped standardize reporting, but differences still exist between authors, journals, and study types. We aimed to synthesize evidence on reporting frequencies of critical study details in abstracts to identify trends and gaps to inform screening methods leveraging AI.
+
+## Methods
+
+A comprehensive, living review was undertaken to identify studies that evaluate the prevalence of key concepts commonly used to determine abstract-level eligibility for literature reviews: Study type, data source(s), study registration, patient population, treatment(s), sample size, and outcomes.
+
+## Results
+
+As of December 2025, 47 studies were included covering 37,177 abstracts, predominantly from randomized controlled trials (RCTs) (10,132 abstracts [27.3%]; n=33 studies), systematic reviews (742[2.0%];n=6), observational (650[1.8%];n=2), diagnostic accuracy (616[1.7%];n=4), RCT+observational (130[0.4%];n=1), and all study types (24,907[67.0%];n=1). Across all study types, intervention/treatment (88%) and disease/condition (86%) were consistently well-reported, while participant eligibility (60%), effectiveness outcomes (62%), and sample size (58%) showed moderate reporting; safety outcomes (38%), data source/setting (38%), and registration (27%) were poorly reported. Notably, diagnostic accuracy studies had strong sample size reporting (78%) but the poorest eligibility (26%) and registration (2%) details. Systematic reviews had strong study type identification (89%) but weak registration (6%), and RCTs showed particularly poor data source/setting reporting (32%) with highly variable study registration (1-99%).
+
+## Conclusions
+
+The abstract-reporting evidence base is heavily skewed toward RCTs (70%), with limited representation of other study types. Most assessments used reporting guidelines (e.g., CONSORT-A) based on rigorous methodological requirements; this may overestimate gaps for AI-assisted screening, which may be able to assess basic concept presence. Future assessments focused on PICO-based concept presence rather than reporting quality may provide more actionable insights for AI-based screening prompts.
+
+---
+
+# 10. CAN A GENERATIVE PATIENT JOURNEY FOUNDATION MODEL ALLEVIATE THE BURDEN OF CANCER SCREENING?
+
+- Session code: MSR172
+- Authors: Wilson Lau, PhD1, Ehsan Alipour, PhD1, Youngwon Kim, PhD 1, Sihang Zeng, B.Eng1, Anand Oka, PhD1, Jay Nanduri2. 1Truveta, Bellevue, WA, USA, 2Truveta, issaquah, USA.
+- Disease: SDC: Oncology|No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/can-a-generative-patient-journey-foundation-model-alleviate-the-burden-of-cancer-screening
+
+## Objectives
+
+The average cost of cancer screening, such as mammogram or colonoscopy, can range from hundreds to over a thousand dollars. This study explores the potential of building a cancer foundation model based on Generative Pre-trained Transformers (GPT) to predict future outcomes for patients. We assess the prediction accuracy and feasibility of leveraging the foundation model to inform when screening can be prioritized, thereby reducing the associated burden of unnecessary procedures.
+
+## Methods
+
+In this study, we extended the GPT architecture and pre-trained it with a subset of Truveta Data containing the electronic health record (EHR) from the journeys of 1.4 million de-identified patients diagnosed with 4 types of cancers (lung, breast, colorectal, prostate) across the United States. For validation, 500 patients were randomly sampled from our test data, in which each type of cancer diagnosis constituted 20%-29% of the samples. We used the model to generate synthetic future patient journeys for the selected patients and compared the predicted outcomes with the actual cancer diagnoses within one year.
+
+## Results
+
+The model achieved sensitivities of 57% (lung), 71% (breast), 38% (colorectal), and 79% (prostate), with corresponding positive predictive values (PPV) of 86%, 83%, 85%, and 67%. More importantly, it demonstrated high specificities of 97% (lung), 94% (breast), 98% (colorectal), 89% (prostate), with corresponding negative predictive values (NPV) of 85%, 89%, 86%, 94%.
+
+## Conclusions
+
+The high specificities and NPV indicate the feasibility of applying generative foundation model pre-trained with EHR data to predict negative cancer outcomes with high accuracy. Since the percentage of screening tests leading to positive cancer diagnosis is relatively low, the projected negative predictive outcomes offer valuable signals for clinicians, which they can use to complement their expert assessment to avoid unnecessary screening and subsequently reduce the burden of screening costs.
+
+---
+
+# 11. COMPARATIVE EFFECTIVENESS OF ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING METHODS VERSUS TRADITIONAL DISPROPORTIONALITY ANALYSIS FOR ADVERSE DRUG REACTION SIGNAL DETECTION: A SYSTEMATIC REVIEW
+
+- Session code: MSR132
+- Authors: Emeka E. Duru, BPharm 1, Lotanna Ezeja, BPharm2, Azeez B. Aina, BPharm3, Fortune E. Olakunle, BPharm4; 1University of Utah, Salt Lake City, UT, USA, 2Auburn University, Harrison School of Pharmacy, Auburn, AL, USA, 3Purdue University, Indianapolis, IN, USA, 4Swipha Pharma Nig, Lagos, Nigeria
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-3-3/comparative-effectiveness-of-artificial-intelligence-and-machine-learning-methods-versus-traditional-disproportionality-analysis-for-adverse-drug-reaction-signal-detection-a-systematic-review
+
+## Objectives
+
+Post-marketing pharmacovigilance relies on statistical signal detection methods to identify potential adverse drug reactions (ADRs) in spontaneous reporting systems (SRS). While traditional disproportionality methods (proportional reporting ratio [PRR], reporting odds ratio [ROR], Bayesian Confidence Propagation Neural Network [BCPNN], Empirical Bayes Geometric Mean [EBGM]) remain standard practice, artificial intelligence (AI) and machine learning (ML) approaches have emerged as potential alternatives.This systematic review aimed to compare the predictive performance of AI/ML methods versus traditional disproportionality analysis for safety signal detection in SRS databases
+
+## Methods
+
+A comprehensive literature search was conducted across PubMed, Embase, and Web of Science from database inception through December 2025. Studies were included if they applied AI/ML algorithms to SRS data, compared ML performance against traditional disproportionality methods, reported quantitative performance metrics, and used validated reference standards. Systematic screening was conducted using Distiller SR with pre-specified PICO criteria. Standardized extraction captured study characteristics, ML algorithms, traditional comparators, and performance metrics.
+
+## Results
+
+12 studies met inclusion criteria, representing 4.1-65 million reports across FAERS (n=7), KAERS (n=2), KIDS-KD (n=1), French national database (n=1), and simulated data (n=1). ML approaches included gradient boosting (n=5), random forests (n=6), deep reinforcement learning (n=1), neural embeddings (n=1), and XGBoost (n=2). Nine studies (75%) demonstrated ML superiority over traditional methods. ML sensitivity ranged 43-100% versus traditional 18-75%; ML AUROC (0.52-1.0 vs 0.46-0.69). Best- performing approaches: gradient boosting machine (AUROC 0.97 vs. 0.55 for traditional), deep Q-network (+26% overall accuracy versus traditional), gradient boosting (4/5 adverse events detected in first year versus zero for traditional), neural embeddings (+14% AUROC improvement). Two studies found Bayesian methods or propensity score approaches comparable/superior due to data characteristics. Feature engineering beyond disproportionality enhanced ML performance. ML excelled at rare event/early detection.
+
+## Conclusions
+
+AI/ML methods generally outperform traditional disproportionality analysis for safety signal detection, with advantages in sensitivity, early detection, and rare event identification.
+
+---
+
+# 12. FAST&FURIOUSHEOR IMPACT:THE AI ASSISTANT PLAYBOOKTO BUILDTRUSTAND RESILIENCYINTHEFAST-PACED WORLD OFLARGE LANGUAGE MODELS (LLMS)
+
+- Session code: MSR186
+- Authors: Katelyn Keyloun, BS, MS, PharmD 1, Gavin J. Outteridge, MA2, Gabriel Bishop, MS, MA3, Anwar Sabir, BS4, Tyler Reinsch, PharmD5, Justin Yu, PharmD MS6; 1Arysana, Director, Product Innovation & Development, Carson City, NV, USA, 2Arysana, London, United Kingdom, 3Arysana, Palo Alto, CA, USA, 4Arysana, Boston, MA, USA, 5Arysana, Springfield, MO, USA, 6Arysana, Jersey City, NJ, USA
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/fast-furiousheor-impact-the-ai-assistant-playbookto-buildtrustand-resiliencyinthefast-paced-world-oflarge-language-models-llms
+
+## Objectives
+
+While broad use of AI Assistants grows with a ‘trust, then verify’ approach, use for HEOR tasks largely warrants verification first. Leading Generative AI (GenAI) and retrieval augmented generation (RAG) validation methods to ‘verify, then trust’, such as human-in-the-loop testing, generally lack task-specificity and do not account for robustness nor estimate the value for HEOR. Thus, the objective was to develop and apply an HEOR AI Assistant validation framework.
+
+## Methods
+
+A targeted review of PubMed and an internet search informed the new framework. The framework was applied to a research-tailored HEOR AI Assistant for evidence summarization using 278 articles, applying pre-and post-processing steps, and using a RAG approach with OpenAI LLM GPT-5. Article processing included: PDF-to-text (Markdown) conversion, semantic text chunking, contextual enrichment, 3072-dimensional embedding using the OpenAI text-embedding-3-large model, and a vector database to facilitate RAG. A test set of 12 queries/answers developed a priori was compared against AI Assistant responses with a passing threshold of ≥90% by human testers. Bias was assessed through 3 queries. A robustness test is planned by comparing LLMs. Yield was estimated from reported minutes saved per query, adjusted for performance.
+
+## Results
+
+Three relevant frameworks across 46 articles informed the new GenAI-VERIFY framework, including ELEVATE-GenAI, CHEERS-AI, and DEAL-B checklist. Validation and Evaluation, includes testing overall performance with predefined queries/answers. Robustness, includes comparing LLMs. Integrity and Fairness, includes transparency, reproducibility and bias. Yield, estimates the value for HEOR. Applying GenAI-VERIFY, the AI Assistant performance was 91% (30/33 queries). Testing temporally varied, supporting reproducibility; assessment of bias supported fairness for 3/3 queries. Estimated research time saved was 54.6 minutes per query.
+
+## Conclusions
+
+The new GenAI-VERIFY validation framework can be applied to research-tailored AI Assistants for HEOR tasks to support verification, as well as integrity, fairness and value. Future research includes automated testing approaches for greater scalability.
+
+---
+
+# 13. BREAKING DOWN THE CITATION CHAIN IN HEALTH ECONOMIC MODELING: HOW FAR IS CURRENT PRACTICE FROM GUIDELINES (AND WHY GENAI MIGHT HELP)?
+
+- Session code: MSR199
+- Authors: Zongbo Li, PhD, Marissa Reitsma, PhD; Stanford University, Stanford, CA, USA
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/breaking-down-the-citation-chain-in-health-economic-modeling-how-far-is-current-practice-from-guidelines-and-why-genai-might-help
+
+## Objectives
+
+Guidelines for health economic modeling recommend parameter estimates "based on the best available evidence, in consideration of the full array of available information" while recognizing "time and resource constraints." Generative AI (GenAI) could transform parameter estimation practices by automating evidence synthesis, but performance benchmarks are necessary to guide adoption. We hypothesize that resource constraints lead modelers to cite parameters from previous studies rather than synthesize comprehensive evidence. This study defines a framework for analyzing current parameter sourcing practices by tracing citation chains in health economic models, proposing a minimum performance metric for GenAI tools.
+
+## Methods
+
+We developed a systematic approach to document parameter sourcing practices, and deployed it for an exemplar parameter: probability of witnessed overdose. We identified all simulation modeling studies using this parameter through PubMed, extracted their citation patterns, and constructed citation networks.
+
+## Results
+
+For all three parameters, we identified 15 modeling studies published after 2020. More than half (n=8, 53%) cited previous modeling studies rather than primary evidence. Citation chain analysis revealed that tracing these citations back to their original sources led to observational studies from the 1990s or early 2000s, but citations of modeling studies made evidence appear relatively recent.
+
+## Conclusions
+
+Current parameter sourcing practices fall substantially short of guideline standards, with modeling studies citing other modeling studies. Our analysis reveals a significant gap between what guidelines recommend and what is practically achievable under traditional workflows. Generative AI tools, with their ability to rapidly synthesize large bodies of evidence, offer a promising pathway to bridge this gap. By automating the labor-intensive process of evidence review, GenAI could enable modelers to move toward the guideline-recommended standard of considering "the full array of available information," ultimately improving the quality of results.
+
+---
+
+# 14. INTEGRATING MACHINE LEARNING AND GENERATIVE AI ACROSS THE SYSTEMATIC REVIEW WORKFLOW - AN AI-ENHANCED SLR OF POST AMI CARDIOVASCULAR RISK AND CARDIOVASCULAR INFLAMMATION
+
+- Session code: MSR151
+- Authors: Adam Nelson, MD1, Julie T. Mortensen, MSc, PhD2, Iram Muhammad, MD2, Jag Chhatwal, PhD3, Carol Kirshner, MS, MSc 4, Kevin Bainey, MD5; 1University of Adelaide, Adelaide, Australia, 2Novo Nordisk, Søborg, Denmark, 3Harvard Medical School / Massachusetts General Hospital, Boston, MA, USA, 4Value Analytics Labs, Boston, MA, USA, 5University of Alberta, Edmonton, AB, Canada
+- Disease: SDC: Cardiovascular Disorders (including MI, Stroke, Circulatory)
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/integrating-machine-learning-and-generative-ai-across-the-systematic-review-workflow--an-ai-enhanced-slr-of-post-ami-cardiovascular-risk-and-cardiovascular-inflammation
+
+## Objectives
+
+Patients surviving a Type 1 acute myocardial infarction (AMI) have substantial residual risk of recurrent cardiovascular (CV) events, but 1- and 5-year estimates vary by population, endpoint, and AMI subtype. Persistent post-AMI CV inflammation, reflected by elevated levels of high-sensitivity C-reactive protein (hsCRP) and interleukin-6 (IL-6), appears prognostically relevant yet insights have been limited to small cohorts limiting generalizability. We aimed to perform a systematic literature review (SLR) to: (1) report 1- and 5-year risks of recurrent CV events after Type 1 AMI; and (2) report hsCRP/IL-6 trajectories post MI and their associations with recurrent CV outcomes. Novel to our approach, we paired machine-learning-assisted screening with generative-AI-supported extraction and reporting under expert validation.
+
+## Methods
+
+We conducted a protocol-driven PRISMA 2020 SLR. MEDLINE and Embase were searched (January 1, 2015-June 28, 2025). Two reviewers screened titles/abstracts and full texts with PICO Portal ML re-ranking and early stopping at a validated 95% recall threshold. After inclusion, GenAI supported structured extraction summaries, draft risk-of-bias text (NOS, ROBINS-I), and reporting. ML was limited to screening and GenAI to synthesis tasks; all outputs were human-validated.
+
+## Results
+
+Searches yielded 6,813 records; 138 studies were included. ML predictions achieved 95% sensitivity (95% CI 93-97) and 64% specificity (95% CI 62-65); NPV was >99% (PPV 21.9%). GenAI accelerated and standardized extraction and risk-of-bias write-up. Preliminary synthesis shows substantial recurrent CV risk after Type 1 AMI. Although few studies reported inflammatory factors, hsCRP/IL-6 levels were generally associated with higher recurrent events.
+
+## Conclusions
+
+Evidence to date indicates Type 1 AMI survivors show substantial recurrent CV risk persisting to 5 years. Persistently elevated hsCRP/IL-6 are associated with higher recurrence suggesting a role for CV inflammation. Finally, a modular ML-GenAI workflow improved SLR efficiency and consistency with full expert validation.
+
+---
+
+# 15. FROM RETRIEVAL TO VERDICT: A HYBRID LLM PIPELINE FOR EVALUATING MEDICAL AND ECONOMIC CLAIMS
+
+- Session code: MSR175
+- Authors: Achilleas Livieratos, PhD1, Maria Kudela, PhD2, Yuxi Zhao, PhD2, All-shine Chen, PhD2, Junjing Lin, PhD3, Di Zhang, PhD4, Xin Luo, PhD2, Paula Angelica Ramos, MSc2, Chinyu Su, MD2, Margaret Gamalo, PhD 2. 1SPAIML Scientific Working Group, New York, NY, USA, 2Pfizer, New York, NY, USA, 3Takeda Pharmaceuticals, Cambridge, MA, USA, 4Teva Pharmacieticals, New York, NY, USA.
+- Disease: SDC: Systemic Disorders/Conditions (Anesthesia, Auto-Immune Disorders (n.e.c.), Hematological Disorders (non-oncologic), Pain)
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/from-retrieval-to-verdict-a-hybrid-llm-pipeline-for-evaluating-medical-and-economic-claims
+
+## Objectives
+
+The process of verifying clinical and economic claims in health technology assessments (HTAs) and systematic reviews is manual and time-consuming. Conventional LLMs like GPT-4 have been effective in filtering, but they also suffer from factual noise and citation hallucinations. In this work, we propose a hybrid AI pipeline comprised of retrieval-augmented generation (RAG), LLM-based abstract re-ranking, and iterative critique using TextGrad to assist claim adjudication. Our objective was to design a transparent, evidence-based system that can generate structured verdicts (TRUE, PARTLY TRUE or FALSE) accompanied by PubMed references for HEOR and regulatory decision support.
+
+## Methods
+
+The pipeline comprised four stages: (1) Iterative retrieval with query expansion reformulated search queries dynamically to capture pivotal RCTs and real-world studies; (2) LLM-based abstract re-ranking (DeepSeek-R1) prioritized clinically relevant evidence (e.g., cost-effectiveness analyses, head-to-head trials); (3) TextGrad iterative critique applied gradient-style optimization, refining verdicts by penalizing unsupported statements and rewarding citation alignment; (4) Structured verdict enforcement constrained outputs to categorical judgments paired with PubMed IDs. The approach was tested on claims relating to ulcerative colitis treatments, encompassing efficacy, safety, and cost-effectiveness comparisons.
+
+## Results
+
+The hybrid model consistently turned noisy retrieval results into clear, citation-supported decisions. First-round retrieval pulls ~8% irrelevant abstracts; re-ranking and TextGrad refinement diminishes noise, with verdicts falling in close agreement to trial evidence/real-world data. Well-organized outputs led to higher precision and, together with the automatic PubMed referencing, promoted accountability.
+
+## Conclusions
+
+The hybrid pipeline presented here showcases the potential of multi-stage AI architectures to improve soundness, transparency and scalability of evidence-based analysis in HEOR claim studies. RAG and re-ranking, combined with TextGrad critique, produce structured verdicts in support of HTA and payer negotiation. Beyond ulcerative colitis, the model is applicable to oncology, rare diseases and other therapeutic areas.
+
+---
+
+# 16. MIND THE GAP: ARTIFICIAL INTELLIGENCE (AI) POWERED ANALYSIS OF DECISION DRIVERS WITHIN ULTRA-RARE DISEASE/HST NICE TECHNOLOGY APPRAISALS
+
+- Session code: MSR174
+- Authors: Sumeet Bakshi, MBBS, MBA, Madhusudan Kabra, MSc. Veev Consulting, London, United Kingdom.
+- Disease: SDC: Rare & Orphan Diseases
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/mind-the-gap-artificial-intelligence-ai-powered-analysis-of-decision-drivers-within-ultra-rare-disease-hst-nice-technology-appraisals
+
+## Objectives
+
+NICE HST (Highly Specialised Technologies) conducts appraisals of rare disease health technologies in UK. We tested a structured AI driven data extraction and analysis framework for evidence submitted for appraisal and derive key decision drivers for NICE recommendations in ultra-rare diseases.
+
+## Methods
+
+A Large Language Model (LLM) assisted platform was used to support synthesis and analysis of ultra-rare disease appraisal guidance documents published by NICE HST in 2023-24. The agent was trained using structured data extraction, reasoning, data-mapping and analysis framework and was prompted to search and evaluate evidence submitted and key decision drivers.
+
+## Results
+
+The AI driven approach yielded faster results than human approaches and was able to identify 10 guidance documents for unique assets/indications appraised by NICE HST and classify them on the basis of recommendations (recommended/not recommended, recommended only in research settings/specialised commissioning eg. Managed Access). 9 were recommended for use on the NHS and 1 was not recommended. Other details that were analysed were whether the recommendations covered the entire requested population or only restricted sub-groups and whether the ICER threshold was met/non met/borderline/undefined. Further, the evidence submitted and qualitative comments made by the committee with respect to each piece of evidence were evaluated. Key identified categories of evidence submitted included pivotal trials, cost-effectiveness modelling, resource impact modelling, generalisability to the NHS, natural history studies, models to extrapolate longer term/outcomes considered relevant by the NHS, current treatment patterns studies, time trade-off studies for carer disutility, registry studies, patient/carer surveys, case studies etc. We showcase effectiveness of AI to identify pieces of evidence that contributed as decision drivers in each NICE HST recommendation.
+
+## Conclusions
+
+AI is a useful tool for synthesis and analysis of HTA decision drivers and assessing evidence evaluated in each appraisal. An AI based engine could potentially enhance and streamline the evidence planning and generation process process.
+
+---
+
+# 17. USE ARTIFICIAL INTELLIGENCE TO PREDICT REGULATORY APPROVAL BASED ON PHASE III ONCOLOGY CLINICAL TRIAL PUBLICATIONS
+
+- Session code: MSR165
+- Authors: Beverly Fuerte, PharmD, Da Sol Kim, PharmD, Kenneth Youens, MD, Timothy Reynolds, PharmD, MS, Linda Chen, PharmD, MS, Paul Godley, PharmD, Harry Liu, MS, PhD; Baylor Scott & White Health, Temple, TX, USA
+- Disease: SDC: Oncology
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/use-artificial-intelligence-to-predict-regulatory-approval-based-on-phase-iii-oncology-clinical-trial-publications
+
+## Objectives
+
+Improving the ability to predict regulatory outcomes using artificial intelligence (AI) could streamline research and development. This shift could save the industry billions in wasted capital, while society benefits from faster access to effective treatments. This study assesses accuracy of AI to predict approval in phase-III oncology clinical trials and identifies key drivers of regulatory outcomes.
+
+## Methods
+
+A set of 208 phase-III oncology clinical trials with overall survival endpoints initiated between January 1990 to January 2021 was curated from literature. Published phase-III trial manuscripts were systematically processed by large language models (LLMs) to predict U.S. Food and Drug Administration (FDA) approval or denial using information only from text. OpenAI’s GPT-4.1-mini and GPT-5-mini were selected for their cost-efficiency and comparable outputs. Across twelve study attributes, LLMs were prompted to assign a relative weight between -1 and 1, where positive values indicated contribution towards approval and negative values towards denial. Weights were then rescaled between 0 and 1 where larger values indicated greater decision contributions. Sensitivity analysis was conducted using retrieval-augmented-generation (RAG) with FDA guidance serving as a knowledge base.
+
+## Results
+
+Of 208 studies, 79 were associated with FDA approval. Across all testing conditions, models achieved 100% sensitivity for approval. GPT-4.1-mini achieved specificity of 85.3% and 84.5% with and without RAG, respectively. GPT-5-mini achieved specificity of 92.3% and 89.9% with and without RAG, respectively. The highest F1 score of 0.940 and balanced accuracy of 96% were achieved with GPT-5-mini and RAG. Primary endpoint type, hazard ratio (HR), and overall survival (OS) were LLM-identified as the most salient features that influenced overall decision-making on regulatory outcomes.
+
+## Conclusions
+
+AI was able to predict regulatory outcomes with great sensitivity and specificity. Of the 12 study features assessed, performance of the primary endpoint, especially with regards to HR and OS, was identified as key factors in predicting regulatory outcomes.
+
+---
+
+# 18. OPTIMIZATION OF PROSTATE CANCER BIOPSY DECISION-MAKING IN KOREAN PATIENTS USING MACHINE LEARNING
+
+- Session code: MSR176
+- Authors: Ji-Eun An, Sr., MS 1, Su-Yeon Yu, Phd1, Min-Ji Rho, Ph.D. program1, Sanghwa Lee, Ph.D. program1, Jae-heung Jung, MD2; 1kangwon national university, Chuncheon, Korea, Republic of, 2Wonju Severance Christian Hospital, Wonju, Korea, Republic of
+- Disease: SDC: Urinary/Kidney Disorders|STA: Personalized & Precision Medicine|SDC: Oncology
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/optimization-of-prostate-cancer-biopsy-decision-making-in-korean-patients-using-machine-learning
+
+## Objectives
+
+Prostate cancer incidence in Korea has tripled over the past decade, ranking as the second most common malignancy in men aged ≥65 years. Prostate-Specific Antigen (PSA) screening facilitates early detection but suffers from low specificity, leading to unnecessary biopsies and associated complications. This study aims to identify prostate cancer biomarkers and develop predictive models for cancer diagnosis and biopsy-related complications in Korean patients.
+
+## Methods
+
+This retrospective cohort study analyzed data from 17,530 Korean male patients who underwent prostate biopsies (2011-2019) across six tertiary hospitals. Variables included sociodemographic (age, smoking, family history), clinical (PSA, Gleason Score, TNM stage, DRE, MRI), and outcome data (cancer diagnosis, biopsy complications). Statistical analyses (chi-square, t-test, ANOVA, LASSO regression) identified significant predictors. Predictive models (logistic regression, SVM, Random Forest, XGBoost, MLP, soft voting ensemble) were trained using an 80:20 dataset split with 10-fold cross-validation and hyperparameter tuning.
+
+## Results
+
+PSA, Gleason Score, age, and family history were significant cancer predictors. The soft voting ensemble achieved the best diagnostic performance (AUC 0.840, precision 0.863, F1-score 0.647). For borderline PSA patients, performance declined but improved with additional features. Biopsy complication prediction was limited by class imbalance, yet combining Random Over Sampling with focal loss improved recall (0.476) and AUC (0.660). A web-based dashboard integrated SHAP analysis and ChatGPT for interpretability.
+
+## Conclusions
+
+This study supports prostate cancer diagnosis and biopsy decision-making in Korean patients. Future work should refine predictive models for complication severity stratification.
+
+---
+
+# 19. FROM DATA TO INSIGHTS: VALIDATING ARTIFICIAL INTELLIGENCE (AI)-GENERATED WRITING IN EVIDENCE SYNTHESIS
+
+- Session code: MSR164
+- Authors: Allie Cichewicz, MSc; Independent Consultant, Boston, MA, USA
+- Disease: SDC: Oncology
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/from-data-to-insights-validating-artificial-intelligence-ai-generated-writing-in-evidence-synthesis
+
+## Objectives
+
+As generative AI is increasingly integrated into literature review software, automated written synthesis remains a key unmet capability and a challenge for reviewers to validate. Following the release of Smart Insights in Nested Knowledge, this work aims to evaluate the quality and reliability of AI-generated narrative synthesis using a novel, structured framework for assessing scientific writing produced by AI.
+
+## Methods
+
+Data were extracted for three oncology reviews using Adaptive Smart Tags in Nested Knowledge: clinical effectiveness from real-world evidence; clinical efficacy and safety from randomized trials; comparative effectiveness from matching-adjusted indirect comparisons. For all tagged data, AI-generated summaries and supporting claims were produced via Smart Insights, with each summary and claim linked back to the citation and evidence for traceability. Each summary was evaluated across six domains: Faithfulness to Sources (Source), Citation Accuracy and Integrity (Citation), Synthesis Quality (Synthesis), Completeness and Representativeness (Completeness), Nuance and Uncertainty Handling (Nuance), and Writing Quality (Writing) on a scoring system ranging from 1 (poor) to 5 (excellent). To assess consistency, Smart Insights was run twice on the same datasets; outputs were compared qualitatively.
+
+## Results
+
+Smart Insights demonstrated the strongest performance on Citation (mean score 4.9/5), Synthesis (4.4), and Writing (4.3), followed by Source (3.6) and Completeness (3.4). Performance was lowest on Nuance (2.7). No hallucinated citations were identified; however, some claims omitted relevant evidence or citations. Repeated Insights generations produced minimal, non-meaningful differences, though greater textual variation was observed for summaries of larger evidence bases and in qualitative domains (e.g., study limitations or author conclusions).
+
+## Conclusions
+
+AI-generated written synthesis within Nested Knowledge achieves high performance in citation accuracy and integrity, coherence, and clarity, supporting its use as an efficiency-enhancing tool in evidence synthesis. Limitations in capturing nuance and uncertainty underscore the need for structured validation and human oversight of any AI-generated summary.
+
+---
+
+# 20. QUALITY ASSESSMENT IN A SYSTEMATIC LITERATURE REVIEW USING AN ARTIFICIAL INTELLIGENCE MODEL
+
+- Session code: MSR187
+- Authors: Philippe Martin, PhD1, Michelle Di Risio, MSc, PhD1, Olivia Colman, MPH2, Corrine Gregory, MPH2, Lee Hughes, MS2, Liz Lunn, BA 3; 1Knight Therapeutics, Montréal, QC, Canada, 2Costello Medical, Boston, MA, USA, 3Costello Medical, Manchester, United Kingdom
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/quality-assessment-in-a-systematic-literature-review-using-an-artificial-intelligence-model
+
+## Objectives
+
+To evaluate AI quality assessment (QA) performance for randomized controlled trials (RCTs).
+
+## Methods
+
+AI prompts were developed to extract risk of bias (RoB) from RCTs included in a systematic literature review (SLR) of attention deficit hyperactivity disorder (ADHD) medications. A modified Cochrane RoB 1.0 tool was used, with additional questions addressing cross-over designs and study funding. Prompts were refined for best output by human judgement and run in GPT-4o (temperature: 0.7) for all questions. A human verified AI outputs against publications to indicate a true positive (accurate, as reported in publication), false positive (data reported which are not present in publication), or false negative (data not reported which are present in publication). Results were used to compute recall (relevant data accurately identified) and precision (correct outputs). F1 scores (harmonic mean of precision and recall; score range 0-1 for all measures) were calculated. A predefined threshold of ≥0.70 was considered a ‘good’ F1 score.
+
+## Results
+
+Among 32 studies, median recall was 1.0 (range: 0.31-1.0), and median precision was 0.68 (range: 0.31-0.94). The F1 threshold was exceeded in 29/32 studies; two of the remaining studies scored close to the threshold (0.63 and 0.67). The remaining study score (for a clinicaltrials.gov record) was an outlier at 0.31. The highest question-specific F1 score was 0.97, for confounding bias. The lowest F1 score across checklist questions was 0.51, recorded for attrition bias.
+
+## Conclusions
+
+The AI model demonstrated high recall, efficiently identifying QA checklist items when present. Precision varied across records, reflecting common misinterpretations of data. Although most studies met the F1 threshold, AI appeared less consistent for extracting and interpreting data from a clinical trial record than manuscript publications. These findings support AI’s value in QA of RCTs but emphasize the need for continuous human-in-the-loop verification to ensure accuracy.
+
+---
+
+# 21. WHAT HEOR CAN LEARN FROM MATURE AI INDUSTRIES AND WHERE THE ANALOGIES BREAK DOWN
+
+- Session code: MSR197
+- Authors: Tushar Srivastava, MSc 1, Kunal Swami, MASc, MSc2; 1ConnectHEOR, London, United Kingdom, 2ConnectHEOR, Delhi, India
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/what-heor-can-learn-from-mature-ai-industries-and-where-the-analogies-break-down
+
+## Objectives
+
+This study critically examined AI deployment practices from high-stakes industries to identify which governance, validation, and oversight approaches translate effectively to HEOR, which require adaptation, and which are fundamentally misaligned due to differences in data characteristics, uncertainty, and decision permanence.
+
+## Methods
+
+A structured comparative analysis was conducted across six AI-mature industries: banking, insurance, aviation, financial reporting, advanced manufacturing, and clinical diagnostics. Practices were assessed across five governance dimensions: (1) model risk stratification, (2) validation and recalibration standards, (3) human oversight models, (4) auditability and traceability requirements, and (5) accountability for downstream decision consequences. These approaches were evaluated against HEOR-specific constraints, including heterogeneous and incomplete real-world data, probabilistic causal inference and forecasting, evolving evidence bases, and HTA and payer decision frameworks.
+
+## Results
+
+Three distinct patterns of transferability were identified. High transferability was observed for governance-centric practices, particularly banking and insurance model risk management frameworks that tier validation rigor based on decision impact. Such approaches align closely with HEOR use cases where models influence reimbursement magnitude and access conditions. Finance-grade auditability and traceability practices also translate directly to HTA requirements for transparency and reproducibility. Conditional transferability was evident for aviation and clinical diagnostics human-in-the-loop models. While these sectors emphasise real-time intervention, HEOR requires retrospective oversight focused on bias detection, assumption validation, and longitudinal consistency as evidence evolves. Low transferability was found for manufacturing-style automation and statistical process control, which depend on stable, repeatable systems and conflict with the non-linear, stochastic nature of disease progression and economic modelling.
+
+## Conclusions
+
+The most transferable lessons for AI-enabled HEOR lie not in algorithmic techniques but in governance and accountability architectures developed by mature industries. Effective translation requires reframing AI assurance around decision impact, explicit uncertainty, and sustained oversight over time, positioning AI as an embedded component of governance-enabled analytic practice rather than a standalone technical solution.
+
+---
+
+# 22. FORECASTING CLINICAL OUTCOMES FROM LIMITED REAL-WORLD DATA: A COMPARATIVE SIMULATION STUDY
+
+- Session code: MSR22
+- Authors: Awa Diop, PhD1, Sheena Kayaniyil, PhD 2, Lise RETAT, PhD3, Sarah Collier, MSc4, Diar Fattah, PhD5, Stefan Franzén, PhD6. 1AstraZeneca, Mississauga, ON, Canada, 2AstraZeneca, Missisauga, ON, Canada, 3AstraZeneca Spain, Barcelona, Spain, 4AstraZeneca Canada, Mississauga, ON, Canada, 5AstraZeneca, Barcelona, Spain, 6AstraZeneca Sweden, Gothenburg, Sweden.
+- Disease: SDC: Respiratory-Related Disorders (Allergy, Asthma, Smoking, Other Respiratory)
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-1-4/forecasting-clinical-outcomes-from-limited-real-world-data-a-comparative-simulation-study
+
+## Objectives
+
+There is growing appreciation for population-based location-specific real-world data (RWD) to drive targeted informed decision-making. Estimating and evaluating future trends in clinical outcomes at a national and sub-national level is essential for effective local planning. Thus, we compared different modeling approaches to identify which one is best suited for demonstrating future trends of key clinical outcomes. We assessed robustness and short horizon performance of [linear model (LM), generalized additive model (GAM), and autoregressive integrated moving average (ARIMA)], with interrupted time series (ITS) to capture COVID-related disruptions.
+
+## Methods
+
+A simulation study of 40 scenarios was conducted using a data-generating process calibrated to our data composed by one national series and 18 regional series considering both chronic obstructive pulmonary disease (COPD) hospital admission rates and counts, with and without seasonality, and T = 10 to 50 time points of follow-up. Separate and pooled analyses of sub-national regions were investigated with and without random-effects. Forecasts were evaluated via rolling origin at 1, 3, and 5 future time points, reporting accuracy and uncertainty metrics.
+
+## Results
+
+Without seasonality, across 10-50 time points, LM + ITS, GAM + ITS, and ARIMA + ITS achieved similar prediction errors (e.g., for T = 10 and 3 future time points, mean errors were respectively 1.78, 1.79 and 1.80). With seasonality, ARIMA+ITS achieved overall lower forecasting errors. At a regional level, ARIMA + ITS without pooling consistently delivered the best forecasts results. When the number of time points increases, the benefit of modeling cross-region correlation grows: pooled and hierarchical fits can better distinguish shared shocks from region-specific noise. However, adding correlations mainly helps uncertainty quantification rather than markedly reducing point error.
+
+## Conclusions
+
+ARIMA + ITS is a flexible and reliable approach for timely, informed decision-making. This approach adapts to different data configurations and can account for seasonality and interruption in the time series.
+
+---
+
+# 23. MACHINE LEARNING-BASED PREDICTION OF 10-YEAR CORONARY HEART DISEASE RISK AND COMPARISON WITH THE FRAMINGHAM RISK SCORE
+
+- Session code: MSR1
+- Authors: Haeseon Lee, MSc, PharmD, Xiangyang Ye, MA, MS, PhD, Kwame Kissi-Twum, MSc, Nathorn Chaiyakunapruk, PharmD, PhD; University of Utah, Salt Lake City, UT, USA
+- Disease: SDC: Cardiovascular Disorders (including MI, Stroke, Circulatory)|No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-1-4/machine-learning-based-prediction-of-10-year-coronary-heart-disease-risk-and-comparison-with-the-framingham-risk-score
+
+## Objectives
+
+The office-based Framingham Risk Score (FRS) is widely used to estimate 10-year coronary heart disease (CHD) risk because of simplicity and reliance on a limited set of variables. However, this parsimony may limit its ability to leverage additional clinical information routinely collected in practice. It remains uncertain whether modest extensions of FRS predictor set using such available variables, when modeled with machine learning (ML) algorithms, translate into meaningful improvements in practical risk prediction. We aimed to compare ML models with FRS for 10-year CHD risk prediction.
+
+## Methods
+
+A total of 4,240 participants were included, of whom 644 (15.2%) experienced CHD within 10 years. Baseline variables included traditional FRS predictors along with additional measures, including heart rate, glucose, smoking exposure, and education. Six classification models were explored: Logistic Regression, Random Forest (RF), SVM, XGBoost, LightGBM, and CatBoost. Class imbalance was addressed via downsampling during training. Models was assessed using discrimination metrics and classification performance at a clinically relevant 20% risk threshold, with secondary analyses using F1-score optimized values.
+
+## Results
+
+Across ML models, ROC-AUC ranged from 0.64 to 0.67, compared with 0.70 (95% CI 0.65-0.75) for FRS. At 20% threshold, RF achieved higher sensitivity for identifying high-risk individuals than FRS, but with lower specificity and precision. FRS achieved higher accuracy and the highest F1-score, reflecting a more balanced profile. When thresholds were optimized to maximize F1-score, performance differences were attenuated, but resulting thresholds varied and lacked clinical interpretability. Shapley Additive Explanations of RF identified age, systolic blood pressure, hypertension, total cholesterol, and sex as the most influential predictors.
+
+## Conclusions
+
+Modest extensions of traditional cardiovascular risk factors may be insufficient to achieve clinically superior risk prediction, even with advanced ML approaches. The sustained performance of FRS underscores the robustness of established risk frameworks and suggests that future improvements will require fundamentally novel predictors.
+
+---
+
+# 24. DATA-DRIVEN BASELINE MATCHING: ENHANCING INDIRECT COMPARISONS WITH A MACHINE LEARNING-INFORMED FRAMEWORK FOR SELECTING HOMOGENEOUS TRIAL SETS
+
+- Session code: MSR39
+- Authors: Saswata Paul Choudhury, MSc, Sekhar K. Dutta, MSc, Subhajit Gupta, MSc; PharmaQuant Insights Private Limited, Kolkata, India
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-1-4/data-driven-baseline-matching-enhancing-indirect-comparisons-with-a-machine-learning-informed-framework-for-selecting-homogeneous-trial-sets
+
+## Objectives
+
+Ensuring baseline comparability across randomized trials is essential for indirect treatment comparisons (ITCs). We present an machine-learning-informed methodology that quantifies similarity across trials and ranks all possible trial combinations, so that investigators can transparently select the most homogeneous pools for downstream comparative work.
+
+## Methods
+
+Ten trial-level baseline characteristics were simulated using appropriate underlying distributions across 8 trials (termed T1-T8). We applied multiple clustering algorithms to identify inherent groupings and computed pairwise dissimilarities between trials in a reduced latent-space representation. For every non-empty subset of trials, we derived complementary subset-level metrics that quantify typical within-group separation (e.g. mean pairwise distance), the maximum internal discordance, and the sample-size-weighted proximity to a pooled centroid. Distance-based metrics were then mapped to bounded similarity indices via a smooth kernel transformation. Penalization was applied to prevent very small trial subsets from being over-favored, as limited pairwise comparisons can exaggerate apparent homogeneity and reduce the robustness of network meta-analysis results.
+
+## Results
+
+A total 255 non-empty trial subsets were analyzed. A Dendogram from the hierarchical clustering was used to visualize trial subset selection pathways . The composite similarity metric suggested 2 optimal trial combinations. T3, T5, and T6 were the most cohesive (mean 0.438; similarity 0.566) amongst 3 trial combinations, while T2, T3, T5, and T6 showed the highest internal consistency (mean 0.433; similarity 0.537) among 4 trial combinations.
+
+## Conclusions
+
+This methodology provides a framework for scoring and ranking trial combinations and suggesting optimal homogenous study pools. By providing comparable similarity metrics and visualizations across trial combinations, the approach enables informed pooling decisions & structured sensitivity analyses for indirect comparisons, underscoring the utility of ML-driven methods for balancing trial homogeneity in ITCs. Future validation is required to evaluate effects on bias and precision in comparative effectiveness.
+
+---
+
+# 25. FROM TEXT TO STRUCTURE: EVALUATING LLMS FOR THE EXTRACTION OF COMPLEX EVIDENCE AND UNCERTAINTY VARIABLES FROM HEALTH TECHNOLOGY ASSESSMENT REPORTS
+
+- Session code: P18
+- Authors: Finlay McIntyre, PhD, David Kirchheimer, PhD, Sandhya Alagan, MSc, Mackenzie Mills, PhD, Panos Kanavos, PhD; HTA-Hive, London, United Kingdom
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:45:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/new-frontiers-in-large-language-models/from-text-to-structure-evaluating-llms-for-the-extraction-of-complex-evidence-and-uncertainty-variables-from-health-technology-assessment-reports
+
+## Objectives
+
+This study evaluated a hybrid framework employing LLMs for the extraction of these structured clinical and economic variables from Health Technology Assessment reports and investigated the use of an "LLM-as-a-Judge" as a novel, scalable method to assess extraction accuracy.
+
+## Methods
+
+A sample of 150 HTA reports from multiple agencies (e.g., NICE, CADTH, TLV) was processed. The target schema included core identifiers, population criteria, and detailed evidence/uncertainty variables (categorising clinical/economic evidence, model uncertainties, real-world evidence role, and social value judgments). A hybrid extraction pipeline was implemented, using rule-based patterns for high-confidence fields and zero/few-shot prompting of a state-of-the-art LLM (e.g., GPT-5) for complex, free-text variables. To evaluate accuracy, a separate LLM-as-a-Judge was prompted to assess the congruence between source text and extracted output for each variable. These automated scores were validated against a subset of 30 human-annotated gold-standard reports.
+
+## Results
+
+The hybrid pipeline successfully populated the complex schema, with performance varying significantly by variable type. High accuracy (F1 >0.85) was achieved for structured fields (e.g., molecule, recommendation). Extraction of nuanced evidence and uncertainty variables (e.g., "type of economic model uncertainty") proved more challenging, with F1 scores ranging from 0.65 to 0.80. The LLM-as-a-Judge's accuracy assessments showed strong correlation (r > 0.75) with human judgment for factual variables but lower agreement for subjective classifications. Error analysis revealed that ambiguity in source text phrasing and the synthesis of scattered information were primary failure modes.
+
+## Conclusions
+
+LLMs present a powerful but imperfect tool for structuring complex HTA data. A hybrid rules/LLM approach can effectively build comprehensive databases, with the LLM-as-a-Judge offering a scalable first-pass quality check. The findings provide a framework for prioritising human-in-the-loop review, focusing expert effort on the most semantically challenging evidence and uncertainty variables. This methodology enables the systematic analysis of HTA rationales and evidentiary requirements across jurisdictions.
+
+---
+
+# 26. IDENTIFYING SEXUAL BEHAVIOR FACTORS FOR INDIVIDUALS WITH HEPATITIS C VIRUS USING A LARGE LANGUAGE MODEL-BASED NATURAL LANGUAGE PROCESSING
+
+- Session code: P20
+- Authors: Pilar Hernández Con, MD, MSCE 1, Daniel Paredes Pardo, MS2, Chanakan Jenjai, PharmD, MS3, Ashley Stultz, PharmD1, Shunhua YAN, MEd1, Danielle Nelson, MD, MPH4, Jungjun Bae, MS1, Khoa Nguyen, PharmD5, Yonghui Wu, PhD6, Haesuk Park, PhD1; 1University of Florida, Department of Pharmaceutical Outcomes and Policy, College of Pharmacy, Gainesville, FL, USA, 2University of Florida, Department of Health Outcomes and Biomedical Informatics, College of Medicine, Health Outcomes and Biomedical Informatics, College of Medicine, Gainesville, FL, USA, 3University of Florida College of Pharmacy, Department of Pharmaceutical Outcomes and Policy, Gainesville, FL, USA, 4University of Florida, Gainesville, FL, USA, 5University of Florida, Department of Pharmacotherapy & Translational Research, Gainesville, FL, USA, 6University of Florida, Department of Health Outcomes & Biomedical Informatics, College of Medicine, Gainesville, FL, USA
+- Disease: SDC: Infectious Disease (non-vaccine)|STA: Personalized & Precision Medicine|No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:45:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/new-frontiers-in-large-language-models/identifying-sexual-behavior-factors-for-individuals-with-hepatitis-c-virus-using-a-large-language-model-based-natural-language-processing
+
+## Objectives
+
+Hepatitis C virus (HCV) infection remains a public health concern in the U.S., with sexual behaviors reported as potential transmission routes in about one in four cases. Structured medical records often provide incomplete information on these behaviors. We aimed to evaluate the use of natural language processing to extract sexual behavior factors from unstructured clinical narratives.
+
+## Methods
+
+We analyzed unstructured clinical notes from the University of Florida Health electronic health records including individuals ≥18 years tested at least once for HCV between January 2016 and July 2023. We developed a list of keywords to identify sexual behavior factors including sexual orientation/gender identity (e.g., men who have sex with men [MSM], same-sex relationships not MSM, transgender people) and high-risk sexual behaviors (e.g., anal sex, sex for compensation). Sentences containing these keywords were extracted for annotation. Annotation guidelines were developed and iteratively refined during training sessions, resulting in inter-annotator agreement improvement from 66.1% to 90.4%. A GatorTron-based Large Language Model (LLM) was trained on 70% of the annotated sentences, validated on 10% and tested on 20% of the sentences. Performance of concept extraction was evaluated using precision (accuracy), recall (sensitivity), and F1-scores (the harmonic mean of precision and recall; a high F1-score indicates a well-balanced model between precision and recall).
+
+## Results
+
+There were 6,092,972 clinical notes from 15,048 individuals tested for HCV. After annotation, we identified 76 sentences containing at least one concept for MSM, 231 sentences for transgender, 50 sentences for same-sex and 314 sentences for high-risk sexual behaviors. Our model achieved robust performance for MSM (Precision=0.722, Recall=0.867, F1 score=0.788), transgender (Precision=0.915, Recall=0.915, F1 score=0.915), same-sex (Precision=0.800, Recall=1.00, F1 score=0.889) and high-risk sexual behaviors (Precision=0.844, Recall=0.794, F1 score=0.818).
+
+## Conclusions
+
+Our findings suggest that the LLM demonstrated high accuracy in extracting concepts related to sexual behavior factors from clinical narratives of individuals tested for HCV.
+
+---
+
+# 27. IDENTIFYING ONCOLOGY PATIENT SUBTYPES USING ELECTRONICPATIENT-REPORTED OUTCOMES (EPROS)DEPLOYED INCLINICAL PRACTICE: A PATIENT-CENTRIC APPROACH TO MACHINE LEARNING
+
+- Session code: MSR17
+- Authors: Nadia Still, DNP, DNP, Keri Collette, Other, Mordecai Kramer, MBA, Debra Wujcik, PhD, RN, FAAN; Health Catalyst, Carevive, South Jordan, UT, USA
+- Disease: SDC: Oncology|No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-1-4/identifying-oncology-patient-subtypes-using-electronicpatient-reported-outcomes-epros-deployed-inclinical-practice-a-patient-centric-approach-to-machine-learning
+
+## Objectives
+
+Digital platforms allow clinicians to leverage ePRO’s for prediction of at-risk patients and enable patient-centric intervention. This study applied a machine learning method to ePRO’s to identify patient groups with high treatment burden.
+
+## Methods
+
+314 eligible patients were undergoing treatment for cancer and enrolled in an ePRO registry from 9/2020 to 4/2025. Social determinants of health (SDoH), weekly treatment bother (TB) by FACT-GP5, frailty, and PRO-CTCAE derived symptoms were collected. A Random Forest (RF) model was trained with symptom alerts at first therapy cycle (SA) as a target variable. Validity was confirmed through 10-fold cross-validation (CV), with AUC of 0.78. Recursive Feature Elimination with CV yielded symptom count (Burden) and TB (Bother) as top features and spectral clustering identified distinct patient subgroups.
+
+## Results
+
+Meaningful subtypes along a matrix of Burden and Bother were identified. Subtype one (n=134, 74% SA) showed Low Burden/Low Bother, with median symptoms of 2 and GP5 score 1 at baseline. Subtype two (n=93, 88% SA) was High Burden/Low Bother, with high median SXs at baseline (4) yet GP5 score 2.85% of patients reported caregiver absence suggesting a need for social work referral. Subtype three (n=45, 98% SA), or High Burden/High Bother A, had high median symptoms at baseline (5) and GP5 score 3. About 80% had no caregiver and 51% lived >10 miles from cancer center, indicating a role for support to complete treatment and manage symptoms. Subtype four (n=42, 100% SA), or High Burden/High Bother B, had high median symptoms at baseline (8) and GP5 score 3.74% of patients had no caregiver and 55% lived >10 miles, suggesting a role for intensive monitoring and care escalation.
+
+## Conclusions
+
+Clustering yielded a straightforward, intuitive patient typing approach using a Burden/Bother attribute matrix, with immediate opportunities for tailored, timely outreach to reduce patient burden.
+
+---
+
+# 28. ASSESSMENT OF AUTONOMOUS LITERATURE REVIEW SYSTEMS FOR UMBRELLA REVIEW SCREENING
+
+- Session code: MSR34
+- Authors: Kevin Kallmes, BS, MA, JD 1, Vicki Young, MD2, Elizabeth Salvo-Halloran, MS3, Sumeet Singh, BSc, MSc4, Nicole Ferko, MSc3; 1Nested Knowledge, CEO, St. Paul, MN, USA, 2Systematic Review Ltd., London, United Kingdom, 3EVERSANA, Burlington, ON, Canada, 4EVERSANA, Nepean, ON, Canada
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-1-4/assessment-of-autonomous-literature-review-systems-for-umbrella-review-screening
+
+## Objectives
+
+Leaders in evidence synthesis methodology have recently published guidance on the use of Artificial Intelligence (AI) in systematic reviews, including the Responsible AI for Systematic Evidence (RAISE) guidelines and the PRISMA-Transparent Reporting of Artificial Intelligence in Comprehensive Evidence Synthesis (PRISMA-trAIce) framework. Core principles for responsible integration of AI include transparency, traceability, and maintaining human‑in‑the‑loop approaches. Criteria‑Based Screening (CBS) supports transparent, compliant abstract and full‑text AI screening using human‑defined Yes/No questions that mirror the review’s eligibility criteria. We assessed the performance of CBS‑enabled AI screening through comparison to human decisions from a published umbrella review of systematic reviews.
+
+## Methods
+
+We assessed the accuracy of CBS in the Nested Knowledge platform using an analysis sample comprising records screened in a published umbrella review of the safety of proton pump inhibitors, using human decisions as a gold standard. Population, Interventions/Comparators, Outcomes, and Study Design (PICOS) criteria were converted into dichotomous Yes/No questions. AI inclusion required meeting all four criteria at abstract level and five at full‑text, with automatic PRISMA tracking. Recall, Precision, and overall Accuracy of AI‑generated decisions were calculated against human screening.
+
+## Results
+
+Of 775 candidate records, humans advanced 94 to full-text review and advanced 43 to included status. All criteria were satisfied for 148 abstracts and 58 full texts. Recall was 97.7% at both abstract and full-text stages, Precision was 28.4% at abstract stage and 72.4% at full-text, and Accuracy was 86.2% and 81.9%, respectively. Full-text false positives were qualitatively analysed; the majority met all criteria except focusing on too narrow of disease states.
+
+## Conclusions
+
+Highly traceable, autonomous AI screening on individual criteria was feasible and achieved high Recall and Accuracy in an umbrella review. CBS’s full traceability in a human-in-the-loop workflow extends beyond abstract-only, black-box methods, and may be useful in either fully-autonomous targeted reviews or to support human-in-the-loop systematic reviews.
+
+---
+
+# 29. CHANGING THE RULES OF THE GAME: AN AI-DRIVEN GAME-THEORETIC ANALYSIS OF THE CAUSAL DRIVERS IN EARLY-ONSET MALIGNANCY
+
+- Session code: MSR14
+- Authors: David J. Smith, PhD 1, Setareh A. Williams, PhD1, Richard J. Weiss, MD2, Russell V. Becker, MS3. 1Health Economics and Outcomes Research, Star Biopharma Consulting, LLC., Malvern, PA, USA, 2Medical Affairs, Star Biopharma Consulting, LLC., Malvern, PA, USA, 3Health Economics and Outcomes Research, Star Biopharma Consulting, LLC., Mobile, AL, USA.
+- Disease: SDC: Oncology|No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-1-4/changing-the-rules-of-the-game-an-ai-driven-game-theoretic-analysis-of-the-causal-drivers-in-early-onset-malignancy
+
+## Objectives
+
+The incidence of cancer in adults under age 50 has risen nearly 80% since 1990. Traditional models struggle to explain the biological aggressiveness of these early-onset cancers, which include colorectal, breast, thyroid, reproductive and gastrointestinal. This scoping review investigates AI-driven multiomics and Evolutionary Game Theory (EGT) to identify how modern environmental "stressors" alter the cellular "fitness landscape," favoring malignant proliferation over healthy tissue cooperation.
+
+## Methods
+
+The focus of the analysis was a dual-layer framework: 1. AI Layer: Deep learning (via LSTM networks, a specialized recurrent neural network) analyzed longitudinal health records and multiomic signatures from patients less than 50 years of age to weight environmental variables (e.g., ultra-processed diets, microbiome dysbiosis, microplastics). 2. Game Theory Layer: Weighted variables parameterized an EGT model simulating cellular competition. Recent studies have modeled a "cooperative game" for tissue maintenance versus a "non-zero-sum game" for tumor-host interaction to determine how the "Westernized" exposome changes the fitness landscape for mutated cells.
+
+## Results
+
+AI analysis identified microbiome dysbiosis and endocrine disruptors as high-weight drivers of metabolic "niche construction." Game-theoretic simulations revealed that these environmental stressors significantly reduce the "cost of cheating" for mutated cells (i.e., the biological and evolutionary penalties a cell usually faces when it stops cooperating with the rest of the body and starts acting selfishly- becoming cancerous). In these "high-payoff" environments, the transition from healthy to malignant states occurs up to 1.5x faster in younger cohorts compared to historical controls, as modern stressors bypass traditional youthful tumor-suppressive checkpoints.
+
+## Conclusions
+
+The rise in several early-onset cancers represents a shift in cellular social dynamics where modern stressors provide a competitive advantage to "selfish" cellular strategies. These findings suggest that health outcomes research should prioritize "Ecological Therapy", i.e., interventions designed to reset the metabolic environment by making cancerous strategies mathematically non-viable for the sub-50-year-old population.
+
+---
+
+# 30. AUTOMATION OF SYSTEMATIC REVIEWS WITH LARGE LANGUAGE MODELS
+
+- Session code: MSR79
+- Authors: Christian Cao, MD; University of Toronto, Toronto, ON, Canada
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/automation-of-systematic-reviews-with-large-language-models
+
+## Objectives
+
+Systematic reviews (SRs) inform evidence-based decision making. Yet, they take over a year to complete, are labor intensive, prone to human error, and face challenges with reproducibility; limiting access to timely and reliable information.Objective: To develop and validate a large language model (LLM)-based workflow (otto-SR) to automate the two most labour intensive tasks in performing SR’s: article screening and data extraction; and to assess its feasibility in rapidly updating existing reviews.
+
+## Methods
+
+We conducted a validation study in three phases, with direct benchmarking against graduate-level human researchers in phases 1 and 2. Phase 1: article screening performance was evaluated across 32,357 citations from 5 systematic reviews. Phase 2: data extraction performance was evaluated across 4,495 data points from 7 reviews. Phase 3: otto-SR was used to reproduce and update a complete issue of Cochrane reviews (n=12 reviews), with analytical comparisons to the original meta-analyzed findings.
+
+## Results
+
+In the first 2 phases, otto-SR outperformed traditional dual human workflows in article screening (otto-SR: 96.7% sensitivity, 97.9% specificity; human: 81.7% sensitivity, 98.1% specificity) and data extraction (otto-SR: 93.1% accuracy; human: 79.7% accuracy). In phase 3, otto-SR, reproduced and updated an entire issue of Cochrane reviews (n=12, 146,276 citations) in two days, representing approximately 12 work-years of traditional systematic review work. Across Cochrane reviews, otto-SR incorrectly excluded a median of 0 studies (IQR 0 to 0.25), and found nearly twice as many eligible studies compared to the original authors (n= 114 vs. 64). Meta-analyses revealed that otto-SR generated newly statistically significant findings in 2 reviews and negated significance in 1 review.
+
+## Conclusions
+
+These findings demonstrate that LLMs can rapidly conduct and update systematic reviews with superhuman performance, laying the foundation for automated, scalable, and reliable evidence synthesis.
+
+---
+
+# 31. ASSESSING QUALITY OF A LARGE LANGUAGE MODEL (LLM)-DERIVED PROSTATE CANCER (PC) REAL-WORLD DATASET: AN APPLICATION OF THE VALIDATION OF ACCURACY FOR LLM/ML-EXTRACTED INFORMATION AND DATA (VALID) FRAMEWORK
+
+- Session code: MSR65
+- Authors: Patrick J. Ward, PhD, MPH, Yunzhi Qian, PhD, MPH, Eunice A. Hankinson, MSN, FNP-C, Aaron Dolor, PhD, Melissa Estevez, MS. Flatiron Health, New York, NY, USA.
+- Disease: SDC: Oncology|STA: Multiple/Other Specialized Treatments
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/assessing-quality-of-a-large-language-model-llm-derived-prostate-cancer-pc-real-world-dataset-an-application-of-the-validation-of-accuracy-for-llm-ml-extracted-information-and-data-valid-framework
+
+## Objectives
+
+The VALID framework assesses LLM-derived real-world data (RWD) quality across three dimensions: variable-level metrics (VLM), verification checks, and replication analyses. This study applied VALID to a novel, LLM-derived PC dataset to determine suitability for generating real-world evidence (RWE).
+
+## Methods
+
+LLMs selected patients with PC from the US-based, electronic health record-derived, deidentified Flatiron Health Research Database and extracted clinically meaningful characteristics, including initial/metastatic diagnosis, castration-resistant PC (CRPC) or hormone-sensitive PC (HSPC) status, and treatment information. LLM-derived data were compared with an abstracted metastatic PC dataset. For VLM, test sets of 349-500 patients were doubly abstracted. Verification checks assessed the proportion of patients who received >1 line of systemic therapy for metastatic-HSPC (mHSPC); replication assessed real-world overall survival (rwOS) performance in treatment-selected cohorts.
+
+## Results
+
+The LLM-derived dataset included 373,524 patients with PC. For VLM, the F1 score for initial diagnosis and date was 2.10% lower for LLM than for abstractors; metastatic diagnosis and date was 2.11% lower; and CRPC/HSPC status was 0.52% lower. The percentage of patients having >1 mHSPC line of therapy was 3.3% higher in the LLM-derived dataset than in the abstracted comparator. Replication showed similar rwOS patterns between the abstracted and LLM-derived datasets in treatment-selected cohorts: patients treated with androgen receptor pathway inhibitors (ARPI) during first-line therapy in the metastatic-CRPC (mCRPC) setting had similar median rwOS (months, 95% CI) between the LLM-derived (25.3, 24.9-25.8) and abstracted (24.4, 23.7-25.1) datasets; rwOS of patients treated with poly(ADP-ribose) polymerase inhibitors (PARPi) during second-line therapy in the mCRPC setting also had similar rwOS between the two datasets (LLM: 15.8, 13.9-17.2 vs abstracted: 15.9, 14.5-17.8).
+
+## Conclusions
+
+The VALID framework provided a multifaceted approach to assessing LLM-derived RWD quality. Applying the VALID framework to a large PC dataset indicated that LLMs can be used to extract data suitable for generating accurate and reliable RWE.
+
+---
+
+# 32. REAL WORLD EVIDENCE METHODOLOGY FOR ECONOMIC EVALUATION OF CLINICAL AI: COST EFFECTIVENESS OF AN IMAGING ALGORITHM FOR INCIDENTAL DETECTION OF HEART FAILURE WITH PRESERVED EJECTION FRACTION
+
+- Session code: PT9
+- Authors: Alexandra Miller, MPH, MS, PharmD, Jamie Dermon, MD, Shivaani Prakash, MSc., PhD. Dandelion Health, Locust Valley, NY, USA.
+- Disease: SDC: Cardiovascular Disorders (including MI, Stroke, Circulatory)|No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/real-world-evidence-methodology-for-economic-evaluation-of-clinical-ai-cost-effectiveness-of-an-imaging-algorithm-for-incidental-detection-of-heart-failure-with-preserved-ejection-fraction
+
+## Objectives
+
+Evidence on the clinical and economic value of artificial intelligence (AI) for disease detection remains limited. We present methodology for evaluating AI using real-world data and health economic modeling, applied to an imaging algorithm detecting incidental heart failure with preserved ejection fraction (HFpEF).
+
+## Methods
+
+The EchoGo Heart Failure (EchoGo) algorithm (Ultromics Ltd, UK) was applied retrospectively to transthoracic echocardiograms (TTEs) from patients in Dandelion Health (longitudinal, multimodal clinical data platform) without prior heart failure. Patients clinically diagnosed with HFpEF within 90 days of the index TTE were classified as true-positive (“Early Diagnosis”) (n=1,152). False-negative (“Delayed Diagnosis”) patients were flagged by EchoGo but not clinically diagnosed within 90 days (n=515, weighted n=1,113). After inverse probability treatment weighting, diagnosis, treatment, healthcare utilization, and cost patterns were compared between the two groups. A hybrid decision-tree Markov model with five states (undiagnosed, diagnosed, major adverse cardiac event hospitalization tunnel state, post-hospitalization tunnel state, and death) projected five-year outcomes from the payer perspective, comparing EchoGo versus Standard of Care (SOC). Model inputs incorporated sensitivity to represent “Early Diagnosis” and “Delayed Diagnosis” pathways.
+
+## Results
+
+Sensitivity of EchoGo was high (84.4%) versus literature-reported SOC (34%). Retrospectively, EchoGo detected HFpEF 263 days before clinical recognition in “Delayed Diagnosis” patients, who experienced higher acute care utilization and mortality than “Early Diagnosis” patients. EchoGo dominated SOC in the Markov model (NMB: $9,485); probabilistic analysis showed a 66.7% likelihood of cost-effectiveness at $150,000/QALY. One-way sensitivity analysis identified the likelihood of diagnosis at acute decompensation and hospitalization costs as primary drivers. Per 1,000 patients over five years, EchoGo yielded 51 QALYs gained, 42 fewer hospitalizations, 50 fewer readmissions, and 56 fewer emergency visits.
+
+## Conclusions
+
+By diagnosing heart failure earlier, EchoGo proved cost-effective by improving patient trajectories and avoiding high-intensity care. Evaluating AI and identifying cost-effective deployment opportunities will be crucial for future clinical use.
+
+---
+
+# 33. A PILOT ASSESSMENT OF LLM-GENERATED SYNTHETIC COHORTS: A FIRST STEP TOWARD ROBUST SYNTHETIC CONTROL ARMS
+
+- Session code: PT12
+- Authors: Manuel Cossio, MPhil, MS 1, Deepa Jahagirdar, PhD2, Anupama Vasudevan, MPH, PhD3. 1Director, Artificial Intelligence Lead, Cytel, Dubendorf, Switzerland, 2Cytel Inc, Bellevue, WA, USA, 3Cytel, Plano, TX, USA.
+- Disease: SDC: Cardiovascular Disorders (including MI, Stroke, Circulatory)
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/a-pilot-assessment-of-llm-generated-synthetic-cohorts-a-first-step-toward-robust-synthetic-control-arms
+
+## Objectives
+
+This study evaluates two methodologies based on large language models (LLM) for generating synthetic clinical trial datasets intended for use in External Control Arms (ECAs). It compares direct generative output against automated code execution for statistical fidelity and reproducibility.
+
+## Methods
+
+Using data from the Vitamin D and Omega-3 Trial (VITAL; NCT01169259), sponsored by Brigham and Women's Hospital, we conducted two experiments. The first method involved direct generation where an LLM produced a synthetic dataset in an Excel file (n=100) by interpreting the original data alongside a variable dictionary. The second method utilized a code-augmented approach where the LLM drafted a Python pipeline to perform bootstrapping and total anonymization. This script implemented an algorithmic noise filter that identified continuous numeric variables and applied additive Gaussian noise scaled to 5 percent of each variable's original standard deviation. Values were clipped to original ranges to maintain physiological plausibility.
+
+## Results
+
+Both methods successfully produced synthetic cohorts (n=100). Direct generation was completed in 23 seconds via a single prompt, while the code-augmented method required 40 seconds and 12 iterations for refinement. The code-augmented methodology demonstrated better distributional fidelity: the synthetic mean age was 67.5 years (Original: 66.6) and mean BMI was 27.6 (Original: 28.1). Categorical distributions for sex (1.46 vs. 1.51) and race (1.44 vs. 1.47) were preserved, indicating that the sampling and noise injection logic maintained the trial's demographic balance.
+
+## Conclusions
+
+While direct LLM generation offers rapid prototyping, code-based generation provides the transparency and granular statistical control essential for regulatory-grade external control arms. Calibrated Gaussian noise effectively balances data privacy with the preservation of population-level characteristics in trial-derived datasets. Future work should systematically evaluate re-identification risk under adversarial attack models and compare noise-based anonymization against alternative privacy-preserving techniques such as differential privacy.
+
+---
+
+# 34. EVALUATING AI MODELS FOR DRUG PRICING ANALYTICS: A COMPARATIVE STUDY FOR MOST-FAVORED-NATION POLICY MODELING
+
+- Session code: MSR86
+- Authors: Mark Dranias, PhD1, Rustam Shariq Mujtaba, BSc(Pharm)2, Walter Sze Tung Lam, MBBS, MS3, Cloe Ying Chee Koh, MS, BSc(Pharm) 1. 1AureusIQ LLC, Mills River, NC, USA, 2AureusIQ LLC, Singapore, Singapore, 3Department of Occupational and Environmental Medicine, Singapore General Hospital, Singapore, Singapore.
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/evaluating-ai-models-for-drug-pricing-analytics-a-comparative-study-for-most-favored-nation-policy-modeling
+
+## Objectives
+
+Extracting accurate and reliable drug pricing data from global markets remains a challenge for Most-Favored-Nation (MFN) pricing models. While Large Language Models (LLMs) show promise, their comparative performance across pricing domains is underexplored. This evidence-based study applies a decision-grade evaluation framework to compare frontier models, GPT-5 and Claude 4 Opus, across multiple prompting strategies and key quality dimensions, to determine how model choice and prompt structure jointly influence accuracy, consistency, and policy-relevant performance for MFN pricing analytics, with broader implications for model evaluation in high-stakes decision-making.
+
+## Methods
+
+A multi-model validation study evaluated three high-value drugs across six countries (U.S., U.K., France, Canada, Germany, Japan). Each drug-country pair was queried with three prompt types: ambiguous, structured schema-constrained, and structured with MFN policy context (n=108). Structured outputs (n=72) were validated via a Python-based pipeline, while ambiguous outputs (n=36) underwent dual blinded review, with moderate inter-rater agreement (Cohen’s κ = 0.638, p < 0.001). All outputs were scored on a 0-3 rubric (price accuracy, unit correctness, citation traceability) against human curated ground truth. Significance was computed using McNemar’s test for binary variables and Wilcoxon tests for numerical scores.
+
+## Results
+
+Structured prompts yielded substantial performance gains over ambiguous prompts, increasing citation accuracy by 58% (p = 0.014), currency unit accuracy by 28.5% (p = 0.0002), and overall quality scores by 37.5% (p = 0.002). With structured prompting, performance exceeded policy-usability thresholds (composite score ≈2.11). Model comparisons showed GPT increased citation scores by 50% over Claude (p = 0.05).
+
+## Conclusions
+
+Structured, schema-constrained prompting significantly enhances LLM performance for MFN pricing analytics. GPT-5 outperforms Claude 4 Opus, particularly in citation traceability, providing more accurate and reliable outputs for decision-grade modeling. This study highlights the growing need for robust model evaluation services across healthcare AI applications, offering actionable insights for organizations seeking reliable, AI-driven solutions.
+
+---
+
+# 35. GLOBAL LANDSCAPE OF ARTIFICIAL INTELLIGENCE IN HEALTH TECHNOLOGY ASSESSMENT: TRENDS, GOVERNANCE, AND EMERGING PRACTICES
+
+- Session code: MSR96
+- Authors: Eon Ting, MBA, MSc1, Matthew Badin, MSc, MBA1, Vivian Vuong, MSc 1, Nishu Gaind, MBA2, Mir-Masoud Pourrahmat, MSc2, Luka Ivkovic, MSc2, Thomas Haugli-Stephens, BSc, MPhil, PhD3, Johanna Jacob, PH Lic4, Mir Sohail Fazeli, PhD, MD2. 1AstraZeneca Canada, Mississauga, ON, Canada, 2Evidinno Outcomes Research Inc., Vancouver, BC, Canada, 3AstraZeneca, Oslo, Norway, 4AstraZeneca, Stockholm, Sweden.
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/global-landscape-of-artificial-intelligence-in-health-technology-assessment-trends-governance-and-emerging-practices
+
+## Objectives
+
+Artificial intelligence (AI) and machine learning (ML) are increasingly applied in health technology assessments (HTAs) to enhance efficiency, rigor, and reproducibility in evidence generation, systematic reviews, economic modeling, real-world data analysis, and internal operations. This study provides a comprehensive overview of AI/ML adoption, guidance, and governance across international HTA agencies.
+
+## Methods
+
+A targeted review of HTA agency websites, policy documents, guidance statements, gray literature, and Embase was conducted from inception to October 01, 2025, covering 17 countries including the United States, Netherlands, England, Canada, France, Germany, Belgium, Norway, Sweden, Finland, Italy, Spain, Denmark, Scotland, Japan, Singapore, and Australia, as well as EUnetHTA/JCA.
+
+## Results
+
+Thirty-seven publications from nine HTA agencies were identified, showing that AI/ML is primarily applied to systematic literature reviews, study screening, data extraction, evidence synthesis, economic modeling, and real-world evidence processing. Guidance documents were available from NICE (England), CDA-AMC (Canada), IQWiG (Germany), HAS (France), NIPH (Norway), FIMEA (Finland), KCE (Belgium), and EUnetHTA/JCA. NICE led global efforts with a 2024 position statement detailing the use of ML classifiers, generative AI in modeling, and large language model-assisted reporting, emphasizing human oversight. CDA-AMC’s 2025 guidance aligned with NICE while incorporating principles from Canada’s Artificial Intelligence and Data Act. European agencies piloted ML tools for literature screening, data extraction, and model validation, often applying high sensitivity thresholds (>95%) and supporting staff training and ethical governance. Pilot projects by KCE, NIPH, and the NICE HTA Laboratory advanced AI/ML use in abstract screening, evidence synthesis, and health economic modeling, focusing on best-practice principles, tool evaluation, and human-in-the-loop oversight.
+
+## Conclusions
+
+AI/ML integration in HTAs is growing but remains inconsistent. Standardized frameworks, cross-agency collaboration, and continuous evaluation are essential to ensure ethical, transparent, and reliable implementation. While NICE and CDA-AMC offer structured approaches, broader guidance is needed to support scalable and trustworthy adoption of AI/ML in HTAs worldwide.
+
+---
+
+# 36. ENHANCING CLINICAL TRIAL ELIGIBILITY CRITERIA DESIGN WITH GENERATIVE ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING
+
+- Session code: MSR149
+- Authors: Ying Li, PhD 1, Brandon Theodorou, PhD2, Jimeng Sun, PhD2. 1Regeneron Pharmaceuticals, Inc, Tarrytown, NY, USA, 2Keiji.AI, Seattle, WA, USA.
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-3-3/enhancing-clinical-trial-eligibility-criteria-design-with-generative-artificial-intelligence-and-machine-learning
+
+## Objectives
+
+Eligibility criteria (EC) define the target patient population for clinical trials, balancing recruitment, safety, and scientific rigor. Manual EC design and extraction from trial text are labor-intensive and error-prone. We aimed to develop a system leveraging large language models (LLMs) and clustering to accelerate and optimize trial selection and EC design.
+
+## Methods
+
+We built an AI-assisted EC design platform with five steps: (1) Project setup - trial designers enter a brief protocol summary. (2) Trial search/selection - the system retrieves reference trials from ClinicalTrials.gov or proprietary sources, ranks protocols using embedding-based relevance, and enables filtering and selection. (3) EC extraction/clustering - EC are extracted; clinical entities (e.g., age, BMI, disease concepts) are identified using GPT-4.1 mini and mapped to UMLS CUIs. An agentic LLM merges entities and clusters criteria into topics based on ontology similarity, ranking topics by frequency across selected trials. (4) Drafting - GPT-4.1 summarizes topic-specific evidence to generate draft criteria, incorporating human edits. (5) Export - users download drafted EC with provenance to source trials.
+
+## Results
+
+Evaluation used a static process without human-in-the-loop feedback. Two components were assessed: (1) trial similarity ranking using precision at top 10 recommendations, and (2) topic identification using recall against known trial protocols. Three publicly available trials (NCT04835519, NCT06787612, NCT07187401) served as gold standards. The top 10 most similar trials were manually reviewed, yielding a precision of 83.3%. Additionally, 28 of 37 eligibility criteria were captured, corresponding to a recall of 75.7%.
+
+## Conclusions
+
+AI-assisted EC design is feasible and can reduce burden on trial design teams while improving consistency. Further evaluation of the drafting process and large-scale validation are needed to ensure robustness. Integration with real-world data represents a promising direction for future development.
+
+---
+
+# 37. INTERPRETABLE MACHINE LEARNING TO PREDICT CATASTROPHIC HEALTH EXPENDITURE RISK IN CHINA: EVIDENCE FROM NATIONALLY REPRESENTATIVE SURVEY DATA
+
+- Session code: MSR138
+- Authors: Danyang Wei, Bachelor of Management, MIN HU, PhD. Fudan University, Shanghai, China.
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-3-3/interpretable-machine-learning-to-predict-catastrophic-health-expenditure-risk-in-china-evidence-from-nationally-representative-survey-data
+
+## Objectives
+
+The incidence of catastrophic health expenditure (CHE) among Chinese households remains high by global standards, revealing gaps in financial risk protection. Prior studies have largely relied on conventional statistical approaches to examine correlates of CHE. This study aimed to develop a machine learning-based prediction model for household CHE risk in China and to identify key predictive factors to inform timely and targeted policy interventions.
+
+## Methods
+
+We used nationally representative data from the 2022 China Family Panel Studies (CFPS), including 8,000 households after data cleaning. CHE was defined as medical spending ≥40% of non-food expenditure, with 25% and 10% thresholds used for robustness checks. Guided by the Andersen behavioral model, predictors were grouped into predisposing(e.g., age, sex, education), enabling(e.g., income, insurance, access-related indicators) and need factors(e.g., chronic, self-reported health, hospitalization). Decision tree(DT), Random Forest(RF), and XGBoost classifiers were trained using an 80/20 train-test split with five-fold cross-validation and class-imbalance handling. Model performance was evaluated using AUROC, accuracy, precision, recall, and F1 score. SHAP was applied to interpret the best-performing model and quantify feature importance.
+
+## Results
+
+CHE incidence was 9.69% at the 40% threshold (17.39% at 25% and 38.01% at 10%). Subgroup analyses showed higher CHE incidence among adults aged ≥75 years, hospitalized, poor health, the lowest income and chronic(all p<0.001). XGBoost achieved the best discrimination (AUROC=0.806), outperforming RF(0.797) and DT(0.772). SHAP ranked hospitalization (SHAP=0.381), age(0.301), household composition(0.277), self-reported health(0.223), and income (0.178) as top contributors. Category-level SHAP suggested increased risk associated with low income, advanced age, poor health, hospitalized and having older household members. Findings were robust across alternative thresholds.
+
+## Conclusions
+
+Interpretable machine learning enables early prediction of household CHE risk and identification of actionable signals, supporting risk stratification, dynamic monitoring, and targeted interventions to improve financial protection and progress toward UHC.
+
+---
+
+# 38. CHALLENGES IN MACHINE LEARNING PREDICTION OF RARE EVENTS : IPW-ADJUSTED PREDICTORS AND THE ASSOCIATION OF GLP-1 RA WITH INCIDENT ALCOHOL-RELATED DISORDERS
+
+- Session code: MSR102
+- Authors: Rinoj Gautam, PhD 1, Hao Wang, MD2, Anjali Rajadhyaksha, PhD3, Rolake A. Neba, PharmD4, Bo Zhou, PhD5, Usha Sambamoorthi, MA, PhD6; 1University of North Texas Health, Institute for Health Disparities, Fort Worth, TX, USA, 2JPS Healthcare, FORT WORTH, TX, USA, 3Lewis Katz School of Medicine at Temple University, Philadelphia, PA, USA, 4University of North Texas College of Pharmacy, Fort Worth, TX, USA, 5University of North Texas health sciences center, Fort Worth, TX, USA, 6UNTHSC, College of Pharmacy, Professor, Associate Dean of Health Outcomes Research, Denton, TX, USA
+- Disease: SDC: Diabetes/Endocrine/Metabolic Disorders (including obesity)
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-3-3/challenges-in-machine-learning-prediction-of-rare-events--ipw-adjusted-predictors-and-the-association-of-glp-1-ra-with-incident-alcohol-related-disorders
+
+## Objectives
+
+Large administrative datasets are commonly used to study rare outcomes, as they allow enough numbers of events to be observed. However, accurately predicting these events at the individual level is challenging. Incident alcohol-related disorders is a low-frequency outcome but of clinical and public health interest. Emerging evidence suggests that Glucagon-like peptide-1 receptor agonists (GLP-1RA), prescribed for diabetes and obesity, may reduce alcohol intake/craving. This study analyzed leading predictors of incident alcohol-related disorders using inverse probability-weighted machine learning models.
+
+## Methods
+
+Methods: We adopted a retrospective cohort study using MarketScan Multi-State Medicaid Database(N=96,460) with 1-year baseline(2022) and follow-up(2023). Adults(age 18-64 years) with continuous enrollment and prescription drug coverage during 2022-2023 and no evidence of alcohol-related disorders in 2022 were included. Baseline features included demographic characteristics, social risk factors identified using Z codes, comorbid conditions, health plans, and GLP1-RA use. Inverse probability weighting (IPW) was applied to adjust for selection bias in GLP-1 RA use. Multiple machine learning models were developed to predict AUD, including logistic regression, XGBoost, LightGBM, and models with oversampling (SMOTE) or undersampling. Data were split 70/30 into training and test sets. Missing values were imputed, features standardized, and models trained with five-fold stratified cross-validation and probability calibration. Model performance was evaluated using ROC-AUC, recall, and precision. SHAP values were used to assess the meaningful contributions of features to model predictors.
+
+## Results
+
+Overall, 21.7% (N=20,899) used GLP-1 RAs; 2.1%(N=2004) had incident alcohol-related disorders. Logistic regression performed the best discrimination (ROC-AUC=0.69). Precision was low (<0.10), while recall was moderate (0.62). SHAP analysis identified GLP-1RA use among the top 15 predictors, with GLP-1RA users associated with a lower predicted risk of incident alcohol-related disorders.
+
+## Conclusions
+
+While the prediction of low-incidence alcohol-related disorders remained challenging, SHAP analyses identified GLP-1 RA use as a potentially important predictive feature, warranting further investigation of its potential protective role.
+
+---
+
+# 39. DISTINGUISHING AI FROM AUTOMATION IN HEOR: LESSONS FROM OTHER INDUSTRIES
+
+- Session code: MSR147
+- Authors: Tushar Srivastava, MSc 1, Hanan Irfan, MSc2, Hemansh Sridhar, BTech2, Kunal Swami, MASc, MSc2; 1ConnectHEOR, London, United Kingdom, 2ConnectHEOR, Delhi, India
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-3-3/distinguishing-ai-from-automation-in-heor-lessons-from-other-industries
+
+## Objectives
+
+As AI adoption increases in HEOR, the terms AI and automation are often used interchangeably despite referring to distinct technological paradigms. This study aims to propose a practical framework to distinguish deterministic automation from learning-based AI, drawing on lessons from AI-mature industries and translating them to common HEOR workflows.
+
+## Methods
+
+We conducted a cross-industry benchmarking exercise comparing robotic process automation in finance, autopilot systems in aviation, programmable logic control in manufacturing, warehouse and routing automation in logistics, and rule-based engines in insurance with applications of machine learning and generative AI. These tasks were mapped onto similar HEOR activities like systematic literature review (SLR) screening, data curation, economic model development, and real-world evidence generation. Each technology class was evaluated on adaptability to unstructured data, transparency of decision logic, and the magnitude and reversibility of error propagation.
+
+## Results
+
+Across industries, deterministic automation is most effective for stable, codifiable workflows: trade reconciliation in finance, standard flight phases, assembly-line control, parcel sorting, and eligibility checks in insurance. By analogy, rule-based tools in HEOR are superior for SLR de-duplication and structured trial data extraction, where deterministic behaviour and reproducible audit trails are required for HTA submissions. Learning-based AI is reserved for noisy, weakly structured problems: fraud detection and market anomaly spotting in finance, predictive maintenance in aviation, computer-vision quality control in manufacturing, demand and congestion forecasting in logistics, and claims fraud detection in insurance. Parallel HEOR use cases include mining heterogeneous real-world data, imputing missing outcomes, and extrapolating long-term survival from short-term surrogates.
+
+## Conclusions
+
+Effective HEOR modernization requires demarcated strategy rather than a one-size-fits-all "AI adoption" plan. Failure to distinguish between AI and automation risks deploying opaque, probabilistic models where transparent, rule-based logic is ethically and scientifically feasible.
+
+---
+
+# 40. AI AGENT FOR AUTOMATED QUALITY CHECK OF MS EXCEL BASED COST-EFFECTIVENESS MODELS
+
+- Session code: MSR146
+- Authors: Tushar Srivastava, MSc 1, Hanan Irfan, MSc2, Kunal Swami, MASc, MSc2, Vikas Badola, BTech2, Shilpi Swami, MSc1; 1ConnectHEOR, London, United Kingdom, 2ConnectHEOR, Delhi, India
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-3-3/ai-agent-for-automated-quality-check-of-ms-excel-based-cost-effectiveness-models
+
+## Objectives
+
+Quality control (QC) of Excel-based cost-effectiveness (CE) models is essential for HTA credibility but remains manual, time-consuming, and inconsistently documented. We evaluated an AI-driven QC system that ingests CE models in Excel and executes a predefined QC checklist and compared the performance against human validators.
+
+## Methods
+
+The AI agent for QC interprets each checklist item to infer the expected behavior, determines applicability to the model type, and uses a reasoning layer to generate a stepwise plan (identify worksheets/ranges, extract values, compare outputs, perform independent calculations). An executor layer then performs static data extractions and dynamic changes (e.g., changing dropdowns/parameters, recalculating) to validate response patterns. For each check, the tool outputs pass/fail, supporting observations, and corrective recommendations. The agent was tested using two complex models: a Markov model and a Partitioned Survival Model (PSM). To evaluate performance, 20 errors were manually seeded across both models, ranging in difficulty.
+
+## Results
+
+In the Markov model, the agent identified 20/20 (100%) seeded errors, including a complex logic error where state-transition probabilities did not sum to one under specific subgroup scenarios. In the PSM, the tool detected 19/20 (95%) errors, successfully identifying a mismatch between the survival function inputs and the extrapolated area-under-the-curve (AUC) calculations. Notably, the agent tested complex logic that required model recalculation, a task typically challenging for even human auditors. In contrast,"human" review identified only 80% of errors . The automated QC process was completed in 90% reduction in time compared to manual review.
+
+## Conclusions
+
+Across Markov and PSM case studies with controlled fault injection, an AI-driven, reasoning-based QC approach demonstrated strong accuracy and efficiency gains. These findings support the potential role of agentic AI systems in delivering scalable, transparent, and reproducible QC for Excel-based CE models, complementing traditional expert review in HTA workflows.
+
+---
+
+# 41. FROM TEXT TO SIGNAL: EVALUATING LLMS FOR VALID CASE IDENTIFICATION IN PHARMACOVIGILANCE
+
+- Session code: MSR129
+- Authors: Artur Nowak, MSc, Ewa Borowiack, MSc, Ewelina Sadowska, MPharm, Monika Opalek, PhD, Iwona Kmicikiewicz, PhD, Joanna Konieczna, MSc, Damian Stachura, MSc; Evidence Prime, Krakow, Poland
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-3-3/from-text-to-signal-evaluating-llms-for-valid-case-identification-in-pharmacovigilance
+
+## Objectives
+
+Pharmacovigilance (PV) requires rapid identification of valid individual case safety reports (ICSRs) within an expanding scientific literature. Because a valid case must include an identifiable patient and reporter, a suspected drug, and an adverse event, manual screening is labor-intensive and inconsistent. Specialized LLM agents may streamline triage by extracting case elements as structured, database-ready records with an auditable trail (supporting quotes, document location, and brief rationale) and enabling downstream standardization (e.g., MedDRA mapping). We evaluated an LLM-agent pipeline for suspected drug identification as the first step toward automated extraction of all valid case elements.
+
+## Methods
+
+The dataset (n=71) was manually developed and tagged in Laser AI by experienced reviewers for the presence of suspected drugs. The training set was used to develop prompts and configure domain-specific agents. Agents were executed as an extraction pipeline, producing one structured record per publication, along with an audit trail. Outputs were compared with human reference values to assess accuracy. Performance assessment included F1 scores calculated on structured outputs, as well as qualitative error analysis to categorize and interpret discrepancies.
+
+## Results
+
+Agents achieved an F1 score of 80% on the held-out test set (n=50). Most errors occurred in multi-patient case series, where not all patient-drug pairs were captured (82% of failures). Additional failure modes included combination therapy handling (returning merged entities such as “ipilimumab/nivolumab” rather than individual drugs) and conservative causality assessment, omitting suspected drugs when attribution was implicit or uncertain.
+
+## Conclusions
+
+Specialized agents can reliably identify and tag suspected drugs in PV literature while providing structured, auditable outputs to support scalable case triage. Subsequent studies will extend extraction to the remaining valid case elements (patient, reporter, and adverse event) and expand coverage to non-English publications, multimodal inputs, and ontology-based mapping, ultimately supporting end-to-end valid case identification.
+
+---
+
+# 42. WHY AI PROOF-OF-CONCEPTS DO NOT NECESSARILY PROVE ANYTHING: JOURNEY FROM POC TO PRODUCT
+
+- Session code: MSR43
+- Authors: Hanan Irfan, MSc1, Tushar Srivastava, MSc 2; 1ConnectHEOR, Delhi, India, 2ConnectHEOR, London, United Kingdom
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-1-4/why-ai-proof-of-concepts-do-not-necessarily-prove-anything-journey-from-poc-to-product
+
+## Objectives
+
+Artificial intelligence (AI) proof-of-concepts (PoCs) are increasingly used in Health Economics and Outcomes Research (HEOR) to demonstrate feasibility and innovation. However, successful PoCs often fail to translate into reliable, HTA-ready products, creating a false sense of validation. This study examined why AI PoCs do not necessarily demonstrate real-world suitability for HEOR and identified the methodological, governance, and operational gaps that must be addressed to progress from PoC to deployable product.
+
+## Methods
+
+A qualitative analysis was conducted across multiple AI-enabled HEOR initiatives spanning literature review support, economic modelling, real-world evidence generation, and technical reporting. PoC designs were compared with production-ready requirements across five dimensions: (1) representativeness of test data, (2) robustness to edge cases and data drift, (3) transparency and auditability of outputs, (4) integration with HEOR quality management systems, and (5) accountability and ownership post-deployment. Failure modes were synthesised into a PoC-to-product maturity framework tailored to HEOR and HTA contexts.
+
+## Results
+
+PoCs were typically optimised to demonstrate technical feasibility under constrained, low-risk conditions, often relying on curated datasets, limited scenarios, and implicit expert supervision. These conditions masked key failure modes encountered during scale-up, including loss of traceability, inconsistent performance across disease areas, sensitivity to evolving evidence, and unclear accountability for errors influencing pricing or reimbursement decisions. Successful transition to product required substantial redesign beyond the PoC stage, including explicit validation thresholds, reproducibility controls, governance checkpoints, and post-deployment monitoring aligned with HTA expectations.
+
+## Conclusions
+
+In HEOR, AI PoCs demonstrate possibility, not readiness. Treating PoCs as evidence of validity risks premature deployment of tools that fail under HTA scrutiny. Progressing from PoC to product requires reframing success criteria around governance, auditability, reproducibility, and decision impact, positioning AI development as a regulated analytical lifecycle rather than a one-time technical achievement.
+
+---
+
+# 43. ADVANCING SURVIVAL ANALYSIS AUTOMATION FOR HTA SUBMISSIONS: A MULTI-AGENTIC GENERATIVE AI FRAMEWORK
+
+- Session code: MSR41
+- Authors: Shubhram Pandey, MSc 1, Rashi Rani, MSc2, Sameer Mansoori, MSc1, Rajdeep Kaur, PhD1, Marjana Bharali, BE1, Barinder Singh, RPh1. 1Pharmacoevidence Pvt. Ltd., SAS Nagar, Mohali, India, 2Heorlytics Private Limited, Mohali, India.
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-1-4/advancing-survival-analysis-automation-for-hta-submissions-a-multi-agentic-generative-ai-framework
+
+## Objectives
+
+Survival analysis and long-term extrapolation are critical components of health technology assessment (HTA) submissions and economic modeling in health economics and outcomes research (HEOR). Traditional approaches are time-intensive and require specialized expertise. This study presents a novel multi-agentic generative AI system utilizing retrieval-augmented generation (RAG) with human-in-the-loop validation to automate survival analysis workflows, generating HTA-ready outputs for regulatory submissions and economic models.
+
+## Methods
+
+A multi-agentic AI framework was developed incorporating three specialized agents: clinician, statistician, and medical writer, each trained on domain-specific knowledge bases. The system accepts individual patient-level time-to-event data or Kaplan-Meier curve images, with automatic digitization and pseudo-IPD generation via the Guyot algorithm. Users specify analysis requirements through natural language prompts, or the system automatically detects optimal model types. Available models include standard parametric distributions (Exponential, Weibull, Log-normal, Log-logistic, Gompertz, Gamma, and Generalized Gamma), spline-based models on odds, hazard, or probit scales with flexible knot configurations (up to three knots), cure models, piecewise models, joint-fitted models, and parametric mixture models. An iterative feedback loop enables user refinement based on clinical plausibility assessments and external validation data.
+
+## Results
+
+Validation across 10 HTA case studies demonstrated 87% concordance with expert-selected models based on minimum AIC/BIC criteria and visual fit. The system reduced analysis time by 85% (from approx. 80 to 12 hours), and produced HTA-ready deliverables including interactive dashboards, Excel-formatted economic model inputs, and dynamically generated Word reports with interpretations and narratives added. Human-in-the-loop validation ensured clinical appropriateness at each decision point.
+
+## Conclusions
+
+This multi-agentic framework demonstrates feasibility of automating survival analyses while maintaining methodological rigor. Current limitations include inability to perform Bayesian survival modeling and computational constraints with complex mixture models. Future development will incorporate Bayesian approaches, expand external validation across therapeutic areas, and enhance real-time quality assurance mechanisms for broader HTA applicability.
+
+---
+
+# 44. QUANTIFYING TIME-VARYING MEDICATION REGIMEN COMPLEXITY USING A MACHINE-LEARNING-BASED PIPELINE IN PATIENTS WITH TYPE 2 DIABETES
+
+- Session code: PT11
+- Authors: Jun Gong, MPharm 1, Antoinette Coe, PharmD, PhD1, Michael Dorsch, PharmD, MS1, Sarah Vordenberg, PharmD, MPH1, VG Vinod Vydiswaran, PhD2, Corey Lester, PharmD, PhD1; 1University of Michigan College of Pharmacy, Ann Arbor, MI, USA, 2University of Michigan Medical School, University of Michigan School of Information, Ann Arbor, MI, USA
+- Disease: SDC: Diabetes/Endocrine/Metabolic Disorders (including obesity)
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/quantifying-time-varying-medication-regimen-complexity-using-a-machine-learning-based-pipeline-in-patients-with-type-2-diabetes
+
+## Objectives
+
+Patients with type 2 diabetes (T2DM) experience complex medication regimens. The Medication Regimen Complexity Index (MRCI) is a validated measure based on dosage form, dosing frequency, and additional instructions, yet it’s limited by manual, static calculation. This study employed a machine-learning-based pipeline to automate time-varying MRCI estimation and identify longitudinal trends and key drivers of medication regimen complexity in T2DM patients.
+
+## Methods
+
+In this retrospective cohort study, adults with T2DM treated at an academic medical center (2009-2019) were included. Electronic health records and pharmacy claims were integrated to construct longitudinal medication histories and compute index-standardized MRCI components: 1. Structured medication records mapped from National Drug Codes to RxNorm concept; 2. Unstructured dosing instructions extracted from free-text using a custom-trained named entity recognition (NER) model. MRCI was computed as the weighted sum of the dosage form, dosing frequency, and additional instructions components; updated with each prescription change. Temporal trends and drivers were assessed using linear regression and summarized using monthly population-level statistics.
+
+## Results
+
+The cohort included 7,976 patients, with 884,185 pharmacy claims and 490,081 outpatient medication orders. Average follow-up was 5.6 years. Unstructured text extraction was required for 79.8% of dosing instructions, and the NER model demonstrated high accuracy (F1 = 0.987). Mean total MRCI increased from 17.1 at diagnosis to 36.6 at 11 years, with a significant average monthly increase of 0.1 points (p < 0.001). At diagnosis, dosing frequency accounted for 49.6% of the total MRCI, followed by dosage form (40.6%), and instructions (9.8%). Over the follow-up period, both frequency and dosage form scores doubled. Diabetes-specific medications captured 19.6-21.7% of regimen complexity over the study period.
+
+## Conclusions
+
+Medication regimen complexity increased steadily over time among patients with T2DM, reflecting cumulative treatment burden. Implementing scalable, automated MRCI can improve real-world computability of complexity and support population-level monitoring and targeted interventions in T2DM care.
+
+---
+
+# 45. EVALUATION OF OFF-THE-SHELF AGENT-BASED AI TOOL CLAUDE CODE FOR RAPID REPLICATION OF A PUBLISHED COST-EFFECTIVENESS MODEL
+
+- Session code: MSR231
+- Authors: Attila Imre, PharmD 1, Bertalan Németh, PhD2, Balázs Nagy, PhD1; 1Semmelweis University, Center for Health Technology Assessment, Budapest, Hungary, 2Syreon Research Institute, Budapest, Hungary
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-1-4/evaluation-of-off-the-shelf-agent-based-ai-tool-claude-code-for-rapid-replication-of-a-published-cost-effectiveness-model
+
+## Objectives
+
+Replication of published models with artificial intelligence (AI) tools is of great interest to the health economic modelling community. Previous techniques used a combination of base models and complex, problem-specific prompting to achieve this. Previous pilot projects also did not take into account the upfront resource use to develop such techniques. In this study our goal was to pilot an off-the-shelf agent-based programming tool in replicating a published health economic model without domain specific prompting. Using a non-trivial cohort model based on the FINGER study (Wimo et al., 2023), we aimed to reproduce its cost-effectiveness analysis based on the published paper and supplement.
+
+## Methods
+
+Reproduction involved converting PDFs to text with Mistral DocumentAI and instructing Claude Code v2.0.76 to generate Python code based solely on the materials and implement base-case results and scenario analysis. The model estimates the long-term cost-effectiveness of a dementia prevention program in Sweden. It simulates patients’ lifetime from age 60+ with states: normal cognition, mild cognitive impairment, mild/moderate/severe dementia and death. Methodology and input parameters were extracted solely from the paper. Reproduced results were compared to published results and the generated Python code was validated by expert human review.
+
+## Results
+
+AI-assisted reproduction achieved rapid and accurate results within 1 hour, with costs <2$. Reproduced results matched published ones within 3%. QALYs/patient usual care (UC): 8.649 vs 8.636 (100.1%); incremental QALYs: 0.044 vs 0.043 (102.3%); person-years alive UC: 15.40 vs 15.13 (101.8%); dementia years UC: 2.86 vs 2.76 (103.6%); incremental cases UC: 47,425 vs 46,297 (102.4%); cases prevented: 1,655 vs 1,623 (102.0%); NNT: 60 vs 62 (97.5%).
+
+## Conclusions
+
+Claude Code demonstrates rapid and accurate HEOR model reproduction without massive up-front investment into problem-specific prompts and expert-time. However expert-validation and oversight is still required to guide reproduction and interpret differences in modelling results.
+
+---
+
+# 46. UNDERSTANDING THE DRIVERS OF VALUE IN COST-EFFECTIVENESS ANALYSIS
+
+- Session code: MSR156
+- Authors: J. Felipe Montano Campos, MS, PhD, Darius Lakdawalla, PhD, Boshen Jiao, MPH, PhD, William Vincent Padula, PhD. University of Southern California, Los Angeles, CA, USA.
+- Disease: SDC: Infectious Disease (non-vaccine)
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-1-4/understanding-the-drivers-of-value-in-cost-effectiveness-analysis
+
+## Objectives
+
+A central goal of cost-effectiveness analysis (CEA) is to understand which uncertain parameters drive economic value under realistic joint uncertainty. While probabilistic sensitivity analysis (PSA) is routinely used to propagate uncertainty through CEA models, existing approaches largely focus on summarizing uncertainty in outcomes or supporting value-of-information metrics. There remains no systematic framework for decomposing how parameters shape variation in value across the plausible parameter space.
+
+## Methods
+
+We apply this approach to a CEA comparing long-acting injectable HIV pre-exposure prophylaxis (PrEP) with daily oral PrEP. Model inputs included transition probabilities, health-state utilities, and costs, and the primary outcome was incremental net monetary benefit (INMB) at a willingness-to-pay of $100,000/QALY. We generated 1,000 Monte Carlo draws of jointly uncertain inputs and computed INMB for each draw. An XGBoost emulator mapped inputs to INMB, and SHAP values quantified, for each draw, how much each parameter shifted predicted INMB above or below the mean, conditional on all other input values.
+
+## Results
+
+The emulator closely reproduced the simulated INMB surface. Mean predicted INMB was $27,691. SHAP identified three parameters as the dominant drivers of value. For HIV acquisition risk under daily oral PrEP, low realizations decreased INMB by up to $59,588 while high realizations increased it by up to $74,672 (mean $27,148). For HIV acquisition risk under long-acting PrEP, high realizations decreased INMB by up to $48,393 while low realizations increased it by up to $18,081 (mean $13,690). For long-acting PrEP cost, higher costs decreased INMB by up to $33,855 while lower costs increased it by up to $20,255 (mean $9,715).
+
+## Conclusions
+
+SHAP values provide a transparent and scalable approach to understanding and quantify which parameters drive value in CEA. By explicitly decomposing value into parameter-level contributions, this framework clarifies which aspects of an intervention matter most for maximizing economic value for decision-makers.
+
+---
+
+# 47. REAL-WORLD DATA LARGE LANGUAGE MODEL ASSISTIVE SQL CODING SYSTEM
+
+- Session code: MSR148
+- Authors: Vladimir Turzhitsky, MS, PhD 1, Varun Kumar Nomula, MS1, Yezhou Sun, MS1, Tesfagabir Meharizghi, MS2, Henry Wang, MS2, Aude Genevay, PhD2, Shinan Zhang, MS2, Tim Shear, MS2, Andy Mitchell, AA2; 1Merck & Co. Inc, Rahway, NJ, USA, 2Amazon Web Services, Seattle, WA, USA
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-3-3/real-world-data-large-language-model-assistive-sql-coding-system
+
+## Objectives
+
+To develop and evaluate a Large Language Model (LLM)-enabled text-to-SQL assistive programming system that accelerates and standardizes SQL generation for real-world data (RWD) analysis, and to characterize its methodological components and early performance on representative RWD tasks.
+
+## Methods
+
+We implemented a web-based assistant that integrates foundation LLMs with retrieval-augmented generation (RAG). The system embeds database-specific metadata (table structures, variable descriptions, DDL statements, example rows) and retrieves verified few-shot “Golden Examples” based on semantic similarity to the user prompt. Prompts combine user intent, metadata, and examples to produce SQL plus an explanation, which users can review, edit, and execute in the interface. Sessions preserve context for iterative refinement. The Golden Examples are stored in an Amazon OpenSearch Serverless vector database and surfaced via AWS-based retrieval. Access is governed through Merck’s Real-World Data Exchange (RWDEx) with single sign-on and role-based permissions. Preliminary performance was assessed on a 40-question benchmark derived from the DE-SynPUF Medicare claims dataset using Anthropic Claude Sonnet 3.5. Early production deployment includes multiple frequently-used commercial claims and EHR datasets, with ongoing collection of initial user case studies.
+
+## Results
+
+On the DE-SynPUF benchmark, first-attempt SQL generation accuracy was 82.5% and increased to 97.5% within two attempts. Accuracy by difficulty was: easy (N=5) 80% first attempt, 100% within two; medium (N=14) 86% first attempt, 100% within two; hard (N=21) 81% first attempt, 95% within two. Initial user case studies demonstrate feasible integration into RWD workflows for claims and EHR use cases; a crossover study to quantify efficiency gains (e.g., time-to-correct query) is planned.
+
+## Conclusions
+
+An LLM-driven, RAG-enhanced text-to-SQL assistant can reliably generate executable SQL for RWD tasks and support iterative query refinement. Early results indicate high accuracy across diverse question types. Future work will expand benchmarking, characterize error modes, compare models, and quantify efficiency and usability in controlled studies.
+
+---
+
+# 48. SECURE DEPLOYMENT OF LARGE LANGUAGE MODELS IN HEOR: GOVERNANCE, INFRASTRUCTURE, AND RISK MITIGATION BEST PRACTICES
+
+- Session code: MSR130
+- Authors: Barinder Singh, RPh 1, Haseeb Raza, MCA1, Inderpreet S. Marwaha, MSc, RPh1, Shubhram Pandey, MSc1, Ritesh Dubey, PharmD2, Rajdeep Kaur, PhD1; 1Pharmacoevidence Pvt. Ltd., Mohali, India, 2Pharmacoevidence, Mohali, India
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-3-3/secure-deployment-of-large-language-models-in-heor-governance-infrastructure-and-risk-mitigation-best-practices
+
+## Objectives
+
+Large Language Models (LLMs) are increasingly being explored across Health Economics and Outcomes Research (HEOR) use-cases. However, the reliance on consumer-grade AI tools poses significant risks related to data privacy, regulatory compliance, intellectual property protection, and emerging AI-specific security vulnerabilities. This paper proposes regulatory-aligned framework establishing secure and compliant AI deployment principles for responsible use within HEOR workflows
+
+## Methods
+
+A conceptual framework was developed based on targeted review of healthcare data protection regulations, enterprise security standards, and emerging AI governance and risk management practices. Potential security risks were assessed across the HEOR AI lifecycle, including data access, model interaction, and output management. Mitigation strategies were consolidated into core principles for safe deployment
+
+## Results
+
+Thefive pillars of framework are: (i) Enterprise-ready infrastructure: Prioritizes LLM deployment on private, high-grade infrastructure, explicitly advising against public LLM interfaces that lack data privacy assurances or immunity from model retraining; (ii) Authentication Control: Enforces strict permission levels (role-based access) via robust multi-factor authentication mechanisms enabling project specific access to confidential data; (iii) Regulatory Compliance: Mandates compliance with AI and data policies, including but not limited to HIPAA and GDPR, end-ot-end data encryption, and permanent audit logs; (iv) Automated Governance Agents: Requires the integration of real-time guardrails and supervisory agents to enforce usage policies and pre-emptively block unsafe or non-compliant outputs; and (v) AI-specific Risk Mitigation: Enforces safeguards against emerging threats such as prompt injection and unintended model behaviours. Collectively, these measures mitigate critical risks related to data sovereignty and regulatory
+
+## Conclusions
+
+Secure adoption of LLMs in HEOR requires a comprehensive deployment and governance strategy that extends beyond model performance considerations. Compliant infrastructure, strong access controls, and AI-specific safeguards can enable responsible innovation while maintaining data security and regulatory alignment. This framework provides guidance for organizations seeking to operationalize LLMs within HEOR environments safely and at scale
+
+---
+
+# 49. CLINICAL VALIDATION OF A MACHINE-LEARNING-ENRICHED IMMUNE-MEDIATED NECROTIZING MYOPATHY COHORT USING LINKED LABORATORY AND CLAIMS DATA
+
+- Session code: MSR23
+- Authors: Parisa F. Asad, Sr., PhD 1, Charlotte E. Ward, PhD2, Shreyas Jarmale, BS3, Andre Gladiator, PhD4; 1argenx BV, Basel (BS), Switzerland, 2ZS Associates, Boston, MA, USA, 3ZS Associates, Bangalore, India, 4argenx, Ghent, Belgium
+- Disease: SDC: Systemic Disorders/Conditions (Anesthesia, Auto-Immune Disorders (n.e.c.), Hematological Disorders (non-oncologic), Pain)|SDC: Musculoskeletal Disorders (Arthritis, Bone Disorders, Osteoporosis, Other Musculoskeletal)|SDC: Rare & Orphan Diseases
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-1-4/clinical-validation-of-a-machine-learning-enriched-immune-mediated-necrotizing-myopathy-cohort-using-linked-laboratory-and-claims-data
+
+## Objectives
+
+Real-world evidence generation in immune-mediated necrotizing myopathy (IMNM) is constrained by disease rarity and limited numbers of patients with laboratory confirmation and a specific diagnosis code. Machine-learning (ML) approaches may enable cohort enrichment; however, credibility of ML-derived populations must be demonstrated. This study assessed concordance of an ML-enriched IMNM cohort relative to a laboratory-confirmed reference cohort with longitudinal enrollment.
+
+## Methods
+
+A reference cohort of IMNM patients (N=36) was identified based on documented anti-HMGCR and/or anti-SRP antibody positivity and required ≥12 months of continuous enrollment before and after index. Laboratory data were derived from Quest Diagnostics, while diagnoses, procedures, treatments, and healthcare utilization were obtained from Komodo Health’s US claims database. A gradient-boosted decision tree model (LightGBM) was trained using claims-based features capturing demographics, diagnostic evaluation (e.g., electromyography, muscle biopsy), laboratory testing patterns (creatine kinase and aldolase test presence and frequency), treatment exposure (corticosteroids, immunosuppressive therapies, IVIG/SCIG), and healthcare utilization, emphasizing longitudinal care patterns. The model was applied to a large claims population; patients with predicted probability ≥0.99 were classified as ML-enriched IMNM (N=5,523). Analyses were descriptive and intended for cohort enrichment rather than diagnosis or prevalence estimation.
+
+## Results
+
+Model performance was strong (AUROC=0.914). The ML-enriched cohort demonstrated high concordance with the reference cohort. Muscle weakness was common (78% reference; 99% ML-enriched), as was muscle enzyme testing (89-100%). Neuromuscular diagnostic procedures were frequently observed, including electromyography (22% vs. 51%) and imaging (75% vs. 98%). Specialist involvement and physical therapy use were prevalent in both cohorts. Corticosteroid exposure occurred in 83% of reference patients and 95% of ML-enriched patients; IVIG use was observed in 11% and 20%, respectively.
+
+## Conclusions
+
+A conservative ML-based approach identified an IMNM-enriched cohort mirroring a laboratory-confirmed population across clinical features, diagnostic evaluation, specialist care, and treatment patterns, supporting ML-based cohort enrichment for real-world research in rare diseases.
+
+---
+
+# 50. VALIDATION OF AN AGENTIC LARGE LANGUAGE MODEL (LLM) SYSTEM IN THE REVIEW STAGE OF A REAL-TIME AI-ASSISTED LIVING SYSTEMATIC LITERATURE REVIEW (REAL-SLR): A SOLUTION TO INSTANT AND EASY ACCESS TO CLINICAL TRIAL DATA (CTD)
+
+- Session code: MSR18
+- Authors: Rozee Liu, MSc 1, Rhiannon Campden, PhD1, Eddie Xiaole Liu, BSc2, Oscar Correa, BSc3, Anna Forsythe, MBA, MSc, PharmD1. 1Oncoscope-AI, Miami, FL, USA, 2Independent, Toronto, ON, Canada, 3Eviviz Inc., Vancouver, BC, Canada.
+- Disease: SDC: Oncology
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-1-4/validation-of-an-agentic-large-language-model-llm-system-in-the-review-stage-of-a-real-time-ai-assisted-living-systematic-literature-review-real-slr--a-solution-to-instant-and-easy-access-to-clinical-trial-data-ctd
+
+## Objectives
+
+Health economics and outcomes research (HEOR) professionals often struggle to stay updated on the latest published CTD. Traditionally, building de novo SLRs requires extensive time and manual effort. To address these challenges, we explored assembling a REAL-SLR of CTD using an agentic LLM system to generate review annotations and evaluated the system’s accuracy and associated time savings.
+
+## Methods
+
+Agentic LLM systems are autonomous systems where multiple LLMs maintain control over how they accomplish tasks with no human input or supervised training. Our system used two OpenAI LLMs (GPT-5, GPT4.1), Gemini 2.5Pro, and Claude Sonnet 4.5 in a matrix of processes, that emulate trained human experts by following an annotation manual, subdividing complex processes into smaller subtasks, and documenting its reasoning for traceable results. Annotations were created for 4 review variables independently (population, intervention/comparator, outcome, study design - PICOS). Accuracy of review was evaluated on publications in four cancers: non-small cell lung cancer (NSCLC), prostate cancer (PC), breast cancer (BC), bladder cancer (BldC) and multiple myeloma (MM) compared to human results.
+
+## Results
+
+Our agentic LLM system generated annotations for 4 review variables for 61,069 publications (17,085 NSCLC, 15,114 PC, 21,904 BC, 9,719 BldC, 6,966 MM) publications. Accuracy ranged from 93.73% to 99.82%. The sensitivity and specificity ranged from 93.86% to 99.58%, and 86.08% to 98.15%, respectively. The false negative rates were 0.34%, 0.33%, 0.88%, 0.00% for the 4 PICOS variables, with a 0.30% cumulative rate. Our system completed review in 33.93 hours, compared to an estimated 763.36 hours by trained human researchers, resulting in 95.56% time savings.
+
+## Conclusions
+
+Our agentic LLM system can accurately review publications with performance superior to human experts. This level of accuracy highlights our system’s potential to deliver real-time clinical data, empowering HEOR professionals with expedited evidence generation, with the hopes of ultimately improving patient access.
+
+---
+
+# 51. NEW FAILURE MODES, OLD STANDARDS: WHY ARTIFICIAL INTELLIGENCE (AI) DEMANDS DIFFERENT VALIDATION APPROACHES IN EVIDENCE SYNTHESIS
+
+- Session code: MSR84
+- Authors: Priccila Zuchinali, PhD1, Kassandra Schaible, MPH 2, Allie Cichewicz, MSc3. 1Thermo Fisher Scientific, Ottawa, ON, Canada, 2Thermo Fisher Scientific, Pittsburgh, PA, USA, 3Independent Consultant, Boston, MA, USA.
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/new-failure-modes-old-standards-why-artificial-intelligence-ai-demands-different-validation-approaches-in-evidence-synthesis
+
+## Objectives
+
+AI has rapidly integrated with literature reviews across screening, extraction, risk of bias, and narrative synthesis tasks. Current research focuses on validation of AI capabilities against a human benchmark, without considering differences in errors for humans versus AI. With increasing AI adoption and proficiency, integrating AI into human workflows is frequently discussed, but validations processes still rely on those designed for human reviewers.
+
+## Methods
+
+This work highlights why such standards are inadequate and outlines AI-specific validation considerations for evidence synthesis workflows.
+
+## Results
+
+AI errors (failures) often come from biased training data or algorithmic constraints and tend to be systematically widespread and less noticeable, whereas human errors more commonly reflect contextual misinterpretation and flawed judgment, occurring more inconsistently across tasks. These differences affect data validation strategies and AI reliability perceptions. Depending on the model used, AI may incorrectly include or exclude studies during screening based on borderline eligibility, while extractions may incorporate fabricated study details or bias assessments be overly generalizable. When synthesizing evidence, AI prioritizes smooth and confident language, which can hide uncertainties or differences between studies. Understanding these possible failures and how they differ from traditional human error is key to successful AI integration. Therefore, effective validation of AI-assisted reviews requires unique safeguards for each task. This may involve using frequent checkpoints within AI systems for ongoing model validation, implementing feedback loops specifically designed for each process or task, monitoring patterns in model decision-making for consistency, and ensuring that AI-generated output pass credibility checks.
+
+## Conclusions
+
+Effective use of AI in evidence synthesis requires more than stronger AI systems, it demands a clear understanding of its limitations, treating it as a high-throughput instrument with unique failure modes. The future of human-AI collaboration depends on developing specific checks, controls, and careful prompt design to catch errors and ensure results are reliable.
+
+---
+
+# 52. CAN ARTIFICIAL INTELLIGENCE ASSISTED SYSTEMATIC LITERATURE REVIEW SUPPORT RIGOROUS EVIDENCE GENERATION? A CASE STUDY ON PREDICTORS OF COPD EXACERBATIONS
+
+- Session code: MSR71
+- Authors: Ákos Bernard Józwiak, PhD1, Judit Józwiak-Hagymásy, MSc1, Agnes Nagy, MSc2, Judit Tittmann, MD2, Sándor Kovács, BA, MBA, MSc1, Przemyslaw Kardas, PhD, MD3, Job FM van Boven, PhD4, Irene Mommers, PhD4, Attila Imre, PharmD5, Tamas Agh, MSc, PhD, MD 6; 1SYREON Research Institute, Budapest, Hungary, 2University of Pecs, Pecs, Hungary, 3Medical University of Lodz, Lodz, Poland, 4University Medical Center Groningen, University of Groningen, Groningen, Netherlands, 5Center for Health Technology Assessment, Semmelweis University & Syreon Research Institute, Budapest, Hungary, 6Center for HTA and Pharmacoeconomic Research, University of Pecs & Syreon Research Institute, Research Associate Professor; Director of Strategy, Budapest, Hungary
+- Disease: SDC: Respiratory-Related Disorders (Allergy, Asthma, Smoking, Other Respiratory)|No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/can-artificial-intelligence-assisted-systematic-literature-review-support-rigorous-evidence-generation-a-case-study-on-predictors-of-copd-exacerbations
+
+## Objectives
+
+To evaluate whether artificial intelligence (AI) assisted systematic literature review (SLR) workflows can support rigorous and reliable evidence generation through AI-assisted screening and data extraction using a case study on predictors of chronic obstructive pulmonary disease (COPD) exacerbations.
+
+## Methods
+
+A literature search was conducted in MEDLINE and Embase. Search hits were de-duplicated in the Systematic Review Accelerator, followed by title and abstract screening assisted by a generative AI pipeline developed in KNIME. Screening was performed using a zero-shot large language model (LLM) (meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8) accessed via DeepInfra. Records deemed potentially relevant were subjected to AI-assisted full-text screening and data extraction in a single step using two parallel pipelines. In the first pipeline, full texts were tokenized with Mistral OCR and processed using the Qwen/Qwen3-235B-A22B-Instruct-2507 LLM via DeepInfra in KNIME. The second pipeline used OpenAI ChatGPT (version 5). AI outputs were validated by a human reviewer.
+
+## Results
+
+Of 8,520 identified records, 1,492 original studies and 80 reviews were flagged as potentially relevant after title and abstract screening. In a 30-record validation sample, the accuracy of AI-assisted title and abstract screening was 96.7%. Full-text screening and data extraction were limited to the reviews. Although both AI models extracted data from all 80 reviews, human validation excluded 38 records. While these excluded reviews focused on COPD and referenced exacerbations, their predictors related to outcomes other than COPD exacerbations. The Qwen pipeline extracted 802 predictors and the ChatGPT pipeline 546. After human validation, 110 predictors were identified as relevant; following refinement and harmonisation of terminology, 88 predictors were retained for the narrative synthesis.
+
+## Conclusions
+
+Our findings demonstrate that AI can meaningfully support SLRs; however, human validation remains essential. AI-assisted SLR workflows showed high accuracy in title and abstract screening and efficiently processed large volumes of evidence, while AI-assisted data extraction required substantial human validation.
+
+---
+
+# 53. PILOT EVALUATION OF AI-ENABLED AMBIENT SPEECH CAPTURE IN HOME-BASED CARE: REDUCING ADMINISTRATIVE BURDEN AND ENHANCING REAL-WORLD EVIDENCE GENERATION FOR COMPLEX THERAPIES
+
+- Session code: MSR56
+- Authors: Katie Duncalf, MSc 1, Gary Gallagher, MSc1, Joseph Frost, MSc1, Warren Hart, MSc1, Alison Griffiths, RN1, Michael Applewhaite, .2. 1Sciensus, London, United Kingdom, 2Microsoft, Oxford, United Kingdom.
+- Disease: SDC: Musculoskeletal Disorders (Arthritis, Bone Disorders, Osteoporosis, Other Musculoskeletal)|SDC: Neurological Disorders|SDC: Oncology|SDC: Rare & Orphan Diseases|SDC: Gastrointestinal Disorders
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/pilot-evaluation-of-ai-enabled-ambient-speech-capture-in-home-based-care-reducing-administrative-burden-and-enhancing-real-world-evidence-generation-for-complex-therapies
+
+## Objectives
+
+To evaluate the feasibility of integrating Microsoft Dragon Copilot for ambient speech capture in home-based clinical workflows, focusing on reducing administrative burden for nurses, enhancing patient interactions, and facilitating structured capture of real-world evidence (RWE) from patient conversations in complex conditions.
+
+## Methods
+
+In December 2025, Sciensus launched the 'CareTranscribe' pilot (n=100), integrating Dragon Copilot with its Intouch mobile app and Microsoft Dynamics 365 platform. Clinical nurse specialists in the UK are using the tool during home visits to record consented patient consultations, generating detailed notes and structured summaries while nurses remain focused on the patient. Nurses review and validate AI-generated content as supportive input for medical record completion, retaining full control over documentation. Outcomes assessed include transcription accuracy, nurse usability and workflow integration, time savings, patient comfort and consent, and potential to identify behavioural triggers that might help patients get better medical care and support. The pilot operates under a robust governance framework aligned with NHS information governance, UK/EU legal standards, patient-informed consent, strict anonymisation, and Class I medical device requirements.
+
+## Results
+
+Pre-launch qualitative research feedback suggests high nurse acceptance, with reduced documentation time enabling greater focus on attentive, personalised care. The recorded interactions are identifying treatment realities rarely captured in traditional clinical settings or trials. Quantitative evaluation of transcription accuracy, workload reduction, and data quality for RWE is in progress. A full data read out will be available at the congress.
+
+## Conclusions
+
+This AI implementation demonstrates potential to alleviate administrative burdens without disrupting nurse-patient relationships, while preserving high-quality clinical documentation. By capturing contextual insights from home-based care such as adherence barriers, education needs, and practical treatment challenges, it supports enriched RWE generation outside controlled environments. This approach offers scalable benefits for outcomes and evidence measurement in complex therapies, facilitating collaboration with biopharma partners to inform service design and improve patient support.
+
+---
+
+# 54. WHAT'S IN AN ABSTRACT? PICOS REPORTING FREQUENCIES TO INFORM AI-ASSISTED SCREENING
+
+- Session code: MSR127
+- Authors: Allie Cichewicz, MSc 1, Marius Sauca, BSc, MSc2, Kevin Kallmes, BS, MA, JD3; 1Nested Knowledge, Boston, MA, USA, 2Nested Knowledge, UTRECHT, Netherlands, 3Nested Knowledge, St. Paul, MN, USA
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-3-3/what-s-in-an-abstract-picos-reporting-frequencies-to-inform-ai-assisted-screening
+
+## Objectives
+
+Large language models (LLMs) for abstract screening do not require training, but depend on explicit inclusion/exclusion criteria provided by researchers. However, incomplete reporting and ambiguous language in abstracts often require inferential judgments traditionally made by experienced reviewers. Optimizing prompts for AI-assisted screening requires understanding which concepts are reliably reported versus where gaps necessitate flexible criteria or human oversight. We aimed to assess what concepts are sufficiently reported in abstracts of randomized controlled trials (RCTs) and observational studies to inform LLM screening.
+
+## Methods
+
+PubMed was searched via Nested Knowledge to identify a random sample of RCT/observational abstracts assessing treatment efficacy/effectiveness and/or safety. Abstracts were reviewed for the presence of key Population, Intervention/Comparator, Outcome, Study Design (PICOS) concepts used to screen for eligibility in literature reviews.
+
+## Results
+
+Among 600 abstracts (300 RCTs, 300 observational studies), treatment/intervention (99.0% vs 98.7%, p=1.00), disease/condition (93.7% vs 92.7%, p=0.75), and sample size (96.7% vs 94.7%, p=0.32) demonstrated consistently high reporting frequencies across study types. However, RCT abstracts more frequently reported study design (99.0% vs 79.3%, p<0.001) and efficacy/effectiveness outcomes (97.7% vs 71.3%, p<0.001). Observational studies more frequently reported data source/setting (76.3% vs 23.7%, p<0.001), geography (48.7% vs 19.0%, p<0.001), and safety outcomes (85.3% vs 60.7%, p<0.001). Age was moderately reported in both RCTs and observational studies (37.7% vs 45.7%, p=0.057). Among RCTs, registration (19.0%) and trial phase (15.3%) were infrequently reported.
+
+## Conclusions
+
+Due to highly consistent reporting rates, LLM-assisted abstract screening can reliably assess treatment, disease, and sample size across study types, but should account for study design-specific reporting patterns, particularly lower reporting of effectiveness outcomes in observational studies and lower safety, setting, and geography reporting in RCTs. Criteria requiring concepts with low or variable reporting frequencies (e.g., registration, trial phase, age) may benefit from flexible prompt language or tolerance for missing information to avoid inappropriate exclusions.
+
+---
+
+# 55. MACHINE LEARNING-BASED PREDICTION FOR NEPHROTOXICITY IN ONCOLOGY PATIENTS WITH CHEMOTHERAPY
+
+- Session code: MSR125
+- Authors: Ching-Ting Tai, M.S., Fang-Yung Chang, M.S., Fan-Ying Chan, M.S., Shu-Ting Chang, B.S., Hsiang-Yin Chen, Pharm.D.; Taipei Medical University, Taipei, Taiwan
+- Disease: SDC: Urinary/Kidney Disorders|SDC: Oncology|STA: Personalized & Precision Medicine
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-3-3/machine-learning-based-prediction-for-nephrotoxicity-in-oncology-patients-with-chemotherapy
+
+## Objectives
+
+Predicting chemotherapy-induced nephrotoxicity is essential to prevent severe adverse drug reactions from treatment interruption. The study aimed to develop machine learning prediction models to support clinicians in preventing chemotherapy-induced acute kidney injury (AKI) and acute kidney disease (AKD).
+
+## Methods
+
+Patients receiving cisplatin, carboplatin, ifosfamide, methotrexate, pemetrexed, and gemcitabine were identified from the Taipei Medical University Clinical Research Database and the Big Data Center, Taipei Veterans General Hospital. Data from Shuang Ho Hospital, Taipei Veterans General Hospital, and Taipei Medical University Hospital were split into training and validation datasets, and Wanfang Hospital served as the testing dataset. Logistic regression, histogram-based gradient boosting classification tree, and light gradient boosting machine (LGBM) were employed. The main performance was evaluated by the area under the receiver operating characteristic curve (AUROC) and other performance metrics. Fairness was evaluated based on Equalized Odds (EO) across different sensitivity groups, and Shapley additive explanation (SHAP) was performed to explain the feature importance.
+
+## Results
+
+A total of 6,126 patients were included, with AKI incidence rates of 3.51%, 3.41%, and 8.28%, and AKD rates of 26.95%, 26.54%, and 32.00% in the training, internal, and external validation datasets, respectively. The LGBM demonstrated an AUROC of 0.762 and 0.718 in predicting AKI and AKD in external validation, respectively. The model achieved fairness based on EO across gender, age, and drug type. SHAP analysis revealed the top 5 features for AKD included the latest albumin, age, cancer stage, the difference between the latest and baseline estimated glomerular filtration rate, and the latest hemoglobin level. Features for AKI included the latest albumin level, diuretics, cisplatin dose, treatment interval, and alcohol consumption.
+
+## Conclusions
+
+This study established machine learning models to predict chemotherapy-induced AKI and AKD, which could be incorporated in a clinician decision support system to aid prevention of chemotherapy-induced nephrotoxicity in clinical practice.
+
+---
+
+# 56. MAPPING HUMAN EFFORT DISPLACEMENT IN AI-ASSISTED HEOR WORKFLOWS
+
+- Session code: MSR44
+- Authors: Hanan Irfan, MSc1, Tushar Srivastava, MSc 2, Shilpi Swami, MSc2; 1ConnectHEOR, Delhi, India, 2ConnectHEOR, London, United Kingdom
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-1-4/mapping-human-effort-displacement-in-ai-assisted-heor-workflows
+
+## Objectives
+
+The integration of artificial intelligence (AI) into Health Economics and Outcomes Research (HEOR) workflows alters how human effort is allocated across evidence generation and decision-support activities. Rather than functioning solely as a net reducer of workload, AI-assisted tools may displace effort toward oversight, governance, and accountability tasks. This study aimed to quantify and characterise how human time, cognitive load, and expert responsibility are redistributed across HEOR workflows following AI adoption.
+
+## Methods
+
+A comparative workflow analysis was conducted contrasting traditional and AI-assisted processes across five HEOR domains: systematic literature review support, evidence synthesis, economic modelling, dossier drafting, and quality assurance (QA). Tasks within each domain were decomposed into discrete steps and classified as automated, partially automated, human-led, or newly introduced through AI adoption. Human effort was assessed across four dimensions: time allocation, cognitive load, required expertise level, and accountability. Analyses were stratified by use case, including exploratory analyses, internal decision support, and HTA-facing deliverables.
+
+## Results
+
+AI assistance reduced time spent on procedural execution tasks, such as data extraction and initial drafting, by approximately 40-60%. However, this reduction was accompanied by a redistribution of effort toward higher-cognition activities. New categories of human effort emerged, including prompt formulation and iteration (approximately 15% of total workflow time) and increased validation and contradiction resolution during QA, associated with a substantial increase in cognitive load. Additional effort was required to manage audit trails and traceability for HTA-facing outputs. Overall, expertise requirements shifted from content production toward content adjudication, with senior methodological judgement increasingly becoming the primary constraint in AI-assisted workflows.
+
+## Conclusions
+
+AI-assisted HEOR workflows primarily reallocate, rather than eliminate, human effort. Efficiency gains are most reliable when AI supports the generation of candidate outputs, while humans retain responsibility for interpretation, methodological judgement, validation, and accountability.
+
+---
+
+# 57. FROM GPT-4 TO GPT-5.2: A COMPARATIVE EVALUATION OF LARGE LANGUAGE MODELS FOR EXTRACTING CLINICAL REAL-WORLD EVIDENCE DATA(RWE)
+
+- Session code: MSR33
+- Authors: Mariana Farraia, PhD1, Anuja Pandey, MD2, Kassandra Schaible 3, Caroline von Wilamowitz-Moellendorff, PhD4; 1Thermo Fischer Scientific, Ede, Netherlands, 2Thermo Fischer Scientific, London, United Kingdom, 3Thermo Fisher Scientific, Pittsburgh, PA, USA, 4Thermo Fisher Scientific, London, United Kingdom
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-1-4/from-gpt-4-to-gpt-5-2-a-comparative-evaluation-of-large-language-models-for-extracting-clinical-real-world-evidence-data-rwe
+
+## Objectives
+
+Large language models (LLMs) are being increasingly explored as tools to support automated data extraction in evidence synthesis. However, as these artificial intelligence (AI) models become more advanced, it is critical to monitor their abilities to perform tasks, and to confirm they are improving. This study aimed to qualitatively compare the older GPT-4 system to the newer GPT-5.2 version for structured data extraction of RWE within a standardized extraction framework.
+
+## Methods
+
+A structured data extraction framework for RWE in non-small cell lung cancer which was previously presented, and used a proprietary model based on GPT-4, was replicated using GPT-5.2. Identical prompts, extraction templates, and source publications were applied across both models. Extracted data elements included study characteristics, population descriptors, interventions, comparators, outcomes, and subgroup information. Outputs were reviewed and compared between model versions, focusing on completeness and accuracy. Differences were categorized by data type and reporting complexity.
+
+## Results
+
+GPT-5.2 generally extracted study data accurately and performed well when compared with GPT-4. Core study characteristics and high-level outcomes were consistently identified across both models, with similar structuring and minimal human correction required. Divergences between models were observed primarily for complex or ambiguously reported data elements. Overall, this comparison suggested GPT-5.2 performed at least as well as GPT-4, with remaining differences highlighting areas where automated extraction remains methodologically challenging.
+
+## Conclusions
+
+This research suggests that GPT-5.2 can produce data extractions broadly comparable to those generated by GPT-4 within a standardized workflow, and that gradual improvements in data extraction of RWE are possible as AI models become more advanced. Ongoing methodological evaluation remains essential to understand any improvements or limitations per new GPT version, ensure reproducibility, and define appropriate roles for human oversight as automated extraction tools continue to evolve.
+
+---
+
+# 58. INNOVATIVE GRAPH BASED CLUSTERING TO IDENTIFY SJÖGREN’S DISEASE SUBTYPES FROM REAL-WORLD DIAGNOSTIC JOURNEYS
+
+- Session code: MSR73
+- Authors: Sujung Choi, PhD 1, Chuxuan Yang, PhD2, Yafen Huang, PhD3, Elizabeth Adamson, MSN, CRNP4, Alexander Keenan, MA, MHP5; 1Johnson and Johnson, Newtown, PA, USA, 2Johnson and Johnson, Gaithersburg, MD, USA, 3Johnson and Johnson, Doylestown, PA, USA, 4Johnson & Johnson, Horsham, PA, USA, 5Johnson and Johnson, Director, Pennington, NJ, USA
+- Disease: SDC: Systemic Disorders/Conditions (Anesthesia, Auto-Immune Disorders (n.e.c.), Hematological Disorders (non-oncologic), Pain)
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/innovative-graph-based-clustering-to-identify-sj-gren-s-disease-subtypes-from-real-world-diagnostic-journeys
+
+## Objectives
+
+Sjögren’s disease (SjD) is a chronic autoimmune disease with frequent diagnostic delay in the US due to heterogeneous symptoms and fragmented care. Previous research has focused on patient-reported symptoms/outcomes and statistical stratification; claims-based subtyping that reflects diagnostic journeys and healthcare provider (HCP)-coded symptoms remain limited. We developed a graph-based clustering approach to identify patient subtypes based on diagnostic sequences and care coordination patterns in U.S. claims
+
+## Methods
+
+Using IQVIA Immunology Longitudinal Access and Adjudication (LAAD) claims, we included adults (≥18 years) with ≥2 SjD diagnoses (ICD-10 M35.0) during Oct2022-Sep2023 and ≥4 years’ stable medical/pharmacy activity before index. Each patient’s diagnostic journey was represented as a node in a similarity graph, with edges weighted by sequence similarity of diagnoses and healthcare interactions. We implemented a multi-level Leiden community-detection pipeline with iterative resolution tuning to identify macro- and micro-level subgroups. Subtypes were characterized by demographics, comorbidities, healthcare utilization, and care fragmentation metrics (e.g., number and mix of specialties/providers), and time-to-diagnosis
+
+## Results
+
+Among 5,126 eligible patients (2,689 primary SjD; 2,437 associated SjD), the approach identified distinct subtypes reflecting variations in diagnostic complexity and care coordination. Clusters differed in early symptom proxies (e.g., fatigue and dryness-related code) and in the number and mix of specialties involved but did not show meaningful differences in time-to-diagnosis. Because symptoms appear in claims only when documented during visits, observed patterns likely reflect care-seeking behavior and may under-ascertain symptoms not prompting encounters or preceding first contact. The method captured a multi-scale structure, revealing patient classes and granular subgroups, outperforming traditional clustering in connectivity and interpretability.
+
+## Conclusions
+
+Graph-based community detection applied to claims can stratify SjD patients by diagnostic sequences and coordination patterns, complementing patient-reported symptom-based approaches. This scalable framework may support targeted care-navigation interventions to reduce fragmentation and improve the diagnostic experience.
+
+---
+
+# 59. AGENT-ATOM-GRADIENT: A NEXT-GEN AI ARCHITECTURE FOR EVIDENCE DRIVEN OUTCOMES RESEARCH
+
+- Session code: MSR124
+- Authors: Achilleas Livieratos, PhD1, Maria Kudela, PhD2, Yuxi Zhao, PhD2, All-shine Chen, PhD2, Junjing Lin, PhD3, Di Zhang, PhD4, Xin Luo, PhD2, Paula Angelica Ramos, MSc2, Sai Dharmarajan, PhD5, Chinyu Su, PhD2, Mina Gaga, MD6, Margaret Gamalo, PhD 2. 1SPAIML Scientific Working Group, New York, NY, USA, 2Pfizer, New York, NY, USA, 3Takeda Pharmaceuticals, Cambridge, MA, USA, 4Teva Pharmacieticals, New York, NY, USA, 5Sarepta Therapeutics, New York, NY, USA, 6Hygeia Hospital, Athens, Greece.
+- Disease: SDC: Systemic Disorders/Conditions (Anesthesia, Auto-Immune Disorders (n.e.c.), Hematological Disorders (non-oncologic), Pain)|SDC: Respiratory-Related Disorders (Allergy, Asthma, Smoking, Other Respiratory)
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-3-3/agent-atom-gradient-a-next-gen-ai-architecture-for-evidence-driven-outcomes-research
+
+## Objectives
+
+Building on prior work with Mixture-of-Agents (MoA) architectures for data extraction in HEOR, this study introduces Agent-Atom-Gradient (AAG), a next-generation AI framework designed for treatment sequence optimization in complex, multi-stage diseases such as ulcerative colitis (UC) and chronic obstructive pulmonary disease (COPD). Traditional single-model LLMs struggle with the heterogeneity of patient pathways and integration of real-world evidence (RWE). Our objective was to develop and evaluate a layered AI pipeline—combining MoA, Atom-of-Thought (AoT) reasoning, and TextGrad refinement—to deliver clinically transparent, evidence-anchored treatment sequences for HEOR decision-making.
+
+## Methods
+
+The AAG pipeline proceeds in three stages. First, a MoA framework deploys multiple LLM proposer models and an aggregator (DeepSeek-R1) to synthesize candidate treatment sequences from RCTs, guidelines, and RWE. Second, AoT reasoning (GPT-4.1) decomposes recommendations into atomic clinical sub-questions (e.g., “After TNF inhibitor failure, which agent demonstrates superior durability in RWE cohorts?”), then recontracts them into coherent pathways. Finally, TextGrad applies iterative, gradient-style optimization, aligning outputs with regulatory trial data, guideline mandates, and RWE metrics under explicit structural constraints (first-, second-, third-line). Benchmarking was performed across UC and COPD use cases.
+
+## Results
+
+Successive reasoning layers yielded progressively richer outputs. MoA provided rapid synthesis of guideline and trial evidence but remained conceptual. AoT exposed reasoning transparency, linking each clinical decision to a specific sub-question. TextGrad produced the most actionable recommendations, explicitly pairing therapies with trial outcomes, real-world utilization metrics, and patient-subgroup guidance. This multi-stage refinement increased both interpretability and clinical utility, supporting treatment plans for UC and COPD.
+
+## Conclusions
+
+The Agent-Atom-Gradient model illustrates the way multi-layered LLM complexes can turn conceptual AI frameworks into transparent, evidence-tethered decision support for HEOR. Combining MoA, AoT and TextGrad in a single pipeline improves scalability, personalization and payer/regulator interactions. This tool is applicable beyond UC and COPD to oncology and other multidisciplinary therapeutic areas where we can benefit from evidence-based decisions.
+
+---
+
+# 60. MULTI-AGENT GENERATIVE AI TO SIMULATE SPONSOR-HTA INTERACTIONS DURING REIMBURSEMENT PROCESSES: IDENTIFYING EVIDENCE GAPS AND INFORMING MITIGATION STRATEGIES
+
+- Session code: MSR87
+- Authors: Barinder Singh, RPh1, Rajdeep Kaur, PhD 1, Pankaj Rai, MS Pharm1, Gagandeep Kaur, MPharm1, Shubhram Pandey, MSc1, Nicola Waddell, HNC2. 1Pharmacoevidence, Mohali, India, 2Pharmacoevidence, London, India.
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/multi-agent-generative-ai-to-simulate-sponsor-hta-interactions-during-reimbursement-processes-identifying-evidence-gaps-and-informing-mitigation-strategies
+
+## Objectives
+
+Health technology assessment (HTA) agencies (NICE, CADTH, etc.), review sponsor-submitted evidence and generate clarification questions to identify evidence gaps and inform reimbursement decisions. This study developed and validated a multi-agent generative AI (GenAI) framework that simulates sponsor-NICE interactions by generating clarification questions from sponsor-submitted data.
+
+## Methods
+
+A multi-agentic GenAI large language models (LLMs) framework was developed to replicate sponsor-HTA interactions. Distinct AI agents reflecting HTA review roles, including the HTA secretariat (lead), clinical, economic, patient-reported outcomes, and patient/public involvement reviewers were included. The HTA secretariat coordinated the process and compiled clarification questions aligning HTA guidance. Using sponsor-submitted evidence for renal cell carcinoma (RCC), the framework generated clarification questions across domains, which were reviewed by subject matter experts (SME) for relevance, accuracy, traceability, data gaps, and alignment with HTA
+
+## Results
+
+NICE TA858 for first-line advanced RCC was used to replicate sponsor-HTA interactions, with a multi-agent GenAI framework simulated structured clarification questions using sponsor-submitted evidence. In total, the AI-framework generated 40 questions (12 clinical-effectiveness, 10 cost-effectiveness, 18 textual/additional), compared with 29 questions (12 clinical-effectiveness, 10 cost-effectiveness, 7 textual/additional) raised by NICE. Most AI-generated questions addressed data gaps, with fewer focused on methodological issues. Some NICE textual questions were not generated by the AI-framework, likely due to data masking, reliance on appendix data, or specific data requests. The SME validated the output, showed 80-85% agreement with clarification questions raised by NICE. The additional questions generated by the GenAI demonstrated its capability to identify potential evidence gaps beyond those identified by historical NICE queries and to suggest timely mitigation strategies during reimbursement process.
+
+## Conclusions
+
+The multi-agent GenAI effectively simulates sponsor-HTA interactions, identifying evidence gaps and suggesting mitigation strategies. Beyond replicating NICE interactions, it has the potential to streamline assessments across diverse HTA contexts, with future updates to incorporate budget impact and real-world evidence.
+
+---
+
+# 61. A MULTI-MODEL LARGE LANGUAGE FRAMEWORK FOR AUTOMATING SYSTEMATIC LITERATURE REVIEWS
+
+- Session code: MSR78
+- Authors: Ritesh Dubey, PharmD, Ankita Sood, PharmD, Vedant Soni, B.Tech, Gagandeep Kaur, M.Pharm, Rajdeep Kaur, PhD, Barinder Singh, RPh; Pharmacoevidence, Mohali, India
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/a-multi-model-large-language-framework-for-automating-systematic-literature-reviews
+
+## Objectives
+
+The first artificial intelligence (AI)-assisted health technology assessment (HTA) submission, accepted by the NICE Evidence Assessment Group, demonstrated that using AI as a second reviewer for title and abstract screening can reduce systematic literature review (SLR) time and cost by approximately 50%. The objective of this study is to assess whether additional efficiencies can be achieved through fully automated SLR screening using multiple large language models (LLMs) and confidence-guided outputs.
+
+## Methods
+
+A Python-based interface was developed to facilitate automated title/abstract screening using multiple LLMs (Claude Sonnet 3.7, Gemini Flash 2.5, and GPT4-o-mini), guided by predefined inclusion and exclusion criteria. Screening decisions were finalized based on the model confidence matrix. The records with low confidence or conflicts were escalated for manual review. A subject matter expert (SME) optimized, fine-tuned the final prompt, and conducted quality control on the records excluded by AI.
+
+## Results
+
+Compared to the semi‑automated benchmark (AI as a second reviewer), which provides approximately 50%-time savings, the multi-LLM screening approach substantially enhanced efficiency, reducing screening time by approximately 90%. Only 7% of the screened citations (1840 in total) were flagged for human review. Moreover, SME assessment of all the AI-excluded citations confirmed that LLMs did not exclude any relevant citation. The models showed a modest over‑inclusion rate of approximately 1-2%. Overall, the findings suggest that LLM‑based screening can substantially accelerate SLR workflows while maintaining decision quality comparable to human reviewers.
+
+## Conclusions
+
+This study shows that a fully automated, multi-LLM approach can produce high-quality SLRs up to ten times faster than conventional methods. The approach achieves around 90% efficiency and reduces costs, while maintaining human oversight. Moreover, it is scalable and practical, and may support faster evidence synthesis and decision-making in healthcare systems.
+
+---
+
+# 62. AI/ML IN HTA EVIDENCE SYNTHESIS: WHERE DO WE STAND TODAY?
+
+- Session code: MSR140
+- Authors: Raju Gautam, PhD 1, Saeed Anwar, MSPharm2, Ratna Pandey, MSc2, Khushbu Baranwal, MSc2, Tushar Srivastava, MSc1; 1ConnectHEOR, London, United Kingdom, 2ConnectHEOR, Delhi, India
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-3-3/ai-ml-in-hta-evidence-synthesis-where-do-we-stand-today
+
+## Objectives
+
+National Institute for Health and Care Excellence (NICE) and Canada Drug Agency (CDA) published an AI-position statement - a guiding principle for the use of artificial intelligence (AI) in the generation and submission of evidence. AI/machine learning (AI/ML) for systematic literature review (SLR) has increased significantly, yet their documented use in formal health technology assessment (HTA) submissions remain unclear. This study aims to identify HTA submissions that reported the use of AI/ML for SLRs.
+
+## Methods
+
+We conducted comprehensive research that followed a two-step process. First, HTA guidance documents from major agencies (NICE, HAS, IQWiG, NCPE, SMC, TLV, CDA, and PBAC) were systematically reviewed to identify guidance on the use of AI/ML in HTA-compliant SLRs. Second, for HTA agencies that refer to AI/ML in the context of SLR, a comprehensive review of HTA submissions from past three years was conducted. The HTA submissions included were reviewed to assess the scope and context of AI use in these SLRs.
+
+## Results
+
+Only NICE, CDA and IQWiG recommended the use of AI/ML for SLRs. A total of 1,391 HTA documents (NICE [468], CDA [264], and IQWiG [659]) were screened. Across the reviewed documents, AI/ML methods were reported in only three HTA documents, all from NICE. One technology appraisal (TA11540) reported the use of AI for SLR study screening. Two additional technology appraisals reported limited application of AI, with TA1071 using an AI-assisted ad-hoc literature search to help identify potential treatment effect modifiers, and TA962 applying a natural language processing approach to update the SLR and assist with search strategy development through identification of keywords within publications.
+
+## Conclusions
+
+Current HTA position papers acknowledge the potential of AI in evidence generation, however, its implementation within HTA evidence reviews remains limited. Bridging this gap could enable more efficient and robust evidence synthesis processes, ultimately facilitating more informed and accelerated decision-making.
+
+---
+
+# 63. ZERO-SHOT LUNG CANCER RISK PREDICTION?FROM?LONGITUDINAL?ELECTRONIC?HEALTH RECORDS?WITH CHAIN-OF-AGENTS?FRAMEWORK
+
+- Session code: MSR67
+- Authors: Sihang Zeng, BS1, Youngwon Kim, PhD1, Wilson Lau, PhD1, Ehsan Alipour, MD, PhD 1, Ruth Etzioni, PhD2, Meliha Yetisgen, PhD3, Anand Oka, PhD1, Jay Nanduri, MBA1. 1Truveta, Bellevue, WA, USA, 2Fred Hutch Cancer Center, Seattle, WA, USA, 3University of Washington, Seattle, WA, USA.
+- Disease: SDC: Oncology
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/zero-shot-lung-cancer-risk-prediction-from-longitudinal-electronic-health-records-with-chain-of-agents-framework
+
+## Objectives
+
+Early identification of individuals at higher risk for lung cancer can improve outcomes and help target screening resources. We evaluate whether a large language model (LLM)-based chain-of-agents (CoA) framework can estimate 1-year lung cancer risk directly from raw longitudinal electronic health record (EHR) data, reducing the need for data cleaning, feature engineering, and task-specific model training required by traditional machine learning (ML) models.
+
+## Methods
+
+Using Truveta Data (de-identified EHR for 120 million patients from leading US health systems), we identified lung cancer cases with clinician-curated diagnostic codes and randomly sampled a test cohort of 500 cases and 125,000 controls. For each patient, all EHR history prior to one year before diagnosis (or index date) was used. The CoA framework applied sequential LLM agents to summarize key clinical events from chronological EHR segments and aggregated a consolidated risk profile to predict a 1-year lung cancer risk score from 1 to 10. We compared CoA performance with common ML models like XGBoost, as well as a single-agent LLM baseline.
+
+## Results
+
+CoA based on GPT-4.1-mini achieved strong discrimination (AUROC 0.871; 95% CI: 0.855-0.885). Using a threshold chosen to balance sensitivity and specificity, CoA achieved NPV 0.999, sensitivity 0.772, specificity 0.825, and PPV 0.017 in this low-incidence cohort. Performance was comparable to, or slightly lower than, that of trained ML models, but was obtained without feature engineering and model training. Further evaluation showed that CoA produced more complete and temporally coherent clinical reasoning than the single-agent LLM, aligned well with clinical knowledge.
+
+## Conclusions
+
+The zero-shot LLM-based CoA framework can predict lung cancer risk directly from heterogeneous real-world EHR, with clinically meaningful reasoning and performance comparable to ML models, while eliminating the costly data pre-processing and training. This approach may lower implementation barriers and support scalable deployment of early detection tools to improve lung cancer outcomes.
+
+---
+
+# 64. CONTRASTIVE TRAJECTORY DISTILLATION: A NOVEL METHOD FOR OPTIMIZING LARGE LANGUAGE MODEL EMBEDDINGS IN MATERNAL HEALTH PREDICTION
+
+- Session code: MSR70
+- Authors: Samuel Weiss, BS, Robert Martorano, BS, Ian J. Hooley, BS. Pomelo Care, New York, NY, USA.
+- Disease: SDC: Reproductive & Sexual Health
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/contrastive-trajectory-distillation-a-novel-method-for-optimizing-large-language-model-embeddings-in-maternal-health-prediction
+
+## Objectives
+
+Electronic Health Records (EHR) contain rich longitudinal signals, yet traditional tabular machine learning often fails to capture temporal dependencies within sparse diagnosis histories. We propose Contrastive Trajectory Distillation (CTD), a framework leveraging Large Language Models (LLMs) to transform longitudinal patient histories into high-fidelity predictive embeddings for maternal health outcomes.
+
+## Methods
+
+We developed a "mutual prediction" framework between two LLM agents (Gemini 2.5 Pro): a Predictor forecasting clinical trajectories from past ICD-10 history, and an Inferrer summarizing actual future outcomes. Using a reflection mechanism, prompts were iteratively optimized to maximize a contrastive objective—ensuring the Predictor’s output was more mathematically closer to the patient's actual future than to a random contrastive patient. We validated this framework on maternal episodes (N=3,000), training CatBoost models to compare 3,072-dimensional optimized embeddings against traditional dummy-coded ICD-10 features across 9 binary maternity complications and total cost.
+
+## Results
+
+Optimized embeddings consistently outperformed traditional features across all tasks. The method showed the greatest lift in hard-to-predict conditions, improving AUC-ROC for Preeclampsia (0.67 vs 0.58; +15.8%), Hypertension Spectrum (0.73 vs 0.66; +10.7%), and Gestational Hypertension (0.71 vs 0.67; +6.4%). For healthcare utilization, the embeddings improved Future Healthcare Cost prediction R² by 4.2% (0.40 vs 0.38) and reduced mean absolute error (MAE) by 3.5%. Furthermore, the optimization process improved the embeddings' ability to distinguish correct patient trajectories (contrastive pass rate) from 63% using raw codes to 80% using optimized prompts.
+
+## Conclusions
+
+CTD effectively bridges the gap between unstructured clinical reasoning and structured risk prediction. By distilling LLM knowledge into fixed-dimensional embeddings, this framework captures semantic and temporal patterns that traditional coding misses. This offers a scalable, interpretable approach for the early identification of high-risk pregnancies without the latency and cost of direct LLM inference.
+
+---
+
+# 65. ACCELERATING EVIDENCE GENERATION: LEVERAGING LLMS FOR FULL-TEXT STUDY SELECTION
+
+- Session code: MSR80
+- Authors: Christopher Olsen, BHSc, Jayson Brian Habib, MPH, Elizabeth Salvo-Halloran, MSc, Sumeet Singh, BScPhm, MSc, Nicole Ferko, MSc. Value & Evidence, EVERSANA, Victoria, BC, Canada.
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/accelerating-evidence-generation-leveraging-llms-for-full-text-study-selection
+
+## Objectives
+
+Large language models (LLMs) can expedite the SLR process; however, most published applications focus on abstract screening. Full-text screening is a resource-intensive phase of SLRs where efficiencies could be achieved with AI tools; however, maintaining accuracy remains critical. Suboptimal sensitivity at this stage poses a risk of excluding relevant studies. The objective of the current research was to validate a proprietary LLM-based tool to support full-text screening using a recently published SLR.
+
+## Methods
+
+The AI-assisted tool was implemented using an R-based application integrating LLMs via API calls for preliminary full-text screening. A recently published PRISMA-compliant SLR of clinical trials in Crohn’s disease was selected, comprising 426 records previously screened by two human reviewers which were submitted to the LLM (GPT-4o-2024-11-20). The LLM was prompted with study eligibility criteria, screening instructions, and the full-text articles for evaluation. For each record, the model generated addressed individual criteria, provided justifications, and rendered eligibility decisions. Exclusion decisions and rationale were assessed for agreement and accuracy against the original human decisions. A human reviewer was consulted for verification where LLM decisions deviated from the original review.
+
+## Results
+
+Of 426 full-text records, 22 (5.2%) problematic records (e.g., unreadable text) were removed. Among 336 true exclusions, the LLM correctly assigned 223 (66.4%), with only one incorrect exclusion (NPV: 0.996). The process completed in under 40 minutes. In a process where a human reviewer only screens records not excluded by the AI tool, time savings of 42.3% could be achieved versus human review of all records.
+
+## Conclusions
+
+This study supports the use of AI for improving full-text screening efficiency. Calibrating tools for high sensitivity, even at the expense of specificity, may provide an optimal balance of accuracy and efficiency. Improved models or refinements to prompting may further improve efficiency gains.
+
+---
+
+# 66. CONTEXT-AWARE GENERATIVE AI FOR EVIDENCE GENERATION, ANALOG-DRIVEN ENROLLMENT FORECASTING, AND OPERATIONAL RISK MANAGEMENT IN ONCOLOGY TRIALS
+
+- Session code: MSR60
+- Authors: Ashwin Kumar Rai, MS 1, Victoria Ikoro, PhD2, Devika Bhandary, MSc3, Andre Ng, Msc4, Marielle Bassel, BA5. 1Director of Data Science & Advanced Analytics, Thermo Fisher Scientific, Overland Park, KS, USA, 2Thermo Fisher Scientific, Kitchener, ON, Canada, 3Thermo Fisher Scientific, London, United Kingdom, 4Thermo Fischer Scientific, London, United Kingdom, 5Thermo Fisher Scientific, Montreal, QC, Canada.
+- Disease: SDC: Oncology
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/context-aware-generative-ai-for-evidence-generation-analog-driven-enrollment-forecasting-and-operational-risk-management-in-oncology-trials
+
+## Objectives
+
+To develop and demonstrate a context-aware GenAI evidence-generation workflow that identifies study-design-matched “analog” oncology trials from ClinicalTrials.gov and linked publications, extracts enrollment performance and operational difficulty signals, and produces explainable enrollment-rate recommendations for a planned study, with a pathway to scale the same pipeline for machine learning (ML).
+
+## Methods
+
+We built a hybrid GenAI + rules pipeline combining (1) structured registry fields (study type/phase, allocation/masking, arms/interventions, endpoints, enrollment, dates, locations) and (2) publications linked via NCT identifiers and robust title/acronym matching. GenAI normalized free-text eligibility and design narratives into a standardized “trial fingerprint” capturing indication/stage/line, biomarker gates, comparator class, endpoint/procedure burden proxies, run-in/washout complexity, and geographic footprint. Analog retrieval used hard filters on critical design attributes, then embedding-based similarity ranking over fingerprints. Enrollment velocity labels were computed as participants/site/month when recruitment windows and site counts were available from publications; otherwise conservative registry-derived proxies were used. Difficulty signals (eligibility restrictiveness themes, biomarker-testing friction, visit/procedure burden, and competitive recruiting density) were extracted to contextualize forecasts. For demonstration, five completed oncology trials were treated as “planned targets,” each matched to ~10 concluded analogs to generate similarity-weighted enrollment-rate distributions and explanatory rationales.
+
+## Results
+
+Across five targets, the system generated consistent trial fingerprints and ranked analog sets aligned on key design drivers. The analog method produced enrollment-rate recommendations (median and uncertainty bands) and highlighted factors expected to accelerate or slow enrollment (e.g., biomarker confirmation requirements, comparator acceptability, procedure intensity, competition). Outputs were traceable to registry fields and publication evidence for stakeholder review.
+
+## Conclusions
+
+Context-aware GenAI enables a evidence generation paradigm for feasibility planning: it systematically identifies design-matched analog trials, extracts enrollment performance and operational challenges, and produces explainable recommendations for expected enrollment rate and study difficulty. The same evidence-engineering pipeline can be scaled to produce large structured datasets suitable for ML-based prediction as additional concluded trials are ingested.
+
+---
+
+# 67. FROM PROMPT ENGINEERING TO DECISION-MAKING: ARTIFICIAL INTELLIGENCE IN HEALTH TECHNOLOGY ASSESSMENT
+
+- Session code: MSR128
+- Authors: Anna Pereira, BSc, Murilo Contó, MBA, MSc; Boston Scientific, São Paulo, Brazil
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-3-3/from-prompt-engineering-to-decision-making-artificial-intelligence-in-health-technology-assessment
+
+## Objectives
+
+To investigate the potential applications and limitations of generative Artificial Intelligence (AI) to optimize Health Technology Assessment (HTA) processes.
+
+## Methods
+
+A narrative, use-case-driven analysis was conducted based on peer-reviewed literature and grey literature, including reports from international organizations and institutions such as the FDA, NICE, and Cochrane, published between June 2020 and January 2025. Applications of generative AI currently used in market research were mapped and translated to core HTA domains, including systematic literature reviews, real-world evidence generation, and health economic modeling. Key considerations related to prompt engineering, transparency, ethics, and governance were qualitatively assessed.
+
+## Results
+
+Transparency and rigor in AI-assisted evidence analysis and decision support was consistently highlighted as a critical enabler of credibility and trust, in line with international guidance such as the NICE position statement on AI in evidence generation. Key limitations were also identified, including risks of bias, lack of interpretability, and the potential for hallucinated or misleading outputs, reinforcing the need for human oversight and clear documentation of assumptions. More specific prompts were consistently associated with more accurate and interpretable results. Although not yet fully explored within HTA, an emerging trend toward the use of generative AI agents in market research was identified in the literature. These agents show potential to support a range of HTA activities, including literature summarization, synthetic data generation, accelerated evidence-based decision-making, and scalable stakeholder engagement, such as enabling interview-level depth in public consultations.
+
+## Conclusions
+
+Generative AI can act as a valuable decision-support tool across the HTA workflow when applied transparently. Its use should aim to enhance rather than replace human judgment, with clear governance frameworks.
+
+---
+
+# 68. EARLY IDENTIFICATION OF POSTPARTUM DEPRESSION RISK USING ARTIFICIAL INTELLIGENCE
+
+- Session code: MSR7
+- Authors: Nehir Yapar, BS 1, Selim Onder, MS2, Enes Arikan, MS2, Onur Baser, MA, MS, PhD2; 1Columbia Data Analytics, New York, NY, USA, 2Boğaziçi University, Istanbul, Turkey
+- Disease: SDC: Reproductive & Sexual Health
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-1-4/early-identification-of-postpartum-depression-risk-using-artificial-intelligence
+
+## Objectives
+
+This study aimed to develop and evaluate machine learning (ML) models to predict post-partum depression (PPD) among women with high-risk pregnancies using claims-based data.
+
+## Methods
+
+A retrospective cohort study was conducted using Kythera Labs commercial claims data (2016-2024). Women aged 18-45 with a recorded delivery (live birth, stillbirth, mixed), continuous enrollment for ≥12 months pre- and post-delivery were included. PPD was identified using ICD-10-CM codes (F53.0/F53.1) or proxy new-onset depression diagnoses within 12 months postpartum. Non-PPD women with established risk factors were included in the training and test sets to represent high-risk populations. Baseline demographic, clinical, and obstetric variables were used for model development, including age, comorbidity indices (Charlson comorbidity Index [CCI], Elixhauser Index, Chronic Disease Score [CDS]), obstetric complications, and overall risk factors. ML algorithms evaluated included Logistic Regression, Random Forest, and XGBoost. Models were trained on 70% of the cohort and tested on the remaining 30%. Performance was assessed via AUC-ROC, sensitivity, specificity, positive predictive value (PPV), negative predictive value (NPV), and confusion matrices. Feature importance in XGBoost was reported using normalized gain scores.
+
+## Results
+
+Total 639,477 patients met study inclusion criteria, of whom 9750 were positive for PPD and 5 were non-PPD patients. The remainder (629,722) was in the at-risk cohort; 32,479 patients were identified as likely to have PPD. Only 23% of patients were actually diagnosed with PPD. The clinical and obstetric risk indicator contributed ~75-80% of total importance (dominant predictor). Three additional features (CDS, age, Elixhauser Index) contributed modestly (~2-5%) and all remaining predictors had negligible importance.
+
+## Conclusions
+
+Only ~1 in 5 postpartum patients were diagnosed. Utilization of ML to predict PPD allows for wider recognition, timely intervention, and targeted treatments to improve or mitigate disease progression and could be used as an initial screening tool.
+
+---
+
+# 69. ASSESSING AI AND ML TOOL PERFORMANCE IN SLRS: A TARGETED LITERATURE REVIEW AND PERFORMANCE BENCHMARK FRAMEWORK
+
+- Session code: MSR88
+- Authors: Raju Gautam, PhD 1, Saeed Anwar, MSc2, Ratna Pandey, MSc2, Khushbu Baranwal, MSc2, Tushar Srivastava, MSc1; 1ConnectHEOR, London, United Kingdom, 2ConnectHEOR, Delhi, India
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/assessing-ai-and-ml-tool-performance-in-slrs-a-targeted-literature-review-and-performance-benchmark-framework
+
+## Objectives
+
+The use of artificial intelligence/machine learning (AI/ML) tools in systematic literature reviews (SLRs) has increased due to its ability to streamline the resource-intensive process. However, despite growing adoption, health technology assessment (HTA) agencies lack clear, evidence-based performance benchmarks to assess the reliability of AI-assisted SLR workflows. This review aims to summarize reported performance metrics of AI-based SLR tools and propose evidence-informed optimal benchmarks for AI-performance.
+
+## Methods
+
+A targeted review was conducted using PubMed, Google Scholar and the ISPOR database published in last 5-years. Eligible sources evaluated AI-based SLR tools and reported at least one performance metric (accuracy, sensitivity, and specificity). SLR steps of interest included title/abstract screening, full-text screening, and data-extraction. Performance metrics were extracted and synthesized descriptively.
+
+## Results
+
+A total of 25 studies were identified, 8 full-publication and 17 ISPOR abstracts/posters. Reported performance covered key SLR stages, different AI models and various disease areas. For title/abstract screening, accuracy (AI-human identical decision) ranged from 10-100%, sensitivity (correct inclusion by AI) ranged from 14-≥99%, and specificity (correct exclusion by AI) from 19-99%. For full-text screening, AI tools demonstrated consistently high sensitivity (76-99%), while specificity (19-77%) and accuracy (40-98.5%) was more variable, reflecting conservative exclusion approaches designed to minimize missed evidence. While only five studies reported accuracy of data-extraction (40-100%). Based on the synthesized evidence, optimal performance benchmarks relevant to HTA standards were proposed: Title/abstract screening - accuracy ≥90%, sensitivity ≥95%, specificity ≥85%; Full-text screening - accuracy ≥95%, sensitivity ≥98%, specificity ≥90%; data-extraction - accuracy ≥95%.
+
+## Conclusions
+
+Current evidence indicates that well-configured and validated AI-based tools can achieve sensitivity and specificity comparable to human reviewer. For HTA agencies, sensitivity should be the primary endpoint to minimize missed evidence. AI-assisted SLRs should be implemented within transparent, human-in-the-loop workflows. This performance benchmark will provide a practical validation framework to support HTA agencies’ confidence in AI-enabled evidence synthesis.
+
+---
+
+# 70. ACCURACY AND EFFICIENCIES ASSOCIATED WITH AI-BASED LINKING OF CLINICAL TRIAL PUBLICATIONS IN SYSTEMATIC REVIEWS
+
+- Session code: MSR82
+- Authors: Md Sohail Aman, M.Pharm1, Abhra R. Choudhury, BDS, MDS1, Kopal Dixit, MSc1, Anup Shaw, Sr., BTech1, Iain Fotheringham, BSc 2; 1PharmaQuant Insights Pvt. Ltd., Kolkata, India, 2PharmaQuant International Limited, Winchester, United Kingdom
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/accuracy-and-efficiencies-associated-with-ai-based-linking-of-clinical-trial-publications-in-systematic-reviews
+
+## Objectives
+
+Systematic literature reviews (SLR)s often include multiple citations from the same clinical study. Failure to identify and link these can lead to duplicate data extraction, increased reviewer burden and potential double-counting in subsequent synthesis. Manual identification is resource-intensive and error-prone, particularly in large evidence bases. This study evaluates the accuracy and efficiency of ActiveSLR®’s novel AI-supported linking.
+
+## Methods
+
+Two SLRs (1,497 and 2,700 citations) were conducted using search results from MEDLINE and Embase. Following population-intervention-comparator-outcomes (PICO) driven title/abstract and full-text screening in ActiveSLR®, included studies were exported to Excel. One reviewer used ActiveSLR®’s AI-supported trial identification feature to link citations, while a second reviewer used Excel to independently link them. Time required for linking was recorded for each, and efficiency was assessed based on the time difference between ActiveSLR® and Excel-based manual linking. AI-supported versus manual linking accuracy was measured, including whether AI introduced incorrect publication links.
+
+## Results
+
+Across the two SLRs, a total of 179 citations were included. ActiveSLR® correctly identified trial names for 164 (~92%) citations. Poster booklets where multiple posters were present in a single PDF, required correction. Reviewer validation and editing time both averaged under 10 seconds/citation; On average linking time across both projects (including validation and edits) was ~24.6 seconds/citation. Manual linking in Excel required 3.82 minutes/citation on average, corresponding to an efficiency gain of ~89.3% in ActiveSLR®. Subsequent assessment of the time difference between ActiveSLR® and Excel to select studies eligible for data extraction, is underway.
+
+## Conclusions
+
+ActiveSLR® demonstrated efficiency gains over Excel for linking multiple publications from the same clinical study, with the potential for efficiency to increase further with review size. AI-supported study linking remains underexplored in evidence synthesis but may markedly reduce reviewer burden in what can be a time-consuming task.
+
+---
+
+# 71. PREDICTING CHRONIC KIDNEY DISEASE IN PATIENTS WITH OBESITY: A PREDICTIVE MODELING APPROACH FOR PREVENTIVE CARE
+
+- Session code: MSR74
+- Authors: Vikash K. Verma, MBA, PharmD1, Louis Brooks Jr, MS2, Marissa Seligman, PharmD3, Abhimanyu Roy, MBA4, Abhinav Nayyar, MBA, MBBS5, Ankitkumar Arora, MPharm6, Anuj Gupta, MSc 7, Vishan Khatavkar, MBA8, Kavita Karayat, Other7, Srishti Motila, Other7, Varshith Gandla, PharmD9, Ankita Misra, MPH, MS6; 1Optum Lifesciences, Boston, MA, USA, 2Optum, Bloomsbury, NJ, USA, 3Optum, Winchester, MA, USA, 4Optum, Gurgaon, India, 5Optum Life Sciences, Gurugram, India, 6Optum Global Solutions, Gurgaon, India, 7Optum Lifesciences, Noida, India, 8Optum Lifesciences, Gurugram, India, 9Optum Global Solutions, Hyderabad, India
+- Disease: SDC: Urinary/Kidney Disorders|SDC: Diabetes/Endocrine/Metabolic Disorders (including obesity)
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/predicting-chronic-kidney-disease-in-patients-with-obesity-a-predictive-modeling-approach-for-preventive-care
+
+## Objectives
+
+Chronic Kidney Disease (CKD) often progresses silently until advanced stages, leading to higher morbidity, costly interventions, and long‑term health system burden. Early identification of high‑risk individuals with obesity is essential for prevention and targeted care. This study evaluated machine‑learning (ML) models to predict CKD onset and stage transitions using real‑world US data.
+
+## Methods
+
+A retrospective cohort was created using Optum® Market Clarity data (January 2016-June 2025). Adults aged ≥18 years with obesity‑related ICD‑10 codes and at least one eGFR or serum creatinine measurement were included. Predictors encompassed demographics (age, BMI), comorbidities (hypertension, diabetes, cardiovascular disease), laboratory parameters (eGFR, creatinine, A1c, urine albumin), medication classes (ACEIs/ARBs, diuretics, GLP‑1 agonists), and healthcare utilization metrics. Logistic Regression, Random Forest, and XGBoost models were developed to estimate CKD onset and stage‑progression risks. Model performance was evaluated using F1‑score, sensitivity, specificity, and area under the receiver operating characteristic curve (AUC). The best model was selected based on predictive accuracy and clinical interpretability.
+
+## Results
+
+Ensemble‑based approaches outperformed single‑algorithm models. Random Forest demonstrated the strongest predictive performance (F1: 77%; AUC: 80%), followed by XGBoost (F1: 75%; AUC: 78%). Key predictors contributing significantly to CKD onset and progression risk included: Age, baseline BMI, and history of hypertension.
+
+## Conclusions
+
+ML‑based predictive models using real‑world data effectively identify obesity‑related CKD risk and anticipate stage progression, supporting proactive and personalized care strategies. By integrating clinical, laboratory, and utilization predictors, these models can inform payer‑provider initiatives focused on early intervention, slowing CKD progression, and reducing long‑term healthcare costs.
+
+---
+
+# 72. REAL-WORLD UTILIZATION SHIFTS AND AI/NLP-DERIVED CLINICAL DRIVERS OF BIOLOGIC-TO-BIOSIMILAR SWITCHING IN INFLAMMATORY BOWEL DISEASE (IBD)
+
+- Session code: MSR47
+- Authors: Vikash K. Verma, MBA, PharmD1, Louis Brooks Jr, MS2, Marissa Seligman, PharmD3, Abhimanyu Roy, MBA4, Abhinav Nayyar, MBA, MBBS5, Ankitkumar Arora, MPharm6, Anuj Gupta, MSc 7, Vishan Khatavkar, MBA8, Shakir Khan, MBA9, Hitesh Khandelwal, BTech8, Satish Kumar, MBA8, Pankaj Bhardwaj, MBA, RPh8, Amit Kaushal, MBA, MD5, Kirti Batra, MBA10; 1Optum Lifesciences, Boston, MA, USA, 2Optum, Bloomsbury, NJ, USA, 3Optum, Winchester, MA, USA, 4Optum, Gurgaon, India, 5Optum Life Sciences, Gurugram, India, 6Optum Global Solutions, Gurgaon, India, 7Optum Lifesciences, Noida, India, 8Optum Lifesciences, Gurugram, India, 9Optum, United Health Group, Hyderabad, India, 10Optum Global Solutions, Noida, India
+- Disease: STA: Biologics & Biosimilars|SDC: Gastrointestinal Disorders
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/real-world-utilization-shifts-and-ai-nlp-derived-clinical-drivers-of-biologic-to-biosimilar-switching-in-inflammatory-bowel-disease-ibd
+
+## Objectives
+
+To evaluate real‑world changes in healthcare resource utilization (HCRU) following switches from originator biologics to biosimilars among adults with inflammatory bowel disease (IBD) and to use AI‑enabled natural language processing (NLP) to identify clinician‑documented reasons for switching.
+
+## Methods
+
+A retrospective cohort study was conducted using de‑identified Optum® Market Clarity data (January 2017-June 2025). Adults aged ≥18 years with ≥1 inpatient or ≥2 outpatient IBD diagnoses who received an originator biologic and subsequently switched to a biosimilar were included. The index date was the first biosimilar claim following originator therapy. Continuous medical and pharmacy enrollment for ≥12 months before and after the index date was required. Baseline demographics, Charlson Comorbidity Index (CCI), and HCRU were compared between pre‑ and post‑switch periods. AI‑enabled NLP was applied to unstructured physician notes to extract clinician‑documented switching rationales.
+
+## Results
+
+A total of 18,499 patients met inclusion criteria; 51.7% were female, and most were commercially insured (78.6%), with lower representation from Medicaid (10.8%) and Medicare (10.3%). Comorbidity burden was low, with 64.5% having a CCI of 0. Significant reductions in HCRU were observed post‑switch. Emergency department visits decreased by 17.5% (0.15 vs. 0.19), inpatient stays by 7.7% (0.35 vs. 0.38), outpatient encounters by 4.1% (3.11 vs. 3.25), and diagnostic procedures by 39.5% (0.07 vs. 0.11). Therapeutic procedure utilization increased by 27.5% (0.11 vs. 0.09). All differences were statistically significant (p < 0.05). NLP analysis identified disease‑ and treatment‑related considerations, immunogenicity concerns, and payer coverage or reimbursement policies as the most frequently documented drivers of biosimilar switching.
+
+## Conclusions
+
+Switching from originator biologics to biosimilars in IBD was associated with meaningful reductions in overall HCRU, supporting clinical and potential economic benefits. NLP‑derived insights highlighted clinical needs, immunogenicity, and payer policies as central drivers of switching, reinforcing biosimilars’ role in value‑based care.
+
+---
+
+# 73. MACHINE LEARNING-BASED PREDICTION OF PULMONARY ARTERIAL HYPERTENSION USING REAL-WORLD EHR AND CLAIMS DATA
+
+- Session code: MSR48
+- Authors: Vikash Kumar Verma, MBA, PharmD1, Louis Brooks Jr, MS2, Marissa Seligman, PharmD3, Abhimanyu Roy, MBA 4, Abhinav Nayyar, MBA, MBBS5, Ankitkumar Arora, MPharm6, Anuj Gupta, MSc7, Kavita Karayat, Other8, Vishan Khatavkar, MBA9, Aakash Singh, Other10, Srishti Motila, Other7, Pankaj Bhardwaj, MBA, RPh9, Riddhi Markan, BA, MSc11, Gargi Mahashay, BTech5. 1Optum Lifesciences, Boston, MA, USA, 2Optum, Bloomsbury, NJ, USA, 3Optum, Winchester, MA, USA, 4Optum, Gurgaon, India, 5Optum Life Sciences, Gurugram, India, 6Optum Global Solutions, Gurgaon, India, 7Optum Lifesciences, Noida, India, 8Optum Lifesciences, NOIDA, India, 9Optum Lifesciences, Gurugram, India, 10Optum Lifesciences, GURUGRAM, India, 11OPTUM Global Solutions, Gurugram, India.
+- Disease: SDC: Cardiovascular Disorders (including MI, Stroke, Circulatory)|SDC: Rare & Orphan Diseases
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/machine-learning-based-prediction-of-pulmonary-arterial-hypertension-using-real-world-ehr-and-claims-data
+
+## Objectives
+
+Pulmonary arterial hypertension (PAH) is a rare, progressive condition frequently diagnosed late due to nonspecific symptoms and reliance on invasive testing, resulting in delayed treatment and poor outcomes. This study applied machine learning (ML) techniques to real‑world clinical and claims data to predict PAH onset earlier, identify key risk factors, and support proactive clinical intervention aimed at improving survival and reducing healthcare burden.
+
+## Methods
+
+A retrospective analysis was conducted using Optum® Market Clarity data (January 2020-June 2025). Patients with confirmed PAH (n=1,026) were identified, with the index date defined as the initial PAH diagnosis. Continuous enrollment for four years pre‑index was required to capture baseline comorbidities, diagnostic activity, and healthcare utilization. A matched control group without PAH was constructed using propensity score matching on age, gender, race, and Charlson Comorbidity Index. Data were split 80:20 into training and testing sets. Logistic Regression, Random Forest, and XGBoost models were developed to predict PAH risk. Performance was evaluated using F1 scores and area under the curve (AUC). Logistic regression was further used to estimate odds ratios (ORs) for significant predictors.
+
+## Results
+
+ML models demonstrated strong predictive performance, with F1 scores of 77% (Logistic Regression), 79% (XGBoost), and 79% (Random Forest). Corresponding AUC values were 0.83, 0.81, and 0.82. Further analysis revealed several statistically significant predictors of PAH onset, including ECG abnormalities (OR=3.91), non-ST elevation myocardial infarction (OR=3.56), and dyspnea (OR=3.51), underscoring the contribution of cardiovascular and respiratory symptoms to earlier risk stratification.
+
+## Conclusions
+
+ML‑powered models applied to real‑world data show strong potential for early PAH identification, highlighting key predictors that may aid in risk stratification before clinical deterioration occurs. Early detection tools embedded into clinical workflows could reduce diagnostic delays and improve outcomes. Future work will focus on external validation, clinical usability, and integration into decision‑support systems.
+
+---
+
+# 74. GOVERNING RWD- AND GENAI-ENABLED RWE: PRACTICAL, AUDITABLE CONTROLS FOR FASTER—YET TRUSTWORTHY—EVIDENCE GENERATION
+
+- Session code: MSR90
+- Authors: Sherrine Eid, BS, MPH; SAS Institute, Global Head, Epidemiology, RWE & Observational Research, Macungie, PA, USA
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/governing-rwd-and-genai-enabled-rwe-practical-auditable-controls-for-faster-yet-trustworthy-evidence-generation
+
+## Objectives
+
+Real-world data (RWD) and modern AI (including large language models [LLMs]) are rapidly compressing the time from question-to-insight in real-world evidence (RWE) generation. Yet the same capabilities introduce new risks—data provenance ambiguity, hidden confounding, automation bias, privacy leakage, and non-reproducible pipelines—that can erode confidence with regulators, HTA bodies, and clinicians. We propose a practical governance blueprint that treats “responsible intelligence generation” as an end-to-end lifecycle spanning data acquisition, phenotyping, analysis, reporting, and ongoing monitoring.
+
+## Methods
+
+Our approach operationalizes risk-based governance using the NIST AI Risk Management Framework (and its GenAI profile) to define measurable controls across governance, mapping, measurement, and management functions, aligned with an AI management system (ISO/IEC 42001) for organizational accountability.
+
+## Results
+
+For RWD fitness-for-purpose, we recommend standardized data models and automated quality assessment (e.g., OMOP CDM with OHDSI’s Data Quality Dashboard), coupled with explicit data provenance, lineage, and access controls. For regulatory-grade traceability, we align feasibility and observational workflows to FDA’s RWD/RWE considerations (including documentation of data relevance/reliability, protocol-driven analyses, and audit-ready records). For AI/LLM components, we specify controls that are increasingly expected in high-stakes settings: model and prompt versioning; retrieval-augmented generation (RAG) with curated, citable source corpora; structured human-in-the-loop adjudication for NLP-derived phenotypes; bias and drift monitoring; red-teaming and incident response; and reproducible reporting using CONSORT-AI/SPIRIT-AI (for AI interventions) and TRIPOD+AI (for prediction models). Finally, we embed transparency norms from ISPOR/ISPE RWE good practices (study registration, replicability, and clear analytic disclosure) to strengthen credibility across stakeholders.
+
+## Conclusions
+
+This blueprint enables organizations to move faster with AI while remaining auditable, patient-protective, and decision-grade.
+
+---
+
+# 75. AI-POWERED NLP FOR COMPREHENSIVE IBD PHENOTYPING ENTITY AND RELATIONSHIP EXTRACTION OF CLINICAL FEATURES AND BIOMARKERS FROM EHR
+
+- Session code: MSR51
+- Authors: Vikash Kumar Verma, MBA, PharmD1, Louis Brooks Jr, MS2, Marissa Seligman, PharmD3, Abhimanyu Roy, MBA 4, Abhinav Nayyar, MBA, MBBS5, Ankitkumar Arora, MPharm6, Anuj Gupta, Msc7, Vishan Khatavkar, MBA8, Mahainn Somani, BTech9, Riddhi Markan, BA, MSc10, Sudhanshu Chawla, Other8, Ram Kumar Mishra, PhD11. 1Optum Lifesciences, Boston, MA, USA, 2Optum, Bloomsbury, NJ, USA, 3Optum, Winchester, MA, USA, 4Optum, Gurgaon, India, 5Optum Life Sciences, Gurugram, India, 6Optum Global Solutions, Gurgaon, India, 7Optum Lifesciences, Noida, India, 8Optum Lifesciences, Gurugram, India, 9Optum, Gurugram, India, 10OPTUM Global Solutions, Gurugram, India, 11Optum Global Solution, Gurugram, India.
+- Disease: SDC: Gastrointestinal Disorders
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/ai-powered-nlp-for-comprehensive-ibd-phenotyping-entity-and-relationship-extraction-of-clinical-features-and-biomarkers-from-ehr
+
+## Objectives
+
+Real‑world evidence (RWE) studies require granular clinical features and biomarkers embedded in unstructured electronic health records (EHR), limiting scalability and timeliness. We aimed to develop and validate an AI‑powered natural language processing (NLP) pipeline, combining Named Entity Recognition (NER) and relationship extraction to automate phenotyping across Inflammatory Bowel Disease (IBD) and Chronic Kidney Disease (CKD) by capturing clinically relevant entities and contextual relationships.
+
+## Methods
+
+Retrospective analyses used EHR corpora for IBD (2007-2024) and CKD (2014-2025). Character‑level Convolutional-Neural-Networks - Bidirectional Long Short‑Term Memory-networks with a Conditional Random-Field layer (CharCNN-biLSTM-CRF) based NER models extracted diagnosis, disease characteristics/events, severity, procedures, and biomarkers (C‑reactive protein [CRP], fecal calprotectin, albumin, hemoglobin [Hb]). Relationship extraction linked entities (e.g., diagnosis-stage/severity, biomarker-result). Performance was evaluated using precision, recall, and F1‑score; operational impact was assessed via clinical notes manual review effort reduction.
+
+## Results
+
+In the IBD cohort, NER model demonstrated F1‑scores of 86% for diagnosis, 78% for clinical features, 78% for disease events/severity, and 82% for biomarkers, while the relationship‑extraction component achieved an accuracy of 85-92% across link types. The pipeline processed approximately 6 million patient notes, enabling automated cohort curation, severity and event mapping, and biomarker trend analysis; the operational assessment indicated a reduction in manual abstraction effort exceeding 85%. In the CKD cohort, NER achieved F1‑scores of 95% for diagnosis, 95% for feature severity, 88% for microscopic features and renal biopsy, 81% for disease severity; relationship extraction accuracy was 90-95%. The CKD pipeline processed ~20 million notes, reducing manual effort by >75%.
+
+## Conclusions
+
+A unified NER-relationship‑extraction pipeline enables scalable, context‑awareness from unstructured EHR across IBD and CKD, accelerating RWE generation and improving inputs for outcomes research and precision medicine.
+
+---
+
+# 76. SYNTHETIC PROGRESSION-FREE SURVIVAL DATA GENERATION FROM PUBLISHED AGGREGATE TRIAL DATA
+
+- Session code: MSR91
+- Authors: Neha Tripathi, MPH1, Parampal Bajaj, BTech1, Akanksha Sharma, MSc1, Shubhram Pandey, MSc 2; 1Heorlytics Pvt. Ltd., Mohali, India, 2Heorlytics Pvt. Ltd., SAS Nagar, Mohali, India
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/synthetic-progression-free-survival-data-generation-from-published-aggregate-trial-data
+
+## Objectives
+
+Individual patient data (IPD) availability is often limited in health technology assessment (HTA), restricting indirect treatment comparisons for time-to-event outcomes. In oncology, survival results are frequently reported in aggregate form, necessitating alternative methodological approaches to derive IPD. This study develops a framework for reconstructing progression-free survival (PFS) from published aggregate data and generating synthetic control cohorts for exploratory comparative analyses
+
+## Methods
+
+A case study was conducted using aggregate data from the docetaxel monotherapy control arm of a phase II randomised trial where IPD were unavailable. PFS times were simulated using a Weibull distribution fitted to the reported median PFS of 3.9 months, with independent censoring applied. Baseline patient characteristics (age, sex, ECOG performance status, and prior therapy burden) were generated to match published aggregate distributions. A synthetic control cohort was created using classification and regression tree (CART) methods to enable propensity-based matching. The aggregate-calibrated and synthetic cohorts were compared using Kaplan-Meier curves and median PFS estimates
+
+## Results
+
+The aggregate-simulated control arm yielded a Kaplan-Meier median PFS of 4.5 months, representing a 15.4% deviation from the published median. The synthetic control cohort showed a comparable PFS profile with overlapping confidence intervals. These deviations were consistent with expected sampling variability in small sample sizes and did not suggest systematic bias. Kaplan-Meier curves demonstrated adequate alignment between simulated and published survival trajectories
+
+## Conclusions
+
+Aggregate-driven simulation provides a pragmatic and reproducible approach to generating synthetic IPD when only aggregate trial data are available. While not replacing true IPD, it enables exploratory analyses and evidence synthesis in data-limited settings. This methodology may be valuable in HTA contexts requiring timely decision-making with limited data access. Future research should validate this approach using real IPD across different disease areas and outcome measures
+
+---
+
+# 77. EVALUATING EARLY TREATMENT INITIATION REGIMES IN TREATMENT-RESISTANT DEPRESSION: A REINFORCEMENT LEARNING-BASED OFF-POLICY EVALUATION APPROACH
+
+- Session code: MSR55
+- Authors: You Wang, BS. Johns Hopkins University Bloomberg School of Public Health, Baltimore, MD, USA.
+- Disease: STA: Personalized & Precision Medicine|STA: Multiple/Other Specialized Treatments
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/evaluating-early-treatment-initiation-regimes-in-treatment-resistant-depression-a-reinforcement-learning-based-off-policy-evaluation-approach
+
+## Objectives
+
+This research aims to develop, pilot, and empirically evaluate a reinforcement learning (RL)-based off-policy evaluation framework for estimating the comparative effectiveness of early treatment initiation regimes among individuals with treatment-resistant depression (TRD) on suicide attempt or intentional self-harm, in observational data.
+
+## Methods
+
+We analyzed Kythera Labs U.S. administrative claims-based longitudinal data comprising 1,331,775 patients with TRD and 13,476,105 monthly transitions over 12 months post TRD index, with suicide-related events modeled as an absorbing outcome. A double deep Q-network with constrained joint action support was trained to estimate state-action values across factored antidepressant therapy, psychotherapy, esketamine, and neuromodulation status. The policy estimate was defined as the 12-month risk under alternative regimes specified by initiation versus non-initiation of treatment classes within the first 3 months. Policy evaluation was conducted using weighted doubly robust off-policy evaluation, with importance weighting restricted to the early initiation window to mitigate weight explosion. Episode-level bootstrapping was used to construct risk differences (RD) and confidence intervals (CI).
+
+## Results
+
+18 joint treatment combinations were supported by the data. Early psychotherapy initiation compared with no psychotherapy was associated with an estimated 12-month risk difference of 0.36 (95% CI: 0.09-0.39). Early neuromodulation showed smaller and statistically non-significant contrasts (RD −0.08; 95% CI: −0.12 to 0.20). Regimes involving rarely observed treatments, such as early esketamine initiation, produced unstable or extreme estimates. Exploratory enumeration of supported early-initiation regimes showed that lowest estimated risks clustered around common real-world care patterns like continuous antidepressant care and psychotherapy.
+
+## Conclusions
+
+This study demonstrates a practical RL-based workflow for comparative evaluation of early treatment initiation regimes using observational data. The proposed framework offers a methodological foundation for future comparative effectiveness research on dynamic mental health treatment strategies, while highlighting key challenges related to decisions supported by the real-world treatment patterns and rare outcomes.
+
+---
+
+# 78. ESTIMATING HETEROGENEOUS TREATMENT EFFECTS FOR PHARMACOEPIDEMIOLOGIC STUDIES: A SCOPING REVIEW FOR CAUSAL FOREST MODELS
+
+- Session code: MSR97
+- Authors: Yinan Wang, PhD, MPP, Zhengxuan Li, Jieni Li, PhD, MPH, Rajender R. Aparasu, PhD, FAPhA. University of Houston, Houston, TX, USA.
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/estimating-heterogeneous-treatment-effects-for-pharmacoepidemiologic-studies-a-scoping-review-for-causal-forest-models
+
+## Objectives
+
+The Causal Forest (CF) models are increasingly being used to evaluate heterogeneous treatment effects (HTEs) in healthcare. Therefore, this study aims to comprehensively review the applications of CF models in pharmacoepidemiologic research.
+
+## Methods
+
+We conducted a systematic literature search in PubMed and Embase to identify peer-reviewed studies published till December 2025. We used the search terms "causal forest", "causal random forest", "causal machine learning", and "generalized random forest" to identify studies that used the CF algorithm and involved/compared pharmaceutical interventions and were published in English. We excluded studies published as conference abstracts, reviews, brief reports, or commentaries. The data extraction focused on the data source, model construction, and key findings.
+
+## Results
+
+Of the 261 unique studies screened, a total of 61 full-text articles were assessed for eligibility, and 35 studies met the inclusion criteria. Sixteen studies (45.7%) used data from randomized controlled trials, and 17 studies (48.6%) used claims or electronic health records data that applied propensity score methods to balance baseline characteristics. Most studies (48.6%) used the “grf” package to build the model and tuned hyperparameters with cross-validation, followed by “EconML”. However, the presentation of results varied considerably across studies. Most studies (65.7%) reported the rank of features that impact HTE, while only a few studies (31.4%) selected the most representative causal tree. Less than half of the studies (45.7%) developed patient subgroups based on estimated individual treatment effects, and only 11 (31.4%) studies presented the most representative tree for patient subgroups using features. Thirteen (37.1%) studies did not evaluate the model performance, six (17.14%) evaluated model performance using calibration.
+
+## Conclusions
+
+We found that CF applications in pharmacoepidemiology have high variability and lack consistency in model development and presentation of HTE findings. More work is needed on how to select the best model and identify informative subgroups to evaluate HTE.
+
+---
+
+# 79. DEVELOPMENT AND EVALUATION OF CELLS, AN ENSEMBLE OF OPEN-WEIGHT LARGE LANGUAGE MODELS FOR SYSTEMATIC LITERATURE REVIEW
+
+- Session code: MSR89
+- Authors: Richard F. Pollock, MA, MSc; Covalence Research Ltd, Director, Harpenden, United Kingdom
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/development-and-evaluation-of-cells-an-ensemble-of-open-weight-large-language-models-for-systematic-literature-review
+
+## Objectives
+
+The Covalence Ensemble Large Language Model (LLM) Systematic Literature Review (SLR) Platform (CELLS) is a web application that orchestrates an ensemble of locally-hosted open-weight LLMs to conduct automated screening of study titles and abstracts in the context of an SLR, focussed on reproducibility, inter-model agreement, chain-of-thought documentation, and human-in-the-loop decision making. The present analysis details key methodological aspects of CELLS and presents an evaluation of performance versus a human reviewer.
+
+## Methods
+
+CELLS was used to run six open-weight LLMs with between 14 and 120 billion parameters on a corpus of 801 study titles and abstracts, screened against five inclusion criteria, with a human reviewer presented with the same task. Each LLM was prompted with identical context for each study and required to emit schema-validated responses for each criterion, with the schema compiled automatically based on human-defined screening criteria specified in the web interface. For every study, LLM, and criterion combination, CELLS recorded the raw LLM output including the chain-of-thought and schema-validated screening decision, enabling per-model performance auditing, generation of inter-LLM agreement statistics (e.g. Fleiss’/Krippendorff’s alpha), and use of pre-specified or post hoc consensus rules (e.g., majority vote or unanimity) to generate final screening recommendations.
+
+## Results
+
+Of the 801 study records retrieved, agreement on the need for full-text screening between CELLS and the human reviewer was 97.2% (779/801); CELLS recommended full-text screening (or reported low inter-LLM agreement) for 45 studies, versus 23 from the human reviewer, with all 23 human-recommended studies included in the 45 recommended by CELLS. Had CELLS made screening decisions without human audit, the human screening workload would have reduced by 94.4% (from 801 to 45 studies), with no studies wrongly excluded.
+
+## Conclusions
+
+Agreement between CELLS and human screening decisions was high, with no studies incorrectly excluded by CELLS, paving the way for substantial human workload efficiencies in literature screening.
+
+---
+
+# 80. VALIDATION OF THE METASLR ROB MODULE: A MULTI-AGENT GENERATIVE AI SYSTEM FOR AUTOMATING COCHRANE RISK OF BIAS 2.0 ASSESSMENTS
+
+- Session code: MSR134
+- Authors: Inderpreet S. Marwaha, MSc, RPh1, Rajdeep Kaur, PhD 1, Ritesh Dubey, PharmD1, Shubhram Pandey, MSc1, Barinder Singh, RPh2. 1Pharmacoevidence Pvt. Ltd., SAS Nagar, Mohali, India, 2Pharmacoevidence Pvt. Ltd., SAS Nagar Mohali, India.
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-3-3/validation-of-the-metaslr-rob-module-a-multi-agent-generative-ai-system-for-automating-cochrane-risk-of-bias-2-0-assessments
+
+## Objectives
+
+Risk of Bias (RoB) assessment is a critical yet resource-intensive element of systematic literature reviews (SLRs), often limited by inter-rater consistency. This study validated a Retrieval-Augmented Generation (RAG)-enabled multi-agent Generative AI (GenAI) module within the MetaSLR platform, benchmarking its efficiency, accuracy, reliability, and directional bias against Subject Matter Experts (SMEs) for Cochrane RoB 2.0 assessments.
+
+## Methods
+
+A validation study was conducted using 36 randomized controlled trials drawn from two historical SLRs. The AI system utilized a multi-agent architecture where distinct sub-agents autonomously answered signalling questions (SQs) using a dynamic checklist approach, where answers to initial SQs adapted subsequent logic. Domain-level and overall risk judgements were derived algorithmically from the SQ decisions. Agreement with SME consensus was evaluated using observed agreement, sensitivity, specificity, and F1 score. Additionally, inter-rater reliability (both Cohen’s κ and Gwet’s AC1), directional bias [Δ=mean (AI score)-mean (SME score)], and time-to-completion were analysed.
+
+## Results
+
+Strong adherence to decision-logic for SQs was demonstrated with 78.16% agreement (specificity: 91.92%, unweighted κ = 0.637, Gwet’s AC1 = 0.727). For Domains, weighted AC1 (0.776) confirmed high reliability, robustly accounting for the dataset's significant class imbalance. For Overall RoB, the agreement was 55.56% (specificity: 78.06%, weighted AC1 = 0.337). Importantly, directional bias analysis indicated the AI was more conservative than SMEs (Overall RoB Δ=0.19; Domain Δ=0.07), with no evidence of systematic risk underestimation. GenAI reduced total assessment time by 46% (9.1 hours saved, including adjudication), cutting mean per-study time from 15 minutes to 15 seconds.
+
+## Conclusions
+
+The multi-agent RAG-enabled module demonstrates high methodological validity in adhering to Cochrane conditional logic (high specificity). While exact concordance with SMEs was moderate, the GenAI system systematically exhibited a conservative bias in its judgements. These findings support the system's implementation as a reliable, high-fidelity quality appraisal tool for Human-in-the-Loop (HITL) governed evidence synthesis.
+
+---
+
+# 81. HEALTH TECHNOLOGY ASSESSMENT (HTA) WORKFLOWS—FROM EVIDENCE SYNTHESIS TO ECONOMIC MODELING AND DOSSIER GENERATION
+
+- Session code: MSR40
+- Authors: Shubhram Pandey, MSc 1, Akanksha Sharma, MSc1, Gagandeep Kaur, MSc1, Rajdeep Kaur, PhD1, Nicola Waddell, MSc2, Michael Marentette, MBA3, Barinder Singh, RPh1. 1Pharmacoevidence Pvt. Ltd., Mohali, India, 2Pharmacoevidence Pvt. Ltd., London, United Kingdom, 3Pharmacoevidence Pvt. Ltd., Westmount, QC, Canada.
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-1-4/health-technology-assessment-hta-workflows-from-evidence-synthesis-to-economic-modeling-and-dossier-generation
+
+## Objectives
+
+Health technology assessment (HTA) workflows from evidence synthesis to economic modeling and dossier generation are often fragmented across multiple workflows and software environments. The objective of this research was to develop and validate a comprehensive generative AI (GenAI) suite capable of producing end-to-end, HTA-ready outputs within a unified and transparent framework, while maintaining human oversight and methodological rigor.
+
+## Methods
+
+The suite integrates five interconnected modules: (1) Evidence Synthesis, enabling landscape assessment and systematic literature reviews for generating standardized extraction grids; (2) Model Conceptualization, producing model conceptualization protocols with model structure, inputs, and assumptions; (3) Model Development, generating fully functional HTA-ready Excel or R/Python models for decision tree, Markov, semi-Markov and hybrid frameworks; (4) Report Generation, drafting technical reports including sensitivity analyses; and (5) Dossier Generation, for market-specific submissions. The system was tested using diverse therapeutic areas, including oncology, rare diseases, and mental health indications. Validation metrics included traceability, reproducibility, structural accuracy, and narrative coherence.
+
+## Results
+
+Across six test cases spanning three therapeutic areas, the suite achieved 80-85% full-process accuracy (from evidence synthesis to dossier generation) and 92-95% partial-process accuracy when individual modules were used independently. Automation reduced approximately 50%-85% development time compared with manual workflows across multiple modules (50% in evidence synthesis, 90% in model conceptualization, 75% in model development, 85% in report writing, and 90% in dossier generation). Domain experts verified all AI-generated excel/R models for face validity, structural integrity, and compliance with established HTA methodological standards.
+
+## Conclusions
+
+This GenAI suite demonstrates that comprehensive automation of HTA workflows with human oversight is achievable while preserving methodological rigor and transparency. The substantial time savings observed across all modules suggest meaningful potential for accelerating HTA submission timelines while maintaining quality standards. Future research will focus on evaluating performance across additional use cases and real-world HTA submissions to further assess robustness, generalizability, and practical applicability.
+
+---
+
+# 82. MODEL-BASED COST-UTILITY ANALYSIS OF RECENTLY APPROVED THERAPIES USING RECONSTRUCTED RANDOMIZED CONTROLLED TRIAL OUTCOMES
+
+- Session code: MSR38
+- Authors: Rekha Kattela, PharmD, Vaishnavi M, PharmD; Raghavendra Institute of Pharmaceutical Education & Research (RIPER), Pharmacy Practice, Anantapur, India
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-1-4/model-based-cost-utility-analysis-of-recently-approved-therapies-using-reconstructed-randomized-controlled-trial-outcomes
+
+## Objectives
+
+To demonstrate the feasibility and validity of using reconstructed randomized controlled trial outcomes to support model-based cost-utility analyses when individual patient-level data are unavailable.
+
+## Methods
+
+A model-based cost-utility analysis was conducted from a healthcare payer perspective using a partitioned survival model with a lifetime horizon. Published KM curves from a recently approved therapy evaluated in a pivotal RCT were digitized and reconstructed using the Guyot iterative algorithm to generate pseudo-IPD. Parametric survival models (including Weibull and log-normal distributions) were fitted to reconstructed data and selected based on statistical fit and clinical plausibility. Health state utilities and direct medical costs were sourced from peer-reviewed literature and standard reimbursement schedules. Outcomes were expressed as quality-adjusted life years (QALYs) and costs (2024 USD), with incremental cost-effectiveness ratios (ICERs) calculated. Deterministic and probabilistic sensitivity analyses were performed to assess parameter uncertainty.
+
+## Results
+
+Reconstructed survival data closely reproduced published trial survival estimates, supporting their suitability for long-term extrapolation. The economic model generated plausible ICER estimates consistent with previously reported evaluations of comparable therapies. Sensitivity analyses identified survival extrapolation assumptions and drug acquisition costs as key drivers of cost-effectiveness. Cost-effectiveness acceptability curves demonstrated stable decision uncertainty across commonly applied willingness-to-pay thresholds.
+
+## Conclusions
+
+This study demonstrates that survival curve reconstruction techniques provide a practical and reproducible approach for conducting model-based economic evaluations when access to proprietary IPD is unavailable. The findings support the use of reconstructed trial data in HTA submissions and early value assessment of newly approved therapies, aligning with ISPOR good research practices.
+
+---
+
+# 83. FAST, ACCURATE, RELIABLE: PROSPECTIVE FOLLOW-UP ASSESSMENT OF THE SUPERDEDUPER MODULE IN LASER AI
+
+- Session code: MSR26
+- Authors: Ewelina Sadowska, MPharm, Joanna Konieczna, MSc, Ewa Borowiack, MSc, Monika Opalek, PhD, Artur Nowak, MSc; Evidence Prime, Krakow, Poland
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-1-4/fast-accurate-reliable-prospective-follow-up-assessment-of-the-superdeduper-module-in-laser-ai
+
+## Objectives
+
+Evidence synthesis typically requires searching multiple databases to ensure comprehensive data collection, making deduplication an essential stage. We prospectively evaluated the performance of the rule-based algorithm used in the SuperDeduper deduplication module within Laser AI, extending our earlier retrospective assessment, and characterized performance by confidence level, including the proportion of records routed for human review.
+
+## Methods
+
+Three systematic reviews of various sizes (3,645 to 31,740 records) and topics were selected and manually deduplicated independently by two researchers to create benchmark reference sets. The deduplication algorithm groups potential duplicates into four confidence levels. Performance was assessed using false positives, false negatives, sensitivity, specificity, and accuracy, overall and stratified by confidence level.
+
+## Results
+
+The benchmark dataset included 40,574 records. Across the three benchmark sets, average accuracy was 99.4%, average sensitivity was 98.2%, and average specificity exceeded 99.9%. In addition, SuperDeduper identified 4 duplicates that were missed in manual deduplication and incorrectly flagged 12 records as duplicates (false positives). All false positives were assigned to the low-confidence level and therefore were not automatically removed, instead being routed for human review. On average, 6.64% of records were assigned to the low-confidence level requiring manual verification.
+
+## Conclusions
+
+The SuperDeduper module supports a human-in-the-loop workflow by assigning confidence levels to potential duplicate groups, providing users with interpretable and actionable outputs. The results confirm that SuperDeduper is an effective and safe method for removing duplicates and may accelerate the review process by reducing human workload in duplicate verification. The generated benchmark dataset (to be published) offers a valuable resource for further validation of deduplication tools.
+
+---
+
+# 84. GENERATIVE AI POWERED EXTRACTION AND RECALIBRATION OF NON STANDARDIZED SPREADSHEET TEMPLATES, ENABLING TOUCHLESS AUTOMATION OF DOWNSTREAM PROCESSES
+
+- Session code: MSR75
+- Authors: Akshay Chaudhary, NA 1, Deeksha Thareja, NA2, Laura J Rhyme, NA3, Abhishek Raj, NA2, Parul Tiwari, NA2; 1Optum Global Solution, Hyderabad, India, 2Optum Global Solution, Gurugram, India, 3Optum, NA, WI, USA
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/generative-ai-powered-extraction-and-recalibration-of-non-standardized-spreadsheet-templates-enabling-touchless-automation-of-downstream-processes
+
+## Objectives
+
+Organizations across industries face a persistent challenge: non-standardized source data templates from multiple clients often become inconsistent and unusable without complex transformation or manual intervention. Although data begins in a fixed template, it evolves through multiple lifecycle stages, with frontline supervisors making ad-hoc changes such as adding new segments or modifying spreadsheets without adhering to guidelines. These uncontrolled variations create multiple versions of master templates, undermining standardization and forcing businesses to introduce corrective steps before ingestion into downstream systems like analytics, claims processing, workforce management, or inventory control. This increases operational complexity and reduces efficiency.
+
+## Methods
+
+The proposed Generative AI based solution with multi-shot prompting is designed to ingest any unstable template of data and convert them into a JSON format which then identifies the multiple headers and corresponding values and convert it into an expected structured format. With minimum configuration the tool would also be able to identify only the target segment of data or set of columns from a non-standardized data set and re-format in standard form, ready to be consumed by downstream processes/ systems.
+
+## Results
+
+The testing of Standardization capability was performed across different document types. Fee Schedule, Rates, provider demographic data and another complex excel document containing Fee Schedules and rates data from various providers is received by HealthCare organizations. Before this data can be ingested by downstream systems for contractual loads and Claims processing must be converted into a pre-defined template, this is tested with our solution and gave us 98.5% accuracy.
+
+## Conclusions
+
+This GenAI technique accelerates clinical workflows by creating a precise single source of truth from multiple input sources. In healthcare, standardized provider and fee schedule data enables faster claims adjudication, accurate contract management, and streamlined interoperability across electronic health record systems significantly reducing manual intervention and improving patient care efficiency.
+
+---
+
+# 85. CHARACTERISTICS AND COMORBIDITIES INFLUENCING MORTALITY RISK AMONG PATIENTS WITH HEREDITARY ANGIOEDEMA
+
+- Session code: MSR122
+- Authors: Subhan Khalid, PhD Candidate; Harrisburg University, Data Science, Harrisburg, PA, USA
+- Disease: SDC: Rare & Orphan Diseases|No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-3-3/characteristics-and-comorbidities-influencing-mortality-risk-among-patients-with-hereditary-angioedema
+
+## Objectives
+
+Patients suffering from hereditary angioedema (HA) face a heightened mortality risk due to multiple factors. The purpose of this study was to identify patient demographics or comorbidities associated with higher mortality risk using Bayesian network (BN) analysis.
+
+## Methods
+
+Data from the 2021 Nationwide Inpatient Sample were used to identify hospitalized patients with hereditary angioedema. Patient demographics, comorbidities, and severity measures were analyzed, and a Bayesian network model was developed to assess factors contributing to mortality risk. Structure learning was performed using a directed acyclic graph and probability estimating using Bayesian Inference. Model performance was validated using a 70/30 training-testing split and assessed via area under the curve.
+
+## Results
+
+Older HA patients and those with autoimmune conditions, hypertension, or low income were at higher risk of mortality. Elevated risk was also observed across certain racial groups, insurance types, and income levels. Notably, older Black patients from the Midwest exhibited the highest estimated mortality risk. The Bayesian Network demonstrated strong predictive performance, highlighting its potential for identifying high-risk subgroups and supporting targeted clinical interventions.
+
+## Conclusions
+
+The findings of this study provide valuable insights into the factors influencing mortality risk for HA patients, with BN analysis offering a detailed understanding of complex dependencies among patient demographics and comorbidities. These results have ramifications for both patients and physicians to improve HA symptom management and preventing onset of life-threatening situations.
+
+---
+
+# 86. LEVERAGING GENERATIVE AI AND MACHINE LEARNING FOR ROBUST REAL-WORLD COHORT DEFINITION AND PATIENT JOURNEY INSIGHTS IN HIV RESEARCH
+
+- Session code: MSR104
+- Authors: Ching Yi Chuo, PhD1, Shikai Jin, PhD1, Jordan Guillot, PhD1, Jason Alexander Rivera, MS2, Mona Fathollahi, PhD3, Luke Liu, PhD1, Andrea Marongiu, PhD4, Travis Lim, PhD5, Rajiv Arora, Bachelor of Technology1, Bryce Chong, Bs1, Saeid Shahraz, PhD 6, Mary J. J. Christoph, PhD1, Gary Leung, PhD1, Li Tao, PhD1, Wenyi Wang, PhD7, Alex Asiimwe, PhD1. 1Gilead Sciences, Foster City, CA, USA, 2University of California San Francisco, San Francisco, CA, USA, 3Amazon Web Services, Palo Alto, CA, USA, 4Gilead Sciences, Uxbridge, United Kingdom, 5Gilead Sciences, Washington, DC, USA, 6Gilead Sciences, Mountain View, CA, USA, 7Gilead Sciences, Parsippany, NJ, USA.
+- Disease: SDC: Infectious Disease (non-vaccine)
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-3-3/leveraging-generative-ai-and-machine-learning-for-robust-real-world-cohort-definition-and-patient-journey-insights-in-hiv-research
+
+## Objectives
+
+When conducting real-world evidence (RWE) studies, researchers often rely on existing literature and clinical guidelines to define patient cohorts. While foundational, this approach is time-consuming and may constrain definitions toward guideline-driven assumptions, oversimplifying patient journeys and missing real-world treatment patterns. We developed an interactive AI-driven framework to streamline cohort definition, uncover treatment patterns, and enable scalable trial emulation. By leveraging graph neural networks and clustering algorithms, we aimed to accelerate insight generation for actionable interventions.
+
+## Methods
+
+HealthVerity claims and lab data (2022-2025) on 22,431 adults with HIV receiving antiretroviral therapy (ART) and ≥18 months of post-ART follow-up were analyzed. We built graphs representing treatments as time-linked nodes and applied a graph encoder to model each patient’s ART journey. Agglomerative clustering was performed on curated ART “lines of therapy” data (e.g., regimen complexity and timelines) to identify patterns. Outputs were reviewed with subject-matter experts to ensure interpretability, then packaged as a Model Context Protocol (MCP) and integrated into a Claude-based chat interface for interactive cohort definition.
+
+## Results
+
+The graph encoder predicted the random masked treatments with over 95% accuracy, confirming its ability to model individual sequences. Clustering identified three distinct ART groups: a large group on standard integrase strand transfer inhibitor (INSTI) plus nucleoside reverse transcriptase inhibitor (NRTI) regimens (mostly treatment-naïve or stable); a second group on protease inhibitor (PI)-heavy regimens (treatment-experienced); and a small group on novel multi-drug regimens (heavily treatment-experienced). Internally, the prototype was used experimentally to reflect on cohort and pattern definitions using epidemiologic standards.
+
+## Conclusions
+
+Integrating generative AI and deep learning into RWE studies improved efficiency in defining patient cohorts and generating insights while preserving epidemiologic rigor through validation, sensitivity analyses, and expert-reviewed guideline mapping. The MCP interface enables interactive discovery of treatment patterns. Future work will evaluate this framework’s performance and generalizability across therapeutic areas and clinical trials.
+
+---
+
+# 87. BEYOND THE BLACK BOX: A NICE- AND CDA-ALIGNED TRANSPARENT GENERATIVE AI FRAMEWORK FOR HEOR EVIDENCE SYNTHESIS AND GENERATION
+
+- Session code: MSR27
+- Authors: Barinder Singh, RPh 1, Shubhram Pandey, MSc1, Nicola Waddell, HNC2, Inderpreet S. Marwaha, MSc, RPh1, Rajdeep Kaur, PhD1; 1Pharmacoevidence Pvt. Ltd., Mohali, India, 2Pharmacoevidence Pvt. Ltd., London, United Kingdom
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-1-4/beyond-the-black-box-a-nice-and-cda-aligned-transparent-generative-ai-framework-for-heor-evidence-synthesis-and-generation
+
+## Objectives
+
+Generative artificial intelligence (GenAI) offers transformative potential for evidence synthesis, yet the adoption in health technology assessment (HTA) remains limited due to its ‘black box’ nature. We propose a comprehensive GenAI implementation framework aimed at enhancing its acceptability across global HTA bodies
+
+## Methods
+
+We synthesized core requirements from the AI position statements of HTA bodies (NICE, CDA-AMC) and methodological standards groups (ISPOR, HTAi, and the Cochrane RAISE framework). A structured framework was developed by mapping high-level regulatory expectations regarding transparency and accountability to actionable operational steps, specifically designed to mitigate trust-deficits and increase the acceptability of GenAI for HEOR processes
+
+## Results
+
+The framework consists of five core pillars: (1) Human-in-the-loop: Defines AI as an assistive tool, where submitting organizations retains the accountability and implements safeguards to preserve critical appraisal skills of human reviewers; (2) Compliance and Security: Ensures alignment with regional AI laws, auditability of decision pathways, and protection against security threats (prompt injection attacks); (3) Quality and Bias Control: Mandates formal bias checks and reporting, comparison against human benchmarks, and strict fact-checking to mitigate AI hallucinations while ensuring AI outputs are accurate and reliable; (4) Reproducibility and Research Integrity: Enforces locked workflows, version control, and standardized reporting templates (adhering to ELEVATE-GenAI domains) to ensure outputs remain reproducible and contestable; (5) Intellectual Property and Legal Integrity: Assigns liability to the submitting organization, mandating compliance with copyright laws and licensing agreements to ensure all AI-generated evidence is legally defensible
+
+## Conclusions
+
+By applying this framework to standard HEOR use-cases (including SLR, RWE synthesis, and health-economic modelling), we demonstrate that GenAI can be a reliable tool for evidence synthesis and generation. Ensuring that outputs remain traceable, inspectable, and human-verified effectively bridges the "acceptability gap" and satisfies the rigorous transparency standards of global HTA bodies
+
+---
+
+# 88. THE FUTURE OF EVIDENCE SYNTHESIS AND GENERATION IN HEOR: A SECURE FRAMEWORK FOR DOMAIN SPECIFIC ADAPTATION AND FINE-TUNING OF LARGE LANGUAGE MODELS
+
+- Session code: MSR37
+- Authors: Rajdeep Kaur, PhD, Mrinal Mayank, B.Tech, Ruhi j, B.Tech, Shubhram Pandey, MSc, Gagandeep Kaur, M Pharma, Barinder Singh, RPh; Pharmacoevidence Pvt. Ltd., Mohali, India
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-1-4/the-future-of-evidence-synthesis-and-generation-in-heor-a-secure-framework-for-domain-specific-adaptation-and-fine-tuning-of-large-language-models
+
+## Objectives
+
+Large language models enable new applications of artificial intelligence (AI) in healthcare; however, they require domain adaptation and fine-tuning to meet the quality, tone, and domain-specific medical writing tasks. The objective of this proof of concept was to validate a secure, cloud-based framework for fine-tuning of large language models to support writing-intensive HEOR workflows
+
+## Methods
+
+A modular framework was implemented as a proof of concept to enable domain adaptation and fine-tuning of large language models within a secure, cloud-based environment using AWS SageMaker AI to support HEOR workflows. Phase 1: Domain-specific source documents (e.g., published literature, HTA guidelines, dossiers, and study reports) were collected, normalized, chunked, tokenized, and securely stored with encryption. The curated data were then partitioned into training 80% and testing 20% datasets. Phase 2: Fine-tuning was performed on an open-source large language model (LLaMA-2-7B) using multiple adaptation strategies, including QLoRA, LoRA, prefix tuning, adapter tuning. Phase 3: Outputs generated on the testing dataset were assessed for writing quality, tone, style adaptation, and cost considerations, followed by subject matter expert validation to ensure alignment with HTA and regulatory
+
+## Results
+
+The framework was validated as a proof of concept using medical writing prompts for dossier, report, and protocol development. Training cost increased with data size across fine-tuning approaches. QLoRA achieved greater cost efficiency but comparatively lower output refinement, whereas LoRA produced higher-quality outputs with improved tonal consistency, clearer structure, and stronger adaptation to medical writing style. Fine-tuned models were generated and deployed securely, supporting the feasibility of the framework for HEOR evidence-generation workflows
+
+## Conclusions
+
+This study demonstrates the feasibility of a secure, cloud-based framework for fine-tuning large language models and presents a novel application of such a framework within HEOR workflows. Future work will focus on enterprise-scale deployment and the integration of domain-adapted models into multi-agent HEOR workflows
+
+---
+
+# 89. OBJECT-CENTRIC CAUSAL DISCOVERY IN MIMIC-IV: A PARADIGM SHIFT FOR IDENTIFYING RISK FACTORS FOR HOSPITAL-ACQUIRED PRESSURE INJURIES IN REAL-WORLD CLINICAL DATA
+
+- Session code: MSR72
+- Authors: Jenny Alderden, PhD 1, Michael Haft, PhD2, Andy Wilson, PhD3; 1Boise State University, Boise, ID, USA, 2Xplain Data, Munich, Germany, 3University of Utah, Salt Lake City, UT, USA
+- Disease: SDC: Sensory System Disorders (Ear, Eye, Dental, Skin)
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/object-centric-causal-discovery-in-mimic-iv-a-paradigm-shift-for-identifying-risk-factors-for-hospital-acquired-pressure-injuries-in-real-world-clinical-data
+
+## Objectives
+
+Traditional causal discovery algorithms face critical limitations in healthcare: they assume "flat" datasets, struggle with EHR relational complexity, and yield equivalence classes rather than fully-oriented graphs. We present an object-centric approach that encodes clinical constraints (temporal precedence, relational structure, informative missingness) while enabling data-driven discovery within that structure. We applied this method to identify causal factors for hospital-acquired pressure injuries (HAPrI) in MIMIC-IV (v3.1).
+
+## Methods
+
+Using MIMIC-IV adult ICU admissions, we represented patient journeys as temporally ordered "objects" (admissions, procedures, medications, labs) and applied a causal discovery algorithm operating directly on this relational structure without flattening. Domain knowledge constrained the search space, enforcing temporal precedence to minimize target leakage and encoding missingness mechanisms, while the algorithm screened millions of candidate dependencies to construct a sparse causal graph. The algorithm explored dependencies without pre-specified candidates, though we prioritized albumin's relationship to HAPrI for focused evaluation given its contested causal status.
+
+## Results
+
+The algorithm identified hypoalbuminemia as a significant upstream driver of HAPrI, supporting albumin's potential protective benefit, a relationship frequently obscured by confounding in conventional analyses. It also rediscovered established risk factors (immobility, moisture, hemodynamic instability, mechanical ventilation) without manual feature engineering, validating clinical plausibility. Object-centric search condensed millions of correlations into interpretable causal structure, surfacing under-recognized factors including fluid management patterns and albumin timing.
+
+## Conclusions
+
+Object-centric causal discovery offers a middle path between purely data-driven search and expert-specified DAGs: clinical knowledge disciplines the algorithm, while the algorithm surfaces relationships experts might overlook. Future work will engage clinicians to refine the graph and employ modern causal estimators (TMLE, longitudinal g-methods) to quantify effects of albumin and other interventions on HAPrI risk.
+
+---
+
+# 90. WHEN NOT TO USE ARTIFICIAL INTELLIGENCE IN HEALTH ECONOMICS AND OUTCOMES RESEARCH
+
+- Session code: MSR94
+- Authors: Tushar Srivastava, MSc, Shilpi Swami, MSc; ConnectHEOR, London, United Kingdom
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/when-not-to-use-artificial-intelligence-in-health-economics-and-outcomes-research
+
+## Objectives
+
+As artificial intelligence (AI) adoption expands within Health Economics and Outcomes Research (HEOR), the risk of inappropriate application increases, particularly in contexts requiring transparency, traceability, and methodological defensibility for Health Technology Assessment (HTA). This study aimed to define explicit exclusionary criteria for AI use in HEOR by identifying decision contexts where algorithmic opacity, probabilistic uncertainty, or data limitations conflict with HTA requirements and may undermine credibility or decision integrity.
+
+## Methods
+
+A conceptual analysis was conducted drawing on HTA methods, literature, regulations, and AI governance frameworks from high-stakes industries. Core HEOR workflows, including systematic literature review (SLR), evidence synthesis, economic modelling, real-world evidence generation, and value communication, were decomposed into discrete decision points. AI suitability was assessed across five dimensions: (1) decisional criticality and reimbursement impact, (2) transparency and traceability , (3) data quality and sample size adequacy, (4) stability of the decision environment (5) consequences and reversibility of error. These criteria were synthesised into a qualitative decision framework with illustrative use cases.
+
+## Results
+
+Across HEOR workflows, fully autonomous AI replacing human judgement in high-impact decision contexts was classified as inappropriate. Examples included unsupervised evidence selection, autonomous base-case cost-effectiveness analyses, and AI-driven reimbursement recommendations where outputs directly influence decisions. In contrast, tightly scoped, assistive AI applications within the same workflows were conditionally acceptable under robust governance. These included AI-supported SLR screening with human confirmation, pre-population of evidence tables, generation of candidate model structures or survival extrapolations, anomaly detection in real-world datasets, and drafting of non-technical summaries, provided all outputs remained auditable, reviewable, and overridable by domain experts.
+
+## Conclusions
+
+Explicitly defining when AI should not be used is essential for responsible innovation. The proposed framework supports principled restraint by aligning AI deployment decisions with HTA transparency standards, methodological rigor, and public trust, ensuring that efficiency gains do not displace decision credibility.
+
+---
+
+# 91. A TALE OF TWO THRESHOLDS: ADAPTIVE THRESHOLDING WITH ABSTENTION FOR AI-ASSISTED SINGLE SCREENING (AISS)
+
+- Session code: MSR77
+- Authors: Artur Nowak, MSc, Monika Opalek, PhD, Ewelina Sadowska, MPharm, Ewa Borowiack, MSc; Evidence Prime, Krakow, Poland
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/a-tale-of-two-thresholds-adaptive-thresholding-with-abstention-for-ai-assisted-single-screening-aiss
+
+## Objectives
+
+To evaluate an AI-assisted single screening (AISS) strategy designed to maintain high recall while reducing manual workload. Title and abstract screening in systematic reviews is a high-effort, unbalanced process prone to "silent misses" when automation is applied. This study specifically assesses the effectiveness of abstention (postponing decisions) as a safety mechanism to mitigate risks arising from poor model fit or ambiguous inclusion criteria.
+
+## Methods
+
+We simulated screening on 160 Cochrane reviews, tuning strategy parameters on 60 and evaluating on a held-out test set of 100 reviews. The two threshold strategy turns classifier output into one of three actions (include, exclude, postpone). We tested the method under simulation of realistic human errors (random and borderline-case uncertainty) plus two stress tests: automation bias (high human-model correlation) and model collapse (model trained on random labels). Outcomes included recall, conflict rate, and number deferred for manual review.
+
+## Results
+
+Under realistic human error scenarios, the strategy maintained high recall (>= 95%) with only a small fraction finalized with 'postpone' status and kept for manual review (2-3%). With higher rate of errors on borderline cases, recall decreased modestly, but conflict increased, providing a clearer warning signal for conflict resolution. In the model collapse stress test, the strategy deferred substantially more records (12.6%) yet preserved high recall (97.5%), demonstrating a safety mechanism that trades automation for manual screening when scores are unreliable. In contrast, under automation bias, recall dropped sharply (<90%) while both conflict and abstention stayed low, indicating a high-risk regime where agreement can mask systematic misses.
+
+## Conclusions
+
+Adaptive thresholding with abstention can preserve recall by shifting uncertain cases back to humans, and conflict and abstention rates provide useful safety signals. We intentionally used a weaker (non-LLM) model to test the strategy’s behavior. However, the approach is classifier-agnostic and evaluation with an LLM-based classifier is ongoing.
+
+---
+
+# 92. ATTRIBUTE MINING FOR DISCRETE CHOICE EXPERIMENTS ACROSS DISEASES USING GEN-AI: REPLICATION AND VALIDATION OBJECTIVES
+
+- Session code: MSR95
+- Authors: Tushar Srivastava, MSc 1, Hanan Irfan, MSc2, Radha Sharma, PhD3; 1ConnectHEOR, London, United Kingdom, 2ConnectHEOR, Delhi, India, 3ConnectHEOR, Edmonton, AB, Canada
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/attribute-mining-for-discrete-choice-experiments-across-diseases-using-gen-ai-replication-and-validation-objectives
+
+## Objectives
+
+Attribute development for discrete choice experiments (DCEs) is traditionally resource-intensive and context-specific, relying on manual qualitative synthesis of literature and expert input. This study evaluated an AI-supported attribute mining approach across three disease areas to assess its replicability, validity, and limitations relative to conventional qualitative methods.
+
+## Methods
+
+An AI-based text mining and clustering pipeline was applied to published qualitative studies, patient-reported outcomes literature, and HTA documents across three disease areas. Candidate attributes and levels were extracted, normalised, and grouped thematically. Outputs were compared against attributes derived through traditional qualitative research for the same diseases. Validation focused on (1) attribute overlap and coverage, (2) conceptual consistency with established DCE frameworks, and (3) disease-specific versus cross-cutting attributes. Expert review was used to assess face validity and identify false positives or missing concepts.
+
+## Results
+
+Across the three disease areas, the AI-supported approach replicated a majority of core attributes identified through traditional methods, particularly those related to treatment effectiveness, safety, and burden of administration. Cross-disease commonalities were consistently identified, while disease-specific attributes showed greater variability in precision and required expert refinement. The AI approach generated additional candidate attributes not previously prioritised, some of which were deemed conceptually relevant, while others reflected semantic noise or insufficient contextual grounding. Replication performance was highest where source literature was rich and well-structured.
+
+## Conclusions
+
+AI-supported attribute mining can efficiently replicate core DCE attribute structures across disease areas and serve as a systematic starting point for attribute development. However, expert validation remains essential, particularly for disease-specific concepts and level refinement. These findings support AI as an assistive tool in DCE design rather than a replacement for qualitative research.
+
+---
+
+# 93. BEYOND THE HYPE: DO EXISTING VALIDATION METHODS AND GOLD STANDARDS PROVE THE VALUE OF GENERATIVE AI APPLICATIONS FOR HEOR?
+
+- Session code: MSR93
+- Authors: Tim Disher, BSc, RN, PhD 1, Nicole Ferko, MSc2, Kevin Kallmes, JD, MA3; 1Sandpiper Analytics, West Porters Lake, NS, Canada, 2EVERSANA, Burlington, ON, Canada, 3Nested Knowledge, St. Paul, MN, USA
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/beyond-the-hype-do-existing-validation-methods-and-gold-standards-prove-the-value-of-generative-ai-applications-for-heor
+
+## Objectives
+
+To evaluate the current state of the art (SOTA) for Generative Artificial Intelligence (GenAI) in Health Economics and Outcomes Research (HEOR) and assess validation rigor and the emerging landscape of tool development.
+
+## Methods
+
+We conducted a targeted review of PubMed, MedArxiv, Arxiv, ISPOR, and commercial websites for GenAI applications. Screening utilized human-in-the-loop tagging; analysis employed GenAI extraction (Gemini Flash Lite 2.5) with human review. We evaluated maturity by application and critically appraised validation methodologies.
+
+## Results
+
+A total of 639 sources were included. SOTA included: SLRs: human/superhuman automation of the entire search and analysis pipeline; Medical Writing: automated multi-modal Retrieval-Augmented Generation pipelines for dossiers; Modelling: structure scoping, semi-automated model replication, and automated coding; RWE: conversational design and analysis. Validation quality is strongest for SLRs but varies greatly in depth and breadth. Across domains, studies struggle to identify gold standards and focus on simple topics/tasks. Evidence suggests that specialized vendors report better metrics than independent researchers. Validation is weakest in medical writing, comprising opaque case studies. Most applications focus on human-in-the-loop tools targeting reductions in labor (eg, consistent 60%-80% time savings), though a small number of vendors target human replacement for complex tasks. Nearly all sources are based on outdated non-reasoning models.
+
+## Conclusions
+
+GenAI applications exist for nearly all HEOR applications, but validation rarely reflects real-world project complexity. There is substantial uncertainty regarding reference standards and likely over-estimation of labor-saving. No evidence currently evaluates GenAI’s reasoning on complex strategic questions. Current applications risk increasing complexity without improving quality or potentially leading to difficult-to-trace failure modes. Tool development is significantly outpaced by foundation model improvements, suggesting greater success is possible with modern models. Future publications should prioritize capturing real-world complexity, explore model decisions where multiple defensible options exist, align on gold standards, and identify applications where GenAI improves outcomes rather than solely reduce costs.
+
+---
+
+# 94. ROUTINELY COLLECTED DIGITAL BIOMARKERS FOR PREDICTING PROGRESSION FROM MILD COGNITIVE IMPAIRMENT TO DEMENTIA: A SYSTEMATIC REVIEW
+
+- Session code: MSR111
+- Authors: Xiaomo (Shawn) Xiong, MS, PhD 1, Eszter Garami, MPharm1, Z. Kevin Lu, PhD2; 1James L Winkle College of Pharmacy, University of Cincinnati, Division of Pharmacy Practice and Administrative Sciences, Cincinnati, OH, USA, 2College of Pharmacy, University of South Carolina, Department of Clinical Pharmacy and Outcomes Sciences, Columbia, SC, USA
+- Disease: SDC: Neurological Disorders
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-3-3/routinely-collected-digital-biomarkers-for-predicting-progression-from-mild-cognitive-impairment-to-dementia-a-systematic-review
+
+## Objectives
+
+Although biomarker- and neuroimaging-based models show promise in predicting dementia risk, digital biomarkers from routinely collected electronic health records (EHRs) or claims offer potential for population-level monitoring. This study evaluated the performance and methodological rigor of models predicting progression from mild cognitive impairment (MCI) to dementia using routinely collected real-world data.
+
+## Methods
+
+We systematically searched PubMed and Embase (from inception to July 1, 2025) for studies developing or validating models predicting progression from MCI to all-cause dementia using routinely collected EHRs or administrative claims. Eligible studies included adults (18 years or older) with MCI at baseline. Two reviewers independently screened studies and extracted data on data source characteristics, predictor domains, modeling approaches, validation methods, and performance metrics.
+
+## Results
+
+A total of 2,297 abstracts were screened after removing duplicates, with 72 undergoing full-text review and 7 meeting inclusion criteria. All studies were conducted in the United States, using regional academic or consortium-based EHRs (n = 4), national claims (n = 2), or Veterans Affairs data (n = 1). Sample sizes ranged from 2,525 to 80,138 adults. Most studies (n = 6) focused on progression to Alzheimer’s disease (AD). All studies relied on ICD codes to identify MCI and outcomes. Deep learning models using temporal sequences generally outperformed aggregate-feature models. Specifically, natural language processing (NLP) approaches using unstructured notes (Area Under the Curve [AUC]: 0.88) and structured sequence models (AUC: 0.83-0.87) overperformed traditional and federated models (AUC: 0.67-0.73). Although internal validation was standard, rigorous external validation on independent health systems was limited to two studies.
+
+## Conclusions
+
+AI models using unstructured text and sequences show high potential for predicting MCI-to-AD progression. However, limited external validation, calibration reporting, and reliance on diagnostic codes restrict clinical use. Future research must prioritize multi-site validation and multimodal integration to improve generalizability.
+
+---
+
+# 95. PREDICTIVE MODELING TRANSITION TO PSA IN HIGH-RISK PSO PATIENTS TO ENABLE EARLY INTERVENTION
+
+- Session code: MSR108
+- Authors: SHAILJA PANDEY, B.TECH.1, Sri Saikumar, B.E., M.S., M.B.A2, Shataksha Singh, B.TECH.3, Ekaterina A Ponomareva, PhD 2. 1Trinity Life Sciences, Bangalore, India, 2Trinity Life Sciences, Waltham, MA, USA, 3Trinity Life Sciences, Gurugram, India.
+- Disease: SDC: Musculoskeletal Disorders (Arthritis, Bone Disorders, Osteoporosis, Other Musculoskeletal)|No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-3-3/predictive-modeling-transition-to-psa-in-high-risk-pso-patients-to-enable-early-intervention
+
+## Objectives
+
+This study leverages advanced analytical methodologies to identify patients at high risk of transitioning from Psoriasis (PsO) to Psoriatic Arthritis (PsA). We aim to improve early detection and intervention, enabling tailored treatment strategies and better resource allocation.
+
+## Methods
+
+Merative MarketScan payer sourced claims data from 2019-2022 was leveraged and patients with advanced PsO treatments were identified. Survival analysis using Kaplan-Meier curves and predictive modeling via Cox Regression and Random Survival Forest (RSF) were conducted. Chi-Square tests of independence identified key predictors, while RSF provided risk scores for patients likely to progress to PsA. Predictors encompassed demographic factors, treatment pathways (e.g., Interleukin inhibitors), comorbidities, and ICD code groupings. Model validation assessed proportional hazard assumptions and predictive accuracy.
+
+## Results
+
+Findings revealed that most PsA cases emerge within the first year of advanced PsO treatment initiation, with significant predictors including Anti-TNF and Interleukin therapies. Brand switching peaked in the initial two years, underscoring critical early intervention opportunities. RSF outperformed other models, accurately stratifying patients by progression risk. Additionally, insights from survival analysis highlighted the role of comorbidities and procedural codes in accelerating PsA development.
+
+## Conclusions
+
+This study demonstrates the value of predictive modeling in identifying patients at high risk of transitioning from PsO to PsA. Such models can drive targeted drug development, optimize clinical trial design, and facilitate precision medicine approaches. Future work should integrate broader datasets to validate findings and explore cost-benefit analyses for early intervention strategies.
+
+---
+
+# 96. AN AGENTIC AI FRAMEWORK INTEGRATING DATA-DRIVEN HYPOTHESIS GENERATION WITH TRADITIONAL VALIDATION FOR REAL-WORLD EVALUATION OF EMERGING THERAPIES
+
+- Session code: MSR139
+- Authors: Peichang Shi, PhD. Booz Allen Hamilton, Mclean, VA, USA.
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-3-3/an-agentic-ai-framework-integrating-data-driven-hypothesis-generation-with-traditional-validation-for-real-world-evaluation-of-emerging-therapies
+
+## Objectives
+
+For emerging diseases and newly introduced therapies, predefined hypotheses regarding population-level effectiveness, safety risks, and long-term outcomes are often unavailable. Conventional hypothesis-driven analyses are therefore limited in early evidence generation. This study presents an agentic AI framework that integrates autonomous, data-driven hypothesis generation with traditional hypothesis-driven validation to support real-world evaluation under uncertainty.
+
+## Methods
+
+We developed an agentic AI workflow in which a transformer-based language model (e.g., BERT) autonomously performs iterative tasks, including exploratory pattern detection in real-world healthcare claims data, structured literature-informed reasoning to assess clinical plausibility, and prioritization of candidate hypotheses for formal testing. Human-in-the-loop oversight is incorporated to review and approve AI-generated hypotheses before validation. Final hypothesis testing is conducted using established epidemiological and causal inference methods. As a case study, we analyzed 2016 data from the Synthetic Healthcare Database for Research, comprising inpatient, outpatient, and pharmacy claims for over 2 million patients. A transformer-based model was used for propensity score matching to construct control cohorts with comparable baseline ICD and CPT code profiles to patients initiating apixaban. Difference-in-differences analyses were then applied to evaluate pre- and post-treatment changes in diagnosis codes, testing AI-prioritized effectiveness and safety hypotheses.
+
+## Results
+
+The agentic AI identified hypotheses consistent with known therapeutic benefits, including reduced stroke risk among patients with atrial fibrillation(ICD codes I25.5, I48.91) and ischemic cardiomyopathy(I25.5), as well as potential safety signals such as increased urinary tract bleeding and chest pain. These findings were confirmed through traditional statistical validation and aligned with published clinical evidence.
+
+## Conclusions
+
+By combining agentic AI-driven hypothesis generation, literature-aware reasoning, and human-in-the-loop governance with conventional causal inference, this framework enables transparent and scalable real-world evaluation when prior knowledge is limited. The proposed methodology enhances early evidence generation for emerging diseases and new therapies while maintaining the rigor required for regulatory and health technology assessment decision-making.
+
+---
+
+# 97. A METHODOLOGICAL COMPARISON OF THREE LANDMARKING APPROACHES FOR TIME-TO-EVENT PREDICTION: PREDICTING DIAGNOSED CANNABIS USE DISORDER AMONG MEDICAL MARIJUANA CARDHOLDERS IN ARKANSAS
+
+- Session code: MSR105
+- Authors: Allen M. Smith, PharmD 1, Bradley C. Martin, RPh, PharmD, PhD2, Horacio Gomez-Acevedo, PhD3, Corey J. Hayes, MPH, PharmD, PhD2, Melody Greer, PhD3, Chenghui Li, PhD3; 1University of Arkansas for Medical Sciences (UAMS), Post Doctoral Fellow, Little Rock, AR, USA, 2University of Arkansas for Medical Sciences (UAMS), Little Rock, AR, USA, 3University of Arkansas for Medical Sciences, Little Rock, AR, USA
+- Disease: Not specified
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-3-3/a-methodological-comparison-of-three-landmarking-approaches-for-time-to-event-prediction-predicting-diagnosed-cannabis-use-disorder-among-medical-marijuana-cardholders-in-arkansas
+
+## Objectives
+
+Landmarking is a time-to-event modeling framework where risk predictions are updated at predefined landmark times over fixed windows. Traditional landmarking strategies include landmark supermodeling, which pools data from multiple landmark times into a single extended dataset, and strict landmarking, which fits separate models at each landmark time. The current study additionally evaluates cumulative landmarking, a hybrid approach that progressively expands the training dataset while fitting separate models at successive landmarks. This study compares predictive performance across these landmarking strategies.
+
+## Methods
+
+Arkansas statewide administrative health claims data from November 2018-December 2023 were used to construct discrete-time datasets for new cannabis use disorder diagnosis prediction among medical marijuana (MMJ) cardholders. Five classifiers were evaluated with each landmarking strategy: Random Survival Forest, Support Vector Machine Survival (SVMS), Cox proportional hazards, Random Forest, and Logistic Regression. Models were trained using a 50:50 train-test split and 1:25 random undersampling. Performance was compared using 90-day, 180-day, and 360-day prediction horizons using mean cumulative sensitivity/dynamic specificity area under the receiver operating characteristic (AUC-ROC) and inverse probability of censoring weighting Brier scores (IPCWBS) with 95% confidence intervals (CIs). Both discrete-time and discrete-time-daily frameworks were evaluated for landmark supermodels, with the latter recording follow-up time on a daily scale while maintaining interval-based prediction updates, thereby more precisely representing partial follow-up within the final prediction interval.
+
+## Results
+
+Among 54,422 MMJ cardholders, SVMS landmark supermodel trained with 360-day prediction windows achieved the highest discriminative performance [AUC-ROC (95% CI)=0.7993(0.7751,0.8206)] outperforming strict [AUC-ROC (95% CI)=0.6684(0.6087,0.7238)] and cumulative landmarking [AUC-ROC (95% CI)=0.7390(0.7072,0.7680)]. Discriminative performance was comparable between discrete-time and discrete-time-daily frameworks, and calibration was modestly better for discrete-time-daily landmark supermodels (IPCWBS point-estimate range: 0.00385-0.00735) compared to discrete-time (IPCWBS point-estimate range: 0.00465-0.02139).
+
+## Conclusions
+
+Landmark supermodeling was the most discriminating among landmarking strategies. Incorporating a discrete-time-daily representation of follow-up time yielded minor calibration improvements, particularly for longer horizons.
+
+---
+
+# 98. PERFORMANCE OF ADAPTIVE SMART TAGS IN NESTED KNOWLEDGE FOR AUTOMATED EXTRACTION OF STUDY CHARACTERISTICS
+
+- Session code: MSR189
+- Authors: Priccila Zuchinali, PhD 1, Sophie Yoon, MPH2, Joanna Kamar, MPH1, Amber Martin, BSc2; 1Thermo Fisher Scientific, Montreal, QC, Canada, 2Thermo Fisher Scientific, Waltham, MA, USA
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/performance-of-adaptive-smart-tags-in-nested-knowledge-for-automated-extraction-of-study-characteristics
+
+## Objectives
+
+Nested Knowledge (NK) is an evidence synthesis platform used in systematic literature reviews (SLRs). This study evaluated the accuracy of Adaptive Smart Tags (ASTs) in NK for extracting study characteristics.
+
+## Methods
+
+An SLR of randomized trials evaluating efficacy and safety of treatments for refractory chronic cough was conducted. Study characteristics were extracted using ASTs, which leverage OpenAI large language models within NK to identify relevant text or numeric values for predefined data elements. AST development involved (1) creating question-based prompts (“tags”) for each data element and organizing them hierarchically to convey concepts and relationships to the model, which searched full-text publications for optimal responses, and (2) applying a human-in-the-loop approach in which two full-text articles were used to pilot and refine prompts prior to deployment across all studies.
+
+## Results
+
+AST performance was evaluated across 18 study characteristics in 37 studies. Accuracy was highest for bibliographic and core design elements, with correct information and formatting achieved for publication type (n=35; 95%), trial registration number (n=35; 95%), comorbidities (n=34; 92%), and interventions (n=29; 78%). Availability of key outcomes was frequently captured (range: 30-33 studies) for most of the outcomes of interest, including cough severity, 24-hour cough frequency, urge-to-cough, Leicester Cough Questionnaire scores, and other patient-reported outcomes. Performance declined for complex or inconsistently reported elements. Subgroup reporting showed poor accuracy, with incorrect information identified in 32 studies. Formatting errors were common for comparator identification (n=30; 81%), timepoints assessed (n=20; 54%), and trial name (n=15; 41%).
+
+## Conclusions
+
+Within NK, AI-driven ASTs showed good performance for structured, consistently reported study characteristics but were less reliable for nuanced, complex, or variably reported data elements. A human-in-the-loop workflow remains essential to ensure accuracy, particularly for subgroup data and detailed outcome specifications.
+
+---
+
+# 99. ETHICAL AI DEPLOYMENT IN HEOR
+
+- Session code: MSR192
+- Authors: Shilpi Swami, MSc, Tushar Srivastava, MSc; ConnectHEOR, London, United Kingdom
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/ethical-ai-deployment-in-heor
+
+## Objectives
+
+Artificial intelligence (AI) is increasingly applied in health economics and outcomes research (HEOR) to support real-world evidence generation, economic modeling, and payer and health technology assessment (HTA) decision-making. However, ethical AI principles are not often widely discussed and existing guidelines may not fully address ethical risks specific to HEOR, where AI outputs influence pricing, reimbursement, and population-level access to care. The objective of this study is to review any existing ethical frameworks and develop a HEOR-specific ethical framework for AI deployment with methodological and governance considerations relevant to economic evaluation and HTA decision contexts.
+
+## Methods
+
+We conducted a brief desk research and collected expert feedback on ethical guidelines related to use of AI in HEOR. We, then, drafted a conceptual framework synthesizing ethical AI principles, HEOR methodological standards, and HTA evidence requirements. Ethical risks were assessed across HTA lifecycle with particular attention to how data characteristics, model objectives, transparency practices, reproducibility, and governance structures influence downstream economic and access outcomes.
+
+## Results
+
+We propose a five-domain ethical framework for AI-enabled HEOR. First, though predictive accuracy is important, bias and equity should also be assessed based on downstream economic and access implications. Second, transparency should be operationalized as decision auditability, enabling traceability of data provenance, assumptions, and modeling choices relevant to HTA review. Third, reproducibility represents ethical concerns in HEOR, given the persistence of pricing and coverage decisions over time. Fourth, robust data governance is required to address privacy and consent challenges associated with large, linked datasets. Fifth, clear accountability and post-deployment monitoring are necessary to identify indirect ethical harms manifested through access and coverage outcomes.
+
+## Conclusions
+
+Integrating economic impact, auditability, objective alignment, and governance into ethical evaluation can support more trustworthy AI-enabled HEOR evidence and more transparent reimbursement and policy decision-making.
+
+---
+
+# 100. COMPARISON OF SAMPLING STRATEGIES TO ADDRESS SEVERE DATA IMBALANCE AND COMPUTATIONAL BENCHMARKING FOR TIME-TO-EVENT PREDICTIVE MODEL DEVELOPMENT ACROSS LOCAL AND HIGH-PERFORMANCE COMPUTING ENVIRONMENTS: PREDICTION OF ALCOHOL USE DISORDER AND OPIOID...
+
+- Session code: MSR157
+- Authors: Allen M. Smith, PharmD 1, Bradley C. Martin, RPh, PharmD, PhD2, Horacio Gomez-Acevedo, PhD3, Corey J. Hayes, MPH, PharmD, PhD2, Melody Greer, PhD3, Chenghui Li, PhD3; 1University of Arkansas for Medical Sciences (UAMS), Post Doctoral Fellow, Little Rock, AR, USA, 2University of Arkansas for Medical Sciences (UAMS), Little Rock, AR, USA, 3University of Arkansas for Medical Sciences, Little Rock, AR, USA
+- Disease: Not specified
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/comparison-of-sampling-strategies-to-address-severe-data-imbalance-and-computational-benchmarking-for-time-to-event-predictive-model-development-across-local-and-high-performance-computing-environments-prediction-of-alcohol-use-disorder-and-opioid
+
+## Objectives
+
+This study evaluates the computational demands of training landmark supermodels across three computing environments and compares sampling strategies to address severe data imbalance.
+
+## Methods
+
+Arkansas statewide administrative health claims from November 2018-December 2023 were used to construct discrete-time datasets. The benchmarking case study focused on predicting opioid use disorder (OUD) and alcohol use disorder (AUD) among Arkansas medical marijuana cardholders. For each outcome, five classifiers were evaluated: Random Survival Forest, Support Vector Machine Survival (SVMS), Cox Proportional Hazards (CPH), Random Forest, and Logistic Regression. Models were trained using a 50:50 train-test split and multiple undersampling/oversampling ratios were compared (AUD: 1:1, 1:3, 1:10, 1:25, full data | OUD: 1:1, 1:3, 1:10, 1:25, 1:50, 1:100, full data). The best-performing configurations were identified using mean cumulative sensitivity/dynamic specificity area under the receiver operating characteristic curve (AUC-ROC) and inverse probability of censoring weighting Brier score (IPCWBS). Computational benchmarking was compared across three environments: local server serial computing, local server using Apache Spark for in-memory parallelization, and the Texas A&M Accelerating Computing for Emerging Sciences (ACES) high-performance research computing (HPRC) environment. For reproducibility, local server environments were replicated within ACES using a Singularity container (16 CPU cores | 160 GB of RAM).
+
+## Results
+
+For OUD prediction, the CPH model achieved the strongest performance [AUC-ROC (95% CI)=0.7842(0.6864,0.8272); IPCWBS (95% CI)=0.00145(0.00114,0.00179)] with a 1:100 undersampling ratio. For AUD, the SVMS model performed best [AUC-ROC (95% CI)=0.7638(0.7335,0.7871); IPCWBS (95% CI)=0.00561(0.00505,0.00626)] with a 1:25 undersampling ratio. Compared with the standard local server (OUD: 476.57 minutes; AUD: 638.90 minutes), Apache Spark achieved 6.80 to 7.15-fold speedups, while the HPRC environment achieved 45.83 to 65.11-fold speedups.
+
+## Conclusions
+
+Parallelization substantially improves development speed, particularly when performing extensive hyperparameter tuning and training computationally intensive models. Across both outcomes, moderately imbalanced random undersampling (1:10-1:100) outperformed other sampling strategies, although differences in performance across strategies were modest.
+
+---
+
+# 101. AN AI-BASED MODEL EXPLAINER TO SUPPORT ONBOARDING AND KNOWLEDGE TRANSFER FOR EXCEL COST-EFFECTIVENESS MODELS
+
+- Session code: MSR195
+- Authors: Tushar Srivastava, MSc 1, Hanan Irfan, MSc2, Kunal Swami, MASc, MSc2, Shilpi Swami, MSc1; 1ConnectHEOR, London, United Kingdom, 2ConnectHEOR, Delhi, India
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/an-ai-based-model-explainer-to-support-onboarding-and-knowledge-transfer-for-excel-cost-effectiveness-models
+
+## Objectives
+
+Complex cost-effectiveness models often present a steep learning curve for new project team members, delaying onboarding and complicating communication across technical and non-technical stakeholders. This study evaluated an AI-based model explainer designed to facilitate structured understanding and interrogation of existing economic models during team onboarding.
+
+## Methods
+
+A comparative case study was conducted during the onboarding of two newly formed project teams (three members each) to an existing multi-state Markov cost-effectiveness model. The control group relied on standard onboarding approaches, including review of technical documentation and manual cell-tracing within Excel. The intervention group used an AI model explainer that generates a structured representation of model components (worksheets, formulas, linkages, and outputs) and enables natural-language querying.A standardized knowledge transfer assessment was administered covering model structure, key assumptions and drivers, inter-sheet linkages, interpretation of outputs, and ability to implement predefined model modifications (e.g., time horizon, discounting, scenario inputs). Outcomes included time-to-competency (hours to pass a model logic assessment), query latency for targeted information retrieval, and ability to communicate model results across different technical audiences).
+
+## Results
+
+The intervention group reached predefined model competency in 6 hours compared with 20 hours in the control group, representing a 70% reduction in onboarding time. For targeted technical questions, the AI explainer reduced information retrieval time by approximately 95% relative to manual cell-tracing. Team members using the AI tool successfully implemented predefined model modifications and correctly explained expected output changes in all assessed scenarios. The explainer also supported re-framing of model outputs for different stakeholder profiles, from clinical to quantitative audiences.
+
+## Conclusions
+
+In this exploratory evaluation, an AI-based model explainer substantially reduced onboarding time and improved accessibility of complex Excel-based cost-effectiveness models. Such tools may support more efficient knowledge transfer and communication within distributed HEOR teams, while preserving transparency of model structure and logic.
+
+---
+
+# 102. AN AUTOMATED FEASIBILITY ASSESSMENT TOOL FOR INDIRECT TREATMENT COMPARISONS ACROSS MULTIPLE ANALYTICAL METHODS
+
+- Session code: MSR182
+- Authors: Emma Hawe, BSc, MSc, Andrea Berardi, MSc; Precision AQ, Evidence Synthesis and Decision Modelling, London, United Kingdom
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/an-automated-feasibility-assessment-tool-for-indirect-treatment-comparisons-across-multiple-analytical-methods
+
+## Objectives
+
+To develop an automated decision-support tool for early feasibility assessment and method selection for indirect treatment comparisons (ITCs), and demonstrate its application in a realistic scenario.
+
+## Methods
+
+We developed a rule‑based feasibility assessment tool implemented in R Shiny to evaluate suitability for pairwise meta-analysis, network meta-analysis (NMA), meta-regression, multilevel network meta-regression (ML-NMR), population-adjusted indirect comparison (PAIC), and external control arm (ECA) analyses. The tool applies automated logic to structured systematic literature review outputs to assess evidence connectivity, alignment of treatments, comparators, outcomes, and populations across PICOS elements, and method-specific data requirements such as availability of individual-level data, covariate overlap and network structures. Users can flexibly refine analytical scope and validate assumptions related to treatment alignment and exchangeability. Automated outputs are explicitly designed to support expert decisions to confirm clinical plausibility and appropriate interpretation.
+
+## Results
+
+The platform is implemented as an interactive dashboard and an automatically generated, decision support-focused slide deck summarizing feasibility assessments across ITC methods and recommended analytical options. In an illustrative application evaluating progression-free survival for everolimus in combination with hormonal therapy versus chemotherapy in advanced breast cancer, as reported in the Cope framework, the tool was used to identify feasible analytical paths while highlighting challenges with treatment alignment and exchangeability that required expert validation.
+
+## Conclusions
+
+This automated feasibility tool enables efficient, transparent, and reproducible early assessment of the suitability of ITC methods. It improves consistency and planning efficiency, producing high-quality, standardized outputs quickly with reduced manual intervention, particularly useful in evolving data landscapes and under tight turnaround timelines such as those required for Joint Clinical Assessments. However, structured expert validation remains essential, particularly for assessing treatment alignment and exchangeability, which cannot be fully resolved algorithmically.
+
+---
+
+# 103. BINARY CLASSIFICATIONANALYSIS FOR PREDICTING MEDICATION ADHERENCE AMONG US ADULTS CURRENTLY TAKING PRESCRIBED MEDICATION FOR DEPRESSION
+
+- Session code: MSR158
+- Authors: Kyla Finlayson, MS1, Vicky W. Li, MPH2, Jason N. Kennedy, MS 3. 1Biostatistician, Real-World Evidence, Oracle Life Science, Providence, RI, USA, 2Oracle Life Sciences, Austin, TX, USA, 3Oracle Life Sciences, Pittsburgh, PA, USA.
+- Disease: Not specified
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/binary-classificationanalysis-for-predicting-medication-adherence-among-us-adults-currently-taking-prescribed-medication-for-depression
+
+## Objectives
+
+This study examined patient characteristics associated with perfect medication adherence among US adults treated for depression.
+
+## Methods
+
+Data on 7,285 adults who were diagnosed and treated with a prescription medication for depression were identified and analyzed from the 2025 US National Health and Wellness Survey, an online survey of the general US adult population. Medication adherence was measured using self-reported scores of the Adherence to Refills and Medications Scale (ARMS), where a score of 12 indicates perfect medication adherence and scores greater than 12 indicate varying levels of non-adherence. XGBoost binary classification with 10-fold cross-validation was used to predict medication non-adherence and to extract feature importance. Variable selection and feature importance were based on SHAP values. Twenty-four variables including demographic characteristics, depression symptoms and severity, participation in talk therapy, smoking status, alcohol use, body mass index (BMI), exercise habits, and factors related to prescription access such as financial barriers and average monthly medication costs were used in the final model. Parameters were tuned using area under the receiver operating characteristic curve (AUC). Performance metrics included AUC, accuracy, sensitivity, specificity, and Brier score.
+
+## Results
+
+Among adults currently taking prescribed medication for depression, 2,700 (37.1%) scored as perfectly adherent while 4,585 (62.9%) were at least somewhat nonadherent. The XGBoost binary classification model had an AUC of 0.73, accuracy of 65.6%, sensitivity of 58.6%, specificity of 76.7%, and Brier score of 0.22. Key predictors features associated with non-adherence included younger age, greater depression severity, cost-related medication barriers, being a drinker and smoker, more recent diagnosis, being male, and higher Charlson Comorbidity Index score.
+
+## Conclusions
+
+In a broadly representative US adult population, XGBoost binary classification identified a selection of factors associated with medication adherence among adults diagnosed with depression.
+
+---
+
+# 104. VALIDATION OF AN AGENTIC LARGE LANGUAGE MODEL (LLM) SYSTEM IN THE EXTRACTION STAGE OF A REAL-TIME AI-ASSISTED LIVING SYSTEMATIC LITERATURE REVIEW (REAL-SLR): A SOLUTION TO INSTANT AND EASY ACCESS TO CLINICAL TRIAL DATA (CTD)
+
+- Session code: MSR221
+- Authors: Rozee Liu, MSc 1, Rhiannon Campden, PhD1, Eddie Xiaole Liu, BSc2, Triston grayston, BSc3, Oscar Correa, BSc3, Anna Forsythe, MBA, MSc, PharmD1; 1Oncoscope-AI, Miami, FL, USA, 2Independent, Toronto, ON, Canada, 3Eviviz Inc., Vancouver, BC, Canada
+- Disease: SDC: Oncology
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-20T13:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-5-3/validation-of-an-agentic-large-language-model-llm-system-in-the-extraction-stage-of-a-real-time-ai-assisted-living-systematic-literature-review-real-slr--a-solution-to-instant-and-easy-access-to-clinical-trial-data-ctd
+
+## Objectives
+
+To address challenges faced by health economics and outcomes research (HEOR) professionals in staying current with clinical trial data (CTD) and the time-intensive nature of de novo systematic literature reviews (SLRs), we evaluated the feasibility of using an agentic large language model (LLM) to develop a REAL-SLR for CTD, assessing extraction accuracy and potential time savings.
+
+## Methods
+
+An agentic large language model (LLM) system was developed to autonomously generate clinical trial data extraction annotations without human input. The system combined multiple LLMs (OpenAI GPT-5 and GPT-4.1, Gemini 2.5 Pro, and Claude Sonnet 4.5) in a matrix of processes designed to emulate trained human reviewers by following a standardized annotation manual, decomposing tasks into subtasks, and recording reasoning for traceability. A retrieval-augmented generation (RAG) architecture with semantic embeddings, parallel population, intervention/comparator, outcome, study design (PICOS)-aligned extraction chains, and study-type-adaptive prompting was implemented. Annotations were generated for 32 extraction variables, and accuracy was evaluated against human annotations in publications for prostate (PC) and breast cancer (BC).
+
+## Results
+
+Our agentic LLM system generated annotations for 32 extraction variables for 3,098 (1,200 PC, 1,898 BC) publications. Twelve out of 32 variables achieved above 90% accuracy, 50% of which were above 95%. As an example, overall survival (OS) extraction includes 3 variables: OS measure, median, landmark. Our agentic system strictly adhered to the specified format: OS measure (“OS”), median (months; hazard ratio; confidence interval; p-value), landmark (percentage, p-value). The accuracy of 3 variables were 93.62%, 83.6%, and 90.9%.
+
+## Conclusions
+
+The agentic LLM system with a RAG architecture demonstrated high accuracy in extracting publications. These findings suggest the system can enable real-time clinical data generation, supporting faster evidence development for HEOR decision-making and potentially improving patient access.
+
+---
+
+# 105. DEVELOPMENT OF A MULTI-AGENT "DEEP" AI SYSTEM FOR HEOR EVIDENCE AND INTELLIGENCE GENERATION
+
+- Session code: MSR236
+- Authors: Jag Chhatwal, PhD 1, Mine Tekman, PhD2, Ismail F. Yildirim, MSc2, Sumeyye Samur, PhD2, Turgay Ayer, PhD2; 1Massachusetts General Hospital/Harvard Medical School, Boston, MA, USA, 2Value Analytics Labs, Boston, MA, USA
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-20T13:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-5-3/development-of-a-multi-agent-deep-ai-system-for-heor-evidence-and-intelligence-generation
+
+## Objectives
+
+While Generative AI offers promise, standard Large Language Models (LLMs) often lack the reasoning depth and traceability required for rigorous HEOR tasks. We introduce ValueGen.AI, a novel multi-agentic system designed to revolutionize evidence gathering by transitioning from simple prompting to autonomous, deep agent workflows.
+
+## Methods
+
+We developed a hierarchical, multi-agent system utilizing the LangGraph Python library to execute complex research workflows. The architecture is composed of three functional layers: 1) A Main Orchestrator Layer, where primary agents decompose queries, manage workflow logic, and evaluate information sufficiency; 2) A Deep Agent Layer, comprising specialized sub-agents tasked with domain-specific retrieval; and 3) A Tool Layer utilizing the Model Context Protocol (MCP) via FastMCP to interface with heterogeneous data sources (databases, APIs, and web repositories). Inter-agent communication is managed via an asynchronous message queue, enabling parallel processing. Unlike linear query systems, this graph-based structure allows agents to iteratively pull data, critique relevance, and verify sources before synthesis.
+
+## Results
+
+The system successfully deploys 1000+ concurrent sub-agents to produce verifiable and traceable HEOR outputs. In testing, the platform generated complex deliverables, including health economic conceptual models, therapeutic analogs, and comparative HTA insight reports across multiple international jurisdictions. The multi-layer verification process significantly mitigated hallucination risks by enforcing strict citation constraints, ensuring that all generated insights are directly linked to retrieved primary sources.
+
+## Conclusions
+
+Deep agentic AI workflows represent a paradigm shift from passive information retrieval to autonomous research assistance. By structuring AI as a hierarchy of specialized agents utilizing standardized protocols like MCP, HEOR professionals can significantly accelerate evidence synthesis and strategy development without compromising the scientific rigor required for value demonstration.
+
+---
+
+# 106. DETECTING CONTRADICTIONS ACROSS CLINICAL, ECONOMIC, AND HTA DOCUMENTS USING AI OBJECTIVES
+
+- Session code: MSR196
+- Authors: Tushar Srivastava, MSc 1, Hanan Irfan, MSc2; 1ConnectHEOR, London, United Kingdom, 2ConnectHEOR, Delhi, India
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/detecting-contradictions-across-clinical-economic-and-hta-documents-using-ai-objectives
+
+## Objectives
+
+Healthcare decision-making relies on consistency across clinical evidence, economic evidence in HTA submissions. However, contradictions in assumptions, definitions, or conclusions across documents often go undetected until late stages. This study evaluated an AI-supported approach to systematically identify internal and cross-document inconsistencies within HTA evidence packages.
+
+## Methods
+
+An AI-based document analysis framework was applied to linked sets of clinical study reports, economic model documentation, and HTA submissions for selected case studies. Documents were parsed to extract key claims, assumptions, definitions, and quantitative statements. Logical and semantic consistency checks were performed across documents to flag potential contradictions, including mismatched population definitions, inconsistent time horizons, conflicting clinical assumptions, and divergent interpretations of uncertainty. Identified issues were reviewed by senior HTA experts for relevance and severity.
+
+## Results
+
+The AI framework identified multiple categories of contradictions across documents, including inconsistencies in comparator definitions, outcome measurement timepoints, subgroup specifications, and interpretation of uncertainty. Several issues were classified as high-impact, with potential implications for HTA credibility if left unresolved. Expert review confirmed that many flagged contradictions would have been difficult to detect through standard manual review due to document volume and fragmentation. False positives were primarily related to contextual nuance requiring human interpretation.
+
+## Conclusions
+
+AI-supported contradiction detection can strengthen internal coherence of HTA evidence packages by systematically identifying misalignments across clinical, economic, and HTA documents. Used as a quality assurance tool alongside expert review, this approach may reduce downstream HTA risk and improve transparency and consistency in evidence submissions.
+
+---
+
+# 107. STANDARDIZING AI MODEL INTERACTION WITH HEALTHCARE SYSTEMS USING THE MODEL CONTEXT PROTOCOL (MCP)
+
+- Session code: MSR241
+- Authors: Rajdeep Kaur, PhD 1, Barinder Singh, RPh1, Mrinal Mayank, B.Tech1, Ruhi j, B.Tech1, Nicola Waddell, HNC2, Shubhram Pandey, MSc1; 1Pharmacoevidence Pvt. Ltd., Mohali, India, 2Pharmacoevidence Pvt. Ltd., London, United Kingdom
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-20T13:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-5-3/standardizing-ai-model-interaction-with-healthcare-systems-using-the-model-context-protocol-mcp
+
+## Objectives
+
+Clinical data is distributed across heterogeneous systems, including clinical databases, research repositories, electronic health records (EHRs), external data sources, and trial management platforms. This proof-of-concept aimed to validate the MCP as a standardized, secure, and reproducible interface for enabling AI access to distributed HEOR and life sciences data sources.
+
+## Methods
+
+A proof-of-concept AI framework was developed to evaluate MCP as a unified interface for AI interaction within complex healthcare environments. The system integrated with SharePoint to retrieve contextually relevant unstructured evidence (including dossiers, reports, PDF files for a specific disease area) via metadata-driven search. In addition, the system was connected to Databricks using MCP, enabling the secure execution of SQL and Python analyses directly within the platform to retrieve structured data. A virtual assistant was integrated to synthesize information from the appropriate data sources and generate HEOR-relevant insights. Generated insights were reviewed and validated by Subject Matter Experts (SMEs) to ensure accuracy, relevance, clarity, and alignment with established HEOR evidence standards
+
+## Results
+
+SMEs evaluated the system using more than 50 prompts to assess integration performance. MCP-based integration reduced the effort required to identify relevant evidence across systems and minimized the cross-platform navigation compared to traditional manual workflows. This resulted into faster insight generation. SMEs confirmed that the generated insights were relevant, interpretable, and offered transparent traceability to underlying data sources, demonstrating suitability for healthcare evidence generation and decision support
+
+## Conclusions
+
+This study demonstrated that MCP enables standardized and governed integration of structured and unstructured HEOR data sources, supporting efficient, consistent, and traceable evidence generation. Furthermore, the MCP-enabled architecture is extensible, allowing for the incorporation of additional data sources and platforms while maintaining necessary governance controls and expert oversight
+
+---
+
+# 108. USE OF A SMALL LANGUAGE MODEL TO IDENTIFY MG-ADL SCORES FROM ENCOUNTER NOTES IN AN EMR SYSTEM
+
+- Session code: MSR213
+- Authors: Ravindra Telidevara, BS1, Neisha Opper, PhD, MPH2, Ishtiyaque Ahmad, PhD1, Vivek Rudrapatna, MD, PhD3, Trinabh Gupta, PhD1, Shivani Aggarwal, PhD, MS 4. 1DataUnite, Cupertino, CA, USA, 2Landmark Science, La Crescenta, CA, USA, 3Bakar Computational Health Sciences Institute, University of California, San Francisco, San Francisco, CA, USA, 4Landmark Science, Inc, Los Angeles, CA, USA.
+- Disease: SDC: Neurological Disorders
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-20T13:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-5-3/use-of-a-small-language-model-to-identify-mg-adl-scores-from-encounter-notes-in-an-emr-system
+
+## Objectives
+
+Myasthenia Gravis Activities of Daily Living (MG-ADL) scores are frequently used in clinical trials as a key indicator of functional status for generalized myasthenia gravis (gMG) patients. Electronic medical records (EMRs) represent a rich source of real-world data for ADL-related information. Large language models show promise for extraction of unstructured EMR data, but their infrastructure requirements limit feasibility in healthcare environments. Here, we characterize the performance of a computationally-lightweight, CPU-only small language model (SLM) in extracting available MG-ADL scores within an EMR system.
+
+## Methods
+
+Adult patients (≥18 years) with prevalent gMG (ICD-10-CM diagnosis code: G70.x, with earliest as index date) between January 2016-September 2025 at the University of California San Francisco were included. MG-ADL scores were extracted from encounter notes using the SLM. A sample of randomly selected notes classified by the SLM as present or absent (n=200) was clinically reviewed. Performance was evaluated for presence/absence classification, total score value, and domain values. Demographic and clinical characteristics were described among all gMG patients and those with ≥1 MG-ADL score(s).
+
+## Results
+
+Among 1,962 gMG patients, 7.8% (n=153) had ≥1 MG-ADL score on/after the index date. Demographic and clinical characteristics were similar across groups. Of encounter notes reviewed, the SLM correctly classified 195/200. Sensitivity, specificity, negative predictive, and positive predictive values ranged from 97-98% for absence/presence (F1-score=97.50%). Among true positives (n=97), the SLM extracted total scores with 100% accuracy; concordance of domain values ranged from 94.85% for ‘brushing teeth/hair’ to 98.97% for ‘arising from chair’ and ‘diplopia’.
+
+## Conclusions
+
+MG-ADL scores were infrequently documented within the EMR. Where present, a computationally-lightweight SLM demonstrated highly discriminative performance for identifying score presence and strong concordance for total and domain-level values. These findings highlight the potential of SLM-assisted approaches for MG-ADL extraction to enable real-world outcomes research in gMG populations.
+
+---
+
+# 109. INTERPRETABLE AI-BASED RISK PROFILING OF METABOLIC SYNDROME AND SIMULATED KLOTHO MODULATION USING REAL-WORLD NHANES DATA (2007-2023)
+
+- Session code: MSR203
+- Authors: Achilles Saxby, MS1, Karthik Chandrakant, BS1, Pramod Koujalagi, BS1, Chandra Ranganathan, MBA1, Dahlia Musa, PhD1, Paola Dama, PhD2, Vinodh Balaraman, MBA 1; 1KolateAI PharmaTech Inc, New York, NY, USA, 2NAMina Bio, New York, NY, USA
+- Disease: SDC: Diabetes/Endocrine/Metabolic Disorders (including obesity)
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-20T13:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-5-3/interpretable-ai-based-risk-profiling-of-metabolic-syndrome-and-simulated-klotho-modulation-using-real-world-nhanes-data-2007-2023
+
+## Objectives
+
+Metabolic Syndrome (MetS) is a heterogeneous condition linked to elevated cardiometabolic risk. Traditional models relying on isolated biomarkers often miss patient‑level complexity relevant to clinical decisions and trial design. This study used interpretable artificial intelligence (AI) to identify key predictors of MetS in real‑world data and to evaluate Klotho, a pleiotropic protein involved in metabolic and aging pathways, as a contextual modifier of metabolic risk.
+
+## Methods
+
+A retrospective analysis was performed using National Health and Nutrition Examination Survey (NHANES) data from 2007-2023. Of 71,775 participants, 4,855 met inclusion criteria (age >60 years, serum Klotho measurements, and complete metabolic biomarker data). An interpretable AI model was developed using KolateAI’s novel precision‑medicine platform to generate individual MetS risk predictions, rank feature importance, identify clinically meaningful thresholds, and simulate counterfactual Klotho‑related perturbations through digital‑twin modeling. Simulations were intended for hypothesis generation and stratification rather than efficacy assessment. Future translational evaluation will use human‑relevant New Approach Methodologies (NAMs).
+
+## Results
+
+The model achieved 92% accuracy. Strong positive correlates included sagittal abdominal diameter (SAD), body mass index (BMI), glycohemoglobin (HbA1c), fasting insulin, Apolipoprotein B, and Mefox oxidation product. Negative correlates included sex hormone-binding globulin (SHBG), nervonic acid, and Klotho. Key thresholds included SAD >25 cm (69.3% MetS prevalence), SHBG <30 nmol/L (65.7%), and HbA1c ≥6.5% (79%). Klotho showed an inverse association with MetS and clustered with favorable metabolic profiles, though it was not a dominant predictor. Simulated Klotho modulation enabled stratification into likely responder (~53%) and non‑responder (~47%) groups.
+
+## Conclusions
+
+Interpretable AI enables transparent, patient‑level MetS risk profiling. Klotho acts as a negative correlate and contextual modifier rather than a primary driver. Simulation‑based stratification supports hypothesis generation, patient enrichment, and precision trial design, offering a NAMs‑aligned, human‑relevant pathway for downstream validation.
+
+---
+
+# 110. FROM PREDICTION TO INTERPRETATION: MACHINE LEARNING-BASED INSIGHTS INTO SUICIDAL IDEATION AMONG ADHD PATIENTS
+
+- Session code: MSR209
+- Authors: SAMUEL AYEMERE, MSc, PharmD 1, Maryam Pathan, BS2, Mohammad A. Al-Mamun, PhD3; 1West Virgina University, MORGANTOWN, WV, USA, 2West Virginia University, Morgantown, WV, USA, 3University of West Virginia, Morgantown, WV, USA
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-20T13:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-5-3/from-prediction-to-interpretation-machine-learning-based-insights-into-suicidal-ideation-among-adhd-patients
+
+## Objectives
+
+This study investigates the elevated risk of suicidal ideation (SI) among individuals with attention deficit hyperactivity disorder (ADHD) and employs machine learning (ML) techniques to identify and evaluate key contributing factors.
+
+## Methods
+
+This study utilized electronic health records from TriNetX to conduct a retrospective longitudinal study of all patients with ADHD who had available medication information and were receiving care within West Virginia healthcare organizations between 2007 and 2023. Given the low prevalence of SI in the data, synthetic minority oversampling technique (SMOTE) was applied to address the class imbalance issue. Logistic regression, Random Forest and Extreme Gradient boosting (XGBoost) models were developed and compared on the SMOTE-adjusted dataset. SHAP (Shapley Additive exPlanations) analysis was used to interpret the most influential factors contributing to the model predictions.
+
+## Results
+
+A total of 11,906 patients with ADHD were included in the study. Suicidal ideation was observed in 4.26% of the cohort. The XGBoost model trained on SMOTE-adjusted data with a sampling ratio of 0.5 demonstrated the best overall performance with an accuracy of 0.85, an F1 score of 0.82, a precision of 0.7, an AUCROC of 0.96, and an AUPRC of 0.93. SHAP analysis identified depression or anxiety as the major factor that leads to SI, followed by bipolar disorder, age <18 years, male gender, and stimulant use.
+
+## Conclusions
+
+Age <18 years, male gender, stimulant use, psychiatric comorbidities like depression or anxiety and bipolar disorders were identified as key factors associated with SI in ADHD. Integrating ML-based SI risk prediction in clinical decision-making among individuals with ADHD may support earlier risk stratification, targeted monitoring, and timely intervention.
+
+---
+
+# 111. ADAPTING AGENTIC LARGE LANGUAGE MODELS (ALLM) TRAINED IN SOLID TUMORS FOR SYSTEMATIC LITERATURE REVIEW (SLR) IN HEMATOLOGICAL MALIGNANCIES: VALIDATION IN MULTIPLE MYELOMA (MM) AND CHRONIC LYMPHOCYTIC LEUKEMIA (CLL)
+
+- Session code: MSR170
+- Authors: Rhiannon Campden, PhD1, Rozee Liu, MSc 1, Eddie Xiaole Liu, BSc2, Anna Forsythe, MBA, MSc, PharmD1; 1Oncoscope-AI, Miami, FL, USA, 2Independent, Toronto, ON, Canada
+- Disease: SDC: Oncology
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/adapting-agentic-large-language-models-allm-trained-in-solid-tumors-for-systematic-literature-review-slr-in-hematological-malignancies-validation-in-multiple-myeloma-mm-and-chronic-lymphocytic-leukemia-cll
+
+## Objectives
+
+We have previously published data on aLLM systems demonstrating strong performance in automating systematic literature reviews (SLRs) in solid tumors. However, extending these systems to hematological malignancies presents distinct challenges, including differences in therapeutic classes, endpoints, disease definitions, and study designs. This study evaluates the adaptation and validation of a Real-time AI-assisted Living SLR (REAL-SLR) system, originally developed for solid tumors, to robustly identify and extract clinical trial evidence in MM and CLL.
+
+## Methods
+
+Our aLLM system comprises multiple autonomous LLMs operating without direct supervision, including GPT-5, GPT-4.1, Gemini 2.5 Pro, and Claude Sonnet 4.5, designed to emulate trained human reviewers. Models were adapted using hematology-specific treatment guidelines and annotation manuals aligned with PRISMA and Cochrane standards and structured around the Population, Intervention/Comparator, Outcomes, and Study Design (PICOS) framework. Inclusion and exclusion decisions were recorded independently for each PICOS element and benchmarked against expert human screening. An iterative refinement process was applied to the annotation manual until >95% accuracy performance thresholds were achieved.
+
+## Results
+
+In MM, the aLLM reviewed 800 abstracts, achieving an initial accuracy of 93.7% with a false negative rate of 3.5%. Following targeted refinement of instructions addressing hematology-specific interventions, outcomes, and study designs, final accuracy increased to 97.4% (Population 98.3%, Intervention/Comparator 97.3%, Outcomes 97.5%, Study Design 96.9%), exceeding single human reviewer performance. The overall false negative rate was <0.7%, below the predefined 1% threshold. In CLL, evaluation of 298 abstracts yielded a final overall accuracy of 96.6% and a false negative rate of 0.34% after initial adaptation.
+
+## Conclusions
+
+Agentic LLM systems originally trained in solid tumors can be successfully adapted to hematological malignancies through disease-specific instruction and governance. This approach enables accurate, scalable, and real-time SLRs in MM and CLL, supporting living evidence generation for HEOR, HTA, and clinical decision making.
+
+---
+
+# 112. CAN PUBMED ALONE CAPTURE THE EVIDENCE BASE FOR TARGETED LITERATURE REVIEWS? A CASE STUDY
+
+- Session code: MSR237
+- Authors: Priscilla Wittkopf, PhD1, Rajat Goel, MPharm2, Kassandra Schaible 3, Caroline von Wilamowitz-Moellendorff, PhD1; 1Thermo Fisher Scientific, London, United Kingdom, 2Thermo Fisher Scientific, Mumbai, India, 3Thermo Fisher Scientific, Pittsburgh, PA, USA
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-20T13:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-5-3/can-pubmed-alone-capture-the-evidence-base-for-targeted-literature-reviews-a-case-study
+
+## Objectives
+
+Targeted literature reviews (TLRs) commonly combine MEDLINE and Embase, to optimise study retrieval. Embase often yields larger results sets due to broader indexing, and differences may be amplified when pragmatic filters are applied. To our knowledge, PubMed is the only database which allows programmatic access and does not impose AI-specific restrictions on the use of external models for analysis of its records. The implications of PubMed-only strategies for AI-assisted TLRs remain unclear. We aimed to compare search results using PubMed-only with those identified using Medline plus Embase in the context of two AI-assisted TLRs.
+
+## Methods
+
+Original searches were conducted in MEDLINE plus Embase (via Ovid) in October-November 2024. Search syntax was adapted for PubMed and rerun in January 2025 using the original date limits. Identical eligibility criteria and AI-assisted screening workflow (Nested Knowledge) were used across approaches. Outcomes included the overlap between approaches and studies uniquely identified through each database.
+
+## Results
+
+For TLR 1 (cost-effectiveness; validated economic filter), PubMed-only retrieved 2,285 records from versus 2,426 articles from the combined MEDLINE + Embase search, with 92.3% overlap of relevant included records. TLR 2 (observational studies; pragmatic design filter), PubMed-only retrieved 937 records versus 2,212 from combined search, with 80.0% overlap of relevant included records. Records not captured by PubMed-only were uniquely identified via Embase, consistent with broader database coverage and indexing.
+
+## Conclusions
+
+Across two AI-assisted TLRs, PubMed-only and combined Medline plus Embase searches yield overlapping evidence bases; however, gaps were larger when a pragmatic observational study design filter was used. AI-assisted screening appears to be a cost-efficient approach and performed consistently across differing record pools, but the final included evidence will depend on where searches are run (database coverage) and how they are run (choice and validation of filters). These findings highlight the importance of understanding database-specific coverage when designing AI-assisted TLR search strategies.
+
+---
+
+# 113. AUTOMATED AMCP DOSSIER DEVELOPMENT USING A RETRIEVAL-AUGMENTED GENERATION (RAG)-BASED MULTI-AGENT APPROACH
+
+- Session code: MSR207
+- Authors: Ankita Sood, PharmD, Gagandeep Kaur, M.Pharm, Rajdeep Kaur, PhD, Shubhram Pandey, MSc, Barinder Singh, RPh. Pharmacoevidence, Mohali, India.
+- Disease: Not specified
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-20T13:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-5-3/automated-amcp-dossier-development-using-a-retrieval-augmented-generation-rag-based-multi-agent-approach
+
+## Objectives
+
+Given the importance of AMCP dossiers in formulary submissions and payer decision-making across the United States (US), optimizing accuracy and efficiency of content development is essential. This study explored the utility of generative artificial intelligence (GenAI) to automate generation of AMCP for a psychiatric disorder to produce reliable, traceable outputs through a human-in-the-loop approach.
+
+## Methods
+
+A Python-based interface was developed using the Claude 3.7 Sonnet GenAI. The tool, deployed on a secure AWS cloud infrastructure combined a Retrieval-Augmented Generation (RAG) framework with a multi-agent architecture to ensure that outputs were fully traceable to source documents. A total of 110 documents including journal articles, conference abstracts, treatment guidelines, and epidemiology data sources were uploaded into the RAG pipeline for processing of text, tables, and figures/plots. The agents were configured to generate different AMCP sections, in accordance with established Format for Formulary Submissions, version 5.0, and the outputs were validated by subject matter experts (SMEs) for relevance, completeness, accuracy, language, and overall quality, using a 5-point Likert scale.
+
+## Results
+
+An AMCP dossier was generated, encompassing sections on executive summary, product and disease description, clinical, value and modeling report, and appendices. Output included tables and visualizations, such as bar graphs, pie charts and line graphs. Based on Likert scale assessment, SMEs strongly agreed that the generated content was relevant and accurate, and somewhat agreed that the responses were largely complete. In all sections, there were instances of repetition, however SMEs concurred that the responses were mostly well-written (Strongly or Somewhat agreed). Overall, the automated approach generated a draft that was ∼90% complete, reduced development time by ∼80% compared to manual methods, and resulted in 70-75% cost reduction.
+
+## Conclusions
+
+This study highlights potential of GenAI to streamline AMCP dossier development process, substantially reducing timeline from weeks/months to days, while maintaining accuracy, traceability and adherence to established guidelines.
+
+---
+
+# 114. AUTOMATING STATISTICAL ANALYSIS PLAN DEVELOPMENT AND DEMOGRAPHIC DESCRIPTIVE ANALYSES IN CLINICAL TRIAL DATA USING GENERATIVE AI
+
+- Session code: MSR243
+- Authors: Ritesh Dubey, PharmD, Shubhram Pandey, MSc, Rajdeep Kaur, PhD, Gagandeep Kaur, M.Pharm, Barinder Singh, RPh; Pharmacoevidence, Mohali, India
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-20T13:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-5-3/automating-statistical-analysis-plan-development-and-demographic-descriptive-analyses-in-clinical-trial-data-using-generative-ai
+
+## Objectives
+
+Healthcare decision-making increasingly relies on large and complex datasets, making traditional analytical approaches time-consuming and resource-intensive. This study evaluated whether a generative AI-based analytical framework could support the development of a statistical analysis plan (SAP) by generating SAP table shells and accurately populating them with study data, while producing analytically rigorous, reproducible, and regulatory-aligned outputs
+
+## Methods
+
+A generative AI-enabled analytical framework incorporating a large language model (LLM) was implemented to support structured analysis and the development of an SAP. Simulated individual patient-level clinical data (~10,000 records) were uploaded to the tool in a CSV format and pre-processed prior to analysis. SAP table shells were generated in accordance with predefined specifications, and plain-language user queries were translated into executable statistical code to produce descriptive analyses and populate SAP-aligned tables and visualisations. All outputs were independently reviewed by a human subject-matter expert (SME) to assess analytical accuracy, completeness, and reproducibility
+
+## Results
+
+The AI-based framework successfully generated 20 SAP table shells and produced complete descriptive statistics for approximately 20 predefined baseline variables across all table shells. SME validation confirmed the accuracy of all numerical outputs and statistical computations. Manual human refinement was required in approximately 3-4% of cases, where some tables and figures needed to be refined to align with SAP presentation standards. These refinements were addressed through iterative review, resulting in finalised SAP-ready outputs. Compared with conventional manual workflows, the AI-enabled approach substantially reduced analytical development and reporting timelines by almost 85%
+
+## Conclusions
+
+The generative AI-based analytical framework demonstrated the ability to support SAP development by generating and populating SAP table shells with high analytical accuracy under continuous human oversight. These findings highlight the potential of AI-enabled analytics to enhance efficiency and reduce analytical timelines in healthcare research while maintaining methodological rigor
+
+---
+
+# 115. THE CURRENT LANDSCAPE OF ARTIFICIAL INTELLIGENCE (AI) METHODOLOGY IN HEALTH ECONOMICS AND OUTCOMES RESEARCH (HEOR): A REVIEW OF ISPOR EUROPE 2025 ABSTRACTS
+
+- Session code: MSR229
+- Authors: Allie Cichewicz, MS, Kush Patel, MS, Ellen Thiel, MPH, Kevin Kallmes, BS, MA, JD. Nested Knowledge, St. Paul, MN, USA.
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-20T13:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-5-3/the-current-landscape-of-artificial-intelligence-ai-methodology-in-health-economics-and-outcomes-research-heor--a-review-of-ispor-europe-2025-abstracts
+
+## Objectives
+
+ISPOR showcases various presentations applying AI across HEOR domains. This work aimed to characterize the scope, methodological diversity, and outcomes of AI/large language model (LLM) applications in HEOR research presented at ISPOR Europe in November 2025.
+
+## Methods
+
+A total of 145 abstracts mentioning AI or LLMs were identified from the ISPOR presentations database and reviewed in the Nested Knowledge platform. Adaptive Smart Tags recommended extraction and experts rapidly curated abstract information including objectives, methodology, HEOR task categories, AI platforms reported, data sources, validation approaches, and performance metrics. Findings were synthesized to define trends across methodologies and AI application domains.
+
+## Results
+
+Across domains that utilized AI, evidence synthesis dominated (n=60/145 abstracts), followed by real-world evidence applications (n=30) and economic modeling (n=18). Among models, LLMs were most frequently employed (n=70), followed by proprietary platforms (n=29) and retrieval-augmented generation systems (n=24). Performance metrics demonstrated accuracy of 70-100%, precision of 8-100%, and F1-scores of 11-99%. Efficiency gains included time savings of 48-95% and workload reductions of 46-90%. Validation primarily relied on direct human comparison (n=51), with limited external validation (n=30). Challenges included interpretability gaps (n=98) and ethical barriers (n=23). Hybrid AI-human models consistently outperformed fully automated or manual-only approaches.
+
+## Conclusions
+
+Studies presented at ISPOR Europe 2025 demonstrated that AI tools reduce time and resource requirements for screening and data extraction in literature review and economic model programming, with the largest efficiency gains reported in high-volume, repetitive tasks. Across presentations, hybrid AI-expert workflows consistently outperformed fully automated approaches, reinforcing the need for human oversight to maintain analytical validity. The range of applications, from title/abstract screening to qualitative coding to payer communication, reflects rapid experimentation, though most studies were proof-of-concept or single-use-case evaluations. These findings suggest near-term adoption should prioritize applications with reproducible validation methods while the field develops shared quality frameworks and reporting standards for HEOR-specific AI use.
+
+---
+
+# 116. OLD DATA, NEW TRICKS: ACCURACY AND EFFICIENCY GAINS FOR AI-DRIVEN SLR UPDATES
+
+- Session code: MSR238
+- Authors: Kelly Bell, MS, PharmD 1, Ramsha Khan, PhD2, Sara Lucas, PhD3, CAITLYN SOLEM, PhD4; 1GSK, Phoenixville, PA, USA, 2Cytel, Toronto, ON, Canada, 3Cytel, London, United Kingdom, 4GSK US, Bethesda, MD, USA
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-20T13:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-5-3/old-data-new-tricks-accuracy-and-efficiency-gains-for-ai-driven-slr-updates
+
+## Objectives
+
+AI-driven screening models can be trained to screen SLR citations to reduce burden and accelerate timelines. Our objective was to compare accuracy of human screening with machine-learning (ML) based systems under two training scenarios when screening a 3-month SLR update. Secondly, this analysis aimed to evaluate efficiency gains of AI-assisted versus human screening.
+
+## Methods
+
+ML training scenarios were tested in two “nests” in Nested Knowledge®. Scenario 1: ML was trained using a fully-human-screened Clinical SLR (n=5,850); scenario 2: ML was trained on the minimum number of human-screened citations (n=50). Both MLs screened a 3-month SLR update (n=244) at title/abstract level. Results were compared with fully human screening to assess concordance, sensitivity and specificity. To determine efficiencies, models were trained using human-screened SLRs (Clinical [n=5,850]; HRQoL [n=1,790]; Economic [n=955]) and time taken compared to a traditional (two experienced human reviewers, rate n=85 citations/hour) and hybrid approach (one human-one AI).
+
+## Results
+
+Model performance varied by training scenario. The scenario 1 model included n=34/224 citations and the scenario 2 model included n=169/224 citations. Human screeners included n= 72/224 at title/abstract level and n=6 studies at full-text level. All relevant studies were included by the scenario 2 model. One study was missed by the scenario 1 model. Compared to two human reviewers, substantial efficiency gains were noted for clinical (n=2873 studies reviewed; traditional: 68h; hybrid: 34h; fully-AI 1h), HRQoL (n=4247 studies; traditional: 100h; hybrid: 50h; fully-AI 0.6h), and economic (n=5288 studies; traditional: 124h; hybrid: 62h; fully-AI 0.6h) updates.
+
+## Conclusions
+
+Results demonstrate that AI-assisted screening can substantially reduce workload and accelerate SLR execution and update turnaround times. Models can feasibly replace one reviewer with high sensitivity but require a human for nuance and final discretion on included studies. The balance between sensitivity, specificity and human oversight will depend on the acceptable risks and intended purpose of the review.
+
+---
+
+# 117. AUTOMATED TECHNICAL REPORT GENERATION FOR HEALTH ECONOMIC MODELS: A COMPARATIVE CASE STUDY OF GENERATIVE AI VS. MANUAL DEVELOPMENT
+
+- Session code: MSR248
+- Authors: Tushar Srivastava, MSc 1, Hanan Irfan, MSc2, Shilpi Swami, MSc1; 1ConnectHEOR, London, United Kingdom, 2ConnectHEOR, Delhi, India
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-20T13:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-5-3/automated-technical-report-generation-for-health-economic-models-a-comparative-case-study-of-generative-ai-vs-manual-development
+
+## Objectives
+
+Technical reports accompanying cost-effectiveness models require both domain expertise and strict editorial compliance to support Health Technology Assessment (HTA) submissions. This study evaluated an AI-driven system for automated technical report generation from existing Excel-based cost-effectiveness models, benchmarking its outputs against manual development across two predefined validation domains: technical accuracy and editorial compliance.
+
+## Methods
+
+Two representative case studies, a partitioned survival model and a multi-state Markov model, were processed using an AI-based report generation system that extracts data directly from Excel models and associated documentation to draft complete technical reports. Performance was assessed across two domains. Domain validation evaluated consistency with health economics principles, accuracy of data extraction from Excel, correctness of result and figure interpretation, and the presence of unsupported or spurious technical statements. Editorial validation assessed HTA-style compliance, including automated generation of front matter (table of contents, lists of tables and figures), accuracy of captions and abbreviation legends, and adherence to predefined company-specific formatting templates. All outputs were independently reviewed by senior health economists and medical writers.
+
+## Results
+
+Across both case studies, the AI-generated reports accurately reflected model inputs and results from Excel, with no unsupported technical statements identified during expert review. Tables and figures were correctly structured from extracted data, and graphical outputs were appropriately interpreted. From an editorial perspective, the system generated required front matter (table of contents, lists of tables and figures), applied captions and abbreviation legends correctly, and adhered to predefined formatting templates suitable for HTA submissions. However, expert review identified residual issues related to verbosity and stylistic refinement in certain narrative sections. Compared with manual drafting, report development time was reduced from approximately 40 hours to under 8 hours.
+
+## Conclusions
+
+In two representative CE model case studies, AI-generated technical reports demonstrated strong domain accuracy and HTA-compliant editorial quality while substantially reducing authoring time.
+
+---
+
+# 118. EVALUATION OF AI-ASSISTED MULTI-ROW DATA EXTRACTION FOR META-ANALYSIS USING EASYSLR
+
+- Session code: MSR235
+- Authors: Shainki Sharma, M.Pharm1, Geetank Kamboj, MPharm1, Abhishek Malik, MSc2, Hemant Rathi, MSc 2; 1Skyward Analytics, Gurugram, India, 2EasySLR, Gurugram, India
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-20T13:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-5-3/evaluation-of-ai-assisted-multi-row-data-extraction-for-meta-analysis-using-easyslr
+
+## Objectives
+
+To evaluate the performance of artificial intelligence (AI)-assisted multi-row data extraction for meta-analysis compared with human data extraction.
+
+## Methods
+
+An umbrella review of published meta-analyses and network meta-analyses was performed. Data were extracted in a multi-row format from nine included reviews to capture study characteristics and outcome data. Extraction by humans was performed in Microsoft Excel, followed by quality control and adjudication to establish a reference standard. The same reviews were extracted by AI using EasySLR. AI-extracted and human-extracted data were compared against the full-text publications. For AI-assisted extraction, each extracted data point was classified as a true positive (TP; correctly extracted and reported in the review), false positive (FP; non-relevant data extracted), false negative (FN; relevant data reported in the review but not extracted), or true negative (TN; as the extraction task does not provide a finite set of non-relevant data points, true negatives cannot be computed and were therefore set to zero). Precision, recall, F1 score, and F2 score were calculated.
+
+## Results
+
+For study characteristics, the AI correctly extracted all relevant data, achieving 100% recall, although three additional non-relevant data points were extracted. For outcome data, AI achieved 100% recall in seven of nine reviews, with recall of 60% and 79% in the remaining two; precision was 100% across all reviews. F1 and F2 scores ranged from 0.86 to 1.00 and 0.94 to 1.00 for study characteristics, and from 0.75 to 1.00 and 0.65 to 1.00 for outcome data, respectively. Missed data points were primarily associated with data reported in more complex reporting formats.
+
+## Conclusions
+
+AI-assisted multi-row data extraction demonstrated high recall and robust F1 and F2 scores across most reviews. However, some data were not extracted when information was presented in complex formats, highlighting the need for human review during data extraction.
+
+---
+
+# 119. AUTOMATING MODEL PARAMETERISATION FOR HEALTH ECONOMIC MODELS: VALIDATION OF A GEN-AI RAG PIPELINE
+
+- Session code: MSR247
+- Authors: Tushar Srivastava, MSc 1, Hanan Irfan, MSc2, Hemansh Sridhar, BTech2, Shilpi Swami, MSc1; 1ConnectHEOR, London, United Kingdom, 2ConnectHEOR, Delhi, India
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-20T13:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-5-3/automating-model-parameterisation-for-health-economic-models-validation-of-a-gen-ai-rag-pipeline
+
+## Objectives
+
+Parameterisation of health economic models requires systematic extraction, synthesis, and validation of inputs from randomized controlled trials (RCTs) and published literature, a process that is resource-intensive and prone to inconsistency. This study evaluated a generative AI retrieval-augmented generation (RAG) pipeline designed to support automated parameterisation of health economic models, benchmarking its performance against manual extraction and validation.
+
+## Methods
+
+A Gen-AI RAG pipeline was developed to retrieve evidence from curated sources including peer-reviewed publications and RCT reports, extract candidate model parameters (e.g., clinical effectiveness, utilities, adverse event rates, and resource use), and generate structured parameter tables with supporting citations.Validation was conducted across multiple case studies representing different therapeutic areas and model types. Extracted parameters were compared with manually curated inputs across three evaluation domains: (1) data accuracy and completeness, (2) traceability to source evidence, and (3) suitability for direct use in cost-effectiveness model parameterisation. Outputs were independently reviewed by senior health economists.
+
+## Results
+
+Across case studies, the RAG pipeline successfully retrieved relevant evidence and generated structured parameter tables aligned with manual reference standards.The majority of core model inputs were correctly identified and accurately extracted, with full citation traceability to source documents. Discrepancies primarily related to contextual interpretation (e.g., subgroup definitions or outcome timing), requiring expert adjudication. Exact-match rates were highest for clinical efficacy data (>88%) but showed moderate variance in complex utility derivations from SLRs. Use of the RAG pipeline reduced parameterisation time by approximately 60-70% compared with manual workflows.
+
+## Conclusions
+
+In this validation study, a Gen-AI RAG pipeline demonstrated the potential to substantially accelerate model parameterisation while maintaining traceability to published evidence. When used as a decision-support tool alongside expert review, such approaches may improve efficiency and consistency in health economic model development without compromising methodological rigor.
+
+---
+
+# 120. A MULTI-AGENT GENAI SYSTEM FOR TRACEABLE, MULTI-COUNTRY LANDSCAPE ASSESSMENT IN MASH
+
+- Session code: MSR155
+- Authors: Jag Chhatwal, PhD 1, Mine Tekman, PhD2, Ismail F. Yildirim, MSc2, Sumeyye Samur, PhD2, Turgay Ayer, PhD2; 1Massachusetts General Hospital/Harvard Medical School, Boston, MA, USA, 2Value Analytics Labs, Boston, MA, USA
+- Disease: SDC: Gastrointestinal Disorders
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/a-multi-agent-genai-system-for-traceable-multi-country-landscape-assessment-in-mash
+
+## Objectives
+
+Generative AI has the potential to accelerate HEOR and market access tasks, but commonly used models (e.g., ChatGPT, Perplexity) often lack the accuracy, depth, and traceability required for rigorous evidence synthesis. We developed HEOR-specific multi-agent AI system, ValueGen.AI to address these limitations. This study evaluated the system’s ability to autonomously generate a comprehensive, multi-country HEOR landscape assessment for metabolic dysfunction-associated steatohepatitis (MASH).
+
+## Methods
+
+We developed a hierarchical "Deep Agent" architecture using the LangGraph framework to orchestrate over 1,000 specialized sub-agent invocations. The system functions through three functional layers: 1) A Main Orchestrator that decomposes queries and evaluates information sufficiency; 2) A Deep Agent Layer executing parallel retrieval tasks; and 3) A Tool Layer utilizing the Model Context Protocol (via FastMCP) to interface with heterogeneous data sources (databases, APIs, and web repositories). Inter-agent communication is managed via an asynchronous message queue, enabling non-linear, iterative data gathering. This structure ensures every generated insight is verified and directly traceable to a primary reference.
+
+## Results
+
+The ValueGen.AI generated a >100-page, multi-regional HEOR landscape assessment for adult MASH in under 48 hours, compared with months using conventional manual approaches. The report synthesized more than 300 verifiable references, covering epidemiology, clinical trials, real-world evidence, and economic models through October 2025, with projections to 2050. The assessment comprehensively addressed critical HEOR domains, including comparative effectiveness, HRQoL utilities, budget impact, and stakeholder policy, alongside granular subgroup analyses (e.g., T2D, obesity, genetic risk). The content and references were verified by human in the loop.
+
+## Conclusions
+
+Multi-agent AI workflows can dramatically improve HEOR productivity by compressing months of work into days. By moving beyond simple prompting to a structured, agentic architecture, this approach demonstrates that Gen AI can perform complex HEOR tasks without compromising the scientific rigor and traceability essential for decision-making.
+
+---
+
+# 121. INCORPORATING REAL-WORLD EVIDENCE INTO TIME-TO-EVENT EXTRAPOLATIONS FROM CLINICAL TRIAL DATA
+
+- Session code: MSR171
+- Authors: Shubhram Pandey, MSc 1, Rashi Rani, MSc2, Sameer Mansoori, MSc1, Barinder Singh, RPh1, Akanksha Sharma, MSc1. 1Pharmacoevidence Pvt. Ltd., Mohali, India, 2Heorlytics Pvt. Ltd., Mohali, India.
+- Disease: SDC: Oncology
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/incorporating-real-world-evidence-into-time-to-event-extrapolations-from-clinical-trial-data
+
+## Objectives
+
+Extrapolation of time-to-event data beyond clinical trials remains challenging in health economic evaluations. While numerous methodologies exist for long-term projections, most lack formal mechanisms to incorporate real-world evidence (RWE). This study presents a methodological framework for integrating RWE into survival extrapolations while maintaining mathematical consistency and clinical plausibility.
+
+## Methods
+
+The proposed framework fits multiple parametric distributions to trial data and integrates external RWE through: (1) assigning data-driven weights to parametric models based on fit to RWE points using distance-weighted mean squared error, and (2) applying inverse distance-weighted influence from RWEdata points to create blended extrapolations. This approach preserves Kaplan-Meier estimates within the trial period while allowing controlled RWE influence on long-term projections. The methodology was applied to simulated 5-year trial data with external survival estimates up to 40 years.
+
+## Results
+
+Across all parametric distributions, RWE integration substantially modified extrapolations and life-year estimates. The weighted average of parametric models without RWE integration yielded 14.29 and 10.15 life years for intervention and control arms, respectively (incremental benefit: 4.14 years). With RWE integration, estimates increased to 15.85 and 11.24 years, respectively (incremental benefit: 4.61 years), representing an 11.4% difference in estimated treatment effect. The best-fitting distributions shifted from log-normal in the standard approach to generalized gamma with RWE integration. Survival probability estimates at distant time points showed more plausible alignment with external evidence while maintaining mathematical consistency.
+
+## Conclusions
+
+Integration of RWE into parametric survival extrapolations significantly impacts life-year estimates and treatment benefits. This model-averaging approach with distance-weighted RWE influence offers value to health technology assessment bodies seeking more realistic long-term projections, especially for novel therapies with limited trial data but available real-world evidence. By reducing uncertainty in extrapolated survival curves, this methodology can improve decision-making reliability for reimbursement and resource allocation.
+
+---
+
+# 122. POLYGENIC RISK SCORES IMPROVE NON-SMALL CELL LUNG CANCER PREDICTION IN REAL-WORLD US DATA
+
+- Session code: MSR163
+- Authors: Vikash Kumar Verma, MBA, PharmD1, Louis Brooks Jr, MS2, Marissa Seligman, PharmD3, Abhimanyu Roy, MBA4, Abhinav Nayyar, MBA, MBBS 5, Ankitkumar Arora, MPharm6, Anuj Gupta, MSc7, Ram Kumar Mishra, PhD8, Pallavi Mohanty, PhD9, Vishan Khatavkar, MBA10, Damanjeet Kaur, .10. 1Optum Lifesciences, Boston, MA, USA, 2Optum, Bloomsbury, NJ, USA, 3Optum, Winchester, MA, USA, 4Optum, Gurgaon, India, 5Optum Life Sciences, Gurugram, India, 6Optum Global Solutions, Gurgaon, India, 7Optum Lifesciences, Noida, India, 8Optum Global Solution, Gurugram, India, 9Optum Global Solutions, Gurugram, India, 10Optum Lifesciences, Gurugram, India.
+- Disease: SDC: Oncology
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/polygenic-risk-scores-improve-non-small-cell-lung-cancer-prediction-in-real-world-us-data
+
+## Objectives
+
+Non-small cell lung cancer (NSCLC) remains a leading cause of mortality; early risk stratification is essential for targeted screening. We accessed the clinical utility of a polygenic risk score (PRS)-based prediction model for NSCLC in a US real-world cohort and its incremental value over clinical risk factors.
+
+## Methods
+
+We conducted a retrospective cohort study using Optum® Market Clarity data between January-2013 to June-2024. Adult patients with confirmed NSCLC were identified, and the index date was defined as the diagnosis of NSCLC. A 12-month pre-index (baseline), and post-index (follow-up) were used. Genotype data were available for a subset of patients, and PRS was constructed using cumulative allele frequency from patient level variant information. Logistic regression models assessed associations between PRS and NSCLC risk, adjusting for demographics, smoking, comorbidities, and top genomic alterations. Model performance was evaluated using AUC, precision, recall, and odds ratios (OR).
+
+## Results
+
+From an initial NSCLC cohort of 43,104 patients, 6,227 met inclusion criteria for PRS analysis. The PRS-based logistic regression model achieved an AUC of 0.82, with precision 63.5% and recall of 65.3%. The confusion matrix exhibited strong predictive accuracy (true positives = 800, true negatives = 2,053). Higher PRS quintiles were associated with increased NSCLC risk. Odds ratio analysis indicated significant associations for clinical features such as lung nodules (OR = 7.0) and hemoptysis (OR = 2.0). Genomic alterations including KRAS G12C, EGFR I858R, and EGFR E746_A750deletion exhibited modest associations (OR ≈ 1.1 each). The most frequent alterations were TP53 splice variants (n = 4,045), KRAS G12C (n = 1,897), and PIK3CA E545K (n = 1,080). Median effect allele sizes were highest for PIK3CA H1047R (3.1) and EGFR E746_A750 deletion (2.9).
+
+## Conclusions
+
+PRS-based prediction significantly improved NSCLC risk stratification beyond clinical and genomic factors. Combining PRS with mutation profiles may support personalized screening strategies and inform cost-effective prevention approaches.
+
+---
+
+# 123. UPDATING SYSTEMATIC LITERATURE REVIEWS AND REPORTS USING A GENERATIVE AI-ENABLED FRAMEWORK
+
+- Session code: MSR191
+- Authors: Ritesh Dubey, PharmD 1, Nicola Waddell, HNC2, Rajdeep Kaur, PhD1, Gagandeep Kaur, M.Pharm1, Barinder Singh, RPh1, Mrinal Mayank, B.Tech1, Shubhram Pandey, MSc1; 1Pharmacoevidence, Mohali, India, 2Pharmacoevidence, London, United Kingdom
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/updating-systematic-literature-reviews-and-reports-using-a-generative-ai-enabled-framework
+
+## Objectives
+
+Periodic updates of systematic literature reviews (SLRs) are required to remain relevant for health economics and outcomes research (HEOR) decision-making. However, manual updating of SLRs is time- and resource-intensive. This study aimed to update existing literature reviews and reports using AI-assisted SLR and report generation, while preserving evidence traceability and ensuring appropriate human oversight.
+
+## Methods
+
+A previously conducted SLR and its report, originally developed in 2024, served as the base for this study (Kaur et al., 2025). An AI-assisted SLR was conducted, supported by automated data extraction tools. Newly identified studies were incorporated into an RAG-based multi-agent framework to update relevant sections of the SLR report, including humanistic burden, economic burden, and unmet needs. Updated report sections were evaluated by a human expert on a 5-point Likert scale to assess factual accuracy, completeness, and evidence traceability.
+
+## Results
+
+Over the two-year update period, five newly published studies were identified. Automated data extraction tables were generated using a human-in-the-loop approach, requiring approximately 10-20% human effort. These finalised extraction tables were subsequently used by the system to update the existing SLR report with new evidence. The framework generated revised narrative text, tables, and figures directly within the original manuscript structure without modifying previously validated content. Most updated sections were rated as “Strongly Agree” or “Agree,” reflecting high factual accuracy and clear linkage to source evidence. Minor terminology refinements were required in a limited number of cases. All updated tables and figures were appropriately aligned with the evidence. Compared with traditional manual updating workflows, the framework reduced update timelines by approximately 80-85%.
+
+## Conclusions
+
+This study demonstrates that a RAG-based generative AI framework can efficiently update existing SLRs while maintaining transparency, traceability, and continuous human oversight, offering a scalable and compliant approach to support responsible AI adoption in HEOR evidence generation.
+
+---
+
+# 124. ACCELERATING HEALTH ECONOMIC MODEL CONCEPTUALIZATION USING MULTI-AGENTIC GENERATIVE AI SYSTEMS
+
+- Session code: MSR193
+- Authors: Shubhram Pandey, MSc 1, Sameer Mansoori, MSc1, Rajdeep Kaur, PhD1, Barinder Singh, RPh1, Nicola Waddell, MSc2, Paul S.J. Stephen John Miller, PhD3. 1Pharmacoevidence Pvt. Ltd., Mohali, India, 2Pharmacoevidence Pvt. Ltd., London, United Kingdom, 3MILLER ECONOMICS LTD, Macclesfield, United Kingdom.
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/accelerating-health-economic-model-conceptualization-using-multi-agentic-generative-ai-systems
+
+## Objectives
+
+Health economic modeling is critical for healthcare decision-making amongst that model conceptualization remains resource-intensive and time-consuming, particularly for rare diseases with limited evidence. This study demonstrates the application of multi-agentic generative AI (GenAI) systems using Retrieval-Augmented Generation (RAG) to develop comprehensive model protocols for health technology assessment (HTA) submissions, addressing two distinct scenarios: de novo model development in evidence-scarce therapeutic areas and model enhancement where existing structures exist.
+
+## Methods
+
+A multi-agentic AI framework was developed with specialized agents representing clinicians, statisticians and health economists. For de novo model conceptualization, system leveraged key opinion leader (KOL) inputs from meeting notes, transcripts, and Large Language Models (LLM) training data. For therapeutic areas with existing models, published evidence from peer-reviewed literature and previous HTA submissions were utilized through RAG architecture. System was designed to generate model structures including health states and transitions, identified key assumptions, specified model inputs (clinical parameters, costs, health-related quality of life values), and recommended relevant sensitivity and scenario analyses. Interactive feedback loops were incorporated to iteratively refine protocol outputs. Generated protocols underwent validation through clinical expert review and comparison against gold-standard manual protocols.
+
+## Results
+
+The multi-agentic system produced HTA-ready protocols with 90% overall alignment with subject matter expert assessments. Development time was reduced by 85% compared to traditional manual workflows resulting in time and resource savings. Section-specific accuracy varied by complexity: cost inputs achieved 96% accuracy, utility inputs showed 90% accuracy, while model structure and clinical pathway conceptualization demonstrated 85% accuracy (95% where model already exists and 80% in de-novo model conceptualization), reflecting the inherent complexity of de novo conceptualization.
+
+## Conclusions
+
+Multi-agentic AI systems significantly accelerate model protocol development while maintaining methodological rigor, particularly valuable for rare diseases with limited evidence. Future development will focus on extending capabilities to discrete event simulation models, agent-based models, and compartmental mathematical models for infectious disease.
+
+---
+
+# 125. SOCIODEMOGRAPHIC DISPARITIES IN DIAGNOSTIC DISCORDANCE BETWEEN RADIOLOGISTS AND A COMMERCIAL AI ALGORITHM FOR PULMONARY EMBOLISM (PE) DETECTION
+
+- Session code: MSR200
+- Authors: Greer Williams, BSc 1, Amir H. Gandomi, PhD1, Maria X. Sanmartin, PhD1, Shlomit Goldberg-Stein, MD1, Matthew Barish, MD1, Elizabeth Y. Rula, PhD2, Jason J. Naidich, MD1, Pina C. Sanelli, MD1; 1Northwell, New Hyde Park, NY, USA, 2Harvey L. Neiman Health Policy Institute, Reston, VA, USA
+- Disease: SDC: Cardiovascular Disorders (including MI, Stroke, Circulatory)|SDC: Respiratory-Related Disorders (Allergy, Asthma, Smoking, Other Respiratory)|No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-20T13:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-5-3/sociodemographic-disparities-in-diagnostic-discordance-between-radiologists-and-a-commercial-ai-algorithm-for-pulmonary-embolism-pe-detection
+
+## Objectives
+
+As artificial intelligence (AI) tools see increasing adoption in medical imaging, including for pulmonary embolism (PE) detection, understanding potential algorithmic bias is critical for ensuring health equity. This study sought to assess sociodemographic differences in diagnostic discordance between interpreting radiologists and a commercially deployed AI algorithm following its integration within a large U.S. health system.
+
+## Methods
+
+This retrospective observational cohort study included 29,492 unique adult CT pulmonary angiography (CTPA) exams processed between June 2021 and February 2023. The primary outcome was AI-radiologist discordance, defined as any binary mismatch in PE classification (positive vs. negative) between the AI tool output and the final radiologist report. Multivariable logistic regression identified independent predictors of discordance, adjusting for sex, age, race, ethnicity, clinical setting, and time since AI deployment.
+
+## Results
+
+The overall AI-radiologist discordance rate was 2.1%. Multivariable analysis identified several significant predictors of higher discordance, including age >65 years (OR=1.65, 95% CI [1.35-2.00], p<0.0001) and Black or African American race (OR=1.25, 95% CI [1.04-1.52], p=0.038). Notably, the odds of discordance decreased significantly over the study period (OR=0.92 per quarter, 95% CI [0.87-0.97], p=0.004).
+
+## Conclusions
+
+The study’s findings highlight significant sociodemographic disparities in the real-world performance of a clinically deployed AI algorithm for PE detection. These results underscore the necessity for continuous monitoring of medical imaging models to mitigate algorithmic bias and support the role of AI as an augmentative tool rather than an autonomous replacement for radiologists.
+
+---
+
+# 126. AN AUTOMATED NETWORK META-ANALYSIS FRAMEWORK INTEGRATING INTELLIGENT ALGORITHMS AND LARGE LANGUAGE MODELS
+
+- Session code: MSR246
+- Authors: Saswata Paul Choudhury, MSc, Sekhar K. Dutta, MSc, Subhajit Gupta, MSc; PharmaQuant Insights Private Limited, Kolkata, India
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-20T13:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-5-3/an-automated-network-meta-analysis-framework-integrating-intelligent-algorithms-and-large-language-models
+
+## Objectives
+
+Network Meta Analysis (NMA) is an essential component of evidence generation in Health Economics and Outcomes Research (HEOR). NMA analyses supporting Joint Clinical Assessment (JCA) and rapid Health Technology Assessment (HTA) submissions, are increasingly conducted in short timelines and with increasingly complex evidence. This study aimed to assess how customized algorithms combined with artificial intelligence (AI), specifically large language models (LLMs) can be used to develop an efficient, intelligent & automated framework for NMA while remaining aligned with current best practices.
+
+## Methods
+
+The typical NMA workflow was decomposed into modular components. Those associated with high analyst time burden were identified. Algorithms/frameworks augmented with LLMs were developed (primarily in R software) to automate each component. Key algorithms/frameworks included: (1) a generalized framework for harmonizing data extraction tables derived from systematic literature reviews; (2) an automated study and intervention grouping algorithm with embedded feasibility checks; (3) an auto-suggestion module proposing analysis specifications consistent with best-practice guidance; and (4) automated reporting aligned with common HTA guidelines. The framework was evaluated using 6 completed NMA projects, assessing accuracy of outcomes and reductions in analyst effort.
+
+## Results
+
+The AI-enabled framework reproduced original NMA results with 100% accuracy across all evaluated projects. Substantial efficiency gains were observed, with estimated time reductions of approximately ~60-90% during early feasibility stages, particularly data harmonization, validation, and study and treatment grouping. Additionally, a potential time reduction of ~30%-50% in reported stages was estimated.
+
+## Conclusions
+
+An AI-enabled NMA framework has the potential to improve efficiency, transparency, and consistency in NMA processes by applying customized algorithms and LLMs in key time-intensive steps. This approach can meaningfully enhance HEOR and HTA decision-making in time- and resource-constrained settings. Further development & validation is required to evaluate & exploit the capabilities of this framework.
+
+---
+
+# 127. GENERAL-PURPOSE VS HEOR-SPECIFIC GENERATIVE AI IN RARE DISEASE MODELING: A DUCHENNE MUSCULAR DYSTROPHY CASE STUDY
+
+- Session code: MSR225
+- Authors: Sumeyye Samur, PhD 1, Turgay Ayer, PhD1, Ismail F. Yildirim, MSc1, Mine Tekman, PhD1, Jag Chhatwal, PhD2; 1Value Analytics Labs, Boston, MA, USA, 2Massachusetts General Hospital/ Harvard Medical School, Boston, MA, USA
+- Disease: SDC: Rare & Orphan Diseases|SDC: Musculoskeletal Disorders (Arthritis, Bone Disorders, Osteoporosis, Other Musculoskeletal)
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-20T13:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-5-3/general-purpose-vs-heor-specific-generative-ai-in-rare-disease-modeling-a-duchenne-muscular-dystrophy-case-study
+
+## Objectives
+
+Health economic modeling for rare diseases is constrained by limited clinical and economic evidence, and heterogeneous disease progression. This study evaluated the feasibility of using GenAI to support rare disease model conceptualization by comparing Duchenne muscular dystrophy (DMD) models generated by three AI platforms.
+
+## Methods
+
+Two general-purpose GenAI platforms (ChatGPT 5.2 and Gemini 3 Flash) and one HEOR-specific platform (ValueGen.AI) were assessed. ValueGen.AI is a multi-agent, deep-research system implemented in Python using LangGraph. All platforms were prompted using an identical prompt to propose a DMD health economic model conceptualization. Outputs were compared across ISPOR/HTA-relevant domains, including model structure, DMD milestones and endpoints, treatment effect conceptualization, evidence traceability, validation, and characterization of parameter and structural uncertainty. Alignment with established DMD frameworks (D-RSC/Project HERCULES) was assessed qualitatively.
+
+## Results
+
+Across all platforms, a state-transition approach was recommended. ChatGPT and ValueGen.AI converged on a milestone-driven progression framework anchored to key DMD transitions (e.g., loss of ambulation, ventilation dependence) and both included detailed cost and utility components (including caregiver burden). ValueGen.AI uniquely provided HTA-aligned framework with 20+ DMD-specific citations, explicit alignment with D-RSC/Project HERCULES, and a CHEERS-consistent validation plan; it also specified PSA distributions and gene-therapy-relevant treatment effects (curve-shift/durability scenarios). ChatGPT, while similarly implementable, provided no citations, validation targets, or HTA precedent, limiting transparency and reproducibility. Gemini proposed a high-level Markov ladder with broad cost/utility categories but had limited endpoint specificity (minimal pulmonary/cardiac integration), no structured adverse-event module, and no explicit validation or uncertainty framework.
+
+## Conclusions
+
+GenAI can support early-stage rare disease model conceptualization, but HEOR-specialized platforms provide substantially greater transparency, alignment with established frameworks, and HTA relevance than general-purpose models.
+
+---
+
+# 128. METHODOLOGICAL CHARACTERISTICS OF PHARMACOGENOMICS-INTEGRATED AI CLINICAL DECISION SUPPORT SYSTEMS (AI-CDSS): A SYSTEMATIC REVIEW
+
+- Session code: MSR244
+- Authors: Shinyoung Park, PharmD 1, Hae Sun Suh, MA, MS, PhD2; 1Kyung Hee University, Department of Regulatory Science, Graduate School, Seoul, Korea, Republic of, 2Kyung Hee University, College of Pharmacy, Seoul, Korea, Republic of
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-20T13:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-5-3/methodological-characteristics-of-pharmacogenomics-integrated-ai-clinical-decision-support-systems-ai-cdss--a-systematic-review
+
+## Objectives
+
+Pharmacogenomics (PGx) has the potential to support patient-centered precision medicine; however, evidence on artificial intelligence-based clinical decision support systems (AI-CDSS) integrating PGx remains fragmented. This systematic review examined the methodological characteristics of PGx-integrated AI-CDSS modeling and validation studies.
+
+## Methods
+
+Studies published through January 1, 2026 were identified in PubMed, EMBASE, the Cochrane Library, and the ACM Digital Library following PRISMA guidelines. Search terms covered AI or machine learning, clinical decision support systems, pharmacogenomics, and modeling or validation. We included studies reporting AI-CDSS model development or validation incorporating PGx data. Risk of bias and applicability were assessed using PROBAST. Extracted information included clinical domain, PGx inputs, analytical methods, validation strategies, explainability techniques, and performance metrics.
+
+## Results
+
+After duplicate removal, 147 unique records were screened, and 18 studies met the inclusion criteria; eight were assessed as having low risk of bias and adequate applicability. Ten studies were assessed to have high risk of bias, primarily due to small sample sizes along with model overfitting concerns. More than half focused-on oncology or individualized treatment optimization, such as warfarin dose prediction or ovarian stimulation in in vitro fertilization. Across studies, PGx-integrated AI-CDSS models combined genomic variants with structured clinical and biomarker data to support patient-level decision-making. Frequently applied tree-based ensemble methods, particularly XGBoost and Random Forest, generally outperformed traditional models. Internal validation using 5- or 10-fold cross-validation was commonly used. Explainability methods, including SHAP and LIME, were used to interpret the contribution of genetic and clinical features. Model performance was primarily reported using AUC-ROC (range: 0.62-0.97), while regression and alternative classification outcomes were evaluated using mean absolute error and F1-score.
+
+## Conclusions
+
+PGx-integrated AI-CDSS studies showed methodological innovation; however, a substantial proportion are limited by small sample sizes and associated risks of overfitting. Further research using larger datasets and rigorous validation is needed for safe clinical implementation.
+
+---
+
+# 129. ECONOMIC OUTCOMES, REAL-WORLD ADHERENCE PATTERNS AND PREDICTIVE MODELING OF MIGRAINE PROPHYLAXIS: A RETROSPECTIVE COHORT STUDY OF TRIPTANS, BETA-BLOCKERS, AND COMBINATION THERAPY
+
+- Session code: MSR161
+- Authors: Vikash Kumar Verma, MBA, PharmD1, Louis Brooks Jr, MS2, Marissa Seligman, PharmD3, Abhimanyu Roy, MBA4, Abhinav Nayyar, MBA, MBBS5, Ankitkumar Arora, MPharm 6, Anuj Gupta, MSc7, Komal Chauhan, Other7, Vishan Khatavkar, MBA8, Solomon Sundaram, Other9, Gargi Shukla, MBA10, Ankita Shrikant Gaonkar, MSc5, Trishala N. Amin, MA11, Arunima Sachdev, MA4, Satish Kumar, MBA8, Kirti Batra, MBA12. 1Optum Lifesciences, Boston, MA, USA, 2Optum, Bloomsbury, NJ, USA, 3Optum Lifesciences, Winchester, MA, USA, 4Optum, Gurgaon, India, 5Optum Life Sciences, Gurugram, India, 6Optum Global Solutions, Gurgaon, India, 7Optum Lifesciences, Noida, India, 8Optum Lifesciences, Gurugram, India, 9Optum Life Sciences, gurugram, India, 10Optum Global Solutions, Gurugram, India, 11Optum Life Sciences, Behrampur, India, 12Optum Global Solutions, Noida, India.
+- Disease: SDC: Neurological Disorders
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/economic-outcomes-real-world-adherence-patterns-and-predictive-modeling-of-migraine-prophylaxis-a-retrospective-cohort-study-of-triptans-beta-blockers-and-combination-therapy
+
+## Objectives
+
+To assess real-world treatment adherence, rescue medication utilization, healthcare resource utilization, and associated costs among migraine patients treated with triptans, beta-blockers, or combination therapy. Additionally, to develop predictive models to identify key factors contributing to non-adherence or treatment discontinuation.
+
+## Methods
+
+A retrospective analysis was conducted using Optum’s® de-identified Market Clarity database. Adults aged ≥18 years with at least one migraine diagnosis and one prescription for triptans, beta-blockers, or both were included. The study period was July 2021-June 2025; the index period was July 2022-June 2023. The index date was the earliest prescription of triptans or beta-blockers linked to a migraine diagnosis. Continuous enrollment for 12 months pre‑ and post‑index was required. Patients with secondary headache disorders or use of other preventive migraine therapies were excluded. Cohorts comprised: triptans‑only, beta‑blockers‑only, and combination therapy.
+
+## Results
+
+After applying inclusion and exclusion criteria, cohort sample sizes were: triptans-only (n = 3,175), beta-blockers-only (n = 191), and combination therapy (n = 114). Adherence (PDC ≥80%) was low across all groups: 20.85% for triptans, 32.46% for beta‑blockers, and 34.21% for combination therapy. Mean rescue medication use remained modest (0.17, 0.18, and 0.20 fills, respectively). Emergency department (ED) visits occurred in 32.94% (triptans), 35.60% (beta‑blockers), and 37.72% (combination therapy) of patients; inpatient visits in 14.11%, 20.94%, and 18.42%, respectively. Total annual healthcare costs averaged $40,781, $40,307, and $36,486 for the respective cohorts. Medical costs were highest in the beta‑blocker cohort ($25,025), while pharmacy costs were highest among triptan users ($21,951). Patients in the combination group incurred comparatively lower total costs.
+
+## Conclusions
+
+Migraine therapy adherence is suboptimal across cohorts; combination therapy shows slightly better adherence and lower costs than monotherapy. Rescue medication uses and acute care visits persist, driving economic burden.
+
+---
+
+# 130. A GENERATIVE AI-DRIVEN FRAMEWORK FOR FEASIBILITY ASSESSMENT OF INDIRECT TREATMENT COMPARISONS OF HEALTHCARE INTERVENTIONS
+
+- Session code: MSR180
+- Authors: Akanksha Sharma, MSc1, Barinder Singh, RPh 2, Rajdeep Kaur, PhD1, Shubhram Pandey, MSc1. 1Pharmacoevidence Pvt. Ltd., Mohali, India, 2Pharmacoevidence Pvt. Ltd., London, United Kingdom.
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-4-3/a-generative-ai-driven-framework-for-feasibility-assessment-of-indirect-treatment-comparisons-of-healthcare-interventions
+
+## Objectives
+
+When head-to-head clinical trial evidence is unavailable, indirect treatment comparisons (ITCs) are essential for health technology assessments, but their validity depends on complex, multi-domain feasibility evaluations. This study evaluates the performance of a Generative AI (GenAI)-based framework designed to conduct transparent, traceable, and HTA-aligned feasibility assessments for ITCs and to validate its outputs against expert human assessments.
+
+## Methods
+
+A multi-agentic, retrieval-augmented generation (RAG)-based architecture was developed to support feasibility analysis for indirect treatment comparisons. Clinical trial data from multiple sources were uploaded, standardized, and indexed using a RAG pipeline to enable the retrieval of trial characteristics, baseline variables, and outcomes. Multiple GenAI agents were configured with domain-specific prompts to independently evaluate four feasibility domains: population similarity, evidence network structure, trial design heterogeneity, and outcome definition alignment. All outputs were generated in accordance with HTA, ISPOR, Cochrane, and JCA methodological guidance.
+
+## Results
+
+The GenAI framework produced a feasibility report with sections covering network diagrams, comparisons of study and patient characteristics, statistical tests, and analysis recommendations, including sensitivity analyses. The AI-assisted feasibility flagged the outlier studies and proposed data-driven sensitivity and scenario analyses. The AI-assisted feasibility assessment required human editing in terms of managing/deleting repetitive information and formatting changes. Human ITC expert marked readiness of AI-assisted feasibility at 85%, requiring only10-15% human intervention to finalize it.
+
+## Conclusions
+
+The GenAI framework produced ITC feasibility assessments that closely matched expert evaluations, requiring only minimal human refinement, and shows strong potential to improve the efficiency, consistency, and rigor of HTA-aligned evidence synthesis.
+
+---
+
+# 131. REAL-WORLD USE OF GENERATIVE AI ASSISTANT TOOLS ACROSS HEALTH ECONOMICS AND OUTCOMES RESEARCH WORKFLOWS: A SCOPING REVIEW
+
+- Session code: MSR234
+- Authors: Eniola A. Olatunji, MPH, PhD 1, Yao Ding, PhD2, Abimbola Williams, MPH, MS3. 1Principal Health Economics, Boston Scientific, Marlborough, MA, USA, 2Boston Scientific, Bethesda, MD, USA, 3Boston Scientific, Marlborough, MA, USA.
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-20T13:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-5-3/real-world-use-of-generative-ai-assistant-tools-across-health-economics-and-outcomes-research-workflows-a-scoping-review
+
+## Objectives
+
+To characterize the real-world use of generative artificial intelligence (GenAI) assistant tools across health economics and outcomes research (HEOR) workflows and to assess the methodological quality of the publications.
+
+## Methods
+
+A scoping review of GenAI applications in HEOR was conducted. English publications were identified from PubMed, health technology agencies, and ISPOR databases published from 2024-2025. Data were extracted on HEOR task, GenAI tool, integration pattern, evaluation metrics, reported benefits, and limitations. Study quality was assessed using the ISPOR GenAI-HEOR Quality Assessment Framework, which evaluates 10 domains (security/privacy, deployment/efficiency, factuality, reproducibility/generalizability, fairness/bias, and accuracy) on a 0-2 scale.
+
+## Results
+
+Among 172 records screened, 23 studies were eligible. Most studies used GenAI for evidence-synthesis tasks (75%), with fewer applications in economic modelling/cost-effectiveness analysis (CEA) (22%) and health technology assessment (HTA) submission support (17%), in mutually non-exclusive tasks. Reported uses included data extraction and screening for systematic reviews, CEA model parameter extraction, CEA model recreation and qualitative coding. OpenAI GPT-based tools were the most reported AI tools (87%), followed by Claude (21%), and other Large Language Models (26%). Human-only workflows were the predominant comparator. Most implementations relied on prompting of base GenAI models, usually with human-in-the-loop. Quality assessment showed all studies assessed accuracy, and most (83%) reported moderate-to-high accuracy for structured extraction or screening tasks. Factuality and comprehensiveness were frequently evaluated (96%), and 35% of studies reported analyst time savings, which ranged from ~15minutes/study to 350minutes/reviewer, depending on task complexity. However, security, fairness, and bias were infrequently assessed.
+
+## Conclusions
+
+Published applications of GenAI in HEOR are primarily concentrated in evidence-synthesis workflows, mainly as supervised assistants. Empirical evaluations of GenAI in economic modelling and HTA submission workflows are less common. Across studies, evaluation of security, bias and reproducibility was limited, indicating priorities for further methodological reporting.
+
+---
+
+# 132. GENERAL-PURPOSE VERSUS DOMAIN-SPECIFIC AI FOR SYSTEMATIC CONFOUNDER IDENTIFICATION IN MULTIPLE SCLEROSIS: A COMPARATIVE METHODOLOGICAL STUDY USING IQWIG ASSESSMENTS AS GROUND TRUTH
+
+- Session code: MSR212
+- Authors: Anton O. Wiehe1, Florian Woeste, MSc. 2, Pia Ana Cuk, MSc3. 1Head of AI, Pharos Labs GmbH, Hamburg, Germany, 2PHAROS Labs, Ahrensburg, Germany, 3PHAROS Labs GmbH, Hamburg, Germany.
+- Disease: SDC: Neurological Disorders
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-20T13:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-5-3/general-purpose-versus-domain-specific-ai-for-systematic-confounder-identification-in-multiple-sclerosis-a-comparative-methodological-study-using-iqwig-assessments-as-ground-truth
+
+## Objectives
+
+Systematic confounder identification is a mandatory step in HTA benefit assessments (e.g., for IQWiG in Germany), traditionally requiring extensive manual labor. While frontier Large Language Models (LLMs) offer efficiency, their reliability in regulatory contexts remains unproven. This study compares the performance of state-of-the-art general-purpose LLMs versus a domain-specific Regulatory Retrieval-Augmented Generation (RAG) system in identifying confounders for Relapsing-Remitting Multiple Sclerosis (RRMS).
+
+## Methods
+
+We used the IQWiG working paper GA23-02 as the ground truth, which defined 28 distinct consolidated confounders (derived from 160 initial variables) for RRMS therapies. We queried two general-purpose frontier models (Claude Opus 4.5, Gemini 3) and one domain-optimized RAG system (Regulaido) to generate confounder lists for a target trial emulation of dimethyl fumarate vs. glatiramer acetate. Performance was evaluated based on Recall (identification of the 28 ground-truth variables), Precision (avoidance of excluded variables), and Hallucination Rate (fabrication of references).
+
+## Results
+
+The IQWiG ground truth established 28 specific confounders. General-purpose LLMs achieved an average Recall of 66%. While Claude Opus 4.5 achieved high recall (89%), it suffered from low precision (43%), erroneously including variables explicitly excluded by IQWiG (e.g., Insurance Status, Time since last relapse) due to lack of specific regulatory context. Gemini 3 failed to identify critical biomarkers, achieving only 43% Recall. Crucially, general models exhibited a citation hallucination rate of 22%, frequently inventing study titles or attributing findings to incorrect journals. The domain-specific RAG system achieved a Recall of 89% with 100% Precision regarding IQWiG exclusion criteria and 0% citation hallucination, as it was constrained to verifiable regulatory databases.
+
+## Conclusions
+
+Even frontier models (Claude Opus 4.5) lack the precision and citation integrity required for regulatory HTA submissions. While capable of generating extensive lists, they fail to adhere to specific exclusion criteria and fabricate evidence. Domain-optimized RAG systems significantly outperform general models in precision and evidentiary support.
+
+---
+
+# 133. COMPARISON OF AI-ASSISTED AND TRADITIONAL ANALYTIC WORKFLOWS IN HEALTH ECONOMICS AND OUTCOMES RESEARCH USING HEALTH SURVEY DATA
+
+- Session code: MSR25
+- Authors: Alysha M. McGovern, MBA 1, Joseph Yeb, BS1, Harshini Mashruwala, MS1, Praveen Kumar Potukuchi, PhD1, Amy Bolton, MPH, MS1, Hamid Zarei, PhD2. 1Boston Scientific, Marlborough, MA, USA, 2University of Louisville, Louisville, KY, USA.
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-20T13:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-5-3/comparison-of-ai-assisted-and-traditional-analytic-workflows-in-health-economics-and-outcomes-research-using-health-survey-data
+
+## Objectives
+
+Although artificial intelligence (AI) is increasingly used in analytic workflows, direct comparisons with traditional human-only analyses are limited. This study compared the efficiency and accuracy of AI-assisted and traditional analytic workflows using publicly-available health survey data.
+
+## Methods
+
+Four analysts independently completed identical descriptive analyses on a 5% sample of the 2024 Behavioral Risk Factor Surveillance System dataset using traditional (Stata 19; StataCorp) and AI-assisted (ChatGPT GPT-5; OpenAI) workflows. A two-sequence crossover design and ≥48-hour washout period were used to minimize learning and order effects. For both workflows, analysts used standard templates and were permitted only limited, predefined modifications to simulate routine applied analyses. AI interactions followed a standardized TRACI (Task-Role-Audience-Create-Intent) prompting framework and a stateless control prompt to prevent personalization. Analysts recorded total task completion time (minutes) for each workflow. Accuracy was assessed by two blinded validators through concordance with pre-generated reference outputs.
+
+## Results
+
+Stata-based and AI-assisted workflows had similar mean completion times (47.8 and 50.3 minutes, respectively), with Stata faster for two analysts and ChatGPT faster for two. In descriptive table construction (N, %), both workflows correctly implemented all required variables, including collapsed variable creation. Stata outputs showed near-complete concordance with validator results (99.3%). ChatGPT outputs consistently reproduced correct absolute counts, but showed lower overall concordance (75.0%) due to small percentage discrepancies (median absolute difference=0.2%) arising from non-exclusion of refused/unknown/missing responses from denominators. Excluding denominator-related discrepancies, ChatGPT concordance was 99.2%. Computational or omission errors were rare (<1.0%) in both workflows. Chi-square tests yielded consistent statistical results across workflows, with most results matching validator outputs (Stata 87.5%, ChatGPT 93.8%); remaining discrepancies were attributable to denominator handling.
+
+## Conclusions
+
+AI-assisted analyses demonstrated comparable completion times and accuracy to traditional Stata-based analyses. Most observed discrepancies reflected denominator-handling rules versus computational errors, underscoring the importance of explicit analytical specifications and independent validation for AI-assisted workflows.
+
+---
+
+# 134. AI-ASSISTED APPROACHES FOR DEFINING LINES OF THERAPY IN ONCOLOGY REAL-WORLD DATA: AN EXPLORATORY ANALYSIS IN CHRONIC LYMPHOCYTIC LEUKEMIA
+
+- Session code: MSR218
+- Authors: Eric Chen, PhD, Catherine Fu, MS, Keri Yang, PhD, MPH, MBA, MS, BSPharm. BeOne Medicines USA, Inc., San Carlos, CA, USA.
+- Disease: SDC: Oncology|No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-20T13:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-5-3/ai-assisted-approaches-for-defining-lines-of-therapy-in-oncology-real-world-data-an-exploratory-analysis-in-chronic-lymphocytic-leukemia
+
+## Objectives
+
+Accurate derivation of lines of therapy (LOT) is foundational for real-world oncology research, informing treatment pattern analyses, comparative effectiveness evaluations, and burden-of-illness studies. However, LOT determination remains inconsistent and highly variable in practice. This study aimed to examine AI-assisted and traditional manual LOT derivation approaches to understand how methodological LOT choices impact LOT results.
+
+## Methods
+
+An exploratory comparison of two LOT approaches was applied to 500 randomly selected chronic lymphocytic leukemia (CLL) patients from Symphony Health Integrated Dataverse®, a nationally representative US open-claims database. The first AI-assisted LOT approach used GPT-5.1, prompted with National Comprehensive Cancer Network (NCCN) guidelines and treatment regimen information to generate LOT definitions. The second approach utilized manually constructed NCCN guideline-based rules, and then further refined through manual expert review. LOT outputs from both approaches were compared to assess consistency in LOT and treatment regimen assignments. Potential sources of discrepancy were further evaluated.
+
+## Results
+
+Among 500 CLL patients evaluated, 404 (80.8%) demonstrated full LOT consistency across both approaches. Line-count mismatches occurred in 71 patients (14.2%), largely due to differences in detecting treatment-switch events, including 25 cases involving missing switch lines. Among patients with matching line counts, regimen-level discrepancies occurred in 25 patients (5.0%), comprising 38 mismatched line pairs. Common patterns reflected divergent interpretations of monotherapy versus combination regimens or missing regimen components. AI prompt design and input rule sets also further affect assignment consistency.
+
+## Conclusions
+
+AI-assisted LOT derivation offers a scalable and transparent alternative to manual rule-based methods, substantially reducing time burden and enabling systematic testing of methodological assumptions. Nonetheless, this study underscores LOT outputs remain sensitive to operational definitions and require expert adjudication. Accurate performance depends on clear specification of AI prompts and foundational regimen information. Findings reinforce the need for standardized LOT frameworks to enhance reproducibility and comparability of oncology real-world data analyses.
+
+---
+
+# 135. PATTERNS OF BREAST CANCER SCREENING UTILIZATION IN BRAZIL’S PRIVATE HEALTH SECTOR: AN ARTIFICIAL INTELLIGENCE ANALYSIS, 2014-2023
+
+- Session code: MSR220
+- Authors: Mônica V. Andrade, PhD 1, Kenya Noronha, PhD2, Leonardo C. Ribeiro, PhD2, Silvana M. Kelles, PhD3, Mariangela Cherchiglia, PhD4, Lucas R. Carvalho, PhD1, Nayara A. Julião, PhD1, Sergio L. Bersan, MSc5, Maria Luisa Rigotti, B.Sc.2, Flávia Colares, M.D., M.S.6, Flávia C. Almeida, M.D.7, Natalia G. Silva, B.Sc.8, Pedro Benner, B.Sc.2, Clara S. Ribeiro, UG Student2, Pedro H. Amorin, UG Student2, Carolina Carvalho, UG Student2, Henrique Bracarense, MSc2, Marcus C. Borin, PhD9, Mariana M. Barbosa, PhD10; 1CEDEPLAR/UFMG, Department of Economics, Belo Horizonte, Brazil, 2CEDEPLAR/UFMG, Belo Horizonte, Brazil, 3Unimed-BH Health Technology Assessment Center (NATS)/Pontifical Catholic University of Minas Gerais (PUC Minas) - Betim, Belo Horizonte, Brazil, 4Universidade Federal de Minas Gerais, Programa de Pós-Graduação em Saúde Pública, Departamento de Medicina Preventiva e Social, Faculdade, Belo Horizonte, Brazil, 5Pontifical Catholic University of Minas Gerais (PUC Minas), Betim, Brazil, 6UNIMED-BH, CASU UFMG, Belo Horizonte, Brazil, 7Oncomed BH - Grupo Orizonti, Belo Horizonte, Brazil, 8Universidade Federal de Minas Gerais, Physics Department, Belo Horizonte, Brazil, 9Unimed-BH Health Technology Assessment Center (NATS)/ Drug Market Regulation Chamber (CMED) – Brazilian Health Regulatory Agency (ANVISA), Brasilia Federal District, Belo Horizonte, Brazil, 10Unimed-BH Health Technology Assessment Center (NATS), Belo Horizonte MG/ UFMG, Belo Horizonte, Brazil
+- Disease: SDC: Oncology|No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-20T13:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-5-3/patterns-of-breast-cancer-screening-utilization-in-brazil-s-private-health-sector-an-artificial-intelligence-analysis-2014-2023
+
+## Objectives
+
+In Brazil, malignant neoplasms are a leading cause of death, and early detection is crucial. However, screening protocols are inconsistently followed, and the widespread availability of services often results in unnecessary overuse, particularly in private sector. This study identifies pathways of breast cancer screening utilization using a unique longitudinal administrative database from a Brazilian health insurer, including beneficiary attributes and healthcare utilization.
+
+## Methods
+
+This observational, longitudinal, study analyzes breast cancer screening using administrative data from a large Brazilian health insurance provider (2014-2023). Artificial intelligence algorithms clustered individual mammography utilization trajectories over ten years, focusing on frequency and timing. The mathematical tools used to identify the patterns were: convolution, Fourier transformation, t-SNE (dimensionality reduction) and DBSCAN (clustering). A neural network was also trained to predict breast cancer occurrence based on the use of 27 types of screening, diagnostic, and treatment procedures. Clusters were characterized by screening frequency, timing, age group, and breast cancer incidence
+
+## Results
+
+Using AI-based clustering, 13 macro-groups were identified. Patterns ranged from minimal use (1-3 screenings in the decade) to consistent annual use. Some groups showed intermittent behavior, with clustered use in specific years. Older women (average age 49) show the highest adherence rates, with over 80% of women screened annually, and experience the highest breast cancer incidence, reaching up to 34%. Groups with sporadic screening were younger and had lower incidence rates. These findings align with the epidemiological profile of breast cancer in Brazil. A noticeable drop in utilization occurred around 2020 across most groups, likely due to the COVID-19 pandemic.
+
+## Conclusions
+
+These differentiated screening trajectories offer valuable insights for tailoring public health strategies and improving early detection efforts. Using cost information and the estimated breast cancer incidence for each screening profile, cost-effectiveness indicators can be calculated to inform clinical practice and resource allocation
+
+---
+
+# 136. USING AI TO MAP HEOR EVIDENCE GAPS: FINDINGS FROM A LARGE-SCALE LLM-BASED CLASSIFICATION ANALYSIS
+
+- Session code: MSR250
+- Authors: Weicheng Ye, MPH, Corrina Mau, MPH, Denise Zou, MS; Thermo Fisher Scientific, Waltham, MA, USA
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-20T13:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-5-3/using-ai-to-map-heor-evidence-gaps-findings-from-a-large-scale-llm-based-classification-analysis
+
+## Objectives
+
+The rapid growth of health technologies has expanded the health economic and outcomes research (HEOR) literature. Identifying over- or underrepresented disease areas may guide biopharma and diagnostics R&D. Advances in artificial intelligence (AI), particularly large language models (LLMs), offer scalable bibliometric analysis that traditionally requires extensive human effort. This study evaluated an AI-assisted pipeline to (1) screen abstracts for intervention-focused HEOR and (2) classify studies to generate an HEOR evidence map for investment and strategic planning.
+
+## Methods
+
+A PubMed-based dataset of HEOR studies (2000-2025, in English) was constructed using predefined economic-evaluation and intervention-related search terms. Abstracts were processed through a two-stage AI/LLM pipeline (Llama 3.1): Stage 1 screened for HEOR relevance; Stage 2 classified HEOR-relevant abstracts by disease area, subtype, and intervention category. A random sample of 350 abstracts underwent blinded human review to assess classification accuracy. Disease-area distributions and publication trends were summarized.
+
+## Results
+
+Among 63,223 unique records, 45,918 (72.6%) were classified as HEOR-relevant. Studies were classified into 42 disease areas and 4,086 subtypes (median confidence: 0.9). Human-review accuracy was 81% for HEOR relevance and 75% for disease-area classification. Oncology, infectious disease, cardiovascular, and gastrointestinal/hepatic diseases comprised the largest share of HEOR studies, each representing approximately 11-15% of publications. Mental health (6.1%) and neurology (5.8%) were moderately represented; rare diseases (1.2%) and fields such as reproductive health, dermatology, urology, ophthalmology, pediatrics, hematology, and genetics each represented <0.2%. Drug interventions dominated (34.7%), followed by diagnostic/screening (18.1%) and behavioral interventions (13.2%). Between 2000 and 2025, endocrine/metabolic, neurology, musculoskeletal, and oncology exhibited the highest growth rates in HEOR publication volume.
+
+## Conclusions
+
+This AI-assisted pipeline demonstrated the feasibility and value of large-scale HEOR screening and classification, highlighting disease areas with different representation. Although accuracy is moderate, results support opportunities for improved prompting, domain-specific LLMs, and human-guided workflows.
+
+---
+
+# 137. FROM REAL-WORLD DATA (RWD) TO DIGITAL TWINS: BUILDING MODELS FOR PATIENT-LEVEL COUNTERFACTUAL PREDICTION IN ONCOLOGY
+
+- Session code: MSR219
+- Authors: Sandra Griffith, PhD, Joe Manfredonia, ME, Marcello Ricottone, MA, Richard Knoche, PhD, Aaron B. Cohen, MD, MSCE, Jacqueline Law, PhD, Melissa Estevez, MS. Flatiron Health, New York, NY, USA.
+- Disease: SDC: Oncology|STA: Personalized & Precision Medicine
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-20T13:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-5-3/from-real-world-data-rwd-to-digital-twins-building-models-for-patient-level-counterfactual-prediction-in-oncology
+
+## Objectives
+
+Digital twins (DT), models capable of generating patient-level counterfactual predictions, may improve oncology drug development success rates by informing trial design, contextualizing results, and enhancing statistical power. Training generalizable outcome-prediction models requires large, diverse, and longitudinally-rich data, and an understanding of methodological approaches. This study leverages the depth and scale of real-world data (RWD) to evaluate the feasibility of DT models and compare performance across approaches.
+
+## Methods
+
+This retrospective study used the Flatiron Health Research Database. Features were generated using demographics, structured, and ML/LLM-extracted clinical variables (e.g., Charlson comorbidity index [CCI] and sites of metastases [SOM]). We trained four models (penalized pooled logistic regression [LR], XGBoost [XGB], Multi-layer Perceptron, and Graph Attention Network [GAT]) to predict real-world overall survival (rwOS) in patients with Stage IV non-small cell lung cancer initiating first-line platinum chemotherapy between 2011 and 2016, contemporaneous to chemotherapy use in trials. Model performance was assessed using C-index, area under the curve (AUC(t)), integrated Brier score (IBS), mean absolute difference (MAD) between predicted and observed survival curves, and median rwOS. Calibration was assessed in clinically-important sub-populations.
+
+## Results
+
+Training (n=12,088) and test (n=3964) cohorts were selected. All four methods performed well (C-index 0.66-0.70; AUC(12) 0.70-0.75; IBS 0.14-0.15; MAD 0.5-2.1%), comparable to published results using different methods. LR/XGB demonstrated better discrimination, while GAT exhibited superior calibration. Predicted median rwOS (months) aligned with observed rwOS (9-10 vs 10 months). Results were robust across subgroups. Top features varied by method and included ECOG, SOM, CCI, and labs (e.g., albumin and creatinine).
+
+## Conclusions
+
+DT models performed well across methodological approaches. Understanding their relative strengths and limitations while integrating rich LLM-extracted clinical features can help accelerate clinical research and drug development. External validation of DT models is ongoing.
+
+---
+
+# 138. REAL-WORLD EVIDENCE METHODOLOGY FOR ECONOMIC EVALUATION OF CLINICAL AI: COST-EFFECTIVENESS OF AN IMAGING ALGORITHM FOR INCIDENTAL DETECTION OF EMPHYSEMA
+
+- Session code: MSR226
+- Authors: Alexandra Miller, MPH, MS, PharmD, Jamie Dermon, MD, Shivaani Prakash, MSc., PhD. Dandelion Health, Locust Valley, NY, USA.
+- Disease: SDC: Respiratory-Related Disorders (Allergy, Asthma, Smoking, Other Respiratory)|No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-20T13:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-5-3/real-world-evidence-methodology-for-economic-evaluation-of-clinical-ai-cost-effectiveness-of-an-imaging-algorithm-for-incidental-detection-of-emphysema
+
+## Objectives
+
+Artificial intelligence (AI) has been used for disease detection, but evidence of its impact is limited. We present a methodology for evaluating the potential benefit of clinical AI using real-world data and health economic modeling, applied to an imaging algorithm detecting incidental emphysema.
+
+## Methods
+
+The ClearRead CT | LTA prototype algorithm (Riverain Technologies) was applied retrospectively to chest CT scans of patients from Dandelion Health (a longitudinal, multimodal clinical data platform) without a prior emphysema diagnosis. Patients were identified as true-positive (“Early Diagnosis”) (n = 212), diagnosed with emphysema after CT, and false-negative (“Delayed Diagnosis”) (n = 90), not diagnosed after scan but detected by the algorithm with confirmation from a panel of radiologists. Healthcare utilization and estimated costs were calculated for each cohort after balancing with inverse probability treatment weighting. A hybrid decision-tree Markov model with four states (stable, moderate, severe emphysema, and death) projected five-year outcomes from the payer perspective. Model inputs incorporated sensitivity to represent “Early Diagnosis” and “Delayed Diagnosis” pathways. Deterministic and probabilistic sensitivity analyses were conducted by sex, age, race/ethnicity, and pre/post-COVID-19.
+
+## Results
+
+The algorithm demonstrated 61.9% sensitivity versus literature-reported 40.6% for conventional radiology. Base case incremental cost-effectiveness ratio was $122,714/QALY. At a $150,000/QALY threshold, the base case had net monetary benefit (NMB) of $624 per patient with 53% probability of cost-effectiveness. Value was higher in non-white patients (NMB: $5,763, 71% probability), males ($4,388, 68%), patients less than 65 years old ($3,665, 64%), and pre-COVID-19 patients ($3,290, 66%). Severe-state costs were the strongest driver of value.
+
+## Conclusions
+
+An imaging algorithm identifying incidental emphysema was found to be cost-effective in multiple scenarios. Health economic modeling combined with multimodal data can assess the potential benefit of clinical AI and identify where deploying AI is cost-effective. As use of clinical AI expands, determining the impact of AI will become increasingly important.
+
+---
+
+# 139. CHOOSING PUBLIC LLMS AND AI AGENTS FOR PATIENT OUTCOMES RESEARCH: PRACTICAL PROS/CONS AND GOVERNANCE IMPLICATIONS
+
+- Session code: MSR142
+- Authors: Sherrine Eid, BS, MPH; SAS Institute, Global Head, Epidemiology, RWE & Observational Research, Macungie, PA, USA
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research^Confounding, Selection Bias Correction, Causal Inference|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-3-3/choosing-public-llms-and-ai-agents-for-patient-outcomes-research-practical-pros-cons-and-governance-implications
+
+## Objectives
+
+LLMs and AI agents can materially enhance POR efficiency and insight generation when governed as statistical instruments rather than general automation tools. Model selection, deployment architecture, and governance controls should be treated as core methodological decisions, with explicit documentation of data lineage, model behavior, validation procedures, and human oversight. Responsible adoption of AI in POR requires aligning speed with statistical integrity, transparency, and regulatory readiness.
+
+## Methods
+
+We conducted a structured technical review and expert benchmarking of publicly available LLMs (OpenAI GPT-4 class models, Google Gemini via Vertex AI, Anthropic Claude, and open-weight models such as Meta Llama 3.1) and agent frameworks (e.g., AutoGen, Vertex AI Agent Builder, and retrieval-augmented generation [RAG] toolchains). Evaluation criteria included: (1) statistical reproducibility, (2) data governance and privacy controls, (3) transparency and auditability, (4) bias and drift management, and (5) fitness-for-purpose in regulated POR workflows. Assessments were aligned to established guidance including the NIST AI Risk Management Framework, TRIPOD-AI, CONSORT-AI, and FDA RWD/RWE considerations.
+
+## Results
+
+Closed, enterprise-grade LLMs demonstrated strong performance for NLP-driven phenotype extraction, protocol summarization, and exploratory analyses when deployed with RAG and human-in-the-loop validation. However, model opacity and vendor-driven version changes introduce reproducibility risks without formal versioning and output archiving. Open-weight models enabled greater statistical control, audit logging, and data-sovereignty compliance but required significant MLOps investment and validation rigor. Agentic workflows improved analytical throughput but increased risk of error propagation, emphasizing the need for tracing, constraint enforcement, and independent statistical review.
+
+## Conclusions
+
+LLMs and AI agents can materially enhance POR efficiency when governed as statistical instruments rather than automation tools. Model choice, deployment architecture, and governance controls should be treated as core methodological decisions to ensure transparency, validity, and regulatory readiness.
+
+---
+
+# 140. ADVANCING CLINICAL DEVELOPMENT AND EVIDENCE GENERATION THROUGH CAUSAL AI: A TARGETED REVIEW OF APPLICATIONS AND IMPLICATIONS FOR REGULATORY-GRADE EVIDENCE
+
+- Session code: MSR85
+- Authors: Jackie Vanderpuye-Orgle, MSc, PhD1, Komaleshwari Rani, MSc 2, Ashley E. Tate, PhD3, Rafael Coderch Lanau, Sr., MSc4; 1PAREXEL, Durham, NC, USA, 2Parexel International, London, United Kingdom, 3Parexel International, Amsterdam, Netherlands, 4Parexel International, Austin, TX, USA
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Confounding, Selection Bias Correction, Causal Inference|Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/advancing-clinical-development-and-evidence-generation-through-causal-ai-a-targeted-review-of-applications-and-implications-for-regulatory-grade-evidence
+
+## Objectives
+
+This review aimed to (1) map the landscape of causal AI use in clinical development and RWE; (2) evaluate methodological transparency and quality; (3) identify cases demonstrating meaningful impact on evidence generation; and (4) highlight opportunities and challenges for broader regulatory adoption.
+
+## Methods
+
+A targeted literature search was conducted across peer reviewed journals, conference proceedings, and pre-print repositories (2015-2025). Pharmaceutical research studies were included if they applied causal methods, i.e. propensity score-based approaches, doubly-robust machine learning, Bayesian causal modeling, or causal discovery. Data extraction focused on study purpose, analytic methods, data sources, validation strategies, and relevance to decision-making. Findings were synthesized narratively.
+
+## Results
+
+A total of 36 studies met inclusion[KR1] criteria. Applications clustered into four areas: (1) clinical trial optimization, including subgroup identification and target trial emulation; (2) external control arm development using RWE; (3) observational treatment effect estimation using advanced causal estimators; and (4) causal discovery and predictive algorithms. While methodological sophistication has increased, reporting quality and documentation of assumptions varied substantially. A limited number of studies aligned methods with regulatory guidance, though several demonstrated improved bias reduction, efficiency gains, or enhanced model inputs for HTA.
+
+## Conclusions
+
+Causal AI is rapidly expanding and shows promise for strengthening both clinical development and RWE. However, broader adoption will require stronger methodological standards, improved transparency, and clearer regulatory guidance. As tools mature, causal AI may become central to generating regulatory grade evidence.
+
+---
+
+# 141. MACHINE LEARNING TO DIFFERENTIATE CONGESTIVE HEART FAILURE ONSET AMONG HIGH-RISK PATIENTS IDENTIFIED BY THE FRAMINGHAM RISK SCORE
+
+- Session code: MSR101
+- Authors: Mike Sicilia, BS, Wouter van der Pluijm, MPH; Forian Inc., Newtown, PA, USA
+- Disease: SDC: Cardiovascular Disorders (including MI, Stroke, Circulatory)|SDC: Diabetes/Endocrine/Metabolic Disorders (including obesity)|SDC: Urinary/Kidney Disorders
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research^Confounding, Selection Bias Correction, Causal Inference|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-3-3/machine-learning-to-differentiate-congestive-heart-failure-onset-among-high-risk-patients-identified-by-the-framingham-risk-score
+
+## Objectives
+
+Risk scores derived from the Framingham Heart Study identify patients at elevated four-year risk for congestive heart failure (CHF), but do not explain why many high-risk individuals do not progress to CHF. This study aimed to (1) identify demographic, clinical, and care-delivery factors that differentiate high-risk patients who did versus did not develop CHF within four years, and (2) develop and validate a machine learning (ML) model to further stratify CHF risk within this high-risk population.
+
+## Methods
+
+A retrospective cohort study used real-world data from individuals aged 45+ with coronary artery disease, hypertension, or valvular disease. Inclusion required ≥1 year baseline data (heart rate, blood pressure, height, weight, BMI) and ≥4 years follow-up. High-risk status, defined by Framingham CHF risk factors, was used to stratify patients by CHF diagnosis within four years. Comparative analyses assessed demographics, comorbidities, procedures, medication, and specialist use. Supervised ML models, trained with cross-validation, predicted CHF onset in high-risk patients. Feature attribution methods identified key risk drivers.
+
+## Results
+
+Among the highest-risk patients, those who developed CHF had higher cardiometabolic and renal comorbidity burden, greater baseline physiologic instability, and increased acute care use. Patients who did not progress to CHF were more likely to receive sustained antihypertensive and cardioprotective drugs, show slower comorbidity progression, and engage earlier with cardiology specialists. Machine learning (ML) models significantly improved the discrimination of CHF onset within the high-risk cohort. Feature analysis consistently identified comorbidity burden, long-term treatment exposure, and specialist care as key differentiators of CHF progression.
+
+## Conclusions
+
+Within populations already classified as high risk, machine learning applied to real-world data can identify clinically meaningful heterogeneity in the progression of CHF. These findings suggest that modifiable treatment and care-delivery factors may mitigate CHF onset despite elevated baseline risk, supporting more targeted prevention strategies.
+
+---
+
+# 142. DEVELOPMENT OF A NOVEL ALGORITHM TO IDENTIFY CAPILLARY LEAK SYNDROME (CLS) IN US CLAIMS DATA
+
+- Session code: MSR120
+- Authors: Shai Shimony, MD, MPH1, Naveen Pemmaraju, MD2, Gabriel N. Mannis, MD3, Eunice S. Wang, MD4, Thomas W. LeBlanc, MD5, Brittany Umer, PhD6, Adrian Mui, MS6, Mansoure Jahanian, MS6, Alessandra Tosolini, BS7, John Katsetos, PA 7, Anthony S. Stein, MD8, Andrew A. Lane, MD, PhD1. 1Dana-Farber Cancer Institute, Boston, MA, USA, 2The University of Texas MD Anderson Cancer Center, Houston, TX, USA, 3Stanford University, Stanford, CA, USA, 4Roswell Park Comprehensive Cancer Center, Buffalo, NY, USA, 5Duke University School of Medicine, Durham, NC, USA, 6Klick Health, Toronto, ON, Canada, 7Menarini Group, New York, NY, USA, 8City of Hope, Duarte, CA, USA.
+- Disease: SDC: Oncology
+- Categories: Methodological & Statistical Research^Missing Data|Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-19T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-3-3/development-of-a-novel-algorithm-to-identify-capillary-leak-syndrome-cls-in-us-claims-data
+
+## Objectives
+
+CLS is a systemic inflammatory adverse event (AE) associated with several conditions and medications, including anticancer therapies. Identifying CLS in claims data is challenging due to the lack of a specific CLS ICD-10 code and overlap of CLS with other clinical diagnoses (eg, sepsis, hypersensitivity reactions). We developed an algorithm for identifying patients who experienced CLS in a US claims database.
+
+## Methods
+
+The algorithm identified potential candidate CLS-causing drugs based upon product label, reports in scientific data, or documentation in the FDA AE Reporting System database. Patients from the PurpleLab claims database were included if, within 2 weeks of initiating candidate drug treatment, they had a diagnosis of diseases of the capillaries (ICD-10: I78.8/9); or had abnormal albumin levels or received intravenous albumin; or had ≥3 indicators of fluid resuscitation/management, edema, hypotension, infusion-related reactions, cardiac arrest, or cardiopulmonary failure. Key exclusion criteria included diagnosis of sepsis, severe hypersensitivity, cytokine release syndrome, or prior history of idiopathic CLS.
+
+## Results
+
+Eighty-one CLS-causing drugs were identified in the evaluation of ~7.5 million patients. After incorporating inclusion and exclusion criteria, CLS was not observed in 4,560,767 patients, and CLS was observed in 14,091 patients. The most common inclusion criteria combination was edema plus hypotension plus other indicators; sepsis was the most common exclusion criterion. The algorithm identified CLS incidence rates of 21% in tagraxofusp-, 0.46% in filgrastim-, and 0.70% in gemcitabine-treated patients. For comparison, the investigator-assessed CLS rate in the pivotal tagraxofusp study was 21% (Pemmaraju JCO 2022); filgrastim and gemcitabine have reported CLS rates of <1% (Izzedine Kidney Int Rep 2022).
+
+## Conclusions
+
+We generated a novel claims-based algorithm for CLS incidence with rates similar to known CLS-causing drugs including tagraxofusp, filgrastim, and gemcitabine. This claims-based algorithm will be validated in future evaluations to identify predictors of CLS in tagraxofusp-treated patients.
+
+---
+
+# 143. INTEGRATING GENERATIVE ARTIFICIAL INTELLIGENCE (AI) INTO BIOSTATISTICAL WORKFLOWS FOR TRIAL EMULATION: A FRAMEWORK TO ACCELERATE REAL-WORLD EVIDENCE GENERATION
+
+- Session code: MSR66
+- Authors: Saamir Pasha, MPH 1, Jessica Paulus, ScD2, Zhaohui Su, PhD3; 1Ontada, Boston, MA, USA, 2Ontada, Dedham, MA, USA, 3McKesson, Chestnut Hill, MA, USA
+- Disease: SDC: Oncology
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research^Confounding, Selection Bias Correction, Causal Inference|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T20:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/integrating-generative-artificial-intelligence-ai-into-biostatistical-workflows-for-trial-emulation-a-framework-to-accelerate-real-world-evidence-generation
+
+## Objectives
+
+Real world evidence (RWE) studies increasingly leverage AI-enabled workflows to accelerate timelines while maintaining rigor. We present a novel framework to apply AI to trial emulation RWE studies integrating deterministic pipelines, archived databases, automated quality checks, and large language model (LLM) evaluations to enhance reproducibility, scalability, and analytic quality.
+
+## Methods
+
+The framework specifies all steps of a trial emulation using real world data— including data curation, eligibility mapping, propensity score modeling, and time-to-event analysis. Automated data quality check (QC) rules and subject matter expert (SME) validated rubrics guided LLM evaluators for eligibility mapping and narrative checks. The framework was applied to a metastatic breast cancer trial emulation using electronic health records and claims data.
+
+## Results
+
+The generative AI trial emulation framework has four major features: (1) Automated specification of eligibility and variable derivation to ensure protocol fidelity (eligibility mapping accuracy and outcome definition concordance >70% per SME checklist); (2) Generation of reasoning chains and progressive summaries with visualizations for interpretability; (3) Automated data quality checks and irregularities flagging with >90% QC rule coverage and rapid resolution; and (4) Execution of trial emulation statistical analyses, producing strong covariate balance (mean standardized difference [MSD] ≤0.1 for ≥90% covariates). The framework incorporates reproducibility checks through repeated runs on identical datasets and includes LLM evaluator reliability using κ/α against SME‑labeled gold sets (20-40 items) plus consistency across multiple prompts. Efficiency gains (~80%) with same-day data insights and a re-allocation index >50% demonstrate reinvestment of time in QC, sensitivity analyses, and cross-discipline review (medical oncology and epidemiology), enhancing rigor.
+
+## Conclusions
+
+AI assisted workflows can deliver reproducible, efficient, and transparent RWE analyses when paired with database archives, standardized QC, and auditable LLM evaluation. Efficiency gains enable more QC and SME engagement, reinforcing credibility. This framework offers a scalable path for high-quality trial emulation.
+
+---
+
+# 144. PERFORMANCE OF AI METHODS FOR TITLE/ABSTRACT SCREENING: COMPARING CRITERIA-BASED AND ADVANCEMENT PROBABILITY-BASED SCREENING APPROACHES
+
+- Session code: MSR233
+- Authors: Darsh Devani, MS1, Ella Jones, BS2, Grace E. Fox, PhD 1. 1OPEN Health, New York, NY, USA, 2OPEN Health, London, United Kingdom.
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research^Confounding, Selection Bias Correction, Causal Inference|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-20T13:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-5-3/performance-of-ai-methods-for-title-abstract-screening-comparing-criteria-based-and-advancement-probability-based-screening-approaches
+
+## Objectives
+
+With increasing use of artificial intelligence (AI) in literature reviews, understanding the performance of different screening approaches is important. This study compares criteria-based and advancement probability-based AI methods for title/abstract screening against a human-reviewed reference standard.
+
+## Methods
+
+This analysis evaluated 2 AI-supported title/abstract screening approaches using a literature review dataset. One human reviewer identified includable references, which served as the reference standard. Criteria-based screening applied predefined inclusion/exclusion criteria, while advancement probability-based screening prioritized references using model-estimated relevance. Both approaches were applied independently to the same dataset. Sensitivity (capture of human-included references), specificity (correct exclusion), accuracy (overall agreement), and precision (confirmation of AI-included references) were assessed by comparing AI included/excluded decisions with the human reference standard. Screening was implemented using the Nested Knowledge platform.
+
+## Results
+
+Criteria-based screening flagged 471 references and identified 97 of 98 references included by human review (sensitivity = 0.99), missing 1 human-included reference. Of excluded references, 99 matched human exclusions, while 374 AI-flagged references were not included by the human reviewer. Specificity was 0.21, accuracy 0.34, and precision 0.21. Advancement probability-based screening advanced 327 references and identified 70 of 98 references included by human review (sensitivity = 0.71), missing 28 human-included references. Among excluded references, 216 matched human exclusions, while 257 AI-flagged references were not included by the human reviewer. Specificity was 0.46, accuracy 0.50, and precision 0.21.
+
+## Conclusions
+
+The 2 AI screening approaches produced different screening patterns when applied to the same dataset. Criteria-based screening captured more included references, while advancement probability-based screening advanced a smaller subset of references for review. These findings show that AI screening approach selection affects screening workload and the balance between completeness and efficiency. Collectively, these findings suggest that future AI-based screening should account for performance differences across methods, as design choices can lead to distinct screening outcomes.
+
+---
+
+# 145. INTEGRATION OF GENERATIVE ARTIFICIAL INTELLIGENCE INTO THE DEVELOPMENT OF STATISTICAL ANALYSIS PLANS FOR PATIENT-REPORTED OUTCOMES
+
+- Session code: MSR245
+- Authors: Sameer Mansoori, MSc1, Rashi Rani, MSc.2, Akanksha Sharma, Sr., MSc1, Rajdeep Kaur, PhD1, Barinder Singh, RPh1, Shubhram Pandey, MSc 1. 1Pharmacoevidence Pvt. Ltd., SAS Nagar, Mohali, India, 2Heorlytics Pvt. Ltd., Mohali, India.
+- Disease: No Additional Disease & Conditions/Specialized Treatment Areas
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research^PRO & Related Methods|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-20T13:00:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-5-3/integration-of-generative-artificial-intelligence-into-the-development-of-statistical-analysis-plans-for-patient-reported-outcomes
+
+## Objectives
+
+Statistical Analysis Plans (SAP) for Patient Report Outcome (PRO) analyses are essential for ensuring transparency, replicability, and acceptability of analyses from a regulatory perspective. Developing PRO-specific SAP content is a resource-intensive and time-consuming process, requiring careful specification of estimands, strategies for handling intercurrent events, approaches to missing data, multiplicity adjustments, and sensitivity analyses. This study evaluates the use of multi-agent generative artificial intelligence (GenAI) with Retrieval-Augmented Generation (RAG) to support the development of PRO-related SAP components for clinical and health technology assessment submissions.
+
+## Methods
+
+A structured, prompt-driven GenAI framework was developed to support generation of PRO-related Statistical Analysis Plan content. The framework incorporated predefined prompts aligned with regulatory and methodological guidance to generate key SAP elements, including PRO endpoint definitions, analysis populations, estimands, descriptive and longitudinal analyses, primary and secondary efficacy analyses, responder analyses, subgroup and time-to-event analyses, approaches to missing data, multiplicity control strategies, sensitivity analyses, and graphical outputs. Iterative feedback loops were incorporated to refine generated content across development stages. All AI-generated outputs underwent systematic validation through subject matter expert review and comparison with conventionally developed SAPs to assess methodological alignment, internal consistency, and analytical completeness.
+
+## Results
+
+GenAI-assisted development successfully generated PRO-focused SAP content aligned with expert-developed strategies, methods appropriateness, and consistency. The time required to draft and develop was less than that of traditional methods. The alignment was good for more standardized parts but needed expert input for more complex sections such as defining estimand and sensitivity analysis.
+
+## Conclusions
+
+GenAI-based frameworks can speed up the development of PRO-related SAPs while upholding methodological standards. However, some sections that require complex clinical judgment still present limitations and therefore continue to require expert involvement. Future development will focus on supporting more complex analytical scenarios and deeper integration of regulatory guidance within AI-assisted SAP workflows.
+
+---
+
+# 146. DECODING PARTICIPANT VOICES WITH ARTIFICIAL INTELLIGENCE (AI): A PILOT ANALYSIS OF FREE-TEXT PARTICIPANT-REPORTED OUTCOME (PRO) DATA FROM THE PURPOSE 1 STUDY OF LENACAPAVIR FOR HIV PRE-EXPOSURE PROPHYLAXIS (PREP)
+
+- Session code: MSR4
+- Authors: SAEID SHAHRAZ, MD, PHD 1, Ryan Thaliffdeen, PharmD, MS1, JeanPierre Coaquira Castro, MPH1, Aaditya Rawal, MS2, Veda Donthireddy, BA2, Shubhi Pathak, BS, MS2, Dylan Mezzio, MS, PharmD1. 1Gilead Sciences, Inc., Foster City, CA, USA, 2Costello Medical, Boston, MA, USA.
+- Disease: SDC: Infectious Disease (non-vaccine)
+- Categories: Methodological & Statistical Research^Artificial Intelligence, Machine Learning, Predictive Analytics|Methodological & Statistical Research^PRO & Related Methods|Methodological & Statistical Research^Survey Methods|Methodological & Statistical Research
+- Journal: Value in Health, Volume 29, Issue S6
+- Published: 2026-05-18T14:30:00.000Z
+- URL: https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-1-4/decoding-participant-voices-with-artificial-intelligence-ai--a-pilot-analysis-of-free-text-participant-reported-outcome-pro-data-from-the-purpose-1-study-of-lenacapavir-for-hiv-pre-exposure-prophylaxis-prep
+
+## Objectives
+
+Free-text responses in PRO questionnaires can elicit deeper insights from complex questions than structured-response formats, but distilling consistent concepts from free text is labor-intensive. AI could facilitate automated analysis of large free-text datasets. A PRO questionnaire in the PURPOSE 1 study (NCT04994509) asked participants about their PrEP administration preferences (daily pills vs twice-yearly injections) and included a free-text question to explain their reasons. This pilot analysis compared manual versus AI-based categorization of free-text reasons for PrEP administration preference among PURPOSE 1 participants who indicated a preference for injections at Week 52.
+
+## Methods
+
+Using behavioral theories, we developed an ontology reflecting human reasoning behind administration preference. Two independent reviewers manually categorized 1724 free-text responses into 17 ontological concepts, with arbitration by a third. To generate AI-based concepts, the same dataset was provided to a secure version of Microsoft Copilot® (GPT-5), along with the ontological categories and few-shot enhancements. A random 10% sample was used to validate Copilot’s classifications, reviewed by two raters, with third-reviewer adjudication. Inter-rater agreement was quantified using Cohen’s Kappa. Accuracy was the number of correctly categorized concepts by Copilot divided by total responses. The most frequent human- and Copilot-categorized concepts were compared to assess categorization alignment.
+
+## Results
+
+Copilot classified 32% of 1724 responses as “other” (vs 3% by humans), 0% as “perceived efficacy” (vs 38%), 21% as “convenience/logistical effort” (vs 29%), and 14% as “adherence feasibility” (vs 21%). In the validation sample, Copilot classified 67% (117/174) of responses accurately, with Kappa=0.63 indicating substantial agreement.
+
+## Conclusions
+
+Despite mismatches between human benchmark and Copilot categorization into the most common concepts, this pilot analysis generated valuable insights and suggests that AI offers a viable approach to analyzing free-text data. Large-language models with retrieval-augmented generation could substantially improve the efficiency and reliability of PRO analyses and unlock further opportunities to leverage free-text data.

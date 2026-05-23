@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dravet Syndrome Competitive Intelligence Update</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 36px 0 20px;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 850;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 74px; line-height: .94; letter-spacing: 0; font-weight: 560; max-width: 1320px; }
+    h2 { font-size: 52px; line-height: .98; letter-spacing: 0; font-weight: 560; max-width: 1300px; }
+    h3 { font-size: 28px; line-height: 1.04; letter-spacing: 0; font-weight: 650; }
+    .dek { margin-top: 16px; color: var(--muted); font-size: 25px; line-height: 1.18; max-width: 1250px; }
+    .section-head { margin-bottom: 18px; }
+    .section-head p { margin-top: 12px; color: var(--muted); font-size: 23px; line-height: 1.18; max-width: 1280px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .panel, .metric, .card, .table, .callout {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.88);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel { padding: 22px; }
+    .panel.dark, .callout { background: #11130f; color: var(--paper); border-color: #11130f; }
+    .panel.dark p, .panel.dark li, .callout p, .callout li { color: rgba(246,241,232,.88); }
+    .metric { padding: 20px; min-height: 150px; }
+    .num { font-size: 48px; line-height: .92; font-weight: 760; letter-spacing: 0; }
+    .label { margin-top: 12px; font-size: 21px; line-height: 1.12; color: var(--muted); }
+    .card { padding: 24px; min-height: 274px; }
+    .card.short { min-height: 222px; }
+    .card p { color: var(--muted); font-size: 23px; line-height: 1.12; margin-top: 12px; }
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      white-space: nowrap;
+      margin-bottom: 11px;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .red { background: var(--red); }
+    .gray { background: var(--gray); }
+    .callout { padding: 22px 26px; }
+    .callout h3 { font-size: 31px; }
+    .summary-list { margin: 12px 0 0; padding-left: 22px; display: grid; gap: 8px; }
+    .summary-list li { color: rgba(246,241,232,.88); font-size: 23px; line-height: 1.12; }
+    .table { display: grid; }
+    .row { display: grid; border-bottom: 1px solid var(--line); min-height: 70px; }
+    .row:last-child { border-bottom: 0; }
+    .row.trials { grid-template-columns: .9fr 1.1fr .95fr 1.55fr; }
+    .row.refs { grid-template-columns: .34fr .95fr 1.05fr 1.75fr; }
+    .row.modalities { grid-template-columns: .9fr 1.05fr 1.45fr 1.15fr; }
+    .row.head { min-height: 46px; }
+    .cell { padding: 15px 16px; border-right: 1px solid var(--line); font-size: 21px; line-height: 1.12; }
+    .cell:last-child { border-right: 0; }
+    .head .cell {
+      background: #11130f;
+      color: var(--paper);
+      font-weight: 850;
+      text-transform: uppercase;
+      font-size: 17px;
+      line-height: 1;
+      white-space: nowrap;
+      padding-top: 13px;
+      padding-bottom: 10px;
+    }
+    .refs .cell { font-size: 17px; line-height: 1.06; padding: 11px 12px; }
+    .refs.head .cell { font-size: 17px; line-height: 1; padding: 11px 12px; white-space: nowrap; }
+    .row.refs .cell:first-child { text-align: center; }
+    .references-slide .section-head { margin-bottom: 14px; }
+    .references-slide h2 { font-size: 48px; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .cite + .cite::before { content: ","; margin-right: 1px; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .wrap { width: 1360px; }
+      .panel, .metric, .card, .table, .callout { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) {
+      .slide { width: 1600px; height: 900px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Dravet syndrome CI update | May 8-14, 2026</div>
+      <h1>Dravet syndrome competitive intelligence update</h1>
+      <div class="grid-4" style="margin-top:30px;">
+        <div class="metric"><div class="num">4</div><div class="label">In-window source records with Dravet-specific evidence.<a class="cite" href="https://encoded.com/press-releases/encoded-therapeutics-presents-new-clinical-data-from-polaris-phase-1-2-trials-of-etx101-gene-therapy-in-dravet-syndrome-at-the-asgct-2026-presidential-symposium/">1</a><a class="cite" href="https://www.jax.org/news-and-insights/2026/may/precision-dna-editing-targets-root-cause-of-severe-childhood-epilepsy-in-preclinical-study">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07013331">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04462770">4</a></div></div>
+        <div class="metric"><div class="num">1</div><div class="label">ETX101 clinical-data update at ASGCT 2026.<a class="cite" href="https://encoded.com/press-releases/encoded-therapeutics-presents-new-clinical-data-from-polaris-phase-1-2-trials-of-etx101-gene-therapy-in-dravet-syndrome-at-the-asgct-2026-presidential-symposium/">1</a></div></div>
+        <div class="metric"><div class="num">1</div><div class="label">Preclinical SCN1A R613X base-editing study described by JAX.<a class="cite" href="https://www.jax.org/news-and-insights/2026/may/precision-dna-editing-targets-root-cause-of-severe-childhood-epilepsy-in-preclinical-study">2</a></div></div>
+        <div class="metric"><div class="num">2</div><div class="label">ClinicalTrials.gov records with substantive May 2026 history changes.<a class="cite" href="https://clinicaltrials.gov/study/NCT07013331">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04462770">4</a></div></div>
+      </div>
+      <div class="callout" style="margin-top:24px;">
+        <h3>Executive summary</h3>
+        <ul class="summary-list">
+          <li>Encoded reported expanded POLARIS Phase 1/2 ETX101 data in SCN1A+ Dravet syndrome, including approximately 76% median monthly countable seizure-frequency reduction at dose level 3 from Week 5 through Week 52 and no treatment- or procedure-related serious adverse events.<a class="cite" href="https://encoded.com/press-releases/encoded-therapeutics-presents-new-clinical-data-from-polaris-phase-1-2-trials-of-etx101-gene-therapy-in-dravet-syndrome-at-the-asgct-2026-presidential-symposium/">1</a></li>
+          <li>JAX described adenine base editing of a Dravet-causing SCN1A R613X variant in mice, with nearly 60% mutated-DNA correction, near-normal gene expression, seizure prevention, and survival improvement in treated animals.<a class="cite" href="https://www.jax.org/news-and-insights/2026/may/precision-dna-editing-targets-root-cause-of-severe-childhood-epilepsy-in-preclinical-study">2</a></li>
+          <li>ClinicalTrials.gov posted recruiting-status registry activity for DRAPETONINE, a PET-MRI study of serotoninergic brainstem pathways in adult Dravet syndrome, and ARGUS, a Phase 3 EPX-100 study with version 34 changes to study status, description, and locations.<a class="cite" href="https://clinicaltrials.gov/study/NCT07013331">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04462770">4</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">01 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">ETX101 clinical data</div>
+        <h2>POLARIS Phase 1/2 data describe seizure, adaptive-behavior, and safety findings for ETX101<a class="cite" href="https://encoded.com/press-releases/encoded-therapeutics-presents-new-clinical-data-from-polaris-phase-1-2-trials-of-etx101-gene-therapy-in-dravet-syndrome-at-the-asgct-2026-presidential-symposium/">1</a></h2>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag lime">Seizure frequency</span>
+          <h3>Dose-level 3 durability</h3>
+          <p>Encoded reported approximately a 76% median monthly countable seizure-frequency reduction at dose level 3 from Week 5 through Week 52 in three POLARIS participants.<a class="cite" href="https://encoded.com/press-releases/encoded-therapeutics-presents-new-clinical-data-from-polaris-phase-1-2-trials-of-etx101-gene-therapy-in-dravet-syndrome-at-the-asgct-2026-presidential-symposium/">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">Developmental measures</span>
+          <h3>VABS-3 and Bayley-4 findings</h3>
+          <p>Participants reaching 52 weeks of observation showed VABS-3 adaptive-behavior improvements, and patients treated before age 2 showed Bayley-4 cognitive gains through Week 52.<a class="cite" href="https://encoded.com/press-releases/encoded-therapeutics-presents-new-clinical-data-from-polaris-phase-1-2-trials-of-etx101-gene-therapy-in-dravet-syndrome-at-the-asgct-2026-presidential-symposium/">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag orange">Safety profile</span>
+          <h3>No serious related events reported</h3>
+          <p>ETX101 was described as well tolerated across four dose levels with no treatment- or procedure-related serious adverse events; treatment-related transaminase elevations were reported as clinically asymptomatic and resolved.<a class="cite" href="https://encoded.com/press-releases/encoded-therapeutics-presents-new-clinical-data-from-polaris-phase-1-2-trials-of-etx101-gene-therapy-in-dravet-syndrome-at-the-asgct-2026-presidential-symposium/">1</a></p>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:18px;">
+        <h3>Program context</h3>
+        <p style="margin-top:10px;font-size:24px;line-height:1.15;">The POLARIS program was described as multiple Phase 1-3 clinical trials in children and adolescents with SCN1A+ Dravet syndrome, with ENDEAVOR Part 1B enrolling ages 4 to 18 and pivotal ENDEAVOR Part 2 evaluating outcomes in ages 6 months to 4 years.<a class="cite" href="https://encoded.com/press-releases/encoded-therapeutics-presents-new-clinical-data-from-polaris-phase-1-2-trials-of-etx101-gene-therapy-in-dravet-syndrome-at-the-asgct-2026-presidential-symposium/">1</a></p>
+      </div>
+    </div>
+    <div class="slide-num">02 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Preclinical genetics</div>
+        <h2>JAX described direct SCN1A R613X correction in a Dravet syndrome mouse model<a class="cite" href="https://www.jax.org/news-and-insights/2026/may/precision-dna-editing-targets-root-cause-of-severe-childhood-epilepsy-in-preclinical-study">2</a></h2>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <span class="tag pink">Variant and delivery</span>
+          <h3>Adenine base editing</h3>
+          <p>The study focused on the Dravet-causing SCN1A R613X variant and used adenine base editing delivered by a single brain injection in very young mice on postnatal day 1 or day 12.<a class="cite" href="https://www.jax.org/news-and-insights/2026/may/precision-dna-editing-targets-root-cause-of-severe-childhood-epilepsy-in-preclinical-study">2</a></p>
+        </div>
+        <div class="card">
+          <span class="tag lime">Molecular correction</span>
+          <h3>DNA and expression effects</h3>
+          <p>JAX reported that treated mice had nearly 60% correction of the mutated DNA and that almost all gene expression appeared normal despite partial DNA correction.<a class="cite" href="https://www.jax.org/news-and-insights/2026/may/precision-dna-editing-targets-root-cause-of-severe-childhood-epilepsy-in-preclinical-study">2</a></p>
+        </div>
+        <div class="card short">
+          <span class="tag blue">Phenotype findings</span>
+          <h3>Seizure and survival outcomes</h3>
+          <p>The edit was described as restoring gene function and preventing seizures, while mice treated at birth had significant survival improvement.<a class="cite" href="https://www.jax.org/news-and-insights/2026/may/precision-dna-editing-targets-root-cause-of-severe-childhood-epilepsy-in-preclinical-study">2</a></p>
+        </div>
+        <div class="card short">
+          <span class="tag orange">Post-symptom timing</span>
+          <h3>Day 12 dosing signal</h3>
+          <p>Mice treated on day 12 were also described as benefiting, with lasting protection into young adulthood and very low levels of unintended DNA changes or other adverse effects in the brain.<a class="cite" href="https://www.jax.org/news-and-insights/2026/may/precision-dna-editing-targets-root-cause-of-severe-childhood-epilepsy-in-preclinical-study">2</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">03 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Registry activity</div>
+        <h2>ClinicalTrials.gov updates identify one imaging study and one Phase 3 drug trial as recruiting<a class="cite" href="https://clinicaltrials.gov/study/NCT07013331">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04462770">4</a></h2>
+      </div>
+      <div class="table">
+        <div class="row trials head">
+          <div class="cell">Record</div>
+          <div class="cell">Study / Sponsor</div>
+          <div class="cell">Current Status</div>
+          <div class="cell">Dravet-Specific Evidence</div>
+        </div>
+        <div class="row trials">
+          <div class="cell">NCT07013331</div>
+          <div class="cell">DRAPETONINE PET-MRI study; Hospices Civils de Lyon<a class="cite" href="https://clinicaltrials.gov/study/NCT07013331">3</a></div>
+          <div class="cell">Recruiting; Last Update Posted 2026-05-08<a class="cite" href="https://clinicaltrials.gov/study/NCT07013331">3</a></div>
+          <div class="cell">The record describes PET and MRI imaging of the 5HT brainstem pathway in adult Dravet syndrome patients compared with drug-resistant focal epilepsy and healthy-adult controls.<a class="cite" href="https://clinicaltrials.gov/study/NCT07013331">3</a></div>
+        </div>
+        <div class="row trials">
+          <div class="cell">NCT04462770</div>
+          <div class="cell">ARGUS EPX-100 Phase 3 study; Epygenix with Harmony Biosciences collaborator<a class="cite" href="https://clinicaltrials.gov/study/NCT04462770">4</a></div>
+          <div class="cell">Recruiting; Last Update Posted 2026-05-14<a class="cite" href="https://clinicaltrials.gov/study/NCT04462770">4</a></div>
+          <div class="cell">The record describes clemizole hydrochloride as adjunctive therapy in children and adults with Dravet syndrome and lists countable motor seizure change as a primary outcome.<a class="cite" href="https://clinicaltrials.gov/study/NCT04462770">4</a></div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:18px;">
+        <h3>Record-history basis</h3>
+        <p style="margin-top:10px;font-size:23px;line-height:1.15;">DRAPETONINE version 3 was submitted on 2026-05-05 with Recruitment Status, Study Status, and Contacts/Locations changes; ARGUS version 34 was submitted on 2026-05-12 with Study Status, Study Description, and Contacts/Locations changes.<a class="cite" href="https://clinicaltrials.gov/study/NCT07013331">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04462770">4</a></p>
+      </div>
+    </div>
+    <div class="slide-num">04 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Competitive modality view</div>
+        <h2>Dravet syndrome updates cover gene regulation, base editing, pathway imaging, and adjunctive therapy<a class="cite" href="https://encoded.com/press-releases/encoded-therapeutics-presents-new-clinical-data-from-polaris-phase-1-2-trials-of-etx101-gene-therapy-in-dravet-syndrome-at-the-asgct-2026-presidential-symposium/">1</a><a class="cite" href="https://www.jax.org/news-and-insights/2026/may/precision-dna-editing-targets-root-cause-of-severe-childhood-epilepsy-in-preclinical-study">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07013331">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04462770">4</a></h2>
+      </div>
+      <div class="table">
+        <div class="row modalities head">
+          <div class="cell">Modality</div>
+          <div class="cell">Asset / Study</div>
+          <div class="cell">Reported Scope</div>
+          <div class="cell">Update Signal</div>
+        </div>
+        <div class="row modalities">
+          <div class="cell">AAV9 gene regulation</div>
+          <div class="cell">ETX101 / POLARIS<a class="cite" href="https://encoded.com/press-releases/encoded-therapeutics-presents-new-clinical-data-from-polaris-phase-1-2-trials-of-etx101-gene-therapy-in-dravet-syndrome-at-the-asgct-2026-presidential-symposium/">1</a></div>
+          <div class="cell">SCN1A+ Dravet syndrome in children aged 6 months to 7 years in Phase 1/2 dose-escalation trials.<a class="cite" href="https://encoded.com/press-releases/encoded-therapeutics-presents-new-clinical-data-from-polaris-phase-1-2-trials-of-etx101-gene-therapy-in-dravet-syndrome-at-the-asgct-2026-presidential-symposium/">1</a></div>
+          <div class="cell">ASGCT 2026 clinical-data release with seizure, neurodevelopmental, and safety findings.<a class="cite" href="https://encoded.com/press-releases/encoded-therapeutics-presents-new-clinical-data-from-polaris-phase-1-2-trials-of-etx101-gene-therapy-in-dravet-syndrome-at-the-asgct-2026-presidential-symposium/">1</a></div>
+        </div>
+        <div class="row modalities">
+          <div class="cell">Adenine base editing</div>
+          <div class="cell">SCN1A R613X mouse model<a class="cite" href="https://www.jax.org/news-and-insights/2026/may/precision-dna-editing-targets-root-cause-of-severe-childhood-epilepsy-in-preclinical-study">2</a></div>
+          <div class="cell">Preclinical correction of a Dravet-causing SCN1A variant by single brain injection in very young mice.<a class="cite" href="https://www.jax.org/news-and-insights/2026/may/precision-dna-editing-targets-root-cause-of-severe-childhood-epilepsy-in-preclinical-study">2</a></div>
+          <div class="cell">JAX release described DNA correction, gene-expression restoration, seizure prevention, and survival findings.<a class="cite" href="https://www.jax.org/news-and-insights/2026/may/precision-dna-editing-targets-root-cause-of-severe-childhood-epilepsy-in-preclinical-study">2</a></div>
+        </div>
+        <div class="row modalities">
+          <div class="cell">PET-MRI pathway imaging</div>
+          <div class="cell">DRAPETONINE<a class="cite" href="https://clinicaltrials.gov/study/NCT07013331">3</a></div>
+          <div class="cell">Adult Dravet syndrome cohort evaluated against drug-resistant focal epilepsy and healthy-adult controls.<a class="cite" href="https://clinicaltrials.gov/study/NCT07013331">3</a></div>
+          <div class="cell">Recruiting registry record with recruitment-status and study-status history changes.<a class="cite" href="https://clinicaltrials.gov/study/NCT07013331">3</a></div>
+        </div>
+        <div class="row modalities">
+          <div class="cell">Small-molecule adjunctive therapy</div>
+          <div class="cell">EPX-100 / ARGUS<a class="cite" href="https://clinicaltrials.gov/study/NCT04462770">4</a></div>
+          <div class="cell">Phase 3 randomized placebo-controlled trial in children and adults with Dravet syndrome.<a class="cite" href="https://clinicaltrials.gov/study/NCT04462770">4</a></div>
+          <div class="cell">Recruiting registry record with study-status, description, and location history changes.<a class="cite" href="https://clinicaltrials.gov/study/NCT04462770">4</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">05 / 06</div>
+  </article>
+
+  <article class="slide references-slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">References 1-4</div>
+        <h2>References</h2>
+      </div>
+      <div class="table">
+        <div class="row refs head">
+          <div class="cell">Ref</div>
+          <div class="cell">Source</div>
+          <div class="cell">Date / Status / Source Owner</div>
+          <div class="cell">Evidence Used in Report</div>
+        </div>
+        <div class="row refs">
+          <div class="cell">1</div>
+          <div class="cell"><a href="https://encoded.com/press-releases/encoded-therapeutics-presents-new-clinical-data-from-polaris-phase-1-2-trials-of-etx101-gene-therapy-in-dravet-syndrome-at-the-asgct-2026-presidential-symposium/">Encoded Therapeutics press release</a></div>
+          <div class="cell">May 13, 2026; Encoded Therapeutics</div>
+          <div class="cell">POLARIS Phase 1/2 ETX101 data, seizure-frequency reduction, adaptive-behavior and cognitive measures, safety findings, and POLARIS program scope</div>
+        </div>
+        <div class="row refs">
+          <div class="cell">2</div>
+          <div class="cell"><a href="https://www.jax.org/news-and-insights/2026/may/precision-dna-editing-targets-root-cause-of-severe-childhood-epilepsy-in-preclinical-study">JAX news release</a></div>
+          <div class="cell">May 13, 2026; The Jackson Laboratory</div>
+          <div class="cell">SCN1A R613X adenine-base-editing mouse study, single-injection delivery timing, DNA correction, expression, seizure, and survival findings</div>
+        </div>
+        <div class="row refs">
+          <div class="cell">3</div>
+          <div class="cell"><a href="https://clinicaltrials.gov/study/NCT07013331">ClinicalTrials.gov NCT07013331</a></div>
+          <div class="cell">Last Update Posted 2026-05-08; Hospices Civils de Lyon</div>
+          <div class="cell">Recruiting DRAPETONINE PET-MRI serotoninergic brainstem-pathway study and record-history changes submitted 2026-05-05</div>
+        </div>
+        <div class="row refs">
+          <div class="cell">4</div>
+          <div class="cell"><a href="https://clinicaltrials.gov/study/NCT04462770">ClinicalTrials.gov NCT04462770</a></div>
+          <div class="cell">Last Update Posted 2026-05-14; Epygenix</div>
+          <div class="cell">Recruiting ARGUS Phase 3 EPX-100 trial design, countable motor seizure outcome, and record-history changes submitted 2026-05-12</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">06 / 06</div>
+  </article>
+</body>
+</html>

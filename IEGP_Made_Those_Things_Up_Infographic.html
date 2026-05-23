@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IEGP - You Made Those Words Up</title>
+<link rel="icon" href="data:,">
+<style>
+:root {
+  --frame: #050706;
+  --white: #f9f7ed;
+  --stroke: #030303;
+  --green-gray: #27342f;
+  --motel-wall: #2e3338;
+  --lamp: #d6b56f;
+  --blue: #55728c;
+  --robe: #2f5877;
+  --skin: #a9856d;
+  --skin-d: #735747;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+html {
+  width: 768px;
+  height: 960px;
+  overflow: hidden;
+  background: var(--frame);
+}
+
+body {
+  width: 768px;
+  height: 960px;
+  overflow: hidden;
+  display: block;
+  padding: 0;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.meme {
+  width: 768px;
+  height: 960px;
+  position: relative;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  background: var(--frame);
+  color: var(--white);
+}
+
+.panel {
+  position: relative;
+  width: 768px;
+  height: 294px;
+  overflow: hidden;
+  border-bottom: 8px solid var(--frame);
+  isolation: isolate;
+}
+
+.panel.bottom {
+  height: 372px;
+  border-bottom: 0;
+}
+
+.room {
+  background:
+    radial-gradient(circle at 51% 13%, rgba(187, 202, 169, 0.2), transparent 24%),
+    linear-gradient(90deg, rgba(0,0,0,0.42), transparent 22%, transparent 82%, rgba(0,0,0,0.16)),
+    linear-gradient(180deg, #314039 0%, #1f2d29 58%, #121816 100%);
+}
+
+.room::before,
+.motel::before,
+.meme::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.room::before {
+  z-index: 0;
+  background:
+    linear-gradient(90deg, transparent 0 28%, rgba(255,255,255,0.055) 28% 28.7%, transparent 28.7% 51%, rgba(255,255,255,0.045) 51% 51.7%, transparent 51.7% 76%, rgba(255,255,255,0.035) 76% 76.5%, transparent 76.5%),
+    linear-gradient(0deg, rgba(0,0,0,0.45), transparent 37%);
+}
+
+.motel {
+  background:
+    radial-gradient(circle at 83% 24%, rgba(214, 181, 111, 0.34), transparent 17%),
+    linear-gradient(90deg, rgba(0,0,0,0.42), transparent 28%, transparent 86%, rgba(0,0,0,0.18)),
+    linear-gradient(180deg, #3b4145 0%, #2c3137 54%, #171716 100%);
+}
+
+.motel::before {
+  z-index: 0;
+  background:
+    linear-gradient(90deg, transparent 0 16%, rgba(255,255,255,0.05) 16% 16.5%, transparent 16.5% 57%, rgba(255,255,255,0.04) 57% 57.5%, transparent 57.5%),
+    linear-gradient(0deg, rgba(0,0,0,0.5), transparent 40%);
+}
+
+.caption {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  z-index: 8;
+  text-align: center;
+  color: var(--white);
+  font-size: 48px;
+  line-height: 0.95;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  paint-order: stroke fill;
+  -webkit-text-stroke: 3px var(--stroke);
+  text-shadow:
+    4px 4px 0 var(--stroke),
+    -2px 2px 0 var(--stroke),
+    2px -2px 0 var(--stroke);
+}
+
+.caption.top {
+  top: 16px;
+}
+
+.caption.mid {
+  top: 18px;
+  font-size: 45px;
+}
+
+.caption.punch {
+  bottom: 68px;
+  font-size: 50px;
+}
+
+.caption .small {
+  display: block;
+  margin-top: 4px;
+  font-size: 34px;
+}
+
+.export-art-only .text-layer {
+  visibility: hidden;
+}
+
+.print-bg {
+  display: none;
+}
+
+.men {
+  position: absolute;
+  left: 46px;
+  right: 210px;
+  bottom: 0;
+  height: 230px;
+  z-index: 3;
+}
+
+.figure {
+  position: absolute;
+  bottom: 0;
+  width: 160px;
+  height: 220px;
+  transform-origin: bottom center;
+}
+
+.figure.one {
+  left: 64px;
+}
+
+.figure.two {
+  left: 250px;
+  transform: scale(0.96);
+}
+
+.head {
+  position: absolute;
+  left: 51px;
+  top: 12px;
+  width: 57px;
+  height: 68px;
+  border-radius: 47% 48% 43% 44%;
+  background:
+    radial-gradient(circle at 36% 38%, rgba(255,255,255,0.15), transparent 8%),
+    linear-gradient(180deg, var(--skin) 0%, var(--skin-d) 100%);
+  box-shadow: inset -12px -13px 0 rgba(0,0,0,0.21), 0 0 0 2px rgba(0,0,0,0.52);
+}
+
+.hair {
+  position: absolute;
+  left: 48px;
+  top: 5px;
+  width: 65px;
+  height: 32px;
+  border-radius: 50% 50% 34% 24%;
+  background: #211a16;
+}
+
+.body {
+  position: absolute;
+  left: 26px;
+  top: 78px;
+  width: 108px;
+  height: 150px;
+  border-radius: 32px 32px 8px 8px;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.33), transparent 48%, rgba(255,255,255,0.08)),
+    var(--jacket);
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.08), 0 22px 24px rgba(0,0,0,0.34);
+}
+
+.shirt {
+  position: absolute;
+  left: 57px;
+  top: 86px;
+  width: 45px;
+  height: 136px;
+  background: linear-gradient(180deg, #242727, #111414);
+  clip-path: polygon(8% 0, 92% 0, 70% 100%, 30% 100%);
+}
+
+.arm {
+  position: absolute;
+  top: 91px;
+  width: 40px;
+  height: 120px;
+  border-radius: 22px;
+  background: var(--jacket);
+  filter: brightness(0.78);
+}
+
+.arm.left {
+  left: 11px;
+  transform: rotate(10deg);
+}
+
+.arm.right {
+  right: 11px;
+  transform: rotate(-8deg);
+}
+
+.panel.middle .figure.one {
+  transform: rotate(-2deg);
+}
+
+.panel.middle .figure.two {
+  transform: translateY(2px) scale(0.96) rotate(1deg);
+}
+
+.panel.middle .head::after {
+  content: "";
+  position: absolute;
+  left: 19px;
+  top: 45px;
+  width: 23px;
+  height: 9px;
+  border-bottom: 3px solid rgba(255,255,255,0.52);
+  border-radius: 0 0 50% 50%;
+}
+
+.offscreen-shadow {
+  position: absolute;
+  right: -20px;
+  bottom: 0;
+  width: 230px;
+  height: 250px;
+  z-index: 2;
+  display: none;
+  background: radial-gradient(ellipse at bottom right, rgba(0,0,0,0.22), transparent 68%);
+}
+
+.bed {
+  position: absolute;
+  left: 318px;
+  right: -24px;
+  bottom: 0;
+  height: 112px;
+  z-index: 1;
+  background:
+    repeating-linear-gradient(-12deg, rgba(255,255,255,0.12) 0 16px, rgba(255,255,255,0.04) 16px 32px),
+    linear-gradient(180deg, #77706b, #3e3a39);
+  border-top: 5px solid rgba(255,255,255,0.12);
+  transform: skewX(-8deg);
+}
+
+.lamp {
+  position: absolute;
+  right: 66px;
+  top: 42px;
+  width: 82px;
+  height: 168px;
+  z-index: 1;
+}
+
+.lamp::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 0;
+  width: 48px;
+  height: 58px;
+  background: linear-gradient(180deg, #e2c37b, #836f43);
+  clip-path: polygon(18% 0, 82% 0, 100% 100%, 0 100%);
+  box-shadow: 0 0 34px rgba(214,181,111,0.56);
+}
+
+.lamp::after {
+  content: "";
+  position: absolute;
+  left: 38px;
+  top: 55px;
+  width: 7px;
+  height: 112px;
+  background: #6a5c41;
+}
+
+.chair {
+  position: absolute;
+  left: 92px;
+  bottom: 3px;
+  width: 245px;
+  height: 98px;
+  z-index: 3;
+  border-radius: 46px 56px 9px 9px;
+  background: linear-gradient(180deg, #40322d, #191615);
+  box-shadow: 0 -34px 0 -18px #2d2522;
+}
+
+.seated {
+  position: absolute;
+  left: 104px;
+  bottom: 32px;
+  width: 294px;
+  height: 235px;
+  z-index: 4;
+}
+
+.seated .head {
+  left: 105px;
+  top: 4px;
+  width: 58px;
+  height: 68px;
+  border-radius: 47% 48% 43% 44%;
+  background:
+    radial-gradient(circle at 38% 34%, rgba(255,255,255,0.14), transparent 9%),
+    linear-gradient(180deg, var(--skin), var(--skin-d));
+}
+
+.beard {
+  position: absolute;
+  left: 119px;
+  top: 52px;
+  width: 31px;
+  height: 14px;
+  border-radius: 0 0 50% 50%;
+  background: rgba(37, 26, 21, 0.68);
+  box-shadow: 0 7px 0 -3px rgba(37, 26, 21, 0.58);
+}
+
+.seated .hair {
+  left: 101px;
+  top: -1px;
+  width: 66px;
+  height: 31px;
+  border-radius: 50% 50% 34% 24%;
+}
+
+.robe {
+  position: absolute;
+  left: 48px;
+  top: 78px;
+  width: 174px;
+  height: 146px;
+  border-radius: 48px 46px 18px 18px;
+  background:
+    linear-gradient(105deg, rgba(255,255,255,0.13), transparent 28%),
+    linear-gradient(180deg, var(--robe), #203849);
+  box-shadow: inset 0 0 0 3px rgba(255,255,255,0.08), 0 18px 28px rgba(0,0,0,0.38);
+}
+
+.chest {
+  position: absolute;
+  left: 112px;
+  top: 87px;
+  width: 49px;
+  height: 104px;
+  background: #1d2225;
+  clip-path: polygon(0 0, 100% 0, 74% 100%, 24% 100%);
+}
+
+.point-arm {
+  position: absolute;
+  left: 184px;
+  top: 96px;
+  width: 132px;
+  height: 36px;
+  border-radius: 24px 22px 20px 24px;
+  background: linear-gradient(90deg, var(--robe), #213545);
+  transform: rotate(13deg);
+  transform-origin: left center;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.08);
+  z-index: 5;
+}
+
+.finger {
+  position: absolute;
+  right: -33px;
+  top: 10px;
+  width: 47px;
+  height: 16px;
+  border-radius: 11px;
+  background: linear-gradient(90deg, var(--skin), var(--skin-d));
+}
+
+.table-clutter {
+  position: absolute;
+  right: 190px;
+  bottom: 88px;
+  width: 56px;
+  height: 48px;
+  z-index: 2;
+}
+
+.cup {
+  position: absolute;
+  left: 12px;
+  bottom: 0;
+  width: 32px;
+  height: 42px;
+  background: rgba(230, 223, 202, 0.7);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+  clip-path: polygon(9% 0, 91% 0, 74% 100%, 25% 100%);
+}
+
+.footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  padding: 0 22px;
+  background: rgba(7, 9, 8, 0.94);
+  border-top: 3px solid rgba(255,255,255,0.18);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.footer strong {
+  color: #f4d48a;
+}
+
+.meme::after {
+  z-index: 20;
+  background:
+    repeating-radial-gradient(circle at 23% 17%, rgba(255,255,255,0.028) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.018) 0 1px, transparent 1px 4px);
+  mix-blend-mode: screen;
+  opacity: 0.58;
+}
+
+@page {
+  size: 768px 960px;
+  margin: 0;
+}
+
+@media print {
+  html,
+  body {
+    background: var(--frame);
+    width: 768px;
+    height: 960px;
+    overflow: hidden;
+    padding: 0;
+    display: block;
+  }
+
+  .meme {
+    background: var(--frame) !important;
+  }
+
+  .print-bg {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 768px;
+    height: 960px;
+    z-index: 0;
+  }
+
+  .panel {
+    background: transparent !important;
+    border-bottom: 0 !important;
+    z-index: 1;
+  }
+
+  .room::before,
+  .motel::before,
+  .meme::after,
+  .panel > :not(.text-layer) {
+    visibility: hidden !important;
+  }
+
+  .text-layer {
+    visibility: visible !important;
+  }
+
+  .caption {
+    paint-order: normal;
+    -webkit-text-stroke: 0;
+    text-shadow:
+      3px 3px 0 var(--stroke),
+      -1px 1px 0 var(--stroke),
+      1px -1px 0 var(--stroke);
+  }
+}
+</style>
+</head>
+<body>
+<main class="meme" aria-label="Three-panel IEGP meme in the you made those words up format">
+  <img class="print-bg" src="IEGP_Made_Those_Things_Up_Background.png" alt="" aria-hidden="true">
+  <section class="panel room top" aria-label="Two generic figures face an off-screen person in a dark room">
+    <div class="caption top text-layer">DO YOU KNOW IEGP?</div>
+    <div class="offscreen-shadow"></div>
+    <div class="men">
+      <div class="figure one" style="--jacket:#33443a;">
+        <div class="hair"></div>
+        <div class="head"></div>
+        <div class="body"></div>
+        <div class="shirt"></div>
+        <div class="arm left"></div>
+        <div class="arm right"></div>
+      </div>
+      <div class="figure two" style="--jacket:#26343f;">
+        <div class="hair"></div>
+        <div class="head"></div>
+        <div class="body"></div>
+        <div class="shirt"></div>
+        <div class="arm left"></div>
+        <div class="arm right"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel room middle" aria-label="The same generic figures react in the second panel">
+    <div class="caption mid text-layer">INTEGRATED EVIDENCE GENERATION PLANNING?</div>
+    <div class="offscreen-shadow"></div>
+    <div class="men">
+      <div class="figure one" style="--jacket:#35483d;">
+        <div class="hair"></div>
+        <div class="head"></div>
+        <div class="body"></div>
+        <div class="shirt"></div>
+        <div class="arm left"></div>
+        <div class="arm right"></div>
+      </div>
+      <div class="figure two" style="--jacket:#293947;">
+        <div class="hair"></div>
+        <div class="head"></div>
+        <div class="body"></div>
+        <div class="shirt"></div>
+        <div class="arm left"></div>
+        <div class="arm right"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel motel bottom" aria-label="A generic seated figure points in a messy motel room">
+    <div class="lamp"></div>
+    <div class="bed"></div>
+    <div class="chair"></div>
+    <div class="table-clutter">
+      <div class="cup"></div>
+    </div>
+    <div class="seated">
+      <div class="hair"></div>
+      <div class="head"></div>
+      <div class="beard"></div>
+      <div class="robe"></div>
+      <div class="chest"></div>
+      <div class="point-arm"><span class="finger"></span></div>
+    </div>
+    <div class="caption punch text-layer">YOU MADE THOSE WORDS UP.</div>
+    <div class="footer text-layer">
+      <span><strong>IEGP</strong> turns RWE, PRO, NMA, BIA, and SLR chaos into an evidence roadmap.</span>
+    </div>
+  </section>
+</main>
+</body>
+</html>

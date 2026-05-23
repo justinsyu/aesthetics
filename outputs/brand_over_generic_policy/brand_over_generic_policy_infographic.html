@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brand-over-generic pharmacy policy examples</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 26px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--paper); color: var(--ink); }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+      scrollbar-width: none;
+    }
+    body::-webkit-scrollbar { display: none; }
+    a { color: inherit; text-decoration-thickness: 1.6px; text-underline-offset: 3px; }
+    .cite {
+      font-size: .66em;
+      vertical-align: super;
+      margin-left: 3px;
+      font-weight: 400;
+      text-decoration: none;
+      color: inherit;
+    }
+    .slide {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      background: var(--paper);
+      page-break-after: always;
+      break-after: page;
+    }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .slide > *:not(.slide-bg-img) {
+      position: relative;
+      z-index: 1;
+    }
+    .wrap {
+      width: min(1370px, calc(100vw - 48px));
+      height: 100%;
+      margin: 0 auto;
+      padding: 38px 0 28px;
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      gap: 14px;
+    }
+    .topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.6px solid var(--line);
+      border-radius: 999px;
+      background: var(--lime);
+      color: var(--ink);
+      padding: 8px 13px 7px;
+      white-space: nowrap;
+    }
+    h1, h2, h3, p { margin: 0; }
+    header {
+      display: grid;
+      gap: 20px;
+    }
+    h1 {
+      max-width: 1240px;
+      font-size: 68px;
+      line-height: .9;
+      font-weight: 780;
+      letter-spacing: 0;
+    }
+    .dek {
+      max-width: 1300px;
+      color: var(--muted);
+      font-size: 21px;
+      line-height: 1.18;
+      font-weight: 400;
+    }
+    .main {
+      display: grid;
+      grid-template-columns: 1.06fr .94fr;
+      gap: 18px;
+      min-height: 0;
+    }
+    .panel, .card {
+      border: 1.6px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 250, 240, .88);
+      box-shadow: var(--shadow);
+    }
+    .panel.dark {
+      background: #11130f;
+      color: var(--paper);
+      box-shadow: none;
+    }
+    .dark .muted, .dark .source-note { color: rgba(246, 241, 232, .72); }
+    .hero-panel {
+      padding: 20px;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 12px;
+      min-height: 0;
+    }
+    .split-title {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: end;
+      gap: 18px;
+      border-bottom: 1.4px solid rgba(246, 241, 232, .24);
+      padding-bottom: 12px;
+    }
+    .big-num {
+      font-size: 70px;
+      line-height: .83;
+      font-weight: 400;
+      letter-spacing: 0;
+      color: var(--lime);
+    }
+    .split-title h2 {
+      max-width: 560px;
+      font-size: 30px;
+      line-height: .98;
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+    .evidence-list {
+      display: grid;
+      gap: 9px;
+      align-content: stretch;
+      min-height: 0;
+    }
+    .evidence-row {
+      display: grid;
+      grid-template-columns: 132px 1fr;
+      gap: 12px;
+      align-items: start;
+      border: 1.3px solid rgba(246, 241, 232, .28);
+      border-radius: 18px;
+      padding: 11px 13px;
+      background: rgba(246, 241, 232, .06);
+    }
+    .label {
+      display: inline-flex;
+      width: max-content;
+      align-items: center;
+      justify-content: center;
+      min-height: 28px;
+      border: 1.3px solid rgba(246, 241, 232, .5);
+      border-radius: 999px;
+      padding: 5px 9px;
+      color: var(--ink);
+      font-size: 11.5px;
+      line-height: 1;
+      font-weight: 780;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      background: var(--blue);
+      white-space: nowrap;
+    }
+    .label.orange { background: var(--orange); }
+    .label.pink { background: var(--pink); }
+    .label.lime { background: var(--lime); }
+    .evidence-row p {
+      color: rgba(246, 241, 232, .88);
+      font-size: 15.8px;
+      line-height: 1.17;
+      font-weight: 400;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      min-height: 0;
+    }
+    .card {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      min-height: 0;
+    }
+    .card h3 {
+      font-size: 20px;
+      line-height: 1.02;
+      font-weight: 780;
+      letter-spacing: 0;
+    }
+    .card p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.19;
+      font-weight: 400;
+    }
+    .card h3.two-line {
+      font-size: 19px;
+      line-height: 1.04;
+    }
+    .meds {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: auto;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 25px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 8px;
+      background: var(--paper-2);
+      color: var(--ink);
+      font-size: 12.8px;
+      line-height: 1;
+      font-weight: 680;
+      white-space: nowrap;
+    }
+    .pill.lime { background: var(--lime); }
+    .pill.blue { background: var(--blue); }
+    .pill.orange { background: var(--orange); }
+    .pill.pink { background: var(--pink); }
+    .footer {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.3;
+      font-weight: 400;
+    }
+    .source-note {
+      max-width: 1030px;
+    }
+    .slide-no {
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: 400;
+      color: rgba(16, 18, 15, .42);
+      white-space: nowrap;
+    }
+
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide {
+        width: 1600px;
+        height: 900px;
+        min-height: 900px;
+      }
+      .wrap { width: 1370px; }
+      .panel, .card { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="topline">
+        <div class="eyebrow">Pharmacy policy</div>
+        <div>Selected public policies and formularies, May 2026</div>
+      </div>
+
+      <header>
+        <h1>When a pharmacy policy favors<br />the brand over the generic</h1>
+        <p class="dek">Examples of how formularies, prior authorization rules, and billing edits can steer dispensing toward a branded drug when rebates, access policy, or plan design make the brand the preferred product.</p>
+      </header>
+
+      <main class="main">
+        <section class="panel dark hero-panel">
+          <div class="split-title">
+            <div class="big-num">5</div>
+            <h2>Policy mechanisms that can reverse the usual generic-first pathway</h2>
+          </div>
+          <div class="evidence-list">
+            <div class="evidence-row">
+              <span class="label lime">Rebate list</span>
+              <p>MassHealth explicitly says its Brand Name Preferred Over Generic list is based on lower net cost after rebates and generally requires a trial or rationale before using the non-preferred generic equivalent<a class="cite" href="https://mhdl.pharmacy.services.conduent.com/MHDL/pubdownloadpdfcurrent.do?id=10267">1</a></p>
+            </div>
+            <div class="evidence-row">
+              <span class="label blue">Generic PA</span>
+              <p>Montana Medicaid states that when preferred brands appear on the PDL, the generic equivalent requires prior authorization; the current May 2026 PDL shows Butrans Patch preferred while buprenorphine (Butrans) is non-preferred<a class="cite" href="https://medicaidprovider.mt.gov/manuals/prescriptiondrugprogrammanual">2</a><a class="cite" href="https://medicaidprovider.mt.gov/docs/pharmacy/2026/May2026PreferredDrugList.pdf">6</a></p>
+            </div>
+            <div class="evidence-row">
+              <span class="label orange">Adherence edit</span>
+              <p>Ohio Medicaid's April 1, 2026 UPDL defines BvG as brand preferred over the generic and marks current BvG products across multiple therapeutic categories<a class="cite" href="https://dam.assets.ohio.gov/image/upload/medicaid.ohio.gov/PHM/unified-pdl/20260401_UPDL_FINAL.pdf">3</a></p>
+            </div>
+            <div class="evidence-row">
+              <span class="label pink">Commercial PA</span>
+              <p>Mass General Brigham Health Plan has a commercial policy for brand preferred over generic drugs, requiring documentation such as trial, adverse reaction, or shortage rationale for the non-preferred generic<a class="cite" href="https://resources.massgeneralbrighamhealthplan.org/pharmacy/PharmacyPolicies/CommercialPolicies/BrandPreferred_PA_ComExch_Rx_05.01.23.pdf">4</a></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="card-grid">
+          <div class="card">
+            <h3>MassHealth lists many named brands as preferred</h3>
+            <p>Current BOGL examples include respiratory, CNS, diabetes, anticoagulant, and ophthalmic products.</p>
+            <div class="meds">
+              <span class="pill lime">Advair</span>
+              <span class="pill lime">Concerta</span>
+              <span class="pill lime">Copaxone</span>
+              <span class="pill lime">Lantus</span>
+              <span class="pill lime">Vyvanse</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3 class="two-line">North Carolina places some<br />brands above direct generics</h3>
+            <p>The April 2026 PDL shows Butrans Patch as preferred while buprenorphine patch, its generic, is non-preferred; it also lists OxyContin Tablet as preferred while generic oxycodone ER is non-preferred<a class="cite" href="https://medicaid.ncdhhs.gov/nc-medicaid-preferred-drug-list-pdl-effective-april-2026revised-05012026/download?attachment=">5</a></p>
+            <div class="meds">
+              <span class="pill blue">Butrans</span>
+              <span class="pill blue">OxyContin</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Montana ties brand preference to state net cost</h3>
+            <p>The manual says brands may be preferred over generics when there is a net cost benefit to the department, and the May 2026 PDL shows Butrans Patch preferred over generic buprenorphine (Butrans)<a class="cite" href="https://medicaidprovider.mt.gov/manuals/prescriptiondrugprogrammanual">2</a><a class="cite" href="https://medicaidprovider.mt.gov/docs/pharmacy/2026/May2026PreferredDrugList.pdf">6</a></p>
+            <div class="meds">
+              <span class="pill orange">Butrans</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Ohio embeds the concept in UPDL terminology</h3>
+            <p>Ohio's April 2026 UPDL defines BvG as brand preferred over generic and labels examples such as Mitigare, Vyvanse, Lantus, Farxiga, Alrex, and Lotemax as BvG<a class="cite" href="https://dam.assets.ohio.gov/image/upload/medicaid.ohio.gov/PHM/unified-pdl/20260401_UPDL_FINAL.pdf">3</a></p>
+            <div class="meds">
+              <span class="pill pink">Lantus</span>
+              <span class="pill pink">Lotemax</span>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="source-note">Sources: MassHealth BOGL Rev. 05/26; Montana Healthcare Programs prescription drug manual and May 2026 PDL; Ohio Medicaid UPDL effective April 1, 2026; Mass General Brigham Health Plan commercial PA policy; NC Medicaid PDL effective April 1, 2026, revised May 1, 2026. Inline numbers link to the source documents.</div>
+        <div class="slide-no">01 / 01</div>
+      </footer>
+    </div>
+  </article>
+</body>
+</html>

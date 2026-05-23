@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>U.S. Brand Medication Dollar Flow</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: var(--paper); color: var(--ink); }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .page {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+      padding: 26px 0 18px;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(255, 184, 107, .20), transparent 30%),
+        linear-gradient(135deg, rgba(255,250,240,.82), rgba(235,228,214,.70)),
+        var(--paper);
+    }
+    .page::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .33;
+      background-image:
+        linear-gradient(rgba(16,18,15,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16,18,15,.035) 1px, transparent 1px);
+      background-size: 22px 22px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.9), rgba(0,0,0,.48));
+    }
+    .wrap { width: min(1460px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 8px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 850;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      background: var(--lime);
+      white-space: nowrap;
+    }
+    .meta {
+      font-size: 13px;
+      font-weight: 850;
+      color: rgba(16,18,15,.55);
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 {
+      max-width: 1160px;
+      font-size: clamp(42px, 4.5vw, 60px);
+      line-height: .93;
+      font-weight: 560;
+      letter-spacing: 0;
+    }
+    .dek {
+      max-width: 1260px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 18.5px;
+      line-height: 1.14;
+    }
+    .cite {
+      font-size: .58em;
+      vertical-align: super;
+      margin-left: 2px;
+      font-weight: 900;
+      text-decoration: none;
+    }
+    .cite + .cite::before { content: ","; margin-right: 1px; }
+    .layout {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 16px;
+      margin-top: 14px;
+      align-items: stretch;
+    }
+    .panel, .metric, .source-note, .legend-card {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.88);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel { padding: 16px; }
+    .panel.dark { background: #11130f; color: var(--paper); border-color: #11130f; }
+    .panel.dark p, .panel.dark li { color: rgba(246,241,232,.86); }
+    .panel-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+    h2 { font-size: 26px; line-height: 1.02; font-weight: 650; letter-spacing: 0; }
+    h3 { font-size: 21px; line-height: 1.06; font-weight: 720; letter-spacing: 0; }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      white-space: nowrap;
+    }
+    .tag.blue { background: var(--blue); }
+    .tag.orange { background: var(--orange); }
+    .tag.pink { background: var(--pink); }
+    .tag.gray { background: var(--gray); }
+    .flow {
+      display: grid;
+      gap: 5px;
+    }
+    .flow-row {
+      display: grid;
+      grid-template-columns: 172px 1fr 78px;
+      align-items: center;
+      gap: 12px;
+    }
+    .flow-label {
+      font-size: 13.5px;
+      line-height: 1.05;
+      font-weight: 820;
+    }
+    .flow-label span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .track {
+      height: 36px;
+      border: 1.3px solid var(--line);
+      background: rgba(235,228,214,.74);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .bar {
+      height: 100%;
+      min-width: 10px;
+      border-right: 1.3px solid rgba(16,18,15,.72);
+    }
+    .bar.insurer { width: 19%; background: var(--blue); }
+    .bar.pbm { width: 2%; background: var(--red); }
+    .bar.pharmacy { width: 3%; background: var(--pink); }
+    .bar.wholesaler { width: 1%; background: var(--gray); }
+    .bar.manufacturer { width: 58%; background: var(--lime); }
+    .bar.production { width: 18%; background: var(--orange); }
+    .amount {
+      font-size: 26px;
+      line-height: .95;
+      font-weight: 880;
+      text-align: right;
+    }
+    .amount small {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+    .flow-caption {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .mini {
+      border: 1.2px solid var(--line);
+      border-radius: 16px;
+      padding: 8px 11px;
+      background: rgba(235,228,214,.65);
+    }
+    .mini strong {
+      display: block;
+      font-size: 15.5px;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+    .mini p {
+      color: var(--muted);
+      font-size: 11.5px;
+      line-height: 1.08;
+    }
+    .side {
+      display: grid;
+      gap: 14px;
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .metric { padding: 13px; min-height: 104px; }
+    .num {
+      font-size: 34px;
+      line-height: .9;
+      font-weight: 880;
+      letter-spacing: 0;
+    }
+    .metric p {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12.8px;
+      line-height: 1.07;
+      font-weight: 650;
+    }
+    .list {
+      list-style: none;
+      margin: 10px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 7px;
+    }
+    .list li {
+      position: relative;
+      padding-left: 18px;
+      font-size: 13px;
+      line-height: 1.12;
+      color: var(--muted);
+    }
+    .list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .42em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--lime);
+      border: 1px solid var(--line);
+    }
+    .dark .list li::before { background: var(--orange); }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 14px;
+      margin-top: 10px;
+    }
+    .source-note {
+      padding: 11px 13px;
+      font-size: 10.5px;
+      line-height: 1.14;
+      color: var(--muted);
+    }
+    .source-note strong { color: var(--ink); }
+    .refs {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 4px 8px;
+      margin-top: 8px;
+      font-size: 9.5px;
+      line-height: 1.05;
+    }
+    .refs a { font-weight: 760; }
+    .legend-card {
+      padding: 13px 15px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .legend-item {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      min-width: 0;
+      font-size: 11px;
+      line-height: 1.05;
+      font-weight: 800;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    .swatch {
+      flex: 0 0 18px;
+      width: 18px;
+      height: 18px;
+      border: 1.2px solid var(--line);
+      border-radius: 6px;
+    }
+    .swatch.insurer { background: var(--blue); }
+    .swatch.pbm { background: var(--red); }
+    .swatch.pharmacy { background: var(--pink); }
+    .swatch.wholesaler { background: var(--gray); }
+    .swatch.manufacturer { background: var(--lime); }
+    .swatch.production { background: var(--orange); }
+    @media (max-width: 1100px) {
+      .layout, .footer-grid { grid-template-columns: 1fr; }
+      .page { overflow: visible; }
+    }
+    @media (max-width: 720px) {
+      .wrap { width: min(100% - 28px, 1420px); }
+      .topline { align-items: flex-start; flex-direction: column; gap: 8px; }
+      .dek { font-size: 20px; }
+      .flow-row { grid-template-columns: 1fr; gap: 7px; }
+      .amount { text-align: left; }
+      .flow-caption, .metrics, .refs, .legend-card { grid-template-columns: 1fr; }
+    }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .page { width: 1600px; min-height: 900px; padding: 26px 0 18px; overflow: hidden; }
+      .wrap { width: 1460px; }
+      h1 { font-size: 60px; }
+      .panel, .metric, .source-note, .legend-card { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="wrap">
+      <div class="topline">
+        <div class="eyebrow">U.S. brand medication dollar flow | May 2026 draft</div>
+        <div class="meta">Profit-pool style view, not GAAP profit attribution</div>
+      </div>
+
+      <h1>Where a U.S. brand medication dollar is retained</h1>
+      <p class="dek">A stylized retail-channel view of a $100 brand-drug expenditure shows manufacturers collecting about $76 and retaining about $58 after production cost, while insurers, PBMs, pharmacies, and wholesalers retain smaller gross amounts before their operating expenses.<a class="cite" href="https://schaeffer.usc.edu/wp-content/uploads/2024/10/The-Flow-of-Money-Through-the-Pharmaceutical-Distribution-System_Final_Spreadsheet.pdf">1</a></p>
+
+      <section class="layout" aria-label="U.S. brand medication dollar flow infographic">
+        <article class="panel">
+          <div class="panel-title">
+            <h2>Illustrative $100 brand-drug retail expenditure</h2>
+            <span class="tag blue">2015-based model</span>
+          </div>
+
+          <div class="flow" role="img" aria-label="For every 100 dollars spent on a branded drug in the USC retail-channel model, insurers keep 19 dollars, PBMs keep 2 dollars, pharmacies keep 3 dollars, wholesalers keep 1 dollar, manufacturers retain 58 dollars, and production cost is 18 dollars.">
+            <div class="flow-row">
+              <div class="flow-label">Insurer retained amount<span>premium-funded margin/admin</span></div>
+              <div class="track"><div class="bar insurer"></div></div>
+              <div class="amount">$19<small>kept</small></div>
+            </div>
+            <div class="flow-row">
+              <div class="flow-label">PBM retained amount<span>intermediary gross amount</span></div>
+              <div class="track"><div class="bar pbm"></div></div>
+              <div class="amount">$2<small>kept</small></div>
+            </div>
+            <div class="flow-row">
+              <div class="flow-label">Pharmacy retained amount<span>dispensing gross amount</span></div>
+              <div class="track"><div class="bar pharmacy"></div></div>
+              <div class="amount">$3<small>kept</small></div>
+            </div>
+            <div class="flow-row">
+              <div class="flow-label">Wholesaler retained amount<span>distribution gross amount</span></div>
+              <div class="track"><div class="bar wholesaler"></div></div>
+              <div class="amount">$1<small>kept</small></div>
+            </div>
+            <div class="flow-row">
+              <div class="flow-label">Manufacturer gross retained amount<span>after estimated production cost</span></div>
+              <div class="track"><div class="bar manufacturer"></div></div>
+              <div class="amount">$58<small>gross</small></div>
+            </div>
+            <div class="flow-row">
+              <div class="flow-label">Estimated production cost<span>not profit pool</span></div>
+              <div class="track"><div class="bar production"></div></div>
+              <div class="amount">$18<small>cost</small></div>
+            </div>
+          </div>
+
+          <div class="flow-caption">
+            <div class="mini">
+              <strong>Manufacturer collection: $76</strong>
+              <p>The same USC figure shows manufacturers collecting about $76 of the $100 brand-drug expenditure and retaining $58 after estimated production cost.<a class="cite" href="https://schaeffer.usc.edu/wp-content/uploads/2024/10/The-Flow-of-Money-Through-the-Pharmaceutical-Distribution-System_Final_Spreadsheet.pdf">1</a></p>
+            </div>
+            <div class="mini">
+              <strong>Accounting-profit caution</strong>
+              <p>USC reports brand-specific net margins only for manufacturers, with brand-drug manufacturer net margin estimated at 28.1%; non-manufacturer brand-specific net margins were not estimated.<a class="cite" href="https://schaeffer.usc.edu/research/flow-of-money-through-the-pharmaceutical-distribution-system/">2</a></p>
+            </div>
+          </div>
+        </article>
+
+        <aside class="side">
+          <div class="metrics">
+            <div class="metric">
+              <div class="num">$606B</div>
+              <p>U.S. medicine spending at net prices in 2025, up from $548B in 2024; IQVIA attributes most of the $58B increase to protected brands outside GIP/GLP-1 agonists and COVID-19 products.<a class="cite" href="https://www.iqvia.com/insights/the-iqvia-institute/reports-and-publications/reports/us-medicine-use-trends-2026">3</a></p>
+            </div>
+            <div class="metric">
+              <div class="num">6-9%</div>
+              <p>IQVIA projects U.S. medicine spending growth through 2030 at 6-9% on a list-price basis versus 4.5-7.5% after discounts, rebates, and other concessions.<a class="cite" href="https://www.iqvia.com/insights/the-iqvia-institute/reports-and-publications/reports/us-medicine-use-trends-2026">3</a></p>
+            </div>
+            <div class="metric">
+              <div class="num">31%</div>
+              <p>NASEM estimated PBM intermediary margins rose from 23% in 2020 to 31% in 2022 in its retail-channel sample.<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611832/">4</a></p>
+            </div>
+            <div class="metric">
+              <div class="num">~80%</div>
+              <p>FTC reported that the top three PBMs processed nearly 80% of about 6.6B prescriptions dispensed by U.S. pharmacies in 2023.<a class="cite" href="https://www.ftc.gov/news-events/news/press-releases/2024/07/ftc-releases-interim-staff-report-prescription-drug-middlemen">5</a></p>
+            </div>
+          </div>
+
+          <article class="panel dark">
+            <div class="panel-title">
+              <h2>Read the pool as retained revenue, not literal profit</h2>
+              <span class="tag orange">Key caveats</span>
+            </div>
+            <ul class="list">
+              <li>Gross retained amounts include operating costs and other uses of funds; they are not equivalent to GAAP net income or economic profit.<a class="cite" href="https://schaeffer.usc.edu/research/flow-of-money-through-the-pharmaceutical-distribution-system/">2</a></li>
+              <li>NASEM estimated net transaction values after rebates, discounts, and DIR, but cautioned that omitted manufacturer concessions such as copay assistance, 340B-related discounts, Medicaid best-price effects, and PBM service fees may bias PBM and pharmacy margin estimates.<a class="cite" href="https://www.ncbi.nlm.nih.gov/books/NBK611832/">4</a></li>
+              <li>USC Schaeffer notes that PBM pass-through payments and vertical integration can make reported PBM profit margins highly sensitive to revenue-recognition choices and public segment reporting.<a class="cite" href="https://schaeffer.usc.edu/research/pbm-profitability/">6</a></li>
+            </ul>
+          </article>
+        </aside>
+      </section>
+
+      <section class="footer-grid" aria-label="Legend and source notes">
+        <div class="source-note">
+          <strong>Source note.</strong> Dollar-flow values are a normalized, retail-channel, privately insured brand-drug model from USC Schaeffer Figure 3 Panel A; components round to approximately $100 and should be read as gross retained amounts or production cost, not literal accounting profit. Current spending context is all U.S. medicines at net manufacturer prices, not brand-only revenue. NASEM intermediary estimates cover a 2020-2022 retail-drug sample and include stated limitations around unobserved concessions.
+          <div class="refs">
+            <a href="https://schaeffer.usc.edu/wp-content/uploads/2024/10/The-Flow-of-Money-Through-the-Pharmaceutical-Distribution-System_Final_Spreadsheet.pdf">1. USC Schaeffer PDF, Figure 3</a>
+            <a href="https://schaeffer.usc.edu/research/flow-of-money-through-the-pharmaceutical-distribution-system/">2. USC Schaeffer flow study</a>
+            <a href="https://www.iqvia.com/insights/the-iqvia-institute/reports-and-publications/reports/us-medicine-use-trends-2026">3. IQVIA U.S. Medicine Use Trends 2026</a>
+            <a href="https://www.ncbi.nlm.nih.gov/books/NBK611832/">4. NASEM/NCBI intermediary margins</a>
+            <a href="https://www.ftc.gov/news-events/news/press-releases/2024/07/ftc-releases-interim-staff-report-prescription-drug-middlemen">5. FTC PBM interim report release</a>
+            <a href="https://schaeffer.usc.edu/research/pbm-profitability/">6. USC Schaeffer PBM accounting paper</a>
+          </div>
+        </div>
+        <div class="legend-card" aria-label="Color legend">
+          <div class="legend-item"><span class="swatch insurer"></span> Insurer</div>
+          <div class="legend-item"><span class="swatch pbm"></span> PBM</div>
+          <div class="legend-item"><span class="swatch pharmacy"></span> Pharmacy</div>
+          <div class="legend-item"><span class="swatch wholesaler"></span> Wholesaler</div>
+          <div class="legend-item"><span class="swatch manufacturer"></span> Manufacturer</div>
+          <div class="legend-item"><span class="swatch production"></span> Production cost</div>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

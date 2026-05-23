@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FDA 2024 novel approvals: launch and payer policy timing</title>
+  <script src="data/fda_2024_dates.js"></script>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --lime: #d7ff5f;
+      --blue: #b8d8ff;
+      --orange: #ffb86b;
+      --pink: #ffd3e0;
+      --red: #ff8a76;
+      --gray: #d6d0c2;
+      --line: #1b1f17;
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #d9d1c0;
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    a { color: inherit; text-decoration: none; }
+    .sheet {
+      width: 1200px;
+      height: 2050px;
+      margin: 0 auto;
+      overflow: hidden;
+      background: var(--paper);
+      padding: 54px;
+      position: relative;
+    }
+    .sheet + .sheet { margin-top: 28px; }
+    .sheet-bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      pointer-events: none;
+      user-select: none;
+    }
+    .sheet > *:not(.sheet-bg-img) {
+      position: relative;
+      z-index: 1;
+    }
+    .sheet > .foot {
+      position: absolute;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 15px;
+      border: 2px solid var(--ink);
+      border-radius: 999px;
+      background: var(--lime);
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 22px 0 0;
+      max-width: 1092px;
+      font-size: 62px;
+      line-height: .94;
+      letter-spacing: 0;
+      font-weight: 560;
+    }
+    .subtitle {
+      margin: 18px 0 0;
+      max-width: 980px;
+      font-size: 20px;
+      line-height: 1.36;
+      color: var(--muted);
+    }
+    .source-run {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .source-run a, .linkish {
+      border-bottom: 1px solid rgba(16, 18, 15, .45);
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 30px;
+    }
+    .metric {
+      min-height: 128px;
+      padding: 20px 18px;
+      border: 2px solid var(--ink);
+      border-radius: var(--radius);
+      background: rgba(255, 250, 240, .86);
+      box-shadow: 0 18px 42px rgba(16, 18, 15, .07);
+    }
+    .metric strong {
+      display: block;
+      font-size: 48px;
+      line-height: .9;
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+    .metric span {
+      display: block;
+      margin-top: 12px;
+      font-size: 14px;
+      line-height: 1.25;
+      color: var(--muted);
+    }
+    .panel-grid {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 18px;
+      margin-top: 24px;
+    }
+    .panel {
+      border: 2px solid var(--ink);
+      border-radius: var(--radius);
+      background: rgba(255, 250, 240, .82);
+      padding: 20px;
+      min-height: 300px;
+    }
+    .panel.dark {
+      background: #11130f;
+      color: #fbf6ea;
+    }
+    h2 {
+      margin: 0 0 16px;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: 0;
+      font-weight: 650;
+    }
+    #orgBars {
+      display: grid;
+      gap: 26px;
+      margin-top: 20px;
+    }
+    .bar-row {
+      display: grid;
+      grid-template-columns: 210px 1fr 48px;
+      align-items: center;
+      gap: 16px;
+      margin: 0;
+      font-size: 19px;
+      line-height: 1.15;
+    }
+    .bar-track {
+      height: 34px;
+      border: 1.5px solid var(--ink);
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(16, 18, 15, .08);
+    }
+    .bar-fill { height: 100%; background: var(--blue); }
+    .bar-row:nth-child(4n+1) .bar-fill { background: var(--lime); }
+    .bar-row:nth-child(4n+2) .bar-fill { background: var(--orange); }
+    .bar-row:nth-child(4n+3) .bar-fill { background: var(--pink); }
+    .basis-list {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 18px;
+      line-height: 1.27;
+    }
+    .basis-list li {
+      padding-left: 18px;
+      position: relative;
+    }
+    .basis-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .55em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--lime);
+      border: 1px solid var(--ink);
+    }
+    .table-wrap {
+      margin-top: 24px;
+      border: 2px solid var(--ink);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: rgba(255, 250, 240, .88);
+    }
+    .table-kicker {
+      margin: 0;
+      padding: 12px 14px;
+      border-bottom: 2px solid var(--ink);
+      background: rgba(235, 228, 214, .72);
+      font-size: 13px;
+      line-height: 1.2;
+      color: var(--muted);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      font-size: 11px;
+      line-height: 1.12;
+    }
+    thead th {
+      background: var(--ink);
+      color: #fbf6ea;
+      padding: 9px 8px;
+      text-align: left;
+      font-size: 11px;
+      font-weight: 720;
+      white-space: nowrap;
+    }
+    tbody td {
+      padding: 7px 8px;
+      border-top: 1.4px solid rgba(16, 18, 15, .28);
+      vertical-align: top;
+    }
+    tbody tr:nth-child(even) td { background: rgba(235, 228, 214, .38); }
+    th:nth-child(1), td:nth-child(1) { width: 156px; }
+    th:nth-child(2), td:nth-child(2) { width: 88px; }
+    th:nth-child(3), td:nth-child(3) { width: 104px; }
+    th:nth-child(4), td:nth-child(4) { width: 118px; }
+    th:nth-child(5), td:nth-child(5) { width: 145px; }
+    th:nth-child(6), td:nth-child(6) { width: 74px; text-align: right; }
+    th:nth-child(7), td:nth-child(7) { width: auto; }
+    .drug {
+      font-weight: 760;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .generic { color: var(--muted); font-size: 10px; }
+    .tag {
+      display: inline-block;
+      padding: 4px 6px;
+      border: 1.4px solid var(--ink);
+      border-radius: 999px;
+      background: var(--gray);
+      font-size: 10px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .tag.fast { background: var(--lime); }
+    .tag.mid { background: var(--blue); }
+    .tag.slow { background: var(--orange); }
+    .tag.late { background: var(--pink); }
+    .tag.missing { background: var(--red); }
+    .notes {
+      margin-top: 20px;
+      display: block;
+    }
+    .note-card {
+      border: 2px solid var(--ink);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      min-height: 0;
+      background: rgba(255, 250, 240, .78);
+      font-size: 24px;
+      line-height: 1.26;
+      color: var(--muted);
+    }
+    .note-card strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 28px;
+      line-height: 1;
+      color: var(--ink);
+      font-weight: 750;
+    }
+    .page-2 .eyebrow {
+      font-size: 13px;
+      padding: 8px 14px;
+    }
+    .page-2 .table-wrap {
+      margin-top: 22px;
+    }
+    .page-2 table {
+      font-size: 10.7px;
+      line-height: 1.1;
+    }
+    .page-2 thead th {
+      padding: 8px 8px;
+      font-size: 10.5px;
+    }
+    .page-2 tbody td {
+      padding: 6px 8px;
+    }
+    .foot {
+      position: absolute;
+      left: 54px;
+      right: 54px;
+      bottom: 28px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.25;
+    }
+    .appendix h1 {
+      max-width: 1050px;
+      font-size: 36px;
+      line-height: .96;
+      margin-top: 14px;
+    }
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: 565px;
+      gap: 42px 18px;
+      margin-top: 22px;
+    }
+    .evidence-card {
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      border: 2px solid var(--ink);
+      border-radius: var(--radius);
+      background: rgba(255, 250, 240, .9);
+      overflow: hidden;
+      box-shadow: 0 14px 34px rgba(16, 18, 15, .06);
+    }
+    .evidence-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      padding: 8px 12px;
+      border-bottom: 2px solid var(--ink);
+      background: var(--ink);
+      color: #fbf6ea;
+    }
+    .evidence-head strong {
+      display: block;
+      font-size: 15px;
+      line-height: 1.05;
+      font-weight: 760;
+    }
+    .evidence-head span {
+      font-size: 10px;
+      color: rgba(251, 246, 234, .72);
+    }
+    .evidence-source {
+      padding: 8px 12px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: start;
+      border-bottom: 1.6px solid rgba(16,18,15,.24);
+    }
+    .source-name {
+      font-size: 12px;
+      font-weight: 720;
+      line-height: 1.15;
+    }
+    .basis-pill {
+      display: inline-flex;
+      align-items: center;
+      border: 1.6px solid var(--ink);
+      border-radius: 999px;
+      padding: 4px 7px;
+      background: var(--blue);
+      font-size: 9.5px;
+      line-height: 1;
+      white-space: nowrap;
+      font-weight: 700;
+    }
+    .shot {
+      margin: 8px 10px 0;
+      border: 1.8px solid rgba(16,18,15,.72);
+      background: #fff;
+      position: relative;
+      overflow: hidden;
+      flex: 1;
+      min-height: 0;
+    }
+    .actual-shot {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      background: #fffaf0;
+    }
+    .shot-caption {
+      padding: 7px 9px;
+      border-left: 5px solid var(--lime);
+      background: rgba(246, 241, 232, .96);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 9.8px;
+      line-height: 1.14;
+      color: var(--muted);
+    }
+    .shot-caption .source-link {
+      border-bottom: 1px solid rgba(16, 18, 15, .45);
+      color: var(--ink);
+    }
+    .shot-caption .source-note {
+      color: var(--muted);
+      font-weight: 650;
+    }
+    .appendix-note {
+      margin-top: 16px;
+      padding: 12px 14px;
+      border: 2px solid var(--ink);
+      border-radius: var(--radius);
+      background: rgba(255, 250, 240, .82);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.28;
+    }
+    .appendix .foot {
+      bottom: 18px;
+    }
+    @page { size: 1200px 2050px; margin: 0; }
+    @media print {
+      .sheet {
+        break-after: page;
+        page-break-after: always;
+      }
+      .sheet + .sheet { margin-top: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main class="sheet page-1">
+    <img class="sheet-bg-img" src="assets/fda_2024_bg_page1.png" alt="" aria-hidden="true">
+    <div class="eyebrow">FDA 2024 novel approvals | public payer/PBM policy scan | May 21, 2026</div>
+    <h1>Approval, launch and payer-policy timing for FDA 2024 novel drugs</h1>
+    <p class="subtitle">A 50-product scan aligning FDA approval dates, launch or market-start dates, and the first drug-specific public medical or pharmacy policy found among large PBMs and insurers</p>
+    <div class="source-run">
+      <a href="https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2024">FDA novel approvals page</a>
+      <span>Launch source hierarchy: company commercial-availability source when explicit; otherwise openFDA NDC marketing-start proxy</span>
+      <span>Policy sources: CVS Caremark/FEP, CarelonRx/Elevance, Humana, Centene affiliates, Cigna and OptumRx public sources where available</span>
+    </div>
+
+    <section class="metrics" id="metrics"></section>
+
+    <section class="panel-grid">
+      <div class="panel">
+        <h2>Earliest public policy source mix</h2>
+        <div id="orgBars"></div>
+      </div>
+      <div class="panel dark">
+        <h2>Measurement basis</h2>
+        <ul class="basis-list">
+          <li>Policy dates mix original, effective, publish and month-only dates from payer sources</li>
+          <li>Launch dates are not always commercial shipment dates; many products only expose an official NDC marketing-start date</li>
+          <li>Intervals should be read as public-source timing signals, not internal P&T decision timing or plan-level coverage implementation</li>
+          <li>Month-only policy dates are shown as months and excluded from exact-day median calculations</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="table-wrap">
+      <p class="table-kicker" id="page1Kicker">Products 1-20 of 50 | January through June approvals</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Drug</th>
+            <th>FDA approval</th>
+            <th>Market start</th>
+            <th>First policy</th>
+            <th>Earliest source</th>
+            <th>Policy delta</th>
+            <th>Date basis and caveat</th>
+          </tr>
+        </thead>
+        <tbody id="rowsPage1"></tbody>
+      </table>
+    </section>
+
+    <div class="foot">
+      <span>Data extracted and assembled May 21, 2026</span>
+      <span>Main page 1 of 2 | Rows link to payer policy source where a public source was found</span>
+    </div>
+  </main>
+
+  <main class="sheet page-2">
+    <img class="sheet-bg-img" src="assets/fda_2024_bg_page2.png" alt="" aria-hidden="true">
+    <div class="eyebrow">Later-2024 approvals | May 21, 2026</div>
+
+    <section class="table-wrap">
+      <p class="table-kicker" id="page2Kicker">Products 21-50 of 50 | June through December approvals</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Drug</th>
+            <th>FDA approval</th>
+            <th>Market start</th>
+            <th>First policy</th>
+            <th>Earliest source</th>
+            <th>Policy delta</th>
+            <th>Date basis and caveat</th>
+          </tr>
+        </thead>
+        <tbody id="rowsPage2"></tbody>
+      </table>
+    </section>
+
+
+    <section class="notes">
+      <div class="note-card">
+        <strong>Interpretation</strong> Public payer signals were available for 42 of 50 products in the scoped scan. Same-day public effective-date signals appeared for Rezdiffra, Duvyzat, Winrevair, Kisunla, Crenessity, Attruby, Alyftrek and Alhemo; unresolved gaps were concentrated in anti-infective, diagnostic, imaging, contrast and acute-use products without a drug-specific public policy found in the reviewed payer/PBM source&nbsp;set.
+      </div>
+    </section>
+
+    <div class="foot">
+      <span>Data extracted and assembled May 21, 2026</span>
+      <span>Main page 2 of 2 | Rows link to payer policy source where a public source was found</span>
+    </div>
+  </main>
+
+
+  <section id="appendixPages"></section>
+
+  <script>
+    const rows = window.FDA_2024_ROWS;
+    const fmt = value => {
+      if (!value) return "Not found";
+      if (/^\d{4}-\d{2}$/.test(value)) return new Date(value + "-01T00:00:00").toLocaleDateString("en-US", {month:"short", year:"numeric"});
+      return new Date(value + "T00:00:00").toLocaleDateString("en-US", {month:"short", day:"numeric", year:"numeric"});
+    };
+    const dateObj = value => {
+      if (!value || /^\d{4}-\d{2}$/.test(value)) return null;
+      return new Date(value + "T00:00:00");
+    };
+    const diffDays = (a,b) => {
+      const da = dateObj(a), db = dateObj(b);
+      if (!da || !db) return null;
+      return Math.round((db - da) / 86400000);
+    };
+    const median = arr => {
+      const s = arr.filter(v => Number.isFinite(v)).sort((a,b) => a-b);
+      if (!s.length) return null;
+      const mid = Math.floor(s.length / 2);
+      return s.length % 2 ? s[mid] : Math.round((s[mid - 1] + s[mid]) / 2);
+    };
+    const found = rows.filter(r => r.policy);
+    const exactPolicyDeltas = found.map(r => diffDays(r.approval, r.policy)).filter(v => v !== null);
+    const exactLaunchDeltas = rows.map(r => diffDays(r.approval, r.launch)).filter(v => v !== null);
+    const sameDayPolicies = exactPolicyDeltas.filter(v => v === 0).length;
+    const fastPolicies = exactPolicyDeltas.filter(v => v !== null && v <= 60).length;
+
+    document.getElementById("metrics").innerHTML = [
+      [rows.length, "FDA CDER novel drugs approved in calendar 2024"],
+      [found.length, "Had a drug-specific public payer/PBM policy found"],
+      [median(exactPolicyDeltas) + " days", "Median approval-to-policy delta among exact policy dates"],
+      [sameDayPolicies, "Same-day public policy effective-date signals"]
+    ].map(([value,label]) => `<div class="metric"><strong>${value}</strong><span>${label}</span></div>`).join("");
+
+    const orgCounts = {};
+    found.forEach(r => {
+      let org = r.policyOrg;
+      if (org.includes("Centene")) org = "Centene affiliates";
+      if (org.includes("Humana")) org = "Humana";
+      if (org.includes("Cigna")) org = "Cigna / EviCore";
+      if (org.includes("Carelon") || org.includes("Elevance") || org.includes("Anthem")) org = "Elevance / CarelonRx";
+      if (org.includes("CVS")) org = "CVS Caremark / FEP";
+      orgCounts[org] = (orgCounts[org] || 0) + 1;
+    });
+    const maxOrg = Math.max(...Object.values(orgCounts));
+    document.getElementById("orgBars").innerHTML = Object.entries(orgCounts)
+      .sort((a,b) => b[1] - a[1])
+      .map(([org,count]) => `<div class="bar-row"><span>${org}</span><div class="bar-track"><div class="bar-fill" style="width:${count / maxOrg * 100}%"></div></div><strong>${count}</strong></div>`)
+      .join("");
+
+    const deltaTag = d => {
+      if (d === null) return `<span class="tag missing">n/a</span>`;
+      if (d === 0) return `<span class="tag fast">same day</span>`;
+      if (d <= 60) return `<span class="tag fast">${d}d</span>`;
+      if (d <= 120) return `<span class="tag mid">${d}d</span>`;
+      if (d <= 180) return `<span class="tag slow">${d}d</span>`;
+      return `<span class="tag late">${d}d</span>`;
+    };
+    const sourceUrl = r => r.linkUrl === null ? null : (r.linkUrl || r.policyUrl);
+
+    const tableRowHtml = r => {
+      const delta = diffDays(r.approval, r.policy);
+      const href = sourceUrl(r);
+      const policyCell = href ? `<a class="linkish" href="${href}">${fmt(r.policy)}</a>` : (r.policy ? fmt(r.policy) : "Not found");
+      const sourceCell = href ? `<a class="linkish" href="${href}">${r.policyOrg}</a>` : r.policyOrg;
+      return `<tr>
+        <td><span class="drug">${r.brand}</span><span class="generic">${r.generic}</span></td>
+        <td>${fmt(r.approval)}</td>
+        <td>${fmt(r.launch)}</td>
+        <td>${policyCell}</td>
+        <td>${sourceCell}</td>
+        <td>${deltaTag(delta)}</td>
+        <td>${r.launchBasis}; policy basis: ${r.policyBasis}</td>
+      </tr>`;
+    };
+    const page1Count = 20;
+    document.getElementById("rowsPage1").innerHTML = rows.slice(0, page1Count).map(tableRowHtml).join("");
+    document.getElementById("rowsPage2").innerHTML = rows.slice(page1Count).map(tableRowHtml).join("");
+
+    const appendixRows = rows.filter(r => r.policyUrl);
+    const chunk = (arr, size) => Array.from({ length: Math.ceil(arr.length / size) }, (_, i) => arr.slice(i * size, i * size + size));
+    const shortUrl = url => {
+      try {
+        const u = new URL(url);
+        return u.hostname + u.pathname;
+      } catch {
+        return url;
+      }
+    };
+    const slug = value => value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    const evidenceType = r => r.policyOrg.includes("Humana") ? "Humana search-result row" : "policy PDF/source page";
+    const sourceNote = r => r.brand === "Qfitlia" ? " Actual source is a redline PDF, so prior struck dates appear next to the current publish date." : "";
+    const captionSource = r => {
+      const href = sourceUrl(r);
+      if (!href) return ` <span class="source-note">Source note: original source URL unavailable; not linked.</span>`;
+      return ` <a class="source-link" href="${href}" target="_blank" rel="noopener noreferrer">Source: ${shortUrl(href)}</a>`;
+    };
+    const screenshotPath = (r, idx) => `source_screenshots/highres/${String(idx).padStart(2, "0")}_${slug(r.brand)}.png`;
+    const appendixCard = (r, idx) => `
+      <article class="evidence-card">
+        <div class="evidence-head">
+          <div><strong>${idx}. ${r.brand}</strong><span>${r.generic}</span></div>
+          <span>${r.policyOrg}</span>
+        </div>
+        <div class="evidence-source">
+          <div class="source-name">${r.policyOrg} policy evidence</div>
+          <div class="basis-pill">${r.policyBasis}</div>
+        </div>
+        <div class="shot" aria-label="Policy source screenshot with highlighted date">
+          <img class="actual-shot" src="${screenshotPath(r, idx)}" alt="Chrome-captured ${r.policyOrg} source screenshot for ${r.brand}">
+        </div>
+        <div class="shot-caption">Chrome-captured ${evidenceType(r)}. Highlight marks the date field used for ${r.brand}: ${fmt(r.policy)} (${r.policyBasis}).${sourceNote(r)}${captionSource(r)}</div>
+      </article>`;
+
+    const appendixPageSize = 6;
+    document.getElementById("appendixPages").innerHTML = chunk(appendixRows, appendixPageSize).map((items, pageIndex) => `
+      <main class="sheet appendix">
+        <img class="sheet-bg-img" src="assets/fda_2024_bg_appendix.png" alt="" aria-hidden="true">
+        <div class="eyebrow">Policy screenshot appendix | ${pageIndex * appendixPageSize + 1}-${pageIndex * appendixPageSize + items.length} of ${appendixRows.length}</div>
+        <h1>Policy-date evidence screenshots</h1>
+        <div class="evidence-grid">
+          ${items.map((r, i) => appendixCard(r, pageIndex * appendixPageSize + i + 1)).join("")}
+        </div>
+        <div class="foot">
+          <span>Appendix generated May 21, 2026</span>
+          <span>Appendix page ${pageIndex + 1} of ${Math.ceil(appendixRows.length / appendixPageSize)}</span>
+        </div>
+      </main>`).join("");
+  </script>
+</body>
+</html>

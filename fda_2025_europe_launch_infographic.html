@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FDA 2025 drugs European launch evidence</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body,
+    *,
+    *::before,
+    *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: var(--paper-2);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: geometricPrecision;
+      scrollbar-width: none;
+    }
+
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+      display: none;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .sheet {
+      position: relative;
+      width: 1600px;
+      height: 2400px;
+      margin: 0 auto;
+      overflow: hidden;
+      padding: 54px 60px 52px;
+      background: var(--paper);
+      page-break-after: always;
+      break-after: page;
+    }
+
+    .sheet:last-of-type {
+      page-break-after: auto;
+      break-after: auto;
+    }
+
+    .sheet-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .hairline {
+      position: absolute;
+      inset: 28px;
+      border: 1.5px solid rgba(16, 18, 15, 0.18);
+      border-radius: 36px;
+      pointer-events: none;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      background: var(--lime);
+      padding: 10px 16px 9px;
+      font-size: 17px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    h1 {
+      max-width: 1480px;
+      margin: 24px 0 0;
+      font-size: 72px;
+      line-height: 0.96;
+      font-weight: 560;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      max-width: 1480px;
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 22px;
+      line-height: 1.16;
+      font-weight: 560;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: 1.02fr 1fr 1fr 1.1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .metric {
+      min-height: 136px;
+      border: 2px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 250, 240, 0.88);
+      box-shadow: var(--shadow);
+      padding: 18px 18px 16px;
+    }
+
+    .metric.dark {
+      background: #11130f;
+      color: var(--paper);
+    }
+
+    .metric .label {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.18;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .metric.dark .label,
+    .metric.dark .note {
+      color: rgba(246, 241, 232, 0.74);
+    }
+
+    .metric .value {
+      margin-top: 11px;
+      font-size: 43px;
+      line-height: 0.94;
+      font-weight: 500;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .metric .note {
+      margin-top: 11px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.24;
+      font-weight: 560;
+    }
+
+    .rule {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: 176px 1fr;
+      gap: 18px;
+      border: 2px solid var(--line);
+      border-radius: var(--radius);
+      background: #11130f;
+      color: var(--paper);
+      box-shadow: var(--shadow);
+      padding: 18px 20px;
+    }
+
+    .rule .label {
+      color: var(--orange);
+      font-size: 22px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .rule p {
+      margin: 0;
+      color: rgba(246, 241, 232, 0.88);
+      font-size: 23px;
+      line-height: 1.18;
+      font-weight: 570;
+    }
+
+    .table-panel {
+      margin-top: 18px;
+      border: 2px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: rgba(255, 250, 240, 0.90);
+      box-shadow: var(--shadow);
+    }
+
+    .table-head,
+    .row {
+      display: grid;
+      grid-template-columns: 46px 220px 278px 390px 1fr;
+      gap: 0;
+      align-items: stretch;
+    }
+
+    .table-head {
+      background: #11130f;
+      color: var(--paper);
+      font-size: 15px;
+      line-height: 1;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .cell {
+      min-width: 0;
+      padding: 10px 12px;
+      border-right: 1.5px solid rgba(16, 18, 15, 0.88);
+      border-bottom: 1.5px solid rgba(16, 18, 15, 0.70);
+    }
+
+    .table-head .cell {
+      padding: 15px 12px 14px;
+      border-right-color: rgba(246, 241, 232, 0.24);
+      border-bottom: 0;
+    }
+
+    .cell:last-child {
+      border-right: 0;
+    }
+
+    .row:last-child .cell {
+      border-bottom: 0;
+    }
+
+    .num {
+      font-size: 19px;
+      font-weight: 900;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    .drug {
+      font-size: 21px;
+      line-height: 1.05;
+      font-weight: 900;
+    }
+
+    .ingredient {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.16;
+      font-weight: 620;
+    }
+
+    .countries {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      align-items: flex-start;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 22px;
+      padding: 4px 7px 3px;
+      border: 1.5px solid var(--line);
+      border-radius: 999px;
+      background: var(--blue);
+      font-size: 14px;
+      line-height: 1;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    .chip.none {
+      background: var(--gray);
+      color: #34372f;
+      white-space: normal;
+      line-height: 1.08;
+      border-radius: 12px;
+      padding: 5px 8px;
+    }
+
+    .row:nth-child(4n + 2) .chip:not(.none) {
+      background: var(--lime);
+    }
+
+    .row:nth-child(4n + 3) .chip:not(.none) {
+      background: var(--orange);
+    }
+
+    .row:nth-child(4n + 4) .chip:not(.none) {
+      background: var(--pink);
+    }
+
+    .evidence {
+      font-size: 15px;
+      line-height: 1.18;
+      font-weight: 620;
+      color: var(--muted);
+    }
+
+    .evidence strong {
+      color: var(--ink);
+      font-weight: 900;
+    }
+
+    .status {
+      display: inline-flex;
+      width: max-content;
+      margin-bottom: 5px;
+      padding: 4px 8px 3px;
+      border: 1.5px solid var(--line);
+      border-radius: 999px;
+      color: var(--ink);
+      background: var(--lime);
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .status.none {
+      background: var(--gray);
+    }
+
+    .cite {
+      color: var(--ink);
+      font-size: 0.76em;
+      font-weight: 950;
+      text-decoration: none;
+      vertical-align: super;
+      margin-left: 2px;
+      white-space: nowrap;
+    }
+
+    .cite + .cite::before {
+      content: ", ";
+    }
+
+    .page-heading {
+      display: grid;
+      grid-template-columns: minmax(720px, 1fr) 620px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 18px;
+    }
+
+    .page-heading h2 {
+      margin: 0;
+      font-size: 42px;
+      line-height: 1;
+      font-weight: 780;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .page-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.2;
+      font-weight: 610;
+      text-align: right;
+    }
+
+    .reference-title {
+      margin: 0;
+      font-size: 54px;
+      line-height: 0.98;
+      font-weight: 620;
+      letter-spacing: 0;
+    }
+
+    .reference-list {
+      margin-top: 26px;
+      columns: 3;
+      column-gap: 42px;
+      font-size: 16px;
+      line-height: 1.15;
+      font-weight: 590;
+      color: var(--muted);
+    }
+
+    .source {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 10px;
+      break-inside: avoid;
+      padding: 0 0 8px;
+      font-size: 16px;
+      line-height: 1.15;
+      font-weight: 590;
+      color: var(--muted);
+    }
+
+    .source a {
+      color: var(--ink);
+      font-weight: 590;
+      text-decoration: none;
+    }
+
+    .source .sid {
+      display: block;
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1;
+      font-weight: 650;
+      padding-top: 2px;
+    }
+
+    @page {
+      size: 1600px 2400px;
+      margin: 0;
+    }
+
+    @media print {
+      html,
+      body {
+        width: 1600px;
+        height: 2400px;
+        background: var(--paper);
+      }
+
+      .sheet {
+        margin: 0;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="sheet">
+    <img class="sheet-bg" src="fda_2025_europe_launch_background.png" alt="" aria-hidden="true">
+    <div class="hairline"></div>
+    <div class="content">
+      <div class="topbar">
+        <div class="eyebrow">FDA 2025 CDER novel approvals</div>
+      </div>
+
+      <h1>Where FDA 2025 novel drugs had public European launch evidence</h1>
+      <p class="subtitle">Country counts are evidence-based, not inferred. FDA approval, EMA or MHRA authorization, managed-access use, and expected launch plans were kept separate from country-level launch, marketed, price, reimbursement, or public product-listing evidence.</p>
+
+      <section class="metrics" aria-label="Summary metrics">
+        <div class="metric dark">
+          <div class="label">FDA 2025 scope</div>
+          <div class="value">46 drugs</div>
+          <div class="note">CDER novel drug approvals on FDA's 2025 list</div>
+        </div>
+        <div class="metric">
+          <div class="label">With country evidence</div>
+          <div class="value">13 drugs</div>
+          <div class="note">At least one European country had public launch or availability evidence</div>
+        </div>
+        <div class="metric">
+          <div class="label">No public country evidence</div>
+          <div class="value">33 drugs</div>
+          <div class="note">Searches found approval-only, US-only, planned, or no launch evidence</div>
+        </div>
+        <div class="metric">
+          <div class="label">Countries represented</div>
+          <div class="value">12 markets</div>
+          <div class="note">Croatia, Denmark, Finland, France, Germany, Greece, Italy, Slovenia, Spain, Sweden, Switzerland, UK</div>
+        </div>
+      </section>
+
+      <section class="rule">
+        <div class="label">METHODS</div>
+        <p>A country is listed only when public evidence indicated launch, marketed status, pricing, reimbursement, or a country product listing by the cutoff. If the evidence found was only regulatory approval, a future launch plan, or US-only availability, the row is marked as no public launch evidence found.</p>
+      </section>
+
+      <section class="table-panel" aria-label="Drug launch evidence table">
+        <div class="table-head">
+          <div class="cell">No</div>
+          <div class="cell">Drug</div>
+          <div class="cell">Active ingredient</div>
+          <div class="cell">European countries found</div>
+          <div class="cell">Evidence note</div>
+        </div>
+        <div id="rows-1"></div>
+      </section>
+    </div>
+  </main>
+
+  <main class="sheet">
+    <img class="sheet-bg" src="fda_2025_europe_launch_background.png" alt="" aria-hidden="true">
+    <div class="hairline"></div>
+    <div class="content">
+      <section class="page-heading">
+        <h2>European launch evidence, continued</h2>
+        <p class="page-note">Continuation of the FDA 2025 CDER novel approvals table. Source markers remain live links to the supporting evidence.</p>
+      </section>
+
+      <section class="table-panel" aria-label="Drug launch evidence table continuation">
+        <div class="table-head">
+          <div class="cell">No</div>
+          <div class="cell">Drug</div>
+          <div class="cell">Active ingredient</div>
+          <div class="cell">European countries found</div>
+          <div class="cell">Evidence note</div>
+        </div>
+        <div id="rows-2"></div>
+      </section>
+    </div>
+  </main>
+
+  <main class="sheet">
+    <img class="sheet-bg" src="fda_2025_europe_launch_background.png" alt="" aria-hidden="true">
+    <div class="hairline"></div>
+    <div class="content">
+      <h2 class="reference-title">References</h2>
+
+      <section class="reference-list" id="sources" aria-label="Source list"></section>
+    </div>
+  </main>
+
+  <script>
+    const sources = {
+      1: ["FDA 2025 CDER novel approvals", "https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2025"],
+      2: ["Datroway Germany AMNOG", "https://www.g-ba.de/bewertungsverfahren/nutzenbewertung/1224/"],
+      3: ["Datroway Switzerland listing", "https://compendium.ch/de/news/28630"],
+      4: ["France BDPM register", "https://base-donnees-publique.medicaments.gouv.fr/download/file/CIS_CIP_bdpm.txt"],
+      5: ["Finland Kanta medicine database", "https://www.kanta.fi/kantafi-rest/kantafi-laaketietokanta/download/latest"],
+      6: ["Trecondi Germany product information", "https://www.fachinfo.de/fi/detail/022576/trecondi-r-1-g-5-g-pulver-zur-herstellung-einer-infusionsloesung"],
+      7: ["Trecondi Italy reimbursement", "https://www.aifa.gov.it/-/cda_aifa_approva_rimborsabilita_nuovi_farmaci_ed_estensioni_22.04.2026"],
+      8: ["Spain CIMA Trecondi", "https://cima.aemps.es/cima/rest/medicamentos?nombre=trecondi"],
+      9: ["UK eMC treosulfan", "https://www.medicines.org.uk/emc/ingredient/1062"],
+      10: ["Switzerland Trecondi listing", "https://compendium.ch/de/product/1453106-trecondi-trockensub-5-g"],
+      11: ["Slovenia JAZMP prices", "https://www.jazmp.si/fileadmin/datoteke/seznami/SFE/Cene/cene_20260501.xlsx"],
+      12: ["Gomekli/Ezmekly Germany launch report", "https://www.emdgroup.com/investors/reports-and-financials/earnings-materials/2025-q4/us/2025-Q4-Report-NA.pdf"],
+      13: ["Ezmekly Germany AMNOG", "https://www.g-ba.de/bewertungsverfahren/nutzenbewertung/1268/"],
+      14: ["Switzerland Ezmekly listing", "https://compendium.ch/de/product/1665510-ezmekly-kaps-1-mg"],
+      15: ["Romvimza Germany AMNOG", "https://www.g-ba.de/bewertungsverfahren/nutzenbewertung/1274/"],
+      16: ["LEO Pharma Anzupgo launch update", "https://www.leo-pharma.com/media-center/news/2024-leo-pharma-continues-to-deliver-double-digit-revenue"],
+      17: ["Anzupgo Germany launch", "https://www.businesswire.com/news/home/20241015674775/en/Germany-Becomes-the-First-Country-to-Launch-LEO-Pharmas-Anzupgo-delgocitinib-Cream"],
+      18: ["Anzupgo Denmark launch", "https://firstwordpharma.com/story/5907379"],
+      19: ["Greece medicine price bulletin", "https://www.moh.gov.gr/articles/times-farmakwn/deltia-timwn/13924-deltio-anathewrhmenwn-timwn-farmakwn-anthrwpinhs-xrhshs-dekembrioy-2025?fdl=30389"],
+      20: ["Imaavy Germany AMNOG", "https://www.g-ba.de/bewertungsverfahren/nutzenbewertung/1300/"],
+      21: ["Switzerland Imaavy listing", "https://compendium.ch/de/product/1653404-imaavy-inf-konz-300-mg-1-62ml"],
+      22: ["Croatia HALMED published prices", "https://www.halmed.hr/fdsak3jnFsk1Kfa/ostale_stranice/Zbirni-popis-objavljenih-cijena-lijekova-7356-svi.xlsx"],
+      23: ["Andembry Germany AMNOG", "https://www.g-ba.de/bewertungsverfahren/nutzenbewertung/1190/"],
+      24: ["Andembry Italy reimbursement and launch", "https://www.quotidianosanita.it/scienza-e-farmaci/aifa-approva-la-rimborsabilita-di-garadacimab-nellangioedema-ereditario/"],
+      25: ["Spain Andembry financing detail", "https://www.sanidad.gob.es/profesionales/medicamentos.do?cn=767418&metodo=verDetalle"],
+      26: ["Switzerland Andembry listing", "https://compendium.ch/fr/product/1637227-andembry-sol-inj-200-mg-1-2ml-stylo-pre"],
+      27: ["UK eMC Andembry", "https://www.medicines.org.uk/emc/product/100625/smpc"],
+      28: ["Sweden TLV medicine prices", "https://www.tlv.se/file/medprice"],
+      29: ["KalVista Ekterly launch update", "https://ir.kalvista.com/news-releases/news-release-details/kalvista-pharmaceuticals-provides-update-strong-ekterlyr-launch"],
+      30: ["PTC Sephience EU launch release", "https://ir.ptcbio.com/news-releases/news-release-details/sephiencetm-sepiapterin-granted-marketing-authorization-european"],
+      31: ["PTC Sephience launch update", "https://ir.ptcbio.com/news-releases/news-release-details/ptc-therapeutics-provides-corporate-update-and-reports-second-3"],
+      32: ["Merck Keytruda SC EU approval", "https://www.merck.com/news/european-commission-approves-subcutaneous-administration-of-keytruda-pembrolizumab-for-all-adult-indications-approved-in-the-european-union/"],
+      33: ["Keytruda SC Germany launch report", "https://www.fiercepharma.com/pharma/mercks-keytruda-sc-launch-germany-faces-new-hurdle-halozyme-scores-preliminary-injunction"],
+      34: ["Bayer Lynkuet UK approval", "https://www.bayer.com/media/en-us/bayer-receives-first-approval-worldwide-for-lynkuet-elinzanetant-in-the-uk-as-treatment-of-moderate-to-severe-vasomotor-symptoms-associated-with-menopause/"],
+      35: ["Bayer Q1 2026 transcript", "https://www.bayer.com/sites/default/files/2026-05/bayer-q1-2026-transcript.pdf"],
+      36: ["GSK Exdensur EU approval", "https://www.gsk.com/en-gb/media/press-releases/exdensur-depemokimab-approved-by-the-european-commission/"],
+      37: ["UK eMC Exdensur", "https://www.medicines.org.uk/emc/"],
+      38: ["Cytokinetics Myqorzo EU approval", "https://ir.cytokinetics.com/press-releases/press-release-details/2026/Cytokinetics-Announces-European-Commission-Approval-of-MYQORZO-aficamten-for-the-Treatment-of-Adults-with-Symptomatic-Obstructive-Hypertrophic-Cardiomyopathy/default.aspx"],
+      39: ["EMA Rhapsido page", "https://www.ema.europa.eu/en/medicines/human/EPAR/rhapsido"],
+      40: ["Boehringer Jascayd global status", "https://www.globenewswire.com/news-release/2026/05/18/3296295/0/en/jascayd-nerandomilast-approved-in-japan-advancing-global-access-to-a-new-ipf-and-ppf-treatment.html"],
+      41: ["FDA product-specific approval or snapshot", "https://www.fda.gov/drugs/drug-approvals-and-databases/drug-trials-snapshots"],
+      42: ["Verastem Avmapki Fakzynja availability statement", "https://investor.verastem.com/news-releases/news-release-details/fda-approves-avmapkitm-fakzynjatm-combination-therapy-first-ever"],
+      43: ["Merck Enflonsia EU approval", "https://www.merck.com/news/european-commission-approves-mercks-enflonsia-clesrovimab-for-the-prevention-of-respiratory-syncytial-virus-rsv-lower-respiratory-tract-disease-in-infants-during-their-first-rsv/"],
+      44: ["Eisai/Nuvation taletrectinib EMA validation", "https://www.prnewswire.com/news-releases/eisai-and-nuvation-bio-announce-marketing-authorisation-application-for-taletrectinib-for-the-treatment-of-advanced-ros1-positive-non-small-cell-lung-cancer-validated-by-the-european-medicines-agency-302726651.html"],
+      45: ["Ionis/Otsuka Dawnzera EU approval", "https://ir.ionis.com/news-releases/news-release-details/dawnzeratm-donidalorsen-approved-european-union-hereditary"],
+      46: ["Sanofi Wayrilz EU approval", "https://www.sanofi.com/assets/dotcom/pressreleases/2025/2025-12-23-14-06-58-3209943-en.pdf"],
+      47: ["Stealth Forzinity approval release", "https://www.prnewswire.com/news-releases/stealth-biotherapeutics-announces-fda-accelerated-approval-of-forzinity-elamipretide-hcl-the-first-therapy-for-progressive-and-life-limiting-ultra-rare-genetic-disease-barth-syndrome-302562058.html"],
+      48: ["Crinetics Palsonify EC approval", "https://www.nasdaq.com/press-release/crinetics-pharmaceuticals-announces-european-commission-approval-palsonifyr"],
+      49: ["Arrowhead Redemplo CHMP opinion", "https://ir.arrowheadpharma.com/news-releases/news-release-details/arrowhead-pharmaceuticals-receives-positive-chmp-opinion"],
+      50: ["Milestone Cardamyst Europe update", "https://www.oindpnews.com/2026/01/ema-accepts-milestone-pharmaceuticals-maa-for-etripamil-nasal-spray-for-the-treatment-of-psvt/"],
+      51: ["Vanda Nereus US availability", "https://www.prnewswire.com/news-releases/vanda-pharmaceuticals-announces-us-commercial-availability-of-nereus-tradipitant-the-first-new-pharmacologic-treatment-for-people-with-motion-sickness-in-more-than-40-years-302760461.html"]
+    };
+
+    const rows = [
+      [1, "Datroway", "datopotamab deruxtecan-dlnk", ["Germany", "Switzerland"], "Germany AMNOG record and Swiss in-trade listing found", [1,2,3]],
+      [2, "Grafapex", "treosulfan", ["Finland", "France", "Germany", "Italy", "Slovenia", "Spain", "Switzerland", "United Kingdom"], "European brand Trecondi; country register, product-listing, or reimbursement evidence found", [1,4,5,6,7,8,9,10,11]],
+      [3, "Journavx", "suzetrigine", [], "No public European launch or country availability evidence found", [1,41]],
+      [4, "Gomekli", "mirdametinib", ["Germany", "Switzerland"], "European brand Ezmekly; Germany launch and Swiss product listing found", [1,12,13,14]],
+      [5, "Romvimza", "vimseltinib", ["France", "Germany"], "France marketed register and Germany AMNOG evidence found", [1,4,15]],
+      [6, "Blujepa", "gepotidacin", [], "UK approval and US launch evidence found, but no European country launch evidence found", [1,41]],
+      [7, "Qfitlia", "fitusiran", [], "No public European launch or country availability evidence found", [1,41]],
+      [8, "Vanrafia", "atrasentan", [], "No public European launch or country availability evidence found", [1,41]],
+      [9, "penpulimab-kcqx", "penpulimab-kcqx", [], "No public European launch or country availability evidence found", [1,41]],
+      [10, "Imaavy", "nipocalimab-aahu", ["Germany", "Slovenia", "Switzerland"], "Germany AMNOG, Slovenia price listing, and Swiss product listing found", [1,20,21,11]],
+      [11, "Avmapki Fakzynja Co-Pack", "avutometinib and defactinib", [], "Company source states the co-pack is commercially available only in the US; no European launch evidence found", [1,42]],
+      [12, "Emrelis", "telisotuzumab vedotin-tllv", [], "US-only approval evidence found; no European launch evidence found", [1,41]],
+      [13, "Tryptyr", "acoltremon", [], "Company source indicated US launch and future other markets; no European launch evidence found", [1,41]],
+      [14, "Enflonsia", "clesrovimab-cfor", ["Croatia"], "Croatia published price listing found; other EU evidence was approval-only or future availability by country", [1,22,43]],
+      [15, "Ibtrozi", "taletrectinib", [], "Europe evidence was MAA validation/licensing only; no launch evidence found", [1,44]],
+      [16, "Andembry", "garadacimab-gxii", ["Finland", "Germany", "Italy", "Spain", "Sweden", "Switzerland", "United Kingdom"], "Country launch, reimbursement, price, financing, or product-listing evidence found", [1,5,23,24,25,26,27,28]],
+      [17, "Lynozyfic", "linvoseltamab-gcpt", [], "EU approval found, but no country launch or availability evidence found", [1,41]],
+      [18, "Zegfrovy", "sunvozertinib", [], "No EMA or European country launch evidence found", [1,41]],
+      [19, "Ekterly", "sebetralstat", ["Germany"], "KalVista reported execution of first European commercial launch in Germany", [1,29]],
+      [20, "Anzupgo", "delgocitinib", ["Denmark", "Finland", "France", "Germany", "Greece"], "Company launch releases plus official France, Finland, and Greece register or price evidence found", [1,16,17,18,4,5,19]],
+      [21, "Sephience", "sepiapterin", ["France", "Germany", "Slovenia"], "PTC reported Germany launch; France marketed register and Slovenia price listing found", [1,30,31,4,11]],
+      [22, "Vizz", "aceclidine", [], "Europe evidence was regulatory submission only; no European approval or launch evidence found", [1,41]],
+      [23, "Modeyso", "dordaviprone", [], "US launch evidence found, but no European launch evidence found", [1,41]],
+      [24, "Hernexeos", "zongertinib", [], "No public European launch or country availability evidence found", [1,41]],
+      [25, "Brinsupri", "brensocatib", [], "EU and UK approval found, but no country commercial launch evidence found", [1,41]],
+      [26, "Dawnzera", "donidalorsen", [], "EU approval found, but no country launch or availability evidence found", [1,45]],
+      [27, "Wayrilz", "rilzabrutinib", [], "EU approval found, but no country launch or availability evidence found", [1,46]],
+      [28, "Keytruda Qlex", "pembrolizumab and berahyaluronidase alfa-pmph", ["Germany"], "German launch/distribution was publicly reported, with subsequent injunction uncertainty noted", [1,32,33]],
+      [29, "Forzinity", "elamipretide", [], "Company source stated no EMA-approved Barth syndrome therapies at US approval; no European launch evidence found", [1,47]],
+      [30, "Inluriyo", "imlunestrant", [], "EU and UK approval found, but no country launch or availability evidence found", [1,41]],
+      [31, "Palsonify", "paltusotine", [], "EC approval found; Germany/Austria launch was planned, not confirmed by cutoff", [1,48]],
+      [32, "Rhapsido", "remibrutinib", [], "EC authorization occurred shortly before cutoff; no country launch evidence found", [1,39]],
+      [33, "Jascayd", "nerandomilast", [], "EU/UK submissions were under review; no European launch evidence found", [1,40]],
+      [34, "Lynkuet", "elinzanetant", ["Germany", "Switzerland", "United Kingdom"], "UK approval plus Bayer-reported Germany and Switzerland market entry found", [1,34,35]],
+      [35, "Kygevvi", "doxecitine and doxribtimine", [], "EC approval found, but no country launch evidence found", [1,41]],
+      [36, "Komzifti", "ziftomenib", [], "US-only commercialization evidence found; no European launch evidence found", [1,41]],
+      [37, "Redemplo", "plozasiran", [], "CHMP positive opinion only by cutoff; no European launch evidence found", [1,49]],
+      [38, "Hyrnuo", "sevabertinib", [], "UK approval found, but no country commercial launch evidence found", [1,41]],
+      [39, "Voyxact", "sibeprenlimab-szsi", [], "No EMA or European country launch evidence found", [1,41]],
+      [40, "Lerochol", "lerodalcibep-liga", [], "No public European launch or country availability evidence found", [1,41]],
+      [41, "Nuzolvence", "zoliflodacin", [], "US commercialization planned for late 2026; no European launch evidence found", [1,41]],
+      [42, "Cardamyst", "etripamil", [], "Europe regulatory decision expected later; no launch evidence found", [1,50]],
+      [43, "Exdensur", "depemokimab-ulaa", ["Germany", "United Kingdom"], "Germany AMNOG market-entry signal and UK product listing found", [1,36,37]],
+      [44, "Myqorzo", "aficamten", [], "EC approval found; first European launch in Germany was expected in Q2, not confirmed by cutoff", [1,38]],
+      [45, "Yartemlea", "narsoplimab-wuug", [], "US launch evidence and European review expectation found, but no European launch evidence found", [1,41]],
+      [46, "Nereus", "tradipitant", [], "US commercial availability found, but no European launch evidence found", [1,51]]
+    ];
+
+    function cite(ids) {
+      return ids.map(id => {
+        const source = sources[id];
+        return `<a class="cite" href="${source[1]}" title="${source[0]}">${id}</a>`;
+      }).join("");
+    }
+
+    function countryChips(countries) {
+      if (!countries.length) {
+        return '<span class="chip none">No public launch evidence found</span>';
+      }
+      return countries.map(country => `<span class="chip">${country}</span>`).join("");
+    }
+
+    function renderRows(items) {
+      return items.map(row => {
+      const [num, drug, ingredient, countries, note, citeIds] = row;
+      const status = countries.length ? "Country evidence found" : "No country evidence";
+      const statusClass = countries.length ? "" : " none";
+      return `
+        <div class="row">
+          <div class="cell num">${num}</div>
+          <div class="cell drug">${drug}</div>
+          <div class="cell ingredient">${ingredient}</div>
+          <div class="cell countries">${countryChips(countries)}</div>
+          <div class="cell evidence"><span class="status${statusClass}">${status}</span><br>${note} ${cite(citeIds)}</div>
+        </div>
+      `;
+      }).join("");
+    }
+
+    document.getElementById("rows-1").innerHTML = renderRows(rows.slice(0, 20));
+    document.getElementById("rows-2").innerHTML = renderRows(rows.slice(20));
+
+    const sourceOrder = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51];
+    document.getElementById("sources").innerHTML = sourceOrder.map(id => {
+      const source = sources[id];
+      return `<div class="source"><span class="sid">${id}</span><a href="${source[1]}">${source[0]}</a></div>`;
+    }).join("");
+  </script>
+</body>
+</html>

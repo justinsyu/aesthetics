@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Examples of 340B hospital participants in high-income ZIP code areas</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      width: 1600px;
+      min-height: 1725px;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: geometricPrecision;
+      font-weight: 400;
+    }
+
+    body,
+    *,
+    *::before,
+    *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    @page {
+      size: 1600px 1725px;
+      margin: 0;
+    }
+
+    .sheet {
+      position: relative;
+      width: 1600px;
+      height: 1725px;
+      overflow: hidden;
+      background: var(--paper);
+    }
+
+    .sheet-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      width: 1480px;
+      height: 1725px;
+      margin: 0 auto;
+      padding: 36px 0 22px;
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      gap: 20px;
+    }
+
+    .header {
+      display: grid;
+      grid-template-columns: 1fr 460px;
+      gap: 38px;
+      align-items: start;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      width: max-content;
+      align-items: center;
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      background: var(--lime);
+      padding: 9px 16px 8px;
+      font-size: 14px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 24px 0 0;
+      max-width: 990px;
+      font-size: 68px;
+      line-height: 1.03;
+      font-weight: 820;
+      letter-spacing: 0;
+    }
+
+    h1 .title-line {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .subtitle {
+      margin: 24px 0 0;
+      max-width: 980px;
+      color: var(--muted);
+      font-size: 27px;
+      line-height: 1.16;
+      font-weight: 400;
+      text-wrap: balance;
+    }
+
+    .metric-stack {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .metric {
+      min-height: 142px;
+      border: 2px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 250, 240, 0.88);
+      box-shadow: var(--shadow);
+      padding: 20px 18px 18px;
+    }
+
+    .metric.dark {
+      grid-column: 1 / -1;
+      background: #11130f;
+      color: var(--paper);
+    }
+
+    .metric-value {
+      display: block;
+      font-size: 48px;
+      line-height: 1;
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+
+    .metric-label {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.16;
+      font-weight: 400;
+    }
+
+    .metric.dark .metric-label {
+      color: rgba(246, 241, 232, 0.82);
+      font-size: 19px;
+    }
+
+    .method {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 18px;
+    }
+
+    .method-card {
+      border: 2px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 250, 240, 0.9);
+      box-shadow: var(--shadow);
+      padding: 16px 22px;
+    }
+
+    .method-title {
+      display: inline-flex;
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      background: var(--blue);
+      padding: 7px 12px 6px;
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .method-card p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 20px;
+      line-height: 1.24;
+      font-weight: 400;
+    }
+
+    .content {
+      min-height: 0;
+      display: grid;
+      grid-template-columns: 1fr 430px;
+      gap: 18px;
+    }
+
+    .table-panel,
+    .side-panel,
+    .source-band {
+      border: 2px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 250, 240, 0.9);
+      box-shadow: var(--shadow);
+    }
+
+    .table-panel {
+      padding: 14px;
+      min-height: 0;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 10px;
+    }
+
+    .panel-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 18px;
+      padding: 2px 2px 0;
+    }
+
+    .panel-title {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 820;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .panel-note {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1;
+      font-weight: 400;
+      white-space: nowrap;
+    }
+
+    table {
+      width: 100%;
+      height: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      border: 2px solid var(--line);
+      background: var(--card);
+    }
+
+    col.rank-col { width: 58px; }
+    col.hospital-col { width: 360px; }
+    col.program-col { width: 220px; }
+    col.mhi-col { width: 162px; }
+    col.bar-col { width: auto; }
+
+    th {
+      background: var(--ink);
+      color: var(--paper);
+      border: 2px solid var(--line);
+      padding: 9px 10px;
+      font-size: 14px;
+      line-height: 1;
+      font-weight: 820;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    td {
+      border: 2px solid var(--line);
+      padding: 6px 10px;
+      vertical-align: middle;
+      font-size: 15px;
+      line-height: 1.12;
+      font-weight: 400;
+    }
+
+    .rank {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+    .hospital {
+      display: block;
+      font-size: 17px;
+      line-height: 1.06;
+      font-weight: 400;
+    }
+
+    .place {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    .program {
+      display: block;
+      font-size: 15px;
+      line-height: 1.08;
+      font-weight: 400;
+    }
+
+    .program small {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.1;
+      font-weight: 400;
+    }
+
+    .money {
+      display: block;
+      font-size: 21px;
+      line-height: 1;
+      font-weight: 400;
+    }
+
+    .ratio {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 400;
+    }
+
+    .bar-wrap {
+      position: relative;
+      height: 24px;
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      background: var(--paper-2);
+      overflow: hidden;
+    }
+
+    .bar {
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: var(--w);
+      background: linear-gradient(90deg, var(--lime), var(--blue));
+      border-right: 2px solid var(--line);
+    }
+
+    .us-line {
+      position: absolute;
+      left: 40.7%;
+      top: -3px;
+      bottom: -3px;
+      width: 3px;
+      background: var(--red);
+      box-shadow: 0 0 0 1px var(--line);
+    }
+
+    .bar-label {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      height: 100%;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 10px;
+      font-size: 12px;
+      font-weight: 400;
+    }
+
+    .side-panel {
+      padding: 16px 16px 18px;
+      display: grid;
+      grid-template-rows: auto auto auto minmax(220px, 1fr) auto;
+      gap: 14px;
+      align-content: stretch;
+    }
+
+    .legend-title {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 820;
+      white-space: nowrap;
+    }
+
+    .legend-card {
+      border: 2px solid var(--line);
+      border-radius: 18px;
+      background: var(--paper);
+      padding: 14px;
+    }
+
+    .legend-card.dark {
+      background: #11130f;
+      color: var(--paper);
+    }
+
+    .legend-card .legend-label {
+      display: block;
+      font-size: 40px;
+      line-height: 1;
+      margin-top: 0;
+      color: inherit;
+      font-weight: 400;
+    }
+
+    .legend-card .legend-body {
+      display: block;
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.18;
+      font-weight: 400;
+    }
+
+    .legend-card.dark .legend-body {
+      color: rgba(246, 241, 232, 0.82);
+    }
+
+    .type-grid {
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      gap: 11px;
+      align-content: start;
+      min-height: 220px;
+    }
+
+    .type-row {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 10px;
+      align-items: center;
+      border: 2px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255, 250, 240, 0.92);
+      padding: 10px 10px;
+    }
+
+    .type-code {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 32px;
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      background: var(--orange);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .type-row span:last-child {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.12;
+      font-weight: 400;
+    }
+
+    .abbr-list {
+      border: 2px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255, 250, 240, 0.92);
+      padding: 12px;
+      display: grid;
+      gap: 5px;
+    }
+
+    .abbr-title {
+      margin: 0 0 2px;
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1;
+      font-weight: 400;
+    }
+
+    .abbr-row {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 8px;
+      align-items: baseline;
+      color: var(--muted);
+      font-size: 11.5px;
+      line-height: 1.12;
+      font-weight: 400;
+    }
+
+    .abbr-code {
+      color: var(--ink);
+      font-weight: 400;
+    }
+
+    .source-band {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .source-title {
+      margin: 0 0 7px;
+      font-size: 19px;
+      line-height: 1;
+      font-weight: 400;
+    }
+
+    .source-band p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.22;
+      font-weight: 400;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .cite {
+      display: inline;
+      color: var(--ink);
+      font-size: 0.68em;
+      line-height: 0;
+      font-weight: 400;
+      text-decoration: none;
+      vertical-align: super;
+      margin-left: 2px;
+    }
+
+    .dark .cite,
+    .metric.dark .cite {
+      color: var(--lime);
+    }
+  </style>
+</head>
+<body>
+  <main class="sheet">
+    <img class="sheet-bg-img" src="assets/340b_affluent_hospital_background.png" alt="" aria-hidden="true">
+    <div class="wrap">
+      <section class="header">
+        <div>
+          <div class="eyebrow">340B OPAIS x ACS 2024 five-year ZCTA income</div>
+          <h1><span class="title-line">Examples of 340B hospital</span><span class="title-line">participants in high&#8209;income</span><span class="title-line">ZIP&nbsp;code&nbsp;areas</span></h1>
+          <p class="subtitle">The examples below are active HRSA OPAIS hospital parent entities joined to the median household income of the ZIP Code Tabulation Area where the parent street address is listed.</p>
+        </div>
+        <div class="metric-stack">
+          <div class="metric">
+            <span class="metric-value">$198k</span>
+            <span class="metric-label">Highest ZCTA median household income in this selected set</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value">1.9x+</span>
+            <span class="metric-label">All shown ZIP areas are at least 1.9x the U.S. ACS 2024 five-year median</span>
+          </div>
+          <div class="metric dark">
+            <span class="metric-value">$80,734<a class="cite" href="https://api.censusreporter.org/1.0/data/show/acs2024_5yr?table_ids=B19013&amp;geo_ids=01000US">2</a></span>
+            <span class="metric-label">U.S. ACS 2024 five-year median household income benchmark</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="method">
+        <div class="method-card">
+          <span class="method-title">Program measure</span>
+          <p>The HRSA OPAIS public reports page provided the Covered Entity Daily Export JSON used for 340B participation, entity type, street address, 340B ID, and start date, downloaded May 21, 2026.<a class="cite" href="https://340bopais.hrsa.gov/reports">1</a></p>
+        </div>
+        <div class="method-card">
+          <span class="method-title">Affluence measure</span>
+          <p>Area affluence is measured only as ZCTA median household income from ACS table B19013; it is not a patient-mix, charity-care, payer-mix, or 340B-eligibility measure.<a class="cite" href="https://api.censusreporter.org/1.0/data/show/acs2024_5yr?table_ids=B19013&amp;geo_ids=01000US">2</a></p>
+        </div>
+      </section>
+
+      <section class="content">
+        <div class="table-panel">
+          <div class="panel-head">
+            <h2 class="panel-title">Hospitals in high-income ZCTAs</h2>
+            <div class="panel-note">bar scale max = $198,216; red tick = U.S. median ($80,734)</div>
+          </div>
+          <table>
+            <colgroup>
+              <col class="rank-col">
+              <col class="hospital-col">
+              <col class="program-col">
+              <col class="mhi-col">
+              <col class="bar-col">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Hospital parent entity</th>
+                <th>340B record</th>
+                <th>ZCTA MHI</th>
+                <th>Versus U.S. benchmark</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="rank">1</td>
+                <td><span class="hospital">Public Hospital District #4 King County Washington</span><span class="place">Snoqualmie, WA 98065</span></td>
+                <td><span class="program">CAH501338-00 | CAH<a class="cite" href="https://340bopais.hrsa.gov/reports">1</a><small>participating since 2011-07-01</small></span></td>
+                <td><span class="money">$198,216<a class="cite" href="https://api.censusreporter.org/1.0/data/show/acs2024_5yr?table_ids=B19013&amp;geo_ids=86000US98065">3</a></span><span class="ratio">2.5x U.S.</span></td>
+                <td><div class="bar-wrap"><div class="bar" style="--w: 100%;"></div><div class="us-line"></div><span class="bar-label">98065</span></div></td>
+              </tr>
+              <tr>
+                <td class="rank">2</td>
+                <td><span class="hospital">John Muir Medical Center - WC</span><span class="place">Walnut Creek, CA 94598</span></td>
+                <td><span class="program">RRC050180-00 | RRC<a class="cite" href="https://340bopais.hrsa.gov/reports">1</a><small>participating since 2026-04-01</small></span></td>
+                <td><span class="money">$186,225<a class="cite" href="https://api.censusreporter.org/1.0/data/show/acs2024_5yr?table_ids=B19013&amp;geo_ids=86000US94598">4</a></span><span class="ratio">2.3x U.S.</span></td>
+                <td><div class="bar-wrap"><div class="bar" style="--w: 94.0%;"></div><div class="us-line"></div><span class="bar-label">94598</span></div></td>
+              </tr>
+              <tr>
+                <td class="rank">3</td>
+                <td><span class="hospital">Good Samaritan Hospital</span><span class="place">West Islip, NY 11795</span></td>
+                <td><span class="program">RRC330286-00 | RRC<a class="cite" href="https://340bopais.hrsa.gov/reports">1</a><small>participating since 2025-04-01</small></span></td>
+                <td><span class="money">$177,269<a class="cite" href="https://api.censusreporter.org/1.0/data/show/acs2024_5yr?table_ids=B19013&amp;geo_ids=86000US11795">5</a></span><span class="ratio">2.2x U.S.</span></td>
+                <td><div class="bar-wrap"><div class="bar" style="--w: 89.4%;"></div><div class="us-line"></div><span class="bar-label">11795</span></div></td>
+              </tr>
+              <tr>
+                <td class="rank">4</td>
+                <td><span class="hospital">Marin General Hospital</span><span class="place">Greenbrae, CA 94904</span></td>
+                <td><span class="program">DSH050360 | DSH<a class="cite" href="https://340bopais.hrsa.gov/reports">1</a><small>participating since 2016-07-01</small></span></td>
+                <td><span class="money">$169,118<a class="cite" href="https://api.censusreporter.org/1.0/data/show/acs2024_5yr?table_ids=B19013&amp;geo_ids=86000US94904">6</a></span><span class="ratio">2.1x U.S.</span></td>
+                <td><div class="bar-wrap"><div class="bar" style="--w: 85.3%;"></div><div class="us-line"></div><span class="bar-label">94904</span></div></td>
+              </tr>
+              <tr>
+                <td class="rank">5</td>
+                <td><span class="hospital">Sutter Bay Hospitals, dba Alta Bates Summit Medical Center</span><span class="place">Berkeley, CA 94705</span></td>
+                <td><span class="program">DSH050305 | DSH<a class="cite" href="https://340bopais.hrsa.gov/reports">1</a><small>participating since 2006-07-01</small></span></td>
+                <td><span class="money">$167,970<a class="cite" href="https://api.censusreporter.org/1.0/data/show/acs2024_5yr?table_ids=B19013&amp;geo_ids=86000US94705">7</a></span><span class="ratio">2.1x U.S.</span></td>
+                <td><div class="bar-wrap"><div class="bar" style="--w: 84.7%;"></div><div class="us-line"></div><span class="bar-label">94705</span></div></td>
+              </tr>
+              <tr>
+                <td class="rank">6</td>
+                <td><span class="hospital">Dell Seton Medical Center at The University of Texas</span><span class="place">Austin, TX 78701</span></td>
+                <td><span class="program">DSH450124 | DSH<a class="cite" href="https://340bopais.hrsa.gov/reports">1</a><small>participating since 2021-03-11</small></span></td>
+                <td><span class="money">$162,168<a class="cite" href="https://api.censusreporter.org/1.0/data/show/acs2024_5yr?table_ids=B19013&amp;geo_ids=86000US78701">8</a></span><span class="ratio">2.0x U.S.</span></td>
+                <td><div class="bar-wrap"><div class="bar" style="--w: 81.8%;"></div><div class="us-line"></div><span class="bar-label">78701</span></div></td>
+              </tr>
+              <tr>
+                <td class="rank">7</td>
+                <td><span class="hospital">St. Anthony North Hospital</span><span class="place">Westminster, CO 80023</span></td>
+                <td><span class="program">DSH060104 | DSH<a class="cite" href="https://340bopais.hrsa.gov/reports">1</a><small>participating since 2013-10-01</small></span></td>
+                <td><span class="money">$158,180<a class="cite" href="https://api.censusreporter.org/1.0/data/show/acs2024_5yr?table_ids=B19013&amp;geo_ids=86000US80023">9</a></span><span class="ratio">2.0x U.S.</span></td>
+                <td><div class="bar-wrap"><div class="bar" style="--w: 79.8%;"></div><div class="us-line"></div><span class="bar-label">80023</span></div></td>
+              </tr>
+              <tr>
+                <td class="rank">8</td>
+                <td><span class="hospital">Mercy Medical Center</span><span class="place">Rockville Centre, NY 11570</span></td>
+                <td><span class="program">DSH330259 | DSH<a class="cite" href="https://340bopais.hrsa.gov/reports">1</a><small>participating since 2016-01-01</small></span></td>
+                <td><span class="money">$157,163<a class="cite" href="https://api.censusreporter.org/1.0/data/show/acs2024_5yr?table_ids=B19013&amp;geo_ids=86000US11570">10</a></span><span class="ratio">1.9x U.S.</span></td>
+                <td><div class="bar-wrap"><div class="bar" style="--w: 79.3%;"></div><div class="us-line"></div><span class="bar-label">11570</span></div></td>
+              </tr>
+              <tr>
+                <td class="rank">9</td>
+                <td><span class="hospital">Huntington Hospital</span><span class="place">Pasadena, CA 91105</span></td>
+                <td><span class="program">DSH050438 | DSH<a class="cite" href="https://340bopais.hrsa.gov/reports">1</a><small>participating since 2019-07-01</small></span></td>
+                <td><span class="money">$156,791<a class="cite" href="https://api.censusreporter.org/1.0/data/show/acs2024_5yr?table_ids=B19013&amp;geo_ids=86000US91105">11</a></span><span class="ratio">1.9x U.S.</span></td>
+                <td><div class="bar-wrap"><div class="bar" style="--w: 79.1%;"></div><div class="us-line"></div><span class="bar-label">91105</span></div></td>
+              </tr>
+              <tr>
+                <td class="rank">10</td>
+                <td><span class="hospital">Memorial Hermann Sugar Land Hospital</span><span class="place">Sugar Land, TX 77479</span></td>
+                <td><span class="program">DSH450848 | DSH<a class="cite" href="https://340bopais.hrsa.gov/reports">1</a><small>participating since 2012-01-01</small></span></td>
+                <td><span class="money">$156,735<a class="cite" href="https://api.censusreporter.org/1.0/data/show/acs2024_5yr?table_ids=B19013&amp;geo_ids=86000US77479">12</a></span><span class="ratio">1.9x U.S.</span></td>
+                <td><div class="bar-wrap"><div class="bar" style="--w: 79.1%;"></div><div class="us-line"></div><span class="bar-label">77479</span></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <aside class="side-panel">
+          <h2 class="legend-title">What this does and does not show</h2>
+          <div class="legend-card dark">
+            <span class="legend-label">340B participant</span>
+            <span class="legend-body">Listed as participating in HRSA OPAIS. HRSA describes eligibility by covered-entity category and program requirements, not local ZIP income.<a class="cite" href="https://www.hrsa.gov/opa/eligibility-and-registration">13</a></span>
+          </div>
+          <div class="legend-card">
+            <span class="legend-label">ZCTA income</span>
+            <span class="legend-body">ACS median household income for the ZCTA tied to the listed street address. This is not a hospital patient-income measure.</span>
+          </div>
+          <div class="type-grid">
+            <div class="type-row"><span class="type-code">DSH</span><span>Disproportionate Share Hospital program type code in OPAIS</span></div>
+            <div class="type-row"><span class="type-code">RRC</span><span>Rural Referral Center program type code in OPAIS</span></div>
+            <div class="type-row"><span class="type-code">CAH</span><span>Critical Access Hospital program type code in OPAIS</span></div>
+          </div>
+          <div class="abbr-list">
+            <p class="abbr-title">Abbreviation key</p>
+            <div class="abbr-row"><span class="abbr-code">340B</span><span>Section 340B Drug Pricing Program</span></div>
+            <div class="abbr-row"><span class="abbr-code">HRSA</span><span>Health Resources and Services Administration</span></div>
+            <div class="abbr-row"><span class="abbr-code">OPAIS</span><span>Office of Pharmacy Affairs Information System</span></div>
+            <div class="abbr-row"><span class="abbr-code">ACS</span><span>American Community Survey</span></div>
+            <div class="abbr-row"><span class="abbr-code">ZCTA</span><span>ZIP Code Tabulation Area</span></div>
+            <div class="abbr-row"><span class="abbr-code">MHI</span><span>Median household income</span></div>
+            <div class="abbr-row"><span class="abbr-code">ZIP</span><span>Zone Improvement Plan postal code</span></div>
+            <div class="abbr-row"><span class="abbr-code">U.S.</span><span>United States</span></div>
+            <div class="abbr-row"><span class="abbr-code">DSH</span><span>Disproportionate Share Hospital</span></div>
+            <div class="abbr-row"><span class="abbr-code">RRC</span><span>Rural Referral Center</span></div>
+            <div class="abbr-row"><span class="abbr-code">CAH</span><span>Critical Access Hospital</span></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="source-band">
+        <div>
+          <h3 class="source-title">Source path</h3>
+          <p>HRSA OPAIS public reports page was used to download <em>340B_CoveredEntityJson_Daily_20260521_141430.zip</em>; the included JSON file was filtered to active participating parent hospital rows and joined by listed ZIP code to ACS 2024 five-year B19013 median household income. Selected rows are saved in <em>source-data/selected_affluent_340b_parent_hospitals.csv</em>.<a class="cite" href="https://340bopais.hrsa.gov/reports">1</a></p>
+        </div>
+        <div>
+          <h3 class="source-title">Measurement limits</h3>
+          <p>This is a location-screening infographic, not a 340B compliance or benefit-use analysis. ZCTAs are Census statistical approximations of ZIP delivery areas; hospital systems may serve patients from many ZIP codes, and 340B eligibility can depend on entity type, ownership or contract status, DSH percentage, and other program-specific requirements.<a class="cite" href="https://www.hrsa.gov/opa/eligibility-and-registration">13</a></p>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

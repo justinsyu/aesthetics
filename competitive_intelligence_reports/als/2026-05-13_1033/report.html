@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amyotrophic Lateral Sclerosis Competitive Intelligence Update</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5b6258;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: rgba(255, 250, 240, 0.88);
+      --line: #171a14;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 36px 0 20px;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 850;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 72px; line-height: .94; letter-spacing: 0; font-weight: 560; max-width: 1300px; }
+    h2 { font-size: 50px; line-height: .98; letter-spacing: 0; font-weight: 560; max-width: 1300px; }
+    h3 { font-size: 25px; line-height: 1.05; letter-spacing: 0; font-weight: 700; }
+    .dek { margin-top: 16px; color: var(--muted); font-size: 25px; line-height: 1.2; max-width: 1280px; }
+    .section-head { margin-bottom: 18px; }
+    .section-head p { margin-top: 10px; color: var(--muted); font-size: 21px; line-height: 1.2; max-width: 1280px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .panel, .metric, .card, .table, .callout {
+      border: 1.5px solid var(--line);
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel { padding: 24px; }
+    .panel.dark, .callout { background: #11130f; color: var(--paper); border-color: #11130f; }
+    .panel.dark p, .panel.dark li, .callout p, .callout li { color: rgba(246, 241, 232, .86); }
+    .metric { padding: 20px; min-height: 145px; }
+    .num { font-size: 50px; line-height: .92; font-weight: 850; letter-spacing: 0; }
+    .label { margin-top: 12px; font-size: 19px; line-height: 1.18; color: var(--muted); }
+    .callout { padding: 24px 28px; }
+    .callout h3 { font-size: 30px; }
+    .callout p { margin-top: 12px; font-size: 22px; line-height: 1.18; }
+    .list { margin: 13px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+    .list li { position: relative; padding-left: 20px; color: var(--muted); font-size: 19px; line-height: 1.22; }
+    .list li::before { content: ""; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; border-radius: 50%; background: var(--lime); border: 1px solid var(--line); }
+    .tag {
+      display: inline-block;
+      padding: 6px 10px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      color: var(--ink);
+      white-space: nowrap;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .gray { background: var(--gray); }
+    .table { display: grid; border-radius: 20px; }
+    .row { display: grid; border-bottom: 1px solid var(--line); }
+    .row:last-child { border-bottom: 0; }
+    .cell { padding: 11px 12px; border-right: 1px solid var(--line); font-size: 15px; line-height: 1.17; }
+    .cell:last-child { border-right: 0; }
+    .head .cell { background: #11130f; color: var(--paper); font-weight: 850; text-transform: uppercase; font-size: 11px; }
+    .program-table .row { grid-template-columns: .74fr 1.16fr 1.37fr 1.35fr; min-height: 96px; }
+    .program-table .cell { font-size: 17px; line-height: 1.16; padding: 12px 13px; }
+    .program-table .head { min-height: 44px; }
+    .program-table .head .cell { font-size: 18px; padding: 9px 13px; white-space: nowrap; }
+    .ref-table .row { grid-template-columns: 72px 1.32fr 1.02fr 2.14fr; min-height: 76px; }
+    .ref-table .head { min-height: 40px; }
+    .ref-table .cell { font-size: 15.5px; line-height: 1.12; padding: 8px 10px; }
+    .ref-table .head .cell { font-size: 17px; white-space: nowrap; }
+    .ref-table .cell:first-child { text-align: center; font-weight: 850; }
+    .signal { padding: 22px 24px; min-height: 360px; }
+    .signal p { color: var(--muted); font-size: 21px; line-height: 1.22; margin-top: 14px; }
+    .signal.dark p { color: rgba(246, 241, 232, .86); }
+    .signal .tag { margin-bottom: 16px; font-size: 16px; padding: 8px 16px; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .cite + .cite::before { content: ","; margin-right: 1px; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .wrap { width: 1360px; }
+      .panel, .metric, .card, .table, .callout { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) {
+      .slide { width: 1600px; height: 900px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Amyotrophic lateral sclerosis | May 7-13, 2026</div>
+      <h1>Amyotrophic lateral sclerosis competitive intelligence update</h1>
+      <p class="dek">Primary-source company, registry, and care-access updates relevant to ALS medical affairs, clinical development, market access, and commercial leadership.</p>
+      <div class="grid-4" style="margin-top:30px;">
+        <div class="metric"><div class="num">7</div><div class="label">Cited primary sources supported this update.<a class="cite" href="https://ir.coyatherapeutics.com/news/news-details/2026/Coya-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Provides-a-Corporate-Update/default.aspx">1</a><a class="cite" href="https://www.amylyx.com/news/amylyx-pharmaceuticals-reports-first-quarter-2026-financial-results">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290601/0/en/leonabio-reports-first-quarter-2026-financial-results-and-provides-business-update.html">3</a><a class="cite" href="https://investor.insmed.com/2026-05-07-Insmed-Reports-First-Quarter-2026-Financial-Results-and-Provides-Business-Update">4</a><a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">5</a><a class="cite" href="https://www.als.org/stories-news/als-association-awards-3-million-bring-expert-als-care-communities-dont-have-it">6</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06008249?tab=history">7</a></div></div>
+        <div class="metric"><div class="num">5</div><div class="label">Company sources reported ALS program status across COYA 302, AMX0114, ATH-1105, INS1202, and PMN267.<a class="cite" href="https://ir.coyatherapeutics.com/news/news-details/2026/Coya-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Provides-a-Corporate-Update/default.aspx">1</a><a class="cite" href="https://www.amylyx.com/news/amylyx-pharmaceuticals-reports-first-quarter-2026-financial-results">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290601/0/en/leonabio-reports-first-quarter-2026-financial-results-and-provides-business-update.html">3</a><a class="cite" href="https://investor.insmed.com/2026-05-07-Insmed-Reports-First-Quarter-2026-Financial-Results-and-Provides-Business-Update">4</a><a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">5</a></div></div>
+        <div class="metric"><div class="num">1</div><div class="label">ClinicalTrials.gov record-history change met the substantive-update threshold after review.<a class="cite" href="https://clinicaltrials.gov/study/NCT06008249?tab=history">7</a></div></div>
+        <div class="metric"><div class="num">$3M</div><div class="label">The ALS Association announced Hoffman awards to expand multidisciplinary ALS care access.<a class="cite" href="https://www.als.org/stories-news/als-association-awards-3-million-bring-expert-als-care-communities-dont-have-it">6</a></div></div>
+      </div>
+      <div class="callout" style="margin-top:22px;">
+        <h3>Executive summary</h3>
+        <p>Coya reported FDA Fast Track Designation for COYA 302 in ALS and stated that ALSTARS was in full recruitment mode with 1Q 2027 topline-readout guidance.<a class="cite" href="https://ir.coyatherapeutics.com/news/news-details/2026/Coya-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Provides-a-Corporate-Update/default.aspx">1</a> Additional company disclosures documented AMX0114, ATH-1105, INS1202, and PMN267 program activity.<a class="cite" href="https://www.amylyx.com/news/amylyx-pharmaceuticals-reports-first-quarter-2026-financial-results">2</a><a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290601/0/en/leonabio-reports-first-quarter-2026-financial-results-and-provides-business-update.html">3</a><a class="cite" href="https://investor.insmed.com/2026-05-07-Insmed-Reports-First-Quarter-2026-Financial-Results-and-Provides-Business-Update">4</a><a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">5</a> ClinicalTrials.gov listed the TRICALS platform trial, a Phase 3 ALS treatment platform trial, as terminated after a planned interim analysis showed no survival benefit versus placebo.<a class="cite" href="https://clinicaltrials.gov/study/NCT06008249?tab=history">7</a></p>
+      </div>
+    </div>
+    <div class="slide-num">01 / 04</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Company disclosures</div>
+        <h2>Company updates spanned regulatory designation, trial execution, and preclinical readiness</h2>
+      </div>
+      <div class="table program-table">
+        <div class="row head">
+          <div class="cell">Program</div>
+          <div class="cell">Source update</div>
+          <div class="cell">Development detail</div>
+          <div class="cell">Status or timing</div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>COYA 302</strong><br />Coya</div>
+          <div class="cell">Coya reported FDA Fast Track Designation for COYA 302 for ALS.<a class="cite" href="https://ir.coyatherapeutics.com/news/news-details/2026/Coya-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Provides-a-Corporate-Update/default.aspx">1</a></div>
+          <div class="cell">The source describes ALSTARS as a Phase 2 randomized, multi-center, double-blind, placebo-controlled study evaluating efficacy and safety.<a class="cite" href="https://ir.coyatherapeutics.com/news/news-details/2026/Coya-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Provides-a-Corporate-Update/default.aspx">1</a></div>
+          <div class="cell">Coya stated that ALSTARS was in full recruitment mode and maintained 1Q 2027 topline-readout guidance.<a class="cite" href="https://ir.coyatherapeutics.com/news/news-details/2026/Coya-Therapeutics-Reports-First-Quarter-2026-Financial-Results-and-Provides-a-Corporate-Update/default.aspx">1</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>AMX0114</strong><br />Amylyx</div>
+          <div class="cell">Amylyx reported completion of Cohort 2 enrollment in Phase 1 LUMINA.<a class="cite" href="https://www.amylyx.com/news/amylyx-pharmaceuticals-reports-first-quarter-2026-financial-results">2</a></div>
+          <div class="cell">The source identifies AMX0114 as an ASO targeting calpain-2 for potential ALS treatment.<a class="cite" href="https://www.amylyx.com/news/amylyx-pharmaceuticals-reports-first-quarter-2026-financial-results">2</a></div>
+          <div class="cell">LUMINA evaluates safety, tolerability, pharmacokinetics, pharmacodynamics, and ALS biomarkers including NfL.<a class="cite" href="https://www.amylyx.com/news/amylyx-pharmaceuticals-reports-first-quarter-2026-financial-results">2</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>ATH-1105</strong><br />LeonaBio</div>
+          <div class="cell">LeonaBio reported ATH-1105 Phase 1 safety, dose-proportional pharmacokinetics, and CNS penetration observations.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290601/0/en/leonabio-reports-first-quarter-2026-financial-results-and-provides-business-update.html">3</a></div>
+          <div class="cell">The source describes ATH-1105 as an orally available, brain-penetrant small-molecule candidate for neurodegenerative diseases including ALS.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290601/0/en/leonabio-reports-first-quarter-2026-financial-results-and-provides-business-update.html">3</a></div>
+          <div class="cell">LeonaBio stated that it was on track to dose ALS patients in a Phase 2 proof-of-concept trial in 2H 2026.<a class="cite" href="https://www.globenewswire.com/news-release/2026/05/07/3290601/0/en/leonabio-reports-first-quarter-2026-financial-results-and-provides-business-update.html">3</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>INS1202</strong><br />Insmed</div>
+          <div class="cell">Insmed reported continued enrollment in the Phase 1 ARMOR study of INS1202.<a class="cite" href="https://investor.insmed.com/2026-05-07-Insmed-Reports-First-Quarter-2026-Financial-Results-and-Provides-Business-Update">4</a></div>
+          <div class="cell">The same source identifies INS1202 as an intrathecally delivered gene therapy for patients with ALS.<a class="cite" href="https://investor.insmed.com/2026-05-07-Insmed-Reports-First-Quarter-2026-Financial-Results-and-Provides-Business-Update">4</a></div>
+          <div class="cell">The update is listed under Insmed's Neuro &amp; Other Rare portfolio section.<a class="cite" href="https://investor.insmed.com/2026-05-07-Insmed-Reports-First-Quarter-2026-Financial-Results-and-Provides-Business-Update">4</a></div>
+        </div>
+        <div class="row">
+          <div class="cell"><strong>PMN267</strong><br />ProMIS</div>
+          <div class="cell">ProMIS listed PMN267 under its Amyotrophic Lateral Sclerosis Disease Program.<a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">5</a></div>
+          <div class="cell">The source describes PMN267 as a lead preclinical antibody directed against toxic misfolded TDP-43 for ALS and other TDP-43 proteinopathies.<a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">5</a></div>
+          <div class="cell">ProMIS stated that PMN267 had been humanized in a human IgG1 framework for IND-enabling studies.<a class="cite" href="https://www.promisneurosciences.com/investors/news-events/press-releases/detail/267/promis-neurosciences-announces-first-quarter-2026-financial/">5</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">02 / 04</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Registry and access signals</div>
+        <h2>TRICALS ended after no survival benefit. Hoffman awards targeted ALS care access</h2>
+      </div>
+      <div class="grid-2">
+        <div class="panel signal dark">
+          <span class="tag lime">ClinicalTrials.gov</span>
+          <h3>TRICALS platform trial listed as terminated</h3>
+          <p>ClinicalTrials.gov lists TRICALS platform trial NCT06008249, a Phase 3 ALS treatment platform trial, as terminated and states that the planned interim analysis showed no survival benefit compared with placebo.<a class="cite" href="https://clinicaltrials.gov/study/NCT06008249?tab=history">7</a></p>
+          <p>The Record History table lists version 3 submitted 2026-05-12 with Recruitment Status, Study Status, Oversight, Study Design, and Contacts/Locations changes.<a class="cite" href="https://clinicaltrials.gov/study/NCT06008249?tab=history">7</a></p>
+        </div>
+        <div class="panel signal">
+          <span class="tag orange">Care access</span>
+          <h3>Hoffman awards targeted multidisciplinary ALS care capacity</h3>
+          <p>The ALS Association announced the newest Hoffman ALS Clinic Development and Capacity Awards, supported by the historic $58 million Hoffman gift, to expand access to multidisciplinary ALS care.<a class="cite" href="https://www.als.org/stories-news/als-association-awards-3-million-bring-expert-als-care-communities-dont-have-it">6</a></p>
+          <p>The same source states that only around half of registered people living with ALS receive multidisciplinary care, a team-based model it describes as extending survival and improving quality of life.<a class="cite" href="https://www.als.org/stories-news/als-association-awards-3-million-bring-expert-als-care-communities-dont-have-it">6</a></p>
+        </div>
+      </div>
+      <div class="panel" style="margin-top:18px; padding:18px 22px;">
+        <h3>Decision-relevant distinction</h3>
+        <p style="margin-top:8px; color:var(--muted); font-size:24px; line-height:1.16;">ClinicalTrials.gov documented termination of the Phase 3 ALS treatment platform trial after interim analysis found no survival benefit versus placebo; the ALS Association announcement documented Hoffman awards to expand multidisciplinary ALS care access, not a therapeutic program milestone.<a class="cite" href="https://clinicaltrials.gov/study/NCT06008249?tab=history">7</a><a class="cite" href="https://www.als.org/stories-news/als-association-awards-3-million-bring-expert-als-care-communities-dont-have-it">6</a></p>
+      </div>
+    </div>
+    <div class="slide-num">03 / 04</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Cited sources</div>
+        <h2>References</h2>
+      </div>
+      <div class="table ref-table">
+        <div class="row head">
+          <div class="cell">Ref</div>
+          <div class="cell">Source</div>
+          <div class="cell">Date / Status / Source Owner</div>
+          <div class="cell">Evidence Used in Report</div>
+        </div>
+        <div class="row">
+          <div class="cell">1</div>
+          <div class="cell">Coya Therapeutics first quarter 2026 results and corporate update</div>
+          <div class="cell">May 12, 2026; Coya Therapeutics</div>
+          <div class="cell">FDA Fast Track Designation for COYA 302 in ALS; ALSTARS full recruitment mode; 1Q 2027 topline-readout guidance</div>
+        </div>
+        <div class="row">
+          <div class="cell">2</div>
+          <div class="cell">Amylyx Pharmaceuticals first quarter 2026 financial results</div>
+          <div class="cell">May 07, 2026; Amylyx</div>
+          <div class="cell">AMX0114 Phase 1 LUMINA Cohort 2 completion; safety, tolerability, PK, PD, and ALS biomarker assessment scope</div>
+        </div>
+        <div class="row">
+          <div class="cell">3</div>
+          <div class="cell">LeonaBio first quarter 2026 financial results and business update</div>
+          <div class="cell">May 07, 2026 16:05 ET; LeonaBio</div>
+          <div class="cell">ATH-1105 Phase 1 safety, PK, and CNS penetration observations; Phase 2 ALS proof-of-concept dosing timing</div>
+        </div>
+        <div class="row">
+          <div class="cell">4</div>
+          <div class="cell">Insmed first quarter 2026 financial results and business update</div>
+          <div class="cell">May 7, 2026; Insmed</div>
+          <div class="cell">Phase 1 ARMOR enrollment for INS1202, described as an intrathecally delivered ALS gene therapy</div>
+        </div>
+        <div class="row">
+          <div class="cell">5</div>
+          <div class="cell">ProMIS Neurosciences first quarter 2026 financial results</div>
+          <div class="cell">May 12, 2026; ProMIS</div>
+          <div class="cell">PMN267 preclinical ALS antibody candidate targeting toxic misfolded TDP-43; humanized framework for IND-enabling work</div>
+        </div>
+        <div class="row">
+          <div class="cell">6</div>
+          <div class="cell">The ALS Association Hoffman clinic awards announcement</div>
+          <div class="cell">May 7, 2026; The ALS Association</div>
+          <div class="cell">Hoffman clinic awards to expand multidisciplinary ALS care access; registered-patient multidisciplinary-care access statement</div>
+        </div>
+        <div class="row">
+          <div class="cell">7</div>
+          <div class="cell">ClinicalTrials.gov NCT06008249 Record History</div>
+          <div class="cell">Terminated; Last Update Posted 2026-05-13; Stichting TRICALS Foundation</div>
+          <div class="cell">Stopped reason after planned interim analysis; Record History version 3 with recruitment, status, oversight, design, and location/contact changes</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">04 / 04</div>
+  </article>
+</body>
+</html>
