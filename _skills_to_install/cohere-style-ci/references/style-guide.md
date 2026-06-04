@@ -93,6 +93,8 @@ Before building or revising a report, open that example report and match its cur
 
 Review browser screenshots and rendered PDF screenshots. Reduce padding or rebalance layout when panels contain excessive blank space. Split content across slides when important cited evidence cannot fit without overlap or unreadable type.
 
+Visible header, navigation, brand-bar, and similar page chrome should use the same horizontal wrapper and gutter math as the main body content unless the chrome is intentionally full-bleed.
+
 When review flags a large multi-line title as touching or too tight and asks not to bold it, increase title line-height or inter-line spacing and reduce font-weight rather than only shrinking the title text.
 
 When review selects header, navigation, or brand-bar UI chrome and asks not to bold it, reduce the font-weight for that selected chrome only. Do not change unrelated body copy, titles, card headings, or citation typography to satisfy chrome-specific weight feedback.
