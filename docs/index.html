@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <title>Aesthetic Neurotoxin Provider Data</title>
+    <meta name="description" content="Static provider-density infographics for BOTOX Cosmetic, Dysport, and Xeomin public locator data.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/site.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./">Aesthetic Neurotoxin Provider Data</a>
+      <nav aria-label="Primary navigation">
+        <a href="#overview">Overview</a>
+        <a href="#states">States</a>
+        <a href="#markets">Markets</a>
+        <a href="#sources">Sources</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="overview">
+        <p class="eyebrow">Public locator intelligence</p>
+        <h1>BOTOX, Dysport, and Xeomin provider footprints</h1>
+        <p class="lead">A static, browser-readable view of participating provider records collected from public manufacturer locators. The page emphasizes market footprint, geographic density, and top local provider clusters.</p>
+      </section>
+
+      <section class="summary-grid" aria-label="Archive summary">
+        <div>
+          <strong>Provider rows</strong>
+          <span data-total-providers>Loading</span>
+        </div>
+        <div>
+          <strong>Products</strong>
+          <span data-total-products>3</span>
+        </div>
+        <div>
+          <strong>States / territories</strong>
+          <span data-total-states>Loading</span>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading-row">
+          <div>
+            <h2>Product footprint</h2>
+            <p class="lead">Provider rows, ZIP coverage, and state coverage from each public locator.</p>
+          </div>
+          <a class="button button-secondary" href="assets/data/provider-summary.json">Download summary JSON</a>
+        </div>
+        <div class="product-grid" data-products></div>
+      </section>
+
+      <section class="panel" id="states">
+        <div class="section-heading-row">
+          <div>
+            <h2>State density</h2>
+            <p class="lead">The top state and territory markets by combined locator rows across the three products.</p>
+          </div>
+        </div>
+        <div class="density-layout">
+          <div class="stacked-bars" data-state-bars></div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>State</th>
+                  <th>Total</th>
+                  <th>BOTOX</th>
+                  <th>Dysport</th>
+                  <th>Xeomin</th>
+                </tr>
+              </thead>
+              <tbody data-state-table></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="markets">
+        <div class="section-heading-row">
+          <div>
+            <h2>Top local markets</h2>
+            <p class="lead">City-level provider clusters by product. These are individual locator rows, not unique clinicians.</p>
+          </div>
+        </div>
+        <div class="market-grid" data-market-grid></div>
+      </section>
+
+      <section class="panel" id="sources">
+        <div class="section-heading-row">
+          <div>
+            <h2>Sources and caveats</h2>
+            <p class="lead">These are public locator extracts and should not be treated as manufacturer account master files.</p>
+          </div>
+        </div>
+        <div class="source-list" data-source-list></div>
+      </section>
+    </main>
+
+    <footer>
+      Static archive for competitive intelligence and provider footprint analysis. Maintained by Justin Yu.
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
