@@ -91,3 +91,5 @@ Before building or revising a report, open that example report and match its cur
 ## Layout QA
 
 Review browser screenshots and rendered PDF screenshots. Reduce padding or rebalance layout when panels contain excessive blank space. Split content across slides when important cited evidence cannot fit without overlap or unreadable type.
+
+When review selects header, navigation, or brand-bar UI chrome and asks not to bold it, reduce the font-weight for that selected chrome only. Do not change unrelated body copy, titles, card headings, or citation typography to satisfy chrome-specific weight feedback.
