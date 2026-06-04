@@ -42,7 +42,7 @@ Before building or revising a report, open that example report and match its cur
 - H3: `30px`, line-height `1.04`, font-weight `650`
 - Deck subtitle/dek: `28px`, line-height `1.24`
 - Section supporting text: `25px`, line-height `1.24`
-- Card body: `19px`, line-height `1.27`
+- Card body: `19px` minimum baseline, line-height `1.27`; increase to `21-24px` where fixed-page card or component space allows
 - Table cells: `16px`, line-height `1.21`
 - Source text: `16px`, line-height `1.27`
 - Key takeaway body: `24-26px`, line-height `1.16-1.21`
@@ -84,6 +84,7 @@ Before building or revising a report, open that example report and match its cur
 
 - Use scientific, objective source attribution such as "states that," "reported," "listed," "describes," or "documented"; do not use "says."
 - Use formal competitive-intelligence phrasing. Avoid casual freshness framing such as "new" or "newly" when "first-posted," "reported," "published," "during the reporting period," or an exact source date is more precise.
+- Do not add terminal periods to title-style headings, chips, labels, captions, or fragment-style display text. Use periods only for complete sentences or where punctuation is required for grammar, citations, or abbreviations.
 - Do not use viewer-facing process headers such as "Factual scope," "Source construction," or "Recorded..." headings.
 - State the report date range once on the title slide. Avoid generic time-window labels elsewhere; when date range wording is necessary, use "between [date] and [date]."
 - Final citation slides should be titled "References" and use source-agnostic columns such as `Ref`, `Source`, `Date / Status / Source Owner`, and `Evidence Used in Report`.
@@ -91,6 +92,8 @@ Before building or revising a report, open that example report and match its cur
 ## Layout QA
 
 Review browser screenshots and rendered PDF screenshots. Reduce padding or rebalance layout when panels contain excessive blank space. Split content across slides when important cited evidence cannot fit without overlap or unreadable type.
+
+When review flags a large multi-line title as touching or too tight and asks not to bold it, increase title line-height or inter-line spacing and reduce font-weight rather than only shrinking the title text.
 
 When review selects header, navigation, or brand-bar UI chrome and asks not to bold it, reduce the font-weight for that selected chrome only. Do not change unrelated body copy, titles, card headings, or citation typography to satisfy chrome-specific weight feedback.
 
@@ -100,4 +103,10 @@ When review selects large metric values inside product or data cards and asks "d
 
 When review selects market, city, provider, compact chart axis/list labels such as state abbreviations, or similar list-item labels and asks not to bold them, reduce the selected item label's perceived emphasis, not just its declared font-weight. If regular or medium labels still read as bold because of uppercase styling, high contrast, tight letterforms, or the font family, soften those factors with title case or lowercase where appropriate, lower contrast, smaller size, more open spacing, or a lighter/less assertive face. Preserve selected-state hierarchy with spacing, borders, background tint, or accent markers rather than bold-looking text.
 
+When review selects a top utility strip, banner, status bar, or similar visible page chrome and asks to remove it, delete the chrome entirely instead of restyling it; preserve essential status or method context only outside the visible chrome.
+
 When review selects a visible methodological caveat, methods note, limitation note, provenance note, or similar note box and asks to remove it, delete the entire visible note instead of restyling, shrinking, or relabeling it; preserve necessary caveats or provenance in source logs or other non-visible documentation where appropriate.
+
+For same-row peer components, reserve shared multi-line header height only when at least one peer header actually wraps; if every header in the row is one line, let subtext begin after the normal heading margin instead of leaving an empty second-line gap.
+
+For data or infographic cards with large metric values above bars, timelines, rings, or other visual marks, verify the rendered spacing between the number and the mark. If review flags the value as crowded, add enough vertical gap or rebalance the card so the metric reads as a distinct label rather than touching the visualization.
