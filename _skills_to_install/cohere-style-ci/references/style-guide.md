@@ -101,6 +101,8 @@ When review selects a summary-stat or metric row and asks "don't bold," reduce f
 
 When review selects large metric values inside product or data cards and asks "don't bold," reduce font-weight only for those selected card metric values. Preserve the card hierarchy with value size, spacing, alignment, muted labels, or color rather than bold.
 
+When review selects compact product-card stat labels that should fit on one line, first widen the label text box or rebalance the card/grid width before shrinking type; reduce font size only as much as needed after available width has been used.
+
 When review selects market, city, provider, compact chart axis/list labels such as state abbreviations, or similar list-item labels and asks not to bold them, reduce the selected item label's perceived emphasis, not just its declared font-weight. If regular or medium labels still read as bold because of uppercase styling, high contrast, tight letterforms, or the font family, soften those factors with title case or lowercase where appropriate, lower contrast, smaller size, more open spacing, or a lighter/less assertive face. Preserve selected-state hierarchy with spacing, borders, background tint, or accent markers rather than bold-looking text.
 
 When review selects a top utility strip, banner, status bar, or similar visible page chrome and asks to remove it, delete the chrome entirely instead of restyling it; preserve essential status or method context only outside the visible chrome.
