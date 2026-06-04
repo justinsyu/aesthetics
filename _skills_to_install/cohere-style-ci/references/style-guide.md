@@ -95,3 +95,5 @@ Review browser screenshots and rendered PDF screenshots. Reduce padding or rebal
 When review selects header, navigation, or brand-bar UI chrome and asks not to bold it, reduce the font-weight for that selected chrome only. Do not change unrelated body copy, titles, card headings, or citation typography to satisfy chrome-specific weight feedback.
 
 When review selects a summary-stat or metric row and asks "don't bold," reduce font-weight only for that selected row's labels and values. Preserve hierarchy with size, spacing, or color rather than bold.
+
+When review selects large metric values inside product or data cards and asks "don't bold," reduce font-weight only for those selected card metric values. Preserve the card hierarchy with value size, spacing, alignment, muted labels, or color rather than bold.
