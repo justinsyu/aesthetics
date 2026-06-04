@@ -97,3 +97,5 @@ When review selects header, navigation, or brand-bar UI chrome and asks not to b
 When review selects a summary-stat or metric row and asks "don't bold," reduce font-weight only for that selected row's labels and values. Preserve hierarchy with size, spacing, or color rather than bold.
 
 When review selects large metric values inside product or data cards and asks "don't bold," reduce font-weight only for those selected card metric values. Preserve the card hierarchy with value size, spacing, alignment, muted labels, or color rather than bold.
+
+When review selects market, city, provider, or similar list-item labels and asks not to bold them, reduce the selected item label weight to regular or medium. Preserve selected-state hierarchy with spacing, color contrast, sizing, borders, background tint, or accent markers rather than bold text.
