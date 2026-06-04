@@ -4,50 +4,55 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-    <title>Aesthetic Neurotoxin Provider Data</title>
-    <meta name="description" content="Static provider-density infographics for BOTOX Cosmetic, Dysport, and Xeomin public locator data.">
+    <title>Aesthetic Botulinum Toxin Public Locator Dataset</title>
+    <meta name="description" content="Descriptive summaries of public locator records for BOTOX Cosmetic, Dysport, and Xeomin.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800;900&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/site.css">
   </head>
   <body>
+    <div class="utility-strip">Public locator records. Descriptive analysis only.</div>
     <header class="site-header">
-      <a class="brand" href="./">Aesthetic Neurotoxin Provider Data</a>
+      <a class="brand" href="./">Aesthetic Botulinum Toxin Locator Dataset</a>
       <nav aria-label="Primary navigation">
         <a href="#overview">Overview</a>
-        <a href="#states">States</a>
-        <a href="#markets">Markets</a>
-        <a href="#sources">Sources</a>
+        <a href="#states">Geography</a>
+        <a href="#markets">Local Areas</a>
+        <a href="#sources">Methods</a>
       </nav>
     </header>
 
     <main>
       <section class="hero" id="overview">
-        <p class="eyebrow">Public locator intelligence</p>
-        <h1>BOTOX, Dysport, and Xeomin provider footprints</h1>
+        <p class="eyebrow">Public locator records</p>
+        <h1>Geographic distribution of BOTOX Cosmetic, Dysport, and Xeomin locator records</h1>
       </section>
 
       <section class="summary-grid" aria-label="Archive summary">
         <div>
-          <strong>Provider rows</strong>
+          <strong>Locator records</strong>
           <span data-total-providers>Loading</span>
         </div>
         <div>
-          <strong>Products</strong>
+          <strong>Included products</strong>
           <span data-total-products>3</span>
         </div>
         <div>
-          <strong>States / territories</strong>
+          <strong>States or territories</strong>
           <span data-total-states>Loading</span>
         </div>
+      </section>
+
+      <section class="method-note" aria-label="Methodological caveat">
+        Public locator inclusion criteria, update frequency, and deduplication rules may differ by manufacturer. Cross-product comparisons should be interpreted as descriptive summaries of source-listed records rather than audited measures of market participation.
       </section>
 
       <section class="panel">
         <div class="section-heading-row">
           <div>
-            <h2>Product footprint</h2>
-            <p class="lead">Provider rows, ZIP coverage, and state coverage from each public locator.</p>
+            <h2>Product-level record counts</h2>
+            <p class="lead">Record counts, represented ZIP codes, and represented states or territories for each public locator extract.</p>
           </div>
           <a class="button button-secondary" href="assets/data/provider-summary.json">Download summary JSON</a>
         </div>
@@ -57,8 +62,8 @@
       <section class="panel" id="states">
         <div class="section-heading-row">
           <div>
-            <h2>State density</h2>
-            <p class="lead">The top state and territory markets by combined locator rows across the three products.</p>
+            <h2>State-level record counts</h2>
+            <p class="lead">States and territories with the highest combined public locator record counts across the three products.</p>
           </div>
         </div>
         <div class="density-layout">
@@ -83,8 +88,8 @@
       <section class="panel" id="markets">
         <div class="section-heading-row">
           <div>
-            <h2>Top local markets</h2>
-            <p class="lead">City-level provider clusters by product. These are individual locator rows, not unique clinicians.</p>
+            <h2>City-level record counts</h2>
+            <p class="lead">City-level public locator record counts by product. Records may represent practices, locations, or listed providers and should not be interpreted as unique clinicians.</p>
           </div>
         </div>
         <div class="market-grid" data-market-grid></div>
@@ -93,8 +98,8 @@
       <section class="panel" id="sources">
         <div class="section-heading-row">
           <div>
-            <h2>Sources and caveats</h2>
-            <p class="lead">These are public locator extracts and should not be treated as manufacturer account master files.</p>
+            <h2>Data sources and limitations</h2>
+            <p class="lead">Records were obtained from public manufacturer locator tools. They should not be interpreted as complete manufacturer account lists, active purchasing accounts, or unique clinician counts.</p>
           </div>
         </div>
         <div class="source-list" data-source-list></div>
@@ -102,7 +107,7 @@
     </main>
 
     <footer>
-      Static archive for competitive intelligence and provider footprint analysis. Maintained by Justin Yu.
+      Static descriptive summary of public manufacturer locator records.
     </footer>
 
     <script src="assets/js/app.js"></script>

@@ -12,10 +12,10 @@ function number(value) {
 
 function productColor(key) {
   return {
-    botox: "#1c71ed",
-    dysport: "#76a6eb",
-    xeomin: "#00844f",
-  }[key] || "#06254a";
+    botox: "#1b60e9",
+    dysport: "#6a97f1",
+    xeomin: "#007247",
+  }[key] || "#071d49";
 }
 
 function renderProducts(summary) {
@@ -32,8 +32,8 @@ function renderProducts(summary) {
           <div class="bar-fill" style="width:${width}%; background:${product.color};"></div>
         </div>
         <div class="metric-row">
-          <span><b>${number(product.stateCount)}</b> states / territories</span>
-          <span><b>${number(product.zipCount)}</b> ZIP codes</span>
+          <span><b>${number(product.stateCount)}</b> states or territories represented</span>
+          <span><b>${number(product.zipCount)}</b> ZIP codes represented</span>
         </div>
       </article>
     `;
@@ -52,7 +52,7 @@ function renderStateDensity(summary) {
     return `
       <div class="state-row">
         <span class="state-label">${row.state}</span>
-        <span class="state-bar-track" title="${row.state}: ${number(row.total)} rows">
+        <span class="state-bar-track" title="${row.state}: ${number(row.total)} records">
           <span class="stacked" style="width:${width}%">
             <span style="width:${botox}%; background:${productColor("botox")}"></span>
             <span style="width:${dysport}%; background:${productColor("dysport")}"></span>
@@ -97,11 +97,11 @@ function renderSources(summary) {
   sourceList.innerHTML = summary.products.map((product) => `
     <div class="source-item">
       <strong>${product.name}</strong><br>
-      ${number(product.providerCount)} public locator rows. Source CSV: <a href="${product.file}">${product.file.split("/").pop()}</a>
+      ${number(product.providerCount)} records obtained from the public locator. Source CSV: <a href="${product.file}">${product.file.split("/").pop()}</a>
     </div>
   `).join("") + `
     <div class="source-item">
-      DAXXIFY and Jeuveau were investigated separately. DAXXIFY remained rate-limited during retry; Jeuveau required browser-origin requests and is not included in these three-product infographics.
+      DAXXIFY and Jeuveau records were evaluated separately and are excluded from this three-product summary because complete, comparable public locator extracts were not available for inclusion.
     </div>
   `;
 }

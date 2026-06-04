@@ -1,27 +1,23 @@
 :root {
   color-scheme: light;
-  --background: #ffffff;
+  --background: #fbf8f6;
   --surface: #ffffff;
-  --surface-soft: #f7f9fb;
-  --surface-elevated: #ebeceb;
-  --text: #06254a;
-  --body-text: #3c3c3c;
-  --muted: #68717c;
-  --border: #ebeceb;
-  --border-strong: #d9d9d9;
-  --accent: #1c71ed;
-  --accent-navy: #06254a;
-  --accent-teal: #22b3cd;
-  --accent-periwinkle: #76a6eb;
-  --accent-pink: #ea18a8;
-  --accent-green: #00844f;
-  --panel-blue-bg: rgba(28, 113, 237, 0.08);
-  --panel-blue-border: rgba(28, 113, 237, 0.24);
-  --panel-teal-bg: rgba(34, 179, 205, 0.1);
-  --panel-teal-border: rgba(34, 179, 205, 0.28);
-  --panel-pink-bg: rgba(234, 24, 168, 0.08);
-  --panel-pink-border: rgba(234, 24, 168, 0.24);
-  --radius-card: 0.35rem;
+  --surface-soft: #f6eff1;
+  --surface-elevated: #efe4e1;
+  --text: #071d49;
+  --body-text: #2b3036;
+  --muted: #616a74;
+  --border: #eadfdc;
+  --border-strong: #d6c7c2;
+  --accent: #1b60e9;
+  --accent-navy: #071d49;
+  --accent-teal: #237b7f;
+  --accent-periwinkle: #6a97f1;
+  --accent-pink: #925c54;
+  --accent-green: #007247;
+  --panel-blue-bg: #e4edfd;
+  --panel-blue-border: #b8cdf7;
+  --radius-card: 0.5rem;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-display: "Newsreader", Georgia, "Times New Roman", serif;
   --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
@@ -33,9 +29,9 @@
 
 body {
   margin: 0;
-  background: var(--background);
+  background: linear-gradient(180deg, #ffffff 0, var(--background) 25rem, #ffffff 100%);
   color: var(--body-text);
-  font: 400 1rem/1.6 var(--font-body);
+  font: 400 1rem/1.58 var(--font-body);
   letter-spacing: 0;
 }
 
@@ -48,6 +44,18 @@ a:hover {
   text-decoration: underline;
 }
 
+.utility-strip {
+  min-height: 2.25rem;
+  padding: 0.55rem clamp(1rem, 3vw, 2rem);
+  background: var(--accent-navy);
+  color: #ffffff;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -56,38 +64,51 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
+  min-height: 4.8rem;
   padding: 1rem clamp(1rem, 3vw, 2rem);
-  border-bottom: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--accent-navy);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
 }
 
 .brand {
+  max-width: 25rem;
   color: var(--text);
+  font-size: 0.98rem;
   font-weight: 800;
+  letter-spacing: 0;
 }
 
 nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem 1rem;
-  font-size: 0.9rem;
-  font-weight: 700;
+  gap: 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+nav a {
+  padding: 0.2rem 0;
+}
+
+nav a:hover {
+  text-decoration: none;
+  box-shadow: inset 0 -2px 0 var(--accent);
 }
 
 main {
-  width: min(1180px, calc(100% - 2rem));
+  width: min(1200px, calc(100% - 2rem));
   margin: 0 auto;
 }
 
 .hero {
-  padding: 3.25rem 0 1.5rem;
+  padding: 4.2rem 0 2.1rem;
 }
 
 .eyebrow {
-  margin: 0 0 0.75rem;
+  margin: 0 0 1rem;
   color: var(--accent);
-  font: 700 0.76rem/1 var(--font-mono);
+  font: 700 0.78rem/1 var(--font-mono);
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -102,12 +123,14 @@ h3 {
 }
 
 h1 {
-  max-width: 820px;
-  font: 600 clamp(2.2rem, 5vw, 3.35rem)/0.98 var(--font-display);
+  max-width: 980px;
+  font: 500 5rem/0.95 var(--font-display);
+  letter-spacing: 0;
 }
 
 h2 {
-  font: 600 clamp(1.7rem, 3vw, 2.35rem)/1 var(--font-display);
+  font: 500 2.45rem/1 var(--font-display);
+  letter-spacing: 0;
 }
 
 h3 {
@@ -116,30 +139,24 @@ h3 {
 
 .lead {
   max-width: 780px;
-  margin: 0.7rem 0 0;
+  margin: 0.85rem 0 0;
   color: var(--muted);
-  font-size: 1rem;
+  font-size: 1.02rem;
 }
 
 .summary-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0;
-  margin: 1.25rem 0 2rem;
-  border-top: 1px solid var(--border-strong);
-  border-bottom: 1px solid var(--border-strong);
-}
-
-.panel,
-.product-card,
-.market-card {
+  overflow: hidden;
+  margin: 0 0 1.6rem;
   border: 1px solid var(--border-strong);
-  border-radius: var(--radius-card);
-  background: var(--surface);
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .summary-grid div {
-  padding: 1rem 1.25rem;
+  padding: 1.15rem 1.25rem;
   border-right: 1px solid var(--border-strong);
 }
 
@@ -159,18 +176,34 @@ h3 {
   display: block;
   margin-top: 0.55rem;
   color: var(--text);
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 2.15rem;
+  font-weight: 850;
   line-height: 1;
 }
 
+.method-note {
+  margin: 0 0 2rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-card);
+  background: var(--surface-soft);
+  color: var(--body-text);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.panel,
+.product-card,
+.market-card {
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+}
+
 .panel {
-  margin: 1.4rem 0;
-  padding: 1.35rem 0 0;
-  border-right: 0;
-  border-bottom: 0;
-  border-left: 0;
-  border-radius: 0;
+  margin: 1.8rem 0;
+  padding: 1.45rem;
+  border-top: 2px solid var(--accent-navy);
 }
 
 .section-heading-row {
@@ -184,13 +217,22 @@ h3 {
 .button {
   display: inline-flex;
   align-items: center;
-  min-height: 2.5rem;
-  padding: 0.55rem 0.85rem;
-  border: 1px solid var(--border-strong);
-  border-radius: 0.35rem;
-  color: var(--accent-navy);
-  font-size: 0.9rem;
-  font-weight: 700;
+  justify-content: center;
+  min-height: 2.9rem;
+  padding: 0.6rem 1.1rem;
+  border: 1px solid var(--accent-navy);
+  border-radius: 0.25rem;
+  background: var(--accent-navy);
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.button:hover {
+  background: var(--accent);
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .product-grid {
@@ -200,7 +242,7 @@ h3 {
 }
 
 .product-card {
-  padding: 1rem;
+  padding: 1.15rem;
 }
 
 .product-card[data-product="botox"] {
@@ -209,26 +251,26 @@ h3 {
 }
 
 .product-card[data-product="dysport"] {
-  background: rgba(118, 166, 235, 0.12);
-  border-color: rgba(118, 166, 235, 0.32);
+  background: #eef3fd;
+  border-color: #cbd9f4;
 }
 
 .product-card[data-product="xeomin"] {
-  background: rgba(0, 132, 79, 0.08);
-  border-color: rgba(0, 132, 79, 0.24);
+  background: #f0f6f2;
+  border-color: #c9dfd1;
 }
 
 .product-meta {
   margin: 0.2rem 0 0.9rem;
   color: var(--muted);
   font-size: 0.86rem;
-  font-weight: 600;
+  font-weight: 650;
 }
 
 .big-number {
   color: var(--text);
-  font-size: 2.25rem;
-  font-weight: 800;
+  font-size: 2.45rem;
+  font-weight: 850;
   line-height: 1;
 }
 
@@ -243,8 +285,8 @@ h3 {
   display: block;
   padding: 0.7rem;
   border: 1px solid var(--border-strong);
-  border-radius: 0.35rem;
-  background: rgba(255, 255, 255, 0.65);
+  border-radius: var(--radius-card);
+  background: rgba(255, 255, 255, 0.82);
 }
 
 .metric-row b {
@@ -258,7 +300,7 @@ h3 {
   overflow: hidden;
   height: 0.6rem;
   border-radius: 999px;
-  background: #e8edf3;
+  background: #e6eef7;
 }
 
 .bar-fill {
@@ -305,6 +347,7 @@ h3 {
   overflow: auto;
   border: 1px solid var(--border);
   border-radius: var(--radius-card);
+  background: #ffffff;
 }
 
 table {
@@ -340,7 +383,7 @@ th {
 }
 
 .market-card {
-  padding: 1rem;
+  padding: 1.15rem;
 }
 
 .market-list {
@@ -378,7 +421,7 @@ th {
 .source-item {
   padding: 0.85rem;
   border: 1px solid var(--border);
-  border-radius: 0.35rem;
+  border-radius: var(--radius-card);
   background: var(--surface-soft);
 }
 
@@ -407,5 +450,13 @@ footer {
   .density-layout,
   .market-grid {
     grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
   }
 }
