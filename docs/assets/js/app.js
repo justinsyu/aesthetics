@@ -92,20 +92,6 @@ function renderMarkets(summary) {
   `).join("");
 }
 
-function renderSources(summary) {
-  const sourceList = document.querySelector("[data-source-list]");
-  sourceList.innerHTML = summary.products.map((product) => `
-    <div class="source-item">
-      <strong>${product.name}</strong><br>
-      ${number(product.providerCount)} records obtained from the public locator. Source CSV: <a href="${product.file}">${product.file.split("/").pop()}</a>
-    </div>
-  `).join("") + `
-    <div class="source-item">
-      DAXXIFY and Jeuveau records were evaluated separately and are excluded from this three-product summary because complete, comparable public locator extracts were not available for inclusion.
-    </div>
-  `;
-}
-
 async function init() {
   const response = await fetch("assets/data/provider-summary.json");
   const summary = await response.json();
@@ -115,7 +101,6 @@ async function init() {
   renderProducts(summary);
   renderStateDensity(summary);
   renderMarkets(summary);
-  renderSources(summary);
 }
 
 init().catch((error) => {
