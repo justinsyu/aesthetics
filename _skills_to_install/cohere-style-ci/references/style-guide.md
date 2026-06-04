@@ -97,7 +97,7 @@ When review flags a large multi-line title as touching or too tight and asks not
 
 When review selects header, navigation, or brand-bar UI chrome and asks not to bold it, reduce the font-weight for that selected chrome only. Do not change unrelated body copy, titles, card headings, or citation typography to satisfy chrome-specific weight feedback.
 
-When retaining header, navigation, brand-bar, or page chrome, align its left and right gutters to the same visible main body section or inner wrapper edges rather than the full slide edge.
+When retaining header, navigation, brand-bar, or page chrome, align its left and right gutters to the same visible main body section or inner wrapper edges with no extra inset, and keep chrome text at a consistent font size unless a specific hierarchy is intentional.
 
 When review selects a summary-stat or metric row and asks "don't bold," reduce font-weight only for that selected row's labels and values. Preserve hierarchy with size, spacing, or color rather than bold.
 
