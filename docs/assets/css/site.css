@@ -369,11 +369,22 @@ th {
 
 .market-name {
   overflow: hidden;
-  color: var(--body-text);
-  font-weight: 300;
+  color: var(--muted);
+  font: 200 0.94rem/1.25 var(--font-body);
+  font-weight: 200;
+  font-variation-settings: "wght" 200;
+  font-synthesis: none;
   font-synthesis-weight: none;
   text-overflow: ellipsis;
   white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+}
+
+.market-name * {
+  font-weight: inherit;
+  font-variation-settings: inherit;
+  font-synthesis: inherit;
+  font-synthesis-weight: inherit;
 }
 
 .market-count {
