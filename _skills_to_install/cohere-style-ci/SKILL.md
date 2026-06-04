@@ -200,6 +200,7 @@ If highlighting with browser selection is unreliable, inject a temporary highlig
 - Tighten components when excessive internal bottom padding leaves content visually floating or weakly anchored. For cards with excess empty bottom space, rebalance by increasing text size where readable and reducing padding or min-height rather than leaving the card underfilled.
 - In References tables, center-align the first column only when it contains reference numbers, including the first-column header. Leave all other References columns normally aligned.
 - In References tables, make header text visibly larger than body values when space allows, keep header vertical padding balanced with body rows, avoid excess line or row spacing where bottom whitespace exceeds top whitespace, and keep source names normal-weight and non-underlined, including linked source-name text.
+- When review selects a summary-stat or metric row and asks "don't bold," reduce font-weight only for that selected row's labels and values; preserve row hierarchy with size, spacing, or color rather than applying bold elsewhere.
 - Do not allow text or components to overlap or extend outside a slide.
 - If information does not fit, split it into another slide rather than trimming evidence or reducing type below readability thresholds.
 - When table rows collide with footers, citations, or page chrome in PDF exports, move rows to a continuation slide/page before shrinking type, row padding, or evidence wording excessively.
