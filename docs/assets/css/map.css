@@ -22,16 +22,11 @@
   border-bottom: 1px solid var(--border);
 }
 
-.map-status {
-  color: var(--text);
-  font-size: 0.96rem;
-}
-
-.search-box,
-.product-filter {
+.map-status-block {
   min-width: 0;
 }
 
+.toolbar-label,
 .search-box span,
 .product-filter legend {
   display: block;
@@ -40,6 +35,18 @@
   font: 500 0.72rem/1 var(--font-mono);
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.map-status {
+  display: block;
+  min-height: 2.45rem;
+  color: var(--text);
+  font: 400 1.2rem/2.45rem var(--font-body);
+}
+
+.search-box,
+.product-filter {
+  min-width: 0;
 }
 
 .search-box input {

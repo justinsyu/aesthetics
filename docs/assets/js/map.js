@@ -54,7 +54,7 @@ async function init() {
     state.records = batches.flat();
     applyFilters();
   } catch (error) {
-    statusEl.textContent = "Provider records could not be loaded.";
+    statusEl.textContent = "Unavailable";
     setControlsDisabled(false);
     setMapLoading(false);
     console.error(error);
@@ -138,7 +138,7 @@ function renderProductFilters() {
 }
 
 function loadProductRecords(product) {
-  statusEl.textContent = `Loading ${product.name} records...`;
+  statusEl.textContent = "Loading";
 
   return new Promise((resolve, reject) => {
     Papa.parse(product.file, {
@@ -287,13 +287,13 @@ function applyFilters(options = {}) {
   }
 
   countsEl.innerHTML = "";
-  statusEl.textContent = `Rendering ${markers.length.toLocaleString()} provider markers...`;
+  statusEl.textContent = "Rendering";
   state.cluster.options.chunkProgress = (processed, total) => {
     if (renderToken !== state.renderToken) return;
     progressSeen = true;
 
     if (processed < total) {
-      statusEl.textContent = `Rendering ${processed.toLocaleString()} of ${total.toLocaleString()} provider markers...`;
+      statusEl.textContent = "Rendering";
       return;
     }
 
@@ -323,7 +323,7 @@ function getVisibleRecords() {
 
 function updateCounts(records) {
   const total = records.length.toLocaleString();
-  statusEl.textContent = `${total} records shown`;
+  statusEl.textContent = total;
 
   const counts = PRODUCTS.map((product) => ({
     ...product,

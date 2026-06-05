@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" crossorigin="">
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" crossorigin="">
     <link rel="stylesheet" href="assets/css/site.css">
-    <link rel="stylesheet" href="assets/css/map.css">
+    <link rel="stylesheet" href="assets/css/map.css?v=toolbar-metric-1">
   </head>
   <body>
     <header class="site-header">
@@ -35,7 +35,10 @@
 
       <section class="map-shell" aria-label="Interactive provider location map">
         <div class="map-toolbar">
-          <div class="map-status" data-map-status>Loading provider records...</div>
+          <div class="map-status-block" aria-live="polite">
+            <span class="toolbar-label">Records shown</span>
+            <output class="map-status" data-map-status>Loading</output>
+          </div>
           <label class="search-box">
             <span>Search</span>
             <input type="search" data-map-search placeholder="Practice, city, state, ZIP, or product">
@@ -67,6 +70,6 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" crossorigin=""></script>
     <script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js" crossorigin=""></script>
-    <script src="assets/js/map.js"></script>
+    <script src="assets/js/map.js?v=toolbar-metric-1"></script>
   </body>
 </html>
