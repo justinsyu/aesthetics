@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <title>Provider Location Map | Aesthetic Botulinum Toxin Public Locator Dataset</title>
+    <meta name="description" content="Interactive map of public locator records for BOTOX Cosmetic, Dysport, and Xeomin providers.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@200;300;400;500;600;700;800;900&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" crossorigin="">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" crossorigin="">
+    <link rel="stylesheet" href="assets/css/site.css">
+    <link rel="stylesheet" href="assets/css/map.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./">Aesthetic Botulinum Toxin Locator Dataset</a>
+      <nav aria-label="Primary navigation">
+        <a href="./#overview">Overview</a>
+        <a href="./#states">Geography</a>
+        <a href="./#markets">Local Areas</a>
+        <a href="map.html">Map</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero map-hero" id="overview">
+        <p class="eyebrow">Provider location map</p>
+        <h1>Interactive map of public locator records</h1>
+        <p class="lead">Zoom, pan, filter by product, and select clustered provider locations to inspect source-listed practice details.</p>
+      </section>
+
+      <section class="map-shell" aria-label="Interactive provider location map">
+        <div class="map-toolbar">
+          <div class="map-status" data-map-status>Loading provider records...</div>
+          <label class="search-box">
+            <span>Search</span>
+            <input type="search" data-map-search placeholder="Practice, city, state, ZIP, or product">
+          </label>
+          <fieldset class="product-filter" data-product-filter>
+            <legend>Products</legend>
+          </fieldset>
+          <button type="button" class="map-button" data-reset-map>Reset view</button>
+        </div>
+
+        <div id="provider-map" class="provider-map" role="application" aria-label="Map of public locator provider records"></div>
+
+        <div class="map-counts" data-map-counts aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer>
+      Static descriptive summary of public manufacturer locator records.
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" crossorigin=""></script>
+    <script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js" crossorigin=""></script>
+    <script src="assets/js/map.js"></script>
+  </body>
+</html>
