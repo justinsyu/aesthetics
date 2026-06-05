@@ -39,6 +39,7 @@ const countsEl = document.querySelector("[data-map-counts]");
 const searchEl = document.querySelector("[data-map-search]");
 const filterEl = document.querySelector("[data-product-filter]");
 const resetEl = document.querySelector("[data-reset-map]");
+const loadingEl = document.querySelector("[data-map-loading]");
 let searchTimer;
 
 init();
@@ -55,6 +56,7 @@ async function init() {
   } catch (error) {
     statusEl.textContent = "Provider records could not be loaded.";
     setControlsDisabled(false);
+    setMapLoading(false);
     console.error(error);
   }
 
@@ -89,12 +91,12 @@ function initializeMap() {
   state.map = L.map("provider-map", {
     preferCanvas: true,
     minZoom: 3,
-    maxZoom: 18
+    maxZoom: 18,
+    attributionControl: false
   }).fitBounds(DEFAULT_BOUNDS);
 
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 19,
-    attribution: "&copy; OpenStreetMap contributors"
+    maxZoom: 19
   }).addTo(state.map);
 
   state.cluster = createClusterLayer();
@@ -119,11 +121,17 @@ function setControlsDisabled(disabled) {
   });
 }
 
+function setMapLoading(isLoading, message = "Loading map data") {
+  if (!loadingEl) return;
+  const textEl = loadingEl.querySelector("[data-map-loading-text]");
+  if (textEl) textEl.textContent = message;
+  loadingEl.classList.toggle("is-hidden", !isLoading);
+}
+
 function renderProductFilters() {
   filterEl.innerHTML = "<legend>Products</legend>" + PRODUCTS.map((product) => `
     <label>
       <input type="checkbox" value="${product.key}" checked>
-      <span class="map-count-swatch" style="--product-color:${product.color}"></span>
       ${product.name}
     </label>
   `).join("");
@@ -244,6 +252,7 @@ function applyFilters(options = {}) {
   let renderFinished = false;
 
   setControlsDisabled(true);
+  setMapLoading(true, state.records.length ? "Rendering map data" : "Loading map data");
   state.cluster.clearLayers();
 
   const markers = visible.map((record) => {
@@ -265,6 +274,7 @@ function applyFilters(options = {}) {
     renderFinished = true;
     updateCounts(visible);
     setControlsDisabled(false);
+    setMapLoading(false);
   };
 
   if (!markers.length) {
@@ -313,7 +323,7 @@ function getVisibleRecords() {
 
 function updateCounts(records) {
   const total = records.length.toLocaleString();
-  statusEl.textContent = `${total} mapped provider records shown`;
+  statusEl.textContent = `${total} records shown`;
 
   const counts = PRODUCTS.map((product) => ({
     ...product,
@@ -322,7 +332,6 @@ function updateCounts(records) {
 
   countsEl.innerHTML = counts.map((product) => `
     <span class="map-count-pill">
-      <span class="map-count-swatch" style="--product-color:${product.color}"></span>
       <strong>${product.name}</strong>
       ${product.count.toLocaleString()}
     </span>

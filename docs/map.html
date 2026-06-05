@@ -46,7 +46,15 @@
           <button type="button" class="map-button" data-reset-map>Reset view</button>
         </div>
 
-        <div id="provider-map" class="provider-map" role="application" aria-label="Map of public locator provider records"></div>
+        <div class="map-stage" data-map-stage>
+          <div id="provider-map" class="provider-map" role="application" aria-label="Map of public locator provider records"></div>
+          <div class="map-loading" data-map-loading>
+            <div class="map-loading-card">
+              <span class="map-spinner" aria-hidden="true"></span>
+              <span data-map-loading-text>Loading map data</span>
+            </div>
+          </div>
+        </div>
 
         <div class="map-counts" data-map-counts aria-live="polite"></div>
       </section>
