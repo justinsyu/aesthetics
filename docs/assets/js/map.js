@@ -342,8 +342,11 @@ function fitToRecords(records) {
 function renderPopup(record) {
   const website = normalizeUrl(record.website);
   const profile = normalizeUrl(record.profileUrl);
-  const source = normalizeUrl(record.sourceUrl);
   const details = (record.details || []).filter(Boolean);
+  const directLinks = [
+    profile && `<p><a href="${escapeAttribute(profile)}" target="_blank" rel="noopener">Manufacturer profile</a></p>`,
+    website && website !== profile && `<p><a href="${escapeAttribute(website)}" target="_blank" rel="noopener">Practice website</a></p>`
+  ].filter(Boolean).join("");
 
   return `
     <article class="provider-popup">
@@ -356,9 +359,7 @@ function renderPopup(record) {
       ${record.address ? `<p>${escapeHtml(record.address)}</p>` : ""}
       ${record.phone ? `<p>${formatPhone(record.phone)}</p>` : ""}
       ${details.map((detail) => `<p>${escapeHtml(detail)}</p>`).join("")}
-      ${website ? `<p><a href="${escapeAttribute(website)}" target="_blank" rel="noopener">Website or profile</a></p>` : ""}
-      ${profile && profile !== website ? `<p><a href="${escapeAttribute(profile)}" target="_blank" rel="noopener">Manufacturer profile</a></p>` : ""}
-      ${source ? `<p><a href="${escapeAttribute(source)}" target="_blank" rel="noopener">Source locator</a></p>` : ""}
+      ${directLinks}
     </article>
   `;
 }
