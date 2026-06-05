@@ -332,6 +332,7 @@ function updateCounts(records) {
 
   countsEl.innerHTML = counts.map((product) => `
     <span class="map-count-pill">
+      <span class="map-count-swatch" style="--product-color:${product.color}"></span>
       <strong>${product.name}</strong>
       ${product.count.toLocaleString()}
     </span>
