@@ -129,12 +129,12 @@ function setMapLoading(isLoading, message = "Loading map data") {
 }
 
 function renderProductFilters() {
-  filterEl.innerHTML = "<legend>Products</legend>" + PRODUCTS.map((product) => `
+  filterEl.innerHTML = `<legend>Products</legend><div class="product-options">${PRODUCTS.map((product) => `
     <label>
       <input type="checkbox" value="${product.key}" checked>
       ${product.name}
     </label>
-  `).join("");
+  `).join("")}</div>`;
 }
 
 function loadProductRecords(product) {
