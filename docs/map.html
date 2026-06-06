@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" crossorigin="">
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" crossorigin="">
     <link rel="stylesheet" href="assets/css/site.css">
-    <link rel="stylesheet" href="assets/css/map.css?v=toolbar-layout-4">
+    <link rel="stylesheet" href="assets/css/map.css?v=open-payments-1">
   </head>
   <body>
     <header class="site-header">
@@ -41,10 +41,17 @@
           </div>
           <label class="search-box">
             <span>Search</span>
-            <input type="search" data-map-search placeholder="Practice, city, state, ZIP, or product">
+            <input type="search" data-map-search placeholder="Practice, clinician, NPI, city, state, ZIP, or product">
           </label>
           <fieldset class="product-filter" data-product-filter>
             <legend>Products</legend>
+          </fieldset>
+          <fieldset class="view-filter">
+            <legend>View</legend>
+            <label>
+              <input type="checkbox" data-payment-view>
+              2024 payments
+            </label>
           </fieldset>
           <button type="button" class="map-button" data-reset-map>Reset view</button>
         </div>
@@ -70,6 +77,6 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" crossorigin=""></script>
     <script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js" crossorigin=""></script>
-    <script src="assets/js/map.js?v=toolbar-layout-3"></script>
+    <script src="assets/js/map.js?v=open-payments-1"></script>
   </body>
 </html>

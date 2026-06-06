@@ -24,9 +24,13 @@ const PRODUCTS = [
 
 const PRODUCT_BY_KEY = Object.fromEntries(PRODUCTS.map((product) => [product.key, product]));
 const DEFAULT_BOUNDS = [[24.4, -124.9], [49.4, -66.9]];
+const PAYMENT_OVERLAY_FILE = "assets/data/open_payments/provider_open_payments_overlay.json";
 
 const state = {
   records: [],
+  paymentOverlay: null,
+  paymentLocations: {},
+  showPayments: false,
   activeProducts: new Set(PRODUCTS.map((product) => product.key)),
   query: "",
   map: null,
@@ -38,6 +42,7 @@ const statusEl = document.querySelector("[data-map-status]");
 const countsEl = document.querySelector("[data-map-counts]");
 const searchEl = document.querySelector("[data-map-search]");
 const filterEl = document.querySelector("[data-product-filter]");
+const paymentViewEl = document.querySelector("[data-payment-view]");
 const resetEl = document.querySelector("[data-reset-map]");
 const loadingEl = document.querySelector("[data-map-loading]");
 let searchTimer;
@@ -50,8 +55,13 @@ async function init() {
   setControlsDisabled(true);
 
   try {
-    const batches = await Promise.all(PRODUCTS.map(loadProductRecords));
+    const [batches, paymentOverlay] = await Promise.all([
+      Promise.all(PRODUCTS.map(loadProductRecords)),
+      loadPaymentOverlay()
+    ]);
     state.records = batches.flat();
+    state.paymentOverlay = paymentOverlay;
+    state.paymentLocations = paymentOverlay?.locations || {};
     applyFilters();
   } catch (error) {
     statusEl.textContent = "Unavailable";
@@ -79,6 +89,11 @@ async function init() {
       state.activeProducts.delete(checkbox.value);
     }
     applyFilters({ fit: true });
+  });
+
+  paymentViewEl.addEventListener("change", () => {
+    state.showPayments = paymentViewEl.checked;
+    applyFilters();
   });
 
   resetEl.addEventListener("click", () => {
@@ -116,9 +131,18 @@ function createClusterLayer() {
 function setControlsDisabled(disabled) {
   searchEl.disabled = disabled;
   resetEl.disabled = disabled;
+  paymentViewEl.disabled = disabled;
   filterEl.querySelectorAll("input").forEach((input) => {
     input.disabled = disabled;
   });
+}
+
+async function loadPaymentOverlay() {
+  const response = await fetch(PAYMENT_OVERLAY_FILE);
+  if (!response.ok) {
+    throw new Error(`Unable to load Open Payments overlay: ${response.status}`);
+  }
+  return response.json();
 }
 
 function setMapLoading(isLoading, message = "Loading map data") {
@@ -256,12 +280,13 @@ function applyFilters(options = {}) {
   state.cluster.clearLayers();
 
   const markers = visible.map((record) => {
+    const payment = getPaymentLocation(record);
     const marker = L.marker([record.latitude, record.longitude], {
       icon: L.divIcon({
         className: "provider-dot-icon",
-        html: `<span class="provider-dot" style="--product-color:${record.color}"></span>`,
-        iconSize: [18, 18],
-        iconAnchor: [9, 9]
+        html: renderMarkerDot(record, payment),
+        iconSize: state.showPayments ? [paymentMarkerSize(payment), paymentMarkerSize(payment)] : [18, 18],
+        iconAnchor: state.showPayments ? [paymentMarkerSize(payment) / 2, paymentMarkerSize(payment) / 2] : [9, 9]
       }),
       title: record.name
     });
@@ -317,13 +342,26 @@ function getVisibleRecords() {
   return state.records.filter((record) => {
     if (!state.activeProducts.has(record.productKey)) return false;
     if (!state.query) return true;
-    return record.searchText.includes(state.query);
+    return record.searchText.includes(state.query) || paymentSearchText(record).includes(state.query);
   });
 }
 
 function updateCounts(records) {
   const total = records.length.toLocaleString();
   statusEl.textContent = total;
+
+  if (state.showPayments) {
+    const paymentSummary = summarizePayments(records);
+    countsEl.innerHTML = `
+      <span class="map-count-pill">
+        <strong>2024 Open Payments</strong>
+        ${formatCurrency(paymentSummary.totalAmount)}
+      </span>
+      <span class="map-count-pill">${paymentSummary.paidLocations.toLocaleString()} paid locations</span>
+      <span class="map-count-pill">${paymentSummary.matchedProviders.toLocaleString()} matched providers</span>
+    `;
+    return;
+  }
 
   const counts = PRODUCTS.map((product) => ({
     ...product,
@@ -353,6 +391,7 @@ function renderPopup(record) {
   const website = normalizeUrl(record.website);
   const profile = normalizeUrl(record.profileUrl);
   const details = (record.details || []).filter(Boolean);
+  const payment = getPaymentLocation(record);
   const directLinks = [
     profile && `<p><a href="${escapeAttribute(profile)}" target="_blank" rel="noopener">Manufacturer profile</a></p>`,
     website && website !== profile && `<p><a href="${escapeAttribute(website)}" target="_blank" rel="noopener">Practice website</a></p>`
@@ -369,8 +408,93 @@ function renderPopup(record) {
       ${record.address ? `<p>${escapeHtml(record.address)}</p>` : ""}
       ${record.phone ? `<p>${formatPhone(record.phone)}</p>` : ""}
       ${details.map((detail) => `<p>${escapeHtml(detail)}</p>`).join("")}
+      ${renderPaymentSummary(payment)}
       ${directLinks}
     </article>
+  `;
+}
+
+function getPaymentLocation(record) {
+  return state.paymentLocations[record.id] || null;
+}
+
+function paymentSearchText(record) {
+  const payment = getPaymentLocation(record);
+  if (!payment) return "";
+  return (payment.providers || []).map((provider) => [
+    provider.name,
+    provider.rawName,
+    provider.npi,
+    provider.nppesName,
+    provider.openPaymentsName,
+    provider.taxonomy
+  ].filter(Boolean).join(" ")).join(" ").toLowerCase();
+}
+
+function summarizePayments(records) {
+  return records.reduce((summary, record) => {
+    const payment = getPaymentLocation(record);
+    if (!payment) return summary;
+    const total = Number(payment.payment_total_2024) || 0;
+    summary.totalAmount += total;
+    summary.matchedProviders += Number(payment.matched_provider_count) || 0;
+    if (total > 0) summary.paidLocations += 1;
+    return summary;
+  }, { totalAmount: 0, paidLocations: 0, matchedProviders: 0 });
+}
+
+function paymentMarkerSize(payment) {
+  const total = Number(payment?.payment_total_2024) || 0;
+  if (!state.showPayments) return 18;
+  if (!total) return 12;
+  return Math.min(34, Math.max(14, 10 + Math.log10(total + 10) * 4.8));
+}
+
+function paymentMarkerColor(payment) {
+  const total = Number(payment?.payment_total_2024) || 0;
+  if (!total) return "#94a3b8";
+  if (total >= 100000) return "#7c2d12";
+  if (total >= 25000) return "#b45309";
+  if (total >= 5000) return "#d97706";
+  if (total >= 1000) return "#0f766e";
+  return "#0891b2";
+}
+
+function renderMarkerDot(record, payment) {
+  if (!state.showPayments) {
+    return `<span class="provider-dot" style="--product-color:${record.color}"></span>`;
+  }
+  const size = paymentMarkerSize(payment);
+  const color = paymentMarkerColor(payment);
+  return `<span class="provider-dot payment-dot" style="--payment-size:${size}px;--payment-color:${color}"></span>`;
+}
+
+function renderPaymentSummary(payment) {
+  if (!payment || !payment.candidate_count) {
+    return `
+      <div class="payment-popup-summary">
+        <p><strong>Open Payments:</strong> no individual clinician name available for NPI matching in this locator row.</p>
+      </div>
+    `;
+  }
+
+  const total = Number(payment.payment_total_2024) || 0;
+  const providers = (payment.providers || []).slice(0, 5);
+  const providerItems = providers.map((provider) => `
+    <li>
+      ${escapeHtml(provider.name)}
+      ${provider.npi ? ` · NPI ${escapeHtml(provider.npi)}` : ""}
+      · ${formatCurrency(provider.paymentTotal2024 || 0)}
+      ${provider.npiConfidence ? ` · ${escapeHtml(provider.npiConfidence)} confidence` : ""}
+    </li>
+  `).join("");
+
+  return `
+    <div class="payment-popup-summary">
+      <p><strong>2024 Open Payments:</strong> ${formatCurrency(total)} across ${(payment.payment_transactions_2024 || 0).toLocaleString()} transactions.</p>
+      <p>${(payment.matched_provider_count || 0).toLocaleString()} of ${(payment.candidate_count || 0).toLocaleString()} listed clinician names matched to an NPI.</p>
+      ${providerItems ? `<ol class="payment-provider-list">${providerItems}</ol>` : ""}
+    </div>
   `;
 }
 
@@ -402,6 +526,14 @@ function formatPhone(value) {
     return `${digits.slice(0, 3)}-${digits.slice(3, 6)}-${digits.slice(6)}`;
   }
   return escapeHtml(phone);
+}
+
+function formatCurrency(value) {
+  return Number(value || 0).toLocaleString("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0
+  });
 }
 
 function escapeHtml(value) {

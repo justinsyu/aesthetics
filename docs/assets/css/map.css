@@ -15,7 +15,7 @@
 
 .map-toolbar {
   display: grid;
-  grid-template-columns: max-content minmax(22rem, 1fr) max-content auto;
+  grid-template-columns: max-content minmax(20rem, 1fr) max-content max-content auto;
   column-gap: clamp(0.9rem, 1.8vw, 1.5rem);
   row-gap: 0.85rem;
   align-items: start;
@@ -29,7 +29,8 @@
 
 .toolbar-label,
 .search-box span,
-.product-filter legend {
+.product-filter legend,
+.view-filter legend {
   display: block;
   margin: 0 0 0.35rem;
   color: var(--muted);
@@ -46,7 +47,8 @@
 }
 
 .search-box,
-.product-filter {
+.product-filter,
+.view-filter {
   min-width: 0;
 }
 
@@ -71,6 +73,31 @@
   margin: 0;
   padding: 0;
   border: 0;
+}
+
+.view-filter {
+  display: grid;
+  grid-template-rows: auto 2.45rem;
+  align-items: start;
+  block-size: calc(0.72rem + 0.35rem + 2.45rem);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.view-filter label {
+  display: inline-flex;
+  gap: 0.35rem;
+  align-items: center;
+  min-height: 2.45rem;
+  white-space: nowrap;
+  color: var(--body-text);
+  font-size: 0.84rem;
+  line-height: 1;
+}
+
+.view-filter input {
+  accent-color: var(--accent);
 }
 
 .product-options {
@@ -212,6 +239,13 @@
   box-shadow: 0 0 0 1px rgba(7, 29, 73, 0.18), 0 2px 8px rgba(7, 29, 73, 0.25);
 }
 
+.provider-dot.payment-dot {
+  width: var(--payment-size, 0.72rem);
+  height: var(--payment-size, 0.72rem);
+  background: var(--payment-color, #94a3b8);
+  border-width: 2px;
+}
+
 .provider-popup {
   min-width: 16rem;
   color: var(--body-text);
@@ -241,6 +275,25 @@
   font-size: 0.82rem;
 }
 
+.payment-popup-summary {
+  margin-top: 0.55rem;
+  padding-top: 0.55rem;
+  border-top: 1px solid var(--border);
+}
+
+.payment-popup-summary strong {
+  color: var(--text);
+}
+
+.payment-provider-list {
+  margin: 0.35rem 0 0;
+  padding-left: 1rem;
+}
+
+.payment-provider-list li {
+  margin: 0.2rem 0;
+}
+
 .leaflet-popup-content {
   margin: 0.8rem 0.9rem;
 }
@@ -255,6 +308,7 @@
     grid-template-areas:
       "status status"
       "search reset"
+      "view view"
       "products products";
   }
 
@@ -271,6 +325,10 @@
     justify-self: start;
   }
 
+  .view-filter {
+    grid-area: view;
+  }
+
   .map-button {
     grid-area: reset;
   }
@@ -282,6 +340,7 @@
     grid-template-areas:
       "status"
       "search"
+      "view"
       "products"
       "reset";
   }
