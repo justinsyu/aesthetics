@@ -45,6 +45,7 @@ const filterEl = document.querySelector("[data-product-filter]");
 const paymentViewEl = document.querySelector("[data-payment-view]");
 const resetEl = document.querySelector("[data-reset-map]");
 const loadingEl = document.querySelector("[data-map-loading]");
+const mapShellEl = document.querySelector(".map-shell");
 let searchTimer;
 
 init();
@@ -93,7 +94,7 @@ async function init() {
 
   paymentViewEl.addEventListener("change", () => {
     state.showPayments = paymentViewEl.checked;
-    applyFilters();
+    updatePaymentView();
   });
 
   resetEl.addEventListener("click", () => {
@@ -150,6 +151,12 @@ function setMapLoading(isLoading, message = "Loading map data") {
   const textEl = loadingEl.querySelector("[data-map-loading-text]");
   if (textEl) textEl.textContent = message;
   loadingEl.classList.toggle("is-hidden", !isLoading);
+}
+
+function updatePaymentView() {
+  mapShellEl.classList.toggle("is-payment-view", state.showPayments);
+  state.map.closePopup();
+  updateCounts(getVisibleRecords());
 }
 
 function renderProductFilters() {
@@ -285,12 +292,12 @@ function applyFilters(options = {}) {
       icon: L.divIcon({
         className: "provider-dot-icon",
         html: renderMarkerDot(record, payment),
-        iconSize: state.showPayments ? [paymentMarkerSize(payment), paymentMarkerSize(payment)] : [18, 18],
-        iconAnchor: state.showPayments ? [paymentMarkerSize(payment) / 2, paymentMarkerSize(payment) / 2] : [9, 9]
+        iconSize: [36, 36],
+        iconAnchor: [18, 18]
       }),
       title: record.name
     });
-    marker.bindPopup(renderPopup(record), { maxWidth: 340 });
+    marker.bindPopup(() => renderPopup(record), { maxWidth: 340 });
     return marker;
   });
 
@@ -358,7 +365,7 @@ function updateCounts(records) {
         ${formatCurrency(paymentSummary.totalAmount)}
       </span>
       <span class="map-count-pill">${paymentSummary.paidLocations.toLocaleString()} paid locations</span>
-      <span class="map-count-pill">${paymentSummary.matchedProviders.toLocaleString()} matched providers</span>
+      <span class="map-count-pill">${paymentSummary.matchedProviders.toLocaleString()} NPI-matched clinician rows</span>
     `;
     return;
   }
@@ -408,7 +415,7 @@ function renderPopup(record) {
       ${record.address ? `<p>${escapeHtml(record.address)}</p>` : ""}
       ${record.phone ? `<p>${formatPhone(record.phone)}</p>` : ""}
       ${details.map((detail) => `<p>${escapeHtml(detail)}</p>`).join("")}
-      ${renderPaymentSummary(payment)}
+      ${state.showPayments ? renderPaymentSummary(payment) : ""}
       ${directLinks}
     </article>
   `;
@@ -445,7 +452,6 @@ function summarizePayments(records) {
 
 function paymentMarkerSize(payment) {
   const total = Number(payment?.payment_total_2024) || 0;
-  if (!state.showPayments) return 18;
   if (!total) return 12;
   return Math.min(34, Math.max(14, 10 + Math.log10(total + 10) * 4.8));
 }
@@ -461,40 +467,62 @@ function paymentMarkerColor(payment) {
 }
 
 function renderMarkerDot(record, payment) {
-  if (!state.showPayments) {
-    return `<span class="provider-dot" style="--product-color:${record.color}"></span>`;
-  }
   const size = paymentMarkerSize(payment);
   const color = paymentMarkerColor(payment);
-  return `<span class="provider-dot payment-dot" style="--payment-size:${size}px;--payment-color:${color}"></span>`;
+  return `<span class="provider-dot" style="--product-color:${record.color};--payment-size:${size}px;--payment-color:${color}"></span>`;
 }
 
 function renderPaymentSummary(payment) {
   if (!payment || !payment.candidate_count) {
     return `
       <div class="payment-popup-summary">
-        <p><strong>Open Payments:</strong> no individual clinician name available for NPI matching in this locator row.</p>
+        <p><strong>Open Payments matching:</strong> no individual clinician name was available in this locator row for NPI matching.</p>
       </div>
     `;
   }
 
   const total = Number(payment.payment_total_2024) || 0;
+  const transactions = Number(payment.payment_transactions_2024) || 0;
+  const matched = Number(payment.matched_provider_count) || 0;
+  const candidates = Number(payment.candidate_count) || 0;
   const providers = (payment.providers || []).slice(0, 5);
-  const providerItems = providers.map((provider) => `
-    <li>
-      ${escapeHtml(provider.name)}
-      ${provider.npi ? ` · NPI ${escapeHtml(provider.npi)}` : ""}
-      · ${formatCurrency(provider.paymentTotal2024 || 0)}
-      ${provider.npiConfidence ? ` · ${escapeHtml(provider.npiConfidence)} confidence` : ""}
-    </li>
-  `).join("");
+  const providerItems = providers.map(renderProviderPaymentItem).join("");
+  const paymentSentence = total > 0
+    ? `${formatCurrency(total)} across ${transactions.toLocaleString()} transactions.`
+    : matched > 0
+      ? "no 2024 general-payment records were identified for the NPI-matched clinicians."
+      : "no payment total is shown because no listed clinician name was matched to an NPI.";
 
   return `
     <div class="payment-popup-summary">
-      <p><strong>2024 Open Payments:</strong> ${formatCurrency(total)} across ${(payment.payment_transactions_2024 || 0).toLocaleString()} transactions.</p>
-      <p>${(payment.matched_provider_count || 0).toLocaleString()} of ${(payment.candidate_count || 0).toLocaleString()} listed clinician names matched to an NPI.</p>
+      <p><strong>2024 Open Payments:</strong> ${paymentSentence}</p>
+      <p><strong>NPI matching:</strong> ${matched.toLocaleString()} of ${candidates.toLocaleString()} listed clinician names matched.</p>
       ${providerItems ? `<ol class="payment-provider-list">${providerItems}</ol>` : ""}
     </div>
+  `;
+}
+
+function renderProviderPaymentItem(provider) {
+  const amount = Number(provider.paymentTotal2024) || 0;
+  const details = [];
+
+  if (provider.npi) {
+    details.push(`NPI ${escapeHtml(provider.npi)}`);
+    details.push(amount > 0 ? formatCurrency(amount) : "no 2024 payment records");
+    if (provider.npiConfidence && provider.npiConfidence !== "none") {
+      details.push(`${escapeHtml(provider.npiConfidence)}-confidence NPI match`);
+    }
+  } else if (provider.npiStatus && provider.npiStatus.startsWith("ambiguous")) {
+    details.push("ambiguous NPI match");
+  } else {
+    details.push("NPI not matched");
+  }
+
+  return `
+    <li>
+      ${escapeHtml(provider.name)}
+      ${details.length ? ` · ${details.join(" · ")}` : ""}
+    </li>
   `;
 }
 

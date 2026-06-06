@@ -237,9 +237,10 @@
 .provider-dot {
   border: 2px solid #ffffff;
   box-shadow: 0 0 0 1px rgba(7, 29, 73, 0.18), 0 2px 8px rgba(7, 29, 73, 0.25);
+  transition: width 140ms ease, height 140ms ease, background-color 140ms ease;
 }
 
-.provider-dot.payment-dot {
+.map-shell.is-payment-view .provider-dot {
   width: var(--payment-size, 0.72rem);
   height: var(--payment-size, 0.72rem);
   background: var(--payment-color, #94a3b8);
