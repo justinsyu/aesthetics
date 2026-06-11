@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Utility of deep learning–derived PSMA PET biomarkers for metastatic prostate cancer.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Utility of deep learning–derived PSMA PET biomarkers for metastatic prostate cancer.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e17002</div>
+    <div><strong>First speaker:</strong> Daniel Fu, MS</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/261131">https://www.asco.org/abstracts-presentations/261131</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> PSMA PET is increasingly used in staging and management of metastatic prostate cancer. Although qualitative interpretation and SUV-based heuristics of specific regions have shown prognostic value, we currently lack quantitative PET biomarkers that can aid in risk stratification at key therapeutic decision points (e.g., taxanes, ARPI, radioligand therapy). End-to-end deep learning applied directly to whole-body PSMA PET volumes enables pixel-level analysis without manual lesion segmentation, offering a practical pathway toward deployable imaging biomarkers. The purpose of this study was to investigate the utility of deep learning derived PSMA PET prognostic biomarkers in patients with metastatic prostate cancer.</div>
+  <main> 
+
+	<div>Utility of Deep Learning Derived PSMA PET Biomarkers for Metastatic Prostate Cancer<b>Background: </b> PSMA PET is increasingly used in staging and management of metastatic prostate cancer. Although qualitative interpretation and SUV-based heuristics of specific regions have shown prognostic value, we currently lack quantitative PET biomarkers that can aid in risk stratification at key therapeutic decision points (e.g., taxanes, ARPI, radioligand therapy). End-to-end deep learning applied directly to whole-body PSMA PET volumes enables pixel-level analysis without manual lesion segmentation, offering a practical pathway toward deployable imaging biomarkers. The purpose of this study was to investigate the utility of deep learning derived PSMA PET prognostic biomarkers in patients with metastatic prostate cancer.</p>  <b>Methods: </b> In this retrospective multi-institutional study, 486 PSMA PET (Ga-68 and F-18) studies for patients with stage IV metastatic prostate cancer were identified. Studies from patients diagnosed or initially treated at the host institution were split 80:20 into train/validation (344:86 studies, respectively); cases diagnosed or treated elsewhere comprised an external test set (32 studies). Whole-body PSMA PET images were aligned, resampled, and normalized. A pretrained ConvNeXtV2 deep learning model was fine-tuned to predict 3-year post-scan mortality and performance was assessed using area under the receive operating characteristic curve (AUC). Kaplan–Meier survival curves were generated to compare overall survival (OS) between patients with high vs low predicted mortality within 3 years following PSMA PET, and clinical variables were compared between groups to assess biologic correlates to the imaging biomarker.</p>  <b>Results: </b> Median OS across the entire dataset was 2.1 years (range 0–18). The model achieved an accuracy and AUC of 0.885 and 0.774 in the internal validation set, and 0.969 and 0.973 in the external testing set for predicting survival in 3 years after the PSMA PET scan, respectively (Table). A prediction of high mortality was significantly associated with a greater initial PSA (132 vs 86, p&nbsp;=&nbsp;0.05), higher Gleason score (p = &lt;&nbsp;0.001), presenting with a more advanced stage at diagnosis (p&nbsp;=&nbsp;0.004), and lower OS (2.0 vs 3.6 yrs, log-rank p&nbsp;= &lt;&nbsp;0.001) compared to the low predicted mortality group. </p>  <b>Conclusions: </b> We developed and externally validated prognostic PSMA PET biomarkers for metastatic prostate cancer using deep learning. PSMA PET biomarkers represent an objective scalable method for risk stratification that can aid in personalizing treatment. Future work will focus on deriving PSMA PET biomarkers to predict response to specific therapies.</div>
+
+
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p> </p>
+</td>
+<td>
+<p><strong>Accuracy</strong></p>
+</td>
+<td>
+<p><strong>Sensitivity</strong></p>
+</td>
+<td>
+<p><strong>Specificity</strong></p>
+</td>
+<td>
+<p><strong>PPV</strong></p>
+</td>
+<td>
+<p><strong>NPV</strong></p>
+</td>
+<td>
+<p><strong>F1-Score</strong></p>
+</td>
+<td>
+<p><strong>ROC-AUC</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Validation</strong></p>
+</td>
+<td>
+<p>0.885</p>
+</td>
+<td>
+<p>0.625</p>
+</td>
+<td>
+<p>0.911</p>
+</td>
+<td>
+<p>0.417</p>
+</td>
+<td>
+<p>0.960</p>
+</td>
+<td>
+<p>0.500</p>
+</td>
+<td>
+<p>0.774</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>External Test</strong></p>
+</td>
+<td>
+<p>0.969</p>
+</td>
+<td>
+<p>1.000</p>
+</td>
+<td>
+<p>0.964</p>
+</td>
+<td>
+<p>0.800</p>
+</td>
+<td>
+<p>1.000</p>
+</td>
+<td>
+<p>0.889</p>
+</td>
+<td>
+<p>0.973</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+ 
+	<div class="table_footer">PPV = Positive Predictive Value; NPV = Negative Predictive Value</div> 
+
+
+</main>
+</body>
+</html>

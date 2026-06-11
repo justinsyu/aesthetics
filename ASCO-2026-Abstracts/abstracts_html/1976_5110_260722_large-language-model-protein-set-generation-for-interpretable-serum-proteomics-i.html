@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Large language model protein set generation for interpretable serum proteomics in localized prostate cancer.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Large language model protein set generation for interpretable serum proteomics in localized prostate cancer.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 5110</div>
+    <div><strong>First speaker:</strong> Nicholas Robert Rydzewski, MD, MPH</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/260722">https://www.asco.org/abstracts-presentations/260722</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b> High-plex serum proteomics can track prostate cancer biology and treatment response beyond PSA, but interpretation is limited by high dimensionality. Pathway analysis can help, but incomplete overlap between legacy pathway libraries and assay panels can yield hard-to-interpret enrichments dominated by a few measured proteins. We evaluated an automated large language model (LLM) workflow using protein annotations to build protein sets containing only measured proteins.</p>  <b>Methods: </b> Serum from 88 individuals was profiled with an aptamer-based ~7,000-protein assay (SomaScan 7K; SomaLogic, USA). The cohort included localized prostate cancer treated with radiotherapy (RT) with or without androgen-deprivation therapy (ADT) with serial sampling (pre-RT n&nbsp;=&nbsp;76, end-RT n&nbsp;=&nbsp;72, ~1-month follow-up n&nbsp;=&nbsp;76), plus metastatic (n&nbsp;=&nbsp;4) and normal controls (n&nbsp;=&nbsp;8). Assay fidelity was assessed by correlating PSA aptamers with clinical PSA. Protein-level analyses tested ADT effects and paired within-patient changes across RT. For program-level analysis, UniProt annotations for each measured protein were processed with an LLM to generate structured summaries, converted to embeddings, and clustered into protein sets restricted to SomaScan proteins. Set coherence and assay coverage were compared to Gene Ontology (GO) and Reactome mappings. Protein-set enrichment comparing ADT vs no ADT identified candidate programs and were evaluated for association with biochemical recurrence among high-risk ADT-treated patients (n&nbsp;=&nbsp;50; 20 events) using Cox models adjusted for pre-treatment PSA.</p>  <b>Results: </b> PSA aptamers correlated with clinical PSA (Spearman r&nbsp;=&nbsp;0.66–0.77). ADT suppressed reproductive-axis proteins (LH, FSH, hCG) and prostate-lineage proteins (PSA, PAP, TGM4); RT contrasts captured acute epithelial injury/lymphoid suppression followed by remodeling and stress responses. LLM protein sets showed higher set name/protein description coherence (median cosine similarity 0.59) than GO (0.30) or Reactome (0.36) and covered all measured proteins; GO/Reactome sets averaged ~50% member coverage. Pre-RT ADT enrichment identified histone programs (NES 2.13–2.18; FDR&nbsp;&lt;&nbsp;0.01), summarized as a Histone H2 score. Histone H2 score increased across no ADT, ADT, and metastatic samples (Kruskal–Wallis p&nbsp;=&nbsp;0.003; all pairwise FDR&nbsp;&lt;&nbsp;0.05). In high-risk ADT-treated patients, pre-RT Histone H2 score was associated with recurrence (HR 0.53, FDR&nbsp;=&nbsp;0.024), and remained significant in a bivariate model with pre-treatment PSA (Histone H2 HR 0.49, FDR&nbsp;=&nbsp;0.013; PSA HR 2.78, FDR&nbsp;&lt;&nbsp;0.001). Non-H2 histone score (H1/H3) showed no ADT-associated shift (Wilcoxon p&nbsp;=&nbsp;0.70), supporting specificity of the Histone H2 signal.</p>  <b>Conclusions: </b> LLM-derived protein sets restricted to measured proteins improved interpretability of serum proteomics and revealed an ADT-associated Histone H2 program complementary to PSA.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

@@ -1,0 +1,64 @@
+{
+  "abstractNumber": "e23012",
+  "body": " \r\n\r\n\t<div><em><b>Background: </b></em> Foundation models in oncology (FM<sub>onc</sub>) enable creation of unified digital patient representations that can adapt to diverse clinical and translational tasks. We developed a pan-cancer FM<sub>onc</sub> trained on large-scale real-world electronic health record (RWD) data and evaluated its utility across clinically relevant prediction tasks.</p>  <em><b>Methods: </b></em> The manually curated RWD Patient360 dataset, which included NSCLC, breast, colorectal, and prostate cancers, was used. FM<sub>onc</sub> is a time-aware Transformer-based model designed to capture longitudinal patient trajectories across visits. The model contains &gt;&nbsp;1.3B trainable parameters and a vocabulary of tokens representing clinical variables and allowable value classes, plus special tokens. Cohorts included NSCLC (N&nbsp;=&nbsp;57,780), breast (N&nbsp;=&nbsp;43,432), CRC (N&nbsp;=&nbsp;18,521), and prostate cancer (N&nbsp;=&nbsp;17,035), split into training (80%), validation (10%), and test (10%) sets. Masked-token self-supervised learning was used, with masking probability inversely proportional to variable prevalence to mitigate class imbalance. Trained FM<sub>onc</sub> embeddings were used as inputs to a lightweight XGBoost adapter for three downstream tasks: (1) mortality prediction, (2) cancer type classification, and (3) prediction of biomarker testing. Target events were excluded from inputs to prevent label leakage. Model performance was assessed using area under the curve (AUC) for binary outcomes and F1 score for multiclass tasks.</p>  <b>Results: </b> A total of ≈11.6M tokens (≈3850 tokens per patient) across 109,414 patients were used for FM training with convergence reaching 100 epochs. A NSCLC test set has the highest mortality rate of 66% while breast has the lowest with 22% and prostate and CRC ~40%. FM<sub>onc </sub>embeddings enabled high predictive performance across tasks. Test-set mortality prediction achieved across all cancer type AUC of 0.84-0.86. Cancer-type classification exhibited macro avg F1 of 0.98. Clustering embedding observed that breast and prostate are well separated in using LDA projection into 3D space while small overlap between CRC and NSCLC. In the biomarker testing task, FM<sub>onc</sub> embeddings accurately predicted testing utilization with macro-average F1 ≥0.95 across commonly ordered biomarkers, including NSCLC (e.g., EGFR, KRAS) and breast cancer (ER, PR, HER2). Lower performance (F1≈0.20–0.30) was observed for clinically selective, RNA-based genomic expression assays with low real-world utilization (&nbsp;&lt;&nbsp;5%), reflecting sparse and site-dependent observation patterns in RWD rather than limitations of the learned patient representations.</p>  <em><b>Conclusions: </b></em> A pan-cancer FM<sub>onc</sub> trained on large-scale RWD generates compact digital patient representations that generalize across diverse downstream clinical tasks. The model demonstrates strong performance in survival-related prediction, cancer classification, and biomarker testing inference.</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+  "contentId": "260093",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/260093",
+    "queryParams": null,
+    "target": null,
+    "title": "Developing a pan-cancer foundation model for digital patient representation and clinical prediction across real-world oncology data."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION260093"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": null,
+  "presentationId": "260093",
+  "primaryPerson": {
+    "displayName": "Dhaval Parmar",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": "Foundation models in oncology (FMonc) enable creation of unified digital patient representations that can adapt to diverse clinical and translational tasks. We developed a pan-cancer FMonc trained on large-scale real-world electronic health record (RWD) data and evaluated its utility across clinically relevant prediction tasks.",
+  "taxonomy": null,
+  "title": "Developing a pan-cancer foundation model for digital patient representation and clinical prediction across real-world oncology data.",
+  "titles": null,
+  "uid": "PRESENTATION260093"
+}

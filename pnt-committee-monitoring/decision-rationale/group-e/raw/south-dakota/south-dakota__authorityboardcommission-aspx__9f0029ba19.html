@@ -1,0 +1,495 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+
+<!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-79366862-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<meta http-equiv="pragma" CONTENT="no-cache">
+<meta HTTP-equiv="cache-control" CONTENT="no-cache,no-store">
+
+<link rel="icon" type="image/png" href="/img/favicon.png" />
+<script src="/inc/scripts/jquery-1.11.3.min.js" type="text/javascript"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="/inc/scripts/jquery.mask.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<script language="javascript">
+
+    if (top.frames.length != 0)
+        top.location = self.document.location;
+
+</script>
+<meta charset="utf-8" />
+    <script>
+  (function() {
+    var cx = '012382400048732927914:2b3gl3i78k0';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+<!-- BEGIN LivePerson Monitor. -->
+<script>window.lpTag = window.lpTag || {}, 'undefined' == typeof window.lpTag._tagCount ? (window.lpTag = { wl: lpTag.wl || null, scp: lpTag.scp || null, site: '13646062' || '', section: lpTag.section || '', tagletSection: lpTag.tagletSection || null, autoStart: lpTag.autoStart !== !1, ovr: lpTag.ovr || {}, _v: '1.10.0', _tagCount: 1, protocol: 'https:', events: { bind: function (t, e, i) { lpTag.defer(function () { lpTag.events.bind(t, e, i) }, 0) }, trigger: function (t, e, i) { lpTag.defer(function () { lpTag.events.trigger(t, e, i) }, 1) } }, defer: function (t, e) { 0 === e ? (this._defB = this._defB || [], this._defB.push(t)) : 1 === e ? (this._defT = this._defT || [], this._defT.push(t)) : (this._defL = this._defL || [], this._defL.push(t)) }, load: function (t, e, i) { var n = this; setTimeout(function () { n._load(t, e, i) }, 0) }, _load: function (t, e, i) { var n = t; t || (n = this.protocol + '//' + (this.ovr && this.ovr.domain ? this.ovr.domain : 'lptag.liveperson.net') + '/tag/tag.js?site=' + this.site); var o = document.createElement('script'); o.setAttribute('charset', e ? e : 'UTF-8'), i && o.setAttribute('id', i), o.setAttribute('src', n), document.getElementsByTagName('head').item(0).appendChild(o) }, init: function () { this._timing = this._timing || {}, this._timing.start = (new Date).getTime(); var t = this; window.attachEvent ? window.attachEvent('onload', function () { t._domReady('domReady') }) : (window.addEventListener('DOMContentLoaded', function () { t._domReady('contReady') }, !1), window.addEventListener('load', function () { t._domReady('domReady') }, !1)), 'undefined' === typeof window._lptStop && this.load() }, start: function () { this.autoStart = !0 }, _domReady: function (t) { this.isDom || (this.isDom = !0, this.events.trigger('LPT', 'DOM_READY', { t: t })), this._timing[t] = (new Date).getTime() }, vars: lpTag.vars || [], dbs: lpTag.dbs || [], ctn: lpTag.ctn || [], sdes: lpTag.sdes || [], hooks: lpTag.hooks || [], identities: lpTag.identities || [], ev: lpTag.ev || [] }, lpTag.init()) : window.lpTag._tagCount += 1;</script>
+<!-- END LivePerson Monitor. -->
+
+<script src="/inc/scripts/modernizr.custom.min.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>  
+
+    <link rel="stylesheet" href="/inc/styles/styles.css" type="text/css" />
+
+<script>
+    $(document).ready(function(){
+        $('.date').mask('00/00/0000');
+        $('.phoneNum').mask('(000) 000-0000');
+    });
+</script>
+
+<script>
+    //Mobile Toggle
+    $(document).ready(function () {
+        $("#submenu").click(function () {
+            $("#submenu,#sidemenu").toggleClass("open");
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $('.date').datepicker();
+    })
+</script>
+
+<script>
+    //FAQ Toggle
+    $(function () {
+        $("#accordion").accordion({ collapsible: true, autoHeight: false, navigation: true, heightStyle: "content" });
+    });
+  </script>
+
+
+<style>
+    header {
+        max-height: 200px;
+    }
+    header #ag {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+    header #ag img {
+        margin-left: 65px;
+    }
+    header #ag p {
+        margin: -3px 0 0 0;
+        color: #f4bc24;
+        background: #042c6c;
+        font-size: 1.25em;
+        text-align: center;
+        /*text-shadow: 3px 3px 3px #000;*/
+        width: 300px;
+        line-height: 1.8em;
+    }
+    @media screen and (max-width: 1300px) {
+        header #ag img {
+            margin-left: 30px;
+        }
+        header #ag p {
+            font-size: 1.15em;
+            width: 300px;
+        }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        header #ag {
+            margin-bottom: 0;
+        }
+        header #ag img {
+            margin-left: 30px;
+        }
+        header #ag p {
+            display: none;
+        }
+    }
+</style>
+
+
+    <title>South Dakota Attorney General</title> 
+
+    <style type="text/css">
+        .indented {margin-left: 30px;}
+    </style>
+
+</head>
+<body>
+    <section id="main">
+   <header>
+       
+    <article id="sm">
+        <a href="https://www.facebook.com/SDATG/" class="fa fa-facebook-square" target="_blank" aria-label="Facebook"></a>
+        <a href="https://twitter.com/SDAttorneyGen" class="fa fa-twitter-square" target="_blank" aria-label="Twitter"></a>
+        <a href="https://www.instagram.com/agjasonravnsborg/" class="fa fa-instagram" target="_blank" aria-label="Instagram"></a>
+        <a href="https://www.youtube.com/user/SDAttorneyGeneral" class="fa fa-youtube-square" target="_blank" aria-label="Youtube"></a>
+        <a href="/contact.aspx" class="fa fa-envelope-square" aria-label="Contact"></a>
+
+    </article>
+    <article id="livehelp">
+
+		<div id="LP_DIV_1444027343250"></div>
+		
+			
+
+    </article>
+       <article id="ag">
+           <img src="/img/atg.png" alt="Attorney General Headshot" />
+           <p>Attorney General Marty Jackley</p>
+       </article>
+       <article id="logo">
+    <a href="/" aria-label="Attorney General Homepage">
+        <img src="/img/ATGlogo-web.png" alt="Attorney General Logo" />
+    </a>
+</article>
+       <article id="seal">
+           <img src="/img/seal.png" alt="Attorney General Seal" />
+       </article>
+       <article id="search"><gcse:search></gcse:search></article>
+       <article id="menu" class="dl-trigger"><i class="fa fa-bars"></i><br />MENU</article>
+   </header><nav id="dl-menu" class="dl-menuwrapper">
+
+    <ul class="dl-menu">
+        <li><button>Our Office</button>
+            <ul class="dl-submenu">
+                <li><button>Department Links</button>
+                    <ul class="dl-submenu">
+                        <li><a href="/OurOffice/Departments/appellate.aspx">Appellate</a></li>
+                        <li><a href="/OurOffice/Departments/civil.aspx">Civil</a></li>
+                        <li><a href="/OurOffice/Departments/criminal.aspx">Criminal</a></li>
+                        <li><a target="_blank" href="https://consumer.sd.gov">Consumer Protection</a></li>
+                        <li><a href="/OurOffice/Departments/MFCU/default.aspx">Medicaid FANS</a></li>
+                        <li><button>Division of Criminal Investigation</button>
+                            <ul class="dl-submenu">
+                                <li><a href="/LawEnforcement/Training/default.aspx">LET</a></li>
+                                <li><a href="/LawEnforcement/Forensics/default.aspx">Forensic Lab</a></li>
+                                <li><a href="/OurOffice/Departments/DCI/SAC/default.aspx">SAC</a></li>
+                                <li><a href="/LawEnforcement/Identification/default.aspx">ID</a></li>
+                                <li><a href="/OurOffice/Departments/DCI/intel.aspx">Intel</a></li>
+                                <li><a href="/OurOffice/Departments/DCI/UnresolvedCases.aspx">SD Unresolved Cases</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="/OurOffice/employmentopportunities.aspx">Employment Opportunities</a></li>
+                <li><a href="/OurOffice/JohnJusticeProgram.aspx">John R Justice Program </a></li>
+                <li><a href="/OurOffice/bio.aspx">Attorney General Marty Jackley Biography</a></li>
+                <li><a href="/OurOffice/chiefbio.aspx">Chief Deputy Brent Kempema Biography</a></li>
+                
+                <li><button>Media</button>
+                    <ul class="dl-submenu">
+                        <li><a href="/OurOffice/Media/pressreleases.aspx">Press Releases</a></li>
+                        <li><a href="/OurOffice/Media/Publications/default.aspx">Publications</a></li>
+                    </ul>
+                </li>
+                <li><a href="/OurOffice/OfficialOpinions/default.aspx">Official Opinions</a></li>
+                <li><a href="/OurOffice/rfp.aspx">Request for Proposals</a></li>
+                <li><a href="https://www.sd.gov/cs?id=criminal_justice_directory" target="_blank">Criminal Justice Directory</a></li>
+                <li><a href="/LawEnforcement/technologycontacts.aspx">Technology Contacts</a></li>
+                <li><a href="/OurOffice/Departments/DCI/DCIHistory.aspx">DCI History</a></li>
+            </ul>
+        </li>
+        <li><button>Legal Resources</button>
+            <ul class="dl-submenu">
+                <li><a href="/OurOffice/OfficialOpinions/default.aspx">Official Opinions</a></li>
+                <li><a href="/Legal/OpenGovernment/default.aspx">Open Government</a></li>
+                <li><a href="/Legal/governmentaccountabilityboard.aspx">Government Accountability Board</a></li>
+                <li><a href="/Legal/OpenGovernment/authorityboardcommission.aspx">State Authorities/Boards/Commissions</a></li>
+                <li><a href="/legal/DUI247/default.aspx">24/7 Sobriety Program</a></li>
+                <li><a href="/Legal/ballotexplanations.aspx">Draft Ballot Explanation</a></li>
+                <li><a target="_blank" href="http://sor.sd.gov/">Sex Offender Registry</a></li>
+                <li><a target="_blank" href="https://sdsos.gov/general-services/concealed-pistol-permits/cc-default.aspx">Secretary of State Concealed Weapon Information</a></li>
+                <li><a target="_blank" href="http://sdlegislature.gov/">Legislative Research Council</a></li>
+                <li><a target="_blank" href="http://sdlegislature.gov/Statutes/Codified_Laws/default.aspx">SDCL</a></li>
+                <li><a target="_blank" href="http://statebarofsouthdakota.com/">SD State Bar</a></li>
+                <li><a target="_blank" href="http://www.justice.gov/usao-sd">US Attorney Office</a></li>
+                <li><a href="https://www.sd.gov/cs?id=criminal_justice_directory" target="_blank">Criminal Justice Directory</a></li>
+            </ul>
+        </li>
+        <li><button>Law Enforcement Resources</button>
+            <ul class="dl-submenu">
+                <li><a href="/LawEnforcement/DrugAssetCivilForfeiture/default.aspx">Drug Asset Civil Forfeiture</a></li>
+                <li><a href="/OurOffice/Departments/DCI/home.aspx">Division of Criminal Investigation</a></li>
+                <li><a href="https://missingpersons.sd.gov/" target="_blank" rel="noreferrer noopener">Missing Person</a></li>
+                <li><a href="/LawEnforcement/Training/calendar.aspx">Law Enforcement Training Calendar</a></li>
+                <li><a href="/OurOffice/Departments/DCI/SAC/default.aspx">Statistical Analysis Center (SAC)</a>
+                    <ul class="dl-submenu">
+                        <li><a href="https://www.sd.gov/cs?id=criminal_justice_directory" target="_blank">Criminal Justice Directory</a></li>
+                        <li><a href="https://sdcrime.nibrs.com/CrimePublication/CrimePublicationReports" target="_blank">Crime in South Dakota publications</a></li>
+                        <li><a href="/OurOffice/Departments/DCI/SAC/PoliceManagementStudy.aspx">Police Management Study publications</a></li>
+                        <li><a href="/OurOffice/Departments/DCI/SAC/SheriffManagementStudy.aspx">Sheriff Management Study publications</a></li>
+                        <li><a href="https://sdcrime.nibrs.com/Home/Index" target="_blank">NIBRS</a></li>
+                        <li><a href="/OurOffice/Departments/DCI/SAC/MurderedIndigenousPersons.aspx">Murdered Indigenous Persons on Indian Country</a></li>
+                    </ul>
+                </li>
+                <li><a href="/LawEnforcement/Training/default.aspx">Law Enforcement Training</a></li>
+                <li><a href="/LawEnforcement/Training/schoolsentinel.aspx">School Sentinel Training</a></li>
+                <li><a href="/LawEnforcement/Training/Certification/911telecommunicator.aspx">Telecommunicator Training</a></li>
+                <li><a href="/LawEnforcement/Forensics/default.aspx">Forensic Lab</a></li>
+                <li><a href="/LawEnforcement/Identification/backgroundcheckrequirements.aspx">Fingerprint Background Checks</a></li>
+                <li><a href="/LawEnforcement/Identification/default.aspx">Identification Section</a>
+                    <ul class="dl-submenu">
+                        <li><a href="/LawEnforcement/Identification/backgroundcheckrequirements.aspx">Background Checks</a></li>
+                    </ul>
+                </li>
+                <li><a href="/LawEnforcement/training/commission.aspx">Law Enforcement Standards and Training Commission</a></li>
+                <li><a target="_blank" href="https://sdsos.gov/general-services/concealed-pistol-permits/cc-default.aspx">Secretary of State Concealed Weapon Information</a></li>
+                <li><a href="/LawEnforcement/technologycontacts.aspx">Technology Contacts</a></li>
+                <li><a href="/LawEnforcement/heroeswellnessgrant.aspx ">Heroes Wellness Grant</a></li>
+                <li><a target="_blank" href="http://sor.sd.gov/">Sex Offender Registry</a></li>
+                <li><a target="_blank" href="https://atglaserfiche.sd.gov/Forms/HumanTraffickingReporting">Human Trafficking Reporting Form</a></li>
+            </ul>
+        </li>
+        <li><button>Victim Resources</button>
+            <ul class="dl-submenu">
+                <li><a href="/victim/crimevictimservices/default.aspx">Crime Victim Services</a></li>
+                <li><a href="/victim/MDT/default.aspx">Interagency Multidisciplinary Teams</a></li>
+                <li><a href="/LawEnforcement/missingpersons/default.aspx">Missing Persons</a></li>
+                <li><a href="/victim/marsyslaw.aspx">Marsy's Law</a></li>
+                <li><a href="/victim/savin/default.aspx">SAVIN</a></li>
+                <li><a href="/victim/seniors/default.aspx">Senior Citizens Resources</a></li>
+                <li><a target="_blank" href="https://dps.sd.gov/victims-services/crime-victims-compensation">Victim Compensation Link</a></li>
+                <li><a target="_blank" href="http://sdlegislature.gov/Statutes/Codified_Laws/DisplayStatute.aspx?Statute=23A-28C&Type=Statute">Victim Bill of Rights</a></li>
+                <li><a href="https://www.sd.gov/cs?id=criminal_justice_directory" target="_blank">Criminal Justice Directory</a></li>
+                <li><a href="/OurOffice/Departments/DCI/UnresolvedCases.aspx">SD Unresolved Cases</a></li>
+            </ul>
+        </li>
+        <li><button>Consumer Resources</button>
+            <ul class="dl-submenu">
+                <li><a target="_blank" href="https://consumer.sd.gov">Consumer Protection</a>
+                    <ul class="dl-submenu">
+                        <li><a target="_blank" href="https://consumer.sd.gov/complaintform.aspx">Consumer Complaint Form</a></li>
+                    </ul>
+                </li>
+                <li><a href="/OurOffice/Departments/MFCU/default.aspx">Medicaid FANS</a>
+                    <ul class="dl-submenu">
+                        <li><a href="/OurOffice/Departments/MFCU/complaintform.aspx">Complaint Form</a></li>
+                    </ul>
+                </li>
+                <li><a target="_blank" href="https://consumer.sd.gov/resources.aspx">Senior Citizens Resources</a>
+                    <ul class="dl-submenu">
+                        <li><a target="_blank" href="https://consumer.sd.gov/docs/SeniorHandbook.pdf">Senior Handbook</a></li>
+                    </ul>
+                </li>
+                <li><button>Insurance Fraud Prevention Unit</button>
+                    <ul class="dl-submenu">
+                        <li><a target="_blank" href="https://atglaserfiche.sd.gov/Forms/SuspectedFraudulentClaimReport">Suspected Fraudulent Claim Report</a></li>
+                        <li><a target="_blank" href="https://atglaserfiche.sd.gov/Forms/InsuranceFraudComplaint">Insurance Fraud Consumer Complaint Form</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        
+        <li><button>Missing Persons</button>
+            <ul class="dl-submenu">
+                <li><a href="https://missingpersons.sd.gov/" target="_blank" rel="noreferrer noopener">Missing Person Website</a></li>
+                <li><a href="https://atglaserfiche.sd.gov/Forms/MMIPReporting" target="_blank" rel="noreferrer noopener">MMIP Reporting</a></li>
+            </ul>
+        </li>
+
+    </ul>
+</nav>
+
+        <section id="content" style="position: relative;" ><div id="breadcrumb"><a href="/">Home</a> &gt;&gt; <a href="/legal/">Legal Resources</a> &gt;&gt; State Authorities/Boards/Commissions</div>
+
+<article id="maincontent" style="position: relative;">
+<article class="noside" id="secondarycontent">
+<h1>State Authorities/Boards/Commissions</h1>
+
+<p><strong>Annual Disclosure Form</strong></p>
+
+<p>Effective July 1, 2017, members of certain state authorities, boards and commissions are required to make an annual disclosure of contracts in which they have or may have an interest or from which they derive a direct benefit. A list of the authorities, boards and commissions that are subject to the annual reporting requirement can be found on the <a href="http://www.sdlegislature.gov/">Legislative Research Council (LRC)</a> website. Members of authorities, boards and commissions that are not included in the list are not subject to the annual disclosure requirement.</p>
+
+<p >Members of the listed authorities, boards and commissions &nbsp;must make the annual disclosure using a form developed by the Office of Attorney General.&nbsp;&nbsp; The form is available below in PDF format, which can be printed and then completed/signed, or in a Word fillable format, which can be completed and then printed for signature. For more information as to who is subject to the disclosure requirements and the information that must be disclosed see SDCL Chapter 3-23, &nbsp;which can be found on the <a href="http://www.sdlegislature.gov/">LRC website</a> at: <a href="http://www.sdlegislature.gov/Statutes/Codified_Laws/DisplayStatute.aspx?Type=Statute&amp;Statute=3-23">SDCL Chapter 3-23</a>.</p>
+
+<p >Questions regarding the disclosure requirements should be directed to the attorney for the specific authority, board or commission.</p>
+
+<p><a href="/Legal/OpenGovernment/annualdisclosure_onlineform.aspx">Annual Disclosure Form - (online version)</a><br>
+<a href="/docs/authorityboardcommission_AnnualDisclosure.pdf" target="_blank">Annual Disclosure Form - (pdf version)</a></p>
+
+<p><strong>Minutes</strong></p>
+
+<p>Effective July 1, 2017, the above-described &nbsp;annual disclosures and, when necessary, authorizations by the related state authority, board, or commission, must be included in the minutes of the authority, board or commission which must be filed with the auditor-general and the attorney general. Minutes may be filed with the attorney general by email attachment in PDF format to: <a href="mailto:ATGMinutes@state.sd.us">ATGMinutes@state.sd.us</a>. Minutes may be filed with the auditor-general by email attachment in PDF format to:&nbsp; <a href="mailto:DLAMinutes@state.sd.us">DLAMinutes@state.sd.us</a></p>
+
+<p>Minutes can also be filed with the attorney general by mailing a copy to:</p>
+
+<div class="indented">Office of Attorney General<br>
+Attn: Board Minutes<br>
+1302 S.D. East Hwy 1889&nbsp;#1<br>
+Pierre, SD 57501</div>
+
+
+<p >Likewise, minutes can be filed with the auditor-general by mailing a copy to:</font></p>
+
+
+<p >Department of Legislative Audit</p>
+
+<p >427 S Chapelle</p>
+
+<p >c/o 500 E Capitol</p>
+
+<p >Pierre, SD 57501</p>
+
+
+<p >For more information as to the filing requirement for minutes see <a href="http://www.sdlegislature.gov/Statutes/Codified_Laws/DisplayStatute.aspx?Type=Statute&amp;Statute=3-23">SDCL Chapter 3-23</a>, &nbsp;which can be found on the <a href="http://www.sdlegislature.gov/">LRC website</a>.</p>
+
+
+<p >Questions regarding the filing requirements should be directed to the attorney for the specific authority, board or commission.</font></p>
+
+<p>&nbsp;</p>
+</article>
+</article>
+</section>
+       <div> <footer style="position: relative;" ><article id="bar">&nbsp;</article>
+
+<p><a href="/Contact.aspx">Contact Us</a> | <a target="_blank" href="http://sd.gov/disclaim.aspx">Site Disclaimer</a> | <a target="_blank" href="http://sd.gov/privacy.aspx">Privacy Policy</a> | <a target="_blank" href="http://sd.gov" target="_blank">State of South Dakota Home Page </a><br>
+<br>
+<a target="_blank" href="http://www.cwagweb.org/">Conference of Western Attorneys General</a> | <a target="_blank" href="http://www.naag.org/">National Association of Attorneys General</a></p>
+</footer></div>
+       
+         
+      <script src="/inc/scripts/owl.carousel.js"></script>
+        
+        <script src="/inc/scripts/flowtype.js"></script>
+
+<script src="/inc/scripts/jquery.dlmenu.min.js"></script>
+        
+        <script type="text/javascript">
+            
+
+           
+                 widthchange();
+               
+
+
+                 $(window).resize(function () {
+                     
+                    widthchange();
+                });
+               
+                function widthchange() {
+                       
+                        var width = $(window).width();
+
+                        if (width >= 700) {
+                            $('nav').show();
+                        $("nav > ul > li").hover(function () {
+                            $(this).children("ul").addClass("openl1");
+                        },
+                        function() {
+                            $(this).children("ul").removeClass("openl1");
+                        }
+                        );
+
+                        $("nav > ul > li > ul > li").hover(function () {
+                            $(this).children("ul").addClass("openl2");
+                        },
+                        function () {
+                            $(this).children("ul").removeClass("openl2");
+                        }
+                        );
+
+                        $("nav > ul > li > ul > li > ul > li").hover(function () {
+                            $(this).children("ul").addClass("openl3");
+                        },
+                        function () {
+                            $(this).children("ul").removeClass("openl3");
+                        }
+                        );
+                        
+                        }
+                        else {
+                            //$('nav').hide();
+
+                            $('nav > ul > li').unbind('mouseenter mouseleave');
+
+                           
+                            menu();
+                     
+                        }
+
+                }
+                
+
+                function menu() {
+                    if (!menu.isRunning) {
+                        $('#dl-menu').dlmenu();
+                        menu.isRunning = true;
+                    }
+                    
+                }
+               
+
+                $("#menu").click(function () {
+                    $("nav#dl-menu").toggle();
+                    $(this).addClass("dl-active");
+                    $("ul.dl-menu").addClass("dl-menuopen");
+                });
+
+               
+
+                $("#owl-demo").owlCarousel({
+
+                    navigation: true,
+                    slideSpeed: 300,
+                    paginationSpeed: 400,
+                    singleItem: true,
+                    autoPlay: true,
+                    stopOnHover: true,
+                    pagination: false,
+                    navigationText: ["<", ">"]
+
+                });
+                $('#logo').flowtype({
+                    minimum: 250,
+                    maximum: 1500,
+                    minFont: 5,
+                    maxFont: 16,
+                    fontRatio: 35
+                });
+
+                $("#sidemenu ul li").click(function () {
+                    $(this).children("ul").toggle("slow", function () { });
+
+                    if ($(this).hasClass("sideopen")) {
+                        $(this).removeClass("sideopen");
+                    }
+                    else {
+                        $(this).addClass("sideopen");
+                    }
+                    
+                });
+           
+        </script>
+
+
+    </section></body>
+</html>

@@ -1,0 +1,64 @@
+{
+  "abstractNumber": "e16500",
+  "body": " \r\n\r\n\t<div><b>Background: </b></p>  Randomized clinical trials (RCTs) are the gold standard for establishing treatment benefit, but are resource-intensive. An <em>in silico </em>virtual<em> </em>trial that enables exploration of treatment effects from available data could complement this process. We aimed to demonstrate the feasibility of an <em>in-silico</em> clinical trial using a machine learning (ML) model transfer approach, leveraging RCT data to generate counterfactual outcomes and assess whether such a framework reproduces observed RCT behavior in real-world TCGA data.</p>  <b>Methods: </b></p>  ML models were trained on the JAVELIN Renal 101 RCT using RNA-seq data and internally validated for overall-survival (OS) and progression-free survival (PFS) within each arm (Avelumab+Axitinib (AA) and Sunitinib). They were then applied to the opposite arm to generate counterfactual survival predictions under alternative therapy. Treatment effects were summarized using Kaplan-Meier analysis and restricted mean survival times (RMST; τ = 24 months) based on available follow-up data.</p>  <b>Results: </b></p>  In the available JAVELIN Renal 101 RCT data, AA demonstrated a significant PFS benefit compared with Sunitinib (median PFS 13.6 vs 8.1 months; ΔRMST 2.68 months [95% CI: 1.24-4.03], p = 0.001), but no OS benefit (p = 0.11). In our counterfactual analysis, PFS preserved a robust treatment effect favoring AA (median PFS 12.4 vs 8.3 months; ΔRMST 2.29 [95% CI: 0.72-3.65] months, p = 0.003), while OS did not (p = 0.45) (Table 1). Application to the TCGA cohort revealed similar results.</p>  <b>Conclusions: </b></p>  This work demonstrates how the model transfer approach can be used to estimate counterfactual treatment outcomes and support a more informed transition from single-arm phase II to randomized phase III development. By enabling pre-testing of new drugs against established standards within an <em>in-silico</em> setting, this approach provides a practical means to evaluate expected benefit and improve patient selection before launching RCTs. Moreover, this framework would allow for testing drugs in rare diseases where a randomized study is not feasible.</div>\r\n\r\n\r\n\r\n\t<div class=\"table_caption\"><b>Table 1: Landmark survival probabilities</b></div> \r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<p><strong>Outcome</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Time (months)</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>AA Observed </strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Sunitinib Observed</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>AA Counterfactual</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Sunitinib Counterfactual</strong></p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>PFS</p>\r\n</td>\r\n<td>\r\n<p>6</p>\r\n</td>\r\n<td>\r\n<p>68.7% (63.9-73.9)</p>\r\n</td>\r\n<td>\r\n<p>55.8% (50.8-61.4)</p>\r\n</td>\r\n<td>\r\n<p>68.4% (63-73.1)</p>\r\n</td>\r\n<td>\r\n<p>57.6% (51.7-63.1)</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>PFS</p>\r\n</td>\r\n<td>\r\n<p>12</p>\r\n</td>\r\n<td>\r\n<p>53.5% (48.3-59.2)</p>\r\n</td>\r\n<td>\r\n<p>39.5% (34.4-45.3</p>\r\n</td>\r\n<td>\r\n<p>52.0% (46-57)</p>\r\n</td>\r\n<td>\r\n<p>40.3% (34.4-45.7)</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>PFS</p>\r\n</td>\r\n<td>\r\n<p>18</p>\r\n</td>\r\n<td>\r\n<p>43.7% (38.3-49.9)</p>\r\n</td>\r\n<td>\r\n<p>29.1% (23.9-35.3)</p>\r\n</td>\r\n<td>\r\n<p>41.5% (35.4-46.4)</p>\r\n</td>\r\n<td>\r\n<p>27.8% (21.6-33.3)</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>PFS</p>\r\n</td>\r\n<td>\r\n<p>24</p>\r\n</td>\r\n<td>\r\n<p>33.4% (26.1-42.7)</p>\r\n</td>\r\n<td>\r\n<p>29.1% (23.9-35.3)</p>\r\n</td>\r\n<td>\r\n<p>29.8% (21.1-37.2)</p>\r\n</td>\r\n<td>\r\n<p>27.8% (21.6-33.3)</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>OS</p>\r\n</td>\r\n<td>\r\n<p>6</p>\r\n</td>\r\n<td>\r\n<p>95.7% (93.6-97.9)</p>\r\n</td>\r\n<td>\r\n<p>92.4% (89.7-95.1)</p>\r\n</td>\r\n<td>\r\n<p>95.7% (93.3-97.8)</p>\r\n</td>\r\n<td>\r\n<p>93.6% (91.2-96)</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>OS</p>\r\n</td>\r\n<td>\r\n<p>12</p>\r\n</td>\r\n<td>\r\n<p>87.3% (83.9-90.9)</p>\r\n</td>\r\n<td>\r\n<p>83.5% (79.7-87.4)</p>\r\n</td>\r\n<td>\r\n<p>86.9% (82.9-90.2)</p>\r\n</td>\r\n<td>\r\n<p>84.4% (80.2-88.2)</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>OS</p>\r\n</td>\r\n<td>\r\n<p>18</p>\r\n</td>\r\n<td>\r\n<p>78.9% (74.5-83.6)</p>\r\n</td>\r\n<td>\r\n<p>74.8% (70.2-79.7)</p>\r\n</td>\r\n<td>\r\n<p>77.3% (71.6-81.1)</p>\r\n</td>\r\n<td>\r\n<p>75.1% (69.3-79.4)</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>OS</p>\r\n</td>\r\n<td>\r\n<p>24</p>\r\n</td>\r\n<td>\r\n<p>70.0% (64-76.6)</p>\r\n</td>\r\n<td>\r\n<p>65.9% (59.9-72.5)</p>\r\n</td>\r\n<td>\r\n<p>67.5% (59.1-73)</p>\r\n</td>\r\n<td>\r\n<p>65.7% (58.1-70.7)</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n \r\n\t<div class=\"table_footer\">AA: Avelumab+Axitinib</div> \r\n\r\n\r\n",
+  "contentId": "263613",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/263613",
+    "queryParams": null,
+    "target": null,
+    "title": "In silico phase III clinical trial of avelumab plus axitinib versus sunitinib in advanced renal cell carcinoma using a machine learning model transfer approach."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION263613"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": null,
+  "presentationId": "263613",
+  "primaryPerson": {
+    "displayName": "Zuhair Majeed, MD",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": "Randomized clinical trials (RCTs) are the gold standard for establishing treatment benefit, but are resource-intensive. An in silico virtual trial that enables exploration of treatment effects from available data could complement this process. We aimed to demonstrate the feasibility of an in-silico clinical trial using a machine learning (ML) model transfer approach, leveraging RCT data to generate counterfactual outcomes and assess whether such a framework reproduces observed RCT behavior in real-world TCGA data.",
+  "taxonomy": null,
+  "title": "In silico phase III clinical trial of avelumab plus axitinib versus sunitinib in advanced renal cell carcinoma using a machine learning model transfer approach.",
+  "titles": null,
+  "uid": "PRESENTATION263613"
+}

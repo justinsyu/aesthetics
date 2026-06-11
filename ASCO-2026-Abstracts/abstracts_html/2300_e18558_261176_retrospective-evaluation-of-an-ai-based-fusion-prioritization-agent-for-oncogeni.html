@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Retrospective evaluation of an AI-based fusion prioritization agent for oncogenicity assessment in clinical sequencing.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Retrospective evaluation of an AI-based fusion prioritization agent for oncogenicity assessment in clinical sequencing.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e18558</div>
+    <div><strong>First speaker:</strong> Stephen Tanner</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/261176">https://www.asco.org/abstracts-presentations/261176</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Categorizing gene fusions as drivers or passengers is a data-intensive challenge requiring manual interventions in all but the most well-established biomarkers. The large numbers of structural variants identified from genomic assays require a combination of tools to prioritize clinically relevant mutations in a timely manner. Recent advances in artificial intelligence (AI) and AI-agents have enabled the summarization of large-scale biological data and are ideally suited for flagging important knowledge quickly and with limited manual intervention.</div>
+  <main> 
+
+	<div><b>Background: </b></p>  Categorizing gene fusions as drivers or passengers is a data-intensive challenge requiring manual interventions in all but the most well-established biomarkers. The large numbers of structural variants identified from genomic assays require a combination of tools to prioritize clinically relevant mutations in a timely manner. Recent advances in artificial intelligence (AI) and AI-agents have enabled the summarization of large-scale biological data and are ideally suited for flagging important knowledge quickly and with limited manual intervention.</p>  <b>Methods: </b></p>  This work introduces Peryton, a flexible AI-agent capable of analyzing the oncogenic potential of both RNA and DNA fusion events. By integrating genomic breakpoints, gene annotations, literature mining and RNA expression signatures, Peryton generates concise, fully referenced summary of a fusion’s biological function, oncogenic potential, and therapy implications.</p>  Peryton incorporates peer-reviewed articles from PubMed Central, publicly available fusion knowledgebases, and internal data (a curated gene fusion database and internal RNA sequencing expression values) to evaluate and prioritize the oncogenic potential of fusions identified within a sample. The chain-of-thought strategy does extensive pre-computation before prompting the large language model (LLM) with data on which protein features are retained or lost in individual gene fusions. A key output is an oncogenicity score, an AI-generated classification of a fusion's cancer-causing potential based on literature review.</p>  <b>Results: </b></p>  We benchmarked Peryton against a dataset of 300 known positive events from COSMIC and 300 presumed passenger events. The agent demonstrated high curation accuracy, with an area under the receiver operating characteristic greater than 0.98 across the 600 randomly selected records. In a clinical validation study of 41 non-canonical gene fusions flagged by internal pathologists, which were evaluated for clinical reporting, Peryton correctly prioritized the reportability of 90% of fusions providing evidence for its use supporting non-canonical fusion curation. Furthermore, when applied to all structural variant calls from 2 WGS AML cases (202 and 188 respectively), the agent successfully prioritized with the top score in each of the reported clinical drivers (KMT2A::AFDN and ROCK1::PDGFRA). The next highest fusion events showed prognostic literature evidence further validating its utility in real-world scenarios. </p>  <b>Conclusions: </b></p>  Peryton provides a precise assessment of gene fusion events, effectively prioritizing candidate fusions for further clinical and research evaluation. This retrospective analysis demonstrates the agent's potential to streamline fusion curation and ultimately improve patient care. </div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

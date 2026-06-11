@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Predicting multi-cancer risk from EHR data using multi-agent LLMs.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Predicting multi-cancer risk from EHR data using multi-agent LLMs.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 10501</div>
+    <div><strong>First speaker:</strong> Sihang Zeng, PhD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/260659">https://www.asco.org/abstracts-presentations/260659</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b> Accurate multi-cancer risk prediction is essential for optimizing screening strategies and yet remains challenging due to heterogeneous and longitudinal electronic health record (EHR) data. Large language models (LLMs) offer a unified framework for multi-cancer risk assessment without disease-specific model training, but single-agent LLMs struggle to reason effectively over long patient histories.</p>  <b>Methods: </b> We developed a multi-agent system (MAS) composed of chained LLM agents with episodic memory to synthesize longitudinal EHR data into comprehensive cancer risk profiles. The system generates 1-year cancer risk scores (1–10) for individual cancer types. Using Truveta Data, we identified cases for 9 cancer types with clinically recognized precursor signs using clinician-curated diagnostic codes. For each cancer type, 500 cases were randomly sampled and matched 1:1 with controls by 10-year age group and sex. All structured EHR data (conditions, laboratory results, observations, medications, and procedures) up to 1 year before diagnosis or index date were included. Performance was evaluated across cancer types; lung cancer was used as a benchmark cohort for comparison with traditional machine learning (ML) models and a single-agent LLM baseline.</p>  <b>Results: </b> The MAS demonstrated heterogeneous but clinically meaningful discrimination across cancer types (AUROC range: 0.64 to 0.80), with liver cancer performing the best and colorectal cancer the worst. In the lung cancer cohort, performance (AUROC=0.79) was comparable to that of trained ML models (AUROC: XGBoost 0.82, logistic regression 0.73, k-nearest neighbors 0.58). Beyond risk prediction, the system generated concise patient summaries and interpretable rationales that supported downstream analyses, including cancer real-world evidence generation and exploratory knowledge discovery. Compared with a single-agent LLM, the MAS showed improved temporal coherence and clinical reasoning.</p>  <b>Conclusions: </b> A multi-agent LLM system can leverage longitudinal EHR data to estimate short-term multi-cancer risk within a unified framework, without cancer-specific model training. These findings support the potential role of LLM-based systems as scalable tools to inform risk stratification and screening strategies in real-world clinical populations.</div>
+
+
+
+	<div class="table_caption"><b>The MAS’s performance.</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p> </p>
+</td>
+<td>
+<p>Lung </p>
+</td>
+<td>
+<p>Ovarian </p>
+</td>
+<td>
+<p>Liver </p>
+</td>
+<td>
+<p>Pancreatic </p>
+</td>
+<td>
+<p>Colorectal </p>
+</td>
+<td>
+<p>Multiple Myeloma </p>
+</td>
+<td>
+<p>Lymphoma </p>
+</td>
+<td>
+<p>Gastric </p>
+</td>
+<td>
+<p>Bladder </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>AUROC [95% CI] </p>
+</td>
+<td>
+<p>0.79 [0.77, 0.82] </p>
+</td>
+<td>
+<p>0.68 [0.65, 0.71] </p>
+</td>
+<td>
+<p>0.80 [0.77, 0.83] </p>
+</td>
+<td>
+<p>0.66 [0.62, 0.69] </p>
+</td>
+<td>
+<p>0.64 [0.61, 0.68] </p>
+</td>
+<td>
+<p>0.70 [0.67, 0.73] </p>
+</td>
+<td>
+<p>0.69 [0.66, 0.72] </p>
+</td>
+<td>
+<p>0.69 [0.66, 0.72] </p>
+</td>
+<td>
+<p>0.71 [0.68, 0.74] </p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

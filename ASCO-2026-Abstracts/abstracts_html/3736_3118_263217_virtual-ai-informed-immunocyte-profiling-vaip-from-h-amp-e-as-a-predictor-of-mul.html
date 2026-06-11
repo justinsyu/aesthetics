@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Virtual AI-informed immunocyte profiling (VAIP) from H&amp;amp;E as a predictor of multi-cancer prognosis.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Virtual AI-informed immunocyte profiling (VAIP) from H&amp;amp;E as a predictor of multi-cancer prognosis.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 3118</div>
+    <div><strong>First speaker:</strong> Mayukhmala Jana, BSc</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/263217">https://www.asco.org/abstracts-presentations/263217</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b> Improved risk stratification is critically needed across multiple cancers to guide treatment decisions. This includes reducing overtreatment in Ductal Carcinoma in Situ (DCIS), addressing late recurrence risk in estrogen receptor-positive/lymph node-negative (ER+/LN-) breast cancer (BC), and refining prognosis in head &amp; neck squamous cell carcinomas (HNSCC), and high-grade serous ovarian carcinoma (HGSOC). Tumor-infiltrating lymphocytes (TILs) reflect anti-tumor immunity, whereas tumor-associated macrophages (TAMs) polarize toward anti-tumor M1-like (CD68+) or immunosuppressive M2-like (CD163+) phenotypes. Integrating TILs with TAM polarization markers may better capture inflammatory balance and improve outcome prediction. We developed a hematoxylin and eosin (H&amp;E)-only AI method (VAIP) to quantify TILs and virtual CD68/CD163 TAMs to develop multi-cancer based potential prognostic models.</p>  <b>Methods: </b> TILs were detected on H&amp;E with HoVer-UNet, and virtual CD68 and CD163 macrophages were inferred with VISTA. In cancer regions, we computed cell densities and immune-balance ratios and trained cancer-specific Cox models with compact feature sets (DCIS 6; HGSOC 7; ER+ 4; HNSCC 4). Prognostic stratification used disease-free survival (DFS) for DCIS (N=273), HGSOC (training N=165, independent test N=220), and ER+ BC (training N=144, test N=622), and overall survival (OS) for HNSCC (N=77), reflecting clinical endpoints. Evaluation used cross-validation for cohorts without an external test set (DCIS, HNSCC) and independent training and testing when independent cohort was available (HGSOC, ER+).</p>  <b>Results: </b> Risk stratification performance across cancer types is in Table 1. The DCIS model used 6 features, largely TIL-macrophage contrast ratios (TIL/M2, TIL/M1). HGSOC used 7 features with a similar ratio-heavy immune-balance signature, plus macrophage-normalized density and polarization metrics (e.g., M1/N, M/N). In contrast, ER+ BC and HNSCC achieved best performance with 4 features dominated by macrophage measures, particularly M2 density and the M1/M2 ratio. Across sites, CD163-related macrophage metrics and immune-balance ratios were consistently informative.</p>  <b>Conclusions: </b> Integrating H&amp;E-visible TILs with virtual CD68/CD163 TAMs enables fully automated, H&amp;E-only prognostic biomarkers that stratify OS and DFS across multiple cancers, demonstrating consistent prognostic value in DCIS, ER+ BC, HGSOC, and HNSCC. These findings support further study of this histomorphometric risk classifier through broader external and prospective validation.</div>
+
+
+
+	<div class="table_caption"><b>Performance across cancer types.</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p><strong>Cancer Type</strong></p>
+</td>
+<td>
+<p><strong>Cohort</strong></p>
+</td>
+<td>
+<p><strong>C-index</strong></p>
+</td>
+<td>
+<p><strong>HR [95% CI]</strong></p>
+</td>
+<td>
+<p><strong>p-value</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>DCIS</p>
+</td>
+<td>
+<p>All</p>
+</td>
+<td>
+<p>0.616</p>
+</td>
+<td>
+<p>1.76 [1.20-2.59]</p>
+</td>
+<td>
+<p><strong>&lt;0.001</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>DCIS</p>
+</td>
+<td>
+<p>RT/No-treatment</p>
+</td>
+<td>
+<p>0.624</p>
+</td>
+<td>
+<p>1.94 [1.15-3.26]</p>
+</td>
+<td>
+<p><strong>0.003</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>HGSOC</p>
+</td>
+<td>
+<p>Test</p>
+</td>
+<td>
+<p>0.553</p>
+</td>
+<td>
+<p>1.38 [1.02-1.87]</p>
+</td>
+<td>
+<p><strong>0.030</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>ER+ BC</p>
+</td>
+<td>
+<p>Test</p>
+</td>
+<td>
+<p>0.577</p>
+</td>
+<td>
+<p>1.51 [1.00-2.28]</p>
+</td>
+<td>
+<p><strong>0.004</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>HNSCC</p>
+</td>
+<td>
+<p>All</p>
+</td>
+<td>
+<p>0.603</p>
+</td>
+<td>
+<p>1.92 [1.03-3.36]</p>
+</td>
+<td>
+<p><strong>0.012</strong></p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

@@ -1,0 +1,440 @@
+ 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Boards and Commissions</title>
+
+    <!--%@ Page Language="C#" AutoEventWireup="true" CodeBehind="scripts.aspx.cs" Inherits="BoardsCommissions.cms.inc.scripts" %-->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache,no-Store">
+
+<script src="https://cdn.sd.gov/lib/jquery/jquery.min.js"></script>
+<script src="/inc/scripts/flowtype.js"></script>
+<script src="/inc/scripts/site.js"></script>
+<link href="/inc/styles/styles.css" rel="stylesheet" type="text/css" />
+    <style>
+        #mainNavCont{display: none;}
+    </style>
+</head>
+<body>
+    <form method="post" action="./SearchResults.aspx?Letter=S" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'header_imgbutton1')" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=duaBEq24O1jOUyk_E5-NAhPBoZ05VqZMGxvB7p5kKqaRmYs1TUjP1uNGhab3SLwJQL1XRapRRL49FnTfN2yVO8CR9us1&amp;t=638901356248157332" type="text/javascript"></script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="6CEFA833" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="o2cXTnpmcfOT6FAlMl7K6KzkHyo7XK+zYjw9FzOKdLjRW/eSNCkmWa317ZHPDt0qo6EXs07+HDhq0x+cUFWTQbnAo2yFjwKe1mza1fn6Mv9CPXCwlQb0MDMNaUDByUrjk+nbrczETLZvxGqagufVIus+b4H036ZaxJCXTGGVxXKd1WQyw7BzoTU0GWBLV+/aKySCU377NQ7HFMDnSsdJQe4yKWo4UjtI40WT+C/f/ZR3lZPa1eixPkVDqCmJ9HPEdHJpc+2kbyhMYxNdDKQA2ft8KY4PehpqkBoLOzpMBJUD3994wVW67j9hIeWK6YIROVBI3joxOMTZ0XHRtqba6uN25JVSJVJ7KauAjrj0IzC5d7BOJSOCPZqHoeykq3z9XZ6ZkLNIuvHc+ZBmlRzD9Z4fduhcb8VHjWk/lgKcupyorRufR+sEh8GrC1yWWujsBKGWDjF9O8f5uQs4FkFgdkVlkA31RsLW1Dy3jzGwnNN2nyh1IbrOIWMtDIEWMYOxM2YmFTSEqax03yyw3bYOfhgkP3SwfoEVhfrLAEt2StIuhTcNLN4S2zEXjKr54k6l8JjE6rBVmJM7rirVfbPv43twpgwuVwmPK+IPr2h/anTJRyzH8tQdQsdTJ/Fho6dQf46NeuMtpVPG269h3yu7Jj3Ot7ty9w4bj7tQvo9NR+yBeX3JrucAT+JkpJhvyHtZTojZlcX3G1EBImzldLZym5/jNFA+COHE4FFOjemWyJeYkNLrWZ546st8F9AO23ZjpI23RAoEBpDiup35r7UEhAAriF8=" />
+</div>
+        <header>
+			
+
+<div id="seal">
+    <img src="img/BW_Seal_Vector.png" />
+</div>
+
+<div id="logo">
+    <a href="/">
+        <img src="/img/logo.png" />
+    </a>
+</div>
+
+<div id="discloseLink">
+    <a href="http://atg.sd.gov/legal/opengovernment/authorityboardcommission.aspx">ANNUAL DISCLOSURE</a>
+</div>
+
+<div id="search">
+    <div id="searchCont">
+        
+        <div id="geninfoTitle"><a href="#">General Information</a></div>
+        <div id="searchTitle"><a href="#">Find a Board or Commission</a></div>
+        <div id="geninfo">
+            <ul>
+                <li><a href="information/BCMeetingGuidelinesSD.pdf">Boards and Commissions Manual</a></li>
+                <li><a href="https://bfm.sd.gov/budget/boardcompensation.pdf" target="_blank" rel="noopener noreferrer nofollow">Board Compensation</a></li>
+            </ul>
+        </div>
+        <div id="findBC">
+
+            <a id="listALL" href="SearchResults.aspx?Letter=ALL">List All Boards and Commissions</a>
+            <div id="keyWRD">
+                <table class="findTable">
+                    <tr>
+                        <td>
+                            <label for="header_txtKeyword">Search:</label>
+                            <input name="header$txtKeyword" type="text" id="header_txtKeyword" />
+                        </td>
+                        <td>
+                            <input type="image" name="header$imgbutton1" id="header_imgbutton1" src="/img/search.png" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="byAgcy">
+                By Agency: 
+                <select name="header$ddlAgency" onchange="javascript:setTimeout(&#39;WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;header$ddlAgency&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))&#39;, 0)" id="header_ddlAgency" class="ddlagency">
+	<option selected="selected" value="0">--Select Agency--</option>
+	<option value="22">Attorney General</option>
+	<option value="38">Board of Regents</option>
+	<option value="3">Bureau of Administration</option>
+	<option value="1">Bureau of Finance and Management</option>
+	<option value="4">Bureau of Human Resources</option>
+	<option value="2">Bureau of Information and Telecommunications</option>
+	<option value="5">Department of Ag and Natural Resources</option>
+	<option value="6">Department of Corrections</option>
+	<option value="7">Department of Education</option>
+	<option value="9">Department of Game, Fish, and Parks</option>
+	<option value="10">Department of Health</option>
+	<option value="11">Department of Human Services</option>
+	<option value="12">Department of Labor and Regulation</option>
+	<option value="13">Department of Public Safety</option>
+	<option value="14">Department of Revenue</option>
+	<option value="15">Department of Social Services</option>
+	<option value="18">Department of Tourism</option>
+	<option value="16">Department of Transportation</option>
+	<option value="33">Department of Tribal Relations</option>
+	<option value="17">Governor&#39;s Office of Economic Development </option>
+	<option value="24">Office of the Governor</option>
+	<option value="27">Public Utilities Commission</option>
+	<option value="30">School and Public Lands</option>
+	<option value="29">Secretary of State</option>
+	<option value="37">South Dakota Housing Authority</option>
+	<option value="28">South Dakota Retirement System</option>
+	<option value="32">State Treasurer</option>
+	<option value="36">Unified Judicial System</option>
+
+</select>
+            </div>
+
+
+            <div id="findBCBTTM">
+                <ul id="letters">
+                    <li id="letterTitle">By Letter:</li>
+                    <li><a href="SearchResults.aspx?Letter=A">A</a></li>
+                    <li><a href="SearchResults.aspx?Letter=B">B</a></li>
+                    <li><a href="SearchResults.aspx?Letter=C">C</a></li>
+                    <li><a href="SearchResults.aspx?Letter=D">D</a></li>
+                    <li><a href="SearchResults.aspx?Letter=E">E</a></li>
+                    <li><a href="SearchResults.aspx?Letter=F">F</a></li>
+                    <li><a href="SearchResults.aspx?Letter=G">G</a></li>
+                    <li><a href="SearchResults.aspx?Letter=H">H</a></li>
+                    <li><a href="SearchResults.aspx?Letter=I">I</a></li>
+                    <li><a href="SearchResults.aspx?Letter=J">J</a></li>
+                    <li>K</li>
+                    <li><a href="SearchResults.aspx?Letter=L">L</a></li>
+                    <li><a href="SearchResults.aspx?Letter=M">M</a></li>
+                    <li><a href="SearchResults.aspx?Letter=N">N</a></li>
+                    <li><a href="SearchResults.aspx?Letter=O">O</a></li>
+                    <li><a href="SearchResults.aspx?Letter=P">P</a></li>
+                    <li><a href="SearchResults.aspx?Letter=Q">Q</a></li>
+                    <li><a href="SearchResults.aspx?Letter=R">R</a></li>
+                    <li><a href="SearchResults.aspx?Letter=S">S</a></li>
+                    <li><a href="SearchResults.aspx?Letter=T">T</a></li>
+                    <li><a href="SearchResults.aspx?Letter=U">U</a></li>
+                    <li><a href="SearchResults.aspx?Letter=V">V</a></li>
+                    <li><a href="SearchResults.aspx?Letter=W">W</a></li>
+                    <li>X</li>
+                    <li>Y</li>
+                    <li>Z</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script>
+		jQuery(document).ready(function () {
+
+            //find a board/commission search open/close
+            $("#findBC").hide();
+            $("#geninfo").hide();
+            $("#searchTitle").on("click touchstart", function (e) {
+                $("#geninfo").slideUp();
+                $("#findBC").slideToggle();
+                e.stopPropagation();
+            });
+            $("#geninfoTitle").on("click touchstart", function (e) {
+                $("#findBC").slideUp();
+                $("#geninfo").slideToggle();
+                e.stopPropagation();
+            });
+
+		});
+    </script>
+        </header>
+
+        <div id="content">
+           <div id="searchby"> Search Results for <span id="lblSearchType">Search by Letter</span></div>
+	<span id="lblError" style="color:Red;"></span>
+    <span id="noresults" class="noresults"></span><br />
+
+    <div>
+	<table cellspacing="0" id="gvResults" style="border-style:None;border-collapse:collapse;">
+		<tr>
+			<th scope="col" style="width:400px;">Board Name</th>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_0" href="Meetings.aspx?BoardID=3">Abstracters' Board of Examiners</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_1" href="Meetings.aspx?BoardID=4">Accountancy, South Dakota Board of</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_2" href="Meetings.aspx?BoardID=29">Addiction and Prevention Professionals,  Board of</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_3" href="Meetings.aspx?BoardID=150">Appraisal, Board of </a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_4" href="Meetings.aspx?BoardID=9">Athletic Commission, South Dakota</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_5" href="Meetings.aspx?BoardID=10">Banking Commission</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_6" href="Meetings.aspx?BoardID=11">Barber Examiners, Board of</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_7" href="Meetings.aspx?BoardID=13">Brand Board</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_8" href="Meetings.aspx?BoardID=167">Child Support Commission</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_9" href="Meetings.aspx?BoardID=16">Children with Disabilities, South Dakota Advisory Panel on</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_10" href="Meetings.aspx?BoardID=224">Community Based Provider Shared Savings Workgroup</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_11" href="Meetings.aspx?BoardID=21">Cosmetology Commission</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_12" href="Meetings.aspx?BoardID=178">Court Appointed Special Advocates Commission</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_13" href="Meetings.aspx?BoardID=98">Critical Teaching Needs Scholarship Board</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_14" href="Meetings.aspx?BoardID=32">Education Standards, South Dakota Board of</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_15" href="Meetings.aspx?BoardID=123">Elections Board (Secretary of State Board)</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_16" href="Meetings.aspx?BoardID=35">Electrical Commission, State of South Dakota</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_17" href="Meetings.aspx?BoardID=36">Emergency Response Commission</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_18" href="Meetings.aspx?BoardID=42">Fort Sisseton, Governor's Commission on</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_19" href="Meetings.aspx?BoardID=45">Game, Fish and Parks Commission</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_20" href="Meetings.aspx?BoardID=47">Hagen-Harvey Memorial Scholarship Board</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_21" href="Meetings.aspx?BoardID=50">Historical Society Board of Trustees, State of South Dakota</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_22" href="Meetings.aspx?BoardID=51">Housing Development Authority</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_23" href="Meetings.aspx?BoardID=54">Human Rights, Commission on</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_24" href="Meetings.aspx?BoardID=164">Internal Control, Board of</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_25" href="Meetings.aspx?BoardID=201">Interstate Adult Supervision, State Council for</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_26" href="Meetings.aspx?BoardID=177">Investment Council, South Dakota</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_27" href="Meetings.aspx?BoardID=134">Juvenile Justice Oversight Council</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_28" href="Meetings.aspx?BoardID=215">Law Enforcement Officers Standards Commission</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_29" href="Meetings.aspx?BoardID=67">Minerals and Environment Board</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_30" href="Meetings.aspx?BoardID=173">Oilseeds Council</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_31" href="Meetings.aspx?BoardID=77">Plumbing Commission, State of South Dakota</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_32" href="Meetings.aspx?BoardID=88">Railroad Board and Railroad Authority, South Dakota State </a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_33" href="Meetings.aspx?BoardID=84">Real Estate Commission, South Dakota</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_34" href="Meetings.aspx?BoardID=87">Regents, Board of </a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_35" href="Meetings.aspx?BoardID=165">School Finance Accountability Board</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_36" href="Meetings.aspx?BoardID=89">Science and Technology Authority</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_37" href="Meetings.aspx?BoardID=174">Seed Certification Board</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_38" href="Meetings.aspx?BoardID=12">Service to the Blind and Visually Impaired, Board of</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_39" href="Meetings.aspx?BoardID=92">Snowmobile Advisory Council</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_40" href="Meetings.aspx?BoardID=90">Social Services, Board of</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_41" href="Meetings.aspx?BoardID=91">Social Work Examiners, Board of </a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_42" href="Meetings.aspx?BoardID=6">South Dakota Advisory Council on Aging</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_43" href="Meetings.aspx?BoardID=86">South Dakota Retirement System</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_44" href="Meetings.aspx?BoardID=61">South Dakota State Library Board</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_45" href="Meetings.aspx?BoardID=175">Soybean Research and Promotion Council</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_46" href="Meetings.aspx?BoardID=94">Speech-Language Pathology Board of Examiners</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_47" href="Meetings.aspx?BoardID=19">State Conservation Commission</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_48" href="Meetings.aspx?BoardID=223">State Council for Educational Opportunity for Military Children</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_49" href="Meetings.aspx?BoardID=39">State Fair Commission</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_50" href="Meetings.aspx?BoardID=37">Technical Professions Board</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_51" href="Meetings.aspx?BoardID=106">Water Management Board</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_52" href="Meetings.aspx?BoardID=111">Workforce Development Council, South Dakota</a><br />
+                </td>
+		</tr>
+	</table>
+</div>
+        </div>
+
+	<a href="#" class="back-to-top"></a>
+
+        <!--%@ Page Language="C#" AutoEventWireup="true" CodeBehind="footer.aspx.cs" Inherits="BoardsCommissions.cms.inc.footer" %-->
+
+<footer>
+	<div id="copyright">&copy; 2026 | Powered by <a href="http://bit.sd.gov/" target="_blank" rel="noreferrer noopener">BIT</a> | <a href="http://sd.gov/" target="_blank" rel="noreferrer noopener">State of South Dakota</a></div>
+	<div id="footerlinks"><a href="http://sd.gov/" target="_blank" rel="noreferrer noopener">sd.gov</a> | <a href="http://sdlegislature.gov/" target="_blank" rel="noreferrer noopener">sdlegislature.gov</a> | <a href="mailto:bandc@state.sd.us?subject=General Inquiry">email us</a></div>
+</footer></form>
+
+  <script>
+  	$(document).ready(function () {
+            $("#findBC").show();
+  	});
+   </script>
+</body>
+</html>

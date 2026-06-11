@@ -1,0 +1,89 @@
+{
+  "abstractNumber": "6023",
+  "body": " \r\n\r\n\t<div><b>Background: </b> Severe treatment-related myelosuppression (Tr-MS) in nasopharyngeal carcinoma (NPC) necessitates dose reductions, compromising survival. Current static models rely on baseline \"snapshots,\" failing to capture dynamic bone marrow fluctuations. We developed a dynamic deep learning system using longitudinal real-world data to predict cycle-specific Tr-MS risk.</p>  <b>Methods: </b> We analyzed 103,919 longitudinal records from 12,065 NPC patients (Nanfang/SYSUCC). A rolling-window strategy incorporated dynamic pre-dose labs, prior-cycle nadirs, and cumulative exposure to predict Grade ≥3 Tr-MS (CTCAE v6.0). Models (Logistic/XGBoost/LightGBM/TabPFN) were trained (6:3:1 split) and validated in two independent external cohorts (n=197) and three prospective trials (NCT03919552, NCT06767488, NCT06017895; n=173). The model was deployed as an EHR-integrated tool for automated real-time risk stratification.</p>  <b>Results: </b> Dynamic models demonstrated robust discrimination across all validation hierarchies (Table). In internal validation, AUCs ranged from 0.84 to 0.96. Performance remained stable in external cohorts (AUC 0.75-0.87) and prospective trials (AUC 0.79-0.86). SHAP analysis identified cumulative chemotherapy dosage and prior-cycle nadirs as dominant risk factors. Notably, the HIS-integrated tool successfully automated data retrieval, eliminating manual entry burden.</p>  <b>Conclusions: </b> This first EHR-integrated, cycle-specific dynamic system for Tr-MS in NPC captures longitudinal marrow exhaustion, enabling a shift from reactive rescue to precise, proactive prevention.</div>\r\n\r\n\r\n\r\n\t<div class=\"table_caption\"><b>Performance of dynamic prediction models across validation cohorts.</b></div> \r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<thead>\r\n<tr>\r\n<td><strong>Endpoint</strong></td>\r\n<td><strong>Cohort</strong></td>\r\n<td><strong>AUC (95% CI)</strong></td>\r\n<td><strong>Sens</strong></td>\r\n<td><strong>Spec</strong></td>\r\n</tr>\r\n</thead>\r\n<tbody>\r\n<tr>\r\n<td>Anemia</td>\r\n<td>Internal (n=1,231)</td>\r\n<td>0.96 (0.96-0.98)</td>\r\n<td>0.91</td>\r\n<td>0.91</td>\r\n</tr>\r\n<tr>\r\n<td>Anemia</td>\r\n<td>External (n=197)</td>\r\n<td>0.87 (0.85-0.89)</td>\r\n<td>0.89</td>\r\n<td>0.86</td>\r\n</tr>\r\n<tr>\r\n<td>Anemia</td>\r\n<td>Prospective (n=173)</td>\r\n<td>0.86 (0.82-0.89)</td>\r\n<td>0.88</td>\r\n<td>0.86</td>\r\n</tr>\r\n<tr>\r\n<td>PLT</td>\r\n<td>Internal (n=1,231)</td>\r\n<td>0.90 (0.87-0.92)</td>\r\n<td>0.79</td>\r\n<td>0.84</td>\r\n</tr>\r\n<tr>\r\n<td>PLT</td>\r\n<td>External (n=197)</td>\r\n<td>0.80 (0.77-0.81)</td>\r\n<td>0.81</td>\r\n<td>0.82</td>\r\n</tr>\r\n<tr>\r\n<td>PLT</td>\r\n<td>Prospective (n=173)</td>\r\n<td>0.81 (0.80-0.83)</td>\r\n<td>0.80</td>\r\n<td>0.83</td>\r\n</tr>\r\n<tr>\r\n<td>WBC/Neut</td>\r\n<td>Internal (n=1,231)</td>\r\n<td>0.84 (0.82-0.85)</td>\r\n<td>0.71</td>\r\n<td>0.79</td>\r\n</tr>\r\n<tr>\r\n<td>WBC/Neut</td>\r\n<td>External (n=197)</td>\r\n<td>0.75 (0.73-0.77)</td>\r\n<td>0.69</td>\r\n<td>0.77</td>\r\n</tr>\r\n<tr>\r\n<td>WBC/Neut</td>\r\n<td>Prospective (n=173)</td>\r\n<td>0.79 (0.77-0.81)</td>\r\n<td>0.69</td>\r\n<td>0.78</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n \r\n\t<div class=\"table_footer\">Abbreviations: AUC, area under the ROC curve; PLT, thrombocytopenia; WBC/Neut, leukopenia/neutropenia; Sens, sensitivity; Spec, specificity.</div> \r\n\r\n\r\n",
+  "contentId": "263396",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/263396",
+    "queryParams": null,
+    "target": null,
+    "title": "Development and multicenter validation of a machine learning framework for predicting severe myelosuppression in nasopharyngeal carcinoma: Evidence from large-scale real-world data and prospective clinical trials."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION263396"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780176600000,
+    "start": 1780165800000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "480",
+  "presentationId": "263396",
+  "primaryPerson": {
+    "displayName": "Tingxi Tang, MD",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780176600000,
+    "start": 1780165800000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17155",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17155",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Head and Neck Cancer"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": {
+    "countriesThes": null,
+    "drugsThes": null,
+    "entitiesThes": null,
+    "genesThes": null,
+    "orgThes": null,
+    "subjectsThes": [
+      "Cancers"
+    ]
+  },
+  "title": "Development and multicenter validation of a machine learning framework for predicting severe myelosuppression in nasopharyngeal carcinoma: Evidence from large-scale real-world data and prospective clinical trials.",
+  "titles": null,
+  "uid": "PRESENTATION263396"
+}

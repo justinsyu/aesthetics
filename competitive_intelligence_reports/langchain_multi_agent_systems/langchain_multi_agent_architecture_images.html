@@ -1,0 +1,136 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LangChain Multi-Agent Architecture Images</title>
+  <style>
+    @font-face{font-family:Manrope;src:url("https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/65bcfb1ca385c12606e47929_Manrope-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+    @font-face{font-family:Manrope;src:url("https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/65bcfb1daf85a6bf3864dfeb_Manrope-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
+    @font-face{font-family:TWKLausanne;src:url("https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69899c86969c509c69a7199d_TWKLausanne-250.otf") format("opentype");font-weight:300;font-style:normal;font-display:swap}
+    @font-face{font-family:AeonikMono;src:url("https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69b955b08318559fe4fdad49_aeonikmono-regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+
+    :root{
+      --ink:#030710;
+      --panel:#0d1322;
+      --panel-2:#111d2e;
+      --text:#cce9ff;
+      --text-soft:#cce9ffb3;
+      --line:#2f4b68;
+      --sky:#7fc8ff;
+      --lime:#c8ff00;
+      --cta:#e5f4ff;
+      --blue:#006ddd;
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--ink);color:var(--text);font-family:Manrope,Tahoma,sans-serif}
+    body{min-height:100vh}
+    a{color:inherit;text-decoration:none}
+    .page{max-width:1440px;margin:0 auto;padding:42px 42px 56px}
+    .topbar{height:6px;background:var(--sky);position:fixed;top:0;left:0;right:0;z-index:5}
+    .hero{margin-bottom:28px}
+    h1{font-family:TWKLausanne,Tahoma,sans-serif;font-size:56px;line-height:1.04;font-weight:300;letter-spacing:0;margin:0;max-width:870px;text-wrap:balance}
+    .gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .card{border:1px solid var(--line);background:rgba(13,19,34,.86);border-radius:6px;overflow:hidden;min-height:300px}
+    .media{display:flex;align-items:center;justify-content:center;background:#07101f;padding:14px;height:100%;min-height:300px}
+    .media img{display:block;max-width:100%;max-height:100%;object-fit:contain}
+
+    @media (max-width:1100px){
+      .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+
+    @media (max-width:740px){
+      .page{padding:32px 18px 44px}
+      h1{font-size:40px}
+      .gallery{grid-template-columns:1fr}
+      .card{min-height:260px}
+      .media{min-height:260px}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar"></div>
+  <main class="page">
+    <header class="hero">
+      <h1>LangChain multi-agent architecture images</h1>
+    </header>
+    <section class="gallery" id="gallery" aria-label="Multi-agent architecture image gallery"></section>
+  </main>
+
+  <script>
+    const images = [
+      {row:1,title:"Multi-agent docs",source:"https://docs.langchain.com/oss/python/langchain/multi-agent/index",date:"2026-06-01",type:"pattern diagram",notes:"Subagents pattern",url:"https://mintcdn.com/langchain-5e9cc07a/CRpSg52QqwDx49Bw/oss/langchain/multi-agent/images/pattern-subagents.png?fit=max&auto=format&n=CRpSg52QqwDx49Bw&q=85&s=f924dde09057820b08f0c577e08fcfe7"},
+      {row:2,title:"Multi-agent docs",source:"https://docs.langchain.com/oss/python/langchain/multi-agent/index",date:"2026-06-01",type:"pattern diagram",notes:"Handoffs pattern",url:"https://mintcdn.com/langchain-5e9cc07a/CRpSg52QqwDx49Bw/oss/langchain/multi-agent/images/pattern-handoffs.png?fit=max&auto=format&n=CRpSg52QqwDx49Bw&q=85&s=57d935e6a8efab4afb3faa385113f4dd"},
+      {row:3,title:"Multi-agent docs",source:"https://docs.langchain.com/oss/python/langchain/multi-agent/index",date:"2026-06-01",type:"pattern diagram",notes:"Skills pattern",url:"https://mintcdn.com/langchain-5e9cc07a/CRpSg52QqwDx49Bw/oss/langchain/multi-agent/images/pattern-skills.png?fit=max&auto=format&n=CRpSg52QqwDx49Bw&q=85&s=119131d1f19be1f0c6fb1e30f080b427"},
+      {row:4,title:"Multi-agent docs",source:"https://docs.langchain.com/oss/python/langchain/multi-agent/index",date:"2026-06-01",type:"pattern diagram",notes:"Router pattern",url:"https://mintcdn.com/langchain-5e9cc07a/CRpSg52QqwDx49Bw/oss/langchain/multi-agent/images/pattern-router.png?fit=max&auto=format&n=CRpSg52QqwDx49Bw&q=85&s=ceab32819240ba87f3a132357cc78b09"},
+      {row:13,title:"LangGraph Supervisor JS",source:"https://langchain-ai.github.io/langgraphjs/reference/modules/langgraph-supervisor.html",date:"2026-06-01",type:"pattern diagram",notes:"Supervisor topology",url:"https://langchain-ai.github.io/langgraphjs/reference/media/supervisor.png"},
+      {row:16,title:"LangGraph Swarm JS",source:"https://langchain-ai.github.io/langgraphjs/reference/modules/langgraph-swarm.html",date:"2026-06-01",type:"pattern diagram",notes:"Swarm handoff topology",url:"https://langchain-ai.github.io/langgraphjs/reference/media/swarm.png"},
+      {row:17,title:"LangGraph: Multi-Agent Workflows",source:"https://www.langchain.com/blog/langgraph-multi-agent-workflows",date:"January 23 2024",type:"pattern diagram",notes:"Collaboration/shared-scratchpad architecture",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbb05973a7146af5caaec3_simple_multi_agent_diagram--1-.png"},
+      {row:18,title:"LangGraph: Multi-Agent Workflows",source:"https://www.langchain.com/blog/langgraph-multi-agent-workflows",date:"January 23 2024",type:"pattern diagram",notes:"Supervisor architecture",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbb05973a7146af5caaec0_supervisor-diagram.png"},
+      {row:19,title:"LangGraph: Multi-Agent Workflows",source:"https://www.langchain.com/blog/langgraph-multi-agent-workflows",date:"January 23 2024",type:"pattern diagram",notes:"Hierarchical teams architecture",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbb05973a7146af5caaec6_hierarchical-diagram.png"},
+      {row:22,title:"Choosing the Right Multi-Agent Architecture",source:"https://www.langchain.com/blog/choosing-the-right-multi-agent-architecture",date:"January 14 2026",type:"pattern diagram",notes:"Subagents pattern",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbaa03649e3ebd9d135314_image--9--1.png"},
+      {row:23,title:"Choosing the Right Multi-Agent Architecture",source:"https://www.langchain.com/blog/choosing-the-right-multi-agent-architecture",date:"January 14 2026",type:"pattern diagram",notes:"Skills pattern",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbaa0feea3104c341d0d4f_image--10-.png"},
+      {row:24,title:"Choosing the Right Multi-Agent Architecture",source:"https://www.langchain.com/blog/choosing-the-right-multi-agent-architecture",date:"January 14 2026",type:"pattern diagram",notes:"Handoffs pattern",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbaa10eea3104c341d0d5e_image--11-.png"},
+      {row:25,title:"Choosing the Right Multi-Agent Architecture",source:"https://www.langchain.com/blog/choosing-the-right-multi-agent-architecture",date:"January 14 2026",type:"pattern diagram",notes:"Router pattern",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbaa10eea3104c341d0d5b_image--12-.png"},
+      {row:30,title:"Building Multi-Agent Applications with Deep Agents",source:"https://www.langchain.com/blog/building-multi-agent-applications-with-deep-agents",date:"January 21 2026",type:"pattern diagram",notes:"Subagents architecture",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbaa03649e3ebd9d135314_image--9--1.png"},
+      {row:31,title:"Building Multi-Agent Applications with Deep Agents",source:"https://www.langchain.com/blog/building-multi-agent-applications-with-deep-agents",date:"January 21 2026",type:"pattern diagram",notes:"Skills architecture",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbaa03649e3ebd9d135318_image--10--1.png"},
+      {row:35,title:"How and when to build multi-agent systems",source:"https://www.langchain.com/blog/how-and-when-to-build-multi-agent-systems",date:"June 16 2025",type:"architecture diagram",notes:"Supervisor/subagent research model",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbaab1649e3ebd9d13bb29_supervisor.png"},
+      {row:36,title:"Open Deep Research",source:"https://www.langchain.com/blog/open-deep-research",date:"July 16 2025",type:"architecture diagram",notes:"Open deep research overview",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbaa9e967d1d6e80351c13_overview.png"},
+      {row:37,title:"Open Deep Research",source:"https://www.langchain.com/blog/open-deep-research",date:"July 16 2025",type:"workflow diagram",notes:"Scope-research-write process",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbaa9d967d1d6e80351bfa_simple.png"},
+      {row:38,title:"Open Deep Research",source:"https://www.langchain.com/blog/open-deep-research",date:"July 16 2025",type:"workflow diagram",notes:"Scope phase",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbaa9e967d1d6e80351c19_scope.png"},
+      {row:39,title:"Open Deep Research",source:"https://www.langchain.com/blog/open-deep-research",date:"July 16 2025",type:"workflow diagram",notes:"Brief generation",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbaa9d967d1d6e80351bfd_brief.png"},
+      {row:40,title:"Open Deep Research",source:"https://www.langchain.com/blog/open-deep-research",date:"July 16 2025",type:"workflow diagram",notes:"Research supervisor/subagents",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbaa9e967d1d6e80351c10_research.png"},
+      {row:41,title:"Open Deep Research",source:"https://www.langchain.com/blog/open-deep-research",date:"July 16 2025",type:"workflow diagram",notes:"Subagent findings/context compaction",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbaa9e967d1d6e80351c0a_big-research.png"},
+      {row:42,title:"Open Deep Research",source:"https://www.langchain.com/blog/open-deep-research",date:"July 16 2025",type:"workflow diagram",notes:"Report-writing step",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbaa9e967d1d6e80351c16_one-shot.png"},
+      {row:43,title:"Open Deep Research",source:"https://www.langchain.com/blog/open-deep-research",date:"July 16 2025",type:"workflow diagram",notes:"Multi-agent research tradeoff",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbaa9e967d1d6e80351c0d_multi-agent.png"},
+      {row:45,title:"How to Build the Ultimate AI Automation with Multi-Agent Collaboration",source:"https://www.langchain.com/blog/how-to-build-the-ultimate-ai-automation-with-multi-agent-collaboration",date:"May 9 2024",type:"architecture diagram",notes:"Wix/GPT Researcher agent team",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbafd8de8e411982858981_1_ABcpKZRWsJRb9MIpkJ0htQ.webp"},
+      {row:48,title:"GPTeam: A multi-agent simulation",source:"https://www.langchain.com/blog/gpteam-a-multi-agent-simulation",date:"June 5 2023",type:"architecture diagram",notes:"Simulation architecture",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbb2193fe3e9a95a56261b_untitled--1.png"},
+      {row:57,title:"How Chaos Labs built a multi-agent system for resolution in prediction markets",source:"https://www.langchain.com/blog/how-chaos-labs-built-a-multi-agent-system-for-resolution-in-prediction-markets",date:"November 6 2024",type:"architecture diagram",notes:"Edge AI Oracle council architecture",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbae4f8232fce8d20d42ec_image-2--1-.png"},
+      {row:58,title:"How Chaos Labs built a multi-agent system for resolution in prediction markets",source:"https://www.langchain.com/blog/how-chaos-labs-built-a-multi-agent-system-for-resolution-in-prediction-markets",date:"November 6 2024",type:"architecture diagram",notes:"Oracle council model",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbae508232fce8d20d42ff_image.png"},
+      {row:59,title:"How Chaos Labs built a multi-agent system for resolution in prediction markets",source:"https://www.langchain.com/blog/how-chaos-labs-built-a-multi-agent-system-for-resolution-in-prediction-markets",date:"November 6 2024",type:"workflow diagram",notes:"Research analyst/web scraper/document analyst/writer",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbae508232fce8d20d42f9_image-3.png"},
+      {row:60,title:"How Chaos Labs built a multi-agent system for resolution in prediction markets",source:"https://www.langchain.com/blog/how-chaos-labs-built-a-multi-agent-system-for-resolution-in-prediction-markets",date:"November 6 2024",type:"workflow diagram",notes:"Report/verifier/confidence workflow",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbae508232fce8d20d42f4_image-4.png"},
+      {row:62,title:"How Lyft Built a Self-Serve AI Agent Platform with LangGraph and LangSmith",source:"https://www.langchain.com/blog/lyft-built-a-self-serve-ai-agent-platform-for-customer-support-with-langgraph-and-langsmith",date:"May 27 2026",type:"architecture diagram",notes:"Router multi-agent architecture",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/6a163d057c5a37ac3248d4eb_image6.png"},
+      {row:63,title:"How Lyft Built a Self-Serve AI Agent Platform with LangGraph and LangSmith",source:"https://www.langchain.com/blog/lyft-built-a-self-serve-ai-agent-platform-for-customer-support-with-langgraph-and-langsmith",date:"May 27 2026",type:"node-pattern diagram",notes:"Subagent node pattern",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/6a163d27b3647bdaa8dbaa82_image2.png"},
+      {row:71,title:"How Bertelsmann Built a Multi-Agent System to Empower Creatives",source:"https://www.langchain.com/blog/customer-bertelsmann",date:"July 29 2025",type:"architecture diagram",notes:"Coordinator/domain-agent/synthesis architecture",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbaa90cd1956c2e4fa6f13_AD_4nXeDeUfL1k0gwhw6RN38H7YJFMSLcIKTJrIX-Iw1gPTf2QuZk2bmvTIh0kGr-8VdG7-C-2cjkOK5WX0j5muBTtQnHJKiwR7BBOE0O4oq0NS8GpTLS4jtyZkd1PQxu16_TQlcDJEk.png"},
+      {row:73,title:"How Bertelsmann Built a Multi-Agent System to Empower Creatives",source:"https://www.langchain.com/blog/customer-bertelsmann",date:"July 29 2025",type:"deployment diagram",notes:"Standalone agent API deployment",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbaa90cd1956c2e4fa6f0d_AD_4nXdN6NrUNXP5AoPRaKm2EOO1NPOukn-y3kvaV0vG3T3YeNb1BVEau7KJse6bcsf4ofGkUz0o9h42aChinl9AXJrr2jZ1Wn61awEnAv38a6OEFOKniIAUHQfMGP3ev-d4AUVcGH7BXg.png"},
+      {row:74,title:"How Madrigal Built a Flexible and Scalable Multi-Agent Research and Intelligence Platform",source:"https://www.langchain.com/blog/customers-madrigal",date:"April 29 2026",type:"architecture diagram",notes:"Enterprise research architecture",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69f355041f7a1eae1778b75e_langsmith-architecture-dark%201.png"},
+      {row:75,title:"How Kensho built a multi-agent framework with LangGraph to solve trusted financial data retrieval",source:"https://www.langchain.com/blog/customers-kensho",date:"March 26 2026",type:"architecture diagram",notes:"Grounding agent architecture",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cb92b0ec45aa6d7bc39a97_kensho_grounding_agent_3-30.png"},
+      {row:76,title:"How Exa built a Web Research Multi-Agent System with LangGraph and LangSmith",source:"https://www.langchain.com/blog/exa",date:"June 30 2025",type:"architecture diagram",notes:"Planner/tasks/observer research architecture",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbaaabbf847dfe35ef4847_Diagram.png"},
+      {row:85,title:"How Infor is Transforming Enterprise AI using LangGraph and LangSmith",source:"https://www.langchain.com/blog/customers-infor",date:"February 5 2025",type:"platform diagram",notes:"Infor OS GenAI assistant architecture",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbadfc44d72d975255cb47_AD_4nXeOE3OimTefca8Y5X8Tq-i3bK8FTdfSs3uVwy8-MgbX-iTpeBO2iNgHlpDp-ll0mTPVSU5yroINsQBtpBiJnTMEtHVsjfI4F73BYZ3UHTyf-AQR3nFGNk4jC0uM2Qws6P_6x-RZ.png"},
+      {row:86,title:"How Outshift by Cisco achieved a 10x productivity boost with their Agentic AI Platform Engineer",source:"https://www.langchain.com/blog/cisco-outshift",date:"May 4 2025",type:"architecture diagram",notes:"JARVIS architecture",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbab87b02f04cb69c45f59_AD_4nXdzbx8S7Y84Cw859AdD9J9vWRFHji0WNLcarZQOlSj_fqb1PePs6dfKRUKTuXqWlQH7-uQ5ErqJzobHJd6SIQSYR4jocSKYTFa0QrMxqLbx6BI8mzET4nTE_hURWiGAbJhV1Ql2Te6-DuJkONt_TQ.png"},
+      {row:91,title:"Agentic Engineering: How Swarms of AI Agents Are Redefining Software Engineering",source:"https://www.langchain.com/blog/agentic-engineering-redefining-software-engineering",date:"April 17 2026",type:"architecture diagram",notes:"Agentic engineering architecture",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69e2358c6ef03497e00cafa8_architecture-overview_dark%201%20%281%29.png"},
+      {row:92,title:"Agentic Engineering: How Swarms of AI Agents Are Redefining Software Engineering",source:"https://www.langchain.com/blog/agentic-engineering-redefining-software-engineering",date:"April 17 2026",type:"architecture diagram",notes:"Macro team-boundary architecture",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69e235aacaa69e679fd141cf_macro-team-boundary_dark%201.png"},
+      {row:93,title:"Agentic Engineering: How Swarms of AI Agents Are Redefining Software Engineering",source:"https://www.langchain.com/blog/agentic-engineering-redefining-software-engineering",date:"April 17 2026",type:"workflow diagram",notes:"Worker-agent flow",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69e23631d69524c90a11974c_worker-agent-flow_dark%201%20%281%29.png"},
+      {row:94,title:"Financial AI that investigates macro trends",source:"https://www.langchain.com/blog/financial-ai-that-investigates-macro-trends-eu-economic-analysis-with-you-com-and-langchain",date:"May 20 2026",type:"architecture diagram",notes:"You.com/LangChain macro research architecture",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/6a19128fcb6467aa20367d86_arch%20%281%29.png"},
+      {row:99,title:"Multi-agent docs",source:"https://docs.langchain.com/oss/python/langchain/multi-agent/index",date:"2026-06-02",type:"performance flow diagram",notes:"Subagents one-shot model-call flow",url:"https://mintcdn.com/langchain-5e9cc07a/CRpSg52QqwDx49Bw/oss/langchain/multi-agent/images/oneshot-subagents.png?fit=max&auto=format&n=CRpSg52QqwDx49Bw&q=85&s=bd4eeef41d8870bfa887dd0aa97d0b79"},
+      {row:100,title:"Multi-agent docs",source:"https://docs.langchain.com/oss/python/langchain/multi-agent/index",date:"2026-06-02",type:"performance flow diagram",notes:"Handoffs one-shot model-call flow",url:"https://mintcdn.com/langchain-5e9cc07a/CRpSg52QqwDx49Bw/oss/langchain/multi-agent/images/oneshot-handoffs.png?fit=max&auto=format&n=CRpSg52QqwDx49Bw&q=85&s=42ec50519ff04f034050dc77cf869907"},
+      {row:101,title:"Multi-agent docs",source:"https://docs.langchain.com/oss/python/langchain/multi-agent/index",date:"2026-06-02",type:"performance flow diagram",notes:"Skills one-shot model-call flow",url:"https://mintcdn.com/langchain-5e9cc07a/CRpSg52QqwDx49Bw/oss/langchain/multi-agent/images/oneshot-skills.png?fit=max&auto=format&n=CRpSg52QqwDx49Bw&q=85&s=c8dbf69ed4509e30e5280e7e8a391dab"},
+      {row:102,title:"Multi-agent docs",source:"https://docs.langchain.com/oss/python/langchain/multi-agent/index",date:"2026-06-02",type:"performance flow diagram",notes:"Router one-shot model-call flow",url:"https://mintcdn.com/langchain-5e9cc07a/CRpSg52QqwDx49Bw/oss/langchain/multi-agent/images/oneshot-router.png?fit=max&auto=format&n=CRpSg52QqwDx49Bw&q=85&s=be5707931d3e520e3ae66af544f2cf2f"},
+      {row:103,title:"Multi-agent docs",source:"https://docs.langchain.com/oss/python/langchain/multi-agent/index",date:"2026-06-02",type:"performance flow diagram",notes:"Subagents multi-domain parallel flow",url:"https://mintcdn.com/langchain-5e9cc07a/CRpSg52QqwDx49Bw/oss/langchain/multi-agent/images/multidomain-subagents.png?fit=max&auto=format&n=CRpSg52QqwDx49Bw&q=85&s=9cc5d2d46bfa98b7ceeacdc473512c94"},
+      {row:104,title:"Multi-agent docs",source:"https://docs.langchain.com/oss/python/langchain/multi-agent/index",date:"2026-06-02",type:"performance flow diagram",notes:"Handoffs multi-domain sequential flow",url:"https://mintcdn.com/langchain-5e9cc07a/CRpSg52QqwDx49Bw/oss/langchain/multi-agent/images/multidomain-handoffs.png?fit=max&auto=format&n=CRpSg52QqwDx49Bw&q=85&s=7ede44260515e49ff1d0217f0030d66d"},
+      {row:105,title:"Multi-agent docs",source:"https://docs.langchain.com/oss/python/langchain/multi-agent/index",date:"2026-06-02",type:"performance flow diagram",notes:"Skills multi-domain accumulated-context flow",url:"https://mintcdn.com/langchain-5e9cc07a/CRpSg52QqwDx49Bw/oss/langchain/multi-agent/images/multidomain-skills.png?fit=max&auto=format&n=CRpSg52QqwDx49Bw&q=85&s=2162584b6076aee83396760bc6de4cf4"},
+      {row:106,title:"Multi-agent docs",source:"https://docs.langchain.com/oss/python/langchain/multi-agent/index",date:"2026-06-02",type:"performance flow diagram",notes:"Router multi-domain parallel flow",url:"https://mintcdn.com/langchain-5e9cc07a/CRpSg52QqwDx49Bw/oss/langchain/multi-agent/images/multidomain-router.png?fit=max&auto=format&n=CRpSg52QqwDx49Bw&q=85&s=ef11573bc65e5a2996d671bb3030ca6b"},
+      {row:107,title:"How we built LangChain's GTM Agent",source:"https://www.langchain.com/blog/how-we-built-langchains-gtm-agent",date:"May 29 2026",type:"architecture diagram",notes:"Deep Agents architecture with subagents",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cba9bbe7ec0692a2d07a0c_deep-agents-diagram-1--2-.png"},
+      {row:108,title:"How we built LangChain's GTM Agent",source:"https://www.langchain.com/blog/how-we-built-langchains-gtm-agent",date:"May 29 2026",type:"architecture diagram",notes:"Parent account-intelligence agent with parallel subagents",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cba9bbe7ec0692a2d07a1c_account-intelligence-diagram--1--1--1-.png"},
+      {row:109,title:"How We Built LangSmith Engine Our Agent for Improving Agents",source:"https://www.langchain.com/blog/how-we-built-langsmith-engine-our-agent-for-improving-agents",date:"May 19 2026",type:"architecture diagram",notes:"LangSmith Engine orchestrator with subagents",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/6a0c7cab710767bbc0f61dc9_Screenshot%202026-05-19%20at%208.05.40%E2%80%AFAM.png"},
+      {row:110,title:"How We Built LangSmith Engine Our Agent for Improving Agents",source:"https://www.langchain.com/blog/how-we-built-langsmith-engine-our-agent-for-improving-agents",date:"May 19 2026",type:"workflow diagram",notes:"Screener and investigator subagent triage workflow",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/6a0c7ce1e5b1d0aaeb6996c9_Screenshot%202026-05-19%20at%208.05.58%E2%80%AFAM.png"},
+      {row:111,title:"Building workflows for agents with Skills and Interpreters",source:"https://www.langchain.com/blog/interpreter-skills",date:"May 28 2026",type:"workflow diagram",notes:"Interpreter-skill workflow with bounded subagent fanout",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/6a18d0c2ef4f6618e7ec78c6_Screenshot%202026-05-28%20at%201.04.37%E2%80%AFPM.png"},
+      {row:112,title:"Fastweb + Vodafone: Transforming Customer Experience with AI Agents using LangGraph and LangSmith",source:"https://www.langchain.com/blog/customers-vodafone-italy",date:"May 13 2025",type:"architecture diagram",notes:"Super TOBi supervisor graph with use-case agents",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbaa19703c727fd28ab527_data-src-image-0083e293-862f-4762-a4f9-378f4615145c.png"},
+      {row:113,title:"Fastweb + Vodafone: Transforming Customer Experience with AI Agents using LangGraph and LangSmith",source:"https://www.langchain.com/blog/customers-vodafone-italy",date:"May 13 2025",type:"architecture diagram",notes:"Super Agent routing and execution architecture",url:"https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbaa19703c727fd28ab521_data-src-image-2f842c67-179f-43da-a96d-d99032a555e9.png"},
+      {row:114,title:"Subgraphs",source:"https://docs.langchain.com/oss/python/langgraph/use-subgraphs",date:"2026-06-02",type:"subgraph diagram",notes:"Parent graph and subgraph composition",url:"https://mintcdn.com/langchain-5e9cc07a/ybiAaBfoBvFquMDz/oss/images/subgraph.png?fit=max&auto=format&n=ybiAaBfoBvFquMDz&q=85&s=c280df5c968cd4237b0b5d03823d8946"},
+      {row:115,title:"Workflows and agents",source:"https://docs.langchain.com/oss/python/langgraph/workflows-agents",date:"2026-06-02",type:"workflow diagram",notes:"Orchestrator-worker delegation workflow",url:"https://mintcdn.com/langchain-5e9cc07a/ybiAaBfoBvFquMDz/oss/images/worker.png?fit=max&auto=format&n=ybiAaBfoBvFquMDz&q=85&s=2e423c67cd4f12e049cea9c169ff0676"}
+    ]
+
+    const gallery = document.getElementById("gallery")
+
+    gallery.innerHTML = images.map((image, index) => `
+      <article class="card">
+        <a class="media" href="${image.source}" target="_blank" rel="noopener" title="${image.notes}">
+          <img src="${image.url}" alt="${image.notes}" loading="${index < 9 ? "eager" : "lazy"}">
+        </a>
+      </article>
+    `).join("")
+  </script>
+</body>
+</html>

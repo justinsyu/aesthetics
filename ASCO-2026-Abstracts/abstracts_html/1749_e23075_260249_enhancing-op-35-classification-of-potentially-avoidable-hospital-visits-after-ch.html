@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enhancing OP-35 classification of potentially avoidable hospital visits after chemotherapy using procedure codes.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Enhancing OP-35 classification of potentially avoidable hospital visits after chemotherapy using procedure codes.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e23075</div>
+    <div><strong>First speaker:</strong> Isabella Joseph</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/260249">https://www.asco.org/abstracts-presentations/260249</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Medicare’s OP-35 quality measure defines potentially avoidable hospital visits within 30 days of outpatient chemotherapy using the first non-malignancy discharge diagnosis code. Prior work has found poor diagnostic characteristics of OP-35 compared to clinician-reviewed hospital visit (sensitivity 35%, specificity 71%, accuracy 60%, AUROC of 0.53). A single discharge diagnosis code may inadequately capture the clinical complexity of a hospital visit. Using the random sample of clinician-reviewed hospital visits from the prior study, we developed a claims-based definition for potentially avoidable hospital visits incorporating procedure codes as well.</div>
+  <main> 
+
+	<div><b>Background: </b></p>  Medicare’s OP-35 quality measure defines potentially avoidable hospital visits within 30 days of outpatient chemotherapy using the first non-malignancy discharge diagnosis code. Prior work has found poor diagnostic characteristics of OP-35 compared to clinician-reviewed hospital visit (sensitivity 35%, specificity 71%, accuracy 60%, AUROC of 0.53). A single discharge diagnosis code may inadequately capture the clinical complexity of a hospital visit. Using the random sample of clinician-reviewed hospital visits from the prior study, we developed a claims-based definition for potentially avoidable hospital visits incorporating procedure codes as well.</p>  <b>Methods: </b></p>  We analyzed 705 acute hospital visits (5% random sample of 12,597 hospital visits) occurring within 30 days of chemotherapy that underwent blinded clinician chart review, with visit avoidability adjudicated by majority agreement and used as the definition for true avoidability. We constructed encounter-anchored timelines linking all day-level CPT, HCPCS, and ICD-9 procedure codes across the hospital stay (50,169 procedure codes from the 705 visits), and derived interpretable features reflecting care intensity and timing, including procedure diversity, temporal clustering and repeated procedures, and encounter length of stay. We applied multiple procedure-augmented classification approaches, including linear, nonlinear, and pattern-based models, to predict clinician-adjudicated visit avoidability. Model development used five-fold cross-validation for tuning and internal validation, followed by evaluation on a held-out test set comprising 30% of encounters. Performance was evaluated using sensitivity, specificity, accuracy, and area under the receiver operating characteristic curve (AUROC).</p>  <b>Results: </b></p>  Of the 705 hospital visits, clinicians classified 213 visits (30.2%) as potentially avoidable. Our procedure-code augmented OP-35+ method demonstrated substantially improved discrimination, with test-set AUROC ranging from 0.86 to 0.88. Across evaluated approaches, sensitivity improved to approximately 64–66% while maintaining high specificity (88–90%), yielding overall accuracy near 79%. Features capturing procedure intensity, multi-day service patterns, and interactions with length of stay consistently contributed most to model performance and improved differentiation between outpatient-manageable encounters and visits requiring urgent or emergent inpatient care.</p>  <b>Conclusions: </b></p>  Incorporating procedure codes and encounter-level service patterns improved alignment with clinician-defined avoidable hospital visits after chemotherapy. A procedure-informed OP-35+ definition provides a more clinically grounded approach to identifying avoidable hospital visits in claims data, with implications for cancer care quality measurement and policy.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Validation of an AI-based clinical decision support system for guideline-concordant prostate cancer treatment at a Brazilian cancer center.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Validation of an AI-based clinical decision support system for guideline-concordant prostate cancer treatment at a Brazilian cancer center.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 1605</div>
+    <div><strong>First speaker:</strong> Hermano Alexandre Lima Rocha, MD, PhD, MPH</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/267793">https://www.asco.org/abstracts-presentations/267793</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b></p>  Clinical decision support systems (CDSS) based on large language models may improve adherence to evidence-based guidelines in prostate cancer. We developed a Gemini-based CDSS for localized and locally advanced prostate cancer treatment at Instituto do C&#226;ncer do Cear&#225; (ICC), Fortaleza, Brazil, and conducted a validation study comparing its recommendations with National Comprehensive Cancer Network (NCCN) guidelines and real-world physician decisions.</p>  <b>Methods: </b></p>  We retrospectively included 198 consecutive patients prostate cancer treated at ICC. For each case, the CDSS generated a recommended primary treatment. Independent clinician reviewers assigned reference NCCN-concordant treatment categories. We calculated per-treatment precision, recall, F1-score, and one-vs-rest AUC comparing CDSS and physicians, with particular focus on active surveillance (AS) and radical prostatectomy (RP).</p>  <b>Results: </b></p>  Overall NCCN concordance was 87.9% for the CDSS and 82.3% for physicians. Treatment-level analysis showed that the CDSS more often and more accurately identified candidates for active surveillance. For AS, the CDSS achieved precision 1.00, recall 1.00, F1-score 1.00, and AUC 1.00, while physicians had precision 1.00 but substantially lower recall (0.24), F1-score 0.39, and AUC 0.62. In contrast, physicians more frequently recommended RP beyond NCCN indications: for prostatectomy, the CDSS showed precision 1.00, recall 1.00, F1-score 1.00, and AUC 1.00, whereas physicians had lower precision (0.40) with recall 1.00, F1-score 0.58, and AUC 0.90. </p>  <b>Conclusions: </b></p>  In this single-center validation study, a Gemini-based CDSS for prostate cancer treatment achieved higher overall NCCN concordance than treating physicians and improved alignment with guidelines for the appropriate use of AS. These findings suggest that integration of large language model–based CDSS into clinical workflows at cancer centers in low- and middle-income settings may reduce overtreatment and support more value-based prostate cancer care. Although we did not include data on social impossibility of AS, the finding leads to reflections on the possibility of greater use of AS, even in a region with limited resources.</div>
+
+
+
+	<div class="table_caption"><b>Performance of a Gemini-based clinical decision support system vs physicians for active surveillance and radical prostatectomy (NCCN-concordant treatment metrics).</b></div> 
+
+
+	<div class="table"><table>
+<thead>
+<tr>
+<td>
+<p><strong>Treatment modality</strong></p>
+</td>
+<td>
+<p><strong>Metric</strong></p>
+</td>
+<td>
+<p><strong>CDSS (Gemini-based)</strong></p>
+</td>
+<td>
+<p><strong>Physicians</strong></p>
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>Active surveillance (VA)</p>
+</td>
+<td>
+<p>Precision</p>
+</td>
+<td>
+<p>1.00</p>
+</td>
+<td>
+<p>1.00</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Active surveillance (VA)</p>
+</td>
+<td>
+<p>Recall</p>
+</td>
+<td>
+<p>1.00</p>
+</td>
+<td>
+<p>0.24</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Active surveillance (VA)</p>
+</td>
+<td>
+<p>F1-score</p>
+</td>
+<td>
+<p>1.00</p>
+</td>
+<td>
+<p>0.39</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Active surveillance (VA)</p>
+</td>
+<td>
+<p>AUC</p>
+</td>
+<td>
+<p>1.00</p>
+</td>
+<td>
+<p>0.62</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Radical prostatectomy (P)</p>
+</td>
+<td>
+<p>Precision</p>
+</td>
+<td>
+<p>1.00</p>
+</td>
+<td>
+<p>0.40</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Radical prostatectomy (P)</p>
+</td>
+<td>
+<p>Recall</p>
+</td>
+<td>
+<p>1.00</p>
+</td>
+<td>
+<p>1.00</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Radical prostatectomy (P)</p>
+</td>
+<td>
+<p>F1-score</p>
+</td>
+<td>
+<p>1.00</p>
+</td>
+<td>
+<p>0.58</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Radical prostatectomy (P)</p>
+</td>
+<td>
+<p>AUC</p>
+</td>
+<td>
+<p>1.00</p>
+</td>
+<td>
+<p>0.90</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

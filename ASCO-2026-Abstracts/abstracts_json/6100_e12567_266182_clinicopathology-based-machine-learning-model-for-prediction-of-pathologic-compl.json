@@ -1,0 +1,64 @@
+{
+  "abstractNumber": "e12567",
+  "body": " \r\n\r\n\t<div><b>Background: </b> </p>  Pathologic Complete Response (pCR) following neoadjuvant chemotherapy (NAC) is a surrogate for long-term survival in breast cancer. While pCR status informs surgical and therapeutic decisions, accurate patient-level prediction is hindered by tumor heterogeneity and skewed outcomes. Standard parameters (T/N stage, molecular subtype, HER2 status, Ki-67) are routinely documented but rarely integrated into robust decision-support tools. We developed an interpretable machine learning (ML) framework to provide calibrated, data-driven predictions of pCR using routine clinicopathological data.</p>  <b>Methods: </b> </p>  This retrospective study analyzed a Turkish cohort of 298 breast cancer cases (n&nbsp;=&nbsp;84 pCR vs. n&nbsp;=&nbsp;214 non-pCR) using 20 expert-curated variables. To ensure a leakage-proof methodology, the dataset was partitioned into training and independent hold-out test sets, with all preprocessing and feature selection parameters were fitted strictly on training data. Model performance was evaluated using nested cross-validation.</p>  We screened 12 ML algorithms, comprising linear models (Logistic Regression, SVM), distance-based (KNN) and tree-based ensembles (XGBoost, CatBoost, Random Forest), along with meta-ensemble architectures (Voting and Stacking). Optimal model selection was guided by a composite score integrating MCC, PR-AUC, F1-score and Brier score. Models were benchmarked against a 100-iteration Monte Carlo simulation. Class imbalance was addressed through balanced weighting, and outputs were calibrated using Platt scaling. Decision thresholds were tailored using a weighted Youden’s index to prioritize sensitivity. Interpretability was established through permutation importance and SHAP analysis.</p>  <b>Results: </b> </p>  Calibrated Logistic Regression (LR) emerged as the optimal model, achieving a ROC-AUC of 0.803. In the test set (n&nbsp;=&nbsp;60), LR correctly identifies 15 out of 17 pCR cases, yielding 88% sensitivity and 93.1% NPV (63% specificity, 48.4% PPV). These outcomes significantly outperformed random baseline estimates (NPV:71%, PPV:26.9%), confirming a substantial predictive gain.</p>  Feature analysis identified HER2 expression (0.60) as the primary positive predictor of pCR, whereas ER status (-0.56) and AJCC stage (-0.31) were the strongest negative predictors. Other contributors included nodal status (0.11) and Ki-67 (0.11).</p>  <b>Conclusions: </b> </p>  We present the first clinicopathology-based ML framework for a Turkish breast cancer cohort. This calibrated LR model provides clinically meaningful pCR discrimination, potentially aiding clinical decision-making in the neoadjuvant settings.</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+  "contentId": "266182",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/266182",
+    "queryParams": null,
+    "target": null,
+    "title": "Clinicopathology-based machine learning model for prediction of pathologic complete response to neoadjuvant chemotherapy in breast cancer."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION266182"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": null,
+  "presentationId": "266182",
+  "primaryPerson": {
+    "displayName": "Enver Ozkurt, FACS",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": "Pathologic Complete Response (pCR) following neoadjuvant chemotherapy (NAC) is a surrogate for long-term survival in breast cancer. While pCR status informs surgical and therapeutic decisions, accurate patient-level prediction is hindered by tumor heterogeneity and skewed outcomes. Standard parameters (T/N stage, molecular subtype, HER2 status, Ki-67) are routinely documented but rarely integrated into robust decision-support tools. We developed an interpretable machine learning (ML) framework to provide calibrated, data-driven predictions of pCR using routine clinicopathological data.",
+  "taxonomy": null,
+  "title": "Clinicopathology-based machine learning model for prediction of pathologic complete response to neoadjuvant chemotherapy in breast cancer.",
+  "titles": null,
+  "uid": "PRESENTATION266182"
+}

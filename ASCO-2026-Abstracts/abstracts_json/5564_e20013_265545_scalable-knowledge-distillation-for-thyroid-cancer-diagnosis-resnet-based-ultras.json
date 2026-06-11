@@ -1,0 +1,73 @@
+{
+  "abstractNumber": "e20013",
+  "body": " \r\n\r\n\t<div><h3><b>Background: </b></h3>  Thyroid nodules are highly prevalent, while thyroid cancer accounts for 7–15% of cases, most commonly papillary thyroid carcinoma. Ultrasound is the first-line diagnostic modality, yet interpretation remains subjective and prone to interobserver variability despite standardized TI-RADS frameworks. Fine-needle aspiration is the diagnostic gold standard but is invasive and frequently overutilized. Although deep learning has demonstrated strong performance for thyroid nodule classification on ultrasound, high-capacity models are computationally intensive and limit clinical deployment. Knowledge distillation enables transfer of diagnostic capability from large mentor networks to lightweight mentee models while preserving accuracy. We evaluated a ResNet-based distillation framework for scalable thyroid cancer classification.</p> <h3><b>Methods: </b></h3>  We analyzed 2,247 thyroid nodules from the thyroidAI dataset, including 1,320 malignant and 927 benign nodules with histopathologic confirmation. Ultrasound images were curated and independently annotated by two board-certified radiologists using longitudinal and transverse views, then divided into training, validation, and external testing cohorts. A ResNet101 mentor model, leveraging deep residual connections for hierarchical feature extraction, was trained for benign versus malignant classification. A compact ResNet18 mentee model was trained using temperature-scaled knowledge distillation with regularized cross-entropy loss to transfer probabilistic decision structure while reducing computational complexity. Performance was assessed using accuracy, sensitivity, specificity, F1 score, and AUROC. Deployment feasibility was evaluated by expert reviewers across multiple geographic regions.</p> <h3><b>Results: </b></h3>  The ResNet101 mentor achieved high diagnostic accuracy (&nbsp;&gt;&nbsp;99%) for malignant thyroid nodules. The distilled ResNet18 preserved clinically meaningful performance, achieving approximately 94% accuracy with balanced sensitivity and specificity and AUROC exceeding 0.94 on validation and external datasets. Knowledge distillation reduced model parameters by over 80% and substantially decreased inference latency, enabling real-time execution on standard hardware. Expert reviewers reported consistent clinical utility for risk stratification and biopsy triage across institutions.</p> <h3><b>Conclusions: </b></h3>  Knowledge distillation enables a lightweight ResNet18 model to retain near–ResNet101 diagnostic performance for thyroid cancer classification on ultrasound while markedly reducing computational requirements. This scalable approach addresses key translational barriers and supports global deployment of AI-assisted thyroid nodule risk stratification. Prospective evaluation is warranted to assess impact on biopsy utilization and diagnostic consistency.</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+  "contentId": "265545",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/265545",
+    "queryParams": null,
+    "target": null,
+    "title": "Scalable knowledge distillation for thyroid cancer diagnosis: ResNet-based ultrasound classification with global deployment feasibility."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION265545"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": null,
+  "presentationId": "265545",
+  "primaryPerson": {
+    "displayName": "Lalith Akaash Ramasamy, MBBS",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": "Thyroid nodules are highly prevalent, while thyroid cancer accounts for 7–15% of cases, most commonly papillary thyroid carcinoma. Ultrasound is the first-line diagnostic modality, yet interpretation remains subjective and prone to interobserver variability despite standardized TI-RADS frameworks. Fine-needle aspiration is the diagnostic gold standard but is invasive and frequently overutilized. Although deep learning has demonstrated strong performance for thyroid nodule classification on ultrasound, high-capacity models are computationally intensive and limit clinical deployment. Knowledge distillation enables transfer of diagnostic capability from large mentor networks to lightweight mentee models while preserving accuracy. We evaluated a ResNet-based distillation framework for scalable thyroid cancer classification.",
+  "taxonomy": {
+    "countriesThes": null,
+    "drugsThes": null,
+    "entitiesThes": null,
+    "genesThes": null,
+    "orgThes": null,
+    "subjectsThes": [
+      "Cancers"
+    ]
+  },
+  "title": "Scalable knowledge distillation for thyroid cancer diagnosis: ResNet-based ultrasound classification with global deployment feasibility.",
+  "titles": null,
+  "uid": "PRESENTATION265545"
+}

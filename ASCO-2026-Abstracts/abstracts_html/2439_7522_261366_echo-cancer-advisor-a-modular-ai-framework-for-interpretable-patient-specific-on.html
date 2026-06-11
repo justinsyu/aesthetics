@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Echo cancer advisor: A modular AI framework for interpretable, patient-specific oncology decision support.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Echo cancer advisor: A modular AI framework for interpretable, patient-specific oncology decision support.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 7522</div>
+    <div><strong>First speaker:</strong> Ariosto Siqueira Silva, PhD, BSc</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/261366">https://www.asco.org/abstracts-presentations/261366</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b> Oncology increasingly relies on large, heterogeneous datasets spanning genomics, clinical records, imaging, and treatment history. Large language models (LLMs) show promise for synthesizing such information, yet currently suffer from limited transparency, hallucination risk, and poor alignment with real-world clinical reasoning. There is a critical need for AI systems that can integrate multimodal data while preserving interpretability, traceability, and clinician control.</p>  <b>Methods: </b></p>  We developed a modular AI decision-support system to assist oncologists in complex clinical reasoning tasks. Unlike monolithic LLM approaches, it decomposes clinical questions into atomic sub-tasks that are executed through structured, auditable pipelines, while integrating curated clinical data (EHR, genomics, pathology), external knowledge bases, and computational analyses via a function-oriented architecture. Each step is independently validated, logged, and audited to ensure correctness.</p>  It uses a hybrid local/cloud architecture and was evaluated on real-world oncology use cases in Moffitt Cancer Center’s Multiple Myeloma (MM) cohort, which contains three data modalities: clinical, molecular, and pre-clinical. Clinical data resides in a PHI-compliant Snowflake data warehouse (Moffitt Cancer Analytics Platform, MCAP), including longitudinally-resolved treatment and outcome information from clinical notes, labs, pathology and radiology reports. CD138-enriched bone marrow samples from 1,260 MM patients were molecularly profiled using RNA-seq (n=1,376 biopsies) and whole exome sequencing (WES, n=1,427), whereas 549 tumor samples from MM patients were tested for ex vivo drug sensitivity.</p>  <b>Results: </b>This system successfully decomposed complex clinical questions into atomic sub-questions and generated appropriate database queries and software tool calls to retrieve relevant information across heterogeneous data sources. Independently, the system integrated clinical data—including physician notes, pathology reports, laboratory values and pharmacy records—to reconstruct longitudinal patient histories achieving 80% concordance with expert manual abstraction, while reducing case synthesis time from hours to minutes. Importantly, the system preserved transparency by explicitly exposing intermediate reasoning steps and highlighting missing or ambiguous data requiring clinician judgment.</p>  <b>Conclusions: </b> We propose a shift from generative AI toward structured, interpretable clinical reasoning systems. By emphasizing modularity, auditability, and human-in-the-loop design, we offer a scalable path toward trustworthy AI deployment in oncology. This framework supports precision medicine not by replacing clinical judgment, but by amplifying it—providing clinicians with transparent, reproducible, and context-aware decision support.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

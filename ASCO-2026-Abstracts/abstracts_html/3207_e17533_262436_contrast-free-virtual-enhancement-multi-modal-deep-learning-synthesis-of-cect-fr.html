@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contrast-free virtual enhancement: Multi-modal deep learning synthesis of CECT from pCT and MRI.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Contrast-free virtual enhancement: Multi-modal deep learning synthesis of CECT from pCT and MRI.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e17533</div>
+    <div><strong>First speaker:</strong> Jian Chen</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/262436">https://www.asco.org/abstracts-presentations/262436</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Contrast-enhanced CT (CECT) is routinely used in radiotherapy planning to improve visualization of tumors, lymph nodes, and vascular anatomy for accurate target delineation. However, contrast administration is contraindicated in a subset of patients (e.g., iodine allergy, renal insufficiency), and reliance on non-contrast planning CT (pCT) alone may compromise soft-tissue contrast and introduce contouring uncertainty. We propose a Multi-Modal Generative Synthesis Network (MMGSN) to generate synthetic CECT (sCECT) from pCT and T2-weighted MRI, aiming to provide a non-invasive “virtual enhancement” tool for contouring support without physical contrast injection.</div>
+  <main> 
+
+	<div><b>Background: </b></p>  Contrast-enhanced CT (CECT) is routinely used in radiotherapy planning to improve visualization of tumors, lymph nodes, and vascular anatomy for accurate target delineation. However, contrast administration is contraindicated in a subset of patients (e.g., iodine allergy, renal insufficiency), and reliance on non-contrast planning CT (pCT) alone may compromise soft-tissue contrast and introduce contouring uncertainty. We propose a Multi-Modal Generative Synthesis Network (MMGSN) to generate synthetic CECT (sCECT) from pCT and T2-weighted MRI, aiming to provide a non-invasive “virtual enhancement” tool for contouring support without physical contrast injection.</p>  <b>Methods: </b></p>  We retrospectively collected 47 pelvic tumor patients treated with radiotherapy, each with paired non-contrast pCT, T2-weighted MRI, and ground-truth CECT. For each patient, the CECT volume used in this study consisted of 40 axial slices (used as the reference for training/evaluation). MMGSN adopts a dual-stream encoder to fuse the geometric fidelity of pCT with the soft-tissue characterization of MRI, followed by a decoder to reconstruct high-fidelity sCECT. Training employed a compound objective combining adversarial loss, weighted L1 loss, and SSIM loss. Performance was evaluated on a held-out test set using PSNR, SSIM, and MSE, and compared against the baseline similarity between pCT and CECT.</p>  <b>Results: </b></p>  MMGSN generated sCECT with high quantitative fidelity to ground-truth CECT, achieving a mean PSNR of 43.36 dB and mean SSIM of 0.979 on the test set. Compared with the baseline (pCT vs CECT), MMGSN demonstrated a clear improvement in perceptual/structural similarity (e.g., representative case: SSIM 0.978 vs 0.966 and PSNR 43.088 vs 39.757, respectively). As illustrated in the tri-planar views (axial/coronal/sagittal), sCECT better reproduced contrast-related appearance and improved delineation cues for pelvic vasculature and soft-tissue boundaries relative to pCT, while maintaining geometric consistency required for radiotherapy planning.</p>  <b>Conclusions: </b></p>  MMGSN enables high-quality generation of contrast-free sCECT from pCT and MRI in pelvic radiotherapy patients. This approach has the potential to provide clinically useful “virtual enhancement” for target/OAR contouring in patients with contrast contraindications, improving visualization without exposing patients to contrast-related risks and potentially streamlining radiotherapy workflows.</div>
+
+
+
+	<div class="table_caption"><b>Quantitative evaluation: similarity between MMGSN-generated sCECT and ground-truth CECT.</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p><strong> </strong></p>
+</td>
+<td>
+<p><strong>MSE</strong></p>
+<p><strong> </strong></p>
+</td>
+<td>
+<p><strong>SSIM</strong></p>
+<p><strong> </strong></p>
+</td>
+<td>
+<p><strong>PSNR</strong></p>
+<p><strong> </strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>MMGSN</strong></p>
+</td>
+<td>
+<p><strong>0.001</strong></p>
+</td>
+<td>
+<p><strong>0.978</strong></p>
+</td>
+<td>
+<p><strong>43.088</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>PCT</strong></p>
+</td>
+<td>
+<p><strong>0.001</strong></p>
+</td>
+<td>
+<p><strong>0.966</strong></p>
+</td>
+<td>
+<p><strong>39.757</strong></p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

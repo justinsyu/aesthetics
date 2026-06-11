@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Development and external validation of a computational approach for accelerated read out of randomized clinical trials in metastatic prostate cancer.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Development and external validation of a computational approach for accelerated read out of randomized clinical trials in metastatic prostate cancer.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 1502</div>
+    <div><strong>First speaker:</strong> Ali Sabbagh, MD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/260590">https://www.asco.org/abstracts-presentations/260590</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b> While overall survival (OS) is the gold standard endpoint for clinical trials in metastatic prostate cancer (mPC), it requires years of follow-up. We sought to develop and externally validate a computational model for accelerated OS readout based on short term (4 months) PSA kinetic data.</p>  <b>Methods: </b> Longitudinal PSA data were obtained from 8 completed phase 3 mPC trials. Using data from the first 4 months on trial, 18 different PSA kinetic variables were developed, including 50% and 90% decline in PSA, PSA=0.1, and PSA=0.2 at 1, 2, 3, and 4 months, and slope and base of the exponential fit of PSA. TITAN, COU-AA-301, and ACIS comprised the training cohort. Data from those trials was used to model OS using a relaxed LASSO approach. The resulting model was applied to 5 validation trials (see Table 1) to simulate 1,000 potential outcomes for each trial (after Harden and Kropko). For the CHAARTED trial, a model using only PSA-kinetic data was used as most baseline variables were missing. The distribution of 1,000 simulated Hazard Ratios (HR) for each trial was compared against the reported HR.</p>  <b>Results: </b> Overall, &gt; 100,000 PSA values were used with a total &gt; 7,500 eligible study pts, with ~ 70,000 PSA values and ~5,000 patients comprised the validation cohort. The model identified baseline PSA at treatment, PSA50 at 4 months, and the PSA slope as the most informative PSA predictors of OS. Table 1 below compares the median predicted HR and 95%-interpercentile range from the 1,000 simulations with the reported HR for each validation trial. The model correctly predicted the OS point estimate and 95%-confidence interval using the first 4 months of PSA data in every validation trial.</p>  <b>Conclusions: </b> A computational simulation approach to predict the OS outcome of phase 3 mPC trials based on PSA kinetics from the first 4 months on trial was developed. This model correctly predicted OS outcomes in 5 completed validation phase 3 trials. This included phase 3 trials with both positive and negative outcomes for OS as well as in both hormone sensitive and resistant mPC, and involving AR signaling inhibitors, chemotherapy and a PARP inhibitor. This model is being further validated with additional completed phase 3 trials, and once prospectively validated, has the potential to significantly shorten the follow up required for OS readout from phase 3 trials in mPC.</div>
+
+
+
+	<div class="table_caption"><b>Predicted vs. reported HR of each trial.</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p>Validation Trial</p>
+</td>
+<td>
+<p>Predicted HR (median [95<sup>th</sup> interpercentile range])</p>
+</td>
+<td>
+<p>Actual HR [95%-CI]</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>LATITUDE </p>
+</td>
+<td>
+<p>0.64 [0.54 – 0.74]</p>
+</td>
+<td>
+<p>0.66 [0.56 – 0.78]</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>COU-AA-302</p>
+</td>
+<td>
+<p>0.69 [0.60 – 0.80]</p>
+</td>
+<td>
+<p>0.81 [0.70 – 0.93]</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>MAGNITUDE</p>
+</td>
+<td>
+<p>1.06 [0.88 – 1.26]</p>
+</td>
+<td>
+<p>0.97 [0.79 –1.19]*</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>CALGB 90401</p>
+</td>
+<td>
+<p>0.89 [0.78 – 1.01]</p>
+</td>
+<td>
+<p>0.91 [0.78 – 1.05]</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>CHAARTED (Unselected)</p>
+</td>
+<td>
+<p>0.79 [0.61 – 0.98]</p>
+</td>
+<td>
+<p>0.72 [0.59 – 0.89]</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>CHAARTED (High Volume)</p>
+</td>
+<td>
+<p>0.72 [0.53 – 0.92]</p>
+</td>
+<td>
+<p>0.63 [0.50 – 0.79]</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>CHAARTED (Low Volume)</p>
+</td>
+<td>
+<p>0.95 [0.61 – 1.52]</p>
+</td>
+<td>
+<p>1.04 [0.70 – 1.55]</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+ 
+	<div class="table_footer">*Observed HR used as overall OS HR not reported in manuscript.</div> 
+
+
+</main>
+</body>
+</html>

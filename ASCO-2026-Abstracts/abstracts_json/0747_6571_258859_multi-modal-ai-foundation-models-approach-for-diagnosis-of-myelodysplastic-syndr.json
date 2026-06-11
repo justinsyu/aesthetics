@@ -1,0 +1,89 @@
+{
+  "abstractNumber": "6571",
+  "body": " \r\n\r\n\t<div><b>Background: </b> Morphologic diagnosis of myelodysplastic syndromes (MDS) from bone marrow aspirates and biopsies is subjective and error prone. Compared to narrow/specific predictive AI methods used in the literature, recently developed pathology foundation models pretrained on large, diverse histopathology corpora have the potential to improve generalizability while reducing task-specific annotation requirements. Here, we evaluate and compare multiple pretrained foundation models across bone marrow aspirate and biopsy whole-slide images (WSI), incorporate a cell-level bag-of-cells (BoC) foundation model, and assess tri-modal ensemble strategies.</p>  <b>Methods: </b> Digitized bone marrow aspirate (Asp) and biopsy (Bx) WSIs from patients with MDS and non-MDS cytopenias were analyzed using four pretrained pathology foundation models (GigaPath, H-Optimus-0, Virchow2-CLS, MUSK) for tile-level feature extraction. Cell-level features from aspirate-derived BoCs were extracted using DinoBloom-B, a foundation model pretrained for hematologic cell representations. Tile- or cell-level features were aggregated using attention-based multiple instance learning (ABMIL). Models were evaluated on 645 patients (319 MDS, 326 non-MDS) from the NHLBI MDS Natural History Study (NCT02775383) using 5-fold cross-validation (CV) and a held-out test set (n=129). For each modality, the best-performing model was selected based on test performance. Predictions were evaluated individually and combined using soft-probability ensembles. An oracle ensemble estimated the upper bound of multimodal complementarity.</p>  <b>Results: </b> Performance of the foundation models is summarized in Table 1. A soft-vote tri-modal ensemble of the selected models improved performance beyond any single modality (AUC 0.83; accuracy 0.73). Error analysis demonstrated partially non-overlapping failure modes across modalities, and an oracle ensemble achieved substantially higher accuracy (0.94), indicating unrealized multimodal complementarity.</p>  <b>Conclusions: </b> Foundation models enable robust AI-based diagnosis of MDS across bone marrow specimen types. Tri-modal ensembling improves diagnostic performance, while oracle analysis motivates TriPath, a unified framework for joint modeling of aspirate, biopsy, and cellular morphology to support standardized and generalizable MDS diagnosis.</div>\r\n\r\n\r\n\r\n\t<div class=\"table_caption\"><b>Performance summary.</b></div> \r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<p><strong> Model</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Bx WSI​ CV AUC</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Bx WSI​ Test AUC</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Asp WSI CV AUC</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Asp WSI Test AUC</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Asp-derived BoC CV AUC</strong>​</p>\r\n</td>\r\n<td>\r\n<p><strong>Asp-derived BoC Test AUC</strong>​</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>GigaPath+ABMIL<strong>​</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>0.80+/-0.05</strong>​</p>\r\n</td>\r\n<td>\r\n<p><strong>0.82</strong>​</p>\r\n</td>\r\n<td>\r\n<p>0.77+/-0.06​</p>\r\n</td>\r\n<td>\r\n<p>0.66​</p>\r\n</td>\r\n<td>\r\n<p>​</p>\r\n</td>\r\n<td>\r\n<p></p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>H-Optimus-0+ABMIL<strong>​</strong></p>\r\n</td>\r\n<td>\r\n<p>0.82+/-0.04​</p>\r\n</td>\r\n<td>\r\n<p>0.79​</p>\r\n</td>\r\n<td>\r\n<p>0.77+/-0.07​</p>\r\n</td>\r\n<td>\r\n<p>0.68​</p>\r\n</td>\r\n<td>\r\n<p></p>\r\n</td>\r\n<td>\r\n<p></p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Virchow2-CLS+ABMIL<strong>​</strong></p>\r\n</td>\r\n<td>\r\n<p>0.81+/-0.04​</p>\r\n</td>\r\n<td>\r\n<p>0.76​</p>\r\n</td>\r\n<td>\r\n<p><strong>0.78+/-0.05</strong>​</p>\r\n</td>\r\n<td>\r\n<p><strong>0.74</strong>​</p>\r\n</td>\r\n<td>\r\n<p></p>\r\n</td>\r\n<td>\r\n<p></p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>MUSK+ABMIL<strong>​</strong></p>\r\n</td>\r\n<td>\r\n<p>0.77+/-0.05​</p>\r\n</td>\r\n<td>\r\n<p>0.81​</p>\r\n</td>\r\n<td>\r\n<p>0.76+/-0.04​</p>\r\n</td>\r\n<td>\r\n<p>0.72​</p>\r\n</td>\r\n<td>\r\n<p></p>\r\n</td>\r\n<td>\r\n<p></p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>DinoBloom-B+ABMIL<strong>​</strong></p>\r\n</td>\r\n<td>\r\n<p>​</p>\r\n</td>\r\n<td>\r\n<p></p>\r\n</td>\r\n<td>\r\n<p></p>\r\n</td>\r\n<td>\r\n<p></p>\r\n</td>\r\n<td>\r\n<p><strong>0.83+/-0.05</strong>​</p>\r\n</td>\r\n<td>\r\n<p><strong>0.78</strong>​</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Tri-modal Soft Ensemble</p>\r\n</td>\r\n<td>\r\n<p>Test AUC 0.83</p>\r\n</td>\r\n<td></td>\r\n<td></td>\r\n<td></td>\r\n<td></td>\r\n<td></td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Oracle ensemble (upper bound)</p>\r\n</td>\r\n<td>\r\n<p>Test Accuracy 0.94</p>\r\n</td>\r\n<td></td>\r\n<td></td>\r\n<td></td>\r\n<td></td>\r\n<td></td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n\r\n\r\n",
+  "contentId": "258859",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/258859",
+    "queryParams": null,
+    "target": null,
+    "title": "Multi-modal AI foundation models approach for diagnosis of myelodysplastic syndromes across whole bone marrow aspirate and biopsy slides."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION258859"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780333200000,
+    "start": 1780322400000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "364",
+  "presentationId": "258859",
+  "primaryPerson": {
+    "displayName": "Palak Dave, PhD",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780333200000,
+    "start": 1780322400000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17092",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17092",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Hematologic Malignancies—Leukemia, Myelodysplastic Syndromes, and Allotransplant"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": {
+    "countriesThes": null,
+    "drugsThes": null,
+    "entitiesThes": null,
+    "genesThes": null,
+    "orgThes": null,
+    "subjectsThes": [
+      "Cancers"
+    ]
+  },
+  "title": "Multi-modal AI foundation models approach for diagnosis of myelodysplastic syndromes across whole bone marrow aspirate and biopsy slides.",
+  "titles": null,
+  "uid": "PRESENTATION258859"
+}

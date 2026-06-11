@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Automated identification of phenotypically aberrant cells in acute myeloid leukemia MRD: An unsupervised machine learning approach&lt;i&gt;&lt;/i&gt;.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Automated identification of phenotypically aberrant cells in acute myeloid leukemia MRD: An unsupervised machine learning approach&lt;i&gt;&lt;/i&gt;.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e18560</div>
+    <div><strong>First speaker:</strong> Ansh Kumar</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/259003">https://www.asco.org/abstracts-presentations/259003</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Measurable residual disease (MRD) serves as a robust prognostic marker in acute myeloid leukemia (AML), guiding therapeutic stratification and treatment response assessment. Invivoscribe&#x27;s AML MRD Assay is a multiparametric flow cytometry (MFC) 12-color panel of 21 biomarkers to characterize potential AML blast cells using a leukemia-associated immunophenotype (LAIP) based and different-from-normal (DfN) approach. We developed an unsupervised algorithm (FlowER) to automatically identify phenotypically aberrant cells from flow cytometry data without relying on or training on human-drawn gates. This retrospective internal validation study assessed FlowER&#x27;s concordance with clinical MRD gates in distinguishing aberrant from normal cell populations.</div>
+  <main> 
+
+	<div><b>Background: </b></p>  Measurable residual disease (MRD) serves as a robust prognostic marker in acute myeloid leukemia (AML), guiding therapeutic stratification and treatment response assessment. Invivoscribe's AML MRD Assay is a multiparametric flow cytometry (MFC) 12-color panel of 21 biomarkers to characterize potential AML blast cells using a leukemia-associated immunophenotype (LAIP) based and different-from-normal (DfN) approach. We developed an unsupervised algorithm (FlowER) to automatically identify phenotypically aberrant cells from flow cytometry data without relying on or training on human-drawn gates. This retrospective internal validation study assessed FlowER's concordance with clinical MRD gates in distinguishing aberrant from normal cell populations.</p>  </p>  <b>Methods: </b></p>  We analyzed bone marrow samples from 59 AML patients and 25 normal controls processed using one tube from our panel (Tube 2: CD15, CD13, 7-AAD, CD33, CD34, CD45, CD117, HLA-DR, CD5, CD7, CD2). The 25 controls served as a healthy reference pool to establish expected phenotypic distributions. For each patient sample, after density-aware subsampling, FlowER assigned anomaly scores to all cells using k-nearest neighbor distances to the reference pool in dimensionality-reduced feature space, agnostic to immunophenotypic lineage. To validate this unsupervised approach, clinical MRD gates were independently defined by expert cytometrists using standard LAIP-based approaches. We compared median anomaly scores between these clinically-defined aberrant cells and CD45 Dim non-MRD background cells within each patient. The primary outcome was the magnitude and significance of score separation (using a Wilcoxon signed-rank test).</p>  </p>  <b>Results: </b></p>  Total samples analyzed: 59 patients. Median difference in anomaly scores: MRD cells +1.328 higher (35.6% increase) vs. CD45 Dim background; p = 1.78 × 10⁻¹⁰ (one-sided Wilcoxon signed-rank test). Samples with elevated anomaly scores in MRD cells: 52/59 (88%). Cohen’s d (effect size): 1.204. Separation was consistent across CD34+, CD117+, and CD34-/CD117- LAIP populations.</p>  <b>Conclusions: </b></p>  FlowER demonstrated highly significant concordance with clinical MRD gating, successfully distinguishing aberrant from normal cells within immunophenotypic populations (p = 1.78 × 10⁻¹⁰). The consistent median score elevation in clinically-aberrant cells (88% of patients) with large effect size (Cohen's d = 1.204) indicates the algorithm captures phenotypic abnormalities without requiring labeled training data or manual gate definitions. This unsupervised, reference-based approach could enable standardized MRD quantification across institutions with reduced turnaround time, complement expert-driven assessment, and reduce inter-observer variability. Prospective validation with clinical outcome correlation is warranted to assess benefit for clinicians.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

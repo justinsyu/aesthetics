@@ -1,0 +1,92 @@
+{
+  "abstractNumber": "1622",
+  "body": " \r\n\r\n\t<div><b>Background: </b> </p>  Accurate mid-term prognosis estimation in patients newly diagnosed with advanced, non-operable or metastatic cancer is critical for evaluation and treatment prioritization and palliative care planning. A 60-day time horizon is clinically meaningful, as major oncologic assessments typically occur at 2–3-month intervals. Existing prognostic tools have shown limited clinical adoption.</p>  <b>Methods: </b> </p>  We conducted a retrospective analysis of patients evaluated at the Sheba Medical Center Oncology Rapid Diagnosis Clinic between 2017 and 2025. Eligible patients had metastatic or locally advanced, non-operable solid tumors. A raw dataset was generated using the MDClone platform (overall 60-day mortality ~18%). A case-enriched training cohort (n=524; 39.3% 60-day mortality) and an independent test cohort (n=343; 19% 60-day mortality) were randomly selected.</p>  Seventy-four features were included, encompassing demographics, laboratory values, ECOG performance status, and clinical variables extracted from physician notes using a large language model (LLM). LLM extraction accuracy was validated against expert manual review in 32 randomly selected cases (accuracy 0.91–1.0).</p>  Logistic Regression, Random Forest, and XGBoost models were trained with grid-search hyperparameter optimization to predict 60-day survival (y=1) versus death (y=0). Performance was evaluated on the independent test set. Wilson score intervals were used for proportion confidence intervals, and Hanley–McNeil method for AUC confidence intervals. Feature importance for the top-performing model was assessed using SHAP.</p>  <b>Results: </b> </p>  Performance of different ML models is summarized in table 1. Random Forest demonstrated the best overall performance. All models showed high positive predictive value for survival but limited ability to predict short-term mortality.</p>  The most influential Random Forest features included INR, CRP, albumin, ECOG status, total protein, LDH, emergency-related hospitalizations, age, neutrophil count, and history of cardiovascular disease.</p>  <b>Conclusions: </b> </p>  A Random Forest–based model accurately identifies patients likely to survive 60 days, supporting timely evaluation and initiation of oncologic treatment. Prediction of short-term mortality remains limited, suggesting intrinsic unpredictability of mid-term outcomes or the need for additional clinical or biological features.</div>\r\n\r\n\r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td><strong>Metric (95%CI)</strong></td>\r\n<td><strong>Random Forest</strong></td>\r\n<td><strong>Logistic Regression</strong></td>\r\n<td><strong>XGBoost</strong></td>\r\n</tr>\r\n<tr>\r\n<td><strong>ROC AUC </strong></td>\r\n<td>0.84 (0.79-0.88)</td>\r\n<td>\r\n<p>0.81 (0.76-0.86)</p>\r\n</td>\r\n<td>0.80 (0.75-0.85)</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p><strong>Sensitivity</strong></p>\r\n</td>\r\n<td>\r\n<p>0.89 (0.85-0.92)</p>\r\n</td>\r\n<td>0.82 (0.77-0.86)</td>\r\n<td>\r\n<p>0.80 (0.75-0.84)</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td><strong>Specificity</strong></td>\r\n<td>0.62 (0.49-0.72)</td>\r\n<td>0.62 (0.49-0.72)</td>\r\n<td>\r\n<p>0.63 (0.51-0.74)</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td><strong>PPV</strong></td>\r\n<td>\r\n<p>0.91 (0.87-0.94)</p>\r\n</td>\r\n<td>0.90 (0.86-0.93)</td>\r\n<td>0.90 (0.86-0.93)</td>\r\n</tr>\r\n<tr>\r\n<td><strong>NPV</strong></td>\r\n<td>0.57 (0.45-0.68)</td>\r\n<td>\r\n<p>0.45 (0.35-0.55)</p>\r\n</td>\r\n<td>0.43 (0.33-0.53)</td>\r\n</tr>\r\n<tr>\r\n<td><strong>Accuracy</strong></td>\r\n<td>0.84 (0.80-0.87)</td>\r\n<td>\r\n<p>0.78 (0.74-0.82)</p>\r\n</td>\r\n<td>0.77 (0.72-0.81)</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n\r\n\r\n",
+  "contentId": "268296",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/268296",
+    "queryParams": null,
+    "target": null,
+    "title": "Machine learning modeling for predicting 60-day prognosis in newly diagnosed advanced solid tumors."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION268296"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780160400000,
+    "start": 1780149600000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "540",
+  "presentationId": "268296",
+  "primaryPerson": {
+    "displayName": "Damien Urban, MBBS",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780160400000,
+    "start": 1780149600000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17086",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17086",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Care Delivery/Models of Care"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": {
+    "countriesThes": null,
+    "drugsThes": null,
+    "entitiesThes": null,
+    "genesThes": null,
+    "orgThes": null,
+    "subjectsThes": [
+      "Cancers",
+      "Oncology",
+      "Oncology professional practice",
+      "Oncology"
+    ]
+  },
+  "title": "Machine learning modeling for predicting 60-day prognosis in newly diagnosed advanced solid tumors.",
+  "titles": null,
+  "uid": "PRESENTATION268296"
+}

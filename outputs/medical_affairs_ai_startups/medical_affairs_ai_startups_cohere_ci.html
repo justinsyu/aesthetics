@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Artificial Intelligence-Native Startups for Medical Affairs</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 36px 0 20px;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 850;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 {
+      font-family: "Space Grotesk", Inter, ui-sans-serif, system-ui, sans-serif;
+      font-size: 74px;
+      line-height: .92;
+      letter-spacing: 0;
+      font-weight: 560;
+      max-width: 1320px;
+    }
+    .cover-title {
+      font-size: 66px;
+      line-height: 1.14;
+      max-width: none;
+      width: 100%;
+    }
+    .cover-title .title-line {
+      display: block;
+      white-space: nowrap;
+    }
+    h2 {
+      font-family: "Space Grotesk", Inter, ui-sans-serif, system-ui, sans-serif;
+      font-size: 53px;
+      line-height: .98;
+      letter-spacing: 0;
+      font-weight: 560;
+      max-width: 1320px;
+    }
+    h3 {
+      font-family: "Space Grotesk", Inter, ui-sans-serif, system-ui, sans-serif;
+      font-size: 28px;
+      line-height: 1.04;
+      letter-spacing: 0;
+      font-weight: 650;
+    }
+    .dek { margin-top: 8px; color: var(--muted); font-size: 27px; line-height: 1.22; max-width: 1240px; }
+    .section-head { margin-bottom: 18px; }
+    .section-head p { margin-top: 12px; color: var(--muted); font-size: 23px; line-height: 1.18; max-width: 1280px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+    .panel, .metric, .card, .table, .callout {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.88);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel { padding: 22px; }
+    .panel.dark, .callout { background: #11130f; color: var(--paper); border-color: #11130f; }
+    .panel.dark p, .panel.dark li, .callout p, .callout li { color: rgba(246,241,232,.88); }
+    .metric { padding: 18px; min-height: 132px; }
+    .num { font-size: 44px; line-height: .92; font-weight: 520; letter-spacing: 0; }
+    .label { margin-top: 9px; font-size: 20px; line-height: 1.1; color: var(--muted); }
+    .card { padding: 22px; min-height: 238px; }
+    .card.tight { min-height: 184px; padding: 18px; }
+    .card p { color: var(--muted); font-size: 21px; line-height: 1.14; margin-top: 10px; }
+    .card.tight p { font-size: 18px; line-height: 1.14; }
+    .panel p { color: var(--muted); font-size: 20px; line-height: 1.16; margin-top: 10px; }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      white-space: nowrap;
+      margin-bottom: 10px;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .red { background: var(--red); }
+    .gray { background: var(--gray); }
+    .callout { padding: 20px 24px; }
+    .callout h3 { font-size: 30px; color: var(--lime); }
+    .summary-list { margin: 12px 0 0; padding: 0; list-style: none; display: grid; gap: 7px; }
+    .summary-list li { color: rgba(246,241,232,.88); font-size: 21px; line-height: 1.14; position: relative; padding-left: 22px; }
+    .summary-list li::before { content: ""; position: absolute; left: 0; top: .5em; width: 8px; height: 8px; border-radius: 50%; background: var(--lime); }
+    .table { display: grid; }
+    .row { display: grid; border-bottom: 1px solid var(--line); min-height: 58px; }
+    .row:last-child { border-bottom: 0; }
+    .row.cols-4 { grid-template-columns: .72fr 1.08fr 1.28fr 1.7fr; }
+    .row.cols-5 { grid-template-columns: .74fr 1fr 1.18fr 1.42fr .72fr; }
+    .row.refs { grid-template-columns: .28fr .95fr .92fr 1.7fr; min-height: 0; }
+    .cell { padding: 12px 14px; border-right: 1px solid var(--line); font-size: 18px; line-height: 1.13; }
+    .cell:last-child { border-right: 0; }
+    .head .cell {
+      background: #11130f;
+      color: var(--paper);
+      font-weight: 850;
+      text-transform: uppercase;
+      font-size: 15px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .small-table .cell { font-size: 15px; line-height: 1.11; padding: 9px 10px; }
+    .small-table .head .cell { font-size: 12px; }
+    .refs .cell { font-size: 9.5px; line-height: 1.06; padding: 4.2px 6px; }
+    .refs.head .cell { font-size: 9px; line-height: 1; padding: 5px 6px; }
+    .row.refs .cell:first-child { text-align: center; font-weight: 800; }
+    .references-slide h2 { font-size: 44px; }
+    .references-slide .section-head { margin-bottom: 10px; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .source-note { color: var(--muted); font-size: 14px; line-height: 1.22; margin-top: 10px; }
+    .matrix { display: grid; grid-template-columns: repeat(5, 1fr); gap: 11px; }
+    .mini {
+      border: 1.3px solid var(--line);
+      background: rgba(255,250,240,.88);
+      border-radius: 18px;
+      padding: 13px;
+      min-height: 112px;
+    }
+    .mini h3 { font-size: 20px; line-height: 1.02; }
+    .mini p { margin-top: 8px; color: var(--muted); font-size: 14.5px; line-height: 1.14; }
+    .band {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .band .panel { min-height: 178px; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .wrap { width: 1360px; }
+      .panel, .metric, .card, .table, .callout { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) {
+      .slide { width: 1600px; height: 900px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Broad market scan | Retrieved June 2, 2026</div>
+      <h1 class="cover-title"><span class="title-line">Artificial Intelligence-native startups</span><span class="title-line">for Medical Affairs</span></h1>
+      <p class="dek">Public-source inventory of AI-first and AI-enabled vendors across field medical intelligence, KOL workflows, evidence synthesis, scientific content and adjacent life-sciences intelligence.</p>
+      <div class="grid-4" style="margin-top:28px;">
+        <div class="metric"><div class="num">35</div><div class="label">Vendors or benchmarks reviewed across the Medical Affairs AI landscape.</div></div>
+        <div class="metric"><div class="num">5</div><div class="label">Primary workflow clusters: field, KOL/congress, evidence/RWE, content, and strategic CI.</div></div>
+        <div class="metric"><div class="num">11</div><div class="label">High-confidence AI-first / Medical-Affairs-native candidates in the public scan.</div></div>
+        <div class="metric"><div class="num">10</div><div class="label">Benchmarks, acquired assets, or adjacent scaleups included for buyer context.</div></div>
+      </div>
+      <div class="callout" style="margin-top:22px;">
+        <h3>Executive summary</h3>
+        <ul class="summary-list">
+          <li>The clearest AI-first Medical Affairs operating layers are concentrated in field-insight loops, scientific exchange, evidence-to-strategy workspaces and content generation: Atrix AI, SpeerHealth, Sipherio, Sorcero, Centivence, SyncIQ, LogicFlo, KOL Pulse, KeyOps, Dalil and Ariadne are the strongest public-fit candidates.<a class="cite" href="https://atrix.ai/">1</a><a class="cite" href="https://speerhealth.ai/">2</a><a class="cite" href="https://www.sipherio.com/solutions/">5</a><a class="cite" href="https://www.sorcero.com/intelligence-platform">7</a><a class="cite" href="https://centivence.com/">10</a><a class="cite" href="https://www.synciq.ai/life-sciences">16</a><a class="cite" href="https://dalil.bio/">29</a></li>
+          <li>Medical Affairs buyers are likely to compare startups against mature AI-enabled benchmarks such as Within3, Alucio/BEACON, H1, Aktana, WhizAI, TikaMobile, Yseop, Causaly and Atropos because those vendors bring procurement, integration, data-scale or validation advantages.<a class="cite" href="https://within3.com/within3-insights-management-platform-for-medical-affairs">26</a><a class="cite" href="https://www.medispend.com/medispend-acquires-alucio-to-expand-ai-enabled-stakeholder-engagement-capabilities/">27</a><a class="cite" href="https://h1.co/use-case/kol-mapping-and-engagement/">20</a><a class="cite" href="https://www.whiz.ai/">34</a></li>
+          <li>Public evidence is uneven: several early vendors show strong fit but thin proof of adoption, while scaleups disclose broader platform claims but can be less Medical-Affairs-native.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">01 / 12</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Landscape map</div>
+        <h2>Medical Affairs AI is forming around five workflow systems rather than one platform category</h2>
+        <p>Most vendors map to one primary workflow, with expansion into adjacent evidence, engagement, content or analytics layers.</p>
+      </div>
+      <div class="matrix">
+        <div class="mini"><span class="tag lime">Field medical</span><h3>Insight loop</h3><p>Atrix, SpeerHealth, Sorcero, SyncIQ, Sipherio and TikaMobile capture MSL/HCP interactions, classify themes and connect insights to activity impact.<a class="cite" href="https://speerhealth.ai/">2</a><a class="cite" href="https://www.synciq.ai/life-sciences">16</a></p></div>
+        <div class="mini"><span class="tag orange">KOL / congress</span><h3>External signal layer</h3><p>KOL Pulse, KeyOps, Sipherio, H1, Within3 and Fusion Scientific emphasize KOLs, async advisory boards, conference signal capture and sentiment.<a class="cite" href="https://kolpulse.com/">3</a><a class="cite" href="https://www.keyops.io/">4</a><a class="cite" href="https://within3.com/within3-insights-management-platform-for-medical-affairs">26</a></p></div>
+        <div class="mini"><span class="tag blue">Evidence</span><h3>Scientific memory</h3><p>Centivence, MadeAi, Huma.AI/Qoniq, Atropos, Basil, Causaly and Ariadne organize literature, trials, HTA, RWE and source-traceable answers.<a class="cite" href="https://madeai.com/">11</a><a class="cite" href="https://meetariadne.app/">30</a></p></div>
+        <div class="mini"><span class="tag pink">Content</span><h3>Medical outputs</h3><p>LogicFlo, AINGENS, Juisci, Polynom, Yseop, Sorcero, Alucio and Dalil support MSL decks, MI responses, manuscripts, summaries and scientific exchange.<a class="cite" href="https://logicflo.ai/">9</a><a class="cite" href="https://www.prnewswire.com/news-releases/aingens-launches-the-medical-affairs-content-generator-macg-ai-powered-medical-writing--research-and-reference-management-assistant-for-life-sciences-302360332.html">12</a></p></div>
+        <div class="mini"><span class="tag gray">Strategic CI</span><h3>Decision layer</h3><p>Epistemic AI, Causaly, Polynom, Centivence, Basil, Ryght and WhizAI support competitive landscapes, TPPs, pipeline context and cross-functional analytics.<a class="cite" href="https://www.epistemic.ai/index.html">22</a><a class="cite" href="https://www.causaly.com/">21</a></p></div>
+      </div>
+      <div class="band">
+        <div class="panel"><span class="tag lime">AI-native center</span><h3>Field and evidence workflows</h3><p>The strongest startup-fit claims involve AI agents, source-grounded answers, field capture, evidence repositories, medical-impact measurement and content generation.</p></div>
+        <div class="panel"><span class="tag orange">Buyer reality</span><h3>Benchmarks remain material</h3><p>Within3, H1, Aktana, WhizAI, TikaMobile, Yseop and Atropos can anchor RFP comparisons even when the buyer is seeking an AI-native startup.</p></div>
+        <div class="panel"><span class="tag blue">Evaluation caveat</span><h3>Public proof varies</h3><p>Evidence-thin companies should be treated as watchlist candidates until customer names, deployment scope, validation artifacts or security documentation are available.</p></div>
+      </div>
+    </div>
+    <div class="slide-num">02 / 12</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Core Medical Affairs platforms</div>
+        <h2>Field-medical vendors are converging on voice capture, AI classification, source-grounded answers and impact reporting</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card"><span class="tag lime">Atrix AI</span><h3>Decision and perception intelligence</h3><p>Public evidence maps Atrix to HCP belief tracking, activity impact, evidence-gap closure, KOL position movement and MSL engagement ROI across field, congress, claims and market signals.<a class="cite" href="https://atrix.ai/">1</a></p></div>
+        <div class="card"><span class="tag lime">SpeerHealth</span><h3>AI-native field intelligence</h3><p>Speer captures observations by voice, text or mobile; classifies every observation by therapeutic area, sentiment and competitive mention; and exposes Ask Speer, profiles and analytics.<a class="cite" href="https://speerhealth.ai/">2</a></p></div>
+        <div class="card"><span class="tag lime">Sorcero</span><h3>Unified medical intelligence</h3><p>Sorcero ingests CRM, medical inquiries, ad boards, literature, congress abstracts, trials and social media; its platform includes agents, citations and hallucination grading.<a class="cite" href="https://www.sorcero.com/intelligence-platform">7</a></p></div>
+        <div class="card"><span class="tag blue">SyncIQ</span><h3>Medical Affairs agents</h3><p>SyncIQ lists Medical Affairs agents for HCP briefs, scientific answers, CRM logging and structured insight reports, backed by domain data hubs and source connections.<a class="cite" href="https://www.synciq.ai/life-sciences">16</a></p></div>
+        <div class="card"><span class="tag blue">Sipherio</span><h3>KOL intelligence and Ask AI</h3><p>Sipherio combines real-time KOL dashboards, NLP/LLM engines, Ask AI, sentiment/influence tracking and traceable AI reports for Medical Affairs teams.<a class="cite" href="https://www.sipherio.com/solutions/">5</a></p></div>
+        <div class="card"><span class="tag gray">TikaMobile</span><h3>CRM/BI/AI benchmark</h3><p>TikaMobile is an established comparison point: founded 2013, it combines CRM, BI and AI with KOL identification, insights management, conference planning and MIR workflows.<a class="cite" href="https://www.tikamobile.com/">19</a></p></div>
+      </div>
+    </div>
+    <div class="slide-num">03 / 12</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">KOL, advisory and congress intelligence</div>
+        <h2>External-stakeholder intelligence spans asynchronous advisory boards, public oncology signal tracking and conference capture</h2>
+      </div>
+      <div class="table">
+        <div class="row cols-4 head">
+          <div class="cell">Vendor</div><div class="cell">Workflow</div><div class="cell">AI offering</div><div class="cell">Public evidence and caveat</div>
+        </div>
+        <div class="row cols-4">
+          <div class="cell">KOL Pulse</div><div class="cell">Oncology KOL / trial / conference intelligence</div><div class="cell">AI-native public-source trial profiles, KOL commentary and conference social networks</div><div class="cell">Reports 120+ trial profiles, 500+ verified US oncologists and ASCO 2026 live coverage; narrow oncology focus is a positioning strength and scope constraint.<a class="cite" href="https://kolpulse.com/">3</a></div>
+        </div>
+        <div class="row cols-4">
+          <div class="cell">KeyOps</div><div class="cell">HCP advisory, surveys, trackers and program evaluation</div><div class="cell">KoLab AI summaries, compliance reporting and Appraise event evaluation</div><div class="cell">Public page lists 30+ life-science teams and logos including AbbVie, Amgen, GSK, Lilly, Pfizer and Roche; AI-native confidence is medium-high because advisory execution remains service-supported.<a class="cite" href="https://www.keyops.io/">4</a></div>
+        </div>
+        <div class="row cols-4">
+          <div class="cell">Within3</div><div class="cell">Medical Affairs insights and advisory boards</div><div class="cell">Launch Intelligence, virtual ad boards, social listening and AI insights reporting</div><div class="cell">Established benchmark; public evidence states AI is trained on medical language, sentiment and context and that reporting workload can be reduced materially.<a class="cite" href="https://within3.com/within3-insights-management-platform-for-medical-affairs">26</a></div>
+        </div>
+        <div class="row cols-4">
+          <div class="cell">Fusion Scientific / CongressIQ</div><div class="cell">Medical Affairs transformation and congress intelligence</div><div class="cell">evidenceIQ, congressIQ, signalIQ, kolIQ and conference capture</div><div class="cell">Early agency-platform hybrid; public pages position a humanized-AI ecosystem and CongressIQ for conference capture, including an MSL/Medical Affairs pathway.<a class="cite" href="https://www.fusionscientific.io/">31</a></div>
+        </div>
+        <div class="row cols-4">
+          <div class="cell">H1</div><div class="cell">KOL mapping and engagement benchmark</div><div class="cell">AI/ML HCP data pipelines, KOL/rising-star discovery and congress planning support</div><div class="cell">Scaleup benchmark rather than startup; global HCP data and Medical Affairs/MSL positioning make it a frequent comparator.<a class="cite" href="https://h1.co/use-case/kol-mapping-and-engagement/">20</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">04 / 12</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Evidence and RWE intelligence</div>
+        <h2>Evidence vendors differentiate on whether the output is a repository, source-grounded answer, RWE study, dossier or strategic narrative</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card"><span class="tag blue">Centivence</span><h3>Evidence-to-product strategy</h3><p>AI agents monitor literature, trial registries, HTAs and regulatory agencies; the workspace spans Marketing, Medical Affairs and Market Access with evidence repositories and value-message creation.<a class="cite" href="https://centivence.com/">10</a></p></div>
+        <div class="card"><span class="tag blue">MadeAi</span><h3>Evidence synthesis platform</h3><p>MadeAi supports literature reviews, Quick Research, MIR, value dossiers, social listening and JCA; it reports co-development with three large pharmaceutical manufacturers and case-study links for Roche, CSL and Bayer.<a class="cite" href="https://madeai.com/">11</a></p></div>
+        <div class="card"><span class="tag blue">Huma.AI / Qoniq</span><h3>Knowledge hub and expert-guided analysis</h3><p>Public evidence describes generative AI for insight surfacing, literature review, congress materials, CRM, market research, ad boards and internal documents; live site redirects to Qoniq expert-guided Medical Affairs analysis.<a class="cite" href="https://huma.ai/">8</a></p></div>
+        <div class="card"><span class="tag orange">Atropos</span><h3>HEOR, Medical Affairs and RWE</h3><p>Atropos supports HEOR/Medical Affairs/RWE study generation and lists generative AI tools for MSL deployment and medical inquiries alongside Atropos Evidence Agent and ChatRWD.<a class="cite" href="https://www.atroposhealth.com/heor-medical-affairs-rwe/">23</a></p></div>
+        <div class="card"><span class="tag orange">Basil Systems</span><h3>Medical Affairs intelligence</h3><p>Basil positions AI-powered safety, clinical-trial landscape monitoring, compliant medical-commercial collaboration and KOL/ad-board evidence packages for Medical Affairs.<a class="cite" href="https://www.basilsystems.com/solutions/pharma-intel-medical-affairs-intelligence">14</a></p></div>
+        <div class="card"><span class="tag gray">Causaly</span><h3>Scientific graph and CI adjacency</h3><p>Causaly is R&D-first but relevant where Medical Affairs needs scientific evidence, competitive landscapes and traceable biomedical reasoning through Copilot, SIRS, Bio Graph and Pipeline Graph.<a class="cite" href="https://www.causaly.com/">21</a></p></div>
+      </div>
+    </div>
+    <div class="slide-num">05 / 12</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Scientific content and exchange</div>
+        <h2>Content vendors are splitting into medical-writing copilots, source-managed content systems and AI scientific-exchange agents</h2>
+      </div>
+      <div class="grid-4">
+        <div class="card tight"><span class="tag pink">LogicFlo</span><h3>MSL and med-comms outputs</h3><p>Task-specialized agents for MSL decks, congress posters, CME, MI response packages and MLR-ready content with citations and compliant language.<a class="cite" href="https://logicflo.ai/">9</a></p></div>
+        <div class="card tight"><span class="tag pink">AINGENS</span><h3>MACg content generator</h3><p>Medical writing and research assistant built on GPT-4o with PubMed search, editing, reference management and citation support.<a class="cite" href="https://www.prnewswire.com/news-releases/aingens-launches-the-medical-affairs-content-generator-macg-ai-powered-medical-writing--research-and-reference-management-assistant-for-life-sciences-302360332.html">12</a></p></div>
+        <div class="card tight"><span class="tag pink">Dalil.bio</span><h3>AI Medical Science Liaison</h3><p>Early voice scientific-exchange agent using approved content, source/page traceability, guardrails, AE awareness and conversation intelligence.<a class="cite" href="https://dalil.bio/">29</a></p></div>
+        <div class="card tight"><span class="tag pink">Alucio / BEACON</span><h3>Scientific exchange benchmark</h3><p>Acquired by MediSpend; BEACON described as an AI-enabled content-management and HCP-engagement platform for scientific exchange.<a class="cite" href="https://www.medispend.com/medispend-acquires-alucio-to-expand-ai-enabled-stakeholder-engagement-capabilities/">27</a></p></div>
+        <div class="card tight"><span class="tag blue">Juisci</span><h3>HCP learning workspace</h3><p>AI curates, summarizes, translates and recommends medical literature; Workspace automates research tasks, content generation and community engagement.<a class="cite" href="https://www.juisci.com/">13</a></p></div>
+        <div class="card tight"><span class="tag blue">Polynom</span><h3>Medical content copilot</h3><p>Agentic transformation of articles, abstracts, clinical evidence and expert video into Q&A, medical briefs, congress syntheses and field-ready materials.<a class="cite" href="https://www.polynom.io/sector/life-sciences">17</a></p></div>
+        <div class="card tight"><span class="tag gray">Yseop</span><h3>Regulatory-grade writing</h3><p>Traceable source-linked content generation for regulated medical/regulatory documents, with Microsoft Word and Veeva Vault integration.<a class="cite" href="https://yseop.com/">24</a></p></div>
+        <div class="card tight"><span class="tag gray">InpharmD</span><h3>Drug-information benchmark</h3><p>Virtual DI pharmacist and InpharmD AI benchmark for on-demand digital drug information; more health-system med-info than pharma operating layer.<a class="cite" href="https://inpharmd.com/">33</a></p></div>
+      </div>
+      <p class="source-note">Status labels intentionally separate early exchange agents from acquired or established content benchmarks.</p>
+    </div>
+    <div class="slide-num">06 / 12</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Strategic CI and adjacent R&D</div>
+        <h2>Several AI-native platforms are adjacent to Medical Affairs through competitive landscapes, conference intelligence and evidence context</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card"><span class="tag lime">Epistemic AI</span><h3>Strategic intelligence</h3><p>EpistemicGPT is positioned as a multi-agent AI system for life-science strategy, automating competitive landscapes, target product profiles and conference intelligence; Medical Affairs is listed among user groups.<a class="cite" href="https://www.epistemic.ai/index.html">22</a></p></div>
+        <div class="card"><span class="tag lime">Ariadne</span><h3>Medical Affairs workspace</h3><p>Ariadne combines KOL profiling, exchange logging with AI summaries, an evidence repository, PubMed auto-fetch, AI briefing cards, KOL simulator and citation workflows.<a class="cite" href="https://meetariadne.app/">30</a></p></div>
+        <div class="card"><span class="tag orange">Ryght AI</span><h3>Clinical-research adjacency</h3><p>Ryght focuses on AI Site Twins for clinical research site selection, feasibility and study optimization, with Enterprise Agent Architect for bespoke healthcare/life-sciences agents.<a class="cite" href="https://www.ryght.ai/">32</a></p></div>
+        <div class="card"><span class="tag blue">Improzo iZO</span><h3>AI app suite</h3><p>Improzo describes life-sciences AI apps, agentic orchestration, domain-led intelligence and a copilot built on pharma's canonical model across Medical, Field and Brand use cases.<a class="cite" href="https://improzo.com/product/">18</a></p></div>
+        <div class="card"><span class="tag gray">WhizAI</span><h3>Conversational analytics benchmark</h3><p>WhizAI, an IQVIA business, uses proprietary NLP and domain-tuned LLMs for life-sciences analytics across field sales, brand, market access, patient services and clinical research.<a class="cite" href="https://www.whiz.ai/">34</a></p></div>
+        <div class="card"><span class="tag gray">Aktana</span><h3>Next-best-action benchmark</h3><p>Aktana is an established AI-enabled benchmark for omnichannel HCP engagement and Medical Affairs next-best-action rather than an AI-native startup.<a class="cite" href="https://www.aktana.com/blog/exploring-the-pharma-and-vendor-perspectives-in-deploying-next-best-action-at-scale/">35</a></p></div>
+      </div>
+    </div>
+    <div class="slide-num">07 / 12</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Confidence and status</div>
+        <h2>The inventory separates AI-native fit from adoption evidence and benchmark status</h2>
+      </div>
+      <div class="table small-table">
+        <div class="row cols-5 head">
+          <div class="cell">Status</div><div class="cell">Representative vendors</div><div class="cell">Why included</div><div class="cell">Evidence caveat</div><div class="cell">Priority</div>
+        </div>
+        <div class="row cols-5">
+          <div class="cell">High AI-native Medical Affairs fit</div><div class="cell">Atrix, SpeerHealth, Sipherio, Centivence, SyncIQ, LogicFlo, Dalil, Ariadne</div><div class="cell">Public pages map AI directly to field medical, scientific exchange, evidence or Medical Affairs content workflows.</div><div class="cell">Adoption proof varies; several early vendors disclose limited customer evidence.</div><div class="cell">Shortlist</div>
+        </div>
+        <div class="row cols-5">
+          <div class="cell">AI-enabled MA platforms</div><div class="cell">Sorcero, KeyOps, MadeAi, KOL Pulse, Huma.AI/Qoniq, Basil, Avira, Fusion Scientific</div><div class="cell">Strong functional fit but may blend platform, data, services, expert support or broader life-sciences scope.</div><div class="cell">Clarify product boundaries, validation artifacts and customer deployment scope.</div><div class="cell">Evaluate</div>
+        </div>
+        <div class="row cols-5">
+          <div class="cell">Benchmarks / acquired</div><div class="cell">Within3, Alucio/BEACON, H1, TikaMobile, WhizAI, Aktana, Yseop</div><div class="cell">Likely RFP comparators for integration, compliance, procurement, scale or incumbent workflows.</div><div class="cell">Not pure AI-native startup alternatives; some are acquired or established platforms.</div><div class="cell">Compare</div>
+        </div>
+        <div class="row cols-5">
+          <div class="cell">Adjacent intelligence</div><div class="cell">Causaly, Epistemic AI, Atropos, Ryght, InpharmD, OpenEvidence, Polynom, Improzo</div><div class="cell">Relevant to scientific evidence, CI, HEOR/RWE, clinical research, medical information or HCP evidence consumption.</div><div class="cell">May not replace core internal Medical Affairs workflows.</div><div class="cell">Watch</div>
+        </div>
+      </div>
+      <div class="band">
+        <div class="panel"><span class="tag lime">Strongest signal</span><h3>AI-first workflows with traceability</h3><p>Best-fit startups emphasize approved content, source citations, auditability, CRM or field integration, and structured insight outputs.</p></div>
+        <div class="panel"><span class="tag orange">Common gap</span><h3>Public adoption proof</h3><p>Many vendor pages disclose capabilities but not named customers, validation methods, deployment counts, data-security posture or model-governance details.</p></div>
+        <div class="panel"><span class="tag blue">Selection risk</span><h3>Category ambiguity</h3><p>Medical Affairs AI overlaps with commercial engagement, R&D CI, HEOR, med-info, regulatory writing and clinical evidence products.</p></div>
+      </div>
+    </div>
+    <div class="slide-num">08 / 12</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Selection criteria</div>
+        <h2>Vendor screening should test source grounding, compliance controls and workflow ownership before model novelty</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card"><span class="tag lime">1. Evidence grounding</span><h3>Can every answer be traced?</h3><p>Require source-level citations, document/page references, approved-content constraints, no-answer behavior and audit logs for AI-generated claims.</p></div>
+        <div class="card"><span class="tag lime">2. Medical workflow fit</span><h3>Is the buyer workflow explicit?</h3><p>Separate field insights, advisory boards, MI response, evidence synthesis, congress intelligence and med-comms generation; avoid generic AI demos.</p></div>
+        <div class="card"><span class="tag orange">3. Data integration</span><h3>Can it connect to systems of record?</h3><p>Prioritize CRM, Veeva/Salesforce, PubMed/literature, congress, MLR, publication repository and internal document integrations where appropriate.</p></div>
+        <div class="card"><span class="tag orange">4. Governance</span><h3>Can regulated review be enforced?</h3><p>Look for role-based controls, audit trails, human-review checkpoints, content guardrails, AE awareness, tenant isolation and enterprise security posture.</p></div>
+        <div class="card"><span class="tag blue">5. Impact measurement</span><h3>Can medical value be demonstrated?</h3><p>Measure insight velocity, evidence gaps closed, KOL movement, content reuse, response time, engagement quality and alignment to medical strategy.</p></div>
+        <div class="card"><span class="tag gray">6. Commercial posture</span><h3>Is the vendor deployable?</h3><p>Clarify customer references, implementation model, validated use cases, therapeutic-area configuration, data ownership and procurement maturity.</p></div>
+      </div>
+    </div>
+    <div class="slide-num">09 / 12</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Detailed inventory</div>
+        <h2>Comprehensive landscape grouped by primary Medical Affairs relevance</h2>
+        <p>The markdown inventory contains full rows and caveats; this slide preserves the complete vendor set in compact form.</p>
+      </div>
+      <div class="table small-table">
+        <div class="row cols-5 head">
+          <div class="cell">Cluster</div><div class="cell">High / medium AI-native</div><div class="cell">Adjacent AI-enabled</div><div class="cell">Benchmarks or acquired assets</div><div class="cell">Watchlist caveat</div>
+        </div>
+        <div class="row cols-5">
+          <div class="cell">Field medical and insight loop</div><div class="cell">Atrix, SpeerHealth, Sipherio, Sorcero, SyncIQ</div><div class="cell">Avira, Improzo, DocNexus</div><div class="cell">TikaMobile, H1, Aktana</div><div class="cell">Confirm named customers, CRM integrations and source-backed impact metrics.</div>
+        </div>
+        <div class="row cols-5">
+          <div class="cell">KOL, advisory and congress</div><div class="cell">KOL Pulse, KeyOps, Fusion Scientific / CongressIQ</div><div class="cell">Epistemic AI, Avira, Sipherio</div><div class="cell">Within3, H1</div><div class="cell">Separate public-source monitoring from paid panel/advisory execution.</div>
+        </div>
+        <div class="row cols-5">
+          <div class="cell">Evidence, RWE and knowledge hub</div><div class="cell">Centivence, MadeAi, Huma.AI/Qoniq, Ariadne</div><div class="cell">Atropos, Basil, Causaly, Ryght</div><div class="cell">WhizAI for analytics; InpharmD for drug information</div><div class="cell">Clarify whether outputs are evidence summaries, RWE studies, dossiers or strategic recommendations.</div>
+        </div>
+        <div class="row cols-5">
+          <div class="cell">Scientific content and exchange</div><div class="cell">LogicFlo, AINGENS, Dalil.bio, Polynom</div><div class="cell">Juisci, Sorcero, Yseop</div><div class="cell">Alucio / BEACON</div><div class="cell">Confirm MLR workflow, approved-content limits, traceability and external-use guardrails.</div>
+        </div>
+        <div class="row cols-5">
+          <div class="cell">HCP-facing and edge cases</div><div class="cell">Dalil.bio, KOL Pulse</div><div class="cell">OpenEvidence, Juisci</div><div class="cell">InpharmD</div><div class="cell">Do not treat physician-facing scientific search as a replacement for internal Medical Affairs operations.</div>
+        </div>
+      </div>
+      <p class="source-note">Included vendors: Atrix AI, SpeerHealth, KOL Pulse, KeyOps, Sipherio, DocNexus, Sorcero, Huma.AI/Qoniq, LogicFlo, Centivence, MadeAi, AINGENS, Juisci, Basil, Avira, SyncIQ, Polynom, Improzo, TikaMobile, H1, Causaly, Epistemic AI, Atropos, Yseop, OpenEvidence, Within3, Alucio/BEACON, Lokatial, Dalil, Ariadne, Fusion Scientific/CongressIQ, Ryght, InpharmD, WhizAI and Aktana.</p>
+    </div>
+    <div class="slide-num">10 / 12</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Near-term shortlist</div>
+        <h2>Practical diligence sequence for a Medical Affairs AI vendor screen</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card"><span class="tag lime">Start with core workflows</span><h3>Field insights and evidence</h3><p>Prioritize Atrix, SpeerHealth, Sorcero, Sipherio, Centivence, SyncIQ and MadeAi when the problem is internal insight capture, evidence retrieval or source-grounded Medical Affairs intelligence.</p></div>
+        <div class="card"><span class="tag orange">Add engagement specialists</span><h3>KOL and advisory work</h3><p>Evaluate KOL Pulse, KeyOps, Within3, Fusion Scientific and H1 when the job is external stakeholder intelligence, advisory execution, congress monitoring or KOL-network mapping.</p></div>
+        <div class="card"><span class="tag pink">Screen content agents</span><h3>Scientific exchange and output generation</h3><p>Review LogicFlo, AINGENS, Dalil, Ariadne, Alucio/BEACON, Juisci, Polynom and Yseop where MSL decks, MI responses, reference-managed writing or external scientific exchange are central.</p></div>
+        <div class="card"><span class="tag blue">Benchmark against scaleups</span><h3>Procurement and integration</h3><p>Use TikaMobile, Aktana, WhizAI, Atropos and Causaly to benchmark enterprise deployment, analytics maturity, data scale, source traceability and adjacent decision-support capabilities.</p></div>
+        <div class="card"><span class="tag gray">Track early candidates</span><h3>Evidence-thin watchlist</h3><p>Lokatial, Dalil, Ariadne, Fusion Scientific and Ryght warrant follow-up for demos, customer references, security posture and product maturity because public proof is limited.</p></div>
+        <div class="card"><span class="tag red">Boundary rule</span><h3>Avoid category substitution</h3><p>Do not compare OpenEvidence, InpharmD or Ryght directly with field-medical operating systems unless the use case is HCP evidence consumption, drug-information support or clinical-research intelligence.</p></div>
+      </div>
+    </div>
+    <div class="slide-num">11 / 12</div>
+  </article>
+
+  <article class="slide references-slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">References 1-35</div>
+        <h2>References</h2>
+      </div>
+      <div class="table">
+        <div class="row refs head"><div class="cell">Ref</div><div class="cell">Source</div><div class="cell">Date / Status / Source Owner</div><div class="cell">Evidence Used in Report</div></div>
+        <div class="row refs"><div class="cell">1</div><div class="cell"><a href="https://atrix.ai/">Atrix AI</a></div><div class="cell">Retrieved Jun. 2, 2026; company website</div><div class="cell">Decision/perception intelligence; Medical Affairs HCP belief, activity impact, evidence-gap, KOL movement and MSL ROI use cases.</div></div>
+        <div class="row refs"><div class="cell">2</div><div class="cell"><a href="https://speerhealth.ai/">SpeerHealth</a></div><div class="cell">Retrieved Jun. 2, 2026; company website</div><div class="cell">Voice/text/mobile capture, AI classification, Ask Speer, expert profiles, analytics and source-verified AI.</div></div>
+        <div class="row refs"><div class="cell">3</div><div class="cell"><a href="https://kolpulse.com/">KOL Pulse</a></div><div class="cell">Retrieved Jun. 2, 2026; company website</div><div class="cell">AI-native oncology KOL/trial/conference intelligence, public-source profiles, verified oncologist and ASCO 2026 coverage claims.</div></div>
+        <div class="row refs"><div class="cell">4</div><div class="cell"><a href="https://www.keyops.io/">KeyOps</a></div><div class="cell">Retrieved Jun. 2, 2026; company website</div><div class="cell">KoLab, surveys, trackers, Appraise, AI summaries/compliance reporting and public pharma logos.</div></div>
+        <div class="row refs"><div class="cell">5</div><div class="cell"><a href="https://www.sipherio.com/solutions/">Sipherio</a></div><div class="cell">Retrieved Jun. 2, 2026; company website</div><div class="cell">Ask AI, AI KOL reports, NLP/LLM engines, KOL sentiment/influence and traceable insights.</div></div>
+        <div class="row refs"><div class="cell">6</div><div class="cell"><a href="https://www.docnexus.ai/">DocNexus</a></div><div class="cell">Retrieved Jun. 2, 2026; sparse company/search evidence</div><div class="cell">AI healthcare intelligence, HCP/KOL compass, field insights, KOL engagement and clinical data.</div></div>
+        <div class="row refs"><div class="cell">7</div><div class="cell"><a href="https://www.sorcero.com/intelligence-platform">Sorcero</a></div><div class="cell">Retrieved Jun. 2, 2026; company website</div><div class="cell">Medically tuned agentic AI, 250M+ scientific pool, Medical/SciComms/Field/Congress/Publication/Literature workflows.</div></div>
+        <div class="row refs"><div class="cell">8</div><div class="cell"><a href="https://huma.ai/">Huma.AI / Qoniq</a></div><div class="cell">Retrieved Jun. 2, 2026; company/search evidence</div><div class="cell">Knowledge hub and tailored AI/expert analysis for Medical Affairs evidence, literature, congress, CRM, ad boards and reports.</div></div>
+        <div class="row refs"><div class="cell">9</div><div class="cell"><a href="https://logicflo.ai/">LogicFlo AI</a></div><div class="cell">Retrieved Jun. 2, 2026; company website</div><div class="cell">Task-specialized agents for MSL decks, MI response packages, manuscripts, CME, posters and MLR-ready content.</div></div>
+        <div class="row refs"><div class="cell">10</div><div class="cell"><a href="https://centivence.com/">Centivence</a></div><div class="cell">Retrieved Jun. 2, 2026; company website</div><div class="cell">AI Evidence Repository, Find Evidence, Evidence Finder, AI Value Creator and cross-functional evidence workspace.</div></div>
+        <div class="row refs"><div class="cell">11</div><div class="cell"><a href="https://madeai.com/">MadeAi</a></div><div class="cell">Retrieved Jun. 2, 2026; company website</div><div class="cell">Evidence synthesis, literature review, Quick Research, MIR, value dossiers, social listening, JCA and pharma co-development claims.</div></div>
+        <div class="row refs"><div class="cell">12</div><div class="cell"><a href="https://www.prnewswire.com/news-releases/aingens-launches-the-medical-affairs-content-generator-macg-ai-powered-medical-writing--research-and-reference-management-assistant-for-life-sciences-302360332.html">AINGENS MACg</a></div><div class="cell">Jan. 27, 2025; press release</div><div class="cell">GPT-4o-based MACg medical writing, PubMed search, editing, reference management and citation support.</div></div>
+        <div class="row refs"><div class="cell">13</div><div class="cell"><a href="https://www.juisci.com/">Juisci</a></div><div class="cell">Retrieved Jun. 2, 2026; company website</div><div class="cell">AI literature curation/summarization/translation/recommendation and Workspace for research tasks, content and community engagement.</div></div>
+        <div class="row refs"><div class="cell">14</div><div class="cell"><a href="https://www.basilsystems.com/solutions/pharma-intel-medical-affairs-intelligence">Basil Systems</a></div><div class="cell">Retrieved Jun. 2, 2026; company website</div><div class="cell">AI-powered safety, trial landscape, compliant collaboration and KOL/ad-board Medical Affairs intelligence.</div></div>
+        <div class="row refs"><div class="cell">15</div><div class="cell"><a href="https://aviralifesciences.com/">Avira Life Sciences</a></div><div class="cell">Retrieved Jun. 2, 2026; company website</div><div class="cell">Medical 360, Evidence 360, SciComm 360, AI Social Compass, agentic AI/HCP intelligence and CRM integrations.</div></div>
+        <div class="row refs"><div class="cell">16</div><div class="cell"><a href="https://www.synciq.ai/life-sciences">SyncIQ</a></div><div class="cell">Retrieved Jun. 2, 2026; company website</div><div class="cell">Medical Affairs agents for HCP briefs, scientific answers, CRM logging and structured insights.</div></div>
+        <div class="row refs"><div class="cell">17</div><div class="cell"><a href="https://www.polynom.io/sector/life-sciences">Polynom</a></div><div class="cell">Retrieved Jun. 2, 2026; company website</div><div class="cell">Medical Content Copilot, clinical/RWE engine, regulatory intelligence agent and no-code scientific workflow builder.</div></div>
+        <div class="row refs"><div class="cell">18</div><div class="cell"><a href="https://improzo.com/product/">Improzo iZO</a></div><div class="cell">Retrieved Jun. 2, 2026; company website</div><div class="cell">Life-sciences AI app suite, agentic orchestration, domain-led intelligence and pharma canonical model.</div></div>
+        <div class="row refs"><div class="cell">19</div><div class="cell"><a href="https://www.tikamobile.com/">TikaMobile</a></div><div class="cell">Retrieved Jun. 2, 2026; company website</div><div class="cell">CRM/BI/AI Medical Affairs suite, KOL identification, insights, conference planning, MIR and 2013 founding.</div></div>
+        <div class="row refs"><div class="cell">20</div><div class="cell"><a href="https://h1.co/use-case/kol-mapping-and-engagement/">H1</a></div><div class="cell">Retrieved Jun. 2, 2026; company/search evidence</div><div class="cell">AI-powered KOL mapping, global HCP data, rising-star discovery and Medical Affairs/MSL engagement.</div></div>
+        <div class="row refs"><div class="cell">21</div><div class="cell"><a href="https://www.causaly.com/">Causaly</a></div><div class="cell">Retrieved Jun. 2, 2026; company/search evidence</div><div class="cell">Agentic AI, Causaly Copilot, SIRS, Bio Graph, Pipeline Graph, 500M facts and 70M relationships.</div></div>
+        <div class="row refs"><div class="cell">22</div><div class="cell"><a href="https://www.epistemic.ai/index.html">Epistemic AI</a></div><div class="cell">Retrieved Jun. 2, 2026; company website</div><div class="cell">EpistemicGPT, multi-agent strategic intelligence, competitive landscapes, TPPs, conference intelligence and Medical Affairs users.</div></div>
+        <div class="row refs"><div class="cell">23</div><div class="cell"><a href="https://www.atroposhealth.com/heor-medical-affairs-rwe/">Atropos Health</a></div><div class="cell">Retrieved Jun. 2, 2026; company website</div><div class="cell">HEOR/Medical Affairs/RWE studies, Atropos Evidence Agent, ChatRWD and generative AI for MSL deployment.</div></div>
+        <div class="row refs"><div class="cell">24</div><div class="cell"><a href="https://yseop.com/">Yseop</a></div><div class="cell">Retrieved Jun. 2, 2026; company website</div><div class="cell">Regulatory-grade medical/regulatory writing with source traceability, Word and Veeva integration.</div></div>
+        <div class="row refs"><div class="cell">25</div><div class="cell"><a href="https://www.forbes.com/companies/openevidence/">OpenEvidence / Forbes</a></div><div class="cell">Retrieved Jun. 2, 2026; official page blocked; Forbes context</div><div class="cell">Physician-facing AI medical search; edge-case channel context, users/funding/founding reported by Forbes.</div></div>
+        <div class="row refs"><div class="cell">26</div><div class="cell"><a href="https://within3.com/within3-insights-management-platform-for-medical-affairs">Within3</a></div><div class="cell">Retrieved Jun. 2, 2026; company/search evidence</div><div class="cell">Launch Intelligence, AI-powered Medical Affairs analysis, virtual ad boards, social listening and insights reporting.</div></div>
+        <div class="row refs"><div class="cell">27</div><div class="cell"><a href="https://www.medispend.com/medispend-acquires-alucio-to-expand-ai-enabled-stakeholder-engagement-capabilities/">Alucio / BEACON</a></div><div class="cell">Aug. 4, 2025; MediSpend press release</div><div class="cell">Acquired AI-enabled content-management and HCP-engagement platform for scientific exchange.</div></div>
+        <div class="row refs"><div class="cell">28</div><div class="cell"><a href="https://lokatial.app/">Lokatial</a></div><div class="cell">Retrieved Jun. 2, 2026; search evidence</div><div class="cell">Evidence-thin operating system for HCP engagement and WhatsApp-native medical information.</div></div>
+        <div class="row refs"><div class="cell">29</div><div class="cell"><a href="https://dalil.bio/">Dalil.bio</a></div><div class="cell">Retrieved Jun. 2, 2026; company/search evidence</div><div class="cell">AI MSL for voice scientific exchange, approved content, source/page traceability and conversation intelligence.</div></div>
+        <div class="row refs"><div class="cell">30</div><div class="cell"><a href="https://meetariadne.app/">Ariadne</a></div><div class="cell">Retrieved Jun. 2, 2026; company/search evidence</div><div class="cell">Medical Affairs suite for KOL profiling, AI exchange summaries, evidence repository, citations and AI briefing cards.</div></div>
+        <div class="row refs"><div class="cell">31</div><div class="cell"><a href="https://www.fusionscientific.io/">Fusion Scientific / CongressIQ</a></div><div class="cell">Retrieved Jun. 2, 2026; company/search evidence</div><div class="cell">AI-native Medical Affairs intelligence ecosystem; evidenceIQ, congressIQ, signalIQ, kolIQ and congress capture.</div></div>
+        <div class="row refs"><div class="cell">32</div><div class="cell"><a href="https://www.ryght.ai/">Ryght AI</a></div><div class="cell">Retrieved Jun. 2, 2026; company/search evidence</div><div class="cell">AI Site Twins and Enterprise Agent Architect for clinical research and life-sciences agents.</div></div>
+        <div class="row refs"><div class="cell">33</div><div class="cell"><a href="https://inpharmd.com/">InpharmD</a></div><div class="cell">Retrieved Jun. 2, 2026; company/search evidence</div><div class="cell">Virtual DI pharmacist, InpharmD AI and on-demand drug information benchmark.</div></div>
+        <div class="row refs"><div class="cell">34</div><div class="cell"><a href="https://www.whiz.ai/">WhizAI</a></div><div class="cell">Retrieved Jun. 2, 2026; company/IQVIA evidence</div><div class="cell">IQVIA business; proprietary NLP and domain-tuned LLM analytics for life-sciences data.</div></div>
+        <div class="row refs"><div class="cell">35</div><div class="cell"><a href="https://www.aktana.com/blog/exploring-the-pharma-and-vendor-perspectives-in-deploying-next-best-action-at-scale/">Aktana</a></div><div class="cell">Retrieved Jun. 2, 2026; company/search evidence</div><div class="cell">AI-enabled next-best-action and Medical Affairs HCP engagement benchmark.</div></div>
+      </div>
+    </div>
+    <div class="slide-num">12 / 12</div>
+  </article>
+</body>
+</html>

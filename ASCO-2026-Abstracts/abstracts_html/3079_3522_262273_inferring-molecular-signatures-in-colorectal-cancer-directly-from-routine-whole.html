@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inferring molecular signatures in colorectal cancer directly from routine whole-slide images.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Inferring molecular signatures in colorectal cancer directly from routine whole-slide images.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 3522</div>
+    <div><strong>First speaker:</strong> Piotr Keller, MS</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/262273">https://www.asco.org/abstracts-presentations/262273</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b></p>  Molecular profiling has advanced colorectal cancer (CRC) research but remains limited in the clinic due to cost and tissue constraints. In contrast, haematoxylin and eosin (H&amp;E) whole-slide images (WSIs) are routinely available. Recent deep learning studies show that molecular signatures can be inferred from morphology. However, prediction of patient level pathway activity remains underexplored despite their pathobiological significance as coordinated drivers of cancer risk.  </p>  <b>Methods: </b></p>  We developed SPARROW, a neural network trained to predict over 200 molecular signatures from WSI graph representation of tumour, stroma, lymphocytic and mucosal regions in resection specimens. SPARROW was trained on TCGA (n = 585) and externally validated in the PETACC3 trial dataset (n = 1,160). It predicts pathway enrichment scores, point mutation and clinically actionable CRC subtypes.  </p>  <b>Results: </b></p>  As shown in the table below, SPARROW accurately predicts key molecular features of CRC directly from routine H&amp;E slides and generalizes robustly to the independent PETACC3 trial. The strongest concordance was observed for biologically and clinically relevant programmes, including intrinsic consensus molecular subtype 3 (iCMS3) genes, Fetal enteric progenitor pathway genes, a 22-gene YAP/TAZ transcriptional target signature and epithelial-specific high-risk gene set (epiHR) activity. SPARROW also showed good performance for clinically used classifications, including iCMS/CMS subtypes, interferon phenotype and BRAF mutation status. Importantly, image-derived molecular scores were predictive of relapse free survival as well.  </p>  <b>Conclusions: </b></p>  SPARROW demonstrates that key molecular features of CRC, including transcriptomic subtypes and genomic alterations, are robustly encoded in and learnable from routine H&amp;E histology. This enables histology to serve as a cost-effective and rapid surrogate for predicting key molecular signatures and actionable molecular subtypes while also allowing mining of spatially localised image signatures associated with transcriptional programmes.  </div>
+
+
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p>Molecular Signature </p>
+</td>
+<td>
+<p>TCGA  </p>
+<p>(4-fold CV) </p>
+</td>
+<td>
+<p>PETACC3 (external) </p>
+</td>
+<td>
+<p>Relapse Free Survival Analysis (PETACC3) </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>iCMS3 (ρ) </p>
+</td>
+<td>
+<p>0.64 ± 0.05 </p>
+</td>
+<td>
+<p>0.66 </p>
+</td>
+<td>
+<p>HR=1.2*, 95% CI:1.04-1.38 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Fetal Mustata (ρ) </p>
+</td>
+<td>
+<p>0.47 ± 0.06 </p>
+</td>
+<td>
+<p>0.61 </p>
+</td>
+<td>
+<p>HR=1.74*, 95% CI:1.45-2.08 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>YAP_22 (ρ) </p>
+</td>
+<td>
+<p>0.41 ± 0.07 </p>
+</td>
+<td>
+<p>0.49 </p>
+</td>
+<td>
+<p>HR=2.54*,95% CI:2.03-3.18 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>EpiHR (ρ) </p>
+</td>
+<td>
+<p>0.40 ± 0.08 </p>
+</td>
+<td>
+<p>0.45 </p>
+</td>
+<td>
+<p>HR=1.59*, 95% CI:1.31-1.92 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>iCMS2 vs iCMS3 (AUC) </p>
+</td>
+<td>
+<p>0.90 ± 0.02 </p>
+</td>
+<td>
+<p>0.92 </p>
+</td>
+<td>
+<p>HR=1.12, 95% CI:1.00-1.26 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>CMS (4 groups) (AUC) </p>
+</td>
+<td>
+<p>0.84 ± 0.01 </p>
+</td>
+<td>
+<p>0.84 </p>
+</td>
+<td>
+<p>HR=6.3* (CMS4 vs other), 95% CI:3.92-10.01 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Interferon (High/Low) (AUC) </p>
+</td>
+<td>
+<p>0.82 ± 0.08 </p>
+</td>
+<td>
+<p>0.88 </p>
+</td>
+<td>
+<p>HR=1.14, 95% CI:0.86-1.05 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>BRAF Mutation (AUC) </p>
+</td>
+<td>
+<p>0.82 ± 0.07 </p>
+</td>
+<td>
+<p>0.80 </p>
+</td>
+<td>
+<p>HR=2.12*, 95% CI:1.13-4.29 </p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+ 
+	<div class="table_footer">*p-value &lt;0.05 based on log-rank test using median pathway score.</div> 
+
+
+</main>
+</body>
+</html>

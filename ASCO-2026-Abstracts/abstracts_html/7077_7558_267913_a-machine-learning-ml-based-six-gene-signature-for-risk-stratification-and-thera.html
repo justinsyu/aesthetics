@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A machine learning (ML)–based six-gene signature for risk stratification and therapeutic target identification in multiple myeloma.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>A machine learning (ML)–based six-gene signature for risk stratification and therapeutic target identification in multiple myeloma.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 7558</div>
+    <div><strong>First speaker:</strong> Shahzad Raza, MD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/267913">https://www.asco.org/abstracts-presentations/267913</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b> Multiple myeloma(MM) accounts for 10-15% of hematologic malignancies with significant heterogeneity. Current risk stratification relies on clinical variables (ISS, sex, race, age, cytogenetics) but has limited prognostic accuracy (C-index ~0.63).TP53mt MM has worse outcomes, present in only 5% of newly diagnosed patients and increase to 25% at progression.</p>  </p>  <b>Methods: </b> We performed differential gene expression (DGE) and gene set enrichment analysis (GSEA) between TP53mt (36) and TP53wt (717) MM from (MMRF CoMMpass). Intersection of DGE and GSEA identified 46 genes, which along with clinical variables were modeled using Cox regression and 4 ML algorithms: LASSO, CoxBoost, XGBoost and Random Forest. Models were trained on 70% and tested on 30% of data, with external validation on GSE24080 (n=559).The final 6-gene signature was functionally evaluated in drug sensitivity data from 16 MM cell lines (DepMap). Performance was assessed using concordance index (C-index) and hazard ratios (HR).</p>  <b>Results: </b> CoxBoost model 6-gene signature (UBE2C, STMN1, TK1, DSCC1, PTTG1, CENPF) outperformed all other models. Combined with clinical variables, it achieved C-index 0.742 in discovery (95% CI: 0.708-0.776) versus 0.629 for clinical variables alone (+18.0% improvement, p&lt;0.001).Minimal overfitting was observed (training: 0.748, test: 0.742, gap: 0.006). In multivariable Cox analysis, the CoxBoost risk score remained highly significant (HR 1.95, 95%CI:1.51-2.52,p&lt;0.001) independent of ISS stage (HR 2.89, p&lt;0.001) and age (HR 1.39 per decade, p&lt;0.001).External validation on GSE24080 showed improved performance (C-index 0.683,+6.8% over clinical variables).The signature showed 50% gene overlap with LASSO (3/6 genes) and outperformed UAMS-70 (C-index 0.742 vs 0.631).Drug sensitivity analysis identified three compounds (MACIMORELIN, MW-150, BROFAROMINE) with selective activity against high-risk MM cells (p&lt;0.001),validated across 16 cell lines.</p>  <b>Conclusions: </b>TP53 and its downstream pathways are central to MM progression. CoxBoost modeling produced a 6-gene signature that improved MM risk stratification over clinical variables, identifies therapeutic vulnerabilities, and is computationally efficient model suitable for clinical deployment, warranting prospective validation in MM treatment stratification.</div>
+
+
+
+	<div class="table_caption"><b>Performance of clinical-only and clinic-genomic machine learning models.</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p><strong>Model</strong></p>
+</td>
+<td>
+<p><strong>Train C-Index</strong></p>
+</td>
+<td>
+<p><strong>Test C-Index</strong></p>
+</td>
+<td>
+<p><strong>Overfitting</strong></p>
+</td>
+<td>
+<p><strong>Improvement vs Clinical</strong></p>
+</td>
+<td>
+<p><strong>%Improvement</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Clinical</p>
+</td>
+<td>
+<p>0.69</p>
+</td>
+<td>
+<p>0.72</p>
+</td>
+<td>
+<p>-0.03</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Random Forest</p>
+</td>
+<td>
+<p>0.57</p>
+</td>
+<td>
+<p>0.59</p>
+</td>
+<td>
+<p>-0.02</p>
+</td>
+<td>
+<p>-0.13</p>
+</td>
+<td>
+<p>-18.56</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>LASSO</p>
+</td>
+<td>
+<p>0.70</p>
+</td>
+<td>
+<p>0.68</p>
+</td>
+<td>
+<p>0.02</p>
+</td>
+<td>
+<p>-0.04</p>
+</td>
+<td>
+<p>-5.89</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>XGBoost</p>
+</td>
+<td>
+<p>0.81</p>
+</td>
+<td>
+<p>0.65</p>
+</td>
+<td>
+<p>0.16</p>
+</td>
+<td>
+<p>-0.06</p>
+</td>
+<td>
+<p>-8.95</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>CoxBoost</p>
+</td>
+<td>
+<p>0.75</p>
+</td>
+<td>
+<p>0.74</p>
+</td>
+<td>
+<p>0.01</p>
+</td>
+<td>
+<p>0.02</p>
+</td>
+<td>
+<p>3.31</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

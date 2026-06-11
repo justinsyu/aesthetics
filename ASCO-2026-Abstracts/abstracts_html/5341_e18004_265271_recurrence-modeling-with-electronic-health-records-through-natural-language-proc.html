@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recurrence modeling with electronic health records through natural language processing and machine learning techniques.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Recurrence modeling with electronic health records through natural language processing and machine learning techniques.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e18004</div>
+    <div><strong>First speaker:</strong> Justin Albert Fortino, BS</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/265271">https://www.asco.org/abstracts-presentations/265271</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Head and neck cancer patients with locally advanced disease requiring free flap reconstruction are at high risk for locoregional and distant recurrence yet early identification of recurrence is challenging. Unstructured clinical notes contain rich longitudinal information that may capture early signals of disease progression. We evaluated whether natural language processing (NLP)-based large language models (LLM) applied to electronic health record (EHR) notes could predict recurrence in this high-risk population.</div>
+  <main> 
+
+	<div><b>Background: </b></p>  Head and neck cancer patients with locally advanced disease requiring free flap reconstruction are at high risk for locoregional and distant recurrence yet early identification of recurrence is challenging. Unstructured clinical notes contain rich longitudinal information that may capture early signals of disease progression. We evaluated whether natural language processing (NLP)-based large language models (LLM) applied to electronic health record (EHR) notes could predict recurrence in this high-risk population.</p>  <b>Methods: </b></p>  789 patients with head and neck cancers treated with free flap reconstruction from 1997-2023 at a single institution were retrospectively analyzed. EHR pathology, radiology, and clinical notes from diagnosis through five months post-diagnosis were collected. Notes were either combined into a single aggregated document per patient or as individual notes. Any notes post-recurrence were censored. Text was vectorized using term frequency-inverse document frequency (TfidfVectorizer) and a domain-adapted contextual language model trained on clinical notes (clinicalBERT). Patients were split into training and testing cohorts prior to feature extraction. Logistic regression models were trained to predict recurrence. For per-note analyses, the note with the highest recurrence probability was used for lead-time estimation.</p>  <b>Results: </b></p>  The median follow-up in the entire cohort was 39.43 months (IQR 18.53-78.23). 13.05% (103/789) patients experienced disease recurrence at a median of 8.82 months since initial diagnosis (IQR 5.83-17.67). Overall discriminative performance was modest across all models. The best performing model was the combined note TfidfVectorizer, with an AUC of 0.585. Per-note TfidfVectorizer, combined note clinicalBERT, and per-note clinicalBERT had declining AUCs of 0.580, 0.525, and 0.514 respectively. Models showed relatively high specificity but limited sensitivity for recurrent cases with a maximum F1-score of 0.28 for the combined note TfidfVectorizer. Among true-positive recurrence predictions in per-note analysis, the median lead time of predicted recurrence was 194 days (IQR 100-728) for TfidfVectorizer and 187 days (IQR 86-748) for clinicalBERT.</p>  <b>Conclusions: </b></p>  NLP models applied to unstructured EHR notes demonstrated limited discrimination for recurrence prediction in head and neck cancer patients undergoing free flap reconstruction. While recurrence-associated signals were detectable months to years before diagnosis in a subset of patients, overall predictive performance was modest. Predictive performance may be improved by incorporating temporal modeling, restriction to oncology-relevant note types, aggregation of notes by date of encounter, and integration of structured clinical variables.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

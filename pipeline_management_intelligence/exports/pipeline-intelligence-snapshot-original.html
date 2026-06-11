@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280" />
+  <title>Pipeline Intelligence Snapshot</title>
+  <style>
+    @font-face {
+      font-family: "Space Grotesk";
+      src: url("fonts/SpaceGrotesk-Regular.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: block;
+    }
+    @font-face {
+      font-family: "Space Grotesk";
+      src: url("fonts/SpaceGrotesk-Medium.ttf") format("truetype");
+      font-weight: 500;
+      font-style: normal;
+      font-display: block;
+    }
+    @font-face {
+      font-family: "Space Grotesk";
+      src: url("fonts/SpaceGrotesk-Bold.ttf") format("truetype");
+      font-weight: 700;
+      font-style: normal;
+      font-display: block;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: #070907; }
+    body {
+      font-family: "Space Grotesk", Arial, sans-serif;
+      color: #fff9eb;
+      font-synthesis: none;
+      -webkit-font-smoothing: antialiased;
+    }
+    .slide {
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      position: relative;
+      padding: 28px 34px 28px;
+      background:
+        radial-gradient(circle at 82% 8%, rgba(172, 214, 255, 0.23), transparent 28%),
+        radial-gradient(circle at 12% 85%, rgba(215, 255, 95, 0.16), transparent 24%),
+        linear-gradient(90deg, rgba(251, 246, 234, 0.045) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(251, 246, 234, 0.04) 1px, transparent 1px),
+        #070907;
+      background-size: auto, auto, 42px 42px, 42px 42px, auto;
+    }
+    .slide::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(115deg, rgba(251, 246, 234, 0.08), transparent 33%),
+        linear-gradient(290deg, rgba(255, 128, 109, 0.10), transparent 38%);
+      pointer-events: none;
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+      height: 664px;
+      display: grid;
+      grid-template-rows: 74px 462px 108px;
+      gap: 10px;
+    }
+    .header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: start;
+      border-left: 4px solid #d7ff5f;
+      padding-left: 17px;
+    }
+    .brand {
+      color: #fbf6ea;
+      font-size: 43px;
+      line-height: 0.96;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+    .brand strong {
+      color: #a7ea2e;
+      font-weight: 700;
+    }
+    .subtitle {
+      margin: 8px 0 0;
+      color: rgba(251, 246, 234, 0.72);
+      font-size: 13px;
+      line-height: 1.25;
+    }
+    .timestamp {
+      color: rgba(251, 246, 234, 0.78);
+      font-size: 12px;
+      line-height: 1.35;
+      text-align: right;
+      padding: 7px 10px;
+      border: 1px solid rgba(251, 246, 234, 0.18);
+      background: rgba(251, 246, 234, 0.055);
+      min-width: 150px;
+    }
+    .main {
+      display: grid;
+      grid-template-columns: 350px 512px 330px;
+      gap: 10px;
+      min-height: 0;
+    }
+    .rail {
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      gap: 10px;
+      min-height: 0;
+    }
+    .metric {
+      position: relative;
+      overflow: hidden;
+      padding: 17px 18px;
+      border: 1px solid rgba(251, 246, 234, 0.18);
+      background:
+        linear-gradient(135deg, rgba(251, 246, 234, 0.12), rgba(251, 246, 234, 0.045));
+      min-height: 0;
+    }
+    .metric::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 4px;
+      background: linear-gradient(90deg, #d7ff5f, rgba(172, 214, 255, 0.92), rgba(255, 128, 109, 0.85));
+    }
+    .metric.dark {
+      background:
+        radial-gradient(circle at 92% 10%, rgba(215, 255, 95, 0.22), transparent 38%),
+        linear-gradient(135deg, rgba(251, 246, 234, 0.12), rgba(251, 246, 234, 0.035));
+      border-color: rgba(215, 255, 95, 0.34);
+    }
+    .eyebrow {
+      display: block;
+      color: rgba(251, 246, 234, 0.72);
+      font-size: 11.4px;
+      line-height: 1.1;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    .number {
+      color: #fbf6ea;
+      font-size: 42px;
+      line-height: 0.9;
+      font-weight: 400;
+      margin-bottom: 11px;
+    }
+    .metric p {
+      margin: 0;
+      color: rgba(251, 246, 234, 0.68);
+      font-size: 12.4px;
+      line-height: 1.25;
+      max-width: 290px;
+    }
+    .lab-panel {
+      position: relative;
+      border: 1px solid rgba(251, 246, 234, 0.2);
+      background:
+        linear-gradient(180deg, rgba(251, 246, 234, 0.1), rgba(251, 246, 234, 0.035));
+      padding: 18px 18px 15px;
+      min-height: 0;
+      overflow: hidden;
+    }
+    .lab-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(251, 246, 234, 0.05) 1px, transparent 1px);
+      background-size: 64px 100%;
+      opacity: 0.55;
+      pointer-events: none;
+    }
+    .panel-title {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: start;
+      margin-bottom: 14px;
+      z-index: 1;
+    }
+    h2 {
+      margin: 0;
+      color: #fbf6ea;
+      font-size: 19px;
+      line-height: 1.02;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .panel-title span {
+      color: rgba(251, 246, 234, 0.66);
+      font-size: 10.6px;
+      line-height: 1.15;
+      text-align: right;
+      max-width: 172px;
+    }
+    .timeline {
+      position: relative;
+      z-index: 1;
+      height: 365px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      align-items: end;
+      gap: 20px;
+      padding-top: 12px;
+    }
+    .bar-col {
+      min-width: 0;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      gap: 9px;
+    }
+    .bar-area {
+      position: relative;
+      height: 316px;
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      border-bottom: 1px solid rgba(251, 246, 234, 0.24);
+    }
+    .bar-total {
+      position: absolute;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: #fbf6ea;
+      font-size: 14px;
+      line-height: 1;
+      font-weight: 700;
+    }
+    .bar {
+      width: 100%;
+      height: var(--h);
+      min-height: 6px;
+      display: flex;
+      flex-direction: column-reverse;
+      background: rgba(251, 246, 234, 0.15);
+      clip-path: polygon(0 10px, 10px 0, 100% 0, 100% 100%, 0 100%);
+    }
+    .seg { border-top: 1px solid rgba(7, 9, 7, 0.12); }
+    .oncology { background: #ff806d; }
+    .immunology { background: #ffb45f; }
+    .cardio { background: #d6cdb8; }
+    .ophth { background: #acd6ff; }
+    .bar-label {
+      color: rgba(251, 246, 234, 0.72);
+      font-size: 11px;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .legend {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 13px;
+      margin-top: 9px;
+      color: rgba(251, 246, 234, 0.68);
+      font-size: 10.4px;
+      line-height: 1.1;
+    }
+    .legend i {
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      margin-right: 5px;
+      vertical-align: -1px;
+    }
+    .heat-panel {
+      padding: 18px 18px 16px;
+    }
+    .heatmap {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+      margin-top: 10px;
+    }
+    .heat {
+      min-height: 89px;
+      display: grid;
+      place-items: center;
+      padding: 7px 4px;
+      color: #10120f;
+      text-align: center;
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 700;
+      border: 1px solid rgba(251, 246, 234, 0.28);
+      box-shadow: 0 0 0 1px rgba(7, 9, 7, 0.08) inset;
+    }
+    .heat small {
+      display: block;
+      margin-top: 8px;
+      color: rgba(16, 18, 15, 0.7);
+      font-size: 10.1px;
+      line-height: 1.15;
+      font-weight: 500;
+    }
+    .high { background: #ff806d; }
+    .med { background: #ffb45f; }
+    .low { background: #acd6ff; }
+    .empty { background: #d6cdb8; }
+    .notes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      min-height: 0;
+    }
+    .note {
+      position: relative;
+      padding: 12px 13px 12px 16px;
+      border: 1px solid rgba(251, 246, 234, 0.18);
+      background: rgba(251, 246, 234, 0.08);
+      overflow: hidden;
+    }
+    .note::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: #d7ff5f;
+    }
+    .note h3 {
+      margin: 0 0 6px;
+      color: #fbf6ea;
+      font-size: 12.2px;
+      line-height: 1;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .note p {
+      margin: 0;
+      color: rgba(251, 246, 234, 0.7);
+      font-size: 10.4px;
+      line-height: 1.28;
+    }
+    @page { size: 1280px 720px; margin: 0; }
+    @media print {
+      html, body { width: 1280px; height: 720px; }
+      .slide { page-break-after: always; }
+    }
+  </style>
+</head>
+<body>
+  <section class="slide">
+    <div class="content">
+      <header class="header">
+        <div>
+          <div class="brand"><strong>Pipeline</strong> Intelligence</div>
+          <p class="subtitle">Active pipeline formulary view across Oncology, Immunology, Cardiometabolic, and Ophthalmology assets</p>
+        </div>
+        <div class="timestamp">Source-backed refresh<br>May 28, 2026</div>
+      </header>
+
+      <main class="main">
+        <section class="rail">
+          <article class="metric dark">
+            <span class="eyebrow">Total assets</span>
+            <div class="number">27</div>
+            <p>Active commercial-sponsor pipeline assets after exclusions.</p>
+          </article>
+          <article class="metric">
+            <span class="eyebrow">High risk</span>
+            <div class="number">2</div>
+            <p>Planning priority based on launch timing, budget impact, differentiation, and readiness.</p>
+          </article>
+          <article class="metric">
+            <span class="eyebrow">Near term</span>
+            <div class="number">1</div>
+            <p>Expected within 24 months based on normalized launch-timeline bucket.</p>
+          </article>
+        </section>
+
+        <article class="lab-panel">
+          <div class="panel-title">
+            <h2>Launch Timeline</h2>
+            <span>normalized source-derived timing bucket</span>
+          </div>
+          <div class="timeline">
+            <div class="bar-col">
+              <div class="bar-area">
+                <div class="bar-total" style="bottom: 10px;">0</div>
+                <div class="bar" style="--h: 6px;"></div>
+              </div>
+              <div class="bar-label">0-12 months</div>
+            </div>
+            <div class="bar-col">
+              <div class="bar-area">
+                <div class="bar-total" style="bottom: 18px;">1</div>
+                <div class="bar" style="--h: 14px;"><div class="seg ophth" style="height: 14px;"></div></div>
+              </div>
+              <div class="bar-label">12-24 months</div>
+            </div>
+            <div class="bar-col">
+              <div class="bar-area">
+                <div class="bar-total" style="bottom: 31px;">2</div>
+                <div class="bar" style="--h: 28px;"><div class="seg immunology" style="height: 28px;"></div></div>
+              </div>
+              <div class="bar-label">24-36 months</div>
+            </div>
+            <div class="bar-col">
+              <div class="bar-area">
+                <div class="bar-total" style="bottom: 279px;">24</div>
+                <div class="bar" style="--h: 294px;">
+                  <div class="seg oncology" style="height: 88px;"></div>
+                  <div class="seg immunology" style="height: 50px;"></div>
+                  <div class="seg cardio" style="height: 62px;"></div>
+                  <div class="seg ophth" style="height: 94px;"></div>
+                </div>
+              </div>
+              <div class="bar-label">36+ months</div>
+            </div>
+          </div>
+          <div class="legend">
+            <span><i class="oncology"></i>Oncology 7</span>
+            <span><i class="immunology"></i>Immunology 6</span>
+            <span><i class="cardio"></i>Cardiometabolic 5</span>
+            <span><i class="ophth"></i>Ophthalmology 9</span>
+          </div>
+        </article>
+
+        <article class="lab-panel heat-panel">
+          <div class="panel-title">
+            <h2>Formulary Disruption Heatmap</h2>
+            <span>budget impact x clinical differentiation</span>
+          </div>
+          <div class="heatmap">
+            <div class="heat empty">0<small>High / Low</small></div>
+            <div class="heat high">4<small>High / Modest</small></div>
+            <div class="heat high">8<small>High / Meaningful</small></div>
+            <div class="heat high">1<small>High / High</small></div>
+            <div class="heat empty">0<small>Medium / Low</small></div>
+            <div class="heat med">10<small>Medium / Modest</small></div>
+            <div class="heat med">3<small>Medium / Meaningful</small></div>
+            <div class="heat empty">0<small>Medium / High</small></div>
+            <div class="heat empty">0<small>Low / Low</small></div>
+            <div class="heat low">1<small>Low / Modest</small></div>
+            <div class="heat empty">0<small>Low / Meaningful</small></div>
+            <div class="heat empty">0<small>Low / High</small></div>
+          </div>
+        </article>
+      </main>
+
+      <section class="notes">
+        <div class="note">
+          <h3>Launch Timing</h3>
+          <p>Buckets normalize assets to 0-12, 12-24, 24-36, or 36+ months. Official company or regulatory timing is used when available; otherwise estimates use CT.gov dates, phase, filing signals, and public updates.</p>
+        </div>
+        <div class="note">
+          <h3>Heatmap Read</h3>
+          <p>Each cell counts assets at the intersection of budget impact and clinical differentiation. Upper-right cells indicate higher potential payer-management attention; empty cells mean no active assets in that combination.</p>
+        </div>
+        <div class="note">
+          <h3>Evidence Basis</h3>
+          <p>All 27 assets are source-backed with source-derived rationales. No fallback data were used; marketed/non-pipeline assets and non-commercial sponsor records were excluded.</p>
+        </div>
+      </section>
+    </div>
+  </section>
+</body>
+</html>

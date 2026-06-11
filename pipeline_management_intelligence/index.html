@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pipeline Intelligence</title>
+    <link rel="stylesheet" href="app/styles.css" />
+  </head>
+  <body>
+    <header id="top" class="app-header">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span><strong>Pipeline</strong> Intelligence</span>
+      </div>
+      <div class="header-controls">
+        <label>
+          <span>Refresh cadence</span>
+          <select id="cadenceSelect">
+            <option>Monthly</option>
+            <option>Weekly</option>
+            <option>Daily</option>
+          </select>
+        </label>
+        <span class="divider"></span>
+        <span id="lastUpdated">Loading data</span>
+      </div>
+    </header>
+
+    <main class="product-shell">
+      <aside class="filter-rail" aria-label="Filters">
+        <div class="rail-heading">
+          <h2>Filters</h2>
+          <button id="clearFilters" type="button">Clear</button>
+        </div>
+
+        <label class="field">
+          <span>Therapeutic area</span>
+          <select id="areaFilter"></select>
+        </label>
+
+        <label class="field">
+          <span>Development phase</span>
+          <select id="phaseFilter"></select>
+        </label>
+
+        <label class="field">
+          <span>Launch horizon</span>
+          <select id="horizonFilter"></select>
+        </label>
+
+        <label class="field">
+          <span>Formulary risk</span>
+          <select id="riskFilter"></select>
+        </label>
+
+        <div class="risk-method">
+          <p>Risk definition</p>
+          <span>Combines launch proximity, budget impact, clinical differentiation, and Phase 3/readiness.</span>
+          <span>Prioritization signal for formulary planning, not clinical safety risk.</span>
+        </div>
+
+        <label class="field">
+          <span>Search</span>
+          <input id="searchInput" type="search" placeholder="Asset, sponsor, indication" />
+        </label>
+
+        <div class="legend-block">
+          <p>Risk legend</p>
+          <span><i class="risk high"></i> High</span>
+          <span><i class="risk medium"></i> Medium</span>
+          <span><i class="risk low"></i> Low</span>
+        </div>
+
+        <button id="saveView" class="secondary-action" type="button">Save current view</button>
+        <a id="backToTop" class="secondary-action back-to-top" href="#top">Back to top</a>
+      </aside>
+
+      <section class="workspace" aria-label="Pipeline dashboard">
+        <section class="summary-grid">
+          <article class="metric-panel dark-panel">
+            <span>Total assets</span>
+            <strong id="metricAssets">0</strong>
+            <p id="metricScope">Across selected scope</p>
+          </article>
+          <article class="metric-panel">
+            <span>High risk</span>
+            <strong id="metricHigh">0</strong>
+            <p>Require active formulary planning</p>
+          </article>
+          <article class="metric-panel">
+            <span>Near term</span>
+            <strong id="metricNear">0</strong>
+            <p>Expected within 24 months</p>
+          </article>
+        </section>
+
+        <section class="analysis-grid">
+          <article class="panel">
+            <div class="panel-heading">
+              <h2>Launch Timeline</h2>
+              <span>by expected launch window</span>
+            </div>
+            <div id="timelineChart" class="timeline-chart"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-heading">
+              <h2>Formulary Disruption Heatmap</h2>
+              <span>cost impact x clinical differentiation</span>
+            </div>
+            <div id="heatmap" class="heatmap"></div>
+          </article>
+        </section>
+
+        <section class="table-panel panel">
+          <div class="panel-heading table-heading">
+          <div>
+            <h2 id="tableTitle">PIPELINE ASSETS (0)</h2>
+          </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <colgroup>
+                <col class="col-asset" />
+                <col class="col-ctgov" />
+                <col class="col-manufacturer" />
+                <col class="col-indication" />
+                <col class="col-phase" />
+                <col class="col-launch" />
+                <col class="col-clinical" />
+                <col class="col-cost" />
+                <col class="col-risk" />
+                <col class="col-action" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col" data-sort="asset" tabindex="0" aria-sort="none">Asset</th>
+                  <th scope="col" data-sort="ctgov" tabindex="0" aria-sort="none">CT.gov</th>
+                  <th scope="col" data-sort="manufacturer" tabindex="0" aria-sort="none">Manufacturer</th>
+                  <th scope="col" data-sort="indication" tabindex="0" aria-sort="none">Indication</th>
+                  <th scope="col" data-sort="phase" tabindex="0" aria-sort="none">Phase</th>
+                  <th scope="col" data-sort="launch" tabindex="0" aria-sort="none">Expected launch</th>
+                  <th scope="col" data-sort="clinical" tabindex="0" aria-sort="none">Clinical diff.</th>
+                  <th scope="col" data-sort="cost" tabindex="0" aria-sort="none">Annual cost</th>
+                  <th scope="col" data-sort="risk" tabindex="0" aria-sort="none">Risk</th>
+                  <th scope="col" data-sort="action" tabindex="0" aria-sort="none">Action</th>
+                </tr>
+              </thead>
+              <tbody id="assetRows"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <aside class="detail-pane" aria-label="Selected asset">
+        <div class="detail-top">
+          <span>Selected asset</span>
+          <button id="closeDetail" type="button" aria-label="Clear selection">x</button>
+        </div>
+        <div id="assetDetail" class="detail-content"></div>
+      </aside>
+
+    </main>
+
+    <script src="app/app.js?v=20260528-basis-toggle" type="module"></script>
+  </body>
+</html>

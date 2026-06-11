@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ultra-lightweight deep learning for glioma detection: MobileNet-based MRI classification to enable real-time neuro-oncology deployment.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Ultra-lightweight deep learning for glioma detection: MobileNet-based MRI classification to enable real-time neuro-oncology deployment.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e14085</div>
+    <div><strong>First speaker:</strong> Mustafa Abrar Zaman, MD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/259246">https://www.asco.org/abstracts-presentations/259246</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Gliomas, the most common CNS tumors, are associated with substantial morbidity and mortality. Magnetic resonance imaging (MRI) is central to diagnosis, treatment planning, and longitudinal surveillance; however, radiologic interpretation is time intensive and subject to interobserver variability, particularly in high-volume and resource-limited settings. Although AI has demonstrated strong diagnostic performance for brain tumor imaging, many AI models are computationally intensive and difficult to deploy at scale. MobileNet is a lightweight model designed to maximize efficiency through depth-wise separable convolutions. We evaluated whether a MobileNet-based framework could deliver meaningful glioma detection on MRI while enabling scalable, real-time deployment.</div>
+  <main> 
+
+	<div><b>Background: </b></p>  Gliomas, the most common CNS tumors, are associated with substantial morbidity and mortality. Magnetic resonance imaging (MRI) is central to diagnosis, treatment planning, and longitudinal surveillance; however, radiologic interpretation is time intensive and subject to interobserver variability, particularly in high-volume and resource-limited settings. Although AI has demonstrated strong diagnostic performance for brain tumor imaging, many AI models are computationally intensive and difficult to deploy at scale. MobileNet is a lightweight model designed to maximize efficiency through depth-wise separable convolutions. We evaluated whether a MobileNet-based framework could deliver meaningful glioma detection on MRI while enabling scalable, real-time deployment.</p>  <b>Methods: </b></p>  We analyzed a curated dataset of brain MRI studies comprising gliomas and non-glioma intracranial lesions, with ground truth established by expert neuroradiologist consensus incorporating histopathology and longitudinal clinical follow-up. Images were standardized and partitioned at the patient level into training, validation, and held-out testing cohorts to minimize information leakage. A MobileNet architecture pretrained on ImageNet was fine-tuned for binary glioma classification. Depthwise separable convolutions decoupled spatial and channel-wise feature learning, substantially reducing parameter count and computational complexity while preserving discriminative capacity. Model performance was assessed using accuracy, sensitivity, specificity, F1 score, and area under the receiver operating characteristic curve (AUROC). Inference latency and hardware requirements were explicitly evaluated to assess clinical deployability.</p>  <b>Results: </b></p>  The MobileNet model achieved robust diagnostic performance, with overall accuracy exceeding 93% and AUROC greater than 0.94 for glioma detection. Sensitivity for glioma identification remained high (95%) while maintaining specificity (97%) against non-glioma lesions. Performance was stable across MRI sequences and imaging conditions. Mean inference time was under 0.1 seconds per study on standard CPU hardware, enabling real-time operation without graphical processing units or specialized infrastructure.</p>  <b>Conclusions: </b></p>  MobileNet-based deep learning enables accurate, rapid, and computationally efficient glioma detection on MRI, addressing a key barrier to clinical translation of AI in neuro-oncology. By prioritizing deployability alongside diagnostic performance, this approach supports scalable AI-assisted imaging in high-throughput and resource-constrained settings. Prospective, workflow-integrated studies are warranted to evaluate impact on diagnostic turnaround time, triage efficiency, and access to timely neuro-oncologic care.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

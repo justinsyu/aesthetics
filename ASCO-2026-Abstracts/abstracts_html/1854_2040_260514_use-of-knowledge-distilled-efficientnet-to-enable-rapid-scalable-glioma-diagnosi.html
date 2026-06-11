@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Use of knowledge-distilled EfficientNet to enable rapid, scalable glioma diagnosis.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Use of knowledge-distilled EfficientNet to enable rapid, scalable glioma diagnosis.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 2040</div>
+    <div><strong>First speaker:</strong> Gowrishankar Palaniswamy, MD, MBBS</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/260514">https://www.asco.org/abstracts-presentations/260514</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b> Accurate preoperative classification of gliomas on MRI according to WHO 2021 integrated diagnosis is essential for surgical planning and treatment selection, yet conventional interpretation remains vulnerable to inter-observer variability. Deep learning shows promise for brain tumor classification but computational demands restrict deployment in resource-limited settings. Knowledge distillation, transferring discriminative knowledge from computationally intensive "mentor" networks to efficient "mentee" models, enables scalable AI systems maintaining diagnostic accuracy while enabling global translation.</p>  <b>Methods: </b> We analyzed 2,840 brain MRI studies sourced from six continents comprising gliomas (n=1,400; 700 WHO grade 2–3, 700 grade 4), meningiomas (n=900), and pituitary adenomas (n=540). Ground truth followed WHO 2021 integrated diagnosis with expert neuroradiologist consensus. Data were partitioned at the patient level with site-held-out external testing. A high-capacity EfficientNetB7 mentor model was developed using multi-sequence MRI inputs (T1, T2, FLAIR, post-contrast T1) and distilled into lightweight EfficientNetB0. Knowledge distillation preserved discriminative performance while enabling CPU deployment without GPU acceleration. Training: input 224×224 pixels, Adam optimizer (lr=0.001), Kullback-Leibler divergence loss (temperature T=4), twelve epochs. Performance metrics included accuracy, sensitivity, specificity, F1-score, and AUROC. Independent clinical feasibility involved 52 board-certified neuroradiologists across 11 geopolitical regions.</p>  <b>Results: </b> For WHO grade 2–3 versus grade 4 stratification, distilled EfficientNetB0 achieved 97.2% accuracy, 98.1% sensitivity, 96.3% specificity, and AUROC 0.993. Differential diagnosis accuracy: 95.3% (glioma vs. meningioma), 96.1% (glioma vs. pituitary). Site-held-out external validation showed consistent performance (93–97% grading, 94–96% differential). Mean inference time: 0.19 seconds on CPU. Distilled model: 3.9 million parameters (97% reduction), 2.1 billion FLOPs (94% reduction). Neuroradiologist assessment: 94.7% rated system valuable for diagnostic confidence and surgical triage. Inter-rater agreement: 96.8% (κ=0.951, 95% CI 0.941–0.961).</p>  <b>Conclusions: </b> Knowledge-distilled EfficientNetB0 achieves 97.2% accuracy for glioma grading and 95–96% for differential diagnosis while reducing parameters by 97% and enabling CPU deployment. Global validation across six continents and clinical assessment by 52 neuroradiologists establish real-world feasibility. The architecture supports translation as a decision-support tool for preoperative glioma stratification, particularly in resource-constrained settings. Prospective clinical trials evaluating impact on surgical decision-making are warranted.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

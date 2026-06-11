@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deep learning–based classification of benign and malignant breast lesions on ultrasound using knowledge distillation with external validation and global deployment.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Deep learning–based classification of benign and malignant breast lesions on ultrasound using knowledge distillation with external validation and global deployment.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 556</div>
+    <div><strong>First speaker:</strong> Gowrishankar Palaniswamy, MD, MBBS</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/268202">https://www.asco.org/abstracts-presentations/268202</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b> Breast cancer is the most common malignancy in women worldwide. Although breast ultrasonography is widely accessible, diagnostic accuracy remains limited by operator dependence and interobserver variability (κ≈0.6–0.8), contributing to delayed diagnosis and unnecessary biopsies. While deep learning has shown promise in ultrasound-based lesion classification, many models are computationally intensive and lack external validation, limiting clinical scalability. We developed a deployment-ready deep learning framework that balances diagnostic performance with computational efficiency using structured knowledge distillation.</p>  Objectives: To develop and externally validate a computationally efficient deep learning model for binary breast ultrasound lesion classification; to evaluate whether a distilled student model preserves clinically meaningful performance from a high-capacity teacher network; and to assess global clinical feasibility through independent radiologist evaluation.</p>  <b>Methods: </b> We analyzed 8,116 breast ultrasound images (4,074 benign; 4,042 malignant) independently annotated by two board-certified radiologists with consensus adjudication. A ResNet34 teacher network (21.8M parameters) was trained using ImageNet-pretrained weights. A lightweight ResNet18 student network (11.7M parameters; 46% reduction) was trained using structured knowledge distillation with confidence-aligned soft targets and KL-divergence regularization. External validation was performed on three independent ultrasound datasets not used during training. Performance metrics included accuracy, sensitivity, specificity, precision, F1 score, and AUROC. The model was deployed in a HIPAA-compliant cross-platform application and independently evaluated by physicians across six continents.</p>  <b>Results: </b> The student model achieved 91.9% accuracy on held-out test data with balanced performance (sensitivity 90.8%, specificity 93.0%, F1 score 0.918). External validation demonstrated stable generalization (accuracy 89–92%). In global clinical deployment, 94.2% of participating physicians rated the system clinically useful and suitable for integration into routine breast ultrasound workflows.</p>  <b>Conclusions: </b> Knowledge distillation enables substantial model compression while preserving diagnostic accuracy for breast lesion classification on ultrasound. This scalable, deployment-ready approach supports standardized interpretation across diverse clinical environments and warrants prospective evaluation for reducing unnecessary biopsies and improving diagnostic efficiency.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

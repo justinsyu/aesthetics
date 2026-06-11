@@ -1,0 +1,89 @@
+{
+  "abstractNumber": "11132",
+  "body": " \r\n\r\n\t<div><b>Background: </b></p>  Immune-related adverse events (irAEs) from immune checkpoint inhibitors (ICIs) can be lifelong, fatal, or require treatment discontinuation, substantially limiting the clinical benefit of immunotherapy. Despite their impact, predictors of irAE susceptibility remain poorly defined, largely due to the lack of scalable approaches for toxicity phenotyping. Here, we leverage large language models and integrated clinico-genomic data to identify determinants of irAEs.</p>  </p>  <b>Methods: </b></p>  We developed a custom retrieval augmented generation and large language model (RAG-LLM) pipeline to automatically annotate 6 key adverse events (adrenal insufficiency, hepatotoxicity, hyperthyroidism, hypothyroidism, colitis, and pneumonitis) using free text from clinical notes across Memorial Sloan Kettering Cancer Center. We first validated RAG-LLM predictions using a gold standard prospectively collected adverse event dataset from 8,119 patients across 1,057 individual clinical trials. RAG-LLM imputations were then scaled to 55,406 (12,291 ICI-treated) patients. All patients had associated somatic and germline MSK-IMPACT panel sequencing data. Single nucleotide polymorphism (SNP) imputation was performed using GLIMPSE and time-to-event genome-wide association studies (GWAS) were performed using SPACox. HLA class I genotypes were imputed using HLA-HD. Random Survival Forest (RSF) models were trained to predict irAE occurrence.</p>  </p>  <b>Results: </b></p>  The custom RAG-LLM pipeline had strong performance across all 6 irAEs (area under the ROC curve of 0.77-1.00). In the RAG-LLM imputed data, 799 (1.4%) patients had adrenal insufficiency, 2,803 colitis (5.1%), 7,130 hypothyroidism (12.9%), 448 hyperthyroidism (0.8%), 15,627 hepatotoxicity (28.2%), and 3,730 pneumonitis (6.7%). Among ICI-treated patients, pneumonitis (HR 1.4; 95% CI 1.1-1.8; p&nbsp;&lt;&nbsp;0.01) and hepatotoxicity (HR 1.4; 95% CI 1.2-1.6; p&nbsp;&lt;&nbsp;0.01) were associated with worse overall survival. The GWAS found two genome-wide significant hits that predicted adrenal insufficiency (rs115003145, HLA region) and hypothyroidism (rs7864322, <em>FOXE1</em> gene enhancer region) with p&nbsp;&lt;&nbsp;5x10<sup>-8</sup>. Fine mapping of the HLA SNP showed that HLA-C*06:02 was specifically associated with increased risk of adrenal insufficiency in ICI-treated patients only (HR 1.6; 95% CI 1.2-2.2; p&nbsp;&lt;&nbsp;0.01). RSF model performance for irAE occurrence had F1 scores of 0.67-0.85. For pneumonitis, patients with the highest risk quartile by RSF model had 7.1% risk of pneumonitis at 1 year compared to 0.4% for the lowest risk quartile (HR 14.9; 95% CI 10.4-21.3; p&nbsp;&lt;&nbsp;0.01). </p>  </p>  <b>Conclusions: </b></p>  We developed and validated a novel custom RAG-LLM pipeline that allows automatic annotation of irAEs using clinical notes. Using this pipeline, we identified novel biomarkers of ICI-related adrenal insufficiency and hypothyroidism. Finally, we developed predictive models for irAE prediction that can be used at the point of care.</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+  "contentId": "259705",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/259705",
+    "queryParams": null,
+    "target": null,
+    "title": "Pan-cancer discovery of clinical and genomic determinants of immune-related adverse events."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION259705"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780333200000,
+    "start": 1780322400000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "115",
+  "presentationId": "259705",
+  "primaryPerson": {
+    "displayName": "Ziad Bakouny, MD, MSc",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780333200000,
+    "start": 1780322400000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17162",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17162",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Quality Care/Health Services Research"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": {
+    "countriesThes": null,
+    "drugsThes": null,
+    "entitiesThes": null,
+    "genesThes": null,
+    "orgThes": null,
+    "subjectsThes": [
+      "Research"
+    ]
+  },
+  "title": "Pan-cancer discovery of clinical and genomic determinants of immune-related adverse events.",
+  "titles": null,
+  "uid": "PRESENTATION259705"
+}

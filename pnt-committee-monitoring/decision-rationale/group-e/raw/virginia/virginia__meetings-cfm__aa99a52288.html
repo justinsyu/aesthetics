@@ -1,0 +1,1064 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5G7880415"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-E5G7880415');
+        </script>
+  <meta http-equiv="Content-Type" content="text/html; CHARSET=windows-1251">
+  <meta name="description" content="Virginia Regulatory Town Hall View Meetings">
+
+  
+<link rel="stylesheet" href="https://townhall.virginia.gov/jquery/jquery-ui-1.13.2/jquery-ui.css">
+<script src="/jquery/jquery-3.7.1.min.js"></script>
+<script src="/jquery/jquery-ui-1.13.2/jquery-ui.min.js"></script>
+
+  <script type="text/javascript">
+   	function getB()
+	   {
+      var Agy = document.MForm.agencynumber.value;
+      $.ajax({
+            type:"POST",
+            url:"Meetings.cfc?method=getboards",
+            data: { AgencyNumber: Agy},
+            cache:false,
+            success: function(ReturnValue) 
+            {
+              var parser = new DOMParser();
+              var xmlDoc = parser.parseFromString(ReturnValue, "text/xml");
+              var dataElement = xmlDoc.getElementsByTagName("data")[0];
+              var ReturnContent = dataElement.getElementsByTagName("string")[0].textContent;
+              document.getElementById('boardidmenu').innerHTML=ReturnContent;
+              initBoardIdTomSelect();
+              applyRetiredFilters();
+              getBpart2(Agy);
+            }
+        });    
+  	 }
+
+	   function getBpart2(Agy)
+	   {
+       $.ajax({
+             type:"POST",
+             url:"Meetings.cfc?method=getChaptersByAgency",
+             data: { AgencyNumber: Agy},
+             cache:false,
+             success: function(ReturnValue) 
+             {
+               var parser = new DOMParser();
+               var xmlDoc = parser.parseFromString(ReturnValue, "text/xml");
+               var dataElement = xmlDoc.getElementsByTagName("data")[0];
+               var ReturnContent = dataElement.getElementsByTagName("string")[0].textContent;
+               document.getElementById('chapteridmenu').innerHTML=ReturnContent;    
+               var Brd = document.MForm.boardid.value;    
+               if (Brd == 'ALL')
+                  {
+                  document.getElementById("chapteridmenu").style.display='none'; 
+                  document.getElementById("divVisibility").value = "none";
+                  }   
+               else
+                  {
+                  document.getElementById("chapteridmenu").style.display='block';
+                  document.getElementById("divVisibility").value = "block";
+                  }
+             }
+         });    
+    } 
+  
+	   function getC()
+	   {
+      var Brd = document.MForm.boardid.value;
+      var Agy = document.MForm.agencynumber.value;
+      $.ajax({
+            type:"POST",
+            url:"Meetings.cfc?method=getChaptersByBoard",
+            data: { AgencyCode: Agy, BoardID: Brd},
+            cache:false,
+            success: function(ReturnValue) {
+            var parser = new DOMParser();
+            var xmlDoc = parser.parseFromString(ReturnValue, "text/xml");
+            var dataElement = xmlDoc.getElementsByTagName("data")[0];
+            var ReturnContent = dataElement.getElementsByTagName("string")[0].textContent
+            document.getElementById('chapteridmenu').innerHTML=ReturnContent;    
+            if (Brd == 'ALL')
+               {
+               document.getElementById("chapteridmenu").style.display='none'; 
+               document.getElementById("divVisibility").value = "none";
+               }   
+            else
+               {
+               document.getElementById("chapteridmenu").style.display='block';
+               document.getElementById("divVisibility").value = "block";
+               }
+          }
+        });    
+    }
+	   function setsort()
+	   {
+      if (document.MForm.time.options[document.MForm.time.selectedIndex].value == 'Future')
+        document.MForm.sort.value = 'MeetingDate ASC';
+      if (document.MForm.time.options[document.MForm.time.selectedIndex].value == 'Today')
+        document.MForm.sort.value = 'MeetingDate ASC';
+      if (document.MForm.time.options[document.MForm.time.selectedIndex].value == 'Past')
+        document.MForm.sort.value = 'MeetingDate DESC';
+      if (document.MForm.time.options[document.MForm.time.selectedIndex].value == 'PastandFuture')
+        document.MForm.sort.value = 'MeetingDate DESC';
+    }
+
+    function initAgencyNumberTomSelect() {
+      if (typeof TomSelect === 'undefined') {
+        return;
+      }
+
+      var agencySelect = document.getElementById('agencynumber');
+      if (!agencySelect) {
+        return;
+      }
+
+      if (agencySelect.tomselect) {
+        return;
+      }
+
+      new TomSelect('#agencynumber', {
+        create: false,
+        allowEmptyOption: true,
+        maxOptions: 1000,
+        sortField: [
+          { field: 'sortRank', direction: 'asc' },
+          { field: 'text', direction: 'asc' }
+        ]
+      });
+    }
+
+    function initBoardIdTomSelect() {
+      if (typeof TomSelect === 'undefined') {
+        return;
+      }
+
+      var boardSelect = document.getElementById('boardid');
+      if (!boardSelect) {
+        return;
+      }
+
+      if (boardSelect.tomselect) {
+        return;
+      }
+
+      new TomSelect('#boardid', {
+        create: false,
+        allowEmptyOption: true,
+        maxOptions: 1000,
+        sortField: [
+          { field: 'sortRank', direction: 'asc' },
+          { field: 'text', direction: 'asc' }
+        ]
+      });
+    }
+
+    function applySelectRetiredFilter(selectEl, showRetired) {
+      if (!selectEl || !selectEl.tomselect) {
+        return;
+      }
+
+      var ts = selectEl.tomselect;
+      var filtered = [];
+
+      for (var i = 0; i < selectEl.options.length; i++) {
+        var o = selectEl.options[i];
+        var value = o.value;
+        var text = o.text;
+        var status = (o.getAttribute('data-status') || '');
+        var isRetired = false;
+
+        if (status) {
+          isRetired = (status.toLowerCase() === 'retired');
+        } else {
+          isRetired = (/retired/i).test(text);
+        }
+
+        if (value === 'ALL') {
+          filtered.push({ value: value, text: text, sortRank: 0 });
+        } else if (showRetired || !isRetired) {
+          filtered.push({ value: value, text: text, sortRank: 1 });
+        }
+      }
+
+      var currentValue = ts.getValue();
+      ts.clearOptions();
+      ts.addOptions(filtered);
+      ts.refreshOptions(false);
+
+      var stillExists = false;
+      for (var j = 0; j < filtered.length; j++) {
+        if (filtered[j].value === currentValue) {
+          stillExists = true;
+          break;
+        }
+      }
+
+      if (stillExists) {
+        ts.setValue(currentValue, true);
+      } else {
+        ts.setValue('ALL', true);
+        selectEl.value = 'ALL';
+      }
+    }
+
+    function applyRetiredFilters() {
+      var showRetiredEl = document.getElementById('showRetiredMeetings');
+      var showRetired = !!(showRetiredEl && showRetiredEl.checked);
+
+      var agencySelect = document.getElementById('agencynumber');
+      var boardSelect = document.getElementById('boardid');
+
+      var priorAgency = agencySelect ? agencySelect.value : null;
+
+      applySelectRetiredFilter(agencySelect, showRetired);
+      applySelectRetiredFilter(boardSelect, showRetired);
+
+      if (agencySelect && priorAgency && priorAgency !== agencySelect.value) {
+        getB();
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function () {
+        initAgencyNumberTomSelect();
+        initBoardIdTomSelect();
+        applyRetiredFilters();
+
+        var showRetiredEl = document.getElementById('showRetiredMeetings');
+        if (showRetiredEl) {
+          showRetiredEl.addEventListener('change', applyRetiredFilters);
+        }
+      });
+    } else {
+      initAgencyNumberTomSelect();
+      initBoardIdTomSelect();
+      applyRetiredFilters();
+
+      var showRetiredEl = document.getElementById('showRetiredMeetings');
+      if (showRetiredEl) {
+        showRetiredEl.addEventListener('change', applyRetiredFilters);
+      }
+    }
+  </script>
+
+  
+  <link rel="stylesheet" type="text/css" href="../styles.css">
+  <link rel="stylesheet" type="text/css" href="../print.css" media="print">
+  <link rel="shortcut icon" href="../townhall.ico">
+  <link rel="stylesheet" href="../tomselect/tom-select.default.css">
+  <script src="../tomselect/tom-select.complete.js"></script>
+
+  
+  <STYLE Type="text/css">
+    #contentwide a.filelink,  #content a.filelink:visited 
+    {
+      Color: #3366cc;
+      Font-Family: Verdana, Arial, Helvetica, Sans Serif;
+      Font-Size: 85%;
+      Font-Weight: Normal;
+      Text-Decoration: None;
+    }
+    #contentwide a.filelink:hover 
+    {
+      Color: Blue;
+      Text-Decoration: Underline
+    }
+    /* style for the pop up selection form */
+    #menuform
+    {
+      border: 1px solid #bbbbbb;
+      padding: 0px;
+      margin-bottom: 8px;
+      background-color: #FFFAEA;
+    }
+  </STYLE>
+
+  <title>Virginia Regulatory Town Hall - Meetings</title>
+
+</head>
+
+<body>
+
+  
+  
+
+<script src="https://www.developer.virginia.gov/media/developer/resources/branding-bar/brandingbar.php" data-item="va_aabrandingbar" aaname="Department of Planning and Budget" aatheme="aatheme-black" defer="" ></script>
+
+<div id="agencybanner" title="Virginia Regulatory Town Hall">
+
+  
+ 
+  
+  <div class="agency-logo">
+    <img src="../graphics/townhallimage.gif" alt="Virginia Regulatory Town Hall" style="max-width: 100%; height: 100%; object-fit: contain;">
+  </div>
+
+</div>
+
+
+  <div id="breadcrumb">
+    
+<div id="sitesearch">
+  
+   	 <form action="../L/search.cfm" method="post">
+        <input type="text" name="keyword" 
+               style="vertical-align: middle; height: 18px; font-size: .85em; width: 140px; background-color: #feffff; padding: 0px; border: 0px; border-top: 1px solid #D5D5D5; border-bottom: 1px solid #D5D5D5;"
+               onclick="javaScript: if (this.value=='Search the TownHall')this.value=''" onkeypress="javaScript: if (this.value=='Search the TownHall')this.value=''" value="Search the TownHall"               
+        ><input type="image" src="../Graphics/MagnifyGlassSearch.gif" style="vertical-align: middle; height: 20px;">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="../L/search.cfm" alt="search page" style="font-size: .9em;">Search Options</a>
+   	  </form>
+   		 
+</div>
+
+
+    <div id="breadcrumblinks"><a href="../index.cfm">Home</a> &gt; Meetings</div>
+  </div>
+
+  
+  
+  <div id="sidebar">
+    
+    
+
+    
+
+    
+    <div id="menu8"><a>&nbsp;</a></div>
+
+    <ul class="menu">
+      <li><a href="../L/ListBoards.cfm" title="Browse Regulations">Find a Regulation</a></li>
+      <li><a href="../L/NowInProgress.cfm" title="Regulatory Activity">Regulatory Activity</a>
+        <ul>
+          <li><a href="../L/NowInProgress.cfm" title="Actions Underway">Actions Underway</a></li>
+          <li><a href="../L/petitions.cfm" title="Petitions for Rulemaking">Petitions</a></li>
+          <li><a href="../L/previews.cfm" title="Periodic Reviews">Periodic Reviews</a></li>
+          <li><a href="../L/generalnotice.cfm" title="General Notices">General Notices</a></li>
+        </ul>
+      </li>
+
+      <li><a href="../L/meetings.cfm?time=today" title="Meetings">Meetings</a></li>
+      <li><a href="../L/GDocs.cfm" title="Guidance Documents">Guidance Documents</a></li>
+      <li><a href="../L/Forums.cfm" title="Comment Forums">Comment Forums</a></li>
+    </ul>
+
+    
+      <div class="navTR">Sign in</div>
+      <div id="menu6"><a href="../L/statelogin.cfm" title="State agency login">State User</a></div>
+      <div id="menu7"><a href="../L/publiclogin.cfm" title="Public user Login">Registered Public</a></div>
+      <div id="menu13"><a href="../L/Register.cfm" title="Register as a public user">Public Sign up</a></div>
+    
+
+    
+    <div id="menu12"><a>&nbsp;</a></div>
+
+    
+
+    
+    
+  </div>
+
+
+
+  <div id="contentwide">
+
+    <h3>Meetings and public hearings</h3>
+
+
+    
+    
+    
+    
+    <form id="MForm" name="MForm" action="meetings.cfm" method="post">
+    <input type="hidden" name="resetsort" value="N">
+    <input type="hidden" name="sort" value="MeetingDate ASC">
+
+
+
+    
+    <div id='menuform' style="padding: 5px; padding-right:10px; border: solid 2px lightsteelblue;">
+
+      <div style="float:left; width:500px;">
+    
+        <input type="hidden" name="divVisibility" id="divVisibility" value="none">
+        <div style="font-size: 1.1em; float:left;">
+          Scheduled for<br>
+          <select id="time" name="time" onchange="setsort();">
+              <option value="Today" selected>Today</option>
+              <option value="Future" >Future</option>
+              <option value="Past" >Past</option>
+              <option value="PastandFuture" >All Past and Future</option>
+          </select>
+        </div>
+        <div style="margin-left: 20px;float:left;">
+          <div style="float: left;">
+            Meeting Title Partial Match<br>
+            <input type="text" name="title" value="" style="width:300px;">
+          </div>
+          <div style="clear:left; font-size: 0px;">&nbsp;</div>
+        </div>
+        <div style="clear:left; font-size: 0px;">&nbsp;</div>
+
+
+        
+        
+
+        <div id="agencynumbermenu" name="agencynumbermenu" style="padding-top: 10px;">
+          Agency<br>
+          <span style="margin-right:8px;">
+            <input type="hidden" name="showRetiredMeetings" value="0" />
+            <input type="checkbox" id="showRetiredMeetings" name="showRetiredMeetings" value="1" style="vertical-align: middle;"  />
+            <label for="showRetiredMeetings" style="vertical-align: middle;">Include Inactive/Retired</label>
+          </span>
+          <select id="agencynumber" name="agencynumber" style="width: 450px" onChange="getB();" style="font-size: 100%;">
+            <option value="ALL">All Agencies - start typing to search</option>
+            
+              <option value="133"
+              data-status="Active"
+              
+              >Auditor of Public Accounts </option>
+            
+              <option value="507"
+              data-status="Retired"
+              
+              >Board for Towing & Recovery Operators, abolished 1/1/13</option>
+            
+              <option value="226"
+              data-status="Active"
+              
+              >Board of Accountancy</option>
+            
+              <option value="242"
+              data-status="Active"
+              
+              >Christopher Newport University</option>
+            
+              <option value="204"
+              data-status="Active"
+              
+              >College of William and Mary</option>
+            
+              <option value="413"
+              data-status="Active"
+              
+              >Commission on the Virginia Alcohol Safety Action Program</option>
+            
+              <option value="262"
+              data-status="Active"
+              
+              >Department for Aging and Rehabilitative Services </option>
+            
+              <option value="163"
+              data-status="Retired"
+              
+              >Department for the Aging (as of 7/1/12, merged into the Department for Aging and Rehabilitative Services)</option>
+            
+              <option value="702"
+              data-status="Active"
+              
+              >Department for the Blind and Vision Impaired</option>
+            
+              <option value="751"
+              data-status="Active"
+              
+              >Department for the Deaf and Hard-of-Hearing</option>
+            
+              <option value="151"
+              data-status="Retired"
+              
+              >Department of Accounts </option>
+            
+              <option value="301"
+              data-status="Active"
+              
+              >Department of Agriculture and Consumer Services</option>
+            
+              <option value="720"
+              data-status="Active"
+              
+              >Department of Behavioral Health and Developmental Services</option>
+            
+              <option value="199"
+              data-status="Active"
+              
+              >Department of Conservation and Recreation</option>
+            
+              <option value="750"
+              data-status="Retired"
+              
+              >Department of Correctional Education (no longer exists, merged into Department of Juvenile Justice & Department of Corrections)</option>
+            
+              <option value="701"
+              data-status="Active"
+              
+              >Department of Corrections</option>
+            
+              <option value="140"
+              data-status="Active"
+              
+              >Department of Criminal Justice Services</option>
+            
+              <option value="201"
+              data-status="Active"
+              
+              >Department of Education</option>
+            
+              <option value="132"
+              data-status="Active"
+              
+              >Department of Elections</option>
+            
+              <option value="127"
+              data-status="Active"
+              
+              >Department of Emergency Management</option>
+            
+              <option value="409"
+              data-status="Active"
+              
+              >Department of Energy</option>
+            
+              <option value="440"
+              data-status="Active"
+              
+              >Department of Environmental Quality</option>
+            
+              <option value="960"
+              data-status="Active"
+              
+              >Department of Fire Programs</option>
+            
+              <option value="778"
+              data-status="Active"
+              
+              >Department of Forensic Science</option>
+            
+              <option value="411"
+              data-status="Active"
+              
+              >Department of Forestry</option>
+            
+              <option value="194"
+              data-status="Active"
+              
+              >Department of General Services</option>
+            
+              <option value="223"
+              data-status="Active"
+              
+              >Department of Health Professions</option>
+            
+              <option value="423"
+              data-status="Active"
+              
+              >Department of Historic Resources</option>
+            
+              <option value="165"
+              data-status="Active"
+              
+              >Department of Housing and Community Development</option>
+            
+              <option value="129"
+              data-status="Active"
+              
+              >Department of Human Resource Management</option>
+            
+              <option value="777"
+              data-status="Active"
+              
+              >Department of Juvenile Justice</option>
+            
+              <option value="181"
+              data-status="Active"
+              
+              >Department of Labor and Industry</option>
+            
+              <option value="141"
+              data-status="Active"
+              
+              >Department of Law</option>
+            
+              <option value="602"
+              data-status="Active"
+              selected
+              >Department of Medical Assistance Services</option>
+            
+              <option value="232"
+              data-status="Retired"
+              
+              >Department of Minority Business Enterprise, abolished 1/1/14</option>
+            
+              <option value="154"
+              data-status="Active"
+              
+              >Department of Motor Vehicles</option>
+            
+              <option value="122"
+              data-status="Retired"
+              
+              >Department of Planning and Budget </option>
+            
+              <option value="222"
+              data-status="Active"
+              
+              >Department of Professional and Occupational Regulation</option>
+            
+              <option value="505"
+              data-status="Active"
+              
+              >Department of Rail And Public Transportation </option>
+            
+              <option value="350"
+              data-status="Active"
+              
+              >Department of Small Business and Supplier Diversity</option>
+            
+              <option value="765"
+              data-status="Active"
+              
+              >Department of Social Services</option>
+            
+              <option value="156"
+              data-status="Active"
+              
+              >Department of State Police</option>
+            
+              <option value="161"
+              data-status="Active"
+              
+              >Department of Taxation</option>
+            
+              <option value="1111"
+              data-status="Retired"
+              
+              >Department of Testing RIS 2.0 on the Virginia Regulatory Town Hall </option>
+            
+              <option value="152"
+              data-status="Active"
+              
+              >Department of the Treasury</option>
+            
+              <option value="501"
+              data-status="Active"
+              
+              >Department of Transportation</option>
+            
+              <option value="912"
+              data-status="Active"
+              
+              >Department of Veterans Services</option>
+            
+              <option value="403"
+              data-status="Active"
+              
+              >Department of Wildlife Resources</option>
+            
+              <option value="327"
+              data-status="Active"
+              
+              >Department of Workforce Development and Advancement (Virginia Works)</option>
+            
+              <option value="247"
+              data-status="Active"
+              
+              >George Mason University</option>
+            
+              <option value="1011"
+              data-status="Active"
+              
+              >Identity Management Standards Advisory Council</option>
+            
+              <option value="216"
+              data-status="Active"
+              
+              >James Madison University</option>
+            
+              <option value="1012"
+              data-status="Active"
+              
+              >Joint Commission on Administrative Rules</option>
+            
+              <option value="202"
+              data-status="Active"
+              
+              >Library of Virginia</option>
+            
+              <option value="214"
+              data-status="Active"
+              
+              >Longwood University</option>
+            
+              <option value="402"
+              data-status="Active"
+              
+              >Marine Resources Commission</option>
+            
+              <option value="506"
+              data-status="Active"
+              
+              >Motor Vehicle Dealer Board</option>
+            
+              <option value="213"
+              data-status="Active"
+              
+              >Norfolk State University</option>
+            
+              <option value="200"
+              data-status="Active"
+              
+              >Office of Children’s Services</option>
+            
+              <option value="150"
+              data-status="Active"
+              
+              >Office of the State Inspector General </option>
+            
+              <option value="221"
+              data-status="Active"
+              
+              >Old Dominion University</option>
+            
+              <option value="217"
+              data-status="Active"
+              
+              >Radford University</option>
+            
+              <option value="307"
+              data-status="Active"
+              
+              >State Certified Seed Board</option>
+            
+              <option value="171"
+              data-status="Retired"
+              
+              >State Corporation Commission</option>
+            
+              <option value="245"
+              data-status="Active"
+              
+              >State Council of Higher Education for Virginia</option>
+            
+              <option value="215"
+              data-status="Active"
+              
+              >University of Mary Washington</option>
+            
+              <option value="207"
+              data-status="Active"
+              
+              >University Of Virginia</option>
+            
+              <option value="999"
+              data-status="Active"
+              
+              >Virginia Alcoholic Beverage Control Authority</option>
+            
+              <option value="1013"
+              data-status="Active"
+              
+              >Virginia Birth-Related Neurological Injury Compensation Program</option>
+            
+              <option value="233"
+              data-status="Retired"
+              
+              >Virginia Board of Bar Examiners (See http://barexam.virginia.gov for more information.)</option>
+            
+              <option value="977"
+              data-status="Active"
+              
+              >Virginia Cannabis Control Authority</option>
+            
+              <option value="108"
+              data-status="Active"
+              
+              >Virginia Code Commission</option>
+            
+              <option value="236"
+              data-status="Active"
+              
+              >Virginia Commonwealth University</option>
+            
+              <option value="260"
+              data-status="Active"
+              
+              >Virginia Community College System</option>
+            
+              <option value="841"
+              data-status="Active"
+              
+              >Virginia Department of Aviation</option>
+            
+              <option value="601"
+              data-status="Active"
+              
+              >Virginia Department of Health</option>
+            
+              <option value="123"
+              data-status="Active"
+              
+              >Virginia Department of Military Affairs</option>
+            
+              <option value="182"
+              data-status="Active"
+              
+              >Virginia Employment Commission</option>
+            
+              <option value="1004"
+              data-status="Retired"
+              
+              >Virginia Housing Development Authority</option>
+            
+              <option value="170"
+              data-status="Retired"
+              
+              >Virginia Human Rights Council (no longer a state agency as of 7/1/12)</option>
+            
+              <option value="848"
+              data-status="Active"
+              
+              >Virginia Indigent Defense Commission</option>
+            
+              <option value="136"
+              data-status="Active"
+              
+              >Virginia Information Technologies Agency</option>
+            
+              <option value="172"
+              data-status="Active"
+              
+              >Virginia Lottery</option>
+            
+              <option value="211"
+              data-status="Active"
+              
+              >Virginia Military Institute</option>
+            
+              <option value="238"
+              data-status="Active"
+              
+              >Virginia Museum Of Fine Arts</option>
+            
+              <option value="175"
+              data-status="Retired"
+              
+              >Virginia Office for Protection and Advocacy (See https://www.dlcv.org/ for more information.)</option>
+            
+              <option value="522"
+              data-status="Active"
+              
+              >Virginia Passenger Rail Authority</option>
+            
+              <option value="208"
+              data-status="Active"
+              
+              >Virginia Polytechnic Institute And State University</option>
+            
+              <option value="407"
+              data-status="Active"
+              
+              >Virginia Port Authority </option>
+            
+              <option value="405"
+              data-status="Active"
+              
+              >Virginia Racing Commission</option>
+            
+              <option value="117"
+              data-status="Retired"
+              
+              >Virginia State Bar  (See http://www.vsb.org/ for more information.)</option>
+            
+              <option value="212"
+              data-status="Active"
+              
+              >Virginia State University</option>
+            
+              <option value="191"
+              data-status="Active"
+              
+              >Virginia Workers' Compensation Commission</option>
+            
+          </select>
+        </div>
+
+        
+        
+
+        <div id="boardidmenu" name="boardidmenu" style="padding-top: 12px;">
+          Regulatory Board<br>
+          <select id="boardid" name="boardid" style="width: 450px" onChange="getC();" style="font-size: 100%;">
+
+            
+              <option value="ALL">All Boards for this Agency</option
+            
+              <option value="64"
+              data-status="Active"
+              
+              >Board of Medical Assistance Services 
+          </select>
+        </div>
+
+        
+        
+
+        <div id="chapteridmenu" name="chapteridmenu" style="padding-top: 12px; display:none;">
+          Chapter/Regulation <br>
+          <select id="chapterid" name="chapterid" style="width: 450px" style="font-size: 100%;">
+
+            
+              <option value="ALL">All Chapters
+            
+              <option value="1179"
+              
+              >12&nbsp;VAC&nbsp;30&#8209;20&nbsp;&nbsp;&nbsp;Administration of Medical Assistance Services 
+              <option value="1731"
+              
+              >12&nbsp;VAC&nbsp;30&#8209;130&nbsp;&nbsp;&nbsp;Amount, Duration and Scope of Selected Services 
+              <option value="2288"
+              
+              >12&nbsp;VAC&nbsp;30&#8209;50&nbsp;&nbsp;&nbsp;Amount, Duration, and Scope of Medical and Remedial Care and Services 
+              <option value="2926"
+              
+              >12&nbsp;VAC&nbsp;30&#8209;122&nbsp;&nbsp;&nbsp;Community Waiver Services for Individuals with Developmental Disabilities 
+              <option value="2370"
+              
+              >12&nbsp;VAC&nbsp;30&#8209;135&nbsp;&nbsp;&nbsp;Demonstration Waivers - 
+              <option value="2071"
+              
+              >12&nbsp;VAC&nbsp;30&#8209;110&nbsp;&nbsp;&nbsp;Eligibility and Appeals 
+              <option value="2216"
+              
+              >12&nbsp;VAC&nbsp;30&#8209;40&nbsp;&nbsp;&nbsp;Eligibility Conditions and Requirements 
+              <option value="1778"
+              
+              >12&nbsp;VAC&nbsp;30&#8209;141&nbsp;&nbsp;&nbsp;Family Access to Medical Insurance Security (FAMIS)Plan 
+              <option value="2159"
+              
+              >12&nbsp;VAC&nbsp;30&#8209;30&nbsp;&nbsp;&nbsp;Groups Covered and Agencies Responsible for Eligibility Determination 
+              <option value="2577"
+              
+              >12&nbsp;VAC&nbsp;30&#8209;121&nbsp;&nbsp;&nbsp;Medicare-Medicaid Demonstration Waivers - 
+              <option value="1981"
+              
+              >12&nbsp;VAC&nbsp;30&#8209;80&nbsp;&nbsp;&nbsp;Methods and Standards for Establishing Payment Rate; Other Types of Care 
+              <option value="2013"
+              
+              >12&nbsp;VAC&nbsp;30&#8209;90&nbsp;&nbsp;&nbsp;Methods and Standards for Establishing Payment Rates for Long-Term Care 
+              <option value="1949"
+              
+              >12&nbsp;VAC&nbsp;30&#8209;70&nbsp;&nbsp;&nbsp;Methods and Standards for Establishing Payment Rates; in-Patient Hospital Care 
+              <option value="3209"
+              
+              >12&nbsp;VAC&nbsp;30&#8209;160&nbsp;&nbsp;&nbsp;Provider Fees and Assessments 
+              <option value="2624"
+              
+              >12&nbsp;VAC&nbsp;30&#8209;5&nbsp;&nbsp;&nbsp;Public Participation Guidelines 
+              <option value="2872"
+              
+              >12&nbsp;VAC&nbsp;30&#8209;95&nbsp;&nbsp;&nbsp;Standards Established and Methods Used for Fee-for-Service Reimbursement 
+              <option value="2336"
+              
+              >12&nbsp;VAC&nbsp;30&#8209;60&nbsp;&nbsp;&nbsp;Standards Established and Methods Used to Assure High Quality Care 
+              <option value="1064"
+              
+              >12&nbsp;VAC&nbsp;30&#8209;10&nbsp;&nbsp;&nbsp;State Plan Under Title XIX of the Social Security Act Medical Assistance Program; General Provisions 
+              <option value="2042"
+              
+              >12&nbsp;VAC&nbsp;30&#8209;100&nbsp;&nbsp;&nbsp;State Programs 
+              <option value="1790"
+              
+              >12&nbsp;VAC&nbsp;30&#8209;150&nbsp;&nbsp;&nbsp;Uninsured Medical Catastrophe Fund 
+              <option value="1762"
+              
+              >12&nbsp;VAC&nbsp;30&#8209;140&nbsp;&nbsp;&nbsp;Virginia Children's Medical Security Insurance Program 
+              <option value="2110"
+              
+              >12&nbsp;VAC&nbsp;30&#8209;120&nbsp;&nbsp;&nbsp;Waivered Services 
+          </select>
+
+        </div>
+        <div style="margin-top: 10px;">
+          <input type="image" src="../graphics/submit.gif" style="vertical-align: top;">
+        </div>
+      </div>
+      
+      <div style="padding-left: 25px; padding-top: 40px; float:left; width:255px;">
+            <b>Meeting Scope</b><br>
+            <div style="padding-bottom:8px;">
+              H<span style="padding-left: 10px;">Public hearing to discuss a proposed change to regulation</span>
+            </div>
+            <div style="padding-bottom:8px;">
+              R<span style="padding-left: 10px;">Discuss particular regulations / chapters</span>
+            </div>
+            <div>
+              G<span style="padding-left: 10px;">General business of the board</span>
+            </div>
+            
+        <br><br><br>
+
+        
+            
+      </div>
+      
+      <div style="clear:left; font-size: 0px;">&nbsp;</div>
+
+    
+    </div>
+
+    0 meetings scheduled for today
+    
+      relating to Department of Medical Assistance Services 
+    <br style="line-height: 6px">
+    
+    
+      <input name="vPage" id="vPage" type="hidden" value="1" style="width: 30px">
+    
+    
+    
+    </form>
+
+
+
+
+    <table style="width: 800px;">
+      <tr>
+        <th colspan=2 style="text-align:center;">
+          
+            <a onClick="document.MForm.sort.value='MeetingDate DESC';document.MForm.vPage.value='1';document.MForm.submit();" style="cursor:pointer; color:white;">Date and Time &nbsp; <img src="../graphics/downarrow.png" border="0"></a>
+          
+        </th>
+        <th style="text-align:center;">Meeting Title</th>
+        <th style="text-align:center;">Board</th>
+        <th style="text-align: center;">Scope</th>
+      </tr>
+      
+        <tr><td colspan=5>No meetings found matching your criteria</td></tr>
+      
+    </table>
+
+  </div>
+
+
+  <br>
+  <div>
+</div>
+<br>
+
+
+</div>
+
+</body>
+</html> 

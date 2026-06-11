@@ -1,0 +1,80 @@
+{
+  "abstractNumber": "3118",
+  "body": " \r\n\r\n\t<div><b>Background: </b> Improved risk stratification is critically needed across multiple cancers to guide treatment decisions. This includes reducing overtreatment in Ductal Carcinoma in Situ (DCIS), addressing late recurrence risk in estrogen receptor-positive/lymph node-negative (ER+/LN-) breast cancer (BC), and refining prognosis in head &amp; neck squamous cell carcinomas (HNSCC), and high-grade serous ovarian carcinoma (HGSOC). Tumor-infiltrating lymphocytes (TILs) reflect anti-tumor immunity, whereas tumor-associated macrophages (TAMs) polarize toward anti-tumor M1-like (CD68+) or immunosuppressive M2-like (CD163+) phenotypes. Integrating TILs with TAM polarization markers may better capture inflammatory balance and improve outcome prediction. We developed a hematoxylin and eosin (H&amp;E)-only AI method (VAIP) to quantify TILs and virtual CD68/CD163 TAMs to develop multi-cancer based potential prognostic models.</p>  <b>Methods: </b> TILs were detected on H&amp;E with HoVer-UNet, and virtual CD68 and CD163 macrophages were inferred with VISTA. In cancer regions, we computed cell densities and immune-balance ratios and trained cancer-specific Cox models with compact feature sets (DCIS 6; HGSOC 7; ER+ 4; HNSCC 4). Prognostic stratification used disease-free survival (DFS) for DCIS (N=273), HGSOC (training N=165, independent test N=220), and ER+ BC (training N=144, test N=622), and overall survival (OS) for HNSCC (N=77), reflecting clinical endpoints. Evaluation used cross-validation for cohorts without an external test set (DCIS, HNSCC) and independent training and testing when independent cohort was available (HGSOC, ER+).</p>  <b>Results: </b> Risk stratification performance across cancer types is in Table 1. The DCIS model used 6 features, largely TIL-macrophage contrast ratios (TIL/M2, TIL/M1). HGSOC used 7 features with a similar ratio-heavy immune-balance signature, plus macrophage-normalized density and polarization metrics (e.g., M1/N, M/N). In contrast, ER+ BC and HNSCC achieved best performance with 4 features dominated by macrophage measures, particularly M2 density and the M1/M2 ratio. Across sites, CD163-related macrophage metrics and immune-balance ratios were consistently informative.</p>  <b>Conclusions: </b> Integrating H&amp;E-visible TILs with virtual CD68/CD163 TAMs enables fully automated, H&amp;E-only prognostic biomarkers that stratify OS and DFS across multiple cancers, demonstrating consistent prognostic value in DCIS, ER+ BC, HGSOC, and HNSCC. These findings support further study of this histomorphometric risk classifier through broader external and prospective validation.</div>\r\n\r\n\r\n\r\n\t<div class=\"table_caption\"><b>Performance across cancer types.</b></div> \r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<p><strong>Cancer Type</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Cohort</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>C-index</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>HR [95% CI]</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>p-value</strong></p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>DCIS</p>\r\n</td>\r\n<td>\r\n<p>All</p>\r\n</td>\r\n<td>\r\n<p>0.616</p>\r\n</td>\r\n<td>\r\n<p>1.76 [1.20-2.59]</p>\r\n</td>\r\n<td>\r\n<p><strong>&lt;0.001</strong></p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>DCIS</p>\r\n</td>\r\n<td>\r\n<p>RT/No-treatment</p>\r\n</td>\r\n<td>\r\n<p>0.624</p>\r\n</td>\r\n<td>\r\n<p>1.94 [1.15-3.26]</p>\r\n</td>\r\n<td>\r\n<p><strong>0.003</strong></p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>HGSOC</p>\r\n</td>\r\n<td>\r\n<p>Test</p>\r\n</td>\r\n<td>\r\n<p>0.553</p>\r\n</td>\r\n<td>\r\n<p>1.38 [1.02-1.87]</p>\r\n</td>\r\n<td>\r\n<p><strong>0.030</strong></p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>ER+ BC</p>\r\n</td>\r\n<td>\r\n<p>Test</p>\r\n</td>\r\n<td>\r\n<p>0.577</p>\r\n</td>\r\n<td>\r\n<p>1.51 [1.00-2.28]</p>\r\n</td>\r\n<td>\r\n<p><strong>0.004</strong></p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>HNSCC</p>\r\n</td>\r\n<td>\r\n<p>All</p>\r\n</td>\r\n<td>\r\n<p>0.603</p>\r\n</td>\r\n<td>\r\n<p>1.92 [1.03-3.36]</p>\r\n</td>\r\n<td>\r\n<p><strong>0.012</strong></p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n\r\n\r\n",
+  "contentId": "263217",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/263217",
+    "queryParams": null,
+    "target": null,
+    "title": "Virtual AI-informed immunocyte profiling (VAIP) from H&amp;E as a predictor of multi-cancer prognosis."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION263217"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780176600000,
+    "start": 1780165800000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "255",
+  "presentationId": "263217",
+  "primaryPerson": {
+    "displayName": "Mayukhmala Jana, BSc",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780176600000,
+    "start": 1780165800000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17137",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17137",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Developmental Therapeutics—Molecularly Targeted Agents and Tumor Biology"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": null,
+  "title": "Virtual AI-informed immunocyte profiling (VAIP) from H&amp;E as a predictor of multi-cancer prognosis.",
+  "titles": null,
+  "uid": "PRESENTATION263217"
+}

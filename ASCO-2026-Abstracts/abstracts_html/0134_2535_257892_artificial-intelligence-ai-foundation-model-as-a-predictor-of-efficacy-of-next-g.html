@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Artificial intelligence (AI) foundation model as a predictor of efficacy of next-generation checkpoint inhibition with botensilimab (BOT) + balstilimab (BAL) in solid tumors using pretreatment H&amp;E images.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Artificial intelligence (AI) foundation model as a predictor of efficacy of next-generation checkpoint inhibition with botensilimab (BOT) + balstilimab (BAL) in solid tumors using pretreatment H&amp;E images.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 2535</div>
+    <div><strong>First speaker:</strong> Ryan Dalton, PhD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/257892">https://www.asco.org/abstracts-presentations/257892</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b> Predicting immunotherapy response is challenging in treatment-refractory/resistant (R/R) tumors where heterogeneity limits conventional biomarker utility. BOT (Fc-enhanced anti–CTLA-4) augments T-cell priming, depletes Tregs, and activates antigen-presenting cells. BOT+BAL (anti–PD-1) has shown activity across “cold” and R/R tumors including PD-L1–low and tumor mutational burden–low disease; thus, non-conventional predictive biomarkers are needed. A self-supervised AI foundation model applied to routine pretreatment H&amp;E images was used to infer spatial transcriptomics and identify features associated with therapeutic benefit from BOT+BAL in microsatellite-stable colorectal cancer (MSS CRC), sarcoma, and ovarian cancer.</p>  <b>Methods: </b> A self-supervised AI foundation model was trained to infer spatial transcriptome expression from H&amp;E images using purpose-built multimodal training data from thousands of human tumors profiled with multimodal assays. Pretreatment H&amp;E images (not used for training) from 121 BOT+BAL–treated patients (pts) with R/R MSS metastatic CRC (included 20 pts with liver metastases), sarcoma, and ovarian cancer from the phase 1b C-800-01 trial (NCT03860272) were analyzed. Pt-specific embeddings were used to fit cross-validated classifiers predicting BOT+BAL clinical benefit (defined as complete or partial response [CR/PR] or stable disease [SD]).</p>  <b>Results: </b> Fitted logistic regression classifiers separated responders and non-responders in all tumor types, as measured by area under the receiver operating characteristic curve (AUROC; ranges from 0.5 [chance] to 1.0 [perfect separation]). Cross-validated AUROC was 0.61 in MSS CRC, 0.67 in sarcoma, and 0.77 in ovarian cancer (table; shows all findings). The model-recommended population is predicted to have a higher rate of clinical benefit, as measured by cross-validated precision. Beyond this binary analysis, the concordance index (C-index; measures accuracy and ranges from 0.5 [chance] to 1.0 [perfect]) for predicting overall survival (OS; via Cox proportional hazards model) was &gt;0.5 in all tumor types, and highest in ovarian cancer.</p>  <b>Conclusions: </b> A self-supervised AI foundation model applied to routine pretreatment H&amp;E images predicted BOT+BAL responses in MSS CRC, sarcoma, and ovarian cancer. These findings support AI-derived, H&amp;E–based biomarker strategies for BOT+BAL and warrant prospective validation.</div>
+
+
+
+	<div class="table_caption"><b>Sample characteristics and model predictions.</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td></td>
+<td><strong>MSS CRC</strong></td>
+<td><strong>Sarcoma</strong></td>
+<td><strong>Ovarian</strong></td>
+</tr>
+<tr>
+<td><strong>Sampled population<sup>a</sup></strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>  No. of pt samples</td>
+<td>67</td>
+<td>30</td>
+<td>24</td>
+</tr>
+<tr>
+<td>  Pts with CR/PR or SD</td>
+<td>65%</td>
+<td>57%</td>
+<td>54%</td>
+</tr>
+<tr>
+<td><strong>Modeled population</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>  AUROC</td>
+<td>0.61</td>
+<td>0.67</td>
+<td>0.77</td>
+</tr>
+<tr>
+<td>  OS prediction, C-index</td>
+<td>0.58</td>
+<td>0.69</td>
+<td>0.78</td>
+</tr>
+<tr>
+<td><strong>Model recommended population</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>  Population size</td>
+<td>43%</td>
+<td>50%</td>
+<td>46%</td>
+</tr>
+<tr>
+<td>  Estimated pts with CR/PR or SD</td>
+<td>76%</td>
+<td>67%</td>
+<td>73%</td>
+</tr>
+</tbody>
+</table></div> 
+
+ 
+	<div class="table_footer"><sup>a</sup>Data cutoff: Mar 13, 2025; analyses ongoing.</div> 
+
+
+</main>
+</body>
+</html>

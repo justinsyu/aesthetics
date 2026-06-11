@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deep learning identification of high-risk lung adenocarcinoma histologic subtypes: A decision-support tool for treatment planning.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Deep learning identification of high-risk lung adenocarcinoma histologic subtypes: A decision-support tool for treatment planning.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e20022</div>
+    <div><strong>First speaker:</strong> Meghdad Sabouri Rad</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/265548">https://www.asco.org/abstracts-presentations/265548</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Lung adenocarcinoma (LUAD) is the most common lung cancer subtype. Solid and micropapillary patterns represent high-grade histology with significantly worse outcomes: 5-year survival of approximately 60% and 40% respectively, compared to over 90% for lepidic-predominant tumors. Accurate identification is critical for adjuvant therapy decisions, as recent evidence suggests survival benefit from chemotherapy in patients with these high-risk components. However, subtyping suffers from interobserver variability (kappa 0.38-0.55), affecting treatment consistency. We developed an AI tool to identify high-risk subtypes for treatment stratification.</div>
+  <main> 
+
+	<div><b>Background: </b> </p>  Lung adenocarcinoma (LUAD) is the most common lung cancer subtype. Solid and micropapillary patterns represent high-grade histology with significantly worse outcomes: 5-year survival of approximately 60% and 40% respectively, compared to over 90% for lepidic-predominant tumors. Accurate identification is critical for adjuvant therapy decisions, as recent evidence suggests survival benefit from chemotherapy in patients with these high-risk components. However, subtyping suffers from interobserver variability (kappa 0.38-0.55), affecting treatment consistency. We developed an AI tool to identify high-risk subtypes for treatment stratification.</p>  <b>Methods: </b> </p>  We analyzed 143 resected LUAD whole slide images with pathologist-confirmed subtypes: acinar (n&nbsp;=&nbsp;60, 42%), solid (n&nbsp;=&nbsp;55, 38%), lepidic (n&nbsp;=&nbsp;16, 11%), micropapillary (n&nbsp;=&nbsp;10, 7%), and papillary (n&nbsp;=&nbsp;5, 4%). High-risk was defined as solid or micropapillary predominant (n&nbsp;=&nbsp;65, 45%) per WHO/IASLC guidelines. Tissue patches (224&#215;224 pixels) at 20x magnification were processed using Virchow2 foundation model, selected based on superior five-class subtyping performance. ABMIL classifiers with gated attention mechanism were trained using 5-fold stratified cross-validation with class weighting and Youden index threshold optimization.</p>  <b>Results: </b> </p>  The model achieved AUC of 0.951&#177;0.06 and balanced accuracy of 86.1%&#177;4.2% for binary high-risk classification (Table 1). At the optimized operating threshold, sensitivity was 81.7%&#177;13.7% with specificity of 90.5%&#177;14.7%, yielding F1 score of 0.86. Positive predictive value of 90% indicates patients flagged high-risk are likely true positives, supporting chemotherapy consideration. Among AI-classified low-risk patients, 89% were confirmed true low-risk (NPV 88.6%&#177;8.0%), identifying candidates for observation. These operating characteristics support use as a standardized second read to reduce variability in high-risk identification.</p>  <b>Conclusions: </b> </p>  This tool addresses a specific clinical dilemma: which resected LUAD patients warrant adjuvant therapy intensification. The 90% PPV means patients flagged high-risk can be confidently considered for chemotherapy; the 89% NPV identifies patients where observation may be appropriate - potentially sparing treatment toxicity without compromising outcomes. In tumor boards, AI-derived risk stratification provides objective data for treatment decisions, particularly in borderline cases where pathologist interpretation varies. External validation on multi-site cohorts (including biopsies) and outcome linkage (recurrence-free survival) are needed to confirm clinical utility.</div>
+
+
+
+	<div class="table_caption"><b>Table 1. Binary High-Risk Detection Performance</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p><strong>Metric</strong></p>
+</td>
+<td>
+<p><strong>Value</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>AUC</p>
+</td>
+<td>
+<p>0.951 ± 0.06</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Balanced Accuracy</p>
+</td>
+<td>
+<p>86.1% ± 4.2%</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Sensitivity</p>
+</td>
+<td>
+<p>81.7% ± 13.7%</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Specificity</p>
+</td>
+<td>
+<p>90.5% ± 14.7%</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>PPV</p>
+</td>
+<td>
+<p>90%</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>NPV</p>
+</td>
+<td>
+<p>88.6% ± 8.0%</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>F1 Score</p>
+</td>
+<td>
+<p>0.86</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

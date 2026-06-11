@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Association patterns among patient-reported adverse events in advanced NSCLC: A post-hoc analysis of the CLIMEDIN randomized controlled trial.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Association patterns among patient-reported adverse events in advanced NSCLC: A post-hoc analysis of the CLIMEDIN randomized controlled trial.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e23271</div>
+    <div><strong>First speaker:</strong> Paris A. Kosmidis, MD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/260168">https://www.asco.org/abstracts-presentations/260168</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> CLIMEDIN was a randomized controlled trial of digital support for patients with advanced or metastatic non-small cell lung cancer. Patients received either general adverse event (AE) information (control arm), or personalized support depending on their reported AEs (intervention arm). Given the statistically significant difference found between the AEs reported digitally by patients and those captured directly by clinicians, this post-hoc analysis aims to identify patterns of likely co-occurrence of AEs.</div>
+  <main> 
+
+	<div><b>Background: </b></p>  CLIMEDIN was a randomized controlled trial of digital support for patients with advanced or metastatic non-small cell lung cancer. Patients received either general adverse event (AE) information (control arm), or personalized support depending on their reported AEs (intervention arm). Given the statistically significant difference found between the AEs reported digitally by patients and those captured directly by clinicians, this post-hoc analysis aims to identify patterns of likely co-occurrence of AEs.</p>  <b>Methods: </b></p>  Between March 2022 and December 2024, 188 patients submitted 7046 reports among 22 preselected AEs, captured in the CareAcross platform database. For this analysis these reports were de-identified and structured based on the specific AEs they contained. Association rule mining (apriori algorithm with support thresholds) was used to calculate the conditional probability of an AE subset (“Associated AEs”) being reported given that another subset (“Index AEs”) was reported concurrently.</p>  <b>Results: </b></p>  The analysis resulted in 7846 pairs of Associated &amp; Index AE subsets, with up to 7 AEs per subset. The conditional probability of co-occurrence (“Confidence”) ranged from 2.5% to 100%.To make the patterns clinically meaningful and practical, analyses were restricted to subsets of 1-2 AEs, resulting in 1870 combinations. Keeping the pairs with probability &gt;&nbsp;&nbsp;=&nbsp;80% resulted in 110 records (37 of which with &gt;&nbsp;&nbsp;=&nbsp;90% probability).The majority (78/110 or 71%) of Associated AEs included Fatigue.Among the AEs that are not immediately available upon clinical examination: Anorexia was correlated with combinations containing dyspnea (with any of rash, constipation, dysphagia, dysgeusia, diarrhea) as well as dysphagia &amp; weight loss. Dysgeusia was correlated with combinations containing anorexia (with any of pruritus, diarrhea), diarrhea (with any of cough, anorexia, dry skin), stomatitis (with any of dry skin, cough) and more.The full list of associations is available upon request.The Table contains the most frequently occurring pairs of 1 or 2 AEs that do not include Fatigue.</p>  <b>Conclusions: </b></p>  Analysis of Patient-Reported Outcomes can provide relevant Real World Evidence to support clinicians in completing the view of their patients’ journeys. This can be particularly applicable when information is missing, or AEs cannot be readily evaluated clinically.Data Science and Artificial Intelligence can further help derive actionable insights for clinical care and research.</div>
+
+
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p><strong>Index AEs</strong></p>
+</td>
+<td>
+<p><strong>Associated AEs</strong></p>
+</td>
+<td>
+<p><strong>Confidence (%)</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Peripheral Neuropathy, Chest Pain</p>
+</td>
+<td>
+<p>Dry Skin</p>
+</td>
+<td>
+<p>94.7</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Dyspnea, Rash</p>
+</td>
+<td>
+<p>Anorexia</p>
+</td>
+<td>
+<p>93.7</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Peripheral Neuropathy, Bone Pain</p>
+</td>
+<td>
+<p>Dry Skin</p>
+</td>
+<td>
+<p>92.1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Anorexia, Pruritus</p>
+</td>
+<td>
+<p>Dysgeusia</p>
+</td>
+<td>
+<p>88.7</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Peripheral Neuropathy, Chest Pain</p>
+</td>
+<td>
+<p>Bone Pain</p>
+</td>
+<td>
+<p>88.4</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Cough, Diarrhea</p>
+</td>
+<td>
+<p>Dysgeusia</p>
+</td>
+<td>
+<p>88.2</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Weight Loss, Dysphagia</p>
+</td>
+<td>
+<p>Anorexia</p>
+</td>
+<td>
+<p>88.1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Cough, Diarrhea</p>
+</td>
+<td>
+<p>Dry Skin</p>
+</td>
+<td>
+<p>87.5</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Dyspnea, Rash</p>
+</td>
+<td>
+<p>Dysgeusia, Anorexia</p>
+</td>
+<td>
+<p>86.3</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

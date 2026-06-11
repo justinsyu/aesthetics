@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Predicting recurrence and survival in hormone receptor–positive (HR+)/HER2-negative (HER2–) early breast cancer (EBC) with machine learning models: Optimization of model complexity.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Predicting recurrence and survival in hormone receptor–positive (HR+)/HER2-negative (HER2–) early breast cancer (EBC) with machine learning models: Optimization of model complexity.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 562</div>
+    <div><strong>First speaker:</strong> Frederick Howard, MD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/265779">https://www.asco.org/abstracts-presentations/265779</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b> A machine learning model was previously developed to predict distant recurrence (DR) in endocrine therapy–treated patients with HR+/HER2− EBC, with high accuracy achieved using 10 variables (Howard FM, et al. <em>Clin Cancer Res</em>. 2026). Here, optimal performance, based on the number and identity of variables, of recurrence models that include survival events (distant relapse–free survival [DRFS], overall survival [OS]) was determined.</p>  <b>Methods: </b> Retrospective data from patients with stage I-III HR+/HER2− EBC (diagnosed 1 January 2011 to 30 April 2024) were extracted from the Flatiron Health US electronic health record–derived database. Elastic net–penalized Cox proportional hazards–based machine learning models were developed with 2, 5, 10, 15, or 20 variables identified by gradient boosting to predict DR, DRFS, and OS; DRFS was defined according to STEEP criteria v2.0. Model performance was assessed using the C-index and Brier score (BS).</p>  <b>Results: </b> With modeling based on 7842 patients, DR prediction accuracy plateaued (C-index, 0.857; BS, 0.046) (Table) with 10 variables (N status, T status, tumor grade, Ki-67 score, age, time from diagnosis to surgery, percent estrogen receptor–positive cells, menopausal status [post-], Oncotype DX Recurrence Score, and percent progesterone receptor–positive cells). The DRFS (C-index, 0.740; BS, 0.089) and OS (C-index, 0.781; BS, 0.075) prediction models showed high accuracy with 5 to 10 variables, and accuracy continued to increase with up to 20 variables. In contrast to the DR prediction model, the DRFS and OS prediction models included functional status (ie, Eastern Cooperative Oncology Group performance status, Charlson Comorbidity Index) among the most impactful variables.</p>  <b>Conclusions: </b> DR model performance plateaued with 10 tumor-intrinsic variables. In contrast, optimal DRFS and OS prediction required expanding the model to 20 variables, including functional and comorbidity domains necessary to capture non-cancer competing risks critical for survival prediction in real-world populations, despite the modest statistical impact. The machine learning model for predicting DR, a reliable proxy for survival in HR+/HER2− EBC, is based on a lower number of risk factors that are commonly accessible in real-world clinics and has good accuracy.</div>
+
+
+
+	<div class="table_caption"><b>Model performance by outcome and number of variables.</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p><strong>No. of variables </strong></p>
+</td>
+<td>
+<p><strong>DR (C-index<sup>a</sup>) </strong></p>
+</td>
+<td>
+<p><strong>DR (BS<sup>b</sup>) </strong></p>
+</td>
+<td>
+<p><strong>DRFS (C-index<sup>a</sup>) </strong></p>
+</td>
+<td>
+<p><strong>DRFS (BS<sup>b</sup>) </strong></p>
+</td>
+<td>
+<p><strong>OS (C-index<sup>a</sup>) </strong></p>
+</td>
+<td>
+<p><strong>OS (BS<sup>b</sup>) </strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>2  </p>
+</td>
+<td>
+<p>0.812 </p>
+</td>
+<td>
+<p>0.044 </p>
+</td>
+<td>
+<p>0.667 </p>
+</td>
+<td>
+<p>0.093 </p>
+</td>
+<td>
+<p>0.611 </p>
+</td>
+<td>
+<p>0.081 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>5  </p>
+</td>
+<td>
+<p>0.849 </p>
+</td>
+<td>
+<p>0.046 </p>
+</td>
+<td>
+<p>0.718 </p>
+</td>
+<td>
+<p>0.092 </p>
+</td>
+<td>
+<p>0.770 </p>
+</td>
+<td>
+<p>0.075 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>10  </p>
+</td>
+<td>
+<p>0.857 </p>
+</td>
+<td>
+<p>0.046 </p>
+</td>
+<td>
+<p>0.736 </p>
+</td>
+<td>
+<p>0.089 </p>
+</td>
+<td>
+<p>0.774 </p>
+</td>
+<td>
+<p>0.075 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>15  </p>
+</td>
+<td>
+<p>0.858 </p>
+</td>
+<td>
+<p>0.046 </p>
+</td>
+<td>
+<p>0.737 </p>
+</td>
+<td>
+<p>0.089 </p>
+</td>
+<td>
+<p>0.776 </p>
+</td>
+<td>
+<p>0.076 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>20  </p>
+</td>
+<td>
+<p>0.851 </p>
+</td>
+<td>
+<p>0.047 </p>
+</td>
+<td>
+<p>0.740 </p>
+</td>
+<td>
+<p>0.089 </p>
+</td>
+<td>
+<p>0.781 </p>
+</td>
+<td>
+<p>0.075 </p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+ 
+	<div class="table_footer"><sup>a</sup>Concordance index; scores span from 0.5 to 1; 1 = perfect. <sup>b</sup>Brier score; scores span from 0 to 0.25; 0 = perfect.</div> 
+
+
+</main>
+</body>
+</html>

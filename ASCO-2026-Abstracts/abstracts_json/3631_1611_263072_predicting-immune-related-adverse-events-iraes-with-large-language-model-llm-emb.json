@@ -1,0 +1,90 @@
+{
+  "abstractNumber": "1611",
+  "body": " \r\n\r\n\t<div><b>Background: </b> irAEs are a common side effect of immune checkpoint inhibitor (ICI) therapy. Predicting irAEs from clinical records relies on traditional machine learning methods, which require time-consuming and extensive feature engineering such as removing features with many missing values or imputing values. Using LLM vector embeddings to train classifier models may require less feature engineering and leverage LLM understanding of semantic information. We assessed whether this LLM method could predict development of irAEs 12 weeks after initiating an ICI.</p>  <b>Methods: </b> We used patient (pt) data from the Immuno-Oncology Registry, a database of cancer pts from 10 DC-Baltimore-based MedStar Health network hospitals and Hackensack Meridian Health system in New Jersey. The data were divided into training (80%) and testing (20%) datasets. The training dataset was oversampled to balance the irAE class distribution. Tabular data was serialized into natural language, then passed into a LLM with original text, 0-shot, 1-shot, or few-shot prompting. Due to LLM context length limits, pt information was separated into 9 components, and each component embedding was max-pooled before concatenation. The embeddings were used to train 4 classifier models with hyperparameter tuning: XGBoost, support vector machine (SVM), logistic regression (LR), and multilayer perceptron (MLP). Five different sentence transformer or text embedding LLMs were tested. Model classification performance was evaluated by Area Under the Receiver Operating Characteristic curve (AUROC).</p>  <b>Results: </b> Of the 1459 pts, 585 (40%) experienced irAE(s). The most common cancers were lung cancer (34.5%) and melanoma (27.7%). ICIs included anti-CTLA-4 (11.0%), anti-PD-1 (58.9%), anti-PD-L1 (4.6%), anti-PD-1 + anti-CTLA-4 (14.0%), anti-PD-1 + chemotherapy (3.1%), anti-PD-1 + tyrosine kinase inhibitor (0.07%), and others (8.4%). The most common irAEs were skin rash (14.5%) and colitis (8.9%). Median AUROC was highest for XGBoost (0.654), followed by LR (0.641), MLP (0.627), and finally SVM (0.596). Median AUROC was highest for 0-shot (0.641), followed by original (0.636), 1-shot (0.619), and few-shot (0.516). Of the LLMs tested, intfloat/e5-base combined with XGBoost and the original prompt demonstrated the strongest performance (AUROC = 0.712, see Table), although for 0-shot and 1-shot LR was a stronger classifier.</p>  <b>Conclusions: </b> Using LLM embeddings to train classifier models is feasible for making predictions with tabular medical data, works best with XGBoost, and does not need prompt engineering. This method requires less feature engineering and data processing compared to standard approaches and leverages the extensive pre-training and semantic understanding of LLMs to achieve predictive power.</div>\r\n\r\n\r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<p><strong>e5-base</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>original</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>0-shot</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>1-shot</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>few-shot</strong></p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>XGBoost</p>\r\n</td>\r\n<td>\r\n<p>0.71</p>\r\n</td>\r\n<td>\r\n<p>0.62</p>\r\n</td>\r\n<td>\r\n<p>0.67</p>\r\n</td>\r\n<td>\r\n<p>0.62</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>SVM</p>\r\n</td>\r\n<td>\r\n<p>0.56</p>\r\n</td>\r\n<td>\r\n<p>0.61</p>\r\n</td>\r\n<td>\r\n<p>0.67</p>\r\n</td>\r\n<td>\r\n<p>0.65</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>LR</p>\r\n</td>\r\n<td>\r\n<p>0.64</p>\r\n</td>\r\n<td>\r\n<p>0.66</p>\r\n</td>\r\n<td>\r\n<p>0.69</p>\r\n</td>\r\n<td>\r\n<p>0.64</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>MLP</p>\r\n</td>\r\n<td>\r\n<p>0.63</p>\r\n</td>\r\n<td>\r\n<p>0.65</p>\r\n</td>\r\n<td>\r\n<p>0.65</p>\r\n</td>\r\n<td>\r\n<p>0.59</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n\r\n\r\n",
+  "contentId": "263072",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/263072",
+    "queryParams": null,
+    "target": null,
+    "title": "Predicting immune-related adverse events (irAEs) with large language model (LLM) embeddings."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION263072"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780160400000,
+    "start": 1780149600000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "529",
+  "presentationId": "263072",
+  "primaryPerson": {
+    "displayName": "Tiffany Tian, BA",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780160400000,
+    "start": 1780149600000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17086",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17086",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Care Delivery/Models of Care"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": {
+    "countriesThes": null,
+    "drugsThes": null,
+    "entitiesThes": null,
+    "genesThes": null,
+    "orgThes": null,
+    "subjectsThes": [
+      "Oncology professional practice",
+      "Treatment"
+    ]
+  },
+  "title": "Predicting immune-related adverse events (irAEs) with large language model (LLM) embeddings.",
+  "titles": null,
+  "uid": "PRESENTATION263072"
+}

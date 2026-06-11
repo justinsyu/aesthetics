@@ -1,0 +1,276 @@
+ 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Boards and Commissions</title>
+
+    <!--%@ Page Language="C#" AutoEventWireup="true" CodeBehind="scripts.aspx.cs" Inherits="BoardsCommissions.cms.inc.scripts" %-->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache,no-Store">
+
+<script src="https://cdn.sd.gov/lib/jquery/jquery.min.js"></script>
+<script src="/inc/scripts/flowtype.js"></script>
+<script src="/inc/scripts/site.js"></script>
+<link href="/inc/styles/styles.css" rel="stylesheet" type="text/css" />
+    <style>
+        #mainNavCont{display: none;}
+    </style>
+</head>
+<body>
+    <form method="post" action="./SearchResults.aspx?Letter=L" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'header_imgbutton1')" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=duaBEq24O1jOUyk_E5-NAhPBoZ05VqZMGxvB7p5kKqaRmYs1TUjP1uNGhab3SLwJQL1XRapRRL49FnTfN2yVO8CR9us1&amp;t=638901356248157332" type="text/javascript"></script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="6CEFA833" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="xcFvbU7RKKxQ5vbTXhsiJOa5E+hbFtfuPZNuhkgJ9/EN3SUB3Akx0onxE+hkbKhcfNa4Ee0p87LbEEbLeYGak4FaAzGocy7ZgD1+neBKKttgKyxzlL3gqv+SZd0ILNArj6f6uRinCOOyT0635Slg/XRD8cQYwSMZOlBguUHsdx6tZ70t6e6wCMN0cBfjg9q+PS8avqXEFWqyE8KHBKTcv1PDiA1OmK2xb1WScOF4CR+6eqogprNXvdRw0RpEuHr8t5T87/SoF+dp098qvnfZbOiG7aoVGlFvWuZLCWmPHI9W0G5Pw0sDRyBl9+GXVWDDKxZu2RyRgsuNSLGIQUh4wDy0BrDi+qIUYyybqyDdDT63RnORZ+EUnVsu6NVQhtw8YBpyVkOp1Cw6r7V7PP4hZH+pZyGd+8wqBY4x/yIregnH2Ff2GFC6DxhW9ylO+QwjqXcRvtJDy4FqWrdfRnXX6M6W5kfdT9gDk9I79zShri07vQ1Fa1lJ6WYdhlH0b6qDlpuPf8+Ut0ps0kXlDbHmasqHfr6Zp6gkndNv5IJrAO9rNha+Bh6Z++99pcamTaVy3nRFP4CrZnYYCB6bn1vDyddcVZqNTs7tbED4d1vTYsTVr2wYSdrJ08NQu7j85KcVJTpmHfgTIys1i5U3zJxILYzceAAqts9p420rhaT2cHYLzHZJ5G0peCa646oUi6UG+WGLY59imFUQC/9D+2OWhYz2VZSeMZDpnG30PqIQZ5WMmxWzWrdXwCb+G7fe1hJiaC7bxhKs7rm+s96ok7TFWE9mkqk=" />
+</div>
+        <header>
+			
+
+<div id="seal">
+    <img src="img/BW_Seal_Vector.png" />
+</div>
+
+<div id="logo">
+    <a href="/">
+        <img src="/img/logo.png" />
+    </a>
+</div>
+
+<div id="discloseLink">
+    <a href="http://atg.sd.gov/legal/opengovernment/authorityboardcommission.aspx">ANNUAL DISCLOSURE</a>
+</div>
+
+<div id="search">
+    <div id="searchCont">
+        
+        <div id="geninfoTitle"><a href="#">General Information</a></div>
+        <div id="searchTitle"><a href="#">Find a Board or Commission</a></div>
+        <div id="geninfo">
+            <ul>
+                <li><a href="information/BCMeetingGuidelinesSD.pdf">Boards and Commissions Manual</a></li>
+                <li><a href="https://bfm.sd.gov/budget/boardcompensation.pdf" target="_blank" rel="noopener noreferrer nofollow">Board Compensation</a></li>
+            </ul>
+        </div>
+        <div id="findBC">
+
+            <a id="listALL" href="SearchResults.aspx?Letter=ALL">List All Boards and Commissions</a>
+            <div id="keyWRD">
+                <table class="findTable">
+                    <tr>
+                        <td>
+                            <label for="header_txtKeyword">Search:</label>
+                            <input name="header$txtKeyword" type="text" id="header_txtKeyword" />
+                        </td>
+                        <td>
+                            <input type="image" name="header$imgbutton1" id="header_imgbutton1" src="/img/search.png" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="byAgcy">
+                By Agency: 
+                <select name="header$ddlAgency" onchange="javascript:setTimeout(&#39;WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;header$ddlAgency&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))&#39;, 0)" id="header_ddlAgency" class="ddlagency">
+	<option selected="selected" value="0">--Select Agency--</option>
+	<option value="22">Attorney General</option>
+	<option value="38">Board of Regents</option>
+	<option value="3">Bureau of Administration</option>
+	<option value="1">Bureau of Finance and Management</option>
+	<option value="4">Bureau of Human Resources</option>
+	<option value="2">Bureau of Information and Telecommunications</option>
+	<option value="5">Department of Ag and Natural Resources</option>
+	<option value="6">Department of Corrections</option>
+	<option value="7">Department of Education</option>
+	<option value="9">Department of Game, Fish, and Parks</option>
+	<option value="10">Department of Health</option>
+	<option value="11">Department of Human Services</option>
+	<option value="12">Department of Labor and Regulation</option>
+	<option value="13">Department of Public Safety</option>
+	<option value="14">Department of Revenue</option>
+	<option value="15">Department of Social Services</option>
+	<option value="18">Department of Tourism</option>
+	<option value="16">Department of Transportation</option>
+	<option value="33">Department of Tribal Relations</option>
+	<option value="17">Governor&#39;s Office of Economic Development </option>
+	<option value="24">Office of the Governor</option>
+	<option value="27">Public Utilities Commission</option>
+	<option value="30">School and Public Lands</option>
+	<option value="29">Secretary of State</option>
+	<option value="37">South Dakota Housing Authority</option>
+	<option value="28">South Dakota Retirement System</option>
+	<option value="32">State Treasurer</option>
+	<option value="36">Unified Judicial System</option>
+
+</select>
+            </div>
+
+
+            <div id="findBCBTTM">
+                <ul id="letters">
+                    <li id="letterTitle">By Letter:</li>
+                    <li><a href="SearchResults.aspx?Letter=A">A</a></li>
+                    <li><a href="SearchResults.aspx?Letter=B">B</a></li>
+                    <li><a href="SearchResults.aspx?Letter=C">C</a></li>
+                    <li><a href="SearchResults.aspx?Letter=D">D</a></li>
+                    <li><a href="SearchResults.aspx?Letter=E">E</a></li>
+                    <li><a href="SearchResults.aspx?Letter=F">F</a></li>
+                    <li><a href="SearchResults.aspx?Letter=G">G</a></li>
+                    <li><a href="SearchResults.aspx?Letter=H">H</a></li>
+                    <li><a href="SearchResults.aspx?Letter=I">I</a></li>
+                    <li><a href="SearchResults.aspx?Letter=J">J</a></li>
+                    <li>K</li>
+                    <li><a href="SearchResults.aspx?Letter=L">L</a></li>
+                    <li><a href="SearchResults.aspx?Letter=M">M</a></li>
+                    <li><a href="SearchResults.aspx?Letter=N">N</a></li>
+                    <li><a href="SearchResults.aspx?Letter=O">O</a></li>
+                    <li><a href="SearchResults.aspx?Letter=P">P</a></li>
+                    <li><a href="SearchResults.aspx?Letter=Q">Q</a></li>
+                    <li><a href="SearchResults.aspx?Letter=R">R</a></li>
+                    <li><a href="SearchResults.aspx?Letter=S">S</a></li>
+                    <li><a href="SearchResults.aspx?Letter=T">T</a></li>
+                    <li><a href="SearchResults.aspx?Letter=U">U</a></li>
+                    <li><a href="SearchResults.aspx?Letter=V">V</a></li>
+                    <li><a href="SearchResults.aspx?Letter=W">W</a></li>
+                    <li>X</li>
+                    <li>Y</li>
+                    <li>Z</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script>
+		jQuery(document).ready(function () {
+
+            //find a board/commission search open/close
+            $("#findBC").hide();
+            $("#geninfo").hide();
+            $("#searchTitle").on("click touchstart", function (e) {
+                $("#geninfo").slideUp();
+                $("#findBC").slideToggle();
+                e.stopPropagation();
+            });
+            $("#geninfoTitle").on("click touchstart", function (e) {
+                $("#findBC").slideUp();
+                $("#geninfo").slideToggle();
+                e.stopPropagation();
+            });
+
+		});
+    </script>
+        </header>
+
+        <div id="content">
+           <div id="searchby"> Search Results for <span id="lblSearchType">Search by Letter</span></div>
+	<span id="lblError" style="color:Red;"></span>
+    <span id="noresults" class="noresults"></span><br />
+
+    <div>
+	<table cellspacing="0" id="gvResults" style="border-style:None;border-collapse:collapse;">
+		<tr>
+			<th scope="col" style="width:400px;">Board Name</th>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_0" href="Meetings.aspx?BoardID=8">Animal Industry Board</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_1" href="Meetings.aspx?BoardID=150">Appraisal, Board of </a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_2" href="Meetings.aspx?BoardID=228">Commission on Indigent Legal Services</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_3" href="Meetings.aspx?BoardID=36">Emergency Response Commission</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_4" href="Meetings.aspx?BoardID=215">Law Enforcement Officers Standards Commission</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_5" href="Meetings.aspx?BoardID=62">Lottery Commission, South Dakota</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_6" href="Meetings.aspx?BoardID=67">Minerals and Environment Board</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_7" href="Meetings.aspx?BoardID=89">Science and Technology Authority</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_8" href="Meetings.aspx?BoardID=6">South Dakota Advisory Council on Aging</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_9" href="Meetings.aspx?BoardID=61">South Dakota State Library Board</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_10" href="Meetings.aspx?BoardID=37">Technical Professions Board</a><br />
+                </td>
+		</tr><tr>
+			<td align="left" style="width:400px;">
+                    <a id="gvResults_HyperLink2_11" href="Meetings.aspx?BoardID=108">Water and Natural Resources Board</a><br />
+                </td>
+		</tr>
+	</table>
+</div>
+        </div>
+
+	<a href="#" class="back-to-top"></a>
+
+        <!--%@ Page Language="C#" AutoEventWireup="true" CodeBehind="footer.aspx.cs" Inherits="BoardsCommissions.cms.inc.footer" %-->
+
+<footer>
+	<div id="copyright">&copy; 2026 | Powered by <a href="http://bit.sd.gov/" target="_blank" rel="noreferrer noopener">BIT</a> | <a href="http://sd.gov/" target="_blank" rel="noreferrer noopener">State of South Dakota</a></div>
+	<div id="footerlinks"><a href="http://sd.gov/" target="_blank" rel="noreferrer noopener">sd.gov</a> | <a href="http://sdlegislature.gov/" target="_blank" rel="noreferrer noopener">sdlegislature.gov</a> | <a href="mailto:bandc@state.sd.us?subject=General Inquiry">email us</a></div>
+</footer></form>
+
+  <script>
+  	$(document).ready(function () {
+            $("#findBC").show();
+  	});
+   </script>
+</body>
+</html>

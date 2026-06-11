@@ -1,0 +1,80 @@
+{
+  "abstractNumber": "7522",
+  "body": " \r\n\r\n\t<div><b>Background: </b> Oncology increasingly relies on large, heterogeneous datasets spanning genomics, clinical records, imaging, and treatment history. Large language models (LLMs) show promise for synthesizing such information, yet currently suffer from limited transparency, hallucination risk, and poor alignment with real-world clinical reasoning. There is a critical need for AI systems that can integrate multimodal data while preserving interpretability, traceability, and clinician control.</p>  <b>Methods: </b></p>  We developed a modular AI decision-support system to assist oncologists in complex clinical reasoning tasks. Unlike monolithic LLM approaches, it decomposes clinical questions into atomic sub-tasks that are executed through structured, auditable pipelines, while integrating curated clinical data (EHR, genomics, pathology), external knowledge bases, and computational analyses via a function-oriented architecture. Each step is independently validated, logged, and audited to ensure correctness.</p>  It uses a hybrid local/cloud architecture and was evaluated on real-world oncology use cases in Moffitt Cancer Center’s Multiple Myeloma (MM) cohort, which contains three data modalities: clinical, molecular, and pre-clinical. Clinical data resides in a PHI-compliant Snowflake data warehouse (Moffitt Cancer Analytics Platform, MCAP), including longitudinally-resolved treatment and outcome information from clinical notes, labs, pathology and radiology reports. CD138-enriched bone marrow samples from 1,260 MM patients were molecularly profiled using RNA-seq (n=1,376 biopsies) and whole exome sequencing (WES, n=1,427), whereas 549 tumor samples from MM patients were tested for ex vivo drug sensitivity.</p>  <b>Results: </b>This system successfully decomposed complex clinical questions into atomic sub-questions and generated appropriate database queries and software tool calls to retrieve relevant information across heterogeneous data sources. Independently, the system integrated clinical data—including physician notes, pathology reports, laboratory values and pharmacy records—to reconstruct longitudinal patient histories achieving 80% concordance with expert manual abstraction, while reducing case synthesis time from hours to minutes. Importantly, the system preserved transparency by explicitly exposing intermediate reasoning steps and highlighting missing or ambiguous data requiring clinician judgment.</p>  <b>Conclusions: </b> We propose a shift from generative AI toward structured, interpretable clinical reasoning systems. By emphasizing modularity, auditability, and human-in-the-loop design, we offer a scalable path toward trustworthy AI deployment in oncology. This framework supports precision medicine not by replacing clinical judgment, but by amplifying it—providing clinicians with transparent, reproducible, and context-aware decision support.</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+  "contentId": "261366",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/261366",
+    "queryParams": null,
+    "target": null,
+    "title": "Echo cancer advisor: A modular AI framework for interpretable, patient-specific oncology decision support."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION261366"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780333200000,
+    "start": 1780322400000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "401",
+  "presentationId": "261366",
+  "primaryPerson": {
+    "displayName": "Ariosto Siqueira Silva, PhD, BSc",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780333200000,
+    "start": 1780322400000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17107",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17107",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Hematologic Malignancies—Plasma Cell Dyscrasia"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": null,
+  "title": "Echo cancer advisor: A modular AI framework for interpretable, patient-specific oncology decision support.",
+  "titles": null,
+  "uid": "PRESENTATION261366"
+}

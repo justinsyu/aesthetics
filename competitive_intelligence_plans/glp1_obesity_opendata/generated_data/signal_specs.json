@@ -1,0 +1,101 @@
+[
+  {
+    "datasets": [
+      "cms/sdud",
+      "cms/part-d-spending",
+      "cms/medicaid-spending"
+    ],
+    "description": "GLP-1 product uptake and spend over time by payer channel and geography when available.",
+    "primary_measures": [
+      "number_of_prescriptions",
+      "total_claims",
+      "total_beneficiaries",
+      "units_reimbursed",
+      "total_amount_reimbursed",
+      "total_spending",
+      "avg_spending_per_claim",
+      "avg_spending_per_dosage_unit"
+    ],
+    "refresh_cadence": "monthly for SDUD metadata, quarterly for SDUD large scan, annually for spending-by-drug releases",
+    "signal_id": "competitor_utilization_momentum"
+  },
+  {
+    "datasets": [
+      "cms/nadac",
+      "cms/ful",
+      "cms/drug-rebate-products",
+      "cms/ira-drug-prices",
+      "ca-hcai/wac-increases"
+    ],
+    "description": "Price, reimbursement, rebate, and IRA negotiation pressure around GLP-1 and adjacent metabolic drugs.",
+    "primary_measures": [
+      "nadac_per_unit",
+      "federal_upper_limit",
+      "rebate_category",
+      "market_date",
+      "wac_increase",
+      "maximum_fair_price"
+    ],
+    "refresh_cadence": "monthly to quarterly depending on source",
+    "signal_id": "payer_reimbursement_pressure"
+  },
+  {
+    "datasets": [
+      "fda/drugs-at-fda",
+      "fda/ndc-directory",
+      "fda/orange-book",
+      "fda/nme-approvals",
+      "fda/drug-shortages",
+      "fda/drug-recalls"
+    ],
+    "description": "Approved GLP-1 products, dosage forms, NDCs, application numbers, reference flags, shortages, recalls, and lifecycle changes.",
+    "primary_measures": [
+      "application_number",
+      "approval_date",
+      "dosage_form",
+      "route",
+      "strength",
+      "product_ndc",
+      "marketing_status",
+      "shortage_status",
+      "recall_classification"
+    ],
+    "refresh_cadence": "weekly for NDC/shortage/recall context, monthly for Orange Book",
+    "signal_id": "regulatory_product_lifecycle"
+  },
+  {
+    "datasets": [
+      "cdc/brfss",
+      "owid/obesity",
+      "census/health-insurance-coverage",
+      "cms/medicaid-chip-enrollment"
+    ],
+    "description": "Population burden and coverage context for obesity GLP-1 launch and access planning.",
+    "primary_measures": [
+      "obesity_prevalence",
+      "diabetes_prevalence",
+      "uninsured_rate",
+      "medicaid_enrollment"
+    ],
+    "refresh_cadence": "annual to monthly depending on source",
+    "signal_id": "market_opportunity_access_context"
+  },
+  {
+    "datasets": [
+      "cms/transparency-in-coverage",
+      "cms/marketplace-plans",
+      "cms/mlr-data"
+    ],
+    "description": "Issuer denial behavior, appeals, marketplace footprint, premiums, cost-sharing, and insurer financial context.",
+    "primary_measures": [
+      "claims_denied",
+      "denial_rate",
+      "appeals_overturned",
+      "premium",
+      "deductible",
+      "issuer_mlr"
+    ],
+    "refresh_cadence": "annual plan-year and CMS filing releases",
+    "signal_id": "insurer_behavior_access_context"
+  }
+]

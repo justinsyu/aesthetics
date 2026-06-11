@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interpretable machine learning to identify health system levers for survival outcomes of patients with breast cancer.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Interpretable machine learning to identify health system levers for survival outcomes of patients with breast cancer.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 1594</div>
+    <div><strong>First speaker:</strong> Erin Jay Garbes Feliciano, MD, MBA</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/263102">https://www.asco.org/abstracts-presentations/263102</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b> Breast cancer is the most commonly diagnosed cancer and a leading cause of cancer death among women worldwide. Despite advances in screening and treatment, global disparities in breast cancer outcomes remain stark. The mortality-to-incidence ratio (MIR) is an ecological measure of cancer control performance. We applied interpretable machine learning to quantify country-level determinants of the breast cancer MIR within the health system, facilitating examination of interrelated factors for each individual country.</p>  <b>Methods: </b> We developed a CatBoost gradient-boosting model with SHAP (SHapley Additive exPlanations) analysis to predict female breast cancer MIR across 185 countries using GLOBOCAN 2022 data. Health system indicators were compiled from WHO, World Bank, and DIRAC databases, including GDP per capita, UHC index, radiotherapy centers per 1000 population, health spending metrics, workforce densities (physicians, nurses, surgical workforce per 1000), pathology services, gender inequality index, and breast screening program status. The model was trained with repeated leave-one-country-out cross-validation (10 repeats; 1850 total predictions) and nested hyperparameter optimization. SHAP values quantified country-specific feature attributions.</p>  <b>Results: </b> The model demonstrated robust predictive performance, with R&#178; = 0.793 (95% CI: 0.726-0.844), RMSE = 0.068 (95% CI: 0.060-0.076), and correlation r = 0.891 (p&lt;0.001). Global SHAP analysis identified GDP per capita as the most influential predictor (mean |SHAP| = 0.0245), followed by the UHC index (0.0217), physicians per 1000 population (0.0196), the gender inequality index (0.0151), radiotherapy centers per 1M population (0.0150), and nurses/midwives per 1000 (0.0143). The binary breast screening program indicator showed low importance (0.0066), reflecting collinearity with other health system measures. Country-specific SHAP decompositions revealed substantial heterogeneity in dominant drivers, with workforce density and deficits in radiotherapy infrastructure emerging as major barriers in lower-resource settings.</p>  <b>Conclusions: </b> Strategic investments in healthcare workforce development, radiotherapy infrastructure, and UHC expansion are associated with improved national breast cancer survival, alongside complex health system strengthening factors. These findings enable evidence-based, context-specific prioritization of health system strengthening interventions for global breast cancer control, though prospective validation is needed.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

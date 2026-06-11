@@ -1,0 +1,73 @@
+{
+  "abstractNumber": "e13679",
+  "body": " \r\n\r\n\t<div><b>Background: </b> Neoplastic fever (also known as “tumor fever”; TF), is a rare but challenging condition that can be difficult to distinguish from infectious or treatment-related causes of fever. TF can lead to potentially unnecessary diagnostic testing and antibiotic use, as well as physical and psychological distress for patients. While treating the underlying cancer is the gold standard, this may not be successful or sufficient. Further, the inability to prospectively identify individuals with TF limits research to improve prevalence estimates, non-cancer directed therapy and patient quality of life. Therefore, our goal was to develop and validate an NLP algorithm to identify TF from the clinical notes of a retrospective cohort of adult cancer patients.</p>  <b>Methods: </b> Research was approved by the Fred Hutchinson Cancer Center Institutional Review Board. Unstructured clinical notes were extracted from the EMR among patients in the Adult Oncology Program with both ICD10 cancer-related diagnoses with at least two outpatient office visits within a 6-month period between January 1, 2018 and December 31, 2024. The study team developed the annotation schema iteratively with clinical and NLP experts for TF and related clinical entities. Annotations occurred over multiple rounds using the MedTator software. Inter-annotator agreement was assessed using F1 scoring and Cohen’s kappa coefficient, with acceptable inter-annotator agreement (AIAA) defined as F1 score of ≥.8.</p>  <b>Results: </b> 354,245 clinical notes for 26,774 individuals were identified during the study period. Of these, 117,545 (~33.18%) notes had a term related to TF (e.g. \"tumor fever\", \"neoplastic fever\", \"fever\", \"sweating\"). 341 charts were annotated from 89 patients for the final gold standard corpus. AIAA was achieved with overall F1 score of .83 (see Table 1) across all entity and relation types. Training and evaluation of NLP models is ongoing. Full results will be presented.</p>  <b>Conclusions: </b> Our results suggest NLP can be used to identify true cases of tumor fever in the EMR. To our knowledge, this is the first gold standard annotated corpus specifically designed for tumor fever detection in clinical notes. This resource addresses a critical gap in oncology-focused NLP, providing a foundation for developing and evaluating automated methods to identify tumor fever from EHR data and supporting future research aimed at improving diagnostic accuracy and treatment of tumor fever.</div>\r\n\r\n\r\n\r\n\t<div class=\"table_caption\"><b>Inter-annotator agreement, precision and recall for tumor fever-related annotation labels.</b></div> \r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<p><strong>Annotation Label</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>F1</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Precision</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Recall</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>True Positive</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>False Positive</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>False Negative</strong></p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>OVERALL</p>\r\n</td>\r\n<td>\r\n<p>0.8263</p>\r\n</td>\r\n<td>\r\n<p>0.7565</p>\r\n</td>\r\n<td>\r\n<p>0.9103</p>\r\n</td>\r\n<td>\r\n<p>2181</p>\r\n</td>\r\n<td>\r\n<p>702</p>\r\n</td>\r\n<td>\r\n<p>215</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>FEVER</p>\r\n</td>\r\n<td>\r\n<p>0.9433</p>\r\n</td>\r\n<td>\r\n<p>0.9252</p>\r\n</td>\r\n<td>\r\n<p>0.9620</p>\r\n</td>\r\n<td>\r\n<p>507</p>\r\n</td>\r\n<td>\r\n<p>41</p>\r\n</td>\r\n<td>\r\n<p>20</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>FEVER SYMPTOMS</p>\r\n</td>\r\n<td>\r\n<p>0.9236</p>\r\n</td>\r\n<td>\r\n<p>0.8788</p>\r\n</td>\r\n<td>\r\n<p>0.9732</p>\r\n</td>\r\n<td>\r\n<p>145</p>\r\n</td>\r\n<td>\r\n<p>20</p>\r\n</td>\r\n<td>\r\n<p>4</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>NEOPLASM</p>\r\n</td>\r\n<td>\r\n<p>0.7874</p>\r\n</td>\r\n<td>\r\n<p>0.6889</p>\r\n</td>\r\n<td>\r\n<p>0.9186</p>\r\n</td>\r\n<td>\r\n<p>722</p>\r\n</td>\r\n<td>\r\n<p>326</p>\r\n</td>\r\n<td>\r\n<p>64</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>CANCER SIGN</p>\r\n</td>\r\n<td>\r\n<p>0.7457</p>\r\n</td>\r\n<td>\r\n<p>0.6643</p>\r\n</td>\r\n<td>\r\n<p>0.8498</p>\r\n</td>\r\n<td>\r\n<p>566</p>\r\n</td>\r\n<td>\r\n<p>286</p>\r\n</td>\r\n<td>\r\n<p>100</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>NEGATION</p>\r\n</td>\r\n<td>\r\n<p>0.8078</p>\r\n</td>\r\n<td>\r\n<p>0.8240</p>\r\n</td>\r\n<td>\r\n<p>0.7923</p>\r\n</td>\r\n<td>\r\n<p>103</p>\r\n</td>\r\n<td>\r\n<p>22</p>\r\n</td>\r\n<td>\r\n<p>27</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>TUMOR FEVER</p>\r\n</td>\r\n<td>\r\n<p>0.9753</p>\r\n</td>\r\n<td>\r\n<p>0.9517</p>\r\n</td>\r\n<td>\r\n<p>1.0000</p>\r\n</td>\r\n<td>\r\n<p>138</p>\r\n</td>\r\n<td>\r\n<p>7</p>\r\n</td>\r\n<td>\r\n<p>0</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n\r\n\r\n",
+  "contentId": "264409",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/264409",
+    "queryParams": null,
+    "target": null,
+    "title": "Natural language processing (NLP) to identify neoplastic fever in the electronic medical record (EMR)."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION264409"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": null,
+  "presentationId": "264409",
+  "primaryPerson": {
+    "displayName": "Martin Juarez-Alvarado, BS",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": "Neoplastic fever (also known as “tumor fever”; TF), is a rare but challenging condition that can be difficult to distinguish from infectious or treatment-related causes of fever. TF can lead to potentially unnecessary diagnostic testing and antibiotic use, as well as physical and psychological distress for patients. While treating the underlying cancer is the gold standard, this may not be successful or sufficient. Further, the inability to prospectively identify individuals with TF limits research to improve prevalence estimates, non-cancer directed therapy and patient quality of life. Therefore, our goal was to develop and validate an NLP algorithm to identify TF from the clinical notes of a retrospective cohort of adult cancer patients.",
+  "taxonomy": {
+    "countriesThes": null,
+    "drugsThes": null,
+    "entitiesThes": null,
+    "genesThes": null,
+    "orgThes": null,
+    "subjectsThes": [
+      "Health care industry"
+    ]
+  },
+  "title": "Natural language processing (NLP) to identify neoplastic fever in the electronic medical record (EMR).",
+  "titles": null,
+  "uid": "PRESENTATION264409"
+}

@@ -1,0 +1,75 @@
+{
+  "abstractNumber": "e15002",
+  "body": " \r\n\r\n\t<div><b>Background: </b></p>  Artificial intelligence (AI) integration in oncology has transitioned from experimental use to routine clinical practice. Large Language Models (LLMs), such as Gemini Pro, are increasingly used for real-time decision support and molecular interpretation. This study evaluates Gemini Pro’s ability to identify the primary tumor site—defined by histopathology—using only genomic alterations, age, and sex.</p>  <b>Methods: </b></p>  We performed a blinded, retrospective analysis of 465 evaluable Next-Generation Sequencing (NGS) cases, including 356 tissue biopsies and 109 liquid biopsies, generated via comprehensive hybrid-capture sequencing. Gemini Pro was queried using a standardized zero-shot prompt to provide three ranked primary tumor site predictions with confidence levels (Very High, High, Moderate, Low) and molecular justification based on lineage-specific genomic features. No supervised training or model fine-tuning was performed. Performance was assessed using Top-1 and Top-3 accuracy. Pearson’s Chi-square tests compared subgroups, and multivariate logistic regression calculated adjusted odds ratios (aOR) with 95% confidence intervals (CI).</p>  <b>Results: </b></p>  Gemini Pro achieved a Top-1 accuracy of 50.1% (233/465; 95% CI: 45.6–54.6%) and a Top-3 accuracy of 68.4% (318/465; 95% CI: 64.2–72.6%). Model-assigned confidence was the strongest predictor of correctness: “Very High” predictions achieved 81.6% accuracy (102/125) with an aOR of 9.46 (95% CI: 5.82–15.38; p &lt; .001) versus Moderate/Low confidence. Performance was strongest in common tumor lineages, including Breast (74.6%, 53/71) and Colorectal (72.8%, 43/59), where genomic anchors such as GATA3 and APC are prevalent. Accuracy was lower in rare or genomically complex tumors, particularly sarcomas (&nbsp;&lt;&nbsp;20%), which frequently exhibited non-specific copy number alterations. No significant difference was observed between tissue (54.6%) and liquid biopsies (42.9%; p = .174). Discordant cases commonly reflected a “neuroendocrine trap,” with TP53/RB1-deficient tumors misclassified as small cell lung cancer regardless of origin.</p>  <b>Conclusions: </b> In this blinded evaluation, Gemini Pro demonstrated moderate accuracy as a genomic-based tumor-origin classifier, supporting its role as a diagnostic adjunct rather than a replacement for histopathology. High-confidence predictions increased reliability and may guide targeted immunohistochemical confirmation within established diagnostic workflows</div>\r\n\r\n\r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<thead>\r\n<tr>\r\n<td>\r\n<p><strong>Category</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Variable</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Top-1 Accuracy (%)</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Adjusted Odds Ratio (OR)</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>p-value</strong></p>\r\n</td>\r\n</tr>\r\n</thead>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<p><strong>Global Performance</strong></p>\r\n</td>\r\n<td>\r\n<p>Full Study Cohort</p>\r\n</td>\r\n<td>\r\n<p>50.1%</p>\r\n</td>\r\n<td>\r\n<p>--</p>\r\n</td>\r\n<td>\r\n<p>--</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td></td>\r\n<td>\r\n<p>Top-3 Prediction Rate</p>\r\n</td>\r\n<td>\r\n<p>68.4%</p>\r\n</td>\r\n<td>\r\n<p>--</p>\r\n</td>\r\n<td>\r\n<p>--</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p><strong>Model Confidence</strong></p>\r\n</td>\r\n<td>\r\n<p>Very High</p>\r\n</td>\r\n<td>\r\n<p>81.6%</p>\r\n</td>\r\n<td>\r\n<p><strong>9.46</strong></p>\r\n</td>\r\n<td>\r\n<p>&lt; 0.001</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td></td>\r\n<td>\r\n<p>High</p>\r\n</td>\r\n<td>\r\n<p>63.0%</p>\r\n</td>\r\n<td>\r\n<p><strong>2.60</strong></p>\r\n</td>\r\n<td>\r\n<p>&lt; 0.001</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td></td>\r\n<td>\r\n<p>Moderate / Low</p>\r\n</td>\r\n<td>\r\n<p>27.8%</p>\r\n</td>\r\n<td>\r\n<p><em>Reference</em></p>\r\n</td>\r\n<td>\r\n<p>--</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p><strong>High-Accuracy Lineages</strong></p>\r\n</td>\r\n<td>\r\n<p>Breast</p>\r\n</td>\r\n<td>\r\n<p>74.6%</p>\r\n</td>\r\n<td>\r\n<p><strong>7.92</strong></p>\r\n</td>\r\n<td>\r\n<p>&lt; 0.001</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td></td>\r\n<td>\r\n<p>Colorectal</p>\r\n</td>\r\n<td>\r\n<p>72.8%</p>\r\n</td>\r\n<td>\r\n<p><strong>4.89</strong></p>\r\n</td>\r\n<td>\r\n<p>&lt; 0.001</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td></td>\r\n<td>\r\n<p>Lung</p>\r\n</td>\r\n<td>\r\n<p>58.8%</p>\r\n</td>\r\n<td>\r\n<p><strong>3.06</strong></p>\r\n</td>\r\n<td>\r\n<p>&lt; 0.001</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p><strong>Specimen Type</strong></p>\r\n</td>\r\n<td>\r\n<p>Tissue Biopsy</p>\r\n</td>\r\n<td>\r\n<p>54.6%</p>\r\n</td>\r\n<td>\r\n<p>1.38</p>\r\n</td>\r\n<td>\r\n<p>0.174 (NS)</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td></td>\r\n<td>\r\n<p>Liquid Biopsy (ctDNA)</p>\r\n</td>\r\n<td>\r\n<p>42.9%</p>\r\n</td>\r\n<td>\r\n<p><em>Reference</em></p>\r\n</td>\r\n<td>\r\n<p>--</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n\r\n\r\n",
+  "contentId": "264653",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/264653",
+    "queryParams": null,
+    "target": null,
+    "title": "Evaluation of Gemini Pro for primary site prediction in a real-world blinded cohort of 465 patients."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION264653"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": null,
+  "presentationId": "264653",
+  "primaryPerson": {
+    "displayName": "Bayan Altalla",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": "Artificial intelligence (AI) integration in oncology has transitioned from experimental use to routine clinical practice. Large Language Models (LLMs), such as Gemini Pro, are increasingly used for real-time decision support and molecular interpretation. This study evaluates Gemini Pro’s ability to identify the primary tumor site—defined by histopathology—using only genomic alterations, age, and sex.",
+  "taxonomy": {
+    "countriesThes": null,
+    "drugsThes": null,
+    "entitiesThes": null,
+    "genesThes": null,
+    "orgThes": null,
+    "subjectsThes": [
+      "Biology",
+      "Treatment",
+      "Treatment"
+    ]
+  },
+  "title": "Evaluation of Gemini Pro for primary site prediction in a real-world blinded cohort of 465 patients.",
+  "titles": null,
+  "uid": "PRESENTATION264653"
+}

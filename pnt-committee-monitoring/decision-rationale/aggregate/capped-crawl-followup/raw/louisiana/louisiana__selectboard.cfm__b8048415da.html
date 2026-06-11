@@ -1,0 +1,2269 @@
+
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+	<html lang="en-US">
+	<head>
+		<title>State of Louisiana - Boards and Commissions</title>
+		
+			<link rel="stylesheet" type="text/css" href="style.css"/>
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<script language="javascript">
+		<!--
+			function docChanged ()
+			{	document.changed = true;
+			}
+			// returns whether or not docChanged() has been called on this page
+			function docHasChanged ()
+			{	return (typeof(document.changed) != "undefined" && document.changed);
+			}
+			// notifies the user that changes have not been saved
+			function confirmChangesNotSaved ()
+			{	return confirm ("Your changes have NOT yet been saved.\n\nPress OK to leave this page WITHOUT saving.");
+			}
+			function toZip(element)
+			{	if (element.value == "") return;
+				var regexp = /\d\d\d\d\d/;
+				var regexp2 = /\d\d\d\d\d\?\-?\d\d\d\d/;
+				if ((element.length != 5 || element.length != 10) && (!regexp.test(element.value) || !regexp2.test(element.value)))
+				//if (!regexp.test (element.value) && !regexp2.test(element.value))
+				{	alert ("Invalid Zip Code Format. \nTry xxxxx or xxxxx-xxxx\n");
+					element.select();
+				}
+			}
+			function toEmail(element)
+			{	if (element.value == "") return;
+				var regexp = /[\w\-\.]+@[\w\-\.]+/;
+				if (!regexp.test (element.value))
+				{	alert ("Invalid Email Format.\nYour email should be in the form: username@host.com\n");
+					element.select();
+				}
+			}
+			function toPhone(element)
+			{	if (element.value == "") return;
+				var regexp = /(\d\d\d)?\-?\-?(\d\d\d)\-?(\d\d\d\d)/;
+				if (!regexp.test (element.value))
+				{	alert ("Invalid Phone Number Format.\nTry xxx-xxx-xxxx\n");
+					element.value = '';
+					element.select ();
+				}
+				else
+				{	var result = (element.value).match (regexp);
+					if (result != null)
+					{	if (result[1] == "")
+							element.value = result[2] + "-" + result[3];
+						else
+							element.value = result[1] + "-" + result[2] + "-" + result[3];
+					}
+				}
+			}
+			/*function checkNumber(element)
+			{	element.value = formatNumber(parseNumber(element.value));
+			}*/
+			/* this function accepts a string, and returns the integer
+			   representation of it -- after removing all non-numeric characters */
+			/*function parseNumber(val)
+			{	var chars = "0123456789.-()";
+				var num = "";
+				for (var i=0; i<val.length; i++)
+					if (chars.indexOf(val.charAt(i)) != -1)
+						num = num + val.charAt(i);
+				if (num.substring(0,1) == '(' && num.substring(num.length - 1) == ')')
+					num = num.substring(1,val.length-1) * -1;
+				if (num == "" || isNaN(num))
+					num = "0";
+				num = Math.ceil(num);
+				return parseInt(num, 10);
+			}*/
+			/* this function formats an integer using commas separating the thousands places */
+			/*function formatNumber (num)
+			{	var str = new String(Math.abs(num));
+				if (num < 0)
+					str = "(" + str + ")";
+				return str;
+			}*/
+			function toDate(element)
+			{	if(element.value == "") return;
+				var regexp = /(\d+)\s*[\s\\\/\-\.]\s*(\d+)\s*[\s\\\/\-\.]\s*(\d+)\s*/;
+				if(!regexp.test(element.value))
+				{	element.value = "";
+					alert("Invalid date format. \n\nTry m/d/yyyy.\n");
+					element.select();
+				}
+			}
+			function menuOnClick ()
+			{	if (docHasChanged())
+					confirmChangesNotSaved()
+			}	
+			/*function formatTotalNumber (num)
+			{	var str = new String(Math.abs(num));
+				if (str.length > 3)
+				{	var i = str.length - 3;
+					while (i > 0)
+					{	var old_left = str.substring(0,i);
+						var left = str.substring(0,i);
+						var right = str.substring(i,str.length);
+						str = left + "," + right;
+						i = old_left.length - 3;
+					}
+				}
+				if (num < 0)
+					str = "(" + str + ")";
+				return str;
+			}*/
+			// makes sure element.value is a real number
+		function checkNumberWithParen(element)
+			{	element.value = numberWithCommas(parseNumberWithParen(element.value));
+			}
+			
+		/* this function accepts a string, and returns the integer
+		   representation of it -- after removing all non-numeric characters */
+		function parseNumberWithParen(val)
+		{	
+			var chars = "0123456789.-()";
+			var num = "";
+			val = val.replace(/[,]/g,'');
+			for (var i=0; i<val.length; i++)
+				if (chars.indexOf(val.charAt(i)) != -1)
+					num = num + val.charAt(i);
+			if (num.substring(0,1) == '(' && num.substring(num.length - 1) == ')')
+					num = num.substring(1,val.length-1) * -1;
+			//alert(num);
+			if (num == "" || isNaN(num))
+				num = "0";
+			var returnNum = Number(num).toFixed(0);
+			return returnNum;
+		}
+		function checkNumber(element)
+		{	element.value = numberWithCommas(parseNumber(element.value));
+		}
+		
+		function checkWholeNumber(element)
+		{	element.value = formatNumber(parseWholeNumber(element.value));
+		}
+		/* this function accepts a string, and returns the integer
+		   representation of it -- after removing all non-numeric characters */
+		function parseNumber(val)
+		{	var chars = "0123456789.-";
+			var num = "";
+			for (var i=0; i<val.length; i++)
+				if (chars.indexOf(val.charAt(i)) != -1)
+					num = num + val.charAt(i);
+			if (num == "" || isNaN(num))
+				num = "0";
+			var returnNum = Number(num).toFixed(2);
+			return returnNum;
+		}
+		
+		function parseWholeNumber(val)
+		{	var chars = "0123456789.-()";
+			var num = "";
+			for (var i=0; i<val.length; i++)
+				if (chars.indexOf(val.charAt(i)) != -1)
+					num = num + val.charAt(i);
+			if (num.substring(0,1) == '(' && num.substring(num.length - 1) == ')')
+				num = num.substring(1,val.length-1) * -1;
+			if (num == "" || isNaN(num))
+				num = "0";
+			return parseInt(num);
+		}
+		/* this function formats an integer using commas separating the thousands places */
+		function formatNumber (num)
+		{	var str = new String(Math.abs(num));
+			if (str.length > 3)
+			{	var i = str.length - 3;
+				while (i > 0)
+				{	var old_left = str.substring(0,i);
+					var left = str.substring(0,i);
+					var right = str.substring(i,str.length);
+					str = left + "," + right;
+					i = old_left.length - 3;
+				}
+			}
+			if (num < 0)
+				str = "-" + str;
+			return str;
+		}
+		
+		function formatTotalNumber (num)
+		{	var str = new String(Math.abs(num));
+			if (str.length > 3)
+			{	var i = str.length - 3;
+				while (i > 0)
+				{	var old_left = str.substring(0,i);
+					var left = str.substring(0,i);
+					var right = str.substring(i,str.length);
+					str = left + "," + right;
+					i = old_left.length - 3;
+				}
+			}
+			if (num < 0)
+				str = "(" + str + ")";
+			return str;
+		}
+		
+		function numberWithCommas(x) {
+			var parts = x.toString().split(".");
+			parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+			return parts.join(".");
+		}
+		//-->
+		</script>
+	
+
+	<script language="javascript">
+	<!--
+		function searchBoards()
+		{	var str = document.frm.boardSearch.value;
+			var searchString = str.replace(/^\s+|\s+$/g, '');
+			var searchString = searchString.replace(/['"]/g,'');
+			document.frm.boardSearch.value = searchString;
+			document.frm.submit();
+		}
+		function bodyOnLoad()
+		{	document.frm.boardSearch.focus();
+		}
+	//-->
+	</script>
+
+	</head>	
+
+	<body onLoad="bodyOnLoad();">
+	
+		<div id="divisionHeader"> </div>
+		
+		<div id="wrapper">		
+			<div id="bcHeader"/>
+			 
+			<div id="greyBar">	 		
+				<ul id="navi">
+					<li style="background:#ffffff;"> <a href="home.cfm">Home</a> </li>
+					
+						<li style="background:#ffffff;"> <a href="selectBoard.cfm">Boards and Commissions</a> </li>
+					
+					<li style="background:#ffffff;"> <a href="upcomingMeetings.cfm">Upcoming Meetings</a> </li>
+					
+					
+						<li style="background:#ffffff;"> <a href="otherResources.cfm" onClick="menuOnClick();">Other Resources</a> </li>
+					
+						<li style="background:#ffffff;"> <a href="../latrac/feedback/home.cfm" target="_blank">Feedback</a></li>
+					
+						<li class="last" style="background:#ffffff;"> <a href="login.cfm">Login</a> </li>
+					
+				</ul>
+			</div>
+		</div>
+	<div style="background-image:url(images/wrapperNoSidebar.gif); background-position:top left; background-repeat:repeat-y;border:0px solid red;">
+		
+			<div id="main">
+
+
+<h1 style="color:#555555; font-size: 1.5em;" align="center">Boards and Commissions</h1>
+
+<div align="center">
+
+<form name="frm" action="selectBoard.cfm" method="post">
+	<input type="hidden" name="searchFlag" value="N"> 
+	<table cellspacing="0">
+		<tr class="dataTableHeaderRow">
+			<td id="resultTableHeader">Board Search</td>
+		</tr>
+		<tr>
+			
+			<td>
+				<input type="text" name="boardSearch" value="" size="40" aria-label="Board Search">
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="button" value="Search" onClick="javascript: searchBoards();" aria-label="Search Boards">&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="button" value="View All" onClick="javascript: document.frm.boardSearch.value=''; document.frm.submit();" aria-label="View All Boards">
+			</td>
+			
+		</tr>
+	</table>
+</form>
+<br>
+<table cellspacing="0" align="center">
+	<tr class="dataTableHeaderRow">
+		<td id="resultTableHeader" nowrap="nowrap" width="85%">Board Name (Click on name to view details)</td>
+	</tr>
+	
+			<tr>
+				<td ><a href="viewBoard.cfm?board=100" id="board" aria-label="View Board - Abbeville Harbor and Terminal District Board of Commissioners">Abbeville Harbor and Terminal District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=613" id="board" aria-label="View Board - ABLE Account Advisory Council">ABLE Account Advisory Council</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=343" id="board" aria-label="View Board - Acadiana Area Human Services District Governing Board">Acadiana Area Human Services District Governing Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=741" id="board" aria-label="View Board - Acadiana Regional Airport & the LeMaire Memorial Airport District ">Acadiana Regional Airport & the LeMaire Memorial Airport District </a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=705" id="board" aria-label="View Board - Acadiana Regional Juvenile Justice District">Acadiana Regional Juvenile Justice District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=703" id="board" aria-label="View Board - Acadiana Watershed District">Acadiana Watershed District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=1" id="board" aria-label="View Board - Addictive Disorders Regulatory Authority Board ">Addictive Disorders Regulatory Authority Board </a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=659" id="board" aria-label="View Board - Advisory Board of the Louisiana State Archives">Advisory Board of the Louisiana State Archives</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=682" id="board" aria-label="View Board - Advisory Commission for Louisiana's Energy, Environment and Restoration">Advisory Commission for Louisiana's Energy, Environment and Restoration</a> INACTIVE</td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=404" id="board" aria-label="View Board - Advisory Commission on Pesticides">Advisory Commission on Pesticides</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=405" id="board" aria-label="View Board - Advisory Commission on Proprietary Schools">Advisory Commission on Proprietary Schools</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=159" id="board" aria-label="View Board - Advisory Committee for the Regulation and Control of Water Well Drillers">Advisory Committee for the Regulation and Control of Water Well Drillers</a> INACTIVE</td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=162" id="board" aria-label="View Board - Advisory Committee on Polysomnography ">Advisory Committee on Polysomnography </a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=611" id="board" aria-label="View Board - Advisory Council on Early Childhood Care and Education">Advisory Council on Early Childhood Care and Education</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=633" id="board" aria-label="View Board - Advisory Council on Heroin and Opioid Prevention and Education">Advisory Council on Heroin and Opioid Prevention and Education</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=644" id="board" aria-label="View Board - Advisory Council on Historically Black Colleges and Universities">Advisory Council on Historically Black Colleges and Universities</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=610" id="board" aria-label="View Board - Advisory Subcommittee of the Accountability Commission">Advisory Subcommittee of the Accountability Commission</a> INACTIVE</td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=457" id="board" aria-label="View Board - Agricultural Chemistry and Seed Commission">Agricultural Chemistry and Seed Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=408" id="board" aria-label="View Board - Agricultural Commodities Commission">Agricultural Commodities Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=615" id="board" aria-label="View Board - Agricultural Education Commission">Agricultural Education Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=409" id="board" aria-label="View Board - Agricultural Finance Authority">Agricultural Finance Authority</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=410" id="board" aria-label="View Board - Alligator Advisory Council">Alligator Advisory Council</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=737" id="board" aria-label="View Board - Alzheimer's and Related Dementias Advisory Council">Alzheimer's and Related Dementias Advisory Council</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=558" id="board" aria-label="View Board - Ambulance Service District Commission">Ambulance Service District Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=168" id="board" aria-label="View Board - Amite River Basin Drainage and Water Conservation District Board of Commissioners">Amite River Basin Drainage and Water Conservation District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=411" id="board" aria-label="View Board - Apprenticeship Council">Apprenticeship Council</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=174" id="board" aria-label="View Board - Archaeological Survey and Antiquities Commission">Archaeological Survey and Antiquities Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=175" id="board" aria-label="View Board - Architects Selection Board">Architects Selection Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=176" id="board" aria-label="View Board - Artificial Reef Development Council">Artificial Reef Development Council</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=177" id="board" aria-label="View Board - Arts Council">Arts Council</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=178" id="board" aria-label="View Board - Ascension-St. James Airport and Transportation Authority Board of Commissioners">Ascension-St. James Airport and Transportation Authority Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=179" id="board" aria-label="View Board - Assessors' Retirement System Board of Trustees">Assessors' Retirement System Board of Trustees</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=138" id="board" aria-label="View Board - Atchafalaya Basin Levee District Board of Commissioners">Atchafalaya Basin Levee District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=184" id="board" aria-label="View Board - Atchafalaya Basin Technical Advisory Group">Atchafalaya Basin Technical Advisory Group</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=412" id="board" aria-label="View Board - Atchafalaya Trace Commission">Atchafalaya Trace Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=3" id="board" aria-label="View Board - Auctioneers Licensing Board">Auctioneers Licensing Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=102" id="board" aria-label="View Board - Avoyelles Parish Port Commission">Avoyelles Parish Port Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=699" id="board" aria-label="View Board - Baker Main Street Economic Development District">Baker Main Street Economic Development District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=733" id="board" aria-label="View Board - Baton Rouge Regional Airport Authority ">Baton Rouge Regional Airport Authority </a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=187" id="board" aria-label="View Board - Bayou D'Arbonne Lake Watershed District Board of Commissioners">Bayou D'Arbonne Lake Watershed District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=189" id="board" aria-label="View Board - Bayou Lafourche Fresh Water District Board of Commissioners">Bayou Lafourche Fresh Water District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=626" id="board" aria-label="View Board - Bayou Pierre Game and Fish Preserve Commission">Bayou Pierre Game and Fish Preserve Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=190" id="board" aria-label="View Board - Beef Industry Council">Beef Industry Council</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=587" id="board" aria-label="View Board - Behavior Analyst Board">Behavior Analyst Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=193" id="board" aria-label="View Board - Bi-State Corridor Commission">Bi-State Corridor Commission</a> INACTIVE</td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=263" id="board" aria-label="View Board - BioDistrict New Orleans Board of Commissioners">BioDistrict New Orleans Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=192" id="board" aria-label="View Board - Birth Defects Monitoring Network Advisory Board">Birth Defects Monitoring Network Advisory Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=628" id="board" aria-label="View Board - Black Bayou Watershed District">Black Bayou Watershed District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=557" id="board" aria-label="View Board - Blind Vendors Trust Fund Advisory Board">Blind Vendors Trust Fund Advisory Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=16" id="board" aria-label="View Board - Board for Hearing Aid Dealers">Board for Hearing Aid Dealers</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=194" id="board" aria-label="View Board - Board of Animal Health">Board of Animal Health</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=4" id="board" aria-label="View Board - Board of Barber Examiners">Board of Barber Examiners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=9" id="board" aria-label="View Board - Board of Chiropractic Examiners">Board of Chiropractic Examiners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=414" id="board" aria-label="View Board - Board of Commerce and Industry">Board of Commerce and Industry</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=124" id="board" aria-label="View Board - Board of Commissioners of the Port of New Orleans">Board of Commissioners of the Port of New Orleans</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=690" id="board" aria-label="View Board - Board of Directors of the Special School District">Board of Directors of the Special School District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=415" id="board" aria-label="View Board - Board of Elementary and Secondary Education">Board of Elementary and Secondary Education</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=416" id="board" aria-label="View Board - Board of Ethics">Board of Ethics</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=196" id="board" aria-label="View Board - Board of Examiners for New Orleans - Baton Rouge Steamship Pilots for the Mississippi River">Board of Examiners for New Orleans - Baton Rouge Steamship Pilots for the Mississippi River</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=22" id="board" aria-label="View Board - Board of Examiners for Nursing Facility Administrators">Board of Examiners for Nursing Facility Administrators</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=42" id="board" aria-label="View Board - Board of Examiners for Speech-Language Pathology and Audiology">Board of Examiners for Speech-Language Pathology and Audiology</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=197" id="board" aria-label="View Board - Board of Examiners of Bar Pilots for the Port of New Orleans">Board of Examiners of Bar Pilots for the Port of New Orleans</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=8" id="board" aria-label="View Board - Board of Examiners of Certified Shorthand Reporters">Board of Examiners of Certified Shorthand Reporters</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=598" id="board" aria-label="View Board - Board of International Commerce">Board of International Commerce</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=198" id="board" aria-label="View Board - Board of Louisiana River Pilot Review and Oversight">Board of Louisiana River Pilot Review and Oversight</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=19" id="board" aria-label="View Board - Board of Massage Therapy">Board of Massage Therapy</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=418" id="board" aria-label="View Board - Board of Pardons">Board of Pardons</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=26" id="board" aria-label="View Board - Board of Pharmacy">Board of Pharmacy</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=548" id="board" aria-label="View Board - Board of Professional Geoscientists">Board of Professional Geoscientists</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=419" id="board" aria-label="View Board - Board of Regents">Board of Regents</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=200" id="board" aria-label="View Board - Board of River Port Pilot Commissioners and Examiners for the Port of Lake Charles">Board of River Port Pilot Commissioners and Examiners for the Port of Lake Charles</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=201" id="board" aria-label="View Board - Board of River Port Pilot Commissioners for the Port of New Orleans">Board of River Port Pilot Commissioners for the Port of New Orleans</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=420" id="board" aria-label="View Board - Board of Tax Appeals">Board of Tax Appeals</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=43" id="board" aria-label="View Board - Board of Veterinary Medicine">Board of Veterinary Medicine</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=421" id="board" aria-label="View Board - Boll Weevil Eradication Commission">Boll Weevil Eradication Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=422" id="board" aria-label="View Board - Bond Commission">Bond Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=139" id="board" aria-label="View Board - Bossier Levee District Board of Commissioners">Bossier Levee District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=724" id="board" aria-label="View Board - Brookstown Area Crime Prevention and Improvement District">Brookstown Area Crime Prevention and Improvement District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=596" id="board" aria-label="View Board - Bunches Bend Protection District Board of Commissioners">Bunches Bend Protection District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=423" id="board" aria-label="View Board - Byways Commission">Byways Commission</a> INACTIVE</td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=140" id="board" aria-label="View Board - Caddo Levee District Board of Commissioners">Caddo Levee District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=103" id="board" aria-label="View Board - Caddo-Bossier Parishes Port Commission">Caddo-Bossier Parishes Port Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=712" id="board" aria-label="View Board - Cajundome Commission">Cajundome Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=695" id="board" aria-label="View Board - Calcasieu Ship Channel Funding Management Board">Calcasieu Ship Channel Funding Management Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=625" id="board" aria-label="View Board - Cameron Parish Port Commission">Cameron Parish Port Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=424" id="board" aria-label="View Board - Cancer and Lung Trust Fund Board">Cancer and Lung Trust Fund Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=204" id="board" aria-label="View Board - Cancer Research Center of LSU Health Sciences Center in New Orleans/Tulane Health Sciences Center Governing Board">Cancer Research Center of LSU Health Sciences Center in New Orleans/Tulane Health Sciences Center Governing Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=205" id="board" aria-label="View Board - Cane River Waterway District Board of Commissioners">Cane River Waterway District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=425" id="board" aria-label="View Board - Capital Area Human Services District Governing Board">Capital Area Human Services District Governing Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=647" id="board" aria-label="View Board - Capital Area Road and Bridge District">Capital Area Road and Bridge District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=206" id="board" aria-label="View Board - Capital Area Transit System Board of Commissioners">Capital Area Transit System Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=207" id="board" aria-label="View Board - Cash Management Review Board">Cash Management Review Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=718" id="board" aria-label="View Board - Castle Manor Improvement District">Castle Manor Improvement District</a> INACTIVE</td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=6" id="board" aria-label="View Board - Cemetery Board">Cemetery Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=673" id="board" aria-label="View Board - Cemetery Response Task Force">Cemetery Response Task Force</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=568" id="board" aria-label="View Board - Centers of Excellence Financing Corporation Board of Directors">Centers of Excellence Financing Corporation Board of Directors</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=569" id="board" aria-label="View Board - Centers of Excellence Program Advisory Board">Centers of Excellence Program Advisory Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=345" id="board" aria-label="View Board - Central Louisiana Human Services District Governing Board">Central Louisiana Human Services District Governing Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=551" id="board" aria-label="View Board - Central Louisiana Regional Infrastructure Beltway Commission">Central Louisiana Regional Infrastructure Beltway Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=101" id="board" aria-label="View Board - Central Louisiana Regional Port Board of Commissioners">Central Louisiana Regional Port Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=426" id="board" aria-label="View Board - Child Death Review Panel">Child Death Review Panel</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=427" id="board" aria-label="View Board - Children's Cabinet">Children's Cabinet</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=428" id="board" aria-label="View Board - Children's Cabinet Advisory Board">Children's Cabinet Advisory Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=429" id="board" aria-label="View Board - Children's Trust Fund Board">Children's Trust Fund Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=212" id="board" aria-label="View Board - Citizens Property Insurance Corporation Board of Directors">Citizens Property Insurance Corporation Board of Directors</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=213" id="board" aria-label="View Board - Civil Rights Museum Advisory Board">Civil Rights Museum Advisory Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=430" id="board" aria-label="View Board - Civil Service Commission">Civil Service Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=731" id="board" aria-label="View Board - Claiborne Parish Airport District No.31">Claiborne Parish Airport District No.31</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=214" id="board" aria-label="View Board - Clerks of Court Certification Program Committee">Clerks of Court Certification Program Committee</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=215" id="board" aria-label="View Board - Clerks of Court Retirement System Board of Trustees">Clerks of Court Retirement System Board of Trustees</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=51" id="board" aria-label="View Board - Clinical Laboratory Personnel Committee - State Board of Medical Examiners">Clinical Laboratory Personnel Committee - State Board of Medical Examiners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=217" id="board" aria-label="View Board - Coastal Louisiana Levee Consortium">Coastal Louisiana Levee Consortium</a> INACTIVE</td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=432" id="board" aria-label="View Board - Coastal Protection and Restoration Authority Board">Coastal Protection and Restoration Authority Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=218" id="board" aria-label="View Board - Coastal Protection and Restoration Financing Corporation Governing Board">Coastal Protection and Restoration Financing Corporation Governing Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=629" id="board" aria-label="View Board - Cocodrie Lake Fish and Game Commission">Cocodrie Lake Fish and Game Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=269" id="board" aria-label="View Board - College and Career Readiness Commission">College and Career Readiness Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=104" id="board" aria-label="View Board - Columbia Port Commission">Columbia Port Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=433" id="board" aria-label="View Board - Commission for the Deaf">Commission for the Deaf</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=434" id="board" aria-label="View Board - Commission of Weights and Measures">Commission of Weights and Measures</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=221" id="board" aria-label="View Board - Commission on Civic Education">Commission on Civic Education</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=435" id="board" aria-label="View Board - Commission on Human Rights">Commission on Human Rights</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=436" id="board" aria-label="View Board - Commission on Law Enforcement and Administration of Criminal Justice">Commission on Law Enforcement and Administration of Criminal Justice</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=223" id="board" aria-label="View Board - Commission on Perinatal Care and Prevention of Infant Mortality">Commission on Perinatal Care and Prevention of Infant Mortality</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=219" id="board" aria-label="View Board - Commission on Uniform State Laws">Commission on Uniform State Laws</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=225" id="board" aria-label="View Board - Committee of Certification of Waterworks and Sewerage Works Operators">Committee of Certification of Waterworks and Sewerage Works Operators</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=599" id="board" aria-label="View Board - Committee on Parole">Committee on Parole</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=438" id="board" aria-label="View Board - Community and Technical Colleges Board of Supervisors">Community and Technical Colleges Board of Supervisors</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=592" id="board" aria-label="View Board - Coordinated System of Care Governance Board">Coordinated System of Care Governance Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=740" id="board" aria-label="View Board - Coordinated Use of Resources, Economy, Navigation & Transportation Authority Board">Coordinated Use of Resources, Economy, Navigation & Transportation Authority Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=227" id="board" aria-label="View Board - Correctional Facilities Corporation Board of Directors">Correctional Facilities Corporation Board of Directors</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=228" id="board" aria-label="View Board - Cotton Museum Governing Board">Cotton Museum Governing Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=439" id="board" aria-label="View Board - Council for the Development of French in Louisiana (CODOFIL)">Council for the Development of French in Louisiana (CODOFIL)</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=440" id="board" aria-label="View Board - Council on Peace Officer Standards and Training">Council on Peace Officer Standards and Training</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=677" id="board" aria-label="View Board - Council on the Children of Incarcerated Parents and Caregivers">Council on the Children of Incarcerated Parents and Caregivers</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=559" id="board" aria-label="View Board - Council on the Status of Grandparents Raising Grandchildren">Council on the Status of Grandparents Raising Grandchildren</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=230" id="board" aria-label="View Board - Council on the Success of Black Men and Boys">Council on the Success of Black Men and Boys</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=231" id="board" aria-label="View Board - Crab Task Force">Crab Task Force</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=232" id="board" aria-label="View Board - Crawfish Promotion and Research Board">Crawfish Promotion and Research Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=233" id="board" aria-label="View Board - Creole Nature Trail Scenic Byway District Board of Commissioners">Creole Nature Trail Scenic Byway District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=441" id="board" aria-label="View Board - Crime Victims Reparations Board">Crime Victims Reparations Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=723" id="board" aria-label="View Board - Criminal Justice Priority Funding Commission Program">Criminal Justice Priority Funding Commission Program</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=736" id="board" aria-label="View Board - Cross Gates Subdivision Crime Prevention & Neighborhood Improvement District">Cross Gates Subdivision Crime Prevention & Neighborhood Improvement District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=675" id="board" aria-label="View Board - Cybersecurity Education Management Council">Cybersecurity Education Management Council</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=734" id="board" aria-label="View Board - Cypress Point Improvement District">Cypress Point Improvement District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=235" id="board" aria-label="View Board - Dairy Industry Promotion Board">Dairy Industry Promotion Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=442" id="board" aria-label="View Board - Dairy Stabilization Board">Dairy Stabilization Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=236" id="board" aria-label="View Board - Deferred Compensation Commission">Deferred Compensation Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=722" id="board" aria-label="View Board - Delmont Neighborhood Crime Prevention District">Delmont Neighborhood Crime Prevention District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=696" id="board" aria-label="View Board - Delta Bike Trail Commission">Delta Bike Trail Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=689" id="board" aria-label="View Board - Delta Economic Research and Sustainability District">Delta Economic Research and Sustainability District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=237" id="board" aria-label="View Board - Delta Music Museum Governing Board">Delta Music Museum Governing Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=544" id="board" aria-label="View Board - Deputy Sheriff's Supplemental Pay Board ">Deputy Sheriff's Supplemental Pay Board </a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=443" id="board" aria-label="View Board - Developmental Disabilities Council">Developmental Disabilities Council</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=693" id="board" aria-label="View Board - Dew Drop-America's Rock and Roll Museum Governing Board">Dew Drop-America's Rock and Roll Museum Governing Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=238" id="board" aria-label="View Board - District Attorneys' Retirement System Board of Trustees">District Attorneys' Retirement System Board of Trustees</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=607" id="board" aria-label="View Board - Domestic Violence Prevention Commission">Domestic Violence Prevention Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=444" id="board" aria-label="View Board - Drug Abuse Resistance Education (DARE) Advisory Board">Drug Abuse Resistance Education (DARE) Advisory Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=445" id="board" aria-label="View Board - Drug Control and Violent Crime Policy Board">Drug Control and Violent Crime Policy Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=446" id="board" aria-label="View Board - Drug Policy Board">Drug Policy Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=663" id="board" aria-label="View Board - Dual Enrollment Framework Task Force">Dual Enrollment Framework Task Force</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=651" id="board" aria-label="View Board - Early Childhood Care and Education Commission">Early Childhood Care and Education Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=163" id="board" aria-label="View Board - Early Identification of Deaf or Hard of Hearing Infants Advisory Council">Early Identification of Deaf or Hard of Hearing Infants Advisory Council</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=239" id="board" aria-label="View Board - East New Orleans Neighborhood Advisory Commission">East New Orleans Neighborhood Advisory Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=447" id="board" aria-label="View Board - Economic Development Corporation Board of Directors">Economic Development Corporation Board of Directors</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=240" id="board" aria-label="View Board - Eddie G. Robinson Museum Commission">Eddie G. Robinson Museum Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=241" id="board" aria-label="View Board - Egg Commission">Egg Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=242" id="board" aria-label="View Board - El Camino East-West Corridor Commission">El Camino East-West Corridor Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=450" id="board" aria-label="View Board - Emergency Medical Services Commission">Emergency Medical Services Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=243" id="board" aria-label="View Board - Emergency Response Commission">Emergency Response Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=452" id="board" aria-label="View Board - Emergency Response Network Board">Emergency Response Network Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=454" id="board" aria-label="View Board - Employment Security Board of Review">Employment Security Board of Review</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=648" id="board" aria-label="View Board - Empowering Families to Live Well Louisiana Council">Empowering Families to Live Well Louisiana Council</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=518" id="board" aria-label="View Board - ENCORE Louisiana Commission">ENCORE Louisiana Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=244" id="board" aria-label="View Board - Engineers Selection Board">Engineers Selection Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=247" id="board" aria-label="View Board - Ernest N. Morial New Orleans Exhibition Hall Authority Board of Commissioners">Ernest N. Morial New Orleans Exhibition Hall Authority Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=455" id="board" aria-label="View Board - Ethics Adjudicatory Board">Ethics Adjudicatory Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=707" id="board" aria-label="View Board - Evangeline Economic Development Authority">Evangeline Economic Development Authority</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=456" id="board" aria-label="View Board - Executive Board on Aging">Executive Board on Aging</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=717" id="board" aria-label="View Board - Ferriday Downtown Entertainment District">Ferriday Downtown Entertainment District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=141" id="board" aria-label="View Board - Fifth Louisiana Levee District Board of Commissioners">Fifth Louisiana Levee District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=597" id="board" aria-label="View Board - Fire and Emergency Training Commission">Fire and Emergency Training Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=249" id="board" aria-label="View Board - Fire Prevention Board of Review">Fire Prevention Board of Review</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=250" id="board" aria-label="View Board - Firefighters' Retirement System Board of Trustees">Firefighters' Retirement System Board of Trustees</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=459" id="board" aria-label="View Board - Fireman's Supplemental Pay Board">Fireman's Supplemental Pay Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=251" id="board" aria-label="View Board - First Responders Subcommittee">First Responders Subcommittee</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=252" id="board" aria-label="View Board - Fiscal Review Committee">Fiscal Review Committee</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=635" id="board" aria-label="View Board - Floodplain Evaluation and Management Commission">Floodplain Evaluation and Management Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=460" id="board" aria-label="View Board - Florida Parishes Human Services Authority Governing Board">Florida Parishes Human Services Authority Governing Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=253" id="board" aria-label="View Board - Folklife Commission">Folklife Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=462" id="board" aria-label="View Board - Forestry Commission">Forestry Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=463" id="board" aria-label="View Board - Fur Advisory Council">Fur Advisory Council</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=464" id="board" aria-label="View Board - Gaming Control Board">Gaming Control Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=255" id="board" aria-label="View Board - Gentilly Taxing District Board of Commissioners">Gentilly Taxing District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=256" id="board" aria-label="View Board - Geographic Information Systems Council">Geographic Information Systems Council</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=258" id="board" aria-label="View Board - Germantown Colony Museum Governing Board">Germantown Colony Museum Governing Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=727" id="board" aria-label="View Board - Glen Oaks Area Crime Prevention and Improvement District">Glen Oaks Area Crime Prevention and Improvement District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=585" id="board" aria-label="View Board - Governor's Advisory Board of Juvenile Justice and Delinquency Prevention">Governor's Advisory Board of Juvenile Justice and Delinquency Prevention</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=465" id="board" aria-label="View Board - Governor's Advisory Commission on Coastal Protection, Restoration and Conservation">Governor's Advisory Commission on Coastal Protection, Restoration and Conservation</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=259" id="board" aria-label="View Board - Governor's Advisory Council on Disability Affairs">Governor's Advisory Council on Disability Affairs</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=466" id="board" aria-label="View Board - Governor's Council on Physical Fitness and Sports">Governor's Council on Physical Fitness and Sports</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=686" id="board" aria-label="View Board - Governor's Task Force on Murdered and Missing Indigenous Women and Girls">Governor's Task Force on Murdered and Missing Indigenous Women and Girls</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=142" id="board" aria-label="View Board - Grand Isle Independent Levee District Board of Commissioners">Grand Isle Independent Levee District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=107" id="board" aria-label="View Board - Grand Isle Port Commission">Grand Isle Port Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=108" id="board" aria-label="View Board - Grant Parish Port Commission">Grant Parish Port Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=109" id="board" aria-label="View Board - Greater Baton Rouge Port Commission">Greater Baton Rouge Port Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=110" id="board" aria-label="View Board - Greater Krotz Springs Port Commission">Greater Krotz Springs Port Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=111" id="board" aria-label="View Board - Greater Lafourche Port Commission">Greater Lafourche Port Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=264" id="board" aria-label="View Board - Greater New Orleans Expressway Commission">Greater New Orleans Expressway Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=112" id="board" aria-label="View Board - Greater Ouachita Port Commission">Greater Ouachita Port Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=730" id="board" aria-label="View Board - Greater St. Martinville Economic Development District">Greater St. Martinville Economic Development District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=468" id="board" aria-label="View Board - Group Benefits Policy and Planning Board">Group Benefits Policy and Planning Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=268" id="board" aria-label="View Board - Health Data Panel">Health Data Panel</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=471" id="board" aria-label="View Board - Health Plan Board of Directors">Health Plan Board of Directors</a> INACTIVE</td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=472" id="board" aria-label="View Board - Health Works Commission">Health Works Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=474" id="board" aria-label="View Board - Highway Safety Commission">Highway Safety Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=271" id="board" aria-label="View Board - Historical Records Advisory Board">Historical Records Advisory Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=475" id="board" aria-label="View Board - Horticulture Commission">Horticulture Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=739" id="board" aria-label="View Board - Hotel Francis District">Hotel Francis District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=698" id="board" aria-label="View Board - Houma Restoration District">Houma Restoration District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=273" id="board" aria-label="View Board - Housing Corporation Board of Directors">Housing Corporation Board of Directors</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=275" id="board" aria-label="View Board - Hunting and Fishing Advisory Education Council">Hunting and Fishing Advisory Education Council</a> INACTIVE</td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=278" id="board" aria-label="View Board - Iberia Economic Development Authority Board of Commissioners">Iberia Economic Development Authority Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=555" id="board" aria-label="View Board - Iberia Parish Levee, Hurricane, and Conservation District Board of Commissioners">Iberia Parish Levee, Hurricane, and Conservation District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=344" id="board" aria-label="View Board - Imperial Calcasieu Human Services Authority Governing Board">Imperial Calcasieu Human Services Authority Governing Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=478" id="board" aria-label="View Board - Integrated Criminal Justice Information System Policy Board">Integrated Criminal Justice Information System Policy Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=479" id="board" aria-label="View Board - Interagency Coordinating Council for EarlySteps">Interagency Coordinating Council for EarlySteps</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=480" id="board" aria-label="View Board - Interim Emergency Board">Interim Emergency Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=285" id="board" aria-label="View Board - Interoperability Subcommittee">Interoperability Subcommittee</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=576" id="board" aria-label="View Board - Intrastate Mutual Aid Subcommittee">Intrastate Mutual Aid Subcommittee</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=113" id="board" aria-label="View Board - Jefferson Parish Economic Development and Port District Board of Commissioners">Jefferson Parish Economic Development and Port District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=482" id="board" aria-label="View Board - Jefferson Parish Human Services Authority Board of Commissioners">Jefferson Parish Human Services Authority Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=291" id="board" aria-label="View Board - John K. Kelly Grand Bayou Reservoir District Board of Commissioners">John K. Kelly Grand Bayou Reservoir District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=292" id="board" aria-label="View Board - Juvenile Justice Reform Act Implementation Commission">Juvenile Justice Reform Act Implementation Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=293" id="board" aria-label="View Board - Kenner Naval Museum Commission">Kenner Naval Museum Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=636" id="board" aria-label="View Board - LA Animal Control Advisory Task Force">LA Animal Control Advisory Task Force</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=632" id="board" aria-label="View Board - LA Human Trafficking Prevention Commission">LA Human Trafficking Prevention Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=670" id="board" aria-label="View Board - LA Trucking Research and Education Council">LA Trucking Research and Education Council</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=114" id="board" aria-label="View Board - Lafayette Economic Development Authority Board of Commissioners">Lafayette Economic Development Authority Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=143" id="board" aria-label="View Board - Lafitte Area Independent Levee District Board of Commissioners">Lafitte Area Independent Levee District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=720" id="board" aria-label="View Board - Lafitte Greenway Economic Development District">Lafitte Greenway Economic Development District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=144" id="board" aria-label="View Board - Lafourche Basin Conservation Levee and Drainage District">Lafourche Basin Conservation Levee and Drainage District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=115" id="board" aria-label="View Board - Lake Charles Harbor and Terminal District Board of Commissioners">Lake Charles Harbor and Terminal District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=630" id="board" aria-label="View Board - Lake Field Game and Fish Preserve">Lake Field Game and Fish Preserve</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=116" id="board" aria-label="View Board - Lake Providence Port Commission">Lake Providence Port Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=547" id="board" aria-label="View Board - Lakefront Management Authority">Lakefront Management Authority</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=716" id="board" aria-label="View Board - Lakeshore Villages Community Development District">Lakeshore Villages Community Development District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=738" id="board" aria-label="View Board - Lakewood Crime Prevention & Improvement District">Lakewood Crime Prevention & Improvement District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=294" id="board" aria-label="View Board - Landscape Architects Selection Board">Landscape Architects Selection Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=691" id="board" aria-label="View Board - LaSalle Cultural Corridor District">LaSalle Cultural Corridor District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=553" id="board" aria-label="View Board - Latino Commission">Latino Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=668" id="board" aria-label="View Board - Law Enforcement Data Task Force">Law Enforcement Data Task Force</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=483" id="board" aria-label="View Board - Law Enforcement Executive Management Institute Governing Board">Law Enforcement Executive Management Institute Governing Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=295" id="board" aria-label="View Board - Legislative Youth Advisory Council">Legislative Youth Advisory Council</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=87" id="board" aria-label="View Board - Licensed Professional Counselors Board of Examiners">Licensed Professional Counselors Board of Examiners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=44" id="board" aria-label="View Board - Licensed Professional Vocational Rehabilitation Counselors Board of Examiners">Licensed Professional Vocational Rehabilitation Counselors Board of Examiners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=296" id="board" aria-label="View Board - Life Safety and Property Protection Education Board">Life Safety and Property Protection Education Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=484" id="board" aria-label="View Board - Liquefied Petroleum Gas Commission">Liquefied Petroleum Gas Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=298" id="board" aria-label="View Board - Liquefied Petroleum Gas Commission Advisory Board">Liquefied Petroleum Gas Commission Advisory Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=485" id="board" aria-label="View Board - Livestock Brand Commission">Livestock Brand Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=299" id="board" aria-label="View Board - Local Government Environmental Facilities and Community Development Authority Board of Directors">Local Government Environmental Facilities and Community Development Authority Board of Directors</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=694" id="board" aria-label="View Board - Louis Armstrong Park Authority and Historic Jazz District">Louis Armstrong Park Authority and Historic Jazz District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=45" id="board" aria-label="View Board - Louisiana Board of Drug and Device Distributors">Louisiana Board of Drug and Device Distributors</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=609" id="board" aria-label="View Board - Louisiana Clerks Remote Access Authority">Louisiana Clerks Remote Access Authority</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=449" id="board" aria-label="View Board - Louisiana Educational Television Authority">Louisiana Educational Television Authority</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=620" id="board" aria-label="View Board - Louisiana Finfish Task Force">Louisiana Finfish Task Force</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=653" id="board" aria-label="View Board - Louisiana Genetic Counselor Advisory Committee">Louisiana Genetic Counselor Advisory Committee</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=300" id="board" aria-label="View Board - Louisiana Lottery Corporation Board of Directors">Louisiana Lottery Corporation Board of Directors</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=721" id="board" aria-label="View Board - Louisiana Music Commission">Louisiana Music Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=704" id="board" aria-label="View Board - Louisiana Music Trail Commission">Louisiana Music Trail Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=715" id="board" aria-label="View Board - Louisiana Natural Resources Trust Authority">Louisiana Natural Resources Trust Authority</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=321" id="board" aria-label="View Board - Louisiana Naval War Memorial Commission">Louisiana Naval War Memorial Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=710" id="board" aria-label="View Board - Louisiana Ports and Waterways Investment Commission">Louisiana Ports and Waterways Investment Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=711" id="board" aria-label="View Board - Louisiana Public Defender Oversight Board">Louisiana Public Defender Oversight Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=638" id="board" aria-label="View Board - Louisiana Sales and Use Tax Commission for Remote Sellers">Louisiana Sales and Use Tax Commission for Remote Sellers</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=359" id="board" aria-label="View Board - Louisiana School Employees' Retirement System Board of Trustees">Louisiana School Employees' Retirement System Board of Trustees</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=486" id="board" aria-label="View Board - Louisiana School for Math, Science, and the Arts Board of Directors">Louisiana School for Math, Science, and the Arts Board of Directors</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=631" id="board" aria-label="View Board - Louisiana Science, Technology, Engineering and Mathematics Advisory Council">Louisiana Science, Technology, Engineering and Mathematics Advisory Council</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=657" id="board" aria-label="View Board - Louisiana Sexual Assault Oversight Commission">Louisiana Sexual Assault Oversight Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=606" id="board" aria-label="View Board - Louisiana Sickle Cell Commission">Louisiana Sickle Cell Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=5" id="board" aria-label="View Board - Louisiana State Athletic Commission ">Louisiana State Athletic Commission </a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=374" id="board" aria-label="View Board - Louisiana State Employees' Retirement System Board of Trustees">Louisiana State Employees' Retirement System Board of Trustees</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=376" id="board" aria-label="View Board - Louisiana State Police Retirement System Board of Trustees">Louisiana State Police Retirement System Board of Trustees</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=487" id="board" aria-label="View Board - Louisiana State University and Agricultural and Mechanical College Board of Supervisors">Louisiana State University and Agricultural and Mechanical College Board of Supervisors</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=701" id="board" aria-label="View Board - Louisiana State University Economic Development District">Louisiana State University Economic Development District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=683" id="board" aria-label="View Board - Louisiana Tax Institute">Louisiana Tax Institute</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=637" id="board" aria-label="View Board - Louisiana Uniform Local Sales Tax Board">Louisiana Uniform Local Sales Tax Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=688" id="board" aria-label="View Board - Lower Ninth Ward Economic Development District">Lower Ninth Ward Economic Development District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=570" id="board" aria-label="View Board - Madison Parish Economic and Industrial Development District Board of Commissioners">Madison Parish Economic and Industrial Development District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=117" id="board" aria-label="View Board - Madison Parish Port Commission">Madison Parish Port Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=303" id="board" aria-label="View Board - Mansfield Female College Museum Governing Board">Mansfield Female College Museum Governing Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=18" id="board" aria-label="View Board - Manufactured Housing Commission">Manufactured Housing Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=306" id="board" aria-label="View Board - Marriage and Family Therapy Advisory Committee">Marriage and Family Therapy Advisory Committee</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=491" id="board" aria-label="View Board - Medicaid Pharmaceutical and Therapeutics Committee">Medicaid Pharmaceutical and Therapeutics Committee</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=307" id="board" aria-label="View Board - Medical Advisory Board">Medical Advisory Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=600" id="board" aria-label="View Board - Medical Disclosure Panel">Medical Disclosure Panel</a> INACTIVE</td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=52" id="board" aria-label="View Board - Medical Psychology Advisory Committee - State Board of Medical Examiners">Medical Psychology Advisory Committee - State Board of Medical Examiners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=493" id="board" aria-label="View Board - Mental Health Advocacy Service Board of Trustees">Mental Health Advocacy Service Board of Trustees</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=118" id="board" aria-label="View Board - Mermentau River Harbor and Terminal District Board of Commissioners">Mermentau River Harbor and Terminal District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=309" id="board" aria-label="View Board - Metropolitan Human Services District Governing Board">Metropolitan Human Services District Governing Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=310" id="board" aria-label="View Board - Mid-City Security District Board of Commissioners">Mid-City Security District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=602" id="board" aria-label="View Board - Military Advisory Council">Military Advisory Council</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=311" id="board" aria-label="View Board - Military Family Assistance Board">Military Family Assistance Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=314" id="board" aria-label="View Board - Mississippi River Parkway Commission of Louisiana">Mississippi River Parkway Commission of Louisiana</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=315" id="board" aria-label="View Board - Morehouse Parish Lake Commission">Morehouse Parish Lake Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=120" id="board" aria-label="View Board - Morgan City Harbor and Terminal District Board of Commissioners">Morgan City Harbor and Terminal District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=316" id="board" aria-label="View Board - Motor Fuels Underground Storage Tank Trust Fund Advisory Board">Motor Fuels Underground Storage Tank Trust Fund Advisory Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=21" id="board" aria-label="View Board - Motor Vehicle Commission">Motor Vehicle Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=47" id="board" aria-label="View Board - Motor Vehicle Commission - Sales Finance">Motor Vehicle Commission - Sales Finance</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=617" id="board" aria-label="View Board - Multimodal Commerce Advisory Commission">Multimodal Commerce Advisory Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=318" id="board" aria-label="View Board - Municipal Employees' Retirement System Board of Trustees">Municipal Employees' Retirement System Board of Trustees</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=319" id="board" aria-label="View Board - Municipal Police Employees' Retirement System Board of Trustees">Municipal Police Employees' Retirement System Board of Trustees</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=672" id="board" aria-label="View Board - Natchitoches Historic District Development Commission">Natchitoches Historic District Development Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=145" id="board" aria-label="View Board - Natchitoches Levee and Drainage District Board of Commissioners">Natchitoches Levee and Drainage District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=121" id="board" aria-label="View Board - Natchitoches Parish Port Commission">Natchitoches Parish Port Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=320" id="board" aria-label="View Board - National Register Review Committee">National Register Review Committee</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=650" id="board" aria-label="View Board - Native American Commission">Native American Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=498" id="board" aria-label="View Board - New Orleans Center for Creative Arts Board of Directors">New Orleans Center for Creative Arts Board of Directors</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=322" id="board" aria-label="View Board - New Orleans City Park Improvement Association Board of Commissioners">New Orleans City Park Improvement Association Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=678" id="board" aria-label="View Board - New Orleans Public Belt Railroad Commission">New Orleans Public Belt Railroad Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=146" id="board" aria-label="View Board - Nineteenth Louisiana Levee District Board of Commissioners">Nineteenth Louisiana Levee District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=499" id="board" aria-label="View Board - Nonpublic School Commission">Nonpublic School Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=549" id="board" aria-label="View Board - North Bossier Levee and Drainage District Board of Commissioners">North Bossier Levee and Drainage District Board of Commissioners</a> INACTIVE</td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=147" id="board" aria-label="View Board - North Lafourche Conservation, Levee, and Drainage District Board of Commissioners">North Lafourche Conservation, Levee, and Drainage District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=709" id="board" aria-label="View Board - North Lake Charles Economic Development District ">North Lake Charles Economic Development District </a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=500" id="board" aria-label="View Board - Northeast Delta Human Services Authority Governing Board">Northeast Delta Human Services Authority Governing Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=728" id="board" aria-label="View Board - Northeast Louisiana Railroad Development District">Northeast Louisiana Railroad Development District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=325" id="board" aria-label="View Board - Northwest Louisiana Game and Fish Preserve Commission">Northwest Louisiana Game and Fish Preserve Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=346" id="board" aria-label="View Board - Northwest Louisiana Human Services District Governing Board">Northwest Louisiana Human Services District Governing Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=327" id="board" aria-label="View Board - Occupational Forecasting Conference">Occupational Forecasting Conference</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=49" id="board" aria-label="View Board - Occupational Therapy Advisory Committee - State Board of Medical Examiners">Occupational Therapy Advisory Committee - State Board of Medical Examiners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=502" id="board" aria-label="View Board - Oil and Gas Museum Governing Board">Oil and Gas Museum Governing Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=328" id="board" aria-label="View Board - Old State Capitol Advisory Board">Old State Capitol Advisory Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=591" id="board" aria-label="View Board - Ouachita Riverfront Development Commission">Ouachita Riverfront Development Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=504" id="board" aria-label="View Board - Oyster Lease Damage Evaluation Board">Oyster Lease Damage Evaluation Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=505" id="board" aria-label="View Board - Oyster Task Force">Oyster Task Force</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=665" id="board" aria-label="View Board - Palliative Care Interdisciplinary Advisory Council">Palliative Care Interdisciplinary Advisory Council</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=506" id="board" aria-label="View Board - Parks and Recreation Commission">Parks and Recreation Commission</a> INACTIVE</td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=330" id="board" aria-label="View Board - Parochial Employees' Retirement System Board of Trustees">Parochial Employees' Retirement System Board of Trustees</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=507" id="board" aria-label="View Board - Patient's Compensation Fund Oversight Board">Patient's Compensation Fund Oversight Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=331" id="board" aria-label="View Board - Pet Overpopulation Advisory Council">Pet Overpopulation Advisory Council</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=671" id="board" aria-label="View Board - Pharmacy Benefit Manager Monitoring Advisory Council">Pharmacy Benefit Manager Monitoring Advisory Council</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=27" id="board" aria-label="View Board - Physical Therapy Board">Physical Therapy Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=48" id="board" aria-label="View Board - Physician Assistants Advisory Committee - State Board of Medical Examiners">Physician Assistants Advisory Committee - State Board of Medical Examiners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=333" id="board" aria-label="View Board - Pilotage Fee Commission">Pilotage Fee Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=697" id="board" aria-label="View Board - Plank Road Business Economic Development Board">Plank Road Business Economic Development Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=50" id="board" aria-label="View Board - Podiatry Advisory Committee - State Board of Medical Examiners">Podiatry Advisory Committee - State Board of Medical Examiners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=29" id="board" aria-label="View Board - Polygraph Board">Polygraph Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=148" id="board" aria-label="View Board - Pontchartrain Levee District Board of Commissioners">Pontchartrain Levee District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=123" id="board" aria-label="View Board - Port of Iberia District Board of Commissioners">Port of Iberia District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=125" id="board" aria-label="View Board - Port of South Louisiana Commission">Port of South Louisiana Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=335" id="board" aria-label="View Board - Poverty Point Reservoir District Board of Commissioners">Poverty Point Reservoir District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=336" id="board" aria-label="View Board - Prescription Monitoring Program Advisory Council">Prescription Monitoring Program Advisory Council</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=509" id="board" aria-label="View Board - Prison Enterprises Board">Prison Enterprises Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=337" id="board" aria-label="View Board - Process Technology Advisory Board">Process Technology Advisory Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=33" id="board" aria-label="View Board - Professional Engineering and Land Surveying Board">Professional Engineering and Land Surveying Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=340" id="board" aria-label="View Board - Public Retirement Systems' Actuarial Committee">Public Retirement Systems' Actuarial Committee</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=512" id="board" aria-label="View Board - Public Service Commission">Public Service Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=513" id="board" aria-label="View Board - Quality Science and Mathematics Council">Quality Science and Mathematics Council</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=514" id="board" aria-label="View Board - Racing Commission">Racing Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=35" id="board" aria-label="View Board - Radiologic Technology Board of Examiners">Radiologic Technology Board of Examiners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=732" id="board" aria-label="View Board - Railroad Avenue Historic Cultural Economic District">Railroad Avenue Historic Cultural Economic District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=36" id="board" aria-label="View Board - Real Estate Appraisers Board">Real Estate Appraisers Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=37" id="board" aria-label="View Board - Real Estate Commission">Real Estate Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=149" id="board" aria-label="View Board - Red River Levee and Drainage District Board of Commissioners">Red River Levee and Drainage District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=126" id="board" aria-label="View Board - Red River Parish Port Commission">Red River Parish Port Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=342" id="board" aria-label="View Board - Red River Waterway Commission Board of Commissioners">Red River Waterway Commission Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=150" id="board" aria-label="View Board - Red River, Atchafalaya and Bayou Boeuf Levee District Board of Commissioners">Red River, Atchafalaya and Bayou Boeuf Levee District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=282" id="board" aria-label="View Board - Reentry Advisory Council">Reentry Advisory Council</a> INACTIVE</td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=347" id="board" aria-label="View Board - Regional Museum Governing Board of the Louisiana State Exhibit Museum">Regional Museum Governing Board of the Louisiana State Exhibit Museum</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=348" id="board" aria-label="View Board - Regional Parish Office of Emergency Preparedness Parish Directors Subcommittee">Regional Parish Office of Emergency Preparedness Parish Directors Subcommittee</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=349" id="board" aria-label="View Board - Regional Planning Commission of Jefferson, Orleans, St. Bernard, and St. Tammany Parishes">Regional Planning Commission of Jefferson, Orleans, St. Bernard, and St. Tammany Parishes</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=350" id="board" aria-label="View Board - Regional Transit Authority Board of Commissioners">Regional Transit Authority Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=351" id="board" aria-label="View Board - Registrar of Voters Employees' Retirement System Board of Trustees">Registrar of Voters Employees' Retirement System Board of Trustees</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=516" id="board" aria-label="View Board - Rehabilitation Council">Rehabilitation Council</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=713" id="board" aria-label="View Board - Renaissance District ">Renaissance District </a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=353" id="board" aria-label="View Board - Residential Building Contractors Subcommittee">Residential Building Contractors Subcommittee</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=39" id="board" aria-label="View Board - Respiratory Care Advisory Committee - State Board of Medical Examiners">Respiratory Care Advisory Committee - State Board of Medical Examiners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=354" id="board" aria-label="View Board - Rice Promotion Board">Rice Promotion Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=355" id="board" aria-label="View Board - Rice Research Board">Rice Research Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=706" id="board" aria-label="View Board - River Parishes Juvenile Justice District">River Parishes Juvenile Justice District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=356" id="board" aria-label="View Board - River Parishes Transit Authority Board of Commissioners">River Parishes Transit Authority Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=669" id="board" aria-label="View Board - Rural Water Infrastructure Committee">Rural Water Infrastructure Committee</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=520" id="board" aria-label="View Board - Sabine River Authority Board of Commissioners">Sabine River Authority Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=358" id="board" aria-label="View Board - Saline Lake Game and Fish Preserve Board of Commissioners">Saline Lake Game and Fish Preserve Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=601" id="board" aria-label="View Board - Science and Education Advisory Council to LUMCON">Science and Education Advisory Council to LUMCON</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=521" id="board" aria-label="View Board - Seafood Promotion and Marketing Board">Seafood Promotion and Marketing Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=579" id="board" aria-label="View Board - Seafood Safety Task Force">Seafood Safety Task Force</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=523" id="board" aria-label="View Board - Sentencing Commission">Sentencing Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=700" id="board" aria-label="View Board - Sewerage and Water Board of New Orleans">Sewerage and Water Board of New Orleans</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=361" id="board" aria-label="View Board - Sex Offender Assessment Panel">Sex Offender Assessment Panel</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=595" id="board" aria-label="View Board - Sheriff's Executive Management Institute Governing Board">Sheriff's Executive Management Institute Governing Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=363" id="board" aria-label="View Board - Sheriffs' Pension and Relief Fund Board of Trustees">Sheriffs' Pension and Relief Fund Board of Trustees</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=729" id="board" aria-label="View Board - Shreveport I-20 Economic Development District ">Shreveport I-20 Economic Development District </a> INACTIVE</td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=580" id="board" aria-label="View Board - Shrimp Task Force">Shrimp Task Force</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=366" id="board" aria-label="View Board - Small Business Compliance Advisory Panel">Small Business Compliance Advisory Panel</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=368" id="board" aria-label="View Board - Solid Waste Management System Operators Board of Certification and Training">Solid Waste Management System Operators Board of Certification and Training</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=525" id="board" aria-label="View Board - South Central Louisiana Human Services Authority Governing Board">South Central Louisiana Human Services Authority Governing Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=151" id="board" aria-label="View Board - South Lafourche Levee District Board of Commissioners">South Lafourche Levee District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=127" id="board" aria-label="View Board - South Tangipahoa Parish Port Commission">South Tangipahoa Parish Port Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=152" id="board" aria-label="View Board - Southeast Louisiana Flood Protection Authority - East Board of Commissioners">Southeast Louisiana Flood Protection Authority - East Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=153" id="board" aria-label="View Board - Southeast Louisiana Flood Protection Authority - West Board of Commissioners">Southeast Louisiana Flood Protection Authority - West Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=371" id="board" aria-label="View Board - Southern Rail Commission">Southern Rail Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=526" id="board" aria-label="View Board - Southern University Board of Supervisors">Southern University Board of Supervisors</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=702" id="board" aria-label="View Board - Southern University Economic Development District">Southern University Economic Development District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=372" id="board" aria-label="View Board - Soybean and Grain Research and Promotion Board">Soybean and Grain Research and Promotion Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=590" id="board" aria-label="View Board - Sports and Entertainment District Board of Commissioners">Sports and Entertainment District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=662" id="board" aria-label="View Board - Squirrel Run Levee and Drainage District">Squirrel Run Levee and Drainage District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=128" id="board" aria-label="View Board - St. Bernard Port, Harbor and Terminal District Board of Commissioners">St. Bernard Port, Harbor and Terminal District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=735" id="board" aria-label="View Board - St. Martin Parish Economic and Industrial Development District">St. Martin Parish Economic and Industrial Development District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=708" id="board" aria-label="View Board - St. Martin Special Medical District">St. Martin Special Medical District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=154" id="board" aria-label="View Board - St. Mary Levee District Board of Commissioners">St. Mary Levee District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=614" id="board" aria-label="View Board - St. Tammany Levee, Drainage & Conservation District">St. Tammany Levee, Drainage & Conservation District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=527" id="board" aria-label="View Board - Stadium and Exposition District Board of Commissioners">Stadium and Exposition District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=2" id="board" aria-label="View Board - State Board of Architectural Examiners">State Board of Architectural Examiners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=7" id="board" aria-label="View Board - State Board of Certified Public Accountants of Louisiana">State Board of Certified Public Accountants of Louisiana</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=11" id="board" aria-label="View Board - State Board of Cosmetology">State Board of Cosmetology</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=12" id="board" aria-label="View Board - State Board of Dentistry">State Board of Dentistry</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=195" id="board" aria-label="View Board - State Board of Election Supervisors">State Board of Election Supervisors</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=14" id="board" aria-label="View Board - State Board of Electrolysis Examiners">State Board of Electrolysis Examiners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=15" id="board" aria-label="View Board - State Board of Embalmers and Funeral Directors">State Board of Embalmers and Funeral Directors</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=40" id="board" aria-label="View Board - State Board of Examiners for Sanitarians">State Board of Examiners for Sanitarians</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=13" id="board" aria-label="View Board - State Board of Examiners in Dietetics and Nutrition">State Board of Examiners in Dietetics and Nutrition</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=46" id="board" aria-label="View Board - State Board of Examiners of Interior Designers">State Board of Examiners of Interior Designers</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=34" id="board" aria-label="View Board - State Board of Examiners of Psychologists">State Board of Examiners of Psychologists</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=17" id="board" aria-label="View Board - State Board of Home Inspectors">State Board of Home Inspectors</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=72" id="board" aria-label="View Board - State Board of Library Examiners">State Board of Library Examiners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=20" id="board" aria-label="View Board - State Board of Medical Examiners">State Board of Medical Examiners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=24" id="board" aria-label="View Board - State Board of Nursing">State Board of Nursing</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=25" id="board" aria-label="View Board - State Board of Optometry Examiners">State Board of Optometry Examiners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=30" id="board" aria-label="View Board - State Board of Practical Nurse Examiners">State Board of Practical Nurse Examiners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=31" id="board" aria-label="View Board - State Board of Private Investigator Examiners">State Board of Private Investigator Examiners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=32" id="board" aria-label="View Board - State Board of Private Security Examiners">State Board of Private Security Examiners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=41" id="board" aria-label="View Board - State Board of Social Work Examiners">State Board of Social Work Examiners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=562" id="board" aria-label="View Board - State Buildings and Lands Highest and Best Use Advisory Group">State Buildings and Lands Highest and Best Use Advisory Group</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=375" id="board" aria-label="View Board - State Library of Louisiana Board of Commissioners">State Library of Louisiana Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=10" id="board" aria-label="View Board - State Licensing Board for Contractors">State Licensing Board for Contractors</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=621" id="board" aria-label="View Board - State Medical Disability Board">State Medical Disability Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=494" id="board" aria-label="View Board - State Mineral and Energy Board">State Mineral and Energy Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=301" id="board" aria-label="View Board - State Museum Board of Directors">State Museum Board of Directors</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=28" id="board" aria-label="View Board - State Plumbing Board of Louisiana">State Plumbing Board of Louisiana</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=528" id="board" aria-label="View Board - State Police Commission">State Police Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=529" id="board" aria-label="View Board - State Soil and Water Conservation Commission">State Soil and Water Conservation Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=664" id="board" aria-label="View Board - State Use Council for Purchase of Goods and Services by Individuals with Disabilities">State Use Council for Purchase of Goods and Services by Individuals with Disabilities</a> INACTIVE</td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=582" id="board" aria-label="View Board - Statewide Articulation and Transfer Council">Statewide Articulation and Transfer Council</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=530" id="board" aria-label="View Board - Statewide Independent Living Council">Statewide Independent Living Council</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=377" id="board" aria-label="View Board - Strawberry Marketing Board">Strawberry Marketing Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=531" id="board" aria-label="View Board - Structural Pest Control Commission">Structural Pest Control Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=533" id="board" aria-label="View Board - Supplemental Pay Board of Review for Municipal Police Officers">Supplemental Pay Board of Review for Municipal Police Officers</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=378" id="board" aria-label="View Board - Sweet Potato Advertising and Development Commission">Sweet Potato Advertising and Development Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=719" id="board" aria-label="View Board - Tall Timber Crime Prevention & Improvement District">Tall Timber Crime Prevention & Improvement District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=536" id="board" aria-label="View Board - Tax Commission">Tax Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=583" id="board" aria-label="View Board - Teacher Certification Appeals Council">Teacher Certification Appeals Council</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=381" id="board" aria-label="View Board - Teachers' Retirement System of Louisiana Board of Trustees">Teachers' Retirement System of Louisiana Board of Trustees</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=382" id="board" aria-label="View Board - Teche-Vermilion Freshwater District Board of Commissioners">Teche-Vermilion Freshwater District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=155" id="board" aria-label="View Board - Tensas Basin Levee District Board of Commissioners">Tensas Basin Levee District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=129" id="board" aria-label="View Board - Tensas Parish Port Commission">Tensas Parish Port Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=156" id="board" aria-label="View Board - Terrebonne Levee and Conservation District ">Terrebonne Levee and Conservation District </a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=384" id="board" aria-label="View Board - Terrebonne Parish Veterans' Memorial District Board of Commissioners">Terrebonne Parish Veterans' Memorial District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=130" id="board" aria-label="View Board - Terrebonne Port Commission">Terrebonne Port Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=538" id="board" aria-label="View Board - Tourism Development Commission">Tourism Development Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=488" id="board" aria-label="View Board - Tourism Promotion District Board of Directors">Tourism Promotion District Board of Directors</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=386" id="board" aria-label="View Board - Transportation Authority Board of Directors">Transportation Authority Board of Directors</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=387" id="board" aria-label="View Board - Traumatic Head and Spinal Cord Injury Trust Fund Advisory Board">Traumatic Head and Spinal Cord Injury Trust Fund Advisory Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=539" id="board" aria-label="View Board - Tuition Trust Authority">Tuition Trust Authority</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=131" id="board" aria-label="View Board - Twin Parish Port Commission">Twin Parish Port Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=389" id="board" aria-label="View Board - Unified Command Group">Unified Command Group</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=390" id="board" aria-label="View Board - Uniform Construction Code Council">Uniform Construction Code Council</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=546" id="board" aria-label="View Board - Uniform Electronic Local Return and Remittance Advisory Committee (UELRRAC)">Uniform Electronic Local Return and Remittance Advisory Committee (UELRRAC)</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=725" id="board" aria-label="View Board - University of Louisiana at Lafayette Economic Development District ">University of Louisiana at Lafayette Economic Development District </a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=540" id="board" aria-label="View Board - University of Louisiana System Board of Supervisors">University of Louisiana System Board of Supervisors</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=714" id="board" aria-label="View Board - University Security District">University Security District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=38" id="board" aria-label="View Board - Used Motor Vehicle Commission">Used Motor Vehicle Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=391" id="board" aria-label="View Board - Utilities Restoration Corporation Board of Directors">Utilities Restoration Corporation Board of Directors</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=575" id="board" aria-label="View Board - Vermilion and Iberia Railroad Development District Board of Commissioners">Vermilion and Iberia Railroad Development District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=680" id="board" aria-label="View Board - Vernon Parish Economic Development District">Vernon Parish Economic Development District</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=541" id="board" aria-label="View Board - Veterans Affairs Commission">Veterans Affairs Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=726" id="board" aria-label="View Board - Victoria Farms Crime Prevention and Improvement Board ">Victoria Farms Crime Prevention and Improvement Board </a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=132" id="board" aria-label="View Board - Vidalia Port Commission">Vidalia Port Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=133" id="board" aria-label="View Board - Vinton Harbor and Terminal District Board of Commissioners">Vinton Harbor and Terminal District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=524" id="board" aria-label="View Board - Volunteer Louisiana Commission">Volunteer Louisiana Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=612" id="board" aria-label="View Board - Waste Tire Task Force">Waste Tire Task Force</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=545" id="board" aria-label="View Board - West Calcasieu Parish Airport Managing Board">West Calcasieu Parish Airport Managing Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=393" id="board" aria-label="View Board - West Calcasieu Parish Community Center Authority">West Calcasieu Parish Community Center Authority</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=134" id="board" aria-label="View Board - West Calcasieu Port Board of Commissioners">West Calcasieu Port Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=137" id="board" aria-label="View Board - West St. Mary Parish Port and Harbor District Board of Commissioners">West St. Mary Parish Port and Harbor District Board of Commissioners</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=398" id="board" aria-label="View Board - Wildlife and Fisheries Commission">Wildlife and Fisheries Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=400" id="board" aria-label="View Board - Women's Policy and Research Commission">Women's Policy and Research Commission</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=401" id="board" aria-label="View Board - Workers' Compensation Advisory Council">Workers' Compensation Advisory Council</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=542" id="board" aria-label="View Board - Workers' Compensation Second Injury Board">Workers' Compensation Second Injury Board</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=543" id="board" aria-label="View Board - Workforce Investment Council">Workforce Investment Council</a> </td>
+			</tr> 
+		
+			<tr>
+				<td ><a href="viewBoard.cfm?board=403" id="board" aria-label="View Board - Zachary Taylor Parkway Commission">Zachary Taylor Parkway Commission</a> </td>
+			</tr> 
+		
+</table>
+
+</div>
+
+		
+			
+			</div>
+		</div>
+		<div id="footerNoSidebar"></div>
+					
+		<div class="disclaimer" style="color:black;">
+			LaTrac was developed by the Louisiana Office of Technology Services.
+		</div>
+
+	<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"1a78f1ae3d914afaa748434fbdd1a18b","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

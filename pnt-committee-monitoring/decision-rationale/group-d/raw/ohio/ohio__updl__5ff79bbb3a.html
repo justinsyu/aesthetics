@@ -1,0 +1,263 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript">   
+        var enableAccess = 'Enable Accessibility';
+        var disableAccess = 'Disable Accessibility';   
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UPDL - OH MCD SPBM.Web</title>
+
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="https://kendo.cdn.telerik.com/2021.2.511/styles/kendo.bootstrap-v4.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/telerik-theme-builder.css" />
+    <link rel="stylesheet" href="/css/site.css" />
+    <link rel="stylesheet" href="/css/Tpa.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/lib/fontawesome/css/fontawesome.css">
+    <link rel="stylesheet" href="/lib/fontawesome/css/brands.css">
+    <link rel="stylesheet" href="/lib/fontawesome/css/regular.css">
+    <link rel="stylesheet" href="/lib/fontawesome/css/solid.css">
+    <script src="https://kendo.cdn.telerik.com/2021.2.511/js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2021.2.511/js/kendo.all.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2021.2.511/js/kendo.aspnetmvc.min.js"></script>
+    
+    <script src="/js/site.js"></script>
+    <script type="text/javascript"> 
+        sessionDialogWait = 300000;
+        sessionTimeout = 900000;   
+        sessionLoggedIn = 'false' === 'true';        
+    </script>
+
+
+<!-- Google Analytics -->
+<!--<script>
+    (function (i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'G-DKGNWBPGLN-CM', 'auto');
+    ga('send', 'pageview');
+</script>-->
+<!-- End Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DKGNWBPGLN"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-DKGNWBPGLN-CM');
+</script>         
+</head>
+<body>
+    <header>        
+        <div id="sessionEndDialog" title="Session Expiring" style="display:none">  
+            Your session is about to expire.  Click OK to renew your session or Logout of the application.
+        </div>
+        <div class="container-fluid header-banner">            
+            <div style="height:1.7em;"></div>
+            <div>              
+                <a href="/" title="main-header-logo"><div class="main-header-logo" style="padding-right:40%;"></div></a>
+            </div>
+            <div class="main-header-right-actions" style="padding-right: 15%; float:right">
+                    <div id="headerActionsDiv" class="main-header-actions">
+                        <ul class="nav">
+                            <li class="nav-item d-flex flex-row align-items-center">
+                                <div class="icons icon-508"></div>
+                                        <a href="#" name="accessibility" id="accessibility" title="Enable Accessibility" onclick="accessibilityFuncs.EnableAccessibility();">Enable Accessibility</a>
+                            </li>
+                            <li class="nav-item d-flex flex-row align-items-center">
+                                <div class="icons icon-help"></div>
+                                <a class="main-header-action-links" href="/SPPage/Help">Help</a>
+                            </li>
+                            
+
+
+    <li class="nav-item d-flex flex-row align-items-center">
+        <div class="icons icon-user"></div>
+        <a class="main-header-action-links theme-btn-primary font-weight-bold" href="/Account/SignIn">Sign In</a>
+    </li>
+    <li class="nav-item d-flex flex-row align-items-center">
+        <span class="main-header-action-links">OR</span>
+    </li>
+    <li class="nav-item d-flex flex-row align-items-center">
+        <a class="main-header-action-links" href='~/Account/SignIn'>Register</a>
+    </li>
+
+
+                        </ul>
+                    </div>
+                </div>  
+        </div>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm p-0 mb-2 main-nav-bar">
+            <div class="container">
+                <div class="navbar-collapse d-sm-inline-flex justify-content-between">
+                    <div class="row m-0">    
+    <ul class="main-nav-items k-menu k-header k-reset k-widget" id="DashMenu"><li class="k-state-default k-item" id="ContactUs" style="color:black;font-weight: normal;" tabindex="0" target=""><a class="k-link k-menu-link" href="/Contact">Contact Us</a></li><li class="k-state-default k-item" id="PharmacyDirectory" style="color:black;font-weight: normal;" tabindex="0" target=""><a class="k-link k-menu-link" href="/ProvDirectory/ProvDirectory">Pharmacy Directory</a></li><li class="k-state-default k-item" id="ReferenceMaterial" style="color:black;font-weight: normal;" tabindex="0" target=""><a class="k-link k-menu-link" href="javascript:void(0)">Reference Material<span class="k-icon k-i-arrow-60-down"></span></a><ul class="k-group k-menu-group"><li class="k-state-default k-item" id="DrugCoverage" style="color:black;font-weight: normal;"><a class="k-link k-menu-link" href="/SPContent/DocumentLibrary/Drug Coverage">Drug Coverage</a></li><li class="k-state-default k-item" id="DrugSearch" style="color:black;font-weight: normal;"><a class="k-link k-menu-link" href="/PreferredDrugSearch/NDCSearch">Drug Search</a></li><li class="k-state-default k-item" id="CoordinatedServicesProgramCSP" style="color:black;font-weight: normal;"><a class="k-link k-menu-link" href="https://medicaid.ohio.gov/stakeholders-and-partners/phm/csp/csp">Coordinated Services Program (CSP)</a></li><li class="k-state-default k-item" id="DrugUtilizationReview" style="color:black;font-weight: normal;"><a class="k-link k-menu-link" href="https://medicaid.ohio.gov/stakeholders-and-partners/phm/drug-util">Drug Utilization Review</a></li><li class="k-state-default k-item" id="SpecialtyDrugList" style="color:black;font-weight: normal;"><a class="k-link k-menu-link" href="/SPContent/DocumentLibrary/Specialty Drug List">Specialty Drug List</a></li><li class="k-state-default k-item" id="PharmacyTherapeuticsCommittee" style="color:black;font-weight: normal;"><a class="k-link k-menu-link" href="https://medicaid.ohio.gov/stakeholders-and-partners/phm/pt-committee/pt-committee">Pharmacy &amp; Therapeutics Committee</a></li><li class="k-state-default k-item" id="UsefulLinks" style="color:black;font-weight: normal;"><span class="k-link k-menu-link">Useful Links<span class="k-icon k-i-arrow-60-down"></span></span><ul class="k-group k-menu-group"><li class="k-state-default k-item" id="BillingInstructions" style="color:black;font-weight: normal;"><a class="k-link k-menu-link" href="/SPContent/DocumentLibrary/Billing Instructions">Billing Instructions</a></li><li class="k-state-default k-item" id="Forms" style="color:black;font-weight: normal;"><a class="k-link k-menu-link" href="/SPContent/DocumentLibrary/Forms">Forms</a></li><li class="k-state-default k-item" id="UserGuides" style="color:black;font-weight: normal;"><a class="k-link k-menu-link" href="/SPContent/DocumentLibrary/User Guides">User Guides </a></li><li class="k-state-default k-item" id="Manuals" style="color:black;font-weight: normal;"><a class="k-link k-menu-link" href="/SPContent/DocumentLibrary/Manuals">Manuals</a></li><li class="k-state-default k-item" id="ClaimsReview" style="color:black;font-weight: normal;"><a class="k-link k-menu-link" href="https://pharmacy.medicaid.ohio.gov/pharmacy-claims-review">Claims Review</a></li><li class="k-state-default k-item" id="CommunityResources" style="color:black;font-weight: normal;"><a class="k-link k-menu-link" href="/SPContent/DocumentLibrary/Community Resources">Community Resources</a></li></ul></li><li class="k-state-default k-item" id="OtherPublications" style="color:black;font-weight: normal;"><span class="k-link k-menu-link">Other Publications<span class="k-icon k-i-arrow-60-down"></span></span><ul class="k-group k-menu-group"><li class="k-state-default k-item" id="FAQ" style="color:black;font-weight: normal;"><a class="k-link k-menu-link" href="/SPContent/DocumentLibrary/FAQ">FAQ</a></li><li class="k-state-default k-item" id="ClinicalPolicies" style="color:black;font-weight: normal;"><a class="k-link k-menu-link" href="/SPContent/DocumentLibrary/Clinical Policies">Clinical Policies</a></li><li class="k-state-default k-item" id="MachineReadableFiles" style="color:black;font-weight: normal;"><a class="k-link k-menu-link" href="/SPContent/DocumentLibrary/Machine Readable Files">Machine Readable Files</a></li></ul></li></ul></li><li class="k-state-default k-item" id="ReportFraud" style="color:black;font-weight: normal;" tabindex="0" target="_blank"><a class="k-link k-menu-link" href="https://spbm-medicaid-ohio.ethicspoint.com">Report Fraud</a></li></ul><script>kendo.syncReady(function(){jQuery("#DashMenu").kendoMenu({"select":onSelect});});</script>
+</div>
+<script>
+    function onSelect(e) {
+        if(e.item.getAttribute("target") === "_blank"){
+            e.preventDefault();
+            window.open($(e.item).find("a.k-link").first().attr("href"), e.item.getAttribute("target"));
+        }
+    }
+</script>
+
+
+
+                </div>
+                <div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+             
+
+<div id="body" class="container">
+<div>
+        <h6 id="UPDLTitle" class="title title-border-bottom mb-0"><a href="https://spbm.medicaid.ohio.gov/SPContent/DocumentLibrary/UPDL" id="UPDLUrl">UPDL</a></h6>
+	 <br />
+	<div>
+			<script>
+	var folderName = 'UPDL';
+	var DownloadFile = function (folder,filename) {		
+				
+		folder = folder.replaceAll(" ", "%20");
+		 
+		filename = filename.replaceAll(" ","%20");
+		folder = folder.replaceAll("+", "%20");
+		
+		
+		var url =  "../../SPDocumentLibrary/DocumentLibrary/" + folder + "/" + filename;
+		
+
+		
+		
+		window.open(url, '_blank').focus();
+
+			};
+	
+	
+	var LoadFolder = function (filename) {		
+		var title = $('#UPDLTitle').text();
+		title = title.replace("--", ">");
+		$('#UPDLTitle').text(title);
+		var url = "../../SPDocumentLibrary/DocumentLibrary/" + filename;
+			window.open(url, '_parent').focus();		
+	};
+</script>
+
+	<div id="body" class="container">
+
+		<div class="row m-0">
+			<div id="gridSPDLI" name="gridSPDLI" style="height: 300px;    width: 1005px;"></div><script>kendo.syncReady(function(){jQuery("#gridSPDLI").kendoGrid({"sortable":true,"columns":[{"title":" ","width":"15px","template":"# if (Name.includes(\u0027Archive\u0027) == true) { #\u003cimg src = \u0027../../Images/folder.png\u0027 alt = \u0027folder\u0027 height=\u002750%\u0027 width=\u002750%\u0027 /\u003e# } else if (Name.includes(\u0027.pdf\u0027) == true) { #\u003cimg src = \u0027../../Images/pdf.png\u0027 alt = \u0027pdf\u0027 height=\u002750%\u0027 width=\u002750%\u0027 /\u003e# } else if (Name.includes(\u0027.xlsx\u0027) == true) { #\u003cimg src = \u0027../../Images/xlsx.png\u0027 alt = \u0027xlsx\u0027 height=\u002750%\u0027 width=\u002750%\u0027 /\u003e# } else if (Name.includes(\u0027.txt\u0027) == true) { #\u003cimg src = \u0027../../Images/txt.png\u0027 alt = \u0027txt\u0027 height=\u002750%\u0027 width=\u002750%\u0027 /\u003e# } else { ## } #","field":"Name","sortable":false,"filterable":{"messages":{"selectedItemsFormat":"{0} selected items"},"checkAll":false},"encoded":true},{"title":"Name","width":"200px","template":"# if (Name.includes(\u0027Archive\u0027) == true) { #\u003ca href=\u0027javascript:LoadFolder(\"#=ServerRelativeUrl#\")\u0027 \u003e#: Name #\u003c/a\u003e# } else { #\u003ca href=\u0027javascript:DownloadFile(\"#=ServerRelativeUrl#\",\"#=Name#\")\u0027 \u003e#: Name #\u003c/a\u003e# } #","field":"Name","filterable":{"messages":{"selectedItemsFormat":"{0} selected items"},"checkAll":false},"encoded":true},{"title":"Modified","width":"80px","field":"TimeLastModified","format":"{0: MM/dd/yyyy hh:mm:ss tt}","filterable":{"messages":{"selectedItemsFormat":"{0} selected items"},"checkAll":false},"encoded":true}],"pageable":{"buttonCount":10},"scrollable":{"height":"350px"},"dataSource":{"type":(function(){if(kendo.data.transports['aspnetmvc-ajax']){return 'aspnetmvc-ajax';} else{throw new Error('The kendo.aspnetmvc.min.js script is not included.');}})(),"transport":{"read":{"url":""},"prefix":""},"pageSize":20,"page":1,"groupPaging":false,"total":9,"schema":{"data":"Data","total":"Total","errors":"Errors","model":{"fields":{"Name":{"type":"string"},"ServerRelativeUrl":{"type":"string"},"TimeLastModified":{"type":"date"},"SearchFolderList":{"type":"object"}}}},"data":{"Data":[{"Name":"Additional Therapeutic Classes with Clinical Criteria.pdf","ServerRelativeUrl":"UPDL","TimeLastModified":"2024-12-10T23:16:39Z","SearchFolderList":null},{"Name":"Ohio SPBM Covered OTC List 11.29.24.xlsx","ServerRelativeUrl":"UPDL","TimeLastModified":"2024-12-10T23:15:10Z","SearchFolderList":null},{"Name":"30 Day Change Notice 01.01.2025.pdf","ServerRelativeUrl":"UPDL","TimeLastModified":"2024-11-26T22:18:22Z","SearchFolderList":null},{"Name":"Archive","ServerRelativeUrl":"UPDL--Archive","TimeLastModified":"2024-11-26T22:18:03Z","SearchFolderList":null},{"Name":"Quantity Limits 11.13.2024.pdf","ServerRelativeUrl":"UPDL","TimeLastModified":"2024-11-19T22:00:34Z","SearchFolderList":null},{"Name":"Preferred Diabetic Supply List.pdf","ServerRelativeUrl":"UPDL","TimeLastModified":"2024-11-05T22:16:10Z","SearchFolderList":null},{"Name":"UPDL effective 10.01.2024.pdf","ServerRelativeUrl":"UPDL","TimeLastModified":"2024-09-24T21:57:57Z","SearchFolderList":null},{"Name":"UPDL criteria effective 10.01.2024.pdf","ServerRelativeUrl":"UPDL","TimeLastModified":"2024-09-24T21:57:57Z","SearchFolderList":null},{"Name":"OH SPBM Medical Necessity Policy.pdf","ServerRelativeUrl":"UPDL","TimeLastModified":"2024-04-09T22:21:44Z","SearchFolderList":null}],"Total":9}}});});</script>
+		</div>
+	</div>
+
+
+
+	</div>
+</div>
+</div>
+<script type="text/javascript">    
+    $(document).ready(function () {
+        if (false == true) {
+            $('#headerActionsDiv').attr('hidden', 'hidden');
+            $('#searchDiv').attr('hidden', 'hidden');
+        }
+        else {
+            $('#headerActionsDiv').removeAttr('hidden');
+            $('#searchDiv').removeAttr('hidden');
+        }
+    });
+</script>
+
+        </main>
+    </div>
+    <footer class="footer main-footer">
+        <div class="container">
+            <div class="row main-footer-logo"></div>
+            <div class="row">
+                &copy; 2026. Gainwell Technologies. All Rights Reserved.
+            </div>
+          
+            <div class="row">
+
+                                                                                                                <div class="col-sm-6 col-md-3 item">
+                                                                                                                        <p class="main-footer-title">
+                                                                                                                            Site Links
+                                                                                                                        </p>
+                                                                                                                        <ul>
+                                                                                                                                    <li><a href="https://www.gainwelltechnologies.com/privacy/" target="" title="">Privacy Policy</a></li>
+                                                                                                                                    <li><a href="https://www.gainwelltechnologies.com/terms-of-use/" target="" title="">Copyrights</a></li>
+                                                                                                                        </ul>                                                                                                                </div>
+                                                                                                                <div class="col-sm-6 col-md-3 item">
+                                                                                                                        <p class="main-footer-title">Resources &amp; Tools</p>
+                                                                                                                        <ul>
+                                                                                                                                    <li> <a href="https://www.cms.gov/newsroom" target="" title="">CMS Release</a></li>
+                                                                                                                                    <li> <a href="https://www.cms.gov/Center/Provider-Type/Pharmacist-Center" target="" title="">Pharmacy Center | CMS</a></li>
+                                                                                                                                    <li> <a href="https://www.fda.gov/drugs/drug-safety-and-availability/drug-recalls?msclkid=9f0e8a16aaf011ec8bf54688b489ed9e" target="" title="">Drug Recalls | FDA</a></li>
+                                                                                                                                    <li> <a href="https://www.ashp.org/drug-shortages/current-shortages/drug-shortages-list?page=CurrentShortages&amp;loginreturnUrl=SSOCheckOnly" target="" title="">Drug Shortages List</a></li>
+                                                                                                                                    <li> <a href="https://managedcare.medicaid.ohio.gov/managed-care/centralized-credentialing" target="" title="">Provider Network Management</a></li>
+                                                                                                                                    <li> <a href="https://pharmacy.medicaid.ohio.gov/unified-pdl" target="" title="">Unified Preferred Drug List</a></li>
+                                                                                                                                    <li> <a href="https://pharmacy.medicaid.ohio.gov/drug-utilization-review-board" target="" title="">ODM DUR Board</a></li>
+                                                                                                                                    <li> <a href="https://pharmacy.medicaid.ohio.gov/pharmacy-therapeutics-committee" target="" title="">ODM P&amp;T Committee</a></li>
+                                                                                                                                    <li> <a href="https://myersandstauffer.com/client-portal/ohio/" target="" title="">Myers and Stauffer (PPAC) - Ohio Medicaid Pharmacy</a></li>
+                                                                                                                                    <li> <a href="https://pharmacy.medicaid.ohio.gov/prior-authorization" target="" title="">FFS Prior Authorization</a></li>
+                                                                                                                                    <li> <a href="https://pharmacy.medicaid.ohio.gov/pharmacy-billing-information" target="" title="">Pharmacy Billing Information</a></li>
+                                                                                                                        </ul>
+                                                                                                                </div>
+                                                                                                                <div class="col-sm-6 col-md-3 item">
+                                                                                                                        <p class="main-footer-title">External Links</p>
+                                                                                                                        <ul>
+                                                                                                                                <li><a href="https://medicaid.ohio.gov/" target="" title="">Ohio Department of Medicaid</a></li>
+                                                                                                                                <li><a href="https://www.medicaid.gov/medicaid/index.html" target="" title="">Medicaid.gov</a></li>
+                                                                                                                                <li><a href="https://crc.ohio.gov/" target="" title="">Ohio Civil Rights Commission</a></li>
+                                                                                                                                <li><a href="https://codes.ohio.gov/ohio-administrative-code/chapter-5160-26" target="" title="">Chapter 5160-26 - Ohio Administrative Code | Ohio Laws</a></li>
+                                                                                                                                <li><a href="https://codes.ohio.gov/ohio-administrative-code/chapter-5160-9" target="" title="">FFS Pharmacy Ohio Administrative code</a></li>
+                                                                                                                        </ul>                                                                                                                   
+                                                                                                                </div>
+                                                                                                                <div class="col-sm-6 col-md-3 item">
+                                                                                                                        <p class="main-footer-title">Medicaid Managed Care Plans</p>
+                                                                                                                        <ul>
+                                                                                                                                <li><a href="https://www.amerihealthcaritasoh.com" target="" title="">AmeriHealth Caritas Ohio</a></li>
+                                                                                                                                <li><a href="https://www.anthem.com/oh/medicaid/welcome" target="" title="">Anthem Blue Cross Blue Shield</a></li>
+                                                                                                                                <li><a href="https://www.buckeyehealthplan.com/members/medicaid.html" target="" title="">Buckeye Health Plan</a></li>
+                                                                                                                                <li><a href="https://www.caresource.com/oh/plans/medicaid/" target="" title="">CareSource</a></li>
+                                                                                                                                <li><a href="https://www.humana.com/medicaid/ohio" target="" title="">Humana Healthy Horizons Ohio</a></li>
+                                                                                                                                <li><a href="https://www.molinahealthcare.com/members/oh/en-us/mem/medicaid/medicaid.aspx" target="" title="">Molina HealthCare of Ohio Inc.</a></li>
+                                                                                                                                <li><a href="https://www.uhccommunityplan.com/ohio-medicaid-plans" target="" title="">UnitedHealthcare Community Plan</a></li>
+                                                                                                                        </ul>
+                                                                                                                        <p class="main-footer-title">OhioRISE</p>
+                                                                                                                        <ul>
+                                                                                                                                <li><a href="https://www.aetnabetterhealth.com/ohiorise/index.html" target="" title="">Aetna</a></li>
+                                                                                                                        </ul>                                                                                                                </div> 
+            </div>
+        </div>
+    </footer>
+
+  
+    
+
+
+    <div id="spinnerdiv" hidden>
+        <div id="loader">
+            <div id="loader-large" name="loader-large"></div><script>kendo.syncReady(function(){jQuery("#loader-large").kendoLoader({"size":"large"});});</script>
+        </div>
+
+    </div>
+   
+
+</body>
+</html>
+

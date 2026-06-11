@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Integrating AI-derived lung cancer risk and social determinants of health to improve risk stratification in a safety net lung cancer screening program.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Integrating AI-derived lung cancer risk and social determinants of health to improve risk stratification in a safety net lung cancer screening program.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 11081</div>
+    <div><strong>First speaker:</strong> Evan Garrad, MD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/259769">https://www.asco.org/abstracts-presentations/259769</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b></p>  Lung cancer screening (LCS) outcomes remain inequitable, with social and environmental determinants of health (SDOH) influencing lung cancer risk, screening adherence, and cancer detection. Sybil is a validated deep learning model that predicts future lung cancer risk from a single low-dose CT (LDCT) scan using imaging features alone, without demographic or clinical inputs created by MIT/MGH. Its relationship to SDOH in real-world, safety-net screening populations has not been well characterized.</p>  <b>Methods: </b></p>  We analyzed 2,645 individuals enrolled in the UI Health LCS program with baseline LDCT imaging and available Sybil risk scores. Scores were generated using the publicly available model applied exclusively to volumetric LDCT images, without retraining or incorporation of demographic, clinical, or SDOH variables. Individual-level clinical data were linked to census- and community-level SDOH measures. Sybil scores were log₁₀-transformed and analyzed as continuous and categorical variables. Associations between Sybil risk, SDOH, and lung cancer diagnosis were assessed using multivariable logistic regression.</p>  <b>Results: </b></p>  Mean baseline Sybil score was 0.014 (median 0.002). Ninety-six individuals (3.6%) were diagnosed with lung cancer. Sybil scores were significantly higher among individuals later diagnosed with cancer (mean log score −1.52 vs −2.48; p&lt;0.001). In multivariable models, Sybil risk was the strongest independent predictor of lung cancer diagnosis (OR 6.12 per log-unit increase, 95% CI 4.31–8.83; p&lt;0.001), independent of BMI and SDOH. High Sybil risk remained strongly associated with cancer diagnosis across multiple thresholds (all p&lt;0.001). Census-level area deprivation and community-level measures of food insecurity, vehicle access, and neighborhood conditions were also independently associated with cancer diagnosis (Table 1).</p>  <b>Conclusions: </b></p>  In a large safety-net LCS cohort, AI-derived Sybil risk robustly predicted lung cancer diagnosis and remained informative despite relying solely on imaging data. Integrating AI-based risk prediction with SDOH context may support more equitable, precision-guided lung cancer screening strategies.</div>
+
+
+
+	<div class="table_caption"><b>Association of Sybil AI-risk scores and social determinants of health with lung cancer diagnosis in the UI Health lung cancer screening cohort.</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p><strong>Predictor</strong> </p>
+</td>
+<td>
+<p><strong>Comparison / Scale</strong> </p>
+</td>
+<td>
+<p><strong>Adjusted OR (95% CI)</strong> </p>
+</td>
+<td>
+<p><strong>P value</strong> </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Sybil score </p>
+</td>
+<td>
+<p>Log10 continuous </p>
+</td>
+<td>
+<p>6.12 (4.31–8.83) </p>
+</td>
+<td>
+<p>&lt;0.001 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Sybil score </p>
+</td>
+<td>
+<p>High vs Low (median cutoff) </p>
+</td>
+<td>
+<p>4.18 (2.38–7.79) </p>
+</td>
+<td>
+<p>&lt;0.001 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Sybil score </p>
+</td>
+<td>
+<p>High vs Low (75th percentile) </p>
+</td>
+<td>
+<p>5.10 (3.08–8.57) </p>
+</td>
+<td>
+<p>&lt;0.001 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Sybil score </p>
+</td>
+<td>
+<p>High vs Low (tertiles) </p>
+</td>
+<td>
+<p>8.02 (3.90–18.72) </p>
+</td>
+<td>
+<p>&lt;0.001 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>BMI </p>
+</td>
+<td>
+<p>Per unit increase </p>
+</td>
+<td>
+<p>0.93 (0.89–0.96) </p>
+</td>
+<td>
+<p>&lt;0.001 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Area Deprivation Index </p>
+</td>
+<td>
+<p>Census-level </p>
+</td>
+<td>
+<p>1.02 (1.00–1.04) </p>
+</td>
+<td>
+<p>0.02 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Food insecurity </p>
+</td>
+<td>
+<p>Community-level (%) </p>
+</td>
+<td>
+<p>1.08 (1.02–1.15) </p>
+</td>
+<td>
+<p>0.01 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>No vehicle access </p>
+</td>
+<td>
+<p>Community-level (%) </p>
+</td>
+<td>
+<p>1.05 (1.02–1.09) </p>
+</td>
+<td>
+<p>0.003 </p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digital twin models for counterfactual prediction in NSCLC: A validation study using clinical trial data.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Digital twin models for counterfactual prediction in NSCLC: A validation study using clinical trial data.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e20517</div>
+    <div><strong>First speaker:</strong> Aaron B. Cohen, MD, MSCE</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/266528">https://www.asco.org/abstracts-presentations/266528</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Digital twin models (DTMs) developed on real world data can estimate a patient’s response to treatments they did not receive. These counterfactual (CF) predictions can help reduce a trial’s sample size without compromising its statistical power. Validation of DTM-based CF predictions remains limited. We evaluated CF outcome predictions in NSCLC by benchmarking DTM estimates against observed outcomes from IMpower131 and 132.1 We then assessed potential trial sample size reductions enabled by DTMs.</div>
+  <main> 
+
+	<div><b>Background: </b></p>  Digital twin models (DTMs) developed on real world data can estimate a patient’s response to treatments they did not receive. These counterfactual (CF) predictions can help reduce a trial’s sample size without compromising its statistical power. Validation of DTM-based CF predictions remains limited. We evaluated CF outcome predictions in NSCLC by benchmarking DTM estimates against observed outcomes from IMpower131 and 132.<sup>1</sup> We then assessed potential trial sample size reductions enabled by DTMs.</p>  <b>Methods: </b></p>  We trained machine learning (ML) models (penalized logistic regression [LR], XGBoost [XGB], MLP, GAT) to predict real-world overall survival (rwOS) for patients with stage IV NSCLC initiating 1L platinum chemotherapy (chemo) 2011-2016 from the Flatiron Health Research Database. Features were generated using structured and LLM-extracted clinical details (e.g. Charlson comorbidity index [CCI]; sites of metastases [SOM]). Models were internally validated on a held-out test set and externally validated (MAD<sup>2</sup>, rwOS and hazard ratio [HR] comparisons) using patient-level data from IMpower131 and 132. Predictions were made for stage IV patients in 1) the control arm to compare model predictions with observed trial outcomes (Table, Control Arm Validation) and 2) the experimental arm to simulate their outcomes as if they had instead received control-arm therapy (Table, CF Treatment Effect). We estimated trial sample size reduction based on the C-index from Cox Proportional Hazards models with model-based prognostic scores for covariate adjustment.</p>  <b>Results: </b></p>  Key features across models included ECOG status, albumin, Brain+liver SOM, and CCI. LR and XGB performed best for IMpower131 and 132 respectively, with MAD<sup>2</sup>&lt;&nbsp;5% and predicted (pred) control arm rwOS similar to those observed (obs) in the trials<sup>3</sup>. CF predictions yielded HRs consistent with trial results (Table). Estimated sample size reduction was 9-15% and 15-21% for IMpower131 and 132 respectively.</p>  <b>Conclusions: </b></p>  Validated DTMs demonstrate the feasibility of accurately predicting CF outcomes with advanced ML. This approach can enable efficient, well-powered trials with smaller sample sizes and supports a path toward broader validation and regulatory adoption.</div>
+
+
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td></td>
+<td>
+<p><strong>IMpower 131</strong></p>
+</td>
+<td>
+<p><strong>IMpower 132</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Control Arm Validation</strong></p>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>
+<p>Pred vs Obs Median rwOS (months)</p>
+</td>
+<td>
+<p>10 vs 12.6<sup>3</sup></p>
+</td>
+<td>
+<p>15 vs. 13.1<sup>3</sup></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>MAD<sup>2</sup></p>
+</td>
+<td>
+<p>3.9%</p>
+</td>
+<td>
+<p>1.8%</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>C-Index</p>
+</td>
+<td>
+<p>0.61</p>
+</td>
+<td>
+<p>0.67</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>HR (Pred:Obs; </p>
+<p>1 is perfect prediction) </p>
+</td>
+<td>
+<p>0.97 [0.86-1.00]<sup>4</sup></p>
+</td>
+<td>
+<p>1.03 [1.00-1.06]<sup>4</sup></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>CF Treatment Effect</strong></p>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>
+<p>Obs trial HR</p>
+</td>
+<td>
+<p>0.86 (0.73-1.02)<sup>3</sup></p>
+</td>
+<td>
+<p>0.82 (0.66-1.01)<sup>3</sup></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>DTM-derived HR</p>
+</td>
+<td>
+<p>0.81 (0.79-0.84)<sup>4</sup></p>
+</td>
+<td>
+<p>0.85 (0.83-0.86)<sup>4</sup></p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+ 
+	<div class="table_footer"><sup>1</sup>IMpower131 &amp; IMpower132: atezolizumab plus chemo vs chemo alone in squamous and non-squamous NSCLC respectively</p>
+<p><sup>2</sup>Mean absolute difference between pred &amp; obs OS curves</p>
+<p><sup>3</sup>Observed results differ slightly from the published trials as this analysis restricted to subset of stage IV patients</p>
+<p><sup>4</sup>95% CI based on 1000 bootstrapped samples of trial data</div> 
+
+
+</main>
+</body>
+</html>

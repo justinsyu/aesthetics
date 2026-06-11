@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Effects of a multimodal TCR/BCR repertoire foundation model on blood RNA-seq–based prediction of severe adverse event risk and rheumatoid arthritis.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Effects of a multimodal TCR/BCR repertoire foundation model on blood RNA-seq–based prediction of severe adverse event risk and rheumatoid arthritis.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 2570</div>
+    <div><strong>First speaker:</strong> Anatoly Bobe</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/257822">https://www.asco.org/abstracts-presentations/257822</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b> Severe immune-related adverse events (irAEs) limit the use of immune checkpoint inhibitors (ICIs). Clinically, irAEs can resemble autoimmune diseases such as rheumatoid arthritis (RA), suggesting shared dysregulation of adaptive immune receptor repertoires (T-cell receptor [TCR] and B-cell receptor [BCR]). We developed a TCR/BCR foundation model to predict severe irAE risk prior to ICI treatment and to detect RA from peripheral blood.</p>  <b>Methods: </b> Peripheral blood RNA sequencing (RNA-seq) from cancer patients prior to ICI therapy, healthy donors, and RA patients was analyzed across six cohorts (Table 1). Severe irAEs were defined as grade ≥3. Gene expression quantification and signature scores were computed using kallisto and ssGSEA. Adaptive immune receptor repertoire (AIRR) features for TCR and BCR were derived from blood RNA-seq using an in-house pipeline (pyigmap). We trained neural network models to (i) estimate severe irAE risk in ICI-treated cancer patients and (ii) distinguish RA from healthy donors, using TCR/BCR embedding features alone or combined with gene signature scores. Performance was evaluated across multiple datasets to assess discrimination and cross-cohort robustness.</p>  <b>Results: </b> The model combining TCR/BCR embedding features with gene signature scores achieved improved discrimination for severe irAE risk prediction (AUC 0.78; p=1×10⁻⁵) and RA detection (AUC 0.70; p=5×10⁻¹⁴). This outperformed models based on gene signatures alone (irAE AUC 0.67; p=8×10⁻³; RA AUC 0.66; p=4×10⁻⁹), TCR/BCR diversity alone (irAE AUC 0.66; p=2×10⁻²; RA AUC 0.61; p=6×10⁻⁵), or signatures plus diversity (irAE AUC 0.70; p=2×10⁻³; RA AUC 0.69; p=9×10⁻¹³). Embedding-based representations were more robust to technical variation than conventional diversity metrics: batch-effect decomposition showed higher biological variability (0.012 vs 0.002) and lower technical variability (0.460 vs 0.861) for embeddings versus diversity features, consistent with improved cross-cohort generalization.</p>  <b>Conclusions: </b> A TCR/BCR foundation model integrated with gene signatures improves pre-treatment prediction of severe irAE risk and detection of autoimmune disease from peripheral blood RNA-seq. These repertoire-informed representations capture clinically relevant clonotype biology and support minimally invasive risk stratification and monitoring for patients receiving ICIs.</div>
+
+
+
+	<div class="table_caption"><b>Cohort description.</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p>Cohort</p>
+</td>
+<td>
+<p>Source</p>
+</td>
+<td>
+<p>N</p>
+</td>
+<td>
+<p>Severe irAE</p>
+</td>
+<td>
+<p>No severe irAE</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>#1 (irAE Train Set 1)</p>
+</td>
+<td>
+<p>Internal </p>
+</td>
+<td>
+<p>726</p>
+</td>
+<td>
+<p>48</p>
+</td>
+<td>
+<p>678</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>#1 (irAE Test Set 1)</p>
+</td>
+<td>
+<p>Internal</p>
+</td>
+<td>
+<p>187</p>
+</td>
+<td>
+<p>12</p>
+</td>
+<td>
+<p>175</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>#2 (irAE Test Set 2)</p>
+</td>
+<td>
+<p>Internal</p>
+</td>
+<td>
+<p>47</p>
+</td>
+<td>
+<p>10</p>
+</td>
+<td>
+<p>37</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Cohort</p>
+</td>
+<td>
+<p>Source</p>
+</td>
+<td>
+<p>N</p>
+</td>
+<td>
+<p>Healthy</p>
+</td>
+<td>
+<p>RA</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>#3 (RA Train Set 1 / Validation Set)</p>
+</td>
+<td>
+<p>Open source</p>
+</td>
+<td>
+<p>211</p>
+</td>
+<td>
+<p>97</p>
+</td>
+<td>
+<p>114</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>#4 (RA Test Set 1)</p>
+</td>
+<td>
+<p>Open source</p>
+</td>
+<td>
+<p>101</p>
+</td>
+<td>
+<p>50</p>
+</td>
+<td>
+<p>51</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>#5 (RA Test Set 2)</p>
+</td>
+<td>
+<p>Open source</p>
+</td>
+<td>
+<p>24</p>
+</td>
+<td>
+<p>12</p>
+</td>
+<td>
+<p>12</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>#6 (RA Test Set 3)</p>
+</td>
+<td>
+<p>Open source</p>
+</td>
+<td>
+<p>140</p>
+</td>
+<td>
+<p>20</p>
+</td>
+<td>
+<p>120</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

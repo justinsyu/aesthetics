@@ -1,0 +1,80 @@
+{
+  "abstractNumber": "4217",
+  "body": " \r\n\r\n\t<div><b>Background: </b>Pancreatic cancer is among the most lethal malignancies, with a 5-year survival below 12%. Prognosis is strongly stage dependent, yet early disease is frequently misclassified as chronic pancreatitis or benign cystic lesions, resulting in diagnostic delay and loss of surgical opportunity. Although deep learning models demonstrate high accuracy on cross-sectional imaging, their computational demands limit deployment in resource-constrained settings. Knowledge distillation enables transfer of diagnostic capability from high-capacity teacher models to lightweight student networks while preserving performance. We evaluated whether a distilled EfficientNetB0 model could retain EfficientNetB7-level accuracy for pancreatic cancer stage stratification while enabling real-world deployment.</p>  <b>Methods: </b>We analyzed 2,840 contrast-enhanced abdominal CT studies, including pancreatic ductal adenocarcinoma (n&nbsp;=&nbsp;1,400; 700 early-stage resectable or borderline-resectable, 700 locally advanced or metastatic), chronic pancreatitis (n&nbsp;=&nbsp;900), and benign pancreatic lesions (n&nbsp;=&nbsp;540) from multiple international centers. Ground truth was established by multidisciplinary consensus incorporating histopathology, surgical findings, and longitudinal follow-up. A high-capacity EfficientNetB7 teacher model (≈66M parameters; 37 GFLOPs) trained on multiphasic CT served as reference. A lightweight EfficientNetB0 student model (≈5.3M parameters; 0.39 GFLOPs; &gt;&nbsp;90% parameter reduction) was trained using temperature-scaled knowledge distillation with regularized cross-entropy loss. Performance metrics included accuracy, sensitivity, specificity, F1-score, and AUROC. Deployment feasibility was independently evaluated by abdominal radiologists and oncologists across six continents.</p>  <b>Results: </b>The distilled EfficientNetB0 achieved 96.6% accuracy for stage stratification (early vs advanced disease), with sensitivity of 97.4%, specificity of 95.8%, and AUROC of 0.989. Differential diagnosis accuracy was 94.8% for pancreatic cancer versus chronic pancreatitis and 95.6% versus benign lesions. External validation accuracy ranged from 93% to 97%. Mean inference time was 38 ms per image compared with 330 ms for EfficientNetB7. Knowledge distillation preserved 99.1% of teacher performance while reducing computational cost by &gt;&nbsp;95%.</p>  <b>Conclusions: </b>Knowledge distillation enables a lightweight EfficientNetB0 to achieve near–EfficientNetB7 accuracy for pancreatic cancer stage stratification while markedly reducing computational complexity. This scalable approach supports real-time imaging decision support and addresses key barriers to global deployment of AI-assisted pancreatic cancer diagnosis.</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+  "contentId": "268203",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/268203",
+    "queryParams": null,
+    "target": null,
+    "title": "Knowledge distillation for pancreatic cancer diagnosis: EfficientNet-based deep learning for stage stratification with real-world deployment optimization."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION268203"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780160400000,
+    "start": 1780149600000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "200",
+  "presentationId": "268203",
+  "primaryPerson": {
+    "displayName": "Gowrishankar Palaniswamy, MD, MBBS",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780160400000,
+    "start": 1780149600000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17143",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17143",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Gastrointestinal Cancer—Gastroesophageal, Pancreatic, and Hepatobiliary"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": null,
+  "title": "Knowledge distillation for pancreatic cancer diagnosis: EfficientNet-based deep learning for stage stratification with real-world deployment optimization.",
+  "titles": null,
+  "uid": "PRESENTATION268203"
+}

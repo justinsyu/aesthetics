@@ -1,0 +1,80 @@
+{
+  "abstractNumber": "1576",
+  "body": " \r\n\r\n\t<div><b>Background: </b> Non-receipt of guideline-concordant treatment (GCT) for pancreatic cancer is associated with worse outcomes and occurs disproportionately in safety-net settings. Timely identification of patients at risk using traditional approaches remains challenging. We developed machine learning (ML) risk prediction models using electronic health record (EHR) data available at presentation to predict non-receipt of GCT and support targeted navigation.</p>  <b>Methods: </b> We conducted a retrospective analysis of patients with pancreatic cancer treated at two safety-net hospitals in Alabama from 2018-2022. GCT was defined based on NCCN guidelines. Candidate predictors included demographic, clinical, laboratory, access-to-care and healthcare utilization variables available at presentation. Primary outcome was non-receipt of GCT. Data were split into stratified 80/20 training and test sets given class imbalance (2/3<sup>rd</sup> received GCT). Feature engineering was applied to reduce overfitting from high-cardinality variables. Classification and Regression Tree (CART) analysis was used to explore feature interactions and rank predictors. Multiple ML models were trained using PyCaret with default hyperparameters. Model performance was evaluated on the test set, with recall prioritized to reflect a screening use case in which false positives were acceptable.</p>  <b>Results: </b> Of 902 patients, 67.5% (n=609) received GCT. CART identified 30 candidate features. Highly ranked features included Area Deprivation Index, age, albumin, time from symptom onset to start of workup, employment status, presence of primary care physician, BMI and ECOG performance status. Performance metrics of the top 5 models are summarized in Table 1. Across models, test-set accuracy ranged from 72.9% to 86.2%, and recall for non-GCT ranged from 35.6% to 61.0%. Light Gradient Boosting model demonstrated the strongest overall screening performance, achieving the highest recall (61.0%), precision (94.7%), F1 score (0.74), and AUC (0.94).</p>  <b>Conclusions: </b> ML models using EHR data readily available at presentation can identify patients at high risk for non-receipt of GCT, driven in part by modifiable access-to-care and social vulnerability factors. Integration of these models into EHR workflows could enable automated risk flagging at diagnosis and trigger early referral to navigation and supportive services, with the potential to improve treatment delivery and outcomes.</div>\r\n\r\n\r\n\r\n\t<div class=\"table_caption\"><b>Test-set performance of machine learning models.</b></div> \r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<p>Model</p>\r\n</td>\r\n<td>\r\n<p>Accuracy</p>\r\n</td>\r\n<td>\r\n<p>AUC</p>\r\n</td>\r\n<td>\r\n<p>Recall</p>\r\n</td>\r\n<td>\r\n<p>Precision</p>\r\n</td>\r\n<td>\r\n<p>F1 score</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Decision Tree Classifier</p>\r\n</td>\r\n<td>\r\n<p>0.79</p>\r\n</td>\r\n<td>\r\n<p>0.77</p>\r\n</td>\r\n<td>\r\n<p>0.51</p>\r\n</td>\r\n<td>\r\n<p>0.77</p>\r\n</td>\r\n<td>\r\n<p>0.61</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Logistic Regression</p>\r\n</td>\r\n<td>\r\n<p>0.73</p>\r\n</td>\r\n<td>\r\n<p>0.79</p>\r\n</td>\r\n<td>\r\n<p>0.36</p>\r\n</td>\r\n<td>\r\n<p>0.66</p>\r\n</td>\r\n<td>\r\n<p>0.46</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Light Gradient Boosting Machine (LGBM) Classifier</p>\r\n</td>\r\n<td>\r\n<p>0.86</p>\r\n</td>\r\n<td>\r\n<p>0.94</p>\r\n</td>\r\n<td>\r\n<p>0.61</p>\r\n</td>\r\n<td>\r\n<p>0.95</p>\r\n</td>\r\n<td>\r\n<p>0.74</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Extreme Gradient Boosting (XGB) Classifier</p>\r\n</td>\r\n<td>\r\n<p>0.81</p>\r\n</td>\r\n<td>\r\n<p>0.87</p>\r\n</td>\r\n<td>\r\n<p>0.54</p>\r\n</td>\r\n<td>\r\n<p>0.80</p>\r\n</td>\r\n<td>\r\n<p>0.65</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Ada Boost Classifier</p>\r\n</td>\r\n<td>\r\n<p>0.77</p>\r\n</td>\r\n<td>\r\n<p>0.85</p>\r\n</td>\r\n<td>\r\n<p>0.46</p>\r\n</td>\r\n<td>\r\n<p>0.73</p>\r\n</td>\r\n<td>\r\n<p>0.56</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n\r\n\r\n",
+  "contentId": "263124",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/263124",
+    "queryParams": null,
+    "target": null,
+    "title": "Identifying patients at risk for non-receipt of guideline-concordant treatment in pancreatic cancer using electronic health record data and machine learning."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION263124"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780160400000,
+    "start": 1780149600000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "494",
+  "presentationId": "263124",
+  "primaryPerson": {
+    "displayName": "Annabelle Fonseca, MD, MHS",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780160400000,
+    "start": 1780149600000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17086",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17086",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Care Delivery/Models of Care"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": null,
+  "title": "Identifying patients at risk for non-receipt of guideline-concordant treatment in pancreatic cancer using electronic health record data and machine learning.",
+  "titles": null,
+  "uid": "PRESENTATION263124"
+}

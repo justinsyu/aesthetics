@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SpyGlass Pharma Website Currentness Audit</title>
+  <style>
+    :root {
+      --ink: #10120f; --muted: #5d6258; --paper: #f6f1e8; --paper-2: #ebe4d6;
+      --card: #fffaf0; --line: #1b1f17; --lime: #d7ff5f; --teal: #7bc8c0;
+      --orange: #ffbe73; --blue: #b8d8ff; --shadow: 0 18px 48px rgba(16,18,15,.08); --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 64px; line-height: 1.05; font-weight: 560; max-width: 1320px; }
+    h2 { font-size: 43px; line-height: 1.07; font-weight: 560; max-width: 1360px; }
+    h3 { font-size: 25px; line-height: 1.05; font-weight: 650; }
+    .slide {
+      width: 100vw; height: 100vh; min-height: 100vh; overflow: hidden; position: relative;
+      display: flex; align-items: flex-start; padding: 34px 0 18px; page-break-after: always; break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; opacity: .9; pointer-events: none; }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .evidence-slide .wrap { width: min(1460px, calc(100vw - 36px)); }
+    .eyebrow {
+      display: inline-flex; align-items: center; border: 1.4px solid var(--line); padding: 8px 12px;
+      border-radius: 999px; font-size: 14px; font-weight: 850; text-transform: uppercase; margin-bottom: 18px; background: var(--lime);
+    }
+    .dek { margin-top: 24px; color: var(--muted); font-size: 25px; line-height: 1.22; max-width: 1280px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 22px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .metric, .panel, .callout, .table, .evidence-card {
+      border: 1.5px solid var(--line); background: rgba(255,250,240,.9); border-radius: var(--radius);
+      box-shadow: var(--shadow); overflow: hidden;
+    }
+    .metric { min-height: 118px; padding: 16px; }
+    .num { font-size: 43px; line-height: .92; font-weight: 400; }
+    .label { margin-top: 9px; font-size: 18px; line-height: 1.12; color: var(--muted); }
+    .callout { background: #11130f; color: var(--paper); border-color: #11130f; padding: 19px 22px; margin-top: 18px; }
+    .callout h3 { color: var(--lime); }
+    .summary-list { margin: 12px 0 0; padding-left: 22px; display: grid; gap: 8px; }
+    .summary-list li { font-size: 20px; line-height: 1.14; color: rgba(246,241,232,.88); }
+    .section-head { margin-bottom: 22px; }
+    .section-head p { margin-top: 18px; color: var(--muted); font-size: 21px; line-height: 1.2; max-width: 1320px; }
+    .finding-grid { display: grid; grid-template-columns: .86fr 1.14fr; gap: 13px; align-items: stretch; }
+    .comparison { display: grid; gap: 11px; align-content: start; }
+    .aligned-finding .comparison { align-self: stretch; align-content: space-between; height: 100%; }
+    .panel { padding: 17px; }
+    .panel p { margin-top: 8px; color: var(--muted); font-size: 17px; line-height: 1.12; }
+    .aligned-finding .comparison { grid-template-rows: repeat(2, minmax(0, 1fr)); }
+    .aligned-finding .panel { min-height: 166px; padding: 24px 22px; display: flex; flex-direction: column; align-items: flex-start; }
+    .aligned-finding .panel h3, .aligned-finding .panel p { width: 100%; }
+    .aligned-finding .panel p { margin-top: 12px; line-height: 1.24; }
+    .aligned-finding .tag { margin-bottom: 13px; }
+    .tag { display: inline-block; padding: 5px 9px; border: 1.2px solid var(--line); border-radius: 999px; font-size: 12px; font-weight: 850; text-transform: uppercase; background: var(--paper-2); margin-bottom: 9px; }
+    .tag.orange { background: var(--orange); }
+    .tag.blue { background: var(--blue); }
+    .tag.teal { background: var(--teal); }
+    .evidence-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .evidence-grid.three { grid-template-columns: repeat(3, 1fr); }
+    .evidence-card { margin: 0; border-radius: 18px; background: rgba(255,250,240,.92); display: flex; flex-direction: column; }
+    .evidence-top { display: flex; justify-content: space-between; gap: 10px; padding: 7px 10px; border-bottom: 1px solid var(--line); font-size: 12px; font-weight: 850; text-transform: uppercase; background: var(--paper-2); }
+    .evidence-top a { text-transform: none; color: var(--muted); font-weight: 750; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .evidence-card img { display: block; width: 100%; height: 270px; object-fit: contain; object-position: top left; background: #fff; border-bottom: 1px solid var(--line); }
+    .large-img .evidence-card img { height: 412px; }
+    .evidence-grid.three .evidence-card img { height: 305px; }
+    figcaption { margin: 0; padding: 8px 10px 10px; color: var(--muted); font-size: 14px; line-height: 1.08; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .table { display: grid; }
+    .row { display: grid; border-bottom: 1px solid var(--line); }
+    .row:last-child { border-bottom: 0; }
+    .row.refs { grid-template-columns: .25fr .85fr 1fr 1.9fr; min-height: 56px; }
+    .row.refs.head { min-height: 37px; }
+    .cell { padding: 8px 10px; border-right: 1px solid var(--line); font-size: 14px; line-height: 1.08; display: flex; align-items: center; }
+    .cell:first-child { justify-content: center; text-align: center; padding-left: 0; padding-right: 0; }
+    .cell:last-child { border-right: 0; }
+    .head .cell { background: #11130f; color: var(--paper); font-weight: 850; text-transform: uppercase; font-size: 13px; white-space: nowrap; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 34px 0 18px; }
+      .wrap { width: 1360px; }
+      .evidence-slide .wrap { width: 1460px; }
+      .metric, .panel, .callout, .table, .evidence-card { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) { .slide { width: 1600px; height: 900px; } }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">WEBSITE AUDIT | JUNE 2, 2026</div>
+      <h1>SpyGlass Pharma Website Currentness Audit</h1>
+      <p class="dek">This deck compares selected SpyGlass public website statements for the BIM-IOL System with current company primary sources filed or available by June 2, 2026. Findings are limited to website-currentness observations about Phase 1/2 data presentation and related clinical-program context.</p>
+      <div class="grid-4">
+        <div class="metric"><div class="num">3</div><div class="label">Evidence-supported currentness observations</div></div>
+        <div class="metric"><div class="num">2</div><div class="label">SpyGlass public website pages assessed for findings</div></div>
+        <div class="metric"><div class="num">Mar 2026</div><div class="label">Company announcement of 12-month Phase 1/2 results</div></div>
+        <div class="metric"><div class="num">2027</div><div class="label">Current company timing for expected Phase 3 enrollment completion</div></div>
+      </div>
+      <div class="callout">
+        <h3>Executive summary</h3>
+        <ul class="summary-list">
+          <li>The Study Data page states that Phase 1/2 enrollment was completed in November 2024 and that 12-month interim data were expected in 2026; the March 9, 2026 company release filed with the SEC states that positive 12-month Phase 1/2 results had been announced.<a class="cite" href="https://spyglasspharma.com/study-data/">1</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1778922/000177892226000004/exhibit991-8kpr.htm">2</a></li>
+          <li>The BIM-IOL technology page's Clinical Results to Date module foregrounds Phase 1/2 data at 3 months and cites a November 2025 data source; later company primary sources identify 12-month Phase 1/2 results, including 98% drop-free status at the intended commercial dose in the May 14, 2026 update.<a class="cite" href="https://www.spyglasspharma.com/our-technology/">3</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1778922/000177892226000033/exhibit991-8kprx051426.htm">4</a></li>
+          <li>The Study Data page lists the Phase 3 BCDVA co-primary endpoint at 12 months, while the current ClinicalTrials.gov records for SGP-005 and SGP-006 list the BCDVA primary outcome time frame as Month 6; this is framed as a registry-versus-website/source divergence.<a class="cite" href="https://spyglasspharma.com/study-data/#phase-3-clinical-trials">7</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07218783">8</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07218796">9</a></li>
+          <li>Context reviewed but not treated as a finding: the pipeline page states that two Phase 3 trials are underway, which aligns with the May 14, 2026 company update that enrollment remains on track with completion expected in 2027.<a class="cite" href="https://spyglasspharma.com/pipeline/">5</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1778922/000177892226000033/exhibit991-8kprx051426.htm">6</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">1/6</div>
+  </article>
+
+  <article class="slide evidence-slide aligned-finding">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Observation 1 | Phase 1/2 timing wording</div>
+        <h2>Study Data page still frames the 12-month Phase 1/2 readout as expected in 2026</h2>
+        <p>The comparator source is the March 9, 2026 company press release filed as Exhibit 99.1 with the SEC, which states that positive 12-month Phase 1/2 results had already been announced.</p>
+      </div>
+      <div class="finding-grid">
+        <div class="comparison">
+          <div class="panel">
+            <span class="tag orange">SpyGlass website</span>
+            <h3>Future-facing readout wording</h3>
+            <p>The Study Data page lists Phase 1/2 enrollment as completed in November 2024 and says the 12-month interim data were expected in 2026.<a class="cite" href="https://spyglasspharma.com/study-data/">1</a></p>
+          </div>
+          <div class="panel">
+            <span class="tag blue">Current company source</span>
+            <h3>Readout announced in March 2026</h3>
+            <p>The March 9, 2026 company release states that positive 12-month Phase 1/2 results were announced for the BIM-IOL System.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1778922/000177892226000004/exhibit991-8kpr.htm">2</a></p>
+          </div>
+        </div>
+        <div class="evidence-grid">
+          <figure class="evidence-card">
+            <div class="evidence-top"><span>Reference 1</span><a href="https://spyglasspharma.com/study-data/">spyglasspharma.com</a></div>
+            <img src="screenshots/evidence/source-01-study-data-phase-12-expected.png" alt="SpyGlass Study Data page: 12-month interim data expected in 2026" />
+            <figcaption>Study Data page Phase 1/2 section with future-facing 12-month interim-data wording.</figcaption>
+          </figure>
+          <figure class="evidence-card">
+            <div class="evidence-top"><span>Reference 2</span><a href="https://www.sec.gov/Archives/edgar/data/1778922/000177892226000004/exhibit991-8kpr.htm">sec.gov</a></div>
+            <img src="screenshots/evidence/source-02-ir-march-12-month-results.png" alt="SEC-hosted SpyGlass March 9, 2026 release announcing positive 12-month Phase 1/2 results" />
+            <figcaption>Company release filed with the SEC showing the 12-month Phase 1/2 results announcement.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">2/6</div>
+  </article>
+
+  <article class="slide evidence-slide aligned-finding">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Observation 2 | Results-to-date module</div>
+        <h2>Technology-page results module does not reflect the later 12-month Phase 1/2 result set</h2>
+        <p>The currentness observation is limited to the page's public results presentation. The page still centers Phase 1/2 data at 3 months, while later company sources present 12-month outcomes for the intended commercial dose.</p>
+      </div>
+      <div class="finding-grid">
+        <div class="comparison">
+          <div class="panel">
+            <span class="tag orange">SpyGlass website</span>
+            <h3>Phase 1/2 results shown at 3 months</h3>
+            <p>The BIM-IOL technology page's Clinical Results to Date table presents Phase 1/2 Study at 3 Months and cites a November 2025 data source.<a class="cite" href="https://www.spyglasspharma.com/our-technology/">3</a></p>
+          </div>
+          <div class="panel">
+            <span class="tag blue">Current company source</span>
+            <h3>12-month results repeated in May 2026</h3>
+            <p>The May 14, 2026 company update states that the 12-month Phase 1/2 data showed 98% drop-free status and 34% mean IOP reduction at the intended commercial dose.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1778922/000177892226000033/exhibit991-8kprx051426.htm">4</a></p>
+          </div>
+        </div>
+        <div class="evidence-grid">
+          <figure class="evidence-card">
+            <div class="evidence-top"><span>Reference 3</span><a href="https://www.spyglasspharma.com/our-technology/">spyglasspharma.com</a></div>
+            <img src="screenshots/evidence/source-03-technology-results-to-date-3-month.png" alt="SpyGlass technology page: Phase 1/2 Study at 3 Months" />
+            <figcaption>Technology page Clinical Results to Date module with Phase 1/2 results at 3 months.</figcaption>
+          </figure>
+          <figure class="evidence-card">
+            <div class="evidence-top"><span>Reference 4</span><a href="https://www.sec.gov/Archives/edgar/data/1778922/000177892226000033/exhibit991-8kprx051426.htm">sec.gov</a></div>
+            <img src="screenshots/evidence/source-04-sec-q1-12-month-results.png" alt="SEC-hosted SpyGlass May 14, 2026 update: 12-month Phase 1/2 data" />
+            <figcaption>May 2026 company update filed with the SEC showing the later 12-month Phase 1/2 data.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">3/6</div>
+  </article>
+
+  <article class="slide evidence-slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Observation 3 | Phase 3 endpoint timing</div>
+        <h2>Website Phase 3 BCDVA timing differs from current trial registries</h2>
+        <p>The observation is framed as a registry-versus-website/source divergence. The Study Data page lists BCDVA of 20/40 or better at 12 months, while ClinicalTrials.gov lists the BCDVA primary outcome time frame as Month 6 for both SGP-005 and SGP-006.</p>
+      </div>
+      <div class="evidence-grid three">
+        <figure class="evidence-card">
+          <div class="evidence-top"><span>Reference 7</span><a href="https://spyglasspharma.com/study-data/#phase-3-clinical-trials">spyglasspharma.com</a></div>
+          <img src="screenshots/evidence/source-07-study-data-phase-3-bcdva-12-months.png" alt="SpyGlass Study Data page: Phase 3 BCDVA co-primary endpoint at 12 months" />
+          <figcaption>Study Data page Phase 3 section lists BCDVA of 20/40 or better at 12 months.</figcaption>
+        </figure>
+        <figure class="evidence-card">
+          <div class="evidence-top"><span>Reference 8</span><a href="https://clinicaltrials.gov/study/NCT07218783">clinicaltrials.gov</a></div>
+          <img src="screenshots/evidence/source-08-ctgov-sgp-005-bcdva-month-6.png" alt="ClinicalTrials.gov NCT07218783: BCDVA primary outcome time frame Month 6" />
+          <figcaption>ClinicalTrials.gov NCT07218783 / SGP-005 lists BCDVA 20/40 or better as a primary outcome with Month 6 time frame.</figcaption>
+        </figure>
+        <figure class="evidence-card">
+          <div class="evidence-top"><span>Reference 9</span><a href="https://clinicaltrials.gov/study/NCT07218796">clinicaltrials.gov</a></div>
+          <img src="screenshots/evidence/source-09-ctgov-sgp-006-bcdva-month-6.png" alt="ClinicalTrials.gov NCT07218796: BCDVA primary outcome time frame Month 6" />
+          <figcaption>ClinicalTrials.gov NCT07218796 / SGP-006 lists BCDVA 20/40 or better as a primary outcome with Month 6 time frame.</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="slide-num">4/6</div>
+  </article>
+
+  <article class="slide evidence-slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Reviewed context | Phase 3 status</div>
+        <h2>Pipeline Phase 3 status aligns with current company disclosures</h2>
+        <p>This context was reviewed to avoid over-flagging normal source lag. The assessed pipeline wording and current company update both support active Phase 3 development, with the company update adding expected enrollment-completion timing.</p>
+      </div>
+      <div class="evidence-grid large-img">
+        <figure class="evidence-card">
+          <div class="evidence-top"><span>Reference 5</span><a href="https://spyglasspharma.com/pipeline/">spyglasspharma.com</a></div>
+          <img src="screenshots/evidence/source-05-pipeline-phase-3-context.png" alt="SpyGlass pipeline page: two Phase 3 clinical trials underway" />
+          <figcaption>Pipeline page lists the BIM-IOL System development status as two Phase 3 clinical trials underway.</figcaption>
+        </figure>
+        <figure class="evidence-card">
+          <div class="evidence-top"><span>Reference 6</span><a href="https://www.sec.gov/Archives/edgar/data/1778922/000177892226000033/exhibit991-8kprx051426.htm">sec.gov</a></div>
+          <img src="screenshots/evidence/source-06-ir-may-phase-3-context.png" alt="SEC-hosted SpyGlass May 14, 2026 update: enrollment remains on track in Phase 3 trials" />
+          <figcaption>May 2026 company update states Phase 3 enrollment remains on track and is expected to complete in 2027.</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="slide-num">5/6</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">References 1-9</div>
+        <h2>References</h2>
+        <p>Sources are limited to assessed SpyGlass website pages and current company primary sources filed with the SEC.</p>
+      </div>
+      <div class="table">
+        <div class="row refs head"><div class="cell">Ref</div><div class="cell">Source</div><div class="cell">Date / Status / Source Owner</div><div class="cell">Evidence Used in Report</div></div>
+        <div class="row refs"><div class="cell">1</div><div class="cell"><a href="https://spyglasspharma.com/study-data/">Study Data page</a></div><div class="cell">Live public website / SpyGlass</div><div class="cell">Phase 1/2 section says enrollment was completed in November 2024 and 12-month interim data were expected in 2026.</div></div>
+        <div class="row refs"><div class="cell">2</div><div class="cell"><a href="https://www.sec.gov/Archives/edgar/data/1778922/000177892226000004/exhibit991-8kpr.htm">March 9, 2026 company release</a></div><div class="cell">SEC Exhibit 99.1 / SpyGlass</div><div class="cell">Company release states positive 12-month Phase 1/2 results were announced for the BIM-IOL System.</div></div>
+        <div class="row refs"><div class="cell">3</div><div class="cell"><a href="https://www.spyglasspharma.com/our-technology/">BIM-IOL technology page</a></div><div class="cell">Live public website / SpyGlass</div><div class="cell">Clinical Results to Date module presents Phase 1/2 Study at 3 Months and uses a November 2025 data source.</div></div>
+        <div class="row refs"><div class="cell">4</div><div class="cell"><a href="https://www.sec.gov/Archives/edgar/data/1778922/000177892226000033/exhibit991-8kprx051426.htm">May 14, 2026 company update</a></div><div class="cell">SEC Exhibit 99.1 / SpyGlass</div><div class="cell">Company update states 12-month Phase 1/2 data showed 98% drop-free status and 34% mean IOP reduction at the intended commercial dose.</div></div>
+        <div class="row refs"><div class="cell">5</div><div class="cell"><a href="https://spyglasspharma.com/pipeline/">Pipeline page</a></div><div class="cell">Live public website / SpyGlass</div><div class="cell">Pipeline page lists BIM-IOL System development status as two Phase 3 clinical trials underway.</div></div>
+        <div class="row refs"><div class="cell">6</div><div class="cell"><a href="https://www.sec.gov/Archives/edgar/data/1778922/000177892226000033/exhibit991-8kprx051426.htm">May 14, 2026 company update</a></div><div class="cell">SEC Exhibit 99.1 / SpyGlass</div><div class="cell">Company update states Phase 3 enrollment remains on track, with completion of enrollment expected in 2027.</div></div>
+        <div class="row refs"><div class="cell">7</div><div class="cell"><a href="https://spyglasspharma.com/study-data/#phase-3-clinical-trials">Study Data page</a></div><div class="cell">Live public website / SpyGlass</div><div class="cell">Phase 3 section lists BCDVA of 20/40 or better at 12 months as a co-primary endpoint.</div></div>
+        <div class="row refs"><div class="cell">8</div><div class="cell"><a href="https://clinicaltrials.gov/study/NCT07218783">ClinicalTrials.gov NCT07218783</a></div><div class="cell">ClinicalTrials.gov / SGP-005 Rhine</div><div class="cell">Registry record lists BCDVA 20/40 or better as a primary outcome with Month 6 time frame.</div></div>
+        <div class="row refs"><div class="cell">9</div><div class="cell"><a href="https://clinicaltrials.gov/study/NCT07218796">ClinicalTrials.gov NCT07218796</a></div><div class="cell">ClinicalTrials.gov / SGP-006 Rhone</div><div class="cell">Registry record lists BCDVA 20/40 or better as a primary outcome with Month 6 time frame.</div></div>
+      </div>
+    </div>
+    <div class="slide-num">6/6</div>
+  </article>
+</body>
+</html>

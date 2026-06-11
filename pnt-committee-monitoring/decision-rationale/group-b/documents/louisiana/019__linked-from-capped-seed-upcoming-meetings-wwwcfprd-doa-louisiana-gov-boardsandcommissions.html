@@ -1,0 +1,1518 @@
+
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+	<html lang="en-US">
+	<head>
+		<title>State of Louisiana - Boards and Commissions</title>
+		
+			<link rel="stylesheet" type="text/css" href="style.css"/>
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<script language="javascript">
+		<!--
+			function docChanged ()
+			{	document.changed = true;
+			}
+			// returns whether or not docChanged() has been called on this page
+			function docHasChanged ()
+			{	return (typeof(document.changed) != "undefined" && document.changed);
+			}
+			// notifies the user that changes have not been saved
+			function confirmChangesNotSaved ()
+			{	return confirm ("Your changes have NOT yet been saved.\n\nPress OK to leave this page WITHOUT saving.");
+			}
+			function toZip(element)
+			{	if (element.value == "") return;
+				var regexp = /\d\d\d\d\d/;
+				var regexp2 = /\d\d\d\d\d\?\-?\d\d\d\d/;
+				if ((element.length != 5 || element.length != 10) && (!regexp.test(element.value) || !regexp2.test(element.value)))
+				//if (!regexp.test (element.value) && !regexp2.test(element.value))
+				{	alert ("Invalid Zip Code Format. \nTry xxxxx or xxxxx-xxxx\n");
+					element.select();
+				}
+			}
+			function toEmail(element)
+			{	if (element.value == "") return;
+				var regexp = /[\w\-\.]+@[\w\-\.]+/;
+				if (!regexp.test (element.value))
+				{	alert ("Invalid Email Format.\nYour email should be in the form: username@host.com\n");
+					element.select();
+				}
+			}
+			function toPhone(element)
+			{	if (element.value == "") return;
+				var regexp = /(\d\d\d)?\-?\-?(\d\d\d)\-?(\d\d\d\d)/;
+				if (!regexp.test (element.value))
+				{	alert ("Invalid Phone Number Format.\nTry xxx-xxx-xxxx\n");
+					element.value = '';
+					element.select ();
+				}
+				else
+				{	var result = (element.value).match (regexp);
+					if (result != null)
+					{	if (result[1] == "")
+							element.value = result[2] + "-" + result[3];
+						else
+							element.value = result[1] + "-" + result[2] + "-" + result[3];
+					}
+				}
+			}
+			/*function checkNumber(element)
+			{	element.value = formatNumber(parseNumber(element.value));
+			}*/
+			/* this function accepts a string, and returns the integer
+			   representation of it -- after removing all non-numeric characters */
+			/*function parseNumber(val)
+			{	var chars = "0123456789.-()";
+				var num = "";
+				for (var i=0; i<val.length; i++)
+					if (chars.indexOf(val.charAt(i)) != -1)
+						num = num + val.charAt(i);
+				if (num.substring(0,1) == '(' && num.substring(num.length - 1) == ')')
+					num = num.substring(1,val.length-1) * -1;
+				if (num == "" || isNaN(num))
+					num = "0";
+				num = Math.ceil(num);
+				return parseInt(num, 10);
+			}*/
+			/* this function formats an integer using commas separating the thousands places */
+			/*function formatNumber (num)
+			{	var str = new String(Math.abs(num));
+				if (num < 0)
+					str = "(" + str + ")";
+				return str;
+			}*/
+			function toDate(element)
+			{	if(element.value == "") return;
+				var regexp = /(\d+)\s*[\s\\\/\-\.]\s*(\d+)\s*[\s\\\/\-\.]\s*(\d+)\s*/;
+				if(!regexp.test(element.value))
+				{	element.value = "";
+					alert("Invalid date format. \n\nTry m/d/yyyy.\n");
+					element.select();
+				}
+			}
+			function menuOnClick ()
+			{	if (docHasChanged())
+					confirmChangesNotSaved()
+			}	
+			/*function formatTotalNumber (num)
+			{	var str = new String(Math.abs(num));
+				if (str.length > 3)
+				{	var i = str.length - 3;
+					while (i > 0)
+					{	var old_left = str.substring(0,i);
+						var left = str.substring(0,i);
+						var right = str.substring(i,str.length);
+						str = left + "," + right;
+						i = old_left.length - 3;
+					}
+				}
+				if (num < 0)
+					str = "(" + str + ")";
+				return str;
+			}*/
+			// makes sure element.value is a real number
+		function checkNumberWithParen(element)
+			{	element.value = numberWithCommas(parseNumberWithParen(element.value));
+			}
+			
+		/* this function accepts a string, and returns the integer
+		   representation of it -- after removing all non-numeric characters */
+		function parseNumberWithParen(val)
+		{	
+			var chars = "0123456789.-()";
+			var num = "";
+			val = val.replace(/[,]/g,'');
+			for (var i=0; i<val.length; i++)
+				if (chars.indexOf(val.charAt(i)) != -1)
+					num = num + val.charAt(i);
+			if (num.substring(0,1) == '(' && num.substring(num.length - 1) == ')')
+					num = num.substring(1,val.length-1) * -1;
+			//alert(num);
+			if (num == "" || isNaN(num))
+				num = "0";
+			var returnNum = Number(num).toFixed(0);
+			return returnNum;
+		}
+		function checkNumber(element)
+		{	element.value = numberWithCommas(parseNumber(element.value));
+		}
+		
+		function checkWholeNumber(element)
+		{	element.value = formatNumber(parseWholeNumber(element.value));
+		}
+		/* this function accepts a string, and returns the integer
+		   representation of it -- after removing all non-numeric characters */
+		function parseNumber(val)
+		{	var chars = "0123456789.-";
+			var num = "";
+			for (var i=0; i<val.length; i++)
+				if (chars.indexOf(val.charAt(i)) != -1)
+					num = num + val.charAt(i);
+			if (num == "" || isNaN(num))
+				num = "0";
+			var returnNum = Number(num).toFixed(2);
+			return returnNum;
+		}
+		
+		function parseWholeNumber(val)
+		{	var chars = "0123456789.-()";
+			var num = "";
+			for (var i=0; i<val.length; i++)
+				if (chars.indexOf(val.charAt(i)) != -1)
+					num = num + val.charAt(i);
+			if (num.substring(0,1) == '(' && num.substring(num.length - 1) == ')')
+				num = num.substring(1,val.length-1) * -1;
+			if (num == "" || isNaN(num))
+				num = "0";
+			return parseInt(num);
+		}
+		/* this function formats an integer using commas separating the thousands places */
+		function formatNumber (num)
+		{	var str = new String(Math.abs(num));
+			if (str.length > 3)
+			{	var i = str.length - 3;
+				while (i > 0)
+				{	var old_left = str.substring(0,i);
+					var left = str.substring(0,i);
+					var right = str.substring(i,str.length);
+					str = left + "," + right;
+					i = old_left.length - 3;
+				}
+			}
+			if (num < 0)
+				str = "-" + str;
+			return str;
+		}
+		
+		function formatTotalNumber (num)
+		{	var str = new String(Math.abs(num));
+			if (str.length > 3)
+			{	var i = str.length - 3;
+				while (i > 0)
+				{	var old_left = str.substring(0,i);
+					var left = str.substring(0,i);
+					var right = str.substring(i,str.length);
+					str = left + "," + right;
+					i = old_left.length - 3;
+				}
+			}
+			if (num < 0)
+				str = "(" + str + ")";
+			return str;
+		}
+		
+		function numberWithCommas(x) {
+			var parts = x.toString().split(".");
+			parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+			return parts.join(".");
+		}
+		//-->
+		</script>
+	
+
+	</head>	
+
+	<body onLoad="">
+	
+		<div id="divisionHeader"> </div>
+		
+		<div id="wrapper">		
+			<div id="bcHeader"/>
+			 
+			<div id="greyBar">	 		
+				<ul id="navi">
+					<li style="background:#ffffff;"> <a href="home.cfm">Home</a> </li>
+					
+						<li style="background:#ffffff;"> <a href="selectBoard.cfm">Boards and Commissions</a> </li>
+					
+					<li style="background:#ffffff;"> <a href="upcomingMeetings.cfm">Upcoming Meetings</a> </li>
+					
+					
+						<li style="background:#ffffff;"> <a href="otherResources.cfm" onClick="menuOnClick();">Other Resources</a> </li>
+					
+						<li style="background:#ffffff;"> <a href="../latrac/feedback/home.cfm" target="_blank">Feedback</a></li>
+					
+						<li class="last" style="background:#ffffff;"> <a href="login.cfm">Login</a> </li>
+					
+				</ul>
+			</div>
+		</div>
+	<div style="background-image:url(images/wrapperNoSidebar.gif); background-position:top left; background-repeat:repeat-y;border:0px solid red;">
+		
+			<div id="main">
+
+
+<div align="center">
+
+<h1 style="color:##555555; font-size: 1.5em;" align="center">Upcoming Meetings</h1>
+
+<form name="frm" action="upcomingMeetings.cfm" method="post">
+	
+		<input type="hidden" name="sort" value="B">
+	
+</form>
+
+
+	<div align="center" style="font-weight:bold;"><a href="upcomingMeetings.cfm?sort=B" aria-label="Sort Upcoming Meetings by Entity ">By Entity</a> | <a href="upcomingMeetings.cfm?sort=D" aria-label="Sort Upcoming Meetings by Date">By Date</a></div>
+	<br>
+	
+		<table cellpadding="0" cellspacing="0">
+			
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Acadiana Area Human Services District Governing Board</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 15, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/343_AAHSD Board Meeting public notice 6.15.2026.pdf" aria-label="View Meeting Notice - Acadiana Area Human Services District Governing Board June 15, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 20, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/343_AAHSD Board Meeting public notice 7.20.2026.pdf" aria-label="View Meeting Notice - Acadiana Area Human Services District Governing Board July 20, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;August 17, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/343_AAHSD Board Meeting public notice 8.17.2026.pdf" aria-label="View Meeting Notice - Acadiana Area Human Services District Governing Board August 17, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;September 21, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/343_AAHSD Board Meeting public notice 9.21.2026.pdf" aria-label="View Meeting Notice - Acadiana Area Human Services District Governing Board September 21, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;October 19, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/343_AAHSD Board Meeting public notice 10.19.2026.pdf" aria-label="View Meeting Notice - Acadiana Area Human Services District Governing Board October 19, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;November 16, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/343_AAHSD Board Meeting public notice 11.16.2026.pdf" aria-label="View Meeting Notice - Acadiana Area Human Services District Governing Board November 16, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;December 21, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/343_AAHSD Board Meeting public notice 12.21.2026.pdf" aria-label="View Meeting Notice - Acadiana Area Human Services District Governing Board December 21, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Agricultural Chemistry and Seed Commission</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;October 21, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/457_Meeting Notice Template 21Oct2026.pdf" aria-label="View Meeting Notice - Agricultural Chemistry and Seed Commission October 21, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Agricultural Commodities Commission</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 5, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/408_June 5 2026 - MEETING NOTICE.docx" aria-label="View Meeting Notice - Agricultural Commodities Commission June 5, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Agricultural Finance Authority</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 25, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/409_LAFA Board Notice of Meeting_June 25 2026 (1).pdf" aria-label="View Meeting Notice - Agricultural Finance Authority June 25, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Alzheimer's and Related Dementias Advisory Council</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 1, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/737_ADRD Advisory Council Agenda_6.1.2026.pdf" aria-label="View Meeting Notice - Alzheimer's and Related Dementias Advisory Council June 1, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Amite River Basin Drainage and Water Conservation District Board of Commissioners</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 9, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/168_Public Notice for ARBC meetings for the journal 20265.pdf" aria-label="View Meeting Notice - Amite River Basin Drainage and Water Conservation District Board of Commissioners June 9, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Baton Rouge Regional Airport Authority </span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 2, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/733_Public Notice BTR REGIONAL AIRPORT AUTHORITY 6.2.2026.doc" aria-label="View Meeting Notice - Baton Rouge Regional Airport Authority June 2, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Black Bayou Watershed District</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 16, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/628_BBWSD 10251.docx" aria-label="View Meeting Notice - Black Bayou Watershed District July 16, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;October 15, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/628_BBWSD 10252.docx" aria-label="View Meeting Notice - Black Bayou Watershed District October 15, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Board of Animal Health</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;May 29, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/194_Xerox Scan_05282026094037 (2).pdf" aria-label="View Meeting Notice - Board of Animal Health May 29, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Board of Commerce and Industry</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 24, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/414_2026 CI Board Meeting Dates2.pdf" aria-label="View Meeting Notice - Board of Commerce and Industry June 24, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;August 26, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/414_2026 CI Board Meeting Dates3.pdf" aria-label="View Meeting Notice - Board of Commerce and Industry August 26, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;October 21, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/414_2026 CI Board Meeting Dates4.pdf" aria-label="View Meeting Notice - Board of Commerce and Industry October 21, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;December 2, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/414_2026 CI Board Meeting Dates5.pdf" aria-label="View Meeting Notice - Board of Commerce and Industry December 2, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Board of Examiners for Speech-Language Pathology and Audiology</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;May 29, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/42_BoardMeetingNotice.LBESPA.20261.docx" aria-label="View Meeting Notice - Board of Examiners for Speech-Language Pathology and Audiology May 29, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 31, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/42_BoardMeetingNotice.LBESPA.20262.docx" aria-label="View Meeting Notice - Board of Examiners for Speech-Language Pathology and Audiology July 31, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;October 9, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/42_BoardMeetingNotice.LBESPA.20263.docx" aria-label="View Meeting Notice - Board of Examiners for Speech-Language Pathology and Audiology October 9, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;December 4, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/42_BoardMeetingNotice.LBESPA.20264.docx" aria-label="View Meeting Notice - Board of Examiners for Speech-Language Pathology and Audiology December 4, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Board of Pharmacy</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 26, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/26_AgendaPublicHearing-a11y_2026-0626.pdf" aria-label="View Meeting Notice - Board of Pharmacy June 26, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Board of Regents</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 10, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/419_2026 Calendar of BoR Mtgs (Public)3.pdf" aria-label="View Meeting Notice - Board of Regents June 10, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;August 26, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/419_2026 Calendar of BoR Mtgs (Public)4.pdf" aria-label="View Meeting Notice - Board of Regents August 26, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;September 22, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/419_2026 Calendar of BoR Mtgs (Public)5.pdf" aria-label="View Meeting Notice - Board of Regents September 22, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;September 23, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/419_2026 Calendar of BoR Mtgs (Public)6.pdf" aria-label="View Meeting Notice - Board of Regents September 23, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;October 21, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/419_2026 Calendar of BoR Mtgs (Public)7.pdf" aria-label="View Meeting Notice - Board of Regents October 21, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;December 9, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/419_2026 Calendar of BoR Mtgs (Public)8.pdf" aria-label="View Meeting Notice - Board of Regents December 9, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Board of Veterinary Medicine</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 4, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/43_Notice 2026-06-04 with Agenda.pdf" aria-label="View Meeting Notice - Board of Veterinary Medicine June 4, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;August 6, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/43_Boards & Commissions Notice3.pdf" aria-label="View Meeting Notice - Board of Veterinary Medicine August 6, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;October 8, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/43_Boards & Commissions Notice4.pdf" aria-label="View Meeting Notice - Board of Veterinary Medicine October 8, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;December 3, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/43_Boards & Commissions Notice5.pdf" aria-label="View Meeting Notice - Board of Veterinary Medicine December 3, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Cancer Research Center of LSU Health Sciences Center in New Orleans/Tulane Health Sciences Center Governing Board</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 30, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/204_2026 LCRC Board of Directors Meeting Schedule2.docx" aria-label="View Meeting Notice - Cancer Research Center of LSU Health Sciences Center in New Orleans/Tulane Health Sciences Center Governing Board July 30, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;October 29, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/204_2026 LCRC Board of Directors Meeting Schedule3.docx" aria-label="View Meeting Notice - Cancer Research Center of LSU Health Sciences Center in New Orleans/Tulane Health Sciences Center Governing Board October 29, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Capital Area Human Services District Governing Board</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 1, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/425_June 1, 2026  Board DRAFT Meeting Agenda 5.22.2026.pdf" aria-label="View Meeting Notice - Capital Area Human Services District Governing Board June 1, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Central Louisiana Human Services District Governing Board</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 4, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/345_Agenda announcement  06.2026.docx" aria-label="View Meeting Notice - Central Louisiana Human Services District Governing Board June 4, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 2, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/345_July 2026 notice.docx" aria-label="View Meeting Notice - Central Louisiana Human Services District Governing Board July 2, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;August 6, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/345_August 2026 notice.docx" aria-label="View Meeting Notice - Central Louisiana Human Services District Governing Board August 6, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;September 3, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/345_September  2026 notice.docx" aria-label="View Meeting Notice - Central Louisiana Human Services District Governing Board September 3, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;October 1, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/345_October  2026 notice.docx" aria-label="View Meeting Notice - Central Louisiana Human Services District Governing Board October 1, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;November 5, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/345_November 2026 notice.docx" aria-label="View Meeting Notice - Central Louisiana Human Services District Governing Board November 5, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;December 3, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/345_December 2026 notice.docx" aria-label="View Meeting Notice - Central Louisiana Human Services District Governing Board December 3, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Child Death Review Panel</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 23, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/426_CDR Meeting Notice June 2026.docx" aria-label="View Meeting Notice - Child Death Review Panel June 23, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;September 15, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/426_CDR Meeting Notice September 2026.docx" aria-label="View Meeting Notice - Child Death Review Panel September 15, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;December 15, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/426_CDR Meeting Notice December 2026.docx" aria-label="View Meeting Notice - Child Death Review Panel December 15, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Civil Service Commission</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 3, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/430_General Circular 2025-042_ State Civil Service Commission Dates for Calendar Year 20265.pdf" aria-label="View Meeting Notice - Civil Service Commission June 3, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 1, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/430_General Circular 2025-042_ State Civil Service Commission Dates for Calendar Year 20266.pdf" aria-label="View Meeting Notice - Civil Service Commission July 1, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;September 2, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/430_General Circular 2025-042_ State Civil Service Commission Dates for Calendar Year 20267.pdf" aria-label="View Meeting Notice - Civil Service Commission September 2, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;October 5, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/430_GC2026-024.pdf" aria-label="View Meeting Notice - Civil Service Commission October 5, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;November 4, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/430_General Circular 2025-042_ State Civil Service Commission Dates for Calendar Year 20269.pdf" aria-label="View Meeting Notice - Civil Service Commission November 4, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;December 2, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/430_General Circular 2025-042_ State Civil Service Commission Dates for Calendar Year 202610.pdf" aria-label="View Meeting Notice - Civil Service Commission December 2, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Claiborne Parish Airport District No.31</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 9, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/731_Board Notice July 9.docx" aria-label="View Meeting Notice - Claiborne Parish Airport District No.31 July 9, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;October 8, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/731_Board Notice October 8.docx" aria-label="View Meeting Notice - Claiborne Parish Airport District No.31 October 8, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;December 10, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/731_Board Notice December 10.docx" aria-label="View Meeting Notice - Claiborne Parish Airport District No.31 December 10, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Coastal Protection and Restoration Authority Board</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 17, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/432_Meeting Notice CPRA-6-17-26.doc" aria-label="View Meeting Notice - Coastal Protection and Restoration Authority Board June 17, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 15, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/432_Meeting Notice CPRA-7-15-26.doc" aria-label="View Meeting Notice - Coastal Protection and Restoration Authority Board July 15, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;August 19, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/432_Meeting Notice CPRA-8-19-26.doc" aria-label="View Meeting Notice - Coastal Protection and Restoration Authority Board August 19, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;September 16, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/432_Meeting Notice CPRA-9-16-26.doc" aria-label="View Meeting Notice - Coastal Protection and Restoration Authority Board September 16, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;October 21, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/432_Meeting Notice CPRA-10-21-26.doc" aria-label="View Meeting Notice - Coastal Protection and Restoration Authority Board October 21, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;November 18, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/432_Meeting Notice CPRA-11-18-26.doc" aria-label="View Meeting Notice - Coastal Protection and Restoration Authority Board November 18, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Commission for the Deaf</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;May 29, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/433_LCD Public Meeting Agenda May 29 2026.pdf" aria-label="View Meeting Notice - Commission for the Deaf May 29, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 17, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/433_Rescheduled.docx" aria-label="View Meeting Notice - Commission for the Deaf July 17, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;October 16, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/433_LCD Public Meeting Notice 2026 Dates3.docx" aria-label="View Meeting Notice - Commission for the Deaf October 16, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Commission of Weights and Measures</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 24, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/434_06.24.2026 Notice.pdf" aria-label="View Meeting Notice - Commission of Weights and Measures June 24, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Creole Nature Trail Scenic Byway District Board of Commissioners</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;August 27, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/233_2026 Meeting Dates Schedule2.pdf" aria-label="View Meeting Notice - Creole Nature Trail Scenic Byway District Board of Commissioners August 27, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;December 3, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/233_2026 Meeting Dates Schedule3.pdf" aria-label="View Meeting Notice - Creole Nature Trail Scenic Byway District Board of Commissioners December 3, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Delta Bike Trail Commission</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 9, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/696_DBTC July  Board Meeting.pdf" aria-label="View Meeting Notice - Delta Bike Trail Commission July 9, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;October 8, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/696_DBTC October  Board Meeting.pdf" aria-label="View Meeting Notice - Delta Bike Trail Commission October 8, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Delta Economic Research and Sustainability District</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 8, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/689_DERSD July Meeting Notice.pdf" aria-label="View Meeting Notice - Delta Economic Research and Sustainability District July 8, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;October 7, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/689_DERSD October Meeting Notice.pdf" aria-label="View Meeting Notice - Delta Economic Research and Sustainability District October 7, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Early Identification of Deaf or Hard of Hearing Infants Advisory Council</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 24, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/163_Qtr 3 7.24.2026 Adv Council Meeting Notice.docx" aria-label="View Meeting Notice - Early Identification of Deaf or Hard of Hearing Infants Advisory Council July 24, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;October 23, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/163_Qtr 4 10.23.2026 Adv Council Meeting Notice.docx" aria-label="View Meeting Notice - Early Identification of Deaf or Hard of Hearing Infants Advisory Council October 23, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Economic Development Corporation Board of Directors</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 11, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/447_2026 LEDC Board Meeting Dates _20265.docx" aria-label="View Meeting Notice - Economic Development Corporation Board of Directors June 11, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 9, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/447_2026 LEDC Board Meeting Dates _20266.docx" aria-label="View Meeting Notice - Economic Development Corporation Board of Directors July 9, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;August 13, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/447_2026 LEDC Board Meeting Dates _20267.docx" aria-label="View Meeting Notice - Economic Development Corporation Board of Directors August 13, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;September 10, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/447_2026 LEDC Board Meeting Dates _20268.docx" aria-label="View Meeting Notice - Economic Development Corporation Board of Directors September 10, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;October 15, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/447_2026 LEDC Board Meeting Dates _20269.docx" aria-label="View Meeting Notice - Economic Development Corporation Board of Directors October 15, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;November 12, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/447_2026 LEDC Board Meeting Dates _202610.docx" aria-label="View Meeting Notice - Economic Development Corporation Board of Directors November 12, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;December 14, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/447_2026 LEDC BOARD MEETING DATES Revised.pdf" aria-label="View Meeting Notice - Economic Development Corporation Board of Directors December 14, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Emergency Response Commission</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 10, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/243_6.10.2026 - agenda.pdf" aria-label="View Meeting Notice - Emergency Response Commission June 10, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;September 9, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/243_9.09.2026 - agenda.pdf" aria-label="View Meeting Notice - Emergency Response Commission September 9, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;December 9, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/243_12.09.2026 - agenda.pdf" aria-label="View Meeting Notice - Emergency Response Commission December 9, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Ernest N. Morial New Orleans Exhibition Hall Authority Board of Commissioners</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 24, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/247_2026 Board Meeting Schedule2.pdf" aria-label="View Meeting Notice - Ernest N. Morial New Orleans Exhibition Hall Authority Board of Commissioners June 24, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 22, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/247_2026 Board Meeting Schedule3.pdf" aria-label="View Meeting Notice - Ernest N. Morial New Orleans Exhibition Hall Authority Board of Commissioners July 22, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;August 26, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/247_2026 Board Meeting Schedule4.pdf" aria-label="View Meeting Notice - Ernest N. Morial New Orleans Exhibition Hall Authority Board of Commissioners August 26, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;September 23, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/247_2026 Board Meeting Schedule5.pdf" aria-label="View Meeting Notice - Ernest N. Morial New Orleans Exhibition Hall Authority Board of Commissioners September 23, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;October 28, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/247_2026 Board Meeting Schedule6.pdf" aria-label="View Meeting Notice - Ernest N. Morial New Orleans Exhibition Hall Authority Board of Commissioners October 28, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;November 18, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/247_2026 Board Meeting Schedule7.pdf" aria-label="View Meeting Notice - Ernest N. Morial New Orleans Exhibition Hall Authority Board of Commissioners November 18, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;December 16, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/247_2026 Board Meeting Schedule8.pdf" aria-label="View Meeting Notice - Ernest N. Morial New Orleans Exhibition Hall Authority Board of Commissioners December 16, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Florida Parishes Human Services Authority Governing Board</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 26, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/460_Public Notice Board Mtg June 26, 2026.pdf" aria-label="View Meeting Notice - Florida Parishes Human Services Authority Governing Board June 26, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Folklife Commission</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 5, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/253_26 06 Folklife Commission Agenda+Notice.pdf" aria-label="View Meeting Notice - Folklife Commission June 5, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Greater Krotz Springs Port Commission</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 8, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/110_MEETING NOTICE - BOARDS & COMMISSIONS161.docx" aria-label="View Meeting Notice - Greater Krotz Springs Port Commission June 8, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Greater Lafourche Port Commission</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 8, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/111_2026_GLPC_Meeting_Dates15.pdf" aria-label="View Meeting Notice - Greater Lafourche Port Commission June 8, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 10, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/111_2026_GLPC_Meeting_Dates16.pdf" aria-label="View Meeting Notice - Greater Lafourche Port Commission June 10, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 24, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/111_2026_GLPC_Meeting_Dates17.pdf" aria-label="View Meeting Notice - Greater Lafourche Port Commission June 24, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 6, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/111_2026_GLPC_Meeting_Dates18.pdf" aria-label="View Meeting Notice - Greater Lafourche Port Commission July 6, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 8, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/111_2026_GLPC_Meeting_Dates19.pdf" aria-label="View Meeting Notice - Greater Lafourche Port Commission July 8, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 22, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/111_2026_GLPC_Meeting_Dates20.pdf" aria-label="View Meeting Notice - Greater Lafourche Port Commission July 22, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;August 10, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/111_2026_GLPC_Meeting_Dates21.pdf" aria-label="View Meeting Notice - Greater Lafourche Port Commission August 10, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;August 12, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/111_2026_GLPC_Meeting_Dates22.pdf" aria-label="View Meeting Notice - Greater Lafourche Port Commission August 12, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;August 26, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/111_2026_GLPC_Meeting_Dates23.pdf" aria-label="View Meeting Notice - Greater Lafourche Port Commission August 26, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;September 8, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/111_2026_GLPC_Meeting_Dates24.pdf" aria-label="View Meeting Notice - Greater Lafourche Port Commission September 8, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;September 10, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/111_2026_GLPC_Meeting_Dates25.pdf" aria-label="View Meeting Notice - Greater Lafourche Port Commission September 10, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;September 23, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/111_2026_GLPC_Meeting_Dates26.pdf" aria-label="View Meeting Notice - Greater Lafourche Port Commission September 23, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;October 12, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/111_2026_GLPC_Meeting_Dates27.pdf" aria-label="View Meeting Notice - Greater Lafourche Port Commission October 12, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;October 14, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/111_2026_GLPC_Meeting_Dates28.pdf" aria-label="View Meeting Notice - Greater Lafourche Port Commission October 14, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;October 28, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/111_2026_GLPC_Meeting_Dates29.pdf" aria-label="View Meeting Notice - Greater Lafourche Port Commission October 28, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;November 9, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/111_2026_GLPC_Meeting_Dates31.pdf" aria-label="View Meeting Notice - Greater Lafourche Port Commission November 9, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;November 12, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/111_2026_GLPC_Meeting_Dates30.pdf" aria-label="View Meeting Notice - Greater Lafourche Port Commission November 12, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;November 24, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/111_2026_GLPC_Meeting_Dates32.pdf" aria-label="View Meeting Notice - Greater Lafourche Port Commission November 24, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;December 7, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/111_2026_GLPC_Meeting_Dates33.pdf" aria-label="View Meeting Notice - Greater Lafourche Port Commission December 7, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;December 9, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/111_2026_GLPC_Meeting_Dates34.pdf" aria-label="View Meeting Notice - Greater Lafourche Port Commission December 9, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Highway Safety Commission</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 8, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/474_LHSC 2026 Commission Meeting Dates1.pdf" aria-label="View Meeting Notice - Highway Safety Commission June 8, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;September 14, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/474_LHSC 2026 Commission Meeting Dates2.pdf" aria-label="View Meeting Notice - Highway Safety Commission September 14, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;December 7, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/474_LHSC 2026 Commission Meeting Dates3.pdf" aria-label="View Meeting Notice - Highway Safety Commission December 7, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Licensed Professional Counselors Board of Examiners</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 17, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/87_2026 Board Meeting Notice_Boards & Commissions3.pdf" aria-label="View Meeting Notice - Licensed Professional Counselors Board of Examiners July 17, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;September 18, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/87_2026 Board Meeting Notice_Boards & Commissions4.pdf" aria-label="View Meeting Notice - Licensed Professional Counselors Board of Examiners September 18, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;November 20, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/87_2026 Board Meeting Notice_Boards & Commissions5.pdf" aria-label="View Meeting Notice - Licensed Professional Counselors Board of Examiners November 20, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Livestock Brand Commission</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;November 5, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/485_TENTATIVE AGENDA.doc" aria-label="View Meeting Notice - Livestock Brand Commission November 5, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Louisiana Natural Resources Trust Authority</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 10, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/715_2026 NRTA Meeting Schedule6.pdf" aria-label="View Meeting Notice - Louisiana Natural Resources Trust Authority June 10, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 8, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/715_2026 NRTA Meeting Schedule7.pdf" aria-label="View Meeting Notice - Louisiana Natural Resources Trust Authority July 8, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;August 12, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/715_2026 NRTA Meeting Schedule8.pdf" aria-label="View Meeting Notice - Louisiana Natural Resources Trust Authority August 12, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;September 9, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/715_2026 NRTA Meeting Schedule9.pdf" aria-label="View Meeting Notice - Louisiana Natural Resources Trust Authority September 9, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;October 14, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/715_2026 NRTA Meeting Schedule10.pdf" aria-label="View Meeting Notice - Louisiana Natural Resources Trust Authority October 14, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;November 11, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/715_2026 NRTA Meeting Schedule11.pdf" aria-label="View Meeting Notice - Louisiana Natural Resources Trust Authority November 11, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;December 9, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/715_2026 NRTA Meeting Schedule12.pdf" aria-label="View Meeting Notice - Louisiana Natural Resources Trust Authority December 9, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Louisiana Public Defender Oversight Board</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 18, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/711_A_Board_Jun 2026_Public Notice.pdf" aria-label="View Meeting Notice - Louisiana Public Defender Oversight Board June 18, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Louisiana School Employees' Retirement System Board of Trustees</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 8, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/359_2026-Board-Meeting-Schedule7.pdf" aria-label="View Meeting Notice - Louisiana School Employees' Retirement System Board of Trustees June 8, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 13, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/359_2026-Board-Meeting-Schedule8.pdf" aria-label="View Meeting Notice - Louisiana School Employees' Retirement System Board of Trustees July 13, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;August 17, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/359_2026-Board-Meeting-Schedule9.pdf" aria-label="View Meeting Notice - Louisiana School Employees' Retirement System Board of Trustees August 17, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;August 18, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/359_2026-Board-Meeting-Schedule10.pdf" aria-label="View Meeting Notice - Louisiana School Employees' Retirement System Board of Trustees August 18, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;October 5, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/359_2026-Board-Meeting-Schedule11.pdf" aria-label="View Meeting Notice - Louisiana School Employees' Retirement System Board of Trustees October 5, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;December 7, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/359_2026-Board-Meeting-Schedule12.pdf" aria-label="View Meeting Notice - Louisiana School Employees' Retirement System Board of Trustees December 7, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;December 8, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/359_2026-Board-Meeting-Schedule13.pdf" aria-label="View Meeting Notice - Louisiana School Employees' Retirement System Board of Trustees December 8, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Louisiana Sickle Cell Commission</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 4, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/606_LSCC Meeting Agenda 06-04-2026.pdf" aria-label="View Meeting Notice - Louisiana Sickle Cell Commission June 4, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Louisiana State Employees' Retirement System Board of Trustees</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 25, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/374_2026 LASERS Board Meeting Dates5.pdf" aria-label="View Meeting Notice - Louisiana State Employees' Retirement System Board of Trustees June 25, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 23, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/374_2026 LASERS Board Meeting Dates6.pdf" aria-label="View Meeting Notice - Louisiana State Employees' Retirement System Board of Trustees July 23, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;August 27, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/374_2026 LASERS Board Meeting Dates7.pdf" aria-label="View Meeting Notice - Louisiana State Employees' Retirement System Board of Trustees August 27, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;September 24, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/374_2026 LASERS Board Meeting Dates8.pdf" aria-label="View Meeting Notice - Louisiana State Employees' Retirement System Board of Trustees September 24, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;October 22, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/374_2026 LASERS Board Meeting Dates9.pdf" aria-label="View Meeting Notice - Louisiana State Employees' Retirement System Board of Trustees October 22, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;November 19, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/374_2026 LASERS Board Meeting Dates10.pdf" aria-label="View Meeting Notice - Louisiana State Employees' Retirement System Board of Trustees November 19, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;December 10, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/374_2026 LASERS Board Meeting Dates11.pdf" aria-label="View Meeting Notice - Louisiana State Employees' Retirement System Board of Trustees December 10, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Louisiana Uniform Local Sales Tax Board</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 18, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/637_LULSTB 2026 Meeting Schedule1.pdf" aria-label="View Meeting Notice - Louisiana Uniform Local Sales Tax Board June 18, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 9, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/637_LULSTB 2026 Meeting Schedule2.pdf" aria-label="View Meeting Notice - Louisiana Uniform Local Sales Tax Board July 9, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;August 13, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/637_LULSTB 2026 Meeting Schedule3.pdf" aria-label="View Meeting Notice - Louisiana Uniform Local Sales Tax Board August 13, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;September 17, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/637_LULSTB 2026 Meeting Schedule4.pdf" aria-label="View Meeting Notice - Louisiana Uniform Local Sales Tax Board September 17, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;October 8, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/637_LULSTB 2026 Meeting Schedule5.pdf" aria-label="View Meeting Notice - Louisiana Uniform Local Sales Tax Board October 8, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;November 12, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/637_LULSTB 2026 Meeting Schedule6.pdf" aria-label="View Meeting Notice - Louisiana Uniform Local Sales Tax Board November 12, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;December 17, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/637_LULSTB 2026 Meeting Schedule7.pdf" aria-label="View Meeting Notice - Louisiana Uniform Local Sales Tax Board December 17, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Marriage and Family Therapy Advisory Committee</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 17, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/306_2026 Board Meeting Notice_Boards & Commissions3.pdf" aria-label="View Meeting Notice - Marriage and Family Therapy Advisory Committee July 17, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;September 18, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/306_2026 Board Meeting Notice_Boards & Commissions4.pdf" aria-label="View Meeting Notice - Marriage and Family Therapy Advisory Committee September 18, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;November 20, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/306_2026 Board Meeting Notice_Boards & Commissions5.pdf" aria-label="View Meeting Notice - Marriage and Family Therapy Advisory Committee November 20, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Motor Vehicle Commission</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 13, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/21_Tentative Meeting Agenda - July 13, 2026.pdf" aria-label="View Meeting Notice - Motor Vehicle Commission July 13, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;September 14, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/21_Tentative Meeting Agenda - September 14, 2026.pdf" aria-label="View Meeting Notice - Motor Vehicle Commission September 14, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;November 9, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/21_Tentative Meeting Agenda - November 9, 2026.pdf" aria-label="View Meeting Notice - Motor Vehicle Commission November 9, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Motor Vehicle Commission - Sales Finance</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 13, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/47_Tentative Meeting Agenda - July 13, 2026.pdf" aria-label="View Meeting Notice - Motor Vehicle Commission - Sales Finance July 13, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;September 14, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/47_Tentative Meeting Agenda - September 14, 2026.pdf" aria-label="View Meeting Notice - Motor Vehicle Commission - Sales Finance September 14, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;November 9, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/47_Tentative Meeting Agenda - November 9, 2026.pdf" aria-label="View Meeting Notice - Motor Vehicle Commission - Sales Finance November 9, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Municipal Employees' Retirement System Board of Trustees</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 18, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/318_2026 Board Meeting Dates3.pdf" aria-label="View Meeting Notice - Municipal Employees' Retirement System Board of Trustees June 18, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;August 20, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/318_2026 Board Meeting Dates4.pdf" aria-label="View Meeting Notice - Municipal Employees' Retirement System Board of Trustees August 20, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;October 15, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/318_2026 Board Meeting Dates5.pdf" aria-label="View Meeting Notice - Municipal Employees' Retirement System Board of Trustees October 15, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;December 10, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/318_2026 Board Meeting Dates6.pdf" aria-label="View Meeting Notice - Municipal Employees' Retirement System Board of Trustees December 10, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Physical Therapy Board</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 17, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/27_Board_Meeting_NOTICE-202425.pdf" aria-label="View Meeting Notice - Physical Therapy Board June 17, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 15, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/27_Board_Meeting_NOTICE-202426.pdf" aria-label="View Meeting Notice - Physical Therapy Board July 15, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;August 19, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/27_Board_Meeting_NOTICE-202427.pdf" aria-label="View Meeting Notice - Physical Therapy Board August 19, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;September 23, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/27_Board_Meeting_NOTICE-202428.pdf" aria-label="View Meeting Notice - Physical Therapy Board September 23, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;November 18, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/27_Board_Meeting_NOTICE-202429.pdf" aria-label="View Meeting Notice - Physical Therapy Board November 18, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;December 9, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/27_Board_Meeting_NOTICE-202430.pdf" aria-label="View Meeting Notice - Physical Therapy Board December 9, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Saline Lake Game and Fish Preserve Board of Commissioners</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 23, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/358_Saline Lake Game2.docx" aria-label="View Meeting Notice - Saline Lake Game and Fish Preserve Board of Commissioners July 23, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;October 22, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/358_Saline Lake Game3.docx" aria-label="View Meeting Notice - Saline Lake Game and Fish Preserve Board of Commissioners October 22, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Seafood Safety Task Force</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 18, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/579_06.18.2026 Notice.pdf" aria-label="View Meeting Notice - Seafood Safety Task Force June 18, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">South Central Louisiana Human Services Authority Governing Board</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 11, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/525_SCLHSA Board Agenda  June 11, 2026 TBD1.pdf" aria-label="View Meeting Notice - South Central Louisiana Human Services Authority Governing Board June 11, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 9, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/525_SCLHSA Board Agenda July 9, 2026 TBD.pdf" aria-label="View Meeting Notice - South Central Louisiana Human Services Authority Governing Board July 9, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;August 13, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/525_SCLHSA Board Agenda August 13, 2026 TBD.pdf" aria-label="View Meeting Notice - South Central Louisiana Human Services Authority Governing Board August 13, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">South Lafourche Levee District Board of Commissioners</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 1, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/151_2026_06 Agenda 01-JUN rev01.pdf" aria-label="View Meeting Notice - South Lafourche Levee District Board of Commissioners June 1, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">South Tangipahoa Parish Port Commission</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 10, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/127_MEETING NOTICE - JUNE 10 2026.docx" aria-label="View Meeting Notice - South Tangipahoa Parish Port Commission June 10, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">St. Bernard Port, Harbor and Terminal District Board of Commissioners</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 9, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/128_2026 Meeting Dates5.pdf" aria-label="View Meeting Notice - St. Bernard Port, Harbor and Terminal District Board of Commissioners June 9, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 14, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/128_2026 Meeting Dates6.pdf" aria-label="View Meeting Notice - St. Bernard Port, Harbor and Terminal District Board of Commissioners July 14, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;August 11, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/128_2026 Meeting Dates7.pdf" aria-label="View Meeting Notice - St. Bernard Port, Harbor and Terminal District Board of Commissioners August 11, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;September 8, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/128_2026 Meeting Dates8.pdf" aria-label="View Meeting Notice - St. Bernard Port, Harbor and Terminal District Board of Commissioners September 8, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;October 13, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/128_2026 Meeting Dates9.pdf" aria-label="View Meeting Notice - St. Bernard Port, Harbor and Terminal District Board of Commissioners October 13, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;November 10, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/128_2026 Meeting Dates10.pdf" aria-label="View Meeting Notice - St. Bernard Port, Harbor and Terminal District Board of Commissioners November 10, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;December 16, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/128_2026 Meeting Dates11.pdf" aria-label="View Meeting Notice - St. Bernard Port, Harbor and Terminal District Board of Commissioners December 16, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">State Board of Certified Public Accountants of Louisiana</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 30, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/7_July Notice1.pdf" aria-label="View Meeting Notice - State Board of Certified Public Accountants of Louisiana July 30, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;November 5, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/7_October Notice1.pdf" aria-label="View Meeting Notice - State Board of Certified Public Accountants of Louisiana November 5, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">State Board of Cosmetology</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;January 1, 9999</td>
+						<td><a target="_blank" href="MeetingNotices/11_LSBC.pdf" aria-label="View Meeting Notice - State Board of Cosmetology January 1, 9999">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">State Board of Examiners in Dietetics and Nutrition</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;August 14, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/13_BoardMeetingNotice.LBEDN.20262.docx" aria-label="View Meeting Notice - State Board of Examiners in Dietetics and Nutrition August 14, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;November 20, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/13_BoardMeetingNotice.LBEDN.20263.docx" aria-label="View Meeting Notice - State Board of Examiners in Dietetics and Nutrition November 20, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">State Board of Optometry Examiners</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 6, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/25_Annual Meeting Notice.pdf" aria-label="View Meeting Notice - State Board of Optometry Examiners June 6, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">State Board of Private Security Examiners</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;August 19, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/32_Board Meeting Notice 8.19.20261.docx" aria-label="View Meeting Notice - State Board of Private Security Examiners August 19, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;September 16, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/32_Board Meeting Notice 9.16.2026.docx" aria-label="View Meeting Notice - State Board of Private Security Examiners September 16, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;November 18, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/32_Board Meeting Notice 11.18.2026.docx" aria-label="View Meeting Notice - State Board of Private Security Examiners November 18, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">State Board of Social Work Examiners</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 31, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/41_2026 Board Meeting Dates4.pdf" aria-label="View Meeting Notice - State Board of Social Work Examiners July 31, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;August 1, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/41_2026 Board Meeting Dates5.pdf" aria-label="View Meeting Notice - State Board of Social Work Examiners August 1, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;September 25, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/41_2026 Board Meeting Dates6.pdf" aria-label="View Meeting Notice - State Board of Social Work Examiners September 25, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;November 20, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/41_2026 Board Meeting Dates7.pdf" aria-label="View Meeting Notice - State Board of Social Work Examiners November 20, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">State Mineral and Energy Board</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 10, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/494_2026 SMEB Meeting Schedule5.pdf" aria-label="View Meeting Notice - State Mineral and Energy Board June 10, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;July 8, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/494_2026 SMEB Meeting Schedule6.pdf" aria-label="View Meeting Notice - State Mineral and Energy Board July 8, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;August 12, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/494_2026 SMEB Meeting Schedule7.pdf" aria-label="View Meeting Notice - State Mineral and Energy Board August 12, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;September 9, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/494_2026 SMEB Meeting Schedule8.pdf" aria-label="View Meeting Notice - State Mineral and Energy Board September 9, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;October 14, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/494_2026 SMEB Meeting Schedule9.pdf" aria-label="View Meeting Notice - State Mineral and Energy Board October 14, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;November 11, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/494_2026 SMEB Meeting Schedule10.pdf" aria-label="View Meeting Notice - State Mineral and Energy Board November 11, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;December 9, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/494_2026 SMEB Meeting Schedule11.pdf" aria-label="View Meeting Notice - State Mineral and Energy Board December 9, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">Teacher Certification Appeals Council</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 25, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/583_TCAC 2026 meeting notice1.pdf" aria-label="View Meeting Notice - Teacher Certification Appeals Council June 25, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;August 27, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/583_TCAC 2026 meeting notice2.pdf" aria-label="View Meeting Notice - Teacher Certification Appeals Council August 27, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;October 29, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/583_TCAC 2026 meeting notice3.pdf" aria-label="View Meeting Notice - Teacher Certification Appeals Council October 29, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+					<tr>
+						<td colspan="3"><span style="font-size: 1.2em; font-weight: bold;">West Calcasieu Parish Airport Managing Board</span></td>
+					</tr>
+					<tr>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;June 2, 2026</td>
+						<td><a target="_blank" href="MeetingNotices/545_6.2.26.pdf" aria-label="View Meeting Notice - West Calcasieu Parish Airport Managing Board June 2, 2026">View Meeting Notice</a></td>
+					</tr>
+				
+		</table>
+	
+
+</div>
+
+		
+			
+			</div>
+		</div>
+		<div id="footerNoSidebar"></div>
+					
+		<div class="disclaimer" style="color:black;">
+			LaTrac was developed by the Louisiana Office of Technology Services.
+		</div>
+
+	<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"1a78f1ae3d914afaa748434fbdd1a18b","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

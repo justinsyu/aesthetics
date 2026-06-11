@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Global development and validation of the Lung Cancer Prevention Score (LCPS): A quantitative framework linking policy strength, incidence, and outcomes across 40 countries.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Global development and validation of the Lung Cancer Prevention Score (LCPS): A quantitative framework linking policy strength, incidence, and outcomes across 40 countries.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 10518</div>
+    <div><strong>First speaker:</strong> Adarsh Vardhan Tangella, MBBS</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/263867">https://www.asco.org/abstracts-presentations/263867</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b> Lung cancer is the leading cause of cancer worldwide. Despite advances in tobacco control, national prevention efforts remain fragmented. We developed and validated the Lung Cancer Prevention Score (LCPS), a 0–100 composite linking prevention policy strength with real-world outcomes for global benchmarking and equity tracking.</p>  <b>Methods: </b> Two LCPS models were created. Policy LCPS quantified 12 weighted domains: smoke-free laws, TAPS bans, ≥50% pictorial warnings, ≥75% excise tax, plain packaging, legal-age limits, e-cigarette control, LDCT screening, asbestos ban, radon plan, clean-cooking access, and occupational carcinogen controls. Data-Driven LCPS combined age-standardized incidence (ASIR), mortality (ASMR), mortality-to-incidence ratio (MIR), smoking prevalence, GDP, health expenditure, and HDI (normalized 0–1; higher = stronger prevention). Data from GLOBOCAN 2022, WHO GTCR 2023, World Bank, and UNDP HDR 2023 covered 40 countries (G20 + 20 others). Analyses included correlation, regression (adjusted for GDP, HDI), Bland–Altman agreement, and ROC AUC for MIR ≤0.60.</p>  <b>Results: </b> Among 32 complete datasets, Policy and Data-Driven LCPS correlated moderately (r = 0.31; 95% CI –0.04–0.60). Discrimination of favorable outcomes (MIR ≤0.60) showed AUC 0.68 vs 0.77. High-policy countries (≥75) had lower smoking (17%) and MIR (0.45) than those &lt;60 (27%, 0.65; p &lt;0.001). Policy LCPS inversely correlated with ASIR (r = –0.42; p = 0.004); Data-Driven LCPS showed a stronger link (r = –0.55; p &lt;0.001). Each 10-point LCPS-D increase predicted 2.4 fewer cases per 100 000 (β = –0.24 ± 0.07; p = 0.002). Results were consistent across income tiers.</p>  <b>Conclusions: </b> LCPS provides a validated, reproducible framework connecting prevention policy to measurable cancer burden. Data-Driven LCPS reflected performance most accurately, while Policy LCPS defined actionable tiers linked to lower smoking, incidence, and MIR. LCPS serves as a quantitative global benchmark for policy evaluation.</div>
+
+
+
+	<div class="table_caption"><b>Policy-driven lung cancer prevention score (LCPS-P) and data-driven lung cancer prevention score (LCPS-D): Domains and scoring weights.</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p><strong>Component</strong></p>
+</td>
+<td>
+<p><strong>Type</strong></p>
+</td>
+<td>
+<p><strong>Wt</strong></p>
+</td>
+<td>
+<p><strong>Rule / Effect</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Smoke-free law</strong></p>
+</td>
+<td>
+<p>P</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>Yes = 1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>TAPS ban</strong></p>
+</td>
+<td>
+<p>P</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>Yes = 1; Partial = 0.5</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Pictorial ≥ 50 %</strong></p>
+</td>
+<td>
+<p>P</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>Yes = 1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Excise ≥ 75 %</strong></p>
+</td>
+<td>
+<p>P</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>Yes = 1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Plain pack</strong></p>
+</td>
+<td>
+<p>P</p>
+</td>
+<td>
+<p>0.5</p>
+</td>
+<td>
+<p>Yes = 1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Legal age</strong></p>
+</td>
+<td>
+<p>P</p>
+</td>
+<td>
+<p>0.5</p>
+</td>
+<td>
+<p>18–19 = 0.5; ≥ 21 = 1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>E-cig reg</strong></p>
+</td>
+<td>
+<p>P</p>
+</td>
+<td>
+<p>0.5</p>
+</td>
+<td>
+<p>Full/Prescr = 1; None = 0</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>LDCT screen</strong></p>
+</td>
+<td>
+<p>P</p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>Nat = 1; Reg = 0.5</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Asbestos ban</strong></p>
+</td>
+<td>
+<p>P</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>Yes = 1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Radon plan</strong></p>
+</td>
+<td>
+<p>P</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>Yes = 1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Clean-cook &gt; 90 %</strong></p>
+</td>
+<td>
+<p>P</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>Yes = 1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Occ carcinogen ctrl</strong></p>
+</td>
+<td>
+<p>P</p>
+</td>
+<td>
+<p>1.5</p>
+</td>
+<td>
+<p>Yes = 1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>ASIR</strong></p>
+</td>
+<td>
+<p>D</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>Lower = better (1–scaled ASIR)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>ASMR</strong></p>
+</td>
+<td>
+<p>D</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>Lower = better (1–scaled ASMR)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>MIR</strong></p>
+</td>
+<td>
+<p>D</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>Lower = better (1–scaled MIR)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Smoking prev</strong></p>
+</td>
+<td>
+<p>D</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>Lower = better</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>GDP</strong></p>
+</td>
+<td>
+<p>D</p>
+</td>
+<td>
+<p>0.5</p>
+</td>
+<td>
+<p>Higher = better</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Health exp</strong></p>
+</td>
+<td>
+<p>D</p>
+</td>
+<td>
+<p>0.75</p>
+</td>
+<td>
+<p>Higher = better</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>HDI</strong></p>
+</td>
+<td>
+<p>D</p>
+</td>
+<td>
+<p>0.5</p>
+</td>
+<td>
+<p>Higher = better</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Scoring</strong></p>
+</td>
+<td>
+<p>—</p>
+</td>
+<td>
+<p>—</p>
+</td>
+<td>
+<p>Policy LCPS = Σ (weight×value)/12×100; Data LCPS = Σ (weighted norm)/Σ weights×100</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

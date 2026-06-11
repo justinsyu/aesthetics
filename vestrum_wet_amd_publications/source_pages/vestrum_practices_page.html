@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta name="description" content="Use powerful data insights to help improve patient outcomes and practice performance. ">
+    <title>Practices | Vestrum Health Retina Specialists EHR Data Analysis</title>
+	      	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="">
+
+	<link rel="icon" type="image/x-icon" href="https://www.vestrumhealth.com/vestrum-images/vestrum-logo-32.png" />  
+   
+    <!-- Bootstrap core CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" sizes="32x32" href="https://www.vestrumhealth.com/vestrum-health-images/logos/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://www.vestrumhealth.com/vestrum-health-images/logos/favicon-16.png">
+	<link rel="icon" href="https://www.vestrumhealth.com/vestrum-health-images/logos/favicon.ico">
+
+
+     <!-- Fontawesome 
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" >  -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+
+     <!-- CSS --> 
+	 <link href="https://www.vestrumhealth.com/css-vestrum-health/vestrum-new-css.css" rel="stylesheet" type="text/css"> 
+	 <link rel="stylesheet" href="https://use.typekit.net/zlm8ihj.css">		   <meta property="og:type" content="website">
+<meta property="og:site_name" content="Retina Data Insights | Retina Clinical Trials | Retina Analytical Support">
+<meta property="og:url" content="https://vestrumhealth.com/">
+<meta property="og:title" content="Vestrum Health">
+<meta property="og:description" content="Vestrum Health help you realize the valuable information available in your EHR data for patient characteristics, treatments, practice patterns and outcomes.">
+<meta property="og:image" content="https://vestrumhealth.com/vestrum-health-images/logos/og-image-logo.jpg">
+<meta property="og:image:secure_url" content="https://vestrumhealth.com/vestrum-health-images/logos/og-image-logo.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta property="og:image:type" content="image/jpg">
+<meta property="og:locale" content="en-US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@">
+<meta name="twitter:creator" content="@">
+<meta name="twitter:url" content="https://vestrumhealth.com/">
+<meta name="twitter:title" content="VestrumHealth">
+<meta name="twitter:description" content="Vestrum Health help you realize the valuable information available in your EHR data for your patients.">
+<meta name="twitter:image" content="https://vestrumhealth.com/vestrum-health-images/logos/og-twitter-image-logo.jpg">
+        
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org/",
+    "@type": "Corporation",
+    "name": "Retina Data Insights | Retina Clinical Trials | Retina Analytical Support",
+    "description": "Vestrum Health help you realize the valuable information available in your EHR data for patient characteristics, treatments, practice patterns and outcomes.",
+    "url": "https://www.vestrumhealth.com",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://vestrumhealth.com/vestrum-health-images/logos/og-image-logo.jpg",
+        "height": 627,
+        "width": 1200
+    },
+    "contactPoint": [
+        {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "telephone": ""
+        }
+    ],
+    "sameAs": [
+        "https://www.linkedin.com/company/vestrumhealth/",
+        "https://twitter.com/vestrumhealth/"
+    ]
+}
+</script>
+            
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org/",
+    "@type": "Website",
+    "name": "Retina Data Insights | Retina Clinical Trials | Retina Analytical Support",
+    "description": "Vestrum Health help you realize the valuable information available in your EHR data for patient characteristics, treatments, practice patterns and outcomes.",
+    "keywords": "retina ehr data",
+    "url": "https://vestrumhealth.com",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://vestrumhealth.com/vestrum-health-images/logos/og-image-logo.jpg",
+        "height": 627,
+        "width": 1200
+    },
+    "author": {
+        "@type": "Corporation",
+        "name": "Retina Data Insights | Retina Clinical Trials | Retina Analytical Support",
+        "description": "Vestrum Health help you realize the valuable information available in your EHR data for patient characteristics, treatments, practice patterns and outcomes.",
+        "url": "https://vestrumhealth.com",
+        "telephone": "",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://vestrumhealth.com/vestrum-health-images/logos/og-image-logo.jpg",
+        	"height": 627,
+            "width": 1200
+        },
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "contactType": "sales",
+                "telephone": ""
+            }
+        ],
+        "sameAs": [
+        "https://www.linkedin.com/company/vestrumhealth/",
+        "https://twitter.com/vestrumhealth/"
+        ]
+    },
+    "copyrightHolder": {
+        "@type": "Corporation",
+        "name": "Retina Data Insights | Retina Clinical Trials | Retina Analytical Support",
+        "description": "Vestrum Health help you realize the valuable information available in your EHR data for patient characteristics, treatments, practice patterns and outcomes.",
+        "url": "https://vestrumhealth.com",
+        "telephone": "",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://vestrumhealth.com/vestrum-health-images/logos/og-image-logo.jpg",
+            "height": 627,
+            "width": 1200
+        },
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "contactType": "sales",
+                "telephone": ""
+            }
+        ],
+        "sameAs": [
+        "https://www.linkedin.com/company/vestrumhealth/",
+        "https://twitter.com/vestrumhealth/"
+        ]
+    },
+    "creator": {
+        "@type": "Corporation",
+        "name": "Retina Data Insights | Retina Clinical Trials | Retina Analytical Support",
+        "description": "Vestrum Health help you realize the valuable information available in your EHR data for patient characteristics, treatments, practice patterns and outcomes.",
+        "url": "https://vestrumhealth.com",
+        "telephone": "",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://vestrumhealth.com/vestrum-health-images/logos/og-image-logo.jpg",
+            "height": 627,
+            "width": 1200
+        },
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "contactType": "sales",
+                "telephone": ""
+            }
+        ],
+        "sameAs": [
+        "https://www.linkedin.com/company/vestrumhealth/",
+        "https://twitter.com/vestrumhealth/"
+        ]
+    },
+    "sameAs": [
+        "https://www.linkedin.com/company/vestrumhealth/",
+        "https://twitter.com/vestrumhealth/"
+    ]
+}
+</script>
+            
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org/",
+    "@type": "WebPage",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.vestrumhealth.com/"
+    },
+    "description": "Vestrum Health help you realize the valuable information available in your EHR data for patient characteristics, treatments, practice patterns and outcomes.",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://vestrumhealth.com/vestrum-health-images/logos/og-image-logo.jpg",
+        "height": 627,
+        "width": 1200
+    },
+    "url": "https://vestrumhealth.com/",
+    "headline": "Retina Data Insights | Retina Clinical Trials | Retina Analytical Support",
+    "keywords": "retina ehr data",
+    "dateCreated": "2020-01-14T11:36:14-05:00",
+    "dateModified": "2020-03-17T13:21:13-04:00",
+    "datePublished": "2020-01-14T11:36:00-05:00",
+    "author": {
+        "@type": "Corporation",
+        "name": "Retina Data Insights | Retina Clinical Trials | Retina Analytical Support",
+        "description": "Vestrum Health help you realize the valuable information available in your EHR data for patient characteristics, treatments, practice patterns and outcomes.",
+        "url": "https://vestrumhealth.com",
+        "telephone": "",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://vestrumhealth.com/vestrum-health-images/logos/og-image-logo.jpg"
+        },
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "contactType": "sales",
+                "telephone": ""
+            }
+        ],
+        "sameAs": [
+        "https://www.linkedin.com/company/vestrumhealth/",
+        "https://twitter.com/vestrumhealth/"
+        ]
+    },
+    "creator": {
+        "@type": "Corporation",
+        "name": "Retina Data Insights | Retina Clinical Trials | Retina Analytical Support",
+        "description": "Vestrum Health help you realize the valuable information available in your EHR data for patient characteristics, treatments, practice patterns and outcomes.",
+        "url": "https://vestrumhealth.com",
+        "telephone": "",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://vestrumhealth.com/vestrum-health-images/logos/og-image-logo.jpg"
+        },
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "contactType": "sales",
+                "telephone": ""
+            }
+        ],
+        "sameAs": [
+        "https://www.linkedin.com/company/vestrumhealth/",
+        "https://twitter.com/vestrumhealth/"
+        ]
+    },
+    "publisher": {
+        "@type": "Corporation",
+        "name": "Retina Data Insights | Retina Clinical Trials | Retina Analytical Support",
+        "description": "Vestrum Health help you realize the valuable information available in your EHR data for patient characteristics, treatments, practice patterns and outcomes.",
+        "url": "https://vestrumhealth.com",
+        "telephone": "",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://vestrumhealth.com/vestrum-health-images/logos/og-image-logo.jpg"
+        },
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "contactType": "sales",
+                "telephone": ""
+            }
+        ],
+        "sameAs": [
+        "https://www.linkedin.com/company/vestrumhealth/",
+        "https://twitter.com/vestrumhealth/"
+        ]
+    }
+}
+</script>
+	      		<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-KZL6JDT');</script>
+	<!-- End Google Tag Manager -->
+	   <script src="js/corevitas-redirect-practices.js" type="text/javascript"></script>
+	
+	 <link href="https://www.vestrumhealth.com/css-vestrum-health/text-over-images.css" rel="stylesheet" type="text/css"> 
+</head>
+
+<body id="practices">
+  	 <!-- The Modal -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="https://www.vestrumhealth.com/vestrum-health-images/corevitas/corevitas.jpg" class="img-fluid" alt="Responsive image">
+        </div>
+      </div>
+    </div>
+  </div>	   	   <!-- Google Tag Manager (noscript) -->
+	   <noscript>
+	     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZL6JDT"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe>
+      </noscript>
+	   <!-- End Google Tag Manager (noscript) -->   
+	   <nav class="navbar navbar-expand-lg fixed-top navbar-light" id="mainNav">
+      <div class="container-fluid">
+        <a class="navbar-brand js-scroll-trigger" href="https://www.vestrumhealth.com/index.php">
+       <img class="logo ml-3 ms-3 mt-2 mb-2" src="https://www.vestrumhealth.com/vestrum-health-images/logos/vestrum-health-logo.png"  height="90px" alt="Vestrum Health"/> </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+		  
+       <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto ml-auto">
+			  
+            <li class="nav-item">
+              <a class="nav-link practices" href="https://www.vestrumhealth.com/practices.php">PRACTICES</a>
+            </li>
+			  
+		  
+		  	<li class="nav-item">
+              <a class="nav-link pharma" href="https://www.vestrumhealth.com/pharma.php">PHARMA</a>
+          	</li>
+			  
+		  	<li class="nav-item">
+              <a class="nav-link media" href="https://www.vestrumhealth.com/media.php">MEDIA</a>
+          	</li>
+			  
+		  	<li class="nav-item">
+              <a class="nav-link casestudies" href="https://www.vestrumhealth.com/case-studies.php">CASE STUDIES</a>
+          	</li>
+			  
+			  
+			<li class="nav-item">
+              <a class="nav-link reports" href="https://www.vestrumhealth.com/reports.php">REPORTS</a>
+            </li>
+			  
+		   <li class="nav-item">
+              <a class="nav-link about" href="https://www.vestrumhealth.com/about.php">ABOUT</a>
+            </li>
+		   <li class="nav-item">
+              <a class="nav-link join" href="https://www.vestrumhealth.com/join.php">JOIN</a>
+            </li>
+			  
+			  
+<!--			<li class="nav-item nav-button">
+              <a class="nav-link nav-login js-scroll-trigger" href="http://portal.vestrumhealth.com/login">CLIENT LOGIN</a>
+            </li>
+-->
+      	  </ul>
+        </div>
+      </div>
+    </nav>
+	  
+	   
+	   <!-- Masthead -->
+
+<div class="container-fluid"> 
+<div class="quote-over-text pt-5">
+	
+	<div class="row practices-banner mt-5">
+	<div class="col-md-5 col-sm-6 gradient-background m-sm-5 m-3">
+		<h3 class="p-5">Practice <br>Data Services</h3> 
+		<h4 class="ps-5">Transform your EHR data into valuable insights</h4> 
+	</div>	
+	
+</div>	
+</div>		
+</div>
+	
+ 
+  <!-- * * * * * * * * * -->
+  <!-- * Intro Section * -->
+  <!-- * * * * * * * * * -->
+
+
+	<section id="intro">
+		<div class="container-fluid vestrum-shard-background">
+	  <div class="container text-center vestrum-container">
+			<h4 class="mb-3 pt-4 text-green text-uppercase">Retina Community</h4>
+			<h1 class="mb-4 text-pale-blue">Unlock <span class="text-blue">the power of your </span>EHR data</h1>
+	        
+	        
+			<p>Buried in your EHR data - and virtually inaccessible to you - is a wealth of valuable information on patient characteristics, treatments, practice patterns and outcomes.</p>
+			<p>Partner with us and realize the full range of benefits from your data.</p>
+ 		</div>    
+ 		</div>    
+			</section>
+
+  <!-- * * * * * * * * * -->
+  <!-- * Bullets Section * -->
+  <!-- * * * * * * * * * -->
+
+	<section id="bullets">
+		<div class="container-fluid gradient-background">
+			
+
+			
+      <div class="container vestrum-container  text-center">
+		  	<div class="row no-gutters">
+				
+			  <div class="col-md-6 text-start pe-sm-3 pe-0">
+              <ul class="text-white my-0 py-0">
+			  <li>Analyze practice's patient care data</li><br>
+			  <li>Utilize EHR data for research, presentations and papers</li><br> 
+			  <li>Receive monthly Quick Trends reports and infographics</li><br>
+              </ul>
+			  </div>
+				
+			  <div class="col-md-6 text-start pe-sm-3 pe-0">
+              <ul class="text-white my-0 py-0">
+			  <li>Regional and national benchmarking</li><br>
+			  <li>Track and analyze coding patterns and link to outcomes</li><br>
+			  <li>Track referral patterns to identify new referral doctors or fall off from existing referral doctors</li><br>
+              </ul>
+			  </div>
+		  </div>   	      
+		  <a class="btn btn-sm btn-success mt-3" href="join.php" role="button">JOIN US</a>
+			
+        </div>
+			
+        </div>
+    </section>
+  <!-- * * * * * * * * * * * *  -->
+  <!-- * What we offer Section * -->
+  <!-- * * * * * * * * * * * *  --> 
+	
+    <section class="vestrum-container bg-white" id="what">
+      <div class="container">
+			
+		<div class="text-center">
+			<h4 class="mb-3 text-green text-uppercase">Vestrum Health</h4>
+			<h1 class="mb-4 text-blue">What <span class="text-pale-blue">we </span>offer</h1>
+			
+			
+			
+		<div class="row text-center">
+				
+          <div class="col-md-4 pb-3 column-background" onclick="location.href='#data-insights';">
+            <div class="px-4 pb-2 pb-lg-0 h-100">
+			 <i class="pb-2 fas fa-chart-bar fa-2x"></i>              
+			  <h2 class="pb-2 pt-0">Data Insights</h2>
+              <p>Quick Trends reports and insightful infographics to improve your practice's performance</p>
+         	</div>
+          </div>
+			
+          <div class="col-md-4 pb-3 column-background" onclick="location.href='#clinical-trials';">
+            <div class="wow fadeIn px-4 pb-4 pb-lg-0 h-100" data-wow-delay="0s">
+			  <i class="text-pale-blue pb-2 fas fas fa-syringe fa-2x"></i> 
+              <h2 class="pb-2 pt-0"> Clinical Trials</h2>
+              <p class="xtext-white">Benefit from accelerated patient recruitment</p>
+           </div>
+          </div>
+			
+          <div class="col-md-4 pb-3 column-background" onclick="location.href='#analytical-support';">
+            <div class="wow fadeIn px-4 pb-4 pb-lg-0 h-100" data-wow-delay="0s">
+			  <i class="text-pale-blue pb-2 fas fas fa-laptop fa-2x"></i> 
+              <h2 class="pb-2 pt-0">Analytical Support</h2>
+              <p class="xtext-white">Access our tools and data expertise to support your own clinical research and practice analysis</p>
+<!-- 			  <a class="btn btn-sm btn-info mt-2 mt-sm-5" href="../practices.php#analyticalsupport" role="button">Learn More</a>			
+-->            </div>
+          </div>
+			
+        </div>
+
+		  </div>
+        </div>
+    </section>
+
+
+	
+  <!-- * * * * * * * * * -->
+  <!-- * quote over image * -->
+  <!-- * * * * * * * * * -->
+	<div class="container-fluid no-padding">
+
+	<div class="quote-over-text">
+	
+	<div class="d-flex row align-items-center lady-doctor-banner">
+	<div class="col-md-6 col-sm-8 gradient-background m-5">
+		<blockquote>
+		<p class="text-white pt-5">Every time a new study comes out the first question to a sponsor is 'Do you guys support Vestrum'.  Vestrum takes something that used to be so manual and mind-numbing and turned it into something that is somewhat automated.  They help me breathe a little easier and not have to wear so many hats all at the same time</p>
+		</blockquote>
+				<p class="ps-3 text-white">- Chris Riebling, Lead Research Manager, Wagner Kapoor Research Institute</p> 
+
+	</div>	
+	
+	</div>	
+	</div>	
+	</div>	
+	
+  <!-- * * * * * * * * * -->
+  <!-- * Data Insights Section * -->
+  <!-- * * * * * * * * * -->
+
+
+	<section id="data-insights" class="anchor">
+		<div class="container-fluid vestrum-shard-background">
+	  <div class="container text-center vestrum-container">
+			<h4 class="mb-3 text-green text-uppercase">Retina Data Analysis</h4>
+			<h1 class="mb-4 text-pale-blue">Data <span class="text-blue">Insights</span></h1>
+	        <div class="text-start">
+			<p>Your practice’s EHR data contains key information contained in unstructured text fields which can be transformed into powerful insights to help improve patient outcomes and practice performance. </p>
+			<p>Maximizing the value of your data requires analytical tools and comparative industry data, which is where we come in. Vestrum Health has developed processes and algorithms that allow us to combine your data with an industry-wide dataset to produce Quick Trends reports that provide a range of insights. </p>
+			<p>Your practice will benefit from the ability to track and monitor key practice metrics, compare outcomes to regional and national benchmarks and understand the impact of treatments on patients. </p>
+			<p>Joining is straightforward. There are no activation, interface or maintenance fees. </p>
+		    </div> 
+		  <div class="text-center">
+ 			<a class="btn btn-sm btn-info mt-4" href="join.php" role="button">JOIN US</a>			
+		  </div>
+		  
+ 		</div>    
+ 		</div>    
+	</section>
+	
+	
+    <section class="container-fluid vestrum-container gradient-background text-center" id="quote1">
+		<div class="container">
+		<div class="quote">
+  		<blockquote>
+		 	<p class="text-white"> The Vestrum analytic reports provide valuable, actionable insights which have a meaningful impact on how I practice medicine... The Vestrum analysis provides that crucial reporting. Thanks Vestrum.</p>
+    	</blockquote>
+		
+		<div class="box-testimonial-author-center">
+		<p class="text-white">- Vestrum Panel Physician</p>
+		</div>
+		</div>
+  		</div> 
+    </section>
+
+  <!-- * * * * * * * * * -->
+  <!-- * Clinical Trials Section * -->
+  <!-- * * * * * * * * * -->
+
+
+	<section id="clinical-trials" class="anchor">
+		<div class="container-fluid bg-white">
+	  <div class="container text-center vestrum-container">
+			<h4 class="mb-3 text-green text-uppercase">Retina Healthcare</h4>
+			<h1 class="mb-4 text-pale-blue">Clinical Trial <span class="text-blue">Recruitment Acceleration Program (RAP)</span></h1>
+	        
+			<p class="text-start">Clinical Trial Accelerated Patient Recruitment is a service for industry-sponsored trials available to practices in the Vestrum Health panel </p>
+		<div class="row no-gutters py-4">
+			  <div class="col-md-6 text-start pe-sm-3 pe-0">
+              <ul class="my-0 py-0">
+			  <li>Quantify patient recruitment estimates for contract negotiations</li><br>
+			  <li>Accelerate the patient recruitment process</li><br> 
+			  <li>Vestrum’s list replaces the need for manual file searches improving efficiency</li><br> 
+              </ul>
+			  </div>
+			  <div class="col-md-6 text-start pe-sm-3 pe-0">
+              <ul class="my-0 py-0">
+			  <li>Hit trial completion deadlines with faster recruitment</li><br>
+				<li>Become a preferred practice-site for trial sponsors</li><br>
+				<li>Measure the efficiency of your clinical trial process</li><br>
+              </ul>
+			  </div>
+		 </div> 
+		  
+		  <div class="text-start">
+		  <p>Identifying patients for clinical trials enables your practice to reduce recruitment times. Vestrum can analyze your data and identify patients who meet study criteria. Our HIPAA-compliant process allows you to re-identify these patients. Clinical trial staff can call identified patients in for further assessment and enrollment where candidates fit the trial criteria. </p>
+		  <p>Reduce your costs, increase trial revenue and enhance trial capacity through faster and higher levels of patient enrollment.</p>
+		  <p>As a Vestrum Health panel physician, this is a complimentary service. </p>
+		  </div>
+		  
+		<div class="container-fluid bg-grey p-4 my-4">
+		<h1 class="font-size-h1-h2 text-pale-blue">Vestrum Health’s <span class="text-blue">Clinical Trial Case Study</span></h1>
+        <a href="vestrum-health-documents/Vestrum-Clinical-Trial-Recruitment-Case-Study.pdf"><img class="py-4" src="vestrum-health-images/case-studies/Case-study-2.jpg" width="300"  alt="Vestrum Research Case Study"/></a>
+
+        <p>See how Vestrum Health’s Clinical Trial Acceleration Recruitment Program helps clinical trials research managers increase patient recruitment and provide administrative efficiencies with Vestrum’s data analysis and reporting.</p>
+		</div>
+		  
+		        <div class="text-center">
+ 			<a class="btn btn-sm btn-info mt-4" href="clinical-trials.php" role="button">PARTICIPATE IN CLINICAL TRIALS</a>			
+		  </div>
+ 		</div>    
+ 		</div>    
+	</section>
+	
+	
+    <section class="container-fluid vestrum-container gradient-background text-center" id="quote2">
+		<div class="container">
+		<div class="quote">
+  		<blockquote>		
+			<p class="text-white">In a recent clinical trial with Vestrum Health, patient recruitment was completed in 30% less time than anticipated!</p>
+    	</blockquote>
+			
+		<div class="box-testimonial-author-center">
+		<p class="text-white">- Vestrum Panel Physician</p>
+		</div>
+
+		</div>
+		</div>
+	
+	</section>
+
+  <!-- * * * * * * * * * -->
+  <!-- * Analytical support Section * -->
+  <!-- * * * * * * * * * -->
+
+
+	<section id="analytical-support" class="anchor">
+		<div class="container-fluid vestrum-shard-background-left">
+	  <div class="container text-center vestrum-container">
+			<h4 class="mb-3 text-green text-uppercase">Vestrum Health</h4>
+			<h1 class="mb-4 text-pale-blue">Analytical <span class="text-blue">Support</span></h1>
+	        <div class="text-start">
+			<p>Our supported physician research service provides you with analysis support, data generation and publishing support. The service is included in your membership unless it’s an industry-sponsored paper or a very large study. </p>
+			<p>Advanced practice metrics give you insights into your practice performance in a number of key areas:</p>
+			</div>
+		  
+		<div class="row no-gutters py-4">
+			  <div class="col-md-6 text-start pe-sm-3 pe-0">
+              <ul class="my-0 py-0">
+			  <li>RVU analysis of physician productivity</li><br>
+			  <li>New patient analysis including source and contribution</li><br> 
+              </ul>
+			  </div>
+			  <div class="col-md-6 text-start pe-sm-3 pe-0">
+              <ul class="my-0 py-0">
+			  <li>Disease breakdowns</li> 
+              </ul>
+			  </div>
+		 </div>
+		  
+		<div class="container-fluid bg-grey p-4 my-4">
+		<h1 class="font-size-h1-h2 text-pale-blue">Vestrum Health’s <span class="text-blue">Physician Research Case Study</span></h1>
+        <a href="vestrum-health-documents/Vestrum-Research-Case-Study.pdf"><img class="py-4" src="vestrum-health-images/case-studies/Case-study-1.jpg" width="300"  alt="Vestrum Research Case Study"/></a>
+
+        <p>Ophthalmologists and retinal specialists can utilize Vestrum Health’s custom data analytics services to enhance management systems in research and clinical practice utilizing Vestrum data.  </p>
+		</div>
+		  
+
+ 				  
+        <p>Contact us to find out more about our analytical support services. </p>
+		  
+		  <div class="text-center">
+ 			<a class="btn btn-sm btn-info mt-4" href="contact.php" role="button">CONTACT US</a>			
+		  </div>
+		  
+ 		</div>    
+ 		</div>    
+	</section>
+	
+	
+  <!-- * * * * * * * * * -->
+  <!-- * quote over gradient * -->
+  <!-- * * * * * * * * * -->
+    <section class="container-fluid vestrum-container gradient-background text-center" id="quote3">
+		<div class="container">
+		<div class="quote">
+  		<blockquote>		
+			<p class="text-white">Quick Trends has been very valuable to help train all physicians new to our practice</p>
+    	</blockquote>
+			
+		<div class="box-testimonial-author-center">
+		<p class="text-white">- Senior Retina Physician</p>
+		</div>
+
+		</div>
+		</div>
+	
+	</section>
+	
+
+	<!-- WHY VESTRUM HEALTH -->
+    <section class="vestrum-container text-center" id="why">
+	<div class="container-fluid vestrum-shard-background-left">
+
+      <div class="container">
+		  
+<!--			<h4 class="mb-3 text-green">RETINA DATA SPECIALISTS</h4>
+-->			<h1 class="mb-4 text-blue">Why <span class="text-pale-blue">Vestrum Health?</span></h1>
+		  
+		<div class="row no-gutters">
+			
+			  <div class="col-md-6 text-start pe-sm-3 pe-0">
+              <ul>
+			  <li><span class="text-pale-blue">Real-world data </span>—in weeks rather than months. Vestrum Health’s model enables the collection and analysis of massive quantities of high-quality EHR and other real-world data.</li><br>
+			  <li><span class="text-pale-blue">Designed for modern analytics.</span> Vestrum Health embeds innovative strategies into the technology infrastructure and master data management processes. Fast, flexible, and highly responsive to clients’ needs. </li><br> 
+              </ul>
+			  </div>
+			
+			  <div class="col-md-6 text-start pe-sm-3 pe-0">
+              <ul>
+			  <li><span class="text-pale-blue">Fully compliant.</span> Compliant with Stark Anti-Kickback Statute, HIPAA, and other regulatory requirements.</li><br>
+				<li><span class="text-pale-blue">Physician-centric.</span> Designed by practicing retina specialists for retina practices.</li><br>
+              </ul>
+			  </div>
+
+		 </div> 	  
+		  
+      </div>
+	</div>
+	</section>	
+	
+  <!-- * * * * * * * * * -->
+  <!-- * quote over image * -->
+  <!-- * * * * * * * * * -->
+	<div class="container-fluid no-padding">
+
+	<div class="quote-over-text">
+	
+	<div class="d-flex row align-items-center doctor-with-report-banner">
+	<div class="col-md-6 col-sm-8 gradient-background m-5">
+		<blockquote>
+		<p class="text-white xpx-5 pt-5">The ability to provide detailed and accurate utilization reporting is of paramount importance</p>
+		</blockquote>
+		<p class="ps-3 pb-4 text-white">- Vestrum Panel Physician</p> 
+		
+	</div>	
+	
+	</div>	
+	</div>	
+	</div>	
+	
+    <!-- Footer -->
+	    <footer>
+      <div class="container-fluid vestrum-container text-center gradient-background">
+        <div class="row pb-3 pe-sm-5 ps-sm-5 ">
+         
+          <div class="col-md-4 footer-contact-details text-md-start pb-4">
+		  <p class="text-white">USEFUL LINKS </p>  
+          <a class="text-white" href="https://www.vestrumhealth.com/index.php">Home</a><br>
+          <a class="text-white" href="https://www.vestrumhealth.com/practices.php">Practices</a><br>
+          <a class="text-white" href="https://www.vestrumhealth.com/pharma.php">Pharma</a><br>
+          <a class="text-white" href="https://www.vestrumhealth.com/about.php">About</a><br>
+          <a class="text-white" href="https://www.vestrumhealth.com/contact.php">Contact</a><br>
+          </div>
+          
+          <div class="col-md-4 footer-contact-details pb-4">
+		  <p class="text-white">SIGN UP </p>  
+          <a class="text-white" href="https://www.vestrumhealth.com/join.php">Join</a><br>
+          <a class="text-white" href="https://www.vestrumhealth.com/clinical-trials.php">Participate in Clinical Trials</a>
+          
+          </div>
+          
+          <div class="col-md-4 footer-contact-details text-md-end">
+		  <a class="text-white footer-header" href="contact.php">CONTACT</a> <br>
+           <a class="text-white" href="mailto:admin@vestrumhealth.com">admin &#064; vestrumhealth.com 
+			<span class="fa-stack">
+<!--    	<i class="fa fa-square fa-2x fa-stack-1x ps-1 text-white"></i>
+			<i class="fa fa-envelope-square fa-stack-1x fa-2x ps-1 text-blue"></i>-->	
+			<i class="bi bi-envelope ps-1 text-blue" style="font-size: 2rem;"></i>
+			</span>			   
+			</a><br>
+			  
+           <a class="text-white" href="https://www.linkedin.com/company/vestrumhealth/"> 
+			<span class="fa-stack">
+			<i class="bi bi-linkedin pl-1 text-blue" style="font-size: 2rem;"></i>
+
+    		<!--<i class="fa fa-square fa-2x fa-stack-1x ps-1 text-white"></i>
+			<i class="fab fa-linkedin fa-2x fa-stack-1x ps-1 text-blue"></i>-->
+			</span>			   
+			 </a> 
+			<br>
+			  
+			<a class="text-white" href="https://twitter.com/VestrumHealth"> 
+			<span class="fa-stack">
+			<i class="bi bi-twitter pl-1 text-blue" style="font-size: 2rem;"></i>
+<!--			<i class="fab fa-twitter fa-2x fa-stack-1x pl-1 text-blue"></i>-->
+			</span>			   
+			</a> 
+			<br>
+			  
+		<div class="pt-5 pb-2 pb-sm-0"> </div>
+         	 <a class="copyright" href="#">
+          	 &copy; 2013-2026  Vestrum Health</a>
+
+		</div>
+	    </div>
+    </div>
+    </footer>
+	<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<!-- Custom scripts for this theme -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    
+<!-- Custom scripts for this theme -->
+<!--    <script src="https://www.vestrumhealth.com/js-vestrum-health/cowshed.js"></script>
+-->      
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/js/fontawesome.min.js"></script>
+
+    <!-- Start of HubSpot Embed Code -->
+	<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/5998905.js"></script>
+	<!-- End of HubSpot Embed Code -->
+
+	<!-- make nav menu active -->
+	<script src="https://www.vestrumhealth.com/js/nav-menu-active.js"></script>
+
+
+<!-- close menu button when clicked -->       
+	<script type="text/javascript">
+    $(document).on('click','.navbar-collapse.in',function(e) {
+    if( $(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle' ) {
+    $(this).collapse('hide');
+    }
+	});
+	</script>
+
+	<script src="js/corevitas-modal.js" type="text/javascript"></script>
+	
+
+</body>
+</html>

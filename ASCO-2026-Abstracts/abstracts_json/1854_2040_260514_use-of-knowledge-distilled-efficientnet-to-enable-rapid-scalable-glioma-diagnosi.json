@@ -1,0 +1,80 @@
+{
+  "abstractNumber": "2040",
+  "body": " \r\n\r\n\t<div><b>Background: </b> Accurate preoperative classification of gliomas on MRI according to WHO 2021 integrated diagnosis is essential for surgical planning and treatment selection, yet conventional interpretation remains vulnerable to inter-observer variability. Deep learning shows promise for brain tumor classification but computational demands restrict deployment in resource-limited settings. Knowledge distillation, transferring discriminative knowledge from computationally intensive \"mentor\" networks to efficient \"mentee\" models, enables scalable AI systems maintaining diagnostic accuracy while enabling global translation.</p>  <b>Methods: </b> We analyzed 2,840 brain MRI studies sourced from six continents comprising gliomas (n=1,400; 700 WHO grade 2–3, 700 grade 4), meningiomas (n=900), and pituitary adenomas (n=540). Ground truth followed WHO 2021 integrated diagnosis with expert neuroradiologist consensus. Data were partitioned at the patient level with site-held-out external testing. A high-capacity EfficientNetB7 mentor model was developed using multi-sequence MRI inputs (T1, T2, FLAIR, post-contrast T1) and distilled into lightweight EfficientNetB0. Knowledge distillation preserved discriminative performance while enabling CPU deployment without GPU acceleration. Training: input 224×224 pixels, Adam optimizer (lr=0.001), Kullback-Leibler divergence loss (temperature T=4), twelve epochs. Performance metrics included accuracy, sensitivity, specificity, F1-score, and AUROC. Independent clinical feasibility involved 52 board-certified neuroradiologists across 11 geopolitical regions.</p>  <b>Results: </b> For WHO grade 2–3 versus grade 4 stratification, distilled EfficientNetB0 achieved 97.2% accuracy, 98.1% sensitivity, 96.3% specificity, and AUROC 0.993. Differential diagnosis accuracy: 95.3% (glioma vs. meningioma), 96.1% (glioma vs. pituitary). Site-held-out external validation showed consistent performance (93–97% grading, 94–96% differential). Mean inference time: 0.19 seconds on CPU. Distilled model: 3.9 million parameters (97% reduction), 2.1 billion FLOPs (94% reduction). Neuroradiologist assessment: 94.7% rated system valuable for diagnostic confidence and surgical triage. Inter-rater agreement: 96.8% (κ=0.951, 95% CI 0.941–0.961).</p>  <b>Conclusions: </b> Knowledge-distilled EfficientNetB0 achieves 97.2% accuracy for glioma grading and 95–96% for differential diagnosis while reducing parameters by 97% and enabling CPU deployment. Global validation across six continents and clinical assessment by 52 neuroradiologists establish real-world feasibility. The architecture supports translation as a decision-support tool for preoperative glioma stratification, particularly in resource-constrained settings. Prospective clinical trials evaluating impact on surgical decision-making are warranted.</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+  "contentId": "260514",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/260514",
+    "queryParams": null,
+    "target": null,
+    "title": "Use of knowledge-distilled EfficientNet to enable rapid, scalable glioma diagnosis."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION260514"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780349400000,
+    "start": 1780338600000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "405",
+  "presentationId": "260514",
+  "primaryPerson": {
+    "displayName": "Gowrishankar Palaniswamy, MD, MBBS",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780349400000,
+    "start": 1780338600000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17089",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17089",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Central Nervous System Tumors"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": null,
+  "title": "Use of knowledge-distilled EfficientNet to enable rapid, scalable glioma diagnosis.",
+  "titles": null,
+  "uid": "PRESENTATION260514"
+}

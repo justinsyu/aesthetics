@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A two-axis machine learning framework for cell-of-origin inference in AML: A proof-of-concept study.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>A two-axis machine learning framework for cell-of-origin inference in AML: A proof-of-concept study.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 6540</div>
+    <div><strong>First speaker:</strong> Alexandra Thalberg, BS</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/268037">https://www.asco.org/abstracts-presentations/268037</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b> Leukemogenesis mirrors hematopoietic differentiation yet proceeds through dysregulated programs. Multiparameter flow cytometry (MFC) allows leukemia immunophenotypes projection onto normal myeloid ontogeny. Here, we apply machine-learning (ML) models trained on MFC data to reconstruct a preliminary data-driven representation of inferred cell-of-origin (COO). Additionally, we explore integration of monocytic differentiation into canonical COO framework to identify dysregulated commitment programs not explained by developmental maturity alone.</p>  <b>Methods: </b> After IRB approval, MFC data from 261 AML patients were aligned to immunophenotypic signatures of normal myeloid ontogeny (HSC, MPP, CMP, GMP, GP, MP) as previously described (Simoes <em>et al.</em>, <em>Blood Neoplasia</em>, 2024; Vergez <em>et al.</em>, <em>Blood Cancer Journal</em>, 2022). Probabilistic COO states were inferred from core markers (CD34, HLA-DR, MPO, CD33, CD117) using ensemble Random Forest classifiers with gradient boosting [Training/Validation=70/30]. Because canonical COO algorithms omit monocytic features, we implemented a secondary Mono-Risk Layer trained on monocytic markers (CD14, CD64) and stemness/invasiveness surrogates (CD56, reflecting adhesion, migration propensity) and CD123, to generate complementary phenotypic labels. Models were trained with cross-validation in Python, and mutation enrichment was projected onto inferred COO states.</p>  <b>Results: </b> Mean age was 63.8 years. 114/261(44%) were male. 123/261 (47.1%) of cases produced multidimensional P-COO achieving “Ensembled (RF+ Boosting Gradient)" AUC=0.74. Confusion matrix revealed a structured pattern of misclassification predominantly between adjacent COO states, consistent with a continuous differentiation manifold (Recall for MPP, CMP, GMP, GP, MP, 50% 83%, 62%, 65%, 76%, respectively). Mono-Risk-Layer (MRL) improved discriminatory ability for MP (AUC 0.94, Recall 86%, F1 0.75). <em>NPM1</em> was mapped to GMP (60%), MP (34%) and CMP (27%), <em>p=</em>2.61e-09, <em>FLT3 ITD</em> GMP (43.3%), CMP (32.4%) and MP (12.3%), <em>p</em>=4.72 e-05, <em>TP53</em> HSC (50%), MPP (24.3%) and GMP (16%), <em>p</em>=3.6e-04, <em>RUNX1</em> MPP (26.1%), HSC (25%) and MP (13%), <em>p</em>=7.7 e-03, RAS MP (35%), MPP (19%) and HSC (13%), <em>p</em>=5.18 e-03.</p>  <b>Conclusions: </b> Machine-learning–based probabilistic cell-of-origin inference from routine flow cytometry is feasible and biologically informative in AML. Incorporation of a monocytic risk layer improves resolution of monocytic programs not captured by canonical COO and reveals distinct mutation–differentiation relationships. <em>NPM1</em> and <em>FLT3-ITD</em> are enriched in GMP/MP-like states, <em>TP53</em> in primitive HSC/MPP compartments, <em>RUNX1</em> in early progenitors, and RAS in monocytic-skewed trajectories. These findings link genomic drivers to specific developmental niches and establish a scalable framework for biologically grounded AML classification and therapeutic modeling</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

@@ -1,0 +1,80 @@
+{
+  "abstractNumber": "1025",
+  "body": " \r\n\r\n\t<div><b>Background: </b></p>  CDK4/6i ± aromatase inhibitors is a preferred tx for pts with HR+/HER2- mBC in the 1L setting. While a subset of pts experience rapid progression on standard tx, addressing the unmet need remains challenging due to difficult pt identification. While multimodal data have predicted fast progressors in prior work, routinely collected electronic health record (EHR) variables may be more practical for clinical trial design and enrichment use cases. Thus, we performed a feasibility assessment to determine if EHR data can adequately predict fast progressors.</p>  <b>Methods: </b></p>  Models were trained on pts in the Flatiron Health Research Database with 1L CDK4/6i start on February 3, 2015, or later and an event ≤12 months (mos) or follow-up ≥12 mos after tx start. Fast progression was defined as real-world progression or death ≤12 mos after tx start. Baseline demographics, clinical characteristics, and laboratory/vital signs were used to train a logistic regression (LR) and a full-feature XGBoost (XGB) model. A feature-reduced XGB model was also developed by sequentially removing least important features until area under the curve (AUC) declined. Hyperparameters were optimized by grid search. Performance was evaluated via AUC, with feature importance assessed via LR coefficients and SHapley Additive exPlanations. Test-set analyses included rwPFS comparisons between predicted fast progressor (pFPs) and predicted non-fast progressors (pNFPs) using Kaplan-Meier methods.</p>  <b>Results: </b></p>  Among 10,811 included pts, 3,782 were identified as fast progressors, split 80/20 for train/test datasets. The 3 models had comparable performance for predicting fast progression and effectively stratified pts into risk groups (Table). LR and XGB models used 48 and 76 features, respectively, while a feature-selected XGB model retained 30 features with minimal performance loss. Top LR predictors included advanced age, BRCA/ESR1/AKT positivity, and de novo stage IV disease. Important XGB features were consistent across models and emphasized continuous measures, including shorter time to metastatic diagnosis, greater metastatic burden, elevated AST and alkaline phosphatase, and bone-only metastases.</p>  <b>Conclusions: </b></p>  While these models are not optimized as point-of-care clinical risk scores, their ability to identify high- and low-risk groups using scalable, routinely captured variables highlights their potential utility for clinical trial design, enrichment strategies, and cohort stratification. These findings establish a real-world benchmark and support the feasibility of practical, EHR-only approaches to rapid progression prediction.</div>\r\n\r\n\r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<p>Model</p>\r\n</td>\r\n<td>\r\n<p>AUC</p>\r\n</td>\r\n<td>\r\n<p>pFP rwPFS, median (95% CI), mos</p>\r\n</td>\r\n<td>\r\n<p>pNFP rwPFS, median (95% CI) mos</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>LR</p>\r\n</td>\r\n<td>\r\n<p>0.67</p>\r\n</td>\r\n<td>\r\n<p>10.8 (9.8–12.4)</p>\r\n</td>\r\n<td>\r\n<p>25.6 (23.3–27.9)</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>XGB</p>\r\n</td>\r\n<td>\r\n<p>0.67</p>\r\n</td>\r\n<td>\r\n<p>10.8 (9.8–12.4)</p>\r\n</td>\r\n<td>\r\n<p>25.4 (22.9–27.3)</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>XGB (feature selected)</p>\r\n</td>\r\n<td>\r\n<p>0.66</p>\r\n</td>\r\n<td>\r\n<p>11.3 (10.2–13.2)</p>\r\n</td>\r\n<td>\r\n<p>25.6 (23.0–27.9)</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n\r\n\r\n",
+  "contentId": "261278",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/261278",
+    "queryParams": null,
+    "target": null,
+    "title": "Using ML to predict rapid progression for patients (pts) with HR+/HER2- metastatic breast cancer (mBC) treated with frontline (1L) CDK 4/6 inhibitors (CDK 4/6i)."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION261278"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780349400000,
+    "start": 1780338600000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "139",
+  "presentationId": "261278",
+  "primaryPerson": {
+    "displayName": "Michael Peng",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780349400000,
+    "start": 1780338600000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17083",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17083",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Breast Cancer—Metastatic"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": null,
+  "title": "Using ML to predict rapid progression for patients (pts) with HR+/HER2- metastatic breast cancer (mBC) treated with frontline (1L) CDK 4/6 inhibitors (CDK 4/6i).",
+  "titles": null,
+  "uid": "PRESENTATION261278"
+}

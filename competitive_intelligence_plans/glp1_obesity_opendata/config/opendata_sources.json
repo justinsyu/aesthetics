@@ -1,0 +1,189 @@
+{
+  "version": "2026-05-28",
+  "api_base": "https://api.tryopendata.ai/v1",
+  "catalog_base": "https://tryopendata.ai/datasets",
+  "search_queries": [
+    "obesity",
+    "GLP-1",
+    "semaglutide",
+    "tirzepatide",
+    "diabetes",
+    "FDA drug approvals",
+    "Medicare drug spending",
+    "Medicaid obesity",
+    "NADAC GLP-1",
+    "payer formulary obesity drug coverage",
+    "health insurance coverage",
+    "CDC obesity"
+  ],
+  "datasets": [
+    {
+      "id": "cms/sdud",
+      "priority": "P0",
+      "signal_families": ["competitor_utilization_momentum", "payer_reimbursement_pressure"],
+      "refresh_default": "metadata_only",
+      "large_source": true,
+      "ci_use": "State-quarter Medicaid prescriptions, units, and reimbursed amounts by NDC/product."
+    },
+    {
+      "id": "cms/part-d-spending",
+      "priority": "P0",
+      "signal_families": ["competitor_utilization_momentum", "payer_reimbursement_pressure"],
+      "refresh_default": "source_scan",
+      "large_source": false,
+      "ci_use": "Annual Medicare Part D claims, beneficiaries, total spend, spend per claim, and spend per unit by drug."
+    },
+    {
+      "id": "cms/medicaid-spending",
+      "priority": "P0",
+      "signal_families": ["competitor_utilization_momentum", "payer_reimbursement_pressure"],
+      "refresh_default": "source_scan",
+      "large_source": false,
+      "ci_use": "Annual Medicaid claims and spending by drug."
+    },
+    {
+      "id": "cms/nadac",
+      "priority": "P0",
+      "signal_families": ["payer_reimbursement_pressure"],
+      "refresh_default": "metadata_only",
+      "large_source": true,
+      "ci_use": "NDC-level pharmacy acquisition cost for retail drugs."
+    },
+    {
+      "id": "cms/drug-rebate-products",
+      "priority": "P0",
+      "signal_families": ["payer_reimbursement_pressure", "regulatory_product_lifecycle"],
+      "refresh_default": "metadata_only",
+      "large_source": true,
+      "ci_use": "Medicaid rebate-product NDC, category, labeler, approval date, and market date context."
+    },
+    {
+      "id": "cms/ful",
+      "priority": "P1",
+      "signal_families": ["payer_reimbursement_pressure"],
+      "refresh_default": "metadata_only",
+      "large_source": true,
+      "ci_use": "Federal upper limit context for generic/multi-source reimbursement."
+    },
+    {
+      "id": "cms/ira-drug-prices",
+      "priority": "P1",
+      "signal_families": ["payer_reimbursement_pressure"],
+      "refresh_default": "source_scan",
+      "large_source": false,
+      "ci_use": "IRA maximum fair price benchmark for future high-spend metabolic drug risk."
+    },
+    {
+      "id": "fda/drugs-at-fda",
+      "priority": "P0",
+      "signal_families": ["regulatory_product_lifecycle"],
+      "refresh_default": "source_scan",
+      "large_source": false,
+      "ci_use": "Approved products, active ingredients, dosage forms, strengths, reference-drug flags, and application numbers."
+    },
+    {
+      "id": "fda/ndc-directory",
+      "priority": "P0",
+      "signal_families": ["regulatory_product_lifecycle", "payer_reimbursement_pressure"],
+      "refresh_default": "source_scan",
+      "large_source": false,
+      "ci_use": "NDC product identifiers, brand/generic names, labelers, routes, dosage forms, and active ingredients."
+    },
+    {
+      "id": "fda/orange-book",
+      "priority": "P0",
+      "signal_families": ["regulatory_product_lifecycle"],
+      "refresh_default": "source_scan",
+      "large_source": false,
+      "ci_use": "Orange Book application, applicant, approval date, TE/reference flags, and patent/exclusivity context."
+    },
+    {
+      "id": "fda/nme-approvals",
+      "priority": "P1",
+      "signal_families": ["regulatory_product_lifecycle"],
+      "refresh_default": "source_scan",
+      "large_source": false,
+      "ci_use": "NME/biologic approval pattern and regulatory-designation context."
+    },
+    {
+      "id": "fda/drug-shortages",
+      "priority": "P1",
+      "signal_families": ["regulatory_product_lifecycle", "supply_access"],
+      "refresh_default": "source_scan",
+      "large_source": false,
+      "ci_use": "Shortage status, company, dosage form, and shortage reason for GLP-1 products."
+    },
+    {
+      "id": "fda/drug-recalls",
+      "priority": "P1",
+      "signal_families": ["regulatory_product_lifecycle", "supply_access"],
+      "refresh_default": "metadata_only",
+      "large_source": true,
+      "ci_use": "Recall/enforcement-action context for GLP-1 products."
+    },
+    {
+      "id": "ca-hcai/wac-increases",
+      "priority": "P1",
+      "signal_families": ["payer_reimbursement_pressure"],
+      "refresh_default": "source_scan",
+      "large_source": false,
+      "ci_use": "California-reported WAC price increase history."
+    },
+    {
+      "id": "cdc/brfss",
+      "priority": "P0",
+      "signal_families": ["market_opportunity_access_context"],
+      "refresh_default": "metadata_only",
+      "large_source": false,
+      "ci_use": "State-level obesity, diabetes, behavior, and demographic prevalence context."
+    },
+    {
+      "id": "owid/obesity",
+      "priority": "P0",
+      "signal_families": ["market_opportunity_access_context"],
+      "refresh_default": "metadata_only",
+      "large_source": false,
+      "ci_use": "Country-year overweight/obesity prevalence context."
+    },
+    {
+      "id": "census/health-insurance-coverage",
+      "priority": "P1",
+      "signal_families": ["market_opportunity_access_context"],
+      "refresh_default": "source_scan",
+      "large_source": false,
+      "ci_use": "State-year uninsured rate and count context."
+    },
+    {
+      "id": "cms/medicaid-chip-enrollment",
+      "priority": "P1",
+      "signal_families": ["market_opportunity_access_context"],
+      "refresh_default": "source_scan",
+      "large_source": false,
+      "ci_use": "State-month Medicaid/CHIP enrollment and expansion context."
+    },
+    {
+      "id": "cms/transparency-in-coverage",
+      "priority": "P1",
+      "signal_families": ["insurer_behavior_access_context"],
+      "refresh_default": "metadata_only",
+      "large_source": false,
+      "ci_use": "Issuer-level claim denial and appeal behavior context."
+    },
+    {
+      "id": "cms/marketplace-plans",
+      "priority": "P1",
+      "signal_families": ["insurer_behavior_access_context"],
+      "refresh_default": "metadata_only",
+      "large_source": false,
+      "ci_use": "ACA plan county footprint, premiums, and cost-sharing context."
+    },
+    {
+      "id": "cms/mlr-data",
+      "priority": "P2",
+      "signal_families": ["insurer_behavior_access_context"],
+      "refresh_default": "metadata_only",
+      "large_source": true,
+      "ci_use": "Insurer medical loss ratio and financial context."
+    }
+  ]
+}

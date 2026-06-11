@@ -1,0 +1,972 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IEGP Template | RevMed x Novartis Inspired HTML Slides</title>
+  <style>
+    :root {
+      --navy: #102a43;
+      --blue: #1876d2;
+      --teal-900: #063f3a;
+      --teal-700: #0f6f63;
+      --teal-500: #27a39a;
+      --mint: #16d17b;
+      --rev-green: #0f6f63;
+      --rev-green-2: #16d17b;
+      --orange: #ff5a1f;
+      --gold: #f0b429;
+      --ink: #17202a;
+      --muted: #66727f;
+      --line: #d9e0e7;
+      --panel: #f4f7fa;
+      --pale-green: #eaf5ee;
+      --white: #ffffff;
+      --slide-w: 1280px;
+      --slide-h: 720px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #d7dde3;
+      color: var(--ink);
+      font-family: "Inter", "Aptos", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .deck {
+      display: grid;
+      gap: 28px;
+      padding: 28px;
+      justify-items: center;
+    }
+
+    .slide {
+      position: relative;
+      width: var(--slide-w);
+      height: var(--slide-h);
+      overflow: hidden;
+      background: var(--white);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+    }
+
+    .slide::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 82px;
+      background: #f6f8fb;
+      border-right: 1px solid var(--line);
+    }
+
+    .nav {
+      position: absolute;
+      left: 16px;
+      top: 54px;
+      width: 48px;
+      display: grid;
+      gap: 17px;
+      font-size: 7px;
+      color: #8a96a3;
+      text-align: center;
+      z-index: 3;
+    }
+    .nav span {
+      display: block;
+      padding-left: 4px;
+      border-left: 4px solid transparent;
+      line-height: 1.15;
+    }
+    .nav .on {
+      color: var(--blue);
+      border-left-color: var(--orange);
+      font-weight: 700;
+    }
+
+    .footer {
+      position: absolute;
+      left: 112px;
+      right: 42px;
+      bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      color: #7a8795;
+      font-size: 9px;
+      border-top: 1px solid var(--line);
+      padding-top: 7px;
+    }
+
+    .title {
+      position: absolute;
+      left: 112px;
+      top: 34px;
+      right: 56px;
+      z-index: 2;
+    }
+    .eyebrow {
+      color: var(--blue);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 {
+      color: var(--navy);
+      font-size: 34px;
+      line-height: 1.05;
+      letter-spacing: 0;
+      font-weight: 800;
+      max-width: 950px;
+    }
+    .subtitle {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.35;
+      max-width: 890px;
+    }
+
+    .content {
+      position: absolute;
+      left: 112px;
+      right: 42px;
+      top: 150px;
+      bottom: 58px;
+    }
+
+    .cover::before, .section::before { display: none; }
+    .cover {
+      background: linear-gradient(90deg, var(--teal-900) 0 42%, #ffffff 42% 100%);
+    }
+    .cover-visual {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 42%;
+      height: 100%;
+      background:
+        linear-gradient(135deg, rgba(6, 63, 58, 0.96), rgba(15, 111, 99, 0.88)),
+        radial-gradient(circle at 18% 18%, rgba(22,209,123,.22), transparent 26%),
+        repeating-linear-gradient(130deg, transparent 0 42px, rgba(255,255,255,.11) 42px 48px);
+    }
+    .cover-visual::after {
+      content: "";
+      position: absolute;
+      right: -86px;
+      bottom: 24px;
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      background: var(--orange);
+      opacity: .94;
+    }
+    .molecule {
+      position: absolute;
+      left: 74px;
+      top: 92px;
+      width: 420px;
+      height: 420px;
+    }
+    .node {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--rev-green-2);
+      box-shadow: 0 0 0 5px rgba(35, 161, 99, .16);
+    }
+    .node.orange { background: var(--orange); box-shadow: 0 0 0 5px rgba(239, 101, 35, .18); }
+    .bond {
+      position: absolute;
+      height: 3px;
+      background: rgba(255,255,255,.78);
+      transform-origin: left center;
+    }
+    .cover-title {
+      position: absolute;
+      left: 600px;
+      top: 72px;
+      width: 520px;
+    }
+    .cover-title .tag {
+      display: inline-block;
+      background: var(--orange);
+      color: white;
+      padding: 8px 13px;
+      font-size: 11px;
+      font-weight: 800;
+      margin-bottom: 26px;
+    }
+    .cover-title h1 {
+      font-size: 48px;
+      line-height: .98;
+    }
+    .cover-title p {
+      margin-top: 26px;
+      font-size: 18px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+    .cover-meta {
+      position: absolute;
+      left: 600px;
+      bottom: 76px;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .cover-meta small {
+      display: block;
+      margin-top: 10px;
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .token-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .swatch { height: 95px; border: 1px solid var(--line); background: white; }
+    .swatch div { height: 46px; }
+    .swatch b { display: block; font-size: 12px; margin: 10px 10px 4px; color: var(--navy); }
+    .swatch span { display: block; font-size: 10px; margin: 0 10px; color: var(--muted); }
+
+    .section {
+      background: #fff;
+    }
+    .section .photo-field {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 45%;
+      height: 100%;
+      background:
+        linear-gradient(135deg, rgba(8,43,100,.88), rgba(11,107,63,.78)),
+        repeating-linear-gradient(90deg, rgba(255,255,255,.2) 0 6px, transparent 6px 44px);
+    }
+    .section .white-mask {
+      position: absolute;
+      right: 330px;
+      top: 0;
+      width: 390px;
+      height: 720px;
+      border-radius: 50%;
+      background: #fff;
+    }
+    .section .orange-orbit {
+      position: absolute;
+      right: 36px;
+      bottom: 54px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: var(--orange);
+    }
+    .section-title {
+      position: absolute;
+      left: 104px;
+      top: 152px;
+      width: 570px;
+    }
+    .section-title .section-kicker {
+      color: var(--blue);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 12px;
+      margin-bottom: 18px;
+    }
+    .section-title h1 {
+      font-size: 56px;
+      max-width: 560px;
+    }
+    .section-title p {
+      color: var(--muted);
+      margin-top: 24px;
+      font-size: 18px;
+      line-height: 1.35;
+    }
+    .section-title .rule {
+      width: 230px;
+      height: 7px;
+      background: var(--orange);
+      margin-top: 34px;
+    }
+
+    .priority-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      height: 360px;
+    }
+    .priority {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-left: 8px solid var(--teal-700);
+      padding: 22px 22px 18px;
+      position: relative;
+      border-radius: 14px;
+    }
+    .priority:nth-child(2) { border-left-color: var(--rev-green); }
+    .priority:nth-child(3) { border-left-color: var(--orange); }
+    .priority h3 {
+      color: var(--navy);
+      font-size: 20px;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .priority ul, .callout ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.45;
+    }
+    .decision-strip {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 20px;
+      background: var(--navy);
+      color: white;
+      padding: 10px 12px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .ring-map {
+      position: relative;
+      height: 390px;
+      background: linear-gradient(180deg, #ffffff, #f8fbfa);
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+    .ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 2px solid var(--teal-700);
+      opacity: .9;
+    }
+    .ring.r2 { border-color: var(--blue); opacity: .65; }
+    .ring.r3 { border-color: var(--orange); opacity: .75; }
+    .ring-label {
+      position: absolute;
+      background: #fff;
+      border-left: 6px solid var(--teal-700);
+      box-shadow: 0 8px 18px rgba(16,33,33,.08);
+      padding: 10px 12px;
+      width: 185px;
+      font-size: 12px;
+      line-height: 1.25;
+    }
+    .ring-label b { color: var(--navy); display: block; margin-bottom: 4px; }
+
+    .chart-grid {
+      display: grid;
+      grid-template-columns: 7.2fr 3fr;
+      gap: 24px;
+      height: 100%;
+    }
+    .chart-panel, .side-panel, .matrix-panel {
+      background: white;
+      border: 1px solid var(--line);
+      padding: 22px;
+      position: relative;
+    }
+    .chart-panel {
+      background: linear-gradient(180deg, #fff, #f9fbfc);
+    }
+    .bars {
+      position: absolute;
+      left: 80px;
+      right: 48px;
+      bottom: 80px;
+      height: 250px;
+      display: flex;
+      align-items: end;
+      gap: 26px;
+      border-left: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding-left: 28px;
+    }
+    .bar {
+      width: 45px;
+      background: var(--blue);
+      position: relative;
+    }
+    .bar.green { background: var(--rev-green); }
+    .bar.gray { background: #aeb8c2; }
+    .bar.orange { background: var(--orange); }
+    .bar span {
+      position: absolute;
+      top: -24px;
+      width: 80px;
+      left: -17px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--navy);
+    }
+    .bar label {
+      position: absolute;
+      bottom: -30px;
+      left: -18px;
+      width: 82px;
+      font-size: 10px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .callout {
+      border-left: 8px solid var(--orange);
+      background: var(--panel);
+      padding: 22px;
+      height: 100%;
+    }
+    .callout h3 {
+      color: var(--navy);
+      font-size: 22px;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .need-map {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      height: 100%;
+    }
+    .need-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-top: 7px solid var(--blue);
+      padding: 18px;
+    }
+    .need-card.green { border-top-color: var(--rev-green); }
+    .need-card.orange { border-top-color: var(--orange); }
+    .need-card h3 {
+      color: var(--navy);
+      font-size: 18px;
+      margin-bottom: 13px;
+    }
+    .need-card p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+    .mini-label {
+      color: var(--ink);
+      font-size: 12px;
+      line-height: 1.4;
+      border-top: 1px solid var(--line);
+      padding-top: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      line-height: 1.25;
+    }
+    th {
+      background: var(--navy);
+      color: white;
+      text-align: left;
+      padding: 9px 8px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    td {
+      padding: 9px 8px;
+      border-bottom: 1px solid var(--line);
+      color: var(--ink);
+      vertical-align: top;
+    }
+    tr:nth-child(even) td { background: var(--panel); }
+    .priority-tag {
+      display: inline-block;
+      background: var(--orange);
+      color: white;
+      padding: 3px 7px;
+      font-weight: 800;
+      font-size: 10px;
+    }
+    .green-tag {
+      background: var(--rev-green);
+    }
+
+    .pathway {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      align-items: stretch;
+      height: 220px;
+      margin-top: 24px;
+    }
+    .path-step {
+      position: relative;
+      background: var(--pale-green);
+      border: 1px solid #cfe4d7;
+      padding: 15px;
+    }
+    .path-step::after {
+      content: "";
+      position: absolute;
+      right: -19px;
+      top: 86px;
+      border-left: 18px solid var(--rev-green);
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      z-index: 2;
+    }
+    .path-step:last-child::after { display: none; }
+    .path-step b {
+      display: block;
+      color: var(--navy);
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+    .path-step span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.3;
+    }
+
+    .roadmap {
+      display: grid;
+      grid-template-columns: 170px repeat(8, 1fr);
+      gap: 0;
+      border: 1px solid var(--line);
+      background: white;
+      height: 395px;
+    }
+    .roadmap div {
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      padding: 9px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+    .roadmap .head {
+      background: var(--panel);
+      color: var(--navy);
+      font-weight: 800;
+      text-align: center;
+      padding-top: 12px;
+    }
+    .roadmap .lane {
+      color: var(--navy);
+      font-weight: 800;
+      background: #fbfcfd;
+    }
+    .milestone {
+      position: absolute;
+      height: 22px;
+      top: 17px;
+      left: 8px;
+      right: 8px;
+      background: var(--blue);
+      color: white;
+      font-size: 10px;
+      font-weight: 800;
+      text-align: center;
+      padding-top: 5px;
+    }
+    .milestone.green { background: var(--rev-green); }
+    .milestone.orange { background: var(--orange); }
+    .gate {
+      position: absolute;
+      width: 7px;
+      top: 8px;
+      bottom: 8px;
+      background: var(--orange);
+      right: 9px;
+    }
+
+    .study-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 24px;
+      height: 100%;
+    }
+    .study-card {
+      border: 1px solid var(--line);
+      background: white;
+      padding: 20px;
+    }
+    .study-card h3 {
+      color: var(--navy);
+      font-size: 21px;
+      margin-bottom: 14px;
+    }
+    .study-row {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      border-top: 1px solid var(--line);
+      padding: 10px 0;
+      font-size: 13px;
+    }
+    .study-row b { color: var(--blue); }
+
+    .takeaway {
+      position: absolute;
+      left: 112px;
+      right: 42px;
+      bottom: 58px;
+      background: var(--navy);
+      color: white;
+      padding: 14px 18px;
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .source-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .source-list div {
+      border-left: 6px solid var(--blue);
+      background: var(--panel);
+      padding: 16px 18px;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+    .source-list b { color: var(--navy); }
+
+    .controls {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      display: flex;
+      gap: 8px;
+      z-index: 10;
+    }
+    .controls button {
+      border: 0;
+      background: var(--navy);
+      color: #fff;
+      padding: 10px 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .deck { padding: 0; gap: 0; display: block; }
+      .slide { box-shadow: none; page-break-after: always; }
+      .controls { display: none; }
+      @page { size: 1280px 720px; margin: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main class="deck" id="deck">
+    <section class="slide cover" data-title="Cover">
+      <div class="cover-visual"></div>
+      <div class="molecule">
+        <div class="bond" style="left:62px;top:142px;width:150px;transform:rotate(22deg)"></div>
+        <div class="bond" style="left:192px;top:194px;width:135px;transform:rotate(-34deg)"></div>
+        <div class="bond" style="left:112px;top:274px;width:175px;transform:rotate(-9deg)"></div>
+        <div class="node" style="left:54px;top:132px"></div>
+        <div class="node orange" style="left:196px;top:188px"></div>
+        <div class="node" style="left:314px;top:112px"></div>
+        <div class="node orange" style="left:108px;top:264px"></div>
+        <div class="node" style="left:282px;top:246px"></div>
+      </div>
+      <div class="cover-title">
+        <div class="tag">HTML SLIDE TEMPLATE</div>
+        <h1>Integrated Evidence Generation Plan</h1>
+        <p>Clinical evidence briefing system inspired by public Revolution Medicines scientific slides and Novartis investor decks.</p>
+      </div>
+      <div class="cover-meta">[Product] | [Indication] | [Region]<small>Owner: [team] | Version: [v0.1] | Date: [date]</small></div>
+    </section>
+
+    <section class="slide">
+      <div class="nav"><span class="on">Setup</span><span>Brief</span><span>Context</span><span>Needs</span><span>Gaps</span><span>Roadmap</span></div>
+      <div class="title">
+        <div class="eyebrow">Setup</div>
+        <h1>Design tokens keep the deck brand-adaptable</h1>
+        <p class="subtitle">Swap the primary, secondary, green, and signal colors while preserving the data-first layout system.</p>
+      </div>
+      <div class="content">
+        <div class="token-grid">
+          <div class="swatch"><div style="background:var(--navy)"></div><b>Primary brand</b><span>Deep clinical blue</span></div>
+          <div class="swatch"><div style="background:var(--blue)"></div><b>Secondary brand</b><span>Investor blue</span></div>
+          <div class="swatch"><div style="background:var(--rev-green)"></div><b>Science accent</b><span>RevMed-style green</span></div>
+          <div class="swatch"><div style="background:var(--orange)"></div><b>Decision signal</b><span>Orange highlight</span></div>
+          <div class="swatch"><div style="background:var(--panel)"></div><b>Panel gray</b><span>Evidence surface</span></div>
+          <div class="swatch"><div style="background:var(--muted)"></div><b>Comparator</b><span>Neutral series</span></div>
+        </div>
+        <div class="takeaway">Use color sparsely: blue for focal evidence, green for scientific mechanism/pathway, orange only for decisions, gates, or unresolved risks.</div>
+      </div>
+      <div class="footer"><span>IEGP | Setup | [Product / indication]</span><span>02</span></div>
+    </section>
+
+    <section class="slide section">
+      <div class="photo-field"></div><div class="white-mask"></div><div class="orange-orbit"></div>
+      <div class="section-title"><div class="section-kicker">01 | Briefing</div><h1>Evidence priorities</h1><p>Start with the investment and decision story: what must be proven, for whom, and by when.</p><div class="rule"></div></div>
+    </section>
+
+    <section class="slide">
+      <div class="nav"><span>Setup</span><span class="on">Brief</span><span>Context</span><span>Needs</span><span>Gaps</span><span>Roadmap</span></div>
+      <div class="title"><div class="eyebrow">Executive briefing</div><h1>Three evidence priorities focus the plan on decision value</h1><p class="subtitle">Use this as the senior-team orientation page before reviewing detailed evidence gaps and activities.</p></div>
+      <div class="content">
+        <div class="priority-row">
+          <div class="priority"><h3>Priority 1: [strategic evidence objective]</h3><ul><li>Gap: [top evidence gap]</li><li>Action: [study / analysis / synthesis]</li><li>Timing: [decision window]</li></ul><div class="decision-strip">Decision impact: [regulatory / access / adoption]</div></div>
+          <div class="priority"><h3>Priority 2: [strategic evidence objective]</h3><ul><li>Gap: [top evidence gap]</li><li>Action: [study / analysis / synthesis]</li><li>Timing: [decision window]</li></ul><div class="decision-strip">Decision impact: [value / uptake / lifecycle]</div></div>
+          <div class="priority"><h3>Priority 3: [strategic evidence objective]</h3><ul><li>Gap: [top evidence gap]</li><li>Action: [study / analysis / synthesis]</li><li>Timing: [decision window]</li></ul><div class="decision-strip">Decision impact: [risk if delayed]</div></div>
+        </div>
+      </div>
+      <div class="footer"><span>IEGP | Briefing | [Product / indication]</span><span>04</span></div>
+    </section>
+
+    <section class="slide">
+      <div class="nav"><span>Setup</span><span class="on">Brief</span><span>Context</span><span>Needs</span><span>Gaps</span><span>Roadmap</span></div>
+      <div class="title"><div class="eyebrow">Decision board</div><h1>Decisions needed are linked to evidence readiness</h1></div>
+      <div class="content">
+        <table>
+          <thead><tr><th>Decision</th><th>Recommendation</th><th>Evidence basis</th><th>Owner</th><th>Deadline</th></tr></thead>
+          <tbody>
+            <tr><td>Approve priority gaps</td><td>[approve / revise]</td><td>[risk and value rationale]</td><td>[owner]</td><td>[date]</td></tr>
+            <tr><td>Fund evidence activity</td><td>[approve / defer]</td><td>[decision value and feasibility]</td><td>[owner]</td><td>[date]</td></tr>
+            <tr><td>Select study design</td><td>[option A / B]</td><td>[credibility, timing, feasibility]</td><td>[owner]</td><td>[date]</td></tr>
+            <tr><td>Resolve local adaptation</td><td>[global / local split]</td><td>[reuse versus local gap]</td><td>[owner]</td><td>[date]</td></tr>
+            <tr><td>Confirm governance</td><td>[RACI / cadence]</td><td>[execution accountability]</td><td>[owner]</td><td>[date]</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="footer"><span>IEGP | Briefing | [Product / indication]</span><span>05</span></div>
+    </section>
+
+    <section class="slide section">
+      <div class="photo-field"></div><div class="white-mask"></div><div class="orange-orbit"></div>
+      <div class="section-title"><div class="section-kicker">02 | Context</div><h1>Asset and evidence story</h1><p>Frame the asset, value narrative, science pathway, and milestone windows before selecting studies.</p><div class="rule"></div></div>
+    </section>
+
+    <section class="slide">
+      <div class="nav"><span>Setup</span><span>Brief</span><span class="on">Context</span><span>Needs</span><span>Gaps</span><span>Roadmap</span></div>
+      <div class="title"><div class="eyebrow">Asset context</div><h1>Asset snapshot frames the evidence problem</h1></div>
+      <div class="content">
+        <div class="need-map">
+          <div class="need-card"><h3>Asset / mechanism</h3><p>[Name, modality, mechanism]</p><div class="mini-label">Evidence implication: [what needs to be proven]</div></div>
+          <div class="need-card green"><h3>Population</h3><p>[Indication, line, biomarker, subgroup]</p><div class="mini-label">Evidence implication: [endpoint / comparator]</div></div>
+          <div class="need-card orange"><h3>Lifecycle stage</h3><p>[Pre-launch / launch / post-launch]</p><div class="mini-label">Evidence implication: [timing pressure]</div></div>
+          <div class="need-card"><h3>Geography</h3><p>[Global, US, EU5, Japan, priority local markets]</p><div class="mini-label">Evidence implication: [local adaptation]</div></div>
+          <div class="need-card green"><h3>TPP / TVP</h3><p>[Clinical and value targets]</p><div class="mini-label">Evidence implication: [claim support]</div></div>
+          <div class="need-card orange"><h3>Milestones</h3><p>[Readouts, submissions, HTA, launch]</p><div class="mini-label">Evidence implication: [decision gate]</div></div>
+        </div>
+      </div>
+      <div class="footer"><span>IEGP | Context | [Product / indication]</span><span>07</span></div>
+    </section>
+
+    <section class="slide">
+      <div class="nav"><span>Setup</span><span>Brief</span><span class="on">Context</span><span>Needs</span><span>Gaps</span><span>Roadmap</span></div>
+      <div class="title"><div class="eyebrow">Science-to-evidence pathway</div><h1>Mechanism, evidence, and decision use stay connected</h1><p class="subtitle">RevMed-style scientific slide logic adapted for an IEGP: mechanism and population define which evidence questions matter.</p></div>
+      <div class="content">
+        <div class="pathway">
+          <div class="path-step"><b>Mechanism</b><span>[Target, pathway, disease biology]</span></div>
+          <div class="path-step"><b>Clinical question</b><span>[Population, comparator, endpoint]</span></div>
+          <div class="path-step"><b>Evidence package</b><span>[Clinical, RWE, HEOR, COA]</span></div>
+          <div class="path-step"><b>Stakeholder decision</b><span>[Regulatory, HTA, HCP, patient]</span></div>
+          <div class="path-step"><b>Roadmap activity</b><span>[Study, synthesis, publication]</span></div>
+        </div>
+        <div class="takeaway">Template prompt: if the mechanism claim changes, revisit endpoints, subgroup evidence, comparator assumptions, and pull-through claims.</div>
+      </div>
+      <div class="footer"><span>IEGP | Context | [Product / indication]</span><span>08</span></div>
+    </section>
+
+    <section class="slide section">
+      <div class="photo-field"></div><div class="white-mask"></div><div class="orange-orbit"></div>
+      <div class="section-title"><div class="section-kicker">03 | Needs</div><h1>Stakeholder evidence needs</h1><p>Translate each decision maker’s standard of proof into explicit evidence needs, limits, and timing.</p><div class="rule"></div></div>
+    </section>
+
+    <section class="slide">
+      <div class="nav"><span>Setup</span><span>Brief</span><span>Context</span><span class="on">Needs</span><span>Gaps</span><span>Roadmap</span></div>
+      <div class="title"><div class="eyebrow">Evidence landscape</div><h1>Stakeholder needs define the evidence standard</h1></div>
+      <div class="content">
+        <div class="ring-map">
+          <div class="ring r1" style="left:352px;top:52px;width:300px;height:300px"></div>
+          <div class="ring r2" style="left:286px;top:18px;width:430px;height:370px"></div>
+          <div class="ring r3" style="left:220px;top:-18px;width:560px;height:440px"></div>
+          <div class="ring-label" style="left:70px;top:42px"><b>Stakeholder</b>Regulators, HTA/payers, HCPs, patients, policy, internal teams</div>
+          <div class="ring-label" style="right:80px;top:58px;border-left-color:var(--blue)"><b>Geography</b>Global evidence core plus local market adaptations</div>
+          <div class="ring-label" style="left:86px;bottom:54px;border-left-color:var(--orange)"><b>Lifecycle timing</b>Phase 3, launch, HTA, guideline, post-launch, expansion</div>
+          <div class="ring-label" style="right:110px;bottom:50px"><b>Evidence type</b>Clinical, RWE, HEOR, COA/PRO, synthesis, publications</div>
+          <div style="position:absolute;left:430px;top:164px;width:145px;text-align:center;color:var(--navy);font-weight:800;font-size:18px">Evidence need<br><span style="font-size:12px;color:var(--muted);font-weight:500">becomes roadmap activity</span></div>
+        </div>
+      </div>
+      <div class="footer"><span>IEGP | Needs | [Product / indication]</span><span>10</span></div>
+    </section>
+
+    <section class="slide">
+      <div class="nav"><span>Setup</span><span>Brief</span><span>Context</span><span class="on">Needs</span><span>Gaps</span><span>Roadmap</span></div>
+      <div class="title"><div class="eyebrow">Evidence inventory</div><h1>Current evidence inventory separates usable evidence from unresolved limits</h1></div>
+      <div class="content">
+        <table>
+          <thead><tr><th>Source</th><th>Status</th><th>Population</th><th>Endpoint / output</th><th>Stakeholder</th><th>Usability limit</th></tr></thead>
+          <tbody>
+            <tr><td>Clinical trials</td><td>[available]</td><td>[population]</td><td>[endpoint]</td><td>[reg / HCP]</td><td>[maturity, comparator, subgroup]</td></tr>
+            <tr><td>RWE</td><td>[planned]</td><td>[population]</td><td>[outcome]</td><td>[payer / HCP]</td><td>[confounding, missingness]</td></tr>
+            <tr><td>HEOR model</td><td>[planned]</td><td>[inputs]</td><td>[CE / BIA]</td><td>[HTA]</td><td>[assumptions, transferability]</td></tr>
+            <tr><td>SLR / ITC</td><td>[available]</td><td>[network]</td><td>[comparison]</td><td>[HTA / internal]</td><td>[heterogeneity, recency]</td></tr>
+            <tr><td>COA / PRO</td><td>[TBD]</td><td>[population]</td><td>[QoL / burden]</td><td>[patient / HCP]</td><td>[instrument, sample]</td></tr>
+            <tr><td>Publications</td><td>[planned]</td><td>[audience]</td><td>[message]</td><td>[HCP]</td><td>[timing, embargo, claim fit]</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="footer"><span>IEGP | Needs | [Product / indication]</span><span>11</span></div>
+    </section>
+
+    <section class="slide section">
+      <div class="photo-field"></div><div class="white-mask"></div><div class="orange-orbit"></div>
+      <div class="section-title"><div class="section-kicker">04 | Gaps</div><h1>Evidence gap analysis</h1><p>Prioritize gaps by decision consequence, feasibility, credibility, and global-local reuse.</p><div class="rule"></div></div>
+    </section>
+
+    <section class="slide">
+      <div class="nav"><span>Setup</span><span>Brief</span><span>Context</span><span>Needs</span><span class="on">Gaps</span><span>Roadmap</span></div>
+      <div class="title"><div class="eyebrow">Gap matrix</div><h1>Evidence gaps are prioritized by decision consequence and actionability</h1></div>
+      <div class="content">
+        <table>
+          <thead><tr><th>Gap</th><th>Decision</th><th>Current evidence</th><th>Priority</th><th>Action</th><th>Risk if unresolved</th></tr></thead>
+          <tbody>
+            <tr><td>G1: [gap]</td><td>[decision]</td><td>[evidence]</td><td><span class="priority-tag">P1</span></td><td>[tactic]</td><td>[label/access/adoption risk]</td></tr>
+            <tr><td>G2: [gap]</td><td>[decision]</td><td>[evidence]</td><td><span class="priority-tag green-tag">P2</span></td><td>[tactic]</td><td>[risk]</td></tr>
+            <tr><td>G3: [gap]</td><td>[decision]</td><td>[evidence]</td><td><span class="priority-tag green-tag">P2</span></td><td>[tactic]</td><td>[risk]</td></tr>
+            <tr><td>G4: [gap]</td><td>[decision]</td><td>[evidence]</td><td><span class="priority-tag">P1</span></td><td>[tactic]</td><td>[risk]</td></tr>
+            <tr><td>G5: [gap]</td><td>[decision]</td><td>[evidence]</td><td>[P3]</td><td>[monitor]</td><td>[risk]</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="footer"><span>IEGP | Gaps | [Product / indication]</span><span>13</span></div>
+    </section>
+
+    <section class="slide">
+      <div class="nav"><span>Setup</span><span>Brief</span><span>Context</span><span>Needs</span><span class="on">Gaps</span><span>Roadmap</span></div>
+      <div class="title"><div class="eyebrow">Priority scoring</div><h1>Gap scoring converts unanswered questions into roadmap choices</h1></div>
+      <div class="content">
+        <div class="chart-grid">
+          <div class="chart-panel">
+            <h3 style="color:var(--navy);font-size:22px;margin:0 0 12px">Illustrative priority score by gap</h3>
+            <div class="bars">
+              <div class="bar green" style="height:220px"><span>92</span><label>G1</label></div>
+              <div class="bar" style="height:185px"><span>78</span><label>G2</label></div>
+              <div class="bar orange" style="height:170px"><span>72</span><label>G3</label></div>
+              <div class="bar gray" style="height:130px"><span>55</span><label>G4</label></div>
+              <div class="bar gray" style="height:96px"><span>41</span><label>G5</label></div>
+            </div>
+          </div>
+          <div class="callout"><h3>Scoring rubric</h3><ul><li>Strategic impact</li><li>Decision urgency</li><li>Evidence feasibility</li><li>Credibility with stakeholder</li><li>Global-local reuse</li></ul></div>
+        </div>
+      </div>
+      <div class="footer"><span>IEGP | Gaps | [Product / indication]</span><span>14</span></div>
+    </section>
+
+    <section class="slide section">
+      <div class="photo-field"></div><div class="white-mask"></div><div class="orange-orbit"></div>
+      <div class="section-title"><div class="section-kicker">05 | Roadmap</div><h1>Evidence generation roadmap</h1><p>Convert priority gaps into studies, syntheses, disclosures, decision gates, and owners.</p><div class="rule"></div></div>
+    </section>
+
+    <section class="slide">
+      <div class="nav"><span>Setup</span><span>Brief</span><span>Context</span><span>Needs</span><span>Gaps</span><span class="on">Roadmap</span></div>
+      <div class="title"><div class="eyebrow">Roadmap</div><h1>Integrated roadmap aligns workstreams to readouts and decision gates</h1></div>
+      <div class="content">
+        <div class="roadmap">
+          <div class="head">Workstream</div><div class="head">Y1 Q1</div><div class="head">Q2</div><div class="head">Q3</div><div class="head">Q4</div><div class="head">Y2 Q1</div><div class="head">Q2</div><div class="head">Q3</div><div class="head">Q4</div>
+          <div class="lane">Clinical / regulatory</div><div><div class="milestone">Protocol</div></div><div></div><div><div class="gate"></div></div><div><div class="milestone green">Readout</div></div><div></div><div><div class="milestone orange">Reg</div></div><div></div><div></div>
+          <div class="lane">RWE</div><div></div><div><div class="milestone green">Feasibility</div></div><div></div><div><div class="milestone">Start</div></div><div></div><div></div><div><div class="milestone green">Analysis</div></div><div></div>
+          <div class="lane">HEOR / access</div><div><div class="milestone">SLR</div></div><div></div><div><div class="milestone green">Model</div></div><div></div><div><div class="gate"></div></div><div><div class="milestone orange">HTA</div></div><div></div><div></div>
+          <div class="lane">Patient / COA</div><div></div><div><div class="milestone green">Instrument</div></div><div></div><div></div><div><div class="milestone">Study</div></div><div></div><div><div class="milestone green">Output</div></div><div></div>
+          <div class="lane">Publications</div><div></div><div></div><div><div class="milestone">Abstract</div></div><div></div><div><div class="milestone green">Manuscript</div></div><div></div><div></div><div><div class="gate"></div></div>
+        </div>
+      </div>
+      <div class="footer"><span>IEGP | Roadmap | [Product / indication]</span><span>16</span></div>
+    </section>
+
+    <section class="slide">
+      <div class="nav"><span>Setup</span><span>Brief</span><span>Context</span><span>Needs</span><span>Gaps</span><span class="on">Roadmap</span></div>
+      <div class="title"><div class="eyebrow">Study concept</div><h1>Study concept one-pager keeps objective, design, and pull-through visible</h1></div>
+      <div class="content">
+        <div class="study-layout">
+          <div class="study-card">
+            <h3>[Study / activity name]</h3>
+            <div class="study-row"><b>Gap link</b><span>G[ ] / ORQ[ ] / stakeholder decision</span></div>
+            <div class="study-row"><b>Objective</b><span>[Primary objective and hypothesis]</span></div>
+            <div class="study-row"><b>Design</b><span>[Population, comparator, endpoint, data source, duration]</span></div>
+            <div class="study-row"><b>Timing</b><span>[Protocol, start, interim, readout, publication]</span></div>
+          </div>
+          <div class="study-card">
+            <h3>Decision use and feasibility</h3>
+            <div class="study-row"><b>Decision use</b><span>[Regulatory / HTA / HCP / patient / internal]</span></div>
+            <div class="study-row"><b>Feasibility</b><span>[Data access, complexity, cost class, dependencies]</span></div>
+            <div class="study-row"><b>Pull-through</b><span>[Publication, claims matrix, payer dossier, field medical]</span></div>
+            <div class="study-row"><b>Decision</b><span>[Approve / revise / defer]</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer"><span>IEGP | Roadmap | [Product / indication]</span><span>17</span></div>
+    </section>
+
+    <section class="slide">
+      <div class="nav"><span>Setup</span><span>Brief</span><span>Context</span><span>Needs</span><span>Gaps</span><span class="on">Roadmap</span></div>
+      <div class="title"><div class="eyebrow">Activity tracker</div><h1>Activity tracker functions as the working source of truth</h1></div>
+      <div class="content">
+        <table>
+          <thead><tr><th>ID</th><th>Activity</th><th>Gap</th><th>Method / data</th><th>Owner</th><th>Timing</th><th>Status</th><th>Priority</th></tr></thead>
+          <tbody>
+            <tr><td>A1</td><td>[study / analysis]</td><td>G[ ]</td><td>[design / source]</td><td>[owner]</td><td>[start-readout]</td><td>[planned]</td><td><span class="priority-tag">P1</span></td></tr>
+            <tr><td>A2</td><td>[study / analysis]</td><td>G[ ]</td><td>[design / source]</td><td>[owner]</td><td>[start-readout]</td><td>[active]</td><td><span class="priority-tag green-tag">P2</span></td></tr>
+            <tr><td>A3</td><td>[study / analysis]</td><td>G[ ]</td><td>[design / source]</td><td>[owner]</td><td>[start-readout]</td><td>[idea]</td><td>P3</td></tr>
+            <tr><td>A4</td><td>[study / analysis]</td><td>G[ ]</td><td>[design / source]</td><td>[owner]</td><td>[start-readout]</td><td>[planned]</td><td>P2</td></tr>
+            <tr><td>A5</td><td>[study / analysis]</td><td>G[ ]</td><td>[design / source]</td><td>[owner]</td><td>[start-readout]</td><td>[active]</td><td>P1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="footer"><span>IEGP | Roadmap | [Product / indication]</span><span>18</span></div>
+    </section>
+
+    <section class="slide">
+      <div class="nav"><span>Setup</span><span>Brief</span><span>Context</span><span>Needs</span><span>Gaps</span><span class="on">Roadmap</span></div>
+      <div class="title"><div class="eyebrow">Source basis</div><h1>Template design is source-informed, but not a copy of any company’s slides</h1></div>
+      <div class="content">
+        <div class="source-list">
+          <div><b>Revolution Medicines / AACR scientific slides</b><br>Used as design inspiration for scientific evidence density, green pathway accents, clinical tables, response/waterfall-style data framing, and direct study design pages.</div>
+          <div><b>Novartis investor slides</b><br>Used as design inspiration for large blue claims, left navigation, white space, light gray evidence panels, sparse orange decision markers, and image-style section breaks.</div>
+          <div><b>Adaptation guardrail</b><br>No logos, proprietary photography, copied charts, or source slide assets are embedded. The deck uses original HTML/CSS shapes and placeholder content.</div>
+          <div><b>How to adapt</b><br>Change CSS variables in <code>:root</code>, replace placeholders, add or remove slides, and print to PDF using browser print settings.</div>
+        </div>
+      </div>
+      <div class="footer"><span>IEGP | Appendix | [Product / indication]</span><span>19</span></div>
+    </section>
+  </main>
+
+  <div class="controls" aria-label="Slide navigation">
+    <button type="button" id="prev">Prev</button>
+    <button type="button" id="next">Next</button>
+  </div>
+
+  <script>
+    const slides = [...document.querySelectorAll('.slide')];
+    let index = 0;
+    function go(i) {
+      index = Math.max(0, Math.min(slides.length - 1, i));
+      slides[index].scrollIntoView({ behavior: 'smooth', block: 'center' });
+      history.replaceState(null, '', `#${index + 1}`);
+    }
+    document.getElementById('prev').addEventListener('click', () => go(index - 1));
+    document.getElementById('next').addEventListener('click', () => go(index + 1));
+    addEventListener('keydown', (e) => {
+      if (['ArrowRight', 'PageDown', ' '].includes(e.key)) go(index + 1);
+      if (['ArrowLeft', 'PageUp'].includes(e.key)) go(index - 1);
+    });
+    const initial = parseInt(location.hash.replace('#', ''), 10);
+    if (initial) go(initial - 1);
+  </script>
+</body>
+</html>

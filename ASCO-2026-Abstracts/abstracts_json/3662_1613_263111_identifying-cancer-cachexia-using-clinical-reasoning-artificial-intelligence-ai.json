@@ -1,0 +1,80 @@
+{
+  "abstractNumber": "1613",
+  "body": " \r\n\r\n\t<div><b>Background: </b></p>  Cancer cachexia, a severe wasting syndrome, affects up to 87% of cancer patients<sup>1</sup> and contributes to ≥20% of cancer deaths<sup>2</sup>. Despite this burden, ~85% of healthcare providers are unfamiliar with diagnostic criteria<sup>3</sup>, leaving patients often undiagnosed. This study evaluated whether a Clinical Reasoning AI model configured on four cachexia guidelines (Fearon<sup>4</sup>, Evans<sup>5</sup>, GLIM<sup>6</sup> and mGPS<sup>7</sup> criteria) and designed to emulate clinician chart review, could accurately identify cancer cachexia.</p>  <b>Methods: </b></p>  Using structured (vitals, labs) and unstructured (clinical notes) electronic health record data the Clinical Reasoning AI employed retrieval-augmented generation<sup>8</sup> and agentic techniques with large language models (LLMs) to: (1) retrieve clinically relevant information based on the clinical guidelines via natural language processing (NLP) and embedding, and (2) apply guideline-based reasoning to classify patients into Group 1 (no cachexia features), Group 2 (meets ≥1 guideline regardless of documented diagnosis), or Group 3 (documented cancer cachexia). Accuracy was assessed against a gold standard of 50 patients classified by two independent clinicians, with conflicts resolved by a third. Performance was compared against baseline methods: ICD coding (ICD-9 799.4; ICD-10 C80.9), NLP using keywords like cancer or cachexia, and LLMs (Vanilla OpenAI GPT-o4-mini) prompted without explicit instruction to use guidelines.</p>  <b>Results: </b></p>  The Clinical Reasoning AI demonstrated high precision, sensitivity, and specificity, outperforming baselines, particularly for Group 2 patients. ICD and NLP methods could not detect Group 2, due to code- and keyword-based constraints. Performance of LLMs without guidelines worsened with structured and unstructured data, indicating sensitivity to data overload and inability to prioritise clinically relevant information.</p>  <b>Conclusions: </b></p>  These results show that embedding clinical guidelines within a structured retrieval-and-reasoning architecture enabled accurate identification of cancer cachexia, addressing a critical gap where standard coding and keyword methods fail. The guideline-driven approach maintained accurate clinical reasoning while processing complex EHR data. The Clinical Reasoning AI model is currently being deployed at the point of care to assess real-world implementation and impact on patient outcomes.</div>\r\n\r\n\r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td></td>\r\n<td><strong>Group 2</strong></td>\r\n<td></td>\r\n<td></td>\r\n<td></td>\r\n<td><strong>Group 3</strong></td>\r\n<td></td>\r\n<td></td>\r\n<td></td>\r\n</tr>\r\n<tr>\r\n<td><strong>AI Model</strong></td>\r\n<td><em>Precision</em></td>\r\n<td><em>Sensitivity</em></td>\r\n<td><em>F1</em></td>\r\n<td><em>Specificity</em></td>\r\n<td><em>Precision</em></td>\r\n<td><em>Sensitivity</em></td>\r\n<td><em>F1</em></td>\r\n<td><em>Specificity</em></td>\r\n</tr>\r\n<tr>\r\n<td>ICD</td>\r\n<td>N/A</td>\r\n<td>N/A</td>\r\n<td>N/A</td>\r\n<td>N/A</td>\r\n<td>0.759</td>\r\n<td>0.815</td>\r\n<td>0.786</td>\r\n<td>0.696</td>\r\n</tr>\r\n<tr>\r\n<td>Simple NLP</td>\r\n<td>N/A</td>\r\n<td>N/A</td>\r\n<td>N/A</td>\r\n<td>N/A</td>\r\n<td>0.727</td>\r\n<td>0.593</td>\r\n<td>0.653</td>\r\n<td>0.739</td>\r\n</tr>\r\n<tr>\r\n<td>Vanilla OpenAI GPT-o4-mini (unstructured data only)</td>\r\n<td>0.500</td>\r\n<td>0.500</td>\r\n<td>0.500</td>\r\n<td>0.765</td>\r\n<td>0.594</td>\r\n<td>0.704</td>\r\n<td>0.644</td>\r\n<td>0.438</td>\r\n</tr>\r\n<tr>\r\n<td>Vanilla OpenAI GPT-o4-mini (structured and unstructured data)</td>\r\n<td>0.500</td>\r\n<td>0.062</td>\r\n<td>0.111</td>\r\n<td>0.971</td>\r\n<td>0.385</td>\r\n<td>0.185</td>\r\n<td>0.250</td>\r\n<td>0.652</td>\r\n</tr>\r\n<tr>\r\n<td>Clinical Reasoning AI with GPT-o4-mini</td>\r\n<td>0.762</td>\r\n<td>1.00</td>\r\n<td>0.865</td>\r\n<td>0.853</td>\r\n<td>0.964</td>\r\n<td>1.00</td>\r\n<td>0.982</td>\r\n<td>0.957</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n\r\n\r\n",
+  "contentId": "263111",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/263111",
+    "queryParams": null,
+    "target": null,
+    "title": "Identifying cancer cachexia using clinical reasoning artificial intelligence (AI)."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION263111"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780160400000,
+    "start": 1780149600000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "531",
+  "presentationId": "263111",
+  "primaryPerson": {
+    "displayName": "Vibhor Gupta, PhD",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780160400000,
+    "start": 1780149600000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17086",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17086",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Care Delivery/Models of Care"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": null,
+  "title": "Identifying cancer cachexia using clinical reasoning artificial intelligence (AI).",
+  "titles": null,
+  "uid": "PRESENTATION263111"
+}

@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Development and clinical utility of an H&amp;E-based tumor origin prediction model.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Development and clinical utility of an H&amp;E-based tumor origin prediction model.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 3021</div>
+    <div><strong>First speaker:</strong> Qiyuan Isabelle Hu, PhD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/262545">https://www.asco.org/abstracts-presentations/262545</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b></p>  Tumor of unknown primary origin remains a critical unmet need in oncology, as histologic and anatomic diagnoses are essential for ensuring effective and timely therapies. We previously developed the Tempus Tumor Origin (TO) Laboratory Developed Test (LDT), an RNA sequencing-based machine learning algorithm that discriminates between clinically relevant cancer subtypes. However, RNA-sequencing data is not always available, with a failure rate that can be &gt; 20% in the literature. In this study, we develop and assess the accuracy of a hematoxylin and eosin (H&amp;E)-based machine learning algorithm to predict tumor origin. We also explore combining predictions from H&amp;E and RNA models to improve accuracy further.</p>  <b>Methods: </b></p>  We curated a cohort of 93,770 H&amp;E whole slide images (WSIs) of tumor biopsies and surgical resections across 67 cancer subtypes from 73,634 patients. The cohort was split into 60/20/20 for training, validation, and testing, stratified by cancer subtypes and clinical covariates. We extracted tile embeddings from WSIs using a foundation model, H-optimus-0, and trained an attention-based multiple instance learning model to predict cancer subtype labels derived from clinically abstracted documents. Using a subset of 54,878 samples that also have predictions from the RNA-based Tempus TO algorithm, we trained and evaluated a multilayer perceptron multimodal model that takes the prediction scores from the H&amp;E model and the RNA model as input.</p>  <b>Results: </b></p>  On 7,092 test set samples that had both modalities available, the H&amp;E, RNA, and multimodal models achieved top-1 accuracies of 0.85, 0.91, and 0.92 and top-3 accuracies of 0.94, 0.97, and 0.97, respectively. Among subtypes with at least 30 samples in the test set, the multimodal model statistically significantly outperformed the RNA model on five subtypes and underperformed on two. In addition, the H&amp;E model had a top-1 accuracy of 0.77 and a top-3 accuracy of 0.90 on 3,028 samples in the test set that failed RNA sequencing due to quantity insufficient (QNS). Table 1 presents H&amp;E model performance on the RNA QNS samples by diagnosis subtypes.</p>  <b>Conclusions: </b></p>  We developed a high-performing H&amp;E-based algorithm to predict tumor origin. With shorter turnaround time and wider availability, the H&amp;E model can potentially deliver accurate tumor origin predictions faster and, critically, in cases where RNA-seq is unsuccessful or unavailable. Furthermore, leveraging both H&amp;E and RNA in a multimodal model may improve the performance of future tumor origin algorithms.</p>  </div>
+
+
+
+	<div class="table_caption"><b>H&amp;E model performance on RNA QNS test set samples in the five most prevalent diagnosis subtypes and other subtypes combined.</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p>Diagnosis subtype</p>
+</td>
+<td>
+<p>N</p>
+</td>
+<td>
+<p>Top-1 accuracy (%)</p>
+</td>
+<td>
+<p>Top-3 accuracy (%)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Lung adenocarcinoma</p>
+</td>
+<td>
+<p>497</p>
+</td>
+<td>
+<p>84</p>
+</td>
+<td>
+<p>94</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Prostatic adenocarcinoma</p>
+</td>
+<td>
+<p>387</p>
+</td>
+<td>
+<p>92</p>
+</td>
+<td>
+<p>95</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Breast carcinoma</p>
+</td>
+<td>
+<p>348</p>
+</td>
+<td>
+<p>83</p>
+</td>
+<td>
+<p>95</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Colorectal adenocarcinoma</p>
+</td>
+<td>
+<p>327</p>
+</td>
+<td>
+<p>85</p>
+</td>
+<td>
+<p>93</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Pancreatic adenocarcinoma</p>
+</td>
+<td>
+<p>272</p>
+</td>
+<td>
+<p>78</p>
+</td>
+<td>
+<p>94</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Other</p>
+</td>
+<td>
+<p>1,197</p>
+</td>
+<td>
+<p>64</p>
+</td>
+<td>
+<p>83</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

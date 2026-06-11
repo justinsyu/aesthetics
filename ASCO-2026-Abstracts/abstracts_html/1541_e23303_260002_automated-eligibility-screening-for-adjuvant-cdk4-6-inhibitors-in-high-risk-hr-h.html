@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Automated eligibility screening for adjuvant CDK4/6 inhibitors in high-risk HR+/HER2− early breast cancer using natural language processing.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Automated eligibility screening for adjuvant CDK4/6 inhibitors in high-risk HR+/HER2− early breast cancer using natural language processing.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e23303</div>
+    <div><strong>First speaker:</strong> Jessica Liu</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/260002">https://www.asco.org/abstracts-presentations/260002</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> While CDK4/6 inhibitors (CDK4/6i) have transformed the treatment landscape for high-risk, HR+/HER2- early breast cancer (EBC), identifying eligible patients in real-world settings remains labor-intensive. Manual review of unstructured clinical notes to match patients with evolving FDA criteria (e.g., abemaciclib, March 2023; ribociclib, September 2024) has led to an eligibility screening gap. We evaluated an automated pipeline to extract clinical eligibility criteria and facilitate rapid patient-treatment matching.</div>
+  <main> 
+
+	<div><b>Background: </b> While CDK4/6 inhibitors (CDK4/6i) have transformed the treatment landscape for high-risk, HR+/HER2- early breast cancer (EBC), identifying eligible patients in real-world settings remains labor-intensive. Manual review of unstructured clinical notes to match patients with evolving FDA criteria (e.g., abemaciclib, March 2023; ribociclib, September 2024) has led to an eligibility screening gap. We evaluated an automated pipeline to extract clinical eligibility criteria and facilitate rapid patient-treatment matching. </p>  <b>Methods: </b> We developed a hybrid Python-based information extraction pipeline that integrates spaCy-based named entity recognition (NER) with customized rule- and regex-based algorithms to parse both structured electronic health record (EHR) fields and unstructured clinical narratives, including pathology reports, from Yale Cancer Center. The system extracted 11 clinically relevant variables (e.g., ER/PR/HER2 status, tumor stage, Ki-67 index, nodal involvement). Eligibility for adjuvant CDK4/6 inhibitor therapy was determined using rule-based logic aligned with U.S. FDA-approved indications for abemaciclib and ribociclib. A gold-standard manual chart review was conducted by a trained clinical data coordinator on 100 randomly selected early breast cancer (EBC) patients. Extraction accuracy, eligibility classification performance (eligible vs. ineligible), and processing time were evaluated by comparing automated outputs against the manual reference standard. </p>  <b>Results: </b> The pipeline achieved ≥ 90% accuracy across all 11 individual data points. For the final eligibility classification, the tool demonstrated 99% accuracy, with only one false negative (classified as ineligible by NLP but eligible by manual review). Efficiency gains were significant: manual chart review required a median of 3 minutes per patient (range: 1–12), whereas the automated pipeline processed 100 patients in ~1 minute, representing a &gt;&nbsp;99% reduction in screening time. </p>  <b>Conclusions: </b> Automated NLP extraction is an accurate and scalable solution for identifying patients eligible for adjuvant CDK4/6i. By substantially reducing the time required for chart review, this tool can minimize treatment delays and ensure real-world adherence to changing FDA guidelines. Future work will compare this rules-based approach with ML and LLM-based extractors to improve semantic context handling and scalability across health systems.</div>
+
+
+
+	<div class="table_caption"><b>Eligibility classification performance of regex-based pipeline compared to manual chart review</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p>Metric </p>
+</td>
+<td>
+<p>NLP/Regex-based pipeline performance </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Accuracy </p>
+</td>
+<td>
+<p>99.0% </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Sensitivity (Recall) </p>
+</td>
+<td>
+<p>100.0% </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Specificity </p>
+</td>
+<td>
+<p>98.9% </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Precision </p>
+</td>
+<td>
+<p>91.7% </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>F1 Score </p>
+</td>
+<td>
+<p>95.7% </p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sources matter: Learning to evaluate large language models for oncology treatment plans and changes observed by anchoring models to an oncology-specific database.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Sources matter: Learning to evaluate large language models for oncology treatment plans and changes observed by anchoring models to an oncology-specific database.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 1617</div>
+    <div><strong>First speaker:</strong> Connor Yost, DO</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/263090">https://www.asco.org/abstracts-presentations/263090</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b> Large language models (LLMs) are increasingly evaluated for oncology decision support, yet guideline concordance and hallucinations remain variable across cancer types and tasks. Retrieval-augmented generation (RAG) may improve safety by constraining the evidence base used during generation. Prior oncology LLM studies report discordance with guideline-based care, but few describe a reproducible health-system “vetting mechanism” that couples guideline-only retrieval with clinician-scored safety rubrics across multiple oncology domains.</p>  <b>Methods: </b> We assembled 316 de-identified oncology cases in a tumor-board template: medical oncology (breast, GI, GU, leukemia; n=216), gynecologic oncology (n=50), and neuro-oncology/CNS metastatic cancer (n=50). Each case was run on three systems: baseline GPT-4 (O1), NCCN-guideline anchored RAG (O2; guideline-constrained retrieval), and a literature-anchored system (OpenEvidence; O3). Oncologists independently scored outputs using a modified Generative Performance Score (mGPS; −1 to +1) combining guideline concordance with hallucination penalties; readability/rationality was scored on a 1–5 Likert scale. Inter-rater reliability was assessed (κ =.63). This workflow was designed as a pre-deployment model credentialing step for health-system governance (source policy → case bank → clinician-scored acceptance criteria).</p>  <b>Results: </b> Across all 316 cases (case-averaged), O2 achieved the highest mean total mGPS (0.75) compared with O1 (0.43) and O3 (0.59). In the medical oncology cohort (n=216), O2 outperformed O1 and O3 (mean mGPS 0.72 vs 0.35 and 0.54), with higher guideline concordance (0.85 vs 0.68 and 0.75) and lower hallucination penalties (−0.09 vs −0.25 and −0.19); readability was also highest for O2 (4.17 vs 3.22 and 3.86). In gynecologic oncology (n=50), O2 again performed best (mGPS 0.827) relative to O3 (0.697) and O1 (0.647). In the CNS cohort (n=50), mean composite mGPS favored O2 (0.82) over O3 (0.68) and O1 (0.55), while readability remained stable across models (3.55–3.73). Severe hallucination/unsafe recommendation rate: O1 [26%], O2 [5%], O3 [17%] (pre-specified definition; e.g., major fabricated citation or guideline-discordant harmful recommendation).</p>  <b>Conclusions: </b> In a 316-case, multi-domain clinician-scored evaluation, limiting retrieval to oncology guideline sources improved safety-aligned performance relative to unconstrained generation or literature-only anchoring. A guideline-constrained RAG configuration paired with clinician-scored rubrics and tail-risk reporting can serve as a practical health-system vetting mechanism for governance, re-validation, and change control of LLM decision support, including in resource-limited settings where reliable guideline-consistent recommendations are essential.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

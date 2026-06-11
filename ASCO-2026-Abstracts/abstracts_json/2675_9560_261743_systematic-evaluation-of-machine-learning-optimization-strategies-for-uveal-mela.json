@@ -1,0 +1,80 @@
+{
+  "abstractNumber": "9560",
+  "body": " \r\n\r\n\t<div><b>Background: </b></p>  Early differentiation of uveal melanoma (UM) from benign intraocular lesions remains clinically challenging, particularly in regions with limited access to specialized ocular oncologists. Diagnostic uncertainty can delay referral and treatment, highlighting a gap between current practice and the desired goal of timely, accurate early UM detection. Machine learning (ML) offers a promising approach to improving diagnostic support with early detection of UM. This study developed, trained, and optimized eight ML classification models for early UM detection using ultrawidefield fundus (UWF) imaging to evaluate methods to increase clinical utility and readiness of current models. </p>  </p>  <b>Methods: </b></p>  1,592 UWF images from 784 patients were retrospectively collected and labeled into four classes: UM (n&nbsp;=&nbsp;364), choroidal nevus (n&nbsp;=&nbsp;824), congenital hypertrophy of the retinal pigment epithelium (CHRPE, n&nbsp;=&nbsp;102), and healthy controls (n&nbsp;=&nbsp;302). Images with multiple lesions, significant media opacity, or poor tumor visualization were excluded. All models used a ResNet-50 architecture, and a binary UM/nevus classifier was developed as the control. Optimization strategies included 1) class expansion with healthy control and CHRPE images, 2) training dataset augmentation with multiple images per patient and post-treatment images, and 3) a region of interest (ROI) dilation preprocessing pipeline. A 70/15/15 train/validation/test split was used with patient-level stratification to prevent data leakage. The test set was held constant across all models to ensure fair comparison. Performance was assessed using per-class F1 score and area under the curve (AUC) with 5-fold cross-validation. Grad-CAM images were generated to aid in model interpretability.</p>  </p>  <b>Results: </b></p>  The control model achieved an AUC of 0.94&#177;0.01 and F1 scores of 0.90&#177;0.01 for nevus and 0.80&#177;0.03 for UM. ROI dilation achieved the greatest improvement (AUC 0.99&#177;0.001; nevus F1 0.98&#177;0.01; UM F1 0.95&#177;0.01). Other optimization strategies showed variable impact, with multi-optos yielding the second-best performance (AUC 0.95&#177;0.02; nevus F1 0.91&#177;0.02; UM F1 0.83&#177;0.04). A final model integrating the most effective strategies demonstrated robust performance (AUC 0.95&#177;0.01; nevus F1 0.91&#177;0.03; UM F1 0.82&#177;0.06). Grad-CAM confirmed an appropriate lesion-centered focus.</p>  </p>  <b>Conclusions: </b></p>  Our findings show that targeted ML optimizations can meaningfully improve performance for early UM detection. While ROI dilation preprocessing had the most performance gain, results varied across optimization pathways, indicating room for refinement. Further evaluation on external datasets is needed to assess generalizability, paving the way for end-stage clinical rollout.</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+  "contentId": "261743",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/261743",
+    "queryParams": null,
+    "target": null,
+    "title": "Systematic evaluation of machine learning optimization strategies for uveal melanoma detection using ultra-widefield photography."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION261743"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780246800000,
+    "start": 1780236000000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "276",
+  "presentationId": "261743",
+  "primaryPerson": {
+    "displayName": "Sanjay Ganesh, BS",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780246800000,
+    "start": 1780236000000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17118",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17118",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Melanoma/Skin Cancers"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": null,
+  "title": "Systematic evaluation of machine learning optimization strategies for uveal melanoma detection using ultra-widefield photography.",
+  "titles": null,
+  "uid": "PRESENTATION261743"
+}

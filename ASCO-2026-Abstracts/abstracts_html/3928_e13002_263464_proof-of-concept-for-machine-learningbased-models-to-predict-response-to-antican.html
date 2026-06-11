@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Proof of concept for machine learning–based models to predict response to anticancer treatments.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Proof of concept for machine learning–based models to predict response to anticancer treatments.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e13002</div>
+    <div><strong>First speaker:</strong> Edoardo Crimini, MD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/263464">https://www.asco.org/abstracts-presentations/263464</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Selecting the most effective anticancer drugs remains challenging. Comprehensive molecular profiling identifies alterations actionable with targeted agents, but genomic and clinical data may also predict benefit across different drug classes. We developed machine learning–based models (Support Vector Machines - SVM and Random Forest - RF) to predict treatment outcomes using real-world clinical, pathological, genomic, and prior-therapy data at the treatment line level. Genomic alterations were summarized at the pathway level.</div>
+  <main> 
+
+	<div><b>Background: </b></p>  Selecting the most effective anticancer drugs remains challenging. Comprehensive molecular profiling identifies alterations actionable with targeted agents, but genomic and clinical data may also predict benefit across different drug classes. We developed machine learning–based models (Support Vector Machines - SVM and Random Forest - RF) to predict treatment outcomes using real-world clinical, pathological, genomic, and prior-therapy data at the treatment line level. Genomic alterations were summarized at the pathway level.</p>  <b>Methods: </b></p>  We retrospectively analyzed 46 homogeneous patients with breast cancer who received PARP inhibitors (PARPi) discussed at the IEO Molecular Tumor Board between 2019 and 2023. Outcomes were progression-free survival (PFS) and objective response rate (ORR). As a quality control measure, models were trained to predict overall survival in first-line setting to assess data reliability. The most important predictors were expected (hormone receptor (HR), Ki-67 and age), thus supporting data reliability. We then trained outcome models for the four most represented treatment classes: PARPi, taxanes (Tx), endocrine therapies (ET), and pyrimidine analogues (Pyr).</p>  <b>Results: </b></p>  RF models outperformed linear SVMs, particularly for PFS prediction, suggesting non linear interactions among predictors. Overall discrimination was modest (Table 1), reflecting limited sample size and the scarcity of true negative controls, especially for targeted treatments. Prior treatments emerged as the strongest predictor: longer PFS of previous platinum therapy (pPFS) was among the most important features to predict longer PFS and better ORR for PARPi, but similar results were obtained for all the treatment classes. Features such as Ki-67, performance status (PS), age, HR status and treatment history added predictive value, while genomic pathway alterations provided weaker but detectable signals.</p>  <b>Conclusions: </b></p>  Our study demonstrates the feasibility of integrating data to predict treatment benefit and prioritize therapeutic options. Although current limited performance, the approach highlights the dominant yet still underestimated importance of prior treatment response on subsequent therapies’ outcome prediction, establishing a foundation for a methodological refinement, expansion across tumors, and external validation. It could evolve into a clinical decision support tool optimizing both personalized and standard treatments, which is especially relevant for low-income countries without access to expensive drugs.</div>
+
+
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p><strong>Drug</strong></p>
+</td>
+<td>
+<p><strong>PFS</strong></p>
+<p>(RMSE)</p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p><strong>ORR</strong></p>
+<p>(ROC)</p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p><strong>Top features</strong></p>
+<p><strong>ORR</strong></p>
+</td>
+<td>
+<p><strong>Direction</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p> </p>
+</td>
+<td>
+<p>RF</p>
+</td>
+<td>
+<p>SVM</p>
+</td>
+<td>
+<p>RF</p>
+</td>
+<td>
+<p>SVM</p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>PARPi</p>
+<p>46</p>
+</td>
+<td>
+<p>9</p>
+</td>
+<td>
+<p>11.5</p>
+</td>
+<td>
+<p>0.63</p>
+</td>
+<td>
+<p>0.59</p>
+</td>
+<td>
+<p>RAS wt</p>
+</td>
+<td>
+<p>+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p></p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p>pPFS platinum</p>
+</td>
+<td>
+<p>+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p>BRCA1, BRCA2 and PALB2 wt</p>
+</td>
+<td>
+<p>-</p>
+</td>
+</tr>
+<tr>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p>Lobular</p>
+</td>
+<td>
+<p>-</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>ET</p>
+<p>35</p>
+</td>
+<td>
+<p>14.4</p>
+</td>
+<td>
+<p>15.9</p>
+</td>
+<td>
+<p>0.48</p>
+</td>
+<td>
+<p>0.45</p>
+</td>
+<td>
+<p>PGR%</p>
+</td>
+<td>
+<p>+</p>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p>pPFS ET</p>
+</td>
+<td>
+<p>+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p>RAS altered</p>
+</td>
+<td>
+<p>-</p>
+</td>
+</tr>
+<tr>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p>NOTCH wt</p>
+</td>
+<td>
+<p>-</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Tx</p>
+<p>35</p>
+</td>
+<td>
+<p>8.2</p>
+</td>
+<td>
+<p>10.6</p>
+</td>
+<td>
+<p>0.75</p>
+</td>
+<td>
+<p>0.58</p>
+</td>
+<td>
+<p>pPFS anthracyclines</p>
+</td>
+<td>
+<p>+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p></p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p>pPFS TROP2 ADC</p>
+</td>
+<td>
+<p>+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p>PS</p>
+</td>
+<td>
+<p>-</p>
+</td>
+</tr>
+<tr>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p>pPFS PARPi</p>
+</td>
+<td>
+<p>-</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Pyr</p>
+<p>34</p>
+</td>
+<td>
+<p>15.5</p>
+</td>
+<td>
+<p>22.8</p>
+</td>
+<td>
+<p>0.6</p>
+</td>
+<td>
+<p>0.58</p>
+</td>
+<td>
+<p>pPFS alkylating</p>
+</td>
+<td>
+<p>+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p></p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p>Lobular</p>
+</td>
+<td>
+<p>+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p>Ki-67</p>
+</td>
+<td>
+<p>-</p>
+</td>
+</tr>
+<tr>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p>pPFS HER2 ADC</p>
+</td>
+<td>
+<p>-</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

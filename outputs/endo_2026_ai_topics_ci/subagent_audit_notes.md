@@ -1,0 +1,12 @@
+# Subagent Audit Notes
+
+- Scope: updated only `outputs/endo_2026_ai_topics_ci` for the ENDO 2026 AI topics CI report. Existing worktree changes outside this output folder were not touched.
+- Subagent implementation pass: updated `build_endo_ai_ci.js` so main slide titles (`h1` and `h2`) render at regular weight (`font-weight: 400`) instead of bold. Preserved bold weights for section/card/panel `h3` headings, dark-panel headings, callout headings, and chips/tags.
+- Track cleanup: added `cleanTrack()` normalization in the generator and applied it to session text, inventory track/topic fields, and notable-record display text so `Website Technical Support` no longer carries a leading pipe in regenerated outputs.
+- Regenerated report artifacts from the generator: `ai_topic_inventory.csv`, `ai_topic_inventory.json`, `ai_topic_inventory.md`, `excluded_false_positive_candidates.json`, `run_manifest.json`, `source-log.md`, and `endo_2026_ai_topics_ci_report.html`.
+- Export command: used `_skills_to_install/cohere-style-ci/scripts/export_html_slides_pdf.mjs` with `CHROME_PATH=C:/Program Files/Google/Chrome/Application/chrome.exe`, print mode, `--screenshots-dir outputs/endo_2026_ai_topics_ci/screenshots/browser-export`, and `--render-check-dir outputs/endo_2026_ai_topics_ci/screenshots/render-review`.
+- Export status: pass. Exporter reported `slideCount: 9` and `overflowWarnings: []`. Render review was skipped by the exporter because `pdftoppm` is not installed.
+- PDF QA: `pypdf` inspection confirms `endo_2026_ai_topics_ci_report.pdf` has 9 pages, no malformed year-plus-letter token, and no extracted leading-pipe Website text.
+- Screenshot QA: `screenshots/browser-export/slide_01.png` through `slide_09.png` exist and were regenerated after the updated HTML; spot checks on slides 1, 3, and 7 confirm the main slide titles are regular-weight while lower-level headings and chips remain bold.
+- Style QA: grep confirms generator and HTML use `font-weight: 400` for `h1`/`h2`, keep `h3` at `700`, keep `.tag` at `850`, and preserve the existing reference-slide size override without changing its inherited title weight.
+- Skill-feedback pass: a separate subagent updated `_skills_to_install/cohere-style-ci/SKILL.md` and `_skills_to_install/cohere-style-ci/references/style-guide.md` with the general CI guidance that "do not bold slide titles" applies to main `h1`/`h2` slide titles without undoing separately requested bold chips, card headings, panel headings, table headers, or body-section headers.

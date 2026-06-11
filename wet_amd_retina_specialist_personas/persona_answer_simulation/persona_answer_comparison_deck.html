@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wet AMD Persona Benchmark Calibration</title>
+  <style>
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 100 900;
+      font-display: block;
+      src: url('file:///C:/Users/Justin/AppData/Local/Microsoft/Windows/Fonts/Inter-Variable.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'Inter';
+      font-style: italic;
+      font-weight: 100 900;
+      font-display: block;
+      src: url('file:///C:/Users/Justin/AppData/Local/Microsoft/Windows/Fonts/Inter-Italic-Variable.ttf') format('truetype');
+    }
+
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    h1, h2, h3, p { margin: 0; }
+    .slide {
+      width: 1280px;
+      height: 720px;
+      min-height: 720px;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      break-after: page;
+      padding: 30px 0 18px;
+      background: var(--paper);
+    }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      pointer-events: none;
+      user-select: none;
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .wrap { width: 1160px; margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--lime);
+      margin-bottom: 12px;
+    }
+    h1, h2, h3, .num { font-family: Inter, ui-sans-serif, system-ui, sans-serif; letter-spacing: 0; }
+    h1 { font-size: 62px; line-height: .92; font-weight: 560; max-width: 920px; }
+    h2 { font-size: 38px; line-height: .98; font-weight: 560; max-width: 1120px; }
+    h3 { font-size: 20px; line-height: 1.04; font-weight: 500; }
+    .dek { margin-top: 16px; color: var(--muted); font-size: 20px; line-height: 1.18; max-width: 900px; }
+    .section-head { margin-bottom: 22px; }
+    .section-head p { margin-top: 14px; color: var(--muted); font-size: 17px; line-height: 1.18; max-width: 1080px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .panel, .metric, .card, .table, .callout {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.9);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel { padding: 16px; }
+    .card { padding: 16px; min-height: 154px; }
+    .card p, .panel p { color: var(--muted); font-size: 16px; line-height: 1.16; margin-top: 8px; }
+    .metric { min-height: 106px; padding: 16px; }
+    .num { font-size: 42px; line-height: .88; font-weight: 850; }
+    .label { margin-top: 8px; color: var(--muted); font-size: 16px; line-height: 1.12; }
+    .callout { background: #11130f; color: var(--paper); padding: 18px; border-color: #11130f; }
+    .callout p { color: rgba(246,241,232,.9); font-size: 18px; line-height: 1.18; margin-top: 0; }
+    .bullets { list-style: none; padding: 0; margin: 0; display: grid; gap: 9px; }
+    .bullets li { position: relative; padding-left: 19px; font-size: 16px; line-height: 1.16; color: var(--muted); }
+    .bullets li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .42em;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #526716;
+    }
+    .callout .bullets li { color: rgba(246,241,232,.9); font-size: 17px; }
+    .callout .bullets li::before { background: var(--lime); }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 8px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      margin-bottom: 8px;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .gray { background: var(--gray); }
+    .red { background: var(--red); }
+    .scorebar { display: grid; grid-template-columns: 6fr 4fr; height: 34px; border: 1.5px solid var(--line); border-radius: 999px; overflow: hidden; margin-top: 12px; }
+    .scorebar div { display: flex; align-items: center; justify-content: center; font-weight: 850; font-size: 14px; }
+    .scorebar .strong { background: var(--lime); }
+    .scorebar .partial { background: var(--orange); }
+    .table { display: grid; grid-template-rows: auto 1fr; }
+    .thead, .trow { display: grid; align-items: start; border-bottom: 1px solid rgba(27,31,23,.18); }
+    .thead { background: #11130f; color: var(--paper); font-size: 11px; font-weight: 850; text-transform: uppercase; }
+    .thead > div, .trow > div { padding: 7px 9px; }
+    .trow { background: rgba(255,250,240,.72); font-size: 13px; line-height: 1.13; color: var(--muted); }
+    .trow:last-child { border-bottom: 0; }
+    .doctor { color: var(--ink); font-weight: 500; }
+    .rating {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 62px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 8px;
+      color: var(--ink);
+      font-size: 10px;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+    .rating.strong { background: var(--lime); }
+    .rating.partial { background: var(--orange); }
+    .comparison {
+      display: grid;
+      grid-template-columns: .92fr 1fr 1fr;
+      gap: 10px;
+      align-items: stretch;
+    }
+    .example { padding: 14px; min-height: 160px; }
+    .example h3 { font-size: 19px; }
+    .example p { font-size: 14px; line-height: 1.18; }
+    .split-note { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+    .dense-card { padding: 14px; min-height: 130px; }
+    .dense-card h3 { font-size: 18px; }
+    .dense-card p { font-size: 15px; line-height: 1.16; }
+    .small-note { color: var(--muted); font-size: 12px; line-height: 1.18; margin-top: 8px; }
+    .source-basis {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 14px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.15;
+      z-index: 2;
+    }
+    .slide-num { position: absolute; right: 28px; bottom: 14px; font-size: 10px; color: var(--muted); font-weight: 850; text-transform: uppercase; z-index: 3; }
+    .cover-layout {
+      min-height: 650px;
+      display: flex;
+      flex-direction: column;
+      padding-top: 80px;
+      gap: 24px;
+    }
+    .cover-title-block { width: 100%; display: flex; flex-direction: column; }
+    .cover-title-block .eyebrow {
+      justify-content: flex-start;
+      margin-bottom: 20px;
+      align-self: flex-start;
+    }
+    .cover-title-block h1 {
+      max-width: none;
+      width: 100%;
+      font-size: 58px;
+      line-height: .96;
+    }
+    .cover-title-block .dek {
+      width: 100%;
+      max-width: none;
+      margin-top: 20px;
+      font-size: 21px;
+      line-height: 1.2;
+    }
+    .cover-summary {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .cover-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .mini-metric { border: 1.5px solid var(--line); border-radius: 18px; background: rgba(255,250,240,.9); padding: 15px 20px; min-height: 92px; display: grid; grid-template-columns: auto 1fr; column-gap: 18px; align-items: center; }
+    .mini-metric .num { font-size: 42px; line-height: 1; min-width: 38px; font-weight: 560; }
+    .mini-metric .label { font-size: 19px; line-height: 1.12; margin-top: 0; }
+    .methodology-grid .card h3 { min-height: 42px; font-weight: 500; }
+    .accent-lime { color: var(--lime); }
+    .cover-summary .callout {
+      width: 100%;
+      padding: 19px 22px;
+      border-radius: 20px;
+    }
+    .cover-summary .callout .bullets {
+      gap: 10px;
+    }
+    .cover-summary .callout .bullets li {
+      font-size: 18px;
+      line-height: 1.16;
+      padding-left: 22px;
+    }
+    .band {
+      height: 14px;
+      border: 1.4px solid var(--line);
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--lime) 0 60%, var(--orange) 60% 100%);
+      margin-top: 14px;
+    }
+    @media print {
+      @page { size: 1280px 720px; margin: 0; }
+      html, body { width: 1280px; }
+      .slide { width: 1280px; height: 720px; min-height: 720px; padding: 30px 0 18px; }
+      .wrap { width: 1160px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide cover">
+    <img class="slide-bg-img" src="persona_answer_comparison_deck_cover_bg.png" alt="" aria-hidden="true" />
+    <div class="wrap cover-layout">
+      <div class="cover-title-block">
+        <div class="eyebrow">Wet AMD persona benchmark | May 29, 2026</div>
+        <h1>Persona simulations matched broad clinical posture more than source-specific detail</h1>
+        <p class="dek">Ten clean-context persona answers were compared with previously recorded real-answer summaries from interview benchmarks.</p>
+      </div>
+      <div class="cover-summary">
+        <div class="cover-metrics">
+          <div class="mini-metric"><div class="num">10</div><div class="label">expert personas tested<br>in clean context</div></div>
+          <div class="mini-metric"><div class="num">6</div><div class="label">strong conceptual matches<br>to answer summaries</div></div>
+          <div class="mini-metric"><div class="num">4</div><div class="label">partial matches with mostly<br>source-detail gaps</div></div>
+        </div>
+        <div class="callout">
+          <ul class="bullets">
+            <li>Simulations reliably recovered burden, durability, patient-selection, monitoring, and safety themes.</li>
+            <li>Weakest performance occurred where the recorded answer relied on trial, product, or protocol-specific details.</li>
+            <li>Calibration should preserve persona nuance while adding structured retrieval of source-specific facts.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="source-basis">Source basis: local persona simulation files and comparison log; real answers are paraphrased answer-key summaries, not transcript excerpts.</div>
+    <div class="slide-num">01 / 08</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="persona_answer_comparison_deck_cover_bg.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Methodology</div>
+        <h2>Benchmark structure separated clean-context generation from answer-key comparison</h2>
+        <p>The deck summarizes local artifacts produced for the persona benchmark. It does not reproduce full generated answers.</p>
+      </div>
+      <div class="grid-4 methodology-grid">
+        <div class="card">
+          <div class="tag lime">Step 1</div>
+          <h3>One isolated run<br>per expert</h3>
+          <p>Each persona answer was generated from that expert's profile plus the actual interview question only.</p>
+        </div>
+        <div class="card">
+          <div class="tag blue">Step 2</div>
+          <h3>Answer-key join<br>by reference ID</h3>
+          <p>A separate comparison joined simulations to recorded benchmark rows by reference ID.</p>
+        </div>
+        <div class="card">
+          <div class="tag orange">Step 3</div>
+          <h3>Paraphrased real<br>answer basis</h3>
+          <p>Recorded real answers are concise summaries from the answer key, not verbatim interview responses.</p>
+        </div>
+        <div class="card">
+          <div class="tag gray">Step 4</div>
+          <h3>Three-part<br>judgment rubric</h3>
+          <p>Each row captured match rating, strong matches, and missing or overstated elements.</p>
+        </div>
+      </div>
+      <div class="panel" style="margin-top:18px;">
+        <ul class="bullets">
+          <li>Interpretation is directional: it evaluates whether persona context can reproduce viewpoint, not whether it can recover hidden interview facts.</li>
+          <li>Full generated responses, comparison notes, and row-level details remain in companion Markdown and CSV artifacts.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">02 / 08</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="persona_answer_comparison_deck_cover_bg.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Scorecard</div>
+        <h2>All ten simulations retained usable viewpoint signal</h2>
+        <p>Six were strong matches; four were partial matches driven by missing source-specific detail.</p>
+      </div>
+      <div class="table" style="margin-top:12px;">
+        <div class="thead" style="grid-template-columns: 1.1fr .55fr .55fr 2.8fr;">
+          <div>Expert</div><div>Ref ID</div><div>Rating</div><div>Comparison pattern</div>
+        </div>
+        <div class="trow" style="grid-template-columns: 1.1fr .55fr .55fr 2.8fr;">
+          <div class="doctor">Allen C. Ho</div><div>ACH-002</div><div><span class="rating strong">Strong</span></div><div>Strategic role and high-burden fit matched; missed some source-specific framing.</div>
+        </div>
+        <div class="trow" style="grid-template-columns: 1.1fr .55fr .55fr 2.8fr;">
+          <div class="doctor">Arshad M. Khanani</div><div>AK-004</div><div><span class="rating partial">Partial</span></div><div>Captured burden and safety themes; missed trial-specific details and numeric anchors.</div>
+        </div>
+        <div class="trow" style="grid-template-columns: 1.1fr .55fr .55fr 2.8fr;">
+          <div class="doctor">Carl D. Regillo</div><div>CDR-011</div><div><span class="rating partial">Partial</span></div><div>Captured durability/PDS themes; missed exudation-threshold and agent-similarity specifics.</div>
+        </div>
+        <div class="trow" style="grid-template-columns: 1.1fr .55fr .55fr 2.8fr;">
+          <div class="doctor">Charles C. Wykoff</div><div>CW-005</div><div><span class="rating strong">Strong</span></div><div>Strong match on access, choice, and anti-step-therapy stance.</div>
+        </div>
+        <div class="trow" style="grid-template-columns: 1.1fr .55fr .55fr 2.8fr;">
+          <div class="doctor">Dante J. Pieramici</div><div>DJP-013</div><div><span class="rating strong">Strong</span></div><div>Strong match on durability as unmet need and burden-reduction platforms.</div>
+        </div>
+        <div class="trow" style="grid-template-columns: 1.1fr .55fr .55fr 2.8fr;">
+          <div class="doctor">David M. Brown</div><div>DB-007</div><div><span class="rating strong">Strong</span></div><div>Strong match on familiar platform and realistic durability expectations.</div>
+        </div>
+        <div class="trow" style="grid-template-columns: 1.1fr .55fr .55fr 2.8fr;">
+          <div class="doctor">Jeffrey S. Heier</div><div>JSH-001</div><div><span class="rating strong">Strong</span></div><div>Strong match on subretinal targeting and immune-exposure rationale.</div>
+        </div>
+        <div class="trow" style="grid-template-columns: 1.1fr .55fr .55fr 2.8fr;">
+          <div class="doctor">Nancy M. Holekamp</div><div>NH-12</div><div><span class="rating partial">Partial</span></div><div>Good clinical logic; missed fluid-type and timing details.</div>
+        </div>
+        <div class="trow" style="grid-template-columns: 1.1fr .55fr .55fr 2.8fr;">
+          <div class="doctor">Peter K. Kaiser</div><div>PK-007</div><div><span class="rating strong">Strong</span></div><div>Strong match on two switch/extend use cases and monitoring.</div>
+        </div>
+        <div class="trow" style="grid-template-columns: 1.1fr .55fr .55fr 2.8fr;">
+          <div class="doctor">Philip J. Rosenfeld</div><div>PR-20</div><div><span class="rating partial">Partial</span></div><div>Good OCT-first stance; missed the specific dry-interval protocol.</div>
+        </div>
+      </div>
+      <div class="small-note">Strong: broad posture plus several distinctive answer themes matched. Partial: posture matched, but recorded answer specifics were missing or diluted.</div>
+    </div>
+    <div class="slide-num">03 / 08</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="persona_answer_comparison_deck_cover_bg.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Recurring strong-match patterns</div>
+        <h2>Persona context was most predictive for clinical judgment and tradeoff language</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="tag lime">Burden + durability</div>
+          <h3>High-frequency treatment burden was consistently recovered</h3>
+          <p>Simulations repeatedly framed durable therapies, PDS, home OCT, gene therapy, and high-dose anti-VEGF around reducing burden without sacrificing vision.</p>
+        </div>
+        <div class="card">
+          <div class="tag blue">Safety + monitoring</div>
+          <h3>Tradeoffs were usually plausible and persona-consistent</h3>
+          <p>Generated answers emphasized inflammation, infection, procedure risk, rescue criteria, monitoring, and breakthrough activity when relevant.</p>
+        </div>
+        <div class="card">
+          <div class="tag orange">Patient selection</div>
+          <h3>Simulations captured who should be considered first</h3>
+          <p>High-burden, treatment-responsive, frequent-injection, refractory, or access-constrained patient frames appeared across strong matches.</p>
+        </div>
+      </div>
+      <div class="grid-2" style="margin-top:18px;">
+        <div class="panel">
+          <h3>Best-recovered clinical stances</h3>
+          <ul class="bullets" style="margin-top:14px;">
+            <li>Gene therapy as a selected-patient foundation, not a broad injection replacement.</li>
+            <li>Anti-VEGF durability as useful only if anatomy and vision remain controlled.</li>
+            <li>Access policies and step therapy as real risks when they delay vision-preserving care.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Why the persona signal helped</h3>
+          <ul class="bullets" style="margin-top:14px;">
+            <li>Profiles encoded treatment philosophy, practice priorities, trial involvement, and likely adoption thresholds.</li>
+            <li>Opinion questions rewarded reasoning style more than factual recall.</li>
+            <li>Clinical archetypes remained stable across different interview topics.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">04 / 08</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="persona_answer_comparison_deck_cover_bg.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Recurring gaps</div>
+        <h2>Source-specific details were the main failure mode</h2>
+        <p>Gaps generally reflected information that a clean persona would not necessarily contain unless the profile encoded the original interview's evidence context.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="tag orange">Trial contours</div>
+          <h3>Named data details were often absent</h3>
+          <p>Partial rows missed details such as first suprachoroidal trial framing, over 70% burden reduction, 6-month dose-level findings, and LADDER/ARCHWAY support.</p>
+        </div>
+        <div class="card">
+          <div class="tag blue">Product specifics</div>
+          <h3>Product and platform names were under-specified</h3>
+          <p>Some simulations captured mechanism or class logic but omitted RGX-314, REGENXBIO AAV8, neutralizing antibodies, or 2 mg to 8 mg switching details.</p>
+        </div>
+        <div class="card">
+          <div class="tag pink">Protocol details</div>
+          <h3>Management algorithms lost granularity</h3>
+          <p>Recorded answers included timing rules, fluid-priority distinctions, and specific retreatment intervals that simulations often paraphrased generically.</p>
+        </div>
+        <div class="card">
+          <div class="tag gray">Plausible additions</div>
+          <h3>Generated answers sometimes added reasonable but unrecorded cautions</h3>
+          <p>Examples included route-specific surgical concerns, payer factors, or broader workflow cautions that fit the persona but were not central to the recorded answer.</p>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:18px;">
+        <p><span class="accent-lime">Implication</span>: persona-only simulation can test viewpoint fidelity, but benchmark scoring should not penalize missing hidden factual details unless those details are present in the persona context.</p>
+      </div>
+    </div>
+    <div class="slide-num">05 / 08</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="persona_answer_comparison_deck_cover_bg.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Representative examples</div>
+        <h2>Strong matches aligned on stance; partial matches diverged on details</h2>
+        <p>Examples below summarize the comparison log. Simulated text and real-answer summaries are intentionally compressed.</p>
+      </div>
+      <div class="comparison">
+        <div class="example panel">
+          <div class="tag lime">Strong | Access</div>
+          <h3>Charles Wykoff</h3>
+          <p><strong>Question:</strong> choosing wet AMD treatments under access and step-therapy constraints.</p>
+          <p><strong>Comparison:</strong> closely matched patient/physician choice, timely access, and opposition to mandatory step therapy.</p>
+        </div>
+        <div class="example panel">
+          <div class="tag blue">Simulated answer pattern</div>
+          <p>Matched treatment to disease activity, OCT, vision, follow-up reliability, and access; warned that forced sequencing can risk irreversible vision loss.</p>
+        </div>
+        <div class="example panel">
+          <div class="tag orange">Recorded summary pattern</div>
+          <p>Real-answer summary emphasized patient and physician choice, Avastin off-label/repackaging concerns, step-therapy opposition, and ASRS access resources.</p>
+        </div>
+      </div>
+      <div class="comparison" style="margin-top:14px;">
+        <div class="example panel">
+          <div class="tag orange">Partial | Trial data</div>
+          <h3>Arshad Khanani</h3>
+          <p><strong>Question:</strong> significance of suprachoroidal RGX-314 AAVIATE data.</p>
+          <p><strong>Comparison:</strong> captured burden-reduction theme but missed most trial-specific data contours.</p>
+        </div>
+        <div class="example panel">
+          <div class="tag blue">Simulated answer pattern</div>
+          <p>Focused on high-burden patients, fewer visits, maintained vision/anatomy, safety, patient selection, and avoiding undertreatment.</p>
+        </div>
+        <div class="example panel">
+          <div class="tag orange">Recorded summary pattern</div>
+          <p>Real-answer summary included first suprachoroidal gene-therapy trial, over 70% burden reduction, 6-month data, and ongoing dose/NAb analyses.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">06 / 08</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="persona_answer_comparison_deck_cover_bg.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Calibration implications</div>
+        <h2>The benchmark supports a two-layer persona workflow</h2>
+        <p>Persona simulation should preserve judgment style, while source-specific retrieval supplies trial facts and named details.</p>
+      </div>
+      <div class="grid-2">
+        <div class="panel">
+          <h3>Keep persona-only prompts for viewpoint testing</h3>
+          <ul class="bullets" style="margin-top:14px;">
+            <li>Use subjective, opinion-oriented questions with no single right answer.</li>
+            <li>Score for posture, prioritization, tradeoff language, and likely adoption thresholds.</li>
+            <li>Track plausible additions separately from factual errors.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Add retrieval context for fact-sensitive simulations</h3>
+          <ul class="bullets" style="margin-top:14px;">
+            <li>Provide trial names, product labels, data cuts, or mechanism notes when the question requires them.</li>
+            <li>Separate "what the persona would think" from "what the expert actually cited in that interview."</li>
+            <li>Use answer-key details as calibration targets, not hidden facts the model should infer.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="grid-3" style="margin-top:18px;">
+        <div class="dense-card panel">
+          <div class="tag lime">Score design</div>
+          <h3>Split scores</h3>
+          <p>Rate conceptual stance and source-specific detail separately.</p>
+        </div>
+        <div class="dense-card panel">
+          <div class="tag blue">Persona upkeep</div>
+          <h3>Add evidence hooks</h3>
+          <p>Encode known trial involvement and signature phrases as structured profile fields.</p>
+        </div>
+        <div class="dense-card panel">
+          <div class="tag orange">Benchmark growth</div>
+          <h3>Balance topics</h3>
+          <p>Include access, monitoring, durability, mechanism, and real-world adoption prompts.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">07 / 08</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="persona_answer_comparison_deck_cover_bg.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Operating model</div>
+        <h2>Use the deck as the summary layer, and keep row-level evidence in companion artifacts</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="tag lime">Deck</div>
+          <h3>Decision-facing synthesis</h3>
+          <p>Use slides for methodology, scorecard, recurring patterns, representative examples, and calibration implications.</p>
+        </div>
+        <div class="card">
+          <div class="tag blue">Markdown log</div>
+          <h3>Readable detail</h3>
+          <p>Retain complete generated answers, recorded answer summaries, and narrative comparisons for analyst review.</p>
+        </div>
+        <div class="card">
+          <div class="tag orange">CSV log</div>
+          <h3>Structured scoring</h3>
+          <p>Use row-level fields for rating distribution, gap tagging, future re-scoring, and prompt iteration.</p>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:18px;">
+        <ul class="bullets">
+          <li>Viewer-facing claim: these are local benchmark artifacts comparing simulated persona answers with paraphrased recorded real-answer summaries.</li>
+          <li>Do not treat the deck as a substitute for source interviews, transcripts, or the full answer key.</li>
+          <li>Next iteration should expand benchmark rows and tag gaps by type: trial fact, product detail, protocol rule, or plausible-but-unrecorded addition.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">08 / 08</div>
+  </article>
+</body>
+</html>

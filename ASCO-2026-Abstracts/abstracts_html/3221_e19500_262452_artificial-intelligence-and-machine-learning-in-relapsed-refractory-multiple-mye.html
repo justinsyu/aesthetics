@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Artificial intelligence and machine learning in relapsed/refractory multiple myeloma: A systematic review.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Artificial intelligence and machine learning in relapsed/refractory multiple myeloma: A systematic review.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e19500</div>
+    <div><strong>First speaker:</strong> Kesar Prajapati, MD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/262452">https://www.asco.org/abstracts-presentations/262452</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Relapsed/refractory multiple myeloma (RRMM) remains incurable with heterogeneous outcomes. Traditional prognostic systems (ISS/R-ISS) offer limited discriminatory power and no treatment guidance in heterogeneous RRMM. The heterogeneity of RRMM makes it suitable for AI/ML applications; however, these approaches have not been systematically reviewed.</div>
+  <main> 
+
+	<div><b>Background: </b></p>  Relapsed/refractory multiple myeloma (RRMM) remains incurable with heterogeneous outcomes. Traditional prognostic systems (ISS/R-ISS) offer limited discriminatory power and no treatment guidance in heterogeneous RRMM. The heterogeneity of RRMM makes it suitable for AI/ML applications; however, these approaches have not been systematically reviewed.</p>  <b>Methods: </b></p>  We systematically searched PubMed, Embase, and Web of Science (till December 2025) for studies applying AI/ML to RRMM populations. Included studies required: (1) AI/ML algorithm application, (2) RRMM patients included or validated, and (3) clinical outcome prediction. Studies were categorized by application domain. Performance metrics (C-index, AUC), validation methods, and clinical applicability were extracted.</p>  <b>Results: </b> We identified 20 studies applying AI/ML to &gt;20,000 patients across six RRMM-relevant domains. Survival prediction (n=7): Transformer, Random Forest, and ensemble models achieved C-indices of 0.62–0.82; the EMN-HARMONY model (N=14,345) showed 6-variable score outperforming R-ISS, while POD24 was strongest mortality predictor. CAR T-cell therapy (n=3): The MyCARe logistic regression model stratified 5-month relapse risk (7% vs 27% vs 53%; p&lt;0.001) using 4 clinical variables; single-cell multiomics identified CD4+ cytotoxic T cells as predictors of both response and toxicity. Treatment response (n=4): IsomiR-based classifiers achieved high accuracy (AUC 0.98) for daratumumab response; multiomics network models (mmSYGNAL) outperformed ISS and cytogenetics across disease trajectory. Toxicity prediction (n=3): ML nomograms predicted carfilzomib-associated heart failure (C-index 0.78) and daratumumab-related pneumonia (AUC &gt;0.80) using ECOG, hemoglobin, and comorbidities. Minimal residual disease (MRD) (n=1): AI-based pattern classification of longitudinal MRD significantly stratified PFS (p&lt;10⁻⁷). Imaging radiomics (n=2): 3D-CNN on whole-body MRI (AUC 0.804) and DeepSurv on PET/CT (C-index 0.657) identified prognostic imaging features. External validation: 11/20 studies (55%).</p>  <b>Conclusions: </b> AI/ML demonstrates substantial potential for RRMM risk stratification, CAR T optimization, treatment response prediction, and toxicity prevention. Three models (MyCARe, EMN-HARMONY, carfilzomib cardiotoxicity nomogram) use routine clinical variables and are immediately implementable. Standardized external validation and prospective trials are needed for widespread clinical application.</div>
+
+
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>Study</td>
+<td>Method</td>
+<td>Finding</td>
+<td>Metric</td>
+</tr>
+<tr>
+<td>Mosquera 2025</td>
+<td>Ensemble ML</td>
+<td>6-variables vs R-ISS</td>
+<td>C-index:0.66</td>
+</tr>
+<tr>
+<td>Gagelmann 2024</td>
+<td>Logistic</td>
+<td>MyCARe CAR T relapse score</td>
+<td>7% vs 53% relapse</td>
+</tr>
+<tr>
+<td>Gómez-Martín 2025</td>
+<td>IsomiR</td>
+<td>Daratumumab response</td>
+<td>AUC:0.98</td>
+</tr>
+<tr>
+<td>Qiao 2025</td>
+<td>XGBoost</td>
+<td>carfilzomib cardiotoxicity</td>
+<td>C:0.78</td>
+</tr>
+<tr>
+<td>Martinez-Lopez 2024</td>
+<td>AI class</td>
+<td>MRD dynamics</td>
+<td>p10⁻⁷</td>
+</tr>
+<tr>
+<td>Morita 2024</td>
+<td>3D-CNN</td>
+<td>whole-body-MRI prognosis</td>
+<td>AUC:0.80</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

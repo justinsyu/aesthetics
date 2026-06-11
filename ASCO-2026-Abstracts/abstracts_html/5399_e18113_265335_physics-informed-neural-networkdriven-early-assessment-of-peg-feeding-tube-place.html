@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Physics-informed neural network–driven early assessment of PEG feeding tube placement prediction for head and neck cancer.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Physics-informed neural network–driven early assessment of PEG feeding tube placement prediction for head and neck cancer.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e18113</div>
+    <div><strong>First speaker:</strong> Kaushik Halder, PhD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/265335">https://www.asco.org/abstracts-presentations/265335</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Percutaneous endoscopic gastronomy (PEG) feeding tubes are placed in patients with head and neck (HN) cancer to manage nutritional challenges during treatment. Developing a prediction model to assist clinicians in identifying patients requiring PEG feeding tubes is important for augmenting the clinical decision-making. This study focuses on developing Physics-informed Neural Network (PINN)-based prediction models utilizing the key features for PEG feeding tube placement.</div>
+  <main> 
+
+	<div><b>Background: </b> Percutaneous endoscopic gastronomy (PEG) feeding tubes are placed in patients with head and neck (HN) cancer to manage nutritional challenges during treatment. Developing a prediction model to assist clinicians in identifying patients requiring PEG feeding tubes is important for augmenting the clinical decision-making. This study focuses on developing Physics-informed Neural Network (PINN)-based prediction models utilizing the key features for PEG feeding tube placement.</p>  <b>Methods: </b> Data was collected from 65 patients who received radiation therapy (66-70 Gy in 33-35 fractions). Of which 32 patients underwent PEG placement in reactive condition and patients’ median age was 65 years (range: 42-93 yrs). To develop the PINN-based PEG feeding tube prediction model, clinically most impactful features were identified by the Radiation Oncologists, including Age, Performance status, Weight loss at first OTV, Weight loss at last OTV, Tumor (T-stage), Neck Involvement, Level 1 to Level 5 (index), Bi-neck (index), Pre-treatment Dysphagia, Mean dose to oropharynx, Mean dose to Hypopharynx, Mean dose to Oral Cavity, Mean dose to Cervical Esophagus, Mean dose to Pharyngeal Constrictor, and Mean dose to Parotid Gland combined. The designed predictive model comprises of three layers of dense neural network with the combination of binary cross entropy and physics-based mean square error residual loss function. The considered cost function minimizes the deviation between network output and an explicitly formulated analytical expression using input features to accurately predict PEG tube placement.</p>  <b>Results: </b> The developed PINN model with these 19 features as inputs, achieved performance as AUC of 0.78 (&#177;0.09), sensitivity of 0.85 (&#177;0.18), and specificity of 0.72 (&#177;0.22) for five-fold cross validation. This study also highlights comparative analysis with conventional models (Random Forest (RF), K-nearest Neighbor (KNN), and Gradient boost (GB)), in which AUCs observed in the range of 0.65 to 0.70. Results also indicated that proposed PINN architecture achieved the best prediction performance with 11.4% improvement in AUC metric compared to other models.</p>  <b>Conclusions: </b> This study provided encouraging results while the influential features are employed for developing the machine learning (ML)-based prediction model with the objective of feeding tube placement for HN cancer patients. However, future study with multicentric large cohort of patients’ data is warranted.</div>
+
+
+
+	<div class="table_caption"><b>The performance analysis of PINN-based PEG feeding tube prediction models.</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p><strong>ML-models</strong></p>
+</td>
+<td>
+<p><strong>AUC</strong></p>
+</td>
+<td>
+<p><strong>Sensitivity</strong></p>
+</td>
+<td>
+<p><strong>Specificity</strong></p>
+</td>
+<td>
+<p><strong>Weighted Avg F1-score</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>RF</p>
+</td>
+<td>
+<p>0.70 (±0.09)</p>
+</td>
+<td>
+<p>0.90 (±0.07)</p>
+</td>
+<td>
+<p>0.61 (±0.16)</p>
+</td>
+<td>
+<p>0.75 (±0.06)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>KNN</p>
+</td>
+<td>
+<p>0.67 (±0.18)</p>
+</td>
+<td>
+<p>0.74 (±0.31)</p>
+</td>
+<td>
+<p>0.69 (±0.21)</p>
+</td>
+<td>
+<p>0.72 (±0.08)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>GB</p>
+</td>
+<td>
+<p>0.65 (±0.09)</p>
+</td>
+<td>
+<p>0.72 (±0.19)</p>
+</td>
+<td>
+<p>0.70 (±0.16)</p>
+</td>
+<td>
+<p>0.71 (±0.06)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>PINN (Proposed)</strong></p>
+</td>
+<td>
+<p><strong>0.78 (±0.09)</strong></p>
+</td>
+<td>
+<p><strong>0.85 (±0.18)</strong></p>
+</td>
+<td>
+<p><strong>0.72 (±0.22)</strong></p>
+</td>
+<td>
+<p><strong>0.76 (±0.09)</strong></p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

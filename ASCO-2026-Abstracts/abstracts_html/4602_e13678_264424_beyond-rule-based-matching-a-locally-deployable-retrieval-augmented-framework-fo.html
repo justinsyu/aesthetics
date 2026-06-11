@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beyond rule-based matching: A locally deployable retrieval-augmented framework for clinical trial prescreening.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Beyond rule-based matching: A locally deployable retrieval-augmented framework for clinical trial prescreening.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e13678</div>
+    <div><strong>First speaker:</strong> Aashish S Raman</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/264424">https://www.asco.org/abstracts-presentations/264424</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Enrollment in clinical trials is critically hindered by the administrative burden of manually matching patient histories with unstructured eligibility criteria. resulting in the frequent overlooking of eligible patients, stagnating adult cancer patient enrollment at only 5–7%. Traditional keyword-based search fails to capture semantic nuance, and standard AI models are limited by their static training data. In this study, we validate the Retrieval-Augmented Generation (RAG) architecture that dynamically retrieves the clinical trial protocols relevant to a patient&#x27;s case and integrates this external text into our locally deployed Cross-Encoder model for analysis. This allows the system to ground its eligibility assessments in a real-time review of trial criteria, ensuring decisions reflect current protocols rather than relying on the static, often outdated knowledge memorized during model training.</div>
+  <main> 
+
+	<div><b>Background: </b></p>  Enrollment in clinical trials is critically hindered by the administrative burden of manually matching patient histories with unstructured eligibility criteria. resulting in the frequent overlooking of eligible patients, stagnating adult cancer patient enrollment at only 5–7%. Traditional keyword-based search fails to capture semantic nuance, and standard AI models are limited by their static training data. In this study, we validate the Retrieval-Augmented Generation (RAG) architecture that dynamically retrieves the clinical trial protocols relevant to a patient's case and integrates this external text into our locally deployed Cross-Encoder model for analysis. This allows the system to ground its eligibility assessments in a real-time review of trial criteria, ensuring decisions reflect current protocols rather than relying on the static, often outdated knowledge memorized during model training.</p>  <b>Methods: </b></p>  We utilized the TREC Clinical Trials dataset (2021-22) of 375,581 trials, to validate the RAG architecture on a pooled oncology cohort of 57 patients. We implemented a four stage framework , which each level designed to resolve a specific barrier to automated matching:</p> <ol> <li>Semantic Retrieval (S-PubMedBert): Captures conceptual clinical meaning (e.g., linking "Lung Cancer" to "SCLC") independent of exact word overlap.</li> <li>Keyword Retrieval (BM25): Enforces strict matching for critical molecular identifiers (e.g., "HER2-positive") to prevent false positives.</li> <li>Reciprocal Rank Fusion: Synthesizes semantic and keyword signals to prioritize trials with high confidence from both methods.</li> <li>Cross-Encoder Reranking (BGE-Reranker-v2-M3): Performs a final assessment of top candidates to verify complex eligibility logic (e.g., exclusion criteria) akin to human chart reviews.</li> </ol>  </p>  <b>Results: </b></p>  The framework achieved a retrieval Precision@10 of 0.47, representing a 67.8% relative improvement over a standard keyword search baseline (BM25) of 0.24, and Precision@3 of 0.50. While cloud-based LLMs may achieve marginally higher precision, they are deployable only in non-HIPAA environments; our system achieves comparable utility with zero Patient Health Information leakage.</p>  <b>Conclusions: </b></p>  We conclude that a locally hosted lightweight Retrieval-Augmented architecture could serve as a superior alternative to standard keyword based trial matching, balancing specialist-level precision with data privacy. This framework effectively eliminates the manual screening bottleneck, establishing a scalable foundation for automated, real-time patient recruitment.</div>
+
+
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p>Metric</p>
+</td>
+<td>
+<p>RAG</p>
+</td>
+<td>
+<p>BM25*</p>
+</td>
+<td>
+<p>Relative Improvement</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Precision@3*</p>
+</td>
+<td>
+<p>0.50</p>
+</td>
+<td>
+<p>0.33</p>
+</td>
+<td>
+<p>+51.6%</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Precision@10*</p>
+</td>
+<td>
+<p>0.47</p>
+</td>
+<td>
+<p>0.28</p>
+</td>
+<td>
+<p>+67.8%</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>NDCG@10*</p>
+</td>
+<td>
+<p>0.67</p>
+</td>
+<td>
+<p>0.31</p>
+</td>
+<td>
+<p>+116%</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+ 
+	<div class="table_footer">Precision@k – Proportion of relevant trials identified within the top <i>k</i> results. </p>
+<p>NDCG@k – Normalized Discounted Cumulative Gain at <i>k</i></p>
+<p>BM25 – Best Matching 25 (Standard keyword search baseline).</div> 
+
+
+</main>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Knowledge distillation for glioma diagnosis: ResNet-based deep learning for WHO grade stratification with real-world deployment optimization.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Knowledge distillation for glioma diagnosis: ResNet-based deep learning for WHO grade stratification with real-world deployment optimization.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 2083</div>
+    <div><strong>First speaker:</strong> Sravani Bhavanam, MBBS</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/259166">https://www.asco.org/abstracts-presentations/259166</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b></p>  Gliomas are the most common primary CNS malignancies. WHO 2021 classification stratifies diffuse gliomas into molecularly-defined grades with vastly different treatment pathways: grades 2–3 (median survival 7–10 years) versus grade 4 glioblastoma (median survival 15 months untreated). Accurate preoperative grading is critical for surgical planning and treatment intensity. However, 5–8% of gliomas are initially misdiagnosed as meningiomas or pituitary adenomas, delaying definitive treatment by 3–6 months. Automated systems achieving high accuracy while remaining deployable in resource-limited settings could substantially reduce diagnostic error.</p>  <b>Methods: </b></p>  Retrospective cohort: 2,840 brain MRI studies (1,400 gliomas: 700 grade 2–3, 700 grade 4; 900 meningiomas; 540 pituitary adenomas) from six continents. Ground truth used WHO 2021 classification; expert neuroradiologist consensus confirmed diagnoses. ResNet152 (60.2M parameters; 224×224 input; 28.6 GFLOPs) optimized for multi-sequence fusion (T1, T2, FLAIR, post-contrast) served as reference. ResNet18 (11.7M parameters; 224×224 input; 1.8 GFLOPs; 81% parameter reduction) underwent structured knowledge distillation—soft probability targets from ResNet152 with temperature-scaled softmax and regularized cross-entropy loss. Model performance evaluated on accuracy, sensitivity, specificity, F1-score, AUROC. Differential diagnostic accuracy assessed. Deployed globally; 52 neuroradiologists evaluated across six continents.</p>  <b>Results: </b></p>  Glioma grading: ResNet18 achieved 96.9% accuracy for grade 2–3 vs. grade 4 (sensitivity 97.8%, specificity 96.0%, AUROC 0.991). Differential diagnosis: 95.1% for glioma vs. meningioma; 96.0% for glioma vs. pituitary. External validation confirmed consistent performance (93–97% grading; 94–96% differential diagnosis). Deployment advantage: ResNet18 inference time 38ms/image (ResNet152: 320ms), enabling real-time clinical integration on standard hospital GPU servers. Global deployment: 94.6% of neuroradiologists rated the system clinically valuable. Knowledge distillation preserved 99.2% of teacher diagnostic accuracy while reducing computational cost by 93.7%.</p>  <b>Conclusions: </b></p>  Knowledge distillation enables ResNet18 to achieve ResNet152-comparable diagnostic accuracy for glioma grading and differential diagnosis while reducing parameters by 81% and computational cost by 94%. This framework solves critical deployment barriers in resource-limited healthcare systems. ResNet18's efficiency enables real-time inference on standard hardware, rapid diagnostic turnaround, and scalable global implementation. This system merits prospective evaluation to reduce time-to-diagnosis and eliminate glioma misclassification worldwide.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

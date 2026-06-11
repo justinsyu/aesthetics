@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Identifying high-risk cytogenetic subgroups in multiple myeloma using large language artificial intelligence models.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Identifying high-risk cytogenetic subgroups in multiple myeloma using large language artificial intelligence models.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 7523</div>
+    <div><strong>First speaker:</strong> John Culnan, PhD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/261376">https://www.asco.org/abstracts-presentations/261376</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b></p>  The Revised International Staging System (R-ISS) is the clinical standard for risk stratification in multiple myeloma (MM) and is central to treatment selection and prognostication. However, the cytogenetic abnormalities on which the R-ISS is predicated are typically reported in unstructured formats within bone marrow biopsy reports and clinical notes. Despite the critical importance and relevance of obtaining cytogenetic abnormalities in MM, this information is often missing from large clinical databases, limiting their availability for large scale research and real-world analyses. Here, we created a large language model (LLM)-based algorithm to identify cytogenetic abnormalities from unstructured text and evaluated our model’s adaptability by comparing its performance across definitions of high-risk abnormalities.</p>  <b>Methods: </b></p>  We extracted oncology notes and pathology reports within 2 years of diagnosis from the EHR of adult patients with MM registered within the Department of Veterans Affairs (VA) Cancer Registry System between 2000 and 2024. Two physician reviewers iteratively annotated 1600-character snippets from these texts for abnormalities and their type (gain, deletion, translocation) plus normal cytogenetics. From these annotations we identified items with high-risk cytogenetic abnormalities per current guidelines (del(17p) in &gt;&nbsp;20% plasma cells; TP53 mutation; gain(1q) and/or del(1p32) plus t(4;14), t(14;16), or t(14;20); monoallelic del(1p32) plus gain(1q); biallelic del(1p32)) and previous guidelines (t(4;14), t(14;16), t(14;20), del TP53/17p, del(1p), gain(1q)). We used few-shot prompting with GPT-OSS 120B to extract cytogenetic results and validated our model on a test set of 985 snippets representing 773 patients at 98 VA centers.</p>  <b>Results: </b></p>  The test set contained 81 snippets with normal cytogenetics and 464 with abnormalities; 58 were high-risk per current guidelines and 144 per previous guidelines. Our model successfully identified high-risk cytogenetics per current (P: 88.9%, R: 82.8%, F1: 85.7%) and previous guidelines (P: 86.7%, R: 90.3%, F1: 88.4%), as well as type of cytogenetic abnormality (weighted averages; P: 92.3%, R: 92.2%, F1: 92.4%), demonstrating its utility and flexibility for the task as standards change. Applied to a cohort of 7250 unlabeled notes, our model identified high-risk cytogenetics in 501 (6.9%) and any cytogenetic information in 5385 (74.3%).</p>  <b>Conclusions: </b></p>  Our model demonstrated the successful capture of cytogenetic information across multiple definitions of high-risk cytogenetic abnormalities, providing a fast, adaptable framework for extraction that traditionally required repeated large-scale human efforts. Leveraging an LLM for this task enables scalable MM risk stratification while reducing clinician burden and supporting rapid adaptation to evolving cytogenetic risk definitions.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

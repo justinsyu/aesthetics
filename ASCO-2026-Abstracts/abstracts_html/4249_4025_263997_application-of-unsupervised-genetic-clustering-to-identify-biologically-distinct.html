@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Application of unsupervised genetic clustering to identify biologically distinct cholangiocarcinoma subtypes with differential survival.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Application of unsupervised genetic clustering to identify biologically distinct cholangiocarcinoma subtypes with differential survival.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 4025</div>
+    <div><strong>First speaker:</strong> Qianchen Zhang, BS, MSc</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/263997">https://www.asco.org/abstracts-presentations/263997</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b></p>  Cholangiocarcinoma (CCA) is a genetically heterogeneous malignancy for which current anatomic and histologic classifications inadequately predict survival. We hypothesized that unsupervised machine learning clustering of mutations and copy number alterations(CNA) could identify biologically distinct CCA subgroups with clinically meaningful differences in survival.</p>  <b>Methods: </b></p>  Genomic and clinical data were obtained from the MSK cholangiocarcinoma dataset from cBioPortal. 790 patients with intrahepatic and extrahepatic CCA with available mutation and CNA data were included. Multiple unsupervised approaches were evaluated, including k-means, hierarchical clustering, non-negative matrix factorization, PCA–k-means, and UMAP–k-means. Model performance was assessed using silhouette scores, with UMAP–k-means (n=4 clusters) selected as the optimal method. Clusters were defined by dominant genetic alterations and compared for overall survival using Kaplan–Meier analysis with pairwise log-rank testing. Subgroup analyses included patients without curative-intent surgery and a young-onset cohort.</p>  <b>Results: </b></p>   UMAP–k-means delineated four distinct genomic clusters ordered by progressively worse median survival. Cluster 1, defined by <i>ARID1A</i> or <i>BAP1</i> mutations, demonstrated the most favorable survival outcomes. Cluster 2 consisted of tumors wild type for recurrent driver alterations. Cluster 3 was characterized by <i>TP53</i>, <i>KRAS</i>, or <i>IDH1</i> mutations. Cluster 4, defined by <i>CDKN2A</i> double deletion or <i>ERBB2</i> amplification, exhibited the poorest median survival. Overall survival differed significantly across clusters, with all pairwise Kaplan–Meier comparisons reaching statistical significance except between clusters 1 and 2. These survival differences remained significant in patients who did not undergo curative-intent surgery. Notably, cluster 4 remained associated with significantly worse survival within the young-onset cohort.</p>   <b>Conclusions: </b></p>  Unsupervised genomic clustering using UMAP–k-means identified biologically distinct subtypes of cholangiocarcinoma, with clinically significant survival differences that persist across surgical and age-based subgroups. These findings support future genomic subtyping as a prognostic framework and a rationale for biology-driven clinical trial stratification in cholangiocarcinoma.</div>
+
+
+
+	<div class="table_caption"><b>Unsupervised genetic clustering identifies biologically distinct cholangiocarcinoma subtypes with differential survival.</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>Cluster</td>
+<td>Primary Genetic alterations</td>
+<td>N patients</td>
+<td>Median OS</td>
+<td>log-rank test P-value vs cluster 2</td>
+<td>log-rank test P-value vs cluster 3</td>
+<td>log-rank test P-value vs cluster 4</td>
+</tr>
+<tr>
+<td>1</td>
+<td>ARID1A or BAP1 mutant</td>
+<td>120</td>
+<td>28.0</td>
+<td>0.308</td>
+<td>&lt;0.001</td>
+<td>&lt;0.001</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Wild types</td>
+<td>224</td>
+<td>26.7</td>
+<td>-</td>
+<td>0.003</td>
+<td>&lt;0.001</td>
+</tr>
+<tr>
+<td>3</td>
+<td>TP53, KRAS or IDH1 mutant</td>
+<td>319</td>
+<td>22.0</td>
+<td></td>
+<td>-</td>
+<td>0.002</td>
+</tr>
+<tr>
+<td>4</td>
+<td>CDKN2A deletion or ERBB2 amplification</td>
+<td>127</td>
+<td>16.9</td>
+<td></td>
+<td></td>
+<td>-</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

@@ -1,0 +1,472 @@
+
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+	<html lang="en-US">
+	<head>
+		<title>State of Louisiana - Boards and Commissions</title>
+		
+			<link rel="stylesheet" type="text/css" href="style.css"/>
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<script language="javascript">
+		<!--
+			function docChanged ()
+			{	document.changed = true;
+			}
+			// returns whether or not docChanged() has been called on this page
+			function docHasChanged ()
+			{	return (typeof(document.changed) != "undefined" && document.changed);
+			}
+			// notifies the user that changes have not been saved
+			function confirmChangesNotSaved ()
+			{	return confirm ("Your changes have NOT yet been saved.\n\nPress OK to leave this page WITHOUT saving.");
+			}
+			function toZip(element)
+			{	if (element.value == "") return;
+				var regexp = /\d\d\d\d\d/;
+				var regexp2 = /\d\d\d\d\d\?\-?\d\d\d\d/;
+				if ((element.length != 5 || element.length != 10) && (!regexp.test(element.value) || !regexp2.test(element.value)))
+				//if (!regexp.test (element.value) && !regexp2.test(element.value))
+				{	alert ("Invalid Zip Code Format. \nTry xxxxx or xxxxx-xxxx\n");
+					element.select();
+				}
+			}
+			function toEmail(element)
+			{	if (element.value == "") return;
+				var regexp = /[\w\-\.]+@[\w\-\.]+/;
+				if (!regexp.test (element.value))
+				{	alert ("Invalid Email Format.\nYour email should be in the form: username@host.com\n");
+					element.select();
+				}
+			}
+			function toPhone(element)
+			{	if (element.value == "") return;
+				var regexp = /(\d\d\d)?\-?\-?(\d\d\d)\-?(\d\d\d\d)/;
+				if (!regexp.test (element.value))
+				{	alert ("Invalid Phone Number Format.\nTry xxx-xxx-xxxx\n");
+					element.value = '';
+					element.select ();
+				}
+				else
+				{	var result = (element.value).match (regexp);
+					if (result != null)
+					{	if (result[1] == "")
+							element.value = result[2] + "-" + result[3];
+						else
+							element.value = result[1] + "-" + result[2] + "-" + result[3];
+					}
+				}
+			}
+			/*function checkNumber(element)
+			{	element.value = formatNumber(parseNumber(element.value));
+			}*/
+			/* this function accepts a string, and returns the integer
+			   representation of it -- after removing all non-numeric characters */
+			/*function parseNumber(val)
+			{	var chars = "0123456789.-()";
+				var num = "";
+				for (var i=0; i<val.length; i++)
+					if (chars.indexOf(val.charAt(i)) != -1)
+						num = num + val.charAt(i);
+				if (num.substring(0,1) == '(' && num.substring(num.length - 1) == ')')
+					num = num.substring(1,val.length-1) * -1;
+				if (num == "" || isNaN(num))
+					num = "0";
+				num = Math.ceil(num);
+				return parseInt(num, 10);
+			}*/
+			/* this function formats an integer using commas separating the thousands places */
+			/*function formatNumber (num)
+			{	var str = new String(Math.abs(num));
+				if (num < 0)
+					str = "(" + str + ")";
+				return str;
+			}*/
+			function toDate(element)
+			{	if(element.value == "") return;
+				var regexp = /(\d+)\s*[\s\\\/\-\.]\s*(\d+)\s*[\s\\\/\-\.]\s*(\d+)\s*/;
+				if(!regexp.test(element.value))
+				{	element.value = "";
+					alert("Invalid date format. \n\nTry m/d/yyyy.\n");
+					element.select();
+				}
+			}
+			function menuOnClick ()
+			{	if (docHasChanged())
+					confirmChangesNotSaved()
+			}	
+			/*function formatTotalNumber (num)
+			{	var str = new String(Math.abs(num));
+				if (str.length > 3)
+				{	var i = str.length - 3;
+					while (i > 0)
+					{	var old_left = str.substring(0,i);
+						var left = str.substring(0,i);
+						var right = str.substring(i,str.length);
+						str = left + "," + right;
+						i = old_left.length - 3;
+					}
+				}
+				if (num < 0)
+					str = "(" + str + ")";
+				return str;
+			}*/
+			// makes sure element.value is a real number
+		function checkNumberWithParen(element)
+			{	element.value = numberWithCommas(parseNumberWithParen(element.value));
+			}
+			
+		/* this function accepts a string, and returns the integer
+		   representation of it -- after removing all non-numeric characters */
+		function parseNumberWithParen(val)
+		{	
+			var chars = "0123456789.-()";
+			var num = "";
+			val = val.replace(/[,]/g,'');
+			for (var i=0; i<val.length; i++)
+				if (chars.indexOf(val.charAt(i)) != -1)
+					num = num + val.charAt(i);
+			if (num.substring(0,1) == '(' && num.substring(num.length - 1) == ')')
+					num = num.substring(1,val.length-1) * -1;
+			//alert(num);
+			if (num == "" || isNaN(num))
+				num = "0";
+			var returnNum = Number(num).toFixed(0);
+			return returnNum;
+		}
+		function checkNumber(element)
+		{	element.value = numberWithCommas(parseNumber(element.value));
+		}
+		
+		function checkWholeNumber(element)
+		{	element.value = formatNumber(parseWholeNumber(element.value));
+		}
+		/* this function accepts a string, and returns the integer
+		   representation of it -- after removing all non-numeric characters */
+		function parseNumber(val)
+		{	var chars = "0123456789.-";
+			var num = "";
+			for (var i=0; i<val.length; i++)
+				if (chars.indexOf(val.charAt(i)) != -1)
+					num = num + val.charAt(i);
+			if (num == "" || isNaN(num))
+				num = "0";
+			var returnNum = Number(num).toFixed(2);
+			return returnNum;
+		}
+		
+		function parseWholeNumber(val)
+		{	var chars = "0123456789.-()";
+			var num = "";
+			for (var i=0; i<val.length; i++)
+				if (chars.indexOf(val.charAt(i)) != -1)
+					num = num + val.charAt(i);
+			if (num.substring(0,1) == '(' && num.substring(num.length - 1) == ')')
+				num = num.substring(1,val.length-1) * -1;
+			if (num == "" || isNaN(num))
+				num = "0";
+			return parseInt(num);
+		}
+		/* this function formats an integer using commas separating the thousands places */
+		function formatNumber (num)
+		{	var str = new String(Math.abs(num));
+			if (str.length > 3)
+			{	var i = str.length - 3;
+				while (i > 0)
+				{	var old_left = str.substring(0,i);
+					var left = str.substring(0,i);
+					var right = str.substring(i,str.length);
+					str = left + "," + right;
+					i = old_left.length - 3;
+				}
+			}
+			if (num < 0)
+				str = "-" + str;
+			return str;
+		}
+		
+		function formatTotalNumber (num)
+		{	var str = new String(Math.abs(num));
+			if (str.length > 3)
+			{	var i = str.length - 3;
+				while (i > 0)
+				{	var old_left = str.substring(0,i);
+					var left = str.substring(0,i);
+					var right = str.substring(i,str.length);
+					str = left + "," + right;
+					i = old_left.length - 3;
+				}
+			}
+			if (num < 0)
+				str = "(" + str + ")";
+			return str;
+		}
+		
+		function numberWithCommas(x) {
+			var parts = x.toString().split(".");
+			parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+			return parts.join(".");
+		}
+		//-->
+		</script>
+	
+
+	</head>	
+
+	<body onLoad="">
+	
+		<div id="divisionHeader"> </div>
+		
+		<div id="wrapper">		
+			<div id="bcHeader"/>
+			 
+			<div id="greyBar">	 		
+				<ul id="navi">
+					<li style="background:#ffffff;"> <a href="home.cfm">Home</a> </li>
+					
+						<li style="background:#ffffff;"> <a href="selectBoard.cfm">Boards and Commissions</a> </li>
+					
+					<li style="background:#ffffff;"> <a href="upcomingMeetings.cfm">Upcoming Meetings</a> </li>
+					
+					
+						<li style="background:#ffffff;"> <a href="otherResources.cfm" onClick="menuOnClick();">Other Resources</a> </li>
+					
+						<li style="background:#ffffff;"> <a href="../latrac/feedback/home.cfm" target="_blank">Feedback</a></li>
+					
+						<li class="last" style="background:#ffffff;"> <a href="login.cfm">Login</a> </li>
+					
+				</ul>
+			</div>
+		</div>
+	<div style="background-image:url(images/wrapperNoSidebar.gif); background-position:top left; background-repeat:repeat-y;border:0px solid red;">
+		
+			<div id="main">
+
+		<div id="subNav">
+			<ul>	
+				<li><a href="viewBoard.cfm?board=491" aria-label="Board">Board</a></li>
+				<li><a href="viewContacts.cfm?board=491" aria-label="Contacts">Contacts</a></li>
+				<li><a href="viewMembers.cfm?board=491" aria-label="Members">Members</a></li>
+				<li><a href="viewReimbursements.cfm?board=491" aria-label="Reimbursements">Reimbursements</a></li>
+				<li><a href="viewEmployees.cfm?board=491" aria-label="Employees">Employees</a></li>
+				<li><a href="viewMeetingNotices.cfm?board=491" aria-label="Notices">Notices</a></li>
+				<li><a href="viewMeetingMinutes.cfm?board=491" aria-label="Minutes">Minutes</a></li>
+				<li><a href="viewStatutoryCitations.cfm?board=491" aria-label="Citations">Citations</a></li>
+				<li><a href="viewRulesAndRegulations.cfm?board=491" aria-label="Rules">Rules</a></li>
+				<li class="last"><a href="viewBudgets.cfm?board=491" aria-label="Budgets ">Budgets</a></li>
+			</ul>
+		</div>
+	
+	<h1 style="color:#555555; font-size: 1.3em;" align="center">Medicaid Pharmaceutical and Therapeutics Committee General Information</h1>
+
+
+<div align="center">
+
+
+	<table cellspacing="0" width="100%">
+		<tr>
+			<td width="1%"><strong>Name</strong></td>
+			<td>Medicaid Pharmaceutical and Therapeutics Committee</td>
+		</tr>
+		<tr>
+			<td><strong>Contact Person</strong></td>
+			<td> Drew Maranto - Undersecretary, LDH 
+			</td>
+		</tr>
+		<tr>
+			<td><strong>Mailing Address</strong></td>
+			<td>
+				Department of Health<br>
+				Post Office Box 91030<br>
+				Baton Rouge, LA 70821-9030
+			</td>
+		</tr>
+		<tr>
+			<td><strong>Phone Number</strong></td>
+			
+				<td>225-342-1315</td>
+			
+		</tr>
+		<tr>
+			<td><strong>Fax Number</strong></td>
+			
+				<td>225-342-9508</td>
+			
+		</tr>
+		<tr>
+			<td><strong>Board Email</strong></td>
+			<td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b5ded4c1c7dcdbd49bdfdadddbc6dadbf5d9d49bd2dac3">[email&#160;protected]</a></td>
+		</tr>
+		<tr>
+			<td><strong>Website</strong></td>
+			<td>http://ldh.la.gov/index.cfm/directory/detail/697</td>
+		</tr>
+		<tr>
+			<td><strong>Legal Authority</strong></td>
+			<td>R.S. 46:153.3(C)</td>
+		</tr>
+		<tr>
+			<td><strong>Year Created</strong></td>
+			<td>2001</td>
+		</tr>
+		<tr>
+			<td><strong>Organizational Placement</strong></td>
+			<td>Department of Health </td>
+		</tr>
+		<tr>
+			<td><strong>Purpose/Function</strong></td>
+			<td>The committee is responsible for developing and maintaining a preferred drug list (PDL) in conjunction with a prior approval process relating to the Medicaid drug program.</td>
+		</tr>
+		
+		<tr>
+			<td nowrap="nowrap">
+				<strong>Number of Entity Members:</strong>
+			</td>
+			<td>
+				Number Authorized: <strong>15</strong>
+				<br>
+				Number Currently Serving: <strong>14</strong>
+			</td>
+		</tr>
+		<tr>
+			<td nowrap="nowrap">
+				<strong>Number of Entity Meetings:</strong>
+			</td>
+			<td>
+				Actual number in prior year: <strong>2</strong>
+				<br>
+				Estimated number in current year: <strong>2</strong>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<strong>The Entity is:</strong><br>
+				<input type="checkbox" name="statusA" value="Y" checked disabled="disabled" aria-label="Entity is Active"> Active&nbsp;&nbsp;
+				<input type="checkbox" name="statusI" value="Y"  disabled="disabled" aria-label="Entity is Inactive">Inactive&nbsp;&nbsp;
+				<input type="checkbox" name="statusO" value="Y"  disabled="disabled" aria-label="Entity is Not Fully Organized">Not fully organized&nbsp;&nbsp;
+				<input type="checkbox" name="statusD" value="Y"  disabled="disabled" aria-label="Entity is Disbanded">Disbanded&nbsp;&nbsp;
+				<input type="checkbox" name="statusN" value="Y"  disabled="disabled" aria-label="Entity was Never Fully Organized">Never fully organized
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<strong>Do members receive per diem, salaries, and/or travel expense reimbursements?</strong><br>
+				<input type="checkbox" name="perDiemY" value="Y" checked disabled="disabled" aria-label="Members Recieve Per Diems, Salaries, and/or Travel Expense Reimbursements">Yes&nbsp;&nbsp;
+				<input type="checkbox" name="perDiemN" value="Y"  disabled="disabled" aria-label="Members Do Not Recieve Per Diems, Salaries, and/or Travel Expense Reimbursements">No
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<strong>Excluding member per diem, salaries, and travel expense reimbursements, does the entity receive or expend funds?</strong><br>
+				<input type="checkbox" name="expendFundsY" value="Y"  disabled="disabled" aria-label="Excluding Member Per Diems, Salaries, and/or Travel Expense Reimbursements, Enttiy Recieves or Expends Funds">Yes&nbsp;&nbsp;
+				<input type="checkbox" name="expendFundsN" value="Y" checked disabled="disabled" aria-label="Excluding Member Per Diems, Salaries, and/or Travel Expense Reimbursements, Enttiy Does Not Recieves or Expends Funds">No
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<strong>Entity Member Per Diem:</strong><br>
+				&nbsp;&nbsp;Amount Authorized: <strong>$0</strong>&nbsp;&nbsp;
+				&nbsp;&nbsp;<input type="checkbox" name="perDiemTypeM" value="Y"  disabled="disabled" aria-label="Per Diem Per Meeting"> per meeting&nbsp;&nbsp;
+							<input type="checkbox" name="perDiemTypeD" value="Y"  disabled="disabled" aria-label="Per Diem Per Meeting Day"> per meeting day&nbsp;&nbsp;
+							<input type="checkbox" name="perDiemTypeB" value="Y"  disabled="disabled" aria-label="Per Diem Per Day Spent on Board Business"> per day spent on board business&nbsp;&nbsp;
+							<input type="checkbox" name="perDiemTypeN" value="Y" checked disabled="disabled" aria-label="No Per Diem"> None<br><br>
+			</td>
+        </tr>
+        <tr>
+        	<td colspan="2">	
+                <strong>Total entity member per diem:</strong><br>
+				&nbsp;&nbsp;Prior year actual: <strong>$0.00</strong><br>
+				&nbsp;&nbsp;Current year budgeted: <strong>$0.00</strong>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<strong>Entity Member Salaries:</strong><br>
+				&nbsp;&nbsp;Prior year actual: <strong>$0.00</strong><br>
+				&nbsp;&nbsp;Current year budgeted: <strong>$0.00</strong>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<strong>Entity Member Travel Expense Reimbursement:</strong><br>
+				&nbsp;&nbsp;Prior year actual: <strong>$0.00</strong><br>
+				&nbsp;&nbsp;Current year budgeted: <strong>$0.00</strong>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<strong>Number and Type of Authorized Employee Positions:</strong><br>
+				Classified: 0<br>
+				Unclassified: 0<br>
+				Part-time: 0
+				
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<strong>Entity Fiscal Year End:</strong><br>
+				<input type="checkbox" name="fiscalYearEnd4" value="Y"  disabled="disabled" aria-label="Fiscal Year Ends 4/30"> 4/30&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="checkbox" name="fiscalYearEnd7" value="Y"  disabled="disabled" aria-label="Fiscal Year Ends 7/31"> 7/31&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="checkbox" name="fiscalYearEnd10" value="Y"  disabled="disabled" aria-label="Fiscal Year Ends 10/31"> 10/31&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="checkbox" name="fiscalYearEnd0" value="Y"  disabled="disabled" aria-label="Fiscal Year Ends Other Date"> Other (identify date) 
+				<br>
+				<input type="checkbox" name="fiscalYearEnd6" value="Y" checked disabled="disabled" aria-label="Fiscal Year Ends 6/30"> 6/30</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="checkbox" name="fiscalYearEnd9" value="Y"  disabled="disabled" aria-label="Fiscal Year Ends 9/30"> 9/30</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="checkbox" name="fiscalYearEnd12" value="Y"  disabled="disabled" aria-label="Fiscal Year Ends 12/30"> 12/31</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="checkbox" name="fiscalYearEndN" value="Y"  disabled="disabled" aria-label="No Fiscal Year End"> None</label>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<strong>Participation in State Employee Benefit Programs:</strong><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<strong>Employees:</strong><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="employeeBenefitsY" value="Y"  disabled="disabled" aria-label="Employees participate in state retirement system(s) and/or state group insurance program(s)"> participate in state retirement system(s) and/or state group insurance program(s)<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="employeeBenefitsN" value="Y" checked disabled="disabled" aria-label="Employees do not participate in state retirement system(s) and/or state group insurance program(s)"> do not participate in state benefit programs<br><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<strong>Members:</strong><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="memberBenefitsY" value="Y"  disabled="disabled" aria-label="Members participate in state retirement system(s) and/or state group insurance program(s)"> participate in state retirement system(s) and/or state group insurance program(s)<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="memberBenefitsN" value="Y" checked disabled="disabled" aria-label="Members do not participate in state retirement system(s) and/or state group insurance program(s)"> do not participate in state benefit programs
+			</td>
+		</tr>
+		
+			<tr>
+				<td colspan="2">
+					<strong>A state agency provides: (Check all that apply and identify the state agency)</strong></br>
+					<input type="checkbox" name="stateAgyPerDiem" value="Y"  disabled="disabled" aria-label="State agency provides per diem payments"> Per Diem Payments&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;State Agency: <br>
+					<input type="checkbox" name="stateAgyTravel" value="Y" checked disabled="disabled" aria-label="State agency provides travel reimbursements"> Travel Reimbursements&nbsp;&nbsp;&nbsp;&nbsp;State Agency: Department of Health<br>
+					<input type="checkbox" name="stateAgyOther" value="Y"  disabled="disabled" aria-label="State agency provides other"> Other (explain)&nbsp;&nbsp;&nbsp;&nbsp;State Agency: <br>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<strong>Is this entity a budget unit or included within a budget unit of the State of Louisiana as defined by LSA-R.S. 39:2?</strong><br>
+					&nbsp;&nbsp;<input type="checkbox" name="budgetUnitY" value="Y"  disabled="disabled" aria-label="Entity is a budget unit or included within a budget unit of the STate of Louisiana as defined by LSA-R.S. 39:2"> Yes
+					&nbsp;&nbsp;<input type="checkbox" name="budgetUnitN" value="Y" checked disabled="disabled" aria-label="Entity is not a budget unit or included within a budget unit of the STate of Louisiana as defined by LSA-R.S. 39:2"> No
+					<br>
+					&nbsp;&nbsp;<strong>If yes, identify the budget unit and the budget schedule number below:</strong><br>
+					&nbsp;&nbsp;Budget Unit Name: <strong></strong><br>
+					&nbsp;&nbsp;Budget Schedule Number: <strong></strong>
+				</td>
+			</tr>
+		
+		<tr>
+			<td><strong>Notes</strong></td>
+			<td>7  The Pharmaceutical and Therapeutics Committee does not have expenditure authority. Funds for travel reimbursement and other expenditures are placed in LDHs budget.<br><br>8 LDH will not have a Spring P&T Committee Meeting due to the COVID-19 pandemic.  <br><br>9 LDH did not have a Fall P&T Committee Meeting due to the ongoing COVID-19 pandemic.  The new PDL will be posted by Jan 1, 2021.<br><br>10 LDH did not budget expenditures for the committee due to the COIVD 19 pandemic and the limitations on having a meeting.<br><br>11 LDH Held a Virtual Review for Spring 2021 in lieu of a meeting<br><br>12 LDH Held a Virtual Review for Fall 2021 in lieu of a meeting due to the COVID pandemic <br><br>13 LDH Held a Virtual Review for Spring 22 in lieu of a meeting due to the COVID pandemic<br><br>14 LDH Held a Virtual Review for Spring 23 in lieu of a meeting due to a lack of a quorum prior to the meeting.<br><br>15 There was a lack of a quorum at the meeting. P&T members that were present reviewed the in<br><br>10/22/2024 - The meeting minutes have not been approved for meetings held 04/26/2019 thru 04/26/2024 due to a lack of quorum.<br><br>11/1/2024 - The P&T Committee minutes have been approved by the committee during the 10/30/2024 meeting.  </td>
+		</tr>
+	</table>
+
+
+</div>
+
+		
+			
+			</div>
+		</div>
+		<div id="footerNoSidebar"></div>
+					
+		<div class="disclaimer" style="color:black;">
+			LaTrac was developed by the Louisiana Office of Technology Services.
+		</div>
+
+	<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"1a78f1ae3d914afaa748434fbdd1a18b","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+{
+  "abstractNumber": "10501",
+  "body": " \r\n\r\n\t<div><b>Background: </b> Accurate multi-cancer risk prediction is essential for optimizing screening strategies and yet remains challenging due to heterogeneous and longitudinal electronic health record (EHR) data. Large language models (LLMs) offer a unified framework for multi-cancer risk assessment without disease-specific model training, but single-agent LLMs struggle to reason effectively over long patient histories.</p>  <b>Methods: </b> We developed a multi-agent system (MAS) composed of chained LLM agents with episodic memory to synthesize longitudinal EHR data into comprehensive cancer risk profiles. The system generates 1-year cancer risk scores (1–10) for individual cancer types. Using Truveta Data, we identified cases for 9 cancer types with clinically recognized precursor signs using clinician-curated diagnostic codes. For each cancer type, 500 cases were randomly sampled and matched 1:1 with controls by 10-year age group and sex. All structured EHR data (conditions, laboratory results, observations, medications, and procedures) up to 1 year before diagnosis or index date were included. Performance was evaluated across cancer types; lung cancer was used as a benchmark cohort for comparison with traditional machine learning (ML) models and a single-agent LLM baseline.</p>  <b>Results: </b> The MAS demonstrated heterogeneous but clinically meaningful discrimination across cancer types (AUROC range: 0.64 to 0.80), with liver cancer performing the best and colorectal cancer the worst. In the lung cancer cohort, performance (AUROC=0.79) was comparable to that of trained ML models (AUROC: XGBoost 0.82, logistic regression 0.73, k-nearest neighbors 0.58). Beyond risk prediction, the system generated concise patient summaries and interpretable rationales that supported downstream analyses, including cancer real-world evidence generation and exploratory knowledge discovery. Compared with a single-agent LLM, the MAS showed improved temporal coherence and clinical reasoning.</p>  <b>Conclusions: </b> A multi-agent LLM system can leverage longitudinal EHR data to estimate short-term multi-cancer risk within a unified framework, without cancer-specific model training. These findings support the potential role of LLM-based systems as scalable tools to inform risk stratification and screening strategies in real-world clinical populations.</div>\r\n\r\n\r\n\r\n\t<div class=\"table_caption\"><b>The MAS’s performance.</b></div> \r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p>Lung </p>\r\n</td>\r\n<td>\r\n<p>Ovarian </p>\r\n</td>\r\n<td>\r\n<p>Liver </p>\r\n</td>\r\n<td>\r\n<p>Pancreatic </p>\r\n</td>\r\n<td>\r\n<p>Colorectal </p>\r\n</td>\r\n<td>\r\n<p>Multiple Myeloma </p>\r\n</td>\r\n<td>\r\n<p>Lymphoma </p>\r\n</td>\r\n<td>\r\n<p>Gastric </p>\r\n</td>\r\n<td>\r\n<p>Bladder </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>AUROC [95% CI] </p>\r\n</td>\r\n<td>\r\n<p>0.79 [0.77, 0.82] </p>\r\n</td>\r\n<td>\r\n<p>0.68 [0.65, 0.71] </p>\r\n</td>\r\n<td>\r\n<p>0.80 [0.77, 0.83] </p>\r\n</td>\r\n<td>\r\n<p>0.66 [0.62, 0.69] </p>\r\n</td>\r\n<td>\r\n<p>0.64 [0.61, 0.68] </p>\r\n</td>\r\n<td>\r\n<p>0.70 [0.67, 0.73] </p>\r\n</td>\r\n<td>\r\n<p>0.69 [0.66, 0.72] </p>\r\n</td>\r\n<td>\r\n<p>0.69 [0.66, 0.72] </p>\r\n</td>\r\n<td>\r\n<p>0.71 [0.68, 0.74] </p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n\r\n\r\n",
+  "contentId": "260659",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/260659",
+    "queryParams": null,
+    "target": null,
+    "title": "Predicting multi-cancer risk from EHR data using multi-agent LLMs."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION260659"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780422300000,
+    "start": 1780411500000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": null,
+  "presentationId": "260659",
+  "primaryPerson": {
+    "displayName": "Sihang Zeng, PhD",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780422300000,
+    "start": 1780411500000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17123",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17123",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Oral Abstract Session",
+      "title": "Prevention, Risk Reduction, and Genetics"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": null,
+  "title": "Predicting multi-cancer risk from EHR data using multi-agent LLMs.",
+  "titles": null,
+  "uid": "PRESENTATION260659"
+}

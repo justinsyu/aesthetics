@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lung cancer stage prediction using longitudinal CT imaging compared with single-timepoint assessment.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Lung cancer stage prediction using longitudinal CT imaging compared with single-timepoint assessment.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 8018</div>
+    <div><strong>First speaker:</strong> Amrik Majumdar, BS</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/263815">https://www.asco.org/abstracts-presentations/263815</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b> Lung cancer staging guides treatment decisions but is based on single-timepoint imaging, treating tumors as static entities. Screening programs routinely acquire serial low-dose CTs (LD-CTs), yet this longitudinal information is not used for staging. We hypothesized that modelling temporal change would capture tumor evolutionary dynamics predictive of stage beyond volume change alone, reframing staging as a process rather than a snapshot.</p>  <b>Methods: </b> We identified 236 NLST participants with biopsy-confirmed lung cancer and three pre-treatment LD-CTs (median interval 12 months). Reference staging used AJCC 7th edition criteria, pathologic where available and otherwise clinical, for overall stage (I–IV) and T and N components. We developed a longitudinal 3D residual network with dual attention and interval-aware temporal encoding, trained using nested five-fold cross-validation. Volume doubling time (VDT) was computed to assess whether temporal features provided information beyond growth rate. The primary endpoint was macro-AUC for overall stage. Secondary endpoints included balanced accuracy, weighted κ, calibration (ECE, Brier score), and decision-curve net benefit. External validation is ongoing in NLSTseg (n = 605) and NSCLC Radiogenomics (n = 211).</p>  <b>Results: </b> The longitudinal model outperformed a single-timepoint baseline, achieving a macro-AUC of 0.86 versus 0.82, Δ +0.04, p &lt; 0.05. Improvements were greatest for N-stage (Δ +0.13) and T-stage (Δ +0.11). Compared with a recent foundation model approach (DINOv2 + ABMIL), the model showed superior N-stage discrimination (AUC 0.86 vs 0.70). Temporal features remained independently predictive after adjustment for VDT, indicating capture of biological signal beyond growth rate. Attention maps consistently highlighted lesion margins and peritumoral regions across timepoints, consistent with invasive behavior. Performance was stable across sex, age, and smoking subgroups, and inference was feasible on standard CPUs.</p>  <b>Conclusions: </b> Modelling longitudinal change across serial LD-CTs captures tumor evolutionary dynamics that predict lung cancer stage independently of growth rate. This reframes staging as a dynamic, evolution-aware process and provides a practical route for integrating artificial intelligence into screening workflows where serial imaging is already available. External validation is underway.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

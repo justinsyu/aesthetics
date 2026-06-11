@@ -1,0 +1,80 @@
+{
+  "abstractNumber": "9559",
+  "body": " \r\n\r\n\t<div><b>Background: </b> Tumor proliferative activity and the tumor-stroma microenvironment are key determinants of melanoma aggressiveness and prognosis, yet their assessment from routine histology remains limited and subjective. Mitotic activity and stromal composition are histologic markers of tumor aggressiveness associated with overall survival (OS). While spatial transcriptomics (ST) can capture tumor biology associated with prognosis, its cost and limited availability restrict clinical use. Recent advances in computational pathology enable inference of spatial gene expression directly from routine hematoxylin and eosin (H&amp;E) whole slide images (WSIs). We evaluated whether integrating AI-informed histologic biomarkers with ST features derived from routine H&amp;E slides improves OS prediction in primary melanoma.</p>  <b>Methods: </b> Formalin-fixed paraffin-embedded H&amp;E WSIs from TCGA-SKCM primary melanoma cases with available survival data were analyzed (N=291). Automated mitotic index (MI) in tumor region was quantified using a Detectron2-based mitosis detection model, and tumor-stroma ratio (TSR) was computed from automated tissue segmentation.  Spatial gene expression for 18 melanoma relevant genes was inferred from WSIs using a pretrained DeepSpot model, and quantified for spatial heterogeneity and clustering. Three Cox regression models were created: i) M<sub>Path+Clinical</sub> (MI, TSR, age), ii) M<sub>AI-ST+Clinical</sub> (ST features, age), and iii) M<sub>I</sub><sub>ntegrated</sub> (MI, TSR, ST features and age). Feature selection was performed on training cohort (N=174), and model performance for 10-year OS prediction was evaluated on holdout test cohort (N=117) using hazard ratio (HR) with 95% confidence interval, C-index, and log-rank tests. Independent contributions of various features were assessed by multivariable analysis. </p>  <b>Results: </b> In hold-out test cohort,  both M<sub>Path+Clinical</sub> model (C-index = 0.639, p = 0.001, HR = 2.71 [1.49-4.94]), and M<sub>AI-ST+Clinical</sub> model (C-index = 0.603, p = 0.002, HR = 2.51 [1.37-4.59]) were prognostic for 10 year OS. AI-ST signature consisted of spatial heterogeneity and clustering metrics of ARG1, TFAP2A, and KRT6B genes, along with global gene expression metrics. The integrated model M<sub>I</sub><sub>ntegrated </sub><sub> </sub>resulted in the best OS stratification (C-index = 0.644, p = 0.007, HR = 2.24 [1.23-4.07]). Multivariable analysis demonstrated independent association of MI, ST features and age with OS. </p>  <b>Conclusions: </b> AI-derived ST features contributed additional prognostic value beyond histologic and clinical features, yielding the strongest OS stratification when integrated into a unified model. By combining established histologic biomarkers with virtual spatial omics, this approach improves survival prediction without additional tissue or molecular assays, supporting its potential clinical utility for risk adapted management of melanoma patients.</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+  "contentId": "267841",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/267841",
+    "queryParams": null,
+    "target": null,
+    "title": "Integrated AI-informed morphologic and spatial transcriptomics features from H&E slides to enable risk stratification of primary melanoma patients."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION267841"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780246800000,
+    "start": 1780236000000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "275",
+  "presentationId": "267841",
+  "primaryPerson": {
+    "displayName": "Amritpal Singh, MBBS, MS",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780246800000,
+    "start": 1780236000000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17118",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17118",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Melanoma/Skin Cancers"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": null,
+  "title": "Integrated AI-informed morphologic and spatial transcriptomics features from H&E slides to enable risk stratification of primary melanoma patients.",
+  "titles": null,
+  "uid": "PRESENTATION267841"
+}

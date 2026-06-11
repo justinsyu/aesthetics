@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Predicting immune-related adverse events (irAEs) with large language model (LLM) embeddings.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Predicting immune-related adverse events (irAEs) with large language model (LLM) embeddings.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 1611</div>
+    <div><strong>First speaker:</strong> Tiffany Tian, BA</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/263072">https://www.asco.org/abstracts-presentations/263072</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b> irAEs are a common side effect of immune checkpoint inhibitor (ICI) therapy. Predicting irAEs from clinical records relies on traditional machine learning methods, which require time-consuming and extensive feature engineering such as removing features with many missing values or imputing values. Using LLM vector embeddings to train classifier models may require less feature engineering and leverage LLM understanding of semantic information. We assessed whether this LLM method could predict development of irAEs 12 weeks after initiating an ICI.</p>  <b>Methods: </b> We used patient (pt) data from the Immuno-Oncology Registry, a database of cancer pts from 10 DC-Baltimore-based MedStar Health network hospitals and Hackensack Meridian Health system in New Jersey. The data were divided into training (80%) and testing (20%) datasets. The training dataset was oversampled to balance the irAE class distribution. Tabular data was serialized into natural language, then passed into a LLM with original text, 0-shot, 1-shot, or few-shot prompting. Due to LLM context length limits, pt information was separated into 9 components, and each component embedding was max-pooled before concatenation. The embeddings were used to train 4 classifier models with hyperparameter tuning: XGBoost, support vector machine (SVM), logistic regression (LR), and multilayer perceptron (MLP). Five different sentence transformer or text embedding LLMs were tested. Model classification performance was evaluated by Area Under the Receiver Operating Characteristic curve (AUROC).</p>  <b>Results: </b> Of the 1459 pts, 585 (40%) experienced irAE(s). The most common cancers were lung cancer (34.5%) and melanoma (27.7%). ICIs included anti-CTLA-4 (11.0%), anti-PD-1 (58.9%), anti-PD-L1 (4.6%), anti-PD-1 + anti-CTLA-4 (14.0%), anti-PD-1 + chemotherapy (3.1%), anti-PD-1 + tyrosine kinase inhibitor (0.07%), and others (8.4%). The most common irAEs were skin rash (14.5%) and colitis (8.9%). Median AUROC was highest for XGBoost (0.654), followed by LR (0.641), MLP (0.627), and finally SVM (0.596). Median AUROC was highest for 0-shot (0.641), followed by original (0.636), 1-shot (0.619), and few-shot (0.516). Of the LLMs tested, intfloat/e5-base combined with XGBoost and the original prompt demonstrated the strongest performance (AUROC = 0.712, see Table), although for 0-shot and 1-shot LR was a stronger classifier.</p>  <b>Conclusions: </b> Using LLM embeddings to train classifier models is feasible for making predictions with tabular medical data, works best with XGBoost, and does not need prompt engineering. This method requires less feature engineering and data processing compared to standard approaches and leverages the extensive pre-training and semantic understanding of LLMs to achieve predictive power.</div>
+
+
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p><strong>e5-base</strong></p>
+</td>
+<td>
+<p><strong>original</strong></p>
+</td>
+<td>
+<p><strong>0-shot</strong></p>
+</td>
+<td>
+<p><strong>1-shot</strong></p>
+</td>
+<td>
+<p><strong>few-shot</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>XGBoost</p>
+</td>
+<td>
+<p>0.71</p>
+</td>
+<td>
+<p>0.62</p>
+</td>
+<td>
+<p>0.67</p>
+</td>
+<td>
+<p>0.62</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>SVM</p>
+</td>
+<td>
+<p>0.56</p>
+</td>
+<td>
+<p>0.61</p>
+</td>
+<td>
+<p>0.67</p>
+</td>
+<td>
+<p>0.65</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>LR</p>
+</td>
+<td>
+<p>0.64</p>
+</td>
+<td>
+<p>0.66</p>
+</td>
+<td>
+<p>0.69</p>
+</td>
+<td>
+<p>0.64</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>MLP</p>
+</td>
+<td>
+<p>0.63</p>
+</td>
+<td>
+<p>0.65</p>
+</td>
+<td>
+<p>0.65</p>
+</td>
+<td>
+<p>0.59</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

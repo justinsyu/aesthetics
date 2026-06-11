@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Transforming evidence into answers: An agentic framework to support living clinical practice guidelines.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Transforming evidence into answers: An agentic framework to support living clinical practice guidelines.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e17004</div>
+    <div><strong>First speaker:</strong> Syed Arsalan Ahmed Naqvi, MD, MS</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/261164">https://www.asco.org/abstracts-presentations/261164</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Living clinical practice guidelines offer the opportunity to keep recommendations aligned with the latest evidence, but they also present a fundamental challenge: as evidence accumulates, panelists cannot sustainably query and synthesize a growing body of literature. In developing ASCO&#x27;s living metastatic castration-resistant prostate cancer (mCRPC) guideline, we encountered this challenge firsthand. To address it, we developed and evaluated an interactive agentic framework that enables guideline panelists to query evidence in natural language and retrieve structured facts, tables, and figures—with the goal of extending this tool as a clinician-facing companion to enhance guideline accessibility.</div>
+  <main> 
+
+	<div><b>Background: </b> Living clinical practice guidelines offer the opportunity to keep recommendations aligned with the latest evidence, but they also present a fundamental challenge: as evidence accumulates, panelists cannot sustainably query and synthesize a growing body of literature. In developing ASCO's living metastatic castration-resistant prostate cancer (mCRPC) guideline, we encountered this challenge firsthand. To address it, we developed and evaluated an interactive agentic framework that enables guideline panelists to query evidence in natural language and retrieve structured facts, tables, and figures—with the goal of extending this tool as a clinician-facing companion to enhance guideline accessibility.</p>  <b>Methods: </b> The mCRPC systematic review dataset supporting ASCO's clinical practice guideline was used, comprising 212 structured columns capturing trial characteristics, patient populations, and outcomes extracted from 188 references across 88 clinical trials. A large language model (LLM)-based agentic framework was developed employing a coding agent that translates natural language queries into executable scripts for structured evidence retrieval. Claude (Haiku 4.5, Sonnet 4.5, and Opus 4.5) served as the core LLM agents. We constructed a benchmark of 50 fact-based queries with gold-standard answers targeting trial identification, treatment modalities, and endpoint characteristics (e.g., "Which trials evaluated systemic monotherapy?"). Performance was evaluated using exact-match accuracy for final answers, and precision, recall, and F1 score for trial-level retrieval.</p>  <b>Results: </b> Across 50 queries, exact-match accuracy ranged from 82% to 86%. Haiku 4.5 and Sonnet 4.5 each achieved 82% (42/50), while Opus 4.5 achieved 86% (43/50). Precision ranged from 0.93–0.97, recall from 0.94–0.96, and F1 scores from 0.91–0.94.</p>  <b>Conclusions: </b> This agentic framework enables scalable, auditable, natural language interrogation of guideline evidence, addressing a critical bottleneck in living guideline maintenance. For panelists, it supports rapid, reproducible evidence surveillance during recommendation development. For clinicians, it offers a foundation for an interactive companion tool that transforms static guidelines into queryable resources—enabling personalized evidence retrieval at the point of care.</div>
+
+
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td><strong>LLM</strong></td>
+<td><strong>EM</strong></td>
+<td><strong>Precision</strong></td>
+<td><strong>Recall</strong></td>
+<td><strong>F1</strong></td>
+</tr>
+<tr>
+<td>claude-haiku-4-5</td>
+<td>0.82(42/50)</td>
+<td>0.95</td>
+<td>0.94</td>
+<td>0.91</td>
+</tr>
+<tr>
+<td>claude-sonnet-4-5</td>
+<td>0.82(42/50)</td>
+<td>0.97</td>
+<td>0.96</td>
+<td>0.93</td>
+</tr>
+<tr>
+<td>claude-opus-4-5</td>
+<td>0.86(43/50)</td>
+<td>0.93</td>
+<td>0.96</td>
+<td>0.94</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

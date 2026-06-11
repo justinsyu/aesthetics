@@ -1,0 +1,80 @@
+{
+  "abstractNumber": "4556",
+  "body": " \r\n\r\n\t<div><b>Background: </b></p>  There is an unmet need to develop rapidly deployable and reliable biomarkers to guide treatment decisions in clear cell renal cell carcinoma (ccRCC). Transcriptome-based molecular classification is promising in predicting differential clinical outcomes to angiogenesis blockade alone or with an immune checkpoint inhibitor (ICI), but these approaches require molecular profiling that is costly and time-consuming. This study evaluates whether explainable artificial intelligence (AI) can accurately predict molecular classes of ccRCC from diagnostic H&amp;E slides. This approach enables scalable, pathology-based assessment of treatment response–related biology without the need for additional tissue or sequencing.</p>  <b>Methods: </b></p>  We acquired digital whole slide images of H&amp;E stained primary ccRCC tumors from TCGA, OSU Total Cancer Care Alliance, and an in-house built set of selected biopsies. RNA-Seq cluster assignments from IMmotion151 study were reconstructed from published gene log-fold-change cluster enrichment scores and non-negative least squares regression on matching RNA-Seq of our samples. After assigning samples to their highest scoring group, we trained a multi-group attention-based multiple-instance learning (ABMIL) classifier to predict RNA-Seq groups from digital whole slide images broken into 112um patches and encoded using UNI foundation model embeddings.</p>  <b>Results: </b></p>  A total of 555 cases with both H&amp;E and RNA-seq data were included. Class prediction from RNA-Seq were 40% Angio-Stromal, 30% Complement-Ox, 16% Angio, 8% Teff-Prolif, 4% Prolif, 2% Stromal-Prolif and 0% snoRNA. Predicting these classes from H&amp;E-stained images, showed AUROC values of 0.76 (Angio-Stromal), 0.78 (Complement-Ox), 0.83 (Angio), 0.85 (Teff-Prolif), 1.00 (Prolif) and 0.91 (Stromal-Prolif) respectively. Similar AUROC values with more modest curves were seen on a hold-out set (10%) where Angio-Stromal/Complement-Ox (0.61/0.61) and Teff-Prolif (0.59) were the lowest AUROC values and Prolif (0.99) was the highest. Importantly, incorrect predictions most often yielded a group prediction where the predicted group shared some biological identity with the ground truth group label (eg. Angio-Stromal and Angio). We also utilized the attention values from ABMIL to evaluate spatial prediction saliency, which showed the model focused primarily on tumor regions, even for predictions of primarily stromal defined classes.</p>  <b>Conclusions: </b></p>  Our results demonstrate that diagnostic H&amp;E slides contain histologic features that can predict ccRCC molecular subsets using explainable AI. Supporting scalable pathology-based inference of tumor biology linked to treatment response.</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+  "contentId": "262667",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/262667",
+    "queryParams": null,
+    "target": null,
+    "title": "Explainable AI to predict molecular classes of renal cell carcinoma from digital pathology images."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION262667"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780246800000,
+    "start": 1780236000000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "35",
+  "presentationId": "262667",
+  "primaryPerson": {
+    "displayName": "Jordan Krull, PhD",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780246800000,
+    "start": 1780236000000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17145",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17145",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Genitourinary Cancer—Kidney and Bladder"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": null,
+  "title": "Explainable AI to predict molecular classes of renal cell carcinoma from digital pathology images.",
+  "titles": null,
+  "uid": "PRESENTATION262667"
+}

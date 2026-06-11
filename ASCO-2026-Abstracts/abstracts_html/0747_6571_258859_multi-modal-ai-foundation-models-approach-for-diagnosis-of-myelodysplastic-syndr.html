@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Multi-modal AI foundation models approach for diagnosis of myelodysplastic syndromes across whole bone marrow aspirate and biopsy slides.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Multi-modal AI foundation models approach for diagnosis of myelodysplastic syndromes across whole bone marrow aspirate and biopsy slides.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 6571</div>
+    <div><strong>First speaker:</strong> Palak Dave, PhD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/258859">https://www.asco.org/abstracts-presentations/258859</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b> Morphologic diagnosis of myelodysplastic syndromes (MDS) from bone marrow aspirates and biopsies is subjective and error prone. Compared to narrow/specific predictive AI methods used in the literature, recently developed pathology foundation models pretrained on large, diverse histopathology corpora have the potential to improve generalizability while reducing task-specific annotation requirements. Here, we evaluate and compare multiple pretrained foundation models across bone marrow aspirate and biopsy whole-slide images (WSI), incorporate a cell-level bag-of-cells (BoC) foundation model, and assess tri-modal ensemble strategies.</p>  <b>Methods: </b> Digitized bone marrow aspirate (Asp) and biopsy (Bx) WSIs from patients with MDS and non-MDS cytopenias were analyzed using four pretrained pathology foundation models (GigaPath, H-Optimus-0, Virchow2-CLS, MUSK) for tile-level feature extraction. Cell-level features from aspirate-derived BoCs were extracted using DinoBloom-B, a foundation model pretrained for hematologic cell representations. Tile- or cell-level features were aggregated using attention-based multiple instance learning (ABMIL). Models were evaluated on 645 patients (319 MDS, 326 non-MDS) from the NHLBI MDS Natural History Study (NCT02775383) using 5-fold cross-validation (CV) and a held-out test set (n=129). For each modality, the best-performing model was selected based on test performance. Predictions were evaluated individually and combined using soft-probability ensembles. An oracle ensemble estimated the upper bound of multimodal complementarity.</p>  <b>Results: </b> Performance of the foundation models is summarized in Table 1. A soft-vote tri-modal ensemble of the selected models improved performance beyond any single modality (AUC 0.83; accuracy 0.73). Error analysis demonstrated partially non-overlapping failure modes across modalities, and an oracle ensemble achieved substantially higher accuracy (0.94), indicating unrealized multimodal complementarity.</p>  <b>Conclusions: </b> Foundation models enable robust AI-based diagnosis of MDS across bone marrow specimen types. Tri-modal ensembling improves diagnostic performance, while oracle analysis motivates TriPath, a unified framework for joint modeling of aspirate, biopsy, and cellular morphology to support standardized and generalizable MDS diagnosis.</div>
+
+
+
+	<div class="table_caption"><b>Performance summary.</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p><strong> Model</strong></p>
+</td>
+<td>
+<p><strong>Bx WSI​ CV AUC</strong></p>
+</td>
+<td>
+<p><strong>Bx WSI​ Test AUC</strong></p>
+</td>
+<td>
+<p><strong>Asp WSI CV AUC</strong></p>
+</td>
+<td>
+<p><strong>Asp WSI Test AUC</strong></p>
+</td>
+<td>
+<p><strong>Asp-derived BoC CV AUC</strong>​</p>
+</td>
+<td>
+<p><strong>Asp-derived BoC Test AUC</strong>​</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>GigaPath+ABMIL<strong>​</strong></p>
+</td>
+<td>
+<p><strong>0.80+/-0.05</strong>​</p>
+</td>
+<td>
+<p><strong>0.82</strong>​</p>
+</td>
+<td>
+<p>0.77+/-0.06​</p>
+</td>
+<td>
+<p>0.66​</p>
+</td>
+<td>
+<p>​</p>
+</td>
+<td>
+<p></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>H-Optimus-0+ABMIL<strong>​</strong></p>
+</td>
+<td>
+<p>0.82+/-0.04​</p>
+</td>
+<td>
+<p>0.79​</p>
+</td>
+<td>
+<p>0.77+/-0.07​</p>
+</td>
+<td>
+<p>0.68​</p>
+</td>
+<td>
+<p></p>
+</td>
+<td>
+<p></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Virchow2-CLS+ABMIL<strong>​</strong></p>
+</td>
+<td>
+<p>0.81+/-0.04​</p>
+</td>
+<td>
+<p>0.76​</p>
+</td>
+<td>
+<p><strong>0.78+/-0.05</strong>​</p>
+</td>
+<td>
+<p><strong>0.74</strong>​</p>
+</td>
+<td>
+<p></p>
+</td>
+<td>
+<p></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>MUSK+ABMIL<strong>​</strong></p>
+</td>
+<td>
+<p>0.77+/-0.05​</p>
+</td>
+<td>
+<p>0.81​</p>
+</td>
+<td>
+<p>0.76+/-0.04​</p>
+</td>
+<td>
+<p>0.72​</p>
+</td>
+<td>
+<p></p>
+</td>
+<td>
+<p></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>DinoBloom-B+ABMIL<strong>​</strong></p>
+</td>
+<td>
+<p>​</p>
+</td>
+<td>
+<p></p>
+</td>
+<td>
+<p></p>
+</td>
+<td>
+<p></p>
+</td>
+<td>
+<p><strong>0.83+/-0.05</strong>​</p>
+</td>
+<td>
+<p><strong>0.78</strong>​</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Tri-modal Soft Ensemble</p>
+</td>
+<td>
+<p>Test AUC 0.83</p>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>
+<p>Oracle ensemble (upper bound)</p>
+</td>
+<td>
+<p>Test Accuracy 0.94</p>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

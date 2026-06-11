@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Total tumor burden: An automated estimate of scan-level volumetric lung tumor burden from routine CT.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Total tumor burden: An automated estimate of scan-level volumetric lung tumor burden from routine CT.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e15012</div>
+    <div><strong>First speaker:</strong> Jon McDunn, PhD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/264733">https://www.asco.org/abstracts-presentations/264733</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> In clinical trials, tumor burden and treatment response are routinely estimated by applying RECIST 1.1 criteria to CT scans. Although operationally practical, this framework depends on manual selection and linear measurement of a limited number of lesions, making treatment assessment sensitive to lesion choice and introducing operator variability. Baseline disease burden and response categorization influence trial interpretation, so there is a need for scalable approaches that estimate scan-level lung tumor burden from routine CT and are compatible with established trial workflows and standards.</div>
+  <main> 
+
+	<div><b>Background: </b> In clinical trials, tumor burden and treatment response are routinely estimated by applying RECIST 1.1 criteria to CT scans. Although operationally practical, this framework depends on manual selection and linear measurement of a limited number of lesions, making treatment assessment sensitive to lesion choice and introducing operator variability. Baseline disease burden and response categorization influence trial interpretation, so there is a need for scalable approaches that estimate scan-level lung tumor burden from routine CT and are compatible with established trial workflows and standards. </p>  <b>Methods: </b> We applied a machine learning workflow to routine CT thorax imaging to support lesion-level segmentation of malignant lung lesions. The study used a retrospective multi-institutional lung CT dataset where lesions were annotated by two expert radiologists using predefined consensus criteria to serve as reference standards for model training and evaluation. Segmentation of malignant lesions was performed using a 2D U-Net architecture and the scan-level lung tumor burden was computed as the aggregate volume of segmented malignant lesions.</p>  <b>Results: </b> Performance was evaluated on an independent test set by comparing model segmentations with expert reference annotations. DICE similarity stratified by lesion size was the primary segmentation endpoint, supported by targeted error analysis for common failure modes. Scan-level lung tumor burden was calculated as the sum of malignant lesion volumes and compared with RECIST-derived linear measurements (sum of target lesion diameters). Analyses quantified concordance and rank-order differences in disease extent across patients, with focused evaluation in multifocal lung disease where target-based sampling is expected to be most sensitive to lesion selection.</p>  <b>Conclusions: </b> This work established the feasibility and evaluation framework for a modular workflow to estimate scan-level lung tumor burden from routine CT using lesion segmentation and malignancy characterization. Tumor burden estimation in clinically relevant settings such as multifocal lung disease indicates that this approach could serve as a complementary descriptor alongside RECIST for baseline characterization and exploratory trial analyses. Subsequent phases will incorporate lesion detection, longitudinal tracking, and outcome-linked validation to support stepwise progression toward volumetric response assessment.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

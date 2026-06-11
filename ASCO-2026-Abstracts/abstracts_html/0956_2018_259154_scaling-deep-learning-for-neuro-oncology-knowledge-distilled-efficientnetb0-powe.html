@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scaling deep learning for neuro-oncology: Knowledge-distilled EfficientNetB0 powered MRI classification of brain tumors with international expert validation.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Scaling deep learning for neuro-oncology: Knowledge-distilled EfficientNetB0 powered MRI classification of brain tumors with international expert validation.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 2018</div>
+    <div><strong>First speaker:</strong> To Be Determined</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/259154">https://www.asco.org/abstracts-presentations/259154</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b></p>  Accurate classification of brain tumors on magnetic resonance imaging (MRI) is critical for timely diagnosis, treatment planning, and referral in neuro-oncology. However, radiologic interpretation is challenged by tumor heterogeneity, overlapping imaging features, and growing imaging volumes, particularly in settings with limited subspecialty expertise. Although deep learning models have demonstrated high diagnostic accuracy, their computational complexity often limits real-world adoption. Scalable, resource-efficient AI systems capable of maintaining diagnostic performance are needed to enable global clinical translation.</p>  <b>Methods: </b></p>  We retrospectively assembled a multicontinental dataset of 5,000 brain MRI studies from six continents, including pituitary tumors (n=1,200), meningiomas (n=1,300), gliomas (n=1,400), and non-tumor controls (n=1,100). Ground-truth diagnoses were established through independent review by at least two expert neuroradiologists. A high-capacity EfficientNetB4 model served as the reference architecture. A lightweight EfficientNetB0 model was trained using structured knowledge distillation with soft probabilistic supervision to preserve diagnostic fidelity while reducing computational cost. Model performance was evaluated on internal test data and independent external datasets using accuracy, class-specific sensitivity and specificity, F1-score, and area under the receiver operating characteristic curve (AUROC).</p>  <b>Results: </b></p>  The distilled EfficientNetB0 model achieved an overall test accuracy of 94.8%, with balanced sensitivity across tumor classes (pituitary 93.1%, meningioma 95.2%, glioma 94.1%, non-tumor 96.4%). The overall F1-score was 0.946, and AUROC exceeded 0.92 on external validation datasets. Performance remained consistent across geographic regions and heterogeneous MRI acquisition protocols, with accuracy ranging from 93% to 96%. Mean inference time was 0.18 seconds per study on standard hardware, enabling real-time clinical integration. Clinician evaluators reported improved diagnostic confidence and utility for triage and workflow support.</p>  <b>Conclusions: </b></p>  Knowledge-distilled EfficientNet models enable accurate, rapid, and computationally efficient classification of brain tumors on MRI without sacrificing clinically relevant performance. This scalable framework directly addresses key barriers to AI deployment in neuro-oncology and supports global implementation across resource-diverse settings. Prospective studies are planned to evaluate impact on diagnostic turnaround time, subspecialty access, and treatment decision-making.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

@@ -1,0 +1,338 @@
+import fs from "node:fs";
+import path from "node:path";
+
+const root = "C:/Users/Justin/Desktop/linkedin-posts-mac";
+const runDir = path.join(root, "competitive_intelligence_reports", "heor_cost_offset_publications", "2026-06-10_0000");
+const reportPath = path.join(runDir, "report.html");
+const sourceLogPath = path.join(runDir, "sources", "source-log.md");
+const referenceCsvPath = path.join(runDir, "sources", "reference-screenshots.csv");
+
+const refs = [
+  {
+    id: 1,
+    short: "Kwatra et al.",
+    source: "Prurigo nodularis economic burden",
+    owner: "2025 / Dermatol Ther / Sponsor: Regeneron and Sanofi",
+    url: "https://link.springer.com/article/10.1007/s13555-025-01349-7",
+    evidence: "US claims analysis reported higher annual health care costs for prurigo nodularis than for matched controls.",
+  },
+  {
+    id: 2,
+    short: "Dolin et al.",
+    source: "EGPA HCRU and costs",
+    owner: "2026 / medRxiv preprint / Sponsor: AstraZeneca",
+    url: "https://www.medrxiv.org/content/10.64898/2026.04.24.26351614v1",
+    evidence: "EGPA was associated with markedly higher all-cause costs than matched severe uncontrolled asthma.",
+  },
+  {
+    id: 3,
+    short: "Kumar et al.",
+    source: "PBC burden by line of therapy",
+    owner: "2025 / Adv Ther / Sponsor: Ipsen",
+    url: "https://pubmed.ncbi.nlm.nih.gov/41335327/",
+    evidence: "PBC treatment-line analysis reported high economic burden and inpatient-cost concentration among untreated or less effectively managed patients.",
+  },
+  {
+    id: 4,
+    short: "Gish et al.",
+    source: "PBC ALP elevations and costs",
+    owner: "2025 / J Med Econ / Sponsor: Gilead",
+    url: "https://www.tandfonline.com/doi/pdf/10.1080/13696998.2025.2595885",
+    evidence: "Elevated and highly elevated alkaline phosphatase were associated with higher adjusted costs than normal alkaline phosphatase.",
+  },
+  {
+    id: 5,
+    short: "Reza et al.",
+    source: "oHCM longitudinal HCRU and costs",
+    owner: "2025 / J Med Econ / Sponsor: Cytokinetics",
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12643539/",
+    evidence: "Five-year oHCM costs were substantial; hospital admissions were a principal medical-cost driver.",
+  },
+  {
+    id: 6,
+    short: "Albarmawi et al.",
+    source: "MASH Medicare burden",
+    owner: "2026 / J Med Econ / Sponsor: Novo Nordisk",
+    url: "https://pubmed.ncbi.nlm.nih.gov/41719199/",
+    evidence: "MASH was associated with incremental Medicare HCRU and costs compared with matched beneficiaries.",
+  },
+  {
+    id: 7,
+    short: "Khandelwal et al.",
+    source: "MMN claims burden",
+    owner: "2025 / JHEOR / Sponsor: Takeda",
+    url: "https://jheor.org/article/140817",
+    evidence: "Multifocal motor neuropathy was associated with higher post-index costs than matched mimic conditions.",
+  },
+  {
+    id: 8,
+    short: "Khandelwal et al.",
+    source: "AATD Medicare Advantage outcomes",
+    owner: "2025 / JHEOR / Sponsor: Takeda",
+    url: "https://jheor.org/article/127446-clinical-and-economic-outcomes-in-patients-with-alpha-1-antitrypsin-deficiency-in-a-us-medicare-advantage-population",
+    evidence: "AATD with COPD was associated with higher admissions, emergency-department use, and spending.",
+  },
+  {
+    id: 9,
+    short: "Steiner et al.",
+    source: "Pompe disease ERT economic burden",
+    owner: "2025 / J Med Econ / Sponsor: Astellas",
+    url: "https://pubmed.ncbi.nlm.nih.gov/40904046/",
+    evidence: "ERT-treated Pompe disease was associated with very high all-cause costs; outpatient and drug-related costs were major components.",
+  },
+  {
+    id: 10,
+    short: "Kotton et al.",
+    source: "Maribavir pre/post HCRU",
+    owner: "2026 / J Med Econ / Sponsor: Takeda",
+    url: "https://www.tandfonline.com/doi/full/10.1080/13696998.2026.2640810",
+    evidence: "Medical costs declined after maribavir initiation in refractory or resistant post-transplant CMV.",
+  },
+  {
+    id: 11,
+    short: "Rashid et al.",
+    source: "Early pimavanserin treatment",
+    owner: "2026 / JHEOR / Sponsor: Acadia",
+    url: "https://pubmed.ncbi.nlm.nih.gov/41589195/",
+    evidence: "Early pimavanserin treatment was associated with lower emergency, inpatient, and skilled-nursing-facility utilization.",
+  },
+  {
+    id: 12,
+    short: "Langer et al.",
+    source: "NTDT economic burden",
+    owner: "2026 / J Med Econ / Sponsor: Agios",
+    url: "https://www.tandfonline.com/doi/abs/10.1080/13696998.2026.2618930",
+    evidence: "Non-transfusion-dependent thalassemia was associated with higher costs, inpatient admissions, and emergency visits than matched controls.",
+  },
+  {
+    id: 13,
+    short: "Hoffman et al.",
+    source: "Adult growth hormone deficiency burden",
+    owner: "2025 / J Med Econ / Sponsor: Ascendis",
+    url: "https://pubmed.ncbi.nlm.nih.gov/40826813/",
+    evidence: "Confirmed adult growth hormone deficiency was associated with higher costs than controls when GH treatment costs were excluded.",
+  },
+  {
+    id: 14,
+    short: "Michalak et al.",
+    source: "Semaglutide in ASCVD with overweight or obesity",
+    owner: "2025 / J Med Econ / Sponsor: Novo Nordisk",
+    url: "https://www.tandfonline.com/doi/abs/10.1080/13696998.2025.2526282",
+    evidence: "Semaglutide 2.4 mg was associated with lower annual medical costs and lower inpatient utilization than controls.",
+  },
+  {
+    id: 15,
+    short: "Bilen et al.",
+    source: "Apalutamide vs enzalutamide in mCSPC",
+    owner: "2025 / J Med Econ / Sponsor: Johnson & Johnson",
+    url: "https://pubmed.ncbi.nlm.nih.gov/40660892/",
+    evidence: "Apalutamide initiation was associated with lower inpatient use and lower all-cause medical costs than enzalutamide.",
+  },
+  {
+    id: 16,
+    short: "MIBC recurrence claims analysis",
+    source: "Economic burden of MIBC recurrence",
+    owner: "2025 / PMC / Sponsor: no manufacturer sponsor confirmed",
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12653613/",
+    evidence: "Muscle-invasive bladder cancer recurrence was associated with higher adjusted medical costs per patient per month.",
+  },
+  {
+    id: 17,
+    short: "Masand et al.",
+    source: "Cariprazine first vs later adjunctive therapy",
+    owner: "2025 / J Med Econ / Sponsor: AbbVie",
+    url: "https://pubmed.ncbi.nlm.nih.gov/39841541/",
+    evidence: "First adjunctive cariprazine use in MDD was associated with lower mental-health hospitalization and lower mental-health costs than later use.",
+  },
+  {
+    id: 18,
+    short: "Masand et al.",
+    source: "Cariprazine Medicaid analysis",
+    owner: "2025 / J Med Econ / Sponsor: AbbVie",
+    url: "https://pubmed.ncbi.nlm.nih.gov/41320566/",
+    evidence: "First adjunctive cariprazine use in Medicaid beneficiaries was associated with lower emergency-department and outpatient visit rates.",
+  },
+];
+
+const c = (ids) => ids.map((id) => {
+  const ref = refs.find((r) => r.id === id);
+  return `<a class="cite" href="${ref.url}">${id}</a>`;
+}).join("");
+
+function esc(text) {
+  return String(text)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;");
+}
+
+function slide(num, total, eyebrow, title, body, cls = "") {
+  return `<article class="slide ${cls}">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">${eyebrow}</div>
+        <h2>${title}</h2>
+      </div>
+      ${body}
+    </div>
+    <div class="slide-num">${String(num).padStart(2, "0")} / ${String(total).padStart(2, "0")}</div>
+  </article>`;
+}
+
+const totalSlides = 10;
+const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HEOR cost-burden publications relevant to manufacturer treatment value context</title>
+  <style>
+    :root{--ink:#10120f;--muted:#5c6257;--paper:#f6f1e8;--paper2:#ebe4d6;--card:#fffaf0;--line:#1b1f17;--lime:#d7ff5f;--orange:#ffb86b;--blue:#b8d8ff;--pink:#ffd3e0;--gray:#d6d0c2;--red:#ff8a76;--shadow:0 18px 48px rgba(16,18,15,.08);--radius:24px}
+    *{box-sizing:border-box}html,body{margin:0;background:var(--paper);color:var(--ink);scrollbar-width:none}html::-webkit-scrollbar,body::-webkit-scrollbar{display:none}
+    body,*,*::before,*::after{-webkit-print-color-adjust:exact;print-color-adjust:exact;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px}
+    .slide{width:100vw;height:100vh;min-height:100vh;overflow:hidden;position:relative;display:flex;align-items:flex-start;padding:36px 0 20px;page-break-after:always;break-after:page;background:var(--paper)}
+    .slide:last-child{page-break-after:auto;break-after:auto}.slide-bg-img{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;pointer-events:none;user-select:none}
+    .wrap{width:min(1360px,calc(100vw - 56px));margin:0 auto;position:relative;z-index:1}.eyebrow{display:inline-flex;align-items:center;border:1.4px solid var(--line);padding:8px 12px;border-radius:999px;font-size:15px;font-weight:850;letter-spacing:0;text-transform:uppercase;margin-bottom:16px;background:var(--lime)}
+    h1,h2,h3,p{margin:0}h1{font-size:66px;line-height:1.2;font-weight:560;max-width:1320px;text-wrap:balance}h2{font-size:46px;line-height:1.2;font-weight:560;max-width:1320px;text-wrap:balance}h3{font-size:26px;line-height:1.16;font-weight:650}
+    .dek{margin-top:26px;color:var(--muted);font-size:26px;line-height:1.24;max-width:1280px}.section-head{margin-bottom:26px}.section-head p{margin-top:18px;color:var(--muted);font-size:23px;line-height:1.22;max-width:1280px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .panel,.metric,.card,.table,.callout{border:1.5px solid var(--line);background:rgba(255,250,240,.88);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}.panel{padding:22px}.panel.dark,.callout{background:#11130f;color:var(--paper);border-color:#11130f}.callout{padding:26px 30px}.panel.dark h1,.panel.dark h2,.panel.dark h3,.panel.dark h4,.callout h1,.callout h2,.callout h3,.callout h4{color:var(--lime)}.callout h3{font-size:28px;line-height:1.16}.callout p{margin-top:10px;font-size:22px;line-height:1.24}.panel.dark p,.panel.dark li,.callout p,.callout li{color:rgba(246,241,232,.86)}.panel.dark li::marker,.callout li::marker{color:var(--lime)}
+    .metric{padding:20px;min-height:156px}.num{font-size:48px;line-height:.92;font-weight:780;letter-spacing:0}.label{margin-top:12px;font-size:22px;line-height:1.13;color:var(--muted)}
+    .card{padding:22px;min-height:252px}.card.compact{min-height:216px}.card p{color:var(--muted);font-size:22px;line-height:1.15;margin-top:10px}.card .tag{margin-bottom:10px}
+    .tag{display:inline-block;padding:5px 9px;border:1.2px solid var(--line);border-radius:999px;font-size:12px;font-weight:850;text-transform:uppercase;background:var(--paper2);white-space:nowrap}.lime{background:var(--lime)}.orange{background:var(--orange)}.blue{background:var(--blue)}.pink{background:var(--pink)}.red{background:var(--red)}.gray{background:var(--gray)}
+    .summary-list,.bullets{margin:12px 0 0;padding-left:22px;display:grid;gap:8px}.summary-list{gap:10px}.summary-list li{font-size:21px;line-height:1.22}.bullets li{font-size:23px;line-height:1.15}.bullets li{color:var(--muted)}.panel.dark .summary-list li,.panel.dark .bullets li,.callout .summary-list li,.callout .bullets li{color:rgba(246,241,232,.86)}
+    .cite{font-size:.58em;vertical-align:super;margin-left:2px;font-weight:900;text-decoration:none}.cite+.cite::before{content:",";margin-right:1px}.slide-num{position:absolute;right:40px;bottom:24px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(16,18,15,.38);font-weight:800;z-index:2}
+    .table{display:grid}.row{display:grid;border-bottom:1px solid var(--line);min-height:64px}.row:last-child{border-bottom:0}.cell{padding:13px 14px;border-right:1px solid var(--line);font-size:20px;line-height:1.12}.cell:last-child{border-right:0}.head .cell{background:#11130f;color:var(--paper);font-weight:850;text-transform:uppercase;font-size:17px;line-height:1;white-space:nowrap;display:flex;align-items:center}
+    .row.evidence{grid-template-columns:.9fr 1.05fr 1.35fr 1.4fr}.row.treatment{grid-template-columns:.78fr 1.68fr 1.03fr 1.3fr}.row.refs{grid-template-columns:.32fr .95fr 1fr 1.75fr;min-height:0}.refs .cell{font-size:17px;line-height:1.08;padding:10px 11px}.refs.head .cell{font-size:17px;line-height:1;white-space:nowrap}.row.refs .cell:first-child{text-align:center}
+    .matrix{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.matrix .card{min-height:310px}.source-note{font-size:15px;line-height:1.22;color:var(--muted);margin-top:10px}
+    @page{size:1600px 900px;margin:0}@media print{html,body{width:1600px;height:900px}.slide{width:1600px;height:900px;min-height:900px;padding:36px 0 20px}.wrap{width:1360px}.panel,.metric,.card,.table,.callout{box-shadow:none}}@media screen and (max-width:900px){.slide{width:1600px;height:900px}}
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">HEOR publication scan | 2025-2026</div>
+      <h1>Cost-burden publications relevant to treatment value</h1>
+      <p class="dek">This deck summarizes 2025-2026 HEOR publications in which high cost or utilization was reported in disease states that may be relevant to manufacturer-sponsored value evidence, payer evidence generation, or health-care economic information.</p>
+      <div class="grid-3" style="margin-top:28px">
+        <div class="metric"><div class="num">18</div><div class="label">Publication records reviewed in this evidence set${c([1,2,3,4])}</div></div>
+        <div class="metric"><div class="num">16</div><div class="label">Disease or treatment contexts represented${c([5,6,7,8])}</div></div>
+        <div class="metric"><div class="num">5</div><div class="label">Examples with direct treatment-associated HCRU or cost findings${c([10,11,14,15,17])}</div></div>
+      </div>
+      <div class="callout" style="margin-top:24px">
+        <h3>Executive summary</h3>
+        <ul class="summary-list">
+          <li>The evidence is most conservatively used to describe disease burden, cost drivers, and utilization endpoints, not to infer treatment-mediated savings.</li>
+          <li>Treatment-associated findings were identified for semaglutide, apalutamide, maribavir, pimavanserin, and cariprazine analyses.${c([10,11,14,15,17,18])}</li>
+          <li>Burden studies linked cost to disease activity, recurrence, hospitalization, emergency care, delayed diagnosis, or treatment sequencing.${c([1,4,5,6,7,8,16])}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">01 / ${String(totalSlides).padStart(2, "0")}</div>
+  </article>
+  ${slide(2, totalSlides, "Interpretive frame", "Economic burden evidence provides context but does not establish treatment cost offset", `
+    <div class="grid-3">
+      <div class="card"><span class="tag lime">Burden of illness</span><h3>Describes cost consequences</h3><p>Burden analyses quantify medical costs, admissions, emergency-department use, or outpatient utilization associated with a disease state or severity marker.${c([1,2,5,6,12,13])}</p></div>
+      <div class="card"><span class="tag orange">Treatment association</span><h3>Closer to offset evidence</h3><p>Comparative or pre/post treatment analyses provide a more direct, although still usually observational, basis for evaluating whether treatment patterns are associated with lower HCRU or costs.${c([10,11,14,15,17,18])}</p></div>
+      <div class="card"><span class="tag blue">Manufacturer use</span><h3>Supports value framing</h3><p>These studies can inform payer-relevant hypotheses, endpoint selection, budget-impact assumptions, and health-care economic information when limitations and sponsorship are explicitly disclosed.</p></div>
+    </div>
+    <div class="callout" style="margin-top:18px"><h3>Scientific boundary</h3><p>For treatment value context, claims should match the study design: disease burden, biomarker-linked cost, recurrence cost, or treatment-associated utilization. Causal cost-offset language generally requires stronger evidence than retrospective claims analyses provide.</p></div>
+  `)}
+  ${slide(3, totalSlides, "Evidence map | Disease-burden studies", "Burden studies identify cost drivers that may be relevant to treatment value discussions", `
+    <div class="table">
+      <div class="row evidence head"><div class="cell">Disease area</div><div class="cell">Manufacturer involvement</div><div class="cell">Reported burden</div><div class="cell">Use in treatment value context</div></div>
+      <div class="row evidence"><div class="cell">Prurigo nodularis${c([1])}</div><div class="cell">Regeneron/Sanofi-funded</div><div class="cell">Higher annual health care costs than matched controls.</div><div class="cell">Defines economic burden in a disease area with targeted biologic options.</div></div>
+      <div class="row evidence"><div class="cell">EGPA${c([2])}</div><div class="cell">AstraZeneca authors</div><div class="cell">Markedly higher costs than matched severe uncontrolled asthma; preprint status.</div><div class="cell">Supports context for biologic-treated eosinophilic inflammatory disease.</div></div>
+      <div class="row evidence"><div class="cell">Primary biliary cholangitis${c([3,4])}</div><div class="cell">Ipsen author; Gilead authors/funding</div><div class="cell">High costs by treatment line; elevated ALP associated with higher adjusted costs.</div><div class="cell">Links disease activity and treatment status to economic outcomes.</div></div>
+      <div class="row evidence"><div class="cell">Obstructive HCM${c([5])}</div><div class="cell">Cytokinetics-funded/authored</div><div class="cell">Mean 5-year all-cause cost approximately $182,000; admissions were a major driver.</div><div class="cell">Frames hospitalization and progression as endpoints for value evidence.</div></div>
+      <div class="row evidence"><div class="cell">MASH${c([6])}</div><div class="cell">Novo Nordisk authors</div><div class="cell">Incremental Medicare HCRU and costs versus matched beneficiaries.</div><div class="cell">Provides payer-context burden estimates for metabolic liver disease therapies.</div></div>
+    </div>
+  `)}
+  ${slide(4, totalSlides, "Evidence map | Rare and underdiagnosed disease", "Rare-disease studies emphasize persistent cost, delayed diagnosis, and high-acuity utilization", `
+    <div class="grid-2">
+      <div class="card"><span class="tag lime">MMN</span><h3>Diagnostic and mimic-condition context</h3><p>A Takeda-sponsored claims analysis reported higher post-index costs for multifocal motor neuropathy than for matched mimic conditions.${c([7])} The finding can inform discussions of diagnostic delay, treatment access, and IVIG-related economic context.</p></div>
+      <div class="card"><span class="tag orange">AATD with COPD</span><h3>Acute-care utilization</h3><p>A Medicare Advantage study reported higher admissions, emergency-department use, and spending in alpha-1 antitrypsin deficiency with COPD.${c([8])} This supports economic framing around case identification and disease complications.</p></div>
+      <div class="card"><span class="tag blue">Pompe disease</span><h3>Persistent treated-patient cost</h3><p>In ERT-treated Pompe disease, total all-cause costs were very high, with outpatient and drug-related costs as major components.${c([9])} Interpretation should distinguish disease burden from therapy acquisition costs.</p></div>
+      <div class="card"><span class="tag pink">NTDT and AGHD</span><h3>Rare hematologic and endocrine burden</h3><p>NTDT was associated with higher costs and acute-care use than controls, while confirmed adult growth hormone deficiency had higher costs when GH treatment costs were excluded.${c([12,13])}</p></div>
+    </div>
+  `)}
+  ${slide(5, totalSlides, "Evidence map | Direct treatment-associated studies", "Several publications reported lower HCRU or medical costs after or with treatment", `
+    <div class="table">
+      <div class="row treatment head"><div class="cell">Treatment context</div><div class="cell">Confirmed manufacturer involvement</div><div class="cell">Reported finding</div><div class="cell">Scientific interpretation</div></div>
+      <div class="row treatment"><div class="cell">Semaglutide 2.4 mg in ASCVD with overweight or obesity${c([14])}</div><div class="cell">Novo Nordisk employee authors; writing support funded by Novo Nordisk.</div><div class="cell">22% lower annual medical costs and lower inpatient utilization versus controls.</div><div class="cell">Treatment-associated cost evidence; observational design limits causal inference.</div></div>
+      <div class="row treatment"><div class="cell">Apalutamide vs enzalutamide in mCSPC${c([15])}</div><div class="cell">Johnson & Johnson funded; Johnson & Johnson employee authors.</div><div class="cell">Lower inpatient use and lower all-cause medical costs with apalutamide initiation.</div><div class="cell">Comparative treatment-sequencing evidence requiring comparator and confounding review.</div></div>
+      <div class="row treatment"><div class="cell">Maribavir in refractory/resistant post-transplant CMV${c([10])}</div><div class="cell">Takeda funded; Takeda employee authors.</div><div class="cell">Medical costs declined after maribavir initiation in a pre/post analysis.</div><div class="cell">Pre/post design aligns treatment timing with HCRU change but remains nonrandomized.</div></div>
+      <div class="row treatment"><div class="cell">Early pimavanserin in Parkinson's disease psychosis${c([11])}</div><div class="cell">Acadia Pharmaceuticals funded; Acadia employee authors.</div><div class="cell">Lower emergency, inpatient, and skilled-nursing-facility utilization.</div><div class="cell">Useful for timing-of-treatment hypotheses; residual confounding remains plausible.</div></div>
+      <div class="row treatment"><div class="cell">First adjunctive cariprazine in MDD${c([17,18])}</div><div class="cell">AbbVie funded; AbbVie employee authors.</div><div class="cell">Lower hospitalization, emergency-department, outpatient, or mental-health costs in first-adjunctive use analyses.</div><div class="cell">Supports treatment-sequencing economic context, not standalone clinical superiority.</div></div>
+    </div>
+  `)}
+  ${slide(6, totalSlides, "Evidence map | Recurrence and progression costs", "Recurrence, disease activity, and hospitalization are recurring economic endpoints", `
+    <div class="matrix">
+      <div class="card"><span class="tag red">MIBC recurrence</span><h3>Recurrence as economic event</h3><p>A claims analysis reported that muscle-invasive bladder cancer recurrence was associated with approximately $7,191 higher adjusted medical costs per patient per month.${c([16])} The evidence can support recurrence-delay as an economic endpoint when linked to clinical evidence.</p></div>
+      <div class="card"><span class="tag lime">PBC ALP</span><h3>Biomarker-linked burden</h3><p>Elevated alkaline phosphatase in PBC was associated with higher adjusted costs than normal alkaline phosphatase.${c([4])} This supports a biomarker-control value hypothesis, not a direct claim about any one therapy.</p></div>
+      <div class="card"><span class="tag orange">oHCM admissions</span><h3>Hospitalization cost driver</h3><p>oHCM hospital admissions were identified as a major medical-cost component over five years.${c([5])} This provides a measurable economic endpoint for therapies intended to alter symptoms, progression, or decompensation.</p></div>
+    </div>
+    <div class="callout" style="margin-top:18px"><h3>Cross-study pattern</h3><p>The most reusable value-evidence variables were clinically interpretable drivers: admission, emergency care, recurrence, biomarker activity, diagnostic delay, and treatment sequence.</p></div>
+  `)}
+  ${slide(7, totalSlides, "Use in manufacturer treatment support", "The publications can inform value-evidence strategy without requiring promotional cost-offset claims", `
+    <div class="grid-3">
+      <div class="card"><span class="tag lime">Disease burden</span><h3>Establish baseline<br>economic burden</h3><p>Burden studies can document cost magnitude and resource-use patterns before a therapy-specific economic model is developed.${c([1,2,5,6,7,8,12,13])}</p></div>
+      <div class="card"><span class="tag orange">Endpoint selection</span><h3>Identify measurable<br>cost drivers</h3><p>Studies that isolate admissions, emergency care, recurrence, biomarker elevation, or skilled-nursing-facility use can guide HCRU endpoints in RWE studies and budget-impact models.${c([4,5,11,16])}</p></div>
+      <div class="card"><span class="tag blue">Economic modeling</span><h3>Parameterize assumptions<br>cautiously</h3><p>Reported per-patient costs can inform sensitivity analyses, provided the model separately states population, time horizon, payer perspective, and whether drug acquisition costs are included.${c([9,14,15])}</p></div>
+      <div class="card"><span class="tag pink">HCEI context</span><h3>Support nonpromotional<br>evidence exchange</h3><p>For health-care economic information, claims should remain within the study population, comparator, outcome, and design reported by the publication.</p></div>
+      <div class="card"><span class="tag gray">Competitive intelligence</span><h3>Map sponsor evidence<br>priorities</h3><p>Manufacturer involvement helps identify which disease pathways, cost drivers, comparators, and outcomes competitors are emphasizing in value-evidence generation.</p></div>
+      <div class="card"><span class="tag red">Evidence gaps</span><h3>Locate needed follow-up<br>evidence</h3><p>Burden studies usually require therapy-specific clinical or real-world evidence before a cost-offset proposition can be stated with confidence.</p></div>
+    </div>
+  `)}
+  ${slide(8, totalSlides, "Evidence strength", "Direct treatment-associated analyses should be separated from burden-only publications", `
+    <div class="grid-3">
+      <div class="card"><span class="tag lime">More direct</span><h3>Treatment-associated cost or HCRU changes</h3><p>Semaglutide, apalutamide, maribavir, pimavanserin, and cariprazine publications reported cost or utilization differences associated with treatment exposure or sequencing.${c([10,11,14,15,17,18])}</p></div>
+      <div class="card"><span class="tag orange">Intermediate</span><h3>Biomarker or event-linked burden</h3><p>PBC alkaline phosphatase, MIBC recurrence, and oHCM admissions link clinical state or events to cost, providing plausible value pathways when paired with treatment-effect evidence.${c([4,5,16])}</p></div>
+      <div class="card"><span class="tag blue">Contextual</span><h3>Disease-burden<br>quantification</h3><p>PN, EGPA, MASH, MMN, AATD, Pompe, NTDT, and AGHD analyses primarily quantify burden; they do not demonstrate that any specific drug offsets that burden.${c([1,2,6,7,8,9,12,13])}</p></div>
+    </div>
+    <div class="callout" style="margin-top:18px"><h3>Required caveat</h3><p>Claims data are vulnerable to selection, coding, severity, channel, and treatment-cost effects. Funding and author affiliations should be retained when these findings are reused.</p></div>
+  `)}
+  ${slide(9, totalSlides, "Reference table | 1-9", "References", `
+    <div class="table">
+      <div class="row refs head"><div class="cell">Ref</div><div class="cell">Source</div><div class="cell">Date / Status / Sponsor</div><div class="cell">Evidence used in report</div></div>
+      ${refs.slice(0, 9).map((r) => `<div class="row refs"><div class="cell">${r.id}</div><div class="cell">${esc(r.source)}${c([r.id])}</div><div class="cell">${esc(r.owner)}</div><div class="cell">${esc(r.evidence)}${c([r.id])}</div></div>`).join("")}
+    </div>
+  `, "references-slide")}
+  ${slide(10, totalSlides, "Reference table | 10-18", "References", `
+    <div class="table">
+      <div class="row refs head"><div class="cell">Ref</div><div class="cell">Source</div><div class="cell">Date / Status / Sponsor</div><div class="cell">Evidence used in report</div></div>
+      ${refs.slice(9).map((r) => `<div class="row refs"><div class="cell">${r.id}</div><div class="cell">${esc(r.source)}${c([r.id])}</div><div class="cell">${esc(r.owner)}</div><div class="cell">${esc(r.evidence)}${c([r.id])}</div></div>`).join("")}
+    </div>
+  `, "references-slide")}
+</body>
+</html>`;
+
+fs.mkdirSync(path.join(runDir, "sources"), { recursive: true });
+fs.writeFileSync(reportPath, html, "utf8");
+
+const sourceLog = `# Source Log
+
+Topic: 2025-2026 HEOR publications describing high disease-state costs or treatment-associated HCRU/cost differences relevant to manufacturer treatment value context.
+
+Scope override: The user requested 2025-2026 publications and a deck based on prior findings. This is a historical HEOR evidence scan, not a last-7-days CI update.
+
+Language standard: Viewer-facing language is intended to be neutral, objective, scientific, and source-bound. The report distinguishes burden-of-illness evidence from treatment-associated cost or HCRU evidence.
+
+Asset note: The deck uses the local Cohere-style CI tan background asset copied from an existing validated CI report because the installable skill folder referenced, but did not contain, the background PNG.
+
+## References
+
+${refs.map((r) => `### Reference ${r.id}: ${r.source}
+- Short label: ${r.short}
+- URL: ${r.url}
+- Source status/sponsor: ${r.owner}
+- Evidence used: ${r.evidence}`).join("\n\n")}
+`;
+
+fs.writeFileSync(sourceLogPath, sourceLog, "utf8");
+fs.writeFileSync(referenceCsvPath, "label,path,caption\n", "utf8");
+console.log(JSON.stringify({ reportPath, sourceLogPath, referenceCsvPath }, null, 2));

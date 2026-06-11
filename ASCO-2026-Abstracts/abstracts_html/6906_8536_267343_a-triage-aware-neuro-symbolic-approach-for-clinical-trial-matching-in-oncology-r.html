@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A triage-aware neuro-symbolic approach for clinical trial matching in oncology: Real-world validation in lung and genitourinary cancer.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>A triage-aware neuro-symbolic approach for clinical trial matching in oncology: Real-world validation in lung and genitourinary cancer.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 8536</div>
+    <div><strong>First speaker:</strong> Marta Brambilla, MD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/267343">https://www.asco.org/abstracts-presentations/267343</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b> Low clinical trial accrual remains a critical barrier in oncology, driven by fragmented electronic health records (EHRs), limited trial awareness, and the substantial time required for manual eligibility screening. While large language models (LLMs) can extract clinical information from unstructured data, their probabilistic nature limits direct use for eligibility decisions that require protocol-level determinism and auditability. We developed a neuro-symbolic clinical trial matching platform that combines LLM-based information extraction with explicit rule-based eligibility reasoning, augmented by an uncertainty-aware triage strategy to safely integrate automation into real-world workflows.</p>  <b>Methods: </b> Unstructured EHRs were processed using a large language model (Llama 3.1–70B) to extract key clinical variables, which were normalized to a domain ontology. Trial eligibility was evaluated using deterministic inclusion and exclusion criteria encoded directly from full trial protocols, producing per-criterion explanations and an overall classification (eligible, not eligible, or indeterminate). A triage module quantified evidentiary completeness and logical consistency, categorizing cases into low-uncertainty confidence results suitable for automated screening, moderate and high-uncertainty cases requiring clinician review. Performance was assessed against clinician-validated ground truth in a real-world cohort of 107 patients, including advanced lung cancer patients and an independent genitourinary cancer validation cohort. </p>  <b>Results: </b> Among matchable patients (n&nbsp;=&nbsp;79), the system achieved perfect Top-1 accuracy and Recall@3 of 1.00, with all eligible patients correctly identified within the top three trial recommendations. Thirty-nine patients (49%) were triaged as low-uncertainty and suitable for automated screening, while the remainder were appropriately flagged for clinician review. Among non-matchable patients (n&nbsp;=&nbsp;28), no false-positive eligibility assignments were observed (false-positive rate 0.0). Triage correctly identified high-uncertainty cases, minimizing unsafe automation. In indeterminate cases (ground truth unknown, n&nbsp;=&nbsp;6), the system deferred to manual review in two-thirds of cases, with zero unsafe automated classifications. Median end-to-end processing time was under one minute per patient.</p>  <b>Conclusions: </b> This neuro-symbolic, triage-aware approach enables transparent and deterministic clinical trial matching in oncology. By combining automated eligibility assessment with uncertainty-based triage, the system reduces manual screening burden while preserving clinician oversight, supporting scalable and trustworthy trial enrollment in real-world practice.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

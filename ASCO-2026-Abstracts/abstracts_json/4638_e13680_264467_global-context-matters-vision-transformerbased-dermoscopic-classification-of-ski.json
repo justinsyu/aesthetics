@@ -1,0 +1,73 @@
+{
+  "abstractNumber": "e13680",
+  "body": " \r\n\r\n\t<div><h3><b>Background: </b></h3>  Skin cancer is the most common malignancy worldwide, encompassing a spectrum from benign nevi to aggressive melanoma and nonmelanoma skin cancers. Dermoscopy improves diagnostic accuracy but remains operator dependent, with substantial interobserver variability, particularly for atypical or early lesions. Convolutional neural networks (CNNs) have demonstrated expert-level performance in skin lesion classification; however, their reliance on localized receptive fields may limit modeling of global lesion symmetry, border irregularity, and spatial color patterns central to dermoscopic diagnosis. Vision Transformers (ViTs) introduce an alternative paradigm using self-attention to capture long-range contextual relationships across entire images. We evaluated a ViT-B/16 model for automated diagnosis and classification of skin tumors from dermoscopic images.</p> <h3><b>Methods: </b></h3>  We analyzed anonymized publicly available dermoscopy datasets derived from established skin cancer imaging repositories, including the ISIC Archive, comprising malignant melanoma, basal cell carcinoma, squamous cell carcinoma, and benign melanocytic lesions, with ground truth established by histopathology or expert consensus. Images were standardized, augmented, and split into training and validation cohorts using stratified sampling. A Vision Transformer B/16 model pretrained on ImageNet was fine-tuned for multi-class skin tumor classification. Input images (224&#215;224) were partitioned into non-overlapping 16&#215;16 patches and embedded into a token sequence with positional encodings and a learnable class token. The architecture employed 12 transformer encoder blocks with multi-head self-attention and feed-forward networks. Performance was evaluated using accuracy, sensitivity, specificity, F1 score, and area under the receiver operating characteristic curve (AUROC).</p> <h3><b>Results: </b></h3>  The Vision Transformer achieved strong diagnostic performance across skin tumor classes, with overall accuracy exceeding 96% and AUROC greater than 0.96. Attention-based global modeling improved discrimination of lesions with irregular borders, heterogeneous pigmentation, and asymmetric morphology—features critical for melanoma detection. Performance remained stable across lesion subtypes and imaging conditions, supporting robustness and generalizability comparable to state-of-the-art CNN approaches.</p> <h3><b>Conclusions: </b></h3>  Vision Transformer–based modeling enables accurate and interpretable classification of skin tumors by capturing global dermoscopic context beyond localized feature extraction. Although computationally more intensive than conventional CNNs, ViT architectures offer complementary strengths in modeling complex lesion morphology and warrant further prospective evaluation for integration into clinical skin cancer screening and diagnostic workflows.</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+  "contentId": "264467",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/264467",
+    "queryParams": null,
+    "target": null,
+    "title": "Global context matters: Vision transformer–based dermoscopic classification of skin tumors."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION264467"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": null,
+  "presentationId": "264467",
+  "primaryPerson": {
+    "displayName": "Kavin Elangovan, BS",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": "Skin cancer is the most common malignancy worldwide, encompassing a spectrum from benign nevi to aggressive melanoma and nonmelanoma skin cancers. Dermoscopy improves diagnostic accuracy but remains operator dependent, with substantial interobserver variability, particularly for atypical or early lesions. Convolutional neural networks (CNNs) have demonstrated expert-level performance in skin lesion classification; however, their reliance on localized receptive fields may limit modeling of global lesion symmetry, border irregularity, and spatial color patterns central to dermoscopic diagnosis. Vision Transformers (ViTs) introduce an alternative paradigm using self-attention to capture long-range contextual relationships across entire images. We evaluated a ViT-B/16 model for automated diagnosis and classification of skin tumors from dermoscopic images.",
+  "taxonomy": {
+    "countriesThes": null,
+    "drugsThes": null,
+    "entitiesThes": null,
+    "genesThes": null,
+    "orgThes": null,
+    "subjectsThes": [
+      "Health care industry"
+    ]
+  },
+  "title": "Global context matters: Vision transformer–based dermoscopic classification of skin tumors.",
+  "titles": null,
+  "uid": "PRESENTATION264467"
+}

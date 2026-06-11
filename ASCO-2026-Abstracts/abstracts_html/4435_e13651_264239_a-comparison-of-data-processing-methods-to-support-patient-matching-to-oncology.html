@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A comparison of data-processing methods to support patient matching to oncology clinical trials.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>A comparison of data-processing methods to support patient matching to oncology clinical trials.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e13651</div>
+    <div><strong>First speaker:</strong> May Pini, MD, MPH</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/264239">https://www.asco.org/abstracts-presentations/264239</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> To pre-screen and match patients to trials at scale, technology tools are needed to support human workflows. These tools require numerous data inputs, including clinical concepts such as cancer diagnosis, stage, and histology. The more complete these data are, the better the accuracy of matches produced, and the more efficient human reviewers can be. While some clinical data are available from clinical system structured fields, most are within unstructured documentation. Methods including human abstraction, natural language processing (NLP) models, and large language model (LLM) agents can improve data completeness and accuracy beyond structured EHR and laboratory information management system (LIMS) data. We compared these methods to obtain diagnosis and stage data for Tempus Link, a tool that supports patient-trial matching at scale for a national oncology trials network.</div>
+  <main> 
+
+	<div><b>Background: </b> To pre-screen and match patients to trials at scale, technology tools are needed to support human workflows. These tools require numerous data inputs, including clinical concepts such as cancer diagnosis, stage, and histology. The more complete these data are, the better the accuracy of matches produced, and the more efficient human reviewers can be. While some clinical data are available from clinical system structured fields, most are within unstructured documentation. Methods including human abstraction, natural language processing (NLP) models, and large language model (LLM) agents can improve data completeness and accuracy beyond structured EHR and laboratory information management system (LIMS) data. We compared these methods to obtain diagnosis and stage data for Tempus Link, a tool that supports patient-trial matching at scale for a national oncology trials network.</p>  <b>Methods: </b> We randomly sampled patients with one of 4 previously abstracted cancer diagnoses: lung (LC), prostate (PC), colorectal (CRC), and breast cancer (BC). For LC we also examined histology (NSCLC vs SCLC). For each method (EHR, LIMS, NLP predicted, LLM agent), diagnosis, stage, and histology values were compared to the abstracted value, and accuracy was calculated as the percent of patients with a correct value among patients with an abstracted value available. Since these data are inputs into a tool used by RN screeners who confirm matches before notifying a site, diagnosis was focused on accuracy in broad cancer diagnostic categories (e.g. neoplasm of lung). In addition, we assessed completeness as presence of a usable value across all patients in a cohort.</p>  <b>Results: </b> Completeness for EHR, NLP, and LLM was higher for diagnosis compared to stage, ranging from 91.7 - 100% vs 20 - 95.8%. LIMS completeness was lower for all variables across cohorts, ranging from 0 - 87.8%.</p>  <b>Conclusions: </b> Variability exists across data sources and processing methods in generating data inputs for trial matching. All methods have high completeness and accuracy for diagnosis, while there are significant gains when applying NLP and LLMs for stage and histology. To balance accuracy, matching efficiency, and cost, the use of enhanced data processing methods are required for certain variables, but may not be needed for others.</div>
+
+
+
+	<div class="table_caption"><b>Accuracy by cohort, variable, and data processing method.</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p>Cohort</p>
+</td>
+<td></td>
+<td>
+<p>EHR</p>
+</td>
+<td>
+<p>LIMS</p>
+</td>
+<td>
+<p>NLP</p>
+</td>
+<td>
+<p>LLM</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>LC</p>
+<p>n=48</p>
+</td>
+<td>
+<p># diagnosis correct</p>
+</td>
+<td>
+<p>48 (100%)</p>
+</td>
+<td>
+<p>33 (68.8%)</p>
+</td>
+<td>
+<p>48 (100%)</p>
+</td>
+<td>
+<p>45 (93.8%)</p>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<p># NSCLC correct</p>
+<p>n=48</p>
+</td>
+<td>
+<p>1 (2.1%)</p>
+</td>
+<td>
+<p>27 (56.3%)</p>
+</td>
+<td>
+<p>48 (100%)</p>
+</td>
+<td>
+<p>39 (81.3%)</p>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<p># stage correct</p>
+<p>n=41</p>
+</td>
+<td>
+<p>16 (39%)</p>
+</td>
+<td>
+<p>0 (0%)</p>
+</td>
+<td>
+<p>27 (65.9%)</p>
+</td>
+<td>
+<p>30 (73.2%)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>PC</p>
+<p>n=48</p>
+</td>
+<td>
+<p># diagnosis correct </p>
+</td>
+<td>
+<p>48 (100%)</p>
+</td>
+<td>
+<p>43 (89.6%)</p>
+</td>
+<td>
+<p>48 (100%)</p>
+</td>
+<td>
+<p>44 (91.7%)</p>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<p># stage correct</p>
+<p>n=45</p>
+</td>
+<td>
+<p>22 (48.9%)</p>
+</td>
+<td>
+<p>0 (0%)</p>
+</td>
+<td>
+<p>15 (33.3%)</p>
+</td>
+<td>
+<p>38 (84.4%)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>CRC</p>
+<p>n=49</p>
+</td>
+<td>
+<p># diagnosis correct </p>
+</td>
+<td>
+<p>47 (95.9%)</p>
+</td>
+<td>
+<p>42 (85.7%)</p>
+</td>
+<td>
+<p>47 (95.9%)</p>
+</td>
+<td>
+<p>46 (93.9%)</p>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<p># stage correct</p>
+<p>n=46</p>
+</td>
+<td>
+<p>21 (45.7%)</p>
+</td>
+<td>
+<p>0 (0%)</p>
+</td>
+<td>
+<p>36 (78.3%)</p>
+</td>
+<td>
+<p>42 (91.3%)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>BC</p>
+<p>n=50</p>
+</td>
+<td>
+<p># diagnosis correct </p>
+</td>
+<td>
+<p>50 (100%)</p>
+</td>
+<td>
+<p>9 (18%)</p>
+</td>
+<td>
+<p>47 (94%)</p>
+</td>
+<td>
+<p>50 (100%)</p>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<p># stage correct</p>
+<p>n=36</p>
+</td>
+<td>
+<p>5 (13.9%)</p>
+</td>
+<td>
+<p>0 (0%)</p>
+</td>
+<td>
+<p>23 (63.9%)</p>
+</td>
+<td>
+<p>35 (97.2%)</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

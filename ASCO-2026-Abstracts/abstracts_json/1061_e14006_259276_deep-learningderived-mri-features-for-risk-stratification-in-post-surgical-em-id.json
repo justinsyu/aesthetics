@@ -1,0 +1,64 @@
+{
+  "abstractNumber": "e14006",
+  "body": " \r\n\r\n\t<div><b>Background: </b> IDH-mutant gliomas undergo long periods of observation after radiochemotherapy before undergoing malignant transformation, leading to neurological morbidities and death. Unfortunately, the timing of disease progression is unpredictable. In this study, we developed a deep learning (DL)-based AI framework for extracting relevant sub-visual feature representation from routine structural post-surgical brain MRI scans for predicting progression-free survival (PFS) in IDH-mutant glioma patients. Our hypothesis is that AI-derived quantitative features from post-treatment structural MRI enable identification of high-risk patients who undergo earlier disease progression.</p>  <b>Methods: </b> A total of 188 IDH-mutant glioma patients from the University of Wisconsin Hospital were retrospectively analyzed, of whom 143 met the inclusion criteria of this study including (a) patients who underwent biopsy or surgical resection; availability of (b) chemo-radiation therapy information; and (c) post-operative MRI sequences (T1w, post-contrast T1w, T2w, FLAIR). Following co-registration, skull stripping and bias field correction, a Swin UNETR model for semantic segmentation was trained using the publicly available BraTS-Gli2024 challenge dataset, which includes ~1000 glioma post-treatment patients. The model provided tumor habitat segmentations, including enhancing and non-enhancing tumor, FLAIR hyperintensities, and tumor cavity. Using the Swin UNETR model, a total of 768 DL features per patient were extracted from the encoder as feature representations. For survival analysis, patients were randomly divided into training and validation sets in an 80:20 ratio. A LASSO-Cox regression model was then applied in a 10-fold cross validation scheme to identify independent features associated with PFS (defined as time to next intervention) on the training set. The discriminatory features identified on the training set by the Cox model were then applied on the test set to predict survival.</p>  <b>Results: </b> The Swin UNETR model achieved an overall dice score of 0.86 &#177; 0.13 for tumor habitat segmentation. Analysis of encoder-derived DL features using a Cox proportional hazards model yielded concordance indices of 0.76 and 0.78 for the training and testing cohorts, respectively, with statistically significant associations (p-value &lt; 0.05) for both sets.</p>  <b>Conclusions: </b> Our analysis demonstrated that DL features extracted from routine post-surgical MRI may serve as non-invasive imaging biomarkers for the identification of IDH-mutant glioma patients at high risk of earlier disease progression.</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+  "contentId": "259276",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/259276",
+    "queryParams": null,
+    "target": null,
+    "title": "Deep learning–derived MRI features for risk stratification in post-surgical <em>IDH</em>-mutant glioma."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION259276"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": null,
+  "presentationId": "259276",
+  "primaryPerson": {
+    "displayName": "Alvaro Sandino",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": "IDH-mutant gliomas undergo long periods of observation after radiochemotherapy before undergoing malignant transformation, leading to neurological morbidities and death. Unfortunately, the timing of disease progression is unpredictable. In this study, we developed a deep learning (DL)-based AI framework for extracting relevant sub-visual feature representation from routine structural post-surgical brain MRI scans for predicting progression-free survival (PFS) in IDH-mutant glioma patients. Our hypothesis is that AI-derived quantitative features from post-treatment structural MRI enable identification of high-risk patients who undergo earlier disease progression.",
+  "taxonomy": null,
+  "title": "Deep learning–derived MRI features for risk stratification in post-surgical <em>IDH</em>-mutant glioma.",
+  "titles": null,
+  "uid": "PRESENTATION259276"
+}

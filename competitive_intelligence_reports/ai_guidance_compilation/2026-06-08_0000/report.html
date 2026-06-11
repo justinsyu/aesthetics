@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="data:," />
+  <title>AI Guidance Compilation</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 36px 0 20px;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 850;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 76px; line-height: 1.04; letter-spacing: 0; font-weight: 560; max-width: 1320px; }
+    h2 { font-size: 50px; line-height: 1.14; letter-spacing: 0; font-weight: 560; max-width: 1300px; }
+    h3 { font-size: 27px; line-height: 1.05; letter-spacing: 0; font-weight: 650; }
+    .dek { margin-top: 22px; color: var(--muted); font-size: 27px; line-height: 1.22; max-width: 1260px; }
+    .section-head { margin-bottom: 16px; }
+    .section-head p { margin-top: 20px; color: var(--muted); font-size: 22px; line-height: 1.16; max-width: 1280px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-3.evidence-grid { gap: 14px; }
+    .grid-3.evidence-grid .card { min-height: 238px; }
+    .grid-3.evidence-grid .card.compact { min-height: 180px; }
+    .grid-3.evidence-grid h3 {
+      min-height: 58px;
+      line-height: 1.08;
+    }
+    .grid-3.evidence-grid .card p { font-size: 20px; line-height: 1.12; }
+    .clinical-grid { gap: 14px; }
+    .clinical-grid .panel { padding: 18px; }
+    .clinical-grid .mini-grid { gap: 8px; margin-top: 10px; }
+    .practical-grid h3 {
+      min-height: 58px;
+      line-height: 1.08;
+    }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .panel, .metric, .card, .table, .callout {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.88);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel { padding: 20px; }
+    .panel.dark, .callout { background: #11130f; color: var(--paper); border-color: #11130f; }
+    .panel.dark p, .panel.dark li, .callout p, .callout li { color: rgba(246,241,232,.88); }
+    .metric { padding: 20px; min-height: 160px; }
+    .num { font-size: 48px; line-height: .92; font-weight: 820; letter-spacing: 0; }
+    .label { margin-top: 12px; font-size: 22px; line-height: 1.12; color: var(--muted); }
+    .card { padding: 20px; min-height: 246px; }
+    .card.compact { min-height: 190px; }
+    .card p, .panel p { color: var(--muted); font-size: 21px; line-height: 1.14; margin-top: 10px; }
+    .small p { font-size: 19px; line-height: 1.14; }
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      white-space: nowrap;
+      margin-bottom: 11px;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .red { background: var(--red); }
+    .gray { background: var(--gray); }
+    .callout { padding: 22px 26px; }
+    .callout h3 { font-size: 31px; }
+    .callout h3.neon-title { color: var(--lime); }
+    .summary-list { margin: 12px 0 0; padding-left: 22px; display: grid; gap: 8px; }
+    .summary-list li { color: rgba(246,241,232,.88); font-size: 23px; line-height: 1.12; }
+    .callout .summary-list li::marker { color: var(--lime); }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .cite + .cite::before { content: ","; margin-right: 1px; }
+    .row { display: grid; border-bottom: 1px solid var(--line); min-height: 0; }
+    .row:last-child { border-bottom: 0; }
+    .cell { padding: 13px 14px; border-right: 1px solid var(--line); font-size: 19px; line-height: 1.12; }
+    .cell:last-child { border-right: 0; }
+    .head .cell {
+      background: #11130f;
+      color: var(--paper);
+      font-weight: 850;
+      text-transform: uppercase;
+      font-size: 16px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .row.map { grid-template-columns: .84fr 1.02fr 1.38fr 1.28fr; }
+    .row.refs { grid-template-columns: .28fr .98fr 1.02fr 1.72fr; }
+    .refs .cell { font-size: 13.2px; line-height: 1.06; padding: 7px 9px; }
+    .refs.head .cell { font-size: 13px; padding: 8px 9px; }
+    .row.refs .cell:first-child { text-align: center; font-weight: 800; }
+    .mini-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 12px; }
+    .mini {
+      border: 1.2px solid var(--line);
+      border-radius: 14px;
+      padding: 10px;
+      background: rgba(255,250,240,.72);
+      min-height: 82px;
+    }
+    .mini strong { display: block; font-size: 17px; line-height: 1.05; font-weight: 760; }
+    .mini span { display: block; color: var(--muted); font-size: 15px; line-height: 1.1; margin-top: 6px; }
+    .hta-panels { align-items: stretch; }
+    .hta-panels .panel {
+      display: flex;
+      flex-direction: column;
+      min-height: 456px;
+    }
+    .hta-panels .tag {
+      align-self: flex-start;
+    }
+    .hta-panels .panel > p {
+      height: 104px;
+      min-height: 104px;
+      margin-bottom: 0;
+    }
+    .hta-panels .mini-grid {
+      flex: 1;
+      grid-template-rows: repeat(2, minmax(112px, 1fr));
+      margin-top: 14px;
+    }
+    .hta-panels .mini {
+      height: 100%;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .hta-panels .mini span {
+      font-size: 14.7px;
+      line-height: 1.08;
+    }
+    .source-note { color: var(--muted); font-size: 14px; line-height: 1.18; margin-top: 10px; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .wrap { width: 1360px; }
+      .panel, .metric, .card, .table, .callout { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) {
+      .slide { width: 1600px; height: 900px; }
+    }
+        :is(section, .slide, .page):first-of-type [class*="dark"][class*="callout"] :is(h1, h2, h3, h4, [class*="heading"], [class*="title"]) {
+            color: #39ff14;
+        }
+    </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">AI guidance compilation | June 8, 2026</div>
+      <h1>Regulatory, HTA, and professional guidance on artificial intelligence use</h1>
+      <p class="dek">Broad-scope compilation of current and influential source guidance for AI in medicines, medical devices, evidence generation, HEOR, evidence synthesis, and clinical evaluation.</p>
+      <div class="grid-4" style="margin-top:28px;">
+        <div class="metric"><div class="num">8</div><div class="label">Regulatory or government sources anchor lifecycle oversight and risk controls.<a class="cite" href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/considerations-use-artificial-intelligence-support-regulatory-decision-making-drug-and-biological">1</a><a class="cite" href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/artificial-intelligence-enabled-device-software-functions-lifecycle-management-and-marketing">2</a><a class="cite" href="https://www.fda.gov/about-fda/artificial-intelligence-drug-development/guiding-principles-good-ai-practice-drug-development">3</a><a class="cite" href="https://www.ema.europa.eu/en/about-us/how-we-work/data-regulation-big-data-other-sources/artificial-intelligence">4</a><a class="cite" href="https://health.ec.europa.eu/ehealth-digital-health-and-care/artificial-intelligence-healthcare_en">5</a><a class="cite" href="https://www.canada.ca/en/health-canada/services/drugs-health-products/medical-devices/application-information/guidance-documents/pre-market-guidance-machine-learning-enabled-medical-devices.html">6</a><a class="cite" href="https://www.gov.uk/government/publications/software-and-artificial-intelligence-ai-as-a-medical-device/software-and-artificial-intelligence-ai-as-a-medical-device">7</a><a class="cite" href="https://www.who.int/westernpacific/publications/i/item/9789240078871">8</a></div></div>
+        <div class="metric"><div class="num">3</div><div class="label">HTA bodies or HTA-facing sources address AI in submitted evidence and digital health value assessment.<a class="cite" href="https://www.nice.org.uk/corporate/ecd11/chapter/our-position-on-the-use-of-ai-in-evidence-generation-and-reporting">9</a><a class="cite" href="https://www.nice.org.uk/corporate/ecd7">10</a><a class="cite" href="https://www.cda-amc.ca/news/new-position-statement-aims-guide-use-ai-methods-health-technology-assessment">11</a></div></div>
+        <div class="metric"><div class="num">5</div><div class="label">Reporting and appraisal standard clusters translate AI expectations into study-level checklists.<a class="cite" href="https://link.springer.com/article/10.1186/s13063-020-04951-6">14</a><a class="cite" href="https://www.nature.com/articles/s41591-022-01772-9">15</a><a class="cite" href="https://www.nature.com/articles/s41591-025-03953-8">16</a><a class="cite" href="https://www.equator-network.org/reporting-guidelines/tripod-statement/">17</a></div></div>
+        <div class="metric"><div class="num">1</div><div class="label">Repeated requirement across source families: accountable human oversight, validation, and transparency.<a class="cite" href="https://www.nice.org.uk/corporate/ecd11/chapter/our-position-on-the-use-of-ai-in-evidence-generation-and-reporting">9</a><a class="cite" href="https://www.cochrane.org/about-us/news/how-cochrane-advancing-responsible-ai-evidence-synthesis">12</a></div></div>
+      </div>
+      <div class="callout" style="margin-top:22px;">
+        <h3 class="neon-title">Executive summary</h3>
+        <ul class="summary-list">
+          <li>Regulators are converging on context of use, lifecycle risk management, data governance, transparency, performance monitoring, and controlled change management for AI-enabled devices and AI-supported medicine development.<a class="cite" href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/considerations-use-artificial-intelligence-support-regulatory-decision-making-drug-and-biological">1</a><a class="cite" href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/artificial-intelligence-enabled-device-software-functions-lifecycle-management-and-marketing">2</a><a class="cite" href="https://www.ema.europa.eu/en/about-us/how-we-work/data-regulation-big-data-other-sources/artificial-intelligence">4</a><a class="cite" href="https://www.canada.ca/en/health-canada/services/drugs-health-products/medical-devices/application-information/guidance-documents/pre-market-guidance-machine-learning-enabled-medical-devices.html">6</a></li>
+          <li>HTA guidance treats AI-supported evidence as acceptable only when the user justifies the method, declares AI use, preserves human accountability, validates outputs, and manages bias, cybersecurity, licensing, and real-world-data suitability risks.<a class="cite" href="https://www.nice.org.uk/corporate/ecd11/chapter/our-position-on-the-use-of-ai-in-evidence-generation-and-reporting">9</a><a class="cite" href="https://www.cda-amc.ca/sites/default/files/MG%20Methods/Position_Statement_AI_Renumbered.pdf">11</a></li>
+          <li>Professional and methods organizations provide checklists and guidance for AI-assisted evidence synthesis, HEOR, AI clinical trials, early clinical evaluation, diagnostics, and prediction models.<a class="cite" href="https://www.cochrane.org/about-us/news/how-cochrane-advancing-responsible-ai-evidence-synthesis">12</a><a class="cite" href="https://www.ispor.org/heor-resources/good-practices">13</a><a class="cite" href="https://link.springer.com/article/10.1186/s13063-020-04951-6">14</a><a class="cite" href="https://www.nature.com/articles/s41591-022-01772-9">15</a><a class="cite" href="https://www.nature.com/articles/s41591-025-03953-8">16</a><a class="cite" href="https://www.equator-network.org/reporting-guidelines/tripod-statement/">17</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">01 / 08</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Authority map</div>
+        <h2>Guidance separates by intended use: regulated product, evidence method, or study reporting</h2>
+        <p>Across source families, the recurring distinction is whether AI is the product being assessed, a method used to generate evidence, or a tool used to report or synthesize evidence.</p>
+      </div>
+      <div class="table">
+        <div class="row map head">
+          <div class="cell">Source family</div>
+          <div class="cell">Primary scope</div>
+          <div class="cell">Common requirements</div>
+          <div class="cell">Decision relevance</div>
+        </div>
+        <div class="row map">
+          <div class="cell">Regulators</div>
+          <div class="cell">Medicines, biologics, AI-enabled devices, SaMD, AIaMD</div>
+          <div class="cell">Context of use, model credibility, training/test data, clinical validation, risk management, monitoring, change control, cybersecurity</div>
+          <div class="cell">Supports market authorization, scientific advice, regulatory submissions, and post-market control.<a class="cite" href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/considerations-use-artificial-intelligence-support-regulatory-decision-making-drug-and-biological">1</a><a class="cite" href="https://www.ema.europa.eu/en/about-us/how-we-work/data-regulation-big-data-other-sources/artificial-intelligence">4</a><a class="cite" href="https://www.gov.uk/government/publications/software-and-artificial-intelligence-ai-as-a-medical-device/software-and-artificial-intelligence-ai-as-a-medical-device">7</a></div>
+        </div>
+        <div class="row map">
+          <div class="cell">HTA and payer-facing bodies</div>
+          <div class="cell">AI methods in submissions; AI-enabled digital health technologies</div>
+          <div class="cell">Declared AI use, demonstrable value, human-in-the-loop, validation, bias and cybersecurity mitigation, data-suitability reporting, economic evidence</div>
+          <div class="cell">Supports appraisal credibility, evidence-generation advice, procurement, reimbursement, and value assessment.<a class="cite" href="https://www.nice.org.uk/corporate/ecd11/chapter/our-position-on-the-use-of-ai-in-evidence-generation-and-reporting">9</a><a class="cite" href="https://www.nice.org.uk/corporate/ecd7">10</a><a class="cite" href="https://www.cda-amc.ca/news/new-position-statement-aims-guide-use-ai-methods-health-technology-assessment">11</a></div>
+        </div>
+        <div class="row map">
+          <div class="cell">Professional and methods groups</div>
+          <div class="cell">Evidence synthesis, HEOR, trial reporting, early clinical evaluation, diagnostics, prediction models</div>
+          <div class="cell">Task-level disclosure, reproducibility, model/version reporting, human oversight, fairness, applicability, calibration, reference standards</div>
+          <div class="cell">Supports study appraisal, publication integrity, dossier methods, and evidence auditability.<a class="cite" href="https://www.cochrane.org/about-us/news/how-cochrane-advancing-responsible-ai-evidence-synthesis">12</a><a class="cite" href="https://www.ispor.org/heor-resources/good-practices">13</a><a class="cite" href="https://link.springer.com/article/10.1186/s13063-020-04951-6">14</a><a class="cite" href="https://www.nature.com/articles/s41591-022-01772-9">15</a><a class="cite" href="https://www.nature.com/articles/s41591-025-03953-8">16</a><a class="cite" href="https://www.equator-network.org/reporting-guidelines/tripod-statement/">17</a></div>
+        </div>
+        <div class="row map">
+          <div class="cell">Cross-cutting public policy</div>
+          <div class="cell">Horizontal AI regulation and global governance baselines</div>
+          <div class="cell">High-risk AI rules, human oversight, data quality, transparency, privacy, security, human rights, post-release audit</div>
+          <div class="cell">Informs compliance strategy beyond sectoral medical-product rules.<a class="cite" href="https://health.ec.europa.eu/ehealth-digital-health-and-care/artificial-intelligence-healthcare_en">5</a><a class="cite" href="https://www.who.int/westernpacific/publications/i/item/9789240078871">8</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">02 / 08</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Regulators</div>
+        <h2>Medicines regulators distinguish AI-supported evidence from AI-enabled device software</h2>
+        <p>FDA and EMA materials frame AI in medicines around credibility of submitted evidence and lifecycle governance; FDA, Health Canada, MHRA, and IMDRF materials frame AI-enabled devices around total-product-lifecycle controls.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag lime">FDA drugs and biologics</span>
+          <h3>Context-of-use credibility</h3>
+          <p>FDA's drug and biologic draft guidance addresses AI-generated information used to support regulatory decisions about safety, effectiveness, or quality, and requests credibility evidence proportional to the model's context and risk.<a class="cite" href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/considerations-use-artificial-intelligence-support-regulatory-decision-making-drug-and-biological">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag orange">FDA devices</span>
+          <h3>Total product lifecycle</h3>
+          <p>FDA's AI-enabled device software draft guidance covers marketing submission documentation, design, development, validation, maintenance, transparency, bias, and performance monitoring across the device lifecycle.<a class="cite" href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/artificial-intelligence-enabled-device-software-functions-lifecycle-management-and-marketing">2</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">FDA and EMA</span>
+          <h3>Shared medicine principles</h3>
+          <p>FDA CDER/CBER and EMA jointly identified ten good AI practice principles for drug development, with emphasis on patient safety, reliable information, and use across the medicine lifecycle.<a class="cite" href="https://www.fda.gov/about-fda/artificial-intelligence-drug-development/guiding-principles-good-ai-practice-drug-development">3</a><a class="cite" href="https://www.ema.europa.eu/en/about-us/how-we-work/data-regulation-big-data-other-sources/artificial-intelligence">4</a></p>
+        </div>
+        <div class="card compact">
+          <span class="tag pink">EMA and HMA</span>
+          <h3>Medicinal product lifecycle</h3>
+          <p>EMA states that its AI reflection paper helps medicine developers and applicants use AI and machine learning safely and effectively across lifecycle stages, within EU AI, data protection, and medicines requirements.<a class="cite" href="https://www.ema.europa.eu/en/about-us/how-we-work/data-regulation-big-data-other-sources/artificial-intelligence">4</a></p>
+        </div>
+        <div class="card compact">
+          <span class="tag gray">Health Canada</span>
+          <h3>ML-enabled medical devices</h3>
+          <p>Health Canada's 2026 pre-market guidance defines ML-enabled medical devices, emphasizes transparency as safety-relevant, and introduces predetermined change control plans for planned ML-system changes.<a class="cite" href="https://www.canada.ca/en/health-canada/services/drugs-health-products/medical-devices/application-information/guidance-documents/pre-market-guidance-machine-learning-enabled-medical-devices.html">6</a></p>
+        </div>
+        <div class="card compact">
+          <span class="tag red">MHRA</span>
+          <h3>AI as medical device</h3>
+          <p>MHRA's SaMD and AIaMD materials address qualification, classification, pre- and post-market review, clinical and technical assessment, transparency, adaptivity, vigilance, and sandbox learning through <a href="https://www.gov.uk/government/collections/ai-airlock-the-regulatory-sandbox-for-aiamd">AI Airlock</a>.<a class="cite" href="https://www.gov.uk/government/publications/software-and-artificial-intelligence-ai-as-a-medical-device/software-and-artificial-intelligence-ai-as-a-medical-device">7</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">03 / 08</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">HTA and payer-facing expectations</div>
+        <h2>NICE and CDA-AMC require AI use in evidence generation to be justified, declared, and validated</h2>
+        <p>HTA guidance is less focused on AI model novelty and more focused on whether AI-informed evidence remains transparent, auditable, relevant, and decision-grade.</p>
+      </div>
+      <div class="grid-2 hta-panels">
+        <div class="panel">
+          <span class="tag lime">NICE AI evidence position</span>
+          <h3>Use AI only when it adds demonstrable value</h3>
+          <p>NICE states that AI methods should be used judiciously, should augment rather than replace human involvement, and should maintain transparency, rigour, trust, and accessible reporting in guidance production.<a class="cite" href="https://www.nice.org.uk/corporate/ecd11/chapter/our-position-on-the-use-of-ai-in-evidence-generation-and-reporting">9</a></p>
+          <div class="mini-grid">
+            <div class="mini"><strong>Disclosure</strong><span>Declare AI use, method choice, how it was used, and human input.<a class="cite" href="https://www.nice.org.uk/corporate/ecd11/chapter/our-position-on-the-use-of-ai-in-evidence-generation-and-reporting">9</a></span></div>
+            <div class="mini"><strong>Validation</strong><span>Conduct technical and external validation, especially for higher-risk applications.<a class="cite" href="https://www.nice.org.uk/corporate/ecd11/chapter/our-position-on-the-use-of-ai-in-evidence-generation-and-reporting">9</a></span></div>
+            <div class="mini"><strong>RWE extraction</strong><span>Report AI methods for real-world-data extraction and curation in data-suitability assessment.<a class="cite" href="https://www.nice.org.uk/corporate/ecd11/chapter/our-position-on-the-use-of-ai-in-evidence-generation-and-reporting">9</a></span></div>
+            <div class="mini"><strong>Causal inference</strong><span>Use sensitivity analysis, method checks, and triangulation for influential AI causal methods.<a class="cite" href="https://www.nice.org.uk/corporate/ecd11/chapter/our-position-on-the-use-of-ai-in-evidence-generation-and-reporting">9</a></span></div>
+          </div>
+        </div>
+        <div class="panel">
+          <span class="tag blue">CDA-AMC position</span>
+          <h3>Canadian HTA adopts a NICE-aligned stance</h3>
+          <p>CDA-AMC reported that its position statement explains how it will consider AI-generated or AI-reported evidence in HTA, emphasizing appropriateness, transparency, trustworthiness, ethics, and risk-benefit balance.<a class="cite" href="https://www.cda-amc.ca/news/new-position-statement-aims-guide-use-ai-methods-health-technology-assessment">11</a></p>
+          <div class="mini-grid">
+            <div class="mini"><strong>Scope</strong><span>Potential AI uses include evidence identification, data extraction, synthesis, trial design, clinical-data adjustment, and summaries.<a class="cite" href="https://www.cda-amc.ca/sites/default/files/MG%20Methods/Position_Statement_AI_Renumbered.pdf">11</a></span></div>
+            <div class="mini"><strong>Responsibility</strong><span>Users must weigh benefits against risks including bias, cybersecurity, and reduced oversight.<a class="cite" href="https://www.cda-amc.ca/sites/default/files/MG%20Methods/Position_Statement_AI_Renumbered.pdf">11</a></span></div>
+            <div class="mini"><strong>Canadian fit</strong><span>CDA-AMC contextualized a NICE-aligned statement for Canada's HTA environment.<a class="cite" href="https://www.cda-amc.ca/news/new-position-statement-aims-guide-use-ai-methods-health-technology-assessment">11</a></span></div>
+            <div class="mini"><strong>Updates</strong><span>CDA-AMC states the position will be reviewed as significant new evidence emerges.<a class="cite" href="https://www.cda-amc.ca/news/new-position-statement-aims-guide-use-ai-methods-health-technology-assessment">11</a></span></div>
+          </div>
+        </div>
+      </div>
+      <p class="source-note">NICE's separate evidence standards framework remains relevant for AI-enabled digital health technologies because it was updated to include AI and data-driven adaptive algorithms and aligns evidence requirements with regulatory expectations.<a class="cite" href="https://www.nice.org.uk/corporate/ecd7">10</a></p>
+    </div>
+    <div class="slide-num">04 / 08</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Evidence synthesis and HEOR</div>
+        <h2>Methods organizations translate AI use into disclosure, reproducibility, and accountability expectations</h2>
+        <p>For systematic reviews, HEOR, and HTA dossiers, the practical burden is not only whether AI improves efficiency; it is whether the workflow remains auditable and methodologically defensible.</p>
+      </div>
+      <div class="grid-3 evidence-grid">
+        <div class="card">
+          <span class="tag lime">Cochrane and RAISE</span>
+          <h3>Human accountability remains<br />central</h3>
+          <p>Cochrane states that authors can use AI when research integrity is upheld; AI and automation must be disclosed, have human oversight, and authors remain accountable for final content.<a class="cite" href="https://www.cochrane.org/about-us/news/how-cochrane-advancing-responsible-ai-evidence-synthesis">12</a></p>
+        </div>
+        <div class="card">
+          <span class="tag orange">ISPOR PALISADE</span>
+          <h3>ML in HEOR requires<br />fit-for-purpose reporting</h3>
+          <p>ISPOR describes its good-practices reports as international HEOR standards and lists AI-related reports including machine learning methods and generative AI for HTA.<a class="cite" href="https://www.ispor.org/heor-resources/good-practices">13</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">Generative AI in HTA</span>
+          <h3>LLM use adds<br />reproducibility risk</h3>
+          <p>ISPOR lists generative AI for health technology assessment among HTA and policy reports, supporting structured treatment of opportunities, challenges, and policy considerations.<a class="cite" href="https://www.ispor.org/heor-resources/good-practices">13</a></p>
+        </div>
+        <div class="card compact">
+          <span class="tag pink">Operational control</span>
+          <h3>Audit trails preserve<br />review accountability</h3>
+          <p>AI-assisted screening, extraction, synthesis, and model adaptation should document AI use, method choice, human input, validation, disclosure, and final accountability when they inform submissions or publications.<a class="cite" href="https://www.nice.org.uk/corporate/ecd11/chapter/our-position-on-the-use-of-ai-in-evidence-generation-and-reporting">9</a><a class="cite" href="https://www.cochrane.org/about-us/news/how-cochrane-advancing-responsible-ai-evidence-synthesis">12</a></p>
+        </div>
+        <div class="card compact">
+          <span class="tag gray">Economic evidence</span>
+          <h3>AI products need<br />value context</h3>
+          <p>ISPOR's AI and HEOR reports support fit-for-purpose methods, transparent assumptions, uncertainty handling, reproducibility, and workflow-aware interpretation when AI informs value evidence.<a class="cite" href="https://www.ispor.org/heor-resources/good-practices">13</a></p>
+        </div>
+        <div class="card compact">
+          <span class="tag red">Risk controls</span>
+          <h3>Cybersecurity and licensing<br />are HTA issues</h3>
+          <p>NICE identifies cybersecurity, copyright, licensing, and intellectual-property questions as risks for AI methods used in submitted evidence, not merely back-office technology concerns.<a class="cite" href="https://www.nice.org.uk/corporate/ecd11/chapter/our-position-on-the-use-of-ai-in-evidence-generation-and-reporting">9</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">05 / 08</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Clinical evaluation standards</div>
+        <h2>Study reporting guidance now covers the major AI evidence path from protocol to deployment</h2>
+        <p>The professional-standards layer defines what reviewers, journals, regulators, HTA bodies, and committees can expect to see in AI study reports.</p>
+      </div>
+      <div class="grid-2 clinical-grid">
+        <div class="panel small">
+          <span class="tag lime">Clinical trials</span>
+          <h3>CONSORT-AI and SPIRIT-AI</h3>
+          <p>The CONSORT-AI and SPIRIT-AI extensions require AI-specific reporting for trial protocols and reports, including algorithm version, input-data acquisition, AI output handling, and human-AI interaction.<a class="cite" href="https://link.springer.com/article/10.1186/s13063-020-04951-6">14</a></p>
+          <div class="mini-grid">
+            <div class="mini"><strong>Protocol</strong><span>Specify intended use, integration into workflow, and user interaction.</span></div>
+            <div class="mini"><strong>Trial report</strong><span>Report versioning, data inputs, outputs, errors, and operational context.</span></div>
+          </div>
+        </div>
+        <div class="panel small">
+          <span class="tag orange">Early clinical use</span>
+          <h3>DECIDE-AI</h3>
+          <p>DECIDE-AI covers early-stage live clinical evaluation of AI-based decision support systems and emphasizes safety, real clinical performance, implementation environment, human factors, and replicability.<a class="cite" href="https://www.nature.com/articles/s41591-022-01772-9">15</a></p>
+          <div class="mini-grid">
+            <div class="mini"><strong>Pilot bridge</strong><span>Useful between retrospective validation and large comparative trials.</span></div>
+            <div class="mini"><strong>Human factors</strong><span>Captures user training, workflow, interaction, and safety considerations.</span></div>
+          </div>
+        </div>
+        <div class="panel small">
+          <span class="tag blue">Diagnostics</span>
+          <h3>STARD-AI</h3>
+          <p>STARD-AI provides minimum reporting criteria for AI-centered diagnostic test accuracy studies, including dataset practices, AI index-test description, evaluation methods, algorithmic bias, fairness, applicability, and generalizability.<a class="cite" href="https://www.nature.com/articles/s41591-025-03953-8">16</a></p>
+          <div class="mini-grid">
+            <div class="mini"><strong>Beyond AUROC</strong><span>Report thresholding, population, reference standard, and deployment context.</span></div>
+            <div class="mini"><strong>Fairness</strong><span>Document bias and subgroup applicability where relevant.</span></div>
+          </div>
+        </div>
+        <div class="panel small">
+          <span class="tag pink">Prediction models</span>
+          <h3>TRIPOD+AI and PROBAST+AI</h3>
+          <p>TRIPOD+AI covers reporting for studies that develop prediction models or evaluate their performance using regression or AI methods, including transparent model reporting and external validation context; <a href="https://www.bmj.com/content/388/bmj-2024-082505">PROBAST+AI</a> supports risk-of-bias and applicability assessment for those models.<a class="cite" href="https://www.equator-network.org/reporting-guidelines/tripod-statement/">17</a></p>
+          <div class="mini-grid">
+            <div class="mini"><strong>Validation</strong><span>Report calibration, discrimination, clinical utility, and external validation.</span></div>
+            <div class="mini"><strong>Applicability</strong><span>Assess whether model data and use context match the decision population.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">06 / 08</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Practical implications</div>
+        <h2>AI evidence packages should be organized around use case, risk, and accountability</h2>
+        <p>The compiled guidance supports a common evidence architecture for AI-assisted claims, analyses, workflows, and product features.</p>
+      </div>
+      <div class="grid-3 practical-grid">
+        <div class="card">
+          <span class="tag lime">Regulatory submissions</span>
+          <h3>Define context of use<br />before evidence planning</h3>
+          <p>Evidence expectations depend on whether AI informs a drug or biologic regulatory decision, functions as device software, supports manufacturing, or assists evidence generation.<a class="cite" href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/considerations-use-artificial-intelligence-support-regulatory-decision-making-drug-and-biological">1</a><a class="cite" href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/artificial-intelligence-enabled-device-software-functions-lifecycle-management-and-marketing">2</a></p>
+        </div>
+        <div class="card">
+          <span class="tag orange">HTA dossiers</span>
+          <h3>Show why AI adds<br />decision value</h3>
+          <p>Submitting organizations should justify AI methods, present assumptions, disclose human input, validate outputs, and explain risks in language assessors can evaluate.<a class="cite" href="https://www.nice.org.uk/corporate/ecd11/chapter/our-position-on-the-use-of-ai-in-evidence-generation-and-reporting">9</a><a class="cite" href="https://www.cda-amc.ca/sites/default/files/MG%20Methods/Position_Statement_AI_Renumbered.pdf">11</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">AI-enabled products</span>
+          <h3>Plan post-market monitoring<br />before launch</h3>
+          <p>Device and digital-health guidance emphasizes lifecycle performance, model drift, user transparency, intended-use boundaries, change control, and post-deployment evidence.<a class="cite" href="https://www.canada.ca/en/health-canada/services/drugs-health-products/medical-devices/application-information/guidance-documents/pre-market-guidance-machine-learning-enabled-medical-devices.html">6</a><a class="cite" href="https://www.gov.uk/government/publications/software-and-artificial-intelligence-ai-as-a-medical-device/software-and-artificial-intelligence-ai-as-a-medical-device">7</a><a class="cite" href="https://www.nice.org.uk/corporate/ecd7">10</a></p>
+        </div>
+        <div class="card compact">
+          <span class="tag pink">Evidence synthesis</span>
+          <h3>Preserve reviewer control<br />throughout synthesis</h3>
+          <p>AI can support review workflows only when tool use is declared, human oversight is active, and methodological rigour is not compromised.<a class="cite" href="https://www.cochrane.org/about-us/news/how-cochrane-advancing-responsible-ai-evidence-synthesis">12</a></p>
+        </div>
+        <div class="card compact">
+          <span class="tag gray">HEOR</span>
+          <h3>Document uncertainty<br />and reproducibility</h3>
+          <p>HEOR teams should use fit-for-purpose AI methods and document assumptions, uncertainty, transparency, fairness, and reproducibility when AI informs value evidence.<a class="cite" href="https://www.ispor.org/heor-resources/good-practices">13</a></p>
+        </div>
+        <div class="card compact">
+          <span class="tag red">Governance</span>
+          <h3>Horizontal AI rules can<br />apply in parallel</h3>
+          <p>European Commission materials describe phased obligations for high-risk AI, while WHO provides non-binding regulatory considerations on data quality, human oversight, privacy, security, and transparency.<a class="cite" href="https://health.ec.europa.eu/ehealth-digital-health-and-care/artificial-intelligence-healthcare_en">5</a><a class="cite" href="https://www.who.int/westernpacific/publications/i/item/9789240078871">8</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">07 / 08</div>
+  </article>
+
+  <article class="slide references-slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">References 1-17</div>
+        <h2>References</h2>
+      </div>
+      <div class="table">
+        <div class="row refs head">
+          <div class="cell">Ref</div>
+          <div class="cell">Source</div>
+          <div class="cell">Date / Status / Owner</div>
+          <div class="cell">Evidence Used in Report</div>
+        </div>
+        <div class="row refs"><div class="cell">1</div><div class="cell"><a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/considerations-use-artificial-intelligence-support-regulatory-decision-making-drug-and-biological">FDA drug and biologic AI draft guidance</a></div><div class="cell">Jan 2025; draft; FDA</div><div class="cell">AI to support safety, effectiveness, or quality regulatory decisions; context-of-use credibility frame</div></div>
+        <div class="row refs"><div class="cell">2</div><div class="cell"><a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/artificial-intelligence-enabled-device-software-functions-lifecycle-management-and-marketing">FDA AI-enabled device lifecycle guidance</a></div><div class="cell">Jan 2025; draft; FDA</div><div class="cell">Total-product-lifecycle expectations for AI-enabled device software functions</div></div>
+        <div class="row refs"><div class="cell">3</div><div class="cell"><a href="https://www.fda.gov/about-fda/artificial-intelligence-drug-development/guiding-principles-good-ai-practice-drug-development">Good AI practice in drug development</a></div><div class="cell">Jan 2026; FDA / EMA</div><div class="cell">Ten cross-lifecycle principles for AI in drug and biologic development</div></div>
+        <div class="row refs"><div class="cell">4</div><div class="cell"><a href="https://www.ema.europa.eu/en/about-us/how-we-work/data-regulation-big-data-other-sources/artificial-intelligence">EMA AI and reflection paper page</a></div><div class="cell">Reflection paper adopted Sep 2024; page updated 2026; EMA / HMA</div><div class="cell">Medicinal product lifecycle, AI observatory, LLM principles, and EU legal context</div></div>
+        <div class="row refs"><div class="cell">5</div><div class="cell"><a href="https://health.ec.europa.eu/ehealth-digital-health-and-care/artificial-intelligence-healthcare_en">European Commission AI in healthcare</a></div><div class="cell">AI Act in force Aug 1, 2024; phased applicability; EC</div><div class="cell">High-risk healthcare AI obligations, data quality, user information, and human oversight</div></div>
+        <div class="row refs"><div class="cell">6</div><div class="cell"><a href="https://www.canada.ca/en/health-canada/services/drugs-health-products/medical-devices/application-information/guidance-documents/pre-market-guidance-machine-learning-enabled-medical-devices.html">Health Canada ML-enabled device guidance</a></div><div class="cell">Apr 2026; Health Canada</div><div class="cell">MLMD definition, transparency, PCCP, safety and effectiveness framing</div></div>
+        <div class="row refs"><div class="cell">7</div><div class="cell"><a href="https://www.gov.uk/government/publications/software-and-artificial-intelligence-ai-as-a-medical-device/software-and-artificial-intelligence-ai-as-a-medical-device">MHRA software and AI as medical device</a> / <a href="https://www.gov.uk/government/collections/ai-airlock-the-regulatory-sandbox-for-aiamd">AI Airlock</a></div><div class="cell">SaMD page updated Feb 2025; Airlock updated Jun 9, 2026; MHRA</div><div class="cell">AIaMD qualification, classification, pre/post-market work, transparency, adaptivity, vigilance, and sandbox reports</div></div>
+        <div class="row refs"><div class="cell">8</div><div class="cell"><a href="https://www.who.int/westernpacific/publications/i/item/9789240078871">WHO regulatory considerations on AI for health</a></div><div class="cell">Oct 2023; WHO</div><div class="cell">Global regulatory considerations, privacy, cybersecurity, safety, transparency, and governance baseline</div></div>
+        <div class="row refs"><div class="cell">9</div><div class="cell"><a href="https://www.nice.org.uk/corporate/ecd11/chapter/our-position-on-the-use-of-ai-in-evidence-generation-and-reporting">NICE AI in evidence generation position</a></div><div class="cell">Aug 15, 2024; NICE</div><div class="cell">Declared AI use, human augmentation, validation, risk controls, RWE data-suitability reporting</div></div>
+        <div class="row refs"><div class="cell">10</div><div class="cell"><a href="https://www.nice.org.uk/corporate/ecd7">NICE evidence standards framework</a></div><div class="cell">Last updated Aug 9, 2022; NICE</div><div class="cell">Evidence standards for DHTs, updated to include AI and adaptive algorithms</div></div>
+        <div class="row refs"><div class="cell">11</div><div class="cell"><a href="https://www.cda-amc.ca/news/new-position-statement-aims-guide-use-ai-methods-health-technology-assessment">CDA-AMC AI methods notice</a> / <a href="https://www.cda-amc.ca/sites/default/files/MG%20Methods/Position_Statement_AI_Renumbered.pdf">position statement PDF</a></div><div class="cell">Apr 25, 2025; CDA-AMC</div><div class="cell">Canadian HTA stance on AI-informed evidence, risks, responsibilities, and updates</div></div>
+        <div class="row refs"><div class="cell">12</div><div class="cell"><a href="https://www.cochrane.org/about-us/news/how-cochrane-advancing-responsible-ai-evidence-synthesis">Cochrane responsible AI in evidence synthesis</a></div><div class="cell">Jun 24, 2025; Cochrane and RAISE partners</div><div class="cell">RAISE-aligned disclosure, oversight, accountability, and tool transparency expectations</div></div>
+        <div class="row refs"><div class="cell">13</div><div class="cell"><a href="https://www.ispor.org/heor-resources/good-practices">ISPOR good practices</a> / <a href="https://www.ispor.org/strategic-initiatives/topics/artificial-intelligence">AI reports</a></div><div class="cell">Current resource pages; ISPOR</div><div class="cell">HEOR standards, PALISADE, and generative AI in HTA / HEOR report coverage</div></div>
+        <div class="row refs"><div class="cell">14</div><div class="cell"><a href="https://link.springer.com/article/10.1186/s13063-020-04951-6">CONSORT-AI and SPIRIT-AI</a></div><div class="cell">2021 article; working group</div><div class="cell">Clinical trial protocol and report extensions for AI interventions</div></div>
+        <div class="row refs"><div class="cell">15</div><div class="cell"><a href="https://www.nature.com/articles/s41591-022-01772-9">DECIDE-AI</a></div><div class="cell">May 18, 2022; consensus group</div><div class="cell">Early-stage live clinical evaluation of AI decision support systems</div></div>
+        <div class="row refs"><div class="cell">16</div><div class="cell"><a href="https://www.nature.com/articles/s41591-025-03953-8">STARD-AI</a></div><div class="cell">Sep 15, 2025; steering committee</div><div class="cell">AI diagnostic accuracy reporting, dataset practices, bias, applicability, and generalizability</div></div>
+        <div class="row refs"><div class="cell">17</div><div class="cell"><a href="https://www.equator-network.org/reporting-guidelines/tripod-statement/">TRIPOD+AI</a> / <a href="https://www.bmj.com/content/388/bmj-2024-082505">PROBAST+AI</a></div><div class="cell">2024 and 2025; guideline groups</div><div class="cell">Prediction model reporting plus risk-of-bias and applicability assessment</div></div>
+      </div>
+    </div>
+    <div class="slide-num">08 / 08</div>
+  </article>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('h1, h2, h3, h4, h5, h6, .card-title, .card-header, .metric-title').forEach((node) => {
+      const label = node.textContent.trim().replace(/\s+/g, ' ');
+      const cardText = node.closest('article, .card, .grid-card, .heor-card, .evidence-card, div')?.textContent || '';
+
+      if (label === 'Machine learning' && /PALISADE/i.test(cardText)) {
+        node.textContent = 'ML';
+      }
+
+      if (label === 'Audit trails matter') {
+        node.replaceChildren('Audit trails', document.createElement('br'), 'matter');
+      }
+    });
+  });
+</script>
+</body>
+</html>

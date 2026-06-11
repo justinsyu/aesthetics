@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HEOR Use Case: Real-World Utilization Assumptions in SSA Budget Impact</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 36px 0 20px;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 850;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      background: var(--lime);
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 72px; line-height: .94; letter-spacing: 0; font-weight: 560; max-width: 1320px; }
+    h2 { font-size: 50px; line-height: 1.0; letter-spacing: 0; font-weight: 560; max-width: 1280px; }
+    h3 { font-size: 27px; line-height: 1.05; letter-spacing: 0; font-weight: 650; }
+    .dek { margin-top: 16px; color: var(--muted); font-size: 26px; line-height: 1.22; max-width: 1260px; }
+    .section-head { margin-bottom: 18px; }
+    .section-head p { margin-top: 10px; color: var(--muted); font-size: 23px; line-height: 1.18; max-width: 1280px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .panel, .metric, .card, .table, .callout {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.88);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel { padding: 22px; }
+    .panel.dark, .callout { background: #11130f; color: var(--paper); border-color: #11130f; }
+    .panel.dark p, .panel.dark li, .callout p, .callout li { color: rgba(246,241,232,.88); }
+    .metric { padding: 20px; min-height: 158px; }
+    .num { font-size: 48px; line-height: .92; font-weight: 760; letter-spacing: 0; }
+    .label { margin-top: 11px; font-size: 22px; line-height: 1.12; color: var(--muted); }
+    .card { padding: 22px; min-height: 236px; }
+    .card.tight { min-height: 190px; }
+    .card p { color: var(--muted); font-size: 22px; line-height: 1.14; margin-top: 10px; }
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      white-space: nowrap;
+      margin-bottom: 10px;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .red { background: var(--red); }
+    .gray { background: var(--gray); }
+    .table { display: grid; }
+    .row { display: grid; grid-template-columns: 1fr 1fr 1.25fr; border-top: 1.3px solid var(--line); }
+    .row:first-child { border-top: 0; }
+    .cell { padding: 16px; font-size: 18px; line-height: 1.22; color: var(--muted); border-left: 1.3px solid var(--line); }
+    .cell:first-child { border-left: 0; color: var(--ink); font-weight: 680; }
+    .row.head .cell { font-size: 14px; text-transform: uppercase; font-weight: 850; color: var(--ink); background: var(--paper-2); }
+    .callout { padding: 24px; margin-top: 18px; }
+    .callout h3 { color: var(--lime); margin-bottom: 12px; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    li { position: relative; padding-left: 20px; color: var(--muted); font-size: 22px; line-height: 1.18; margin-top: 10px; }
+    li::before { content: ""; position: absolute; left: 0; top: .48em; width: 8px; height: 8px; border-radius: 50%; background: var(--lime); border: 1px solid var(--line); }
+    .callout li::before, .panel.dark li::before { border-color: var(--paper); }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: stretch; }
+    .stack { display: grid; gap: 16px; }
+    .logic { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 20px; }
+    .logic .card { min-height: 245px; }
+    .bar { height: 14px; border: 1.3px solid var(--line); border-radius: 999px; background: var(--paper-2); overflow: hidden; margin-top: 14px; }
+    .fill { height: 100%; background: var(--lime); border-right: 1.3px solid var(--line); }
+    .fill.orange { background: var(--orange); }
+    .foot { color: var(--muted); font-size: 15px; line-height: 1.2; margin-top: 12px; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; }
+    .slide-num { position: absolute; z-index: 2; right: 28px; bottom: 20px; color: var(--muted); font-size: 12px; text-transform: uppercase; font-weight: 800; letter-spacing: 0; }
+    .refs .row { grid-template-columns: 58px 1.05fr 1fr 2.1fr; }
+    .refs .cell { font-size: 17px; line-height: 1.14; padding: 10px 12px; }
+    .refs .row > .cell:first-child { text-align: center; }
+    .refs .row.head .cell { font-size: 15px; }
+    .refs h2 { margin-bottom: 16px; }
+    @media print {
+      @page { size: 1600px 900px; margin: 0; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; }
+      .wrap { width: 1360px; }
+    }
+</style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">HEOR use case | June 10, 2026</div>
+      <h1>Real-world utilization assumptions changed the budget-impact case for an SSA comparator</h1>
+      <p class="dek">Ortendahl et al. modeled metastatic GEP-NET treatment costs using lanreotide deep SC injection versus octreotide LAR IM injection, with economic conclusions that depended on real-world octreotide dosing assumptions.<a class="cite" href="https://www.dovepress.com/budget-impact-of-somatostatin-analogs-as-treatment-for-metastatic-gast-peer-reviewed-fulltext-article-CEOR">1</a></p>
+      <div class="grid-4" style="margin-top:24px">
+        <div class="metric"><div class="num">2017</div><div class="label">Budget-impact publication year<a class="cite" href="https://www.dovepress.com/budget-impact-of-somatostatin-analogs-as-treatment-for-metastatic-gast-peer-reviewed-fulltext-article-CEOR">1</a></div></div>
+        <div class="metric"><div class="num">500</div><div class="label">Hypothetical GEP-NET patients in the hospital model<a class="cite" href="https://www.dovepress.com/budget-impact-of-somatostatin-analogs-as-treatment-for-metastatic-gast-peer-reviewed-fulltext-article-CEOR">1</a></div></div>
+        <div class="metric"><div class="num">36%</div><div class="label">Octreotide patients modeled above labeled dose or frequency<a class="cite" href="https://www.dovepress.com/budget-impact-of-somatostatin-analogs-as-treatment-for-metastatic-gast-peer-reviewed-fulltext-article-CEOR">1</a></div></div>
+        <div class="metric"><div class="num">$489K</div><div class="label">Projected annual hospital savings in the base-case shift<a class="cite" href="https://www.dovepress.com/budget-impact-of-somatostatin-analogs-as-treatment-for-metastatic-gast-peer-reviewed-fulltext-article-CEOR">1</a></div></div>
+      </div>
+      <div class="callout">
+        <h3>Executive summary</h3>
+        <ul>
+          <li>Commercial relevance came from reframing the comparison from labeled acquisition cost to observed utilization, preparation time, and injection-route assumptions.<a class="cite" href="https://www.dovepress.com/budget-impact-of-somatostatin-analogs-as-treatment-for-metastatic-gast-peer-reviewed-fulltext-article-CEOR">1</a></li>
+          <li>The modeled direction of the budget result reversed when octreotide was constrained to its labeled 30 mg every 4 weeks dose.<a class="cite" href="https://www.dovepress.com/budget-impact-of-somatostatin-analogs-as-treatment-for-metastatic-gast-peer-reviewed-fulltext-article-CEOR">1</a></li>
+          <li>A countermodel funded by the octreotide manufacturer found lower costs for octreotide when label-dose assumptions were used, underscoring the importance of assumption transparency.<a class="cite" href="https://www.ahdbonline.com/issues/2017/november-2017-vol-10-no-8/2496-comparing-the-cost-of-treatment-with-octreotide-long-acting-release-versus-lanreotide-in-patients-with-metastatic-gastrointestinal-neuroendocrine-tumors">6</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">01 / 10</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Comparator context | GEP-NET</div>
+      <div class="section-head">
+        <h2>The relevant disease context is metastatic GEP-NET, including pancreatic NET, not pancreatic ductal adenocarcinoma</h2>
+        <p>The use case is centered on long-acting somatostatin analogs used in metastatic gastroenteropancreatic neuroendocrine tumors.</p>
+      </div>
+      <div class="table">
+        <div class="row head"><div class="cell">Product</div><div class="cell">Labeled administration</div><div class="cell">Evidence context used in the model</div></div>
+        <div class="row">
+          <div class="cell">Somatuline Depot<br><span class="foot">lanreotide</span></div>
+          <div class="cell">120 mg every 4 weeks by deep subcutaneous injection for GEP-NETs.<a class="cite" href="https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/022074s032lbl.pdf">2</a></div>
+          <div class="cell">Modeled at the highest indicated dose because the authors reported no US studies of use beyond 120 mg every 4 weeks at the time.<a class="cite" href="https://www.dovepress.com/budget-impact-of-somatostatin-analogs-as-treatment-for-metastatic-gast-peer-reviewed-fulltext-article-CEOR">1</a></div>
+        </div>
+        <div class="row">
+          <div class="cell">Sandostatin LAR Depot<br><span class="foot">octreotide LAR</span></div>
+          <div class="cell">Administered IM in the gluteal region every 4 weeks; the label notes that doses higher than 30 mg are not recommended in the carcinoid tumor and VIPoma section.<a class="cite" href="https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/021008s049lbl.pdf">3</a></div>
+          <div class="cell">Modeled using published real-world estimates that included higher doses or shorter intervals than labeled maximum dosing.<a class="cite" href="https://www.dovepress.com/budget-impact-of-somatostatin-analogs-as-treatment-for-metastatic-gast-peer-reviewed-fulltext-article-CEOR">1</a></div>
+        </div>
+      </div>
+      <div class="foot">NET, neuroendocrine tumor; GEP-NET, gastroenteropancreatic neuroendocrine tumor; IM, intramuscular; SC, subcutaneous; VIPoma, vasoactive intestinal peptide tumor.</div>
+    </div>
+    <div class="slide-num">02 / 10</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Model structure | Hospital perspective</div>
+      <div class="section-head">
+        <h2>The model translated utilization share into hospital budget impact</h2>
+        <p>Ortendahl et al. evaluated annual costs after shifting modeled SSA utilization from a predominantly octreotide mix to a higher lanreotide share.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag lime">Population</span>
+          <h3>500 GEP-NET patients</h3>
+          <p>The model began with 500 GEP-NET patients; 313 were estimated to have metastatic disease and receive an SSA.<a class="cite" href="https://www.dovepress.com/budget-impact-of-somatostatin-analogs-as-treatment-for-metastatic-gast-peer-reviewed-fulltext-article-CEOR">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">Share shift</span>
+          <h3>Lanreotide 5% -> 30%</h3>
+          <p>The alternative scenario changed utilization from 5% lanreotide and 95% octreotide to 30% lanreotide and 70% octreotide.<a class="cite" href="https://www.dovepress.com/budget-impact-of-somatostatin-analogs-as-treatment-for-metastatic-gast-peer-reviewed-fulltext-article-CEOR">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag orange">Cost categories</span>
+          <h3>Acquisition, preparation, administration</h3>
+          <p>The model included drug costs plus preparation and administration time; it also explored failed IM injection in a scenario analysis.<a class="cite" href="https://www.dovepress.com/budget-impact-of-somatostatin-analogs-as-treatment-for-metastatic-gast-peer-reviewed-fulltext-article-CEOR">1</a></p>
+        </div>
+      </div>
+      <div class="callout">
+        <h3>Reported base-case result</h3>
+        <p style="font-size:25px;line-height:1.18">The modeled per-patient annual cost was $83,473 for lanreotide and $89,673 for octreotide; the modeled utilization shift reduced annual hospital costs by $488,615.<a class="cite" href="https://www.dovepress.com/budget-impact-of-somatostatin-analogs-as-treatment-for-metastatic-gast-peer-reviewed-fulltext-article-CEOR">1</a></p>
+      </div>
+    </div>
+    <div class="slide-num">03 / 10</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Decisive assumption | Dosing</div>
+      <div class="section-head">
+        <h2>The budget result depended on real-world octreotide use exceeding labeled dosing</h2>
+        <p>The model used labeled maximum dosing for lanreotide but incorporated above-label dose or frequency for octreotide.</p>
+      </div>
+      <div class="two-col">
+        <div class="panel">
+          <span class="tag lime">Base case</span>
+          <h3>64% at labeled maximum; 36% above label or more frequent</h3>
+          <p class="dek" style="font-size:24px;color:var(--muted)">Ortendahl et al. assumed 64% of octreotide patients received 30 mg every 4 weeks, 18% received 40 or 60 mg every 4 weeks, and 18% received more frequent injections.<a class="cite" href="https://www.dovepress.com/budget-impact-of-somatostatin-analogs-as-treatment-for-metastatic-gast-peer-reviewed-fulltext-article-CEOR">1</a></p>
+          <div class="bar"><div class="fill" style="width:64%"></div></div>
+          <div class="bar"><div class="fill orange" style="width:36%"></div></div>
+        </div>
+        <div class="panel dark">
+          <span class="tag orange">Sensitivity result</span>
+          <h3>Label-only octreotide dosing reversed the budget direction</h3>
+          <p style="font-size:25px;line-height:1.18">When all octreotide patients were modeled at 30 mg once every 4 weeks, the same utilization shift increased costs by $878,489 instead of producing savings.<a class="cite" href="https://www.dovepress.com/budget-impact-of-somatostatin-analogs-as-treatment-for-metastatic-gast-peer-reviewed-fulltext-article-CEOR">1</a></p>
+        </div>
+      </div>
+      <div class="foot">The result does not establish clinical superiority. It demonstrates that economic conclusions can change when modeled dosing reflects observed utilization rather than label-only assumptions.</div>
+    </div>
+    <div class="slide-num">04 / 10</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Operational pathway | Administration</div>
+      <div class="section-head">
+        <h2>Route and preparation created a second commercial-use argument</h2>
+        <p>The HEOR case combined dose utilization with administration mechanics, including preparation time and a scenario involving failed IM injection.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag lime">Deep SC route</span>
+          <h3>Lanreotide label</h3>
+          <p>Somatuline Depot is administered as 120 mg every 4 weeks by deep subcutaneous injection for GEP-NETs.<a class="cite" href="https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/022074s032lbl.pdf">2</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">IM route</span>
+          <h3>Octreotide LAR label</h3>
+          <p>Sandostatin LAR Depot is administered intramuscularly in the gluteal region, with needle considerations for patients with greater skin-to-muscle depth.<a class="cite" href="https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/021008s049lbl.pdf">3</a></p>
+        </div>
+        <div class="card">
+          <span class="tag orange">Scenario analysis</span>
+          <h3>Failed IM injection</h3>
+          <p>At a 25% failed IM injection rate requiring repeat injection, the model reported $2.24 million in annual savings with the utilization shift.<a class="cite" href="https://www.dovepress.com/budget-impact-of-somatostatin-analogs-as-treatment-for-metastatic-gast-peer-reviewed-fulltext-article-CEOR">1</a></p>
+        </div>
+      </div>
+      <div class="callout">
+        <h3>Evidence basis for the injection-failure scenario</h3>
+        <p style="font-size:24px;line-height:1.18">Boyd et al. evaluated intended gluteal IM depot octreotide injections using CT and reported improved success after nurse instruction; Ortendahl et al. used that study to construct the failed-injection scenario.<a class="cite" href="https://pubmed.ncbi.nlm.nih.gov/23508015/">4</a><span class="cite">,</span><a class="cite" href="https://www.dovepress.com/budget-impact-of-somatostatin-analogs-as-treatment-for-metastatic-gast-peer-reviewed-fulltext-article-CEOR">1</a></p>
+      </div>
+    </div>
+    <div class="slide-num">05 / 10</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Evidence chain | RWE inputs</div>
+      <div class="section-head">
+        <h2>Real-world evidence gave the model a commercial-facing rationale beyond list price</h2>
+        <p>The evidence chain connected observed dose escalation and administration burden to a budget-impact model.</p>
+      </div>
+      <div class="logic">
+        <div class="card">
+          <span class="tag gray">Observed use</span>
+          <h3>Above-label octreotide dosing</h3>
+          <p>Published real-world estimates supported a model input in which some octreotide patients received higher doses or shorter intervals.<a class="cite" href="https://www.dovepress.com/budget-impact-of-somatostatin-analogs-as-treatment-for-metastatic-gast-peer-reviewed-fulltext-article-CEOR">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">Mechanism</span>
+          <h3>Route and preparation burden</h3>
+          <p>The model incorporated administration and preparation costs, including the need to reconstitute octreotide LAR.<a class="cite" href="https://www.dovepress.com/budget-impact-of-somatostatin-analogs-as-treatment-for-metastatic-gast-peer-reviewed-fulltext-article-CEOR">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag orange">Modeled outcome</span>
+          <h3>Budget impact</h3>
+          <p>The share-shift scenario generated lower modeled annual costs for the hospital perspective.<a class="cite" href="https://www.dovepress.com/budget-impact-of-somatostatin-analogs-as-treatment-for-metastatic-gast-peer-reviewed-fulltext-article-CEOR">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag lime">Commercial use</span>
+          <h3>Value communication</h3>
+          <p>The model supplied source-backed messages on budget impact and operational efficiency, subject to stated assumptions and sensitivity analyses.<a class="cite" href="https://www.dovepress.com/budget-impact-of-somatostatin-analogs-as-treatment-for-metastatic-gast-peer-reviewed-fulltext-article-CEOR">1</a></p>
+        </div>
+      </div>
+      <div class="foot">The deck uses "commercial use" to describe evidence-supported value communication and stakeholder discussion; it does not infer that HEOR evidence alone caused product uptake or sales outcomes.</div>
+    </div>
+    <div class="slide-num">06 / 10</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Post-publication RWE | Treatment patterns</div>
+      <div class="section-head">
+        <h2>Later claims evidence reported treatment-pattern differences between long-acting SSAs</h2>
+        <p>Clarke et al. evaluated commercially insured and Medicare supplemental patients newly treated with long-acting SSAs from 2015 to 2020.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag lime">Sample</span>
+          <h3>241 lanreotide and 521 octreotide LAR patients</h3>
+          <p>The US MarketScan analysis compared patients initiating lanreotide or octreotide LAR.<a class="cite" href="https://jheor.org/article/89300-treatment-patterns-of-long-acting-somatostatin-analogs-for-neuroendocrine-tumors">5</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">Pattern</span>
+          <h3>Lower rescue-medication and escalation measures</h3>
+          <p>The authors reported lower rescue medication use, fewer dose escalations, and lower above-label dose use among lanreotide patients.<a class="cite" href="https://jheor.org/article/89300-treatment-patterns-of-long-acting-somatostatin-analogs-for-neuroendocrine-tumors">5</a></p>
+        </div>
+        <div class="card">
+          <span class="tag gray">Limitations</span>
+          <h3>Observational design</h3>
+          <p>Claims-based analyses can be affected by residual confounding, coding limits, and dose-estimation uncertainty; Clarke et al. reported Ipsen funding.<a class="cite" href="https://jheor.org/article/89300-treatment-patterns-of-long-acting-somatostatin-analogs-for-neuroendocrine-tumors">5</a></p>
+        </div>
+      </div>
+      <div class="callout">
+        <h3>Interpretation for the use case</h3>
+        <p style="font-size:24px;line-height:1.18">Later RWE may support the plausibility of differential real-world treatment patterns, but it does not remove the need to disclose funding, methods, and sensitivity of conclusions to modeled assumptions.<a class="cite" href="https://jheor.org/article/89300-treatment-patterns-of-long-acting-somatostatin-analogs-for-neuroendocrine-tumors">5</a></p>
+      </div>
+    </div>
+    <div class="slide-num">07 / 10</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Balance | Countermodel</div>
+      <div class="section-head">
+        <h2>A contemporaneous payer model reached the opposite cost conclusion under label-dose assumptions</h2>
+        <p>Ayyagari et al. compared octreotide LAR 30 mg with lanreotide 120 mg in metastatic gastrointestinal NETs from a payer perspective.</p>
+      </div>
+      <div class="two-col">
+        <div class="panel">
+          <span class="tag blue">Ayyagari 2017</span>
+          <h3>Octreotide lower-cost conclusion</h3>
+          <p class="dek" style="font-size:24px;color:var(--muted)">The analysis reported lower treatment costs for octreotide LAR than lanreotide over 1-, 3-, and 5-year horizons, with drug acquisition cost as the main driver.<a class="cite" href="https://www.ahdbonline.com/issues/2017/november-2017-vol-10-no-8/2496-comparing-the-cost-of-treatment-with-octreotide-long-acting-release-versus-lanreotide-in-patients-with-metastatic-gastrointestinal-neuroendocrine-tumors">6</a></p>
+        </div>
+        <div class="panel dark">
+          <span class="tag orange">Interpretive control</span>
+          <h3>Assumptions determine the commercial evidence narrative</h3>
+          <p style="font-size:25px;line-height:1.18">The countermodel illustrates that HEOR findings can support different commercial messages when dosing, perspective, administration burden, and injection-failure assumptions differ.<a class="cite" href="https://www.ahdbonline.com/issues/2017/november-2017-vol-10-no-8/2496-comparing-the-cost-of-treatment-with-octreotide-long-acting-release-versus-lanreotide-in-patients-with-metastatic-gastrointestinal-neuroendocrine-tumors">6</a><span class="cite">,</span><a class="cite" href="https://www.dovepress.com/budget-impact-of-somatostatin-analogs-as-treatment-for-metastatic-gast-peer-reviewed-fulltext-article-CEOR">1</a></p>
+        </div>
+      </div>
+      <div class="grid-3" style="margin-top:18px">
+        <div class="card tight"><span class="tag gray">Perspective</span><h3>Hospital vs payer</h3><p>Ortendahl used a hospital perspective; Ayyagari used a payer perspective.<a class="cite" href="https://www.dovepress.com/budget-impact-of-somatostatin-analogs-as-treatment-for-metastatic-gast-peer-reviewed-fulltext-article-CEOR">1</a><span class="cite">,</span><a class="cite" href="https://www.ahdbonline.com/issues/2017/november-2017-vol-10-no-8/2496-comparing-the-cost-of-treatment-with-octreotide-long-acting-release-versus-lanreotide-in-patients-with-metastatic-gastrointestinal-neuroendocrine-tumors">6</a></p></div>
+        <div class="card tight"><span class="tag gray">Funding</span><h3>Ipsen and Novartis</h3><p>Ortendahl reported Ipsen funding; Ayyagari reported Novartis funding.<a class="cite" href="https://www.dovepress.com/budget-impact-of-somatostatin-analogs-as-treatment-for-metastatic-gast-peer-reviewed-fulltext-article-CEOR">1</a><span class="cite">,</span><a class="cite" href="https://www.ahdbonline.com/issues/2017/november-2017-vol-10-no-8/2496-comparing-the-cost-of-treatment-with-octreotide-long-acting-release-versus-lanreotide-in-patients-with-metastatic-gastrointestinal-neuroendocrine-tumors">6</a></p></div>
+        <div class="card tight"><span class="tag gray">Use</span><h3>Source-backed comparison</h3><p>Both studies can be used to discuss how assumption selection shapes modeled economic value claims.<a class="cite" href="https://www.dovepress.com/budget-impact-of-somatostatin-analogs-as-treatment-for-metastatic-gast-peer-reviewed-fulltext-article-CEOR">1</a><span class="cite">,</span><a class="cite" href="https://www.ahdbonline.com/issues/2017/november-2017-vol-10-no-8/2496-comparing-the-cost-of-treatment-with-octreotide-long-acting-release-versus-lanreotide-in-patients-with-metastatic-gastrointestinal-neuroendocrine-tumors">6</a></p></div>
+      </div>
+    </div>
+    <div class="slide-num">08 / 10</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Scientific guardrails | Commercial interpretation</div>
+      <div class="section-head">
+        <h2>HEOR can be commercially material when assumptions are explicit and stress-tested</h2>
+        <p>The use case supports a disciplined commercial-evidence framework rather than a causal claim that HEOR alone produced product success.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag lime">1. Define the comparator</span>
+          <h3>Indication and route matter</h3>
+          <p>The comparison is lanreotide deep SC versus octreotide LAR IM in metastatic GEP-NET, including pancreatic NET, not pancreatic ductal adenocarcinoma.<a class="cite" href="https://www.dovepress.com/budget-impact-of-somatostatin-analogs-as-treatment-for-metastatic-gast-peer-reviewed-fulltext-article-CEOR">1</a><span class="cite">,</span><a class="cite" href="https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/022074s032lbl.pdf">2</a></p>
+        </div>
+        <div class="card">
+          <span class="tag blue">2. Separate label and RWE</span>
+          <h3>Real-world utilization drove the result</h3>
+          <p>The modeled savings depended on octreotide dose escalation and frequency assumptions; label-only dosing reversed the direction.<a class="cite" href="https://www.dovepress.com/budget-impact-of-somatostatin-analogs-as-treatment-for-metastatic-gast-peer-reviewed-fulltext-article-CEOR">1</a></p>
+        </div>
+        <div class="card">
+          <span class="tag orange">3. Disclose uncertainty</span>
+          <h3>Sponsor and scenario context</h3>
+          <p>Funding source, model perspective, pricing inputs, and injection-failure assumptions are necessary context for interpreting the findings.<a class="cite" href="https://www.dovepress.com/budget-impact-of-somatostatin-analogs-as-treatment-for-metastatic-gast-peer-reviewed-fulltext-article-CEOR">1</a><span class="cite">,</span><a class="cite" href="https://www.ahdbonline.com/issues/2017/november-2017-vol-10-no-8/2496-comparing-the-cost-of-treatment-with-octreotide-long-acting-release-versus-lanreotide-in-patients-with-metastatic-gastrointestinal-neuroendocrine-tumors">6</a></p>
+        </div>
+      </div>
+      <div class="callout">
+        <h3>Use-case conclusion</h3>
+        <p style="font-size:25px;line-height:1.18">The lanreotide case illustrates how HEOR can support commercial value communication by quantifying real-world utilization and operational costs, provided that the analysis is presented with transparent assumptions, limitations, and counter-evidence.<a class="cite" href="https://www.dovepress.com/budget-impact-of-somatostatin-analogs-as-treatment-for-metastatic-gast-peer-reviewed-fulltext-article-CEOR">1</a><span class="cite">,</span><a class="cite" href="https://www.ahdbonline.com/issues/2017/november-2017-vol-10-no-8/2496-comparing-the-cost-of-treatment-with-octreotide-long-acting-release-versus-lanreotide-in-patients-with-metastatic-gastrointestinal-neuroendocrine-tumors">6</a></p>
+      </div>
+    </div>
+    <div class="slide-num">09 / 10</div>
+  </article>
+
+  <article class="slide refs">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">References 1-6</div>
+      <h2>References</h2>
+      <div class="table">
+        <div class="row head"><div class="cell">Ref</div><div class="cell">Source</div><div class="cell">Date / Status / Source Owner</div><div class="cell">Evidence Used in Report</div></div>
+        <div class="row"><div class="cell">1</div><div class="cell">Ortendahl et al., ClinicoEconomics and Outcomes Research</div><div class="cell">Published August 16, 2017; Dove Medical Press</div><div class="cell">Budget-impact model, 500-patient cohort, 5% to 30% lanreotide shift, real-world octreotide dosing, sensitivity analyses, injection-failure scenario, funding disclosure</div></div>
+        <div class="row"><div class="cell">2</div><div class="cell">Somatuline Depot FDA label</div><div class="cell">2024 label PDF; FDA</div><div class="cell">GEP-NET dose and deep subcutaneous administration route for lanreotide</div></div>
+        <div class="row"><div class="cell">3</div><div class="cell">Sandostatin LAR Depot FDA label</div><div class="cell">2024 label PDF; FDA</div><div class="cell">Gluteal intramuscular administration, needle considerations, and labeled dosing context for octreotide LAR</div></div>
+        <div class="row"><div class="cell">4</div><div class="cell">Boyd et al., Pancreas</div><div class="cell">Published 2013; PubMed record</div><div class="cell">Evidence basis for gluteal IM depot octreotide injection-success scenario used by Ortendahl et al.</div></div>
+        <div class="row"><div class="cell">5</div><div class="cell">Clarke et al., Journal of Health Economics and Outcomes Research</div><div class="cell">Published December 11, 2023; JHEOR</div><div class="cell">Claims-based treatment-pattern data on lanreotide versus octreotide LAR, including dose escalation, above-label dosing, rescue medication, and funding statement</div></div>
+        <div class="row"><div class="cell">6</div><div class="cell">Ayyagari et al., American Health and Drug Benefits</div><div class="cell">Published 2017; AHDB</div><div class="cell">Countermodel comparing octreotide LAR and lanreotide costs under label-dose and payer-perspective assumptions, including funding statement</div></div>
+      </div>
+    </div>
+    <div class="slide-num">10 / 10</div>
+  </article>
+</body>
+</html>

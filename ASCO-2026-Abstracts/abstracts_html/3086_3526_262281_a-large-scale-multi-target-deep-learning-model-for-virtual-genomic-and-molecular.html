@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A large-scale, multi-target deep learning model for virtual genomic and molecular risk profiling in colorectal cancer.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>A large-scale, multi-target deep learning model for virtual genomic and molecular risk profiling in colorectal cancer.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 3526</div>
+    <div><strong>First speaker:</strong> Erik N. Bergstrom, PhD, BS</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/262281">https://www.asco.org/abstracts-presentations/262281</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b> Molecular profiling of tumor biopsies is central to precision oncology, informing treatment selection, prognostication, and disease monitoring. Computational analysis of routine H&amp;E slides offers a complementary, scalable approach that can accelerate biological insights and optimize downstream molecular testing. Recent advances in computational pathology have demonstrated that deep learning models can infer molecular features directly from digital H&amp;E images, referred to as virtual genomics. However, most studies in colorectal cancer (CRC) have been constrained by limited cohort sizes, single-target predictions, and a lack of integration with longitudinal clinical outcomes. </p>  Here, we present a transformer-based deep learning framework designed for large-scale virtual genomic and molecular recurrence risk profiling in CRC.</p>  <b>Methods: </b> The model was trained on 45,155 patients with matched digital H&amp;E images, whole-exome sequencing (WES), and longitudinal circulating tumor DNA (ctDNA) for molecular recurrence monitoring. We embedded all images using H-optimus-0 and trained a transformer-based multiple instance learning aggregation head for downstream virtual genomic predictions. We trained individual models to predict genes found in the MSK-IMPACT505 cancer gene panel and a single model that predicts all genes simultaneously. Lastly, we trained an independent model to predict the risk of molecular recurrence. All results were validated on an external cohort from The Cancer Genome Atlas (TCGA; n&nbsp;=&nbsp;422 CRC patients).</p>  <b>Results: </b> Individual models predicted 379 mutated genes with an internal area under the receiver operating curve (AUROC)&nbsp;&gt;&nbsp;0.7. We validated 254 of these genes within TCGA with an AUROC&nbsp;&gt;&nbsp;0.7. Training a multi-task learning model to predict all genes simultaneously improved the AUROC for 85% of the genes. Based on NCCN guidelines in CRC, we further trained individual models to predict MSI status, BRAF V600E, KRAS G12D/V/G13D, and POLE/POLD1 exonuclease mutations with AUROCs of 0.96, 0.93, 0.84, and 0.86, respectively. Lastly, we developed an image-based molecular recurrence risk model trained directly on longitudinal ctDNA outcomes. The model stratified patients into low, medium, and high risk groups with a concordance index of 0.67. Compared to low-risk patients, the high-risk group exhibited a hazard ratio (HR) of 4.67, while the medium-risk group showed an HR of 1.98 (p-values&nbsp;&lt;&nbsp;&nbsp;&lt;&nbsp;1E-5).</p>  <b>Conclusions: </b> This unified framework demonstrates that virtual genomics from routine H&amp;E histopathology can enable scalable, cost-efficient inference of hundreds of clinically relevant genomic alterations and molecular recurrence risk in CRC. By leveraging universally available diagnostic slides, virtual genomics has the potential to expand access to precision oncology, optimize molecular testing strategies, and support earlier risk stratification.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

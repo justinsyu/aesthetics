@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Optimizing post-prostatectomy management: A machine learning tool to identify low-risk patients and minimize unnecessary burden in localized prostate cancer.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Optimizing post-prostatectomy management: A machine learning tool to identify low-risk patients and minimize unnecessary burden in localized prostate cancer.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e17121</div>
+    <div><strong>First speaker:</strong> Xiang Tu</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/261013">https://www.asco.org/abstracts-presentations/261013</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Biochemical recurrence (BCR) is a key early indicator of disease progression in localized prostate cancer (LPC). While uniform, intensive follow-up is standard, it leads to significant resource burden and patient anxiety, as patients particularly at minimal risk may not require it. It remains to be established whether machine learning models can provide efficient, data-driven decision-making solutions in this clinical context.</div>
+  <main> 
+
+	<div><b>Background: </b> Biochemical recurrence (BCR) is a key early indicator of disease progression in localized prostate cancer (LPC). While uniform, intensive follow-up is standard, it leads to significant resource burden and patient anxiety, as patients particularly at minimal risk may not require it. It remains to be established whether machine learning models can provide efficient, data-driven decision-making solutions in this clinical context.</p>  <b>Methods: </b> This is a retrospective cohort study using structured electronic medical record data from a tertiary care center (West China Hospital). Eligible patients had clinical LPC and underwent RP between 2017-2024, with at least one year of follow-up. BCR was defined as PSA≥0.2 ng/mL with two consecutive increases post-RP. Predictors encompassed biopsy, pathological Gleason scores, prostate size, pT stage, surgical margin status, pre- and post-RP PSA levels, and inflammatory ratios. Random Forest (RF) and XGBoost models were developed with hyperparameter tuning via 10‑fold cross‑validation. Model performance was evaluated using 500 bootstrap resamples to obtain optimism-corrected Area Under Curve (AUC), Sensitivity, Specificity, PPV, NPV, and Calibration-In-The-Large (CITL). Clinical utility was assessed via Decision Curve Analysis (DCA) to guide follow-up decisions.</p>  <b>Results: </b> Among 763 male patients (mean age 67.3 years) in the cohort, 78 (10.2%) patients experienced BCR within 1 year (median 6 months). After bootstrap correction, the RF model achieved superior discrimination (optimism-corrected AUC: RF 0.90 vs. XGboost 0.82, P&lt;0.05) and better calibration (CITL: RF -0.04 vs. XGboost 0.23, P&lt;0.05). Both models demonstrated a consistently high NPV (0.97), supporting safe exclusion of low‑risk patients from intensive surveillance. DCA revealed that using the RF model provided a superior net benefit across the risk thresholds of 0-54.2% compared to XGboost and default strategies of "follow-all" or "follow-none." A model‑guided management strategy could reduce approximately 70% of health utilization cost per low‑risk patient and reallocate about 19 clinician workdays to higher‑value care annually.</p>  <b>Conclusions: </b> Using rigorous internal validation, we developed a highly discriminative and well‑calibrated RF model capable of accurately identifying patients at minimal short‑term BCR risk. The model's high NPV and demonstrated clinical utility suggest strong potential to safely de‑escalate post‑RP surveillance. Prospective multi‑center validation is warranted to confirm its generalizability and its impact on clinical workflow and resource optimization.</div>
+
+
+
+	<div class="table_caption"><b>Optimism-corrected performance metrics.</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p>Algorithm</p>
+</td>
+<td>
+<p>AUC</p>
+</td>
+<td>
+<p>Sensitivity*</p>
+</td>
+<td>
+<p>Specificity*</p>
+</td>
+<td>
+<p>PPV*</p>
+</td>
+<td>
+<p>NPV*</p>
+</td>
+<td>
+<p>CITL</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>RF</p>
+</td>
+<td>
+<p>0.90</p>
+</td>
+<td>
+<p>0.82</p>
+</td>
+<td>
+<p>0.79</p>
+</td>
+<td>
+<p>0.19</p>
+</td>
+<td>
+<p>0.97</p>
+</td>
+<td>
+<p>-0.04</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>XGboost</p>
+</td>
+<td>
+<p>0.82</p>
+</td>
+<td>
+<p>0.81</p>
+</td>
+<td>
+<p>0.66</p>
+</td>
+<td>
+<p>0.15</p>
+</td>
+<td>
+<p>0.97</p>
+</td>
+<td>
+<p>0.23</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+ 
+	<div class="table_footer">*With a Youden threshold</div> 
+
+
+</main>
+</body>
+</html>

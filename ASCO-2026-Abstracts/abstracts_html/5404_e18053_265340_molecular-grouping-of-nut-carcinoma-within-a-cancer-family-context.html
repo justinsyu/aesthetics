@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Molecular grouping of NUT carcinoma within a cancer family context.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Molecular grouping of NUT carcinoma within a cancer family context.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e18053</div>
+    <div><strong>First speaker:</strong> Samuel Shenoi, MD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/265340">https://www.asco.org/abstracts-presentations/265340</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> NUT carcinomas are characterized by ectopic expression of nuclear protein in testis (NUT). These rare squamous cell carcinomas carry a poor prognosis despite chemotherapy. Since new extensive molecular profiling has shown that cancers with different histologies can converge on common oncogenic pathways, rare cancers like NUT carcinoma have been increasingly grouped into &quot;molecular families&quot; based on shared molecular circuitry. We sought to group NUT carcinoma within the context of a cancer family.</div>
+  <main> 
+
+	<div><b>Background: </b></p>  NUT carcinomas are characterized by ectopic expression of nuclear protein in testis (NUT). These rare squamous cell carcinomas carry a poor prognosis despite chemotherapy. Since new extensive molecular profiling has shown that cancers with different histologies can converge on common oncogenic pathways, rare cancers like NUT carcinoma have been increasingly grouped into "molecular families" based on shared molecular circuitry. We sought to group NUT carcinoma within the context of a cancer family.</p>  <b>Methods: </b></p>  Proteins in the NUT interactome were identified using BioGRID, a database of protein, genetic, and chemical interactions. The identified corresponding genes were used to obtain sample data from 5 cancer subtypes in cBioPortal, a resource for exploration of multidimensional cancer genomics data sets. Mutational, copy number variations, mRNA, protein, and structural variant data identified by cBioPortal were grouped into a sample by gene matrix. The Multi-Dendrix Chain Monte Carlo (MCMC) algorithm, which identifies driver pathways from patterns of mutual exclusivity between mutations, was run on the matrix to identify driver pathways across a range of pathway sizes (3-5) and number of pathways (2-3); a permutation test with 100 simulations was used to assess for statistical significance (p&lt; 0.05). We tested the coverage of the identified pathways by counting the number of samples of each cancer with at least one mutation in a gene implicated in an identified pathway.</p>  <b>Results: </b></p>  We identified 56 unique human proteins in the NUT interactome using BioGRID. We searched Head and Neck Squamous Cell Cancer (H&amp;N), Cutaneous Squamous Cell Cancer (CSCC), Ewing Sarcoma, Osteosarcoma, and Pancreatic Acinar Cell Carcinoma (pACC) datasets in CBioPortal. Ewing Sarcoma and CSCC had pathways identified by MCMC that reached statistical significance across the range of pathway sizes. Osteosarcoma had the highest coverage (75.76%) and Ewing Sarcoma had the lowest coverage (4.85%) of pathway mutations in samples. We were unable to run the permutation test on the H&amp;N dataset and excluded it from our subsequent analyzes.</p>  <b>Conclusions: </b></p>  The results of our study provides some evidence of subsets of cancers with a shared oncogenic pathways with NUT carcinoma; further work is needed to better characterize these relationships.</div>
+
+
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td><strong>Cancer</strong></td>
+<td><strong># Genes</strong></td>
+<td><strong>Significant Sets (pathway size, # pathways, # sets)</strong></td>
+<td><strong># Samples</strong></td>
+<td><strong>Sample Coverage</strong></td>
+</tr>
+<tr>
+<td>Ewing Sarcoma</td>
+<td>17</td>
+<td>(3,2,25), (3,3,25), (4,2,21), (4,3,25), (5,2,2), (5,3,17)</td>
+<td>495</td>
+<td>7, 4.85%</td>
+</tr>
+<tr>
+<td>CSCC</td>
+<td>53</td>
+<td>3,2,25), (3,3,25), (4,2,25), (4,3,25), (5,2,10), (5,3,25)</td>
+<td>151</td>
+<td>104, 68.87%</td>
+</tr>
+<tr>
+<td>Osteosarcoma</td>
+<td>52</td>
+<td>(3,2,25), (3,3,25), (4,2,3), (4,3,20), (5,3,1)</td>
+<td>66</td>
+<td>50, 75.76%</td>
+</tr>
+<tr>
+<td>pACC</td>
+<td>13</td>
+<td>(3,2,1), (3,3,1)</td>
+<td>69</td>
+<td>12, 17.39%</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

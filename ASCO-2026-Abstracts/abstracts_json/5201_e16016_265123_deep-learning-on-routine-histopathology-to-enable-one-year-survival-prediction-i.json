@@ -1,0 +1,64 @@
+{
+  "abstractNumber": "e16016",
+  "body": " \r\n\r\n\t<div><b>Background: </b> Pancreatic cancer ductal adenocarcinoma (PDAC) is an aggressive malignancy with a poor prognosis and limited tools for survival stratification. Our prior work demonstrated the feasibility of predicting Moffitt molecular subtypes from histopathology; however, these subtypes showed limited association with overall survival, motivating direct outcome-based modeling. We hypothesized that whole slide images (WSI) contain prognostically relevant morphologic signals that can be leveraged to predict short-term survival in PDAC.</p>  <b>Methods: </b> We analyzed PDAC cases from the Pancreatic Cancer Action Network (PANCAN) dataset (n = 846), including 272 patients with survival data. A WSI-based deep learning framework (PathRosetta) was trained to predict 1-year survival using five-fold cross-validation. In parallel, pretrained PathRosetta models predicting pan-cancer genetic alterations (APC, BRAF, KMT2D, KRAS, PIK3CA, TP53, and TTN) were used to extract mutation-relevant morphologic features for survival modeling, evaluated using leave-one-out cross-validation. The mutations were selected based on the availability of robust pretrained models with adequate case numbers in The Cancer Genome Atlas (TCGA), rather than PDAC-specific biological hypotheses. These represent mutations for which reliable pan-cancer prediction models currently exist.</p>  <b>Results: </b> At 1 year, 71 of 272 patients had died. Mutation-relevant morphologic-feature–based models demonstrated discrimination comparable to or superior to that of direct WSI modeling, with TP53 achieving the highest performance (Table).</p>  <b>Conclusions: </b> Deep learning applied to routine histopathology enables prediction of 1-year survival in PDAC. Leveraging mutation-relevant morphologic representations improves prognostic performance and supports a biologically grounded link between tumor genetics, tissue architecture, and clinical outcomes, highlighting the potential of WSI-based models for clinically meaningful risk stratification. It potentially aids in baseline risk stratification, with potential implications for clinical decision-making and trial enrichment.</div>\r\n\r\n\r\n\r\n\t<div class=\"table_caption\"><b>Performance for One-year survival Prediction in PDAC</b></div> \r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td></td>\r\n<td>\r\n<p><strong>AUC</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Accuracy</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Sensitivity</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Specificity</strong></p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p><strong>PathRosetta (scratch)</strong></p>\r\n</td>\r\n<td>\r\n<p>0.768 ± 0.036</p>\r\n</td>\r\n<td>\r\n<p>0.707 ± 0.018</p>\r\n</td>\r\n<td>\r\n<p>0.634 ± 0.112</p>\r\n</td>\r\n<td>\r\n<p>0.730 ± 0.054</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p><strong>APC</strong></p>\r\n</td>\r\n<td>\r\n<p>0.818</p>\r\n</td>\r\n<td>\r\n<p>0.920</p>\r\n</td>\r\n<td>\r\n<p>0.864</p>\r\n</td>\r\n<td>\r\n<p>0.937</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p><strong>BRAF</strong></p>\r\n</td>\r\n<td>\r\n<p>0.791</p>\r\n</td>\r\n<td>\r\n<p>0.905</p>\r\n</td>\r\n<td>\r\n<p>0.841</p>\r\n</td>\r\n<td>\r\n<p>0.926</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p><strong>KMT2D</strong></p>\r\n</td>\r\n<td>\r\n<p>0.786</p>\r\n</td>\r\n<td>\r\n<p>0.904</p>\r\n</td>\r\n<td>\r\n<p>0.851</p>\r\n</td>\r\n<td>\r\n<p>0.922</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p><strong>KRAS</strong></p>\r\n</td>\r\n<td>\r\n<p>0.726</p>\r\n</td>\r\n<td>\r\n<p>0.871</p>\r\n</td>\r\n<td>\r\n<p>0.797</p>\r\n</td>\r\n<td>\r\n<p>0.896</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p><strong>PIK3CA</strong></p>\r\n</td>\r\n<td>\r\n<p>0.729</p>\r\n</td>\r\n<td>\r\n<p>0.890</p>\r\n</td>\r\n<td>\r\n<p>0.771</p>\r\n</td>\r\n<td>\r\n<p>0.933</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p><strong>TP53</strong></p>\r\n</td>\r\n<td>\r\n<p>0.877</p>\r\n</td>\r\n<td>\r\n<p>0.935</p>\r\n</td>\r\n<td>\r\n<p>0.938</p>\r\n</td>\r\n<td>\r\n<p>0.934</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p><strong>TTN</strong></p>\r\n</td>\r\n<td>\r\n<p>0.745</p>\r\n</td>\r\n<td>\r\n<p>0.862</p>\r\n</td>\r\n<td>\r\n<p>0.846</p>\r\n</td>\r\n<td>\r\n<p>0.868</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n\r\n\r\n",
+  "contentId": "265123",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/265123",
+    "queryParams": null,
+    "target": null,
+    "title": "Deep learning on routine histopathology to enable one-year survival prediction in pancreatic ductal adenocarcinoma."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION265123"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": null,
+  "presentationId": "265123",
+  "primaryPerson": {
+    "displayName": "Abdul Rehman Akbar, BS, MS",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": "Pancreatic cancer ductal adenocarcinoma (PDAC) is an aggressive malignancy with a poor prognosis and limited tools for survival stratification. Our prior work demonstrated the feasibility of predicting Moffitt molecular subtypes from histopathology; however, these subtypes showed limited association with overall survival, motivating direct outcome-based modeling. We hypothesized that whole slide images (WSI) contain prognostically relevant morphologic signals that can be leveraged to predict short-term survival in PDAC.",
+  "taxonomy": null,
+  "title": "Deep learning on routine histopathology to enable one-year survival prediction in pancreatic ductal adenocarcinoma.",
+  "titles": null,
+  "uid": "PRESENTATION265123"
+}

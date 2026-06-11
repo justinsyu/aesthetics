@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A clinically deployable deep learning model for decision support and specimen triage in colorectal histopathology with international pathologist validation.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>A clinically deployable deep learning model for decision support and specimen triage in colorectal histopathology with international pathologist validation.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e15514</div>
+    <div><strong>First speaker:</strong> Sarveswar Chinnaswamy Dhandapani, MBBS</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/262960">https://www.asco.org/abstracts-presentations/262960</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Colorectal cancer is a leading cause of cancer-related mortality globally, with histopathology as the diagnostic gold standard. Pathologists must differentiate malignant, benign, and non-neoplastic tissue with high accuracy—a cognitively demanding task subject to interobserver variability. Rising specimen volumes and workforce constraints further challenge routine practice. Although deep learning has shown promise in digital pathology, computational demands hinder clinical adoption. We aimed to develop and validate a computationally efficient deep learning framework for colon histopathology classification, assess diagnostic performance preservation using a lightweight model trained via structured knowledge distillation; and to evaluate global clinical feasibility using expert-reviewed, multi-institutional data.</div>
+  <main> 
+
+	<div><b>Background: </b></p>  Colorectal cancer is a leading cause of cancer-related mortality globally, with histopathology as the diagnostic gold standard. Pathologists must differentiate malignant, benign, and non-neoplastic tissue with high accuracy—a cognitively demanding task subject to interobserver variability. Rising specimen volumes and workforce constraints further challenge routine practice. Although deep learning has shown promise in digital pathology, computational demands hinder clinical adoption. We aimed to develop and validate a computationally efficient deep learning framework for colon histopathology classification, assess diagnostic performance preservation using a lightweight model trained via structured knowledge distillation; and to evaluate global clinical feasibility using expert-reviewed, multi-institutional data.</p>  <b>Methods: </b></p>  We assembled 10,000 anonymized hematoxylin-eosin stained histopathological images representing malignant lesions, benign findings, and non-neoplastic controls from multi-institutional sources across six continents. Two independent expert pathologists reviewed all images to establish consensus ground truth. Following comprehensive preprocessing and stain-adaptive augmentation, images were stratified into training (60%), validation (20%), and testing (20%) cohorts. ResNet152 (60.3M parameters, 224&#215;224 resolution), selected for its deep residual architecture, was trained as the reference model. ResNet18 (11.7M parameters, 81% parameter reduction) underwent structured knowledge distillation using soft probabilistic targets from ResNet152 via temperature-scaled cross-entropy loss. Model performance was evaluated on held-out test data and externally validated on independent datasets. Metrics included accuracy, sensitivity, specificity, F1-score, and AUROC. The optimized ResNet18 model was deployed in a cross-platform digital pathology application and independently assessed by pathologists across six continents for clinical utility and workflow integration.</p>  <b>Results: </b> </p>  ResNet152 achieved high diagnostic accuracy across tissue classes. The knowledge-distilled ResNet18 demonstrated comparable performance, with accuracy exceeding 97% on test data, balanced sensitivity and specificity, and AUROC &gt;&nbsp;0.97 on external validation. Performance remained stable across geographically distinct datasets with variation in staining protocols. Pathologist evaluators reported the system valuable for diagnostic decision support and specimen triage.</p>  <b>Conclusions: </b></p>  ResNet-based AI enables accurate and efficient histopathology classification. Knowledge distillation from ResNet152 to ResNet18 preserved performance while reducing parameters by 81% supporting deployment in diverse clinical settings.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

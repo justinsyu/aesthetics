@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Knowledge distillation for pancreatic cancer diagnosis: EfficientNet-based deep learning for stage stratification with real-world deployment optimization.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Knowledge distillation for pancreatic cancer diagnosis: EfficientNet-based deep learning for stage stratification with real-world deployment optimization.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 4217</div>
+    <div><strong>First speaker:</strong> Gowrishankar Palaniswamy, MD, MBBS</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/268203">https://www.asco.org/abstracts-presentations/268203</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b>Pancreatic cancer is among the most lethal malignancies, with a 5-year survival below 12%. Prognosis is strongly stage dependent, yet early disease is frequently misclassified as chronic pancreatitis or benign cystic lesions, resulting in diagnostic delay and loss of surgical opportunity. Although deep learning models demonstrate high accuracy on cross-sectional imaging, their computational demands limit deployment in resource-constrained settings. Knowledge distillation enables transfer of diagnostic capability from high-capacity teacher models to lightweight student networks while preserving performance. We evaluated whether a distilled EfficientNetB0 model could retain EfficientNetB7-level accuracy for pancreatic cancer stage stratification while enabling real-world deployment.</p>  <b>Methods: </b>We analyzed 2,840 contrast-enhanced abdominal CT studies, including pancreatic ductal adenocarcinoma (n&nbsp;=&nbsp;1,400; 700 early-stage resectable or borderline-resectable, 700 locally advanced or metastatic), chronic pancreatitis (n&nbsp;=&nbsp;900), and benign pancreatic lesions (n&nbsp;=&nbsp;540) from multiple international centers. Ground truth was established by multidisciplinary consensus incorporating histopathology, surgical findings, and longitudinal follow-up. A high-capacity EfficientNetB7 teacher model (≈66M parameters; 37 GFLOPs) trained on multiphasic CT served as reference. A lightweight EfficientNetB0 student model (≈5.3M parameters; 0.39 GFLOPs; &gt;&nbsp;90% parameter reduction) was trained using temperature-scaled knowledge distillation with regularized cross-entropy loss. Performance metrics included accuracy, sensitivity, specificity, F1-score, and AUROC. Deployment feasibility was independently evaluated by abdominal radiologists and oncologists across six continents.</p>  <b>Results: </b>The distilled EfficientNetB0 achieved 96.6% accuracy for stage stratification (early vs advanced disease), with sensitivity of 97.4%, specificity of 95.8%, and AUROC of 0.989. Differential diagnosis accuracy was 94.8% for pancreatic cancer versus chronic pancreatitis and 95.6% versus benign lesions. External validation accuracy ranged from 93% to 97%. Mean inference time was 38 ms per image compared with 330 ms for EfficientNetB7. Knowledge distillation preserved 99.1% of teacher performance while reducing computational cost by &gt;&nbsp;95%.</p>  <b>Conclusions: </b>Knowledge distillation enables a lightweight EfficientNetB0 to achieve near–EfficientNetB7 accuracy for pancreatic cancer stage stratification while markedly reducing computational complexity. This scalable approach supports real-time imaging decision support and addresses key barriers to global deployment of AI-assisted pancreatic cancer diagnosis.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

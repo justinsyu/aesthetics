@@ -1,0 +1,64 @@
+{
+  "abstractNumber": "e23177",
+  "body": " \r\n\r\n\t<div><b>Background: </b> Although mortality risk prediction is essential in oncology, risk determinants vary widely across cancer types and patient characteristics, rendering population-level prediction challenging. While traditional statistical and machine learning (ML) approaches have shown encouraging results, the effectiveness of ML and large language models (LLMs) for near and long-term cancer mortality prediction remains unknown. We sought to assess the mortality prediction of these different models for multiple timepoints in a heterogeneous cancer population.</p>  <b>Methods: </b> We conducted a retrospective cohort study using electronic health record (EHR) data from Yale New Haven Health, with follow-up through 6/30/25. Patients with any first cancer diagnosis on or after 1/2019 were included. One post-diagnosis encounter was randomly selected as the index visit, excluding visits within 7 days of death. The final cohort was randomly divided into training, validation, and test sets. Structed demographics, laboratory, and diagnostic comorbidity codes were included in training models and derived from the 180 days preceding the index visit. Outcomes included mortality at 30 and 180 days after index visit. We assessed logistic regression (LR), ML model (XGBoost), and LLM (GPT-4o) for prediction of mortality. LR and XGBoost were trained on the full training set, whereas GPT-4o was not trained on patient data and evaluated using zero-shot inference and limited in-context learning (ICL) with five example patients, within a secure environment. Model performance was compared using area under the receiver operating characteristic curve (AUROC), sensitivity, and specificity with higher values indicating better performance.</p>  <b>Results: </b> Our cohort included 82,662 individuals with a median follow-up of 23.4 months after their index date. 15,152 (18.33%) of individuals died during our study period. The most common diagnoses were prostate (14.5%), breast (12.4%), and lung (6.8%). Fully trained ML models achieved the highest AUROC, while untrained LLMs (0-shot) showed meaningful performance and improved with minimal ICL, approaching traditional and ML methods (Table).</p>  <b>Conclusions: </b> Our findings highlight the importance of assessing both short- and longer-term mortality, as model performance differed across timepoints. LLMs captured clinically relevant risk signals from structured EHR data even without task-specific training, with further improvement using minimal ICL. While ML achieved the best performance after supervised training, LLMs show promise for mortality prediction and integration into EHR-based clinical decision support.</div>\r\n\r\n\r\n\r\n\t<div class=\"table_caption\"><b>Performance of models for mortality prediction</b></div> \r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<p><strong>Model</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Time (days)</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>AUROC</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Sensitivity</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Specificity</strong></p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>LR</p>\r\n</td>\r\n<td>\r\n<p>30</p>\r\n</td>\r\n<td>\r\n<p>0.90</p>\r\n</td>\r\n<td>\r\n<p>0.81</p>\r\n</td>\r\n<td>\r\n<p>0.84</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p>180</p>\r\n</td>\r\n<td>\r\n<p>0.87</p>\r\n</td>\r\n<td>\r\n<p>0.74</p>\r\n</td>\r\n<td>\r\n<p>0.82</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>XGBoost</p>\r\n</td>\r\n<td>\r\n<p>30</p>\r\n</td>\r\n<td>\r\n<p>0.92</p>\r\n</td>\r\n<td>\r\n<p>0.38</p>\r\n</td>\r\n<td>\r\n<p>0.98</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p>180</p>\r\n</td>\r\n<td>\r\n<p>0.89</p>\r\n</td>\r\n<td>\r\n<p>0.59</p>\r\n</td>\r\n<td>\r\n<p>0.93</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>GPT-4o (0-shot)</p>\r\n</td>\r\n<td>\r\n<p>30</p>\r\n</td>\r\n<td>\r\n<p>0.87</p>\r\n</td>\r\n<td>\r\n<p>0.90</p>\r\n</td>\r\n<td>\r\n<p>0.70</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p>180</p>\r\n</td>\r\n<td>\r\n<p>0.83</p>\r\n</td>\r\n<td>\r\n<p>0.81</p>\r\n</td>\r\n<td>\r\n<p>0.73</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>GPT-4o (ICL)</p>\r\n</td>\r\n<td>\r\n<p>30</p>\r\n</td>\r\n<td>\r\n<p>0.88</p>\r\n</td>\r\n<td>\r\n<p>0.85</p>\r\n</td>\r\n<td>\r\n<p>0.80</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p>180</p>\r\n</td>\r\n<td>\r\n<p>0.84</p>\r\n</td>\r\n<td>\r\n<p>0.75</p>\r\n</td>\r\n<td>\r\n<p>0.80</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n\r\n\r\n",
+  "contentId": "260082",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/260082",
+    "queryParams": null,
+    "target": null,
+    "title": "Understanding the role of large language models in cancer mortality prediction: A real-world study."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION260082"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": null,
+  "presentationId": "260082",
+  "primaryPerson": {
+    "displayName": "Xueqing Peng, PhD",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": "Although mortality risk prediction is essential in oncology, risk determinants vary widely across cancer types and patient characteristics, rendering population-level prediction challenging. While traditional statistical and machine learning (ML) approaches have shown encouraging results, the effectiveness of ML and large language models (LLMs) for near and long-term cancer mortality prediction remains unknown. We sought to assess the mortality prediction of these different models for multiple timepoints in a heterogeneous cancer population.",
+  "taxonomy": null,
+  "title": "Understanding the role of large language models in cancer mortality prediction: A real-world study.",
+  "titles": null,
+  "uid": "PRESENTATION260082"
+}

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Knowledge-distilled EfficientNets for peripheral blood smear classification.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Knowledge-distilled EfficientNets for peripheral blood smear classification.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e14083</div>
+    <div><strong>First speaker:</strong> Gowrishankar Palaniswamy, MD, MBBS</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/259228">https://www.asco.org/abstracts-presentations/259228</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Leukemias represent the most common malignancies in children and remain a major source of cancer-related morbidity across age groups. Microscopic examination of peripheral blood smears is central to diagnosis and classification but is labor intensive, operator dependent, and challenged by morphologic overlap between leukemic subtypes and reactive hematologic conditions. Delays or misclassification can directly affect treatment initiation and risk stratification. Although deep learning has demonstrated high accuracy in hematologic image analysis, many models are computationally intensive and difficult to deploy outside specialized centers. Scalable AI systems that preserve diagnostic fidelity while enabling broad clinical adoption are needed.</div>
+  <main> 
+
+	<div><b>Background: </b></p>  Leukemias represent the most common malignancies in children and remain a major source of cancer-related morbidity across age groups. Microscopic examination of peripheral blood smears is central to diagnosis and classification but is labor intensive, operator dependent, and challenged by morphologic overlap between leukemic subtypes and reactive hematologic conditions. Delays or misclassification can directly affect treatment initiation and risk stratification. Although deep learning has demonstrated high accuracy in hematologic image analysis, many models are computationally intensive and difficult to deploy outside specialized centers. Scalable AI systems that preserve diagnostic fidelity while enabling broad clinical adoption are needed.</p>  <b>Methods: </b></p>  We conducted a retrospective, multi-institutional analysis of digitized peripheral blood smear images curated from publicly available leukemia repositories, including ALL-IDB–derived datasets, encompassing acute lymphoblastic leukemia, other leukemic subtypes, and normal hematologic samples. Ground-truth labels were established through expert hematopathologist annotation with diagnostic confirmation. A high-capacity EfficientNetB7 reference model was trained to capture hierarchical cytomorphologic features across heterogeneous smear preparations. Structured knowledge distillation was then applied to train a lightweight EfficientNetB0 model, transferring discriminative capability while substantially reducing computational requirements. Extensive computational evaluation was accompanied with external validation across sites. Performance metrics included accuracy, sensitivity, specificity, F1 score, and AUROC.</p>  <b>Results: </b></p>  The distilled EfficientNetB0 model achieved high diagnostic accuracy across leukemia and non-leukemia classes, with overall accuracy exceeding 97% and AUROC greater than 0.97 on external validation. Sensitivity for leukemic blast detection remained high across morphologically challenging cases, including low-blast-count samples. Performance was consistent across staining variations and imaging conditions. Mean inference time was under 0.1 seconds per image on standard hardware, supporting real-time clinical use. Expert reviewers reported the system to be valuable for diagnostic triage and workload prioritization.</p>  <b>Conclusions: </b></p>  Knowledge-distilled EfficientNet modeling enables accurate, rapid, and computationally efficient leukemia classification from peripheral blood smears while preserving clinically meaningful performance. By addressing key barriers to deployment, this approach supports scalable integration of AI-assisted hematologic diagnostics across resource-diverse settings. Prospective studies are planned to evaluate impact on diagnostic turnaround time, interobserver variability, and treatment initiation.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

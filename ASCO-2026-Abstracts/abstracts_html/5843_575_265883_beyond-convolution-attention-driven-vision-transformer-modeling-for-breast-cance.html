@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beyond convolution: Attention-driven vision transformer modeling for breast cancer detection on mammography.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Beyond convolution: Attention-driven vision transformer modeling for breast cancer detection on mammography.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 575</div>
+    <div><strong>First speaker:</strong> Tanzeela Mariam Shuja, MD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/265883">https://www.asco.org/abstracts-presentations/265883</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b> </p>  Breast cancer is the most commonly diagnosed malignancy among women worldwide, and screening mammography remains central to early detection and mortality reduction. Despite standardized reporting systems, mammographic interpretation is challenged by tissue overlap, subtle lesion morphology, and interobserver variability. Convolutional neural networks (CNNs) have demonstrated strong performance in automated mammography analysis but rely on localized receptive fields that may limit modeling of global spatial relationships critical for detecting architectural distortion and diffuse malignancy. Vision Transformers (ViTs) employ self-attention mechanisms that enable global contextual modeling across entire images. We evaluated the performance of a Vision Transformer for breast cancer classification on mammographic imaging.</p>  <b>Methods: </b> </p>  We analyzed over 8,000 anonymized mammography images obtained from publicly available Kaggle datasets curated and annotated by expert radiologists. Images included malignant and non-malignant breast findings and were preprocessed and resized to 224&#215;224 pixels. Data were split into training and validation cohorts using stratified sampling at the patient level to prevent data leakage. A Vision Transformer B/16 model pretrained on ImageNet was fine-tuned for binary classification. Images were divided into non-overlapping 16&#215;16 patches, embedded into token sequences with positional encodings and a learnable class token, and processed through 12 transformer blocks with multi-head self-attention. Model performance was evaluated using accuracy, sensitivity, specificity, F1 score, and area under the receiver operating characteristic curve (AUROC).</p>  <b>Results: </b> </p>  The ViT-B/16 model achieved high diagnostic performance, with validation accuracy approaching approximately 96% and AUROC exceeding 0.98. Sensitivity for malignant lesions remained robust across dense and non-dense breast tissue. Attention-based global processing reduced misclassification of lesions with diffuse margins, asymmetric density, and architectural distortion—patterns that are challenging for purely convolutional approaches. Performance was comparable to state-of-the-art CNN models, though achieved with higher parameter count and computational cost.</p>  <b>Conclusions: </b> </p>  Vision Transformer–based modeling enables accurate breast cancer detection on mammography by capturing global contextual relationships through self-attention. While computationally heavier than optimized CNNs, ViT offers complementary strengths in modeling complex spatial patterns and provides interpretable attention maps aligned with radiologic reasoning. These findings support further evaluation of transformer architectures in large-scale breast cancer screening and diagnostic workflows.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

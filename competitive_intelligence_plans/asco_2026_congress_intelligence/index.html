@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ASCO 2026 Abstract Evidence Review</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css?v=dense-dashboard-redesign-20260529-panel-border-bar-width" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <main class="main-canvas">
+        <section class="hero-grid" id="overview" aria-labelledby="overview-title">
+          <div class="hero-panel">
+            <div class="panel-topline">
+              <span id="data-updated">Prepared 2026-05-27</span>
+            </div>
+            <h2 id="overview-title">ASCO 2026 abstract evidence summary</h2>
+            <p>
+              Review of ASCO 2026 abstracts with session, conference track, role,
+              evidence tag, and source-link fields retained for each record.
+            </p>
+            <div class="hero-metrics" id="hero-metrics"></div>
+          </div>
+
+          <div class="content-panel session-panel">
+            <div class="section-heading">
+              <div>
+                <h2>Session type</h2>
+              </div>
+            </div>
+            <div id="session-stack" class="session-stack"></div>
+          </div>
+        </section>
+
+        <section class="review-row" id="abstracts" aria-labelledby="abstracts-title">
+          <div class="content-panel track-panel review-track-column">
+            <div class="section-heading">
+              <div>
+                <h2>Conference track</h2>
+              </div>
+            </div>
+            <div id="track-list" class="track-list"></div>
+          </div>
+
+          <div class="content-panel signal-list-panel review-records-column">
+            <div class="section-heading signal-heading">
+              <div>
+                <h2 id="abstracts-title">Abstract records</h2>
+              </div>
+              <div class="search-control">
+                <span aria-hidden="true">Search</span>
+            <input id="signal-search" type="search" placeholder="Title, ID, speaker, role, conference track, tag" />
+              </div>
+            </div>
+            <div class="filter-row" id="audience-filters"></div>
+            <p id="signal-result-count" class="result-note"></p>
+            <div id="signal-list" class="signal-list"></div>
+          </div>
+
+          <aside class="detail-panel review-detail-column" aria-label="Selected abstract detail">
+            <div id="signal-detail"></div>
+          </aside>
+        </section>
+
+        <section class="workflow-grid" id="workflow" aria-labelledby="workflow-title">
+          <div class="dark-panel">
+            <p class="section-label">Methods</p>
+            <h2 id="workflow-title">Abstract processing workflow</h2>
+            <p>
+              The workflow separates source intake, text normalization, role
+              classification, source enrichment, and analyst review.
+            </p>
+          </div>
+          <div id="workflow-steps" class="workflow-steps"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="generated_data/dashboard_data.js"></script>
+    <script src="app.js?v=dense-dashboard-redesign-20260528-no-side-rail"></script>
+  </body>
+</html>

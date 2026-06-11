@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CIDER: Secure high-throughput extraction of clinical variables from non-English pathology reports with local large language models.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>CIDER: Secure high-throughput extraction of clinical variables from non-English pathology reports with local large language models.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e13676</div>
+    <div><strong>First speaker:</strong> Mate Posta</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/264418">https://www.asco.org/abstracts-presentations/264418</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Clinically relevant information is primarily embedded in unstructured narrative documents, limiting the scalability of clinical research and the development of registries. While large language models (LLMs) enable advanced clinical text mining, adoption is constrained by concerns regarding data sovereignty, multilingual performance, and reproducibility. We developed and validated a secure, on-premise LLM-based pipeline for structured data extraction from non-English pathology reports.</div>
+  <main> 
+
+	<div><b>Background: </b> Clinically relevant information is primarily embedded in unstructured narrative documents, limiting the scalability of clinical research and the development of registries. While large language models (LLMs) enable advanced clinical text mining, adoption is constrained by concerns regarding data sovereignty, multilingual performance, and reproducibility. We developed and validated a secure, on-premise LLM-based pipeline for structured data extraction from non-English pathology reports.</p>  <b>Methods: </b> CIDER (ClinIcal Data ExtractoR) is an on-premise, asynchronous pipeline for high-throughput extraction of structured clinical variables from pathology reports. The system uses vLLM-based inference with the open-source Qwen3-VL-32B-Instruct-FP8 model deployed in an air-gapped institutional environment. Validation was performed on 2,073 Hungarian-language histopathology reports. Seven clinical variables were evaluated against expert-curated reference data. Extraction accuracy, technical reproducibility (three independent runs at temperature [T] = 0.1), and robustness across stochastic sampling settings (T = 0–2.0) were assessed.</p>  <b>Results: </b> CIDER achieved near-expert concordance with manual abstraction, with accuracy exceeding 98% for sex and year of surgery, &gt;&nbsp;95% for T stage, and &gt;&nbsp;92% for N stage. Technical reproducibility was high, with negligible variability across repeated runs. The pipeline substantially improved dataset completeness by recovering clinically valid values omitted during manual abstraction, including 62.8% of missing T-stage annotations and 91.5% of missing tumor size measurements. Performance remained stable across sampling temperatures, with optimal accuracy at low stochasticity (T ≤ 0.2).</p>  <b>Conclusions: </b> CIDER demonstrates that locally deployed, open-source LLMs can reliably extract structured clinical data from complex, non-English pathology narratives while preserving full data sovereignty and reproducibility. By enabling scalable transformation of unstructured text into research-ready datasets, CIDER provides a secure and practical solution for clinical registry development and real-world evidence generation.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

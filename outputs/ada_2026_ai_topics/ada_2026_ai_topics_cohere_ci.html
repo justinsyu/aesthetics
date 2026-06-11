@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ADA 2026 AI Topics Summary</title>
+  <style>
+    :root {
+      --paper:#f4efe3;
+      --ink:#171717;
+      --muted:#5e5a50;
+      --line:#2a2924;
+      --lime:#c7f000;
+      --blue:#7aa7ff;
+      --red:#ff6b5f;
+      --orange:#f1a33b;
+      --purple:#ad8cff;
+      --card:#fffaf0;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#d8d0bf; color:var(--ink); font-family:Inter, Arial, sans-serif; }
+    .deck { width:1600px; margin:0 auto; }
+    .slide { position:relative; width:1600px; height:900px; overflow:hidden; padding:64px 72px 58px; page-break-after:always; background:var(--paper); border:1px solid #bfb6a4; }
+    .slide-bg-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; opacity:.55; }
+    .content { position:relative; z-index:1; height:100%; display:flex; flex-direction:column; gap:26px; }
+    .eyebrow { font-size:18px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:#3e3a33; }
+    h1 { margin:0; font-family:"Space Grotesk", Inter, Arial, sans-serif; font-size:76px; line-height:.98; max-width:1260px; letter-spacing:0; }
+    h2 { margin:0; font-family:"Space Grotesk", Inter, Arial, sans-serif; font-size:42px; line-height:1.05; max-width:1320px; letter-spacing:0; }
+    h3 { margin:0 0 10px; font-size:24px; line-height:1.12; letter-spacing:0; }
+    p, li { font-size:22px; line-height:1.26; margin:0; color:#2f2d28; }
+    ul { margin:0; padding-left:26px; display:flex; flex-direction:column; gap:10px; }
+    .lede { font-size:31px; line-height:1.22; max-width:1180px; color:#323028; }
+    .grid { display:grid; gap:22px; }
+    .two { grid-template-columns:1fr 1fr; }
+    .three { grid-template-columns:1fr 1fr 1fr; }
+    .metrics { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+    .metric, .panel, .callout { border:2px solid var(--line); background:rgba(255,250,240,.86); border-radius:8px; padding:22px; }
+    .metric .value { font-family:"Space Grotesk", Inter, Arial, sans-serif; font-size:54px; line-height:1; font-weight:800; }
+    .metric .label { margin-top:9px; font-size:18px; font-weight:800; text-transform:uppercase; }
+    .metric .note { margin-top:8px; color:var(--muted); font-size:18px; line-height:1.24; }
+    .bar-list { display:flex; flex-direction:column; gap:12px; }
+    .bar-item { display:grid; grid-template-columns:460px 1fr 58px; gap:15px; align-items:center; font-size:22px; }
+    .bar-track { height:24px; border:1.5px solid var(--line); background:#eee4ce; }
+    .bar-fill { height:100%; background:var(--lime); }
+    .bar-fill.blue { background:var(--blue); } .bar-fill.red { background:var(--red); } .bar-fill.orange { background:var(--orange); } .bar-fill.purple { background:var(--purple); } .bar-fill.ink { background:#1d1c18; } .bar-fill.muted { background:#9e988c; }
+    .bar-label { font-weight:700; line-height:1.12; } .bar-value { font-weight:800; text-align:right; font-size:24px; }
+    table { width:100%; border-collapse:collapse; font-size:18px; line-height:1.14; }
+    th, td { border-bottom:1.5px solid rgba(42,41,36,.35); text-align:left; padding:9px 9px 9px 0; vertical-align:top; }
+    th { font-size:15px; text-transform:uppercase; letter-spacing:.08em; color:#4a463c; }
+    .pill-row { display:flex; gap:12px; flex-wrap:wrap; }
+    .pill { border:1.5px solid var(--line); border-radius:999px; padding:9px 13px; background:#f8f1db; font-size:18px; font-weight:800; }
+    .callout { font-size:25px; line-height:1.25; font-weight:750; background:#eef8bd; }
+    .slide-num { position:absolute; right:72px; bottom:35px; font-size:15px; color:#5d574d; z-index:2; }
+    .small { font-size:19px; color:#4b463d; line-height:1.3; }
+    .footer-note { margin-top:auto; font-size:17px; color:#5b554b; }
+    @page { size:1600px 900px; margin:0; }
+    @media print { body { background:white; } .deck { margin:0; } .slide { border:0; } }
+  </style>
+</head>
+<body>
+<main class="deck">
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="content">
+      <div class="eyebrow">ADA 2026 abstracts and posters | local-corpus AI topic scan</div>
+      <h1>AI topics cluster around glucose automation, prediction, GenAI, and discovery workflows</h1>
+      <p class="lede">Full scan of 2,081 ADA 2026 publication records from the local archive, separating explicit AI/ML records from adjacent algorithmic diabetes-technology records.</p>
+      <div class="metrics">
+        
+      <div class="metric">
+        <div class="value">2081</div>
+        <div class="label">total source records screened</div>
+        <div class="note">ADA local publication archive</div>
+      </div>
+        
+      <div class="metric">
+        <div class="value">107</div>
+        <div class="label">explicit AI/ML records</div>
+        <div class="note">direct AI, ML, LLM, NLP, or image-AI language</div>
+      </div>
+        
+      <div class="metric">
+        <div class="value">93</div>
+        <div class="label">AI-adjacent records</div>
+        <div class="note">AID, closed-loop, algorithm, or digital-biomarker language</div>
+      </div>
+        
+      <div class="metric">
+        <div class="value">200</div>
+        <div class="label">retained records</div>
+        <div class="note">deduped companion CSV rows</div>
+      </div>
+      </div>
+      <div class="callout">The strongest explicit signal is applied ML in prediction and omics; the broadest adjacent signal is automated insulin delivery and closed-loop glucose management.</div>
+      <div class="footer-note">Source: C:\Users\Justin\Desktop\ada-2026\ada26_publications.json | scraped 2026-05-30T04:37:06.841108+00:00 | generated 2026-05-31 05:21 UTC</div>
+    </div>
+    <div class="slide-num">01 / 10</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="content">
+      <div class="eyebrow">Scope and classification</div>
+      <h2>Explicit AI/ML is the primary readout; AID and closed-loop records are a separate adjacent layer</h2>
+      <div class="grid two">
+        <div class="panel"><h3>Explicit AI/ML</h3><ul><li>Artificial intelligence, AI-based / AI-enabled / AI-derived, AI/ML, machine learning, deep learning, neural-network, LLM, GPT/OpenAI, GenAI, RAG, NLP, and image-AI terms.</li><li>Used for conference-topic interpretation and method/tool assessment.</li><li>Includes both substantive AI products and AI as an analytic method.</li></ul></div>
+        <div class="panel"><h3>AI-adjacent algorithmic/digital</h3><ul><li>Automated insulin delivery, hybrid or fully closed-loop systems, AID algorithms, digital twins, digital biomarkers, predictive algorithms, and automated AGP interpretation without explicit AI/ML terms.</li><li>Reported separately to avoid overstating AI volume.</li><li>Generic modeling, simulations, surveys, and diabetes-technology adoption were excluded unless the source framed an AI or algorithmic workflow.</li></ul></div>
+      </div>
+      <div class="callout">Run mode: full local-corpus scan. No fresh web re-check or source screenshot audit was performed.</div>
+    </div>
+    <div class="slide-num">02 / 10</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="content">
+      <div class="eyebrow">Topic map</div>
+      <h2>Topic clusters show a device-heavy adjacent layer and a broad explicit AI/ML research layer</h2>
+      <div class="grid two">
+        <div class="panel"><h3>Non-exclusive topic clusters</h3><div class="bar-list"><div class="bar-item"><div class="bar-label">Predictive risk, progression, and utilization models</div><div class="bar-track"><div class="bar-fill lime" style="width:100%"></div></div><div class="bar-value">172</div></div>
+<div class="bar-item"><div class="bar-label">Population health, EHR/RWD, equity, and implementation</div><div class="bar-track"><div class="bar-fill blue" style="width:90%"></div></div><div class="bar-value">155</div></div>
+<div class="bar-item"><div class="bar-label">CGM analytics, glycemic forecasting, and AID algorithms</div><div class="bar-track"><div class="bar-fill red" style="width:74%"></div></div><div class="bar-value">128</div></div>
+<div class="bar-item"><div class="bar-label">Omics, biomarkers, endotypes, and drug discovery</div><div class="bar-track"><div class="bar-fill orange" style="width:59%"></div></div><div class="bar-value">102</div></div>
+<div class="bar-item"><div class="bar-label">Nutrition, behavior, digital coaching, and remote care</div><div class="bar-track"><div class="bar-fill purple" style="width:40%"></div></div><div class="bar-value">68</div></div>
+<div class="bar-item"><div class="bar-label">Generative AI, agents, and clinical decision support</div><div class="bar-track"><div class="bar-fill ink" style="width:28%"></div></div><div class="bar-value">48</div></div>
+<div class="bar-item"><div class="bar-label">Imaging, retinopathy, wounds, and visual AI</div><div class="bar-track"><div class="bar-fill muted" style="width:16%"></div></div><div class="bar-value">27</div></div></div></div>
+        <div class="panel"><h3>AI role taxonomy</h3><div class="bar-list"><div class="bar-item"><div class="bar-label">AI-adjacent algorithmic diabetes technology</div><div class="bar-track"><div class="bar-fill lime" style="width:100%"></div></div><div class="bar-value">90</div></div>
+<div class="bar-item"><div class="bar-label">AI as analytic method</div><div class="bar-track"><div class="bar-fill blue" style="width:61%"></div></div><div class="bar-value">55</div></div>
+<div class="bar-item"><div class="bar-label">Substantive AI method or enabled workflow</div><div class="bar-track"><div class="bar-fill red" style="width:28%"></div></div><div class="bar-value">25</div></div>
+<div class="bar-item"><div class="bar-label">Substantive AI tool/workflow/evaluation</div><div class="bar-track"><div class="bar-fill orange" style="width:22%"></div></div><div class="bar-value">20</div></div>
+<div class="bar-item"><div class="bar-label">AI infrastructure or implementation</div><div class="bar-track"><div class="bar-fill purple" style="width:7%"></div></div><div class="bar-value">6</div></div>
+<div class="bar-item"><div class="bar-label">AI-adjacent algorithmic workflow</div><div class="bar-track"><div class="bar-fill ink" style="width:6%"></div></div><div class="bar-value">4</div></div></div></div>
+      </div>
+      <div class="pill-row">
+        <span class="pill">107 explicit AI/ML</span>
+        <span class="pill">93 adjacent algorithmic/digital</span>
+        <span class="pill">35 oral presentations</span>
+        <span class="pill">34 late-breaking posters</span>
+      </div>
+    </div>
+    <div class="slide-num">03 / 10</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="content">
+      <div class="eyebrow">Generative AI and agents</div>
+      <h2>LLM work is visible, but most examples remain constrained to bounded support tasks</h2>
+      <div class="grid two">
+        <div class="panel"><h3>What appeared</h3><ul><li>Diabetes self-management agents, evidence-citing treatment decisions, pharmacotherapy recommendation testing, dietary advice, carbohydrate counting, and previsit workflow efficiency.</li><li>RAG-assisted interpretation and natural-language queries also appeared in research infrastructure contexts.</li><li>Several studies included human validation or expert-comparison framing rather than autonomous clinical authority.</li></ul></div>
+        <div class="panel"><h3>Representative records</h3><table><thead><tr><th>ID</th><th>Topic</th><th>Role</th></tr></thead><tbody><tr><td>1467-P</td><td>Construction and Evaluation of T1Diabot: A Large Language Model Agent f...</td><td>Substantive AI tool/workflow/evaluation</td></tr>
+<tr><td>1749-P</td><td>Predicting Insulin in Type 2 Diabetes Using Gradient Boosting Machine L...</td><td>AI as analytic method</td></tr>
+<tr><td>2120-P</td><td>Perioperative Automated Insulin Delivery (AID) Use in Youth and Young A...</td><td>AI-adjacent algorithmic diabetes technology</td></tr>
+<tr><td>2395-P</td><td>PanKgraph: An Integrated Knowledge Graph for Type 1 Diabetes Research</td><td>Substantive AI tool/workflow/evaluation</td></tr>
+<tr><td>1558-P</td><td>Qualitative Interviews on Experience and Impact of the Sutter Health Me...</td><td>Substantive AI tool/workflow/evaluation</td></tr></tbody></table></div>
+      </div>
+    </div>
+    <div class="slide-num">04 / 10</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="content">
+      <div class="eyebrow">Prediction and clinical risk</div>
+      <h2>Applied ML is used for risk stratification, utilization, glycemic trajectories, and precision screening</h2>
+      <div class="grid two">
+        <div class="panel"><h3>Common use cases</h3><ul><li>Acute-care utilization, inpatient hypoglycemia, HbA1c trajectories, T2D prediction, diabetes complications, G6PD carrier flagging, and race-specific insulin-sensitivity estimation.</li><li>Population-scale EHR and claims-linked cohorts are a recurring data source.</li><li>Fairness, calibration, and subgroup validation appear as explicit methodological concerns in selected abstracts.</li></ul></div>
+        <div class="panel"><h3>Representative records</h3><table><thead><tr><th>ID</th><th>Topic</th><th>Role</th></tr></thead><tbody><tr><td>1261-OR</td><td>Molecular Risk Scores Enhance Type 2 Diabetes (T2D) Prediction beyond H...</td><td>AI as analytic method</td></tr>
+<tr><td>1749-P</td><td>Predicting Insulin in Type 2 Diabetes Using Gradient Boosting Machine L...</td><td>AI as analytic method</td></tr>
+<tr><td>2045-P</td><td>Predicting Acute Care Utilization by People with Diabetes Using EHR Data</td><td>AI as analytic method</td></tr>
+<tr><td>1116-OR</td><td>An Interpretable Machine-Learning Model to Differentiate Diabetic and N...</td><td>AI as analytic method</td></tr>
+<tr><td>1130-OR</td><td>Efficacy of a Leucine-Rich EAA, Creatine HCl, and Ca-HMB Stack Coupled...</td><td>Substantive AI method or enabled workflow</td></tr></tbody></table></div>
+      </div>
+    </div>
+    <div class="slide-num">05 / 10</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="content">
+      <div class="eyebrow">CGM, forecasting, and AID</div>
+      <h2>Automated insulin delivery is the largest adjacent algorithmic footprint</h2>
+      <div class="grid two">
+        <div class="panel"><h3>Readout</h3><ul><li>The adjacent layer is dominated by automated insulin delivery, hybrid closed-loop, advanced hybrid closed-loop, open-source AID, and device-algorithm studies.</li><li>Explicit AI/ML overlaps with CGM through real-time glucose prediction, CGM pattern interpretation, and AI-enabled continuous-glucose-monitoring platforms.</li><li>This layer should be read as algorithmic diabetes technology, not as uniformly explicit AI research.</li></ul></div>
+        <div class="panel"><h3>Representative adjacent records</h3><table><thead><tr><th>ID</th><th>Topic</th><th>Role</th></tr></thead><tbody><tr><td>1906-P</td><td>Perioperative Use of Diabetes Technology</td><td>AI-adjacent algorithmic diabetes technology</td></tr>
+<tr><td>2127-P</td><td>Association between HbA1c Levels, Use of Aid Systems over Time, and Dia...</td><td>AI-adjacent algorithmic diabetes technology</td></tr>
+<tr><td>2120-P</td><td>Perioperative Automated Insulin Delivery (AID) Use in Youth and Young A...</td><td>AI-adjacent algorithmic diabetes technology</td></tr>
+<tr><td>1863-P</td><td>Medicare Beneficiaries with Type 1 and Type 2 Diabetes Using the MiniMe...</td><td>AI-adjacent algorithmic diabetes technology</td></tr>
+<tr><td>1067-OR</td><td>A Multicenter Trial Assessing the Efficacy and Safety of the Novel Twii...</td><td>AI-adjacent algorithmic diabetes technology</td></tr></tbody></table></div>
+      </div>
+    </div>
+    <div class="slide-num">06 / 10</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="content">
+      <div class="eyebrow">Behavior, nutrition, and remote care</div>
+      <h2>AI-enabled behavior work connects meal data, engagement patterns, and remote-care operations</h2>
+      <div class="grid two">
+        <div class="panel"><h3>Behavior and nutrition</h3><ul><li>AI-based meal logging, GenAI dietary advice, fiber-intake behavior change, carbohydrate estimation, and smart-ring nutrition analysis appeared as practical digital-health use cases.</li><li>Digital biomarkers and ePRO integration broadened the signal into early-phase obesity-trial operations.</li></ul></div>
+        <div class="panel"><h3>Representative records</h3><table><thead><tr><th>ID</th><th>Topic</th><th>Role</th></tr></thead><tbody><tr><td>1130-OR</td><td>Efficacy of a Leucine-Rich EAA, Creatine HCl, and Ca-HMB Stack Coupled...</td><td>Substantive AI method or enabled workflow</td></tr>
+<tr><td>1558-P</td><td>Qualitative Interviews on Experience and Impact of the Sutter Health Me...</td><td>Substantive AI tool/workflow/evaluation</td></tr>
+<tr><td>2087-P</td><td>Predictive Modeling of HbA1c Progression for Use in Synthetic Controls...</td><td>AI-adjacent algorithmic workflow</td></tr>
+<tr><td>1033-OR</td><td>Early Weight Loss Velocity Guides Precision Escalation in Obesity Treat...</td><td>Substantive AI method or enabled workflow</td></tr>
+<tr><td>1910-P</td><td>Increasing Adoption of Diabetes Technology among Adults with Type 1 Dia...</td><td>AI-adjacent algorithmic diabetes technology</td></tr></tbody></table></div>
+      </div>
+    </div>
+    <div class="slide-num">07 / 10</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="content">
+      <div class="eyebrow">Omics, biomarkers, and discovery</div>
+      <h2>AI/ML is being applied upstream in diabetes endotyping and metabolic drug discovery</h2>
+      <div class="grid two">
+        <div class="panel"><h3>Research layer</h3><ul><li>Examples include deep-learning multiomics, kinase-activity inference, AI-guided natural inhibitor identification, machine-learning platforms for ActR2 antibody design, AI-assisted structure-based drug discovery, and AI-ready datasets.</li><li>Several records are method-heavy, where AI is the analytic engine rather than the clinical intervention.</li></ul></div>
+        <div class="panel"><h3>Representative records</h3><table><thead><tr><th>ID</th><th>Topic</th><th>Role</th></tr></thead><tbody><tr><td>1467-P</td><td>Construction and Evaluation of T1Diabot: A Large Language Model Agent f...</td><td>Substantive AI tool/workflow/evaluation</td></tr>
+<tr><td>1261-OR</td><td>Molecular Risk Scores Enhance Type 2 Diabetes (T2D) Prediction beyond H...</td><td>AI as analytic method</td></tr>
+<tr><td>1749-P</td><td>Predicting Insulin in Type 2 Diabetes Using Gradient Boosting Machine L...</td><td>AI as analytic method</td></tr>
+<tr><td>1906-P</td><td>Perioperative Use of Diabetes Technology</td><td>AI-adjacent algorithmic diabetes technology</td></tr>
+<tr><td>1116-OR</td><td>An Interpretable Machine-Learning Model to Differentiate Diabetic and N...</td><td>AI as analytic method</td></tr></tbody></table></div>
+      </div>
+    </div>
+    <div class="slide-num">08 / 10</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="content">
+      <div class="eyebrow">Imaging and implementation</div>
+      <h2>Smaller clusters point to deployable visual AI and operational workflow uses</h2>
+      <div class="grid two">
+        <div class="panel"><h3>Imaging and visual AI</h3><ul><li>AI-derived retinal biomarkers, autonomous AI for diabetic eye exams, image analysis with AI, CT imaging biomarkers, and high-content image analysis appear across clinical and discovery settings.</li><li>The imaging signal is smaller than CGM or prediction, but closer to concrete workflow deployment.</li></ul></div>
+        <div class="panel"><h3>Representative records</h3><table><thead><tr><th>ID</th><th>Topic</th><th>Role</th></tr></thead><tbody><tr><td>1116-OR</td><td>An Interpretable Machine-Learning Model to Differentiate Diabetic and N...</td><td>AI as analytic method</td></tr>
+<tr><td>2395-P</td><td>PanKgraph: An Integrated Knowledge Graph for Type 1 Diabetes Research</td><td>Substantive AI tool/workflow/evaluation</td></tr>
+<tr><td>1962-P</td><td>Evaluation of Large Language Model Performance for Detecting Continuous...</td><td>Substantive AI tool/workflow/evaluation</td></tr>
+<tr><td>1136-OR</td><td>Longitudinal Time-to-Event Modeling and Identification of Risk Factors...</td><td>AI-adjacent algorithmic workflow</td></tr>
+<tr><td>1917-P</td><td>Artificial Intelligence–Enabled Food Image Logging Improves CGM Metrics...</td><td>Substantive AI method or enabled workflow</td></tr></tbody></table></div>
+      </div>
+      <div class="callout">Implementation-oriented records include rural-care innovation, DKA protocol adherence, health-system AI workflows, and human-reviewed qualitative theme generation.</div>
+    </div>
+    <div class="slide-num">09 / 10</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="content">
+      <div class="eyebrow">Outputs and caveats</div>
+      <h2>The companion CSV is the record-level source map for the topic summary</h2>
+      <div class="grid two">
+        <div class="panel"><h3>Delivered artifacts</h3><ul><li><strong>ada_2026_ai_records.csv</strong>: retained records with classification, AI role, topic clusters, source excerpt, session metadata, and local source path.</li><li><strong>source_notes.md</strong>: corpus, scrape timestamp, inclusion rules, counts, and caveats.</li><li><strong>ada_2026_ai_topics_cohere_ci.html/pdf</strong>: Cohere-style CI summary deck.</li></ul></div>
+        <div class="panel"><h3>Interpretation caveats</h3><ul><li>Counts are lexical and rule-based; they are suitable for descriptive CI triage, not formal bibliometrics.</li><li>Topic clusters are non-exclusive, so cluster counts sum above retained-record counts.</li><li>AID and closed-loop records are reported separately because they are algorithmic diabetes technology even when not source-framed as AI/ML.</li></ul></div>
+      </div>
+      <div class="callout">Bottom line: ADA 2026 presents AI as both a research method and a care-delivery technology layer, with the most commercial-near activity around glucose automation, prediction, decision support, and digital coaching.</div>
+    </div>
+    <div class="slide-num">10 / 10</div>
+  </article>
+</main>
+</body>
+</html>

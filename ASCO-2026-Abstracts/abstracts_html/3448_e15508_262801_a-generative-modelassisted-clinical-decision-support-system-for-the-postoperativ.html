@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A generative model–assisted clinical decision support system for the postoperative management of colon cancer.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>A generative model–assisted clinical decision support system for the postoperative management of colon cancer.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e15508</div>
+    <div><strong>First speaker:</strong> Wenjing Gong</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/262801">https://www.asco.org/abstracts-presentations/262801</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Postoperative management of colon cancer relies on the accurate interpretation of complex pathology reports and adherence to evolving clinical guidelines. However, manual assessment is time-consuming and prone to numerical errors, resulting in staging misclassification and guideline-discordant therapy. Utilizing Large Language Models (LLMs) to bridge the gap between raw clinical data and standardized decision-making, while enhancing patient communication, remains an unmet clinical need.</div>
+  <main> 
+
+	<div><b>Background: </b> </p>  Postoperative management of colon cancer relies on the accurate interpretation of complex pathology reports and adherence to evolving clinical guidelines. However, manual assessment is time-consuming and prone to numerical errors, resulting in staging misclassification and guideline-discordant therapy. Utilizing Large Language Models (LLMs) to bridge the gap between raw clinical data and standardized decision-making, while enhancing patient communication, remains an unmet clinical need.</p>  <b>Methods: </b> </p>  We developed and verified an LLM-based Clinical Decision Support System (CDSS) utilizing a dataset of 4,608 pathology reports from two tertiary hospitals and 409 cases from TCGA. The system implements a standardized "pathology-to-decision" workflow comprising five key modules: (1) Automated Staging: Extraction of unstructured data to automate TNM staging (AJCC 8<sup>th</sup> edition) with explicit reasoning and field tracing; (2) Risk Stratification: Classification of MMR status and assessment of high-risk factors (e.g., lymph nodes &lt;&nbsp;12, perineural invasion) to distinguish high-risk from low-risk patients; (3) Decision Support: Generation of guideline-concordant treatment recommendations and follow-up schedules calculated from the surgery date (NCCN Guidelines 2025 v4); (4) Prognostic RAG: A PubMed-based Retrieval-Augmented Generation module that synthesizes patient demographics and pathology features to answer queries regarding 5-year survival, recurrence windows, and genetic screening necessity; and (5) Patient Education: Simplification of complex reports into patient-friendly summaries.</p>  <b>Results: </b> </p>  Comparative analysis with manual expert review demonstrated that the CDSS significantly reduced the average time required for case processing by 98.3% (approx. 9.8s vs. 578.9s per case). In performance validation, the system achieved an accuracy of 96.8% for TNM staging and 97.9% for risk stratification, and reduced guideline-discordant treatment decisions. The PubMed-RAG module provided evidence-based prognostic information, and the patient summaries showed improved readability scores compared to original reports (Table 1).</p>  <b>Conclusions: </b> </p>  The CDSS improves postoperative staging accuracy, supports guideline-concordant treatment and surveillance, and facilitates patient-centered risk counseling. It provides a scalable approach to standardizing management of colon cancer across diverse clinical settings.</div>
+
+
+
+	<div class="table_caption"><b>Table 1. Comparison of Postoperative Decision Support Approaches</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p><strong>Feature</strong></p>
+</td>
+<td>
+<p><strong>CDSS</strong></p>
+</td>
+<td>
+<p><strong>Manual Practice</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Staging Logic</p>
+</td>
+<td>
+<p>Deterministic (Rule-based)</p>
+</td>
+<td>
+<p>Experience-dependent</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Guideline adherence</p>
+</td>
+<td>
+<p>Real-time (AJCC/NCCN)</p>
+</td>
+<td>
+<p>Manual updates</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Traceability</p>
+</td>
+<td>
+<p>Fully traceable (Linked to source)</p>
+</td>
+<td>
+<p>Manual cross-checking</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Multilingual pathology support</p>
+</td>
+<td>
+<p>Yes</p>
+</td>
+<td>
+<p>Limited</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Patient support</p>
+</td>
+<td>
+<p>Integrated, guideline-based</p>
+</td>
+<td>
+<p>Time-consuming</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Time per Case</p>
+</td>
+<td>
+<p>&lt; 10 seconds</p>
+</td>
+<td>
+<p>5-10 minutes</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

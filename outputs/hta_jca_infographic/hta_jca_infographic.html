@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HTA JCA Ongoing Assessment Infographic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600;6..72,700&display=swap" rel="stylesheet">
+<style>
+@page { size: 13.333in 7.5in; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #eef3f7; color: #122033; font-family: Inter, Arial, sans-serif; }
+.page { width: 1280px; height: 720px; margin: 0 auto; background: #fbfcfe; padding: 28px 34px 24px; position: relative; overflow: hidden; }
+.topline { display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #10233f; padding-bottom:10px; color:#10233f; font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+.nav { display:flex; gap:8px; align-items:center; } .nav span { border:1px solid #c8d3df; border-radius:999px; padding:5px 9px; background:#fff; }
+.hero { display:grid; grid-template-columns: 1.35fr .65fr; gap:22px; padding-top:18px; align-items:start; }
+h1 { font-family: Newsreader, Georgia, serif; font-size:48px; line-height:.95; margin:0; font-weight:650; letter-spacing:0; color:#0e203a; max-width:720px; }
+h1 span { color:#2563eb; }
+.deck { margin:12px 0 0; font-size:16px; line-height:1.35; color:#34445a; max-width:650px; }
+.window { border:1px solid #cbd6e2; background:#fff; padding:13px 14px; min-height:112px; }
+.window .label { font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:#64748b; }
+.window .dates { font-family: Newsreader, Georgia, serif; font-size:26px; color:#0f2744; margin:8px 0 6px; }
+.window p { margin:0; font-size:12px; line-height:1.35; color:#475569; }
+.kpis { display:grid; grid-template-columns: repeat(8, 1fr); gap:10px; margin-top:18px; }
+.kpi { border:1px solid #cbd6e2; background:#fff; min-height:86px; padding:10px 11px; position:relative; }
+.kpi:before { content:""; width:10px; height:10px; border-radius:50%; position:absolute; right:10px; top:10px; background:var(--accent,#14b8a6); }
+.kpi b { display:block; font-family: Newsreader, Georgia, serif; font-size:35px; line-height:1; color:#0e203a; }
+.kpi span { display:block; margin-top:7px; font-size:11px; line-height:1.2; color:#475569; font-weight:700; text-transform:uppercase; letter-spacing:.04em; }
+.main { display:grid; grid-template-columns: 360px 365px 1fr; gap:14px; margin-top:16px; }
+.panel { border-top:2px solid #10233f; padding-top:9px; }
+h2 { margin:0 0 10px; font-size:14px; color:#10233f; text-transform:uppercase; letter-spacing:.06em; display:flex; align-items:center; gap:8px; }
+.dot { width:9px; height:9px; border-radius:50%; display:inline-block; background:#14b8a6; }
+.card { border:1px solid #cbd6e2; background:#fff; padding:10px; }
+.mix { height:16px; display:flex; border:1px solid #dbe4ee; margin:4px 0 12px; }
+.mix span { display:block; }
+.legend { display:grid; gap:7px; }
+.legend-row { display:grid; grid-template-columns: 14px 1fr auto; align-items:center; gap:8px; font-size:13px; }
+.sw { width:11px; height:11px; border-radius:50%; }
+.big-split { display:grid; grid-template-columns: 1fr 1fr; gap:10px; margin-top:10px; }
+mini, .mini { border:1px solid #dbe4ee; padding:7px 8px; min-height:62px; }
+.mini b { display:block; font-family:Newsreader, Georgia, serif; font-size:29px; color:#0e203a; } .mini span { font-size:11px; color:#475569; font-weight:700; }
+.zero-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:10px; }
+.zero { border:1px solid #dbe4ee; padding:6px; text-align:center; } .zero b { font-size:23px; font-family:Newsreader, Georgia, serif; } .zero span { display:block; font-size:10px; text-transform:uppercase; color:#64748b; font-weight:800; }
+.bar-row { display:grid; grid-template-columns:108px 1fr 20px; gap:8px; align-items:center; font-size:11px; margin:7px 0; }
+.track { height:10px; border:1px solid #dbe4ee; background:#f8fafc; } .track i { display:block; height:100%; background:#8b5cf6; }
+.assessor-note { margin:10px 0 0; font-size:12px; line-height:1.35; color:#334155; }
+.timeline-card { display:grid; gap:5px; padding:10px 10px 8px; }
+.timeline-row { display:grid; grid-template-columns:72px 1fr 18px; gap:8px; align-items:center; font-size:10px; }
+.timeline-row .month { color:#0f2744; font-weight:800; }
+.timeline-track { height:10px; border:1px solid #dbe4ee; background:#f8fafc; }
+.timeline-track i { display:block; height:100%; background:#ec4899; }
+.timeline-row .count { color:#0e203a; font-family:Consolas, monospace; font-size:10px; text-align:right; }
+.timeline-summary { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:3px; }
+.timeline-summary .mini { min-height:52px; padding:8px 10px; }
+.timeline-summary .mini b { font-size:25px; }
+.timeline-note { display:none; }
+.callout { display:none; }
+.footer { position:absolute; left:34px; right:34px; bottom:13px; border-top:1px solid #cbd6e2; padding-top:7px; color:#64748b; font-size:10px; display:flex; justify-content:space-between; }
+@media print { html,body { background:#fff; } .page { margin:0; box-shadow:none; } }
+</style>
+</head>
+<body>
+<main class="page" role="img" aria-label="Infographic summary of ongoing EU HTA joint clinical assessments from the April 2026 workbook extract.">
+  <div class="topline"><div>EU HTA Joint Clinical Assessments</div><div class="nav"><span>Ongoing queue</span><span>April 2026 extract</span><span>Text-selectable PDF</span></div></div>
+  <section class="hero">
+    <div>
+      <h1>Ongoing JCAs are already an <span>oncology-heavy</span> workload.</h1>
+      <p class="deck">The current EU HTA workbook shows 15 active medicine assessments, only one discontinued assessment, and no completed reports yet. The queue is concentrated in oncology, conventional chemicals, and orphan-designated products.</p>
+    </div>
+    <aside class="window">
+      <div class="label">EMA validation window</div>
+      <div class="dates">27 Mar 2025 to 26 Mar 2026</div>
+      <p>All active records have standard timetable flags: no accelerated assessments, no MA variations, and no listed reverts to standard timetable.</p>
+    </aside>
+  </section>
+  <section class="kpis" aria-label="Key metrics">
+    <div class="kpi" style="--accent:#14b8a6"><b>15</b><span>ongoing assessments</span></div>
+    <div class="kpi" style="--accent:#ec4899"><b>1</b><span>discontinued</span></div>
+    <div class="kpi" style="--accent:#94a3b8"><b>0</b><span>completed reports</span></div>
+    <div class="kpi" style="--accent:#22c55e"><b>13</b><span>oncology-related</span></div>
+    <div class="kpi" style="--accent:#14b8a6"><b>9</b><span>chemical substances</span></div>
+    <div class="kpi" style="--accent:#8b5cf6"><b>4</b><span>ATMPs</span></div>
+    <div class="kpi" style="--accent:#ec4899"><b>2</b><span>biologicals</span></div>
+    <div class="kpi" style="--accent:#2563eb"><b>8/7</b><span>orphan yes/no split</span></div>
+  </section>
+  <section class="main">
+    <div class="panel">
+      <h2><span class="dot"></span>Substance and status mix</h2>
+      <div class="card">
+        <div class="mix" aria-label="Substance mix bar">
+          <span style="width:60.00%;background:#14b8a6" title="Chemicals: 9"></span><span style="width:26.67%;background:#8b5cf6" title="ATMP: 4"></span><span style="width:13.33%;background:#ec4899" title="Biologicals: 2"></span>
+        </div>
+        <div class="legend">
+          <div class="legend-row"><i class="sw" style="background:#14b8a6"></i><span>Chemicals</span><b>9</b></div><div class="legend-row"><i class="sw" style="background:#8b5cf6"></i><span>ATMP</span><b>4</b></div><div class="legend-row"><i class="sw" style="background:#ec4899"></i><span>Biologicals</span><b>2</b></div>
+        </div>
+        <div class="big-split">
+          <div class="mini"><b>13</b><span>of 15 oncology-related</span></div>
+          <div class="mini"><b>8</b><span>orphan products flagged Y/y</span></div>
+        </div>
+        <div class="zero-grid">
+          <div class="zero"><b>0</b><span>accelerated</span></div>
+          <div class="zero"><b>0</b><span>variations</span></div>
+          <div class="zero"><b>0</b><span>reverts</span></div>
+        </div>
+      </div>
+      <div class="callout"><b>Interpretation:</b> the first year of JCA activity is not a broad cross-section of medicine launches. It is a concentrated specialist queue, with oncology and orphan evidence needs setting the operating pattern.</div>
+    </div>
+    <div class="panel">
+      <h2><span class="dot" style="background:#8b5cf6"></span>Lead assessor concentration</h2>
+      <div class="card">
+        <div class="bar-row"><span>Germany IQWiG</span><div class="track"><i style="width:100.0%"></i></div><b>4</b></div><div class="bar-row"><span>Ireland NCPE</span><div class="track"><i style="width:50.0%"></i></div><b>2</b></div><div class="bar-row"><span>Austria FSI</span><div class="track"><i style="width:50.0%"></i></div><b>2</b></div><div class="bar-row"><span>Sweden TLV</span><div class="track"><i style="width:50.0%"></i></div><b>2</b></div><div class="bar-row"><span>France HAS</span><div class="track"><i style="width:25.0%"></i></div><b>1</b></div><div class="bar-row"><span>Portugal INFARMED</span><div class="track"><i style="width:25.0%"></i></div><b>1</b></div>
+        <p class="assessor-note"><b>Germany IQWiG leads 4</b> of the 15 ongoing assessments, the highest lead-assessor count in the workbook. Ireland NCPE follows with 2 lead assessments.</p>
+      </div>
+      <div class="callout"><b>Operational read:</b> lead-assessor concentration matters for dossier strategy because early JCA norms may be shaped by a small set of national HTA bodies.</div>
+    </div>
+    <div class="panel">
+      <h2><span class="dot" style="background:#ec4899"></span>EMA validation timeline</h2>
+      <div class="card timeline-card">
+        <div class="timeline-row"><span class="month">Mar 2025</span><div class="timeline-track"><i style="width:100%"></i></div><span class="count">2</span></div>
+        <div class="timeline-row"><span class="month">May 2025</span><div class="timeline-track"><i style="width:50%"></i></div><span class="count">1</span></div>
+        <div class="timeline-row"><span class="month">Jun 2025</span><div class="timeline-track"><i style="width:100%"></i></div><span class="count">2</span></div>
+        <div class="timeline-row"><span class="month">Jul 2025</span><div class="timeline-track"><i style="width:100%"></i></div><span class="count">2</span></div>
+        <div class="timeline-row"><span class="month">Aug 2025</span><div class="timeline-track"><i style="width:50%"></i></div><span class="count">1</span></div>
+        <div class="timeline-row"><span class="month">Oct 2025</span><div class="timeline-track"><i style="width:50%"></i></div><span class="count">1</span></div>
+        <div class="timeline-row"><span class="month">Nov 2025</span><div class="timeline-track"><i style="width:100%"></i></div><span class="count">2</span></div>
+        <div class="timeline-row"><span class="month">Dec 2025</span><div class="timeline-track"><i style="width:50%"></i></div><span class="count">1</span></div>
+        <div class="timeline-row"><span class="month">Jan 2026</span><div class="timeline-track"><i style="width:50%"></i></div><span class="count">1</span></div>
+        <div class="timeline-row"><span class="month">Mar 2026</span><div class="timeline-track"><i style="width:100%"></i></div><span class="count">2</span></div>
+        <div class="timeline-summary">
+          <div class="mini"><b>12</b><span>records validated in 2025</span></div>
+          <div class="mini"><b>3</b><span>records validated in 2026</span></div>
+        </div>
+        <p class="timeline-note"><b>Pattern:</b> the active register spans ten validation months, with March, June, July, November, and the latest March window each contributing two active records.</p>
+      </div>
+    </div>
+  </section>
+  <div class="footer"><span>Source: European Commission HTA Secretariat workbook, hta_ongoing-jca_en.xlsx. Normalized from workbook XML.</span><span>Y/y orphan flags, agency spacing, serial dates, and narrow spaces normalized.</span></div>
+</main>
+</body>
+</html>

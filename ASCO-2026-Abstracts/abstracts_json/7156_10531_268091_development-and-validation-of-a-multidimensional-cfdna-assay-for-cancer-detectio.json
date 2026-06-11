@@ -1,0 +1,80 @@
+{
+  "abstractNumber": "10531",
+  "body": " \r\n\r\n\t<div><b>Background: </b> Early detection remains a major unmet need in oncology, and multi-cancer early detection assays that analyze circulating cell-free DNA features have shown promise for detecting multiple cancers with high specificity and tissue-of-origin prediction. Here, we leverage whole-genome sequencing (WGS) to extract multiple cfDNA features (genomic, fragmentomic, and estimated methylation) from a single assay to enable multi-cancer early detection and tissue-of-origin (TOO) localization.</p>  <b>Methods: </b> Plasma samples were collected in a multicenter, prospective case-control study. From 5&#215; low-pass WGS data, multiple cfDNA feature sets were extracted, including fragmentomic, genomic, and inferred epigenetic features. Machine learning models were trained for cancer detection (healthy vs. cancer) and tissue-of-origin (TOO) classification. The training set included 3,577 healthy and 3,578 cancer participants, and the independent validation set included 2,384 healthy and 2,386 cancer participants. Cancer cases spanned 56 cancer types, grouped into 21 cancer classes.</p>  <b>Results: </b> Age and sex are evenly distributed across healthy and cancer samples in both the training and validation datasets (Table 1). At 99% specificity, cancer detection sensitivity increased with stage and was consistent between training and validation cohorts: Stage I: 70.66% vs 70.89%, Stage II: 80.41% vs 80.27%, Stage III: 89.89% vs 88.58%, and Stage IV: 92.23% vs 91.76%. Across tumor types, sensitivity at 99% specificity varied substantially, ranging from 57.43% (Thyroid tumor) and 63.87% (Kidney cancer) to 95.96% (Lymphoma) and 99.07% (Liver/Biliary cancer). Tissue-of-origin prediction achieved high accuracy in machine-learning predicted cancer-positive samples (Top-1/Top-2: 0.75/0.89 in training; 0.75/0.88 in validation).</p>  <b>Conclusions: </b> We developed a cost-efficient blood test (CanScan Pro) using multidimensional cfDNA features from low-pass WGS and machine learning that detects cancers at 99% specificity, with sensitivity increasing by stage and similar performance in training and validation cohorts. The model predicts tissue of origin with high accuracy, which may help guide downstream diagnostic evaluation following a positive result and thereby enhance real-world clinical utility.</div>\r\n\r\n\r\n\r\n\t<div class=\"table_caption\"><b>Patient characteristics.</b></div> \r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<p><strong> </strong></p>\r\n</td>\r\n<td colspan=\"2\">\r\n<p><strong>Train</strong></p>\r\n</td>\r\n<td colspan=\"2\">\r\n<p><strong>Valid</strong></p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td rowspan=\"2\"></td>\r\n<td>\r\n<p><strong>Healthy</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Cancer</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Healthy</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Cancer</strong></p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p><strong>(N=3577)</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>(N=3578)</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>(N=2384)</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>(N=2386)</strong></p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p><strong>Age</strong></p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Mean (SD)</p>\r\n</td>\r\n<td>\r\n<p>57.8 (6.46)</p>\r\n</td>\r\n<td>\r\n<p>57.7 (14.74)</p>\r\n</td>\r\n<td>\r\n<p>58.1 (6.63)</p>\r\n</td>\r\n<td>\r\n<p>57.2 (15.00)</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Median [Min, Max]</p>\r\n</td>\r\n<td>\r\n<p>57.0 [45.0 ,76.0]</p>\r\n</td>\r\n<td>\r\n<p>60.0 [11.0 ,91.0]</p>\r\n</td>\r\n<td>\r\n<p>57.0 [45.0 ,76.0]</p>\r\n</td>\r\n<td>\r\n<p>59.0 [11.0 ,92.0]</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p><strong>Sex</strong></p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>F</p>\r\n</td>\r\n<td>\r\n<p>2018 (56.4%)</p>\r\n</td>\r\n<td>\r\n<p>1655 (46.3%)</p>\r\n</td>\r\n<td>\r\n<p>1355 (56.8%)</p>\r\n</td>\r\n<td>\r\n<p>1101 (46.1%)</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>M</p>\r\n</td>\r\n<td>\r\n<p>1559 (43.6%)</p>\r\n</td>\r\n<td>\r\n<p>1923 (53.7%)</p>\r\n</td>\r\n<td>\r\n<p>1029 (43.2%)</p>\r\n</td>\r\n<td>\r\n<p>1285 (53.9%)</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p><strong>Stage TNM</strong></p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>-</p>\r\n</td>\r\n<td>\r\n<p>3577 (100%)</p>\r\n</td>\r\n<td>\r\n<p>0 (0%)</p>\r\n</td>\r\n<td>\r\n<p>2384 (100%)</p>\r\n</td>\r\n<td>\r\n<p>0 (0%)</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>I</p>\r\n</td>\r\n<td>\r\n<p>0 (0%)</p>\r\n</td>\r\n<td>\r\n<p>1060 (29.6%)</p>\r\n</td>\r\n<td>\r\n<p>0 (0%)</p>\r\n</td>\r\n<td>\r\n<p>718 (30.1%)</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>II</p>\r\n</td>\r\n<td>\r\n<p>0 (0%)</p>\r\n</td>\r\n<td>\r\n<p>883 (24.7%)</p>\r\n</td>\r\n<td>\r\n<p>0 (0%)</p>\r\n</td>\r\n<td>\r\n<p>588 (24.6%)</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>III</p>\r\n</td>\r\n<td>\r\n<p>0 (0%)</p>\r\n</td>\r\n<td>\r\n<p>811 (22.7%)</p>\r\n</td>\r\n<td>\r\n<p>0 (0%)</p>\r\n</td>\r\n<td>\r\n<p>534 (22.4%)</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>IV</p>\r\n</td>\r\n<td>\r\n<p>0 (0%)</p>\r\n</td>\r\n<td>\r\n<p>824 (23.0%)</p>\r\n</td>\r\n<td>\r\n<p>0 (0%)</p>\r\n</td>\r\n<td>\r\n<p>546 (22.9%)</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n\r\n\r\n",
+  "contentId": "268091",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/268091",
+    "queryParams": null,
+    "target": null,
+    "title": "Development and validation of a multidimensional cfDNA assay for cancer detection and tissue-of-origin prediction."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION268091"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780349400000,
+    "start": 1780338600000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "492",
+  "presentationId": "268091",
+  "primaryPerson": {
+    "displayName": "Haimeng Tang, MS, MSc",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780349400000,
+    "start": 1780338600000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17125",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17125",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Prevention, Risk Reduction, and Genetics"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": null,
+  "title": "Development and validation of a multidimensional cfDNA assay for cancer detection and tissue-of-origin prediction.",
+  "titles": null,
+  "uid": "PRESENTATION268091"
+}

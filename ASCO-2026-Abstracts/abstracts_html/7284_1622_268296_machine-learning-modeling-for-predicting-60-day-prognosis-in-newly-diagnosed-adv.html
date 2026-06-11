@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Machine learning modeling for predicting 60-day prognosis in newly diagnosed advanced solid tumors.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Machine learning modeling for predicting 60-day prognosis in newly diagnosed advanced solid tumors.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 1622</div>
+    <div><strong>First speaker:</strong> Damien Urban, MBBS</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/268296">https://www.asco.org/abstracts-presentations/268296</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b> </p>  Accurate mid-term prognosis estimation in patients newly diagnosed with advanced, non-operable or metastatic cancer is critical for evaluation and treatment prioritization and palliative care planning. A 60-day time horizon is clinically meaningful, as major oncologic assessments typically occur at 2–3-month intervals. Existing prognostic tools have shown limited clinical adoption.</p>  <b>Methods: </b> </p>  We conducted a retrospective analysis of patients evaluated at the Sheba Medical Center Oncology Rapid Diagnosis Clinic between 2017 and 2025. Eligible patients had metastatic or locally advanced, non-operable solid tumors. A raw dataset was generated using the MDClone platform (overall 60-day mortality ~18%). A case-enriched training cohort (n=524; 39.3% 60-day mortality) and an independent test cohort (n=343; 19% 60-day mortality) were randomly selected.</p>  Seventy-four features were included, encompassing demographics, laboratory values, ECOG performance status, and clinical variables extracted from physician notes using a large language model (LLM). LLM extraction accuracy was validated against expert manual review in 32 randomly selected cases (accuracy 0.91–1.0).</p>  Logistic Regression, Random Forest, and XGBoost models were trained with grid-search hyperparameter optimization to predict 60-day survival (y=1) versus death (y=0). Performance was evaluated on the independent test set. Wilson score intervals were used for proportion confidence intervals, and Hanley–McNeil method for AUC confidence intervals. Feature importance for the top-performing model was assessed using SHAP.</p>  <b>Results: </b> </p>  Performance of different ML models is summarized in table 1. Random Forest demonstrated the best overall performance. All models showed high positive predictive value for survival but limited ability to predict short-term mortality.</p>  The most influential Random Forest features included INR, CRP, albumin, ECOG status, total protein, LDH, emergency-related hospitalizations, age, neutrophil count, and history of cardiovascular disease.</p>  <b>Conclusions: </b> </p>  A Random Forest–based model accurately identifies patients likely to survive 60 days, supporting timely evaluation and initiation of oncologic treatment. Prediction of short-term mortality remains limited, suggesting intrinsic unpredictability of mid-term outcomes or the need for additional clinical or biological features.</div>
+
+
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td><strong>Metric (95%CI)</strong></td>
+<td><strong>Random Forest</strong></td>
+<td><strong>Logistic Regression</strong></td>
+<td><strong>XGBoost</strong></td>
+</tr>
+<tr>
+<td><strong>ROC AUC </strong></td>
+<td>0.84 (0.79-0.88)</td>
+<td>
+<p>0.81 (0.76-0.86)</p>
+</td>
+<td>0.80 (0.75-0.85)</td>
+</tr>
+<tr>
+<td>
+<p><strong>Sensitivity</strong></p>
+</td>
+<td>
+<p>0.89 (0.85-0.92)</p>
+</td>
+<td>0.82 (0.77-0.86)</td>
+<td>
+<p>0.80 (0.75-0.84)</p>
+</td>
+</tr>
+<tr>
+<td><strong>Specificity</strong></td>
+<td>0.62 (0.49-0.72)</td>
+<td>0.62 (0.49-0.72)</td>
+<td>
+<p>0.63 (0.51-0.74)</p>
+</td>
+</tr>
+<tr>
+<td><strong>PPV</strong></td>
+<td>
+<p>0.91 (0.87-0.94)</p>
+</td>
+<td>0.90 (0.86-0.93)</td>
+<td>0.90 (0.86-0.93)</td>
+</tr>
+<tr>
+<td><strong>NPV</strong></td>
+<td>0.57 (0.45-0.68)</td>
+<td>
+<p>0.45 (0.35-0.55)</p>
+</td>
+<td>0.43 (0.33-0.53)</td>
+</tr>
+<tr>
+<td><strong>Accuracy</strong></td>
+<td>0.84 (0.80-0.87)</td>
+<td>
+<p>0.78 (0.74-0.82)</p>
+</td>
+<td>0.77 (0.72-0.81)</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

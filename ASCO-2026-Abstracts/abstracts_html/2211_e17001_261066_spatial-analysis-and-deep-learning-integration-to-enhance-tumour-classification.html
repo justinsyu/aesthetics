@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spatial analysis and deep learning integration to enhance tumour classification in total-body PET/CT imaging: A preliminary study.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Spatial analysis and deep learning integration to enhance tumour classification in total-body PET/CT imaging: A preliminary study.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e17001</div>
+    <div><strong>First speaker:</strong> David Han, MSc</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/261066">https://www.asco.org/abstracts-presentations/261066</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Accurate identification of metastases with TNM classification on 68Ga‑PSMA‑11 PET/CT scans is critical for prostate cancer staging and monitoring including disease progression, however this still present challenges for conventional AI methods with computer vision. This study aims to enhance diagnostic accuracy by proposing a novel quantitative spatial analysis method using machine learning that can classify lesions in TNM staging. Integrating this method with automated machine learning based lesion segmentation improves efficiency of clinical workflows of 68Ga‑PSMA‑11 PET/CT scans.</div>
+  <main> 
+
+	<div><b>Background: </b> </p>  Accurate identification of metastases with TNM classification on <sup>68</sup>Ga‑PSMA‑11 PET/CT scans is critical for prostate cancer staging and monitoring including disease progression, however this still present challenges for conventional AI methods with computer vision. This study aims to enhance diagnostic accuracy by proposing a novel quantitative spatial analysis method using machine learning that can classify lesions in TNM staging. Integrating this method with automated machine learning based lesion segmentation improves efficiency of clinical workflows of <sup>68</sup>Ga‑PSMA‑11 PET/CT scans.</p>  <b>Methods: </b> </p>  297 total-body <sup>68</sup>Ga‑PSMA‑11 PET/CT scans containing 3,771 lesions were selected for training. Lesions were segmented using a deep learning model developed in house, and major organs were automatically delineated on CT images using open-source organ segmentation tool TotalSegmentator. Spatial features were then computed to quantify each lesion’s anatomical relationships to organs (e.g., distances to organ surfaces and centroid, 3D bounding boxes coordinates, overlaps, etc). These features, along with imaging data, were used to train two complementary machine-learning classifiers—a convolutional neural network (CNN) and a graph neural network (GNN)—to predict each lesion’s category.</p>  <b>Results: </b> </p>  both the CNN and GNN classifiers achieved 95.7% overall accuracy in lesion classification on our with total-body PSMA PET/CT scans containing 92 lesions. The inclusion of spatial features noticeably improved the models’ ability to discriminate between different TNM staging. The model achieved class-specific accuracy for regional lymph nodes (N) and distinct metastasis (M) with respectively.</p>  <b>Conclusions: </b> </p>  In this preliminary study, we have developed a novel TNM lesion-level classification method that focus on quantitative spatial features on total-body <sup>68</sup>Ga‑PSMA‑11 PET/CT, and achieved promising results with overall classification accuracy 95.7%. These results indicate that explicit lesion-to-organ spatial relationships can help to more reliably distinguish regional lymph node lesions from distant metastases in the presented model, . The proposed method is a step towards clinically utility when combined with the automated lesion segmentation model, which can generate structured staging output. This novel AI-driven workflow can generate consistent lesion-type labels at scale and provide an auditable basis for staging summaries to support clinician’s decisions. Future work will extend the current lesion-to-organ approach by incorporating lesion-to-lesion spatial relationships for longitudinal lesion matching and disease tracking, and by aligning outputs with . Importantly, the same spatial analysis methodology is also transferable to other TNM-staged malignancies, offering a universal tool for imaging-based classification.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

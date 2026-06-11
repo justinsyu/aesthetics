@@ -1,0 +1,64 @@
+{
+  "abstractNumber": "e12576",
+  "body": " \r\n\r\n\t<div><b>Background: </b> </p>  Early detection of breast cancer is essential but remains limited by the high cost. Echo signal–based approaches offer a low-cost alternative and have demonstrated tumor detection using single-channel signals; however, limited information content restricts performance stability. Recent advances in multi-channel echo signal acquisition highlight the need for adaptive models that can effectively integrate different channel configurations.</p>  <b>Methods: </b> </p>  Single-channel echo signals were prospectively collected from 200 breast tumor patients who underwent curative surgery at Seoul National University Hospital (SNUH) and SMG-SNU Boramae Medical Center between Oct 2022 and Feb 2024. In addition, four-channel echo signal data were collected from 34 patients between Apr and Dec 2025 at SNUH. To enable unified processing of different channel configurations, all inputs were represented in a bag-of-instances format, with single-channel data modeled as a single-instance bag and four-channel data as a four-instance bag. Feature extraction was performed using an ImageNet-pretrained EfficientNet-B0 backbone, followed by a gated attention–based multiple instance learning architecture.</p>  <b>Results: </b> </p>  In the independent test set, single-channel models achieved AUC values ranging from 0.739 to 0.872, whereas the proposed model achieved an AUC of 0.892. Although the difference in AUC was not statistically significant (DeLong test, p = 0.7804), the AUC standard deviation of the four-channel–based MIL model (0.007) was substantially lower than that of the single-channel models (0.015–0.043), indicating superior performance stability. Notably, the MIL model showed improved performance in the independent test set compared with internal evaluation, suggesting enhanced generalization.</p>  <b>Conclusions: </b> </p>  This study demonstrates that extending single-channel echo signal–based approaches to a four-channel–based MIL framework improves performance stability and generalization in breast tumor detection. Although the performance difference was not statistically significant, the proposed method demonstrates the potential of integrating multiple channels for more robust and stable predictions in clinical applications.</div>\r\n\r\n\r\n\r\n\t<div class=\"table_caption\"><b>Model performance comparison in terms of AUC and others.</b></div> \r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<p><strong>Model</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>AUC</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>ACC@SEN95</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>SPE@SEN95</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>PPV@SEN95</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>NPV@SEN95</strong></p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>1<sup>st</sup> CH Single</p>\r\n</td>\r\n<td>\r\n<p>0.872±0.025</p>\r\n</td>\r\n<td>\r\n<p>0.813±0.025</p>\r\n</td>\r\n<td>\r\n<p>0.815±0.052</p>\r\n</td>\r\n<td>\r\n<p>0.802±0.045</p>\r\n</td>\r\n<td>\r\n<p>0.825±0.009</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>2<sup>nd</sup> CH Single</p>\r\n</td>\r\n<td>\r\n<p>0.865±0.034</p>\r\n</td>\r\n<td>\r\n<p>0.807±0.029</p>\r\n</td>\r\n<td>\r\n<p>0.810±0.055</p>\r\n</td>\r\n<td>\r\n<p>0.795±0.046</p>\r\n</td>\r\n<td>\r\n<p>0.819±0.010</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>3<sup>rd</sup> CH Single</p>\r\n</td>\r\n<td>\r\n<p>0.823±0.043</p>\r\n</td>\r\n<td>\r\n<p>0.751±0.068</p>\r\n</td>\r\n<td>\r\n<p>0.696±0.139</p>\r\n</td>\r\n<td>\r\n<p>0.717±0.086</p>\r\n</td>\r\n<td>\r\n<p>0.798±0.025</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>4<sup>th</sup> CH Single</p>\r\n</td>\r\n<td>\r\n<p>0.739±0.015</p>\r\n</td>\r\n<td>\r\n<p>0.673±0.037</p>\r\n</td>\r\n<td>\r\n<p>0.536±0.064</p>\r\n</td>\r\n<td>\r\n<p>0.619±0.035</p>\r\n</td>\r\n<td>\r\n<p>0.768±0.033</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>4CH-MIL</p>\r\n</td>\r\n<td>\r\n<p><strong>0.892±0.007</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>0.841±0.058</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>0.863±0.092</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>0.850±0.095</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>0.837±0.030</strong></p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n \r\n\t<div class=\"table_footer\">Abbreviations: AUC, Area under the curve; ACC, Accuracy; SEN, Sensivitiy; SPE, Specificity; PPV, Positive predictive value; NPV, Negative predictive value</div> \r\n\r\n\r\n",
+  "contentId": "266302",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/266302",
+    "queryParams": null,
+    "target": null,
+    "title": "A multiple-instance learning-based deep learning model with multi-channel input for early detection of breast tumor."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION266302"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": null,
+  "presentationId": "266302",
+  "primaryPerson": {
+    "displayName": "Hyeong-Gon Moon, MD, PhD",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": "Early detection of breast cancer is essential but remains limited by the high cost. Echo signal–based approaches offer a low-cost alternative and have demonstrated tumor detection using single-channel signals; however, limited information content restricts performance stability. Recent advances in multi-channel echo signal acquisition highlight the need for adaptive models that can effectively integrate different channel configurations.",
+  "taxonomy": null,
+  "title": "A multiple-instance learning-based deep learning model with multi-channel input for early detection of breast tumor.",
+  "titles": null,
+  "uid": "PRESENTATION266302"
+}

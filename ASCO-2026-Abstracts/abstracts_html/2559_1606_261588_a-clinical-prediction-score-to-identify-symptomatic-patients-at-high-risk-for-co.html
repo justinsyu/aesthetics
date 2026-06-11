@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A clinical prediction score to identify symptomatic patients at high risk for colorectal cancer in South Africa.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>A clinical prediction score to identify symptomatic patients at high risk for colorectal cancer in South Africa.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 1606</div>
+    <div><strong>First speaker:</strong> Yoanna S. Pumpalova, MD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/261588">https://www.asco.org/abstracts-presentations/261588</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b> Colorectal cancer (CRC) is the third most diagnosed cancer globally with a rising incidence across sub-Saharan Africa. In South Africa (SA), advanced stage at diagnosis drives poor outcomes and limited endoscopic capacity makes early CRC diagnosis guidelines difficult to implement. We developed a clinical prediction score to identify patients with lower gastrointestinal (GI) symptoms at high risk for CRC in SA. </p>  <b>Methods: </b> Adults (≥18 years old) with ≥1 “red flag” lower GI symptom (weight loss, change in bowel habits, rectal bleeding, anemia, abdominal mass) referred for colonoscopy at two public hospitals in Durban were eligible for this prospective study (Sept 23, 2022 – Dec 9, 2025). Demographic and clinical data, results from a pre- or intra-colonoscopy POC-FIT, and colonoscopy results were recorded. The sensitivity, specificity, positive predictive value (PPV), and negative predictive value (NPV) of POC-FIT for CRC were calculated. A clinical prediction score was derived using this cohort. The optimal number of prognostic factors for a predictive multivariate logistic regression model were determined using LASSO and model validation was done using bootstrapping technique. Overall performance was assessed using the scaled Brier score, Hosmer-Lemeshow test, and AUC. Analysis was performed using R (v 4.4.1).</p>  <b>Results: </b> Of 393 enrolled patients (median age 52 years, 54.5% female), 306 (77.9%) had a valid FIT result, with 194 (63.4%) positives. In this symptomatic cohort, the adenoma detection rate was 19.6%, with 15 low-risk (3.8%), 14 high-risk (3.6%) adenomas, and 31 (7.9%) CRCs. POC-FIT had 75% sensitivity, 38% specificity, 9% PPV and 95% NPV for CRC. If patients with a negative POC-FIT had not immediately proceeded to colonoscopy, 102 (33.3%) urgent colonoscopies could have been avoided, but diagnosis would have been delayed for 4 patients with high-risk adenomas and 6 with CRC. The LASSO model, utilizing λ=0.017, selected 3 variables associated with CRC: age greater/less than 50, weight loss (yes/no), symptom duration &gt;3 months (yes/no) (risk score 0-3), with AUC 78.6% for predicting CRC (Table 1). Adding negative FIT result to the clinical prediction score (risk score 0-4) improved performance (AUC 79.2%). Setting a symptom score of &#179;2 as positive, the specificity for diagnosing CRC was 47.9%, and sensitivity 95.8%. </p>  <b>Conclusions: </b> Among South African patients referred for diagnostic colonoscopy, FIT has a strong NPV but weak PPV for CRC. A clinical prediction score for CRC among symptomatic South African patients was derived with good performance for ruling out CRC. Future studies will validate this model in the primary care setting.</div>
+
+
+
+	<div class="table_caption"><b>Clinical prediction score derived from cohort of symptomatic patients undergoing colonoscopy in Durban, South Africa.</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p><strong>Clinical Score</strong></p>
+</td>
+<td>
+<p><strong>No CRC</strong></p>
+</td>
+<td>
+<p><strong>%</strong></p>
+</td>
+<td>
+<p><strong>CRC</strong></p>
+</td>
+<td>
+<p><strong>%</strong></p>
+</td>
+<td>
+<p><strong>Total</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>30</p>
+</td>
+<td>
+<p>100</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>30</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>105</p>
+</td>
+<td>
+<p>99</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>106</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>112</p>
+</td>
+<td>
+<p>91</p>
+</td>
+<td>
+<p>11</p>
+</td>
+<td>
+<p>9</p>
+</td>
+<td>
+<p>123</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>3</p>
+</td>
+<td>
+<p>32</p>
+</td>
+<td>
+<p>74</p>
+</td>
+<td>
+<p>11</p>
+</td>
+<td>
+<p>26</p>
+</td>
+<td>
+<p>43</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>4</p>
+</td>
+<td>
+<p>3</p>
+</td>
+<td>
+<p>75</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>25</p>
+</td>
+<td>
+<p>4</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Total</strong></p>
+</td>
+<td>
+<p><strong>282</strong></p>
+</td>
+<td>
+<p><strong>92</strong></p>
+</td>
+<td>
+<p><strong>24</strong></p>
+</td>
+<td>
+<p><strong>8</strong></p>
+</td>
+<td>
+<p><strong>306</strong></p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

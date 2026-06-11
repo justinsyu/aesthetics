@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ocular Therapeutix Website Currentness Audit</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16,18,15,.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 36px 0 20px;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+      opacity: .9;
+    }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 850;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      background: var(--lime);
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 75px; line-height: .95; font-weight: 560; max-width: 1320px; }
+    h2 { font-size: 48px; line-height: .98; font-weight: 560; max-width: 1300px; }
+    h3 { font-size: 27px; line-height: 1.04; font-weight: 650; }
+    .dek { margin-top: 22px; color: var(--muted); font-size: 26px; line-height: 1.2; max-width: 1260px; }
+    .section-head { margin-bottom: 16px; }
+    .section-head p { margin-top: 16px; color: var(--muted); font-size: 22px; line-height: 1.18; max-width: 1280px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .panel, .metric, .card, .table, .callout, .evidence-card {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.9);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel { padding: 22px; }
+    .callout { background: #11130f; color: var(--paper); border-color: #11130f; padding: 24px 26px; }
+    .callout h3 { color: var(--lime); }
+    .callout p, .callout li { color: rgba(246,241,232,.86); }
+    .metric { padding: 20px; min-height: 155px; }
+    .num { font-size: 50px; line-height: .92; font-weight: 400; }
+    .label { margin-top: 12px; font-size: 22px; line-height: 1.12; color: var(--muted); }
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      white-space: nowrap;
+      margin-bottom: 10px;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .red { background: var(--red); }
+    .gray { background: var(--gray); }
+    .summary-list { margin: 14px 0 0; padding-left: 22px; display: grid; gap: 9px; }
+    .summary-list li { font-size: 22px; line-height: 1.15; }
+    .title-slide h1 { font-size: 64px; max-width: 1360px; }
+    .title-slide .dek { font-size: 23px; line-height: 1.14; max-width: 100%; }
+    .title-slide .grid-4 { margin-top: 20px !important; }
+    .title-slide .metric { min-height: 124px; padding: 16px; }
+    .title-slide .num { font-size: 44px; }
+    .title-slide .label { margin-top: 8px; font-size: 18px; line-height: 1.1; }
+    .title-slide .callout { margin-top: 18px !important; padding: 18px 22px; }
+    .title-slide .summary-list { gap: 7px; }
+    .title-slide .summary-list li { font-size: 23px; line-height: 1.16; }
+    .observation-card { padding: 22px; min-height: 232px; }
+    .observation-card p { margin-top: 10px; color: var(--muted); font-size: 21px; line-height: 1.17; }
+    .evidence-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; align-items: stretch; }
+    .evidence-grid.three { grid-template-columns: repeat(3, 1fr); }
+    .evidence-grid.four { grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .evidence-card { display: flex; flex-direction: column; min-height: 0; margin: 0; background: rgba(255,250,240,.92); }
+    .evidence-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--line);
+      background: var(--paper-2);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .evidence-top a { text-transform: none; font-weight: 700; color: var(--muted); }
+    .evidence-card img {
+      display: block;
+      width: 100%;
+      height: 315px;
+      object-fit: contain;
+      object-position: center;
+      background: white;
+      border-bottom: 1px solid rgba(16,18,15,.22);
+    }
+    .evidence-grid.three .evidence-card img { height: 292px; }
+    .evidence-grid.four .evidence-card img { height: 238px; }
+    .evidence-grid.four figcaption { font-size: 13px; line-height: 1.12; }
+    .evidence-slide {
+      padding: 24px 0 14px;
+    }
+    .evidence-slide .wrap {
+      width: min(1460px, calc(100vw - 34px));
+    }
+    .evidence-slide .eyebrow {
+      margin-bottom: 16px;
+      padding: 7px 11px;
+    }
+    .evidence-slide .section-head {
+      margin-bottom: 10px;
+    }
+    .evidence-slide h2 {
+      font-size: 44px;
+      line-height: .96;
+      max-width: 1450px;
+    }
+    .evidence-slide .section-head p {
+      margin-top: 22px;
+      font-size: 20px;
+      line-height: 1.12;
+      max-width: 1440px;
+    }
+    .evidence-slide .evidence-grid {
+      gap: 10px;
+    }
+    .evidence-slide .evidence-grid.four {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .evidence-slide .evidence-card {
+      border-radius: 18px;
+    }
+    .evidence-slide .evidence-top {
+      padding: 7px 10px;
+    }
+    .evidence-slide .evidence-card img {
+      height: 420px;
+    }
+    .evidence-slide .evidence-grid.four .evidence-card img {
+      height: 205px;
+    }
+    .evidence-slide figcaption {
+      padding: 8px 10px 9px;
+      font-size: 17px;
+      line-height: 1.08;
+    }
+    .evidence-slide .evidence-grid.four figcaption {
+      font-size: 14px;
+      line-height: 1.08;
+    }
+    figcaption {
+      margin: 0;
+      padding: 10px 12px 12px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.16;
+    }
+    .note-card { padding: 20px; min-height: 172px; }
+    .note-card p { margin-top: 8px; color: var(--muted); font-size: 20px; line-height: 1.16; }
+    .table { display: grid; }
+    .row { display: grid; border-bottom: 1px solid var(--line); min-height: 70px; }
+    .row:last-child { border-bottom: 0; }
+    .row.refs { grid-template-columns: .28fr .9fr 1.15fr 1.9fr; min-height: 53px; }
+    .row.refs.head { min-height: 40px; }
+    .cell { padding: 12px 12px; border-right: 1px solid var(--line); font-size: 17px; line-height: 1.13; }
+    .row.refs .cell { padding: 8px 10px; font-size: 14.5px; line-height: 1.08; }
+    .row.refs:not(.head) .cell {
+      display: flex;
+      align-items: center;
+    }
+    .row.refs .cell:first-child {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .cell:last-child { border-right: 0; }
+    .head .cell {
+      background: #11130f;
+      color: var(--paper);
+      font-weight: 850;
+      text-transform: uppercase;
+      font-size: 16px;
+      white-space: nowrap;
+    }
+    .row.refs.head .cell {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      font-size: 14px;
+    }
+    .row.refs.head .cell:first-child { justify-content: center; }
+    .references-slide .section-head {
+      margin-bottom: 30px;
+    }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .slide.evidence-slide { padding: 24px 0 14px; }
+      .wrap { width: 1360px; }
+      .panel, .metric, .card, .table, .callout, .evidence-card { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) {
+      .slide { width: 1600px; height: 900px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide title-slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">WEBSITE AUDIT | MAY 26, 2026</div>
+      <h1>Ocular Therapeutix Website<br>Currentness Audit</h1>
+      <p class="dek">This deck compares public website statements with the most recently available official registry or filing data, including website pages that present different status, count, or endpoint wording than those sources. Other timing differences were noted only when the public website presented a current claim with wording or values that differed from those sources.</p>
+      <div class="grid-4" style="margin-top:28px;">
+        <div class="metric"><div class="num">3</div><div class="label">Evidence-supported website-currentness observations.</div></div>
+        <div class="metric"><div class="num">0</div><div class="label">Active-status Ocular Phase 2 sponsor records returned by CT.gov query.</div></div>
+        <div class="metric"><div class="num">2</div><div class="label">Clinical-trials page observations: SOL-R count and HELIOS-3 endpoint text.</div></div>
+        <div class="metric"><div class="num">4</div><div class="label">Prior observations not included as website-currentness observations in this review.</div></div>
+      </div>
+      <div class="callout" style="margin-top:24px;">
+        <h3>Executive summary</h3>
+        <ul class="summary-list">
+          <li>The OTX-TIC page states OTX-TIC is currently in Phase 2; CT.gov lists the treatment record as completed, the active-status sponsor query returns zero Ocular Phase 2 records, and the current 10-Q states next steps are being evaluated.<a class="cite" href="https://www.ocutx.com/pipeline/otx-tic/">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT05335122">2</a><a class="cite" href="https://clinicaltrials.gov/search?term=AREA%5BPhase%5DPHASE2%20AND%20(AREA%5BOverallStatus%5DRECRUITING%20OR%20AREA%5BOverallStatus%5DACTIVE_NOT_RECRUITING%20OR%20AREA%5BOverallStatus%5DNOT_YET_RECRUITING%20OR%20AREA%5BOverallStatus%5DENROLLING_BY_INVITATION)&spons=Ocular%20Therapeutix">8</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1393434/000110465926055256/ocul-20260331x10q.htm">3</a></li>
+          <li>The Ocular clinical-trials page lists SOL-R as a 555-subject randomized trial, while the current filing reports completed randomization with 631 subjects.<a class="cite" href="https://www.ocutx.com/pipeline/clinical-trials/">4</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1393434/000110465926055256/ocul-20260331x10q.htm">5</a></li>
+          <li>The HELIOS-3 website description contains Week 56 in the endpoint heading and Week 52 in the endpoint sentence; the current filing states that the endpoint assessment was extended from Week 52 to Week 56.<a class="cite" href="https://www.ocutx.com/pipeline/clinical-trials/">6</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1393434/000110465926055256/ocul-20260331x10q.htm">7</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">1/5</div>
+  </article>
+
+  <article class="slide evidence-slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">OTX-TIC status</div>
+        <h2>Website Phase 2 wording compared with active-status Phase 2 treatment-trial checks</h2>
+        <p>The CT.gov sponsor query identified no active-status Phase 2 Ocular records. Glaukos travoprost implant records list separate sponsors/products and were not included as Ocular OTX-TIC records for this status comparison.</p>
+      </div>
+      <div class="evidence-grid four">
+        <figure class="evidence-card">
+      <div class="evidence-top"><span>Reference 1</span><a href="https://www.ocutx.com/pipeline/otx-tic/">www.ocutx.com</a></div>
+      <img src="screenshots/evidence/source-01-otx-tic-website-phase2.png" alt="Ocular website source: OTX-TIC page states current Phase 2 status" />
+      <figcaption>Ocular's OTX-TIC page states that OTX-TIC is currently in Phase 2 clinical trials.</figcaption>
+    </figure>
+        <figure class="evidence-card">
+      <div class="evidence-top"><span>Reference 2</span><a href="https://clinicaltrials.gov/study/NCT05335122">clinicaltrials.gov</a></div>
+      <img src="screenshots/evidence/source-02-ctgov-otx-tic-completed.png" alt="ClinicalTrials.gov: OTX-TIC Phase 2 record is completed" />
+      <figcaption>The OTX-TIC Phase 2 treatment record is listed as completed on ClinicalTrials.gov.</figcaption>
+    </figure>
+        <figure class="evidence-card">
+      <div class="evidence-top"><span>Reference 8</span><a href="https://clinicaltrials.gov/search?term=AREA%5BPhase%5DPHASE2%20AND%20(AREA%5BOverallStatus%5DRECRUITING%20OR%20AREA%5BOverallStatus%5DACTIVE_NOT_RECRUITING%20OR%20AREA%5BOverallStatus%5DNOT_YET_RECRUITING%20OR%20AREA%5BOverallStatus%5DENROLLING_BY_INVITATION)&amp;spons=Ocular%20Therapeutix">clinicaltrials.gov</a></div>
+      <img src="screenshots/evidence/source-08-ctgov-active-phase2-zero.png" alt="ClinicalTrials.gov search: active-status Ocular Phase 2 sponsor query returns no records" />
+      <figcaption>A ClinicalTrials.gov active-status Phase 2 sponsor search for Ocular Therapeutix returns no records.</figcaption>
+    </figure>
+        <figure class="evidence-card">
+      <div class="evidence-top"><span>Reference 3</span><a href="https://www.sec.gov/Archives/edgar/data/1393434/000110465926055256/ocul-20260331x10q.htm">www.sec.gov</a></div>
+      <img src="screenshots/evidence/source-03-sec-otx-tic-completed.png" alt="SEC 10-Q: OTX-TIC completed Phase 2 and next steps are being evaluated" />
+      <figcaption>The current 10-Q states that OTX-TIC has completed Phase 2 and that next steps are being evaluated.</figcaption>
+    </figure>
+      </div>
+    </div>
+    <div class="slide-num">2/5</div>
+  </article>
+
+  <article class="slide evidence-slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">SOL-R randomized count</div>
+        <h2>The SOL-R website count is 555 and the current filing reports 631 randomized subjects</h2>
+        <p>The website page reports 555 randomized subjects; the May 2026 Form 10-Q reports completed randomization with 631 subjects.</p>
+      </div>
+      <div class="evidence-grid">
+        <figure class="evidence-card">
+      <div class="evidence-top"><span>Reference 4</span><a href="https://www.ocutx.com/pipeline/clinical-trials/">www.ocutx.com</a></div>
+      <img src="screenshots/evidence/source-04-website-solr-555.png" alt="Ocular website source: SOL-R trial design shows 555 randomized subjects" />
+      <figcaption>The Ocular clinical-trials page states that SOL-R has 555 total subjects randomized.</figcaption>
+    </figure>
+        <figure class="evidence-card">
+      <div class="evidence-top"><span>Reference 5</span><a href="https://www.sec.gov/Archives/edgar/data/1393434/000110465926055256/ocul-20260331x10q.htm">www.sec.gov</a></div>
+      <img src="screenshots/evidence/source-05-sec-solr-631.png" alt="SEC 10-Q: SOL-R completed randomization with 631 subjects" />
+      <figcaption>The 10-Q reports that SOL-R completed randomization with 631 subjects and gives a Q1 2027 topline-data expectation.</figcaption>
+    </figure>
+      </div>
+    </div>
+    <div class="slide-num">3/5</div>
+  </article>
+
+  <article class="slide evidence-slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">HELIOS-3 endpoint</div>
+        <h2>The HELIOS-3 website text contains Week 56 and Week 52 endpoint language</h2>
+        <p>This observation is not based on CT.gov showing Week 52; the website text contains both Week 56 and Week 52 endpoint references, while the current filing describes the February 2026 amendment to Week 56.</p>
+      </div>
+      <div class="evidence-grid">
+        <figure class="evidence-card">
+      <div class="evidence-top"><span>Reference 6</span><a href="https://www.ocutx.com/pipeline/clinical-trials/">www.ocutx.com</a></div>
+      <img src="screenshots/evidence/source-06-website-helios-week52-week56.png" alt="Ocular website source: HELIOS-3 endpoint text contains Week 56 and Week 52" />
+      <figcaption>The website's HELIOS-3 endpoint heading states Week 56, while the endpoint sentence states Week 52.</figcaption>
+    </figure>
+        <figure class="evidence-card">
+      <div class="evidence-top"><span>Reference 7</span><a href="https://www.sec.gov/Archives/edgar/data/1393434/000110465926055256/ocul-20260331x10q.htm">www.sec.gov</a></div>
+      <img src="screenshots/evidence/source-07-sec-helios-week56.png" alt="SEC 10-Q: HELIOS-3 protocol amendment extends endpoint from Week 52 to Week 56" />
+      <figcaption>The 10-Q states that the HELIOS-3 protocol amendment extended endpoint assessment from Week 52 to Week 56.</figcaption>
+    </figure>
+      </div>
+    </div>
+    <div class="slide-num">4/5</div>
+  </article>
+
+  <article class="slide references-slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">References 1-8</div>
+        <h2>References</h2>
+      </div>
+      <div class="table">
+        <div class="row refs head">
+          <div class="cell">Ref</div>
+          <div class="cell">Source</div>
+          <div class="cell">Date / Status / Source Owner</div>
+          <div class="cell">Evidence Used in Report</div>
+        </div>
+        <div class="row refs"><div class="cell">1</div><div class="cell"><a href="https://www.ocutx.com/pipeline/otx-tic/">Ocular OTX-TIC page</a></div><div class="cell">Live website page / Ocular Therapeutix</div><div class="cell">Website statement that OTX-TIC is currently in Phase 2 clinical trials.</div></div>
+        <div class="row refs"><div class="cell">2</div><div class="cell"><a href="https://clinicaltrials.gov/study/NCT05335122">ClinicalTrials.gov NCT05335122</a></div><div class="cell">Registry record / Ocular Therapeutix sponsor</div><div class="cell">Completed Phase 2 OTX-TIC treatment record for OAG/OHT.</div></div>
+        <div class="row refs"><div class="cell">3</div><div class="cell"><a href="https://www.sec.gov/Archives/edgar/data/1393434/000110465926055256/ocul-20260331x10q.htm">Q1 2026 Form 10-Q</a></div><div class="cell">Filed May 2026 / Ocular Therapeutix</div><div class="cell">OTX-TIC completed Phase 2 and next steps are being evaluated.</div></div>
+        <div class="row refs"><div class="cell">4</div><div class="cell"><a href="https://www.ocutx.com/pipeline/clinical-trials/">Ocular clinical-trials page</a></div><div class="cell">Live website page / Ocular Therapeutix</div><div class="cell">SOL-R 555-subject randomized count shown on the website.</div></div>
+        <div class="row refs"><div class="cell">5</div><div class="cell"><a href="https://www.sec.gov/Archives/edgar/data/1393434/000110465926055256/ocul-20260331x10q.htm">Q1 2026 Form 10-Q</a></div><div class="cell">Filed May 2026 / Ocular Therapeutix</div><div class="cell">SOL-R completed randomization with 631 subjects and Q1 2027 topline timing.</div></div>
+        <div class="row refs"><div class="cell">6</div><div class="cell"><a href="https://www.ocutx.com/pipeline/clinical-trials/">Ocular clinical-trials page</a></div><div class="cell">Live website page / Ocular Therapeutix</div><div class="cell">HELIOS-3 Week 56 heading and Week 52 endpoint sentence.</div></div>
+        <div class="row refs"><div class="cell">7</div><div class="cell"><a href="https://www.sec.gov/Archives/edgar/data/1393434/000110465926055256/ocul-20260331x10q.htm">Q1 2026 Form 10-Q</a></div><div class="cell">Filed May 2026 / Ocular Therapeutix</div><div class="cell">HELIOS-3 protocol amendment extending primary endpoint assessment from Week 52 to Week 56.</div></div>
+        <div class="row refs"><div class="cell">8</div><div class="cell"><a href="https://clinicaltrials.gov/search?term=AREA%5BPhase%5DPHASE2%20AND%20(AREA%5BOverallStatus%5DRECRUITING%20OR%20AREA%5BOverallStatus%5DACTIVE_NOT_RECRUITING%20OR%20AREA%5BOverallStatus%5DNOT_YET_RECRUITING%20OR%20AREA%5BOverallStatus%5DENROLLING_BY_INVITATION)&spons=Ocular%20Therapeutix">ClinicalTrials.gov search results</a></div><div class="cell">Live registry webpage / Ocular sponsor search</div><div class="cell">Active-status Phase 2 sponsor search for Ocular Therapeutix returns no records.</div></div>
+      </div>
+    </div>
+    <div class="slide-num">5/5</div>
+  </article>
+</body>
+</html>

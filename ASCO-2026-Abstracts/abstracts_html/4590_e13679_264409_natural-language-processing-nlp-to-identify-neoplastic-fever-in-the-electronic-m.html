@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Natural language processing (NLP) to identify neoplastic fever in the electronic medical record (EMR).</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Natural language processing (NLP) to identify neoplastic fever in the electronic medical record (EMR).</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e13679</div>
+    <div><strong>First speaker:</strong> Martin Juarez-Alvarado, BS</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/264409">https://www.asco.org/abstracts-presentations/264409</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Neoplastic fever (also known as “tumor fever”; TF), is a rare but challenging condition that can be difficult to distinguish from infectious or treatment-related causes of fever. TF can lead to potentially unnecessary diagnostic testing and antibiotic use, as well as physical and psychological distress for patients. While treating the underlying cancer is the gold standard, this may not be successful or sufficient. Further, the inability to prospectively identify individuals with TF limits research to improve prevalence estimates, non-cancer directed therapy and patient quality of life. Therefore, our goal was to develop and validate an NLP algorithm to identify TF from the clinical notes of a retrospective cohort of adult cancer patients.</div>
+  <main> 
+
+	<div><b>Background: </b> Neoplastic fever (also known as “tumor fever”; TF), is a rare but challenging condition that can be difficult to distinguish from infectious or treatment-related causes of fever. TF can lead to potentially unnecessary diagnostic testing and antibiotic use, as well as physical and psychological distress for patients. While treating the underlying cancer is the gold standard, this may not be successful or sufficient. Further, the inability to prospectively identify individuals with TF limits research to improve prevalence estimates, non-cancer directed therapy and patient quality of life. Therefore, our goal was to develop and validate an NLP algorithm to identify TF from the clinical notes of a retrospective cohort of adult cancer patients.</p>  <b>Methods: </b> Research was approved by the Fred Hutchinson Cancer Center Institutional Review Board. Unstructured clinical notes were extracted from the EMR among patients in the Adult Oncology Program with both ICD10 cancer-related diagnoses with at least two outpatient office visits within a 6-month period between January 1, 2018 and December 31, 2024. The study team developed the annotation schema iteratively with clinical and NLP experts for TF and related clinical entities. Annotations occurred over multiple rounds using the MedTator software. Inter-annotator agreement was assessed using F1 scoring and Cohen’s kappa coefficient, with acceptable inter-annotator agreement (AIAA) defined as F1 score of ≥.8.</p>  <b>Results: </b> 354,245 clinical notes for 26,774 individuals were identified during the study period. Of these, 117,545 (~33.18%) notes had a term related to TF (e.g. "tumor fever", "neoplastic fever", "fever", "sweating"). 341 charts were annotated from 89 patients for the final gold standard corpus. AIAA was achieved with overall F1 score of .83 (see Table 1) across all entity and relation types. Training and evaluation of NLP models is ongoing. Full results will be presented.</p>  <b>Conclusions: </b> Our results suggest NLP can be used to identify true cases of tumor fever in the EMR. To our knowledge, this is the first gold standard annotated corpus specifically designed for tumor fever detection in clinical notes. This resource addresses a critical gap in oncology-focused NLP, providing a foundation for developing and evaluating automated methods to identify tumor fever from EHR data and supporting future research aimed at improving diagnostic accuracy and treatment of tumor fever.</div>
+
+
+
+	<div class="table_caption"><b>Inter-annotator agreement, precision and recall for tumor fever-related annotation labels.</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p><strong>Annotation Label</strong></p>
+</td>
+<td>
+<p><strong>F1</strong></p>
+</td>
+<td>
+<p><strong>Precision</strong></p>
+</td>
+<td>
+<p><strong>Recall</strong></p>
+</td>
+<td>
+<p><strong>True Positive</strong></p>
+</td>
+<td>
+<p><strong>False Positive</strong></p>
+</td>
+<td>
+<p><strong>False Negative</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>OVERALL</p>
+</td>
+<td>
+<p>0.8263</p>
+</td>
+<td>
+<p>0.7565</p>
+</td>
+<td>
+<p>0.9103</p>
+</td>
+<td>
+<p>2181</p>
+</td>
+<td>
+<p>702</p>
+</td>
+<td>
+<p>215</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>FEVER</p>
+</td>
+<td>
+<p>0.9433</p>
+</td>
+<td>
+<p>0.9252</p>
+</td>
+<td>
+<p>0.9620</p>
+</td>
+<td>
+<p>507</p>
+</td>
+<td>
+<p>41</p>
+</td>
+<td>
+<p>20</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>FEVER SYMPTOMS</p>
+</td>
+<td>
+<p>0.9236</p>
+</td>
+<td>
+<p>0.8788</p>
+</td>
+<td>
+<p>0.9732</p>
+</td>
+<td>
+<p>145</p>
+</td>
+<td>
+<p>20</p>
+</td>
+<td>
+<p>4</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>NEOPLASM</p>
+</td>
+<td>
+<p>0.7874</p>
+</td>
+<td>
+<p>0.6889</p>
+</td>
+<td>
+<p>0.9186</p>
+</td>
+<td>
+<p>722</p>
+</td>
+<td>
+<p>326</p>
+</td>
+<td>
+<p>64</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>CANCER SIGN</p>
+</td>
+<td>
+<p>0.7457</p>
+</td>
+<td>
+<p>0.6643</p>
+</td>
+<td>
+<p>0.8498</p>
+</td>
+<td>
+<p>566</p>
+</td>
+<td>
+<p>286</p>
+</td>
+<td>
+<p>100</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>NEGATION</p>
+</td>
+<td>
+<p>0.8078</p>
+</td>
+<td>
+<p>0.8240</p>
+</td>
+<td>
+<p>0.7923</p>
+</td>
+<td>
+<p>103</p>
+</td>
+<td>
+<p>22</p>
+</td>
+<td>
+<p>27</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>TUMOR FEVER</p>
+</td>
+<td>
+<p>0.9753</p>
+</td>
+<td>
+<p>0.9517</p>
+</td>
+<td>
+<p>1.0000</p>
+</td>
+<td>
+<p>138</p>
+</td>
+<td>
+<p>7</p>
+</td>
+<td>
+<p>0</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

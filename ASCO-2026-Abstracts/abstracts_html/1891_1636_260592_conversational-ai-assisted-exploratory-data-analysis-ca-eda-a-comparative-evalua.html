@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conversational AI-assisted exploratory data analysis (CA-EDA): A comparative evaluation of commercial large language models for clinical trial analysis.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Conversational AI-assisted exploratory data analysis (CA-EDA): A comparative evaluation of commercial large language models for clinical trial analysis.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 1636</div>
+    <div><strong>First speaker:</strong> Yaacov R Lawrence, MA, MBBS, MRCP</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/260592">https://www.asco.org/abstracts-presentations/260592</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b></p>  Conventional analysis of clinical trial data requires statistical expertise, time and effort. Previous AI approaches have used structured, pre-processed datasets on specialized platforms. We hypothesized that widely available commercial large language models (LLMs) would perform rapid analysis of raw data. We evaluated three commercial LLM platforms fed identical data, and subsequently validated the outcomes with a formal statistical analysis. We name this approach "Conversational AI-assisted Exploratory Data Analysis" (CA-EDA).</p>  <b>Methods: </b></p>  We used data from a completed phase 2 trial (NCT03323489; Lancet Oncol 2024; 25:1070-9); n=125; 2165 variables) that evaluated the efficacy of celiac plexus radiosurgery in controlling retroperitoneal pain syndrome amongst pancreatic cancer patients. Raw individual patient data was uploaded to three commercial LLMs: Claude Opus 4.1 (Anthropic), ChatGPT 5.2 (OpenAI) in deep research mode, and Gemini 3 Pro (Google). Each LLM received identical inputs: the raw Excel dataset, the codebook, the protocol, and the published manuscript. The prompt requested identification of baseline predictors of pain response and development of a clinical score. Outputs were compared for statistical analyses performed, predictors identified, visualizations generated, and clinical utility. Findings were formally verified using Stata IC/16.1.</p>  <b>Results: </b></p>  Analysis completion time ranged from 10 to 30 minutes across all three platforms. Claude performed a comprehensive statistical analysis, generated a 9-panel visualization dashboard, identified prior exposure to neurotoxic chemotherapy as a novel predictor of response (OR 0.20, p&lt;0.001), and created a 4-variable clinical score predictive of response (AUC 0.71). ChatGPT performed a statistical analysis but missed neurotoxic chemotherapy, creating a 3-variable score. Gemini produced an 8-page narrative with biological insights, but did not perform any statistical analysis. Analysis using Stata confirmed the association between prior exposure to neurotoxic chemotherapy and response (35% with prior exposure vs 75% without, p&lt;0.001).</p>  <b>Conclusions: </b></p>  Claude Opus 4.1 identified a clinically significant predictor that had not previously been recognized, and developed a helpful clinical score. CA-EDA always requires formal biostatistical verification due to concerns about LLMs’ tendency to hallucinate, may analyse only sampled data and potentially implement incorrect Python code. Despite these concerns, here we found CA-EDA of clinical trial data to be rapid, accurate and cost-effective. Financial support for clinical trial: Gateway for Cancer Research, The Israel Cancer Association.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

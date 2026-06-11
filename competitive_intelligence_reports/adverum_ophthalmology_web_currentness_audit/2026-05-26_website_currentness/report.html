@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adverum Ophthalmology Website Currentness Audit</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5b6258;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16,18,15,.08);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 34px 0 18px;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+      opacity: .9;
+    }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 850;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 62px; line-height: .96; font-weight: 560; max-width: 1320px; letter-spacing: 0; }
+    h2 { font-size: 44px; line-height: .98; font-weight: 560; max-width: 1300px; letter-spacing: 0; }
+    h3 { font-size: 25px; line-height: 1.04; font-weight: 650; letter-spacing: 0; }
+    .dek { margin-top: 18px; color: var(--muted); font-size: 23px; line-height: 1.18; max-width: 1260px; }
+    .section-head { margin-bottom: 12px; }
+    .section-head p { margin-top: 10px; color: var(--muted); font-size: 18px; line-height: 1.14; max-width: 1280px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .panel, .metric, .table, .callout, .evidence-card, .note-card {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.9);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel { padding: 20px; }
+    .callout { background: #11130f; color: var(--paper); border-color: #11130f; padding: 22px 24px; }
+    .callout h3 { color: var(--lime); }
+    .callout p, .callout li { color: rgba(246,241,232,.88); }
+    .metric { padding: 17px; min-height: 122px; }
+    .num { font-size: 46px; line-height: .92; font-weight: 400; }
+    .label { margin-top: 10px; font-size: 19px; line-height: 1.12; color: var(--muted); }
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      white-space: nowrap;
+      margin-bottom: 10px;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .red { background: var(--red); }
+    .gray { background: var(--gray); }
+    .summary-list { margin: 13px 0 0; padding-left: 22px; display: grid; gap: 9px; }
+    .summary-list li { font-size: 20px; line-height: 1.14; }
+    .finding-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 14px; align-items: start; }
+    .comparison { display: grid; gap: 12px; }
+    .comparison .panel { min-height: 150px; }
+    .comparison p { color: var(--muted); font-size: 18px; line-height: 1.13; margin-top: 8px; }
+    .evidence-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .evidence-grid.three { grid-template-columns: repeat(3, 1fr); }
+    .evidence-card { margin: 0; border-radius: 18px; background: rgba(255,250,240,.92); }
+    .evidence-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 7px 10px;
+      border-bottom: 1px solid var(--line);
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+    .evidence-top a { text-transform: none; color: var(--muted); font-weight: 750; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .evidence-card img {
+      display: block;
+      width: 100%;
+      height: 174px;
+      object-fit: cover;
+      object-position: top left;
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+    }
+    .evidence-grid.three .evidence-card img { height: 174px; }
+    figcaption {
+      margin: 0;
+      padding: 8px 10px 10px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.08;
+    }
+    .note-card { padding: 16px; min-height: 260px; }
+    .note-card p { margin-top: 8px; color: var(--muted); font-size: 18px; line-height: 1.13; }
+    .context-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 12px; }
+    .context-card { padding: 20px; min-height: 240px; }
+    .context-card h3 { font-size: 28px; }
+    .context-card p { margin-top: 12px; color: var(--muted); font-size: 22px; line-height: 1.15; }
+    .table { display: grid; }
+    .row { display: grid; border-bottom: 1px solid var(--line); min-height: 62px; }
+    .row:last-child { border-bottom: 0; }
+    .row.refs { grid-template-columns: .28fr .8fr 1fr 1.88fr; min-height: 58px; }
+    .cell { padding: 10px 11px; border-right: 1px solid var(--line); font-size: 15px; line-height: 1.1; }
+    .row.refs .cell:first-child {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .cell:last-child { border-right: 0; }
+    .head .cell {
+      background: #11130f;
+      color: var(--paper);
+      font-weight: 850;
+      text-transform: uppercase;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 34px 0 18px; }
+      .wrap { width: 1360px; }
+      .panel, .metric, .table, .callout, .evidence-card, .note-card { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) {
+      .slide { width: 1600px; height: 900px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Adverum ophthalmology web audit | May 26, 2026</div>
+      <h1>Adverum Ophthalmology Website Currentness Audit</h1>
+      <p class="dek">This audit compares live Adverum ophthalmology website statements with current ClinicalTrials.gov registry records for Ixo-vec wet AMD trials. Observations are limited to source-currentness comparisons supported by public website text and registry data.</p>
+      <div class="grid-4" style="margin-top:24px;">
+        <div class="metric"><div class="num">2</div><div class="label">High-confidence website-currentness observations.</div></div>
+        <div class="metric"><div class="num">5</div><div class="label">Primary source references retained in the report.</div></div>
+        <div class="metric"><div class="num">311</div><div class="label">ARTEMIS actual enrollment in the current registry record.</div></div>
+        <div class="metric"><div class="num">2026-05</div><div class="label">Current ARTEMIS status verification month.</div></div>
+      </div>
+      <div class="callout" style="margin-top:20px;">
+        <h3>Executive summary</h3>
+        <ul class="summary-list">
+          <li>The Adverum ARTEMIS patient page states that the trial is open for enrollment and cites an April 2025 ClinicalTrials.gov reference line; the current ARTEMIS registry record lists ACTIVE_NOT_RECRUITING, May 2026 status verification, May 22, 2026 last update posting, and 311 actual enrollment.<a class="cite" href="https://adverum.com/ixo-vec-artemis-wamd-trial/">1</a><a class="cite" href="https://clinicaltrials.gov/study/NCT06856577">2</a></li>
+          <li>The Adverum pipeline page uses present-tense OPTIC program wording and a most-recent-follow-up statement covering 1 to 2 years post treatment; the current OPTIC registry record lists the study as COMPLETED, with actual completion on June 22, 2022 and last update posting on August 8, 2023.<a class="cite" href="https://adverum.com/pipeline/">3</a><a class="cite" href="https://clinicaltrials.gov/study/NCT03748784">4</a></li>
+          <li>Current Phase 3 registry context includes ARTEMIS and AQUARIUS; AQUARIUS is listed as RECRUITING with May 2026 status verification and actual start on March 16, 2026. This context is not treated as a standalone website-currentness observation.<a class="cite" href="https://clinicaltrials.gov/study/NCT06856577">2</a><a class="cite" href="https://clinicaltrials.gov/study/NCT07482176">5</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">1/5</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Observation 1 | ARTEMIS enrollment status</div>
+        <h2>Adverum ARTEMIS enrollment language differs from the current registry status</h2>
+        <p>The website statement is framed as a current patient-facing trial availability claim. The current ClinicalTrials.gov API record lists ARTEMIS as active, not recruiting, with a later update date and actual enrollment count.</p>
+      </div>
+      <div class="finding-grid">
+        <div class="comparison">
+          <div class="panel">
+            <span class="tag orange">Adverum website</span>
+            <h3>Open-enrollment claim and older reference line</h3>
+            <p>The patient page states that the trial is open for enrollment and cites NCT06856577 as updated April 27, 2025 and accessed April 28, 2025.<a class="cite" href="https://adverum.com/ixo-vec-artemis-wamd-trial/">1</a></p>
+          </div>
+          <div class="panel">
+            <span class="tag blue">Current registry record</span>
+            <h3>Active, not recruiting</h3>
+            <p>The current ARTEMIS API record lists statusVerifiedDate 2026-05, overallStatus ACTIVE_NOT_RECRUITING, lastUpdatePostDate 2026-05-22, and enrollment 311 actual.<a class="cite" href="https://clinicaltrials.gov/study/NCT06856577">2</a></p>
+          </div>
+        </div>
+        <div class="evidence-grid">
+          <figure class="evidence-card">
+      <div class="evidence-top"><span>Reference 1</span><a href="https://adverum.com/ixo-vec-artemis-wamd-trial/">adverum.com</a></div>
+      <img src="screenshots/evidence/source-01a-adverum-artemis-open-enrollment.png" alt="Adverum ARTEMIS page: open-enrollment statement" />
+      <figcaption>Adverum patient page statement that ARTEMIS is open for enrollment.</figcaption>
+    </figure>
+          <figure class="evidence-card">
+      <div class="evidence-top"><span>Reference 1</span><a href="https://adverum.com/ixo-vec-artemis-wamd-trial/">adverum.com</a></div>
+      <img src="screenshots/evidence/source-01b-adverum-artemis-reference-date.png" alt="Adverum ARTEMIS page: dated ClinicalTrials.gov reference line" />
+      <figcaption>Adverum reference line citing NCT06856577 as updated April 27, 2025 and accessed April 28, 2025.</figcaption>
+    </figure>
+          <figure class="evidence-card">
+      <div class="evidence-top"><span>Reference 2</span><a href="https://clinicaltrials.gov/api/v2/studies/NCT06856577?format=json">clinicaltrials.gov</a></div>
+      <img src="screenshots/evidence/source-02a-ctgov-artemis-status-update.png" alt="ClinicalTrials.gov ARTEMIS API: status verification and last update" />
+      <figcaption>ClinicalTrials.gov API fields for ARTEMIS status verification, overall status, and last update posting.</figcaption>
+    </figure>
+          <figure class="evidence-card">
+      <div class="evidence-top"><span>Reference 2</span><a href="https://clinicaltrials.gov/api/v2/studies/NCT06856577?format=json">clinicaltrials.gov</a></div>
+      <img src="screenshots/evidence/source-02b-ctgov-artemis-enrollment.png" alt="ClinicalTrials.gov ARTEMIS API: actual enrollment count" />
+      <figcaption>ClinicalTrials.gov API field for ARTEMIS actual enrollment count.</figcaption>
+    </figure>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">2/5</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Observation 2 | OPTIC program wording</div>
+        <h2>Adverum OPTIC program wording differs from the completed registry record</h2>
+        <p>The pipeline page presents OPTIC program language in the present tense and describes most recent follow-up at 1 to 2 years. The current OPTIC registry record lists the trial as completed, with actual completion in 2022.</p>
+      </div>
+      <div class="finding-grid">
+        <div class="comparison">
+          <div class="panel">
+            <span class="tag orange">Adverum website</span>
+            <h3>Present-tense program description</h3>
+            <p>The pipeline page states that the OPTIC clinical program is investigating Ixo-vec safety and efficacy during the first two years post treatment and long-term outcomes up to five years.<a class="cite" href="https://adverum.com/pipeline/">3</a></p>
+          </div>
+          <div class="panel">
+            <span class="tag blue">Current registry record</span>
+            <h3>Completed status</h3>
+            <p>The OPTIC ClinicalTrials.gov API record lists overallStatus COMPLETED, completionDateStruct 2022-06-22 actual, and lastUpdatePostDate 2023-08-08.<a class="cite" href="https://clinicaltrials.gov/study/NCT03748784">4</a></p>
+          </div>
+        </div>
+        <div class="evidence-grid">
+          <figure class="evidence-card">
+      <div class="evidence-top"><span>Reference 3</span><a href="https://adverum.com/pipeline/">adverum.com</a></div>
+      <img src="screenshots/evidence/source-03a-adverum-pipeline-optic-program.png" alt="Adverum pipeline page: present-tense OPTIC clinical program text" />
+      <figcaption>Adverum pipeline page present-tense OPTIC clinical program wording.</figcaption>
+    </figure>
+          <figure class="evidence-card">
+      <div class="evidence-top"><span>Reference 3</span><a href="https://adverum.com/pipeline/">adverum.com</a></div>
+      <img src="screenshots/evidence/source-03b-adverum-pipeline-optic-follow-up.png" alt="Adverum pipeline page: most recent follow-up text" />
+      <figcaption>Adverum pipeline page most-recent-follow-up statement for participants 1 to 2 years post treatment.</figcaption>
+    </figure>
+          <figure class="evidence-card">
+      <div class="evidence-top"><span>Reference 4</span><a href="https://clinicaltrials.gov/api/v2/studies/NCT03748784?format=json">clinicaltrials.gov</a></div>
+      <img src="screenshots/evidence/source-04-ctgov-optic-completed.png" alt="ClinicalTrials.gov OPTIC API: completed status and dates" />
+      <figcaption>ClinicalTrials.gov API fields for OPTIC completed status, actual completion date, and last update posting.</figcaption>
+    </figure>
+          <div class="note-card">
+            <span class="tag gray">Scope note</span>
+            <h3>Neutral currentness framing</h3>
+            <p>This observation is limited to the relationship between current website wording and the cited registry record. It does not assess clinical interpretation, program strategy, or regulatory implications.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">3/5</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Registry context | Phase 3 Ixo-vec wet AMD records</div>
+        <h2>Current Phase 3 registry context includes ARTEMIS and AQUARIUS</h2>
+        <p>AQUARIUS is retained as source-scope context because it is an active Phase 3 Ixo-vec registry record. It is not used as a standalone website-currentness observation in this deck.</p>
+      </div>
+      <div class="context-grid">
+        <div class="panel context-card">
+          <span class="tag blue">ARTEMIS | NCT06856577</span>
+          <h3>Active, not recruiting</h3>
+          <p>Status verified May 2026; last update posted May 22, 2026; actual enrollment 311. This current registry status is the comparator for the Adverum ARTEMIS patient-page observation.<a class="cite" href="https://clinicaltrials.gov/study/NCT06856577">2</a></p>
+        </div>
+        <div class="panel context-card">
+          <span class="tag lime">AQUARIUS | NCT07482176</span>
+          <h3>Recruiting</h3>
+          <p>Status verified May 2026; actual study start March 16, 2026. This supports current Phase 3 source context without changing the ARTEMIS-specific enrollment-status comparison.<a class="cite" href="https://clinicaltrials.gov/study/NCT07482176">5</a></p>
+        </div>
+      </div>
+      <div class="evidence-grid" style="margin-top:14px;">
+        <figure class="evidence-card">
+      <div class="evidence-top"><span>Reference 2</span><a href="https://clinicaltrials.gov/api/v2/studies/NCT06856577?format=json">clinicaltrials.gov</a></div>
+      <img src="screenshots/evidence/source-02a-ctgov-artemis-status-update.png" alt="ClinicalTrials.gov ARTEMIS API: status verification and last update" />
+      <figcaption>ARTEMIS current registry status and last update fields.</figcaption>
+    </figure>
+        <figure class="evidence-card">
+      <div class="evidence-top"><span>Reference 5</span><a href="https://clinicaltrials.gov/api/v2/studies/NCT07482176?format=json">clinicaltrials.gov</a></div>
+      <img src="screenshots/evidence/source-05-ctgov-aquarius-context.png" alt="ClinicalTrials.gov AQUARIUS API: active Phase 3 context" />
+      <figcaption>AQUARIUS current registry status, verification month, and actual start date fields.</figcaption>
+    </figure>
+      </div>
+    </div>
+    <div class="slide-num">4/5</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">References 1-5</div>
+        <h2>References</h2>
+        <p>References are limited to live Adverum pages and current ClinicalTrials.gov registry records used in the report.</p>
+      </div>
+      <div class="table">
+        <div class="row refs head">
+          <div class="cell">Ref</div>
+          <div class="cell">Source</div>
+          <div class="cell">Date / Status / Source Owner</div>
+          <div class="cell">Evidence Used in Report</div>
+        </div>
+        <div class="row refs"><div class="cell">1</div><div class="cell"><a href="https://adverum.com/ixo-vec-artemis-wamd-trial/">Adverum ARTEMIS patient page</a></div><div class="cell">Adverum public website</div><div class="cell">The page states that the trial is open for enrollment and cites ClinicalTrials.gov identifier NCT06856577 as updated April 27, 2025 and accessed April 28, 2025.</div></div>
+        <div class="row refs"><div class="cell">2</div><div class="cell"><a href="https://clinicaltrials.gov/study/NCT06856577">ClinicalTrials.gov ARTEMIS API record</a></div><div class="cell">ClinicalTrials.gov registry</div><div class="cell">The current ARTEMIS record lists overall status ACTIVE_NOT_RECRUITING, May 2026 status verification, May 22, 2026 last update posting, and 311 actual enrollment.</div></div>
+        <div class="row refs"><div class="cell">3</div><div class="cell"><a href="https://adverum.com/pipeline/">Adverum pipeline page</a></div><div class="cell">Adverum public website</div><div class="cell">The page describes the OPTIC clinical program in present tense and states that the most recent follow-up covered participants between 1 and 2 years post treatment.</div></div>
+        <div class="row refs"><div class="cell">4</div><div class="cell"><a href="https://clinicaltrials.gov/study/NCT03748784">ClinicalTrials.gov OPTIC API record</a></div><div class="cell">ClinicalTrials.gov registry</div><div class="cell">The current OPTIC record lists overall status COMPLETED, actual completion date June 22, 2022, and last update posting August 8, 2023.</div></div>
+        <div class="row refs"><div class="cell">5</div><div class="cell"><a href="https://clinicaltrials.gov/study/NCT07482176">ClinicalTrials.gov AQUARIUS API record</a></div><div class="cell">ClinicalTrials.gov registry</div><div class="cell">The current AQUARIUS Phase 3 context record lists overall status RECRUITING, May 2026 status verification, and actual start date March 16, 2026.</div></div>
+      </div>
+    </div>
+    <div class="slide-num">5/5</div>
+  </article>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bridging guidelines and interoperability: mCODE STU4 coverage of NCCN breast cancer decision criteria.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Bridging guidelines and interoperability: mCODE STU4 coverage of NCCN breast cancer decision criteria.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e23188</div>
+    <div><strong>First speaker:</strong> Lucas Douridas, BS</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/260128">https://www.asco.org/abstracts-presentations/260128</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> The minimal Common Oncology Data Elements (mCODE) initiative defines structured data elements using Fast Healthcare Interoperability Resources (FHIR) to improve interoperability of oncology electronic health record (EHR) data. However, mCODE does not explicitly encode disease-specific clinical decision logic contained in practice guidelines such as those from the National Comprehensive Cancer Network (NCCN). Understanding how mCODE represents guideline-driven decision criteria is essential to determine whether EHR data can reliably support guideline-based treatment recommendations, automated assessment of guideline adherence, and analysis of outcomes using routinely collected clinical data. We evaluated the extent to which NCCN breast cancer guideline decision criteria are representable using mCODE STU4 and identified gaps requiring extension.</div>
+  <main> 
+
+	<div><b>Background: </b> </p>  The minimal Common Oncology Data Elements (mCODE) initiative defines structured data elements using Fast Healthcare Interoperability Resources (FHIR) to improve interoperability of oncology electronic health record (EHR) data. However, mCODE does not explicitly encode disease-specific clinical decision logic contained in practice guidelines such as those from the National Comprehensive Cancer Network (NCCN). Understanding how mCODE represents guideline-driven decision criteria is essential to determine whether EHR data can reliably support guideline-based treatment recommendations, automated assessment of guideline adherence, and analysis of outcomes using routinely collected clinical data. We evaluated the extent to which NCCN breast cancer guideline decision criteria are representable using mCODE STU4 and identified gaps requiring extension.</p>   </p>  <b>Methods: </b> </p>  The NCCN Breast Cancer Guidelines (Version 1.2026) sections BINV-1 through BINV-16 and BINV-K were reviewed to identify decision criteria that drove branching within guideline pathways. Criteria were included if they required categorical or numerical values to determine downstream management. Each decision value was mapped to mCODE STU4 profiles when available, otherwise to US Core profiles or to standard terminologies (SNOMED CT, LOINC). Values lacking a structured representation were classified as unmappable.</p>   </p>  <b>Results: </b> </p>  Sections BINV-1 through BINV-16 and BINV-K yielded 28 decision criteria with 97 distinct values. Of these, 69 values (71%) were representable using mCODE profiles for staging, biomarker status, tumor characteristics, genetic status, performance status, and age. Fourteen values (14%) mapped to US Core profiles for pregnancy, menopausal or menstrual status, lymphovascular invasion, and symptomatic status. Fourteen values (14%) across seven criteria lacked representation and were unmappable. These included surgical margin status and distance, fertility preservation concerns, treatment candidacy assessments, and genomic assay thresholds, including 21-gene recurrence score cutpoints. Several mapped criteria lacked sufficient terminology granularity to represent NCCN-specific thresholds, such as ER-positive (&nbsp;&gt;&nbsp;10%) versus ER low-positive (1–10%).</p>   </p>  <b>Conclusions: </b></p>  Most NCCN breast cancer decision values relevant to initial workup and treatment selection for non-metastatic invasive disease are representable using existing mCODE or US Core resources. However, clinically important gaps remain in surgical pathology detail, genomic assay thresholds, and treatment candidacy assessments. These findings define a focused roadmap for targeted mCODE profile and terminology extensions needed to more fully support portable guideline-based care, quality measurement, and secondary use of EHR data across health systems.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

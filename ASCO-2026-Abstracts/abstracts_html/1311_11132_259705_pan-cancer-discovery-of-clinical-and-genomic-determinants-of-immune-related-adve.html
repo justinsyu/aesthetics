@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pan-cancer discovery of clinical and genomic determinants of immune-related adverse events.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Pan-cancer discovery of clinical and genomic determinants of immune-related adverse events.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 11132</div>
+    <div><strong>First speaker:</strong> Ziad Bakouny, MD, MSc</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/259705">https://www.asco.org/abstracts-presentations/259705</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b></p>  Immune-related adverse events (irAEs) from immune checkpoint inhibitors (ICIs) can be lifelong, fatal, or require treatment discontinuation, substantially limiting the clinical benefit of immunotherapy. Despite their impact, predictors of irAE susceptibility remain poorly defined, largely due to the lack of scalable approaches for toxicity phenotyping. Here, we leverage large language models and integrated clinico-genomic data to identify determinants of irAEs.</p>  </p>  <b>Methods: </b></p>  We developed a custom retrieval augmented generation and large language model (RAG-LLM) pipeline to automatically annotate 6 key adverse events (adrenal insufficiency, hepatotoxicity, hyperthyroidism, hypothyroidism, colitis, and pneumonitis) using free text from clinical notes across Memorial Sloan Kettering Cancer Center. We first validated RAG-LLM predictions using a gold standard prospectively collected adverse event dataset from 8,119 patients across 1,057 individual clinical trials. RAG-LLM imputations were then scaled to 55,406 (12,291 ICI-treated) patients. All patients had associated somatic and germline MSK-IMPACT panel sequencing data. Single nucleotide polymorphism (SNP) imputation was performed using GLIMPSE and time-to-event genome-wide association studies (GWAS) were performed using SPACox. HLA class I genotypes were imputed using HLA-HD. Random Survival Forest (RSF) models were trained to predict irAE occurrence.</p>  </p>  <b>Results: </b></p>  The custom RAG-LLM pipeline had strong performance across all 6 irAEs (area under the ROC curve of 0.77-1.00). In the RAG-LLM imputed data, 799 (1.4%) patients had adrenal insufficiency, 2,803 colitis (5.1%), 7,130 hypothyroidism (12.9%), 448 hyperthyroidism (0.8%), 15,627 hepatotoxicity (28.2%), and 3,730 pneumonitis (6.7%). Among ICI-treated patients, pneumonitis (HR 1.4; 95% CI 1.1-1.8; p&nbsp;&lt;&nbsp;0.01) and hepatotoxicity (HR 1.4; 95% CI 1.2-1.6; p&nbsp;&lt;&nbsp;0.01) were associated with worse overall survival. The GWAS found two genome-wide significant hits that predicted adrenal insufficiency (rs115003145, HLA region) and hypothyroidism (rs7864322, <em>FOXE1</em> gene enhancer region) with p&nbsp;&lt;&nbsp;5x10<sup>-8</sup>. Fine mapping of the HLA SNP showed that HLA-C*06:02 was specifically associated with increased risk of adrenal insufficiency in ICI-treated patients only (HR 1.6; 95% CI 1.2-2.2; p&nbsp;&lt;&nbsp;0.01). RSF model performance for irAE occurrence had F1 scores of 0.67-0.85. For pneumonitis, patients with the highest risk quartile by RSF model had 7.1% risk of pneumonitis at 1 year compared to 0.4% for the lowest risk quartile (HR 14.9; 95% CI 10.4-21.3; p&nbsp;&lt;&nbsp;0.01). </p>  </p>  <b>Conclusions: </b></p>  We developed and validated a novel custom RAG-LLM pipeline that allows automatic annotation of irAEs using clinical notes. Using this pipeline, we identified novel biomarkers of ICI-related adrenal insufficiency and hypothyroidism. Finally, we developed predictive models for irAE prediction that can be used at the point of care.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

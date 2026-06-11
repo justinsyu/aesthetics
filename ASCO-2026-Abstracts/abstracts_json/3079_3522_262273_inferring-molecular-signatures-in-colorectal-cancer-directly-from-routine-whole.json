@@ -1,0 +1,80 @@
+{
+  "abstractNumber": "3522",
+  "body": " \r\n\r\n\t<div><b>Background: </b></p>  Molecular profiling has advanced colorectal cancer (CRC) research but remains limited in the clinic due to cost and tissue constraints. In contrast, haematoxylin and eosin (H&amp;E) whole-slide images (WSIs) are routinely available. Recent deep learning studies show that molecular signatures can be inferred from morphology. However, prediction of patient level pathway activity remains underexplored despite their pathobiological significance as coordinated drivers of cancer risk.  </p>  <b>Methods: </b></p>  We developed SPARROW, a neural network trained to predict over 200 molecular signatures from WSI graph representation of tumour, stroma, lymphocytic and mucosal regions in resection specimens. SPARROW was trained on TCGA (n = 585) and externally validated in the PETACC3 trial dataset (n = 1,160). It predicts pathway enrichment scores, point mutation and clinically actionable CRC subtypes.  </p>  <b>Results: </b></p>  As shown in the table below, SPARROW accurately predicts key molecular features of CRC directly from routine H&amp;E slides and generalizes robustly to the independent PETACC3 trial. The strongest concordance was observed for biologically and clinically relevant programmes, including intrinsic consensus molecular subtype 3 (iCMS3) genes, Fetal enteric progenitor pathway genes, a 22-gene YAP/TAZ transcriptional target signature and epithelial-specific high-risk gene set (epiHR) activity. SPARROW also showed good performance for clinically used classifications, including iCMS/CMS subtypes, interferon phenotype and BRAF mutation status. Importantly, image-derived molecular scores were predictive of relapse free survival as well.  </p>  <b>Conclusions: </b></p>  SPARROW demonstrates that key molecular features of CRC, including transcriptomic subtypes and genomic alterations, are robustly encoded in and learnable from routine H&amp;E histology. This enables histology to serve as a cost-effective and rapid surrogate for predicting key molecular signatures and actionable molecular subtypes while also allowing mining of spatially localised image signatures associated with transcriptional programmes.  </div>\r\n\r\n\r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<p>Molecular Signature </p>\r\n</td>\r\n<td>\r\n<p>TCGA  </p>\r\n<p>(4-fold CV) </p>\r\n</td>\r\n<td>\r\n<p>PETACC3 (external) </p>\r\n</td>\r\n<td>\r\n<p>Relapse Free Survival Analysis (PETACC3) </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>iCMS3 (ρ) </p>\r\n</td>\r\n<td>\r\n<p>0.64 ± 0.05 </p>\r\n</td>\r\n<td>\r\n<p>0.66 </p>\r\n</td>\r\n<td>\r\n<p>HR=1.2*, 95% CI:1.04-1.38 </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Fetal Mustata (ρ) </p>\r\n</td>\r\n<td>\r\n<p>0.47 ± 0.06 </p>\r\n</td>\r\n<td>\r\n<p>0.61 </p>\r\n</td>\r\n<td>\r\n<p>HR=1.74*, 95% CI:1.45-2.08 </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>YAP_22 (ρ) </p>\r\n</td>\r\n<td>\r\n<p>0.41 ± 0.07 </p>\r\n</td>\r\n<td>\r\n<p>0.49 </p>\r\n</td>\r\n<td>\r\n<p>HR=2.54*,95% CI:2.03-3.18 </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>EpiHR (ρ) </p>\r\n</td>\r\n<td>\r\n<p>0.40 ± 0.08 </p>\r\n</td>\r\n<td>\r\n<p>0.45 </p>\r\n</td>\r\n<td>\r\n<p>HR=1.59*, 95% CI:1.31-1.92 </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>iCMS2 vs iCMS3 (AUC) </p>\r\n</td>\r\n<td>\r\n<p>0.90 ± 0.02 </p>\r\n</td>\r\n<td>\r\n<p>0.92 </p>\r\n</td>\r\n<td>\r\n<p>HR=1.12, 95% CI:1.00-1.26 </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>CMS (4 groups) (AUC) </p>\r\n</td>\r\n<td>\r\n<p>0.84 ± 0.01 </p>\r\n</td>\r\n<td>\r\n<p>0.84 </p>\r\n</td>\r\n<td>\r\n<p>HR=6.3* (CMS4 vs other), 95% CI:3.92-10.01 </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Interferon (High/Low) (AUC) </p>\r\n</td>\r\n<td>\r\n<p>0.82 ± 0.08 </p>\r\n</td>\r\n<td>\r\n<p>0.88 </p>\r\n</td>\r\n<td>\r\n<p>HR=1.14, 95% CI:0.86-1.05 </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>BRAF Mutation (AUC) </p>\r\n</td>\r\n<td>\r\n<p>0.82 ± 0.07 </p>\r\n</td>\r\n<td>\r\n<p>0.80 </p>\r\n</td>\r\n<td>\r\n<p>HR=2.12*, 95% CI:1.13-4.29 </p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n \r\n\t<div class=\"table_footer\">*p-value &lt;0.05 based on log-rank test using median pathway score.</div> \r\n\r\n\r\n",
+  "contentId": "262273",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/262273",
+    "queryParams": null,
+    "target": null,
+    "title": "Inferring molecular signatures in colorectal cancer directly from routine whole-slide images."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION262273"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780160400000,
+    "start": 1780149600000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "276",
+  "presentationId": "262273",
+  "primaryPerson": {
+    "displayName": "Piotr Keller, MS",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780160400000,
+    "start": 1780149600000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17140",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17140",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Gastrointestinal Cancer—Colorectal and Anal"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": null,
+  "title": "Inferring molecular signatures in colorectal cancer directly from routine whole-slide images.",
+  "titles": null,
+  "uid": "PRESENTATION262273"
+}

@@ -1,0 +1,294 @@
+{
+  "metadata": {
+    "generated_at": "2026-05-27T22:00:00.000Z",
+    "method": "Asset-level subagent research packets. Overrides are applied after CT.gov and openFDA ingestion.",
+    "coverage_note": "Tildrakizumab records have completed source-backed packets. All other assets retain generated provenance plus pending research assignments until their own subagent packet is added."
+  },
+  "overrides": {
+    "NCT06488170": {
+      "research_agent": "019e6b5d-c933-7860-9e29-9d4f8a9f76fa",
+      "checked_at": "2026-05-27",
+      "research_status": "source_backed",
+      "mechanism": "Humanized IgG1/k monoclonal antibody that selectively binds the IL-23 p19 subunit and blocks IL-23 receptor interaction.",
+      "clinical_summary": "Post-approval real-world wellbeing study in plaque psoriasis. Tildrakizumab is an established adult plaque-psoriasis biologic dosed 100 mg SC at Weeks 0 and 4, then every 12 weeks; key label risks include hypersensitivity, infections, TB screening, and avoiding live vaccines.",
+      "estimated_annual_cost_low": 65700,
+      "estimated_annual_cost_high": 82100,
+      "budget_impact_level": "Medium",
+      "disruption_risk": "Medium",
+      "recommended_action": "Monitor",
+      "management_tools": ["PA", "QL", "Medical benefit precertification", "TB screening", "Continuation criteria"],
+      "evidence_gaps": [
+        "No posted ClinicalTrials.gov results for NCT06488170 as of 2026-05-27",
+        "Real-world QoL study does not represent a new-product launch",
+        "Net payer cost depends on rebates, buy-and-bill economics, and site-of-care controls"
+      ],
+      "sources": [
+        {
+          "source_id": "ctgov:NCT06488170",
+          "title": "A Study to Assess Patient-Reported Wellbeing Using Tildrakizumab in a Live Setting",
+          "type": "Clinical trial",
+          "url": "https://clinicaltrials.gov/study/NCT06488170",
+          "date": "2025-06-24"
+        },
+        {
+          "source_id": "fda-label:BLA761067-s024",
+          "title": "ILUMYA FDA label, BLA761067 supplement 24",
+          "type": "FDA label",
+          "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761067s024lbl.pdf",
+          "date": "2025-12"
+        },
+        {
+          "source_id": "dailymed:ilumya",
+          "title": "DailyMed ILUMYA label",
+          "type": "Drug label",
+          "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=c6a322bb-51b9-4f0e-8642-62a9682ffcde",
+          "date": "2025-12"
+        },
+        {
+          "source_id": "wac:sun-ilumya-2023",
+          "title": "Sun Pharma Connecticut WAC disclosure for ILUMYA",
+          "type": "Cost source",
+          "url": "https://sunpharma.com/wp-content/uploads/2023/11/Ilumya-CT-Prescribers-Disclosure-Form-2023.pdf",
+          "date": "2023-11"
+        },
+        {
+          "source_id": "payer:aetna-tildrakizumab",
+          "title": "Aetna clinical policy bulletin for tildrakizumab-asmn",
+          "type": "Payer policy analog",
+          "url": "https://www.aetna.com/cpb/medical/data/1000_1099/1012.html",
+          "date": "2026-05-27"
+        }
+      ],
+      "rationale": {
+        "expected_launch_window": {
+          "value": "Marketed",
+          "basis_type": "source_direct",
+          "method": "FDA approval / marketed-status override plus CT.gov trial classification",
+          "explanation": "ILUMYA is already FDA-approved and marketed for adult plaque psoriasis; the CT.gov record is a post-approval real-world study and should not be treated as initial launch timing.",
+          "source_refs": ["openfda:BLA761067", "fda-label:BLA761067-s024", "ctgov:NCT06488170"]
+        },
+        "annual_cost_range": {
+          "value": "65700-82100",
+          "basis_type": "source_derived",
+          "method": "Drug-specific WAC disclosure annualized to labeled dosing",
+          "explanation": "Sun Pharma's WAC disclosure lists $16,416.64 per 100 mg syringe. The range approximates maintenance-year to first 52-week/loading-year dosing under the label and excludes rebates, administration, wastage, and site-of-care effects.",
+          "source_refs": ["wac:sun-ilumya-2023", "fda-label:BLA761067-s024"]
+        },
+        "clinical_differentiation": {
+          "value": "Low",
+          "basis_type": "source_derived",
+          "method": "Trial-purpose review",
+          "explanation": "NCT06488170 is a prospective observational real-world wellbeing study, not an interventional label-enabling trial. It may inform QoL evidence but is unlikely to materially change formulary positioning by itself.",
+          "source_refs": ["ctgov:NCT06488170"]
+        },
+        "budget_impact": {
+          "value": "Medium",
+          "basis_type": "source_derived",
+          "method": "Drug-specific WAC plus post-approval evidence context",
+          "explanation": "The product is already on market and the study is observational, so incremental budget impact is lower than for a launch or label expansion; total budget impact remains sensitive to net cost and utilization management.",
+          "source_refs": ["wac:sun-ilumya-2023", "ctgov:NCT06488170", "payer:aetna-tildrakizumab"]
+        },
+        "disruption_risk": {
+          "value": "Medium",
+          "basis_type": "source_derived",
+          "method": "Source-backed formulary-readiness assessment",
+          "explanation": "Risk is medium because ILUMYA is a high-cost biologic with payer controls, but NCT06488170 is post-approval QoL evidence rather than a new launch or label-expansion trigger.",
+          "source_refs": ["ctgov:NCT06488170", "payer:aetna-tildrakizumab"]
+        },
+        "recommended_action": {
+          "value": "Monitor",
+          "basis_type": "source_derived",
+          "method": "Mapped from marketed status and trial purpose",
+          "explanation": "Monitor real-world QoL results and payer-policy implications; do not initiate new-product launch planning for this record.",
+          "source_refs": ["ctgov:NCT06488170", "fda-label:BLA761067-s024"]
+        }
+      }
+    },
+    "NCT06611163": {
+      "research_agent": "019e6b5d-c933-7860-9e29-9d4f8a9f76fa",
+      "checked_at": "2026-05-27",
+      "research_status": "source_backed",
+      "mechanism": "Humanized IgG1/k monoclonal antibody that selectively binds the IL-23 p19 subunit and blocks IL-23 receptor interaction.",
+      "clinical_summary": "Phase 3 randomized, double-blind, placebo-controlled genital psoriasis study; if positive, it could support a high-impact site-specific label or payer-policy expansion.",
+      "estimated_annual_cost_low": 65700,
+      "estimated_annual_cost_high": 82100,
+      "budget_impact_level": "High",
+      "disruption_risk": "High",
+      "recommended_action": "Prepare",
+      "management_tools": ["PA", "QL", "Medical benefit precertification", "Dermatologist prescribing/consult", "TB screening", "Continuation criteria"],
+      "evidence_gaps": [
+        "No posted ClinicalTrials.gov results for NCT06611163 as of 2026-05-27",
+        "No current FDA genital psoriasis indication identified in the 2025 label",
+        "Limited head-to-head evidence versus preferred IL-23/IL-17 agents in genital psoriasis",
+        "Net payer cost depends on rebates, buy-and-bill economics, and site-of-care controls"
+      ],
+      "sources": [
+        {
+          "source_id": "ctgov:NCT06611163",
+          "title": "A Study to Evaluate the Efficacy and Safety of Tildrakizumab in Subjects With Genital Psoriasis",
+          "type": "Clinical trial",
+          "url": "https://clinicaltrials.gov/study/NCT06611163",
+          "date": "2026-05-27"
+        },
+        {
+          "source_id": "fda-label:BLA761067-s024",
+          "title": "ILUMYA FDA label, BLA761067 supplement 24",
+          "type": "FDA label",
+          "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761067s024lbl.pdf",
+          "date": "2025-12"
+        },
+        {
+          "source_id": "wac:sun-ilumya-2023",
+          "title": "Sun Pharma Connecticut WAC disclosure for ILUMYA",
+          "type": "Cost source",
+          "url": "https://sunpharma.com/wp-content/uploads/2023/11/Ilumya-CT-Prescribers-Disclosure-Form-2023.pdf",
+          "date": "2023-11"
+        },
+        {
+          "source_id": "payer:aetna-tildrakizumab",
+          "title": "Aetna clinical policy bulletin for tildrakizumab-asmn",
+          "type": "Payer policy analog",
+          "url": "https://www.aetna.com/cpb/medical/data/1000_1099/1012.html",
+          "date": "2026-05-27"
+        }
+      ],
+      "rationale": {
+        "expected_launch_window": {
+          "value": "Marketed",
+          "basis_type": "source_direct",
+          "method": "FDA approval / marketed-status override plus CT.gov label-expansion classification",
+          "explanation": "ILUMYA is already FDA-approved and marketed; NCT06611163 is a Phase 3 genital psoriasis study and should be tracked as a potential label or policy expansion, not initial launch.",
+          "source_refs": ["openfda:BLA761067", "fda-label:BLA761067-s024", "ctgov:NCT06611163"]
+        },
+        "annual_cost_range": {
+          "value": "65700-82100",
+          "basis_type": "source_derived",
+          "method": "Drug-specific WAC disclosure annualized to labeled dosing",
+          "explanation": "Sun Pharma's WAC disclosure lists $16,416.64 per 100 mg syringe. The range approximates maintenance-year to first 52-week/loading-year dosing under the label and excludes rebates, administration, wastage, and site-of-care effects.",
+          "source_refs": ["wac:sun-ilumya-2023", "fda-label:BLA761067-s024"]
+        },
+        "clinical_differentiation": {
+          "value": "Meaningful",
+          "basis_type": "source_derived",
+          "method": "Trial-design and indication-impact review",
+          "explanation": "The trial is Phase 3, randomized, double-blind, and placebo-controlled in moderate-to-severe genital psoriasis. A positive result could support a high-impact site-specific label or payer-policy expansion.",
+          "source_refs": ["ctgov:NCT06611163"]
+        },
+        "budget_impact": {
+          "value": "High",
+          "basis_type": "source_derived",
+          "method": "Drug-specific WAC plus label-expansion scenario",
+          "explanation": "Genital/groin involvement can be treated as a high-impact site even with lower BSA. A label or policy expansion could increase eligible utilization for an already high-cost biologic.",
+          "source_refs": ["ctgov:NCT06611163", "wac:sun-ilumya-2023", "payer:aetna-tildrakizumab"]
+        },
+        "disruption_risk": {
+          "value": "High",
+          "basis_type": "source_derived",
+          "method": "Source-backed formulary-readiness assessment",
+          "explanation": "Risk is high because a near-term Phase 3 label-expansion signal could affect PA criteria and preferred biologic positioning for a high-impact psoriasis subpopulation.",
+          "source_refs": ["ctgov:NCT06611163", "payer:aetna-tildrakizumab"]
+        },
+        "recommended_action": {
+          "value": "Prepare",
+          "basis_type": "source_derived",
+          "method": "Mapped from label-expansion risk",
+          "explanation": "Prepare label-watch, evidence-review, and policy-scenario materials for genital psoriasis; do not treat the product as a new-product launch.",
+          "source_refs": ["ctgov:NCT06611163", "fda-label:BLA761067-s024"]
+        }
+      }
+    },
+    "NCT03997786": {
+      "research_agent": "019e6b5d-c933-7860-9e29-9d4f8a9f76fa",
+      "checked_at": "2026-05-27",
+      "research_status": "source_backed",
+      "mechanism": "Humanized IgG1/k monoclonal antibody that selectively binds the IL-23 p19 subunit and blocks IL-23 receptor interaction.",
+      "clinical_summary": "Phase 2/3 pediatric plaque-psoriasis study in ages 6 to under 18 with placebo and etanercept comparator components plus long-term extension; could support pediatric label monitoring while longer-term evidence matures.",
+      "estimated_annual_cost_low": 65700,
+      "estimated_annual_cost_high": 82100,
+      "budget_impact_level": "Medium",
+      "disruption_risk": "Medium",
+      "recommended_action": "Prepare",
+      "management_tools": ["PA", "QL", "Medical benefit precertification", "Pediatric specialist review", "TB screening", "Continuation criteria"],
+      "evidence_gaps": [
+        "No posted ClinicalTrials.gov results for NCT03997786 as of 2026-05-27",
+        "No current FDA pediatric indication identified in the 2025 label",
+        "Long-term pediatric extension evidence remains immature",
+        "Net payer cost depends on rebates, buy-and-bill economics, and site-of-care controls"
+      ],
+      "sources": [
+        {
+          "source_id": "ctgov:NCT03997786",
+          "title": "A Study of Tildrakizumab in Pediatric Subjects With Chronic Plaque Psoriasis",
+          "type": "Clinical trial",
+          "url": "https://clinicaltrials.gov/study/NCT03997786",
+          "date": "2026-04-15"
+        },
+        {
+          "source_id": "fda-label:BLA761067-s024",
+          "title": "ILUMYA FDA label, BLA761067 supplement 24",
+          "type": "FDA label",
+          "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/761067s024lbl.pdf",
+          "date": "2025-12"
+        },
+        {
+          "source_id": "wac:sun-ilumya-2023",
+          "title": "Sun Pharma Connecticut WAC disclosure for ILUMYA",
+          "type": "Cost source",
+          "url": "https://sunpharma.com/wp-content/uploads/2023/11/Ilumya-CT-Prescribers-Disclosure-Form-2023.pdf",
+          "date": "2023-11"
+        },
+        {
+          "source_id": "payer:aetna-tildrakizumab",
+          "title": "Aetna clinical policy bulletin for tildrakizumab-asmn",
+          "type": "Payer policy analog",
+          "url": "https://www.aetna.com/cpb/medical/data/1000_1099/1012.html",
+          "date": "2026-05-27"
+        }
+      ],
+      "rationale": {
+        "expected_launch_window": {
+          "value": "Marketed",
+          "basis_type": "source_direct",
+          "method": "FDA approval / marketed-status override plus CT.gov pediatric-expansion classification",
+          "explanation": "ILUMYA is already FDA-approved and marketed for adults; NCT03997786 is a pediatric study and should be monitored as potential label-expansion evidence, not initial launch.",
+          "source_refs": ["openfda:BLA761067", "fda-label:BLA761067-s024", "ctgov:NCT03997786"]
+        },
+        "annual_cost_range": {
+          "value": "65700-82100",
+          "basis_type": "source_derived",
+          "method": "Drug-specific WAC disclosure annualized to labeled dosing",
+          "explanation": "Sun Pharma's WAC disclosure lists $16,416.64 per 100 mg syringe. The range approximates maintenance-year to first 52-week/loading-year dosing under the label and excludes rebates, administration, wastage, and site-of-care effects.",
+          "source_refs": ["wac:sun-ilumya-2023", "fda-label:BLA761067-s024"]
+        },
+        "clinical_differentiation": {
+          "value": "Meaningful",
+          "basis_type": "source_derived",
+          "method": "Trial-design and population-expansion review",
+          "explanation": "The pediatric Phase 2/3 study includes placebo and etanercept comparator components plus long-term extension, creating a meaningful pediatric evidence signal while final long-term evidence remains pending.",
+          "source_refs": ["ctgov:NCT03997786"]
+        },
+        "budget_impact": {
+          "value": "Medium",
+          "basis_type": "source_derived",
+          "method": "Drug-specific WAC plus pediatric expansion scenario",
+          "explanation": "A pediatric expansion would add a new covered population for a high-cost biologic, but expected volume is likely smaller than adult plaque psoriasis.",
+          "source_refs": ["ctgov:NCT03997786", "wac:sun-ilumya-2023", "payer:aetna-tildrakizumab"]
+        },
+        "disruption_risk": {
+          "value": "Medium",
+          "basis_type": "source_derived",
+          "method": "Source-backed formulary-readiness assessment",
+          "explanation": "Risk is medium because pediatric evidence could require PA and policy updates, but the product is already marketed and long-term study completion extends beyond the near term.",
+          "source_refs": ["ctgov:NCT03997786", "payer:aetna-tildrakizumab"]
+        },
+        "recommended_action": {
+          "value": "Prepare",
+          "basis_type": "source_derived",
+          "method": "Mapped from pediatric label-expansion monitoring need",
+          "explanation": "Prepare for pediatric label-decision monitoring and policy scenarios while continuing to track final results and long-term safety evidence.",
+          "source_refs": ["ctgov:NCT03997786", "fda-label:BLA761067-s024"]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "abstractNumber": "2080",
+  "body": " \r\n\r\n\t<div><b>Background: </b></p>  Distinguishing true tumor recurrence (TuR) from radiation necrosis (RN) on post-treatment MRI scans remains a major neuro-oncology challenge. We hypothesized that an integrated Spatial, Morphologic, and Textural radiomics risk (SMART-risk) model that comprehensively captures local and spatial organization of lesion heterogeneity, can unravel distinct biology across TuR and RN, on clinical MRI; and improve distinction over a data-driven ResNet50 deep learning model.</p>  <b>Methods: </b></p>  We retrospectively collected multi-institutional post-treatment MRI cohorts: brain metastases (233 studies; from Cleveland Clinic (CCF), University Hospitals Cleveland (UH), University of Wisconsin (UW); and glioma (340 studies from Indiana University (IU), Dana-Farber Cancer Center, Thomas Jefferson University (TJU), and CCF). Over 80% of the studies were pathologically confirmed as TuR or RN. Institution-held-out external testing was performed (metastases: train CCF+UH, test UW; glioma: train IU+TJU+Dana-Farber Cancer Center, test CCF). Following segmentation, 944 radiomic features/lesion were extracted including graph-based spatial organization of tumor heterogeneity (GrRAiL), local gradient texture heterogeneity (COLLAGE), Haralick, and morphology. LASSO-selected features were integrated in a Random Forest classifier. Performance metrics included cross validation accuracy (CV), test accuracy, F1 score, and AUC; interpretability used SHAP. Comparison was performed with a ResNet50 baseline model.</p>  <b>Results: </b></p>  SMART-Risk demonstrated consistent discrimination on the institution-held-out external test set (Table 1) with ~80% accuracy; ~10-15% improvement over a ResNet50 model. SHAP analysis indicated that features corresponding to spatial organization and local heterogeneity, i.e. average path length, node count and entropy measures, were dominant contributors (Mann–Whitney U test, <em>p </em>≤ 0.001). Recurrent tumors showed higher spatial complexity and greater heterogeneity than RN.</p>  <b>Conclusions: </b></p>  SMART-Risk may provide a noninvasive approach to distinguish TuR from RN on routine post-contrast T1-weighted MRI. By integrating spatial-organization (GrRAiL), texture (COLLAGE/Haralick), and morphology features, SMART-Risk captures complementary signatures and may improve discrimination compared with any single feature family. An AI-based SMART-Risk approach may reduce diagnostic ambiguity, support earlier treatment decisions, and avoid unnecessary invasive procedures.</div>\r\n\r\n\r\n\r\n\t<div class=\"table_caption\"><b>Test set performance of SMART-Risk vs ResNet50 for TuR vs RN classification.</b></div> \r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td><strong>Cohort (external test site)</strong></td>\r\n<td><strong>Model</strong></td>\r\n<td><strong>CV accuracy</strong></td>\r\n<td><strong>Test accuracy</strong></td>\r\n<td><strong>F1 score</strong></td>\r\n<td><strong>AUC</strong></td>\r\n</tr>\r\n<tr>\r\n<td>Metastatic cohort (UW)</td>\r\n<td>SMART-Risk</td>\r\n<td>0.78 ± 0.08</td>\r\n<td>0.79</td>\r\n<td>0.78</td>\r\n<td>0.86</td>\r\n</tr>\r\n<tr>\r\n<td>Metastatic cohort (UW)</td>\r\n<td>ResNet50</td>\r\n<td>0.70 ± 0.09</td>\r\n<td>0.60</td>\r\n<td>0.67</td>\r\n<td>0.63</td>\r\n</tr>\r\n<tr>\r\n<td>Glioma (CCF)</td>\r\n<td>SMART-Risk</td>\r\n<td>0.83 ± 0.06</td>\r\n<td>0.80</td>\r\n<td>0.84</td>\r\n<td>0.87</td>\r\n</tr>\r\n<tr>\r\n<td>Glioma (CCF)</td>\r\n<td>ResNet50</td>\r\n<td>0.69± 0.10</td>\r\n<td>0.65</td>\r\n<td>0.77</td>\r\n<td>0.70</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n\r\n\r\n",
+  "contentId": "259159",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/259159",
+    "queryParams": null,
+    "target": null,
+    "title": "Tumor recurrence or treatment effect? Large multi-institutional evaluation of an AI risk assessment model in glioma and brain metastases."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION259159"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780349400000,
+    "start": 1780338600000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "445",
+  "presentationId": "259159",
+  "primaryPerson": {
+    "displayName": "Dheerendranath Battalapalli, MS, MSc",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780349400000,
+    "start": 1780338600000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17089",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17089",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Central Nervous System Tumors"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": {
+    "countriesThes": null,
+    "drugsThes": null,
+    "entitiesThes": null,
+    "genesThes": null,
+    "orgThes": null,
+    "subjectsThes": [
+      "ASCO",
+      "Cancers",
+      "Medicine",
+      "Oncology",
+      "Medicine",
+      "Health care industry",
+      "Cancers"
+    ]
+  },
+  "title": "Tumor recurrence or treatment effect? Large multi-institutional evaluation of an AI risk assessment model in glioma and brain metastases.",
+  "titles": null,
+  "uid": "PRESENTATION259159"
+}

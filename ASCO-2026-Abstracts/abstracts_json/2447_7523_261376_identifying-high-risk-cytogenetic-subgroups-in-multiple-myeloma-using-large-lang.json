@@ -1,0 +1,80 @@
+{
+  "abstractNumber": "7523",
+  "body": " \r\n\r\n\t<div><b>Background: </b></p>  The Revised International Staging System (R-ISS) is the clinical standard for risk stratification in multiple myeloma (MM) and is central to treatment selection and prognostication. However, the cytogenetic abnormalities on which the R-ISS is predicated are typically reported in unstructured formats within bone marrow biopsy reports and clinical notes. Despite the critical importance and relevance of obtaining cytogenetic abnormalities in MM, this information is often missing from large clinical databases, limiting their availability for large scale research and real-world analyses. Here, we created a large language model (LLM)-based algorithm to identify cytogenetic abnormalities from unstructured text and evaluated our model’s adaptability by comparing its performance across definitions of high-risk abnormalities.</p>  <b>Methods: </b></p>  We extracted oncology notes and pathology reports within 2 years of diagnosis from the EHR of adult patients with MM registered within the Department of Veterans Affairs (VA) Cancer Registry System between 2000 and 2024. Two physician reviewers iteratively annotated 1600-character snippets from these texts for abnormalities and their type (gain, deletion, translocation) plus normal cytogenetics. From these annotations we identified items with high-risk cytogenetic abnormalities per current guidelines (del(17p) in &gt;&nbsp;20% plasma cells; TP53 mutation; gain(1q) and/or del(1p32) plus t(4;14), t(14;16), or t(14;20); monoallelic del(1p32) plus gain(1q); biallelic del(1p32)) and previous guidelines (t(4;14), t(14;16), t(14;20), del TP53/17p, del(1p), gain(1q)). We used few-shot prompting with GPT-OSS 120B to extract cytogenetic results and validated our model on a test set of 985 snippets representing 773 patients at 98 VA centers.</p>  <b>Results: </b></p>  The test set contained 81 snippets with normal cytogenetics and 464 with abnormalities; 58 were high-risk per current guidelines and 144 per previous guidelines. Our model successfully identified high-risk cytogenetics per current (P: 88.9%, R: 82.8%, F1: 85.7%) and previous guidelines (P: 86.7%, R: 90.3%, F1: 88.4%), as well as type of cytogenetic abnormality (weighted averages; P: 92.3%, R: 92.2%, F1: 92.4%), demonstrating its utility and flexibility for the task as standards change. Applied to a cohort of 7250 unlabeled notes, our model identified high-risk cytogenetics in 501 (6.9%) and any cytogenetic information in 5385 (74.3%).</p>  <b>Conclusions: </b></p>  Our model demonstrated the successful capture of cytogenetic information across multiple definitions of high-risk cytogenetic abnormalities, providing a fast, adaptable framework for extraction that traditionally required repeated large-scale human efforts. Leveraging an LLM for this task enables scalable MM risk stratification while reducing clinician burden and supporting rapid adaptation to evolving cytogenetic risk definitions.</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+  "contentId": "261376",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/261376",
+    "queryParams": null,
+    "target": null,
+    "title": "Identifying high-risk cytogenetic subgroups in multiple myeloma using large language artificial intelligence models."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION261376"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780333200000,
+    "start": 1780322400000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "402",
+  "presentationId": "261376",
+  "primaryPerson": {
+    "displayName": "John Culnan, PhD",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780333200000,
+    "start": 1780322400000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17107",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17107",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Hematologic Malignancies—Plasma Cell Dyscrasia"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": null,
+  "title": "Identifying high-risk cytogenetic subgroups in multiple myeloma using large language artificial intelligence models.",
+  "titles": null,
+  "uid": "PRESENTATION261376"
+}

@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Applying a large language model to detect immune-related adverse events in electronic health records: Effect of integrating prescription and laboratory data on accuracy.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Applying a large language model to detect immune-related adverse events in electronic health records: Effect of integrating prescription and laboratory data on accuracy.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 12133</div>
+    <div><strong>First speaker:</strong> Yukiko Shimoda Igawa, MD, PhD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/258259">https://www.asco.org/abstracts-presentations/258259</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b></p>  Accurate identification of immune-related adverse events (irAEs) is essential; however, manual review of electronic health records poses a significant burden on clinicians. Furthermore, conventional text-only approaches may fail to capture clinically important events. In this study, we evaluated whether a Large Language Model (LLM) with a multimodal approach could improve patient-level identification of irAEs.</p>  <b>Methods: </b></p>   Among patients who received immune checkpoint inhibitors (ICIs) monotherapy at National Cancer Center Hospital, Tokyo, Japan between October 2014 and July 2023, a subset of patients was randomly sampled for analysis. A zero-shot prompt was designed to identify irAEs. Using a standalone local LLM (gpt-oss-20b), single-modal analysis utilized clinical notes alone, whereas multimodal analysis additionally incorporated systemic steroid prescriptions and laboratory data. Patient-level predictions were aggregated, using the threshold that maximizes the micro-averaged F1-score. The irAEs were clinically adjudicated by board-certified oncologists. Analyses were limited to major irAEs, and performance was evaluated using precision, recall, and the F1-score (α = 0.05).</p>  <b>Results: </b></p>  The median number of cases reviewed per day by physicians was 18, whereas the LLM processed 25. During the study period, 296 patients (207 with irAEs and 89 without irAEs) were randomly sampled. Among patients with irAEs, irAE types included rash, pneumonitis, endocrine disorders, colitis, and hepatitis. For the identification of irAE occurrence, the precision of the multimodal approach was significantly higher than that of the single-modal approach (88.7% to 83.7%, p = 0.01). In organ-specific analyses, precision for colitis and rash and recall for endocrine were significantly improved. In addition, the multimodal approach reduced false-positive classifications from 33% to 22% and false-negative classifications from 37% to 35%. IrAE onset timing also differed significantly between the two approaches, with earlier identification by the multimodal LLM (−21.9 vs −17.7 days, p = 0.04); both approaches detected onset earlier than clinical adjudication.</p>  <b>Conclusions: </b></p>   A multimodal LLM framework improves irAE detection accuracy and may reduce clinician workload.</div>
+
+
+
+	<div class="table_caption"><b>IrAEs with significant differences between single-modal and multimodal analyses.</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td colspan="3">
+<p><strong>Precision</strong></p>
+</td>
+<td colspan="3">
+<p><strong>Recall</strong></p>
+</td>
+<td>
+<p><strong>F1-score</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p>%</p>
+</td>
+<td>
+<p>95%CI</p>
+</td>
+<td>
+<p>P</p>
+</td>
+<td>
+<p>%</p>
+</td>
+<td>
+<p>95%CI</p>
+</td>
+<td>
+<p>P</p>
+</td>
+<td>
+<p>%</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Any irAE</p>
+</td>
+<td>
+<p>Multi</p>
+</td>
+<td>
+<p>88.7</p>
+</td>
+<td>
+<p>84.2-93.1</p>
+</td>
+<td>
+<p>0.01</p>
+</td>
+<td>
+<p>83.1</p>
+</td>
+<td>
+<p>78.0-88.2</p>
+</td>
+<td>
+<p>0.62</p>
+</td>
+<td>
+<p>85.8</p>
+</td>
+</tr>
+<tr>
+<td>
+<p> </p>
+</td>
+<td>
+<p>Single</p>
+</td>
+<td>
+<p>83.7</p>
+</td>
+<td>
+<p>78.7-88.8</p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p>82.1</p>
+</td>
+<td>
+<p>76.9-87.3</p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p>82.9</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Rash</p>
+</td>
+<td>
+<p>Multi</p>
+</td>
+<td>
+<p>64.5</p>
+</td>
+<td>
+<p>53.7-75.2</p>
+</td>
+<td>
+<p>0.03</p>
+</td>
+<td>
+<p>60.5</p>
+</td>
+<td>
+<p>49.8-71.1</p>
+</td>
+<td>
+<p>0.10</p>
+</td>
+<td>
+<p>62.4</p>
+</td>
+</tr>
+<tr>
+<td>
+<p> </p>
+</td>
+<td>
+<p>Single</p>
+</td>
+<td>
+<p>58.9</p>
+</td>
+<td>
+<p>48.7-69.1</p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p>65.4</p>
+</td>
+<td>
+<p>55.1-75.8</p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p>62.0</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Colitis</p>
+</td>
+<td>
+<p>Multi</p>
+</td>
+<td>
+<p>80.4</p>
+</td>
+<td>
+<p>69.5-91.3</p>
+</td>
+<td>
+<p>&lt;0.01</p>
+</td>
+<td>
+<p>77.4</p>
+</td>
+<td>
+<p>66.1-88.6</p>
+</td>
+<td>
+<p>0.32</p>
+</td>
+<td>
+<p>78.8</p>
+</td>
+</tr>
+<tr>
+<td>
+<p> </p>
+</td>
+<td>
+<p>Single</p>
+</td>
+<td>
+<p>61.8</p>
+</td>
+<td>
+<p>50.2-73.3</p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p>79.2</p>
+</td>
+<td>
+<p>68.3-90.2</p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p>69.4</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Endocrine</p>
+</td>
+<td>
+<p>Multi</p>
+</td>
+<td>
+<p>71.2</p>
+</td>
+<td>
+<p>59.6-82.7</p>
+</td>
+<td>
+<p>0.37</p>
+</td>
+<td>
+<p>75.0</p>
+</td>
+<td>
+<p>63.7-86.3</p>
+</td>
+<td>
+<p>0.03</p>
+</td>
+<td>
+<p>73.0</p>
+</td>
+</tr>
+<tr>
+<td>
+<p> </p>
+</td>
+<td>
+<p>Single</p>
+</td>
+<td>
+<p>76.6</p>
+</td>
+<td>
+<p>64.5-88.7</p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p>64.3</p>
+</td>
+<td>
+<p>51.7-76.8</p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p>69.9</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

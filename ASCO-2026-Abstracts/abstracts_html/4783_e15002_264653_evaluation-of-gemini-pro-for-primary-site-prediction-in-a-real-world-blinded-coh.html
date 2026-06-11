@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Evaluation of Gemini Pro for primary site prediction in a real-world blinded cohort of 465 patients.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Evaluation of Gemini Pro for primary site prediction in a real-world blinded cohort of 465 patients.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e15002</div>
+    <div><strong>First speaker:</strong> Bayan Altalla</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/264653">https://www.asco.org/abstracts-presentations/264653</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Artificial intelligence (AI) integration in oncology has transitioned from experimental use to routine clinical practice. Large Language Models (LLMs), such as Gemini Pro, are increasingly used for real-time decision support and molecular interpretation. This study evaluates Gemini Pro’s ability to identify the primary tumor site—defined by histopathology—using only genomic alterations, age, and sex.</div>
+  <main> 
+
+	<div><b>Background: </b></p>  Artificial intelligence (AI) integration in oncology has transitioned from experimental use to routine clinical practice. Large Language Models (LLMs), such as Gemini Pro, are increasingly used for real-time decision support and molecular interpretation. This study evaluates Gemini Pro’s ability to identify the primary tumor site—defined by histopathology—using only genomic alterations, age, and sex.</p>  <b>Methods: </b></p>  We performed a blinded, retrospective analysis of 465 evaluable Next-Generation Sequencing (NGS) cases, including 356 tissue biopsies and 109 liquid biopsies, generated via comprehensive hybrid-capture sequencing. Gemini Pro was queried using a standardized zero-shot prompt to provide three ranked primary tumor site predictions with confidence levels (Very High, High, Moderate, Low) and molecular justification based on lineage-specific genomic features. No supervised training or model fine-tuning was performed. Performance was assessed using Top-1 and Top-3 accuracy. Pearson’s Chi-square tests compared subgroups, and multivariate logistic regression calculated adjusted odds ratios (aOR) with 95% confidence intervals (CI).</p>  <b>Results: </b></p>  Gemini Pro achieved a Top-1 accuracy of 50.1% (233/465; 95% CI: 45.6–54.6%) and a Top-3 accuracy of 68.4% (318/465; 95% CI: 64.2–72.6%). Model-assigned confidence was the strongest predictor of correctness: “Very High” predictions achieved 81.6% accuracy (102/125) with an aOR of 9.46 (95% CI: 5.82–15.38; p &lt; .001) versus Moderate/Low confidence. Performance was strongest in common tumor lineages, including Breast (74.6%, 53/71) and Colorectal (72.8%, 43/59), where genomic anchors such as GATA3 and APC are prevalent. Accuracy was lower in rare or genomically complex tumors, particularly sarcomas (&nbsp;&lt;&nbsp;20%), which frequently exhibited non-specific copy number alterations. No significant difference was observed between tissue (54.6%) and liquid biopsies (42.9%; p = .174). Discordant cases commonly reflected a “neuroendocrine trap,” with TP53/RB1-deficient tumors misclassified as small cell lung cancer regardless of origin.</p>  <b>Conclusions: </b> In this blinded evaluation, Gemini Pro demonstrated moderate accuracy as a genomic-based tumor-origin classifier, supporting its role as a diagnostic adjunct rather than a replacement for histopathology. High-confidence predictions increased reliability and may guide targeted immunohistochemical confirmation within established diagnostic workflows</div>
+
+
+
+
+	<div class="table"><table>
+<thead>
+<tr>
+<td>
+<p><strong>Category</strong></p>
+</td>
+<td>
+<p><strong>Variable</strong></p>
+</td>
+<td>
+<p><strong>Top-1 Accuracy (%)</strong></p>
+</td>
+<td>
+<p><strong>Adjusted Odds Ratio (OR)</strong></p>
+</td>
+<td>
+<p><strong>p-value</strong></p>
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p><strong>Global Performance</strong></p>
+</td>
+<td>
+<p>Full Study Cohort</p>
+</td>
+<td>
+<p>50.1%</p>
+</td>
+<td>
+<p>--</p>
+</td>
+<td>
+<p>--</p>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<p>Top-3 Prediction Rate</p>
+</td>
+<td>
+<p>68.4%</p>
+</td>
+<td>
+<p>--</p>
+</td>
+<td>
+<p>--</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Model Confidence</strong></p>
+</td>
+<td>
+<p>Very High</p>
+</td>
+<td>
+<p>81.6%</p>
+</td>
+<td>
+<p><strong>9.46</strong></p>
+</td>
+<td>
+<p>&lt; 0.001</p>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<p>High</p>
+</td>
+<td>
+<p>63.0%</p>
+</td>
+<td>
+<p><strong>2.60</strong></p>
+</td>
+<td>
+<p>&lt; 0.001</p>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<p>Moderate / Low</p>
+</td>
+<td>
+<p>27.8%</p>
+</td>
+<td>
+<p><em>Reference</em></p>
+</td>
+<td>
+<p>--</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>High-Accuracy Lineages</strong></p>
+</td>
+<td>
+<p>Breast</p>
+</td>
+<td>
+<p>74.6%</p>
+</td>
+<td>
+<p><strong>7.92</strong></p>
+</td>
+<td>
+<p>&lt; 0.001</p>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<p>Colorectal</p>
+</td>
+<td>
+<p>72.8%</p>
+</td>
+<td>
+<p><strong>4.89</strong></p>
+</td>
+<td>
+<p>&lt; 0.001</p>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<p>Lung</p>
+</td>
+<td>
+<p>58.8%</p>
+</td>
+<td>
+<p><strong>3.06</strong></p>
+</td>
+<td>
+<p>&lt; 0.001</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Specimen Type</strong></p>
+</td>
+<td>
+<p>Tissue Biopsy</p>
+</td>
+<td>
+<p>54.6%</p>
+</td>
+<td>
+<p>1.38</p>
+</td>
+<td>
+<p>0.174 (NS)</p>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<p>Liquid Biopsy (ctDNA)</p>
+</td>
+<td>
+<p>42.9%</p>
+</td>
+<td>
+<p><em>Reference</em></p>
+</td>
+<td>
+<p>--</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

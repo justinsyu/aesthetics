@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ASCO 2026 Abstract Evidence Review App: User Guide</title>
+<style>
+  :root {
+    --ink: #11130f;
+    --muted: #5e6258;
+    --paper: #f5efe3;
+    --paper-2: #e8decb;
+    --card: #fffaf0;
+    --line: #171a14;
+    --green: #d7f28f;
+    --blue: #c7dbef;
+    --amber: #f3c883;
+    --rose: #efc7bd;
+    --gray: #d7d0c2;
+    --shadow: 0 24px 60px rgba(17, 19, 15, 0.18);
+    --radius: 18px;
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    background: #d7d0c2;
+    color: var(--ink);
+  }
+  body, *, *::before, *::after {
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    text-wrap: pretty;
+  }
+  h1, h2, h3, p { margin: 0; }
+  h1 {
+    max-width: 940px;
+    font-size: 66px;
+    line-height: 0.98;
+    font-weight: 640;
+    letter-spacing: 0;
+  }
+  h2 {
+    max-width: 940px;
+    font-size: 40px;
+    line-height: 1.04;
+    font-weight: 560;
+    letter-spacing: 0;
+  }
+  h3 {
+    font-size: 24px;
+    line-height: 1.08;
+    font-weight: 650;
+  }
+  p {
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1.45;
+  }
+  a {
+    color: inherit;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+
+  .slide {
+    width: 1080px;
+    height: 1440px;
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    margin: 18px auto;
+    background: var(--paper);
+    box-shadow: var(--shadow);
+    page-break-after: always;
+    break-after: page;
+    overflow: hidden;
+  }
+  .slide:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+  .wrap {
+    flex: 1;
+    padding: 56px 72px 64px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+  .slide.cover .wrap {
+    align-items: center;
+    justify-content: center;
+    padding: 72px 96px;
+    text-align: left;
+  }
+  .slide.cover .cover-block {
+    width: min(900px, 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .slide.cover h1 {
+    font-size: 62px;
+    line-height: 0.98;
+    font-weight: 640;
+  }
+  .slide.cover .lede {
+    font-size: 23px;
+    line-height: 1.4;
+    max-width: 860px;
+  }
+  .slide.cover .eyebrow {
+    font-size: 18px;
+    padding: 12px 18px;
+    border-width: 2px;
+  }
+  .slide.cover .pill {
+    font-size: 15px;
+    padding: 8px 14px;
+    border-width: 1.6px;
+  }
+  .slide.cover .pills {
+    gap: 10px;
+    max-width: 820px;
+  }
+  .lede {
+    max-width: 930px;
+    font-size: 22px;
+    line-height: 1.42;
+  }
+  .eyebrow,
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    border: 1.5px solid var(--line);
+    border-radius: 999px;
+    background: var(--green);
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 850;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 8px 12px;
+    white-space: nowrap;
+  }
+  .eyebrow {
+    font-size: 16px;
+    padding: 12px 16px;
+    border-width: 2px;
+  }
+  .pill.blue { background: var(--blue); }
+  .pill.amber { background: var(--amber); }
+  .pill.rose { background: var(--rose); }
+  .pill.gray { background: var(--gray); }
+  .pill.dark {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--paper);
+    font-size: 15px;
+    font-weight: 850;
+  }
+  .shot {
+    border: 1.7px solid var(--line);
+    border-radius: var(--radius);
+    background: #fff;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .shot img {
+    width: 100%;
+    height: 100%;
+    max-height: 760px;
+    object-fit: contain;
+    display: block;
+  }
+  .shot.tall img { max-height: 820px; }
+  .shot-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .shot-grid .shot img {
+    max-height: 330px;
+  }
+  .caption {
+    padding: 12px 16px;
+    border-top: 1.5px solid var(--line);
+    background: var(--card);
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.35;
+  }
+  .orientation-slide .wrap {
+    gap: 18px;
+    padding-bottom: 56px;
+  }
+  .orientation-slide h2 {
+    font-size: 38px;
+    line-height: 1.03;
+  }
+  .orientation-slide .wrap > p {
+    font-size: 17px;
+    line-height: 1.36;
+  }
+  .orientation-slide .card-grid {
+    gap: 12px;
+  }
+  .orientation-slide .card {
+    padding: 14px 16px;
+  }
+  .orientation-slide .card h3 {
+    margin-bottom: 6px;
+    font-size: 22px;
+  }
+  .orientation-slide .card p {
+    font-size: 13.5px;
+    line-height: 1.34;
+  }
+  .orientation-slide .note {
+    padding: 13px 16px;
+  }
+  .orientation-slide .note p {
+    font-size: 13.5px;
+    line-height: 1.34;
+  }
+  .orientation-slide .shot {
+    flex: 0 0 auto;
+  }
+  .orientation-slide .shot img {
+    max-height: 690px;
+  }
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .card-grid.three {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .card {
+    border: 1.5px solid var(--line);
+    border-radius: 16px;
+    background: var(--card);
+    padding: 18px 20px;
+  }
+  .card h3 { margin-bottom: 8px; }
+  .card p {
+    font-size: 15px;
+    line-height: 1.42;
+  }
+  .note {
+    border: 1.5px solid var(--line);
+    border-radius: 16px;
+    background: var(--green);
+    padding: 16px 20px;
+  }
+  .note strong {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 12px;
+    font-weight: 850;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .note p {
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.42;
+  }
+  .table {
+    border: 1.5px solid var(--line);
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--card);
+  }
+  .row {
+    display: grid;
+    grid-template-columns: 0.78fr 1.55fr 1.25fr;
+    border-top: 1px solid var(--line);
+  }
+  .row:first-child { border-top: 0; }
+  .row.head {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .cell {
+    padding: 12px 14px;
+    border-right: 1px solid var(--line);
+    font-size: 13.5px;
+    line-height: 1.38;
+  }
+  .cell:last-child { border-right: 0; }
+  .head .cell {
+    font-size: 12px;
+    font-weight: 850;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .field-slide .wrap {
+    gap: 18px;
+  }
+  .field-slide h2 {
+    font-size: 38px;
+  }
+  .field-slide .wrap > p {
+    font-size: 17px;
+    line-height: 1.36;
+  }
+  .field-slide .cell {
+    padding: 10px 12px;
+    font-size: 12.8px;
+    line-height: 1.32;
+  }
+  .field-slide .note {
+    padding: 13px 16px;
+  }
+  .field-slide .note p {
+    font-size: 13.5px;
+    line-height: 1.34;
+  }
+  .workflow {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  .workflow .card {
+    min-height: 158px;
+    height: auto;
+    padding: 16px;
+  }
+  .workflow .card .pill {
+    margin-bottom: 12px;
+    font-size: 11px;
+    padding: 6px 9px;
+  }
+  .workflow .card h3 {
+    font-size: 21px;
+    line-height: 1.12;
+  }
+  .workflow .card p {
+    font-size: 13.5px;
+    line-height: 1.36;
+  }
+  .runbook-slide .wrap {
+    gap: 20px;
+  }
+  .runbook-slide h2 {
+    font-size: 38px;
+    line-height: 1.04;
+  }
+  .runbook-slide .wrap > p {
+    font-size: 17px;
+    line-height: 1.38;
+  }
+  .runbook-slide .shot img {
+    max-height: 500px;
+  }
+  .runbook {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .runbook .card {
+    min-height: 138px;
+    padding: 14px 16px;
+  }
+  .runbook .card .pill {
+    margin-bottom: 8px;
+  }
+  .runbook .card h3 {
+    margin-bottom: 6px;
+    font-size: 20px;
+    line-height: 1.12;
+  }
+  .runbook .card p {
+    font-size: 13.25px;
+    line-height: 1.34;
+  }
+  .runbook-slide .note {
+    padding: 14px 18px;
+  }
+  .runbook-slide .note p {
+    font-size: 14px;
+    line-height: 1.36;
+  }
+  .slide-num {
+    position: absolute;
+    right: 54px;
+    bottom: 34px;
+    color: rgba(17, 19, 15, 0.42);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  @page { size: 1080px 1440px; margin: 0; }
+  @media print {
+    html, body { background: var(--paper); }
+    .slide {
+      width: 1080px;
+      height: 1440px;
+      margin: 0;
+      box-shadow: none;
+    }
+  }
+</style>
+</head>
+<body>
+
+<section class="slide cover">
+  <div class="wrap">
+    <div class="cover-block">
+      <span class="eyebrow">ASCO 2026 abstract evidence review app</span>
+      <h1>Operator guide for reviewing, filtering, and triaging ASCO abstract evidence</h1>
+      <p class="lede">This guide describes the static evidence review interface built for ASCO 2026 abstracts. The app is intended to support structured review of abstracts by session type, ASCO conference track, keyword search, and heuristic role categories. It is a triage surface, not a source of adjudicated scientific claims.</p>
+      <div class="pills">
+        <span class="pill">Overview metrics</span>
+        <span class="pill blue">Session type distribution</span>
+        <span class="pill amber">Track filters</span>
+        <span class="pill rose">Role triage</span>
+        <span class="pill gray">Source links</span>
+        <span class="pill dark">Workflow methods</span>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num">01 / 08</div>
+</section>
+
+<section class="slide orientation-slide">
+  <div class="wrap">
+    <div class="step">
+      <span class="num">01</span>
+      <span class="pill">Start with corpus orientation</span>
+    </div>
+    <h2>Use the overview to understand coverage before filtering</h2>
+    <p>The overview panel provides the first quality check for the abstract corpus. Review the total number of abstracts, session type distribution, role distribution, and track mix before selecting filters. This establishes whether the question should be answered from the full corpus or a narrower subset.</p>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Overview metrics</h3>
+        <p>Use the metric tiles to confirm the size of the current evidence set and the number of abstracts remaining after filters are applied. Counts update with the active filter state.</p>
+      </div>
+      <div class="card">
+        <h3>Session type distribution</h3>
+        <p>Session type is the ASCO presentation or session format field. It supports quick distinction between presentation formats and Publication Only records.</p>
+      </div>
+      <div class="card">
+        <h3>Conference tracks</h3>
+        <p>Conference track is the ASCO track or topic grouping from the abstract record. It is used as a full-corpus filter, independent of role tags.</p>
+      </div>
+      <div class="card">
+        <h3>Role categories</h3>
+        <p>Role labels are heuristic triage aids derived from abstract text and metadata. They should help prioritize review, not replace source-level interpretation.</p>
+      </div>
+    </div>
+    <div class="note">
+      <strong>Publication Only definition</strong>
+      <p>Publication Only means accepted abstracts published online or in meeting materials but not assigned to poster, oral, rapid oral, clinical science symposium, or plenary presentation slots. Other session type rows are ASCO-assigned presentation formats.</p>
+    </div>
+    <div class="shot">
+      <div>
+        <img src="screenshots/01_overview_summary_annotated.png" alt="Annotated overview summary screen in the ASCO 2026 abstract evidence review app" />
+        <div class="caption">Annotated callout boxes identify summary counts, role controls, session type distribution, conference tracks, and the active abstract list.</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num">02 / 08</div>
+</section>
+
+<section class="slide field-slide">
+  <div class="wrap">
+    <div class="step">
+      <span class="num">02</span>
+      <span class="pill amber">Understand categorization fields</span>
+    </div>
+    <h2>Separate ASCO source fields from heuristic triage fields</h2>
+    <p>The app combines source metadata from ASCO abstract records with derived role categories. Treat ASCO fields as record metadata and role categories as keyword-based review aids. The distinction is important when citing evidence, preparing source notes, or checking whether an abstract belongs in a functional workstream.</p>
+    <div class="shot-grid">
+      <div class="shot">
+        <div>
+          <img src="screenshots/02_session_type_distribution_annotated.png" alt="Annotated session type distribution in the ASCO abstract review app" />
+          <div class="caption">Callout boxes highlight where session type distribution appears and how it supports format-aware review.</div>
+        </div>
+      </div>
+      <div class="shot">
+        <div>
+          <img src="screenshots/03_conference_track_filter_annotated.png" alt="Annotated conference track filter controls in the ASCO abstract review app" />
+          <div class="caption">Callout boxes identify the conference track filter and its effect on the active evidence set.</div>
+        </div>
+      </div>
+    </div>
+    <div class="table">
+      <div class="row head">
+        <div class="cell">Field</div>
+        <div class="cell">Meaning</div>
+        <div class="cell">How to use it</div>
+      </div>
+      <div class="row">
+        <div class="cell">Session type</div>
+        <div class="cell">ASCO presentation or session format field. Publication Only records are accepted abstracts published online or in meeting materials without an assigned poster, oral, rapid oral, clinical science symposium, or plenary presentation slot.</div>
+        <div class="cell">Use for format-aware review, for example prioritizing oral sessions while still retaining Publication Only records for evidence surveillance.</div>
+      </div>
+      <div class="row">
+        <div class="cell">Conference track</div>
+        <div class="cell">ASCO track or topic grouping from the abstract record. It reflects the source record grouping, not a custom taxonomy.</div>
+        <div class="cell">Use as a full-corpus filter to constrain review to disease areas, modalities, methods, or meeting topic groups.</div>
+      </div>
+      <div class="row">
+        <div class="cell">Role category</div>
+        <div class="cell">Heuristic keyword-based triage category derived from title, body, track, and abstract number, with track boosts. Records can have multiple role tags.</div>
+        <div class="cell">Use to route abstracts to Medical Affairs, HEOR, Market Access, Commercial, or Launch review. Verify claims against the ASCO source URL.</div>
+      </div>
+      <div class="row">
+        <div class="cell">Primary role</div>
+        <div class="cell">The role with the highest keyword-hit count. If no role is classified, records can default to Medical Affairs for conservative clinical review.</div>
+        <div class="cell">Use for the first-pass list order or owner assignment. Do not treat it as manual adjudication.</div>
+      </div>
+    </div>
+    <div class="note">
+      <strong>Interpretation rule</strong>
+      <p>Scores, chips, and tags are triage aids. They indicate why a record was surfaced for a workstream, but any scientific or competitive claim should be checked against the abstract detail and the linked ASCO source page.</p>
+    </div>
+  </div>
+  <div class="slide-num">03 / 08</div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <div class="step">
+      <span class="num">03</span>
+      <span class="pill rose">Filter by role</span>
+    </div>
+    <h2>Use role buttons for workstream-specific triage</h2>
+    <p>Selecting a role button restricts the abstract list to records tagged for that role. This supports fast review by functional workstream while preserving the selected abstract detail panel for source checking.</p>
+    <div class="shot">
+      <div>
+        <img src="screenshots/04_role_filter_market_access_annotated.png" alt="Annotated Market Access role filter applied to the ASCO abstract review app" />
+        <div class="caption">Callout boxes show the selected Market Access role control and the narrowed list of abstracts with access, cost, resource use, value, or payer endpoint signals.</div>
+      </div>
+    </div>
+    <div class="table">
+      <div class="row head">
+        <div class="cell">Role</div>
+        <div class="cell">Definition</div>
+        <div class="cell">Typical review use</div>
+      </div>
+      <div class="row">
+        <div class="cell">Medical Affairs</div>
+        <div class="cell">Clinical evidence, mechanism, safety, biomarker, and subgroup relevance.</div>
+        <div class="cell">Clinical narrative, evidence context, scientific exchange, and source validation.</div>
+      </div>
+      <div class="row">
+        <div class="cell">HEOR</div>
+        <div class="cell">Real-world evidence, patient-reported outcomes, quality of life, burden, resource use, and equity.</div>
+        <div class="cell">Outcomes evidence, burden framing, RWE scans, PRO and QoL signal review.</div>
+      </div>
+      <div class="row">
+        <div class="cell">Market Access</div>
+        <div class="cell">Access, cost, resource use, value assessment, and payer endpoints.</div>
+        <div class="cell">Payer evidence, value dossiers, access objections, and economic context.</div>
+      </div>
+      <div class="row">
+        <div class="cell">Commercial</div>
+        <div class="cell">Comparative evidence, treatment-line context, mature endpoints, and competitor relevance.</div>
+        <div class="cell">Landscape review, positioning questions, competitor monitoring, and endpoint maturity scans.</div>
+      </div>
+      <div class="row">
+        <div class="cell">Launch</div>
+        <div class="cell">Registrational studies, label context, guideline relevance, and evidence gaps.</div>
+        <div class="cell">Launch readiness, label evidence tracking, guideline watch, and gap prioritization.</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num">04 / 08</div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <div class="step">
+      <span class="num">04</span>
+      <span class="pill blue">Combine filters with AND logic</span>
+    </div>
+    <h2>Role, track, and search filters narrow the same working set</h2>
+    <p>Filters are combined using AND logic. If a role and conference track are both selected, the list shows only abstracts matching both criteria. Adding a search term further restricts the current set to records containing the term in indexed text fields.</p>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Role plus track</h3>
+        <p>Use this when a functional question is tied to an ASCO topic area, such as Market Access signals within a specific disease or methods track.</p>
+      </div>
+      <div class="card">
+        <h3>Full-corpus track filter</h3>
+        <p>Track filters operate across the entire abstract corpus. They are not dependent on role assignment and can be used alone for topic-based scanning.</p>
+      </div>
+    </div>
+    <div class="shot tall">
+      <div>
+        <img src="screenshots/05_combined_role_track_filter_annotated.png" alt="Annotated combined role and conference track filters applied in the ASCO abstract app" />
+        <div class="caption">Callout boxes show how the filtered count reflects the intersection of active role, conference track, and any search terms.</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num">05 / 08</div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <div class="step">
+      <span class="num">05</span>
+      <span class="pill gray">Search the abstract text</span>
+    </div>
+    <h2>Use search for endpoint, population, intervention, and comparator terms</h2>
+    <p>The search field supports targeted review within the active filter state. It is useful for endpoint terms such as overall survival, progression-free survival, response rate, adverse events, quality of life, cost, and biomarker-defined subgroups.</p>
+    <div class="shot">
+      <div>
+        <img src="screenshots/06_search_overall_survival_annotated.png" alt="Annotated search for overall survival in the ASCO abstract review app" />
+        <div class="caption">Callout boxes identify the search term and the resulting active list of abstracts containing "overall survival" in indexed fields.</div>
+      </div>
+    </div>
+    <div class="workflow">
+      <div class="card">
+        <span class="pill">1</span>
+        <h3>Set broad context</h3>
+        <p>Start with no filters, or select a conference track if the question is topic-specific.</p>
+      </div>
+      <div class="card">
+        <span class="pill blue">2</span>
+        <h3>Add role</h3>
+        <p>Select a role only if the workstream lens matters for the review question.</p>
+      </div>
+      <div class="card">
+        <span class="pill amber">3</span>
+        <h3>Enter search term</h3>
+        <p>Search for endpoint, treatment, biomarker, population, or competitor terms.</p>
+      </div>
+      <div class="card">
+        <span class="pill rose">4</span>
+        <h3>Inspect details</h3>
+        <p>Open records from the list and validate the source text before using findings.</p>
+      </div>
+    </div>
+    <div class="note">
+      <strong>Search practice</strong>
+      <p>Use multiple narrow searches rather than one broad query when reviewing endpoint-specific evidence. For example, search "overall survival", then "quality of life", then a competitor name, while preserving the same role and track filters.</p>
+    </div>
+  </div>
+  <div class="slide-num">06 / 08</div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <div class="step">
+      <span class="num">06</span>
+      <span class="pill dark">Review selected abstract detail</span>
+    </div>
+    <h2>Use the detail pane as the source-checking workspace</h2>
+    <p>Selecting an abstract opens a structured detail view. Use this pane to read the title, body sections, track metadata, session type, speaker or presenter metadata where available, role chips, keyword tags, and source link. The list is for navigation; the detail pane is for interpretation.</p>
+    <div class="shot tall">
+      <div>
+        <img src="screenshots/07_selected_abstract_detail_annotated.png" alt="Annotated selected abstract detail panel with structured sections, role chips, metadata, and ASCO source link" />
+        <div class="caption">Callout boxes identify source metadata, structured abstract text, role chips, tags, and the View on ASCO source link.</div>
+      </div>
+    </div>
+    <div class="card-grid three">
+      <div class="card">
+        <h3>Structured sections</h3>
+        <p>Review background, methods, results, conclusions, and available metadata as separate fields when the source record provides them.</p>
+      </div>
+      <div class="card">
+        <h3>Chips and tags</h3>
+        <p>Use chips to understand why a record was triaged to a role. Treat them as prompts for review, not final labels.</p>
+      </div>
+      <div class="card">
+        <h3>ASCO source link</h3>
+        <p>Use View on ASCO source before citing or summarizing a claim outside the app.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num">07 / 08</div>
+</section>
+
+<section class="slide runbook-slide">
+  <div class="wrap">
+    <div class="step">
+      <span class="num">07</span>
+      <span class="pill amber">Workflow and methods</span>
+    </div>
+    <h2>Use the workflow cards to document how the review was performed</h2>
+    <p>The workflow and methods area explains how the corpus is intended to be reviewed: orient, filter, search, inspect, and validate. It also records the role-classification method so downstream users understand that roles are derived by rules and keyword scoring rather than manual adjudication.</p>
+    <div class="shot">
+      <div>
+        <img src="screenshots/08_workflow_methods_annotated.png" alt="Annotated workflow and methods cards in the ASCO abstract review app" />
+        <div class="caption">Callout boxes highlight the workflow runbook and methods summary used to document transparent evidence review.</div>
+      </div>
+    </div>
+    <div class="workflow runbook">
+      <div class="card">
+        <span class="pill">Orient</span>
+        <h3>Check summary state</h3>
+        <p>Confirm corpus size, session type distribution, role mix, and track coverage before narrowing the evidence set.</p>
+      </div>
+      <div class="card">
+        <span class="pill blue">Filter</span>
+        <h3>Apply role and track</h3>
+        <p>Use role buttons and conference track controls to create the review subset required for the question.</p>
+      </div>
+      <div class="card">
+        <span class="pill gray">Search</span>
+        <h3>Find specific signals</h3>
+        <p>Search within the filtered set for endpoints, populations, interventions, methods, or competitor terms.</p>
+      </div>
+      <div class="card">
+        <span class="pill rose">Validate</span>
+        <h3>Open source record</h3>
+        <p>Use the ASCO source link before extracting claims, making comparisons, or sharing findings.</p>
+      </div>
+    </div>
+    <div class="note">
+      <strong>Methods statement</strong>
+      <p>Role categories are heuristic keyword-based triage categories derived from abstract title, body, track, and abstract number with track boosts. Records can have multiple roles. The primary role is the highest keyword-hit count. Unclassified records can default to Medical Affairs. Scores and tags are triage aids, and claims should be checked against the ASCO source URL.</p>
+    </div>
+  </div>
+  <div class="slide-num">08 / 08</div>
+</section>
+
+</body>
+</html>

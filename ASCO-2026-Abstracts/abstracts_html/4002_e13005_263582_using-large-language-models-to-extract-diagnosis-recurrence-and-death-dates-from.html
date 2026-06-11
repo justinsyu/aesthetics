@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Using large language models to extract diagnosis, recurrence, and death dates from breast cancer electronic medical records.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Using large language models to extract diagnosis, recurrence, and death dates from breast cancer electronic medical records.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e13005</div>
+    <div><strong>First speaker:</strong> James Dickerson, MD, MS</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/263582">https://www.asco.org/abstracts-presentations/263582</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Breast cancer research needs accurate extraction of clinical event dates (e.g., recurrence dates) from the electronic medical record (EMR). Manual chart review is time-consuming and error-prone. We evaluated whether unadapted, HIPAA-compliant, commercially available large language models (LLMs) could extract event dates with accuracy comparable to research coordinators, benchmarked against medical oncologists, in patients with complex breast cancer histories.</div>
+  <main> 
+
+	<div><b>Background: </b> Breast cancer research needs accurate extraction of clinical event dates (e.g., recurrence dates) from the electronic medical record (EMR). Manual chart review is time-consuming and error-prone. We evaluated whether unadapted, HIPAA-compliant, commercially available large language models (LLMs) could extract event dates with accuracy comparable to research coordinators, benchmarked against medical oncologists, in patients with complex breast cancer histories.</p>  <b>Methods: </b> We randomly selected 99 patients from an institutional cohort. Ground truth was established by oncologist review of all EMR data, except CareEverywhere. Abstracted events included: original diagnosis date; first locoregional recurrence (LRR); first distant metastatic date; vital status; and an exact or estimated date of death. In parallel, research coordinators abstracted original diagnosis and metastatic dates. For the LLMs, a patient’s full chart was ingested into a patient-specific vector database. Relevant evidence chunks were retrieved using hybrid lexical + semantic retrieval. Chunks were sent to the LLMs with structured, sequential prompts that enforced definitions and prioritized pathology provenance. Estimation was used only if no explicit date was found. Identical evidence and prompts were used with Gemini 2.5, GPT-4, and GPT-5. We report only the best-performing model for each event due to space constraints.</p>  <b>Results: </b> All 99 patients had a documented year of original diagnosis. Thirty-one had LRR, 78 developed distant disease, and 13 presented with de novo metastatic disease. As of the censor date (01/10/2026), 83 patients died, with 49 having an exact date of death. Agreement for vital status for the best performing model (GPT-5) was 99%. Time to first recurrence for stage 1-3 patients was 29 [17–49] months (median [IQR]); the best LLM estimate (GPT-5) of recurrence differed by 3.8 ± 12.7 months (mean ± SD) with 87% of events ≤ 90 days. Cohort overall survival was 67 [43–99] months. The best LLM (GPT-5) estimate of survival differed by 2.1 ± 3.5 months, with 71% ≤ 90 days. When the EMR had the exact date of death, concordance was high (98% ≤ 90 days); when estimation was used, concordance was low (28% ≤ 90 days). Original diagnosis date within ± 90 days was 98% for research coordinators and GPT-5. For LRR, the best LLM (Gemini) had an F1 score of 0.80; among correctly identified events, 91% were ≤ 90 days. For 91 metastatic events, the best LLM (GPT-4) had an F1 of 0.96, with 72% ≤ 90 days. Research coordinators had an F1 of 0.96 with 76% ≤ 90 days.</p>  <b>Conclusions: </b> Commercial LLMs, when provided the full chart and a provenance-aware prompting framework, can reliably extract explicit dates and clinical details, and are similar to trained research coordinators. However, for complex details in patients with recurrent breast cancer histories spanning years and often institutions, agreement with clinicians remains below thresholds needed for fully automated extraction.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

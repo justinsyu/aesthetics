@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Whole slide imaging–based prediction of immunohistochemistry markers and surgical pathological features.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Whole slide imaging–based prediction of immunohistochemistry markers and surgical pathological features.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 6022</div>
+    <div><strong>First speaker:</strong> Yusuf Sadek, BA</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/263359">https://www.asco.org/abstracts-presentations/263359</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b> </p>  Immunohistochemistry (IHC) marker testing and identification of pathological features are essential tasks in surgical pathology following resection of head and neck cancers. However, IHC testing is time-consuming, and identifying pathologic features typically requires examination of multiple slides. We hypothesized that imaging features from a single H&amp;E-stained whole slide image (WSI) could predict this information using machine learning. </p>  <b>Methods: </b> </p>  We utilized data from the publicly available HANCOCK dataset for machine learning model development and testing. All patients had undergone surgical resection for locoregional head and neck cancer. Image features (embeddings extracted by TITAN, a pretrained vision-language pathology foundation model) from each primary tumor's H&amp;E-stained WSI served as model inputs. Four machine learning algorithms (XGBoost, support vector machine, multilayer perceptron, and random forest) were trained to predict seven IHC markers (CD3, CD8, CD56, CD68, CD163, MHC-I, PD-L1) and three surgical pathological features (tumor grading, lymphovascular invasion, and perineural invasion). IHC marker positivity was determined using DeepLIIF-derived percent-positive staining, with non-PD-L1 markers binarized by median split and PD-L1 positivity defined using a 10% threshold. Surgical pathological features were binary except for tumor grade, which included four classes. All models underwent nested stratified five-fold cross-validation with hyperparameter tuning. Performance was assessed using AUC and F1 score for binary tasks (IHC markers, lymphovascular invasion, perineural invasion), and balanced accuracy and macro-F1 score and for tumor grading. </p>  <b>Results: </b> </p>  Between 685 and 699 cases were available for model development depending on the prediction task. Support vector machine (SVM) was the best-performing model for five tasks, followed by XGBoost (XGB) for three tasks and random forest (RF) for two tasks. Performance metrics for the best-performing models are detailed in the table. </p>  <b>Conclusions: </b></p>  Our findings demonstrate that IHC markers and surgical pathological features can be predicted with reasonable accuracy from image features extracted from a single H&amp;E-stained WSI. Future work will focus on external validation of these models in independent cohorts and exploration of advanced foundational models to further improve prediction performance. </div>
+
+
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p>Task </p>
+</td>
+<td>
+<p>Best Model </p>
+</td>
+<td>
+<p>Metrics </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>CD3 </p>
+</td>
+<td>
+<p>XGB </p>
+</td>
+<td>
+<p>AUC: 0.78 ± 0.04 </p>
+<p>F1: 0.72 ± 0.03 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>CD8 </p>
+</td>
+<td>
+<p>SVM </p>
+</td>
+<td>
+<p>AUC: 0.73 ± 0.03  F1: 0.67 ± 0.04 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>CD56 </p>
+</td>
+<td>
+<p>XGB </p>
+</td>
+<td>
+<p>AUC: 0.66 ± 0.03  F1: 0.67 ± 0.02 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>CD68 </p>
+</td>
+<td>
+<p>SVM </p>
+</td>
+<td>
+<p>AUC: 0.75 ± 0.03 F1: 0.70 ± 0.04 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>CD163 </p>
+</td>
+<td>
+<p>SVM </p>
+</td>
+<td>
+<p>AUC: 0.71 ± 0.05 F1: 0.67 ± 0.04 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>MHC1 </p>
+</td>
+<td>
+<p>SVM </p>
+</td>
+<td>
+<p>AUC: 0.68 ± 0.05 F1: 0.66 ± 0.03 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>PDL1 </p>
+</td>
+<td>
+<p>SVM </p>
+</td>
+<td>
+<p>AUC: 0.73 ± 0.06  Macro F1: 0.54 ± 0.04 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Grading </p>
+</td>
+<td>
+<p>RF </p>
+</td>
+<td>
+<p>Balanced Acc: 0.71 ± 0.04 </p>
+<p>Macro F1: 0.70 ± 0.03 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Lymphovascular Invasion </p>
+</td>
+<td>
+<p>RF </p>
+</td>
+<td>
+<p>AUC: 0.82 ± 0.02 </p>
+<p>Macro F1: 0.70 ± 0.02 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Perineural Invasion </p>
+</td>
+<td>
+<p>XGB </p>
+</td>
+<td>
+<p>AUC: 0.78 ± 0.03 </p>
+<p>Macro F1: 0.67 ± 0.03 </p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

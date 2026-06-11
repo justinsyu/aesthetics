@@ -1,0 +1,756 @@
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head"><title>
+	ForwardHealth Provider Type: 24, Pharmacy
+</title>
+  <!--[if lt IE 9]>
+      <link rel="stylesheet" type="text/css" href="../../../../css/ie8-and-down.css" />
+    <style>
+    .QuickLinks_container {behavior: url('/WIPortal/Css/PIE.htc');}
+    </style>
+  <![endif]-->
+
+  <script type="text/javascript" src="/WIPortal/Scripts/jquery-3.6.1.min.js"> </script>
+  <script type="text/javascript" src="/WIPortal/Javascript/DatePicker.js"> </script>
+  <script type="text/javascript" src="/WIPortal/Javascript/HotKeyButton.js"> </script>
+
+  <link id="LinkPortalStyle" rel="stylesheet" type="text/css" media="screen" href="../../../../css/portal.css" /><link id="LinkCustomerOverride" rel="stylesheet" type="text/css" media="screen" href="../../../../css/customerOverride.css" /><link id="favicon" rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico" />
+ <link rel="stylesheet"    id="LinkStaticStyle"          type="text/css" media="screen" href="/WIPortal/css/staticContent.css" />
+<link href="/WIPortal/WebResource.axd?d=z9Wg1GZ4j9-ZRcLA-ArcJi6u--Sn35RzE7olIHsiZvaFp8awqpjz3jZB3WwGHmCoZscOT-_aEBdA5IoDBXd3PaAE_w6a0VTobnR9-VzArJJVUvJ_oFEJHDYPKQoLcMmVpHzgA0hrdgJwRs6L-8tC1Q2&amp;t=639125368620000000" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /></head>
+<body  >
+  <form method="post" action="./resources.htm.spage?file=provider%2fmedicaid%2fpharmacy%2fresources.htm" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="RadScriptManager1_TSM" id="RadScriptManager1_TSM" value="" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATEKEY" id="__VIEWSTATEKEY" value="BID1_WID1" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WIPortal/WebResource.axd?d=WVE_R4M3wXYQcMJFiKQxyJIMX7DvXOHvFBAuhQzOdC4zKjELiwwKGD1JHqFqKygtUGcpTHfU9GFhr7DJUYkVZlVvhIquSh6f847rNOWxldA1&amp;t=638901356248157332" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+ function CheckDisableBackButton()
+ {
+   var excludeArray = [];
+ var url= '';
+ var arrayLength = excludeArray.length;
+//alert(arrayLength);
+ var exclusionMatch = false;
+  for (var i = 0; i < arrayLength; i++)
+  {
+     if (url.indexOf(excludeArray[i]) > -1)
+     {
+        exclusionMatch = true;
+        break;
+     }
+  }
+   if (exclusionMatch)
+   {
+      if(window.history.forward(1) != null)
+	     window.history.forward(1);
+   }
+}
+//]]>
+</script>
+
+<script src="/WIPortal/Javascript/iC_DNNHead.js" type="text/javascript"></script>
+<script src="/WIPortal/Javascript/ShowHide.js" type="text/javascript"></script>
+<script src="/WIPortal/Javascript/iC_SessionWarning.js" type="text/javascript"></script>
+<script src="/WIPortal/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=RadScriptManager1_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen-US%3aa8328cc8-0a99-4e41-8fe3-b58afac64e45%3aea597d4b%3ab25378d2%3bTelerik.Web.UI%3aen-US%3a1bc89511-db65-4edd-9b7b-852f5fbc5915%3a16e4e7cd%3af7645509%3a22a6274a%3aed16cbdc%3a88144a7a" type="text/javascript"></script>
+
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$RadScriptManager1', 'form1', ['tctl00$ctl00$MainContentAjaxPanePanel',''], [], [], 1800, 'ctl00');
+//]]>
+</script>
+
+    <script type="text/javascript" language="javascript">
+        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+        function EndRequestHandler(sender, args) {
+            if (args.get_error() != undefined && args.get_error().httpStatusCode == '500') {
+                var errorMessage = args.get_error().message
+                args.set_errorHandled(true);
+                alert(errorMessage + "<br/><br/> Close your browser and try again");
+            }
+        }
+    </script>
+
+    <script type="text/javascript" language="javascript">
+        Sys.WebForms.PageRequestManager.getInstance().add_pageLoaded(setPortalFocus);
+
+
+        function setPortalFocus() {
+
+            if ($("span[id*='WizardNextButton']").length > 0) {
+                var button = $("span[id*='WizardNextButton']");
+                button.focus();
+            }
+
+            var minMaxButton = $('span[id*="MinMaxButton"]');
+            minMaxButton.unbind("click");
+            minMaxButton.attr("onclick", "return false;");
+
+
+            var field = $('#PortalContentPane').find('input[type=radio],input[type=text],input[type=checkbox],input[type=password],textarea,select').filter(':enabled:first');
+            if (field.is(":enabled")) {
+                field.focus();
+            }                
+
+            $(function () {
+                var zIndexNumber = 1000;
+
+                // Put your target element(s) in the selector below!
+                $(".RadMenu").each(function () {
+                    $(this).css('zIndex', zIndexNumber);
+                    zIndexNumber -= 10;
+                });
+            });
+
+            $(".iC_InformationLink").parent().hide();
+
+            if (document.documentMode == 7) {
+                $(".iC_LimitWidth").css("width", $(window).width() - 50);
+                $(".iC_LimitWidth").css("max-width", $(window).width() - 50);
+                $(".iC_LimitWidth").css("min-width", $(window).width() - 50);
+            }
+
+            $(window).resize(function () {
+                if (document.documentMode == 7) {
+                    $(".iC_LimitWidth").css("width", $(window).width() - 50);
+                    $(".iC_LimitWidth").css("max-width", $(window).width() - 50);
+                    $(".iC_LimitWidth").css("min-width", $(window).width() - 50);
+                }
+            });
+
+            /* fix search control display name to [ Search ] if not already defined. */
+            $(function () {
+                var searchButton = $('span[id*="DataSearchButton"]').find('input');
+                $.each(searchButton,
+                  function (index, button) {
+                      if (button.value == 'Search') {
+                          button.value = "[ Search ]";
+                      }
+                  }
+                );
+            }
+            );
+
+
+        } // end setPortalFocus
+
+       
+       
+    </script>
+
+    
+
+    <div class="RadAjaxPanel" id="ctl00_ctl00_MainContentAjaxPanePanel" style="height:100%;">
+	<div id="ctl00_MainContentAjaxPane" class="iC_AjaxPane" style="height:100%;">
+		<!-- 2023.2.714.45 -->
+      <!-- Required State Header -->
+      <table class="header_banner">
+        <tr class="iC_SkinNoPrint">
+          <td>
+            <img id="HeaderMap" title="State of Wisconsin Agency Banner" src="../../../../Images/agency_banner.gif" alt="State of Wisconsin Agency Banner" usemap="#ImageMapHeaderMap" /><map name="ImageMapHeaderMap" id="ImageMapHeaderMap">
+			<area shape="rect" coords="0,0,175,34" href="http://www.wisconsin.gov" target="_blank" title="wisconsin.gov Home" alt="wisconsin.gov Home" /><area shape="rect" coords="176,0,292,34" href="http://www.wisconsin.gov/Pages/allagencies.aspx" target="_blank" title="State Agencies" alt="State Agencies" /><area shape="rect" coords="293,0,500,34" href="http://dhs.wisconsin.gov/" target="_blank" title="Department of Health Services" alt="Department of Health Services" />
+		</map>
+          </td>
+        </tr>
+      </table>
+
+      
+
+      
+
+      
+
+      
+
+      <table id="PublicHeaderTable" class="BannerTable" style="background-color:#ffffff">
+			<tr>
+				<td class="fowardHealthLogo"><a id="LinkHomePublic2" tabindex="1010" href="../../../../Default.aspx"><img id="Image5" title="Home Page" src="../../../../Images/diamond_logo.gif" alt="Return to Main Page" /></a></td><td> 
+            <div class="ColumnHeader" style="font-weight:bold;"><span></span></div>
+            <div class="ColumnHeader"><span></span></div>
+          </td><td><table id="WelcomeTable" class="BannerTable">
+					<tr>
+						<td class="BannerRight">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td class="UserInfo" align="right" HorizontalAlign="right" style="padding-right: 15px;">
+            <span id="welcomemessage3_lblWelcome" title="Not currently logged in.">Welcome </span>&nbsp;&raquo;&nbsp;<span id="welcomemessage3_lblCurrentDate">May 28, 2026 12:26 PM</span>
+        </td>
+    </tr>
+</table></td>
+					</tr><tr>
+						<td class="BannerRight" style="font-weight:bold;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td class="UserInfo" align="right" HorizontalAlign="right" style="padding-right: 15px; text-align: right;">
+            <a id="loginout3_LinkButtonLogin" tabindex="1011" title="Log into the site" href="javascript:__doPostBack(&#39;ctl00$loginout3$LinkButtonLogin&#39;,&#39;&#39;)">Login</a>
+        </td>
+    </tr>
+</table></td>
+					</tr>
+				</table></td>
+			</tr><tr class="whiteBackground">
+				<td class="BannerRight" colspan="3">
+<table  id="tableMiniSearch" class="BannerTable">
+  <tr>
+  <td class="miniSearch"><input name="ctl00$MINI2$MiniSearchValue" type="text" size="15" id="MINI2_MiniSearchValue" tabindex="1012" aria-label="Search ForwardHealth" onkeydown="checkEnterHotKey(&#39;MINI2_MiniSearchSubmit&#39;, event);" style="font-size:Small;" /></td>
+  <td ><a id="MINI2_MiniSearchSubmit" tabindex="1013" class="iC_StyleButton iC_StyleButton iC_StyleButton_Medium" href="javascript:__doPostBack(&#39;ctl00$MINI2$MiniSearchSubmit&#39;,&#39;&#39;)">Search</a></td>
+</tr>
+</table></td>
+			</tr>
+		</table>
+
+      <div>
+        <div class="iC_SystemMessage"><table  style="padding:0;border-collapse:collapse;" class="white_GroupBox"><tr><td class="white_GroupBoxHeaderLeft"></td><td class="white_GroupBoxHeaderMiddle"><span class="white_GroupBoxTitle" title="Alerts">Alerts</span></td><td class="white_GroupBoxHeaderRight"></td></tr><tr><td class="white_GroupBoxBodyLeft"></td><td class="white_GroupBoxBodyMiddle white_GroupBoxTitlePadding"><div><ul class="ic_messageList"><li class="iC_Message">The ForwardHealth Portal is currently experiencing technical difficulties. Staff are working to resolve the issue as quickly as possible. Please check back at a later time.</li></ul></div></td><td class="white_GroupBoxBodyRight"></td></tr><tr><td class="white_GroupBoxFooterLeft"></td><td class="white_GroupBoxFooterMiddle"></td><td class="white_GroupBoxFooterRight"></td></tr></table></div>
+      </div>
+
+      <table id="TableStaticContentBreadcrumbs" class="HeaderTable">
+			<tr>
+				<td><span class="breadcrumbSelectedLink">Pharmacy</span></td>
+			</tr>
+		</table>
+		
+
+      <table class='iC_ContentTable' cellpadding="0" cellspacing="0">
+        <tr>
+          <td id="LeftPanelBar" class="leftPanel" style="display:none;">
+            
+          </td>
+		
+          <td class="collapseBar" onclick='iC_ToggleExpand(this)' style="display:none;" >&nbsp;<input type="hidden" name="ctl00$LPanelClientState" id="LPanelClientState" /></td>
+          <td class="rightPanel">
+            <div class="HeaderTable" id="PortalContentPane">
+            
+  
+    
+<div id="MainContent_GenericPageCtrl1_content"><!--<title>ForwardHealth Provider Type: 24, Pharmacy</title>-->
+<!--<breadcrumb>Pharmacy</breadcrumb>-->
+<!--
+<table style="padding:0;border-collapse:collapse;" class="white_GroupBox">
+    <tbody>
+        <tr>
+            <td class="white_GroupBoxHeaderLeft"></td>
+            <td class="white_GroupBoxHeaderMiddle"><span class="white_GroupBoxTitle" title="Alerts">Alerts</span></td>
+            <td class="white_GroupBoxHeaderRight"></td>
+        </tr>
+        <tr>
+            <td class="white_GroupBoxBodyLeft"></td>
+            <td class="white_GroupBoxBodyMiddle white_GroupBoxTitlePadding">
+                <div>
+                    <ul class="ic_messageList">
+                        <li class="iC_Message">
+                        <b>Pharmacy Point-of-Sale System Outage Extended</b><br/>
+                        The point-of-sale (POS) system remains inaccessible past the scheduled maintenance end time of 4 p.m. Central Time, Sunday, March 15, 2026. We apologize for the inconvenience and anticipate POS will be available this evening. Pharmacies are encouraged to fill prescriptions for ForwardHealth members during the time POS is unavailable. Pharmacies can reprocess the claim on Sunday evening or Monday morning. Certain drugs may be dispensed via emergency supply policy. Refer to ForwardHealth Online Handbook Emergency Medication Dispensing topic #1399 for more information.
+                        </li>
+                    </ul>
+                </div>
+            </td>
+            <td class="white_GroupBoxBodyRight"></td>
+        </tr>
+        <tr>
+            <td class="white_GroupBoxFooterLeft"></td>
+            <td class="white_GroupBoxFooterMiddle"></td>
+            <td class="white_GroupBoxFooterRight"></td>
+        </tr>
+    </tbody>
+</table> -->
+
+<div class="staticContent">
+
+
+
+
+    <h3>Pharmacy</h3>
+    <div style="float:left">
+        <a style="margin-left:10px;" href='/WIPortal/cms/public/html/over-the-counter/emergency-contraception/resources' target='_new'>Resources Supporting Coverage of Over-the-Counter Oral Contraception Under State Standing Orders</a>
+        <br>
+        <br>
+        <h4>Resources</h4>
+        <ul>
+        <li>
+            <!-- <span style="color: #ff0000">Revised Effective 09/08/2025:</span> -->
+            <a href="pdl/pdfs/quickref05012026.pdf.spage">Preferred Drug List Quick Reference</a> (Effective 5/1/2026)
+            <ul>
+                <li>
+                    <strong>Effective 6/1/2026</strong>
+                    &mdash;
+                    <a href="pdl/pdfs/quickref06012026.pdf.spage">Preferred Drug List Quick Reference</a>
+                </li>
+            </ul> 
+        </li>
+       
+	   <li>
+                <!-- <span style="color: #ff0000">Revised 8/2/2019:</span>  -->
+                <a href="pdl/pdfs/dsquickref051525.pdf.spage">Diabetic Supply List Quick Reference</a>
+                (Effective 5/15/2025)
+                <!-- <ul>
+                    <li>
+                        <strong>Effective 1/1/2025</strong>
+                        &mdash;
+                        <a href="pdl/pdfs/dsquickref010125.pdf.spage">Diabetic Supply List Quick Reference</a>
+                    </li>
+                </ul> -->
+            </li>
+			<li>
+            <strong>Over-the-Counter Drugs</strong>
+            <ul>
+                <li>
+                    <!--<span style="color: #ff0000">Revised 1/26/2015:</span>-->
+                    <a href="data_tables/pdfs/CoveredOTC110525.pdf.spage">Covered (BadgerCare Plus and Medicaid)</a>
+                    (Effective 11/5/2025)
+                    <!-- <ul>
+                        <li>
+                          <span style="color: #ff0000">Revised 1/26/2015:</span>
+                          <strong>Effective 7/1/2025</strong>
+                          &mdash;
+                          <a href="data_tables/pdfs/CoveredOTC070125.pdf.spage">Covered (BadgerCare Plus and Medicaid)</a>
+                        </li>
+                    </ul> -->
+                </li>
+                <li>
+                    <!-- <span style="color: #ff0000">Revised 5/6/2015:</span> -->
+                    <a href="data_tables/pdfs/OTC_HCOS040125.pdf.spage">Covered by HealthCheck "Other Services"</a>
+                    (Effective 4/1/2025)
+                    <!-- <ul>
+                        <li>
+                            <span style="color: #ff0000">Revised 9/1/2022:</span>
+                            <strong>Effective 10/1/2023</strong>
+                            &mdash;
+                            <a href="data_tables/pdfs/OTC_HCOS100123.pdf.spage">Covered by HealthCheck "Other Services"</a>
+                        </li>
+                    </ul> -->
+                </li>
+            </ul>
+            </li>
+            <li>
+                <strong>Wisconsin HIV Drug Assistance Program (HDAP) Formulary</strong>
+                <ul>
+                    <li>
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.dhs.wisconsin.gov/publications/p02760.pdf">PDF</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <h4>Other</h4>
+<ul>
+    <li>
+        <a href="data_tables/pdfs/2026_BMN_BBG_050126.pdf.spage">Brand Medically Necessary Drugs and Brand Before Generic
+        Drugs</a>
+        (Effective 5/1/2026)
+        <ul>
+            <li>
+                <strong>Effective 6/1/2026</strong>
+                &mdash;
+                <a href="data_tables/pdfs/2026_BMN_BBG_060126.pdf.spage">Brand Medically Necessary Drugs and Brand Before Generic Drugs</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href="data_tables/pdfs/APIs0601120.pdf.spage">
+            Covered Active Pharmaceutical Ingredients (APIs) and Excipients
+        </a>
+        (Effective 6/1/2020)
+    </li>
+    <li>
+        <!--<span style="color: #ff0000">Revised 1/27/2016:</span>-->
+        <a href="data_tables/pdfs/dx050126.pdf.spage">Diagnosis Restricted Drugs</a>
+        (Effective 5/1/2026)
+        <ul>
+			<li>
+				<strong>Effective 6/1/2026</strong>
+				&mdash;
+				<a href="data_tables/pdfs/dx060126.pdf.spage">Diagnosis Restricted Drugs</a>
+			</li> 
+        </ul>
+    </li>
+    <li>
+    <a href="data_tables/pdfs/EarlyRefill120122.pdf.spage">Early Refill Drug Utilization Review Drugs</a>
+    (Effective 12/1/2022)
+        <!-- <ul>
+          <li>
+            <strong>Effective 12/1/2022</strong>
+            &mdash;
+            <a href="data_tables/pdfs/EarlyRefill120122.pdf.spage">Early Refill Drug Utilization Review Drugs</a>
+          </li>
+        </ul> -->
+    </li>
+        <li>
+            <a href="data_tables/pdfs/EmergencySupply010126.pdf.spage">Expedited Emergency Supply Request Drugs</a>
+            (Effective 1/1/2026)
+            <!-- <ul>
+                <li>
+                    <strong>Effective 1/1/2026</strong>
+                    &mdash;
+                    <a href="data_tables/pdfs/EmergencySupply010126.pdf.spage">Expedited Emergency Supply Request
+                    Drugs</a>
+                </li>
+            </ul> -->
+        </li>
+	<li>
+            <!-- <span style="color: #ff0000">Revised 4/12/2017:</span> -->
+            <a href="data_tables/pdfs/State_and_Specialty_PDRR_050126.pdf.spage">State and Specialty Pharmacy Drug 
+            Reimbursement Rates</a> (Effective 5/1/2026)
+            <ul>
+                <li>
+                    <strong>Effective 6/1/2026</strong>
+                    &mdash;
+                    <a href="data_tables/pdfs/State_and_Specialty_PDRR_060126.pdf.spage">State and Specialty Pharmacy Drug
+                    Reimbursement Rates</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="VaccinesBillableByPharmacies.xlsx.spage">
+                Influenza Vaccine Procedure Codes Reimbursable to Outpatient Pharmacies for Wisconsin Medicaid and <br />
+                BadgerCare Plus fee-for-service and Managed Care Members -- November 14, 2014.
+            </a>
+        </li>
+        <li>
+            <a id="LockIn" href="data_tables/pdfs/LockIn050126.pdf.spage">
+                Medications monitored by the Pharmacy Services Lock-In Program
+            </a>
+            (Effective 5/1/2026)
+			<!-- <ul>
+                <li>
+                    <strong>Effective 5/1/2026</strong>
+                    &mdash;
+                    <a href="data_tables/pdfs/LockIn050126.pdf.spage">Medications monitored by the Pharmacy Services Lock-In Program</a>
+                </li>
+            </ul> -->
+        </li>
+        <li>
+            <!-- <span style="color: #ff0000">Revised 7/5/2023:</span> -->
+            <a href="data_tables/pdfs/2026_MFR_Rebates_050126.pdf.spage">
+                Numeric Listing of Manufacturers That Have Signed Rebate Agreements
+            </a>
+            (Effective 5/1/2026)
+            <ul>
+                <li>
+                    <strong>Effective 6/1/2026</strong>
+                    &mdash;
+                    <a href="data_tables/pdfs/2026_MFR_Rebates_060126.pdf.spage">Numeric Listing of Manufacturers That Have Signed
+                    Rebate Agreements</a>
+                </li>
+            </ul>
+        </li>
+        <!--li>
+            <a href="data_tables/pdfs/opioids090113.pdf.spage">Opioids Included in the Prescription Fill Limit</a>
+            (Effective 9/1/2013)
+        </li-->
+        <li>
+            <a href="data_tables/pdfs/prospective120122.pdf.spage">Prospective Drug Utilization Review Alerts</a>
+            (Effective 12/1/2022)
+            <!-- <ul>
+               <li>
+                  <strong>Effective 12/1/2022</strong>
+                  &mdash;
+                  <a href="data_tables/pdfs/prospective120122.pdf.spage">Prospective Drug Utilization Review Alerts</a>
+               </li>
+            </ul -->
+        </li>
+        <li>
+            <!-- <span style="color: #ff0000">Revised 8/8/2016:</span> -->
+            <a href="data_tables/pdfs/2026_QtyTbl_040126_Re_04032026.pdf.spage">Quantity Limit Drugs and Diabetic Supplies</a>
+            (Effective 4/1/2026)
+            <ul>
+               <li>
+                  <strong>Effective 6/1/2026</strong>
+                  &mdash;
+                  <a href="data_tables/pdfs/2026_QtyTbl_060126.pdf.spage">Quantity Limit Drugs and Diabetic Supplies</a>
+               </li>
+            </ul>
+       </li>
+       <li>
+			<a href="data_tables/pdfs/SHCOaAAD050126.pdf.spage">Select High Cost, Orphan, and Accelerated Approval Drugs</a>
+			(Effective 5/1/2026)
+			<!-- <ul>
+			  <li>
+				<strong>Effective 5/1/2026</strong>
+				&mdash;
+				<a href="data_tables/pdfs/SHCOaAAD050126.pdf.spage">Select High Cost, Orphan, and Accelerated Approval Drugs</a>
+			  </li>
+			</ul> -->
+      </li>
+      <li>
+        <!-- <span style="color: #ff0000">Revised 1/12/2023:</span> -->
+        <a href="data_tables/pdfs/3Month040126.pdf.spage">Three-Month Supply Drugs</a>
+        (Effective 4/1/2026)
+        <!-- <ul>
+            <li>
+                <strong>Effective 7/1/2025</strong>
+                &mdash;
+                <a href="data_tables/pdfs/3Month070125.pdf.spage">Three-Month Supply Drugs</a>
+            </li>
+        </ul> -->
+      </li>
+      <li>
+        <strong>Explanation of Benefits Report</strong>
+        (Effective 5/10/2026)
+        <ul>
+            <li>
+                <a href="eobs/Denied05102026.pdf.spage">EOBs on Denied Claims for April 2026</a>
+            </li>
+            <li>
+                <a href="eobs/Paid05102026.pdf.spage">EOBs on Paid Claims for April 2026</a>
+            </li>
+        </ul>
+    </li>
+</ul>
+</div>
+<div style="float:left; margin-left:70px">
+    <table cellpadding="2" style="border-collapse: collapse; border-spacing: 0;">
+        <tr>
+            <td style="vertical-align:top">
+                <h4>Quick Links</h4>
+                <ul>
+                    <!-- <li>
+                        <a href="/WIPortal/cms/public/html/pharmacy_prov_type" rel="noopener noreferrer" target="_blank">Act 98 Pharmacist as a Provider Project</a>
+                    </li> -->
+                    <li><a href="/WIPortal/cms/page/provider/medicaid/pharmacy/apva/resources" rel="noopener noreferrer" target="_blank">Annual Prescription Volume Attestation Resources</a></li>
+                    <li>
+                        <a target="_blank" rel="noopener noreferrer" href="http://www.ohsu.edu/drugeffectiveness/">Drug Effectiveness Review
+                        Project</a>
+                        (DERP)
+                    </li>
+                    <li>
+                        <a target="_blank" rel="noopener noreferrer" href="/WIPortal/Subsystem/Provider/DrugSearch.aspx">Drug Search Tool</a>
+                    </li>
+                    <li>
+                        <a href="dur/meetings.htm.spage">Drug Utilization Review Board</a>
+                    </li>
+                    <li>
+                        <a target="_blank" rel="noopener noreferrer" href="../EOB_Messages.htm.spage">Explanation of Benefits Code List</a>
+                    </li>
+                    <li>
+                        <a target="_blank" rel="noopener noreferrer" href="/WIPortal/content/provider/pdf/fieldrepguide.pdf.spage">Field Rep Contact Information</a>
+                    </li>               
+                    <li>
+                        <a href="MTM/MTMHome.htm.spage">
+                            Medication Therapy Management Case Management Software
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../pac/mhda/index.htm.spage">Mental Health Drug Advisors Group</a>
+                    </li>
+                    <li>
+                        <a target="_blank" rel="noopener noreferrer" href="/WIPortal/Subsystem/KW/Display.aspx?ia=1&p=1&sa=48">Pharmacy Online
+                        Handbook</a>
+                    </li>
+                    <li>
+                        <a target="_blank" rel="noopener noreferrer" href="/WIPortal/Subsystem/Publications/ForwardHealthCommunications.aspx?panel=Forms">Pharmacy
+                        Related Forms</a>
+                    </li>
+                    <li>
+                        <a href="../../pac/index.htm.spage">Pharmacy Prior Authorization Advisory Committee</a>
+                        (PAC)
+                        <ul style="margin-bottom:0px;">
+                            <li>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.primetherapeutics.com/">Prime Therapeutics</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="/WIPortal/cms/public/physician/administered-drug-resources">Physician-Administered Drugs Resources</a></li>
+                    <li>
+                        <a target="_blank" rel="noopener noreferrer" href="http://www.dhs.wisconsin.gov/seniorcare/">SeniorCare</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td style="vertical-align:top">
+                <h4>Archives</h4>
+                <ul>
+                    <li>
+                        <a target="_blank" rel="noopener noreferrer" href="data_tables/archived_productlists.htm.spage">BadgerCare Plus Product Lists</a>
+                    </li>
+                    <li>
+                        <a target="_blank" rel="noopener noreferrer" href="codp/codp.htm.spage">Covered Outpatient Drug Pricing</a>
+                    </li>
+                    <li>
+                        <a target="_blank" rel="noopener noreferrer" href="data_tables/archives.htm.spage">Other (e.g. MAC List)</a>
+                    </li>
+                    <li>
+                        <a target="_blank" rel="noopener noreferrer" href="pdl/archived_pdllists.htm.spage">PDL and Diabetic Supply Quick Reference</a>
+                    </li>
+                    <li>
+                        <a target="_blank" rel="noopener noreferrer" href="archived_pharm_rel-forms.htm.spage">Pharmacy-Related Forms and Instructions</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</div>
+<script>
+    var idParm = gup('id');
+
+    if (idParm != null) {
+        window.location.href = '#' + idParm;
+    }
+
+        // alert("parameter value is " + idParm);
+
+        function gup(name) {
+            name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+            var regexS = "[\\?&]" + name + "=([^&#]*)";
+            var regex = new RegExp(regexS);
+            var results = regex.exec(window.location.href);
+
+            if (results == null) {
+                return "";
+            } else {
+                return results[1];
+            }
+        }
+    </script>
+</div>
+</div>
+
+
+              </div>
+            <div class='rightPanelWidth'>&nbsp;</div>
+          </td>
+        </tr>
+      </table>
+
+      <!-- footer -->
+    <div style="text-align:center;margin:auto;">
+      <div style="width: 600px;border-bottom: 1px solid #c0c0c0;text-align:center;margin:auto;">&nbsp;</div>
+      <div style="font-family: Verdana; font-size: smaller; padding-top: 10px;">
+        <a class="norm" title="About"           target="new" href="http://dhs.wisconsin.gov/aboutDHS/index.htm">About</a> &nbsp;|&nbsp;
+        <a id="ContactLink" tabindex="1014" title="Contact" class="norm" href="../../../html/Contact.htm.spage" target="_top">Contact</a>&nbsp;|&nbsp;
+        <a class="norm" title="Disclaimer"      target="new" href="http://dhs.wisconsin.gov/disclaimer.htm">Disclaimer</a> &nbsp;|&nbsp;
+        <a class="norm" title="Privacy Notice"  target="new" href="http://www.dhs.wisconsin.gov/publications/p1/p13040.pdf">Privacy Notice</a>
+        <div><b>Wisconsin Department of Health Services</b></div>
+          
+        <table class="iC_SkinEnvironmentTag" id="Table1" align="center">
+	        <tr>
+		        <td valign="bottom" class="UserInfo"><div style="text-align:center;"><span id="ENVIRONMENT1_lblEnvironment" title="Represents the current environment the application is running in.">Production PROD_WIPortal2_M1056B__4</span>
+</div></td>
+	        </tr>
+	        <tr>
+		        <td valign="bottom" ><span style="font-size:xx-small;" id='iC_elapsedTime'></span></td>
+	        </tr>
+          <tr>
+		        <td valign="bottom" >
+              <span id="BrowserID" class="iC_WindowId">Browser Tab ID: 1  &nbsp;</span>
+              <span id="WindowID" class="iC_WindowId">-1</span>
+		        </td>
+	        </tr>
+        </table>
+      </div>
+    </div>
+
+      <input type="hidden" name="ctl00$iCWindowID" id="iCWindowID" value="1" />
+      <input type="hidden" name="ctl00$iCRequestID" id="iCRequestID" value="1" />
+      <input type="hidden" name="ctl00$UniqueBrowserID" id="UniqueBrowserID" value="1" /> 
+      <input type="hidden" name="ctl00$iCPanelViewMode" id="iCPanelViewMode" /> 
+      <input type="hidden" name="ctl00$iCPanelViewTabSelectMode" id="iCPanelViewTabSelectMode" /> 
+
+      <input name="ctl00$ScrollTop" type="hidden" id="ScrollTop" />
+      <input name="ctl00$__dnnVariable" type="hidden" id="__dnnVariable" />
+      <input name="ctl00$iCFieldsChanged" type="hidden" id="iCFieldsChanged" value="0" />
+      <input id="ScrollX"         type="hidden"                 name="ScrollX"          value="0"/>
+      <input id="ScrollY"         type="hidden"                 name="ScrollY"          value="0"/>
+            
+      
+      <div id="LoadingPanel1" class="iC_LoadingPanel" style="display:none;">
+
+		</div>
+
+    
+	</div>
+</div>
+    
+  <span id="ctl07"></span>
+                <div id='iC_SessionExtended' class='iC_SessionExtended' style='text-align:center;display: none;'>Session Extended.</div>
+                <div id='iC_SessionWarningPopup' class='iC_SessionWarningPopup' style='text-align:center;display: none;'>
+                    <br/>
+                    <p class='iC_WarningText'>
+                       Because you have not recently performed an action 
+	                    <br/>that loads or reloads a page, your session will expire in 
+	                    <br/>
+	                    <br/><span class='iC_SessionWarningTime' id='sw_minutesValue'></span><br/> 
+	                    <br/>
+	                    Upon expiration your unsaved data will be lost and you 
+	                    <br/>will be required to login again to begin a new session.  
+	                    <br/>
+	                    <br/>
+	                    To avoid a session expiration, 
+	                    <br/>
+	                    click this button to extend your session.
+	                    <br/>	                    
+                    </p>
+                    <p style='font-size:100%'>
+                        <a id='iC_ExtendSessionButton' class='iC_StyleButton iC_StyleButton_Large' 
+                            style='margin-left: auto;margin-right: auto;' 
+                            target='SessionExpirationWarning' title='Session Expiration Warning' 
+                            href='../../../../iCSessionExtender.extend' onclick='ExtendSession("../../../../iCSessionExtender.extend", "1");return false;'>Extend</a>
+                        <br/>
+                    </p>
+                </div> <script>SetupSessionWarning('1800','5','INFO','../Subsystem/Account/SecureSiteLogin.aspx');</script>
+
+<script type="text/javascript">
+//<![CDATA[
+$(window).bind('beforeunload', function() { WhatToCheck();});window.__TsmHiddenField = $get('RadScriptManager1_TSM');//]]>
+</script>
+<script src="/WIPortal/Javascript/ShortCutEnterKeyHandler.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+function SetupStartFunctions(){var localController=null; if(typeof icPanelViewModeController=='undefined'){ localController= new PanelViewModeController()} else{localController=icPanelViewModeController;  } 
+}
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadAjaxLoadingPanel, {"initialDelayTime":0,"isSticky":true,"minDisplayTime":0,"skin":"","transparency":20,"uniqueID":"ctl00$LoadingPanel1","zIndex":90000}, null, null, $get("LoadingPanel1"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadAjaxPanel, {"clientEvents":{OnRequestStart:"RequestStartWIPortal2",OnResponseEnd:"ResponseEnd"},"enableAJAX":true,"enableHistory":false,"links":[],"loadingPanelID":"LoadingPanel1","styles":[],"uniqueID":"ctl00$MainContentAjaxPane"}, null, null, $get("ctl00_MainContentAjaxPane"));
+});
+//]]>
+</script>
+</form>
+</body>
+</html>     
+<script type="text/javascript">
+
+  function portalScrollToError()
+  {
+    if ($(".MsgHeading")[0])
+    {
+      $(".MsgHeading")[0].scrollIntoView();
+
+      /* if we are showing the ignore checkbox, change the column span from 6 to 9 to match the extra fields. */
+      if ($(".WarningMessage").find("input:checkbox").length > 0) {
+        $(".iC_TaskList").find("td[colspan='6']").attr('colspan', 9);
+      }
+    }
+  }
+  
+  function backbuttonCheck()
+{
+    console.log("backbuttonCheck called.");
+}
+</script>

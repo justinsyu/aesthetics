@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enabling federated discovery leveraging agentic AI systems: The Cancer AI Alliance and DataVoyager.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Enabling federated discovery leveraging agentic AI systems: The Cancer AI Alliance and DataVoyager.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e20516</div>
+    <div><strong>First speaker:</strong> Simone E. Dekker, MD, PhD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/266360">https://www.asco.org/abstracts-presentations/266360</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Artificial intelligence (AI) has the potential to transform oncology, but robust AI models require diverse, multi-institutional data that preserve patient privacy. Federating data across institutions is a promising solution, yet historically difficult to implement at scale. The Cancer AI Alliance (CAIA) was created to enable secure, large-scale federation of patient data across leading cancer centers. Moreover, to address analytic barriers faced by investigators, we developed a federated implementation of DataVoyager (DV), an interactive AI agent for data analysis by Ai2. Here we present early results leveraging agentic AI to evaluate real-world outcomes in non-small cell lung cancer (NSCLC).</div>
+  <main> 
+
+	<div><b>Background: </b> Artificial intelligence (AI) has the potential to transform oncology, but robust AI models require diverse, multi-institutional data that preserve patient privacy. Federating data across institutions is a promising solution, yet historically difficult to implement at scale. The Cancer AI Alliance (CAIA) was created to enable secure, large-scale federation of patient data across leading cancer centers. Moreover, to address analytic barriers faced by investigators, we developed a federated implementation of DataVoyager (DV), an interactive AI agent for data analysis by Ai2. Here we present early results leveraging agentic AI to evaluate real-world outcomes in non-small cell lung cancer (NSCLC).</p>  </p>  <b>Methods: </b> A researcher entered a natural language query into DV: “Describe the overall survival (OS) for patients who receive osimertinib or alectinib for lung cancer.” A large language model (LLM; a secure, open-weight gpt-oss-120B model) translated the query into a statistical analysis plan, and a second LLM autonomously generated Python code for implementation. Through the federated framework, code was securely distributed to four edge-nodes where it was executed locally on de identified EHR data. CAIA site edge-nodes returned model summaries to DV, which synthesized aggregated outputs and produced summary statistics, metadata, and visualizations. All plans, code, assumptions, and discussions were archived for independent validation and reproducibility.</p>  </p>  <b>Results: </b> CAIA enabled federated access to data from &gt;1 million patients across four institutions. DV harmonized cohort identification, estimated demographics, and conducted federated survival analyses in CAIA’s combined stage I–IV NSCLC cohort (Table). DV produced an analysis plan and outputs (descriptive tables, Kaplan-Meier plots, plain-language summaries, code, and logs) in 1 min 24 s, within privacy safeguards. The results appeared broadly consistent with published clinical trials and real-world observations, supporting the validity of the federated workflow. The generated code was verified as correct by human expert review.</p>  </p>  <b>Conclusions: </b> Combining CAIA’s federated infrastructure with DV’s agentic AI represents a potential new paradigm in oncology discovery. CAIA brings together leading cancer centers to enable secure analytics without patient-level data exchange. In parallel, DV provides a novel capability to interrogate large, distributed datasets without coding expertise or costly infrastructure, delivering complete analytic workflows in minutes. Together, these advances enable privacy-preserving, reproducible, and scalable real-world evidence generation, as demonstrated in NSCLC.</div>
+
+
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td><strong>Characteristic</strong></td>
+<td></td>
+<td><strong>Alectinib (N = 603)</strong></td>
+<td><strong>Osimertinib (N = 2823)</strong></td>
+</tr>
+<tr>
+<td>Age</td>
+<td>&lt;65 years</td>
+<td>68%</td>
+<td>46%</td>
+</tr>
+<tr>
+<td>Sex</td>
+<td>Male</td>
+<td>43%</td>
+<td>30%</td>
+</tr>
+<tr>
+<td></td>
+<td>Female</td>
+<td>57%</td>
+<td>70%</td>
+</tr>
+<tr>
+<td>Race</td>
+<td>White</td>
+<td>73%</td>
+<td>64%</td>
+</tr>
+<tr>
+<td></td>
+<td>Non-white</td>
+<td>20%</td>
+<td>30%</td>
+</tr>
+<tr>
+<td></td>
+<td>Missing</td>
+<td>7%</td>
+<td>6%</td>
+</tr>
+<tr>
+<td>OS</td>
+<td>2-year</td>
+<td>78%</td>
+<td>63%</td>
+</tr>
+<tr>
+<td></td>
+<td>5-year</td>
+<td>69%</td>
+<td>52%</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

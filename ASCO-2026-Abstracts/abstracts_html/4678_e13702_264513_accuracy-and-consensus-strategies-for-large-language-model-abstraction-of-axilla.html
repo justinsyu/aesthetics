@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accuracy and consensus strategies for large language model abstraction of axillary surgery type from a breast cancer oncologic history text.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Accuracy and consensus strategies for large language model abstraction of axillary surgery type from a breast cancer oncologic history text.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e13702</div>
+    <div><strong>First speaker:</strong> Claire Dvorak</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/264513">https://www.asco.org/abstracts-presentations/264513</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Accurate abstraction of axillary surgery from unstructured oncologic history is essential for breast cancerresearch, quality assessment, and downstream data modeling. Large language models (LLMs) offer ascalable approach but vary in performance and reliability. We evaluated multiple LLMs and ensemblestrategies for high-confidence axillary surgery abstraction from real-world clinical texts.</div>
+  <main> 
+
+	<div><b>Background: </b> Accurate abstraction of axillary surgery from unstructured oncologic history is essential for breast cancerresearch, quality assessment, and downstream data modeling. Large language models (LLMs) offer ascalable approach but vary in performance and reliability. We evaluated multiple LLMs and ensemblestrategies for high-confidence axillary surgery abstraction from real-world clinical texts.</p>  <b>Methods: </b> Unedited oncologic history narratives were manually copied verbatim from clinical oncologichistory section for 100 breast cancer cases (EPIC EHR) with varied note complexities and adjudicatedaxillary surgery outcomes (sentinel lymph node biopsy [SLNB], axillary lymph node dissection [ALND], orno axillary surgery [NONE]). Two physician abstractors (TD, DH) independently labeled all cases toestablish a finalized ground-truth benchmark. Four contemporary LLMs from different vendors (Gemini-3,GPT-5.2, Claude-4.5, Grok-4) were evaluated using an identical single-pass prompt instructing models toclassify as SLNB, ALND, or NONE with abstention permitted. Model outputs were compared against thebenchmark. Performance metrics included coverage, overall accuracy, and conditional accuracy (amongnon-abstaining predictions), with class imbalance considered. Ensemble strategies used increasingagreement thresholds (≥2/4, ≥3/4, unanimous 4/4). All data were de-identified and analyzed under IRB.This was a proof-of-concept evaluation of abstraction reliability and ensemble confidence strategies.</p>  <b>Results: </b> Ground-truth distribution was SLNB 68%, NONE 19%, ALND 13%. Physician accuracy vs.finalized label was TD 92%, DH 96%; when agreed (88% cases, κ = 0.748), conditional accuracy was100%. Among LLMs, Gemini-3 and Grok-4 achieved highest performance (88% overall accuracy each;100% coverage). Claude-4.5 abstained in 12% but had 91% conditional accuracy. GPT-5.2 showed 60%overall accuracy. Ensembles revealed precision–coverage tradeoff: unanimous 4-of-4 agreement auto-labeled 51% cases with 96% conditional accuracy; 3-of-4 auto-labeled 88% with 92% conditionalaccuracy. ≥2-model agreement did not exceed best individual models. Unanimous failures were rare(3%), with manual review identifying temporal anchoring to prior procedures and incomplete OncologicHistory summaries, reflecting real world documentation limitations.</p>  <b>Conclusions: </b> LLMs can accurately abstract axillary surgery from unstructured text, approaching but notmatching expert performance, with model-specific error modes. Ensemble agreement supports selectiveautomation, auto-labeling high-confidence cases while routing ambiguities for human review. Multi-modelunanimity yields low-error subsets suitable for clean data generation. These findings support human-in-the-loop frameworks for scalable oncology data abstraction.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

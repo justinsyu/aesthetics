@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JMCP Citation Validation Visual Report</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw; height: 100vh; min-height: 100vh; overflow: hidden; position: relative;
+      display: flex; align-items: flex-start; padding: 36px 0 20px; page-break-after: always; break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; user-select: none; }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow { display: inline-flex; align-items: center; border: 1.4px solid var(--line); padding: 8px 12px; border-radius: 999px; font-size: 15px; font-weight: 850; text-transform: uppercase; margin-bottom: 18px; background: var(--lime); }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 76px; line-height: .94; font-weight: 560; max-width: 1320px; }
+    h2 { font-size: 52px; line-height: .98; font-weight: 560; max-width: 1300px; }
+    h3 { font-size: 28px; line-height: 1.04; font-weight: 650; }
+    .dek { margin-top: 18px; color: var(--muted); font-size: 27px; line-height: 1.22; max-width: 1260px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .panel, .metric, .card, .table, .callout { border: 1.5px solid var(--line); background: rgba(255,250,240,.88); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+    .panel { padding: 22px; }
+    .panel.dark, .callout { background: #11130f; color: var(--paper); border-color: #11130f; }
+    .metric { padding: 21px; min-height: 166px; }
+    .num { font-size: 50px; line-height: .92; font-weight: 560; }
+    .label { margin-top: 12px; font-size: 23px; line-height: 1.12; color: var(--muted); }
+    .tag { display: inline-block; padding: 5px 9px; border: 1.2px solid var(--line); border-radius: 999px; font-size: 12px; font-weight: 850; text-transform: uppercase; background: var(--paper-2); white-space: nowrap; }
+    .lime { background: var(--lime); } .orange { background: var(--orange); } .blue { background: var(--blue); } .pink { background: var(--pink); } .red { background: var(--red); }
+    .callout { padding: 30px 32px; }
+    .callout h3 { color: var(--lime); }
+    .callout p { font-size: 21px; line-height: 1.24; }
+    .summary-list { margin: 12px 0 0; padding-left: 22px; display: grid; gap: 8px; }
+    .summary-list li { color: rgba(246,241,232,.86); font-size: 24px; line-height: 1.12; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .cite + .cite::before { content: ","; margin-right: 1px; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    .section-head { margin-bottom: 32px; }
+    .section-head p { margin-top: 12px; color: var(--muted); font-size: 24px; line-height: 1.18; max-width: 1280px; }
+    .evidence-img { width: 100%; border: 1.5px solid var(--line); border-radius: 18px; display: block; box-shadow: var(--shadow); }
+    .shot-small { height: 360px; object-fit: contain; object-position: center; background: var(--card); }
+    .shot-large { height: 520px; object-fit: contain; object-position: center; background: var(--card); }
+    .source-note { color: var(--muted); font-size: 15px; line-height: 1.22; margin-top: 10px; }
+    .bar-block { display: grid; gap: 9px; }
+    .bar-row { display: grid; grid-template-columns: 90px 1fr 160px; gap: 12px; align-items: center; }
+    .bar-label { font-size: 18px; font-weight: 850; }
+    .bar-track { height: 24px; background: var(--paper-2); border: 1.2px solid var(--line); border-radius: 999px; overflow: hidden; }
+    .bar-fill { height: 100%; background: linear-gradient(90deg, var(--lime), var(--orange)); }
+    .bar-value { font-size: 17px; color: var(--muted); }
+    .table { display: grid; }
+    .row { display: grid; border-bottom: 1px solid var(--line); min-height: 70px; }
+    .row:last-child { border-bottom: 0; }
+    .row.refs { grid-template-columns: .32fr .8fr .9fr 1.85fr; min-height: 0; }
+    .table .row.refs .cell:first-child { display: flex; align-items: center; justify-content: center; text-align: center; }
+    .cell { padding: 13px 13px; border-right: 1px solid var(--line); font-size: 18px; line-height: 1.12; }
+    .cell:last-child { border-right: 0; }
+    .head .cell { background: #11130f; color: var(--paper); font-weight: 850; text-transform: uppercase; font-size: 17px; line-height: 1; white-space: nowrap; }
+    .method-list { display: grid; gap: 12px; }
+    .method-item { border: 1.5px solid var(--line); border-radius: 18px; background: rgba(255,250,240,.88); padding: 15px 18px; font-size: 21px; line-height: 1.14; }
+    .method-item .tag { display: table; margin-bottom: 8px; }
+    .source-slide .grid-2 { align-items: stretch; }
+    .source-slide .grid-2 > .callout,
+    .source-slide .method-list { height: 534px; }
+    .source-slide .method-list { grid-template-rows: repeat(4, 1fr); }
+    .source-slide .callout .source-note { color: rgba(246,241,232,.74); }
+    .record-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px 22px; margin-top: 30px; }
+    .record-item { border-top: 1px solid rgba(246,241,232,.34); padding-top: 20px; }
+    .record-value { color: var(--lime); font-size: 46px; line-height: 1; font-weight: 560; }
+    .record-label { color: rgba(246,241,232,.78); font-size: 20px; line-height: 1.18; margin-top: 10px; }
+    .flag-copy { font-size: 20px; line-height: 1.18; color: var(--muted); margin-top: 12px; }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .wrap { width: 1360px; }
+      .panel, .metric, .card, .table, .callout, .evidence-img { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) { .slide { width: 1600px; height: 900px; } }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">JMCP citation validation | May 30, 2026</div>
+      <h1>Current-issue citation validation found 2 unresolved references</h1>
+      <div class="grid-4" style="margin-top:30px;">
+        <div class="metric"><div class="num">11</div><div class="label">JMCP article records reviewed.<a class="cite" href="https://www.jmcp.org/toc/jmcsp/current">1</a></div></div>
+        <div class="metric"><div class="num">377</div><div class="label">References extracted from full-text pages.<a class="cite" href="https://www.jmcp.org/toc/jmcsp/current">1</a></div></div>
+        <div class="metric"><div class="num">375</div><div class="label">References validated online (99.5%).<a class="cite" href="https://www.jmcp.org/toc/jmcsp/current">1</a></div></div>
+        <div class="metric"><div class="num">2</div><div class="label">References remained not found (0.5%).<a class="cite" href="https://scholar.google.com/scholar?q=Schommer%20JC%2C%20Brown%20LM%2C%20Adekunle%20O%2C%20Olson%20AW%2C%20Mott%20DA.%202021%20National%20Consumer%20Survey%20on%20Medication%20Experiences%20and%20Pharmacists%E2%80%99%20Roles%20(NCSME-PR)%3A%20Codebook.%20University%20of%20Minnesota%20and%20Chapman%20University%3B%202021.">3</a><a class="cite" href="https://scholar.google.com/scholar?q=Majd%20Z.%20Effect%20of%20Initial%20Combination%20Therapy%20vs.%20Step-Therapy%20on%20Adherence%20and%20Persistence%20in%20Drug-Na%C3%AFve%20Type%202%20Diabetes%20Patients.%20Pharmaceutical%20Health%20Outcomes%20and%20Policy%2C%20College%20of%20Pharmacy%2C%20University%20of%20Houston%3B%202022.">5</a></div></div>
+      </div>
+      <div class="callout" style="margin-top:24px;">
+        <h3>Executive summary</h3>
+        <ul class="summary-list">
+          <li>The issue contained 11 article records and 377 extracted references after excluding the issue-level DOI.<a class="cite" href="https://www.jmcp.org/toc/jmcsp/current">1</a></li>
+          <li>DOI, PubMed, cited URL, and targeted search validation classified 375 references as validated and 2 as not found.</li>
+          <li>The not-found references were a 2021 NCSME-PR codebook and a 2022 University of Houston work cited in the type 2 diabetes adherence article.<a class="cite" href="https://www.jmcp.org/doi/full/10.18553/jmcp.2026.32.6.679">2</a><a class="cite" href="https://www.jmcp.org/doi/full/10.18553/jmcp.2026.32.6.717">4</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">01 / 06</div>
+  </article>
+
+  <article class="slide source-slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Source set</div>
+        <h2>Article collection and reference parsing were deterministic</h2>
+        <p>Full-text article pages were opened from the issue table of contents and references were captured from the scoped References container.</p>
+      </div>
+      <div class="grid-2">
+        <div class="callout">
+          <h3>Deterministic extraction record</h3>
+          <p>The JSON extraction file preserves each article title, article URL, DOI, Full text URL, PDF URL, reference order, DOI field, PMID URL, cited URL, and validation status.</p>
+          <div class="record-grid">
+            <div class="record-item"><div class="record-value">11</div><div class="record-label">article records from the current issue</div></div>
+            <div class="record-item"><div class="record-value">377</div><div class="record-label">references captured from full-text pages</div></div>
+            <div class="record-item"><div class="record-value">4</div><div class="record-label">primary validation routes applied</div></div>
+            <div class="record-item"><div class="record-value">2</div><div class="record-label">references carried forward as not found</div></div>
+          </div>
+          <p class="source-note">Evidence screenshots in later slides show the captured webpage records used for the not-found determinations.</p>
+        </div>
+        <div class="method-list">
+          <div class="method-item"><span class="tag lime">Step 1</span> Save all article titles, article URLs, DOI strings, Full text URLs, and PDF URLs.</div>
+          <div class="method-item"><span class="tag blue">Step 2</span> Visit each Full text page and extract #core-collateral-references .citation .citation-content.</div>
+          <div class="method-item"><span class="tag orange">Step 3</span> Preserve reference order as the reference number and store DOI, PMID URL, cited URL, and source links when present.</div>
+          <div class="method-item"><span class="tag pink">Step 4</span> Validate by DOI resolution, PubMed resolution, cited URL resolution, or targeted web search.</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">02 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Validation status</div>
+        <h2>375 of 377 extracted references had online evidence</h2>
+        <p>The unresolved set comprised 2 references, equal to 0.5% of the extracted reference set.</p>
+      </div>
+      <div class="grid-3">
+        <div class="metric"><div class="num">375</div><div class="label">validated references</div></div>
+        <div class="metric"><div class="num">2</div><div class="label">not found after targeted search</div></div>
+        <div class="metric"><div class="num">0</div><div class="label">references left in needs-review status</div></div>
+      </div>
+      <div class="table" style="margin-top:22px;">
+        <div class="row refs head"><div class="cell">Ref</div><div class="cell">Article</div><div class="cell">Location</div><div class="cell">Reason for flag</div></div>
+        <div class="row refs"><div class="cell">1</div><div class="cell">679</div><div class="cell">Reference 17</div><div class="cell">Crossref and web searches located adjacent published articles and 2015 NCSME material, but not the cited 2021 codebook.</div></div>
+<div class="row refs"><div class="cell">2</div><div class="cell">717</div><div class="cell">Reference 15</div><div class="cell">The live JMCP article body cites the prior Majd study, and PubMed lists a matching article with the same title family, 2025 publication year, PMID 40446757, and DOI 10.1016/j.jdiacomp.2025.109080.</div></div>
+      </div>
+      <p class="source-note">Search categories included exact-title queries, author and title queries, cited source or institution queries, DOI resolution, PubMed, and cited URL resolution.</p>
+    </div>
+    <div class="slide-num">03 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Flagged reference 1</div>
+        <h2>Searches located adjacent NCSME records, not the cited 2021 codebook</h2>
+        <p>Article 10.18553/jmcp.2026.32.6.679, reference 17.</p>
+      </div>
+      <div class="grid-2">
+        <div>
+          <img class="evidence-img shot-small" src="assets/actual_jmcp_679_article_ncsme_highlight_crop.png" alt="Highlighted JMCP article citation to NCSME reference 17" />
+          <p class="flag-copy">The JMCP article Methods section cites the 2021 NCSME-PR source with citation marker 17.</p>
+        </div>
+        <div>
+          <img class="evidence-img shot-small" src="assets/actual_bing_ncsme_codebook_highlight_crop.png" alt="NCSME search validation log" />
+          <p class="flag-copy">Crossref and web searches located adjacent published articles and 2015 NCSME material, but not the cited 2021 codebook.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">04 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Flagged reference 2</div>
+        <h2>Current source evidence points to a matching 2025 Majd article</h2>
+        <p>Article 10.18553/jmcp.2026.32.6.717, reference 15.</p>
+      </div>
+      <div class="grid-2">
+        <div>
+          <img class="evidence-img shot-small" src="assets/actual_jmcp_717_body_ref31_highlight_crop.png" alt="Highlighted Majd source reference" />
+          <p class="flag-copy">Majd Z. Effect of Initial Combination Therapy vs. Step-Therapy on Adherence and Persistence in Drug-Naive Type 2 Diabetes Patients. Pharmaceutical Health Outcomes and Policy, College of Pharmacy, University of Houston; 2022.</p>
+        </div>
+        <div>
+          <img class="evidence-img shot-small" src="assets/actual_pubmed_40446757_highlight_crop.png" alt="Majd search validation log" />
+          <p class="flag-copy">The live JMCP article body cites the prior Majd study, and PubMed lists a matching article with the same title family, 2025 publication year, PMID 40446757, and DOI 10.1016/j.jdiacomp.2025.109080.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">05 / 06</div>
+  </article>
+
+  <article class="slide references-slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">References 1-5</div>
+        <h2>References</h2>
+      </div>
+      <div class="table">
+        <div class="row refs head"><div class="cell">Ref</div><div class="cell">Source</div><div class="cell">Date / Status / Source Owner</div><div class="cell">Evidence Used in Report</div></div>
+        <div class="row refs"><div class="cell"><a href="https://www.jmcp.org/toc/jmcsp/current">1</a></div><div class="cell">JMCP current issue</div><div class="cell">Accessed May 30, 2026</div><div class="cell">Article source set, Full text links, issue metadata</div></div>
+<div class="row refs"><div class="cell"><a href="https://www.jmcp.org/doi/full/10.18553/jmcp.2026.32.6.679">2</a></div><div class="cell">JMCP article 10.18553/jmcp.2026.32.6.679</div><div class="cell">Accessed May 30, 2026</div><div class="cell">Flagged reference 17 source text</div></div>
+<div class="row refs"><div class="cell"><a href="https://scholar.google.com/scholar?q=Schommer%20JC%2C%20Brown%20LM%2C%20Adekunle%20O%2C%20Olson%20AW%2C%20Mott%20DA.%202021%20National%20Consumer%20Survey%20on%20Medication%20Experiences%20and%20Pharmacists%E2%80%99%20Roles%20(NCSME-PR)%3A%20Codebook.%20University%20of%20Minnesota%20and%20Chapman%20University%3B%202021.">3</a></div><div class="cell">Web search validation for NCSME-PR codebook</div><div class="cell">Search run May 30, 2026</div><div class="cell">Exact title, acronym, and author-title searches</div></div>
+<div class="row refs"><div class="cell"><a href="https://www.jmcp.org/doi/full/10.18553/jmcp.2026.32.6.717">4</a></div><div class="cell">JMCP article 10.18553/jmcp.2026.32.6.717</div><div class="cell">Accessed May 30, 2026</div><div class="cell">Flagged reference 15 source text</div></div>
+<div class="row refs"><div class="cell"><a href="https://scholar.google.com/scholar?q=Majd%20Z.%20Effect%20of%20Initial%20Combination%20Therapy%20vs.%20Step-Therapy%20on%20Adherence%20and%20Persistence%20in%20Drug-Na%C3%AFve%20Type%202%20Diabetes%20Patients.%20Pharmaceutical%20Health%20Outcomes%20and%20Policy%2C%20College%20of%20Pharmacy%2C%20University%20of%20Houston%3B%202022.">5</a></div><div class="cell">Web search validation for Majd dissertation</div><div class="cell">Search run May 30, 2026</div><div class="cell">Exact title, institution, author, and topic searches</div></div>
+      </div>
+      <p class="source-note">Separate screenshot appendix contains the highlighted evidence images used in slides 4 and 5.</p>
+    </div>
+    <div class="slide-num">06 / 06</div>
+  </article>
+</body>
+</html>

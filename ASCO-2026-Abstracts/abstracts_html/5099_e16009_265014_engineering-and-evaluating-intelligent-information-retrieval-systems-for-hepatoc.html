@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Engineering and evaluating intelligent information retrieval systems for hepatocellular carcinoma clinical question answering.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Engineering and evaluating intelligent information retrieval systems for hepatocellular carcinoma clinical question answering.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e16009</div>
+    <div><strong>First speaker:</strong> Michael Sheen, BS</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/265014">https://www.asco.org/abstracts-presentations/265014</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Large language models (LLMs) help navigate complex clinical guidelines but often suffer from hallucinations. Retrieval-augmented generation (RAG) systems aim to mitigate this, yet systematic evaluations in medical contexts are rare. This study benchmarks four AI architectures against the AASLD hepatocellular carcinoma guidelines to address this gap.</div>
+  <main> 
+
+	<div><b>Background: </b> Large language models (LLMs) help navigate complex clinical guidelines but often suffer from hallucinations. Retrieval-augmented generation (RAG) systems aim to mitigate this, yet systematic evaluations in medical contexts are rare. This study benchmarks four AI architectures against the AASLD hepatocellular carcinoma guidelines to address this gap.</p>  <b>Methods: </b> Four AI architectures were evaluated: a baseline LLM; a custom RAG system; a custom multimodal RAG system integrating figures; and a custom agentic multimodal RAG system with autonomous multi-step retrieval. All systems used GPT-5.1. Two test sets were used: 39 guideline-derived question–answer pairs spanning epidemiology, diagnostics, and therapeutics, and 10 complex clinical vignettes requiring integration of multiple guideline components. Each query was run five times and scored using an LLM-as-a-judge three-point scale: 0.0 (incorrect), 0.5 (partially correct), and 1.0 (correct). Mann–Whitney U tests compared systems with the baseline LLM.</p>  <b>Results: </b> For guideline questions, performance increased with architectural complexity. Agentic multimodal RAG achieved the highest mean score (0.81±0.31, SD), with 28/39 questions (71.8%) scoring 1.0 and 3/39 (7.7%) scoring 0.0. Multimodal RAG scored 0.74±0.36, traditional RAG 0.62±0.41, and the base LLM 0.51±0.40. All RAG systems significantly outperformed the base LLM (p&nbsp;&lt;&nbsp;0.001 for multimodal and agentic; p&nbsp;=&nbsp;0.004 for traditional). Agentic multimodal RAG showed the lowest variability across guideline questions, indicating more consistent performance than other architectures. In contrast, for clinical vignettes (n&nbsp;=&nbsp;10), the base LLM performed best (0.90±0.24), with 8/10 questions scoring 1.0. All RAG systems significantly underperformed compared to base LLM (p≤0.005): traditional RAG scored 0.63±0.46 (6/10 perfect), agentic multimodal RAG scored 0.73±0.35 (5/10 perfect), and multimodal RAG scored only 0.42±0.44, with 5/10 questions (50%) scoring 0.0. These findings suggest complex clinical reasoning relies more on parametric knowledge and general reasoning rather than document retrieval.</p>  <b>Conclusions: </b> These findings reveal a critical dichotomy in medical AI performance. While agentic and multimodal RAG architectures excel at factual extraction and visual data interpretation for specific guideline queries, they falter in complex clinical vignettes, where the base model’s holistic reasoning proves superior. This suggests that retrieval mechanisms can inadvertently fragment context or introduce noise during synthesis tasks.</div>
+
+
+
+	<div class="table_caption"><b>Comparative performance metrics across four AI system architectures</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td><strong>System</strong></td>
+<td><strong>Guideline Questions (n=39) Mean (SD)</strong></td>
+<td><strong>Vignettes (n=10) Mean (SD)</strong></td>
+</tr>
+<tr>
+<td>Base LLM</td>
+<td>0.51 (0.40)</td>
+<td>0.90 (0.24)</td>
+</tr>
+<tr>
+<td>RAG Pipeline</td>
+<td>0.62 (0.41)</td>
+<td>0.63 (0.46)</td>
+</tr>
+<tr>
+<td>Multimodal RAG</td>
+<td>0.74 (0.36)</td>
+<td>0.42 (0.44)</td>
+</tr>
+<tr>
+<td>Agentic Multimodal RAG</td>
+<td>0.81 (0.31)</td>
+<td>0.73 (0.35)</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

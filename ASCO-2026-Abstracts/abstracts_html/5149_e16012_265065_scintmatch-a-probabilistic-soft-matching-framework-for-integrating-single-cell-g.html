@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SCIntMatch: A probabilistic soft-matching framework for integrating single-cell genomes and transcriptomes to dissect adaptive resistance in patients with esophageal cancer.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>SCIntMatch: A probabilistic soft-matching framework for integrating single-cell genomes and transcriptomes to dissect adaptive resistance in patients with esophageal cancer.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e16012</div>
+    <div><strong>First speaker:</strong> Yue Lyu</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/265065">https://www.asco.org/abstracts-presentations/265065</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Adaptive resistance remains a major barrier to effective radiation therapy in esophageal cancer. While scDNA-seq reveals clonal architecture and scRNA-seq captures phenotypic states, linking specific genotypes to transcriptional programs remains challenging. Current methods often rely on hard clustering assignments that fail to capture the uncertainty and noise inherent in single-cell data. We developed SCIntMatch, a novel probabilistic soft-matching framework, and applied it to dissect resistance mechanisms in longitudinally sampled esophageal tumors.</div>
+  <main> 
+
+	<div>SCIntMatch: A Probabilistic Soft-Matching Framework for Integrating Single-Cell Genomes and Transcriptomes to Dissect Adaptive Resistance in Patients with Esophageal Cancer</p>  <b>Background: </b> Adaptive resistance remains a major barrier to effective radiation therapy in esophageal cancer. While scDNA-seq reveals clonal architecture and scRNA-seq captures phenotypic states, linking specific genotypes to transcriptional programs remains challenging. Current methods often rely on hard clustering assignments that fail to capture the uncertainty and noise inherent in single-cell data. We developed SCIntMatch, a novel probabilistic soft-matching framework, and applied it to dissect resistance mechanisms in longitudinally sampled esophageal tumors.</p>  <b>Methods: </b> SCIntMatch utilizes an optimal transport formulation to probabilistically map scRNA-seq profiles onto ground-truth scDNA-seq clonal landscapes. Unlike discrete assignment methods, our algorithm optimizes a global reconstruction loss in copy-number space and applies a softmax function to generate continuous probability scores for every cell-to-clone pairing. This allows the model to handle ambiguity by assigning "soft" weights rather than forcing rigid classifications. We validated the framework on a high-complexity "ground truth" breast cancer dataset before applying it to paired pre- and mid-treatment samples from esophageal cancer patients.</p>  <b>Results: </b> In technical validation, SCIntMatch successfully resolved complex subclonal architectures, demonstrating robust specificity in distinguishing normal diploid cells from the tumor mass. The soft-matching probabilities effectively captured the signal of different subclones, enabling the dissection of subtle evolutionary trajectories that hard-clustering methods missed. Applying SCIntMatch to the esophageal cohort revealed distinct resistance landscapes. The tool revealed distinct resistance landscapes across the cohort. In one non-responder, the tool linked persistent resistant clones to a specific transcriptional program characterized by upregulated oxidative phosphorylation and downregulated interferon/inflammatory responses. In another, SCIntMatch resolved intra-patient heterogeneity, distinguishing a 'stress-adapted' persistent clone (enriched for EMT, mTORC1, and NFκB) from a genetically distinct 'newly emerged' clone that exhibited a purely proliferative phenotype.</p>  <b>Conclusions: </b> SCIntMatch provides a rigorous probabilistic framework for resolving genotype-phenotype links. By replacing rigid clustering with soft-weighted assignments, we successfully identified coexisting intrinsic (metabolic adaptation) and adaptive (proliferative emergence) resistance mechanisms, highlighting the utility of probabilistic integration for precision oncology.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

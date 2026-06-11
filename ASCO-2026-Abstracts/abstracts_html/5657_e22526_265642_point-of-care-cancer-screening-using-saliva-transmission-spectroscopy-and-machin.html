@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Point-of-care cancer screening using saliva transmission spectroscopy and machine learning.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Point-of-care cancer screening using saliva transmission spectroscopy and machine learning.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e22526</div>
+    <div><strong>First speaker:</strong> Huizi Chen, MD, PhD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/265642">https://www.asco.org/abstracts-presentations/265642</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Tier-1 cancer screening would benefit from point-of-care (POC) testing that is rapid, inexpensive, and highly specific to minimize unnecessary downstream workup. We evaluated saliva transmission hyperspectral spectroscopy combined with machine learning algorithms as a POC screening approach.</div>
+  <main> 
+
+	<div><b>Background: </b>Tier-1 cancer screening would benefit from point-of-care (POC) testing that is rapid, inexpensive, and highly specific to minimize unnecessary downstream workup. We evaluated saliva transmission hyperspectral spectroscopy combined with machine learning algorithms as a POC screening approach.</p>  </p>  <b>Methods: </b> Saliva was collected from outpatient consented participants in a lung cancer clinic (n&nbsp;=&nbsp;99) and a high-risk clinic (n&nbsp;=&nbsp;152) on an IRB-approved protocol (PREDICT NCT05802069). Two drops of saliva were scanned in ~3 seconds on a ProSpectral hyperspectral spectrophotometric device to acquire transmission spectra.</p>  Cancer status and stage were abstracted from the electronic health record and categorized as cancer-positive, hereditary cancer-predisposition but without diagnosis, no evidence of disease (NED) while on treatment, and NED at least 2 months after treatment completion. Spectra and labels were used to train and validate a Pattern Discovery Engine (PDE) classifier, which yields a human-readable symbolic equation in the spectral domain; operating thresholds were calibrated to tune specificity for low false-positive tier-1 operation.</p>  <b>Results: </b> Across clinically relevant labeling i.e., cancer-positive (n&nbsp;=&nbsp;99 patients), hereditary cancer-predisposition but without diagnosis (n&nbsp;=&nbsp;86), no evidence of disease (NED) while on treatment (n&nbsp;=&nbsp;16), and NED at least 2 months after treatment completion (n&nbsp;=&nbsp;50), models achieved high median balanced accuracy and maintained discrimination under very high specificity settings suitable for tier-1 screening (very few false positives). At comparable cohort scale, discrimination exceeded that reported for sequencing-based cfDNA methylation blood assays, while reducing time-to-signal from centralized laboratory workflows (~2-week turnaround) to seconds at the POC and avoiding reagent costs.</p>  Saturation analysis indicates that Specificity &gt;&nbsp;98% is likely attainable with fewer than 500 samples, providing a path to a clinically actionable screening protocol in subsequent phases of work.</p>  <b>Conclusions: </b> Saliva transmission hyperspectral spectroscopy with the PDE supports a practical, near-real-time POC paradigm for early cancer screening and triage. Ongoing work will attribute discriminative spectral regions and identify contributing analytes and host-response biomarkers using orthogonal assays (e.g., fractionation and targeted mass spectrometry), improving interpretability and enabling prospective validation.</div>
+
+
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td><strong>Samples</strong></td>
+<td><strong>Balanced Accuracy</strong></td>
+<td><strong>Sensitivity</strong></td>
+<td><strong>Specificity</strong></td>
+<td><strong>F1-Score</strong></td>
+</tr>
+<tr>
+<td>251</td>
+<td>61%</td>
+<td><strong>44%</strong></td>
+<td><strong>91%</strong></td>
+<td>0.55</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

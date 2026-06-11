@@ -1,0 +1,6002 @@
+STATE: Arkansas\nURL: https://ar.primetherapeutics.com/documents/268611/269354/Arkansas+Medicaid+Payer+Sheet.pdf/b968e902-37a0-942c-0610-464bdf37938d?t=1682360375720\nSTATUS: 200\nCONTENT_TYPE: application/pdf\nSOURCE_ROLE: linked from https://ar.primetherapeutics.com/provider-documents\n\n--- Page 1 ---
+ 
+ 
+ 
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company 
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+October 10, 2022 
+Request Claim Billing/Claim Re-Bill Payer Sheet 
+**Start of Request Claim Billing/Claim Re-Bill (B1/B3) Payer Sheet** 
+General Information 
+Payer Name: Arkansas Medicaid 
+Plan Name/Group Name: Arkansas Medicaid 
+BIN: 017606 
+PCN: P027017606 
+Processor: Prime Therapeutics State Government Solutions 
+Effective as of: 03/14/2015  
+NCPDP Telecommunication Standard Version/Release 
+#: D.0  
+NCPDP Data Dictionary Version Date: October, 
+2013 
+NCPDP External Code List Version Date: October, 
+2013 
+Contact/Information Source: For questions prior to 03/14/2015, please call 800-424-5932. For 
+questions from 03/14/2015 forward, please call 800-424-7895. 
+Certification Testing Window: 02/02/2015 – 02/16/2015 
+Certification Contact Information: Please contact Thomasina Thomas at 804-548-0479 to schedule a 
+time for testing.  
+Provider Relations Help Desk Info: 1-800-424-7895  
+Other versions supported: No other versions supported 
+Other Transactions Supported 
+Payer:  Please list each transaction supported with the segments, fields, and pertinent information on 
+each transaction. 
+Transaction Code 
+Transaction Name 
+B1 
+Claim Billing 
+B2 
+Claim Reversal 
+B3 
+Claim Re-Bill 
+E1 
+Claim Eligibility Transaction 
+
+
+--- Page 2 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 2 
+Field Legend for Columns 
+Payer Usage 
+Column 
+Value 
+Explanation 
+Payer 
+Situation 
+Column 
+MANDATORY 
+M 
+The Field is mandatory for the Segment in the 
+designated Transaction. 
+No 
+REQUIRED 
+R 
+The Field has been designated with the situation of 
+“Required” for the Segment in the designated 
+Transaction. 
+No 
+QUALIFIED 
+REQUIREMENT 
+RW 
+“Required when”. The situations designated have 
+qualifications for usage (“Required if x”, “Not required if 
+y”). 
+Yes 
+Fields that are not used in the Claim Billing/Claim Re-Bill transactions and those that do not have 
+qualified requirements (i.e., not used) for this payer are excluded from the template.  
+Claim Billing/Claim Re-Bill Transaction 
+The following lists the segments and fields in a Claim Billing or Claim Re-Bill Transaction for the 
+NCPDP Telecommunication Standard Implementation Guide Version D.Ø.  
+Transaction Header Segment 
+Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+If Situational, Payer 
+Situation 
+This Segment is always sent 
+X 
+  
+Source of certification IDs 
+required in Software 
+Vendor/Certification ID (11Ø-AK) 
+is Payer Issued 
+X 
+ 
+Source of certification IDs 
+required in Software 
+Vendor/Certification ID (11Ø-AK) 
+is Switch/VAN issued 
+ 
+ 
+Source of certification IDs 
+required in Software 
+Vendor/Certification ID (11Ø-AK) 
+is Not used 
+ 
+ 
+ 
+
+
+--- Page 3 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 3 
+Transaction Header Segment 
+Claim Billing/Claim Re-Bill 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+1Ø1-A1 BIN NUMBER 
+017606 
+M 
+NEW! 
+1Ø2-A2 VERSION/RELEASE 
+NUMBER 
+DØ 
+M 
+ 
+1Ø3-A3 TRANSACTION CODE B1, B2, B3, E1 
+M 
+B1 Billing 
+B2 Reversal 
+B3 Re-Bill 
+E1 Eligibility Verification 
+1Ø4-A4 PROCESSOR 
+CONTROL NUMBER 
+P027017606 
+M 
+NEW! 
+1Ø9-A9 TRANSACTION 
+COUNT 
+ 
+Ø1 = One 
+occurrence 
+ 
+Ø2 = Two 
+occurrences 
+ 
+Ø3 = Three 
+occurrences 
+ 
+Ø4 = Four 
+occurrences 
+M 
+One transaction for B2 or 
+compound claim; Four allowed 
+for B1 or B3 
+2Ø2-B2 SERVICE PROVIDER 
+ID QUALIFIER 
+01-NPI 
+M 
+Code qualifying the ‘Service 
+Provider ID’ (Field # 2Ø1-B1) 
+Ø1 – National Provider 
+Identifier (NPI) 
+2Ø1-B1 Service Provider ID  
+National Provider 
+Identifier (NPI) 
+M 
+ 
+4Ø1-D1 Date of Service 
+Format = CCYYMMDD 
+M 
+ 
+11Ø-AK Software 
+Vendor/Certification ID 
+ 
+M 
+Required when vendor 
+certification is required by 
+Prime Therapeutics 
+Management – otherwise 
+submit all zeroes 
+ 
+Insurance Segment Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+If Situational, Payer Situation 
+This Segment is always sent 
+X 
+  
+ 
+
+
+--- Page 4 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 4 
+Insurance Segment 
+Segment Identification (111-AM) 
+= “Ø4” 
+Claim Billing/Claim Re-Bill 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+3Ø2-C2 CARDHOLDER ID 
+10-Digit Arkansas 
+Medicaid  ID Number 
+M 
+AR Medicaid identification 
+number (patient specific) 
+3Ø1-C1 GROUP ID 
+ARMEDICAID 
+R 
+NEW! 
+312-CC CARDHOLDER FIRST 
+NAME 
+ 
+R 
+ 
+313-CD CARDHOLDER LAST 
+NAME 
+ 
+R 
+ 
+36Ø-2B MEDICAID INDICATOR Two character State 
+Postal Code indicating 
+the state where 
+Medicaid coverage 
+exists. 
+RW 
+Imp Guide: Required, if 
+known, when patient has 
+Medicaid coverage.  
+Example: AR 
+ 
+Patient Segment Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+If Situational, Payer Situation 
+This Segment is always sent 
+X 
+  
+ 
+Patient Segment 
+Segment Identification (111-AM) 
+= “Ø1” 
+Claim Billing/Claim Re-Bill 
+Field 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+3Ø4-C4 DATE OF BIRTH 
+8 digit date of birth 
+Format = CCYYMMDD 
+R 
+ 
+3Ø5-C5 PATIENT GENDER 
+CODE 
+ 
+Ø = Not Specified 
+ 
+1 = Male 
+ 
+2 = Female 
+R 
+ 
+31Ø-CA PATIENT FIRST NAME  
+R 
+ 
+Required when the patient 
+has a first name; must 
+support special characters 
+ 
+Required for a patient 
+name validation 
+311-CB PATIENT LAST NAME  
+R 
+ 
+Required when the patient 
+has a last name; must 
+support special characters 
+ 
+Required for a patient 
+name validation 
+
+
+--- Page 5 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 5 
+Patient Segment 
+Segment Identification (111-AM) 
+= “Ø1” 
+Claim Billing/Claim Re-Bill 
+Field 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+3Ø7-C7 PLACE OF SERVICE 
+ 
+RW 
+ 
+Imp Guide: Required if this 
+field could result in 
+different coverage, pricing, 
+or patient financial 
+responsibility. 
+ 
+Payer Requirement: Same 
+as Imp Guide 
+335-2C PREGNANCY 
+INDICATOR 
+ 
+Blank = Not 
+Specified 
+ 
+1 = Not Pregnant 
+ 
+2 = Pregnant 
+RW 
+Payer requirement: Required if 
+the patient is known to be 
+pregnant 
+384-4X PATIENT RESIDENCE  
+Ø = Not Specified  
+ 
+1 = Home  
+ 
+2 = Skilled Nursing 
+Facility. PART B 
+ONLY  
+ 
+3 = Nursing Facility  
+ 
+4 = Assisted Living 
+Facility  
+ 
+5 = Custodial Care 
+Facility. PART B 
+ONLY  
+ 
+6 = Group Home  
+ 
+7 = Inpatient 
+Psychiatric Facility 
+ 
+8 = Psychiatric 
+Facility – Partial 
+Hospitalization 
+ 
+9 = Intermediate 
+Care 
+Facility/Mentally 
+Retarded 
+ 
+1Ø = Residential 
+Substance Abuse 
+Treatment Facility 
+ 
+11 = Hospice 
+ 
+12 = Psychiatric 
+Residential 
+Treatment Facility 
+RW 
+ 
+Imp Guide: Required if this 
+field could result in 
+different coverage, pricing, 
+or patient financial 
+responsibility. 
+ 
+Payer Requirement: Same 
+as Imp Guide  
+
+
+--- Page 6 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 6 
+Patient Segment 
+Segment Identification (111-AM) 
+= “Ø1” 
+Claim Billing/Claim Re-Bill 
+Field 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+ 
+13 = 
+Comprehensive 
+Inpatient 
+Rehabilitation 
+Facility 
+ 
+14 = Homeless 
+Shelter 
+ 
+15 = Correctional 
+Institution 
+ 
+Claim Segment Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+If Situational, Payer Situation 
+This Segment is always sent 
+X 
+  
+This payer supports partial fills 
+X 
+ 
+ 
+Claim Segment 
+Segment Identification (111-AM) 
+= “Ø7” 
+Claim Billing/Claim Re-Bill 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+455-EM PRESCRIPTION/SERVIC
+E REFERENCE 
+NUMBER QUALIFIER 
+1 = Rx Billing 
+M 
+For Transaction Code of “B1,” 
+in the Claim Segment, the 
+Prescription/Service 
+Reference Number Qualifier 
+(455-EM) is “1” (Rx Billing). 
+4Ø2-D2 PRESCRIPTION/SERVIC
+E REFERENCE 
+NUMBER 
+12 Bytes 
+M 
+ 
+436-E1 PRODUCT/SERVICE ID 
+QUALIFIER 
+ 
+ØØ = Not specified 
+ 
+Ø3 = National Drug 
+Code (NDC) 
+M 
+ 
+ØØ must be submitted for 
+compounds 
+ 
+03 for non-compound 
+claims 
+4Ø7-D7 PRODUCT/SERVICE ID  
+NDC for non-
+compound claims 
+ 
+“Ø” for compound 
+claims 
+M 
+CHANGED! “Ø” for compound 
+claims 
+
+
+--- Page 7 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 7 
+Claim Segment 
+Segment Identification (111-AM) 
+= “Ø7” 
+Claim Billing/Claim Re-Bill 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+456-EN ASSOCIATED 
+PRESCRIPTION/SERVIC
+E REFERENCE 
+NUMBER 
+ 
+RW 
+ 
+Required if the 
+“completion” transaction in 
+a partial fill (Dispensing 
+Status (343-HD) = “C” 
+(Completed)). 
+ 
+Required if the Dispensing 
+Status (343-HD) = “P” 
+(Partial Fill) and there are 
+multiple occurrences of 
+partial fills for this 
+prescription. 
+457-EP ASSOCIATED 
+PRESCRIPTION/SERVIC
+E DATE 
+ 
+RW 
+ 
+Required if the 
+“completion” transaction in 
+a partial fill (Dispensing 
+Status (343-HD) = “C” 
+(Completed)). 
+ 
+Required if Associated 
+Prescription/Service 
+Reference Number (456-
+EN) is used. 
+ 
+Required if the Dispensing 
+Status (343-HD) = “P” 
+(Partial Fill) and there are 
+multiple occurrences of 
+partial fills for this 
+prescription. 
+ 
+Payer Requirement: Same 
+as Imp Guide 
+442-E7 QUANTITY DISPENSED Metric Decimal 
+Quantity 
+R 
+ 
+460-ET QUANTITY 
+PRESCRIBED 
+ 
+RW 
+Imp Guide: Required when a 
+transmission is for a 
+Scheduled II drug as defined 
+in 21 CFR 1308.12 and per 
+CMS-0055-F (Compliance 
+Date 09/21/2020. Refer to the 
+Version D.0 Editorial 
+Document). 
+
+
+--- Page 8 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 8 
+Claim Segment 
+Segment Identification (111-AM) 
+= “Ø7” 
+Claim Billing/Claim Re-Bill 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+4Ø3-D3 FILL NUMBER 
+ 
+Ø = Original 
+dispensing 
+ 
+1–5 = Refill number 
+– Number of the 
+replenishment 
+R 
+ 
+4Ø5-D5 DAYS SUPPLY 
+ 
+R 
+ 
+4Ø6-D6 COMPOUND CODE 
+ 
+1 = Not a 
+Compound 
+ 
+2 = Compound 
+R 
+ 
+4Ø8-D8 DISPENSE AS WRITTEN 
+(DAW)/PRODUCT 
+SELECTION CODE 
+ 
+Ø = No Product 
+Selection Indicated 
+ 
+1 = Substitution 
+Not Allowed by 
+Prescriber 
+R 
+Values other than “0”, “1,” 
+414-DE DATE PRESCRIPTION 
+WRITTEN 
+ 
+R 
+ 
+415-DF NUMBER OF REFILLS 
+AUTHORIZED 
+ 
+Ø = No refills 
+authorized 
+ 
+1–99 = Authorized 
+Refill number – 
+with 99 being as 
+needed, refills 
+unlimited 
+R 
+NEW! 
+419-DJ PRESCRIPTION ORIGIN 
+CODE 
+ 
+1 = Written  
+ 
+2 = Telephone 
+ 
+3 = Electronic 
+ 
+4 = Facsimile 
+ 
+5 = Pharmacy 
+R 
+NEW! 
+354-NX SUBMISSION 
+CLARIFICATION CODE 
+COUNT 
+Maximum count of 3. 
+RW 
+ 
+Imp Guide: Required if 
+Submission Clarification 
+Code (42Ø-DK) is used. 
+ 
+Payer Requirement: Same 
+as Imp Guide 
+42Ø-DK SUBMISSION 
+CLARIFICATION CODE 
+8 = Process 
+Compound for 
+Approved Ingredients 
+RW 
+ 
+Imp Guide: Required if 
+clarification is needed and 
+value submitted is greater 
+than zero (Ø). 
+ 
+Payer Requirement: Same 
+
+
+--- Page 9 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 9 
+Claim Segment 
+Segment Identification (111-AM) 
+= “Ø7” 
+Claim Billing/Claim Re-Bill 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+as Imp Guide 
+3Ø8-C8 OTHER COVERAGE 
+CODE 
+ 
+Ø = Not Specified 
+by patient 
+ 
+1 = No Other 
+Coverage 
+ 
+2 = Other coverage 
+exists-payment 
+collected 
+ 
+3 = Other 
+Coverage Billed - 
+claim not covered 
+ 
+4 = Other coverage 
+exists-payment not 
+collected 
+RW 
+ 
+Required for Coordination 
+of Benefits. 
+ 
+OCC 8 is not allowed 
+429-DT SPECIAL PACKAGING 
+INDICATOR 
+ 
+1 = Not Unit Dose 
+ 
+2 = Manufacturer 
+Unit Dose 
+ 
+3 = Pharmacy Unit 
+Dose 
+RW 
+ 
+453-EJ ORIGINALLY 
+PRESCRIBED 
+PRODUCT/SERVICE ID 
+QUALIFIER 
+ 
+RW 
+Required on partial or 
+completion fills 
+445-EA ORIGINALLY 
+PRESCRIBED 
+PRODUCT/SERVICE 
+CODE 
+ 
+RW 
+Required on partial or 
+completion fills 
+446-EB ORIGINALLY 
+PRESCRIBED 
+QUANTITY 
+ 
+RW 
+Required on partial or 
+completion fills 
+454-EK SCHEDULED 
+PRESCRIPTION ID 
+NUMBER 
+ 
+RW 
+ 
+Imp Guide: Required if 
+necessary for 
+state/federal/regulatory 
+agency programs. 
+ 
+Payer Requirement: 
+Follow State regulatory 
+guidance for products that 
+require a scheduled 
+
+
+--- Page 10 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 10 
+Claim Segment 
+Segment Identification (111-AM) 
+= “Ø7” 
+Claim Billing/Claim Re-Bill 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+prescription ID number. 
+6ØØ-28 UNIT OF MEASURE 
+ 
+Values: 
+ 
+EA = Each 
+ 
+GM = Grams 
+ 
+ML = Milliliters 
+R 
+NEW!  
+Required 
+418-DI LEVEL OF SERVICE 
+Values: 
+ 
+ØØ = Not specified 
+ 
+Ø 3 = Emergency 
+RW 
+Required for Emergency 
+Supply; “3” only allowed value. 
+Must be submitted with a 
+maximum 5 day supply. 
+461-EU PRIOR 
+AUTHORIZATION TYPE 
+CODE 
+ 
+RW 
+ 
+Imp Guide: Required if this 
+field could result in 
+different coverage, pricing, 
+or patient financial 
+responsibility. 
+ 
+Payer Requirement: Same 
+as Imp Guide 
+462-EV PRIOR 
+AUTHORIZATION 
+NUMBER SUBMITTED 
+ 
+RW 
+ 
+Imp Guide: Required if this 
+field could result in 
+different coverage, pricing, 
+or patient financial 
+responsibility. 
+ 
+Payer Requirement: Same 
+as Imp Guide 
+343-HD DISPENSING STATUS 
+ 
+P = Partial Fill 
+ 
+C = Completion of 
+Partial Fill 
+RW 
+ 
+Imp Guide: Required for 
+the partial fill or the 
+completion fill of a 
+prescription. 
+ 
+Payer Requirement: Same 
+as Imp Guide 
+344-HF QUANTITY INTENDED 
+TO BE DISPENSED 
+ 
+RW 
+ 
+Imp Guide: Required for 
+the partial fill or the 
+completion fill of a 
+prescription. 
+ 
+Payer Requirement: Same 
+as Imp Guide 
+345-HG DAYS SUPPLY 
+INTENDED TO BE 
+DISPENSED 
+ 
+RW 
+ 
+Imp Guide: Required for 
+the partial fill or the 
+completion fill of a 
+prescription. 
+
+
+--- Page 11 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 11 
+Claim Segment 
+Segment Identification (111-AM) 
+= “Ø7” 
+Claim Billing/Claim Re-Bill 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+ 
+Payer Requirement: Same 
+as Imp Guide 
+357-NV DELAY REASON CODE  
+RW 
+ 
+Imp Guide: Required when 
+needed to specify the 
+reason that submission of 
+the transaction has been 
+delayed. 
+ 
+Payer Requirement: Same 
+as Imp Guide 
+995-E2 ROUTE OF 
+ADMINISTRATION 
+SNOMED 
+RW 
+NEW! 
+ 
+Imp Guide: Required if 
+specified in trading partner 
+agreement. 
+ 
+Payer Requirement 
+Required when submitting 
+compounds claims 
+996-G1 COMPOUND TYPE 
+ 
+Ø1 = Anti-infective 
+ 
+Ø2 = Ionotropic 
+ 
+Ø3 = 
+Chemotherapy 
+ 
+Ø4 = Pain 
+management 
+ 
+Ø5 = TPN/PPN 
+(Hepatic, Renal, 
+Pediatric) Total 
+Parenteral 
+Nutrition/ 
+Peripheral 
+Parenteral Nutrition 
+ 
+Ø6 = Hydration 
+ 
+Ø7 = Ophthalmic 
+ 
+99 = Other 
+RW 
+ 
+Imp Guide: Required if 
+specified in trading partner 
+agreement. 
+ 
+Payer Requirement: Same 
+as Imp Guide 
+147-U7 PHARMACY SERVICE 
+TYPE 
+ 
+1 = Community/ 
+Retail Pharmacy 
+Services 
+ 
+2 = Compounding 
+Pharmacy Services 
+ 
+3 = Home Infusion 
+Therapy Provider 
+RW 
+ 
+Imp Guide: Required when 
+the submitter must clarify 
+the type of services being 
+performed as a condition 
+for proper reimbursement 
+by the payer. 
+ 
+Payer Requirement: Same 
+
+
+--- Page 12 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 12 
+Claim Segment 
+Segment Identification (111-AM) 
+= “Ø7” 
+Claim Billing/Claim Re-Bill 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+Services 
+ 
+5 = Long-Term 
+Care Pharmacy 
+Services 
+ 
+8 = Specialty Care 
+Pharmacy Services 
+as Imp Guide 
+ 
+Pricing Segment Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+If Situational, Payer Situation 
+This Segment is always sent 
+X 
+  
+ 
+Pricing Segment 
+Segment Identification (111-AM) 
+= “11” 
+Claim Billing/Claim Re-Bill 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+4Ø9-D9 INGREDIENT COST 
+SUBMITTED 
+ 
+R 
+ 
+412-DC DISPENSING FEE 
+SUBMITTED 
+ 
+RW 
+ 
+Imp Guide: Required if its 
+value has an effect on the 
+Gross Amount Due (43Ø-
+DU) calculation.  
+ 
+Payer Requirement: Same 
+as Imp Guide 
+433-DX PATIENT PAID 
+AMOUNT SUBMITTED 
+ 
+RW 
+NOT REQUIRED; DO NOT 
+SEND  
+438-E3 INCENTIVE AMOUNT 
+SUBMITTED 
+ 
+RW 
+ 
+Imp Guide: Required if its 
+value has an effect on the 
+Gross Amount Due (43Ø-
+DU) calculation. 
+ 
+Payer Requirement: Same 
+as Imp Guide 
+426-DQ USUAL AND 
+CUSTOMARY CHARGE 
+ 
+R 
+340b pharmacies must submit 
+actual acquisition cost in this 
+field 
+43Ø-DU GROSS AMOUNT DUE  
+R 
+ 
+423-DN BASIS OF COST 
+DETERMINATION 
+Values: 
+ 
+Ø7 = Usual & 
+R 
+ 
+Imp Guide: Required if 
+needed for receiver 
+claim/encounter 
+
+
+--- Page 13 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 13 
+Pricing Segment 
+Segment Identification (111-AM) 
+= “11” 
+Claim Billing/Claim Re-Bill 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+Customary  
+ 
+Ø8 = 34ØB/ 
+Disproportionate 
+Share 
+Pricing/Public 
+Health Service  
+ 
+13 = Special 
+Patient Pricing – 
+The cost 
+calculated by the 
+pharmacy for the 
+drug for this 
+special patient 
+adjudication. 
+ 
+Payer Requirement: 
+Claims for products 
+purchased through the 
+340B Program must be 
+submitted with one of the 
+following values:  
+− 
+Ø7  
+− 
+Ø8  
+− 
+13 
+ 
+Pharmacy Provider Segment 
+Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+If Situational, Payer Situation 
+This Segment is always sent 
+ 
+  
+This Segment is situational 
+X 
+Required only if law or regulation required. 
+ 
+ 
+Prescriber Segment Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+If Situational, Payer Situation 
+This Segment is always sent 
+X 
+  
+ 
+Prescriber Segment 
+Segment Identification (111-AM) 
+= “Ø3” 
+Claim Billing/Claim Re-Bill 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+466-EZ PRESCRIBER ID 
+QUALIFIER  
+Ø1 = NPI 
+R 
+AR Medicaid requires the 
+National Provider Identifier 
+(NPI) (Ø1) 
+411-DB PRESCRIBER ID 
+Prescriber’s individual 
+NPI 
+R 
+Required; Must submit valid 
+NPI 
+427-DR PRESCRIBER LAST 
+NAME 
+ 
+RW 
+ 
+Imp Guide: Required when 
+the Prescriber ID (411-DB) 
+is not known. 
+ 
+Required if needed for 
+Prescriber ID (411-DB) 
+validation/clarification. 
+ 
+
+
+--- Page 14 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 14 
+Coordination of Benefits/Other 
+Payments Segment Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+If Situational, Payer Situation 
+This Segment is always sent 
+ 
+  
+This Segment is situational 
+X 
+ 
+Required only for secondary, tertiary, 
+etc., claims. 
+ 
+It is used when a receiver needs 
+payment information from other 
+receivers to perform claim/encounter 
+determination. This may be in the case 
+of primary, secondary, tertiary etc., 
+health plan coverage for example. 
+ 
+The Coordination of Benefits/Other 
+Payments Segment is mandatory for a 
+Claim Billing or Encounter request to a 
+downstream payer. It is used to assist a 
+downstream payer to uniquely identify a 
+claim or encounter in case of duplicate 
+processing.  
+ 
+The segment is mandatory if required 
+under provider payer contract or 
+mandatory on claims where this 
+information is necessary for 
+adjudication of the claim. 
+Scenario 1 – Other Payer Amount 
+Paid Repetitions Only 
+X 
+OCC codes 0, 1, 2, 3, and 4 Supported (no 
+co-pay only billing allowed) 
+ 
+Coordination of Benefits/Other 
+Payments Segment 
+Segment Identification (111-AM) 
+= “Ø5” 
+Claim Billing/Claim Re-Bill 
+Scenario 1 – Other Payer Amount Paid Repetitions Only 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+337-4C 
+COORDINATION OF 
+BENEFITS/OTHER 
+PAYMENTS COUNT 
+Maximum count of 9 
+M 
+Required if submitting other 
+coverage/payment 
+information. 
+338-5C 
+Other Payer Coverage 
+Type 
+ 
+M 
+Required if patient has other 
+coverage 
+339-6C 
+OTHER PAYER ID 
+QUALIFIER 
+03 = BIN 
+99 = Other 
+RW 
+Required if Other Payer ID 
+(Field # 34Ø-7C) is used 
+34Ø-7C OTHER PAYER ID  
+ 
+RW 
+Required if COB segment is 
+used 
+ 
+
+
+--- Page 15 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 15 
+Coordination of Benefits/Other 
+Payments Segment 
+Segment Identification (111-AM) 
+= “Ø5” 
+Claim Billing/Claim Re-Bill 
+Scenario 1 – Other Payer Amount Paid Repetitions Only 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+443-E8 
+OTHER PAYER DATE 
+ 
+RW 
+ 
+Imp Guide: Required if 
+identification of the Other 
+Payer Date is necessary 
+for claim/encounter 
+adjudication. 
+ 
+Payer Requirement: Same 
+as Imp Guide 
+341-HB OTHER PAYER 
+AMOUNT PAID COUNT 
+Maximum count of 9. 
+RW 
+ 
+Imp Guide: Required if 
+Other Payer Amount Paid 
+Qualifier (342-HC) is used. 
+ 
+Payer Requirement: Same 
+as Imp Guide 
+342-HC OTHER PAYER 
+AMOUNT PAID 
+QUALIFIER 
+Values: 
+Ø 7 = Drug Benefit 
+RW 
+ 
+Required on all COB 
+claims with Other 
+Coverage Code of 2 
+ 
+“Ø7” is the only accepted 
+value.  
+431-DV OTHER PAYER 
+AMOUNT PAID  
+ 
+RW 
+Imp Guide: Required if other 
+payer has approved payment 
+for some/all of the billing.  
+471-5E 
+OTHER PAYER 
+REJECT COUNT 
+Maximum count of 5. 
+RW*** 
+Required on all COB claims 
+with Other Coverage Code of 
+3. 
+472-6E 
+OTHER PAYER 
+REJECT CODE 
+ 
+RW 
+Required on all COB claims 
+with Other Coverage Code of 
+3 
+ 
+DUR/PPS Segment Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+If Situational, Payer Situation 
+This Segment is always sent 
+ 
+  
+This Segment is situational 
+X 
+Submitted if required to affect outcome of 
+claim related to DUR intervention. 
+ 
+
+
+--- Page 16 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 16 
+DUR/PPS Segment 
+Segment Identification (111-AM) 
+= “Ø8” 
+Claim Billing/Claim Re-Bill 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+473-7E DUR/PPS CODE 
+COUNTER 
+Maximum 
+ of 9 occurrences. 
+RW*** 
+ 
+Imp Guide: Required if 
+DUR/PPS Segment is 
+used. 
+ 
+Payer Requirement: Same 
+as Imp Guide 
+439-E4 REASON FOR 
+SERVICE CODE 
+Allowed values:  
+ 
+DD = Drug-Drug 
+Interaction 
+ 
+ER = Early Refill  
+ 
+HD = High Dose 
+ 
+TD=Therapeutic 
+Duplication 
+RW*** 
+Required when needed to 
+communicate DUR 
+information  
+44Ø-E5 PROFESSIONAL 
+SERVICE CODE 
+Allowed values: 
+ 
+MØ = Prescriber 
+consulted 
+ 
+PØ = Patient 
+consulted 
+ 
+RØ = Pharmacist 
+consulted other 
+source 
+RW*** 
+Required when needed to 
+communicate DUR 
+information 
+ 
+441-E6 RESULT OF SERVICE 
+CODE 
+Allowed Values: 
+ 
+1A = Filled As Is, 
+False Positive 
+ 
+1B = Filled 
+Prescription As Is 
+ 
+1C = Filled, With 
+Different Dose 
+ 
+1D = Filled, With 
+Different 
+Directions 
+ 
+IE = Filled, with 
+Different Drug 
+ 
+1F = Filled, With 
+Different Quantity 
+ 
+1G = Filled, With 
+Prescriber 
+Approval 
+ 
+2A = Prescription 
+not filled 
+RW*** 
+Required when needed to 
+communicate DUR 
+information 
+ 
+
+
+--- Page 17 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 17 
+DUR/PPS Segment 
+Segment Identification (111-AM) 
+= “Ø8” 
+Claim Billing/Claim Re-Bill 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+ 
+2B = Not filled, 
+directions clarified 
+474-8E DUR/PPS LEVEL OF 
+EFFORT 
+Values: 
+ 
+Ø = Not Specified 
+ 
+11 = Level 1 
+(Lowest) 
+ 
+12 = Level 2 
+ 
+13 = Level 3 
+RW 
+ 
+ 
+Compound Segment Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+If Situational, Payer Situation 
+This Segment is always sent 
+ 
+  
+This Segment is situational 
+X 
+Submitted if the claim dispensed is a 
+compound. 
+ 
+Compound Segment 
+Segment Identification (111-AM) 
+= “1Ø” 
+Claim Billing/Claim Re-Bill 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+45Ø-EF COMPOUND DOSAGE 
+FORM DESCRIPTION 
+CODE 
+Values: 
+ 
+Blank = Not 
+Specified 
+ 
+Ø1 = Capsule 
+ 
+Ø2 = Ointment 
+ 
+Ø3 = Cream 
+ 
+Ø4 = Suppository 
+ 
+Ø5 = Powder  
+ 
+Ø6 = Emulsion 
+ 
+Ø7 = Liquid 
+ 
+1Ø = Tablet 
+ 
+11 = Solution 
+ 
+12 = Suspension 
+ 
+13 = Lotion 
+ 
+14 = Shampoo 
+ 
+15 = Elixir 
+ 
+16 = Syrup 
+ 
+17 = Lozenge 
+M 
+ 
+
+
+--- Page 18 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 18 
+Compound Segment 
+Segment Identification (111-AM) 
+= “1Ø” 
+Claim Billing/Claim Re-Bill 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+ 
+18 = Enema 
+451-EG COMPOUND 
+DISPENSING UNIT 
+FORM INDICATOR 
+Values: 
+ 
+1 = Each 
+ 
+2 = Grams 
+ 
+3 = Milliliters 
+M 
+ 
+447-EC COMPOUND 
+INGREDIENT 
+COMPONENT  COUNT 
+Maximum 25 
+ingredients 
+M 
+ 
+488-RE COMPOUND PRODUCT 
+ID QUALIFIER 
+Ø3 = National Drug 
+Code (NDC) – 
+Formatted 11 digits 
+(N) 
+M 
+ 
+489-TE COMPOUND PRODUCT 
+ID  
+ 
+M 
+ 
+448-ED COMPOUND 
+INGREDIENT 
+QUANTITY 
+ 
+M 
+ 
+449-EE COMPOUND 
+INGREDIENT DRUG 
+COST 
+ 
+R 
+Imp Guide: Required if needed 
+for receiver claim 
+determination when multiple 
+products are billed. 
+49Ø-UE COMPOUND 
+INGREDIENT BASIS OF 
+COST 
+DETERMINATION 
+Values: 
+ 
+ØØ = Default 
+ 
+Ø1 = AWP 
+ 
+Ø2 = Local 
+Wholesaler 
+ 
+Ø3 = Direct 
+ 
+Ø4 = EAC 
+(Estimated 
+Acquisition Cost) 
+ 
+Ø5 = Acquisition 
+ 
+Ø6 = MAC 
+(Maximum 
+Allowable Cost) 
+ 
+Ø7 = Usual & 
+Customary 
+ 
+Ø8 = 34ØB/ 
+Disproportionate 
+RW 
+NEW! 
+ 
+Imp Guide: Required if 
+needed for receiver claim 
+determination when 
+multiple products are 
+billed. 
+ 
+Required when submitting 
+compounds claims 
+
+
+--- Page 19 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 19 
+Compound Segment 
+Segment Identification (111-AM) 
+= “1Ø” 
+Claim Billing/Claim Re-Bill 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+Share Pricing 
+ 
+Ø9 = Other 
+ 
+1Ø = ASP 
+(Average Sales 
+Price) 
+ 
+11 = AMP 
+(Average 
+Manufacturer 
+Price) 
+ 
+12 = WAC 
+(Wholesale 
+Acquisition Cost) 
+ 
+13 = Special 
+Patient Pricing 
+ 
+ 
+Clinical Segment Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+If Situational, Payer Situation 
+This Segment is always sent 
+ 
+  
+This Segment is situational 
+X 
+Submitted if the clinical detail will affect the 
+outcome of claims processing. 
+ 
+Clinical Segment 
+Segment Identification (111-AM) 
+= “13” 
+Claim Billing/Claim Re-Bill 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+491-VE DIAGNOSIS CODE 
+COUNT 
+Maximum count of 5 
+RW 
+ 
+Imp Guide: Required if 
+Diagnosis Code Qualifier 
+(492-WE) and Diagnosis 
+Code (424-DO) are used. 
+ 
+Payer Requirement: Same 
+as Imp Guide 
+492-WE DIAGNOSIS CODE 
+QUALIFIER 
+ 
+RW*** 
+Required if Diagnosis Code 
+(424-DO) is used. AR Medicaid 
+Valid Value: Ø1 = International 
+Classification of Diseases 
+(ICD9) 
+424-DO DIAGNOSIS CODE 
+ 
+RW*** 
+ 
+Imp Guide: Required if this 
+field could result in different 
+
+
+--- Page 20 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 20 
+Clinical Segment 
+Segment Identification (111-AM) 
+= “13” 
+Claim Billing/Claim Re-Bill 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+coverage, pricing, patient 
+financial responsibility, 
+and/or drug utilization 
+review outcome.  
+ 
+Required if this field affects 
+payment for professional 
+pharmacy service. 
+ 
+Required if this information 
+can be used in place of 
+prior authorization.  
+ 
+Required if necessary for 
+state/federal/regulatory 
+agency programs. 
+ 
+Payer Requirement: 
+Required to identify 
+pregnancy. 
+493-XE CLINICAL 
+INFORMATION 
+COUNTER 
+Maximum 5 
+occurrences 
+supported. 
+RW*** 
+ 
+Required if 494-ZE, 495-
+H1, 496-H2 are sent. 
+ 
+Grouped with 
+Measurement fields 
+(Measurement Date (494-
+ZE), Measurement Time 
+(495-H1), Measurement 
+Dimension (496-H2), 
+Measurement Unit (497-
+H3), Measurement Value 
+(499-H4) 
+494-ZE MEASUREMENT DATE  
+RW*** 
+Required if necessary when 
+this field could result in 
+different coverage and/or drug 
+utilization review outcome 
+495-H1 MEASUREMENT TIME  
+RW*** 
+ 
+Required if time is known 
+or has impact on 
+measurement. 
+ 
+Required if necessary 
+when this field could result 
+in different coverage and/or 
+drug utilization review 
+outcome 
+
+
+--- Page 21 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 21 
+Clinical Segment 
+Segment Identification (111-AM) 
+= “13” 
+Claim Billing/Claim Re-Bill 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+496-H2 MEASUREMENT 
+DIMENSION 
+ 
+RW*** 
+ 
+Required if Measurement 
+Unit (497-H3) and 
+Measurement Value (499-
+H4) are used. 
+ 
+Required if necessary 
+when this field could result 
+in different coverage and/or 
+drug utilization review 
+outcome 
+497-H3 MEASUREMENT UNIT 
+ 
+RW*** 
+ 
+Required if Measurement 
+Dimension (496-H2) and 
+Measurement Value (499-
+H4) are used 
+ 
+Required if necessary 
+when this field could result 
+in different coverage and/or 
+drug utilization review 
+outcome 
+499-H4 MEASUREMENT 
+VALUE 
+ 
+RW*** 
+ 
+Required if Measurement 
+Dimension (496-H2) and 
+Measurement Unit (497-
+H3) are used. 
+ 
+Required if necessary 
+when this field could result 
+in different coverage and/or 
+drug utilization review 
+outcome 
+ 
+**End of Request Claim Billing/Claim Re-Bill (B1/B3) Payer Sheet** 
+ 
+ 
+
+
+--- Page 22 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 22 
+Response Claim Billing/Claim Re-Bill Payer Sheet  
+Claim Billing/Claim Re-Bill Accepted/Paid (or Duplicate of Paid) Response 
+**Start of Response Claim Billing/Claim Re-Bill (B1/B3) Payer Sheet** 
+General Information 
+Payer Name: Prime Therapeutics State Government Solutions 
+Plan Name/Group Name: Arkansas Medicaid 
+BIN: 017606 
+PCN: P027017606 
+Claim Billing/Claim Re-Bill PAID (or Duplicate of PAID) Response 
+The following lists the segments and fields in a Claim Billing or Claim Re-Bill response (Paid or 
+Duplicate of Paid) Transaction for the NCPDP Telecommunication Standard Implementation Guide 
+Version D.Ø.  
+Response Transaction Header 
+Segment Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+Accepted/Paid (or Duplicate of Paid) 
+If Situational, Payer Situation 
+This Segment is always sent 
+X 
+  
+ 
+Response Transaction Header 
+Segment 
+Claim Billing/Claim Re-Bill 
+Accepted/Paid (or Duplicate of Paid) 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+1Ø2-A2 VERSION/RELEASE 
+NUMBER 
+DØ 
+M 
+ 
+1Ø3-A3 TRANSACTION CODE 
+B1, B3 
+M 
+ 
+1Ø9-A9 TRANSACTION COUNT 
+Same value as in 
+request 
+M 
+ 
+5Ø1-F1 HEADER RESPONSE 
+STATUS 
+A = Accepted 
+M 
+ 
+2Ø2-B2 SERVICE PROVIDER ID 
+QUALIFIER 
+Same value as in 
+request 
+M 
+ 
+2Ø1-B1 SERVICE PROVIDER ID  
+Same value as in 
+request 
+M 
+ 
+4Ø1-D1 DATE OF SERVICE 
+Same value as in 
+request 
+M 
+ 
+ 
+
+
+--- Page 23 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 23 
+Response Message Segment 
+Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+Accepted/Paid (or Duplicate of 
+Paid) 
+If Situational, Payer Situation 
+This Segment is always sent 
+ 
+  
+This Segment is situational 
+X 
+Sent if additional information is 
+available from the payer/processor. 
+ 
+Response Message Segment 
+Segment Identification (111-AM) = 
+“2Ø” 
+Claim Billing/Claim Re-Bill 
+Accepted/Paid (or Duplicate of Paid) 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+5Ø4-F4 MESSAGE 
+ 
+RW 
+ 
+Imp Guide: Required if text is 
+needed for clarification or detail. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+ 
+Response Insurance Segment 
+Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+Accepted/Paid (or Duplicate of Paid) 
+If Situational, Payer Situation 
+This Segment is always sent 
+X 
+  
+This Segment is situational 
+ 
+ 
+ 
+Response Insurance Segment 
+Segment Identification (111-AM) = 
+“25” 
+Claim Billing/Claim Re-Bill 
+Accepted/Paid (or Duplicate of Paid) 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+3Ø1-C1 GROUP ID 
+ 
+RW 
+ 
+Imp Guide: Required if needed 
+to identify the actual cardholder 
+or employer group, to identify 
+appropriate group number, 
+when available. 
+ 
+Required to identify the actual 
+group that was used when 
+multiple group coverages exist. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+ 
+Response Patient Segment 
+Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+Accepted/Paid (or Duplicate of Paid) 
+If Situational, Payer Situation 
+This Segment is always sent 
+X 
+  
+This Segment is situational 
+ 
+ 
+ 
+
+
+--- Page 24 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 24 
+Response Patient Segment 
+Segment Identification (111-AM) = 
+“29” 
+Claim Billing/Claim Re-Bill 
+Accepted/Paid (or Duplicate of Paid) 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+31Ø-CA PATIENT FIRST NAME 
+ 
+RW 
+ 
+Imp Guide: Required if known. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+311-CB PATIENT LAST NAME 
+ 
+RW 
+ 
+Imp Guide: Required if known. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+3Ø4-C4 DATE OF BIRTH 
+ 
+RW 
+ 
+Imp Guide: Required if known. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+ 
+Response Status Segment 
+Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+Accepted/Paid (or Duplicate of 
+Paid) 
+If Situational, Payer Situation 
+This Segment is always sent 
+X 
+  
+ 
+Response Status Segment 
+Segment Identification (111-AM) = 
+“21” 
+Claim Billing/Claim Re-Bill 
+Accepted/Paid (or Duplicate of Paid) 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+112-AN TRANSACTION 
+RESPONSE STATUS 
+ 
+P = Paid 
+ 
+D = 
+Duplicate 
+of Paid 
+M 
+ 
+5Ø3-F3 AUTHORIZATION 
+NUMBER 
+ 
+RW 
+ 
+Imp Guide: Required if needed 
+to identify the transaction. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+547-5F APPROVED MESSAGE 
+CODE COUNT 
+Maximum 
+count of 5. 
+RW 
+ 
+Imp Guide: Required if 
+Approved Message Code (548-
+6F) is used. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+
+
+--- Page 25 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 25 
+Response Status Segment 
+Segment Identification (111-AM) = 
+“21” 
+Claim Billing/Claim Re-Bill 
+Accepted/Paid (or Duplicate of Paid) 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+548-6F APPROVED MESSAGE 
+CODE 
+ 
+RW 
+ 
+Imp Guide: Required if 
+Approved Message Code 
+Count (547-5F) is used and the 
+sender needs to communicate 
+additional follow up for a 
+potential opportunity. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+13Ø-UF ADDITIONAL MESSAGE 
+INFORMATION COUNT 
+Maximum 
+count of 25. 
+RW 
+ 
+Imp Guide: Required if 
+Additional Message Information 
+(526-FQ) is used. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+132-UH ADDITIONAL MESSAGE 
+INFORMATION 
+QUALIFIER 
+ 
+RW 
+ 
+Imp Guide: Required if 
+Additional Message Information 
+(526-FQ) is used. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+526-FQ ADDITIONAL MESSAGE 
+INFORMATION 
+ 
+RW 
+ 
+Imp Guide: Required when 
+additional text is needed for 
+clarification or detail. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+131-UG ADDITIONAL MESSAGE 
+INFORMATION 
+CONTINUITY 
+ 
+RW 
+ 
+Imp Guide: Required if and 
+only if current repetition of 
+Additional Message Information 
+(526-FQ) is used, another 
+populated repetition of 
+Additional Message Information 
+(526-FQ) follows it, and the text 
+of the following message is a 
+continuation of the current. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+549-7F HELP DESK PHONE 
+NUMBER QUALIFIER 
+ 
+RW 
+ 
+Imp Guide: Required if Help 
+Desk Phone Number (55Ø-8F) 
+is used. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+
+
+--- Page 26 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 26 
+Response Status Segment 
+Segment Identification (111-AM) = 
+“21” 
+Claim Billing/Claim Re-Bill 
+Accepted/Paid (or Duplicate of Paid) 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+55Ø-8F HELP DESK PHONE 
+NUMBER 
+ 
+RW 
+ 
+Imp Guide: Required if needed 
+to provide a support telephone 
+number to the receiver. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+ 
+Response Claim Segment 
+Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+Accepted/Paid (or Duplicate of 
+Paid) 
+If Situational, Payer Situation 
+This Segment is always sent 
+X 
+  
+ 
+Response Claim Segment 
+Segment Identification (111-AM) = 
+“22” 
+Claim Billing/Claim Re-Bill 
+Accepted/Paid (or Duplicate of Paid) 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+455-EM PRESCRIPTION/SERVICE 
+REFERENCE NUMBER 
+QUALIFIER 
+1 = RxBilling 
+M 
+Imp Guide: For Transaction Code 
+of “B1,” in the Response Claim 
+Segment, the Prescription/Service 
+Reference Number Qualifier (455-
+EM) is “1” (Rx Billing). 
+4Ø2-D2 PRESCRIPTION/SERVICE 
+REFERENCE NUMBER 
+ 
+M 
+ 
+ 
+Response Pricing Segment 
+Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+Accepted/Paid (or Duplicate of 
+Paid) 
+If Situational, Payer Situation 
+This Segment is always sent 
+X 
+  
+o 
+Response Pricing Segment 
+Segment Identification (111-AM) = 
+“23” 
+Claim Billing/Claim Re-Bill 
+Accepted/Paid (or Duplicate of Paid) 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+5Ø5-F5 PATIENT PAY AMOUNT  
+ 
+R 
+ 
+5Ø6-F6 INGREDIENT COST PAID  
+ 
+R 
+ 
+
+
+--- Page 27 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 27 
+Response Pricing Segment 
+Segment Identification (111-AM) = 
+“23” 
+Claim Billing/Claim Re-Bill 
+Accepted/Paid (or Duplicate of Paid) 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+5Ø7-F7 DISPENSING FEE PAID  
+ 
+RW 
+ 
+Imp Guide: Required if this 
+value is used to arrive at the 
+final reimbursement. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+557-AV TAX EXEMPT INDICATOR 
+ 
+RW 
+ 
+Imp Guide: Required if the 
+sender (health plan) and/or 
+patient is tax exempt and 
+exemption applies to this 
+billing. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+558-AW FLAT SALES TAX AMOUNT 
+PAID 
+ 
+RW 
+ 
+Imp Guide: Required if Flat 
+Sales Tax Amount Submitted 
+(481-HA) is greater than zero 
+(Ø) or if Flat Sales Tax Amount 
+Paid (558-AW) is used to arrive 
+at the final reimbursement. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+559-AX PERCENTAGE SALES TAX 
+AMOUNT PAID 
+ 
+RW 
+ 
+Imp Guide: Required if this 
+value is used to arrive at the 
+final reimbursement. 
+ 
+Required if Percentage Sales 
+Tax Amount Submitted (482-
+GE) is greater than zero (Ø).  
+ 
+Required if Percentage Sales 
+Tax Rate Paid (56Ø-AY) and 
+Percentage Sales Tax Basis 
+Paid (561-AZ) are used. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+56Ø-AY PERCENTAGE SALES TAX 
+RATE PAID  
+ 
+RW 
+ 
+Imp Guide: Required if 
+Percentage Sales Tax Amount 
+Paid (559-AX) is greater than 
+zero (Ø). 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+
+
+--- Page 28 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 28 
+Response Pricing Segment 
+Segment Identification (111-AM) = 
+“23” 
+Claim Billing/Claim Re-Bill 
+Accepted/Paid (or Duplicate of Paid) 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+561-AZ PERCENTAGE SALES TAX 
+BASIS PAID 
+ 
+RW 
+ 
+Imp Guide: Required if 
+Percentage Sales Tax Amount 
+Paid (559-AX) is greater than 
+zero (Ø). 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+521-FL INCENTIVE AMOUNT PAID  
+RW 
+ 
+Imp Guide: Required if this 
+value is used to arrive at the 
+final reimbursement. 
+ 
+Required if Incentive Amount 
+Submitted (438-E3) is greater 
+than zero (Ø).  
+ 
+Payer Requirement: Same as 
+Imp Guide 
+563-J2 OTHER AMOUNT PAID 
+COUNT  
+Maximum 
+count of 3. 
+RW 
+ 
+Imp Guide: Required if Other 
+Amount Paid (565-J4) is used. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+564-J3 OTHER AMOUNT PAID 
+QUALIFIER 
+ 
+RW 
+ 
+Imp Guide: Required if Other 
+Amount Paid (565-J4) is used. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+565-J4 OTHER AMOUNT PAID 
+ 
+RW 
+ 
+Imp Guide: Required if this 
+value is used to arrive at the 
+final reimbursement. 
+ 
+Required if Other Amount 
+Claimed Submitted (48Ø-H9) is 
+greater than zero (Ø).  
+ 
+Payer Requirement: Same as 
+Imp Guide 
+
+
+--- Page 29 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 29 
+Response Pricing Segment 
+Segment Identification (111-AM) = 
+“23” 
+Claim Billing/Claim Re-Bill 
+Accepted/Paid (or Duplicate of Paid) 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+566-J5 OTHER PAYER AMOUNT 
+RECOGNIZED 
+ 
+RW 
+ 
+Imp Guide: Required if this 
+value is used to arrive at the 
+final reimbursement. 
+ 
+Required if Other Payer 
+Amount Paid (431-DV) is 
+greater than zero (Ø) and 
+Coordination of Benefits/Other 
+Payments Segment is 
+supported. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+5Ø9-F9 TOTAL AMOUNT PAID 
+ 
+R 
+ 
+522-FM BASIS OF 
+REIMBURSEMENT 
+DETERMINATION  
+ 
+RW 
+ 
+Imp Guide: Required if 
+Ingredient Cost Paid (5Ø6-F6) 
+is greater than zero (Ø). 
+ 
+Required if Basis of Cost 
+Determination (432-DN) is 
+submitted on billing. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+523-FN AMOUNT ATTRIBUTED TO 
+SALES TAX 
+ 
+RW 
+ 
+Imp Guide: Required if Patient 
+Pay Amount (5Ø5-F5) includes 
+sales tax that is the financial 
+responsibility of the member 
+but is not also included in any 
+of the other fields that add up 
+to Patient Pay Amount.  
+ 
+Payer Requirement: Same as 
+Imp Guide 
+512-FC ACCUMULATED 
+DEDUCTIBLE AMOUNT 
+ 
+RW 
+ 
+Imp Guide: Provided for 
+informational purposes only. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+513-FD REMAINING DEDUCTIBLE 
+AMOUNT 
+ 
+RW 
+ 
+Imp Guide: Provided for 
+informational purposes only. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+
+
+--- Page 30 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 30 
+Response Pricing Segment 
+Segment Identification (111-AM) = 
+“23” 
+Claim Billing/Claim Re-Bill 
+Accepted/Paid (or Duplicate of Paid) 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+514-FE REMAINING BENEFIT 
+AMOUNT 
+ 
+RW 
+ 
+Imp Guide: Provided for 
+informational purposes only. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+517-FH AMOUNT APPLIED TO 
+PERIODIC DEDUCTIBLE 
+ 
+RW 
+ 
+Imp Guide: Required if Patient 
+Pay Amount (5Ø5-F5) includes 
+deductible 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+518-FI AMOUNT OF COPAY 
+ 
+RW 
+ 
+Imp Guide: Required if Patient 
+Pay Amount (5Ø5-F5) includes 
+co-pay as patient financial 
+responsibility. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+52Ø-FK AMOUNT EXCEEDING 
+PERIODIC BENEFIT 
+MAXIMUM 
+ 
+RW 
+ 
+Imp Guide: Required if Patient 
+Pay Amount (5Ø5-F5) includes 
+amount exceeding periodic 
+benefit maximum. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+572-4U AMOUNT OF 
+COINSURANCE 
+ 
+RW 
+ 
+Imp Guide: Required if Patient 
+Pay Amount (5Ø5-F5) includes 
+coinsurance as patient 
+financial responsibility. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+128-UC SPENDING ACCOUNT 
+AMOUNT REMAINING 
+ 
+RW 
+ 
+Imp Guide: This dollar amount 
+will be provided, if known, to 
+the receiver when the 
+transaction had spending 
+account dollars reported as 
+part of the patient pay amount. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+
+
+--- Page 31 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 31 
+Response Pricing Segment 
+Segment Identification (111-AM) = 
+“23” 
+Claim Billing/Claim Re-Bill 
+Accepted/Paid (or Duplicate of Paid) 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+129-UD HEALTH PLAN-FUNDED 
+ASSISTANCE AMOUNT 
+ 
+RW 
+ 
+Imp Guide: Required when the 
+patient meets the plan-funded 
+assistance criteria, to reduce 
+Patient Pay Amount (5Ø5-F5). 
+The resulting Patient Pay 
+Amount (5Ø5-F5) must be 
+greater than or equal to zero. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+133-UJ AMOUNT ATTRIBUTED TO 
+PROVIDER NETWORK 
+SELECTION 
+ 
+RW 
+ 
+Imp Guide: Required if Patient 
+Pay Amount (5Ø5-F5) includes 
+an amount that is attributable 
+to a cost share differential due 
+to the selection of one 
+pharmacy over another 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+134-UK AMOUNT ATTRIBUTED TO 
+PRODUCT 
+SELECTION/BRAND DRUG 
+ 
+RW 
+ 
+Imp Guide: Required if Patient 
+Pay Amount (5Ø5-F5) includes 
+an amount that is attributable 
+to a patient’s selection of a 
+Brand drug. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+135-UM AMOUNT ATTRIBUTED TO 
+PRODUCT 
+SELECTION/NON-
+PREFERRED FORMULARY 
+SELECTION 
+ 
+RW 
+ 
+Imp Guide: Required if Patient 
+Pay Amount (5Ø5-F5) includes 
+an amount that is attributable 
+to a patient’s selection of a 
+non-preferred formulary 
+product. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+136-UN AMOUNT ATTRIBUTED TO 
+PRODUCT 
+SELECTION/BRAND NON-
+PREFERRED FORMULARY 
+SELECTION 
+ 
+RW 
+ 
+Imp Guide: Required if Patient 
+Pay Amount (5Ø5-F5) includes 
+an amount that is attributable 
+to a patient’s selection of a 
+Brand non-preferred formulary 
+product. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+
+
+--- Page 32 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 32 
+Response Pricing Segment 
+Segment Identification (111-AM) = 
+“23” 
+Claim Billing/Claim Re-Bill 
+Accepted/Paid (or Duplicate of Paid) 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+137-UP AMOUNT ATTRIBUTED TO 
+COVERAGE GAP 
+ 
+RW 
+ 
+Imp Guide: Required when the 
+patient’s financial responsibility 
+is due to the coverage gap. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+ 
+Response DUR/PPS Segment 
+Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+Accepted/Paid (or Duplicate of 
+Paid) 
+If Situational, Payer Situation 
+This Segment is always sent 
+ 
+  
+This Segment is situational 
+X 
+Sent when DUR intervention is 
+encountered during claim 
+processing. 
+ 
+Response DUR/PPS Segment 
+Segment Identification (111-AM) = 
+“24” 
+Claim Billing/Claim Re-Bill 
+Accepted/Paid (or Duplicate of Paid) 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+567-J6 DUR/PPS RESPONSE 
+CODE COUNTER  
+Maximum 9 
+occurrences 
+supported. 
+RW 
+ 
+Imp Guide: Required if Reason 
+For Service Code (439-E4) is 
+used. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+439-E4 REASON FOR SERVICE 
+CODE 
+ 
+RW 
+ 
+Imp Guide: Required if 
+utilization conflict is detected. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+528-FS CLINICAL SIGNIFICANCE 
+CODE 
+ 
+RW 
+ 
+Imp Guide: Required if needed 
+to supply additional information 
+for the utilization conflict. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+529-FT OTHER PHARMACY 
+INDICATOR 
+ 
+RW 
+ 
+Imp Guide: Required if needed 
+to supply additional information 
+for the utilization conflict. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+
+
+--- Page 33 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 33 
+Response DUR/PPS Segment 
+Segment Identification (111-AM) = 
+“24” 
+Claim Billing/Claim Re-Bill 
+Accepted/Paid (or Duplicate of Paid) 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+53Ø-FU PREVIOUS DATE OF FILL  
+RW 
+ 
+Imp Guide: Required if needed 
+to supply additional information 
+for the utilization conflict. 
+ 
+Required if Quantity of 
+Previous Fill (531-FV) is used. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+531-FV QUANTITY OF PREVIOUS 
+FILL 
+ 
+RW 
+ 
+Imp Guide: Required if needed 
+to supply additional information 
+for the utilization conflict. 
+ 
+Required if Previous Date Of 
+Fill (53Ø-FU) is used. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+532-FW DATABASE INDICATOR 
+ 
+RW 
+ 
+Imp Guide: Required if needed 
+to supply additional information 
+for the utilization conflict. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+533-FX OTHER PRESCRIBER 
+INDICATOR 
+ 
+RW 
+ 
+Imp Guide: Required if needed 
+to supply additional information 
+for the utilization conflict. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+544-FY DUR FREE TEXT 
+MESSAGE 
+ 
+RW 
+ 
+Imp Guide: Required if needed 
+to supply additional information 
+for the utilization conflict. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+57Ø-NS DUR ADDITIONAL TEXT 
+ 
+RW 
+ 
+Imp Guide: Required if needed 
+to supply additional information 
+for the utilization conflict. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+ 
+Response Coordination of 
+Benefits/Other Payers Segment 
+Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+Accepted/Paid (or Duplicate of Paid) 
+If Situational, Payer Situation 
+This Segment is always sent 
+ 
+  
+
+
+--- Page 34 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 34 
+This Segment is situational 
+X 
+Sent when Other Health Insurance (OHI) is 
+encountered during claims processing. 
+ 
+Response Coordination of 
+Benefits/Other Payers Segment 
+Segment Identification (111-AM) = 
+“28” 
+Claim Billing/Claim Re-Bill 
+Accepted/Paid (or Duplicate of Paid) 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+355-NT OTHER PAYER ID 
+COUNT 
+Maximum count 
+of 3. 
+M 
+ 
+338-5C OTHER PAYER 
+COVERAGE TYPE 
+ 
+M 
+ 
+339-6C OTHER PAYER ID 
+QUALIFIER 
+ 
+RW 
+ 
+Imp Guide: Required if Other 
+Payer ID (34Ø-7C) is used. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+34Ø-7C OTHER PAYER ID 
+ 
+RW 
+ 
+Imp Guide: Required if other 
+insurance information is 
+available for coordination of 
+benefits. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+991-MH OTHER PAYER 
+PROCESSOR CONTROL 
+NUMBER 
+ 
+RW 
+ 
+Imp Guide: Required if other 
+insurance information is 
+available for coordination of 
+benefits. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+356-NU OTHER PAYER 
+CARDHOLDER ID 
+ 
+RW 
+ 
+Imp Guide: Required if other 
+insurance information is 
+available for coordination of 
+benefits. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+992-MJ OTHER PAYER GROUP 
+ID 
+ 
+RW 
+ 
+Imp Guide: Required if other 
+insurance information is 
+available for coordination of 
+benefits. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+
+
+--- Page 35 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 35 
+Response Coordination of 
+Benefits/Other Payers Segment 
+Segment Identification (111-AM) = 
+“28” 
+Claim Billing/Claim Re-Bill 
+Accepted/Paid (or Duplicate of Paid) 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+142-UV OTHER PAYER PERSON 
+CODE 
+ 
+RW 
+ 
+Imp Guide: Required if needed 
+to uniquely identify the family 
+members within the Cardholder 
+ID, as assigned by the other 
+payer. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+127-UB OTHER PAYER HELP 
+DESK PHONE NUMBER 
+ 
+RW 
+ 
+Imp Guide: Required if needed 
+to provide a support telephone 
+number of the other payer to 
+the receiver. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+143-UW OTHER PAYER PATIENT 
+RELATIONSHIP CODE 
+ 
+RW 
+ 
+Imp Guide: Required if needed 
+to uniquely identify the 
+relationship of the patient to the 
+cardholder ID, as assigned by 
+the other payer. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+ 
+ 
+ 
+
+
+--- Page 36 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 36 
+Claim Billing/Claim Re-Bill Accepted/Rejected Response 
+Response Transaction Header 
+Segment Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+Accepted/Rejected 
+If Situational, Payer Situation 
+This Segment is always sent 
+X 
+  
+ 
+Response Transaction Header 
+Segment 
+Claim Billing/Claim Re-Bill Accepted/Rejected 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+1Ø2-A2 VERSION/RELEASE 
+NUMBER 
+DØ 
+M 
+ 
+1Ø3-A3 TRANSACTION CODE 
+B1, B3 
+M 
+ 
+1Ø9-A9 TRANSACTION COUNT 
+Same value as 
+in request 
+M 
+ 
+5Ø1-F1 HEADER RESPONSE 
+STATUS 
+A = Accepted 
+M 
+ 
+2Ø2-B2 SERVICE PROVIDER ID 
+QUALIFIER 
+Same value as 
+in request 
+M 
+ 
+2Ø1-B1 SERVICE PROVIDER ID  
+Same value as 
+in request  
+M 
+ 
+4Ø1-D1 DATE OF SERVICE 
+Same value as 
+in request 
+M 
+ 
+ 
+Response Message Segment 
+Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+Accepted/Rejected 
+If Situational, Payer Situation 
+This Segment is always sent 
+ 
+  
+This Segment is situational 
+X 
+ 
+ 
+Response Message Segment 
+Segment Identification (111-AM) = 
+“2Ø” 
+Claim Billing/Claim Re-Bill Accepted/Rejected 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+5Ø4-F4 MESSAGE 
+ 
+RW 
+Imp Guide: Required if text is 
+needed for clarification or detail.  
+Payer Requirement: Same as 
+Imp Guide 
+ 
+
+
+--- Page 37 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 37 
+Response Insurance Segment 
+Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+Accepted/Rejected 
+If Situational, Payer Situation 
+This Segment is always sent 
+X 
+  
+This Segment is situational 
+ 
+ 
+ 
+Response Insurance Segment 
+Segment Identification (111-AM) = 
+“25” 
+Claim Billing/Claim Re-Bill Accepted/Rejected 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+3Ø1-C1 GROUP ID 
+ 
+R 
+ 
+Imp Guide: Required if 
+needed to identify the actual 
+cardholder or employer 
+group, to identify appropriate 
+group number, when 
+available. 
+ 
+Required to identify the actual 
+group that was used when 
+multiple group coverages 
+exist. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+3Ø2-C2 CARDHOLDER ID 
+ 
+RW 
+ 
+Imp Guide: Required if the 
+identification to be used in 
+future transactions is different 
+than what was submitted on 
+the request. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+ 
+Response Patient Segment 
+Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+Accepted/Rejected 
+If Situational, Payer Situation 
+This Segment is always sent 
+ 
+  
+This Segment is situational 
+X 
+Sent when known by plan 
+ 
+
+
+--- Page 38 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 38 
+Response Patient Segment 
+Segment Identification (111-AM) = 
+“29” 
+Claim Billing/Claim Re-Bill Accepted/Rejected 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+31Ø-CA PATIENT FIRST NAME 
+ 
+RW 
+ 
+Imp Guide: Required if 
+known. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+311-CB PATIENT LAST NAME 
+ 
+RW 
+ 
+Imp Guide: Required if 
+known. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+3Ø4-C4 DATE OF BIRTH 
+ 
+RW 
+ 
+Imp Guide: Required if 
+known. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+ 
+Response Status Segment 
+Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+Accepted/Rejected  
+If Situational, Payer Situation 
+This Segment is always sent 
+X 
+  
+ 
+Response Status Segment 
+Segment Identification (111-AM) = 
+“21” 
+Claim Billing/Claim Re-Bill Accepted/Rejected 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+112-AN TRANSACTION 
+RESPONSE STATUS 
+R = Reject 
+M 
+ 
+5Ø3-F3 AUTHORIZATION 
+NUMBER 
+ 
+ 
+ 
+Imp Guide: Required if 
+needed to identify the 
+transaction. 
+ 
+Payer Requirement: (any 
+unique payer requirement(s)) 
+51Ø-FA REJECT COUNT 
+Maximum count 
+of 5. 
+R 
+ 
+511-FB REJECT CODE 
+ 
+R 
+ 
+546-4F REJECT FIELD 
+OCCURRENCE 
+INDICATOR 
+ 
+RW 
+ 
+Imp Guide: Required if a 
+repeating field is in error, to 
+identify repeating field 
+occurrence. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+
+
+--- Page 39 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 39 
+Response Status Segment 
+Segment Identification (111-AM) = 
+“21” 
+Claim Billing/Claim Re-Bill Accepted/Rejected 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+13Ø-UF ADDITIONAL MESSAGE 
+INFORMATION COUNT 
+Maximum count 
+of 25. 
+RW 
+ 
+Imp Guide: Required if 
+Additional Message 
+Information (526-FQ) is used. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+132-UH ADDITIONAL MESSAGE 
+INFORMATION QUALIFIER 
+ 
+RW 
+ 
+Imp Guide: Required if 
+Additional Message 
+Information (526-FQ) is used. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+526-FQ ADDITIONAL MESSAGE 
+INFORMATION 
+ 
+RW 
+ 
+Imp Guide: Required when 
+additional text is needed for 
+clarification or detail. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+131-UG ADDITIONAL MESSAGE 
+INFORMATION 
+CONTINUITY 
+ 
+RW 
+ 
+Imp Guide: Required if and 
+only if current repetition of 
+Additional Message 
+Information (526-FQ) is used, 
+another populated repetition 
+of Additional Message 
+Information (526-FQ) follows 
+it, and the text of the following 
+message is a continuation of 
+the current. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+549-7F HELP DESK PHONE 
+NUMBER QUALIFIER 
+ 
+RW 
+ 
+Imp Guide: Required if Help 
+Desk Phone Number (55Ø-
+8F) is used. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+55Ø-8F HELP DESK PHONE 
+NUMBER 
+ 
+RW 
+ 
+Imp Guide: Required if 
+needed to provide a support 
+telephone number to the 
+receiver. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+ 
+
+
+--- Page 40 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 40 
+Response Claim Segment 
+Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+Accepted/Rejected 
+If Situational, Payer Situation 
+This Segment is always sent 
+X 
+  
+ 
+Response Claim Segment 
+Segment Identification (111-AM) = 
+“22” 
+Claim Billing/Claim Re-Bill Accepted/Rejected 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+455-EM PRESCRIPTION/SERVICE 
+REFERENCE NUMBER 
+QUALIFIER 
+1 = RxBilling 
+M 
+Imp Guide: For Transaction Code 
+of “B1,” in the Response Claim 
+Segment, the 
+Prescription/Service Reference 
+Number Qualifier (455-EM) is “1” 
+(Rx Billing). 
+4Ø2-D2 PRESCRIPTION/SERVICE 
+REFERENCE NUMBER 
+ 
+M 
+ 
+ 
+Response DUR/PPS Segment 
+Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+Accepted/Rejected 
+If Situational, Payer Situation 
+This Segment is always sent 
+ 
+  
+This Segment is situational 
+X 
+Sent when DUR intervention is encountered 
+during claim adjudication. 
+ 
+Response DUR/PPS Segment 
+Segment Identification (111-AM) = 
+“24” 
+Claim Billing/Claim Re-Bill Accepted/Rejected 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+567-J6 DUR/PPS RESPONSE 
+CODE COUNTER  
+Maximum 9 
+occurrences 
+supported. 
+RW 
+ 
+Imp Guide: Required if 
+Reason For Service Code 
+(439-E4) is used. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+439-E4 REASON FOR SERVICE 
+CODE 
+ 
+RW 
+ 
+Imp Guide: Required if 
+utilization conflict is detected. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+
+
+--- Page 41 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 41 
+Response DUR/PPS Segment 
+Segment Identification (111-AM) = 
+“24” 
+Claim Billing/Claim Re-Bill Accepted/Rejected 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+528-FS CLINICAL SIGNIFICANCE 
+CODE 
+ 
+RW 
+ 
+Imp Guide: Required if 
+needed to supply additional 
+information for the utilization 
+conflict. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+529-FT OTHER PHARMACY 
+INDICATOR 
+ 
+RW 
+ 
+Imp Guide: Required if 
+needed to supply additional 
+information for the utilization 
+conflict. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+53Ø-FU PREVIOUS DATE OF FILL  
+RW 
+ 
+Imp Guide: Required if 
+needed to supply additional 
+information for the utilization 
+conflict. 
+ 
+Required if Quantity of 
+Previous Fill (531-FV) is 
+used. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+531-FV QUANTITY OF PREVIOUS 
+FILL 
+ 
+RW 
+ 
+Imp Guide: Required if 
+needed to supply additional 
+information for the utilization 
+conflict. 
+ 
+Required if Previous Date Of 
+Fill (53Ø-FU) is used. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+532-FW DATABASE INDICATOR 
+ 
+RW 
+ 
+Imp Guide: Required if 
+needed to supply additional 
+information for the utilization 
+conflict. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+
+
+--- Page 42 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 42 
+Response DUR/PPS Segment 
+Segment Identification (111-AM) = 
+“24” 
+Claim Billing/Claim Re-Bill Accepted/Rejected 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+533-FX OTHER PRESCRIBER 
+INDICATOR 
+ 
+RW 
+ 
+Imp Guide: Required if 
+needed to supply additional 
+information for the utilization 
+conflict. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+544-FY DUR FREE TEXT 
+MESSAGE 
+ 
+RW 
+ 
+Imp Guide: Required if 
+needed to supply additional 
+information for the utilization 
+conflict. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+57Ø-NS DUR ADDITIONAL TEXT 
+ 
+RW 
+ 
+Imp Guide: Required if 
+needed to supply additional 
+information for the utilization 
+conflict. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+ 
+Response Prior Authorization 
+Segment Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+Accepted/Rejected 
+If Situational, Payer Situation 
+This Segment is always sent 
+ 
+  
+This Segment is situational 
+X 
+Sent when claim adjudication outcome 
+requires subsequent PA number for payment 
+ 
+Response Prior Authorization 
+Segment 
+Segment Identification (111-AM) = 
+“26” 
+Claim Billing/Claim Re-Bill Accepted/Rejected 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+498-PY PRIOR AUTHORIZATION 
+NUMBER–ASSIGNED 
+ 
+RW 
+ 
+Imp Guide: Required when 
+the receiver must submit this 
+Prior Authorization Number in 
+order to receive payment for 
+the claim.  
+ 
+Payer Requirement: Same as 
+Imp Guide 
+ 
+
+
+--- Page 43 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 43 
+Response Coordination of 
+Benefits/Other Payers Segment 
+Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+Accepted/Rejected 
+If Situational, Payer Situation 
+This Segment is always sent 
+ 
+  
+This Segment is situational 
+X 
+Sent when Other Health Insurance (OHI) is 
+encountered during claim processing. 
+ 
+Response Coordination of 
+Benefits/Other Payers Segment 
+Segment Identification (111-AM) = 
+“28” 
+Claim Billing/Claim Re-Bill Accepted/Rejected 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+355-NT OTHER PAYER ID COUNT 
+Maximum count 
+of 3. 
+M 
+ 
+338-5C OTHER PAYER COVERAGE 
+TYPE 
+ 
+M 
+ 
+339-6C OTHER PAYER ID QUALIFIER  
+RW 
+ 
+Imp Guide: Required if Other 
+Payer ID (34Ø-7C) is used. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+34Ø-7C OTHER PAYER ID 
+ 
+RW 
+ 
+Imp Guide: Required if other 
+insurance information is 
+available for coordination of 
+benefits. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+991-MH OTHER PAYER PROCESSOR 
+CONTROL NUMBER 
+ 
+RW 
+ 
+Imp Guide: Required if other 
+insurance information is 
+available for coordination of 
+benefits. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+356-NU OTHER PAYER 
+CARDHOLDER ID 
+ 
+RW 
+ 
+Imp Guide: Required if other 
+insurance information is 
+available for coordination of 
+benefits. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+992-MJ OTHER PAYER GROUP ID 
+ 
+RW 
+ 
+Imp Guide: Required if other 
+insurance information is 
+available for coordination of 
+benefits. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+
+
+--- Page 44 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 44 
+Response Coordination of 
+Benefits/Other Payers Segment 
+Segment Identification (111-AM) = 
+“28” 
+Claim Billing/Claim Re-Bill Accepted/Rejected 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+142-UV OTHER PAYER PERSON 
+CODE 
+ 
+RW 
+ 
+Imp Guide: Required if 
+needed to uniquely identify 
+the family members within 
+the Cardholder ID, as 
+assigned by the other payer. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+127-UB Other Payer Help Desk 
+Phone Number 
+ 
+RW 
+ 
+Imp Guide: Required if 
+needed to provide a support 
+telephone number of the 
+other payer to the receiver. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+143-UW OTHER PAYER PATIENT 
+RELATIONSHIP CODE 
+ 
+RW 
+ 
+Imp Guide: Required if 
+needed to uniquely identify 
+the relationship of the patient 
+to the cardholder ID, as 
+assigned by the other payer. 
+ 
+Payer Requirement: Same as 
+Imp Guide 
+ 
+ 
+
+
+--- Page 45 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 45 
+Claim Billing/Claim Re-Bill Rejected/Rejected Response 
+Response Transaction Header 
+Segment Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+Rejected/Rejected 
+If Situational, Payer Situation 
+This Segment is always sent 
+X 
+ 
+ 
+Response Transaction Header 
+Segment 
+Claim Billing/Claim Re-Bill Rejected/Rejected 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+1Ø2-
+A2 
+VERSION/RELEASE 
+NUMBER 
+DØ 
+M 
+ 
+1Ø3-
+A3 
+TRANSACTION CODE 
+B1, B3 
+M 
+ 
+1Ø9-
+A9 
+TRANSACTION COUNT 
+Same value as in 
+request 
+M 
+ 
+5Ø1-F1 HEADER RESPONSE 
+STATUS 
+R = Rejected 
+M 
+ 
+2Ø2-
+B2 
+SERVICE PROVIDER ID 
+QUALIFIER 
+Same value as in 
+request 
+M 
+ 
+2Ø1-
+B1 
+SERVICE PROVIDER ID  
+Same value as in 
+request  
+M 
+ 
+4Ø1-
+D1 
+DATE OF SERVICE 
+Same value as in 
+request 
+M 
+ 
+ 
+Response Message Segment 
+Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+Rejected/Rejected 
+If Situational, Payer Situation 
+This Segment is always sent 
+ 
+  
+This Segment is situational 
+X 
+ 
+ 
+Response Message Segment 
+Segment Identification (111-AM) = 
+“2Ø” 
+Claim Billing/Claim Re-Bill Rejected/Rejected 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+5Ø4-F4 MESSAGE 
+ 
+RW 
+ 
+Imp Guide: Required if text 
+is needed for clarification or 
+detail.  
+ 
+Payer Requirement: Same 
+as Imp Guide 
+ 
+
+
+--- Page 46 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 46 
+Response Status Segment 
+Questions 
+Check 
+Claim Billing/Claim Re-Bill 
+Rejected/Rejected 
+If Situational, Payer Situation 
+This Segment is always sent 
+X 
+  
+ 
+Response Status Segment 
+Segment Identification (111-AM) = 
+“21” 
+Claim Billing/Claim Re-Bill Rejected/Rejected 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+112-AN TRANSACTION 
+RESPONSE STATUS 
+R = Reject 
+M 
+ 
+5Ø3-F3 AUTHORIZATION 
+NUMBER 
+ 
+RW 
+ 
+Imp Guide: Required if 
+needed to identify the 
+transaction. 
+ 
+Payer Requirement: Same 
+as Imp Guide 
+51Ø-FA REJECT COUNT 
+Maximum count 
+of 5. 
+R 
+ 
+511-FB REJECT CODE 
+ 
+R 
+ 
+546-4F REJECT FIELD 
+OCCURRENCE 
+INDICATOR 
+ 
+RW 
+ 
+Imp Guide: Required if a 
+repeating field is in error, to 
+identify repeating field 
+occurrence. 
+ 
+Payer Requirement: Same 
+as Imp Guide 
+13Ø-UF ADDITIONAL MESSAGE 
+INFORMATION COUNT 
+Maximum count 
+of 25. 
+RW 
+ 
+Imp Guide: Required if 
+Additional Message 
+Information (526-FQ) is 
+used. 
+ 
+Payer Requirement: Same 
+as Imp Guide 
+132-UH ADDITIONAL MESSAGE 
+INFORMATION QUALIFIER 
+ 
+RW 
+ 
+Imp Guide: Required if 
+Additional Message 
+Information (526-FQ) is 
+used. 
+ 
+Payer Requirement: Same 
+as Imp Guide 
+526-FQ ADDITIONAL MESSAGE 
+INFORMATION 
+ 
+RW 
+ 
+Imp Guide: Required when 
+additional text is needed for 
+clarification or detail. 
+ 
+Payer Requirement: Same 
+as Imp Guide 
+
+
+--- Page 47 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 47 
+Response Status Segment 
+Segment Identification (111-AM) = 
+“21” 
+Claim Billing/Claim Re-Bill Rejected/Rejected 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+131-UG ADDITIONAL MESSAGE 
+INFORMATION 
+CONTINUITY 
+ 
+RW 
+ 
+Imp Guide: Required if and 
+only if current repetition of 
+Additional Message 
+Information (526-FQ) is 
+used, another populated 
+repetition of Additional 
+Message Information (526-
+FQ) follows it, and the text 
+of the following message is 
+a continuation of the 
+current. 
+ 
+Payer Requirement: Same 
+as Imp Guide 
+549-7F HELP DESK PHONE 
+NUMBER QUALIFIER 
+ 
+RW 
+ 
+Imp Guide: Required if Help 
+Desk Phone Number (55Ø-
+8F) is used. 
+ 
+Payer Requirement: Same 
+as Imp Guide 
+55Ø-8F HELP DESK PHONE 
+NUMBER 
+ 
+RW 
+ 
+Imp Guide: Required if 
+needed to provide a 
+support telephone number 
+to the receiver. 
+ 
+Payer Requirement: Same 
+as Imp Guide 
+ 
+**End of Response Claim Billing/Claim Re-Bill (B1/B3) Payer Sheet** 
+ 
+ 
+
+
+--- Page 48 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 48 
+NCPDP Version D.0 Claim Reversal  
+Request Claim Reversal Payer Sheet  
+**Start of Request Claim Reversal (B2) Payer Sheet** 
+General Information 
+Payer Name: Prime Therapeutics State Government Solutions 
+Client Name: Arkansas Medicaid 
+BIN: 017606 
+PCN: P027017606 
+Claim Reversal Transaction 
+The following lists the segments and fields in a Claim Reversal Transaction for the NCPDP 
+Telecommunication Standard Implementation Guide Version D.Ø.  
+Transaction Header Segment 
+Questions 
+Check 
+Claim Reversal 
+If Situational, Payer Situation 
+This Segment is always sent 
+X 
+  
+Source of certification IDs required in 
+Software Vendor/Certification ID (11Ø-
+AK) is Payer Issued 
+X 
+ 
+Source of certification IDs required in 
+Software Vendor/Certification ID (11Ø-
+AK) is Switch/VAN issued 
+ 
+ 
+Source of certification IDs required in 
+Software Vendor/Certification ID (11Ø-
+AK) is Not used 
+ 
+ 
+ 
+Transaction Header Segment 
+Claim Reversal 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+1Ø1-A1 BIN NUMBER 
+017606 
+M 
+ 
+1Ø2-A2 VERSION/RELEASE 
+NUMBER 
+DØ 
+M 
+ 
+1Ø3-A3 TRANSACTION CODE 
+B2 
+M 
+ 
+1Ø4-A4 PROCESSOR CONTROL 
+NUMBER 
+P027017606 
+M 
+ 
+1Ø9-A9 TRANSACTION COUNT 
+1–4 
+M 
+ 
+
+
+--- Page 49 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 49 
+Transaction Header Segment 
+Claim Reversal 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+2Ø2-B2 SERVICE PROVIDER ID 
+QUALIFIER 
+01-NPI 
+M 
+ 
+2Ø1-B1 SERVICE PROVIDER ID  
+ 
+M 
+Payer Requirement: Send NPI 
+of submitting pharmacy 
+provider 
+4Ø1-D1 DATE OF SERVICE 
+ 
+M 
+ 
+11Ø-AK SOFTWARE 
+VENDOR/CERTIFICATION 
+ID 
+ 
+M 
+ 
+ 
+Insurance Segment Questions 
+Check 
+Claim Reversal 
+If Situational, Payer Situation 
+This Segment is always sent 
+X 
+  
+This Segment is situational 
+ 
+ 
+ 
+Insurance Segment 
+Segment Identification (111-AM) = 
+“Ø4” 
+Claim Reversal 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+3Ø2-C2 CARDHOLDER ID 
+ 
+M 
+ 
+3Ø1-C1 GROUP ID 
+ 
+RW 
+ 
+Imp Guide: Required if 
+needed to match the 
+reversal to the original 
+billing transaction. 
+ 
+Payer Requirement: Same 
+as Imp Guide 
+ 
+Claim Segment Questions 
+Check 
+Claim Reversal 
+If Situational, Payer Situation 
+This Segment is always sent 
+X 
+  
+ 
+
+
+--- Page 50 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 50 
+Claim Segment 
+Segment Identification (111-AM) = 
+“Ø7” 
+Claim Reversal 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+455-EM PRESCRIPTION/SERVICE 
+REFERENCE NUMBER 
+QUALIFIER 
+ 
+M 
+Imp Guide: For Transaction 
+Code of “B2,” in the Claim 
+Segment, the 
+Prescription/Service 
+Reference Number Qualifier 
+(455-EM) is “1” (Rx Billing). 
+4Ø2-D2 PRESCRIPTION/SERVICE 
+REFERENCE NUMBER 
+ 
+M 
+ 
+436-E1 PRODUCT/SERVICE ID 
+QUALIFIER 
+ 
+M 
+ 
+4Ø7-D7 PRODUCT/SERVICE ID 
+ 
+M 
+ 
+4Ø3-D3 FILL NUMBER 
+ 
+R 
+ 
+Imp Guide: Required if 
+needed for reversals when 
+multiple fills of the same 
+Prescription/Service 
+Reference Number (4Ø2-
+D2) occur on the same 
+day. 
+ 
+Payer Requirement: Same 
+as Imp Guide 
+3Ø8-C8 OTHER COVERAGE CODE  
+RW 
+ 
+Imp Guide: Required if 
+needed by receiver to 
+match the claim that is 
+being reversed. 
+ 
+Payer Requirement: Same 
+as Imp Guide 
+ 
+Pricing Segment Questions 
+Check 
+Claim Reversal 
+If Situational, Payer Situation 
+This Segment is always sent 
+ 
+  
+This Segment is situational 
+X 
+ 
+ 
+
+
+--- Page 51 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 51 
+Pricing Segment 
+Segment Identification (111-AM) = 
+“11” 
+Claim Reversal 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+438-E3 INCENTIVE AMOUNT 
+SUBMITTED 
+ 
+RW 
+ 
+Imp Guide: Required if this 
+field could result in 
+contractually agreed upon 
+payment. 
+ 
+Payer Requirement: Same 
+as Imp Guide 
+43Ø-DU GROSS AMOUNT DUE 
+ 
+RW 
+ 
+Imp Guide: Required if this 
+field could result in 
+contractually agreed upon 
+payment. 
+ 
+Payer Requirement: Same 
+as Imp Guide 
+ 
+**End of Request Claim Reversal (B2) Payer Sheet** 
+ 
+ 
+
+
+--- Page 52 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 52 
+Response Claim Reversal Payer Sheet  
+Claim Reversal Accepted/Approved Response 
+**Start of Claim Reversal Response (B2) Payer Sheet** 
+General Information 
+Payer Name: Prime Therapeutics State Government Solutions 
+Client Name: Arkansas Medicaid 
+BIN: 017606 
+PCN: P027017606 
+Claim Reversal Accepted/Approved Response 
+The following lists the segments and fields in a Claim Reversal response (Approved) Transaction for 
+the NCPDP Telecommunication Standard Implementation Guide Version D.Ø.  
+Response Transaction Header 
+Segment Questions 
+Check 
+Claim Reversal – Accepted/Approved 
+If Situational, Payer Situation 
+This Segment is always sent 
+X 
+  
+ 
+Response Transaction Header 
+Segment 
+Claim Reversal – Accepted/Approved 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+1Ø2-A2 VERSION/RELEASE 
+NUMBER 
+DØ 
+M 
+ 
+1Ø3-A3 TRANSACTION CODE 
+B2 
+M 
+ 
+1Ø9-A9 TRANSACTION COUNT 
+Same value as in 
+request 
+M 
+ 
+5Ø1-F1 HEADER RESPONSE 
+STATUS 
+A = Accepted 
+M 
+ 
+2Ø2-B2 SERVICE PROVIDER ID 
+QUALIFIER 
+Same value as in 
+request 
+M 
+ 
+2Ø1-B1 SERVICE PROVIDER ID  
+Same value as in 
+request 
+M 
+ 
+4Ø1-D1 DATE OF SERVICE 
+Same value as in 
+request 
+M 
+ 
+ 
+
+
+--- Page 53 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 53 
+Response Message Segment 
+Questions 
+Check 
+Claim Reversal – Accepted/Approved 
+If Situational, Payer Situation 
+This Segment is always sent 
+ 
+  
+This Segment is situational 
+X 
+Provide general information when used 
+for transmission-level messaging. 
+ 
+Response Message Segment 
+Segment Identification (111-AM) = 
+“2Ø” 
+Claim Reversal – Accepted/Approved 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+5Ø4-F4 MESSAGE 
+ 
+RW 
+ 
+Imp Guide: Required if 
+text is needed for 
+clarification or detail. 
+ 
+Payer Requirement: 
+Same as Imp Guide 
+ 
+Response Status Segment 
+Questions 
+Check 
+Claim Reversal – Accepted/Approved 
+If Situational, Payer Situation 
+This Segment is always sent 
+X 
+  
+ 
+Response Status Segment 
+Segment Identification (111-AM) = 
+“21” 
+Claim Reversal – Accepted/Approved 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+112-AN TRANSACTION 
+RESPONSE STATUS 
+A = Approved 
+M 
+ 
+5Ø3-F3 AUTHORIZATION 
+NUMBER 
+ 
+RW 
+ 
+Imp Guide: Required if 
+needed to identify the 
+transaction. 
+ 
+Payer Requirement: 
+Same as Imp Guide 
+547-5F APPROVED MESSAGE 
+CODE COUNT 
+Maximum count of 5. 
+RW 
+ 
+Imp Guide: Required if 
+Approved Message 
+Code (548-6F) is used. 
+ 
+Payer Requirement: 
+Same as Imp Guide 
+
+
+--- Page 54 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 54 
+Response Status Segment 
+Segment Identification (111-AM) = 
+“21” 
+Claim Reversal – Accepted/Approved 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+548-6F APPROVED MESSAGE 
+CODE 
+ 
+RW 
+ 
+Imp Guide: Required if 
+Approved Message 
+Code Count (547-5F) is 
+used and the sender 
+needs to communicate 
+additional follow up for 
+a potential opportunity. 
+ 
+Payer Requirement: 
+Same as Imp Guide 
+13Ø-UF ADDITIONAL MESSAGE 
+INFORMATION COUNT 
+Maximum count of 
+25. 
+RW 
+ 
+Imp Guide: Required if 
+Additional Message 
+Information (526-FQ) is 
+used. 
+ 
+Payer Requirement: 
+Same as Imp Guide 
+132-UH ADDITIONAL MESSAGE 
+INFORMATION QUALIFIER 
+ 
+RW 
+ 
+Imp Guide: Required if 
+Additional Message 
+Information (526-FQ) is 
+used. 
+ 
+Payer Requirement: 
+Same as Imp Guide 
+526-FQ ADDITIONAL MESSAGE 
+INFORMATION 
+ 
+RW 
+ 
+Imp Guide: Required 
+when additional text is 
+needed for clarification 
+or detail. 
+ 
+Payer Requirement: 
+Same as Imp Guide 
+
+
+--- Page 55 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 55 
+Response Status Segment 
+Segment Identification (111-AM) = 
+“21” 
+Claim Reversal – Accepted/Approved 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+131-UG ADDITIONAL MESSAGE 
+INFORMATION 
+CONTINUITY 
+ 
+RW 
+ 
+Imp Guide: Required if 
+and only if current 
+repetition of Additional 
+Message Information 
+(526-FQ) is used, 
+another populated 
+repetition of Additional 
+Message Information 
+(526-FQ) follows it, and 
+the text of the following 
+message is a 
+continuation of the 
+current. 
+ 
+Payer Requirement: 
+Same as Imp Guide 
+549-7F HELP DESK PHONE 
+NUMBER QUALIFIER 
+ 
+RW 
+ 
+Imp Guide: Required if 
+Help Desk Phone 
+Number (55Ø-8F) is 
+used. 
+ 
+Payer Requirement: 
+Same as Imp Guide 
+55Ø-8F HELP DESK PHONE 
+NUMBER 
+ 
+RW 
+ 
+Imp Guide: Required if 
+needed to provide a 
+support telephone 
+number to the receiver. 
+ 
+Payer Requirement: 
+Same as Imp Guide 
+ 
+Response Claim Segment 
+Questions 
+Check 
+Claim Reversal – Accepted/Approved 
+If Situational, Payer Situation 
+This Segment is always sent 
+X 
+  
+ 
+
+
+--- Page 56 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 56 
+Response Claim Segment 
+Segment Identification (111-AM) = 
+“22” 
+Claim Reversal – Accepted/Approved 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+455-EM PRESCRIPTION/SERVICE 
+REFERENCE NUMBER 
+QUALIFIER 
+1 = RxBilling 
+M 
+Imp Guide: For Transaction 
+Code of “B2”, in the 
+Response Claim Segment, 
+the Prescription/Service 
+Reference Number 
+Qualifier (455-EM) is “1” 
+(Rx Billing). 
+4Ø2-D2 PRESCRIPTION/SERVICE 
+REFERENCE NUMBER 
+ 
+M 
+ 
+ 
+Response Pricing Segment 
+Questions 
+Check 
+Claim Reversal – Accepted/Approved 
+If Situational, Payer Situation 
+This Segment is always sent 
+ 
+  
+This Segment is situational 
+X 
+Sent if reversal results in generation of 
+pricing detail. 
+ 
+Response Pricing Segment 
+Segment Identification (111-AM) = 
+“23” 
+Claim Reversal – Accepted/Approved 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+521-FL INCENTIVE AMOUNT PAID  
+RW 
+ 
+Imp Guide: Required if 
+this field is reporting a 
+contractually agreed 
+upon payment. 
+ 
+Payer Requirement: 
+Same as Imp Guide 
+5Ø9-F9 TOTAL AMOUNT PAID 
+ 
+RW 
+ 
+Imp Guide: Required if 
+any other payment 
+fields sent by the 
+sender. 
+ 
+Payer Requirement: 
+Same as Imp Guide 
+ 
+ 
+ 
+
+
+--- Page 57 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 57 
+Claim Reversal Accepted/Rejected Response 
+Response Transaction Header 
+Segment Questions 
+Check 
+Claim Reversal – Accepted/Rejected 
+If Situational, Payer Situation 
+This Segment is always sent 
+X 
+  
+ 
+Response Transaction Header 
+Segment 
+Claim Reversal – Accepted/Rejected 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+1Ø2-A2 VERSION/RELEASE 
+NUMBER 
+DØ 
+M 
+ 
+1Ø3-A3 TRANSACTION CODE 
+B2 
+M 
+ 
+1Ø9-A9 TRANSACTION COUNT 
+Same value as in 
+request 
+M 
+ 
+5Ø1-F1 HEADER RESPONSE 
+STATUS 
+A = Accepted 
+M 
+ 
+2Ø2-B2 SERVICE PROVIDER ID 
+QUALIFIER 
+Same value as in 
+request 
+M 
+ 
+2Ø1-B1 SERVICE PROVIDER ID  
+Same value as in 
+request  
+M 
+ 
+4Ø1-D1 DATE OF SERVICE 
+Same value as in 
+request 
+M 
+ 
+ 
+Response Message Segment 
+Questions 
+Check 
+Claim Reversal – Accepted/Rejected 
+If Situational, Payer Situation 
+This Segment is always sent 
+ 
+  
+This Segment is situational 
+X 
+ 
+ 
+Response Message Segment 
+Segment Identification (111-AM) = 
+“2Ø” 
+Claim Reversal – Accepted/Rejected 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+5Ø4-F4 MESSAGE 
+ 
+RW 
+ 
+Imp Guide: Required if 
+text is needed for 
+clarification or detail.  
+ 
+Payer Requirement: 
+Same as Imp Guide 
+ 
+
+
+--- Page 58 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 58 
+Response Status Segment 
+Questions 
+Check 
+Claim Reversal – Accepted/Rejected 
+If Situational, Payer Situation 
+This Segment is always sent 
+X 
+  
+ 
+Response Status Segment 
+Segment Identification (111-AM) = 
+“21” 
+Claim Reversal – Accepted/Rejected 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+112-AN TRANSACTION 
+RESPONSE STATUS 
+R = Reject 
+M 
+ 
+5Ø3-F3 AUTHORIZATION NUMBER  
+R 
+ 
+51Ø-FA REJECT COUNT 
+Maximum count of 5. 
+R 
+ 
+511-FB REJECT CODE 
+ 
+R 
+ 
+546-4F REJECT FIELD 
+OCCURRENCE 
+INDICATOR 
+ 
+RW 
+ 
+Imp Guide: Required if 
+a repeating field is in 
+error, to identify 
+repeating field 
+occurrence. 
+ 
+Payer Requirement: 
+Same as Imp Guide 
+13Ø-UF ADDITIONAL MESSAGE 
+INFORMATION COUNT 
+Maximum count of 
+25. 
+RW 
+ 
+Imp Guide: Required if 
+Additional Message 
+Information (526-FQ) is 
+used. 
+ 
+Payer Requirement: 
+Same as Imp Guide 
+132-UH ADDITIONAL MESSAGE 
+INFORMATION QUALIFIER 
+ 
+RW 
+ 
+Imp Guide: Required if 
+Additional Message 
+Information (526-FQ) is 
+used. 
+ 
+Payer Requirement: 
+Same as Imp Guide 
+526-FQ ADDITIONAL MESSAGE 
+INFORMATION 
+ 
+RW 
+ 
+Imp Guide: Required 
+when additional text is 
+needed for clarification 
+or detail. 
+ 
+Payer Requirement: 
+Same as Imp Guide 
+131-UG ADDITIONAL MESSAGE 
+INFORMATION 
+CONTINUITY 
+ 
+RW 
+ 
+Imp Guide: Required if 
+and only if current 
+repetition of Additional 
+Message Information 
+(526-FQ) is used, 
+
+
+--- Page 59 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 59 
+Response Status Segment 
+Segment Identification (111-AM) = 
+“21” 
+Claim Reversal – Accepted/Rejected 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+another populated 
+repetition of Additional 
+Message Information 
+(526-FQ) follows it, and 
+the text of the following 
+message is a 
+continuation of the 
+current. 
+ 
+Payer Requirement: 
+Same as Imp Guide 
+549-7F HELP DESK PHONE 
+NUMBER QUALIFIER 
+ 
+RW 
+ 
+Imp Guide: Required if 
+Help Desk Phone 
+Number (55Ø-8F) is 
+used. 
+ 
+Payer Requirement: 
+Same as Imp Guide 
+55Ø-8F HELP DESK PHONE 
+NUMBER 
+ 
+RW 
+ 
+Imp Guide: Required if 
+needed to provide a 
+support telephone 
+number to the receiver. 
+ 
+Payer Requirement: 
+Same as Imp Guide 
+ 
+Response Claim Segment 
+Questions 
+Check 
+Claim Reversal – Accepted/Rejected 
+If Situational, Payer Situation 
+This Segment is always sent 
+X 
+  
+ 
+Response Claim Segment 
+Segment Identification (111-AM) = 
+“22” 
+Claim Reversal – Accepted/Rejected 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+455-EM PRESCRIPTION/SERVICE 
+REFERENCE NUMBER 
+QUALIFIER 
+1 = RxBilling 
+M 
+Imp Guide: For 
+Transaction Code of “B2,” 
+in the Response Claim 
+Segment, the 
+Prescription/Service 
+Reference Number 
+Qualifier (455-EM) is “1” 
+(Rx Billing). 
+
+
+--- Page 60 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 60 
+Response Claim Segment 
+Segment Identification (111-AM) = 
+“22” 
+Claim Reversal – Accepted/Rejected 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+4Ø2-D2 PRESCRIPTION/SERVICE 
+REFERENCE NUMBER 
+ 
+M 
+ 
+ 
+ 
+
+
+--- Page 61 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 61 
+Claim Reversal Rejected/Rejected Response 
+Response Transaction Header 
+Segment Questions 
+Check 
+Claim Reversal – Rejected/Rejected 
+If Situational, Payer Situation 
+This Segment is always sent 
+X 
+  
+ 
+Response Transaction Header 
+Segment 
+Claim Reversal – Rejected/Rejected 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+1Ø2-A2 VERSION/RELEASE 
+NUMBER 
+DØ 
+M 
+ 
+1Ø3-A3 TRANSACTION CODE 
+B2 
+M 
+ 
+1Ø9-A9 TRANSACTION COUNT 
+Same value as in 
+request 
+M 
+ 
+5Ø1-F1 HEADER RESPONSE 
+STATUS 
+A = Accepted 
+M 
+ 
+2Ø2-B2 SERVICE PROVIDER ID 
+QUALIFIER 
+Same value as in 
+request 
+M 
+ 
+2Ø1-B1 SERVICE PROVIDER ID  
+Same value as in 
+request  
+M 
+ 
+4Ø1-D1 DATE OF SERVICE 
+Same value as in 
+request 
+M 
+ 
+ 
+Response Message Segment 
+Questions 
+Check 
+Claim Reversal – Rejected/Rejected 
+If Situational, Payer Situation 
+This Segment is always sent 
+ 
+  
+This Segment is situational 
+X 
+ 
+ 
+Response Message Segment 
+Segment Identification (111-AM) = 
+“2Ø” 
+Claim Reversal – Rejected/Rejected 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+5Ø4-F4 MESSAGE 
+ 
+RW 
+ 
+Imp Guide: Required if 
+text is needed for 
+clarification or detail.  
+ 
+Payer Requirement: 
+Same as Imp Guide 
+ 
+
+
+--- Page 62 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 62 
+Response Status Segment 
+Questions 
+Check 
+Claim Reversal - Rejected/Rejected 
+If Situational, Payer Situation 
+This Segment is always sent 
+X 
+  
+ 
+Response Status Segment 
+Segment Identification (111-AM) 
+= “21” 
+Claim Reversal – Rejected/Rejected 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+112-AN TRANSACTION 
+RESPONSE STATUS 
+R = Reject 
+M 
+ 
+5Ø3-F3 AUTHORIZATION 
+NUMBER 
+ 
+R 
+ 
+51Ø-FA REJECT COUNT 
+Maximum count of 5. 
+R 
+ 
+511-FB REJECT CODE 
+ 
+R 
+ 
+546-4F REJECT FIELD 
+OCCURRENCE 
+INDICATOR 
+ 
+RW 
+ 
+Imp Guide: Required if a 
+repeating field is in error, 
+to identify repeating field 
+occurrence. 
+ 
+Payer Requirement: 
+Same as Imp Guide 
+13Ø-UF ADDITIONAL 
+MESSAGE 
+INFORMATION COUNT 
+Maximum count of 25. 
+RW 
+ 
+Imp Guide: Required if 
+Additional Message 
+Information (526-FQ) is 
+used. 
+ 
+Payer Requirement: 
+Same as Imp Guide 
+132-UH ADDITIONAL 
+MESSAGE 
+INFORMATION 
+QUALIFIER 
+ 
+RW 
+ 
+Imp Guide: Required if 
+Additional Message 
+Information (526-FQ) is 
+used. 
+ 
+Payer Requirement: 
+Same as Imp Guide 
+526-FQ ADDITIONAL 
+MESSAGE 
+INFORMATION 
+ 
+RW 
+ 
+Imp Guide: Required 
+when additional text is 
+needed for clarification or 
+detail. 
+ 
+Payer Requirement: 
+Same as Imp Guide 
+131-UG ADDITIONAL 
+MESSAGE 
+INFORMATION 
+CONTINUITY 
+ 
+RW 
+ 
+Imp Guide: Required if 
+and only if current 
+repetition of Additional 
+Message Information 
+
+
+--- Page 63 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 63 
+Response Status Segment 
+Segment Identification (111-AM) 
+= “21” 
+Claim Reversal – Rejected/Rejected 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+(526-FQ) is used, another 
+populated repetition of 
+Additional Message 
+Information (526-FQ) 
+follows it, and the text of 
+the following message is 
+a continuation of the 
+current. 
+ 
+Payer Requirement: 
+Same as Imp Guide 
+549-7F HELP DESK PHONE 
+NUMBER QUALIFIER 
+ 
+RW 
+ 
+Imp Guide: Required if 
+Help Desk Phone 
+Number (55Ø-8F) is 
+used. 
+ 
+Payer Requirement: 
+Same as Imp Guide 
+55Ø-8F HELP DESK PHONE 
+NUMBER 
+ 
+RW 
+ 
+Imp Guide: Required if 
+needed to provide a 
+support telephone 
+number to the receiver. 
+ 
+Payer Requirement: 
+Same as Imp Guide 
+ 
+**End of Claim Reversal (B2) Response Payer Sheet** 
+ 
+ 
+
+
+--- Page 64 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 64 
+Eligibility Verification 
+**Start of Request Eligibility Verification (E1) Payer Sheet** 
+Request Eligibility Verification Payer Sheet  
+General Information 
+Payer Name: Prime Therapeutics State Government Solutions 
+Client Name: Arkansas Medicaid 
+BIN: 017606 
+PCN: P027017606 
+Other Transactions Supported 
+Transaction Code 
+Transaction Name 
+B1 
+Claim Billing 
+B2 
+Claim Reversal 
+B3 
+Claim Rebill 
+Field Legend for Columns 
+Payer Usage Column 
+Value 
+Explanation 
+Payer 
+Situation 
+Column 
+MANDATORY 
+M 
+The Field is mandatory for the Segment in 
+the designated Transaction. 
+No 
+REQUIRED 
+R 
+The Field has been designated with the 
+situation of “Required” for the Segment in the 
+designated Transaction. 
+No 
+QUALIFIED REQUIREMENT 
+RW 
+“Required when”. The situations designated 
+have qualifications for usage (“Required if x,” 
+“Not required if y”). 
+Yes 
+Eligibility Verification Transaction 
+The following lists the segments and fields in Eligibility Verification Transaction for the NCPDP 
+Telecommunication Standard Implementation Guide Version D.Ø. 
+Transaction Header Segment Questions 
+Check 
+Claim Reversal 
+This Segment is always sent 
+X 
+ 
+
+
+--- Page 65 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 65 
+Transaction Header Segment Questions 
+Check 
+Claim Reversal 
+Source of certification IDs required in Software 
+Vendor/Certification ID (11Ø-AK) is Payer Issued 
+ 
+ 
+Source of certification IDs required in Software 
+Vendor/Certification ID (11Ø-AK) is Switch/VAN 
+issued 
+X 
+ 
+Source of certification IDs required in Software 
+Vendor/Certification ID (11Ø-AK) is Not used 
+ 
+ 
+ 
+Transaction Header Segment 
+Claim Reversal 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+1Ø1-A1 BIN NUMBER 
+017606 
+M 
+ 
+1Ø2-A2 VERSION/RELEASE 
+NUMBER 
+ 
+M 
+ 
+1Ø3-A3 TRANSACTION CODE 
+ 
+M 
+ 
+1Ø4-A4 PROCESSOR 
+CONTROL NUMBER 
+ 
+M 
+ 
+1Ø9-A9 TRANSACTION COUNT 1 - One Occurrence 
+M 
+ 
+2Ø2-B2 SERVICE PROVIDER 
+ID QUALIFIER 
+Ø1 = National Provider 
+Identifier (NPI) 
+M 
+ 
+2Ø1-B1 SERVICE PROVIDER 
+ID 
+1Ø digit National Provider 
+Identifier (NPI) 
+M 
+ 
+4Ø1-D1 DATE OF SERVICE 
+ 
+Format = CCYYMMDD  
+ 
+CC – Century  
+ 
+YY – Year  
+ 
+MM – Month  
+ 
+DD – Day 
+M 
+ 
+11Ø-AK SOFTWARE 
+VENDOR/CERTIFICATI
+ON ID 
+ID assigned by the switch or 
+processor to identify the 
+software source. 
+M 
+ 
+ 
+Insurance Segment Questions 
+Check 
+Claim Billing/Claim Rebill 
+This Segment is always sent 
+X 
+ 
+ 
+Insurance Segment  
+Segment Identification (111-AM) = “Ø4” 
+Claim Billing/Claim Rebill 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+3Ø2-C2 
+CARDHOLDER ID 
+M 
+ 
+ 
+
+
+--- Page 66 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 66 
+Patient Segment Questions 
+Check 
+Claim Billing/Claim Rebill 
+This Segment is always sent 
+X 
+ 
+This Segment is situational 
+ 
+ 
+ 
+Patient Segment 
+Segment Identification (111-AM) = “Ø1” 
+Claim Billing/Claim Rebill 
+Field 
+NCPDP Field 
+Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+3Ø4-C4 
+DATE OF BIRTH 8 digit date of birth 
+Format = 
+CCYYMMDD 
+RW 
+ 
+Imp Guide: Required if needed 
+for receiver inquiry validation 
+and/or determination. Required if 
+necessary for 
+state/federal/regulatory agency 
+programs. 
+ 
+Payer Requirement: Same as 
+Imp Guide. 
+ 
+**End of Request Eligibility Verification (E1) Payer Sheet** 
+ 
+ 
+ 
+
+
+--- Page 67 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 67 
+Eligibility Verification Response 
+Eligibility Verification Accepted/Approved Response 
+**Start of Eligibility Verification Response (E1) Payer Sheet** 
+General Information 
+Payer Name: Prime Therapeutics State Government Solutions 
+Client Name: Arkansas Medicaid 
+BIN: 017606 
+PCN: P027017606 
+Eligibility Verification Accepted/Approved Response 
+The following lists the segments and fields in an Eligibility Verification response (Approved) Transaction 
+for the NCPDP Telecommunication Standard Implementation Guide Version D.Ø. 
+Response Status Segment 
+Questions 
+Check 
+Claim Reversal – Accepted/Approved 
+This Segment is always sent 
+X 
+  
+ 
+Response Transaction Header 
+S
+t
+Claim Reversal – Accepted/Approved 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+U
+Payer Situation 
+1Ø2-A2 VERSION/RELEASE 
+NUMBER 
+DØ 
+M 
+ 
+1Ø3-A3 TRANSACTION CODE 
+E1 
+M 
+ 
+1Ø9-A9 TRANSACTION COUNT 
+Same value as in 
+request 
+M 
+ 
+5Ø1-F1 HEADER RESPONSE 
+STATUS 
+A = Accepted 
+M 
+ 
+2Ø2-B2 SERVICE PROVIDER ID 
+QUALIFIER 
+Same value as in 
+request 
+M 
+ 
+2Ø1-B1 SERVICE PROVIDER ID 
+Same value as in 
+request 
+M 
+ 
+4Ø1-D1 DATE OF SERVICE 
+Same value as in 
+request 
+M 
+ 
+ 
+Response Message Header 
+Segment Questions 
+Check 
+Claim Reversal – Accepted/Approved 
+This Segment is always sent 
+ 
+ 
+This Segment is situational 
+X 
+Provide general information when used for 
+
+
+--- Page 68 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 68 
+transmission-level messaging. 
+  
+ 
+
+
+--- Page 69 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 69 
+Response Message Segment 
+Segment Identification (111-AM) = “2Ø” 
+Claim Reversal – Accepted/Approved 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+5Ø4-F4 
+MESSAGE 
+ 
+RW 
+ 
+Imp Guide: Required if text 
+is needed for clarification or 
+detail. 
+ 
+Payer Requirement: Same 
+as Imp Guide. 
+ 
+Response Status Segment 
+Questions 
+Check 
+Claim Reversal – Accepted/Approved 
+This Segment is always sent 
+X 
+ 
+ 
+Response Status Segment 
+Segment Identification (111-AM) = “21” 
+Claim Reversal – Accepted/Approved 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+112-AN 
+TRANSACTION 
+RESPONSE STATUS 
+A = Approved 
+M 
+ 
+13Ø-UF 
+ADDITIONAL MESSAGE 
+INFORMATION 
+COUNT 
+Maximum count 
+of 25. 
+RW 
+ 
+Imp Guide: Required if 
+Additional Message 
+ 
+Information (526-FQ) is 
+used. 
+ 
+Payer Requirement: Same 
+as Imp Guide. 
+132-UH 
+ADDITIONAL MESSAGE 
+INFORMATION 
+QUALIFIER 
+ 
+RW 
+ 
+Imp Guide: Required if 
+Additional Message 
+ 
+Information (526-FQ) is 
+used. 
+ 
+Payer Requirement: Same 
+as Imp Guide. 
+526-FQ 
+ADDITIONAL MESSAGE 
+INFORMATION 
+ 
+RW 
+ 
+Imp Guide: Required when 
+additional text is needed for 
+clarification or detail.  
+ 
+Payer Requirement: Same 
+as Imp Guide. 
+131-UG 
+ADDITIONAL MESSAGE 
+INFORMATION 
+CONTINUITY 
+ 
+RW 
+ 
+Imp Guide: Required if and 
+only if current repetition of 
+Additional Message 
+Information (526-FQ) is 
+used, another populated 
+repetition of Additional 
+Message Information (526-
+
+
+--- Page 70 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 70 
+FQ) follows it, and the text 
+of the following message is 
+a continuation of the current. 
+ 
+Payer Requirement: Same 
+as Imp Guide. 
+Eligibility Verification Accepted/Rejected Response 
+Response Transaction Header 
+Segment Questions 
+Check 
+Claim Reversal – Accepted/Rejected 
+This Segment is always sent 
+X 
+ 
+ 
+Response Transaction Header Segment 
+Claim Reversal – Accepted/Rejected 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+1Ø2-A2 VERSION/RELEASE 
+NUMBER 
+DØ 
+M 
+ 
+1Ø3-A3 TRANSACTION CODE 
+E1 
+M 
+ 
+1Ø9-A9 TRANSACTION COUNT 
+Same value as in 
+request 
+M 
+ 
+5Ø1-F1 HEADER RESPONSE 
+STATUS 
+A = Accepted 
+M 
+ 
+2Ø2-B2 SERVICE PROVIDER ID 
+QUALIFIER 
+Same value as in 
+request 
+M 
+ 
+2Ø1-B1 SERVICE PROVIDER ID Same value as in 
+request 
+M 
+ 
+4Ø1-D1 DATE OF SERVICE 
+Same value as in 
+request 
+M 
+ 
+ 
+Response Message Segment 
+Questions 
+Check 
+Claim Reversal – Accepted/Rejected 
+This Segment is always sent 
+ 
+ 
+This Segment is situational 
+X 
+Provide general information when used for 
+transmission-level messaging. 
+ 
+Response Message Segment 
+Segment Identification (111-AM) = “2Ø” 
+Claim Reversal – Accepted/Rejected 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+5Ø4-F4 MESSAGE 
+ 
+RW 
+ 
+Imp Guide: Required if text is 
+needed for clarification or 
+detail. 
+
+
+--- Page 71 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 71 
+ 
+Payer Requirement: Same 
+as Imp Guide. 
+ 
+Response Status Segment 
+Questions 
+Check 
+Claim Reversal – Accepted/Rejected 
+This Segment is always sent 
+X 
+ 
+ 
+Response Status Segment 
+Segment Identification (111-AM) = “21” 
+Claim Reversal – Accepted/Rejected 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+112-AN TRANSACTION 
+RESPONSE STATUS 
+R = Reject 
+M 
+ 
+51Ø-FA REJECT COUNT 
+Maximum count 
+of 5. 
+R 
+ 
+511-FB 
+REJECT CODE 
+R 
+ 
+546-4F 
+REJECT FIELD 
+OCCURRENCE 
+INDICATOR 
+RW 
+ 
+Imp Guide: Required if a 
+repeating field is in error, to 
+identify repeating field 
+occurrence. 
+ 
+Payer Requirement: Same 
+as Imp Guide. 
+13Ø-UF ADDITIONAL MESSAGE 
+INFORMATION COUNT 
+Maximum count 
+of 25. 
+RW 
+ 
+Imp Guide: Required if 
+Additional Message 
+Information (526-FQ) is 
+used. 
+ 
+Payer Requirement: Same 
+as Imp Guide. 
+132-UH ADDITIONAL MESSAGE 
+INFORMATION 
+QUALIFIER 
+ 
+RW 
+ 
+Imp Guide: Required if 
+Additional Message 
+ 
+Information (526-FQ) is 
+used. 
+ 
+Payer Requirement: Same 
+as Imp Guide. 
+526-FQ ADDITIONAL MESSAGE 
+INFORMATION 
+ 
+RW 
+ 
+Imp Guide: Required when 
+additional text is needed for 
+clarification or detail. 
+ 
+Payer Requirement: Same 
+as Imp Guide. 
+131-UG ADDITIONAL MESSAGE 
+INFORMATION 
+CONTINUITY 
+ 
+RW 
+ 
+Imp Guide: Required if and 
+only if current repetition of 
+Additional Message 
+Information (526-FQ) is 
+used, another populated 
+
+
+--- Page 72 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 72 
+Response Status Segment 
+Segment Identification (111-AM) = “21” 
+Claim Reversal – Accepted/Rejected 
+Field # 
+NCPDP Field Name 
+Value 
+Payer 
+Usage 
+Payer Situation 
+repetition of Additional 
+Message Information (526-
+FQ) follows it, and the text of 
+the following message is a 
+continuation of the current. 
+ 
+Payer Requirement: Same 
+as Imp Guide. 
+ 
+ 
+
+
+--- Page 73 ---
+© 2015–2024 Prime Therapeutics Management LLC, a Prime Therapeutics LLC company  
+Arkansas Medicaid NCPDP D.0 Payer Specifications 
+Page 73 
+Revision History 
+Date 
+Name 
+Comments 
+03/14/2015 Implementation team 
+Initial creation 
+07/24/2020 
+Steven Giera 
+Added quantity prescribed field (# 460-ET) required for 
+Schedule II drugs in Claim Segment Ø7 
+Documentation Management 
+team 
+Rebranded; reformatted; updated and standardized 
+naming conventions; and added Revision History table 
+10/10/2022 Documentation Management 
+team 
+Updated document to reference current company name.\n

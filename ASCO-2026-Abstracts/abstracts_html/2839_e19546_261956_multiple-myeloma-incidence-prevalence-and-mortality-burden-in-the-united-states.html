@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Multiple myeloma incidence, prevalence, and mortality burden in the United States: Retrospective epidemiological trends and burden (1990–2023) with machine learning-based projections to 2050.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Multiple myeloma incidence, prevalence, and mortality burden in the United States: Retrospective epidemiological trends and burden (1990–2023) with machine learning-based projections to 2050.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e19546</div>
+    <div><strong>First speaker:</strong> Md Abu Sayed</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/261956">https://www.asco.org/abstracts-presentations/261956</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Multiple myeloma, a plasma cell malignancy, imposes a substantial disease burden in the United States, with improvements in survival driven by novel therapies yet persistent challenges in incidence and long-term outcomes. This study examined age-standardized rates (ASRs) of DALYs, deaths, incidence, and prevalence from 1990 to 2023, quantified trends via estimated annual percentage change (EAPC), and projected future burden to 2050 through ARIMA time-series forecasting.</div>
+  <main> 
+
+	<div><b>Background: </b> Multiple myeloma, a plasma cell malignancy, imposes a substantial disease burden in the United States, with improvements in survival driven by novel therapies yet persistent challenges in incidence and long-term outcomes. This study examined age-standardized rates (ASRs) of DALYs, deaths, incidence, and prevalence from 1990 to 2023, quantified trends via estimated annual percentage change (EAPC), and projected future burden to 2050 through ARIMA time-series forecasting.</p>  <b>Methods: </b> Age-standardized rates per 100,000 population were extracted from the Global Burden of Disease 2023 database for the United States, stratified by sex (Both, Female, Male). Historical trends (1990–2023) were evaluated using EAPC from linear regression on log-transformed ASRs. Future projections (2024–2050) were generated with ARIMA models fitted to historical time series, providing point estimates and 95% prediction intervals (PI).</p>  <b>Results: </b> From 1990 to 2023, age-standardized DALYs (Both sexes) declined from 74.26 (95% UI: 68.16–81.47) to 55.94 (95% UI: 50.99–60.56), with an EAPC of -1.06% (95% CI: -1.18 to -0.94); females showed a steeper reduction (EAPC -1.19%, 95% CI: -1.34 to -1.05) than males (EAPC -1.03%, 95% CI: -1.13 to -0.93). Age-standardized death rates decreased from 3.24 to 2.72 (EAPC -0.69%, 95% CI: -0.80 to -0.58), with stronger declines in females (EAPC -0.83%) than males (EAPC -0.67%). Incidence fell modestly from 4.33 to 3.95 (EAPC -0.47%, 95% CI: -0.63 to -0.30), while prevalence remained nearly stable (EAPC -0.08%, 95% CI: -0.34 to 0.18), reflecting substantial survival gains from therapeutic advances. ARIMA forecasts indicate accelerated declines in age-standardized DALYs (Both: from 55.07 in 2024 toward ~32.55 by 2050, with widening intervals at extended horizons), deaths (to ~1.76), and incidence (to ~2.68), while prevalence shows gradual erosion or stabilization.</p>  <b>Conclusions: </b> Age-standardized burden of multiple myeloma in the US decreased substantially from 1990–2023 across DALYs, mortality, and incidence, with more pronounced improvements in females and notable survival-driven gains. Projections to 2050 anticipate continued reductions in key metrics, underscoring the impact of therapeutic innovations, though persistent absolute cases due to aging populations emphasize the need for sustained research into prevention and equitable access to care.</div>
+
+
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p>Measure</p>
+</td>
+<td>
+<p>Sex</p>
+</td>
+<td>
+<p>EAPC</p>
+</td>
+<td>
+<p>Lower 95%CI</p>
+</td>
+<td>
+<p>Upper 95%CI</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>DALYs</p>
+</td>
+<td>
+<p>Both</p>
+</td>
+<td>
+<p>-1.06</p>
+</td>
+<td>
+<p>-1.18</p>
+</td>
+<td>
+<p>-0.94</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>DALYs</p>
+</td>
+<td>
+<p>Female</p>
+</td>
+<td>
+<p>-1.19</p>
+</td>
+<td>
+<p>-1.34</p>
+</td>
+<td>
+<p>-1.05</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>DALYs</p>
+</td>
+<td>
+<p>Male</p>
+</td>
+<td>
+<p>-1.03</p>
+</td>
+<td>
+<p>-1.13</p>
+</td>
+<td>
+<p>-0.93</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Deaths</p>
+</td>
+<td>
+<p>Both</p>
+</td>
+<td>
+<p>-0.69</p>
+</td>
+<td>
+<p>-0.8</p>
+</td>
+<td>
+<p>-0.58</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Deaths</p>
+</td>
+<td>
+<p>Female</p>
+</td>
+<td>
+<p>-0.83</p>
+</td>
+<td>
+<p>-0.97</p>
+</td>
+<td>
+<p>-0.69</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Deaths</p>
+</td>
+<td>
+<p>Male</p>
+</td>
+<td>
+<p>-0.67</p>
+</td>
+<td>
+<p>-0.77</p>
+</td>
+<td>
+<p>-0.58</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Incidence</p>
+</td>
+<td>
+<p>Both</p>
+</td>
+<td>
+<p>-0.47</p>
+</td>
+<td>
+<p>-0.63</p>
+</td>
+<td>
+<p>-0.3</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Incidence</p>
+</td>
+<td>
+<p>Female</p>
+</td>
+<td>
+<p>-0.61</p>
+</td>
+<td>
+<p>-0.8</p>
+</td>
+<td>
+<p>-0.42</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Incidence</p>
+</td>
+<td>
+<p>Male</p>
+</td>
+<td>
+<p>-0.42</p>
+</td>
+<td>
+<p>-0.57</p>
+</td>
+<td>
+<p>-0.27</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Prevalence</p>
+</td>
+<td>
+<p>Both</p>
+</td>
+<td>
+<p>-0.08</p>
+</td>
+<td>
+<p>-0.34</p>
+</td>
+<td>
+<p>0.18</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Prevalence</p>
+</td>
+<td>
+<p>Female</p>
+</td>
+<td>
+<p>-0.28</p>
+</td>
+<td>
+<p>-0.56</p>
+</td>
+<td>
+<p>-0.01</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Prevalence</p>
+</td>
+<td>
+<p>Male</p>
+</td>
+<td>
+<p>0.06</p>
+</td>
+<td>
+<p>-0.2</p>
+</td>
+<td>
+<p>0.31</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

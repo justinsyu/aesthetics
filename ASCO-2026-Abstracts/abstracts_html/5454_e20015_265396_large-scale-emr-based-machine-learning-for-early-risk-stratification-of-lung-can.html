@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Large-scale EMR-based machine learning for early risk stratification of lung cancer.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Large-scale EMR-based machine learning for early risk stratification of lung cancer.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e20015</div>
+    <div><strong>First speaker:</strong> Valery V. Nazarova, MD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/265396">https://www.asco.org/abstracts-presentations/265396</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Lung cancer is the leading cause of cancer-related mortality worldwide. Early detection is crucial for improving outcomes; however, existing screening tools often rely on specialized data (e.g., CT imaging and biomarkers), limiting their broad implementation. We aimed to develop a machine learning model using routine clinical and demographic data from electronic health records (EHRs) to identify individuals at high risk of lung cancer up to three years before diagnosis.</div>
+  <main> 
+
+	<div><b>Background: </b> Lung cancer is the leading cause of cancer-related mortality worldwide. Early detection is crucial for improving outcomes; however, existing screening tools often rely on specialized data (e.g., CT imaging and biomarkers), limiting their broad implementation. We aimed to develop a machine learning model using routine clinical and demographic data from electronic health records (EHRs) to identify individuals at high risk of lung cancer up to three years before diagnosis.</p>  <b>Methods: </b> We analyzed 61 million EHR entries from Russian healthcare facilities, including diagnoses, vital signs, lab results, physician visits, and demographic data. Patients with confirmed lung cancer (ICD-10 C34) were matched with controls without any cancer diagnosis. . Patients were assigned to time-to-diagnosis groups (0.5–1, 1–2, and 2–3 years before diagnosis as positive; ≥3 years before diagnosis and cancer-free controls with &gt;&nbsp;3 years observation as negative). Data within 6 months prior to diagnosis and post-diagnosis periods were excluded to reduce diagnostic work-up leakage. Models (histogram-based gradient boosting, LightGBM, random forest) were trained with class rebalancing (SMOTE) and combined via a soft-voting ensemble. The dataset was split 80:20 at the patient level to prevent leakage, with additional validation of cohorts containing other malignancies (population-representative validation cohort).</p>  <b>Results: </b> On the test set, the ensemble achieved an accuracy of 88.02%, sensitivity of 78.8%, specificity of 78.43%, NPV of 98.2%, F1-score of 78.61%, and a ROC AUC of 0.8715. On the population-representative validation cohort, performance metrics were: accuracy 86.02%, sensitivity 79.1%, specificity 76.41%, NPV 95.2%, F1-score 77.73%, and ROC AUC 0.8335. The final model included 53 features, with the key contributors being age, patterns of healthcare utilization (e.g., primary care and surgical visits), vital signs (respiratory rate, pulse, blood pressure), routine laboratory parameters, and utilization of respiratory-related investigations (e.g., fluorography/CT chest), rather than cancer-specific markers.</p>  <b>Conclusions: </b> We have developed a highly accurate artificial intelligence model for the early stratification of lung cancer risk utilizing routine, nonspecific electronic health record (EHR) data. This model obviates the need for additional testing or specialized biomarkers, thereby rendering it scalable and cost-effective for screening at the population level. Its integration within primary care EHR systems could facilitate proactive referrals for low-dose computed tomography (CT) screening for individuals at high risk, potentially enhancing early detection rates and improving clinical outcomes.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

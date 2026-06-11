@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enhanced pre-biopsy risk stratification for aggressive prostate cancer using prostate density in an EHR-derived cohort.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Enhanced pre-biopsy risk stratification for aggressive prostate cancer using prostate density in an EHR-derived cohort.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e17127</div>
+    <div><strong>First speaker:</strong> Laurel Jackson, MS</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/261132">https://www.asco.org/abstracts-presentations/261132</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Total prostate-specific antigen (PSA) lacks specificity for distinguishing aggressive prostate cancer (Gleason score ≥7) from indolent/benign disease, leading to unnecessary biopsies. Prostate-specific antigen density (PSAD), incorporating prostate volume, may improve diagnostic prediction. We developed and internally validated prediction models comparing PSAD-based versus PSA-based approaches using electronic health record (EHR) data.</div>
+  <main> 
+
+	<div><b>Background: </b> Total prostate-specific antigen (PSA) lacks specificity for distinguishing aggressive prostate cancer (Gleason score ≥7) from indolent/benign disease, leading to unnecessary biopsies. Prostate-specific antigen density (PSAD), incorporating prostate volume, may improve diagnostic prediction. We developed and internally validated prediction models comparing PSAD-based versus PSA-based approaches using electronic health record (EHR) data.</p>  <b>Methods: </b> We conducted a retrospective cohort study using EHR data from Rush University Medical Center. Men aged &gt;&nbsp;30 years who underwent prostate biopsy between 2017-2024 were included if they had PSA ≤1 year pre-biopsy, prostate volume from mpMRI/TRUS, and pathologic confirmation. The outcome was aggressive prostate cancer (Gleason ≥7) versus indolent/benign disease. Candidate predictors included demographics, comorbidities, medications, and PSA or PSAD (log<sub>2</sub>-transformed). Logistic regression and random forest models were developed, evaluating PSA and PSAD alone and in combination with clinical predictors. Data were randomly split 80/20 for training/testing with 5-fold cross-validation for internal validation.</p>  <b>Results: </b> 673 men total were included, of whom 333 (49%) had aggressive prostate cancer, with a median age of 65 years. PSAD consistently outperformed total PSA across all models. In multivariable logistic regression, PSAD showed a significant association with aggressive cancer (OR per doubling 2.87; 95% CI 2.32–3.61). Age was independently associated with aggressive cancer, whereas race and ethnicity were not significant. Overall, PSAD-based models improved area under the curve (AUC) by an average of 0.10 in training and 0.12 in testing compared with PSA-based models.</p>  <b>Conclusions: </b> PSAD significantly improves prediction of aggressive prostate cancer compared with total PSA alone. Incorporating PSAD into pre-biopsy risk stratification algorithms may reduce unnecessary biopsies while maintaining detection of clinically significant disease. EHR-derived clinical notes represent a valuable data source for algorithm development and highlight the importance of integrating structured and unstructured data sources in oncology decision support.</div>
+
+
+
+	<div class="table_caption"><b>Comparison of model performance for aggressive prostate cancer discrimination</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td><strong>Model</strong></td>
+<td><strong>Predictors</strong></td>
+<td>
+<p><strong>Train AUC</strong></p>
+<p><strong> (95% CI)</strong></p>
+</td>
+<td>
+<p><strong>Test AUC </strong></p>
+<p><strong> (95% CI)</strong></p>
+</td>
+</tr>
+<tr>
+<td>Logistic Regression</td>
+<td>Total PSA</td>
+<td>0.67 (0.63–0.72)</td>
+<td>0.56 (0.46–0.66)</td>
+</tr>
+<tr>
+<td>Logistic Regression</td>
+<td>Total PSA + Demographics</td>
+<td>0.70 (0.66–0.74)</td>
+<td>0.57 (0.47–0.67)</td>
+</tr>
+<tr>
+<td>Logistic Regression</td>
+<td>PSAD</td>
+<td>0.78 (0.74–0.82)</td>
+<td>0.67 (0.57–0.76)</td>
+</tr>
+<tr>
+<td>Logistic Regression</td>
+<td>PSAD + Demographics</td>
+<td>0.79 (0.76–0.83)</td>
+<td>0.67 (0.58–0.77)</td>
+</tr>
+<tr>
+<td>Random Forest</td>
+<td>Total PSA + Demographics</td>
+<td>0.67 (0.63–0.72)</td>
+<td>0.50 (0.39–0.60)</td>
+</tr>
+<tr>
+<td>Random Forest</td>
+<td>PSAD + Demographics</td>
+<td>0.78 (0.74–0.81)</td>
+<td>0.65 (0.55–0.75)</td>
+</tr>
+</tbody>
+</table></div> 
+
+ 
+	<div class="table_footer">Demographics included age, race, and ethnicity, based on a p-value &lt; 0.10 in univariable modeling.</div> 
+
+
+</main>
+</body>
+</html>

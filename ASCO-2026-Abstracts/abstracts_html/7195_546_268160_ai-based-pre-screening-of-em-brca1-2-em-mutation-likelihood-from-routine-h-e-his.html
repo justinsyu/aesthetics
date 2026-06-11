@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI-based pre-screening of &lt;em&gt;BRCA1/2&lt;/em&gt; mutation likelihood from routine H&amp;E histopathology in unselected breast cancer cases using peakPredictBRCA.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>AI-based pre-screening of &lt;em&gt;BRCA1/2&lt;/em&gt; mutation likelihood from routine H&amp;E histopathology in unselected breast cancer cases using peakPredictBRCA.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 546</div>
+    <div><strong>First speaker:</strong> Patrick Frey, PhD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/268160">https://www.asco.org/abstracts-presentations/268160</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b> BRCA1/2 mutation status is essential for precision oncology in breast cancer, directly guiding therapy decisions such as eligibility for PARP inhibitors. However, not all patients globally have reimbursed access to genetic BRCA testing, due to cost and a lack of uniform global implementation, leading to actionable mutations being missed. We developed a scalable artificial intelligence pre-screening algorithm that estimates BRCA1/2 mutation likelihood from routine whole-slide H&amp;E images, to enable systematic prioritization of patients for genetic testing.</p>  <b>Methods: </b> peakPredictBRCA, a deep learning-based algorithm, was developed to predict likelihood of BRCA1/2 mutations from H&amp;E whole-slide images of primary and metastatic breast cancer cases, independent of hormone receptor or HER2 status. Breast cancer images were collected from 6 institutions across 5 countries using different whole-slide scanners (Argentina, Brazil, Germany, Jordan, and USA), with slide-level BRCA mutation labels derived from clinical sequencing (n=725 images, 60% mutated). Training data was augmented with open-access TCGA datasets for breast, prostate, and ovarian cancer (n = 1,633 images), resulting in 2,358 total images (21% mutated). Model performance was evaluated on the collected breast cancer images using five-fold cross-validation. The model was trained end-to-end without manual annotations using multiple-instance learning.</p>  <b>Results: </b> On the breast cancer cohort, peakPredictBRCA achieved a mean AUC of 0.81&#177;0.13. At a screening-oriented operating point, the model identified most BRCA1/2 mutated cases (mean sensitivity 0.82&#177;0.23) while excluding a substantial proportion of non-mutated cases (mean specificity 0.56&#177;0.38), without additional calibration on held-out images. Additional analyses during development demonstrated that robust generalization to unseen data depends on appropriate tumor tissue detection and model architecture selection.</p>  <b>Conclusions: </b> Our results demonstrate that BRCA1/2 mutation likelihood can be effectively triaged from routine H&amp;E breast cancer histology with consistent performance across institutions, scanners, and slide preparations. Implementation of the peakPredictBRCA algorithm in routine pathology workflows could enable systematic prescreening of unselected breast cancer cases at diagnosis and prioritization for confirmatory genetic testing, particularly in resource-constrained settings. Ongoing work focuses on incorporating human-interpretable features and on prospective validation in real-world workflows.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

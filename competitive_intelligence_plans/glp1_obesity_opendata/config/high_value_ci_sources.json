@@ -1,0 +1,260 @@
+{
+  "version": "2026-05-28",
+  "public_collectors": [
+    {
+      "id": "clinicaltrials_gov",
+      "category": "clinical_pipeline",
+      "status": "public_api",
+      "base_url": "https://clinicaltrials.gov/api/v2",
+      "documentation_url": "https://clinicaltrials.gov/data-api/api",
+      "refresh_cadence": "weekly",
+      "ci_use": "Pipeline trial starts, status changes, phase movement, sponsor positioning, enrollment criteria, outcomes, and comparator designs.",
+      "queries": [
+        "\"GLP-1\" OR semaglutide OR tirzepatide OR liraglutide OR dulaglutide OR exenatide OR lixisenatide",
+        "obesity AND (semaglutide OR tirzepatide OR liraglutide OR \"GLP-1\" OR incretin)",
+        "\"weight loss\" AND (semaglutide OR tirzepatide OR \"GLP-1\" OR incretin)",
+        "amycretin OR cagrilintide OR retatrutide OR orforglipron OR survodutide OR pemvidutide OR mazdutide OR petrelintide"
+      ]
+    },
+    {
+      "id": "pubmed_literature",
+      "category": "scientific_kol",
+      "status": "public_api",
+      "base_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils",
+      "documentation_url": "https://www.ncbi.nlm.nih.gov/books/NBK25501/",
+      "refresh_cadence": "weekly",
+      "ci_use": "Publication velocity, safety/tolerability papers, comparative efficacy publications, KOL author networks, and guideline-adjacent evidence.",
+      "queries": [
+        "(semaglutide OR tirzepatide OR liraglutide OR dulaglutide OR exenatide OR lixisenatide) AND (obesity OR overweight OR \"weight loss\")",
+        "(retatrutide OR orforglipron OR survodutide OR amycretin OR cagrilintide OR pemvidutide OR mazdutide OR petrelintide)",
+        "(\"GLP-1\" OR incretin) AND (nausea OR tolerability OR discontinuation OR pancreatitis OR gastroparesis) AND obesity"
+      ]
+    },
+    {
+      "id": "dailymed_labels",
+      "category": "safety_tolerability",
+      "status": "public_api",
+      "base_url": "https://dailymed.nlm.nih.gov/dailymed/services/v2",
+      "documentation_url": "https://dailymed.nlm.nih.gov/dailymed/app-support-web-services.cfm",
+      "refresh_cadence": "weekly",
+      "ci_use": "Current label updates, indication language, contraindications, warnings, dosing, and adverse-reaction wording.",
+      "queries": [
+        "Wegovy",
+        "Ozempic",
+        "Rybelsus",
+        "Zepbound",
+        "Mounjaro",
+        "Saxenda",
+        "Victoza",
+        "Trulicity",
+        "Bydureon",
+        "Byetta",
+        "Adlyxin",
+        "Soliqua",
+        "Xultophy"
+      ]
+    },
+    {
+      "id": "sec_edgar_submissions",
+      "category": "company_disclosures",
+      "status": "public_api",
+      "base_url": "https://data.sec.gov",
+      "documentation_url": "https://www.sec.gov/edgar/sec-api-documentation",
+      "refresh_cadence": "weekly",
+      "fetch_text": true,
+      "text_max_per_company": 8,
+      "ci_use": "Earnings releases, 10-K/10-Q/8-K updates, risk factors, manufacturing disclosures, trial updates, launch commentary, and partnership disclosures.",
+      "companies": [
+        {"name": "Eli Lilly", "ticker": "LLY", "cik": "0000059478"},
+        {"name": "Novo Nordisk ADR", "ticker": "NVO", "cik": "0000353278"},
+        {"name": "Amgen", "ticker": "AMGN", "cik": "0000318154"},
+        {"name": "Pfizer", "ticker": "PFE", "cik": "0000078003"},
+        {"name": "Viking Therapeutics", "ticker": "VKTX", "cik": "0001607678"},
+        {"name": "Altimmune", "ticker": "ALT", "cik": "0001326190"}
+      ]
+    },
+    {
+      "id": "public_pricing_opendata_extract",
+      "category": "pricing_gross_to_net",
+      "status": "public_generated_extract",
+      "base_url": "generated_data/glp1_product_matches.csv",
+      "documentation_url": "METHODOLOGY.md",
+      "refresh_cadence": "monthly",
+      "ci_use": "Public pricing proxies from refreshed OpenData matches, including CA WAC increase rows, NADAC acquisition-cost rows, and IRA price benchmark rows. These are not net price or rebate estimates.",
+      "source_dataset_ids": [
+        "ca-hcai/wac-increases",
+        "cms/nadac",
+        "cms/ira-drug-prices"
+      ]
+    },
+    {
+      "id": "fda_drug_enforcement",
+      "category": "supply_manufacturing",
+      "status": "public_api",
+      "base_url": "https://api.fda.gov/drug/enforcement.json",
+      "documentation_url": "https://open.fda.gov/apis/drug/enforcement/",
+      "refresh_cadence": "weekly",
+      "ci_use": "OpenFDA drug recall/enforcement actions for GLP-1 brands and active ingredients, including ongoing recalls, classification, recalling firm, reason, and product description.",
+      "queries": [
+        "Wegovy",
+        "Ozempic",
+        "Rybelsus",
+        "Zepbound",
+        "Mounjaro",
+        "Saxenda",
+        "Victoza",
+        "Trulicity",
+        "Bydureon",
+        "Byetta",
+        "Adlyxin",
+        "Soliqua",
+        "Xultophy",
+        "semaglutide",
+        "tirzepatide",
+        "liraglutide",
+        "dulaglutide",
+        "exenatide",
+        "lixisenatide"
+      ]
+    },
+    {
+      "id": "state_medicaid_pdl_public_registry",
+      "category": "formulary_access",
+      "status": "public_fragmented_registry",
+      "base_url": "config/state_medicaid_pdl_sources.json",
+      "documentation_url": "HIGH_VALUE_METHODOLOGY.md",
+      "refresh_cadence": "quarterly",
+      "ci_use": "Deterministic registry of official state Medicaid PDL or PA pages where public source URLs are known; page hashes and GLP-1 lexical hits support follow-on manual criteria extraction."
+    },
+    {
+      "id": "cms_partd_formulary_puf",
+      "category": "formulary_access",
+      "status": "public_bulk_catalog",
+      "base_url": "https://catalog.data.gov/dataset/monthly-prescription-drug-plan-formulary-and-pharmacy-network-information",
+      "data_gov_package_id": "monthly-prescription-drug-plan-formulary-and-pharmacy-network-information",
+      "documentation_url": "https://catalog.data.gov/dataset/monthly-prescription-drug-plan-formulary-and-pharmacy-network-information",
+      "refresh_cadence": "monthly",
+      "max_zip_attempts": 1,
+      "allow_full_zip_download": false,
+      "ci_use": "Medicare Part D formulary placement, prior authorization, step therapy, quantity limits, plan footprint, and pharmacy-network pricing context.",
+      "collection_note": "Use catalog metadata to resolve the latest monthly ZIP; parse Basic Drugs Formulary and related files by NDC/RxNorm/product terms."
+    },
+    {
+      "id": "fda_faers_quarterly",
+      "category": "safety_tolerability",
+      "status": "public_bulk_catalog",
+      "base_url": "https://www.fda.gov/drugs/questions-and-answers-fdas-adverse-event-reporting-system-faers/fda-adverse-event-reporting-system-faers-latest-quarterly-data-files",
+      "openfda_api_url": "https://api.fda.gov/drug/event.json",
+      "documentation_url": "https://www.fda.gov/drugs/surveillance/fda-adverse-event-reporting-system-faers",
+      "refresh_cadence": "quarterly",
+      "ci_use": "Adverse-event reporting patterns, disproportionality hypotheses, tolerability watchlists, and label-signal triage.",
+      "collection_note": "Bulk FAERS files require quarterly download, drug-name normalization, deduplication by primaryid/caseid, and signal review; spontaneous reports are not incidence.",
+      "queries": [
+        "Wegovy",
+        "Ozempic",
+        "Rybelsus",
+        "Zepbound",
+        "Mounjaro",
+        "Saxenda",
+        "Victoza",
+        "Trulicity",
+        "Bydureon",
+        "Byetta",
+        "Adlyxin",
+        "Soliqua",
+        "Xultophy"
+      ]
+    },
+    {
+      "id": "patentsview_uspto",
+      "category": "ip_lifecycle",
+      "status": "public_api",
+      "base_url": "https://search.patentsview.org/api/v1",
+      "query_url": "https://search.patentsview.org/api/v1/patent/",
+      "documentation_url": "https://patentsview.org/apis/purpose",
+      "bulk_fallback_resources": [
+        {
+          "dataset": "pvgpatdis",
+          "name": "PatentsView Granted Patent Disambiguated Data",
+          "url": "https://data.uspto.gov/bulkdata/datasets/pvgpatdis"
+        },
+        {
+          "dataset": "pvpgpubdis",
+          "name": "PatentsView Pre-Grant Publication Disambiguated Data",
+          "url": "https://data.uspto.gov/bulkdata/datasets/pvpgpubdis"
+        },
+        {
+          "dataset": "pvgpattxt",
+          "name": "PatentsView Granted Patent Long Text Data",
+          "url": "https://data.uspto.gov/bulkdata/datasets/pvgpattxt"
+        },
+        {
+          "dataset": "pvpgpubtxt",
+          "name": "PatentsView Pre-Grant Publication Long Text Data",
+          "url": "https://data.uspto.gov/bulkdata/datasets/pvpgpubtxt"
+        }
+      ],
+      "refresh_cadence": "monthly",
+      "ci_use": "Patent-family, assignee, inventor, and claim-theme discovery around incretin, peptide, oral GLP-1, amylin, and combination obesity assets.",
+      "queries": [
+        "semaglutide",
+        "tirzepatide",
+        "retatrutide",
+        "orforglipron",
+        "survodutide",
+        "cagrilintide",
+        "amycretin",
+        "pemvidutide",
+        "mazdutide",
+        "petrelintide"
+      ]
+    }
+  ],
+  "gated_ingestion_specs": [
+    {
+      "id": "paid_rx_claims",
+      "category": "claims_rx_demand",
+      "status": "requires_license_or_client_data",
+      "example_sources": ["IQVIA", "Symphony", "Komodo", "Optum", "MarketScan"],
+      "ci_use": "Near-real-time demand, starts, switches, persistence, channel mix, payer segment, diagnosis linkage, and cash/commercial/Medicare Advantage behavior.",
+      "required_fields": ["fill_date", "product_or_ndc", "quantity", "days_supply", "payer_type", "plan_or_channel", "patient_id_hash", "diagnosis_code_optional", "geography_optional"],
+      "minimum_refresh_cadence": "monthly"
+    },
+    {
+      "id": "commercial_pbm_policy",
+      "category": "formulary_access",
+      "status": "requires_license_or_manual_policy_corpus",
+      "example_sources": ["MMIT", "FormularyLookup", "Fingertip", "PBM policy PDFs", "payer medical/pharmacy policies"],
+      "ci_use": "Commercial coverage, PA criteria, BMI/comorbidity rules, continuation criteria, exclusions, step therapy, and channel-specific access barriers.",
+      "required_fields": ["payer", "plan", "product", "coverage_status", "tier_optional", "pa_required", "step_required", "quantity_limit", "policy_effective_date", "source_url_or_file"],
+      "minimum_refresh_cadence": "monthly"
+    },
+    {
+      "id": "gross_to_net_pricing",
+      "category": "pricing_gross_to_net",
+      "status": "requires_license_or_client_data",
+      "example_sources": ["SSR Health", "Red Book", "Medi-Span", "internal contracting data", "GoodRx/cash-price captures"],
+      "ci_use": "WAC, net price proxies, rebate pressure, coupon/cash-pay dynamics, and payer contracting intensity.",
+      "required_fields": ["product", "date", "price_type", "price", "unit", "channel_optional", "source"],
+      "minimum_refresh_cadence": "monthly"
+    },
+    {
+      "id": "state_medicaid_pdl_policy",
+      "category": "formulary_access",
+      "status": "public_but_state_fragmented",
+      "example_sources": ["state Medicaid PDL PDFs", "state pharmacy PA criteria", "state DUR board materials"],
+      "ci_use": "State Medicaid access restrictions, preferred/non-preferred placement, PA renewal requirements, and obesity-treatment exclusions.",
+      "required_fields": ["state", "program", "product", "preferred_status", "pa_required", "criteria_text", "effective_date", "source_url_or_file"],
+      "minimum_refresh_cadence": "quarterly"
+    },
+    {
+      "id": "manufacturing_supply_watch",
+      "category": "supply_manufacturing",
+      "status": "mixed_public_and_manual_review",
+      "example_sources": ["FDA 483s", "warning letters", "import alerts", "facility registrations", "earnings transcripts", "CMO announcements"],
+      "ci_use": "Capacity constraints, fill-finish risk, API/device bottlenecks, facility quality events, and competitor supply readiness.",
+      "required_fields": ["company", "facility_or_supplier", "event_type", "event_date", "product_or_modality", "risk_summary", "source_url_or_file"],
+      "minimum_refresh_cadence": "monthly"
+    }
+  ]
+}

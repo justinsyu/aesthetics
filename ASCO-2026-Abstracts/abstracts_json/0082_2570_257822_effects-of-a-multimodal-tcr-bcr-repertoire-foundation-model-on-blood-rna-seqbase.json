@@ -1,0 +1,80 @@
+{
+  "abstractNumber": "2570",
+  "body": " \r\n\r\n\t<div><b>Background: </b> Severe immune-related adverse events (irAEs) limit the use of immune checkpoint inhibitors (ICIs). Clinically, irAEs can resemble autoimmune diseases such as rheumatoid arthritis (RA), suggesting shared dysregulation of adaptive immune receptor repertoires (T-cell receptor [TCR] and B-cell receptor [BCR]). We developed a TCR/BCR foundation model to predict severe irAE risk prior to ICI treatment and to detect RA from peripheral blood.</p>  <b>Methods: </b> Peripheral blood RNA sequencing (RNA-seq) from cancer patients prior to ICI therapy, healthy donors, and RA patients was analyzed across six cohorts (Table 1). Severe irAEs were defined as grade ≥3. Gene expression quantification and signature scores were computed using kallisto and ssGSEA. Adaptive immune receptor repertoire (AIRR) features for TCR and BCR were derived from blood RNA-seq using an in-house pipeline (pyigmap). We trained neural network models to (i) estimate severe irAE risk in ICI-treated cancer patients and (ii) distinguish RA from healthy donors, using TCR/BCR embedding features alone or combined with gene signature scores. Performance was evaluated across multiple datasets to assess discrimination and cross-cohort robustness.</p>  <b>Results: </b> The model combining TCR/BCR embedding features with gene signature scores achieved improved discrimination for severe irAE risk prediction (AUC 0.78; p=1×10⁻⁵) and RA detection (AUC 0.70; p=5×10⁻¹⁴). This outperformed models based on gene signatures alone (irAE AUC 0.67; p=8×10⁻³; RA AUC 0.66; p=4×10⁻⁹), TCR/BCR diversity alone (irAE AUC 0.66; p=2×10⁻²; RA AUC 0.61; p=6×10⁻⁵), or signatures plus diversity (irAE AUC 0.70; p=2×10⁻³; RA AUC 0.69; p=9×10⁻¹³). Embedding-based representations were more robust to technical variation than conventional diversity metrics: batch-effect decomposition showed higher biological variability (0.012 vs 0.002) and lower technical variability (0.460 vs 0.861) for embeddings versus diversity features, consistent with improved cross-cohort generalization.</p>  <b>Conclusions: </b> A TCR/BCR foundation model integrated with gene signatures improves pre-treatment prediction of severe irAE risk and detection of autoimmune disease from peripheral blood RNA-seq. These repertoire-informed representations capture clinically relevant clonotype biology and support minimally invasive risk stratification and monitoring for patients receiving ICIs.</div>\r\n\r\n\r\n\r\n\t<div class=\"table_caption\"><b>Cohort description.</b></div> \r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<p>Cohort</p>\r\n</td>\r\n<td>\r\n<p>Source</p>\r\n</td>\r\n<td>\r\n<p>N</p>\r\n</td>\r\n<td>\r\n<p>Severe irAE</p>\r\n</td>\r\n<td>\r\n<p>No severe irAE</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>#1 (irAE Train Set 1)</p>\r\n</td>\r\n<td>\r\n<p>Internal </p>\r\n</td>\r\n<td>\r\n<p>726</p>\r\n</td>\r\n<td>\r\n<p>48</p>\r\n</td>\r\n<td>\r\n<p>678</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>#1 (irAE Test Set 1)</p>\r\n</td>\r\n<td>\r\n<p>Internal</p>\r\n</td>\r\n<td>\r\n<p>187</p>\r\n</td>\r\n<td>\r\n<p>12</p>\r\n</td>\r\n<td>\r\n<p>175</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>#2 (irAE Test Set 2)</p>\r\n</td>\r\n<td>\r\n<p>Internal</p>\r\n</td>\r\n<td>\r\n<p>47</p>\r\n</td>\r\n<td>\r\n<p>10</p>\r\n</td>\r\n<td>\r\n<p>37</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Cohort</p>\r\n</td>\r\n<td>\r\n<p>Source</p>\r\n</td>\r\n<td>\r\n<p>N</p>\r\n</td>\r\n<td>\r\n<p>Healthy</p>\r\n</td>\r\n<td>\r\n<p>RA</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>#3 (RA Train Set 1 / Validation Set)</p>\r\n</td>\r\n<td>\r\n<p>Open source</p>\r\n</td>\r\n<td>\r\n<p>211</p>\r\n</td>\r\n<td>\r\n<p>97</p>\r\n</td>\r\n<td>\r\n<p>114</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>#4 (RA Test Set 1)</p>\r\n</td>\r\n<td>\r\n<p>Open source</p>\r\n</td>\r\n<td>\r\n<p>101</p>\r\n</td>\r\n<td>\r\n<p>50</p>\r\n</td>\r\n<td>\r\n<p>51</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>#5 (RA Test Set 2)</p>\r\n</td>\r\n<td>\r\n<p>Open source</p>\r\n</td>\r\n<td>\r\n<p>24</p>\r\n</td>\r\n<td>\r\n<p>12</p>\r\n</td>\r\n<td>\r\n<p>12</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>#6 (RA Test Set 3)</p>\r\n</td>\r\n<td>\r\n<p>Open source</p>\r\n</td>\r\n<td>\r\n<p>140</p>\r\n</td>\r\n<td>\r\n<p>20</p>\r\n</td>\r\n<td>\r\n<p>120</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n\r\n\r\n",
+  "contentId": "257822",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/257822",
+    "queryParams": null,
+    "target": null,
+    "title": "Effects of a multimodal TCR/BCR repertoire foundation model on blood RNA-seq–based prediction of severe adverse event risk and rheumatoid arthritis."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION257822"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780176600000,
+    "start": 1780165800000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "360",
+  "presentationId": "257822",
+  "primaryPerson": {
+    "displayName": "Anatoly Bobe",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780176600000,
+    "start": 1780165800000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17134",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17134",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Developmental Therapeutics—Immunotherapy"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": null,
+  "title": "Effects of a multimodal TCR/BCR repertoire foundation model on blood RNA-seq–based prediction of severe adverse event risk and rheumatoid arthritis.",
+  "titles": null,
+  "uid": "PRESENTATION257822"
+}

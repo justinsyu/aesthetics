@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A machine learning model for predicting recurrence and survival in stage I-III colorectal cancer.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>A machine learning model for predicting recurrence and survival in stage I-III colorectal cancer.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e15518</div>
+    <div><strong>First speaker:</strong> Mariam Manukyan, MD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/262953">https://www.asco.org/abstracts-presentations/262953</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> While 5-year overall survival for stage I-III colorectal cancer (CRC) is relatively high, the risk of recurrence remains substantial, ranging from approximately 7% in stage I to 29% in stage III disease. Accurate identification of high-risk patients is therefore critical for personalizing postoperative surveillance and adjuvant therapy. This study aimed to develop and validate a machine learning (ML) model using routinely available clinical data to precisely predict 5-year recurrence and mortality, enabling improved patient risk stratification.</div>
+  <main> 
+
+	<div><b>Background: </b> While 5-year overall survival for stage I-III colorectal cancer (CRC) is relatively high, the risk of recurrence remains substantial, ranging from approximately 7% in stage I to 29% in stage III disease. Accurate identification of high-risk patients is therefore critical for personalizing postoperative surveillance and adjuvant therapy. This study aimed to develop and validate a machine learning (ML) model using routinely available clinical data to precisely predict 5-year recurrence and mortality, enabling improved patient risk stratification.</p>  <b>Methods: </b> In this retrospective study, we analyzed data from 7,253 patients diagnosed with non-metastatic CRC who underwent curative-intent surgery at three clinical centers. From an initial set of 143 clinical, laboratory, and treatment-related variables extracted from electronic medical records, a parsimonious predictor set was selected through iterative CatBoost-based feature elimination. This process identified the most informative and clinically accessible features, including: NRAS mutation status, number of positive lymph nodes, preoperative CEA level, absolute lymphocyte count, hemoglobin, patient weight, age at treatment initiation, platelet count, leukocyte count, surgical approach, and pathological T-stage (pT). Model development and comparison against logistic regression, Random Forest, XGBoost, and LightGBM were conducted using stratified 5-fold cross-validation. Hyperparameters were optimized using the Optuna framework with AUC as the objective. The final model's performance was subsequently validated on an independent hold-out test cohort (20% of the data) to assess generalizability.</p>  <b>Results: </b> The optimized CatBoost model demonstrated superior predictive performance. Final cross-validated AUCs reached 0.84 for recurrence and 0.81 for mortality, representing a substantial improvement over the initial comparative analysis (AUCs of 0.749 and 0.770, respectively). The model maintained strong and robust discrimination on the independent validation set.</p>  <b>Conclusions: </b> We developed a validated ML model for accurate recurrence and mortality risk stratification in CRC. Crucially, all selected predictors are simple, routinely documented clinical parameters that can be automatically extracted from existing medical information systems. This facilitates seamless clinical integration, enabling data-driven identification of high-risk patients for personalized surveillance and adjuvant therapy, potentially improving long-term outcomes.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

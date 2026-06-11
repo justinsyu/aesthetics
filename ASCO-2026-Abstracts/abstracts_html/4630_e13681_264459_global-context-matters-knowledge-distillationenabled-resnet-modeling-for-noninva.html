@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Global context matters: Knowledge distillation–enabled ResNet modeling for noninvasive stratification of adrenal tumors.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Global context matters: Knowledge distillation–enabled ResNet modeling for noninvasive stratification of adrenal tumors.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e13681</div>
+    <div><strong>First speaker:</strong> Jansi Rani Sethuraj, DNP</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/264459">https://www.asco.org/abstracts-presentations/264459</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Adrenal tumors are increasingly detected as incidental findings on cross-sectional imaging, yet accurate differentiation of benign adenomas from malignant or hormonally active lesions remains clinically challenging. Overlapping radiologic features on CT and MRI often lead to unnecessary surveillance, invasive testing, or delayed diagnosis. Although deep convolutional neural networks demonstrate strong diagnostic performance, their computational complexity limits real-world deployment. Knowledge distillation enables transfer of diagnostic capability from high-capacity models to lightweight architectures while preserving accuracy. We evaluated a distilled ResNet-based framework for efficient adrenal tumor classification.</div>
+  <main> 
+
+	<div><b>Background: </b>Adrenal tumors are increasingly detected as incidental findings on cross-sectional imaging, yet accurate differentiation of benign adenomas from malignant or hormonally active lesions remains clinically challenging. Overlapping radiologic features on CT and MRI often lead to unnecessary surveillance, invasive testing, or delayed diagnosis. Although deep convolutional neural networks demonstrate strong diagnostic performance, their computational complexity limits real-world deployment. Knowledge distillation enables transfer of diagnostic capability from high-capacity models to lightweight architectures while preserving accuracy. We evaluated a distilled ResNet-based framework for efficient adrenal tumor classification.</p>  <b>Methods: </b>We analyzed a curated adrenal imaging dataset from the adrenalAI study, including benign adrenal adenomas, adrenocortical carcinoma, pheochromocytoma, and non-neoplastic adrenal findings. Ground truth was established by multidisciplinary consensus incorporating imaging features, biochemical evaluation, histopathology, and longitudinal follow-up. Images were standardized and split into training and validation cohorts. A ResNet152 mentor model pretrained on ImageNet was trained for multi-class classification. A compact ResNet18 student model was trained using temperature-scaled knowledge distillation with soft probabilistic targets and regularized cross-entropy loss. Performance was evaluated using accuracy, sensitivity, specificity, F1 score, and AUROC.</p>  <b>Results: </b>The distilled ResNet18 achieved robust diagnostic performance across adrenal tumor subtypes, with overall accuracy exceeding 90% and AUROC greater than 0.90, closely approximating mentor performance. Knowledge distillation reduced model parameters by more than 80% and significantly decreased inference latency. Performance remained stable across CT and MRI protocols and lesion sizes, including challenging lipid-poor adenomas and pheochromocytomas.</p>  <b>Conclusions: </b>Knowledge distillation enables computationally efficient ResNet-based modeling for accurate, noninvasive adrenal tumor stratification. This scalable approach supports broader clinical deployment of AI-assisted adrenal imaging and complements attention-based transformer methods. Prospective studies are warranted to assess workflow integration and impact on diagnostic decision-making.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

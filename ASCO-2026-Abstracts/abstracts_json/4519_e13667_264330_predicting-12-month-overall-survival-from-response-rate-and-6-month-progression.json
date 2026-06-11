@@ -1,0 +1,73 @@
+{
+  "abstractNumber": "e13667",
+  "body": " \r\n\r\n\t<div><b>Background: </b> </p>  Overall Survival (OS) remains the regulatory gold standard endpoint, but early trial decisions depend on Objective Response Rate (ORR) and intermediate Progression-Free Survival (PFS) to accelerate development timelines. Traditional endpoint surrogacy analyses demonstrate variable correlations across tumor types, stages, and treatment modalities. However, machine learning (ML)-based prediction of OS from early endpoints across heterogeneous trials remains limited. We developed an ML framework incorporating ORR, 6-month PFS rate, and LLM-based clinical and treatment embeddings to predict 12-month OS rate in a comprehensive cross-tumor clinical trials dataset. </p>  <b>Methods: </b> </p>  Data were extracted from the LARVOL CLIN outcomes database (2004–2023), comprising 1,029 Phase I–III trials (1,520 experimental and control arms) reporting ORR, 6-month PFS rate, and 12-month OS rate. To account for cross-trial heterogeneity, key population descriptors (tumor type, stage, setting, prior lines of therapy, biomarker status) were embedded separately to preserve granularity, while treatment details (regimen and dose/schedule) were embedded into a single representation. Embeddings from OpenAI text-embedding-3-large were used and reduced to 30 principal components (PCs) via Principal Component Analysis (PCA) (retaining 85% variance). ML models evaluated included XGBoost, LightGBM (LGBM), elastic net, and Random Forest (RF), with hyperparameters optimized using Optuna. Trial-grouped five-fold CV was used to prevent data leakage. Performance metrics included Coefficient of Determination (R&#178;), Root Mean Squared Error (RMSE) and Mean Absolute Error (MAE) on a logit scale. Shapley Additive Explanations (SHAP) analysis was used to quantify relative feature contributions. </p>  <b>Results: </b> </p>  XGBoost achieved CV R&#178;=0.731 for 12-month OS rate prediction, outperforming RF CV R&#178;=0.498 (Table 1). SHAP analysis identified 6-month PFS rate (34.1%) and tumor type (24.2%) as dominant predictors, followed by arm description embeddings (9.5%) and stage (6.9%); ORR demonstrated a smaller relative contribution of 3.9%. Limitations include the modest dataset size and uncertain generalizability to rare tumor subtypes. </p>  <b>Conclusions: </b> </p>  ML models integrating early endpoints with LLM-based clinical and regimen embeddings achieved robust cross-tumor prediction of 12-month OS rate, supporting trial prioritization and OS hypothesis generation. SHAP analysis confirmed that 6-month PFS rate and tumor type were the dominant predictors. </div>\r\n\r\n\r\n\r\n\t<div class=\"table_caption\"><b>Models performance for 12-month OS prediction (logit scale).</b></div> \r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<p>Model  </p>\r\n</td>\r\n<td>\r\n<p>R²  </p>\r\n</td>\r\n<td>\r\n<p>RMSE  </p>\r\n</td>\r\n<td>\r\n<p>MAE  </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>XGBoost  </p>\r\n</td>\r\n<td>\r\n<p>0.731  </p>\r\n</td>\r\n<td>\r\n<p>0.465  </p>\r\n</td>\r\n<td>\r\n<p>0.35  </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>LGBM  </p>\r\n</td>\r\n<td>\r\n<p>0.716  </p>\r\n</td>\r\n<td>\r\n<p>0.510  </p>\r\n</td>\r\n<td>\r\n<p>0.35  </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>ElasticNet  </p>\r\n</td>\r\n<td>\r\n<p>0.556  </p>\r\n</td>\r\n<td>\r\n<p>0.769  </p>\r\n</td>\r\n<td>\r\n<p>0.42  </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Random Forest  </p>\r\n</td>\r\n<td>\r\n<p>0.498  </p>\r\n</td>\r\n<td>\r\n<p>0.817  </p>\r\n</td>\r\n<td>\r\n<p>0.44  </p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n \r\n\t<div class=\"table_footer\">Coefficient of Determination (R²), Root Mean Squared Error (RMSE) and Mean Absolute Error (MAE).</div> \r\n\r\n\r\n",
+  "contentId": "264330",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/264330",
+    "queryParams": null,
+    "target": null,
+    "title": "Predicting 12-month overall survival from response rate and 6-month progression-free survival in oncology clinical trials: An embedding-based machine learning approach."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION264330"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": null,
+  "presentationId": "264330",
+  "primaryPerson": {
+    "displayName": "Ankit Kalucha",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": "Overall Survival (OS) remains the regulatory gold standard endpoint, but early trial decisions depend on Objective Response Rate (ORR) and intermediate Progression-Free Survival (PFS) to accelerate development timelines. Traditional endpoint surrogacy analyses demonstrate variable correlations across tumor types, stages, and treatment modalities. However, machine learning (ML)-based prediction of OS from early endpoints across heterogeneous trials remains limited. We developed an ML framework incorporating ORR, 6-month PFS rate, and LLM-based clinical and treatment embeddings to predict 12-month OS rate in a comprehensive cross-tumor clinical trials dataset.",
+  "taxonomy": {
+    "countriesThes": null,
+    "drugsThes": null,
+    "entitiesThes": null,
+    "genesThes": null,
+    "orgThes": null,
+    "subjectsThes": [
+      "Health care industry"
+    ]
+  },
+  "title": "Predicting 12-month overall survival from response rate and 6-month progression-free survival in oncology clinical trials: An embedding-based machine learning approach.",
+  "titles": null,
+  "uid": "PRESENTATION264330"
+}

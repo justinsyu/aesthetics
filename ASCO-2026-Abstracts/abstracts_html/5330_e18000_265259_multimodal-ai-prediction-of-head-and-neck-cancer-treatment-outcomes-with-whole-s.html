@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Multimodal AI prediction of head and neck cancer treatment outcomes with whole slide imaging.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Multimodal AI prediction of head and neck cancer treatment outcomes with whole slide imaging.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e18000</div>
+    <div><strong>First speaker:</strong> Jiaxiang Sun</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/265259">https://www.asco.org/abstracts-presentations/265259</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Current risk stratification and adjuvant treatment decisions for head and neck cancer following surgical resection rely primarily on pathological risk factors. The growing adoption of digital pathology presents an opportunity to leverage histopathological image features to enhance risk stratification accuracy. This study investigated the performance of machine learning models for treatment outcome prediction using image features and traditional clinical variables, and identified optimal strategies for combining these modalities.</div>
+  <main> 
+
+	<div><b>Background: </b>  </p>  Current risk stratification and adjuvant treatment decisions for head and neck cancer following surgical resection rely primarily on pathological risk factors. The growing adoption of digital pathology presents an opportunity to leverage histopathological image features to enhance risk stratification accuracy. This study investigated the performance of machine learning models for treatment outcome prediction using image features and traditional clinical variables, and identified optimal strategies for combining these modalities. </p>  <b>Methods: </b>  </p>  We analyzed data from 645 patients in the publicly available HANCOCK dataset for model development and testing. All patients had head and neck cancers treated with primary surgery with or without adjuvant therapy. For each patient, H&amp;E-stained whole slide images of the primary tumor and nine clinical variables served as model inputs. Slide-level image embeddings were extracted using a pretrained vision-language pathology foundation model (TITAN). Clinical variables included tumor site, pT classification, pN classification, histologic grade, perineural invasion, lymphovascular invasion, extranodal extension, margin status, and smoking history. Models were trained to predict survival, with performance measured by Harrell's concordance index (C-index), using an machine learning-based Cox proportional hazards model (DeepSurv). We compared unimodal models (using either clinical variables or image features alone) with multimodal models utilizing different fusion strategies (concatenation, late fusion, and cross-attention). Five-fold cross-validation with early stopping was implemented during training. </p>  <b>Results: </b>  </p>  Unimodal models achieved C-indices of 0.62 +/- 0.04 (clinical variables) and 0.65 +/- 0.07 (image features). Multimodal models demonstrated progressive improvement: late fusion (0.63 +/- 0.05), concatenation (0.67 +/- 0.07), and cross-attention (0.69 +/- 0.07), with cross-attention achieving the highest performance. </p>  <b>Conclusions: </b> </p>  H&amp;E-stained whole slide images from resected head and neck cancers contain significant prognostic information. Multimodal AI models integrating histopathological images with clinical variables, particularly using cross-attention fusion, enhance prognostic prediction and may improve risk stratification for adjuvant therapy decisions. </div>
+
+
+
+	<div class="table_caption"><b>Harrell's concordance index for each type of model input and feature fusion methods.</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p>Model input </p>
+</td>
+<td>
+<p>C-index (mean +/- std) </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Clinical variables alone </p>
+</td>
+<td>
+<p>0.62 +/- 0.04 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Image features alone </p>
+</td>
+<td>
+<p>0.65 +/- 0.07 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Multimodal (late fusion) </p>
+</td>
+<td>
+<p>0.63 +/- 0.05 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Multimodal (concatenation) </p>
+</td>
+<td>
+<p>0.67 +/- 0.07 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Multimodal (cross attention) </p>
+</td>
+<td>
+<p>0.69 +/- 0.07 </p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

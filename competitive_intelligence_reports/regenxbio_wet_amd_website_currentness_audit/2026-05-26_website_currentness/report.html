@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>REGENXBIO Wet AMD Website Currentness Audit</title>
+  <style>
+    :root {
+      --ink: #10120f; --muted: #5c6257; --paper: #f6f1e8; --paper-2: #ebe4d6;
+      --line: #1b1f17; --lime: #d7ff5f; --shadow: 0 18px 48px rgba(16,18,15,.08); --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after { -webkit-print-color-adjust: exact; print-color-adjust: exact; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide { width: 100vw; height: 100vh; min-height: 100vh; overflow: hidden; position: relative; display: flex; align-items: flex-start; padding: 36px 0 20px; page-break-after: always; break-after: page; background: var(--paper); }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; user-select: none; opacity: .9; }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .evidence-slide { padding: 24px 0 14px; }
+    .evidence-slide .wrap { width: min(1460px, calc(100vw - 34px)); }
+    .eyebrow { display: inline-flex; align-items: center; border: 1.4px solid var(--line); padding: 8px 12px; border-radius: 999px; font-size: 15px; font-weight: 850; text-transform: uppercase; margin-bottom: 22px; background: var(--lime); }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 67px; line-height: .95; font-weight: 560; max-width: 1340px; }
+    h2 { font-size: 46px; line-height: .98; font-weight: 560; max-width: 1460px; }
+    h3 { font-size: 27px; line-height: 1.04; font-weight: 650; }
+    .dek { margin-top: 22px; color: var(--muted); font-size: 23px; line-height: 1.18; max-width: 1280px; }
+    .section-head { margin-bottom: 14px; }
+    .section-head p { margin-top: 24px; color: var(--muted); font-size: 20px; line-height: 1.12; max-width: 1440px; }
+    .references-slide .section-head { margin-bottom: 28px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 20px; }
+    .metric, .table, .callout, .evidence-card { border: 1.5px solid var(--line); background: rgba(255,250,240,.9); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+    .callout { background: #11130f; color: var(--paper); border-color: #11130f; padding: 18px 22px; margin-top: 18px; }
+    .callout h3 { color: var(--lime); }
+    .callout li { color: rgba(246,241,232,.86); }
+    .metric { min-height: 124px; padding: 16px; }
+    .num { font-size: 44px; line-height: .92; font-weight: 400; }
+    .label { margin-top: 8px; font-size: 18px; line-height: 1.1; color: var(--muted); }
+    .summary-list { margin: 14px 0 0; padding-left: 22px; display: grid; gap: 7px; }
+    .summary-list li { font-size: 22px; line-height: 1.15; }
+    .evidence-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; align-items: stretch; }
+    .evidence-grid.three { grid-template-columns: repeat(3, 1fr); }
+    .evidence-card { display: flex; flex-direction: column; min-height: 0; margin: 0; background: rgba(255,250,240,.92); border-radius: 18px; }
+    .evidence-top { display: flex; justify-content: space-between; gap: 12px; align-items: center; padding: 7px 10px; border-bottom: 1px solid var(--line); background: var(--paper-2); font-size: 12px; font-weight: 800; text-transform: uppercase; }
+    .evidence-top a { text-transform: none; font-weight: 700; color: var(--muted); }
+    .evidence-card img { display: block; width: 100%; height: 420px; object-fit: contain; object-position: center; background: white; border-bottom: 1px solid rgba(16,18,15,.22); }
+    .evidence-grid.three .evidence-card img { height: 336px; }
+    figcaption { margin: 0; padding: 8px 10px 9px; color: var(--muted); font-size: 17px; line-height: 1.08; }
+    .evidence-grid.three figcaption { font-size: 14px; line-height: 1.08; }
+    .table { display: grid; }
+    .row { display: grid; border-bottom: 1px solid var(--line); min-height: 70px; }
+    .row:last-child { border-bottom: 0; }
+    .row.refs { grid-template-columns: .28fr .92fr 1.1fr 1.85fr; min-height: 56px; }
+    .row.refs.head { min-height: 38px; }
+    .cell { padding: 12px; border-right: 1px solid var(--line); font-size: 17px; line-height: 1.13; }
+    .row.refs .cell { display: flex; align-items: center; padding: 7px 10px; font-size: 14.4px; line-height: 1.08; }
+    .row.refs .cell:first-child { justify-content: center; text-align: center; padding-left: 0; padding-right: 0; }
+    .cell:last-child { border-right: 0; }
+    .head .cell { background: #11130f; color: var(--paper); font-weight: 850; text-transform: uppercase; font-size: 16px; white-space: nowrap; }
+    .row.refs.head .cell { align-items: center; justify-content: flex-start; padding-top: 5px; padding-bottom: 5px; font-size: 14px; }
+    .row.refs.head .cell:first-child { justify-content: center; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .slide.evidence-slide { padding: 24px 0 14px; }
+      .wrap { width: 1360px; }
+      .evidence-slide .wrap { width: 1460px; }
+      .metric, .table, .callout, .evidence-card { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) { .slide { width: 1600px; height: 900px; } }
+  </style>
+</head>
+<body>
+  <article class="slide title-slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">WEBSITE AUDIT | MAY 26, 2026</div>
+      <h1>REGENXBIO Wet AMD Website Currentness Audit</h1>
+      <p class="dek">This deck reviews REGENXBIO public wet AMD website statements for ABBV-RGX-314/sura-vec against the current Form 10-Q and ClinicalTrials.gov record data. Findings are limited to website enrollment-status wording that differs from later official source language.</p>
+      <div class="grid-4">
+        <div class="metric"><div class="num">2</div><div class="label">Evidence-supported website-currentness observations</div></div>
+        <div class="metric"><div class="num">3</div><div class="label">Wet AMD trials named on the patient page: ATMOSPHERE, ASCENT, and AAVIATE</div></div>
+        <div class="metric"><div class="num">Oct 2025</div><div class="label">Current 10-Q timing for completed ATMOSPHERE and ASCENT enrollment</div></div>
+        <div class="metric"><div class="num">146</div><div class="label">AAVIATE actual enrollment listed in the current registry record</div></div>
+      </div>
+      <div class="callout">
+        <h3>Executive summary</h3>
+        <ul class="summary-list">
+          <li>The patient wet AMD page states that REGENXBIO is currently enrolling patients with wet AMD in several clinical trials and that ATMOSPHERE and ASCENT are active and enrolling; the current filing states enrollment in those pivotal trials was completed in October 2025.<a class="cite" href="https://www.regenxbio.com/patients-families/wet-amd/">1</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1590877/000119312526222804/rgnx-20260331.htm">2</a></li>
+          <li>The same patient page states that AAVIATE is active and enrolling patients; the current filing states enrollment of AAVIATE has been completed, and the current registry record lists ACTIVE_NOT_RECRUITING with 146 actual participants.<a class="cite" href="https://www.regenxbio.com/patients-families/wet-amd/">3</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1590877/000119312526222804/rgnx-20260331.htm">4</a><a class="cite" href="https://clinicaltrials.gov/study/NCT04514653">5</a></li>
+          <li>Context: the therapeutic-program page identifies sura-vec/ABBV-RGX-314 as a wet AMD/DR program developed with AbbVie and lists ATMOSPHERE, ASCENT, and AAVIATE; this context was not treated as a finding.<a class="cite" href="https://www.regenxbio.com/therapeutic-programs/rgx-314/">6</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">1/4</div>
+  </article>
+
+  <article class="slide evidence-slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">ATMOSPHERE and ASCENT status</div>
+        <h2>Patient-page active/enrolling wording differs from the current filing's completed-enrollment statement</h2>
+        <p>The observation is limited to enrollment-status wording. The current filing states that ATMOSPHERE and ASCENT enrollment was completed in October 2025 and that topline data are expected in the fourth quarter of 2026.</p>
+      </div>
+      <div class="evidence-grid">
+        
+    <figure class="evidence-card">
+      <div class="evidence-top"><span>Reference 1</span><a href="https://www.regenxbio.com/patients-families/wet-amd/">www.regenxbio.com</a></div>
+      <img src="screenshots/evidence/source-01-patient-page-atmosphere-ascent-enrolling.png" alt="REGENXBIO patient wet AMD page: ATMOSPHERE and ASCENT active/enrolling wording" />
+      <figcaption>The patient wet AMD page states that REGENXBIO is currently enrolling wet AMD patients and that ATMOSPHERE and ASCENT are active and enrolling.</figcaption>
+    </figure>
+        
+    <figure class="evidence-card">
+      <div class="evidence-top"><span>Reference 2</span><a href="https://www.sec.gov/Archives/edgar/data/1590877/000119312526222804/rgnx-20260331.htm">www.sec.gov</a></div>
+      <img src="screenshots/evidence/source-02-sec-atmosphere-ascent-completed.png" alt="Q1 2026 Form 10-Q: ATMOSPHERE and ASCENT enrollment completed in October 2025" />
+      <figcaption>The current 10-Q states that ATMOSPHERE and ASCENT enrollment was completed in October 2025.</figcaption>
+    </figure>
+      </div>
+    </div>
+    <div class="slide-num">2/4</div>
+  </article>
+
+  <article class="slide evidence-slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">AAVIATE status</div>
+        <h2>Patient-page AAVIATE enrolling wording differs from both filing and registry status language</h2>
+        <p>The current filing states enrollment of the AAVIATE trial has been completed. ClinicalTrials.gov lists NCT04514653 as ACTIVE_NOT_RECRUITING with actual enrollment of 146.</p>
+      </div>
+      <div class="evidence-grid three">
+        
+    <figure class="evidence-card">
+      <div class="evidence-top"><span>Reference 3</span><a href="https://www.regenxbio.com/patients-families/wet-amd/">www.regenxbio.com</a></div>
+      <img src="screenshots/evidence/source-03-patient-page-aaviate-enrolling.png" alt="REGENXBIO patient wet AMD page: AAVIATE active/enrolling wording" />
+      <figcaption>The patient page states that AAVIATE is active and enrolling patients and links to NCT04514653.</figcaption>
+    </figure>
+        
+    <figure class="evidence-card">
+      <div class="evidence-top"><span>Reference 4</span><a href="https://www.sec.gov/Archives/edgar/data/1590877/000119312526222804/rgnx-20260331.htm">www.sec.gov</a></div>
+      <img src="screenshots/evidence/source-04-sec-aaviate-completed.png" alt="Q1 2026 Form 10-Q: AAVIATE enrollment completed" />
+      <figcaption>The current 10-Q states that enrollment of the AAVIATE trial has been completed.</figcaption>
+    </figure>
+        
+    <figure class="evidence-card">
+      <div class="evidence-top"><span>Reference 5</span><a href="https://clinicaltrials.gov/study/NCT04514653">clinicaltrials.gov</a></div>
+      <img src="screenshots/evidence/source-05-ctgov-aaviate-active-not-recruiting.png" alt="ClinicalTrials.gov NCT04514653: AAVIATE active, not recruiting with 146 actual participants" />
+      <figcaption>The current ClinicalTrials.gov study page shows active, not recruiting status and 146 actual participants.</figcaption>
+    </figure>
+      </div>
+    </div>
+    <div class="slide-num">3/4</div>
+  </article>
+
+  <article class="slide references-slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">References 1-6</div>
+        <h2>References</h2>
+      </div>
+      <div class="table">
+        <div class="row refs head"><div class="cell">Ref</div><div class="cell">Source</div><div class="cell">Date / Status / Source Owner</div><div class="cell">Evidence Used in Report</div></div>
+        <div class="row refs"><div class="cell">1</div><div class="cell"><a href="https://www.regenxbio.com/patients-families/wet-amd/">Patient wet AMD page</a></div><div class="cell">Live website page / REGENXBIO</div><div class="cell">Patient page states REGENXBIO is currently enrolling patients and that ATMOSPHERE/ASCENT are active and enrolling.</div></div>
+        <div class="row refs"><div class="cell">2</div><div class="cell"><a href="https://www.sec.gov/Archives/edgar/data/1590877/000119312526222804/rgnx-20260331.htm">Q1 2026 Form 10-Q</a></div><div class="cell">SEC filing / REGENXBIO</div><div class="cell">Enrollment in ATMOSPHERE and ASCENT was completed in October 2025; topline data expected in Q4 2026.</div></div>
+        <div class="row refs"><div class="cell">3</div><div class="cell"><a href="https://www.regenxbio.com/patients-families/wet-amd/">Patient wet AMD page</a></div><div class="cell">Live website page / REGENXBIO</div><div class="cell">Patient page states AAVIATE is active and enrolling patients and links to NCT04514653.</div></div>
+        <div class="row refs"><div class="cell">4</div><div class="cell"><a href="https://www.sec.gov/Archives/edgar/data/1590877/000119312526222804/rgnx-20260331.htm">Q1 2026 Form 10-Q</a></div><div class="cell">SEC filing / REGENXBIO</div><div class="cell">Enrollment of the AAVIATE trial has been completed.</div></div>
+        <div class="row refs"><div class="cell">5</div><div class="cell"><a href="https://clinicaltrials.gov/study/NCT04514653">ClinicalTrials.gov NCT04514653</a></div><div class="cell">Current ClinicalTrials.gov study page / ClinicalTrials.gov</div><div class="cell">AAVIATE status shown as active, not recruiting, with enrollment listed as 146 actual participants.</div></div>
+        <div class="row refs"><div class="cell">6</div><div class="cell"><a href="https://www.regenxbio.com/therapeutic-programs/rgx-314/">Therapeutic-program page</a></div><div class="cell">Live website page / REGENXBIO</div><div class="cell">Program page identifies sura-vec/ABBV-RGX-314 developed with AbbVie for wet AMD/DR; ATMOSPHERE, ASCENT, and AAVIATE listed.</div></div>
+      </div>
+    </div>
+    <div class="slide-num">4/4</div>
+  </article>
+</body>
+</html>

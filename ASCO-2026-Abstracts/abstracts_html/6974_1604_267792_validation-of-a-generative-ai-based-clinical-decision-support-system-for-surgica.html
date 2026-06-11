@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Validation of a generative AI-based clinical decision support system for surgical extent in thyroid cancer in Brazil: Potential aid to de-escalating treatment to preserve function.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Validation of a generative AI-based clinical decision support system for surgical extent in thyroid cancer in Brazil: Potential aid to de-escalating treatment to preserve function.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 1604</div>
+    <div><strong>First speaker:</strong> Hermano Alexandre Lima Rocha, MD, PhD, MPH</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/267792">https://www.asco.org/abstracts-presentations/267792</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b></p>  The decision between thyroid lobectomy (TL) and total thyroidectomy (TT) for differentiated thyroid carcinoma involves balancing oncological control with morbidity. While NCCN guidelines support TL for low-risk cases, clinical practice often favors TT due to risk aversion, exposing patients to lifelong levothyroxine dependence. We validated "Korina," a clinical decision support system based on the Gemini Large Language Model developed at Instituto do Câncer do Ceará (ICC), Brazil, to assess its ability to optimize surgical decision-making and identify candidates suitable for organ-preserving surgery.</p>  <b>Methods: </b></p>  We validated the AI model using a retrospective thyroid cohort (N = 100). The median age was 47 years (IQR 38–55), 87% were female, and histology was predominantly papillary thyroid carcinoma (99%) with 1% follicular. The median reported nodule size was approximately 1.7 cm (IQR 1.2–2.4). We (three independent medical evaluators, one head neck specialist, blinded) compared the surgical recommendations of the AI and a senior head and neck surgeon against NCCN guidelines (ground truth). The primary outcome was the accuracy of the indicated surgical extent (TL vs. TT). Performance metrics included AUC, Accuracy, Precision, and Recall (Sensitivity) for identifying TL candidates.</p>  <b>Results: </b></p>  In the validation analysis, the AI model demonstrated superior concordance with guidelines compared to standard clinical assessment. The AI achieved an Accuracy of 0.894 and an AUC of 0.895, significantly outperforming the clinician (Accuracy 0.532; AUC 0.542). Critical analysis revealed that the clinician had a high rate of unnecessary TT recommendations, with a Recall of only 0.083 (8.3%) for the TL class. In contrast, the AI model achieved a Recall of 0.833 (83.3%) for TL. </p>  <b>Conclusions: </b></p>  The Gemini-based system (the first in Brazil to the best of our knowledge) outperformed standard clinical judgment in adhering to NCCN guidelines. The clinician demonstrated a bias toward aggressive surgery, missing over 90% of eligible lobectomy cases. Implementing this AI tool potentially could safely increase the rate of partial thyroidectomies, directly benefiting patients by preserving thyroid function and eliminating the lifelong burden of hormone replacement therapy for a significant proportion of cases.</div>
+
+
+
+	<div class="table_caption"><b>Performance metrics of AI vs. clinician (reference: NCCN).</b></div> 
+
+
+	<div class="table"><table>
+<thead>
+<tr>
+<td>
+<p><strong>Model</strong></p>
+</td>
+<td>
+<p><strong>Precision</strong></p>
+</td>
+<td>
+<p><strong>Recall (Sensitivity)</strong></p>
+</td>
+<td>
+<p><strong>F1-Score</strong></p>
+</td>
+<td>
+<p><strong>Accuracy</strong></p>
+</td>
+<td>
+<p><strong>AUC</strong></p>
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p><strong>AI (Gemini)</strong></p>
+</td>
+<td>
+<p>0.952</p>
+</td>
+<td>
+<p>0.833</p>
+</td>
+<td>
+<p>0.889</p>
+</td>
+<td>
+<p>0.894</p>
+</td>
+<td>
+<p>0.895</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Clinician</strong></p>
+</td>
+<td>
+<p>1.000</p>
+</td>
+<td>
+<p>0.083</p>
+</td>
+<td>
+<p>0.154</p>
+</td>
+<td>
+<p>0.532</p>
+</td>
+<td>
+<p>0.542</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

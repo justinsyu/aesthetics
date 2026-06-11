@@ -1,0 +1,64 @@
+{
+  "abstractNumber": "e15513",
+  "body": " \r\n\r\n\t<div><b>Background: </b> </p>  Early detection of colorectal cancer (CRC) substantially improves outcomes; however, age- and symptom-based screening strategies fail to identify many high-risk individuals. Machine learning (ML) applied to longitudinal electronic medical records (EMR) may enable earlier, data-driven risk stratification beyond traditional risk factors.</p>  <b>Methods: </b> </p>  We analyzed a de-identified EMR event-stream dataset comprising 61,062,985 records from 300,000 patients. A case–control CRC cohort was constructed including 500 incident CRC cases (43,123 records) and 299,500 cancer-free controls with ≥3 years follow-up beyond the last observation. CRC onset was defined as the multidisciplinary tumor board diagnosis date. To reduce diagnostic work-up leakage, events within 6 months prior to onset were excluded.Patient histories were featurized over a primary prediction horizon of −36 to −6 months, summarized across four pre-diagnostic intervals (−6 to −12, −12 to −24, −24 to −36, and &gt;&nbsp;−36 months). Models (random forest, LightGBM, histogram-based gradient boosting) were trained using patient-level splits, class rebalancing (SMOTE), and combined via a soft-voting ensemble.Generalizability was assessed in an independent, non-overlapping validation cohort (~100,000 patients) without restrictions on comorbidities and with CRC prevalence reflecting the general population.</p>  <b>Results: </b> </p>  In internal testing, the ensemble achieved accuracy 80.0%, sensitivity 72.2%, specificity 80.1%, NPV 95.0%, F1-score 75.9%, and ROC AUC 0.8175. Performance was preserved in the population-representative validation cohort (accuracy 79.0%, sensitivity 70.3%, specificity 79.0%, NPV 99.0%, F1-score 74.4%, ROC AUC 0.8217).Key contributors included age, healthcare utilization patterns across multiple specialties, routine laboratory parameters, and vital signs, rather than cancer-specific markers. Window-specific models for shorter pre-diagnostic intervals are under evaluation.</p>  <b>Conclusions: </b> </p>  Machine learning applied to large-scale longitudinal EMR data enables early CRC risk stratification up to three years before diagnosis using nonspecific, routinely collected features. Validation in an independent non-overlapping cohort supports feasibility as a phase-1, population-scale triage approach. Limitations include potential confounding by healthcare utilization intensity. Prospective evaluation of clinical yield (including PPV), sensitivity analyses, decision-curve utility, and validation across healthcare systems are planned.</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+  "contentId": "262915",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/262915",
+    "queryParams": null,
+    "target": null,
+    "title": "Large-scale EMR-based machine learning for early risk stratification of colorectal cancer."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION262915"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": null,
+  "presentationId": "262915",
+  "primaryPerson": {
+    "displayName": "Igor V. Samoylenko, MD, PhD",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": "Early detection of colorectal cancer (CRC) substantially improves outcomes; however, age- and symptom-based screening strategies fail to identify many high-risk individuals. Machine learning (ML) applied to longitudinal electronic medical records (EMR) may enable earlier, data-driven risk stratification beyond traditional risk factors.",
+  "taxonomy": null,
+  "title": "Large-scale EMR-based machine learning for early risk stratification of colorectal cancer.",
+  "titles": null,
+  "uid": "PRESENTATION262915"
+}

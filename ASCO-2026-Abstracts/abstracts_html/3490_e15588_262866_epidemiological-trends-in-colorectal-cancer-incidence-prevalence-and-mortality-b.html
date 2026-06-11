@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Epidemiological trends in colorectal cancer incidence, prevalence, and mortality burden in the United States, 1990–2023: Retrospective analysis and advanced machine learning forecasting to 2050.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Epidemiological trends in colorectal cancer incidence, prevalence, and mortality burden in the United States, 1990–2023: Retrospective analysis and advanced machine learning forecasting to 2050.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e15588</div>
+    <div><strong>First speaker:</strong> Ibrahim Khalil, MBBS</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/262866">https://www.asco.org/abstracts-presentations/262866</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Colorectal cancer remains one of the leading causes of cancer incidence and mortality in the United States, though widespread screening, lifestyle interventions, and therapeutic advances have contributed to declining age-standardized burden over recent decades. This study analyzed age-standardized rates (ASRs) of DALYs, deaths, incidence, and prevalence from 1990 to 2023, and projected future burden to 2050 with ARIMA time-series forecasting.</div>
+  <main> 
+
+	<div><b>Background: </b> Colorectal cancer remains one of the leading causes of cancer incidence and mortality in the United States, though widespread screening, lifestyle interventions, and therapeutic advances have contributed to declining age-standardized burden over recent decades. This study analyzed age-standardized rates (ASRs) of DALYs, deaths, incidence, and prevalence from 1990 to 2023, and projected future burden to 2050 with ARIMA time-series forecasting.</p>  <b>Methods: </b> Age-standardized rates per 100,000 population were extracted from the Global Burden of Disease 2023 database for the United States, stratified by sex (Both, Female, Male). Historical trends (1990–2023) were quantified using estimated annual percentage change (EAPC) derived from linear regression on log-transformed ASRs. Future projections (2024–2050) employed ARIMA models fitted to historical time series, generating point forecasts and 95% prediction intervals (PI).</p>  <b>Results: </b> From 1990 to 2023, age-standardized DALYs (Both sexes) declined substantially from 474.99 (95% UI: 441.94–506.86) to 318.71 (95% UI: 294.23–340.32), with an EAPC of -1.36% (95% CI: -1.44 to -1.28); declines were similar in females (EAPC -1.38%, 95% CI: -1.47 to -1.29) and slightly steeper in males (EAPC -1.44%, 95% CI: -1.52 to -1.36). Age-standardized death rates fell from 20.81 to 12.64 (EAPC -1.68%, 95% CI: -1.75 to -1.60), with stronger reductions in males (EAPC -1.81%) than females (EAPC -1.67%). Incidence decreased from 51.04 to 37.61 (EAPC -1.19%, 95% CI: -1.31 to -1.06), and prevalence from 292.54 to 239.01 (EAPC -0.87%, 95% CI: -1.00 to -0.75), reflecting successful screening and earlier detection. ARIMA forecasts indicate continued marked declines in age-standardized DALYs (Both: from 313.97 in 2024 to ~190.84 by 2050), deaths (to ~5.95), and incidence (to ~26.69), while prevalence stabilizes or slowly decreases.</p>  <b>Conclusions: </b> Age-standardized burden of colorectal cancer in the US decreased significantly from 1990–2023 across DALYs, mortality, incidence, and prevalence, with consistent progress in both sexes. Projections to 2050 anticipate further substantial reductions in key metrics, highlighting the effectiveness of public health interventions, though absolute case numbers may remain elevated due to demographic changes, reinforcing the importance of prevention and early detection strategies.</div>
+
+
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p>Measure</p>
+</td>
+<td>
+<p>Sex</p>
+</td>
+<td>
+<p>EAPC</p>
+</td>
+<td>
+<p>Lower 95%CI</p>
+</td>
+<td>
+<p>Upper 95%CI</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>DALYs</p>
+</td>
+<td>
+<p>Both</p>
+</td>
+<td>
+<p>-1.36</p>
+</td>
+<td>
+<p>-1.44</p>
+</td>
+<td>
+<p>-1.28</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>DALYs</p>
+</td>
+<td>
+<p>Female</p>
+</td>
+<td>
+<p>-1.38</p>
+</td>
+<td>
+<p>-1.47</p>
+</td>
+<td>
+<p>-1.29</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>DALYs</p>
+</td>
+<td>
+<p>Male</p>
+</td>
+<td>
+<p>-1.44</p>
+</td>
+<td>
+<p>-1.52</p>
+</td>
+<td>
+<p>-1.36</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Deaths</p>
+</td>
+<td>
+<p>Both</p>
+</td>
+<td>
+<p>-1.68</p>
+</td>
+<td>
+<p>-1.75</p>
+</td>
+<td>
+<p>-1.6</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Deaths</p>
+</td>
+<td>
+<p>Female</p>
+</td>
+<td>
+<p>-1.67</p>
+</td>
+<td>
+<p>-1.75</p>
+</td>
+<td>
+<p>-1.59</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Deaths</p>
+</td>
+<td>
+<p>Male</p>
+</td>
+<td>
+<p>-1.81</p>
+</td>
+<td>
+<p>-1.88</p>
+</td>
+<td>
+<p>-1.74</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Incidence</p>
+</td>
+<td>
+<p>Both</p>
+</td>
+<td>
+<p>-1.19</p>
+</td>
+<td>
+<p>-1.31</p>
+</td>
+<td>
+<p>-1.06</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Incidence</p>
+</td>
+<td>
+<p>Female</p>
+</td>
+<td>
+<p>-1.18</p>
+</td>
+<td>
+<p>-1.31</p>
+</td>
+<td>
+<p>-1.06</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Incidence</p>
+</td>
+<td>
+<p>Male</p>
+</td>
+<td>
+<p>-1.29</p>
+</td>
+<td>
+<p>-1.41</p>
+</td>
+<td>
+<p>-1.17</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Prevalence</p>
+</td>
+<td>
+<p>Both</p>
+</td>
+<td>
+<p>-0.87</p>
+</td>
+<td>
+<p>-1</p>
+</td>
+<td>
+<p>-0.75</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Prevalence</p>
+</td>
+<td>
+<p>Female</p>
+</td>
+<td>
+<p>-0.92</p>
+</td>
+<td>
+<p>-1.04</p>
+</td>
+<td>
+<p>-0.79</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Prevalence</p>
+</td>
+<td>
+<p>Male</p>
+</td>
+<td>
+<p>-0.92</p>
+</td>
+<td>
+<p>-1.04</p>
+</td>
+<td>
+<p>-0.79</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

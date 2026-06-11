@@ -1,0 +1,64 @@
+{
+  "abstractNumber": "e20716",
+  "body": " \r\n\r\n\t<div><b>Background: </b> Non-small cell lung cancer (NSCLC) in non-smoking women represents a biologically distinct subgroup in which actionable therapeutic targets can be identified and may also have broader relevance across diverse NSCLC subgroups. This study aimed to identify hub genes from tumor-normal transcriptomics and to identify druggable targets using drug–gene interaction mining, structure-based docking, and in silico developability profiling.</p>  <b>Methods: </b> Microarray data from the publicly accessible dataset GSE19804 (Affymetrix U133 Plus 2.0), comprising 60 tumors and 60 paired adjacent normal lung tissues, were analyzed utilizing GEO2R/limma. Differentially expressed genes were identified with a significance threshold of p ≤ 0.05 and |logFC| ≥ 1.0. Protein–protein interactions (PPI) were constructed using STRING with a combined score of ≥ 0.700 and a false discovery rate (FDR) of 1%, and these interactions were ranked by degree centrality in Cytoscape/cytoHubba.</p>  <b>Results: </b> PPI results revealed ten highly connected upregulated hubs: CDK1, CCNB1, CCNA2, KIF11, BUB1, TOP2A, DLGAP5, NUF2, MELK, and PBK, with a high-confidence and robust integration of KIF11 (degree 57; mean score 0.973). DGIdb analysis prioritized KIF11 as the most actionable hub, led by ispinesib–KIF11 and filanesib, followed by litronesib, AZD-4877, dimethylenastron, S-Trityl-L-cystein (STLC). Docking to the KIF11 L5 allosteric pocket (PDB 4A5Y) showed stable binding across inhibitors (–8.7 to –10.5 kcal/mol), with ispinesib and STLC strongest (–10.5), driven by Glu116-centered hydrogen bonding and extensive hydrophobic/aromatic contacts. OSIRIS and ADMET predictions indicated overall oral drug-like properties, high intestinal absorption, and no predicted AMES mutagenicity, while differentiating safety/liability profiles (Table). Notably, STLC and dimethylenastron exhibited more favorable predicted safety profiles, including lower hERG and hepatotoxicity probabilities, compared with ispinesib, which showed higher liability signals.</p>  <b>Conclusions: </b> This study highlights STLC as a promising KIF11 inhibitor with strong structural engagement and favorable in silico developability, alongside ispinesib as a validated reference, supporting KIF11 as a central, druggable vulnerability in female non-smoking NSCLC with potential relevance across broader NSCLC subgroups.</div>\r\n\r\n\r\n\r\n\t<div class=\"table_caption\"><b>In silico binding, ADMET, and OSIRIS drug-likeness profiles of KIF11 inhibitors.</b></div> \r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<p><strong>Drug</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Binding Affinity (kcal/mol)</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>HIA</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>AMES</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>hERG Risk</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Overall Drug Score (OSIRIS)</strong></p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p><strong>Ispinesib</strong></p>\r\n</td>\r\n<td>\r\n<p>–10.5</p>\r\n</td>\r\n<td>\r\n<p>High</p>\r\n</td>\r\n<td>\r\n<p>Negative</p>\r\n</td>\r\n<td>\r\n<p>High</p>\r\n</td>\r\n<td>\r\n<p>0.36</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p><strong>S-Trityl-L-cysteine (STLC)</strong></p>\r\n</td>\r\n<td>\r\n<p>–10.5</p>\r\n</td>\r\n<td>\r\n<p>High</p>\r\n</td>\r\n<td>\r\n<p>Negative</p>\r\n</td>\r\n<td>\r\n<p>Low</p>\r\n</td>\r\n<td>\r\n<p>0.38</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p><strong>Filanesib</strong></p>\r\n</td>\r\n<td>\r\n<p>–9.0</p>\r\n</td>\r\n<td>\r\n<p>High</p>\r\n</td>\r\n<td>\r\n<p>Negative</p>\r\n</td>\r\n<td>\r\n<p>Low</p>\r\n</td>\r\n<td>\r\n<p>0.35</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p><strong>AZD-4877</strong></p>\r\n</td>\r\n<td>\r\n<p>–9.1</p>\r\n</td>\r\n<td>\r\n<p>High</p>\r\n</td>\r\n<td>\r\n<p>Negative</p>\r\n</td>\r\n<td>\r\n<p>Moderate</p>\r\n</td>\r\n<td>\r\n<p>0.56</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p><strong>Dimethylenastron</strong></p>\r\n</td>\r\n<td>\r\n<p>–9.0</p>\r\n</td>\r\n<td>\r\n<p>High</p>\r\n</td>\r\n<td>\r\n<p>Negative</p>\r\n</td>\r\n<td>\r\n<p>Very Low</p>\r\n</td>\r\n<td>\r\n<p>0.56</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p><strong>Litronesib</strong></p>\r\n</td>\r\n<td>\r\n<p>–8.7</p>\r\n</td>\r\n<td>\r\n<p>High</p>\r\n</td>\r\n<td>\r\n<p>Negative</p>\r\n</td>\r\n<td>\r\n<p>Low</p>\r\n</td>\r\n<td>\r\n<p>0.33</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n \r\n\t<div class=\"table_footer\">Abbreviations: HIA, human intestinal absorption; AMES, Ames mutagenicity test; hERG, human ether-a-go-go–related gene channel.</div> \r\n\r\n\r\n",
+  "contentId": "266365",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/266365",
+    "queryParams": null,
+    "target": null,
+    "title": "KIF11 as a druggable target in NSCLC: An integrated computational analysis."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION266365"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": null,
+  "presentationId": "266365",
+  "primaryPerson": {
+    "displayName": "Yusuf Acikgoz, MD",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": "Non-small cell lung cancer (NSCLC) in non-smoking women represents a biologically distinct subgroup in which actionable therapeutic targets can be identified and may also have broader relevance across diverse NSCLC subgroups. This study aimed to identify hub genes from tumor-normal transcriptomics and to identify druggable targets using drug–gene interaction mining, structure-based docking, and in silico developability profiling.",
+  "taxonomy": null,
+  "title": "KIF11 as a druggable target in NSCLC: An integrated computational analysis.",
+  "titles": null,
+  "uid": "PRESENTATION266365"
+}

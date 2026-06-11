@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ADA 2026 AI Topics CI Report</title>
+  <style>
+    @page { size: 16in 9in; margin: 0; }
+    :root {
+      --paper: #f3eadb;
+      --paper-2: #efe1c9;
+      --ink: #191714;
+      --muted: #6f675c;
+      --line: #d0bfa4;
+      --lime: #d9ff4a;
+      --green: #35624d;
+      --rose: #a85045;
+      --blue: #3f5f8f;
+      --charcoal: #201d19;
+      --white: #fffaf1;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--charcoal); color: var(--ink); font-family: Inter, Arial, sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    .deck { width: 16in; margin: 0 auto; }
+    .slide {
+      width: 16in; height: 9in; page-break-after: always; position: relative; overflow: hidden;
+      padding: .58in .68in .5in .68in; background: var(--paper);
+      display: flex; flex-direction: column; gap: .24in;
+    }
+    .slide.dark { background: var(--charcoal); color: var(--white); }
+    .slide::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background-image: radial-gradient(circle at 1px 1px, rgba(25,23,20,.18) 1px, transparent 0);
+      background-size: 22px 22px; opacity: .13;
+    }
+    .dark::before { opacity: .1; background-image: radial-gradient(circle at 1px 1px, rgba(255,250,241,.22) 1px, transparent 0); }
+    .content { position: relative; z-index: 1; display: flex; flex-direction: column; gap: .22in; height: 100%; }
+    .kicker { display: flex; align-items: center; gap: .12in; font-size: .16in; font-weight: 800; text-transform: uppercase; color: var(--green); letter-spacing: 0; }
+    .dark .kicker { color: var(--lime); }
+    .kicker::before { content: ""; width: .38in; height: .08in; background: var(--lime); border: 1px solid var(--ink); }
+    h1 { margin: 0; font-size: .78in; line-height: .92; letter-spacing: 0; max-width: 12.7in; }
+    h2 { margin: 0; font-size: .42in; line-height: 1.02; letter-spacing: 0; }
+    h3 { margin: 0; font-size: .19in; line-height: 1.12; letter-spacing: 0; }
+    p { margin: 0; font-size: .17in; line-height: 1.38; color: var(--muted); }
+    .dark p { color: #d9d0c1; }
+    .dek { font-size: .24in; line-height: 1.25; max-width: 12.2in; color: #4c463d; }
+    .dark .dek { color: #ece3d4; }
+    .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: .18in; }
+    .metric { border: 1.5px solid var(--ink); background: var(--white); padding: .18in; min-height: 1.25in; display: flex; flex-direction: column; justify-content: space-between; }
+    .dark .metric { background: #302b25; border-color: #746a5c; }
+    .metric .value { font-size: .46in; font-weight: 900; line-height: .9; }
+    .metric .label { font-size: .15in; line-height: 1.22; color: var(--muted); }
+    .dark .metric .label { color: #d9d0c1; }
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: .24in; flex: 1; min-height: 0; }
+    .three { display: grid; grid-template-columns: repeat(3, 1fr); gap: .2in; flex: 1; min-height: 0; }
+    .panel { border: 1.5px solid var(--line); background: rgba(255,250,241,.72); padding: .2in; min-height: 0; }
+    .dark .panel { background: rgba(255,250,241,.06); border-color: #5c554c; }
+    .panel h3 { margin-bottom: .1in; }
+    .callout { border-left: .1in solid var(--lime); padding: .18in .22in; background: rgba(255,250,241,.78); max-width: 12.6in; }
+    .dark .callout { background: rgba(255,250,241,.08); }
+    .bar-row { display: grid; grid-template-columns: 2.55in 1fr .35in; align-items: center; gap: .12in; margin: .095in 0; }
+    .bar-label { font-size: .145in; line-height: 1.12; }
+    .bar-track { height: .14in; border: 1px solid var(--line); background: rgba(255,255,255,.48); }
+    .bar-fill { height: 100%; background: var(--green); }
+    .dark .bar-fill { background: var(--lime); }
+    .bar-count { font-size: .15in; font-weight: 800; text-align: right; }
+    .record-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .16in; }
+    .record-card { border: 1.4px solid var(--line); background: rgba(255,250,241,.78); padding: .16in; min-height: 1.55in; display: flex; flex-direction: column; gap: .075in; }
+    .dark .record-card { background: rgba(255,250,241,.08); border-color: #5c554c; }
+    .record-card p { font-size: .125in; line-height: 1.25; }
+    .record-top { display: flex; justify-content: space-between; align-items: center; font-size: .12in; font-weight: 800; color: var(--green); }
+    .dark .record-top { color: var(--lime); }
+    .tagline { margin-top: auto; font-size: .11in; color: var(--muted); line-height: 1.15; }
+    .dark .tagline { color: #cfc5b7; }
+    .cite { display: inline-block; background: var(--lime); color: var(--ink); border: 1px solid var(--ink); padding: .015in .055in; font-size: .105in; font-weight: 900; }
+    table.mini { width: 100%; border-collapse: collapse; font-size: .123in; line-height: 1.18; }
+    table.mini th, table.mini td { border-bottom: 1px solid var(--line); padding: .075in .05in; text-align: left; vertical-align: top; }
+    table.mini th { font-size: .105in; text-transform: uppercase; color: var(--muted); }
+    .foot { position: absolute; left: .68in; right: .68in; bottom: .26in; display: flex; justify-content: space-between; color: var(--muted); font-size: .105in; z-index: 2; }
+    .dark .foot { color: #c7bbaa; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: .09in; }
+    .pill { border: 1px solid var(--ink); background: var(--lime); padding: .045in .085in; font-size: .12in; font-weight: 800; }
+    .method-list { display: grid; gap: .12in; }
+    .method-list div { border-left: .08in solid var(--green); padding-left: .13in; font-size: .17in; line-height: 1.3; }
+    .dark .method-list div { border-color: var(--lime); }
+  </style>
+</head>
+<body>
+<main class="deck">
+  <section class="slide dark">
+    <div class="content">
+      <div class="kicker">ADA 2026 Scientific Sessions | Local corpus scan</div>
+      <h1>AI topics appear across care delivery, LLMs, imaging, omics, and predictive modeling</h1>
+      <p class="dek">Screened all 2,081 local ADA abstract/poster records for explicit AI, ML, deep learning, LLM, NLP, computer-vision, named ML-algorithm, and predictive-modeling topics. Predictive-only records are retained but labeled separately.</p>
+      <div class="metrics">
+        <div class="metric"><div class="value">136</div><div class="label">retained AI/ML/predictive-model records</div></div>
+        <div class="metric"><div class="value">105</div><div class="label">direct AI/ML/NLP/LLM/deep-learning records</div></div>
+        <div class="metric"><div class="value">31</div><div class="label">predictive-only AI-adjacent records</div></div>
+        <div class="metric"><div class="value">30</div><div class="label">late-breaking or ePoster retained records</div></div>
+      </div>
+      <div class="callout"><p>Full-run label: all records in <code>C:\Users\Justin\Desktop\ada-2026\ada26_publications.json</code> were screened. Source citations use local record IDs plus EventPilot session URLs generated from ADA agenda IDs.</p></div>
+    </div>
+    <div class="foot"><span>cohere-style-ci local archive adaptation</span><span>1</span></div>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="kicker">Screening method</div>
+      <h2>Candidate matching was broad, then acronym false positives were removed</h2>
+      <div class="two">
+        <div class="panel">
+          <h3>Screening funnel</h3>
+          <div class="metrics" style="grid-template-columns: repeat(2, 1fr); margin-top:.12in;">
+            <div class="metric"><div class="value">2,081</div><div class="label">records screened</div></div>
+            <div class="metric"><div class="value">137</div><div class="label">lexical candidates</div></div>
+            <div class="metric"><div class="value">136</div><div class="label">retained records</div></div>
+            <div class="metric"><div class="value">1</div><div class="label">excluded acronym-context candidates</div></div>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Classification rules</h3>
+          <div class="method-list">
+            <div>Direct AI/ML includes artificial intelligence, standalone AI in AI context, machine learning, ML, deep learning, LLMs, generative AI, NLP, neural networks, transformers, and named ML algorithms.</div>
+            <div>Predictive-only records are retained as AI-adjacent because the request asked to include predictive model topics; these are not counted as direct AI unless AI/ML language also appears.</div>
+            <div>Excluded contexts include AI/AN race/ethnicity and adrenal insufficiency abbreviations. Source text remains auditable in candidate and retained exports.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><span>Sources: retained CSV/JSON and candidate screen in /sources</span><span>2</span></div>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="kicker">Topic landscape</div>
+      <h2>Predictive analytics is the largest cluster; LLMs and AI-enabled workflows form visible application clusters</h2>
+      <div class="two">
+        <div class="panel">
+          <h3>Retained records by category</h3>
+          <div class="bar-row"><div class="bar-label">Omics, discovery, and translational science</div><div class="bar-track"><div class="bar-fill" style="width:29.4%"></div></div><div class="bar-count">40</div></div>
+<div class="bar-row"><div class="bar-label">Predictive analytics and risk models</div><div class="bar-track"><div class="bar-fill" style="width:24.3%"></div></div><div class="bar-count">33</div></div>
+<div class="bar-row"><div class="bar-label">AI imaging and computer vision</div><div class="bar-track"><div class="bar-fill" style="width:9.6%"></div></div><div class="bar-count">13</div></div>
+<div class="bar-row"><div class="bar-label">LLM and generative AI</div><div class="bar-track"><div class="bar-fill" style="width:8.8%"></div></div><div class="bar-count">12</div></div>
+<div class="bar-row"><div class="bar-label">Clinical workflow and decision support</div><div class="bar-track"><div class="bar-fill" style="width:8.1%"></div></div><div class="bar-count">11</div></div>
+<div class="bar-row"><div class="bar-label">Digital health and behavior</div><div class="bar-track"><div class="bar-fill" style="width:5.9%"></div></div><div class="bar-count">8</div></div>
+<div class="bar-row"><div class="bar-label">Clustering and phenotyping</div><div class="bar-track"><div class="bar-fill" style="width:5.1%"></div></div><div class="bar-count">7</div></div>
+<div class="bar-row"><div class="bar-label">AI infrastructure and data resources</div><div class="bar-track"><div class="bar-fill" style="width:5.1%"></div></div><div class="bar-count">7</div></div>
+<div class="bar-row"><div class="bar-label">ML analytic methods</div><div class="bar-track"><div class="bar-fill" style="width:2.9%"></div></div><div class="bar-count">4</div></div>
+        </div>
+        <div class="panel">
+          <h3>Retained records by AI role</h3>
+          <div class="bar-row"><div class="bar-label">Machine-learning method</div><div class="bar-track"><div class="bar-fill" style="width:25.7%"></div></div><div class="bar-count">35</div></div>
+<div class="bar-row"><div class="bar-label">AI-enabled workflow or resource</div><div class="bar-track"><div class="bar-fill" style="width:23.5%"></div></div><div class="bar-count">32</div></div>
+<div class="bar-row"><div class="bar-label">AI-adjacent predictive analytics</div><div class="bar-track"><div class="bar-fill" style="width:22.8%"></div></div><div class="bar-count">31</div></div>
+<div class="bar-row"><div class="bar-label">AI/ML predictive model</div><div class="bar-track"><div class="bar-fill" style="width:12.5%"></div></div><div class="bar-count">17</div></div>
+<div class="bar-row"><div class="bar-label">Generative AI or LLM</div><div class="bar-track"><div class="bar-fill" style="width:8.1%"></div></div><div class="bar-count">11</div></div>
+<div class="bar-row"><div class="bar-label">Deep learning or vision model</div><div class="bar-track"><div class="bar-fill" style="width:6.6%"></div></div><div class="bar-count">9</div></div>
+<div class="bar-row"><div class="bar-label">NLP text analytics</div><div class="bar-track"><div class="bar-fill" style="width:0.7%"></div></div><div class="bar-count">1</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><span>Counts are row counts, not evidence-weighted rankings</span><span>3</span></div>
+  </section>
+
+  <section class="slide dark">
+    <div class="content">
+      <div class="kicker">Clinical domains</div>
+      <h2>AI-related work spans type 1 and type 2 diabetes, glycemia/CGM, kidney, retinal, obesity, and translational science</h2>
+      <div class="two">
+        <div class="panel">
+          <h3>Topic areas</h3>
+          <div class="bar-row"><div class="bar-label">Glycemia, CGM, and insulin</div><div class="bar-track"><div class="bar-fill" style="width:25.0%"></div></div><div class="bar-count">34</div></div>
+<div class="bar-row"><div class="bar-label">Type 2 diabetes</div><div class="bar-track"><div class="bar-fill" style="width:19.9%"></div></div><div class="bar-count">27</div></div>
+<div class="bar-row"><div class="bar-label">Type 1 diabetes</div><div class="bar-track"><div class="bar-fill" style="width:13.2%"></div></div><div class="bar-count">18</div></div>
+<div class="bar-row"><div class="bar-label">Obesity and GLP-1 therapy</div><div class="bar-track"><div class="bar-fill" style="width:13.2%"></div></div><div class="bar-count">18</div></div>
+<div class="bar-row"><div class="bar-label">Islet and pancreatic biology</div><div class="bar-track"><div class="bar-fill" style="width:7.4%"></div></div><div class="bar-count">10</div></div>
+<div class="bar-row"><div class="bar-label">Cardiovascular risk</div><div class="bar-track"><div class="bar-fill" style="width:5.9%"></div></div><div class="bar-count">8</div></div>
+<div class="bar-row"><div class="bar-label">Eye and retinal complications</div><div class="bar-track"><div class="bar-fill" style="width:3.7%"></div></div><div class="bar-count">5</div></div>
+<div class="bar-row"><div class="bar-label">Kidney disease</div><div class="bar-track"><div class="bar-fill" style="width:2.9%"></div></div><div class="bar-count">4</div></div>
+<div class="bar-row"><div class="bar-label">Muscle, lean mass, and sarcopenia</div><div class="bar-track"><div class="bar-fill" style="width:2.9%"></div></div><div class="bar-count">4</div></div>
+<div class="bar-row"><div class="bar-label">General diabetes/metabolic science</div><div class="bar-track"><div class="bar-fill" style="width:2.9%"></div></div><div class="bar-count">4</div></div>
+        </div>
+        <div class="panel">
+          <h3>Presentation formats</h3>
+          <div class="bar-row"><div class="bar-label">General Poster Session</div><div class="bar-track"><div class="bar-fill" style="width:61.0%"></div></div><div class="bar-count">83</div></div>
+<div class="bar-row"><div class="bar-label">Late Breaking Poster Session</div><div class="bar-track"><div class="bar-fill" style="width:21.3%"></div></div><div class="bar-count">29</div></div>
+<div class="bar-row"><div class="bar-label">Oral Presentations</div><div class="bar-track"><div class="bar-fill" style="width:16.9%"></div></div><div class="bar-count">23</div></div>
+<div class="bar-row"><div class="bar-label">ePoster Theater</div><div class="bar-track"><div class="bar-fill" style="width:0.7%"></div></div><div class="bar-count">1</div></div>
+          <div class="pill-row" style="margin-top:.18in;">
+            <span class="pill">23 oral</span>
+            <span class="pill">83 general posters</span>
+            <span class="pill">29 late-breaking</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><span>Session metadata from ADA local JSON fields</span><span>4</span></div>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="kicker">LLMs and generative AI</div>
+      <h2>LLM work is concentrated in education, decision support, diet advice, CGM interpretation, and knowledge platforms</h2>
+      <div class="record-grid"><article class="record-card"><div class="record-top"><span><a class="cite" href="https://eppro02.ativ.me/web/page.php?nav=false&amp;page=Session&amp;project=ADA26&amp;id=P2135&amp;plannersession=true&amp;eptable=agenda">R020</a></span><span>1286-OR</span></div><h3>FiberMore: A Generative AI-Enabled Behavior Change Intervention to Improve Dietary Fiber Intake and Glycemic Management in Individuals with Type 2 Diabetes</h3><p>A generative AI-powered, app-based intervention led to a significant increase in dietary fiber intake and a corresponding reduction in HbA1c.</p><div class="tagline">LLM and generative AI | Type 2 diabetes</div></article>
+<article class="record-card"><div class="record-top"><span><a class="cite" href="https://eppro02.ativ.me/web/page.php?nav=false&amp;page=Session&amp;project=ADA26&amp;id=P3630&amp;plannersession=true&amp;eptable=agenda">R032</a></span><span>1467-P</span></div><h3>Construction and Evaluation of T1Diabot: A Large Language Model Agent for Type 1 Diabetes Self-Management Support among Adolescents</h3><p>T1DiaBot is a clinically accurate and culturally tailored AI tool for supporting T1D self-management. The E2P framework provides a rigorous methodology for...</p><div class="tagline">LLM and generative AI | Type 1 diabetes</div></article>
+<article class="record-card"><div class="record-top"><span><a class="cite" href="https://eppro02.ativ.me/web/page.php?nav=false&amp;page=Session&amp;project=ADA26&amp;id=P3642&amp;plannersession=true&amp;eptable=agenda">R033</a></span><span>1479-P</span></div><h3>GK Charger: An LLM-Empowered Knowledge Platform for Interactive Education in Glucokinase-Based Diabetes Therapy</h3><p>GK Charger illustrates a scalable and reproducible paradigm integrating artificial intelligence with authoritative medical knowledge, supporting precision...</p><div class="tagline">LLM and generative AI | Islet and pancreatic biology</div></article>
+<article class="record-card"><div class="record-top"><span><a class="cite" href="https://eppro02.ativ.me/web/page.php?nav=false&amp;page=Session&amp;project=ADA26&amp;id=P3247&amp;plannersession=true&amp;eptable=agenda">R042</a></span><span>1771-P</span></div><h3>Practice-Based Fine-Tuning of Local Large Language Models Achieves Superior Performance in Clinical Decision Support for Diabetes Management</h3><p>In conclusion, knowledge distillation from expert teacher to deployable student model using guideline-based synthetic data achieved superior performance...</p><div class="tagline">LLM and generative AI | Type 2 diabetes</div></article>
+<article class="record-card"><div class="record-top"><span><a class="cite" href="https://eppro02.ativ.me/web/page.php?nav=false&amp;page=Session&amp;project=ADA26&amp;id=P3250&amp;plannersession=true&amp;eptable=agenda">R043</a></span><span>1774-P</span></div><h3>Structural Mechanisms and AI-Driven Prediction of Glucokinase Variants: Advancing Precision Medicine in MODY2</h3><p>This work establishes clear structure-function relationships for GK mutations: active-site alterations impair substrates affinity, while allosteric/hinge...</p><div class="tagline">LLM and generative AI | Glycemia, CGM, and insulin</div></article>
+<article class="record-card"><div class="record-top"><span><a class="cite" href="https://eppro02.ativ.me/web/page.php?nav=false&amp;page=Session&amp;project=ADA26&amp;id=P2752&amp;plannersession=true&amp;eptable=agenda">R048</a></span><span>1884-P</span></div><h3>Enabling Small Language Models to Count Carbohydrates Using Meal Descriptions from People with Type 1 Diabetes</h3><p>Fine-tuning SLMs improves accuracy in carb estimations. Large errors in LLMs and SLMs mean they should be used with caution to guide carb estimations and meal...</p><div class="tagline">LLM and generative AI | Type 1 diabetes</div></article></div>
+    </div>
+    <div class="foot"><span>Representative LLM/generative AI records; full list in retained_ai_records.csv</span><span>5</span></div>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="kicker">Care workflows</div>
+      <h2>AI is also positioned as workflow infrastructure for logging, screening, coaching, protocol adherence, and treatment selection</h2>
+      <div class="record-grid"><article class="record-card"><div class="record-top"><span><a class="cite" href="https://eppro02.ativ.me/web/page.php?nav=false&amp;page=Session&amp;project=ADA26&amp;id=P2217&amp;plannersession=true&amp;eptable=agenda">R006</a></span><span>1048-OR</span></div><h3>Digital Engagement Features Associated with Blood Glucose Improvement in Real-World Diabetes (*This presentation will not be available on-demand.)</h3><p>In this real-world digital diabetes cohort, consistent, longitudinal engagement rather than a single interaction was strongly linked to glycemic improvement,...</p><div class="tagline">Digital health and behavior | Glycemia, CGM, and insulin</div></article>
+<article class="record-card"><div class="record-top"><span><a class="cite" href="https://eppro02.ativ.me/web/page.php?nav=false&amp;page=Session&amp;project=ADA26&amp;id=P2015&amp;plannersession=true&amp;eptable=agenda">R009</a></span><span>1116-OR</span></div><h3>An Interpretable Machine-Learning Model to Differentiate Diabetic and Nondiabetic Kidney Disease in Type 2 Diabetes</h3><p>This interpretable ML model accurately distinguishes DKD from NDKD using routine clinical data, potentially reducing reliance on renal biopsy and supporting...</p><div class="tagline">Clinical workflow and decision support | Kidney disease</div></article>
+<article class="record-card"><div class="record-top"><span><a class="cite" href="https://eppro02.ativ.me/web/page.php?nav=false&amp;page=Session&amp;project=ADA26&amp;id=P2187&amp;plannersession=true&amp;eptable=agenda">R010</a></span><span>1130-OR</span></div><h3>Efficacy of a Leucine-Rich EAA, Creatine HCl, and Ca-HMB Stack Coupled with Digital Twin Coaching on Sarcopenia in Type 2 Diabetes: A Double-Blind RCT</h3><p>A targeted anabolic nutrient stack combined with Digital Twin coaching reverses sarcopenic muscle loss and improves metabolic quality in T2D. This &#x27;nutrition +...</p><div class="tagline">Digital health and behavior | Muscle, lean mass, and sarcopenia</div></article>
+<article class="record-card"><div class="record-top"><span><a class="cite" href="https://eppro02.ativ.me/web/page.php?nav=false&amp;page=Session&amp;project=ADA26&amp;id=P2646&amp;plannersession=true&amp;eptable=agenda">R024</a></span><span>1362-P</span></div><h3>Mortality Risk after Hypoglycaemia in Acute Settings in People with Diabetes: Development of a Prognostic Model</h3><p>We successfully developed and internally validated a prognostic model to predict mortality within 24 hours of hypoglycaemia in PLwD in acute settings. This...</p><div class="tagline">Clinical workflow and decision support | Glycemia, CGM, and insulin</div></article>
+<article class="record-card"><div class="record-top"><span><a class="cite" href="https://eppro02.ativ.me/web/page.php?nav=false&amp;page=Session&amp;project=ADA26&amp;id=P2653&amp;plannersession=true&amp;eptable=agenda">R025</a></span><span>1369-P</span></div><h3>Optimization of an Inpatient Hypoglycemic Risk Model Based on Machine Learning</h3><p>The optimized model demonstrated substantially improved predictive performance over the previous version within acceptable tolerance for clinical decision...</p><div class="tagline">Clinical workflow and decision support | Glycemia, CGM, and insulin</div></article>
+<article class="record-card"><div class="record-top"><span><a class="cite" href="https://eppro02.ativ.me/web/page.php?nav=false&amp;page=Session&amp;project=ADA26&amp;id=P3728&amp;plannersession=true&amp;eptable=agenda">R036</a></span><span>1587-P</span></div><h3>Beyond the Mean: Machine Learning–Driven Discovery of Behavioral Drivers and Barriers to Glycemic Control</h3><p>In summary, this work highlights the pivotal role of mobile health apps in diabetes management. Furthermore, it demonstrates the utility of explainable AI in...</p><div class="tagline">Digital health and behavior | Glycemia, CGM, and insulin</div></article></div>
+    </div>
+    <div class="foot"><span>Examples cite local ADA records and EventPilot URLs</span><span>6</span></div>
+  </section>
+
+  <section class="slide dark">
+    <div class="content">
+      <div class="kicker">Science and measurement</div>
+      <h2>Deep learning, ML, and AI-assisted analysis appear in omics, molecular discovery, phenotyping, imaging, and segmentation</h2>
+      <div class="record-grid"><article class="record-card"><div class="record-top"><span><a class="cite" href="https://eppro02.ativ.me/web/page.php?nav=false&amp;page=Session&amp;project=ADA26&amp;id=P1944&amp;plannersession=true&amp;eptable=agenda">R002</a></span><span>1021-OR</span></div><h3>Extracellular Vesicle (EV) Proteomics Distinguishes Partial Clinical Remission (PCR) in New-Onset Type 1 Diabetes (T1D)</h3><p>EV proteomics can predict PCR in new-onset T1D, with pancreas- and immune-derived signatures linked to remission, supporting development of standardized assays...</p><div class="tagline">Omics, discovery, and translational science | Type 1 diabetes</div></article>
+<article class="record-card"><div class="record-top"><span><a class="cite" href="https://eppro02.ativ.me/web/page.php?nav=false&amp;page=Session&amp;project=ADA26&amp;id=P2167&amp;plannersession=true&amp;eptable=agenda">R003</a></span><span>1025-OR</span></div><h3>Immune Repertoire Profiling for Accurate Classification of Latent Autoimmune Diabetes in Adults</h3><p>TCR/BCR repertoire profiling is a highly accurate and novel diagnostic tool that can effectively differentiate LADA from T1D, offering a direct path to more...</p><div class="tagline">Omics, discovery, and translational science | Type 1 diabetes</div></article>
+<article class="record-card"><div class="record-top"><span><a class="cite" href="https://eppro02.ativ.me/web/page.php?nav=false&amp;page=Session&amp;project=ADA26&amp;id=P2042&amp;plannersession=true&amp;eptable=agenda">R004</a></span><span>1030-OR</span></div><h3>Spatial Organization of Human Islet Endocrine Cells Modulates Stimulated Hormone Secretion</h3><p>The spatial organization of endocrine cells in human islets exhibits substantial inter-donor heterogeneity yet follows non-random patterns. Neighborhood...</p><div class="tagline">AI imaging and computer vision | Islet and pancreatic biology</div></article>
+<article class="record-card"><div class="record-top"><span><a class="cite" href="https://eppro02.ativ.me/web/page.php?nav=false&amp;page=Session&amp;project=ADA26&amp;id=P2263&amp;plannersession=true&amp;eptable=agenda">R005</a></span><span>1033-OR</span></div><h3>Early Weight Loss Velocity Guides Precision Escalation in Obesity Treatment</h3><p>Baseline profiles are insufficient for predicting dietary success. However, the physiological response at 1 month effectively integrates biological complexity...</p><div class="tagline">Clustering and phenotyping | Obesity and GLP-1 therapy</div></article>
+<article class="record-card"><div class="record-top"><span><a class="cite" href="https://eppro02.ativ.me/web/page.php?nav=false&amp;page=Session&amp;project=ADA26&amp;id=P1932&amp;plannersession=true&amp;eptable=agenda">R007</a></span><span>1088-OR</span></div><h3>Bridging Omics to Phenotypes: A Deep-Learning Framework for Molecular Characterization of Type 2 Diabetes Subtypes</h3><p>Deep learning-based multi-omics integration effectively identifies clinically distinct T2D subtypes, outperforming single-omics models. This approach provides...</p><div class="tagline">Omics, discovery, and translational science | Type 2 diabetes</div></article>
+<article class="record-card"><div class="record-top"><span><a class="cite" href="https://eppro02.ativ.me/web/page.php?nav=false&amp;page=Session&amp;project=ADA26&amp;id=P1981&amp;plannersession=true&amp;eptable=agenda">R008</a></span><span>1092-OR</span></div><h3>A Kinase-Mediated Signaling and Glucose-Uptake Defect in Human Insulin Resistance</h3><p>In summary, combining a Kinome analysis with CRISPR screening reveals DYRK2 as an important upstream regulator of human insulin resistance.</p><div class="tagline">Omics, discovery, and translational science | Glycemia, CGM, and insulin</div></article></div>
+    </div>
+    <div class="foot"><span>Translational examples include drug discovery, omics, image segmentation, and subtype discovery</span><span>7</span></div>
+  </section>
+
+  <section class="slide">
+    <div class="content">
+      <div class="kicker">Predictive modeling</div>
+      <h2>Predictive models are the broadest AI-adjacent theme and should be separated from direct AI claims</h2>
+      <div class="two">
+        <div class="panel">
+          <h3>Representative predictive records</h3>
+          <table class="mini"><thead><tr><th>Ref</th><th>No.</th><th>Record</th><th>Topic</th></tr></thead><tbody><tr><td><a class="cite" href="https://eppro02.ativ.me/web/page.php?nav=false&amp;page=Session&amp;project=ADA26&amp;id=P2522&amp;plannersession=true&amp;eptable=agenda">R001</a></td><td>1015-OR</td><td>Wearables-Derived Physical Activity Is Independently Associated with Lower Odds of Type 2 Diabetes in the All of Us Research Program</td><td>Type 2 diabetes</td></tr>
+<tr><td><a class="cite" href="https://eppro02.ativ.me/web/page.php?nav=false&amp;page=Session&amp;project=ADA26&amp;id=P2383&amp;plannersession=true&amp;eptable=agenda">R013</a></td><td>1153-OR</td><td>A Novel Dual-Endpoint Model to Simultaneously Predict Risks of Type 2 Diabetes and Cardiovascular Disease in Prediabetes</td><td>Cardiovascular risk</td></tr>
+<tr><td><a class="cite" href="https://eppro02.ativ.me/web/page.php?nav=false&amp;page=Session&amp;project=ADA26&amp;id=P2334&amp;plannersession=true&amp;eptable=agenda">R016</a></td><td>1232-OR</td><td>Dynamic CGM Models to Predict GDM: A GO MOMs Analysis</td><td>Gestational diabetes and pregnancy</td></tr>
+<tr><td><a class="cite" href="https://eppro02.ativ.me/web/page.php?nav=false&amp;page=Session&amp;project=ADA26&amp;id=P2336&amp;plannersession=true&amp;eptable=agenda">R017</a></td><td>1234-OR</td><td>Do First-Trimester Metabolic or Lipid Measures Improve Prediction of GDM and LGA?</td><td>Gestational diabetes and pregnancy</td></tr>
+<tr><td><a class="cite" href="https://eppro02.ativ.me/web/page.php?nav=false&amp;page=Session&amp;project=ADA26&amp;id=P2089&amp;plannersession=true&amp;eptable=agenda">R021</a></td><td>1296-OR</td><td>Continuous Glucose Monitoring Metrics Are Associated with Diabetic Ketoacidosis across Pre-Event Time Windows</td><td>Glycemia, CGM, and insulin</td></tr>
+<tr><td><a class="cite" href="https://eppro02.ativ.me/web/page.php?nav=false&amp;page=Session&amp;project=ADA26&amp;id=P3589&amp;plannersession=true&amp;eptable=agenda">R026</a></td><td>1399-P</td><td>Bidirectional Association between Obesity and Urinary Albumin–Creatinine Ratio: Cortisol as a Key Mediator with Gender-Specific Effects</td><td>Obesity and GLP-1 therapy</td></tr></tbody></table>
+        </div>
+        <div class="panel">
+          <h3>Interpretation guardrails</h3>
+          <div class="method-list">
+            <div>Predictive-only records often describe statistical learning, prognostic models, risk scores, or simulation; they are included for landscape completeness, not as proof of AI deployment.</div>
+            <div>Direct AI/ML predictive records combine predictive framing with machine-learning methods or explicit AI language, such as XGBoost, random forests, neural networks, or ML model statements.</div>
+            <div>For follow-up CI, prioritize evidence quality, validation cohorts, model calibration, fairness, workflow integration, and whether records report prospective clinical impact.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><span>Predictive-only tier retained by user scope</span><span>8</span></div>
+  </section>
+
+  <section class="slide dark">
+    <div class="content">
+      <div class="kicker">Audit trail</div>
+      <h2>Every retained claim maps to local corpus IDs, source snippets, and generated exports</h2>
+      <div class="three">
+        <div class="panel">
+          <h3>Primary artifacts</h3>
+          <p><code>sources/retained_ai_records.csv</code><br><code>sources/retained_ai_records.json</code><br><code>sources/source-log.md</code></p>
+        </div>
+        <div class="panel">
+          <h3>Record locators</h3>
+          <p>Each retained row includes source ID, abstract number, media ID, matched agenda ID, local JSON locator, trigger snippet, section text, and EventPilot URL.</p>
+        </div>
+        <div class="panel">
+          <h3>QA status</h3>
+          <p>No external web collection was performed. The local archive replaces screenshot appendices; export status and limitations are recorded in <code>sources/qa_status.md</code>.</p>
+        </div>
+      </div>
+      <div class="callout"><p>Bottom line: ADA 2026 contains a meaningful direct-AI layer, led by ML analytics, LLM/generative AI, digital care workflows, and AI-assisted imaging/discovery, plus a larger predictive-modeling layer that needs separate interpretation.</p></div>
+    </div>
+    <div class="foot"><span>Generated 2026-05-31 11:40</span><span>9</span></div>
+  </section>
+</main>
+</body>
+</html>

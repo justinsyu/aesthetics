@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pre-diagnostic imaging and radiology report–based risk modeling for pancreatic ductal adenocarcinoma.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Pre-diagnostic imaging and radiology report–based risk modeling for pancreatic ductal adenocarcinoma.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e16017</div>
+    <div><strong>First speaker:</strong> David Le, PhD, BS</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/265231">https://www.asco.org/abstracts-presentations/265231</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Pancreatic ductal adenocarcinoma (PDAC) is the most common form of pancreatic cancer and remains one of the deadliest malignancies worldwide, largely due to late-stage diagnosis. Early-stage PDAC is frequently asymptomatic, limiting opportunities for timely detection and intervention. We aimed to develop prognostic models using routinely acquired pre-diagnostic clinical data to identify individuals at high risk for PDAC prior to clinical manifestation.</div>
+  <main> 
+
+	<div><b>Background: </b> </p>  Pancreatic ductal adenocarcinoma (PDAC) is the most common form of pancreatic cancer and remains one of the deadliest malignancies worldwide, largely due to late-stage diagnosis. Early-stage PDAC is frequently asymptomatic, limiting opportunities for timely detection and intervention. We aimed to develop prognostic models using routinely acquired pre-diagnostic clinical data to identify individuals at high risk for PDAC prior to clinical manifestation.</p>  <b>Methods: </b> </p>  We conducted a retrospective study of patients treated at Mayo Clinic sites in Rochester, MN; Phoenix, AZ; and Jacksonville, FL between January 2011 and February 2023. The cohort included 1,151 patients with PDAC and 3,745 noncancer controls. CT scans were standardized to axial abdominal acquisitions with slice thickness between 0.8–3.0 mm. Radiology reports were de-identified, normalized, and parsed into structured sections (Indications, Findings, Impression), with an additional pancreas-specific section aggregating pancreas-related sentences. Demographic and clinical variables, e.g., age, sex, race, etc., were encoded using a templated sentence representation. All textual inputs were embedded using a Sentence-BERT model. A multimodal deep learning survival model was developed to integrate CT imaging, radiology report embeddings, and demographic features. The model was trained using a negative log-likelihood loss to estimate patient-specific PDAC risk scores. Model performance was assessed using the concordance index (C-index). Internal validation included patients from MN and AZ sites, while external validation used the FL cohort.</p>  <b>Results: </b> </p>  We evaluated unimodal (imaging, text, and demographics) and multimodal inputs. Fusion of imaging, radiology report, and demographic features achieved the highest performance, with internal and external validation C-indices of 0.885 (95% CI, 0.856–0.908) and 0.751 (95% CI, 0.719–0.783), respectively. Subgroup analysis by tumor location demonstrated differential performance. For pancreatic head tumors, internal and external C-indices were 0.916 (95% CI, 0.841–0.960) and 0.778 (95% CI, 0.730–0.823). For pancreatic body tumors, C-indices were 0.954 (95% CI, 0.897–0.997) internally and 0.929 (95% CI, 0.897–0.953) externally. For pancreatic tail tumors, internal and external C-indices were 0.903 (95% CI, 0.830–0.974) and 0.789 (95% CI, 0.689–0.874).</p>  <b>Conclusions: </b> </p>  A multimodal deep survival model leveraging pre-diagnostic CT imaging, radiology report embeddings, and demographic data can effectively identify individuals at high risk for PDAC prior to clinical diagnosis. Differences in performance were observed across pancreatic head, body, and tail tumors. This approach highlights the potential of opportunistic cancer risk stratification from routine imaging to enable earlier detection and targeted intervention strategies.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

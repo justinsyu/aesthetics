@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Persona Testing Q&A Examples</title>
+  <style>
+    @page { size: 11in 8.5in; margin: 0; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #ece7dc;
+      color: #1e211d;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .page {
+      width: 11in;
+      height: 8.5in;
+      page-break-after: always;
+      padding: 0.42in 0.5in;
+      background: #f8f3e7;
+      position: relative;
+      overflow: hidden;
+    }
+    .page::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 0.08in solid #1e211d;
+      pointer-events: none;
+    }
+    .header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.25in;
+      align-items: start;
+      margin-bottom: 0.2in;
+      position: relative;
+      z-index: 1;
+    }
+    .eyebrow {
+      font-size: 9px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #6f5f40;
+      font-weight: 700;
+      margin-bottom: 0.06in;
+    }
+    h1 {
+      font-size: 25px;
+      line-height: 1.05;
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+    .page-num {
+      font-size: 10px;
+      color: #6f5f40;
+      border: 1px solid #b8ad95;
+      padding: 0.05in 0.09in;
+      border-radius: 0.04in;
+      white-space: nowrap;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.18in;
+      position: relative;
+      z-index: 1;
+    }
+    .card {
+      min-height: 6.85in;
+      border: 1px solid #b8ad95;
+      background: #fffaf0;
+      padding: 0.19in;
+      display: flex;
+      flex-direction: column;
+      gap: 0.12in;
+    }
+    .meta {
+      display: flex;
+      gap: 0.08in;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .chip {
+      font-size: 8px;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      border: 1px solid #c6bda6;
+      color: #5f5238;
+      padding: 0.045in 0.07in;
+      border-radius: 0.04in;
+      background: #f4ecd8;
+      font-weight: 700;
+    }
+    .doctor {
+      font-size: 18px;
+      line-height: 1.1;
+      font-weight: 700;
+      margin: 0;
+    }
+    .source {
+      font-size: 9.2px;
+      line-height: 1.25;
+      color: #5d574c;
+      overflow-wrap: anywhere;
+    }
+    .section {
+      border-top: 1px solid #d6ccb5;
+      padding-top: 0.1in;
+    }
+    .label {
+      font-size: 8.5px;
+      line-height: 1;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: #7a683f;
+      font-weight: 700;
+      margin-bottom: 0.055in;
+    }
+    .question {
+      font-size: 13px;
+      line-height: 1.28;
+      font-weight: 700;
+      margin: 0;
+    }
+    .answer {
+      font-size: 12.2px;
+      line-height: 1.32;
+      margin: 0;
+    }
+    .why {
+      font-size: 11.4px;
+      line-height: 1.3;
+      margin: 0;
+      color: #37352f;
+    }
+    .link {
+      margin-top: auto;
+      padding-top: 0.08in;
+      border-top: 1px solid #d6ccb5;
+      font-size: 8.5px;
+      line-height: 1.25;
+      color: #5d574c;
+      overflow-wrap: anywhere;
+    }
+    a { color: #4d55b8; text-decoration: none; }
+    .note {
+      position: absolute;
+      bottom: 0.18in;
+      left: 0.5in;
+      right: 0.5in;
+      font-size: 8px;
+      line-height: 1.2;
+      color: #7a725f;
+      z-index: 1;
+    }
+    @media print {
+      body { background: #fff; }
+      .page { margin: 0; }
+    }
+  </style>
+</head>
+<body>
+  <section class="page">
+    <div class="header">
+      <div>
+        <div class="eyebrow">Persona benchmark examples</div>
+        <h1>Access, Value, and Policy Pressure</h1>
+      </div>
+      <div class="page-num">Page 1 / 5</div>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="meta"><span class="chip">CW-005</span><span class="chip">Payer / treatment selection</span></div>
+        <h2 class="doctor">Charles C. Wykoff, MD, PhD</h2>
+        <div class="source">BrightFocus Foundation Macular Chat</div>
+        <div class="section"><div class="label">Question</div><p class="question">How does a provider choose among wet AMD treatments, including patient access and step-therapy considerations?</p></div>
+        <div class="section"><div class="label">Actual answer summary</div><p class="answer">Wykoff emphasized patient and physician choice, timely access, and matching the right medicine to the patient. He said Avastin can work but is off-label and requires repackaging, opposed mandatory step therapy because it can delay care and risk vision, and advised patients to understand insurance constraints.</p></div>
+        <div class="section"><div class="label">Why this tests a persona</div><p class="why">Strong discriminator for payer pressure, access friction, and willingness to push back on policy constraints when vision is at risk.</p></div>
+        <div class="link">Source: <a href="https://www.brightfocus.org/resource/wet-amd-treatments-updates-challenges-and-future-innovations/">brightfocus.org/resource/wet-amd-treatments-updates-challenges-and-future-innovations/</a></div>
+      </article>
+      <article class="card">
+        <div class="meta"><span class="chip">PK-014</span><span class="chip">Adoption / risk tolerance</span></div>
+        <h2 class="doctor">Peter K. Kaiser, MD</h2>
+        <div class="source">HCPLive biosimilars interview transcript</div>
+        <div class="section"><div class="label">Question</div><p class="question">What challenges and concerns might physicians face when using biosimilars for retinal diseases?</p></div>
+        <div class="section"><div class="label">Actual answer summary</div><p class="answer">Kaiser said adoption depends on trust in FDA analytics, safety, clinical outcomes, and personal experience with the product. He flags antidrug antibodies and intraocular inflammation as issues ophthalmologists now watch closely, while noting ranibizumab biosimilar trials did not show higher ADA or IOI rates versus reference ranibizumab.</p></div>
+        <div class="section"><div class="label">Why this tests a persona</div><p class="why">Tests how the persona weighs regulatory evidence, immune/safety risk, real-world comfort, and economic pressure.</p></div>
+        <div class="link">Source: <a href="https://www.hcplive.com/view/challenges-in-use-of-biosimilars-in-ophthalmology-practices">hcplive.com/view/challenges-in-use-of-biosimilars-in-ophthalmology-practices</a></div>
+      </article>
+    </div>
+    <div class="note">Answer summaries are concise paraphrases from the benchmark answer key; source pages retain the actual interview answers.</div>
+  </section>
+
+  <section class="page">
+    <div class="header">
+      <div>
+        <div class="eyebrow">Persona benchmark examples</div>
+        <h1>Monitoring and Retreatment Logic</h1>
+      </div>
+      <div class="page-num">Page 2 / 5</div>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="meta"><span class="chip">PR-20</span><span class="chip">Monitoring / treatment selection</span></div>
+        <h2 class="doctor">Philip J. Rosenfeld, MD, PhD</h2>
+        <div class="source">Anti-VEGF Q&A article</div>
+        <div class="section"><div class="label">Question</div><p class="question">How do you decide on retreatment after anti-VEGF therapy: visual acuity, OCT, or fluorescein angiography?</p></div>
+        <div class="section"><div class="label">Actual answer summary</div><p class="answer">Rosenfeld relies heavily on qualitative OCT for retreatment and treats for any macular fluid until the macula is dry. He then follows monthly to learn the patient's fluid-free interval and returns just before expected recurrence, or uses treat-and-extend injections while dry to define and maintain that interval.</p></div>
+        <div class="section"><div class="label">Why this tests a persona</div><p class="why">Clear decision rule for OCT-driven retreatment; useful for testing precision, fluid tolerance, and protocol logic.</p></div>
+        <div class="link">Source: <a href="https://anyflip.com/cnnfm/zaky/basic">anyflip.com/cnnfm/zaky/basic</a></div>
+      </article>
+      <article class="card">
+        <div class="meta"><span class="chip">NH-12</span><span class="chip">Patient selection / treatment strategy</span></div>
+        <h2 class="doctor">Nancy M. Holekamp, MD</h2>
+        <div class="source">HCPLive peer exchange transcript</div>
+        <div class="section"><div class="label">Question</div><p class="question">For patients who need frequent injections and are not fully dry after multiple monthly anti-VEGF injections, what is your next approach and patient discussion?</p></div>
+        <div class="section"><div class="label">Actual answer summary</div><p class="answer">Holekamp said she first rechecks the diagnosis and considers masqueraders before labeling a patient as a high-VEGF-need incomplete responder. She emphasized continued maintenance/treat-and-extend, patient communication about chronic therapy, and greater concern for intraretinal than subretinal fluid.</p></div>
+        <div class="section"><div class="label">Why this tests a persona</div><p class="why">Tests differential diagnosis, incomplete-responder management, fluid tolerance, and patient-facing explanation style.</p></div>
+        <div class="link">Source: <a href="https://www.hcplive.com/view/anti-vegf-agent-safety">hcplive.com/view/anti-vegf-agent-safety</a></div>
+      </article>
+    </div>
+    <div class="note">Selected examples emphasize subjective judgment, not factual recall.</div>
+  </section>
+
+  <section class="page">
+    <div class="header">
+      <div>
+        <div class="eyebrow">Persona benchmark examples</div>
+        <h1>Durable Delivery and Gene Therapy Thresholds</h1>
+      </div>
+      <div class="page-num">Page 3 / 5</div>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="meta"><span class="chip">ACH-002</span><span class="chip">Adoption / treatment selection</span></div>
+        <h2 class="doctor">Allen C. Ho, MD</h2>
+        <div class="source">New Retina Radio transcript</div>
+        <div class="section"><div class="label">Question</div><p class="question">Discuss whether retinal gene therapy is working, including anti-VEGF biofactory approaches for wet AMD, and where it may fit relative to injections.</p></div>
+        <div class="section"><div class="label">Actual answer summary</div><p class="answer">Ho said retinal gene therapy is moving from rare inherited disease into common retina diseases such as wet AMD, with evidence that anti-VEGF-like proteins can be produced durably. He does not expect injections to disappear; he sees gene therapy as a possible foundation therapy for selected high-burden patients, with injections still used as needed.</p></div>
+        <div class="section"><div class="label">Why this tests a persona</div><p class="why">Tests adoption threshold for disruptive therapy and whether the persona avoids overclaiming replacement of injections.</p></div>
+        <div class="link">Source: <a href="https://eyetube.net/index.php/podcasts/new-retina-radio/tags/the-fellow-eye-a-miniseries/the-fellow-eye-episode-4">eyetube.net/.../the-fellow-eye-episode-4</a></div>
+      </article>
+      <article class="card">
+        <div class="meta"><span class="chip">AK-004</span><span class="chip">Evidence / patient selection</span></div>
+        <h2 class="doctor">Arshad M. Khanani, MD, MA</h2>
+        <div class="source">HCPLive gene therapy interview</div>
+        <div class="section"><div class="label">Question</div><p class="question">Explain the significance of suprachoroidal RGX-314 AAVIATE data for high-burden previously treated nAMD patients.</p></div>
+        <div class="section"><div class="label">Actual answer summary</div><p class="answer">Khanani called AAVIATE important because it was the first suprachoroidal gene-therapy trial and showed early tolerability plus meaningful treatment-burden reduction while maintaining anatomy and vision. He stressed that RGX-314 is not curative, but a one-time in-clinic approach could reduce repeated anti-VEGF injections.</p></div>
+        <div class="section"><div class="label">Why this tests a persona</div><p class="why">Tests enthusiasm control: recognizes burden reduction and novelty while avoiding cure claims.</p></div>
+        <div class="link">Source: <a href="https://www.hcplive.com/view/gene-therapy-rgx-314-benefits-namd-treatment-burden-phase-2-aaviate">hcplive.com/view/gene-therapy-rgx-314-benefits-namd-treatment-burden-phase-2-aaviate</a></div>
+      </article>
+    </div>
+    <div class="note">These examples distinguish cautious platform adoption from pipeline-forward interpretation.</div>
+  </section>
+
+  <section class="page">
+    <div class="header">
+      <div>
+        <div class="eyebrow">Persona benchmark examples</div>
+        <h1>Risk, Futility, and Patient Selection</h1>
+      </div>
+      <div class="page-num">Page 4 / 5</div>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="meta"><span class="chip">CW-011</span><span class="chip">Risk / patient selection</span></div>
+        <h2 class="doctor">Charles C. Wykoff, MD, PhD</h2>
+        <div class="source">Retinal Physician Q&A</div>
+        <div class="section"><div class="label">Question</div><p class="question">When would an eye with wet AMD not receive treatment?</p></div>
+        <div class="section"><div class="label">Actual answer summary</div><p class="answer">Wykoff said active wet AMD may sometimes be observed or dosed infrequently when there is a disciform scar, limited visual potential, a well-sighted fellow eye, or near end of life. He emphasized individualized decisions rather than a single universal stopping rule.</p></div>
+        <div class="section"><div class="label">Why this tests a persona</div><p class="why">Tests treatment futility thresholds, patient-context reasoning, and willingness to depart from reflexive treatment.</p></div>
+        <div class="link">Source: <a href="https://www.retinalphysician.com/issues/2020/april/real-world-vs-clinical-trial-data-for-retinal-drug-regimens/">retinalphysician.com/issues/2020/april/real-world-vs-clinical-trial-data-for-retinal-drug-regimens/</a></div>
+      </article>
+      <article class="card">
+        <div class="meta"><span class="chip">PR-23</span><span class="chip">Risk / shared decision</span></div>
+        <h2 class="doctor">Philip J. Rosenfeld, MD, PhD</h2>
+        <div class="source">Anti-VEGF Q&A article</div>
+        <div class="section"><div class="label">Question</div><p class="question">In a patient with prior cerebrovascular accident or myocardial infarction and occult CNV, what treatment would you choose?</p></div>
+        <div class="section"><div class="label">Actual answer summary</div><p class="answer">Rosenfeld said prior CVA or MI does not change his treatment choice. He presents options and finds patients generally accept even a small possible vascular risk to avoid likely blindness or vision loss, framing the decision as shared risk-benefit judgment.</p></div>
+        <div class="section"><div class="label">Why this tests a persona</div><p class="why">Tests medically complex risk communication and whether the persona balances small systemic risks against likely vision loss.</p></div>
+        <div class="link">Source: <a href="https://anyflip.com/cnnfm/zaky/basic">anyflip.com/cnnfm/zaky/basic</a></div>
+      </article>
+    </div>
+    <div class="note">These examples test judgment under uncertainty, not factual knowledge.</div>
+  </section>
+
+  <section class="page">
+    <div class="header">
+      <div>
+        <div class="eyebrow">Persona benchmark examples</div>
+        <h1>Practice Burden and Future Workflow</h1>
+      </div>
+      <div class="page-num">Page 5 / 5</div>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="meta"><span class="chip">CDR-011</span><span class="chip">Evidence / operations</span></div>
+        <h2 class="doctor">Carl D. Regillo, MD</h2>
+        <div class="source">Retina Today supplement transcript</div>
+        <div class="section"><div class="label">Question</div><p class="question">What are your impressions of the durability of currently available anti-VEGF agents?</p></div>
+        <div class="section"><div class="label">Actual answer summary</div><p class="answer">Regillo said durability varies by patient but is broadly similar across agents, with many patients extending beyond 8 weeks but fewer reaching 12 to 16 weeks. He emphasized that durability definitions depend on tolerated exudation thresholds, and described PDS as technically more demanding than injection but well tolerated and supported by LADDER/ARCHWAY maintenance data.</p></div>
+        <div class="section"><div class="label">Why this tests a persona</div><p class="why">Tests realistic durability expectations, exudation tolerance, and procedural adoption realism.</p></div>
+        <div class="link">Source: <a href="https://supplements.retinatoday.com/articles/treatment-adherence-in-neovascular-amd-2/treatment-adherence-in-neovascular-amd-2/">supplements.retinatoday.com/articles/treatment-adherence-in-neovascular-amd-2/</a></div>
+      </article>
+      <article class="card">
+        <div class="meta"><span class="chip">DJP-013</span><span class="chip">Operations / risk tolerance</span></div>
+        <h2 class="doctor">Dante J. Pieramici, MD</h2>
+        <div class="source">HCPLive peer exchange transcript</div>
+        <div class="section"><div class="label">Question</div><p class="question">How do emerging options such as PDS, bispecific therapy, home OCT, and durability-focused therapies address wet AMD burden?</p></div>
+        <div class="section"><div class="label">Actual answer summary</div><p class="answer">Pieramici said durability is the biggest unmet need because anti-VEGF works when patients adhere, but maintaining frequent care is difficult. He viewed PDS as a potential burden reducer while recognizing a small absolute, higher relative infection risk, and saw future durability plus home OCT as ways to reduce burden.</p></div>
+        <div class="section"><div class="label">Why this tests a persona</div><p class="why">Tests durability-versus-safety tradeoff, procedural realism, and openness to monitoring-enabled care models.</p></div>
+        <div class="link">Source: <a href="https://www.hcplive.com/view/emerging-treatment-options-for-the-management-of-wet-amd">hcplive.com/view/emerging-treatment-options-for-the-management-of-wet-amd</a></div>
+      </article>
+    </div>
+    <div class="note">Sampled from 136 opinion-filtered benchmark rows; selected for answer availability and persona-discriminating value.</div>
+  </section>
+</body>
+</html>

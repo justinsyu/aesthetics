@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Toxicity risk calculator for personalised prediction of irAEs in patients with solid tumours receiving ICIs, developed based on a clinical dataset and machine learning approaches.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Toxicity risk calculator for personalised prediction of irAEs in patients with solid tumours receiving ICIs, developed based on a clinical dataset and machine learning approaches.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 1628</div>
+    <div><strong>First speaker:</strong> Marina Lyadova, MD, PhD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/263152">https://www.asco.org/abstracts-presentations/263152</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b> Immune checkpoint inhibitors (ICIs) can cause severe (grade 3-4) immune-related adverse events (irAEs), which complicate treatment and require immunosuppressive therapy. To address this, we developed a machine learning (ML)-based tool to predict individual risk. Aim: To identify predictors and develop an ML calculator for assessing the risk of grade 3–4 irAEs in patients receiving ICIs for solid tumours.</p>  <b>Methods: </b> This retrospective study included 1,001 patients (585 men, 415 women; mean age 62.4) treated with ICIs for melanoma, kidney, lung, GI, or cervical cancers. The workflow was implemented in Python using pandas, scikit-learn, and SHAP. The cohort was split 70/30 for training and testing. Only pre-treatment variables were used. Data preprocessing included imputation (median for numeric, most frequent for categorical), one-hot encoding, and standardization. Two classifiers were trained: elastic-net logistic regression and gradient boosting. Hyperparameters were tuned via 5-fold CV. Class imbalance (~7-8% positives) was addressed with class_weight="balanced" and SMOTE. Probabilities were calibrated. Performance was assessed by PR-AUC (primary), ROC-AUC, F1, and Brier score. Predictors were selected in a two-stage process: 1) Retention of pre-IO variables, removal of low-variance/high-missingness (&gt;30%) features, and collinearity pruning (|correlation| &gt; 0.85). 2) Model-agnostic ranking using three normalized signals: elastic-net coefficients, permutation importance, and mean absolute SHAP values, combined into a consensus score (weights: 0.5, 0.3, 0.2). Stability was verified by bootstrap resampling.</p>  <b>Results: </b> The final 10 features maximized cross-validated PR-AUC while maintaining calibration and interpretability. Selected predictors: ICI type/combination; age; haemoglobin; creatinine; treatment regimen (mono/combo); K-RAS/N-RAS mutation status; skeletal muscle index; lymphocyte-to-monocyte ratio; immunotherapy line; T4 level.The model identifies patients at increased risk with calibrated probabilities. Results are presented as probabilities (95% CI) categorized as low (&lt;0.10), moderate (0.10–0.25), and high (≥0.25). The colored pictogram visualizes risk distribution for a sample of 100 patients (based on the database; median, quartiles).</p>  <b>Conclusions: </b> We developed the 'Toxicity Risk Calculator' using 10 clinical factors to assess the probability of severe irAEs. This calculator enables routine assessment of the low, moderate, or high probability of grade 3–4 irAEs, facilitating more effective personalization of cancer immunotherapy in everyday practice. Further prospective studies in real-world clinical settings are needed.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

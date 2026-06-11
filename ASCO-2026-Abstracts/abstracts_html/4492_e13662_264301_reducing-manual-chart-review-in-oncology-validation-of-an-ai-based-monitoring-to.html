@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reducing manual chart review in oncology: Validation of an AI-based monitoring tool for lung cancer staging and biomarker tracking.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Reducing manual chart review in oncology: Validation of an AI-based monitoring tool for lung cancer staging and biomarker tracking.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e13662</div>
+    <div><strong>First speaker:</strong> Katie Mo, MS</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/264301">https://www.asco.org/abstracts-presentations/264301</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Continuous monitoring of evolving staging and molecular data is essential for clinical decision support to capture shifts in an oncology patient&#x27;s care journey. However, current systems struggle to synchronize fragmented electronic health records and extensive clinical documentation. This leaves clinicians with an incomplete picture, hindering their ability to follow complex and dynamic NCCN protocols without manual chart reviews.</div>
+  <main> 
+
+	<div><b>Background: </b></p>  Continuous monitoring of evolving staging and molecular data is essential for clinical decision support to capture shifts in an oncology patient's care journey. However, current systems struggle to synchronize fragmented electronic health records and extensive clinical documentation. This leaves clinicians with an incomplete picture, hindering their ability to follow complex and dynamic NCCN protocols without manual chart reviews.</p>  <b>Methods: </b></p>  We implemented an AI-based continuous monitoring system (AI-CM) that uses embeddings from large language models, fine-tuned on clinical notes, to extract clinical events and flag patients whose care deviates from NCCN guidelines. Monitoring begins at the initial oncology ICD code, where the system tracks follow-ups that determine stage, histology, and site (diagnostic features). Subsequently, it continuously monitors documents for diagnosis-specific NCCN-recommended biomarker testing (ordered or performed). We validated AI-CM in a manually annotated cohort of 7,259 patients across eight institutions (2024–2025). The evaluation focused on biomarker testing for early-stage (n=1,155) and advanced (n=4,448) non-small cell lung cancer (eNSCLC, aNSCLC), specifically targeting EGFR, ALK, PD-L1, and NGS.</p>  <b>Results: </b></p>  AI-CM identified eNSCLC and aNSCLC diagnostic features with precision of 0.77 and 0.85 and recall of 0.91 and 0.94, respectively, and biomarker testing with precision of 0.75 and recall of 0.81. Incorporating monitoring for diagnostic features reduced false positive diagnoses by 25% relative to relying solely on ICD codes. The median time to diagnosis was 41 days for eNSCLC and 16 days for aNSCLC, with a median time to test from diagnosis of 9 days. Within 6 weeks of the initial ICD code and diagnosis, AI-CM identified diagnosis and biomarker testing, on average, for 82% and 88% of patients, respectively (Table 1). This enables flagging for full review of a much smaller proportion of patients (18%) with a missed diagnosis, or who are non-adherent (12%) to NCCN guidelines for testing. By reviewing only the AI-recommended document to confirm diagnosis for the 89% of patients correctly identified as aNSCLC, and all documents for the remaining patients, the average number of documents requiring review within the first 6 weeks to determine these diagnoses was reduced from 5.5 to 1.3 per patient (a 76% reduction).</p>  <b>Conclusions: </b></p>  AI-based continuous monitoring improves timely identification of patients deviating from guidelines and reduces manual review by prioritizing documents for human verification.</div>
+
+
+
+	<div class="table_caption"><b>Performances of AI-CM at 6 weeks from the previous clinical event.</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p>Target</p>
+</td>
+<td>
+<p>Patients Identified (%)</p>
+</td>
+<td>
+<p>Mean Documents to Review per Patient</p>
+</td>
+<td>
+<p>AI-CM Mean Documents to Review per Patient</p>
+</td>
+<td>
+<p>AI-CM Documents to Review Reduction (%)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>eNSCLC</p>
+</td>
+<td>
+<p>76</p>
+</td>
+<td>
+<p>7.3</p>
+</td>
+<td>
+<p>2.4</p>
+</td>
+<td>
+<p>67</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>aNSCLC</p>
+</td>
+<td>
+<p>89</p>
+</td>
+<td>
+<p>5.5</p>
+</td>
+<td>
+<p>1.3</p>
+</td>
+<td>
+<p>76</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>eNSCLC Testing</p>
+</td>
+<td>
+<p>89</p>
+</td>
+<td>
+<p>5.2</p>
+</td>
+<td>
+<p>1.5</p>
+</td>
+<td>
+<p>71</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>aNSCLC Testing</p>
+</td>
+<td>
+<p>88</p>
+</td>
+<td>
+<p>7.5</p>
+</td>
+<td>
+<p>1.8</p>
+</td>
+<td>
+<p>76</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

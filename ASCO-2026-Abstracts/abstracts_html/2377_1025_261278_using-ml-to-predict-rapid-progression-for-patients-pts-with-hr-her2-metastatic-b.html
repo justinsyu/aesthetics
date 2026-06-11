@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Using ML to predict rapid progression for patients (pts) with HR+/HER2- metastatic breast cancer (mBC) treated with frontline (1L) CDK 4/6 inhibitors (CDK 4/6i).</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Using ML to predict rapid progression for patients (pts) with HR+/HER2- metastatic breast cancer (mBC) treated with frontline (1L) CDK 4/6 inhibitors (CDK 4/6i).</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 1025</div>
+    <div><strong>First speaker:</strong> Michael Peng</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/261278">https://www.asco.org/abstracts-presentations/261278</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b></p>  CDK4/6i ± aromatase inhibitors is a preferred tx for pts with HR+/HER2- mBC in the 1L setting. While a subset of pts experience rapid progression on standard tx, addressing the unmet need remains challenging due to difficult pt identification. While multimodal data have predicted fast progressors in prior work, routinely collected electronic health record (EHR) variables may be more practical for clinical trial design and enrichment use cases. Thus, we performed a feasibility assessment to determine if EHR data can adequately predict fast progressors.</p>  <b>Methods: </b></p>  Models were trained on pts in the Flatiron Health Research Database with 1L CDK4/6i start on February 3, 2015, or later and an event ≤12 months (mos) or follow-up ≥12 mos after tx start. Fast progression was defined as real-world progression or death ≤12 mos after tx start. Baseline demographics, clinical characteristics, and laboratory/vital signs were used to train a logistic regression (LR) and a full-feature XGBoost (XGB) model. A feature-reduced XGB model was also developed by sequentially removing least important features until area under the curve (AUC) declined. Hyperparameters were optimized by grid search. Performance was evaluated via AUC, with feature importance assessed via LR coefficients and SHapley Additive exPlanations. Test-set analyses included rwPFS comparisons between predicted fast progressor (pFPs) and predicted non-fast progressors (pNFPs) using Kaplan-Meier methods.</p>  <b>Results: </b></p>  Among 10,811 included pts, 3,782 were identified as fast progressors, split 80/20 for train/test datasets. The 3 models had comparable performance for predicting fast progression and effectively stratified pts into risk groups (Table). LR and XGB models used 48 and 76 features, respectively, while a feature-selected XGB model retained 30 features with minimal performance loss. Top LR predictors included advanced age, BRCA/ESR1/AKT positivity, and de novo stage IV disease. Important XGB features were consistent across models and emphasized continuous measures, including shorter time to metastatic diagnosis, greater metastatic burden, elevated AST and alkaline phosphatase, and bone-only metastases.</p>  <b>Conclusions: </b></p>  While these models are not optimized as point-of-care clinical risk scores, their ability to identify high- and low-risk groups using scalable, routinely captured variables highlights their potential utility for clinical trial design, enrichment strategies, and cohort stratification. These findings establish a real-world benchmark and support the feasibility of practical, EHR-only approaches to rapid progression prediction.</div>
+
+
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p>Model</p>
+</td>
+<td>
+<p>AUC</p>
+</td>
+<td>
+<p>pFP rwPFS, median (95% CI), mos</p>
+</td>
+<td>
+<p>pNFP rwPFS, median (95% CI) mos</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>LR</p>
+</td>
+<td>
+<p>0.67</p>
+</td>
+<td>
+<p>10.8 (9.8–12.4)</p>
+</td>
+<td>
+<p>25.6 (23.3–27.9)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>XGB</p>
+</td>
+<td>
+<p>0.67</p>
+</td>
+<td>
+<p>10.8 (9.8–12.4)</p>
+</td>
+<td>
+<p>25.4 (22.9–27.3)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>XGB (feature selected)</p>
+</td>
+<td>
+<p>0.66</p>
+</td>
+<td>
+<p>11.3 (10.2–13.2)</p>
+</td>
+<td>
+<p>25.6 (23.0–27.9)</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

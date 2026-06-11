@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pipeline Intelligence: P&amp;T Planning Overview</title>
+<style>
+  :root {
+    --ink: #10120f;
+    --muted: #5f6458;
+    --paper: #f6f1e8;
+    --paper-2: #ebe4d6;
+    --card: #fffaf0;
+    --line: #1b1f17;
+    --lime: #d7ff5f;
+    --orange: #ffb86b;
+    --blue: #b8d8ff;
+    --pink: #ffd3e0;
+    --gray: #d6d0c2;
+    --red: #ff8a76;
+    --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+    --radius: 22px;
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    background: #d8d2c4;
+    color: var(--ink);
+  }
+
+  body, *, *::before, *::after {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  a {
+    color: inherit;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+
+  code {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, monospace;
+    background: var(--paper-2);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 0.94em;
+  }
+
+  .slide {
+    width: 1080px;
+    height: 1440px;
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    background: var(--paper);
+    overflow: hidden;
+    margin: 18px auto;
+    box-shadow: 0 24px 60px rgba(16, 18, 15, 0.18);
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .slide:last-child { page-break-after: auto; break-after: auto; }
+
+  .wrap {
+    flex: 1;
+    padding: 56px 72px 64px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    border: 1.5px solid var(--line);
+    padding: 9px 14px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 850;
+    text-transform: uppercase;
+    background: var(--lime);
+    color: var(--ink);
+  }
+
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 11px;
+    border: 1.3px solid var(--line);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 850;
+    text-transform: uppercase;
+    background: var(--paper-2);
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  .tag.lime { background: var(--lime); }
+  .tag.orange { background: var(--orange); }
+  .tag.blue { background: var(--blue); }
+  .tag.pink { background: var(--pink); }
+  .tag.gray { background: var(--gray); }
+  .tag.red { background: var(--red); }
+
+  h1, h2, h3, p { margin: 0; }
+  h1 { font-size: 66px; line-height: .98; font-weight: 640; letter-spacing: 0; max-width: 940px; }
+  h2 { font-size: 40px; line-height: 1.04; font-weight: 560; letter-spacing: 0; max-width: 940px; }
+  h3 { font-size: 24px; line-height: 1.08; font-weight: 650; }
+
+  .lede {
+    color: var(--muted);
+    font-size: 22px;
+    line-height: 1.38;
+    max-width: 940px;
+    font-weight: 400;
+  }
+
+  .stack-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .step-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+
+  .step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 10px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--paper);
+    font-size: 14px;
+    font-weight: 850;
+    letter-spacing: .04em;
+  }
+
+  .step-tag { font-size: 13px; padding: 6px 12px; }
+
+  .body-text {
+    color: var(--muted);
+    font-size: 19px;
+    line-height: 1.44;
+    margin-top: 20px;
+    max-width: 940px;
+  }
+
+  .mech {
+    margin-top: 20px;
+    padding: 16px 22px;
+    background: var(--lime);
+    border: 1.4px solid var(--line);
+    border-radius: 16px;
+    max-width: 940px;
+  }
+
+  .mech .mech-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 850;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    margin-bottom: 6px;
+    color: var(--ink);
+  }
+
+  .mech p {
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.44;
+  }
+
+  .feature-grid {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    flex: 1;
+    align-items: stretch;
+  }
+
+  .feature-grid > div:first-child { flex: 0 0 auto; }
+
+  .feature-shot {
+    border: 1.5px solid var(--line);
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    width: 100%;
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .feature-shot img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    max-height: 800px;
+  }
+
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    margin-top: 26px;
+  }
+
+  .compare .col {
+    border: 1.5px solid var(--line);
+    border-radius: var(--radius);
+    padding: 24px 26px 22px;
+    background: var(--card);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .compare .col.focus { background: var(--lime); }
+
+  .compare .col-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+
+  .compare .col-head h3 { font-size: 20px; }
+
+  .compare ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .compare ul li { margin-bottom: 8px; }
+
+  .case-map {
+    border: 1.5px solid var(--line);
+    background: rgba(255, 250, 240, .92);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-top: 22px;
+  }
+
+  .case-map .row {
+    display: grid;
+    grid-template-columns: 0.9fr 1.15fr 1.4fr;
+    border-top: 1px solid var(--line);
+  }
+
+  .case-map .row:first-child { border-top: 0; }
+  .case-map .row.head { background: var(--ink); color: var(--paper); }
+
+  .case-map .row .cell {
+    padding: 13px 15px;
+    border-right: 1px solid var(--line);
+    font-size: 13.5px;
+    line-height: 1.42;
+  }
+
+  .case-map .row .cell:last-child { border-right: 0; }
+
+  .case-map .row.head .cell {
+    font-size: 12px;
+    font-weight: 850;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+  }
+
+  .slide.cover .wrap {
+    align-items: center;
+    justify-content: center;
+    padding: 120px 96px;
+    text-align: left;
+  }
+
+  .slide.cover .cover-block {
+    width: min(900px, 100%);
+  }
+
+  .slide.cover .cover-line {
+    display: block;
+  }
+
+  .slide.cover .eyebrow {
+    font-size: 18px;
+    padding: 12px 18px;
+    border-width: 2px;
+  }
+
+  .slide.cover h1 {
+    margin: 36px 0 32px;
+    font-size: 62px;
+    line-height: .98;
+  }
+
+  .slide.cover .lede {
+    margin-bottom: 44px;
+    font-size: 23px;
+    line-height: 1.4;
+    max-width: 860px;
+  }
+
+  .slide.cover .tag {
+    font-size: 15px;
+    padding: 8px 14px;
+    border-width: 1.6px;
+  }
+
+  .slide.cover .stack-row {
+    justify-content: flex-start;
+    gap: 10px;
+    max-width: 820px;
+  }
+
+  .slide-num {
+    position: absolute;
+    right: 56px;
+    bottom: 32px;
+    font-size: 12px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: rgba(16, 18, 15, .42);
+    font-weight: 800;
+    z-index: 2;
+  }
+
+  @page { size: 1080px 1440px; margin: 0; }
+  @media print {
+    html, body { background: var(--paper); }
+    .slide {
+      width: 1080px;
+      height: 1440px;
+      margin: 0;
+      box-shadow: none;
+    }
+  }
+</style>
+</head>
+<body>
+
+<section class="slide cover">
+  <div class="wrap">
+    <div class="cover-block">
+      <div><span class="eyebrow">Pipeline Intelligence walkthrough</span></div>
+      <h1><span class="cover-line">Using a pipeline dashboard</span> <span class="cover-line">for P&amp;T committee planning</span></h1>
+      <p class="lede"><span class="cover-line">This overview shows how the dashboard helps formulary and</span> <span class="cover-line">market access teams identify upcoming therapies, triage disruption risk,</span> <span class="cover-line">review cited evidence, and prepare P&amp;T committee workstreams</span> <span class="cover-line">before launch pressure arrives.</span></p>
+      <div class="stack-row">
+        <span class="tag lime">27 active pipeline assets</span>
+        <span class="tag red">2 high risk</span>
+        <span class="tag blue">1 near term</span>
+        <span class="tag orange">Launch timing buckets</span>
+        <span class="tag gray">CT.gov traceability</span>
+        <span class="tag gray">Traceable rationales</span>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num">01 / 07</div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <div class="step-meta">
+      <span class="step-num">01</span>
+      <span class="tag lime step-tag">Planning surface</span>
+    </div>
+    <h2>The first view tells a committee what needs attention</h2>
+    <div class="feature-grid">
+      <div>
+        <p class="body-text">The dashboard opens with the current active pipeline scope, high-risk count, near-term count, launch-timing distribution, and disruption heatmap. For P&amp;T planning, this is the top-of-meeting orientation: what is in scope, how soon it may matter, and which assets combine higher budget impact with meaningful clinical differentiation.</p>
+        <div class="mech">
+          <span class="mech-label">Committee use</span>
+          <p>Use the summary row to size agenda load, the launch chart to identify lead-time pressure, and the heatmap to flag assets that may require budget scenarios, prior authorization language, or evidence review before launch.</p>
+        </div>
+      </div>
+      <div class="feature-shot"><img src="screenshots/01-dashboard-overview.png" alt="Pipeline Intelligence dashboard overview with filters, launch timeline, heatmap, asset table, and selected asset pane" /></div>
+    </div>
+  </div>
+  <div class="slide-num">02 / 07</div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <div class="step-meta">
+      <span class="step-num">02</span>
+      <span class="tag orange step-tag">Therapeutic-area focus</span>
+    </div>
+    <h2>Filter the pipeline to the specialty area being planned</h2>
+    <div class="feature-grid">
+      <div>
+        <p class="body-text">Therapeutic-area filtering turns a broad pipeline view into a committee-specific work queue. In the cardiometabolic view shown here, the asset count, launch timeline, heatmap, table, and selected detail pane all update together so the committee can discuss one service line or disease area without losing source traceability.</p>
+        <div class="mech">
+          <span class="mech-label">Committee use</span>
+          <p>Use this mode before a diabetes, obesity, retina, oncology, or immunology review cycle to identify which assets belong in the committee packet and which can remain on watch.</p>
+        </div>
+      </div>
+      <div class="feature-shot"><img src="screenshots/02-ta-filter-cardiometabolic.png" alt="Cardiometabolic filter applied to the Pipeline Intelligence dashboard" /></div>
+    </div>
+  </div>
+  <div class="slide-num">03 / 07</div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <div class="step-meta">
+      <span class="step-num">03</span>
+      <span class="tag red step-tag">Risk triage</span>
+    </div>
+    <h2>Convert risk scoring into an agenda queue</h2>
+    <div class="feature-grid">
+      <div>
+        <p class="body-text">Risk is defined as a formulary-planning prioritization signal, not a clinical safety risk. The filter rail keeps the definition visible while the table can be filtered to high-risk assets and sorted by a planning field such as expected launch. This separates assets that need immediate committee preparation from assets that can be monitored.</p>
+        <div class="mech">
+          <span class="mech-label">Committee use</span>
+          <p>Use high-risk filtering to decide which assets need near-term evidence synthesis, utilization-management modeling, budget-impact review, and medical-policy drafting before the next committee cycle.</p>
+        </div>
+      </div>
+      <div class="feature-shot"><img src="screenshots/03-high-risk-launch-sort.png" alt="High-risk assets filtered and sorted by launch timing" /></div>
+    </div>
+  </div>
+  <div class="slide-num">04 / 07</div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <div class="step-meta">
+      <span class="step-num">04</span>
+      <span class="tag blue step-tag">Evidence basis</span>
+    </div>
+    <h2>Open an asset view before making assumptions</h2>
+    <div class="feature-grid">
+      <div>
+        <p class="body-text">Selecting an asset opens its manufacturer, indication, CT.gov study links, research status, mechanism, launch timing, risk, action, clinical profile, cost, evidence gaps, and management tools. Basis controls reveal how each estimate was derived, while inline source links keep the page compact.</p>
+        <div class="mech">
+          <span class="mech-label">Committee use</span>
+          <p>Use the detail pane to distinguish official or source-derived facts from estimates. The source-backed rationale helps a team document why an asset entered the committee queue and what uncertainty still needs review.</p>
+        </div>
+      </div>
+      <div class="feature-shot"><img src="screenshots/04-asset-detail-basis.png" alt="Selected asset detail pane with source basis control opened" /></div>
+    </div>
+  </div>
+  <div class="slide-num">05 / 07</div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <div class="step-meta">
+      <span class="step-num">05</span>
+      <span class="tag pink step-tag">Committee packet review</span>
+    </div>
+    <h2>Sort the table for pre-work, ownership, and follow-up</h2>
+    <div class="feature-grid">
+      <div>
+        <p class="body-text">Column headers sort the review table directly, so teams can organize by asset, manufacturer, indication, phase, launch, clinical differentiation, annual cost, risk, or action without leaving the dashboard. The sticky filter rail and table scrolling keep the review context in view while the detail pane remains tied to the selected asset.</p>
+        <div class="mech">
+          <span class="mech-label">Committee use</span>
+          <p>Use sortable columns to assign owner follow-ups by manufacturer or indication, group assets by phase, and identify which records should be exported or summarized for the next P&amp;T meeting packet.</p>
+        </div>
+      </div>
+      <div class="feature-shot"><img src="screenshots/05-column-sort-review.png" alt="Pipeline asset table sorted by a clicked column header" /></div>
+    </div>
+  </div>
+  <div class="slide-num">06 / 07</div>
+</section>
+
+<section class="slide">
+  <div class="wrap">
+    <div class="step-meta">
+      <span class="step-num">06</span>
+      <span class="tag gray step-tag">Planning map</span>
+    </div>
+    <h2>How the dashboard maps to P&amp;T planning work</h2>
+    <p class="body-text">The dashboard is designed to support committee preparation, not replace clinical or payer judgment. It gives the team a structured way to turn public pipeline signals into a planning backlog with traceable assumptions.</p>
+    <div class="case-map">
+      <div class="row head">
+        <div class="cell">Dashboard signal</div>
+        <div class="cell">Planning question</div>
+        <div class="cell">P&amp;T committee output</div>
+      </div>
+      <div class="row">
+        <div class="cell">Launch timeline bucket</div>
+        <div class="cell">How soon could the asset affect coverage, contracting, or policy operations?</div>
+        <div class="cell">Committee calendar placement, evidence-review start date, and policy drafting lead time.</div>
+      </div>
+      <div class="row">
+        <div class="cell">Budget impact level</div>
+        <div class="cell">Which assets need financial scenario planning before launch?</div>
+        <div class="cell">Budget-impact sensitivity range, utilization assumptions, and contracting questions.</div>
+      </div>
+      <div class="row">
+        <div class="cell">Clinical differentiation</div>
+        <div class="cell">Could the asset change preferred therapy, step order, or exception criteria?</div>
+        <div class="cell">Comparator evidence questions, restriction logic, and final-label review needs.</div>
+      </div>
+      <div class="row">
+        <div class="cell">Risk and action</div>
+        <div class="cell">Should the committee actively plan, prepare, or monitor?</div>
+        <div class="cell">Agenda triage, owner assignment, and next-review cadence.</div>
+      </div>
+      <div class="row">
+        <div class="cell">Evidence gaps</div>
+        <div class="cell">What uncertainty should be resolved before a coverage decision?</div>
+        <div class="cell">Data requests, manufacturer questions, label-watch items, and post-launch evidence needs.</div>
+      </div>
+    </div>
+    <div class="compare">
+      <div class="col focus">
+        <div class="col-head"><span class="tag lime">Good use</span></div>
+        <h3>Formulary planning aid</h3>
+        <ul>
+          <li>Prioritize committee pre-work from source-backed pipeline signals.</li>
+          <li>Track which assumptions are source-direct, source-derived, or heuristic.</li>
+          <li>Use CT.gov and primary-source links to support internal review notes.</li>
+        </ul>
+      </div>
+      <div class="col">
+        <div class="col-head"><span class="tag gray">Boundary</span></div>
+        <h3>Not a final coverage decision</h3>
+        <ul>
+          <li>Does not replace final label, clinical guideline, comparative-effectiveness, rebate, or net-cost review.</li>
+          <li>Does not infer access impact from trial existence alone.</li>
+          <li>Should be refreshed and re-reviewed as source evidence changes.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-num">07 / 07</div>
+</section>
+
+</body>
+</html>

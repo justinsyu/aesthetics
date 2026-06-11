@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tumor recurrence or treatment effect? Large multi-institutional evaluation of an AI risk assessment model in glioma and brain metastases.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Tumor recurrence or treatment effect? Large multi-institutional evaluation of an AI risk assessment model in glioma and brain metastases.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 2080</div>
+    <div><strong>First speaker:</strong> Dheerendranath Battalapalli, MS, MSc</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/259159">https://www.asco.org/abstracts-presentations/259159</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b></p>  Distinguishing true tumor recurrence (TuR) from radiation necrosis (RN) on post-treatment MRI scans remains a major neuro-oncology challenge. We hypothesized that an integrated Spatial, Morphologic, and Textural radiomics risk (SMART-risk) model that comprehensively captures local and spatial organization of lesion heterogeneity, can unravel distinct biology across TuR and RN, on clinical MRI; and improve distinction over a data-driven ResNet50 deep learning model.</p>  <b>Methods: </b></p>  We retrospectively collected multi-institutional post-treatment MRI cohorts: brain metastases (233 studies; from Cleveland Clinic (CCF), University Hospitals Cleveland (UH), University of Wisconsin (UW); and glioma (340 studies from Indiana University (IU), Dana-Farber Cancer Center, Thomas Jefferson University (TJU), and CCF). Over 80% of the studies were pathologically confirmed as TuR or RN. Institution-held-out external testing was performed (metastases: train CCF+UH, test UW; glioma: train IU+TJU+Dana-Farber Cancer Center, test CCF). Following segmentation, 944 radiomic features/lesion were extracted including graph-based spatial organization of tumor heterogeneity (GrRAiL), local gradient texture heterogeneity (COLLAGE), Haralick, and morphology. LASSO-selected features were integrated in a Random Forest classifier. Performance metrics included cross validation accuracy (CV), test accuracy, F1 score, and AUC; interpretability used SHAP. Comparison was performed with a ResNet50 baseline model.</p>  <b>Results: </b></p>  SMART-Risk demonstrated consistent discrimination on the institution-held-out external test set (Table 1) with ~80% accuracy; ~10-15% improvement over a ResNet50 model. SHAP analysis indicated that features corresponding to spatial organization and local heterogeneity, i.e. average path length, node count and entropy measures, were dominant contributors (Mann–Whitney U test, <em>p </em>≤ 0.001). Recurrent tumors showed higher spatial complexity and greater heterogeneity than RN.</p>  <b>Conclusions: </b></p>  SMART-Risk may provide a noninvasive approach to distinguish TuR from RN on routine post-contrast T1-weighted MRI. By integrating spatial-organization (GrRAiL), texture (COLLAGE/Haralick), and morphology features, SMART-Risk captures complementary signatures and may improve discrimination compared with any single feature family. An AI-based SMART-Risk approach may reduce diagnostic ambiguity, support earlier treatment decisions, and avoid unnecessary invasive procedures.</div>
+
+
+
+	<div class="table_caption"><b>Test set performance of SMART-Risk vs ResNet50 for TuR vs RN classification.</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td><strong>Cohort (external test site)</strong></td>
+<td><strong>Model</strong></td>
+<td><strong>CV accuracy</strong></td>
+<td><strong>Test accuracy</strong></td>
+<td><strong>F1 score</strong></td>
+<td><strong>AUC</strong></td>
+</tr>
+<tr>
+<td>Metastatic cohort (UW)</td>
+<td>SMART-Risk</td>
+<td>0.78 ± 0.08</td>
+<td>0.79</td>
+<td>0.78</td>
+<td>0.86</td>
+</tr>
+<tr>
+<td>Metastatic cohort (UW)</td>
+<td>ResNet50</td>
+<td>0.70 ± 0.09</td>
+<td>0.60</td>
+<td>0.67</td>
+<td>0.63</td>
+</tr>
+<tr>
+<td>Glioma (CCF)</td>
+<td>SMART-Risk</td>
+<td>0.83 ± 0.06</td>
+<td>0.80</td>
+<td>0.84</td>
+<td>0.87</td>
+</tr>
+<tr>
+<td>Glioma (CCF)</td>
+<td>ResNet50</td>
+<td>0.69± 0.10</td>
+<td>0.65</td>
+<td>0.77</td>
+<td>0.70</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

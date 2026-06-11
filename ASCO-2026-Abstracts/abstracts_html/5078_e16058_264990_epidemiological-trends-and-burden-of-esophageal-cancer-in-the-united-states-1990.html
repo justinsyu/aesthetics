@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Epidemiological trends and burden of esophageal cancer in the United States, 1990–2023: A retrospective analysis with machine learning projections to 2050.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Epidemiological trends and burden of esophageal cancer in the United States, 1990–2023: A retrospective analysis with machine learning projections to 2050.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e16058</div>
+    <div><strong>First speaker:</strong> Sunjida Amin Promi</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/264990">https://www.asco.org/abstracts-presentations/264990</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Esophageal cancer remains a significant cause of cancer-related mortality in the United States, with risk factors including smoking, alcohol, obesity, and gastroesophageal reflux disease contributing to its burden. This study analyzed age-standardized rates (ASRs) of DALYs, deaths, incidence, and prevalence from 1990 to 2023 using IHME GBD 2023 data, evaluated trends through estimated annual percentage change (EAPC), and projected future burden to 2050 employing ARIMA time-series models.</div>
+  <main> 
+
+	<div><b>Background: </b> Esophageal cancer remains a significant cause of cancer-related mortality in the United States, with risk factors including smoking, alcohol, obesity, and gastroesophageal reflux disease contributing to its burden. This study analyzed age-standardized rates (ASRs) of DALYs, deaths, incidence, and prevalence from 1990 to 2023 using IHME GBD 2023 data, evaluated trends through estimated annual percentage change (EAPC), and projected future burden to 2050 employing ARIMA time-series models.</p>  <b>Methods: </b> Age-standardized rates per 100,000 population were retrieved from the Global Burden of Disease 2023 database for the United States, stratified by sex (Both, Female, Male). Historical trends (1990–2023) were assessed via EAPC derived from linear regression on log-transformed ASRs. Future projections (2024–2050) were generated using ARIMA models fitted to historical data, yielding point forecasts and 95% prediction intervals (PI).</p>  <b>Results: </b> From 1990 to 2023, age-standardized DALYs (Both sexes) decreased from 96.08 (95% UI: 88.99–103.15) to 84.02 (95% UI: 76.56–91.25), with an EAPC of -0.49% (95% CI: -0.61 to -0.36); females experienced a steeper decline (EAPC -0.84%, 95% CI: -0.91 to -0.77) than males (EAPC -0.52%, 95% CI: -0.67 to -0.37). Age-standardized death rates fell from 3.76 to 3.51 (EAPC -0.28%, 95% CI: -0.41 to -0.14), again with greater reductions in females (EAPC -0.78%) than males (EAPC -0.30%). Incidence declined modestly from 4.32 to 4.15 (EAPC -0.23%, 95% CI: -0.39 to -0.07), while prevalence showed near-stability overall (EAPC -0.08%, 95% CI: -0.29 to 0.13), reflecting improved survival offsetting some incidence reductions. ARIMA forecasts indicate continued gradual declines in age-standardized DALYs (Both: from 83.13 in 2024 to 59.97 by 2050), deaths (approaching ~2.56 by 2050), and incidence (to ~3.16 by 2050), while prevalence remains relatively stable or slowly erodes, influenced by demographic aging and modest therapeutic progress.</p>  <b>Conclusions: </b> Age-standardized burden of esophageal cancer in the US declined modestly from 1990–2023 across key metrics, with more pronounced improvements in females and limited progress in males. Projections to 2050 suggest ongoing reductions in DALYs, mortality, and incidence, though absolute case numbers may persist due to population growth and aging, highlighting the need for enhanced prevention, screening, and treatment strategies.</div>
+
+
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p>Measure</p>
+</td>
+<td>
+<p>Sex</p>
+</td>
+<td>
+<p>EAPC</p>
+</td>
+<td>
+<p>Lower 95%CI</p>
+</td>
+<td>
+<p>Upper 95%CI</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>DALYs</p>
+</td>
+<td>
+<p>Both</p>
+</td>
+<td>
+<p>-0.49</p>
+</td>
+<td>
+<p>-0.61</p>
+</td>
+<td>
+<p>-0.36</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>DALYs</p>
+</td>
+<td>
+<p>Female</p>
+</td>
+<td>
+<p>-0.84</p>
+</td>
+<td>
+<p>-0.91</p>
+</td>
+<td>
+<p>-0.77</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>DALYs</p>
+</td>
+<td>
+<p>Male</p>
+</td>
+<td>
+<p>-0.52</p>
+</td>
+<td>
+<p>-0.67</p>
+</td>
+<td>
+<p>-0.37</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Deaths</p>
+</td>
+<td>
+<p>Both</p>
+</td>
+<td>
+<p>-0.28</p>
+</td>
+<td>
+<p>-0.41</p>
+</td>
+<td>
+<p>-0.14</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Deaths</p>
+</td>
+<td>
+<p>Female</p>
+</td>
+<td>
+<p>-0.78</p>
+</td>
+<td>
+<p>-0.87</p>
+</td>
+<td>
+<p>-0.7</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Deaths</p>
+</td>
+<td>
+<p>Male</p>
+</td>
+<td>
+<p>-0.3</p>
+</td>
+<td>
+<p>-0.46</p>
+</td>
+<td>
+<p>-0.14</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Incidence</p>
+</td>
+<td>
+<p>Both</p>
+</td>
+<td>
+<p>-0.23</p>
+</td>
+<td>
+<p>-0.39</p>
+</td>
+<td>
+<p>-0.07</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Incidence</p>
+</td>
+<td>
+<p>Female</p>
+</td>
+<td>
+<p>-0.62</p>
+</td>
+<td>
+<p>-0.73</p>
+</td>
+<td>
+<p>-0.5</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Incidence</p>
+</td>
+<td>
+<p>Male</p>
+</td>
+<td>
+<p>-0.25</p>
+</td>
+<td>
+<p>-0.44</p>
+</td>
+<td>
+<p>-0.06</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Prevalence</p>
+</td>
+<td>
+<p>Both</p>
+</td>
+<td>
+<p>-0.08</p>
+</td>
+<td>
+<p>-0.29</p>
+</td>
+<td>
+<p>0.13</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Prevalence</p>
+</td>
+<td>
+<p>Female</p>
+</td>
+<td>
+<p>-0.31</p>
+</td>
+<td>
+<p>-0.46</p>
+</td>
+<td>
+<p>-0.15</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Prevalence</p>
+</td>
+<td>
+<p>Male</p>
+</td>
+<td>
+<p>-0.09</p>
+</td>
+<td>
+<p>-0.33</p>
+</td>
+<td>
+<p>0.14</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

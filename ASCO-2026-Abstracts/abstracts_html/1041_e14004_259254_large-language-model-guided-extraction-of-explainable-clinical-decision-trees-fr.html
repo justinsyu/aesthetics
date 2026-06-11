@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Large language model-guided extraction of explainable clinical decision trees from longitudinal meningioma clinical notes.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Large language model-guided extraction of explainable clinical decision trees from longitudinal meningioma clinical notes.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e14004</div>
+    <div><strong>First speaker:</strong> David Gritsch, MD, PhD, MPH</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/259254">https://www.asco.org/abstracts-presentations/259254</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Meningiomas are the most common primary brain tumors, requiring longitudinal integration of clinical observations, imaging, histopathology, and multimodal treatment responses documented in narrative clinical notes. This unstructured knowledge remains largely inaccessible for systematic decision support, comparative practice analysis, and collaborative learning across institutions. We therefore developed a novel LLM-guided framework that extracts structured, explainable clinical decision trees (CDTs) from longitudinal meningioma notes while enabling privacy-preserving aggregation of real-world care pathways.</div>
+  <main> 
+
+	<div><b>Background: </b> Meningiomas are the most common primary brain tumors, requiring longitudinal integration of clinical observations, imaging, histopathology, and multimodal treatment responses documented in narrative clinical notes. This unstructured knowledge remains largely inaccessible for systematic decision support, comparative practice analysis, and collaborative learning across institutions. We therefore developed a novel LLM-guided framework that extracts structured, explainable clinical decision trees (CDTs) from longitudinal meningioma notes while enabling privacy-preserving aggregation of real-world care pathways.</p>  <b>Methods: </b> We used a structured LLM workflow to convert longitudinal meningioma clinical notes into explainable CDTs. First, a guideline-aligned generic meningioma decision tree and ontology were defined based on NCCN management domains. For each patient, the LLM extracted meningioma-relevant clinical events directly supported by note text, including relative timing, NCCN domain classification, uncertainty labeling, and verbatim evidence quotes, with safeguards to prevent inference or hallucination. Extracted events were assembled into patient-specific directed graphs representing observed temporal transitions. Events were then mapped to a predefined canonical state vocabulary to generate patient-level state sequences, enabling aggregation of individual graphs into a cohort-level CDT with empirically derived node frequencies and transition probabilities. All outputs used de-identified data and relative time to ensure privacy.</p>  <b>Results: </b> The pipeline successfully generated patient-specific state sequences and aggregated CDTs capturing diverse meningioma management patterns across diagnostic evaluation, surgical resection, radiation therapy, and surveillance strategies. Stakeholder input from seven multidisciplinary clinicians (neuro-oncologists, oncologists) at Massachusetts General Hospital demonstrated 100% agreement that CDTs improve treatment planning confidence (compared to a black-box LLM), 75% preference for CDTs over free-text notes for knowledge assimilation, and 80% preference for adaptive complexity (simple trees for routine cases, higher complexity for rare presentations). </p>  <b>Conclusions: </b> LLM-guided extraction of explainable clinical decision trees from longitudinal clinical notes is feasible, clinically interpretable, and supports privacy-preserving aggregation of real-world care pathways. This approach provides a scalable foundation for evidence-based decision support, practice pattern analysis, and quality improvement initiatives in meningioma care and other conditions requiring complex longitudinal management.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

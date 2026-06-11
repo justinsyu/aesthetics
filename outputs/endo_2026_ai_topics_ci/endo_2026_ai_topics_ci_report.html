@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Artificial intelligence-related topics at ENDO 2026</title>
+  <style>
+    :root { --ink:#10120f; --muted:#5c6257; --paper:#f6f1e8; --paper-2:#ebe4d6; --card:#fffaf0; --line:#1b1f17; --lime:#d7ff5f; --orange:#ffb86b; --blue:#b8d8ff; --pink:#ffd3e0; --gray:#d6d0c2; --red:#ff8a76; --shadow:0 18px 48px rgba(16,18,15,.08); --radius:24px; }
+    * { box-sizing:border-box; }
+    html, body { margin:0; background:var(--paper); color:var(--ink); scrollbar-width:none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display:none; }
+    body, *, *::before, *::after { -webkit-print-color-adjust:exact; print-color-adjust:exact; font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    a { color:inherit; text-decoration-thickness:1px; text-underline-offset:3px; }
+    .slide { width:100vw; height:100vh; min-height:100vh; overflow:hidden; position:relative; display:flex; align-items:flex-start; padding:36px 0 20px; page-break-after:always; break-after:page; background:var(--paper); }
+    .slide:last-child { page-break-after:auto; break-after:auto; }
+    .slide-bg-img { position:absolute; inset:0; z-index:0; width:100%; height:100%; object-fit:cover; pointer-events:none; user-select:none; }
+    .wrap { width:min(1360px, calc(100vw - 56px)); margin:0 auto; position:relative; z-index:1; }
+    .eyebrow { display:inline-flex; align-items:center; border:1.4px solid var(--line); padding:8px 12px; border-radius:999px; font-size:15px; font-weight:850; letter-spacing:0; text-transform:uppercase; margin-bottom:18px; background:var(--lime); }
+    h1,h2,h3,p { margin:0; }
+    h1 { font-size:76px; line-height:.94; letter-spacing:0; font-weight:400; max-width:1320px; font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    h2 { font-size:52px; line-height:.98; letter-spacing:0; font-weight:400; max-width:1300px; font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    h3 { font-size:28px; line-height:1.04; letter-spacing:0; font-weight:700; font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .dek { margin-top:18px; color:var(--muted); font-size:27px; line-height:1.22; max-width:1260px; }
+    .section-head { margin-bottom:34px; }
+    .section-head p { margin-top:12px; color:var(--muted); font-size:24px; line-height:1.18; max-width:1280px; }
+    .grid-2 { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+    .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+    .panel,.metric,.card,.table,.callout { border:1.5px solid var(--line); background:rgba(255,250,240,.88); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; }
+    .panel { padding:22px; }
+    .panel.dark,.callout { background:#11130f; color:var(--paper); border-color:#11130f; }
+    .panel.dark p,.panel.dark li,.callout p,.callout li { color:rgba(246,241,232,.88); }
+    .panel.dark h3 { color:var(--lime); font-weight:700; }
+    .metric { padding:21px; min-height:156px; }
+    .num { font-size:50px; line-height:.92; font-weight:400; letter-spacing:0; }
+    .label { margin-top:12px; font-size:22px; line-height:1.12; color:var(--muted); }
+    .card { padding:22px; min-height:250px; }
+    .card p { color:var(--muted); font-size:22px; line-height:1.15; margin-top:12px; }
+    .tag { display:inline-block; padding:5px 9px; border:1.2px solid var(--line); border-radius:999px; font-size:12px; font-weight:850; text-transform:uppercase; background:var(--paper-2); white-space:nowrap; margin-bottom:11px; }
+    .lime{background:var(--lime);} .orange{background:var(--orange);} .blue{background:var(--blue);} .pink{background:var(--pink);} .red{background:var(--red);} .gray{background:var(--gray);}
+    .callout { padding:22px 26px; }
+    .callout h3 { font-size:31px; font-weight:700; color:var(--lime); }
+    .summary-list { margin:12px 0 0; padding-left:22px; display:grid; gap:8px; }
+    .summary-list li { color:rgba(246,241,232,.88); font-size:23px; line-height:1.13; }
+    .cite { font-size:.58em; vertical-align:super; margin-left:2px; font-weight:500; text-decoration:none; }
+    .slide-num { position:absolute; right:40px; bottom:24px; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:rgba(16,18,15,.38); font-weight:500; z-index:2; }
+    .source-note { color:var(--muted); font-size:15px; line-height:1.22; margin-top:12px; }
+    .bar-wrap { display:grid; gap:18px; }
+    .bar-row { display:grid; grid-template-columns:430px 1fr 42px; gap:12px; align-items:center; font-size:19px; line-height:1.12; }
+    .bar-label { font-weight:500; }
+    .bar-track { height:30px; border:1.3px solid var(--line); background:var(--paper-2); border-radius:999px; overflow:hidden; }
+    .bar-track div { height:100%; background:var(--lime); border-right:1.3px solid var(--line); }
+    .bar-val { font-weight:500; text-align:right; }
+    .table { display:grid; }
+    .row { display:grid; border-bottom:1px solid var(--line); min-height:68px; }
+    .row:last-child { border-bottom:0; }
+    .row.notable { grid-template-columns:.55fr 2.35fr 1.1fr; min-height:60px; }
+    .row.refs { grid-template-columns:.32fr 1.2fr .92fr 1.65fr; min-height:0; }
+    .cell { padding:13px 14px; border-right:1px solid var(--line); font-size:18px; line-height:1.12; }
+    .cell:last-child { border-right:0; }
+    .head .cell { background:#11130f; color:var(--paper); font-weight:500; text-transform:uppercase; font-size:17px; line-height:1; white-space:nowrap; }
+    .cell span { color:var(--muted); }
+    .cell.code { font-weight:500; }
+    .refs .cell { font-size:12px; line-height:1.04; padding:7px 8px; }
+    .refs.head .cell { font-size:12px; }
+    .refs .cell:first-child { text-align:center; }
+    .accent-heading { color:var(--lime); }
+    .callout h3.accent-heading { font-weight:700; }
+    .slide:nth-of-type(n+2):nth-of-type(-n+9) .section-head { margin-bottom:44px; }
+    .slide:nth-of-type(n+2):nth-of-type(-n+9) .card p,
+    .slide:nth-of-type(n+2):nth-of-type(-n+9) .panel p,
+    .slide:nth-of-type(n+2):nth-of-type(-n+9) .summary-list li,
+    .slide:nth-of-type(n+2):nth-of-type(-n+9) .bar-row,
+    .slide:nth-of-type(n+2):nth-of-type(-n+9) .bar-label,
+    .slide:nth-of-type(n+2):nth-of-type(-n+9) .bar-val,
+    .slide:nth-of-type(n+2):nth-of-type(-n+9) .row:not(.head) .cell,
+    .slide:nth-of-type(n+2):nth-of-type(-n+9) .row:not(.head) .cell.code,
+    .slide:nth-of-type(n+2):nth-of-type(-n+9) .row:not(.head) strong,
+    .slide:nth-of-type(n+2):nth-of-type(-n+9) .source-note,
+    .slide:nth-of-type(n+2):nth-of-type(-n+9) .cite {
+      font-weight:400;
+    }
+    .references-slide h2 { font-size:48px; }
+    @page { size:1600px 900px; margin:0; }
+    @media print { html,body{width:1600px;height:900px;} .slide{width:1600px;height:900px;min-height:900px;padding:36px 0 20px;} .wrap{width:1360px;} .panel,.metric,.card,.table,.callout{box-shadow:none;} }
+    @media screen and (max-width:900px){ .slide{width:1600px;height:900px;} }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">ENDO 2026 AI topic scan | Conference data retrieved May 30, 2026</div>
+      <h1>Artificial intelligence-related topics at ENDO 2026</h1>
+      <p class="dek">A full scan of 2,079 ENDO 2026 conference records identified 29 AI-related or AI-adjacent records after excluding non-AI abbreviations and disclosure-only uses.<a class="cite" href="ai_topic_inventory.json">A</a><a class="cite" href="run_manifest.json">B</a></p>
+      <div class="grid-4" style="margin-top:28px;">
+        <div class="metric"><div class="num">29</div><div class="label">Substantive AI/ML records retained.<a class="cite" href="ai_topic_inventory.json">A</a></div></div>
+        <div class="metric"><div class="num">5</div><div class="label">Topic clusters in the data.<a class="cite" href="ai_topic_inventory.json">A</a></div></div>
+        <div class="metric"><div class="num">10</div><div class="label">Diabetes and vascular disease records retained.<a class="cite" href="ai_topic_inventory.json">A</a></div></div>
+        <div class="metric"><div class="num">59</div><div class="label">Lexical candidates excluded or marked borderline.<a class="cite" href="run_manifest.json">B</a></div></div>
+      </div>
+      <div class="callout" style="margin-top:24px;">
+        <h3 class="accent-heading">Executive summary</h3>
+        <ul class="summary-list">
+          <li>The largest cluster was imaging AI and computer vision, including retinal fundus deep-learning models and thyroid ultrasound/molecular/histology AI applications.<a class="cite" href="https://endo2026.endocrine.org/ajaxcalls/PresentationInfo.asp?PresentationID=1830619">3</a><a class="cite" href="https://endo2026.endocrine.org/ajaxcalls/PresentationInfo.asp?PresentationID=1830671">4</a><a class="cite" href="https://endo2026.endocrine.org/ajaxcalls/PresentationInfo.asp?PresentationID=1830692">5</a></li>
+          <li>Diabetes technology content retained CGM-linked machine-learning markers and artificial-pancreas control systems, while AID-only records without AI/ML/control-system language were excluded.<a class="cite" href="https://endo2026.endocrine.org/ajaxcalls/SessionInfo.asp?PresentationID=1763904">1</a><a class="cite" href="ai_topic_inventory.json">A</a><a class="cite" href="https://endo2026.endocrine.org/ajaxcalls/PresentationInfo.asp?PresentationID=1844101">2</a></li>
+          <li>Generative-AI content appeared in education, diabetes education chatbot/tool building, and retrieval-augmented clinical decision support; AI/ChatGPT language-editing disclosures only were excluded.<a class="cite" href="https://endo2026.endocrine.org/ajaxcalls/SessionInfo.asp?PresentationID=1788077">8</a><a class="cite" href="ai_topic_inventory.json">A</a><a class="cite" href="https://endo2026.endocrine.org/ajaxcalls/PresentationInfo.asp?PresentationID=1844097">9</a><a class="cite" href="run_manifest.json">B</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">01 / 09</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Conference-scan scope</div>
+        <h2>Source basis was ENDO 2026 conference record data, not a live web refresh</h2>
+        <p>The scan covered ENDO 2026 abstract, poster, presentation, and session records with associated public source URLs and record metadata.<a class="cite" href="run_manifest.json">B</a></p>
+      </div>
+      <div class="grid-3">
+        <div class="card"><span class="tag lime">Full run</span><h3>2,079 records scanned</h3><p>The ENDO 2026 conference data includes 2,079 records, with source URLs available for the included abstracts, posters, sessions, and presentations.<a class="cite" href="run_manifest.json">B</a></p></div>
+        <div class="card"><span class="tag blue">Inclusive terms</span><h3>AI, ML, algorithms, automation</h3><p>Screening terms included artificial intelligence, AI, machine learning, ML, deep learning, neural network, algorithms, automated, prediction models, radiomics, LLMs, chatbots, and related phrases.<a class="cite" href="run_manifest.json">B</a></p></div>
+        <div class="card"><span class="tag orange">False positives</span><h3>Clinical abbreviations removed</h3><p>Records were excluded when AI meant adrenal insufficiency, aromatase inhibitor, or assay index, when ML appeared only in names/credentials, or when AI appeared only in an umbrella session title.<a class="cite" href="run_manifest.json">B</a></p></div>
+      </div>
+      <div class="panel dark" style="margin-top:18px;">
+        <h3 class="accent-heading">Interpretation boundary</h3>
+        <p style="font-size:24px;line-height:1.16;margin-top:10px;">Included records are AI-related conference topics identified from the record text. The report does not infer clinical validity beyond the abstract, poster, session, and presentation metadata.<a class="cite" href="ai_topic_inventory.json">A</a><a class="cite" href="run_manifest.json">B</a></p>
+      </div>
+    </div>
+    <div class="slide-num">02 / 09</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Topic clusters</div>
+        <h2>Substantive AI/ML records concentrated in imaging, LLMs, and phenotyping</h2>
+      </div>
+      <div class="grid-2">
+        <div class="panel">
+          <h3>Included records by cluster</h3>
+          <div class="bar-wrap" style="margin-top:18px;"><div class="bar-row"><div class="bar-label">Imaging AI and quantitative image analysis</div><div class="bar-track"><div style="width:31%"></div></div><div class="bar-val">9</div></div><div class="bar-row"><div class="bar-label">AI implementation, education, and governance</div><div class="bar-track"><div style="width:24%"></div></div><div class="bar-val">7</div></div><div class="bar-row"><div class="bar-label">ML prediction and computational phenotyping</div><div class="bar-track"><div style="width:21%"></div></div><div class="bar-val">6</div></div><div class="bar-row"><div class="bar-label">AI-enabled glucose-control systems</div><div class="bar-track"><div style="width:14%"></div></div><div class="bar-val">4</div></div><div class="bar-row"><div class="bar-label">Generative AI, LLMs, and decision support</div><div class="bar-track"><div style="width:10%"></div></div><div class="bar-val">3</div></div></div>
+          <p class="source-note">Counts reflect the topic cluster assigned to each retained record.<a class="cite" href="ai_topic_inventory.json">A</a></p>
+        </div>
+        <div class="panel dark">
+          <h3 class="accent-heading">Readout</h3>
+          <ul class="summary-list">
+            <li>Imaging topics covered retina, thyroid nodule/cancer, routine histology, MRI-derived measures, DXA, and radiomics.<a class="cite" href="ai_topic_inventory.json">A</a><a class="cite" href="ai_topic_inventory.json">A</a><a class="cite" href="ai_topic_inventory.json">A</a></li>
+            <li>Prediction and phenotyping topics retained machine-learning or named-ML methods, including PCOS subtyping, diabetes prediction, random-forest biomarkers, and SVM diagnostic models.<a class="cite" href="https://endo2026.endocrine.org/ajaxcalls/PresentationInfo.asp?PresentationID=1843540">6</a><a class="cite" href="ai_topic_inventory.json">A</a><a class="cite" href="https://endo2026.endocrine.org/ajaxcalls/PresentationInfo.asp?PresentationID=1843392">7</a></li>
+            <li>Implementation content included conference-level AI sessions and a healthcare implementation talk; language-editing-only disclosures are excluded from the retained AI-topic count.<a class="cite" href="https://endo2026.endocrine.org/ajaxcalls/SessionInfo.asp?PresentationID=1763889">10</a><a class="cite" href="ai_topic_inventory.json">A</a><a class="cite" href="run_manifest.json">B</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">03 / 09</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Diabetes technology</div>
+        <h2>Glucose-management AI content focused on CGM ML markers and control logic</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card"><span class="tag lime">CGM + ML</span><h3>Progression tracking</h3><p>The SY08 symposium description links CGM, self-adapting AI algorithms in insulin delivery, and CGM-based dynamic markers with machine learning for diabetes progression tracking.<a class="cite" href="https://endo2026.endocrine.org/ajaxcalls/SessionInfo.asp?PresentationID=1763904">1</a><a class="cite" href="ai_topic_inventory.json">A</a></p></div>
+        <div class="card"><span class="tag blue">AID boundary</span><h3>Automation alone excluded</h3><p>Automated insulin-delivery records were excluded when they described devices or real-world outcomes without explicit AI, ML, neural-network, or AI-control-system language.<a class="cite" href="run_manifest.json">B</a></p></div>
+        <div class="card"><span class="tag orange">Artificial pancreas</span><h3>Control systems</h3><p>One diabetes poster states that insulin-delivery results can be optimized by integrating artificial-intelligence-based control systems with artificial-pancreas technology.<a class="cite" href="https://endo2026.endocrine.org/ajaxcalls/PresentationInfo.asp?PresentationID=1844101">2</a></p></div>
+      </div>
+      <div class="panel" style="margin-top:18px;">
+        <h3>Boundary note</h3>
+        <p style="font-size:24px;line-height:1.16;margin-top:10px;color:var(--muted);">Automated insulin delivery alone is not counted as an AI topic. AID and glucose-control records are retained only when the record also states AI, ML, or AI-based control-system content.<a class="cite" href="run_manifest.json">B</a></p>
+      </div>
+    </div>
+    <div class="slide-num">04 / 09</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Imaging AI</div>
+        <h2>Computer-vision topics appeared across retina, thyroid, histology, and quantitative imaging</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card"><span class="tag lime">Retina</span><h3>EfficientNet and ResNet</h3><p>Diabetic-retinopathy records described EfficientNetB0/B1/B3 and ResNet152 neural-network approaches using fundus imaging for detection, severity staging, and differential diagnosis.<a class="cite" href="https://endo2026.endocrine.org/ajaxcalls/PresentationInfo.asp?PresentationID=1830619">3</a><a class="cite" href="ai_topic_inventory.json">A</a><a class="cite" href="ai_topic_inventory.json">A</a></p></div>
+        <div class="card"><span class="tag blue">Thyroid</span><h3>Ultrasound and histology</h3><p>Thyroid records included AIBx ultrasound software, an AI-driven multimodal thyroid tumor score, and a systematic review of predicting molecular alterations from routine histology.<a class="cite" href="https://endo2026.endocrine.org/ajaxcalls/PresentationInfo.asp?PresentationID=1830671">4</a><a class="cite" href="ai_topic_inventory.json">A</a><a class="cite" href="https://endo2026.endocrine.org/ajaxcalls/PresentationInfo.asp?PresentationID=1830692">5</a></p></div>
+        <div class="card"><span class="tag orange">Quantitative imaging</span><h3>Deep learning and DXA</h3><p>Adjacent imaging records included automated deep-learning-derived prostate volume from MRI and kNN-assisted bone pore-space measurement from spinal DXA images.<a class="cite" href="ai_topic_inventory.json">A</a><a class="cite" href="ai_topic_inventory.json">A</a></p></div>
+      </div>
+      <div class="panel dark" style="margin-top:18px;">
+        <h3 class="accent-heading">Caveat</h3>
+        <p style="font-size:24px;line-height:1.16;margin-top:10px;">The retained data separates records that report AI/ML or computer-vision methods from records that only mention radiomics or advanced imaging as a potential future modality.<a class="cite" href="ai_topic_inventory.json">A</a></p>
+      </div>
+    </div>
+    <div class="slide-num">05 / 09</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Prediction and phenotyping</div>
+        <h2>ML prediction and phenotyping topics were retained only when AI/ML methods were explicit</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card"><span class="tag lime">Metabolic disease</span><h3>Diabetes and PCOS</h3><p>Records described external validation of a diabetes prediction machine-learning model, unsupervised machine-learning PCOS subtypes, and a frugal AI PCOS risk score.<a class="cite" href="ai_topic_inventory.json">A</a><a class="cite" href="https://endo2026.endocrine.org/ajaxcalls/PresentationInfo.asp?PresentationID=1843540">6</a><a class="cite" href="ai_topic_inventory.json">A</a></p></div>
+        <div class="card"><span class="tag blue">Diagnostic modeling</span><h3>SVM and routine biomarkers</h3><p>One retained biochemical-marker record used support-vector-machine diagnostic models to distinguish primary hyperparathyroidism from IGF-I-induced metabolic changes in acromegaly.<a class="cite" href="https://endo2026.endocrine.org/ajaxcalls/PresentationInfo.asp?PresentationID=1843392">7</a></p></div>
+        <div class="card"><span class="tag orange">Biomarker panels</span><h3>Random forest</h3><p>One type 1 diabetes biomarker record used a machine-learning random forest model to identify a multivariate protein panel for autoantibody prediction.<a class="cite" href="ai_topic_inventory.json">A</a></p></div>
+      </div>
+    </div>
+    <div class="slide-num">06 / 09</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Generative AI and implementation</div>
+        <h2>LLMs appeared in education, patient education tool-building, and evidence-based diabetes decision support</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card"><span class="tag lime">Teaching</span><h3>LLM-assisted learning design</h3><p>An education session states that large language models would be used to design learning pathways and case studies in a hands-on teaching workshop.<a class="cite" href="https://endo2026.endocrine.org/ajaxcalls/SessionInfo.asp?PresentationID=1788077">8</a></p></div>
+        <div class="card"><span class="tag blue">Patient education</span><h3>Clinician-built tools</h3><p>A diabetes poster asks whether clinicians can build acceptable AI tools for diabetes education and matches the chatbot/LLM term set.<a class="cite" href="ai_topic_inventory.json">A</a></p></div>
+        <div class="card"><span class="tag orange">Clinical decision support</span><h3>RAG for type 2 diabetes</h3><p>Evidence Rx is described as evidence-based clinical decision support in type 2 diabetes using a retrieval-augmented generation system.<a class="cite" href="https://endo2026.endocrine.org/ajaxcalls/PresentationInfo.asp?PresentationID=1844097">9</a></p></div>
+      </div>
+      <div class="panel" style="margin-top:18px;">
+        <h3>AI implementation and disclosure</h3>
+        <p style="font-size:24px;line-height:1.16;margin-top:10px;color:var(--muted);">Conference programming also included AI implementation sessions. Records that disclosed ChatGPT or AI-assisted tools only for language or grammar editing are excluded from the retained AI-topic count.<a class="cite" href="https://endo2026.endocrine.org/ajaxcalls/SessionInfo.asp?PresentationID=1763889">10</a><a class="cite" href="ai_topic_inventory.json">A</a><a class="cite" href="run_manifest.json">B</a></p>
+      </div>
+    </div>
+    <div class="slide-num">07 / 09</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Notable records</div>
+        <h2>Selected records illustrate the range of AI-related conference topics</h2>
+      </div>
+      <div class="table">
+        <div class="row notable head"><div class="cell">Code</div><div class="cell">Record</div><div class="cell">Track</div></div>
+        <div class="row notable"><div class="cell code">SY11</div><div class="cell"><strong>Artificial Intelligence in Endocrinology: Practical Uses, Lessons Learned, and What Comes Next</strong><br><span>AI implementation, education, and governance</span></div><div class="cell">General Endocrinology<a class="cite" href="ai_topic_inventory.json">A</a></div></div><div class="row notable"><div class="cell code">SY08</div><div class="cell"><strong>In Range: Gadgets for a New Era of Precision Medicine in Glucose Management</strong><br><span>AI-enabled glucose-control systems</span></div><div class="cell">Website Technical Support<a class="cite" href="ai_topic_inventory.json">A</a></div></div><div class="row notable"><div class="cell code">ORF33-04</div><div class="cell"><strong>Efficient and Scalable Diabetic Retinopathy Screening using EfficientNetB0: Multiclass Detection, Severity Staging, and Differential Diagnosis from Fundus Imaging</strong><br><span>Imaging AI and quantitative image analysis</span></div><div class="cell">Diabetes and Vascular Disease<a class="cite" href="ai_topic_inventory.json">A</a></div></div><div class="row notable"><div class="cell code">ORF40-04</div><div class="cell"><strong>Aibx Software for Thyroid Cancer Diagnosis from Ultrasound Images: A Multicenter International Study</strong><br><span>Imaging AI and quantitative image analysis</span></div><div class="cell">Thyroid Biology and Disease<a class="cite" href="ai_topic_inventory.json">A</a></div></div><div class="row notable"><div class="cell code">ORF40-03</div><div class="cell"><strong>Thyroid Tumor Score-an AI-Driven Multimodal Model Combining Ultrasound and Multiplex Molecular Cytology for Risk Stratification of Thyroid Nodules</strong><br><span>Imaging AI and quantitative image analysis</span></div><div class="cell">Thyroid Biology and Disease<a class="cite" href="ai_topic_inventory.json">A</a></div></div><div class="row notable"><div class="cell code">MON-666</div><div class="cell"><strong>Evidence Rx: Evidence-Based Clinical Decision Support in Type 2 Diabetes Using Retrieval-Augmented Generation System</strong><br><span>Generative AI, LLMs, and decision support</span></div><div class="cell">Diabetes and Vascular Disease<a class="cite" href="ai_topic_inventory.json">A</a></div></div>
+      </div>
+      <p class="source-note">Selection is illustrative; the retained record set includes all 29 AI-related or AI-adjacent records.<a class="cite" href="ai_topic_inventory.json">A</a></p>
+    </div>
+    <div class="slide-num">08 / 09</div>
+  </article>
+
+  <article class="slide references-slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">References 1-10 plus data notes</div>
+        <h2>References</h2>
+      </div>
+      <div class="table">
+        <div class="row refs head"><div class="cell">Ref</div><div class="cell">Source</div><div class="cell">Date / Status / Source Owner</div><div class="cell">Evidence Used in Report</div></div>
+        <div class="row refs">
+    <div class="cell">1</div>
+    <div class="cell">SY08: In Range: Gadgets for a New Era of Precision Medicine in Glucose Management<a class="cite" href="https://endo2026.endocrine.org/ajaxcalls/SessionInfo.asp?PresentationID=1763904">1</a></div>
+    <div class="cell">Saturday, June 13, 2026<br>2026-05-30T04:35:40Z</div>
+    <div class="cell">Explicit artificial-intelligence technology or AI-focused programming. Machine-learning, deep-learning, neural-network architecture, or named ML method. AI-based algorithm or control-system language.</div>
+  </div><div class="row refs">
+    <div class="cell">2</div>
+    <div class="cell">MON-551: Optimization of the Results of Insulin Delivery with Artificial Pancreas by Integrating Artificial Intelligence-Based Control Systems<a class="cite" href="https://endo2026.endocrine.org/ajaxcalls/PresentationInfo.asp?PresentationID=1844101">2</a></div>
+    <div class="cell">Monday, June 15, 2026<br>2026-05-30T05:11:36Z</div>
+    <div class="cell">Explicit artificial-intelligence technology or AI-focused programming. Machine-learning, deep-learning, neural-network architecture, or named ML method. AI-based algorithm or control-system language.</div>
+  </div><div class="row refs">
+    <div class="cell">3</div>
+    <div class="cell">ORF33-04: Efficient and Scalable Diabetic Retinopathy Screening using EfficientNetB0: Multiclass Detection, Severity Staging, and Differential Diagnosis from Fundus Imaging<a class="cite" href="https://endo2026.endocrine.org/ajaxcalls/PresentationInfo.asp?PresentationID=1830619">3</a></div>
+    <div class="cell">Sunday, June 14, 2026<br>2026-05-30T04:38:16Z</div>
+    <div class="cell">Explicit artificial-intelligence technology or AI-focused programming. Machine-learning, deep-learning, neural-network architecture, or named ML method.</div>
+  </div><div class="row refs">
+    <div class="cell">4</div>
+    <div class="cell">ORF40-04: Aibx Software for Thyroid Cancer Diagnosis from Ultrasound Images: A Multicenter International Study<a class="cite" href="https://endo2026.endocrine.org/ajaxcalls/PresentationInfo.asp?PresentationID=1830671">4</a></div>
+    <div class="cell">Monday, June 15, 2026<br>2026-05-30T04:55:39Z</div>
+    <div class="cell">Explicit artificial-intelligence technology or AI-focused programming.</div>
+  </div><div class="row refs">
+    <div class="cell">5</div>
+    <div class="cell">ORF40-05: Can Molecular Alterations in Thyroid Cancer Be Predicted from Routine Histology using Artificial Intelligence? A Systematic Review<a class="cite" href="https://endo2026.endocrine.org/ajaxcalls/PresentationInfo.asp?PresentationID=1830692">5</a></div>
+    <div class="cell">Monday, June 15, 2026<br>2026-05-30T04:44:34Z</div>
+    <div class="cell">Explicit artificial-intelligence technology or AI-focused programming.</div>
+  </div><div class="row refs">
+    <div class="cell">6</div>
+    <div class="cell">MON-185: Pathogenesis-Specific Subtypes of PCOS Identified by Unsupervised Machine Learning Enable Precision Treatment<a class="cite" href="https://endo2026.endocrine.org/ajaxcalls/PresentationInfo.asp?PresentationID=1843540">6</a></div>
+    <div class="cell">Monday, June 15, 2026<br>2026-05-30T04:59:52Z</div>
+    <div class="cell">Machine-learning, deep-learning, neural-network architecture, or named ML method.</div>
+  </div><div class="row refs">
+    <div class="cell">7</div>
+    <div class="cell">MON-037: Distinguishing Primary Hyperparathyroidism from IGF-I-Induced Changes in Calcium and Phosphate Metabolism in Acromegaly using Routine Biochemical Markers.<a class="cite" href="https://endo2026.endocrine.org/ajaxcalls/PresentationInfo.asp?PresentationID=1843392">7</a></div>
+    <div class="cell">Monday, June 15, 2026<br>2026-05-30T04:39:18Z</div>
+    <div class="cell">Machine-learning, deep-learning, neural-network architecture, or named ML method.</div>
+  </div><div class="row refs">
+    <div class="cell">8</div>
+    <div class="cell">PD04: Effective Teaching Strategies<a class="cite" href="https://endo2026.endocrine.org/ajaxcalls/SessionInfo.asp?PresentationID=1788077">8</a></div>
+    <div class="cell">Sunday, June 14, 2026<br>2026-05-30T04:37:16Z</div>
+    <div class="cell">Generative AI, LLM, chatbot, or retrieval-augmented-generation content.</div>
+  </div><div class="row refs">
+    <div class="cell">9</div>
+    <div class="cell">MON-666: Evidence Rx: Evidence-Based Clinical Decision Support in Type 2 Diabetes Using Retrieval-Augmented Generation System<a class="cite" href="https://endo2026.endocrine.org/ajaxcalls/PresentationInfo.asp?PresentationID=1844097">9</a></div>
+    <div class="cell">Monday, June 15, 2026<br>2026-05-30T04:43:10Z</div>
+    <div class="cell">Explicit artificial-intelligence technology or AI-focused programming. Generative AI, LLM, chatbot, or retrieval-augmented-generation content.</div>
+  </div><div class="row refs">
+    <div class="cell">10</div>
+    <div class="cell">SY11: Artificial Intelligence in Endocrinology: Practical Uses, Lessons Learned, and What Comes Next<a class="cite" href="https://endo2026.endocrine.org/ajaxcalls/SessionInfo.asp?PresentationID=1763889">10</a></div>
+    <div class="cell">Saturday, June 13, 2026<br>2026-05-30T04:50:23Z</div>
+    <div class="cell">Explicit artificial-intelligence technology or AI-focused programming.</div>
+  </div>
+        <div class="row refs"><div class="cell">A</div><div class="cell">Conference record dataset<a class="cite" href="ai_topic_inventory.json">A</a></div><div class="cell">ENDO 2026 abstract/session records</div><div class="cell">Retained records, matched terms, topic clusters, and record-level classification basis.</div></div>
+        <div class="row refs"><div class="cell">B</div><div class="cell">Screening method notes<a class="cite" href="run_manifest.json">B</a><a class="cite" href="source-log.md">B</a></div><div class="cell">ENDO 2026 record metadata</div><div class="cell">Screened records, excluded lexical candidates, source URLs, caveats, and record metadata.</div></div>
+      </div>
+    </div>
+    <div class="slide-num">09 / 09</div>
+  </article>
+</body>
+</html>

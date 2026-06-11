@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The efficacy and limitations of artificial intelligence (AI) in radiologic tumor assessment.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>The efficacy and limitations of artificial intelligence (AI) in radiologic tumor assessment.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e20002</div>
+    <div><strong>First speaker:</strong> Sean Michael King, BA</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/265447">https://www.asco.org/abstracts-presentations/265447</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Numerous Artificial Intelligence (AI) models for evaluating radiologic images are emerging, yet limited data exist to demonstrate the efficacy of these tools, particularly within oncology. Notably, these tools often require assistance from radiologists to verify their accuracy, and thus further research is needed to help characterize the current efficacy and limitations of AI in radiologic tumor assessment. This study evaluated ChatGPT-5.2 in thoracic tumor identification and measurement in order to enhance our understanding of the current efficacy and limitations of AI in oncologic radiology assessments</div>
+  <main> 
+
+	<div><b>Background: </b> Numerous Artificial Intelligence (AI) models for evaluating radiologic images are emerging, yet limited data exist to demonstrate the efficacy of these tools, particularly within oncology. Notably, these tools often require assistance from radiologists to verify their accuracy, and thus further research is needed to help characterize the current efficacy and limitations of AI in radiologic tumor assessment. This study evaluated ChatGPT-5.2 in thoracic tumor identification and measurement in order to enhance our understanding of the current efficacy and limitations of AI in oncologic radiology assessments</p>  <b>Methods: </b> 61 publicly available CT scans with known thoracic tumors from the Lung CT Diagnosis collection (The Cancer Imaging Archive) were analyzed, with 1 dominant tumor per scan. A single radiologist identified tumors using a representative slice and measured maximal anteroposterior (AP), transverse (TV), and craniocaudal (CC) diameters, with tumor volume calculated using the ellipsoid formula. We sequentially prompted ChatGPT-5.2 to identify tumors on axial and coronal images and to generate corresponding measurements using DICOM metadata. Radiologist and AI measurements were compared using paired t-tests.</p>  <b>Results: </b> ChatGPT showed no significant differences from radiologist measurements for axial anteroposterior (26.2 vs 25.2 mm, p=0.176) or transverse diameters (26.9 vs 26.2 mm, p=0.397) across 61 tumor assessments. In contrast, craniocaudal diameters (34.6 vs 24.4 mm, p&lt;0.001) and derived tumor volumes (21.2 vs 14.4 mL, p&lt;0.001) were significantly overestimated. Average percent differences were modest for AP (7.3%) and TV (5.0%) but markedly higher for CC (51.5%) and volume (79.0%). Percent differences for volume measurements ranged from -100% to 745.6% different from the radiologist assessment. The median number of prompts required for correct tumor identification by ChatGPT was 3 for both axial and coronal images</p>  <b>Conclusions: </b> Although ChatGPT-5.2 is not a radiology-specific AI model, this tool utilizes similar approaches to radiology-specific models and can be trained to assess images. While the average percentage differences between ChatGPT and radiologist-assessed images appeared similar, we found wide variation in assessment percentage from image to image. Findings highlight that although AI models may provide a mechanism for aggregating and analyzing large volumes of data, further work is needed to identify how best to incorporate AI tools in radiologic tumor assessment.</div>
+
+
+
+	<div class="table_caption"><b>Comparison of radiologist and ChatGPT-5.2 tumor measurements (n = 61).</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td><strong>Measurement</strong></td>
+<td><strong>Radiologist Mean</strong></td>
+<td><strong>ChatGPT Mean</strong></td>
+<td><strong><em>p</em>-value (paired <em>t</em>-test)</strong></td>
+<td><strong>Mean % Difference</strong></td>
+<td><strong>% Difference Range</strong></td>
+</tr>
+<tr>
+<td>AP (mm)</td>
+<td>25.2</td>
+<td>26.2</td>
+<td>0.176</td>
+<td>7.3%</td>
+<td>-38.9 to 75%</td>
+</tr>
+<tr>
+<td>TV (mm)</td>
+<td>26.2</td>
+<td>26.9</td>
+<td>0.397</td>
+<td>5.0%</td>
+<td>-65.4 to 120%</td>
+</tr>
+<tr>
+<td>CC (mm)</td>
+<td>24.4</td>
+<td>34.6</td>
+<td>&lt;0.001</td>
+<td>51.5%</td>
+<td>-100 to 380%</td>
+</tr>
+<tr>
+<td>
+<p>Tumor Volume (mL)</p>
+</td>
+<td>14.4</td>
+<td>21.2</td>
+<td>&lt;0.001</td>
+<td>79.0%</td>
+<td>-100 to 745.6%</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AMT-130 Regulatory Setback: Foreseeable Evidence Lessons</title>
+  <style>
+    :root {
+      --paper: #f4efe3;
+      --card: #fffaf0;
+      --ink: #181714;
+      --muted: #59554d;
+      --line: #24231f;
+      --lime: #c7f000;
+      --blue: #7aa7ff;
+      --red: #e53935;
+      --orange: #ff8f00;
+      --green: #5ba66b;
+      --soft: #eee3cc;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #d6ccba;
+      color: var(--ink);
+      font-family: Inter, Arial, sans-serif;
+    }
+    .deck { width: 1600px; margin: 0 auto; }
+    .slide {
+      width: 1600px;
+      height: 900px;
+      position: relative;
+      overflow: hidden;
+      padding: 58px 70px 52px;
+      background: var(--paper);
+      border: 1px solid #bdb3a0;
+      page-break-after: always;
+    }
+    .slide::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(24,23,20,.045) 1px, transparent 1px),
+        linear-gradient(rgba(24,23,20,.035) 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: .28;
+      pointer-events: none;
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+    .eyebrow {
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-weight: 800;
+      color: #3f3a32;
+    }
+    h1, h2, h3 { font-family: "Space Grotesk", Inter, Arial, sans-serif; letter-spacing: 0; margin: 0; }
+    h1 { font-size: 78px; line-height: .98; max-width: 1230px; }
+    h2 { font-size: 44px; line-height: 1.05; max-width: 1360px; }
+    h3 { font-size: 24px; line-height: 1.1; margin-bottom: 10px; }
+    p, li { font-size: 22px; line-height: 1.26; margin: 0; color: #2e2b26; }
+    ul { margin: 0; padding-left: 26px; display: flex; flex-direction: column; gap: 10px; }
+    a { color: inherit; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+    .lede { font-size: 31px; line-height: 1.22; max-width: 1120px; color: #302d27; }
+    .grid { display: grid; gap: 20px; }
+    .two { grid-template-columns: 1fr 1fr; }
+    .three { grid-template-columns: repeat(3, 1fr); }
+    .panel, .metric, .callout, .evidence-note {
+      background: rgba(255,250,240,.92);
+      border: 2px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .metric .value {
+      font-family: "Space Grotesk", Inter, Arial, sans-serif;
+      font-size: 50px;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .metric .label {
+      margin-top: 10px;
+      font-size: 17px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .callout {
+      background: #eef8bd;
+      font-size: 25px;
+      line-height: 1.24;
+      font-weight: 750;
+    }
+    .tag-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .tag {
+      border: 1.5px solid var(--line);
+      border-radius: 999px;
+      background: #f8f0d9;
+      padding: 8px 12px;
+      font-size: 17px;
+      font-weight: 800;
+    }
+    .tag.red { background: #ffe3df; }
+    .tag.green { background: #e5f2dc; }
+    .tag.blue { background: #e4ecff; }
+    .timeline {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 18px;
+      margin-top: 6px;
+    }
+    .step {
+      background: var(--card);
+      border: 2px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+      min-height: 218px;
+    }
+    .date {
+      display: inline-block;
+      font-size: 18px;
+      font-weight: 900;
+      padding: 6px 10px;
+      border: 1.5px solid var(--line);
+      background: var(--lime);
+      margin-bottom: 12px;
+    }
+    .source-img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #fdfbf5;
+      border: 2px solid var(--line);
+      border-radius: 8px;
+    }
+    .evidence-frame { height: 600px; }
+    .evidence-frame.short { height: 520px; }
+    .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .pair .source-img { height: 435px; }
+    .caption {
+      font-size: 14px;
+      line-height: 1.24;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+    .small { font-size: 18px; line-height: 1.27; color: #4b463d; }
+    .dense p, .dense li { font-size: 20px; line-height: 1.23; }
+    .matrix {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 19px;
+      line-height: 1.22;
+      background: rgba(255,250,240,.92);
+      border: 2px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .matrix th, .matrix td {
+      border-bottom: 1.5px solid rgba(36,35,31,.35);
+      padding: 14px 16px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .matrix th {
+      background: #eadfc8;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .matrix tr:last-child td { border-bottom: 0; }
+    .quote {
+      border-left: 10px solid var(--red);
+      padding: 18px 24px;
+      background: #fff8e8;
+      font-size: 29px;
+      line-height: 1.18;
+      font-weight: 760;
+      max-width: 1280px;
+    }
+    .slide-num {
+      position: absolute;
+      right: 70px;
+      bottom: 30px;
+      font-size: 15px;
+      color: #5b554c;
+      z-index: 2;
+    }
+    .footer-note {
+      margin-top: auto;
+      font-size: 16px;
+      color: var(--muted);
+    }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      body { background: white; }
+      .deck { margin: 0; }
+      .slide { border: 0; }
+    }
+  </style>
+</head>
+<body>
+<main class="deck">
+  <article class="slide">
+    <div class="content">
+      <div class="eyebrow">Competitive intelligence | AMT-130 regulatory evidence review</div>
+      <h1>uniQure did not receive a CRL. FDA still sent a clear signal: external-control evidence was not enough.</h1>
+      <p class="lede">The most recent AMT-130 regulatory setback was final Type A meeting minutes, not a Complete Response Letter. The avoidable lesson is broader: for an invasive CNS gene therapy in a slow, heterogeneous neurodegenerative disease, a sham-controlled pivotal path should have been treated as base case, not contingency.</p>
+      <div class="tag-row">
+        <span class="tag red">Not a true CRL</span>
+        <span class="tag">External-control vulnerability</span>
+        <span class="tag">Sham surgery control precedent</span>
+        <span class="tag blue">Accelerated approval tightening</span>
+      </div>
+      <div class="callout">Conclusion: The exact FDA reversal was not fully predictable, but the risk was foreseeable enough that the sponsor could have built or pre-aligned a randomized sham-controlled pathway earlier.</div>
+      <div class="footer-note">All source screenshots in this deck were captured from webpages or browser-rendered PDF files with boxed evidence excerpts.</div>
+    </div>
+    <div class="slide-num">01 / 12</div>
+  </article>
+
+  <article class="slide">
+    <div class="content">
+      <div class="eyebrow">What happened</div>
+      <h2>The relevant action was final FDA meeting-minutes feedback, not a post-submission refusal to approve</h2>
+      <div class="grid three">
+        <div class="metric">
+          <div class="value">0</div>
+          <div class="label">AMT-130 CRLs found</div>
+          <p class="small">No public evidence located of an FDA Complete Response Letter for AMT-130. The BLA had not advanced to an approval decision.</p>
+        </div>
+        <div class="metric">
+          <div class="value">1</div>
+          <div class="label">Type A setback</div>
+          <p class="small">uniQure reported final minutes from a January 30, 2026 Type A meeting on March 2, 2026.</p>
+        </div>
+        <div class="metric">
+          <div class="value">1</div>
+          <div class="label">recommended remedy</div>
+          <p class="small">FDA strongly recommended a prospective, randomized, double-blind, sham surgery-controlled study.</p>
+        </div>
+      </div>
+      <div class="quote">This is CRL-like in business impact, but not a true CRL. That distinction matters because the preventable issue was trial-design risk before BLA submission.</div>
+      <div class="footer-note">Primary source basis: uniQure/GlobeNewswire March 2, 2026 regulatory update; no FDA-published AMT-130 CRL identified.</div>
+    </div>
+    <div class="slide-num">02 / 12</div>
+  </article>
+
+  <article class="slide">
+    <div class="content">
+      <div class="eyebrow">Timeline</div>
+      <h2>The public story moved from FDA alignment to a required controlled-study discussion in nine months</h2>
+      <div class="timeline">
+        <div class="step">
+          <span class="date">June 2, 2025</span>
+          <h3>Planned accelerated-approval BLA</h3>
+          <p>uniQure said FDA alignment supported an accelerated approval pathway and a first-quarter 2026 BLA plan using 3-year cUHDRS versus an ENROLL-HD external control.</p>
+        </div>
+        <div class="step">
+          <span class="date">Dec. 4, 2025</span>
+          <h3>Pre-BLA minutes reversal</h3>
+          <p>Final pre-BLA meeting minutes said Phase I/II AMT-130 data were currently unlikely to provide the primary evidence for a BLA submission.</p>
+        </div>
+        <div class="step">
+          <span class="date">March 2, 2026</span>
+          <h3>Type A minutes clarify the gap</h3>
+          <p>FDA could not agree that Phase I/II data compared with an external control were sufficient primary evidence and recommended a sham-controlled trial.</p>
+        </div>
+      </div>
+      <div class="callout">The most important learning is not that FDA changed its mind. It is that the evidence strategy relied on the most challengeable part of the package as the primary proof of effectiveness.</div>
+    </div>
+    <div class="slide-num">03 / 12</div>
+  </article>
+
+  <article class="slide">
+    <div class="content">
+      <div class="eyebrow">Evidence: prior expectation</div>
+      <h2>Source evidence shows the planned BLA path depended on FDA alignment around external controls</h2>
+      <div class="evidence-frame">
+        <img class="source-img" src="screenshots/s01_uniqure_prior_alignment_boxed.png" alt="uniQure June 2025 source screenshot with boxes around accelerated approval and BLA submission language" />
+      </div>
+      <p class="caption">Source: <a href="https://www.globenewswire.com/news-release/2025/06/02/3091732/0/en/uniqure-provides-regulatory-update-on-amt-130-for-huntington-s-disease.html">uniQure / GlobeNewswire, June 2, 2025</a>. Boxes mark the stated accelerated-approval pathway and planned Q1 2026 BLA submission.</p>
+    </div>
+    <div class="slide-num">04 / 12</div>
+  </article>
+
+  <article class="slide">
+    <div class="content">
+      <div class="eyebrow">Evidence: setback</div>
+      <h2>By March 2026, FDA had rejected the external-control package as primary evidence</h2>
+      <div class="pair">
+        <div>
+          <img class="source-img" src="screenshots/s02_uniqure_dec_reversal_boxed.png" alt="uniQure December 2025 PDF screenshot with box around pre-BLA minutes language" />
+          <p class="caption">December 2025: pre-BLA meeting minutes said Phase I/II data were unlikely to provide primary BLA evidence.</p>
+        </div>
+        <div>
+          <img class="source-img" src="screenshots/s03_uniqure_type_a_minutes_boxed.png" alt="uniQure March 2026 source screenshot with box around Type A meeting and sham-controlled study language" />
+          <p class="caption">March 2026: Type A minutes said FDA could not agree that Phase I/II plus external control were sufficient and strongly recommended sham control.</p>
+        </div>
+      </div>
+      <p class="caption">Sources: <a href="https://hdsa.org/wp-content/uploads/2025/12/uniQure-Provides-Regulatory-Update-on-AMT-130-for-Huntingtons-Disease.pdf">uniQure release rehosted as PDF by HDSA, Dec. 4, 2025</a>; <a href="https://www.globenewswire.com/news-release/2026/03/02/3247236/0/en/uniqure-provides-regulatory-update-on-amt-130-for-huntington-s-disease.html">uniQure / GlobeNewswire, March 2, 2026</a>.</p>
+    </div>
+    <div class="slide-num">05 / 12</div>
+  </article>
+
+  <article class="slide">
+    <div class="content">
+      <div class="eyebrow">Learning 1: external controls</div>
+      <h2>FDA's own external-control guidance makes the AMT-130 primary-evidence strategy a known risk</h2>
+      <div class="grid two">
+        <div class="dense">
+          <div class="panel">
+            <h3>Why this mattered for Huntington's disease</h3>
+            <ul>
+              <li>Clinical progression is slow and heterogeneous.</li>
+              <li>cUHDRS and TFC are clinically meaningful but observer- and trajectory-sensitive.</li>
+              <li>Phase I/II treated sample size was small, while the comparator came from a natural-history cohort.</li>
+              <li>Propensity weighting can improve balance, but it cannot replace randomization or blinding when unmeasured confounding remains plausible.</li>
+            </ul>
+          </div>
+          <div class="callout" style="margin-top:18px;">The guidance did not forbid external controls. It signaled that the design had to be fit-for-purpose and robust enough to support effectiveness.</div>
+        </div>
+        <div>
+          <img class="source-img" src="screenshots/s04_fda_external_controls_boxed.png" alt="FDA external-control guidance page screenshot with boxed definition of externally controlled trials" />
+          <p class="caption">Source: <a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/considerations-design-and-conduct-externally-controlled-trials-drug-and-biological-products">FDA draft guidance on externally controlled trials, February 2023</a>.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">06 / 12</div>
+  </article>
+
+  <article class="slide">
+    <div class="content">
+      <div class="eyebrow">Learning 2: CNS surgical-gene-therapy precedent</div>
+      <h2>Neurosurgical CNS programs had already shown why sham control could be necessary</h2>
+      <div class="grid two">
+        <div>
+          <img class="source-img" src="screenshots/s08_pubmed_cere120_boxed.png" alt="ClinicalTrials.gov screenshot for CERE-120 trial with boxes around sham-controlled study evidence" />
+        </div>
+        <div class="dense">
+          <div class="panel">
+            <h3>Relevant precedent</h3>
+            <ul>
+              <li>CERE-120, an AAV2-neurturin Parkinson's disease gene therapy, moved from open-label promise into a double-blind, randomized, sham-surgery controlled trial.</li>
+              <li>The published Lancet Neurology abstract reported no significant primary-endpoint difference versus sham control at 12 months.</li>
+              <li>For AMT-130, the direct lesson was not disease or vector identity. It was procedural and measurement bias: invasive brain-delivered therapies can create expectation, observer, and surgery-related effects that regulators may want controlled prospectively.</li>
+            </ul>
+          </div>
+          <div class="callout" style="margin-top:18px;">A sponsor could reasonably argue AMT-130's disease biology differs. It could not reasonably ignore the sham-control precedent for brain-delivered gene therapy.</div>
+          <p class="caption">Screenshot source: <a href="https://clinicaltrials.gov/study/NCT00400634?tab=results">ClinicalTrials.gov NCT00400634</a>. Publication source: <a href="https://pubmed.ncbi.nlm.nih.gov/20970382/">Marks et al., Lancet Neurology 2010, PubMed record</a>.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">07 / 12</div>
+  </article>
+
+  <article class="slide">
+    <div class="content">
+      <div class="eyebrow">Learning 3: prior alignment can be revisited</div>
+      <h2>Recent single-arm programs show that FDA alignment did not eliminate design-risk exposure</h2>
+      <div class="pair">
+        <div>
+          <img class="source-img" src="screenshots/s05_pierre_fabre_tabelecleucel_boxed.png" alt="Pierre Fabre PDF screenshot with box around tabelecleucel CRL language about single-arm ALLELE study" />
+          <p class="caption">Tabelecleucel: a January 2026 CRL said FDA no longer considered the previously accepted single-arm ALLELE study adequate for accelerated approval.</p>
+        </div>
+        <div>
+          <img class="source-img" src="screenshots/s06_replimune_rp1_boxed.png" alt="Replimune source screenshot with box around FDA prior single-arm acceptance language" />
+          <p class="caption">RP1: Replimune described prior FDA statements that a single-arm trial could be acceptable if sufficiently compelling, yet the program still received a CRL.</p>
+        </div>
+      </div>
+      <p class="caption">Sources: <a href="https://www.pierrefabrepharmaceuticals.com/sites/default/files/press/20260112_PS_FDA%20CRL%20on%20EBVALLO%20BLA.pdf">Pierre Fabre, Jan. 12, 2026 PDF statement</a>; <a href="https://www.globenewswire.com/news-release/2026/04/10/3272063/0/en/Replimune-Receives-Complete-Response-Letter-from-the-FDA-for-RP1-Biologics-License-Application-for-the-Treatment-of-Advanced-Melanoma.html">Replimune / GlobeNewswire, Apr. 10, 2026</a>.</p>
+    </div>
+    <div class="slide-num">08 / 12</div>
+  </article>
+
+  <article class="slide">
+    <div class="content">
+      <div class="eyebrow">Learning 4: accelerated approval operations</div>
+      <h2>Even when efficacy and safety are not the issue, confirmatory-trial readiness can drive CRL risk</h2>
+      <div class="grid two">
+        <div>
+          <img class="source-img" src="screenshots/s07_regeneron_odronextamab_boxed.png" alt="Regeneron source screenshot with boxes around confirmatory trial enrollment CRL language" />
+          <p class="caption">Source: <a href="https://www.globenewswire.com/news-release/2024/03/25/2851488/0/en/Regeneron-Provides-Update-on-Biologics-License-Application-for-Odronextamab.html">Regeneron / GlobeNewswire, March 25, 2024</a>.</p>
+        </div>
+        <div class="dense">
+          <div class="panel">
+            <h3>How this maps to AMT-130</h3>
+            <ul>
+              <li>Odronextamab's CRLs were not about efficacy, safety, trial design, labeling, or manufacturing. They were about confirmatory-trial status.</li>
+              <li>That precedent reinforces a conservative accelerated-approval operating model: the controlled evidence plan must be active, credible, and synchronized with the filing strategy.</li>
+              <li>For AMT-130, a sham-controlled trial plan should have been more than a fallback scenario once the filing package depended on external controls.</li>
+            </ul>
+          </div>
+          <div class="callout" style="margin-top:18px;">Regulators can support flexibility and still require the confirmatory or controlled-study machinery to be real before approval.</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">09 / 12</div>
+  </article>
+
+  <article class="slide">
+    <div class="content">
+      <div class="eyebrow">Sponsor-readiness checklist</div>
+      <h2>What uniQure's sponsor could or should have stress-tested earlier</h2>
+      <table class="matrix">
+        <thead>
+          <tr>
+            <th>Risk area</th>
+            <th>Prior evidence to look at</th>
+            <th>Action that could have reduced CRL-like setback risk</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>External-control comparability</td>
+            <td>FDA external-control guidance; AMT-130 reliance on ENROLL-HD, TRACK-HD/TRACK-ON, and PREDICT-HD sensitivity analyses.</td>
+            <td>Pre-specify a controlled fallback and treat external controls as supportive unless FDA acceptance was locked at filing-grade specificity.</td>
+          </tr>
+          <tr>
+            <td>CNS surgical bias</td>
+            <td>CERE-120 sham-controlled Parkinson's disease gene therapy trial.</td>
+            <td>Start or protocol-ready a randomized double-blind sham-controlled trial earlier, even if accelerated approval was pursued.</td>
+          </tr>
+          <tr>
+            <td>Prior-alignment fragility</td>
+            <td>Tabelecleucel and RP1 single-arm evidence disputes.</td>
+            <td>Communicate alignment as conditional and reversible; avoid treating design discussions as durable approval evidence.</td>
+          </tr>
+          <tr>
+            <td>Accelerated-approval readiness</td>
+            <td>Odronextamab CRLs tied to confirmatory-trial enrollment status.</td>
+            <td>Ensure the controlled/confirmatory study is not only proposed but operationally credible before the BLA package becomes dependent on it.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="slide-num">10 / 12</div>
+  </article>
+
+  <article class="slide">
+    <div class="content">
+      <div class="eyebrow">Foreseeability assessment</div>
+      <h2>This was foreseeable as a material regulatory risk, but not as a guaranteed FDA reversal</h2>
+      <div class="grid two">
+        <div class="panel">
+          <h3>Foreseeable</h3>
+          <ul>
+            <li>Primary evidence came from a small Phase I/II surgical gene therapy program compared with external controls.</li>
+            <li>The indication involves slow, variable neurodegenerative progression.</li>
+            <li>FDA guidance and CNS neurosurgical precedents made bias and comparability obvious review risks.</li>
+            <li>Recent CRLs show single-arm or accelerated-approval strategies can be revisited despite prior interaction history.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Not fully predictable</h3>
+          <ul>
+            <li>uniQure had publicly described FDA alignment on endpoint, SAP, and external-control dataset elements before the setback.</li>
+            <li>RMAT and Breakthrough designations plausibly supported a view that FDA would entertain flexibility.</li>
+            <li>The exact Type A outcome and timing could not be known externally before the meeting minutes.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout">Final read: do not say "there was no way to foresee this." A more precise statement is that the strength of FDA's reversal was uncertain, while the trial-design risk was visible enough to warrant earlier controlled-study planning.</div>
+    </div>
+    <div class="slide-num">11 / 12</div>
+  </article>
+
+  <article class="slide">
+    <div class="content">
+      <div class="eyebrow">Implications</div>
+      <h2>Practical takeaway for future rare-disease gene therapy programs</h2>
+      <div class="grid two">
+        <div class="panel">
+          <h3>Base-case evidence plan</h3>
+          <ul>
+            <li>Use external controls to enrich, contextualize, and support sensitivity analyses.</li>
+            <li>Use randomization and blinding when the clinical endpoint, procedure, or disease trajectory can plausibly be biased.</li>
+            <li>Make the confirmatory or controlled trial operational before it becomes a post-setback rescue plan.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Investor and internal communication</h3>
+          <ul>
+            <li>Separate FDA agreement on analysis components from agreement that the total package is filing-grade primary evidence.</li>
+            <li>Label RMAT, Breakthrough, and accelerated-approval interactions as facilitative, not dispositive.</li>
+            <li>Stress-test public claims against worst-case FDA interpretation of adequacy and well-controlled evidence.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="evidence-note">
+        <h3>Source log</h3>
+        <p class="small">uniQure June 2025, uniQure December 2025 PDF, uniQure March 2026, FDA externally controlled trials guidance, ClinicalTrials.gov CERE-120 trial record, PubMed CERE-120 publication record, Pierre Fabre tabelecleucel CRL PDF, Replimune RP1 CRL release, Regeneron odronextamab CRL release. All screenshots were captured through Chrome from webpages or browser-rendered PDFs and annotated with bounding boxes around relevant source language.</p>
+      </div>
+    </div>
+    <div class="slide-num">12 / 12</div>
+  </article>
+</main>
+</body>
+</html>

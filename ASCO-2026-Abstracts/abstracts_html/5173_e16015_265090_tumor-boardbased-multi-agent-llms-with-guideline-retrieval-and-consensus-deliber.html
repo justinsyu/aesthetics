@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tumor board–based multi-agent LLMs with guideline retrieval and consensus deliberation: Implications for hepatocellular carcinoma clinical reasoning.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Tumor board–based multi-agent LLMs with guideline retrieval and consensus deliberation: Implications for hepatocellular carcinoma clinical reasoning.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e16015</div>
+    <div><strong>First speaker:</strong> Ernest Saenz, MSc</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/265090">https://www.asco.org/abstracts-presentations/265090</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Hepatocellular carcinoma (HCC), requires multidisciplinary decision-making across specialities. Multidisciplinary team (MDT) care has been associated with improved outcomes in HCC cohorts, yet major care-process gaps persist. Conventional single-call large language model (LLM) inference for clinical decision support may be constrained by limited guideline grounding. We evaluated whether an MDT-analogous multi-agent consensus architecture augmented with guideline retrieval improves LLM accuracy on validated HCC clinical reasoning tasks versus standard single-call inference.</div>
+  <main> 
+
+	<div><b>Background: </b> Hepatocellular carcinoma (HCC), requires multidisciplinary decision-making across specialities. Multidisciplinary team (MDT) care has been associated with improved outcomes in HCC cohorts, yet major care-process gaps persist. Conventional single-call large language model (LLM) inference for clinical decision support may be constrained by limited guideline grounding. We evaluated whether an MDT-analogous multi-agent consensus architecture augmented with guideline retrieval improves LLM accuracy on validated HCC clinical reasoning tasks versus standard single-call inference.</p>  <b>Methods: </b> We developed a multi-agent system comprising three specialist agents (hepatology, oncology, radiology personas) and a supervisor agent. The system used retrieval-augmented generation (RAG) over a curated guideline corpus (AASLD, EASL, ESMO, BSG) implemented in a vector store, retrieving the top-5 passages per case. Performance was benchmarked against baseline single-call inference on a validated 88-item HCC Script Concordance Test (SCT) validated by 3 hepatologists with more than 10 years of experience. We evaluated a top large model (gpt-5.2) and a top small model (qwen3_vl_30b_thinking) selected from an initial benchmarking of 10 LLMs. </p>  <b>Results: </b> Baseline single-call accuracy ranged from 61.8% to 74.9% with no significant heterogeneity (Friedman p = 0.44). Large versus small model classes showed no significant difference (69.9% vs 67.4%; Wilcoxon p = 0.26). The multi-agent consensus architecture produced significant improvements for both model classes. For the large model (gpt-5.2), accuracy improved from 74.2% to 80.3% (+6.1 percentage points; 95% CI, 75.1-85.4%; p = 0.020). For the small model (qwen3-vl-30b), accuracy improved from 55.4% to 64.8% (+9.4; 95% CI, 57.0-72.5%; p = 0.029). Notably, the small model demonstrated the largest absolute gain; item-level analysis showed 17 previously incorrect items converted to correct versus only 3 errors introduced (McNemar p = 0.004). Run-to-run consistency was maintained or improved (gpt-5.2: 93%; qwen3-vl-30b: 55% to 73%).</p>  <b>Conclusions: </b> A tumor board-inspired multi-agent LLM architecture with guideline retrieval significantly improved HCC clinical reasoning accuracy for both large and small models, suggesting clinical relevance. The larger proportional benefit in smaller models raises the possibility of cost-effective deployment using open-weight architectures. Prospective validation should assess impact on tumor board efficiency, guideline adherence rates, and patient outcomes.</div>
+
+
+
+	<div class="table_caption"><b>Summary Comparison Table</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p>Metric</p>
+</td>
+<td>
+<p>GPT-5.2 Solo</p>
+</td>
+<td>
+<p>GPT-5.2 Consensus</p>
+</td>
+<td>
+<p>Qwen Solo</p>
+</td>
+<td>
+<p>Qwen Consensus</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Accuracy</p>
+</td>
+<td>
+<p>74.2%</p>
+</td>
+<td>
+<p>80.3%</p>
+</td>
+<td>
+<p>55.4%</p>
+</td>
+<td>
+<p>64.8%</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>95% CI</p>
+</td>
+<td>
+<p>68.1-79.8%</p>
+</td>
+<td>
+<p>75.1-85.4%</p>
+</td>
+<td>
+<p>48.8-62.0%</p>
+</td>
+<td>
+<p>57.0-72.5%</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Wilcoxon p</p>
+</td>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>0.020</p>
+</td>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>0.029</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>McNemar p</p>
+</td>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>0.19</p>
+</td>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>0.004</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Consistency</p>
+</td>
+<td>
+<p>95.8%</p>
+</td>
+<td>
+<p>93.0%</p>
+</td>
+<td>
+<p>54.9%</p>
+</td>
+<td>
+<p>73.2%</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

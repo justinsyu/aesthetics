@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Automated abstraction of colorectal cancer registry data using AI: Accuracy and implementation insights.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Automated abstraction of colorectal cancer registry data using AI: Accuracy and implementation insights.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e15516</div>
+    <div><strong>First speaker:</strong> Jacob Lindberg</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/262937">https://www.asco.org/abstracts-presentations/262937</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Cancer registries support surveillance, quality measurement, and research, yet abstraction of high-value clinical variables remains heavily manual. Human registrars must synthesize information across structured fields and unstructured documentation, including pathology, operative reports, imaging, and oncology notes, resulting in time-intensive workflows that are difficult to standardize and scale. Automated chart abstraction of registry variables directly from the electronic medical record (EMR), particularly from unstructured text, could improve efficiency, timeliness, and consistency of registry data capture and reporting.</div>
+  <main> 
+
+	<div><b>Background: </b> </p>  Cancer registries support surveillance, quality measurement, and research, yet abstraction of high-value clinical variables remains heavily manual. Human registrars must synthesize information across structured fields and unstructured documentation, including pathology, operative reports, imaging, and oncology notes, resulting in time-intensive workflows that are difficult to standardize and scale. Automated chart abstraction of registry variables directly from the electronic medical record (EMR), particularly from unstructured text, could improve efficiency, timeliness, and consistency of registry data capture and reporting.</p>  <b>Methods: </b> </p>  We evaluated Synapsis AI, an AI-based abstraction system developed by Dyania Health, Inc. to automate extraction of colorectal cancer (CRC) registry variables from the EMR. Adult patients (18–90 years) treated at Cleveland Clinic with the ICD-10 codes C18-C20 first recorded during Q1 2024 were included, capped at 200 cases. The system was instructed to abstract 33 registry fields corresponding to 60 questions per patient, including mainly unstructured data, such as staging, lymph node metrics, biomarkers, treatments, and surgical details, as defined in STORE and SSDI guidelines. AI outputs were compared with registrar-abstracted tumor registry data.</p>  <b>Results: </b> </p>  Overall accuracy across all fields was 94.78%. Question-level accuracy reached 100% for lymph node yield and positivity, pathologic and post-therapy TNM stage, mismatch repair and microsatellite instability status, immunotherapy regimens, and surgical procedures. The lowest accuracy (28%) occurred for residual colorectal tumor presence. This was primarily due to ambiguity in field definition rather than model error: when no relevant documentation was identified, the system returned “NA,” reflecting a weak negative inference, whereas registry standards required a “No” response. Additional contributors to inaccuracies included incomplete access to imaging reports and insufficient upfront alignment on field definitions and response conventions. Accuracy exceeded 72% across all remaining fields.</p>  <b>Conclusions: </b> </p>  These findings demonstrate that AI can accurately abstract CRC registry data at scale. Importantly, performance limitations were largely attributable to scoping of fields and access to relevant data, rather than model capability. Proper upfront scoping to align definitions, explicit communication of registrar-developed abstraction conventions, and health-system defined prioritization of sources of truth are critical to achieving registrar-aligned automation. When these elements are addressed, AI systems can function as reliable, scalable extensions of cancer registry workflows.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

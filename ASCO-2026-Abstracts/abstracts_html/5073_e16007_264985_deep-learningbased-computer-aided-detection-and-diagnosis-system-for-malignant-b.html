@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deep learning–based computer-aided detection and diagnosis system for malignant biliary stricture (with videos).</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Deep learning–based computer-aided detection and diagnosis system for malignant biliary stricture (with videos).</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e16007</div>
+    <div><strong>First speaker:</strong> Qingyu Tang, MD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/264985">https://www.asco.org/abstracts-presentations/264985</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Timely and precise diagnosis of malignant biliary stricture (MBS) remains challenging. Although digital single-operator cholangioscopy (DSOC) assists endoscopists, suboptimal diagnosis accuracy is observed. This study introduces a novel deep learning (DL)-based computer-aided detection (CADe) and computer-aided diagnosis (CADx) system to enhance MBS diagnosis.</div>
+  <main> 
+
+	<div><b>Background: </b></p>  Timely and precise diagnosis of malignant biliary stricture (MBS) remains challenging. Although digital single-operator cholangioscopy (DSOC) assists endoscopists, suboptimal diagnosis accuracy is observed. This study introduces a novel deep learning (DL)-based computer-aided detection (CADe) and computer-aided diagnosis (CADx) system to enhance MBS diagnosis.</p>  <b>Methods: </b></p>  In this retrospective, multicenter study, the CADe and CADx system were developed using a two-stage convolutional neural network (CNN) architecture trained on 10,443 DSOC images from 174 patients across three hospitals in China. For CADe, the YOLOv11 object detection CNN was applied to detect typical cancer features in real-time. For CADx, the ResNet18 CNN provided diagnostic classification, with visualization explanations. Model performance was assessed through standard metrics and comparison with expert endoscopists. A practical platform demo was implemented to facilitate real world application.</p>  <b>Results: </b></p>  The CADe system achieved a mean average precision at 50% intersection-over-union (mAP50) of 91.2% for identifying the targeted malignant features, with an overall precision of 92.0% and recall of 87.0%. The CADx model attained an area under the receiver operating characteristic curve (AUC) of 0.960 in internal validation and 0.843 in external validation. The system matched expert sensitivity while improving specificity and positive predictive value (PPV). The system demonstrated significant improvements compared to expert endoscopists (p &lt; 0.05).</p>  <b>Conclusions: </b></p>  This study presents the first CADe and CADx system for accurate, real-time MBS detection and diagnosis during DSOC with superior performance compared to conventional methods. The integration of CADe and CADx effectively enhances the potential clinical utility of AI-assisted DSOC for MBS diagnosis.</div>
+
+
+
+	<div class="table_caption"><b>Table 1. Performance metrics of the DL-based MBS CADe and CADx system in diagnosis classification for MBS during DSOC.</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p><strong>Metrics</strong></p>
+</td>
+<td>
+<p><strong>Internal validation</strong></p>
+</td>
+<td>
+<p><strong>External validation</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>AUC (95% CI)</p>
+</td>
+<td>
+<p>0.960 (0.945 – 0.975)</p>
+</td>
+<td>
+<p>0.843 (0.826 – 0.860)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Sensitivity (95% CI)</p>
+</td>
+<td>
+<p>0.922 (0.892 – 0.946)</p>
+</td>
+<td>
+<p>0.520 (0.485 – 0.556)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Specificity (95% CI)</p>
+</td>
+<td>
+<p>0.880 (0.822 – 0.922)</p>
+</td>
+<td>
+<p>0.952 (0.946 – 0.958)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Accuracy (95% CI)</p>
+</td>
+<td>
+<p>0.908 (0.884 – 0.932)</p>
+</td>
+<td>
+<p>0.887 (0.878 – 0.895)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>PPV (95% CI)</p>
+</td>
+<td>
+<p>0.938 (0.907 – 0.961)</p>
+</td>
+<td>
+<p>0.659 (0.621 – 0.696)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>NPV (95% CI)</p>
+</td>
+<td>
+<p>0.851 (0.792 – 0.898)</p>
+</td>
+<td>
+<p>0.918 (0.910 – 0.926)</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+ 
+	<div class="table_footer">AUC, area under the curve; CI, confidence interval; PPV, positive predictive value; NPV, negative predictive value</div> 
+
+
+</main>
+</body>
+</html>

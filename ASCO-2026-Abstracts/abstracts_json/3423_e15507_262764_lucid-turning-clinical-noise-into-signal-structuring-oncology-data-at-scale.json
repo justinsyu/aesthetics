@@ -1,0 +1,64 @@
+{
+  "abstractNumber": "e15507",
+  "body": " \r\n\r\n\t<div><b>Background: </b> Most clinically meaningful oncology information is recorded in unstructured formats, limiting its consistent use. Northwell Health diagnoses approximately 26,000 new cancer patients annually and operates a data lake in which all patient-level digital information is accessible. LUCID was developed to convert unstructured oncology data into structured representations in order to enable reliable downstream clinical, research, and operational use.</p>  <b>Methods: </b> LUCID is a platform deployed within a secure, HIPAA compliant environment designed to convert unstructured oncology data into clinically meaningful variables. The architecture combines natural language processing pipelines with modular large language model agents using GPT-5-mini. The modules described here characterize cancer presence, pathologic features, surgical resection events, staging, and follow longitudinal radiographic disease status. Each module was evaluated against clinician-validated ground truth, with cases reviewed by at least two clinicians and disagreements adjudicated by a third reviewer. Performance was assessed using accuracy, precision, recall, and F1 score. Time per patient abstraction and computational cost were measured.</p>  <b>Results: </b> 30 patient records were randomly select amongst patients who had undergone a biopsy at Northwell Health within the last decade and had a GI malignancy-associated ICD code; 20 of these cases had malignancy identified and were then assessed for staging and radiographic changes over time. These cases represented real-world heterogeneity including &gt;6 histologies, a range of TNM stages (I-IV), and a breadth of longitudinal imaging assessments (average 13 per patient). Across evaluated domains, LUCID achieved accuracy ranging from 93.0% to 100.0%, with F1 scores from 0.96 to 1 (Table 1). False positives (FP) describe identification of events such as progression or response, whereas false negatives (FN) represent no call detected for an event. Errors were typically attributed to clinical edge-cases such as pseudo-malignant cysts. Abstraction required a total of 85 seconds per patient and 3 cents in processing cost. </p>  <b>Conclusions: </b> This proof- of- principle shows that structured oncology information can be extracted efficiently and at scale from unstructured clinical data within a health-system data lake. Although LUCID is capable of generating longitudinal patient timelines, this evaluation focused on module-level performance to enable objective measurements. Ongoing work applies this architecture to expand clinical and research capabilities system-wide.</div>\r\n\r\n\r\n\r\n\t<div class=\"table_caption\"><b>LUCID Module Performance</b></div> \r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<p>Domain </p>\r\n</td>\r\n<td>\r\n<p>N </p>\r\n</td>\r\n<td>\r\n<p>Accuracy </p>\r\n</td>\r\n<td>\r\n<p>Precision </p>\r\n</td>\r\n<td>\r\n<p>Recall </p>\r\n</td>\r\n<td>\r\n<p>F1 </p>\r\n</td>\r\n<td>\r\n<p>Error profile </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Cancer Presence </p>\r\n</td>\r\n<td>\r\n<p>30 </p>\r\n</td>\r\n<td>\r\n<p>100% </p>\r\n</td>\r\n<td>\r\n<p>100% </p>\r\n</td>\r\n<td>\r\n<p>100% </p>\r\n</td>\r\n<td>\r\n<p>100% </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Valid Resection </p>\r\n</td>\r\n<td>\r\n<p>30 </p>\r\n</td>\r\n<td>\r\n<p>93% </p>\r\n</td>\r\n<td>\r\n<p>100% </p>\r\n</td>\r\n<td>\r\n<p>82% </p>\r\n</td>\r\n<td>\r\n<p>90% </p>\r\n</td>\r\n<td>\r\n<p>2 FN </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Histology and Differentiation </p>\r\n</td>\r\n<td>\r\n<p>30 </p>\r\n</td>\r\n<td>\r\n<p>97% </p>\r\n</td>\r\n<td>\r\n<p>95% </p>\r\n</td>\r\n<td>\r\n<p>100% </p>\r\n</td>\r\n<td>\r\n<p>98% </p>\r\n</td>\r\n<td>\r\n<p>1 FP </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>T stage </p>\r\n</td>\r\n<td>\r\n<p>20 </p>\r\n</td>\r\n<td>\r\n<p>100% </p>\r\n</td>\r\n<td>\r\n<p>100% </p>\r\n</td>\r\n<td>\r\n<p>100% </p>\r\n</td>\r\n<td>\r\n<p>100% </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>N stage </p>\r\n</td>\r\n<td>\r\n<p>20 </p>\r\n</td>\r\n<td>\r\n<p>100% </p>\r\n</td>\r\n<td>\r\n<p>100% </p>\r\n</td>\r\n<td>\r\n<p>100% </p>\r\n</td>\r\n<td>\r\n<p>100% </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>M stage </p>\r\n</td>\r\n<td>\r\n<p>20 </p>\r\n</td>\r\n<td>\r\n<p>95% </p>\r\n</td>\r\n<td>\r\n<p>95% </p>\r\n</td>\r\n<td>\r\n<p>100% </p>\r\n</td>\r\n<td>\r\n<p>97% </p>\r\n</td>\r\n<td>\r\n<p>1 FP </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Radiographic Changes </p>\r\n</td>\r\n<td>\r\n<p>106 </p>\r\n</td>\r\n<td>\r\n<p>96% </p>\r\n</td>\r\n<td>\r\n<p>95% </p>\r\n</td>\r\n<td>\r\n<p>98% </p>\r\n</td>\r\n<td>\r\n<p>96% </p>\r\n</td>\r\n<td>\r\n<p>3 FP </p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n\r\n\r\n",
+  "contentId": "262764",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/262764",
+    "queryParams": null,
+    "target": null,
+    "title": "LUCID: Turning clinical noise into signal, structuring oncology data at scale."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION262764"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": null,
+  "presentationId": "262764",
+  "primaryPerson": {
+    "displayName": "Nicholas James Hornstein, MD, PhD",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": "Most clinically meaningful oncology information is recorded in unstructured formats, limiting its consistent use. Northwell Health diagnoses approximately 26,000 new cancer patients annually and operates a data lake in which all patient-level digital information is accessible. LUCID was developed to convert unstructured oncology data into structured representations in order to enable reliable downstream clinical, research, and operational use.",
+  "taxonomy": null,
+  "title": "LUCID: Turning clinical noise into signal, structuring oncology data at scale.",
+  "titles": null,
+  "uid": "PRESENTATION262764"
+}

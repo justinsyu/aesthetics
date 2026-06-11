@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pharma Agent Decision Criteria</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 26px;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    html,
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.28;
+      letter-spacing: 0;
+      scrollbar-width: none;
+    }
+
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar { display: none; }
+
+    h1,
+    h2,
+    h3,
+    p { margin: 0; }
+
+    .slide {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: stretch;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+
+    .slide:last-child {
+      page-break-after: auto;
+      break-after: auto;
+    }
+
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      width: min(1360px, calc(100vw - 48px));
+      height: 100%;
+      margin: 0 auto;
+      padding: 58px 0 42px;
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+    }
+
+    .topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 34px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      background: var(--lime);
+      color: var(--ink);
+      padding: 8px 13px 7px;
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      white-space: nowrap;
+    }
+
+    .slide-no {
+      display: none;
+      color: rgba(16, 18, 15, .48);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 410px 1fr;
+      gap: 66px;
+      align-items: center;
+      flex: 1;
+      min-height: 0;
+    }
+
+    h1 {
+      font-size: 82px;
+      line-height: .92;
+      font-weight: 520;
+      letter-spacing: 0;
+      max-width: 390px;
+    }
+
+    h2 {
+      font-size: 56px;
+      line-height: .98;
+      font-weight: 520;
+      letter-spacing: 0;
+      max-width: 920px;
+    }
+
+    .lead {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 25px;
+      line-height: 1.32;
+      max-width: 390px;
+      font-weight: 500;
+    }
+
+    .decision-panel,
+    .example-card {
+      border: 2px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 250, 240, .9);
+      box-shadow: var(--shadow);
+    }
+
+    .decision-panel {
+      position: relative;
+      padding: 28px;
+      display: grid;
+      gap: 16px;
+      align-content: center;
+      transform: translateY(-52px);
+    }
+
+    .decision-row {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+      min-height: 154px;
+    }
+
+    .row-chip {
+      position: absolute;
+      left: 50%;
+      top: -11px;
+      transform: translateX(-50%);
+      z-index: 2;
+      width: 330px;
+      height: 46px;
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      background: var(--pink);
+      display: grid;
+      place-items: center;
+      font-size: 15px;
+      line-height: 1;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      box-shadow: 0 10px 22px rgba(16, 18, 15, .08);
+    }
+
+    .decision-row:nth-child(2) .row-chip { background: var(--blue); }
+    .decision-row:nth-child(3) .row-chip { background: var(--orange); }
+
+    .decision-cell {
+      position: relative;
+      border: 2px solid rgba(16, 18, 15, .84);
+      border-radius: 20px;
+      background: rgba(255, 250, 240, .84);
+      padding: 66px 30px 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .decision-cell.good {
+      background: rgba(215, 255, 95, .18);
+    }
+
+    .decision-cell h3 {
+      font-size: 25px;
+      line-height: 1.08;
+      font-weight: 850;
+      letter-spacing: 0;
+    }
+
+    .decision-cell p {
+      margin-top: 11px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.26;
+      font-weight: 500;
+    }
+
+    .marker {
+      position: absolute;
+      top: 17px;
+      width: 34px;
+      height: 34px;
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: var(--card);
+    }
+
+    .marker.no { left: 18px; }
+    .marker.yes { right: 18px; background: var(--lime); }
+
+    .marker.no::before {
+      content: "";
+      width: 20px;
+      height: 3px;
+      border-radius: 999px;
+      background: var(--red);
+      transform: rotate(45deg);
+    }
+
+    .marker.no::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 3px;
+      border-radius: 999px;
+      background: var(--red);
+      transform: rotate(-45deg);
+    }
+
+    .marker.yes::before {
+      content: "";
+      width: 16px;
+      height: 9px;
+      border-left: 4px solid var(--line);
+      border-bottom: 4px solid var(--line);
+      transform: rotate(-45deg) translate(1px, -1px);
+    }
+
+    .slide-title-row {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 34px;
+      align-items: end;
+    }
+
+    .dek {
+      color: var(--muted);
+      font-size: 23px;
+      line-height: 1.32;
+      font-weight: 500;
+    }
+
+    .example-layout {
+      display: grid;
+      grid-template-columns: .96fr 1.04fr;
+      gap: 28px;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .visual-stack {
+      display: grid;
+      gap: 18px;
+      min-height: 0;
+    }
+
+    .illustration {
+      border: 2px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 250, 240, .88);
+      box-shadow: var(--shadow);
+      min-height: 257px;
+      padding: 20px 22px 18px;
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 8px;
+    }
+
+    .illustration.agent {
+      background: rgba(184, 216, 255, .28);
+    }
+
+    .caption-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .caption-row h3,
+    .example-card h3 {
+      font-size: 31px;
+      line-height: 1.04;
+      font-weight: 850;
+      letter-spacing: 0;
+    }
+
+    .mode-pill {
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      background: var(--paper-2);
+      padding: 6px 10px 5px;
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+
+    .mode-pill.lime { background: var(--lime); }
+    .mode-pill.blue { background: var(--blue); }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .examples {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      min-height: 0;
+    }
+
+    .example-card {
+      padding: 24px 28px;
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .example-card.dark {
+      background: #11130f;
+      color: var(--paper);
+      box-shadow: none;
+    }
+
+    .example-card header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid rgba(16, 18, 15, .22);
+    }
+
+    .example-card.dark header {
+      border-bottom-color: rgba(246, 241, 232, .22);
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 11px 6px;
+      background: var(--red);
+      color: var(--ink);
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .example-card.dark .status {
+      background: var(--lime);
+      border-color: var(--paper);
+    }
+
+    .example-list {
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .example-list li {
+      position: relative;
+      padding-left: 24px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.24;
+      font-weight: 500;
+      text-wrap: pretty;
+    }
+
+    .example-card.dark .example-list li {
+      color: rgba(246, 241, 232, .82);
+    }
+
+    .example-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 10px;
+      height: 10px;
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      background: var(--blue);
+    }
+
+    .example-card.dark .example-list li::before {
+      border-color: var(--paper);
+      background: var(--lime);
+    }
+
+    .footer {
+      position: absolute;
+      z-index: 2;
+      left: 50%;
+      bottom: 20px;
+      transform: translateX(-50%);
+      width: min(1360px, calc(100vw - 48px));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      color: rgba(16, 18, 15, .44);
+      font-size: 10.5px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    .footer span:last-child {
+      display: inline;
+    }
+
+    @page {
+      size: 1600px 900px;
+      margin: 0;
+    }
+
+    @media print {
+      html,
+      body {
+        width: 1600px;
+        height: 900px;
+      }
+
+      .slide {
+        width: 1600px;
+        height: 900px;
+        min-height: 900px;
+      }
+
+      .wrap,
+      .footer {
+        width: 1360px;
+      }
+
+      .decision-panel,
+      .example-card,
+      .illustration {
+        box-shadow: none;
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+      .wrap {
+        width: calc(100vw - 28px);
+        padding-top: 32px;
+      }
+
+      .hero-grid,
+      .example-layout,
+      .slide-title-row {
+        grid-template-columns: 1fr;
+      }
+
+      h1 { font-size: 52px; }
+      h2 { font-size: 40px; }
+      .decision-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide" aria-label="Slide 1: Criteria for using an AI agent in pharma">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="topline">
+        <span class="eyebrow">AI operating model</span>
+        <span class="slide-no">01 / 02</span>
+      </div>
+      <div class="hero-grid">
+        <section>
+          <h1>Do I need an AI agent?</h1>
+          <p class="lead">Not every regulated workflow needs agentic AI. Start with task complexity, source context, and how much adaptive triage the process requires.</p>
+        </section>
+        <section class="decision-panel" aria-label="Decision criteria comparing automation and agents">
+          <div class="decision-row">
+            <div class="row-chip">Task complexity</div>
+            <div class="decision-cell">
+              <span class="marker no" aria-hidden="true"></span>
+              <h3>Rules, templates, or simple decision trees</h3>
+              <p>Suitable for locked forms, scheduled dashboards, and repeatable extraction fields.</p>
+            </div>
+            <div class="decision-cell good">
+              <span class="marker yes" aria-hidden="true"></span>
+              <h3>Judgment across clinical and commercial context</h3>
+              <p>Useful when evidence, assumptions, and reviewer questions change over time.</p>
+            </div>
+          </div>
+          <div class="decision-row">
+            <div class="row-chip">Data context</div>
+            <div class="decision-cell">
+              <span class="marker no" aria-hidden="true"></span>
+              <h3>Single governed source or structured input</h3>
+              <p>Automation works well when inputs are complete, stable, and already normalized.</p>
+            </div>
+            <div class="decision-cell good">
+              <span class="marker yes" aria-hidden="true"></span>
+              <h3>Multiple source types requiring reconciliation</h3>
+              <p>Agents can help triage labels, trials, publications, guidelines, and payer policies.</p>
+            </div>
+          </div>
+          <div class="decision-row">
+            <div class="row-chip">Process behavior</div>
+            <div class="decision-cell">
+              <span class="marker no" aria-hidden="true"></span>
+              <h3>Static SOP with infrequent changes</h3>
+              <p>Keep deterministic steps for audit trails, status updates, and routine reports.</p>
+            </div>
+            <div class="decision-cell good">
+              <span class="marker yes" aria-hidden="true"></span>
+              <h3>Monitoring, triage, and planning</h3>
+              <p>Use agents when the workflow benefits from prioritization and adaptive next steps.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="footer"><span>Pharma agent decision criteria</span><span>01 / 02</span></div>
+  </article>
+
+  <article class="slide" aria-label="Slide 2: Pharma examples for agent selection">
+    <img class="slide-bg-img" src="tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="topline">
+        <span class="eyebrow">Pharma examples</span>
+        <span class="slide-no">02 / 02</span>
+      </div>
+      <div class="slide-title-row">
+        <div>
+          <h2>Use agents where the work must interpret changing evidence</h2>
+        </div>
+        <p class="dek">Agents excel when facing judgment calls, variable conditions, and information synthesis - tasks that traditionally required human intelligence to execute effectively.</p>
+      </div>
+      <div class="example-layout">
+        <div class="visual-stack" aria-label="Workflow illustrations">
+          <section class="illustration">
+            <div class="caption-row">
+              <h3>Fixed automation</h3>
+              <span class="mode-pill">Stable input</span>
+            </div>
+            <svg viewBox="0 0 620 210" role="img" aria-label="Template automation workflow">
+              <rect x="28" y="42" width="154" height="116" rx="18" fill="#fffaf0" stroke="#1b1f17" stroke-width="4"/>
+              <rect x="54" y="68" width="20" height="20" rx="5" fill="#b8d8ff" stroke="#1b1f17" stroke-width="3"/>
+              <path d="M59 78 L64 83 L73 70" fill="none" stroke="#10120f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="88" y="73" width="74" height="8" rx="4" fill="#d6d0c2"/>
+              <rect x="54" y="96" width="20" height="20" rx="5" fill="#fffaf0" stroke="#1b1f17" stroke-width="3"/>
+              <rect x="88" y="101" width="88" height="8" rx="4" fill="#d6d0c2"/>
+              <rect x="54" y="124" width="20" height="20" rx="5" fill="#fffaf0" stroke="#1b1f17" stroke-width="3"/>
+              <rect x="88" y="129" width="66" height="8" rx="4" fill="#d6d0c2"/>
+              <line x1="210" y1="102" x2="424" y2="102" stroke="#1b1f17" stroke-width="4"/>
+              <circle cx="246" cy="102" r="20" fill="#ff8a76" stroke="#1b1f17" stroke-width="4"/>
+              <text x="246" y="109" text-anchor="middle" font-size="19" font-weight="900" fill="#10120f">1</text>
+              <circle cx="310" cy="102" r="20" fill="#fffaf0" stroke="#1b1f17" stroke-width="4"/>
+              <text x="310" y="109" text-anchor="middle" font-size="19" font-weight="900" fill="#10120f">2</text>
+              <circle cx="374" cy="102" r="20" fill="#fffaf0" stroke="#1b1f17" stroke-width="4"/>
+              <text x="374" y="109" text-anchor="middle" font-size="19" font-weight="900" fill="#10120f">3</text>
+              <path d="M410 92 L424 102 L410 112" fill="none" stroke="#1b1f17" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="448" y="58" width="144" height="98" rx="16" fill="#fffaf0" stroke="#1b1f17" stroke-width="4"/>
+              <rect x="466" y="78" width="104" height="10" rx="5" fill="#d6d0c2"/>
+              <rect x="466" y="99" width="96" height="10" rx="5" fill="#d6d0c2"/>
+              <rect x="466" y="120" width="108" height="10" rx="5" fill="#b8d8ff"/>
+              <rect x="466" y="141" width="72" height="8" rx="4" fill="#d6d0c2"/>
+            </svg>
+          </section>
+          <section class="illustration agent">
+            <div class="caption-row">
+              <h3>Agent workflow</h3>
+              <span class="mode-pill blue">Changing evidence</span>
+            </div>
+            <svg viewBox="0 0 620 210" role="img" aria-label="Agent workflow with evidence triage and medical review">
+              <rect x="22" y="70" width="116" height="58" rx="14" fill="#fffaf0" stroke="#1b1f17" stroke-width="4"/>
+              <text x="80" y="94" text-anchor="middle" font-size="14" font-weight="900" fill="#10120f">Signals</text>
+              <rect x="48" y="106" width="64" height="8" rx="4" fill="#d6d0c2"/>
+              <path d="M142 99 C164 99 172 99 194 99" fill="none" stroke="#1b1f17" stroke-width="4" stroke-linecap="round"/>
+              <path d="M181 89 L196 99 L181 109" fill="none" stroke="#1b1f17" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="206" y="35" width="176" height="140" rx="18" fill="#fffaf0" stroke="#1b1f17" stroke-width="4"/>
+              <text x="294" y="62" text-anchor="middle" font-size="14" font-weight="900" fill="#10120f">Evidence workspace</text>
+              <rect x="232" y="80" width="50" height="30" rx="9" fill="#ebe4d6" stroke="#1b1f17" stroke-width="3"/>
+              <rect x="306" y="80" width="50" height="30" rx="9" fill="#ebe4d6" stroke="#1b1f17" stroke-width="3"/>
+              <rect x="232" y="126" width="50" height="30" rx="9" fill="#ebe4d6" stroke="#1b1f17" stroke-width="3"/>
+              <rect x="306" y="126" width="50" height="30" rx="9" fill="#d7ff5f" stroke="#1b1f17" stroke-width="3"/>
+              <path d="M384 105 C408 105 418 105 440 105" fill="none" stroke="#1b1f17" stroke-width="4" stroke-linecap="round"/>
+              <path d="M427 95 L442 105 L427 115" fill="none" stroke="#1b1f17" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="454" y="56" width="138" height="112" rx="18" fill="#fffaf0" stroke="#1b1f17" stroke-width="4"/>
+              <text x="523" y="83" text-anchor="middle" font-size="15" font-weight="900" fill="#10120f">Review gate</text>
+              <rect x="482" y="102" width="82" height="9" rx="5" fill="#d6d0c2"/>
+              <rect x="482" y="123" width="68" height="9" rx="5" fill="#d6d0c2"/>
+              <rect x="482" y="143" width="50" height="20" rx="10" fill="#d7ff5f" stroke="#1b1f17" stroke-width="3"/>
+              <text x="507" y="158" text-anchor="middle" font-size="10" font-weight="900" fill="#10120f">OK</text>
+            </svg>
+          </section>
+        </div>
+        <section class="examples" aria-label="Examples of when agents are and are not needed">
+          <article class="example-card">
+            <header>
+              <h3>No agent needed</h3>
+              <span class="status">Automate</span>
+            </header>
+            <ul class="example-list">
+              <li>Refresh weekly brand dashboards from curated commercial marts</li>
+              <li>Populate AMCP or value dossier sections from locked source fields</li>
+              <li>Apply MedDRA mapping rules before human quality review</li>
+            </ul>
+          </article>
+          <article class="example-card dark">
+            <header>
+              <h3>Agent needed</h3>
+              <span class="status">Human-reviewed</span>
+            </header>
+            <ul class="example-list">
+              <li>Monitor label changes, trial registries, and abstracts for claim signals</li>
+              <li>Synthesize literature, guidelines, and payer policies into evidence briefs</li>
+              <li>Coordinate RWE feasibility questions across criteria and cohort attrition</li>
+            </ul>
+          </article>
+        </section>
+      </div>
+    </div>
+    <div class="footer"><span>Pharma examples</span><span>02 / 02</span></div>
+  </article>
+  <script>
+    const slides = Array.from(document.querySelectorAll(".slide"));
+    let current = 0;
+    const go = index => {
+      current = Math.max(0, Math.min(slides.length - 1, index));
+      slides[current].scrollIntoView({ behavior: "smooth", block: "center" });
+    };
+    document.addEventListener("keydown", event => {
+      if (["ArrowRight", "ArrowDown", " ", "PageDown"].includes(event.key)) {
+        event.preventDefault();
+        go(current + 1);
+      }
+      if (["ArrowLeft", "ArrowUp", "PageUp"].includes(event.key)) {
+        event.preventDefault();
+        go(current - 1);
+      }
+    });
+  </script>
+</body>
+</html>

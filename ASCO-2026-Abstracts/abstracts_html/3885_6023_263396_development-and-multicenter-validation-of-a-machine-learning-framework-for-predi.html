@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Development and multicenter validation of a machine learning framework for predicting severe myelosuppression in nasopharyngeal carcinoma: Evidence from large-scale real-world data and prospective clinical trials.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Development and multicenter validation of a machine learning framework for predicting severe myelosuppression in nasopharyngeal carcinoma: Evidence from large-scale real-world data and prospective clinical trials.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 6023</div>
+    <div><strong>First speaker:</strong> Tingxi Tang, MD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/263396">https://www.asco.org/abstracts-presentations/263396</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b> Severe treatment-related myelosuppression (Tr-MS) in nasopharyngeal carcinoma (NPC) necessitates dose reductions, compromising survival. Current static models rely on baseline "snapshots," failing to capture dynamic bone marrow fluctuations. We developed a dynamic deep learning system using longitudinal real-world data to predict cycle-specific Tr-MS risk.</p>  <b>Methods: </b> We analyzed 103,919 longitudinal records from 12,065 NPC patients (Nanfang/SYSUCC). A rolling-window strategy incorporated dynamic pre-dose labs, prior-cycle nadirs, and cumulative exposure to predict Grade ≥3 Tr-MS (CTCAE v6.0). Models (Logistic/XGBoost/LightGBM/TabPFN) were trained (6:3:1 split) and validated in two independent external cohorts (n=197) and three prospective trials (NCT03919552, NCT06767488, NCT06017895; n=173). The model was deployed as an EHR-integrated tool for automated real-time risk stratification.</p>  <b>Results: </b> Dynamic models demonstrated robust discrimination across all validation hierarchies (Table). In internal validation, AUCs ranged from 0.84 to 0.96. Performance remained stable in external cohorts (AUC 0.75-0.87) and prospective trials (AUC 0.79-0.86). SHAP analysis identified cumulative chemotherapy dosage and prior-cycle nadirs as dominant risk factors. Notably, the HIS-integrated tool successfully automated data retrieval, eliminating manual entry burden.</p>  <b>Conclusions: </b> This first EHR-integrated, cycle-specific dynamic system for Tr-MS in NPC captures longitudinal marrow exhaustion, enabling a shift from reactive rescue to precise, proactive prevention.</div>
+
+
+
+	<div class="table_caption"><b>Performance of dynamic prediction models across validation cohorts.</b></div> 
+
+
+	<div class="table"><table>
+<thead>
+<tr>
+<td><strong>Endpoint</strong></td>
+<td><strong>Cohort</strong></td>
+<td><strong>AUC (95% CI)</strong></td>
+<td><strong>Sens</strong></td>
+<td><strong>Spec</strong></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anemia</td>
+<td>Internal (n=1,231)</td>
+<td>0.96 (0.96-0.98)</td>
+<td>0.91</td>
+<td>0.91</td>
+</tr>
+<tr>
+<td>Anemia</td>
+<td>External (n=197)</td>
+<td>0.87 (0.85-0.89)</td>
+<td>0.89</td>
+<td>0.86</td>
+</tr>
+<tr>
+<td>Anemia</td>
+<td>Prospective (n=173)</td>
+<td>0.86 (0.82-0.89)</td>
+<td>0.88</td>
+<td>0.86</td>
+</tr>
+<tr>
+<td>PLT</td>
+<td>Internal (n=1,231)</td>
+<td>0.90 (0.87-0.92)</td>
+<td>0.79</td>
+<td>0.84</td>
+</tr>
+<tr>
+<td>PLT</td>
+<td>External (n=197)</td>
+<td>0.80 (0.77-0.81)</td>
+<td>0.81</td>
+<td>0.82</td>
+</tr>
+<tr>
+<td>PLT</td>
+<td>Prospective (n=173)</td>
+<td>0.81 (0.80-0.83)</td>
+<td>0.80</td>
+<td>0.83</td>
+</tr>
+<tr>
+<td>WBC/Neut</td>
+<td>Internal (n=1,231)</td>
+<td>0.84 (0.82-0.85)</td>
+<td>0.71</td>
+<td>0.79</td>
+</tr>
+<tr>
+<td>WBC/Neut</td>
+<td>External (n=197)</td>
+<td>0.75 (0.73-0.77)</td>
+<td>0.69</td>
+<td>0.77</td>
+</tr>
+<tr>
+<td>WBC/Neut</td>
+<td>Prospective (n=173)</td>
+<td>0.79 (0.77-0.81)</td>
+<td>0.69</td>
+<td>0.78</td>
+</tr>
+</tbody>
+</table></div> 
+
+ 
+	<div class="table_footer">Abbreviations: AUC, area under the ROC curve; PLT, thrombocytopenia; WBC/Neut, leukopenia/neutropenia; Sens, sensitivity; Spec, specificity.</div> 
+
+
+</main>
+</body>
+</html>

@@ -1,0 +1,64 @@
+{
+  "abstractNumber": "e20018",
+  "body": " \r\n\r\n\t<div><b>Background: </b> </p>  AI-assisted histological subtyping of lung adenocarcinoma (LUAD) shows promise but imperfect accuracy in the setting of histologic heterogeneity raises concerns about clinical deployment. Current AI systems provide predictions without indicating confidence, leaving clinicians unable to identify cases requiring expert review. Misclassification of high-risk patterns (e.g., solid and micropapillary) can affect risk stratification. We developed an uncertainty-aware triage framework that identifies difficult cases for pathologist review while allowing confident AI predictions to proceed, optimizing workflow efficiency.</p>  <b>Methods: </b> </p>  We analyzed 143 resected LUAD whole slide images with five predominant subtypes: acinar (n&nbsp;=&nbsp;60, 42%), solid (n&nbsp;=&nbsp;55, 38%), lepidic (n&nbsp;=&nbsp;16, 11%), micropapillary (n&nbsp;=&nbsp;10, 7%), papillary (n&nbsp;=&nbsp;5, 4%). Two Attention-Based Multiple Instance Learning (ABMIL) classifiers were trained on identical 5-fold cross-validation splits using Virchow2 and concatenated (Virchow2/UNI2/CONCH/GigaPath) embeddings. Prediction uncertainty was quantified via Monte Carlo dropout (T&nbsp;=&nbsp;30 stochastic forward passes) with entropy of mean probabilities as the uncertainty measure. Multi-model disagreement was computed as a binary indicator when classifier predictions differed. A fixed-weight triage score (0.5× entropy + 0.5×disagreement) ranked cases for referral to pathologist review. Performance was evaluated at 10%, 20%, and 30% referral thresholds on non-referred cases.</p>  <b>Results: </b> </p>  For five-class LUAD predominant-pattern subtyping, baseline balanced accuracy was 65.2% with macro-F1 of 0.65. Model disagreement strongly predicted classification errors: accuracy was 81.7% when models agreed versus only 44.1% when models disagreed. Uncertainty also tracked errors: entropy was higher in incorrect than correct predictions (0.60 (95% CI 0.51–0.68) vs 0.83 (95% CI 0.71–0.94)). Using the combined uncertainty–disagreement triage score, performance improved on non-referred cases (Table 1). At 30% referral, balanced accuracy increased by 15.6 percentage points.</p>  <b>Conclusions: </b> </p>  This framework enables risk-stratified AI deployment where the system self-identifies cases requiring expert review. In clinical workflow, the system would prioritize 20–30% of uncertain cases for focused review, while remaining cases would still undergo pathologist sign-out with AI decision support. This addresses a critical barrier to clinical AI adoption: the inability to distinguish reliable from unreliable predictions. The approach transforms AI from an autonomous classifier into an intelligent triage system that appropriately allocates expert pathologist attention to diagnostically challenging cases.</div>\r\n\r\n\r\n\r\n\t<div class=\"table_caption\"><b>Table 1. Triage Performance by Referral Rat</b></div> \r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<p><strong>Referral %</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Balanced Acc</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Macro-F1</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Cases Retained</strong></p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>0%</p>\r\n</td>\r\n<td>\r\n<p>65.2%</p>\r\n</td>\r\n<td>\r\n<p>0.65</p>\r\n</td>\r\n<td>\r\n<p>143</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>10%</p>\r\n</td>\r\n<td>\r\n<p>68.6%</p>\r\n</td>\r\n<td>\r\n<p>0.66</p>\r\n</td>\r\n<td>\r\n<p>129</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>20%</p>\r\n</td>\r\n<td>\r\n<p>74.4%</p>\r\n</td>\r\n<td>\r\n<p>0.76</p>\r\n</td>\r\n<td>\r\n<p>114</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>30%</p>\r\n</td>\r\n<td>\r\n<p>80.8% ± 10.1%</p>\r\n</td>\r\n<td>\r\n<p>0.80 ± 0.09</p>\r\n</td>\r\n<td>\r\n<p>100</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n\r\n\r\n",
+  "contentId": "265537",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/265537",
+    "queryParams": null,
+    "target": null,
+    "title": "Uncertainty-aware AI triage for LUAD histologic subtyping: Flagging cases for expert review."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION265537"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": null,
+  "presentationId": "265537",
+  "primaryPerson": {
+    "displayName": "Meghdad Sabouri Rad",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": "AI-assisted histological subtyping of lung adenocarcinoma (LUAD) shows promise but imperfect accuracy in the setting of histologic heterogeneity raises concerns about clinical deployment. Current AI systems provide predictions without indicating confidence, leaving clinicians unable to identify cases requiring expert review. Misclassification of high-risk patterns (e.g., solid and micropapillary) can affect risk stratification. We developed an uncertainty-aware triage framework that identifies difficult cases for pathologist review while allowing confident AI predictions to proceed, optimizing workflow efficiency.",
+  "taxonomy": null,
+  "title": "Uncertainty-aware AI triage for LUAD histologic subtyping: Flagging cases for expert review.",
+  "titles": null,
+  "uid": "PRESENTATION265537"
+}

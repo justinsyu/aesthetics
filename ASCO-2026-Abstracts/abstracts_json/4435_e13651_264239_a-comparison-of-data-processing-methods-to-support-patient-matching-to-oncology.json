@@ -1,0 +1,73 @@
+{
+  "abstractNumber": "e13651",
+  "body": " \r\n\r\n\t<div><b>Background: </b> To pre-screen and match patients to trials at scale, technology tools are needed to support human workflows. These tools require numerous data inputs, including clinical concepts such as cancer diagnosis, stage, and histology. The more complete these data are, the better the accuracy of matches produced, and the more efficient human reviewers can be. While some clinical data are available from clinical system structured fields, most are within unstructured documentation. Methods including human abstraction, natural language processing (NLP) models, and large language model (LLM) agents can improve data completeness and accuracy beyond structured EHR and laboratory information management system (LIMS) data. We compared these methods to obtain diagnosis and stage data for Tempus Link, a tool that supports patient-trial matching at scale for a national oncology trials network.</p>  <b>Methods: </b> We randomly sampled patients with one of 4 previously abstracted cancer diagnoses: lung (LC), prostate (PC), colorectal (CRC), and breast cancer (BC). For LC we also examined histology (NSCLC vs SCLC). For each method (EHR, LIMS, NLP predicted, LLM agent), diagnosis, stage, and histology values were compared to the abstracted value, and accuracy was calculated as the percent of patients with a correct value among patients with an abstracted value available. Since these data are inputs into a tool used by RN screeners who confirm matches before notifying a site, diagnosis was focused on accuracy in broad cancer diagnostic categories (e.g. neoplasm of lung). In addition, we assessed completeness as presence of a usable value across all patients in a cohort.</p>  <b>Results: </b> Completeness for EHR, NLP, and LLM was higher for diagnosis compared to stage, ranging from 91.7 - 100% vs 20 - 95.8%. LIMS completeness was lower for all variables across cohorts, ranging from 0 - 87.8%.</p>  <b>Conclusions: </b> Variability exists across data sources and processing methods in generating data inputs for trial matching. All methods have high completeness and accuracy for diagnosis, while there are significant gains when applying NLP and LLMs for stage and histology. To balance accuracy, matching efficiency, and cost, the use of enhanced data processing methods are required for certain variables, but may not be needed for others.</div>\r\n\r\n\r\n\r\n\t<div class=\"table_caption\"><b>Accuracy by cohort, variable, and data processing method.</b></div> \r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<p>Cohort</p>\r\n</td>\r\n<td></td>\r\n<td>\r\n<p>EHR</p>\r\n</td>\r\n<td>\r\n<p>LIMS</p>\r\n</td>\r\n<td>\r\n<p>NLP</p>\r\n</td>\r\n<td>\r\n<p>LLM</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>LC</p>\r\n<p>n=48</p>\r\n</td>\r\n<td>\r\n<p># diagnosis correct</p>\r\n</td>\r\n<td>\r\n<p>48 (100%)</p>\r\n</td>\r\n<td>\r\n<p>33 (68.8%)</p>\r\n</td>\r\n<td>\r\n<p>48 (100%)</p>\r\n</td>\r\n<td>\r\n<p>45 (93.8%)</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td></td>\r\n<td>\r\n<p># NSCLC correct</p>\r\n<p>n=48</p>\r\n</td>\r\n<td>\r\n<p>1 (2.1%)</p>\r\n</td>\r\n<td>\r\n<p>27 (56.3%)</p>\r\n</td>\r\n<td>\r\n<p>48 (100%)</p>\r\n</td>\r\n<td>\r\n<p>39 (81.3%)</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td></td>\r\n<td>\r\n<p># stage correct</p>\r\n<p>n=41</p>\r\n</td>\r\n<td>\r\n<p>16 (39%)</p>\r\n</td>\r\n<td>\r\n<p>0 (0%)</p>\r\n</td>\r\n<td>\r\n<p>27 (65.9%)</p>\r\n</td>\r\n<td>\r\n<p>30 (73.2%)</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>PC</p>\r\n<p>n=48</p>\r\n</td>\r\n<td>\r\n<p># diagnosis correct </p>\r\n</td>\r\n<td>\r\n<p>48 (100%)</p>\r\n</td>\r\n<td>\r\n<p>43 (89.6%)</p>\r\n</td>\r\n<td>\r\n<p>48 (100%)</p>\r\n</td>\r\n<td>\r\n<p>44 (91.7%)</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td></td>\r\n<td>\r\n<p># stage correct</p>\r\n<p>n=45</p>\r\n</td>\r\n<td>\r\n<p>22 (48.9%)</p>\r\n</td>\r\n<td>\r\n<p>0 (0%)</p>\r\n</td>\r\n<td>\r\n<p>15 (33.3%)</p>\r\n</td>\r\n<td>\r\n<p>38 (84.4%)</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>CRC</p>\r\n<p>n=49</p>\r\n</td>\r\n<td>\r\n<p># diagnosis correct </p>\r\n</td>\r\n<td>\r\n<p>47 (95.9%)</p>\r\n</td>\r\n<td>\r\n<p>42 (85.7%)</p>\r\n</td>\r\n<td>\r\n<p>47 (95.9%)</p>\r\n</td>\r\n<td>\r\n<p>46 (93.9%)</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td></td>\r\n<td>\r\n<p># stage correct</p>\r\n<p>n=46</p>\r\n</td>\r\n<td>\r\n<p>21 (45.7%)</p>\r\n</td>\r\n<td>\r\n<p>0 (0%)</p>\r\n</td>\r\n<td>\r\n<p>36 (78.3%)</p>\r\n</td>\r\n<td>\r\n<p>42 (91.3%)</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>BC</p>\r\n<p>n=50</p>\r\n</td>\r\n<td>\r\n<p># diagnosis correct </p>\r\n</td>\r\n<td>\r\n<p>50 (100%)</p>\r\n</td>\r\n<td>\r\n<p>9 (18%)</p>\r\n</td>\r\n<td>\r\n<p>47 (94%)</p>\r\n</td>\r\n<td>\r\n<p>50 (100%)</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td></td>\r\n<td>\r\n<p># stage correct</p>\r\n<p>n=36</p>\r\n</td>\r\n<td>\r\n<p>5 (13.9%)</p>\r\n</td>\r\n<td>\r\n<p>0 (0%)</p>\r\n</td>\r\n<td>\r\n<p>23 (63.9%)</p>\r\n</td>\r\n<td>\r\n<p>35 (97.2%)</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n\r\n\r\n",
+  "contentId": "264239",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/264239",
+    "queryParams": null,
+    "target": null,
+    "title": "A comparison of data-processing methods to support patient matching to oncology clinical trials."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION264239"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": null,
+  "presentationId": "264239",
+  "primaryPerson": {
+    "displayName": "May Pini, MD, MPH",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": "To pre-screen and match patients to trials at scale, technology tools are needed to support human workflows. These tools require numerous data inputs, including clinical concepts such as cancer diagnosis, stage, and histology. The more complete these data are, the better the accuracy of matches produced, and the more efficient human reviewers can be. While some clinical data are available from clinical system structured fields, most are within unstructured documentation. Methods including human abstraction, natural language processing (NLP) models, and large language model (LLM) agents can improve data completeness and accuracy beyond structured EHR and laboratory information management system (LIMS) data. We compared these methods to obtain diagnosis and stage data for Tempus Link, a tool that supports patient-trial matching at scale for a national oncology trials network.",
+  "taxonomy": {
+    "countriesThes": null,
+    "drugsThes": null,
+    "entitiesThes": null,
+    "genesThes": null,
+    "orgThes": null,
+    "subjectsThes": [
+      "Health care industry"
+    ]
+  },
+  "title": "A comparison of data-processing methods to support patient matching to oncology clinical trials.",
+  "titles": null,
+  "uid": "PRESENTATION264239"
+}

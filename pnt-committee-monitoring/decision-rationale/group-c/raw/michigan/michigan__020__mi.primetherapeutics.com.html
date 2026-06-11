@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" id="ng-app" data-ng-controller="AppCtrl" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <title ng-bind="pageTitle"></title>
+    <meta charset="utf-8">
+    <link rel="icon" href="{{getFavicon()}}" type="image/x-icon" ng-if="model.businessLine === 'commercial' || model.businessLine === 'medicaid'">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="fragment" content="!" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{'META_DESCRIPTION'|translate}}">
+    <meta name="author" content="{{'PORTAL_OWNER'|translate}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="Su_uIHZ59MsAJLuHcAi-kj4sNiw_6o_m4hdFZxDGcmk" />
+    <base href="/">
+    <!--[if IE]><script type="text/javascript">
+        // Fix for IE ignoring relative base tags.
+        // See http://stackoverflow.com/questions/3926197/html-base-tag-and-local-folder-path-with-internet-explorer
+        (function() {
+            var baseTag = document.getElementsByTagName('base')[0];
+            baseTag.href = baseTag.href;
+        })();
+    </script><![endif]-->
+    <script type="text/javascript" src="/ruxitagentjs_ICA15789NPRTUVXfqrux_10337260504112723.js" data-dtconfig="rid=RID_2045115851|rpid=-1027173467|domain=primetherapeutics.com|reportUrl=/rb_bf44283pdp|app=57bf470771d698d5|cuc=dptn9q2p|owasp=1|mel=100000|expw=1|featureHash=ICA15789NPRTUVXfqrux|dpvc=1|lastModification=1779229814385|tp=500,50,0|rdnt=1|uxrgce=1|srbbv=2|agentUri=/ruxitagentjs_ICA15789NPRTUVXfqrux_10337260504112723.js" data-config='{"revision":1779229814385,"beaconUri":"/rb_bf44283pdp","agentUri":"/ruxitagentjs_ICA15789NPRTUVXfqrux_10337260504112723.js","environmentId":"dptn9q2p","modules":"ICA15789NPRTUVXfqrux"}' data-envconfig='{"tracestateKeyPrefix":"2806ea04-9d39b7de"}' data-appconfig='{"app":"57bf470771d698d5"}'></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-CD7E00ZD43"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CD7E00ZD43');
+    </script>
+    <!-- compiled CSS -->
+    
+        <link rel="stylesheet" type="text/css" href="assets/portal-21.3.179.1.css" />
+    
+        <link rel="stylesheet" type="text/css" href="assets/portal-21.3.179.css" />
+    
+
+    <link rel="stylesheet" type="text/css" custom-css />
+
+    <link rel="stylesheet" type="text/css" custom-new-co-css />
+
+    <!-- compiled JavaScript -->
+    
+        <script type="text/javascript" src="assets/portal-21.3.179.js"></script>
+    
+</head>
+
+<body id="mh-content" ng-class="{'smFont':isSetFontNormal,'mdFont':isSetFont1x,'lgFont':isSetFont2x}" class="landingBody">
+    <div class="modal-backdrop fade in" data-ng-if="isRouteLoading || isSavingData || isContentLoading"></div>
+    <div class="container" id="portalHeader">
+        <div data-ui-view="header"></div>
+    </div>
+    <div data-ng-include="'common/views/navbar.tpl.html'"></div>
+    <!-- Begin page content -->
+    <div class="pageContent">
+    <div external-src="emergencyAlert.html"></div>
+        <div class="pageSpinner" data-ng-if="isRouteLoading || isSavingData || isContentLoading"> <i class="sl sl-spin icon-loading-filled"></i></div>
+        <div data-ng-if="!isRouteLoading" data-ui-view="main" class="landingcontent mag-landing-footer"></div>
+    </div>
+    <div external-src="footer.html" build-date="Fri Feb 13 2026 19:28:27 GMT+0000 (Coordinated Universal Time)" common business-content="medicare"></div>
+    <div external-src="footer.html" build-date="Fri Feb 13 2026 19:28:27 GMT+0000 (Coordinated Universal Time)" business-content="commercial"></div>
+    <div external-src="footer.html" build-date="Fri Feb 13 2026 19:28:27 GMT+0000 (Coordinated Universal Time)" business-content="medicaid"></div>
+</body>
+
+</html>

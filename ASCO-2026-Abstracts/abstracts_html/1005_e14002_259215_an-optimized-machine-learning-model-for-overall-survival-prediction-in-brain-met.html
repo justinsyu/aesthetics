@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>An optimized machine learning model for overall survival prediction in brain metastasis patients using genomic mutation and copy number features.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>An optimized machine learning model for overall survival prediction in brain metastasis patients using genomic mutation and copy number features.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e14002</div>
+    <div><strong>First speaker:</strong> Mostafa I.H. Ali</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/259215">https://www.asco.org/abstracts-presentations/259215</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Cancer progression and patient survival are influenced by both tumor-intrinsic and microenvironmental factors, including the ability of tumor cells to disseminate and colonize distant organs. Organ-specific metastases, such as brain metastases, exhibit distinct tumor–microenvironment interactions, therapeutic responses, and clinical outcomes. Incorporating metastatic genomic patterns into survival modeling is critical for improving prognostic accuracy. Here, we present an optimized machine learning framework using genomic mutations and copy number variations to predict overall survival (OS) in brain metastasis (BM) patients.</div>
+  <main> 
+
+	<div><b>Background: </b></p>  Cancer progression and patient survival are influenced by both tumor-intrinsic and microenvironmental factors, including the ability of tumor cells to disseminate and colonize distant organs. Organ-specific metastases, such as brain metastases, exhibit distinct tumor–microenvironment interactions, therapeutic responses, and clinical outcomes. Incorporating metastatic genomic patterns into survival modeling is critical for improving prognostic accuracy. Here, we present an optimized machine learning framework using genomic mutations and copy number variations to predict overall survival (OS) in brain metastasis (BM) patients.</p>  <b>Methods: </b></p>  We employed a rigorous, machine learning methodology to build a survival prediction model. Feature selection, model training, and hyperparameter optimization were conducted exclusively within the training dataset, while the test dataset was held out for final evaluation. The cohort was randomly split into training (70%) and test (30%) datasets. Prognostic features were first identified in the training cohort using univariable Cox regression (p &lt; 0.05) and further refined using machine learning–based feature selection, retaining features selected by at least 12 models. Hyperparameter tuning was performed using 3-fold cross-validation. The Model was assessed using the concordance index (C-index) and area under the curve (AUC), and survival analysis was conducted using the Kaplan–Meier method.</p>  <b>Results: </b></p>  The cohort included 381 patients with brain metastases primarily from lung cancer (51.1%), followed by melanoma (15.2%) and breast cancer (7.9%). Among the selected prognostic features, many were single-nucleotide variants, with alterations in <em>PTPRT, ARID1A, PREX2,</em> and <em>FAT1</em> frequently represented across metastatic malignancies. Ridge regression emerged as the top-performing model, achieving a C-index of 0.70 in the test cohort, demonstrating robust performance. As summarized in Table 1, time-dependent and survival analyses indicate stable model performance, with consistent discrimination over time and clear separation of predicted risk groups in the internal test cohort.</p>  <b>Conclusions: </b></p>  We developed an optimized machine learning framework that integrates genomic mutation profiles and copy number alterations to predict overall survival in patients with brain metastases. The model demonstrated robust and stable performance across time-dependent and survival analyses, achieving clear risk stratification in an independent test cohort, thereby supporting its potential clinical utility for prognostic risk assessment in the clinical settings.</div>
+
+
+
+	<div class="table_caption"><b>Summarized model performance.</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p>Metric</p>
+</td>
+<td>
+<p>Time/Comparison</p>
+</td>
+<td>
+<p>Value</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Time-dependent AUC</p>
+</td>
+<td>
+<p>year 1</p>
+</td>
+<td>
+<p>0.642</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Time-dependent AUC</p>
+</td>
+<td>
+<p>year 2</p>
+</td>
+<td>
+<p>0.711</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Time-dependent AUC</p>
+</td>
+<td>year 3</td>
+<td>
+<p>0.729</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Kaplan–Meier HR</p>
+</td>
+<td>
+<p>High vs Low risk</p>
+</td>
+<td>
+<p>3.45</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>p-value</p>
+</td>
+<td>
+<p>High vs Low risk</p>
+</td>
+<td>
+<p>&lt; 0.001</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

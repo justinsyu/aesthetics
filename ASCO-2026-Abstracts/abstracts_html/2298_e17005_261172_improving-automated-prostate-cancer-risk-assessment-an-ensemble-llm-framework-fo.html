@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Improving automated prostate cancer risk assessment: An ensemble LLM framework for clinical T-stage inference and NCCN risk stratification.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Improving automated prostate cancer risk assessment: An ensemble LLM framework for clinical T-stage inference and NCCN risk stratification.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e17005</div>
+    <div><strong>First speaker:</strong> Umair Ayub, PhD, MS</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/261172">https://www.asco.org/abstracts-presentations/261172</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> We previously developed a hybrid framework combining LLMs and rule-based algorithms (RBA) for automated risk stratification in localized prostate cancer (locPCa), achieving 89% accuracy. However, clinical T-stage (cTS) inference from narrative MRI reports remained the primary source of errors. Herein, we evaluated whether ensemble approaches using multiple state-of-the-art LLMs could improve cTS inference and overall NCCN risk stratification accuracy.</div>
+  <main> 
+
+	<div><b>Background: </b> We previously developed a hybrid framework combining LLMs and rule-based algorithms (RBA) for automated risk stratification in localized prostate cancer (locPCa), achieving 89% accuracy. However, clinical T-stage (cTS) inference from narrative MRI reports remained the primary source of errors. Herein, we evaluated whether ensemble approaches using multiple state-of-the-art LLMs could improve cTS inference and overall NCCN risk stratification accuracy.</p>  <b>Methods: </b> This study included patients with locPCa presenting with at least one positive prostate biopsy and MRI report available. Building on our previously validated hybrid framework that extracts structured phenotypic variables (PSA, prostate volume, cTS, Gleason patterns, grade group, positive and examined cores) from unstructured reports using LLMs and applies NCCN-concordant RBA for risk stratification, we focused on improving cTS inference. Four HIPAA-compliant LLMs (GPT-4.1, GPT-5.1, Gemini-2.5-Pro, Gemini-2.5-Flash) were evaluated using structured zero-shot prompts iteratively refined through oncologist feedback. Majority voting was employed to generate consensus cTS predictions. Performance was evaluated using weighted accuracy.</p>  <b>Results: </b> A total of 358 patients were included. The median age at diagnosis was 65 years (IQR: 60-69); the majority were White (92%) and non-Hispanic (94%). cTS distribution was T2a (51%), T2c (20%), T3a (16%), T3b (7%), T2b (4%), and T4 (2%). The most prevalent risk category was unfavorable intermediate (38%) followed by favorable intermediate (20%), high risk (19%), very high risk (16%), low (5%), and very low (1%). Individual LLM accuracy for cTS inference ranged from 85-90%, with Gemini-2.5-Pro achieving highest accuracy (90%), followed by GPT-4.1 (88%), GPT-5.1 (87%), and Gemini-2.5-Flash (85%). The four-model ensemble reached consensus in 92% of cases, achieving 93% cTS inference accuracy. When integrated into NCCN risk stratification schema, single-model approaches achieved 89-92% accuracy, while ensemble consensus cases achieved 95% accuracy.</p>  <b>Conclusions: </b> The ensemble framework using multiple LLMs significantly improves cTS inference and achieves 95% NCCN risk stratification accuracy in consensus cases (92% of patients), representing a 6-percentage-point improvement over our previous single-model framework (89%). This strategy demonstrates that ensemble methods can overcome individual model limitations for complex clinical tasks and holds promise for reliable AI-assisted risk stratification.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

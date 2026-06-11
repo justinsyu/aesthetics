@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mimilabs Wet AMD Opportunity Map</title>
+  <style>
+    :root {
+      --ink: #17201b;
+      --muted: #59655e;
+      --paper: #fbfaf4;
+      --panel: #ffffff;
+      --line: #d9ded5;
+      --accent: #245f65;
+      --accent-2: #a85f36;
+      --soft: #eaf3f2;
+      --code-bg: #eef2ee;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      line-height: 1.56;
+    }
+
+    a { color: var(--accent); }
+
+    code {
+      display: inline-block;
+      color: #223c39;
+      background: var(--code-bg);
+      border: 1px solid #dce3dc;
+      border-radius: 5px;
+      padding: 0.08rem 0.28rem;
+      margin: 0.05rem 0;
+      font-size: 0.9em;
+    }
+
+    .wrap {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 42px 24px 72px;
+    }
+
+    header {
+      display: grid;
+      gap: 18px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 28px;
+      margin-bottom: 30px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      color: var(--accent);
+      background: var(--soft);
+      border: 1px solid #cfe2e0;
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 0.82rem;
+      font-weight: 750;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 970px;
+      font-size: clamp(2rem, 4vw, 4rem);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.45rem;
+      line-height: 1.18;
+    }
+
+    .dek {
+      max-width: 960px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      margin: 0;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .meta, .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 1px 0 rgba(23, 32, 27, 0.04);
+    }
+
+    .meta { padding: 12px 14px; }
+
+    .meta strong {
+      display: block;
+      color: var(--muted);
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 4px;
+    }
+
+    section { margin-top: 34px; }
+
+    .summary {
+      display: grid;
+      grid-template-columns: 1.06fr 0.94fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .panel { padding: 20px; }
+
+    .spines {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .spines li {
+      padding: 10px 12px;
+      background: #f6f7f2;
+      border: 1px solid #e1e5dc;
+      border-radius: 7px;
+    }
+
+    .table-shell {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: auto;
+      box-shadow: 0 1px 0 rgba(23, 32, 27, 0.04);
+    }
+
+    table {
+      width: 100%;
+      min-width: 1460px;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 0.91rem;
+    }
+
+    th, td {
+      vertical-align: top;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      padding: 12px 14px;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: #e7f0ef;
+      color: #203532;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+    td:nth-child(1) { width: 72px; font-weight: 800; color: var(--accent-2); }
+    td:nth-child(2) { width: 220px; font-weight: 760; }
+    td:nth-child(3) { width: 160px; color: var(--muted); }
+    td:nth-child(4) { width: 300px; }
+    td:nth-child(5) { width: 300px; }
+    td:nth-child(6) { width: 270px; }
+    td:nth-child(7) { width: 290px; }
+
+    .note {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin: 8px 0 14px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    ol, ul { padding-left: 1.3rem; }
+    li + li { margin-top: 8px; }
+
+    .warning {
+      border-left: 5px solid var(--accent-2);
+    }
+
+    .deliverable {
+      border-left: 5px solid var(--accent);
+    }
+
+    .footer {
+      margin-top: 42px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 860px) {
+      .wrap { padding: 28px 16px 48px; }
+      .meta-grid, .summary, .two-col { grid-template-columns: 1fr; }
+      table { min-width: 1040px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="eyebrow">Wet AMD / retina focus</div>
+      <h1>Mimilabs Data Catalog Opportunity Map for Wet AMD and Retinal Diseases</h1>
+      <p class="dek">A retina-specific review of how public and public-derived datasets in the <code>mimi_ws_1</code> catalog can support MSL, Medical Affairs, Market Access, field reimbursement, and patient-access teams.</p>
+      <div class="meta-grid">
+        <div class="meta"><strong>Source reviewed</strong><a href="https://www.mimilabs.ai/datacatalog/list">mimilabs.ai/datacatalog/list</a></div>
+        <div class="meta"><strong>Review date</strong>2026-06-10</div>
+        <div class="meta"><strong>Focus</strong>Wet AMD and adjacent retinal diseases involving anti-VEGF, complement, intravitreal injection, imaging, retina-specialist access, site-of-care economics, and payer controls.</div>
+      </div>
+    </header>
+
+    <section class="summary">
+      <div class="panel">
+        <h2>Executive Take</h2>
+        <p>For wet AMD and retinal diseases, the Mimilabs catalog is most useful as a public-data connection layer around retina specialists, injection and imaging procedures, physician-administered ophthalmic drugs, medical-benefit coverage, local access, and evidence-generation targets.</p>
+        <p>It is less useful as a direct outcomes dataset: the catalog does not appear to contain chart-level visual acuity, OCT anatomy, lesion activity, laterality, injection interval, persistence, switching, or retina registry outcomes.</p>
+        <p>The key revision from the general map is to build around the retina care pathway. Public data can show where retina care is delivered, paid for, coded, and geographically constrained. Deeper claims, EHR, registry, hub, or chart-abstraction data are needed to validate clinical outcomes and treatment behavior.</p>
+      </div>
+
+      <div class="panel">
+        <h2>Retina Intelligence Spines</h2>
+        <ul class="spines">
+          <li><strong>Provider spine:</strong> NPI, taxonomy, practice addresses, group/TIN, facility affiliation, HIE endpoints, Open Payments, trials, publications, and Medicare service volume.</li>
+          <li><strong>Procedure and product spine:</strong> ICD-10 diagnosis families, CPT/HCPCS for injection and imaging, NDC/RxCUI/HCPCS for ophthalmic drugs, FDA labels, adverse events, and code histories.</li>
+          <li><strong>Medical-benefit payer spine:</strong> Part B utilization/spending, MA enrollment and benefit design, LCD/article/code-policy language, commercial in-network rates, provider references, and Medicaid rates/utilization.</li>
+          <li><strong>Geography and access spine:</strong> county/ZCTA/tract burden proxies, older-adult enrollment, SVI/ADI/SDI, HPSA/MUA, provider supply, rurality, transportation benefits, and practice locations.</li>
+          <li><strong>Evidence and influence spine:</strong> ClinicalTrials.gov sites/investigators, publications/ORCID, Open Payments, FDA safety/label changes, and payer-policy evidence citations.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Priority Opportunity Map</h2>
+      <p class="note">Scroll horizontally if needed. The table is tuned to wet AMD and retinal diseases rather than general medical affairs or access use cases.</p>
+      <div class="table-shell" role="region" aria-label="Wet AMD priority opportunity map" tabindex="0">
+        <table>
+          <thead>
+            <tr>
+              <th>Priority</th>
+              <th>Opportunity</th>
+              <th>Roles Supported</th>
+              <th>Core Datasets and Tables</th>
+              <th>Wet AMD / Retina-Specific Cleaning and Linking Work</th>
+              <th>Differentiated Insight</th>
+              <th>Where Public Data Is Insufficient</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Retina specialist access and treatment-capacity map</td>
+              <td>MSL, Medical Affairs, Market Access</td>
+              <td><code>nppes.npidata</code>, <code>nppes.npi_to_address</code>, <code>nppes.nucc_taxonomy_codes</code>, <code>nppes.placekey</code>, <code>placekey.npidata_with_placekey</code>, <code>datacmsgov.mupphy</code>, <code>datacmsgov.mupphy_prvdr</code>, <code>provdatacatalog.dac_ndf</code>, <code>provdatacatalog.dac_fa</code>, <code>huduser.*</code>, <code>usda.ruca_*</code>, <code>census.pop_est_zcta</code>, <code>datacmsgov.medicare_monthly_enrollment</code></td>
+              <td>Identify ophthalmology/retina-relevant providers from taxonomy, specialty, group, and procedure patterns; geocode practice locations; dedupe multi-location NPIs; map ZIP/ZCTA/county/CBSA/rurality; flag likely treatment capacity using intravitreal injection and imaging code volume where available.</td>
+              <td>Finds where wet AMD patients may face specialist scarcity, travel burden, or limited injection capacity even when population need is high.</td>
+              <td>Taxonomy may not confirm retina subspecialty. Appointment wait times, true capacity, referral leakage, and local care pathways need claims, EHR, registry, scheduling, or account research.</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Anti-VEGF and retinal drug utilization/economics tracker</td>
+              <td>Market Access, HEOR, Medical Affairs</td>
+              <td><code>datacmsgov.qdd_quarterly</code>, <code>datacmsgov.qdd</code>, <code>datacmsgov.mupdpr</code>, <code>datacmsgov.mupdpr_geo</code>, <code>datamedicaidgov.drugutilization</code>, <code>datamedicaidgov.nadac</code>, <code>fda.ndc_directory</code>, <code>fda.ndc_to_rxcui</code>, <code>fda.ndc_to_active_ingredients</code>, <code>fda.approved_drugs</code>, <code>fda.purplebook</code>, <code>fda.orangebook_products</code>, <code>palmettogba.ndc_hcpcs_xwalk</code>, <code>cmscoding.hcpcs</code></td>
+              <td>Build a retina drug master across brand, ingredient, NDC, RxCUI, HCPCS/J-code, biosimilar reference product, and formulation; separate physician-administered Part B products from pharmacy-benefit products; align quarterly/yearly spending and utilization vintages.</td>
+              <td>Shows which products are driving public spending and where uptake differs by geography, provider, or payer segment.</td>
+              <td>Net price, rebates, acquisition cost, buy-and-bill terms, account contracting, PA approval, abandoned claims, and patient affordability need private payer, hub, SP, distributor, or account data.</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Intravitreal injection and imaging service economics</td>
+              <td>Market Access, Field Reimbursement, Account Teams</td>
+              <td><code>datacmsgov.mupphy</code>, <code>datacmsgov.mupphy_geo</code>, <code>datacmsgov.mupohp</code>, <code>payermrf.in_network_rates_*</code>, <code>payermrf.allowed_amounts</code>, <code>payermrf.provider_references_*</code>, <code>payermrf.npi_to_tin</code>, <code>cmscoding.hcpcs</code>, <code>cmscoding.ncci_mue</code>, <code>cmscoding.ncci_ptp</code>, <code>dol.physician_feeschedules</code>, <code>dol.physician_gpci</code></td>
+              <td>Normalize CPT/HCPCS code sets for intravitreal injection, OCT/retinal imaging, office visit, drug administration, and modifiers; map commercial provider arrays to NPI/TIN; compare commercial rates with Medicare-like benchmarks; remove MRF outliers.</td>
+              <td>Explains whether adoption friction is clinical or economic: low procedure reimbursement, code edits, documentation burden, or site-of-care payment differences can shape therapy use.</td>
+              <td>Public data does not show treated eye, lesion activity, OCT fluid/anatomy, visual acuity, clinical appropriateness, inventory workflow, or actual paid claim logic.</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Retina coverage-policy and documentation monitor</td>
+              <td>Market Access, Medical Affairs, MSL</td>
+              <td><code>mcd.lcd</code>, <code>mcd.article</code>, <code>mcd.*_x_hcpc_code</code>, <code>mcd.*_x_icd10_covered</code>, <code>mcd.*_revision_history</code>, <code>mcd.contractor</code>, <code>mcd.contractor_jurisdiction</code>, <code>cmscoding.hcpcs_decisions_*</code>, <code>noridian.smrc_current_projects*</code>, <code>noridian.smrc_completed_projects*</code>, <code>x12.*</code>, <code>stategov.*policy*</code>, <code>cmsit.hpms_memos</code></td>
+              <td>Extract coverage criteria, covered/noncovered ICD-10 codes, HCPCS groups, documentation language, revision reasons, MAC jurisdiction, and effective dates; map policy text to retina products/procedures and account geographies.</td>
+              <td>Detects new documentation requirements, coding ambiguity, audit focus, diagnosis restrictions, or payer language before utilization shifts are visible.</td>
+              <td>Commercial and MA PA rules are not fully exposed. Payer portals, medical policy PDFs, denial data, PA outcomes, and account conversations are needed for real friction.</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Medicare Advantage and older-adult access lens</td>
+              <td>Market Access, Patient Services, Field Reimbursement</td>
+              <td><code>partcd.cpsc_combined</code>, <code>partcd.cpsc_enrollment</code>, <code>partcd.landscape_medicare_advantage</code>, <code>partcd.pbp_b17_eye_exams_wear</code>, <code>partcd.pbp_b17_b19b_eye_exams_wear_vbid_uf</code>, <code>partcd.pbp_b10_amb_trans</code>, <code>partcd.pbp_b13i_b19b_services_vbid_ssbci</code>, <code>partcd.starrating_*</code>, <code>partcd.lis_enrollment_by_plan</code>, <code>cmsmarketplace.*</code></td>
+              <td>Link MA plan/county enrollment to provider supply, transportation/vision supplemental benefits, LIS mix, and quality/star context; keep supplemental vision benefits distinct from medical-benefit injection coverage.</td>
+              <td>Identifies counties where older adults are concentrated in MA plans, retina specialist access is thin, and transportation or vision-benefit design may affect adherence.</td>
+              <td>Supplemental vision benefits do not equal injection coverage. Patient adherence, transportation use, OOP burden, and MA medical-management behavior need deeper plan, claims, or patient-support data.</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Retina KOL, investigator, and implementation-champion graph</td>
+              <td>MSL, Medical Affairs</td>
+              <td><code>clinicaltrialsgov.studies</code>, <code>clinicaltrialsgov.conditions</code>, <code>clinicaltrialsgov.interventions</code>, <code>clinicaltrialsgov.facilities</code>, <code>clinicaltrialsgov.facility_investigators</code>, <code>clinicaltrialsgov.overall_officials</code>, <code>clinicaltrialsgov.study_references</code>, <code>orcid.*</code>, <code>nlm.pmc_articles</code>, <code>openpayments.general</code>, <code>openpayments.research</code>, <code>nppes.npidata</code>, <code>datacmsgov.mupphy</code></td>
+              <td>Resolve investigator and author names to NPI/ORCID; normalize retina clinic, academic center, and health-system names; distinguish trial leadership, site participation, publication authorship, high volume, and industry-payment roles.</td>
+              <td>Identifies different expert types: scientific leaders, high-volume treaters, emerging investigators, and access-equity champions.</td>
+              <td>Public data does not reveal site enrollment performance, screen failures, unpublished outcomes, referral networks, or true diagnosis-specific volume.</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Evidence-to-label-to-access gap map</td>
+              <td>Medical Affairs, HEOR, Market Access</td>
+              <td><code>fda.ndc_label</code>, <code>fda.approved_drugs</code>, <code>fda.novel_drugs</code>, <code>fda.purplebook</code>, <code>fda.orangebook_*</code>, <code>fda.adverse_event_*</code>, <code>fda.ndc_to_pharm_class</code>, <code>nlm.rxnconso</code>, <code>nlm.rxnrel</code>, <code>nlm.rxnsat</code>, <code>nlm.pmc_articles</code>, <code>clinicaltrialsgov.outcomes</code>, <code>clinicaltrialsgov.outcome_measurements</code>, <code>mcd.*</code>, <code>prescriptiondrugplan.*</code></td>
+              <td>Build product/indication/comparator synonym graphs; separate wet AMD from DME, diabetic retinopathy, geographic atrophy, retinal vein occlusion, and broader ophthalmology uses; map endpoints and safety terms without implying cross-indication evidence.</td>
+              <td>Finds where payer criteria, label language, safety narratives, and published outcomes diverge.</td>
+              <td>FAERS/MAUDE are not incidence datasets. Real-world vision, OCT, switching, discontinuation, inflammation grading, and rescue-treatment data need registry, EHR, claims, or chart review.</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Equity, travel, and adherence-risk proxy map</td>
+              <td>Medical Affairs, Market Access, Patient Services</td>
+              <td><code>cdc.places_*</code>, <code>cdc.brfss_*</code>, <code>cdc.svi_*</code>, <code>ahrq.sdohdb_*</code>, <code>neighborhoodatlas.adi_*</code>, <code>grahamcenter.sdi_*</code>, <code>hrsa.hpsa_*</code>, <code>hrsa.mua_det</code>, <code>hrsa.unmet_need_score</code>, <code>fcc.c2h_*</code>, <code>epa.airdata_*</code>, <code>irs.zpallagi</code>, <code>huduser.*</code>, <code>usda.ruca_*</code></td>
+              <td>Combine older-adult/geographic proxies, deprivation, rurality, broadband, transportation benefit availability, and retina provider supply; avoid presenting area-level measures as individual patient attributes.</td>
+              <td>Prioritizes geographies where monthly or frequent retina visits may be hardest to sustain.</td>
+              <td>These are access proxies, not wet AMD prevalence or untreated-patient counts. Missed visits, patient barriers, and outcomes disparities need claims, EHR, registry, survey, or hub data.</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>340B, IDN, and site-of-care incentive map</td>
+              <td>Market Access, Account Teams, Medical Affairs</td>
+              <td><code>hrsa.340b_covered_entities</code>, <code>hrsa.340b_contract_pharmacies</code>, <code>hrsa.340b_shipping_addresses</code>, <code>datacmsgov.pc_hospital</code>, <code>datacmsgov.pc_hospital_owner</code>, <code>ahrq.compendium_hospital_linkage</code>, <code>ahrq.compendium_outpatient_linkage</code>, <code>ahrq.compendium_us_health_systems</code>, <code>provdatacatalog.hospital_*</code>, <code>payermrf.npi_to_tin</code>, <code>placekey.*</code></td>
+              <td>Resolve NPI/TIN/CCN/Placekey; connect retina clinics and hospital outpatient departments to health-system parents and 340B status; avoid inferring margin or contracting terms from public data alone.</td>
+              <td>Flags where 340B status, IDN control, or hospital outpatient structure may shape retinal drug choices and access strategy.</td>
+              <td>Public files do not expose acquisition cost, replenishment workflows, spread, payer mix by retinal indication, inventory policy, or account contracting strategy.</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>Safety, adverse-event, and product-quality surveillance layer</td>
+              <td>Medical Affairs, Pharmacovigilance, MSL</td>
+              <td><code>fda.adverse_event_base</code>, <code>fda.adverse_event_drug</code>, <code>fda.adverse_event_reaction</code>, <code>fda.enforcement</code>, <code>fda.enforcement_ndc_detail</code>, <code>fda.ndc_label</code>, <code>fda.maude_*</code>, <code>fda.device_510k</code>, <code>fda.device_registrationlisting</code></td>
+              <td>Normalize product names, NDCs, active ingredients, device names, and MedDRA terms; separate drug, device, injection procedure, and reporting-source signals; avoid incidence claims because spontaneous-report denominators are absent.</td>
+              <td>Supports early signal awareness when retina therapy delivery depends on devices, injection kits, implants, or ophthalmic procedures.</td>
+              <td>Spontaneous reporting lacks reliable denominators and confounding control. Clinical adjudication and comparative safety need trial, registry, chart, or claims-linked analyses.</td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td>Medicaid and state retina-access radar</td>
+              <td>Market Access, Government Affairs, Field Reimbursement</td>
+              <td><code>datamedicaidgov.drugutilization</code>, <code>datamedicaidgov.medicaid_provider_spending</code>, <code>datamedicaidgov.nadac</code>, <code>datamedicaidgov.medicaid_eligibility_by_group</code>, <code>stategov.*medicaid_enrollment*</code>, <code>stategov.*medicaid_provider_directory</code>, <code>stategov.*ffs_rate*</code>, <code>stategov.*policy*</code>, <code>cmscoding.hcpcs</code></td>
+              <td>Harmonize state FFS/MCO rate code sets, NDC/HCPCS, Medicaid eligibility groups, state provider directories, and policy letters; distinguish Medicaid pharmacy benefit from medical-benefit billing.</td>
+              <td>Creates state-specific briefs where reimbursement rates, managed Medicaid enrollment, provider participation, and policy language may affect retinal therapy access differently than Medicare.</td>
+              <td>State public files rarely expose MCO medical-policy operations, denials, PA decisions, patient liability, or drug-level contracting terms.</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>Methods sandbox for claims and OMOP logic</td>
+              <td>Analytics, HEOR, Data Science</td>
+              <td><code>synthea.*</code>, <code>tuvahealth.*</code>, <code>desynpuf.*</code>, <code>eunomia.*</code>, <code>resdac.*</code>, <code>qualitynet.*</code>, <code>ahrq.ccs_cpt</code>, <code>ahrq.ccsr_dx</code>, <code>cmscoding.icd10cm</code>, <code>cmscoding.hcpcs</code></td>
+              <td>Use synthetic/sample data only for pipeline QA, code mapping, cohort-definition tests, and OMOP/claims logic; do not infer wet AMD prevalence, outcomes, or market share from synthetic records.</td>
+              <td>Lets teams harden cohort and code logic before applying it to licensed claims, EHR, or registry assets.</td>
+              <td>Synthetic/sample data cannot support wet AMD epidemiology, outcomes, market share, adherence, or payer conclusions.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="two-col">
+      <div class="panel">
+        <h2>Clean Before Analysis</h2>
+        <ol>
+          <li><strong>Product identity:</strong> brand, ingredient, NDC, RxCUI, HCPCS/J-code, FDA application, reference biologic or biosimilar status, route/formulation, and indication.</li>
+          <li><strong>Provider identity:</strong> retina specialists, comprehensive ophthalmologists, groups, hospital outpatient departments, ambulatory sites, and academic centers.</li>
+          <li><strong>Procedure identity:</strong> intravitreal injection, OCT/retinal imaging, angiography, office visits, drug administration, modifiers, and code edits.</li>
+          <li><strong>Geography:</strong> provider address, county/ZCTA/tract/CBSA, RUCA, MA plan service areas, and MAC jurisdictions.</li>
+          <li><strong>Time:</strong> align monthly directories, quarterly drug spending, yearly utilization files, MCD updates, and MRF refreshes.</li>
+          <li><strong>Policy text:</strong> covered diagnoses, excluded diagnoses, step requirements, documentation criteria, code groups, effective dates, and revision history.</li>
+        </ol>
+      </div>
+
+      <div class="panel warning">
+        <h2>Where Public Data Is Not Enough</h2>
+        <ol>
+          <li>Visual acuity, OCT anatomy, lesion activity, laterality, fibrosis/atrophy, and durability require EHR, registry, chart abstraction, or disease-specific RWE.</li>
+          <li>Persistence, discontinuation, switching, bilateral treatment, treat-and-extend intervals, missed injections, and restart patterns usually require claims/EHR/registry data.</li>
+          <li>Copay assistance, hub interactions, prior authorization outcomes, abandonment, transportation barriers, and caregiver burden are not fully visible in public files.</li>
+          <li>Rebates, provider acquisition cost, buy-and-bill spread, 340B margin, value-based contracts, and account-specific agreements are not observable directly from public tables.</li>
+          <li>Public coding may not cleanly distinguish active wet AMD from history of wet AMD, fellow-eye disease, lesion subtype, fibrosis, atrophy, or clinical contraindications.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Where to Dig Deeper First</h2>
+      <ol>
+        <li>Build one retina drug/code spine: FDA label/NDC/RxCUI -> HCPCS/J-code -> MCD LCD/article code groups -> Medicare Part B spending/utilization -> Medicaid utilization/NADAC -> commercial MRF procedure/provider economics.</li>
+        <li>Build one provider spine in a test geography: NPPES ophthalmology/retina candidates -> geocoded practice locations -> Medicare injection/imaging volume -> TIN/group and health-system affiliation -> MA enrollment and SVI/ADI/RUCA context.</li>
+        <li>Pick a few MAC jurisdictions and extract retina-specific LCD/article criteria, code groups, documentation requirements, and revision histories before scaling policy NLP.</li>
+        <li>Validate procedure and drug code sets with a retina billing expert before presenting findings.</li>
+        <li>Compare public insights against one deeper source if available: IRIS Registry, Vestrum/Verana/Komodo/Symphony/IQVIA claims, retina EHR extracts, hub data, or account-level payer criteria.</li>
+      </ol>
+    </section>
+
+    <section class="panel deliverable">
+      <h2>Best First Deliverable</h2>
+      <p>For wet AMD, build a 10-geography "retina access and evidence action" pilot.</p>
+      <ol>
+        <li>Select 10 high-priority counties, CBSAs, or IDN catchments.</li>
+        <li>Resolve retina providers, practice sites, TINs, hospital affiliations, 340B/IDN status, MA enrollment, and local vulnerability/rurality.</li>
+        <li>Score each geography on retina specialist density, injection/imaging capacity, Medicare Part B drug and procedure utilization, commercial procedure rates, policy friction, trial/publication activity, older-adult access risk, and private-data gaps.</li>
+        <li>Produce role-specific action:
+          <ul>
+            <li><strong>MSL:</strong> which retina specialists or investigators to engage, what evidence gaps to discuss, and where access context may shape scientific exchange.</li>
+            <li><strong>Medical Affairs:</strong> which evidence narratives need stronger durability, safety, switching, adherence, or outcomes support.</li>
+            <li><strong>Market Access:</strong> which policy, coding, site-of-care, payer, or account economics barrier is most actionable.</li>
+          </ul>
+        </li>
+      </ol>
+      <p>This focused pilot is more useful than a national retina dashboard because it tests whether public catalog data can generate account-level hypotheses worth validating with claims, registry, EHR, hub, or payer-policy data.</p>
+    </section>
+
+    <p class="footer">Generated as a static HTML review artifact from <code>mimilabs_data_catalog_opportunity_map.md</code>. No external CSS or JavaScript dependencies.</p>
+  </main>
+</body>
+</html>

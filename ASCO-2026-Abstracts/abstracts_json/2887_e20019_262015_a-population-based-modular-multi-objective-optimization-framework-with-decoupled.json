@@ -1,0 +1,64 @@
+{
+  "abstractNumber": "e20019",
+  "body": " \r\n\r\n\t<div><b>Background: </b> </p>  Current state-of-the-art artificial neural network optimizers, such as Adam, are single-objective, single-solution and produce a single weight configuration optimized for a broad range of tasks such as histopathological subtyping of lung adenocarcinoma due to complex morphologic patterns. One-size-fits-all optimization limits clinical adaptability. Existing multi-objective approaches prioritize loss reduction without monitoring clinically meaningful metrics, leading to unpredictable generalization and underscoring the need for domain-calibrated multi-objective optimization frameworks.</p>  <b>Methods: </b> </p>  We proposed a universal, component-independent multi-objective optimization framework that decouples exploitation (search-space navigation) from exploration (elite models selection) to provide a Pareto front of high-performing trade-off solutions. Therefore, the performance metrics of the final Pareto-front solutions are no longer unexpected, since the calibration during training consistently promotes model parameters that achieve strong performance according to the selected evaluation metrics, which will contain more clinical control on the deep neural networks. The framework is modular: exploitation can use any loss-driven optimizer, and exploration can use any performance-metric–driven evolutionary selection method. In this study, for multi-label classification, we used Adam-based updates for exploitation and max–max non-dominated sorting for exploration. The multi-objective optimizer minimized clinically motivated losses (1−precision, 1−recall) while maximizing evaluation metrics (specificity, sensitivity) to identify high-performing trade-off models.</p>  <b>Results: </b> </p>  In multi-objective, multi-label classification experiments, we compared MAdam and enhanced MAdam using hypervolume (HV) as the primary performance indicator. Experiments used the WSSS4LUAD dataset, a weakly supervised benchmark for histologic subtyping of lung adenocarcinoma from H&amp;E whole-slide images. Table 1 reports higher HV values for the proposed performance metric–driven non-dominated sorting (Scheme 2) compared with loss-driven non-dominated sorting (Scheme 1). </p>  <b>Conclusions: </b> </p>  We present a multi-objective optimization framework that decouples search-space navigation from solution selection to generate a Pareto-front of clinically meaningful trade-off models. This approach provides pathologists with multiple well-calibrated model options. It also improves convergence and achieves broader coverage of high-performing model parameters compared with conventional loss-driven non-dominated sorting strategies.</div>\r\n\r\n\r\n\r\n\t<div class=\"table_caption\"><b>Table 1. Hypervolume (HV) comparison between schemes</b></div> \r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<p><strong>Dataset</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Scheme 1</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Scheme 2</strong></p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Train</p>\r\n</td>\r\n<td>\r\n<p>0.92</p>\r\n</td>\r\n<td>\r\n<p><strong>0.97</strong></p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Validation</p>\r\n</td>\r\n<td>\r\n<p>0.89</p>\r\n</td>\r\n<td>\r\n<p><strong>0.96</strong></p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Test</p>\r\n</td>\r\n<td>\r\n<p>0.89</p>\r\n</td>\r\n<td>\r\n<p><strong>0.96</strong></p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n\r\n\r\n",
+  "contentId": "262015",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/262015",
+    "queryParams": null,
+    "target": null,
+    "title": "A population-based modular multi-objective optimization framework with decoupled exploration and exploitation for lung adenocarcinoma histopathological subtyping in H&E whole-slide images (WSI)."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION262015"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": null,
+  "presentationId": "262015",
+  "primaryPerson": {
+    "displayName": "Farzaneh Nikbakhtsarvestani, PhD",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": "Current state-of-the-art artificial neural network optimizers, such as Adam, are single-objective, single-solution and produce a single weight configuration optimized for a broad range of tasks such as histopathological subtyping of lung adenocarcinoma due to complex morphologic patterns. One-size-fits-all optimization limits clinical adaptability. Existing multi-objective approaches prioritize loss reduction without monitoring clinically meaningful metrics, leading to unpredictable generalization and underscoring the need for domain-calibrated multi-objective optimization frameworks.",
+  "taxonomy": null,
+  "title": "A population-based modular multi-objective optimization framework with decoupled exploration and exploitation for lung adenocarcinoma histopathological subtyping in H&E whole-slide images (WSI).",
+  "titles": null,
+  "uid": "PRESENTATION262015"
+}

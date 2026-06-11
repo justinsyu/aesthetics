@@ -1,0 +1,64 @@
+{
+  "abstractNumber": "e15515",
+  "body": " \r\n\r\n\t<div><h3><b>Background: </b></h3>  Gastric cancer remains a leading cause of cancer-related mortality worldwide, largely due to delayed diagnosis and subtle early mucosal changes that challenge visual detection. Upper gastrointestinal endoscopy is the primary diagnostic modality for gastric tumors; however, interpretation is highly operator dependent, with significant interobserver variability, particularly for early-stage lesions and flat or diffuse tumors. Convolutional neural networks (CNNs) have demonstrated promise in automated endoscopic image analysis but rely on localized receptive fields that may inadequately capture global mucosal architecture. Vision Transformers (ViTs) introduce a fundamentally different paradigm by leveraging self-attention to model long-range spatial dependencies across entire images. We evaluated a ViT-B/16 model for gastric tumor classification using curated endoscopic imaging datasets.</p> <h3><b>Methods: </b></h3>  We analyzed publicly available gastric endoscopy datasets derived from multiple institutions, including malignant gastric tumors, benign gastric lesions, and non-neoplastic mucosa annotated by expert endoscopists with histopathologic confirmation. Images were standardized, augmented, and split into training and validation cohorts using stratified sampling. A Vision Transformer B/16 model pretrained on ImageNet was fine-tuned for multi-class gastric lesion classification. Input images (224&#215;224) were divided into non-overlapping 16&#215;16 patches and embedded into a token sequence augmented with positional encodings and a learnable class token. The architecture employed 12 transformer encoder blocks with multi-head self-attention and feed-forward layers, enabling global contextual reasoning across mucosal patterns. Performance was assessed using accuracy, sensitivity, specificity, F1 score, and area under the receiver operating characteristic curve (AUROC).</p> <h3><b>Results: </b></h3>  The Vision Transformer achieved strong diagnostic performance, with overall accuracy exceeding 96% and AUROC greater than 0.96 across gastric lesion categories. Attention-based global modeling improved discrimination of early gastric cancers and lesions with diffuse or irregular mucosal patterns, reducing misclassification commonly observed with convolutional approaches. Performance remained stable across lesion morphology and imaging conditions, supporting generalizability.</p> <h3><b>Conclusions: </b></h3>  Vision Transformer–based modeling enables accurate and interpretable diagnosis of gastric tumors by capturing global mucosal and structural context beyond localized feature extraction. While computationally more intensive than CNNs, ViT architectures offer complementary advantages for complex endoscopic imaging tasks and warrant further prospective evaluation to enhance early gastric cancer detection and diagnostic consistency.</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+  "contentId": "262964",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/262964",
+    "queryParams": null,
+    "target": null,
+    "title": "Beyond local mucosal patterns: Vision transformer–based modeling for diagnosis of gastric tumors on endoscopic imaging."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION262964"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": null,
+  "presentationId": "262964",
+  "primaryPerson": {
+    "displayName": "Kavin Elangovan, BS",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": "Gastric cancer remains a leading cause of cancer-related mortality worldwide, largely due to delayed diagnosis and subtle early mucosal changes that challenge visual detection. Upper gastrointestinal endoscopy is the primary diagnostic modality for gastric tumors; however, interpretation is highly operator dependent, with significant interobserver variability, particularly for early-stage lesions and flat or diffuse tumors. Convolutional neural networks (CNNs) have demonstrated promise in automated endoscopic image analysis but rely on localized receptive fields that may inadequately capture global mucosal architecture. Vision Transformers (ViTs) introduce a fundamentally different paradigm by leveraging self-attention to model long-range spatial dependencies across entire images. We evaluated a ViT-B/16 model for gastric tumor classification using curated endoscopic imaging datasets.",
+  "taxonomy": null,
+  "title": "Beyond local mucosal patterns: Vision transformer–based modeling for diagnosis of gastric tumors on endoscopic imaging.",
+  "titles": null,
+  "uid": "PRESENTATION262964"
+}

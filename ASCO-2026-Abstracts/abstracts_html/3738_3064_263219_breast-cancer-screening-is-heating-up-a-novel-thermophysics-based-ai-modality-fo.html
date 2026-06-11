@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Breast cancer screening is heating up: A novel thermophysics-based AI modality for screening subjects with BIRADS 4 or 5 mammograms.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Breast cancer screening is heating up: A novel thermophysics-based AI modality for screening subjects with BIRADS 4 or 5 mammograms.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 3064</div>
+    <div><strong>First speaker:</strong> Nedal Darwish, MD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/263219">https://www.asco.org/abstracts-presentations/263219</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b> Although mammography is an effective cancer detection modality, limited specificity at population scale leads to unnecessary biopsies, highlighting a need for adjunctive approaches. Cancer exhibits increased metabolic activity, leading to temperature differentials when compared with benign tissue. In this study, ultra-high sensitivity infrared imaging (IRI) was utilized with a novel thermophysics-based AI neural network to leverage temperature differentials for cancer screening. </p>  <b>Methods: </b> This prospective validation pilot study enrolled 14 patients with BI-RADS 4 or 5 breast lesions on diagnostic imaging prior to biopsy. IRI and optical images were acquired using an infrared imaging device at angular intervals, encoding the breast surface. Thermal and optical data were processed using a 3D reconstruction algorithm to generate breast surface thermal-spatial point-clouds, encoding temperature values at corresponding locations. Tumor presence or absence was predicted using an AI physics-informed neural network (PINN) that solves inverse bioheat transfer equations to identify heat sources associated with increased metabolic activity and blood perfusion. The PINN result was then compared to diagnostic mammography and to histologic findings on pathology.</p>  <b>Results: </b> 14 patients aged 42-83 years were included in a prespecified salient interim analysis approved by the study committee to assess feasibility. Histologic outcomes ranging from normal breast tissue to benign and premalignant/malignant conditions as outlined in Table 1. The PINN accurately predicted the presence and location of all premalignant/malignant lesions, including all incidences of IDC (n=3), DCIS (n=3), and ADH (n=2). Histologically benign lesions (n=6) were not detected by the PINN as a heat source. The mean size error for the PINN was 1.3 cm compared to size on pathology.</p>  <b>Conclusions: </b> Infrared imaging combined with a thermophysics-based AI neural network was able to localize and detect premalignant/malignant breast lesions with 100% sensitivity and specificity. Our findings suggest that IRI adjunctive screening may have the potential to both accurately detect breast cancer and minimize unnecessary biopsies. </div>
+
+
+
+	<div class="table_caption"><b>Comparison of PINN assessment with histological outcome.</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p>Number of Patients </p>
+</td>
+<td>
+<p>Breast </p>
+<p>Tissue Type </p>
+</td>
+<td>
+<p>PINN Assessment </p>
+</td>
+<td>
+<p>PINN </p>
+<p>Diameter (cm) </p>
+</td>
+<td>
+<p>Histologic </p>
+<p>Assessment </p>
+</td>
+<td>
+<p>Histologic </p>
+<p>Diameter (cm) </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>2 </p>
+</td>
+<td>
+<p>SF  </p>
+</td>
+<td>
+<p>+ </p>
+</td>
+<td>
+<p>1.2, 2.2  </p>
+</td>
+<td>
+<p>ADH </p>
+</td>
+<td>
+<p>2.1,3.0 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>3</p>
+</td>
+<td>
+<p>SF </p>
+</td>
+<td>
+<p>+ </p>
+</td>
+<td>
+<p>1.1, 1.4, 1.4 </p>
+</td>
+<td>
+<p>DCIS </p>
+</td>
+<td>
+<p>2.1, 2.0, 2.8 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>3 </p>
+</td>
+<td>
+<p>SF </p>
+</td>
+<td>
+<p>+ </p>
+</td>
+<td>
+<p>1.0, 1.2, 1.6 </p>
+</td>
+<td>
+<p>IDC </p>
+</td>
+<td>
+<p>0.5, 3.0, 5.0 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>1 </p>
+</td>
+<td>
+<p>SF </p>
+</td>
+<td>
+<p>− </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p>Fibrosis </p>
+</td>
+<td>
+<p> </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>1 </p>
+</td>
+<td>
+<p>SF </p>
+</td>
+<td>
+<p>− </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p>Cystic Fluid </p>
+</td>
+<td>
+<p> </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>1 </p>
+</td>
+<td>
+<p>SF </p>
+</td>
+<td>
+<p>− </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p>Fibrocystic </p>
+</td>
+<td>
+<p> </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>1 </p>
+</td>
+<td>
+<p>SF </p>
+</td>
+<td>
+<p>− </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p>Fibroadenoma </p>
+</td>
+<td>
+<p> </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>1 </p>
+</td>
+<td>
+<p>SF </p>
+</td>
+<td>
+<p>− </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p>Duct Ectasia </p>
+</td>
+<td>
+<p> </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>1 </p>
+</td>
+<td>
+<p>HD </p>
+</td>
+<td>
+<p>− </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p>Normal Breast </p>
+</td>
+<td>
+<p> </p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+ 
+	<div class="table_footer">Breast tissue density classifications: scattered fibro-glandular (SF), heterogeneously dense (HD). Histology subtypes: invasive ductal carcinoma (IDC), ductal carcinoma in situ (DCIS), atypical ductal hyperplasia (ADH). PINN=physics-informed neural network.</div> 
+
+
+</main>
+</body>
+</html>

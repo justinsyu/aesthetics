@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Outlook Therapeutics Wet AMD Website Currentness Audit</title>
+  <style>
+    :root {
+      --ink: #10120f; --muted: #5c6257; --paper: #f6f1e8; --paper-2: #ebe4d6;
+      --line: #1b1f17; --lime: #d7ff5f; --shadow: 0 18px 48px rgba(16,18,15,.08); --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after { -webkit-print-color-adjust: exact; print-color-adjust: exact; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide { width: 100vw; height: 100vh; min-height: 100vh; overflow: hidden; position: relative; display: flex; align-items: flex-start; padding: 36px 0 20px; page-break-after: always; break-after: page; background: var(--paper); }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; user-select: none; opacity: .9; }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .evidence-slide { padding: 24px 0 14px; }
+    .evidence-slide .wrap { width: min(1460px, calc(100vw - 34px)); }
+    .eyebrow { display: inline-flex; align-items: center; border: 1.4px solid var(--line); padding: 8px 12px; border-radius: 999px; font-size: 15px; font-weight: 850; text-transform: uppercase; margin-bottom: 22px; background: var(--lime); }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 67px; line-height: .95; font-weight: 560; max-width: 1340px; }
+    h2 { font-size: 46px; line-height: .98; font-weight: 560; max-width: 1460px; }
+    h3 { font-size: 27px; line-height: 1.04; font-weight: 650; }
+    .dek { margin-top: 22px; color: var(--muted); font-size: 23px; line-height: 1.18; max-width: 1280px; }
+    .section-head { margin-bottom: 14px; }
+    .section-head p { margin-top: 14px; color: var(--muted); font-size: 20px; line-height: 1.12; max-width: 1440px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 20px; }
+    .metric, .table, .callout, .evidence-card { border: 1.5px solid var(--line); background: rgba(255,250,240,.9); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+    .callout { background: #11130f; color: var(--paper); border-color: #11130f; padding: 18px 22px; margin-top: 18px; }
+    .callout h3 { color: var(--lime); }
+    .callout li { color: rgba(246,241,232,.86); }
+    .metric { min-height: 124px; padding: 16px; }
+    .num { font-size: 44px; line-height: .92; font-weight: 400; }
+    .label { margin-top: 8px; font-size: 18px; line-height: 1.1; color: var(--muted); }
+    .summary-list { margin: 14px 0 0; padding-left: 22px; display: grid; gap: 7px; }
+    .summary-list li { font-size: 22px; line-height: 1.15; }
+    .evidence-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; align-items: stretch; }
+    .evidence-grid.four { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .evidence-card { display: flex; flex-direction: column; min-height: 0; margin: 0; background: rgba(255,250,240,.92); border-radius: 18px; }
+    .evidence-top { display: flex; justify-content: space-between; gap: 12px; align-items: center; padding: 7px 10px; border-bottom: 1px solid var(--line); background: var(--paper-2); font-size: 12px; font-weight: 800; text-transform: uppercase; }
+    .evidence-top a { text-transform: none; font-weight: 700; color: var(--muted); }
+    .evidence-card img { display: block; width: 100%; height: 420px; object-fit: contain; object-position: center; background: white; border-bottom: 1px solid rgba(16,18,15,.22); }
+    .evidence-grid.four .evidence-card img { height: 205px; }
+    figcaption { margin: 0; padding: 8px 10px 9px; color: var(--muted); font-size: 17px; line-height: 1.08; }
+    .evidence-grid.four figcaption { font-size: 14px; line-height: 1.08; }
+    .table { display: grid; }
+    .row { display: grid; border-bottom: 1px solid var(--line); min-height: 70px; }
+    .row:last-child { border-bottom: 0; }
+    .row.refs { grid-template-columns: .28fr .92fr 1.1fr 1.85fr; min-height: 53px; }
+    .cell { padding: 12px; border-right: 1px solid var(--line); font-size: 17px; line-height: 1.13; }
+    .row.refs .cell { padding: 8px 10px; font-size: 14.4px; line-height: 1.08; }
+    .row.refs .cell:first-child { display: flex; align-items: center; justify-content: center; text-align: center; padding-left: 0; padding-right: 0; }
+    .cell:last-child { border-right: 0; }
+    .head .cell { background: #11130f; color: var(--paper); font-weight: 850; text-transform: uppercase; font-size: 16px; white-space: nowrap; }
+    .row.refs.head .cell { display: flex; align-items: center; justify-content: flex-start; font-size: 14px; }
+    .row.refs.head .cell:first-child { justify-content: center; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .slide.evidence-slide { padding: 24px 0 14px; }
+      .wrap { width: 1360px; }
+      .evidence-slide .wrap { width: 1460px; }
+      .metric, .table, .callout, .evidence-card { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) { .slide { width: 1600px; height: 900px; } }
+  </style>
+</head>
+<body>
+  <article class="slide title-slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Outlook Therapeutics wet AMD web audit | May 26, 2026</div>
+      <h1>Outlook Therapeutics Wet AMD Website Currentness Audit</h1>
+      <p class="dek">This deck reviews Outlook Therapeutics public website statements for ONS-5010/LYTENAVA in wet AMD against later official company regulatory-update and exhibit sources. Observations are limited to website statements that differ from, or remain less current than, later official source language.</p>
+      <div class="grid-4">
+        <div class="metric"><div class="num">3</div><div class="label">Website-currentness observations in reviewed wet AMD pages.</div></div>
+        <div class="metric"><div class="num">8</div><div class="label">Primary source screenshots retained in the appendix.</div></div>
+        <div class="metric"><div class="num">2</div><div class="label">Company website pages assessed: homepage and clinical-progress page.</div></div>
+        <div class="metric"><div class="num">May 2026</div><div class="label">Most recent cited company update on U.S. regulatory status.</div></div>
+      </div>
+      <div class="callout">
+        <h3>Executive summary</h3>
+        <ul class="summary-list">
+          <li>The homepage states that the U.S. BLA has been resubmitted; later company sources state that FDA issued a CRL and that Outlook was awaiting a formal FDA decision after an April 2026 formal dispute resolution meeting.<a class="cite" href="https://outlooktherapeutics.com/">1</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1649989/000110465926000066/tm2534608d1_ex99-1.htm">2</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1649989/000110465926062865/tm2614868d1_ex99-1.htm">3</a></li>
+          <li>The homepage describes initiating EU/UK commercial launch in the second quarter of calendar 2025; later company source language states Outlook commenced commercial launch in Germany and the UK and continued European rollout in FY2026.<a class="cite" href="https://outlooktherapeutics.com/">4</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1649989/000110465926062865/tm2614868d1_ex99-1.htm">5</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1649989/000110465926062865/tm2614868d1_ex99-1.htm">6</a></li>
+          <li>The LYTENAVA clinical-progress page describes NORSE EIGHT and BLA resubmission in future-tense 2024 planning language; later company source language identifies a 2025 BLA resubmission based on NORSE EIGHT and CMC information.<a class="cite" href="https://outlooktherapeutics.com/lytenava-clinical-progress/">7</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1649989/000110465925078622/tm2523462d1_ex99-1.htm">8</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">1/5</div>
+  </article>
+
+  <article class="slide evidence-slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">U.S. regulatory status</div>
+        <h2>Homepage BLA-resubmission wording is less current than later CRL and FDA-review updates</h2>
+        <p>The currentness observation is limited to the homepage status sentence. Later official company sources state that FDA issued a CRL for the resubmitted BLA and that Outlook completed a formal dispute resolution meeting while awaiting a formal FDA decision.</p>
+      </div>
+      <div class="evidence-grid four">
+        
+    <figure class="evidence-card">
+      <div class="evidence-top"><span>Reference 1</span><a href="https://outlooktherapeutics.com/">outlooktherapeutics.com</a></div>
+      <img src="screenshots/evidence/source-01-home-bla-resubmitted.png" alt="Outlook homepage: U.S. BLA resubmission wording" />
+      <figcaption>The homepage states that ONS-5010/LYTENAVA is investigational in the United States and that a BLA has been resubmitted to FDA.</figcaption>
+    </figure>
+        
+    <figure class="evidence-card">
+      <div class="evidence-top"><span>Reference 2</span><a href="https://www.sec.gov/Archives/edgar/data/1649989/000110465926000066/tm2534608d1_ex99-1.htm">www.sec.gov</a></div>
+      <img src="screenshots/evidence/source-02-crl-current-status.png" alt="Outlook regulatory update exhibit: FDA issued a CRL for the resubmitted BLA" />
+      <figcaption>The December 31, 2025 company regulatory update states that FDA issued a CRL for the resubmitted BLA.</figcaption>
+    </figure>
+        
+    <figure class="evidence-card">
+      <div class="evidence-top"><span>Reference 3</span><a href="https://www.sec.gov/Archives/edgar/data/1649989/000110465926062865/tm2614868d1_ex99-1.htm">www.sec.gov</a></div>
+      <img src="screenshots/evidence/source-03-q2fy2026-regulatory-status.png" alt="Outlook Q2 FY2026 exhibit: formal dispute resolution status" />
+      <figcaption>The May 15, 2026 company update states that Outlook completed a formal dispute resolution meeting and expected an FDA decision in May 2026.</figcaption>
+    </figure>
+        
+    <figure class="evidence-card">
+      <div class="evidence-top"><span>Reference 8</span><a href="https://www.sec.gov/Archives/edgar/data/1649989/000110465925078622/tm2523462d1_ex99-1.htm">www.sec.gov</a></div>
+      <img src="screenshots/evidence/source-08-resubmission-norse-eight.png" alt="Outlook BLA resubmission exhibit: NORSE EIGHT and CMC support" />
+      <figcaption>The February 2025 resubmission source is retained to distinguish the original resubmission event from the later FDA status.</figcaption>
+    </figure>
+      </div>
+    </div>
+    <div class="slide-num">2/5</div>
+  </article>
+
+  <article class="slide evidence-slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">European commercial status</div>
+        <h2>Homepage launch-timing wording remains framed as a future Q2 2025 event</h2>
+        <p>Later company source language states that Outlook commenced commercial launch in Germany and the UK, and that the company continued European rollout activities in the second fiscal quarter of 2026.</p>
+      </div>
+      <div class="evidence-grid">
+        
+    <figure class="evidence-card">
+      <div class="evidence-top"><span>Reference 4</span><a href="https://outlooktherapeutics.com/">outlooktherapeutics.com</a></div>
+      <img src="screenshots/evidence/source-04-home-launch-timing.png" alt="Outlook homepage: EU/UK launch described as expected in Q2 2025" />
+      <figcaption>The homepage states Outlook is working to initiate EU/UK commercial launch, expected in Q2 2025.</figcaption>
+    </figure>
+        
+    <figure class="evidence-card">
+      <div class="evidence-top"><span>Reference 5</span><a href="https://www.sec.gov/Archives/edgar/data/1649989/000110465926062865/tm2614868d1_ex99-1.htm">www.sec.gov</a></div>
+      <img src="screenshots/evidence/source-05-commercial-launch.png" alt="Outlook Q2 FY2026 exhibit: commercial launch commenced in Germany and the UK" />
+      <figcaption>The Q2 FY2026 company exhibit states that Outlook commenced commercial launch in Germany and the UK.</figcaption>
+    </figure>
+      </div>
+    </div>
+    <div class="slide-num">3/5</div>
+  </article>
+
+  <article class="slide evidence-slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Clinical-progress copy</div>
+        <h2>The clinical-progress page retains future-tense NORSE EIGHT and 2024 resubmission language</h2>
+        <p>The observation is based on the page's retained planning language. The cited later source states that the 2025 BLA resubmission was based on NORSE EIGHT efficacy and safety results and additional CMC information requested by FDA.</p>
+      </div>
+      <div class="evidence-grid">
+        
+    <figure class="evidence-card">
+      <div class="evidence-top"><span>Reference 7</span><a href="https://outlooktherapeutics.com/lytenava-clinical-progress/">outlooktherapeutics.com</a></div>
+      <img src="screenshots/evidence/source-07-clinical-progress-norse-eight.png" alt="Outlook clinical-progress page: NORSE EIGHT and 2024 resubmission wording" />
+      <figcaption>The clinical-progress page describes NORSE EIGHT and BLA resubmission timing using future-tense 2024 planning language.</figcaption>
+    </figure>
+        
+    <figure class="evidence-card">
+      <div class="evidence-top"><span>Reference 8</span><a href="https://www.sec.gov/Archives/edgar/data/1649989/000110465925078622/tm2523462d1_ex99-1.htm">www.sec.gov</a></div>
+      <img src="screenshots/evidence/source-08-resubmission-norse-eight.png" alt="Outlook BLA resubmission exhibit: NORSE EIGHT and CMC support" />
+      <figcaption>The later company resubmission exhibit describes NORSE EIGHT and CMC information as support for the 2025 BLA resubmission.</figcaption>
+    </figure>
+      </div>
+    </div>
+    <div class="slide-num">4/5</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">References 1-8</div>
+        <h2>References</h2>
+      </div>
+      <div class="table">
+        <div class="row refs head"><div class="cell">Ref</div><div class="cell">Source</div><div class="cell">Date / Status / Source Owner</div><div class="cell">Evidence Used in Report</div></div>
+        <div class="row refs"><div class="cell">1</div><div class="cell"><a href="https://outlooktherapeutics.com/">Outlook homepage</a></div><div class="cell">Live website page / Outlook Therapeutics</div><div class="cell">Homepage U.S. BLA-resubmission sentence for ONS-5010/LYTENAVA.</div></div>
+        <div class="row refs"><div class="cell">2</div><div class="cell"><a href="https://www.sec.gov/Archives/edgar/data/1649989/000110465926000066/tm2534608d1_ex99-1.htm">FDA CRL regulatory update</a></div><div class="cell">December 31, 2025 / Outlook Therapeutics exhibit</div><div class="cell">FDA CRL for the resubmitted ONS-5010/LYTENAVA BLA.</div></div>
+        <div class="row refs"><div class="cell">3</div><div class="cell"><a href="https://www.sec.gov/Archives/edgar/data/1649989/000110465926062865/tm2614868d1_ex99-1.htm">Q2 FY2026 company update</a></div><div class="cell">May 15, 2026 / Outlook Therapeutics exhibit</div><div class="cell">Formal dispute resolution meeting and May 2026 FDA-decision expectation.</div></div>
+        <div class="row refs"><div class="cell">4</div><div class="cell"><a href="https://outlooktherapeutics.com/">Outlook homepage</a></div><div class="cell">Live website page / Outlook Therapeutics</div><div class="cell">Homepage EU/UK launch timing states expected second quarter of calendar 2025.</div></div>
+        <div class="row refs"><div class="cell">5</div><div class="cell"><a href="https://www.sec.gov/Archives/edgar/data/1649989/000110465926062865/tm2614868d1_ex99-1.htm">Q2 FY2026 company update</a></div><div class="cell">May 15, 2026 / Outlook Therapeutics exhibit</div><div class="cell">Commercial launch commenced in Germany and the UK for wet AMD.</div></div>
+        <div class="row refs"><div class="cell">6</div><div class="cell"><a href="https://www.sec.gov/Archives/edgar/data/1649989/000110465926062865/tm2614868d1_ex99-1.htm">Q2 FY2026 company update</a></div><div class="cell">May 15, 2026 / Outlook Therapeutics exhibit</div><div class="cell">European rollout, Netherlands/Ireland 2026 expansion plan, and initial-country demand.</div></div>
+        <div class="row refs"><div class="cell">7</div><div class="cell"><a href="https://outlooktherapeutics.com/lytenava-clinical-progress/">LYTENAVA clinical-progress page</a></div><div class="cell">Live website page / Outlook Therapeutics</div><div class="cell">NORSE EIGHT and BLA resubmission timing described in future-tense 2024 planning language.</div></div>
+        <div class="row refs"><div class="cell">8</div><div class="cell"><a href="https://www.sec.gov/Archives/edgar/data/1649989/000110465925078622/tm2523462d1_ex99-1.htm">BLA resubmission exhibit</a></div><div class="cell">February 28, 2025 / Outlook Therapeutics exhibit</div><div class="cell">BLA resubmission based on NORSE EIGHT efficacy/safety and additional CMC information.</div></div>
+      </div>
+    </div>
+    <div class="slide-num">5/5</div>
+  </article>
+</body>
+</html>

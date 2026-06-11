@@ -1,0 +1,64 @@
+{
+  "abstractNumber": "e12558",
+  "body": " \r\n\r\n\t<div><b>Background: </b> Beyond reducing image interpretability, high breast density is an independent risk factor for breast cancer. It is increasingly considered in personalized screening strategies and decisions regarding supplemental imaging. Because breast density influences both the sensitivity of mammography and the patient’s overall risk of developing breast cancer, its accurate assessment is clinically important. Most of present days systems for breast density assessment are convolution neural networks (CNN) whose inputs are the mammograms. Because their numbers of connection weights are huge and because the features their density assignment decisions rely on are not explicit and up to now cannot be explained, CNN can hardly meet the prime requirements of reproducibility, transparency and testability for trustworthy applications of artificial intelligence in healthcare.</p>  <b>Methods: </b> We analyzed the 7,622 cranio-caudal images of VinDr-Mammo dataset from Siemens Mammomat device only, for quality uniformity concern. In each mammogram we removed the image background and artefacts. Then, in this very large region of interest we extracted four easy and fast to compute markers of low and high density tissues: Marker M1 was the bimodality of the pixel intensity histogram. From this marker we defined 4 ranges of pixel intensities: the very dark range of intensities (VDRI), and the dark (DRI), bright (BRI) and very bright (VBRI) ones. Marker M2 was the heterogeneity of BRI. Markers M3 and M4 were the ratio of BRI over DRI heterogeneities and that of VBRI over VDRI. The heterogeneity of an intensity range was the Shannon entropy of its pixel intensities distribution. The four markerswere input to a deep learning classifier of only 256 parameters: 4 input cells one per marker, a single hidden layer of 16 cells, and the output layer of one cell per BIRADS A to D breast density category.</p>  <b>Results: </b> Markers M1 to M4 were relevant features for breast density assessment because of their very high correlations with subsets of BIRADS breast density categories. They were interpretable in terms of breast tissues and were fast to compute. The classifier was small, easy to simulate in open source machine learning environments, and the learning too was very fast on regular personal computers. The computational efficiency of both the markers and the classifier allowed assessing the performance robustness by cross validation procedures. The design achieved performances that were at the level of most of CNN designs. In A-B versus C-D category assessment: Acc = 94.25% &#177; 0.027, F1 = 93.86 &#177; y, AUC = 94.82 &#177; 0.045. In A-B-C-D: Acc = 83.18 &#177; 0.100, F1 = 81.40 &#177; 0.117, AUC = 89.57 &#177; 0.154.</p>  <b>Conclusions: </b> Our design offers a simple, transparent, and efficient alternative to CNN-based breast density classifiers. It is suited for clinical integration and may support consistent patient stratification for supplemental screening. The codes are publicly available to ensure reproducibility.</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+  "contentId": "266117",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/266117",
+    "queryParams": null,
+    "target": null,
+    "title": "Assessing breast density: Are convolutional neural networks the only path?"
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION266117"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": null,
+  "presentationId": "266117",
+  "primaryPerson": {
+    "displayName": "Anxhelo Shehu, MSc",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": "Beyond reducing image interpretability, high breast density is an independent risk factor for breast cancer. It is increasingly considered in personalized screening strategies and decisions regarding supplemental imaging. Because breast density influences both the sensitivity of mammography and the patient’s overall risk of developing breast cancer, its accurate assessment is clinically important. Most of present days systems for breast density assessment are convolution neural networks (CNN) whose inputs are the mammograms. Because their numbers of connection weights are huge and because the features their density assignment decisions rely on are not explicit and up to now cannot be explained, CNN can hardly meet the prime requirements of reproducibility, transparency and testability for trustworthy applications of artificial intelligence in healthcare.",
+  "taxonomy": null,
+  "title": "Assessing breast density: Are convolutional neural networks the only path?",
+  "titles": null,
+  "uid": "PRESENTATION266117"
+}

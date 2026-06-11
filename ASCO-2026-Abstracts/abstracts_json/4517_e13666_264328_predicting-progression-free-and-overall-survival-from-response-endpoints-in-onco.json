@@ -1,0 +1,73 @@
+{
+  "abstractNumber": "e13666",
+  "body": " \r\n\r\n\t<div><b>Background: </b>  </p>  Objective response rate (ORR) and duration of response (DoR) provide important early efficacy signals in oncology trials. Their ability to predict subsequent progression-free survival (PFS) and overall survival (OS) varies widely by tumor type and treatment mechanism. Prior endpoint surrogacy analyses have focused on tumor type and treatment-specific statistical correlations, limiting generalizability across heterogeneous settings. We developed a machine learning (ML) framework incorporating ORR, DoR, and LLM-based clinical and treatment embeddings to predict median PFS (mPFS) and median OS (mOS) in a comprehensive cross-tumor clinical trials dataset.  </p>  <b>Methods: </b>  </p>  Data were extracted from the LARVOL CLIN, an outcomes database (2004–2023), comprising 1,223 Phase I–III trials (2,086 experimental and control arms) reporting both ORR and DoR. Median PFS and OS were available for 908 and 690 trials, respectively. To account for cross-trial heterogeneity, key population descriptors (tumor type, stage, treatment setting, prior lines of therapy, biomarker status) were embedded separately to preserve granularity, while treatment details (drugs, modalities, and dose/schedule) were embedded into a single representation. Embeddings from Sentence Transformers (all-mpnet-base-v2 embeddings) were used and reduced to 30 principal components (PCs). Two gradient boosting algorithms (XGBoost [XGB], LightGBM) were evaluated to predict log-transformed mPFS and mOS using log (ORR), log (DoR), arm size, population embeddings and treatment embeddings. To prevent intra-trial data leakage, trial-grouped five-fold cross-validation (CV) was used. </p>  <b>Results: </b>  </p>  The best-performing model, XGBoost, achieved higher predictive accuracy for mPFS than mOS (CV R&#178;: 0.72 vs 0.53 on log scale). SHAP importance analysis revealed that mPFS predictions were primarily driven by ORR and DoR, followed by tumor type and stage. Conversely, mOS predictions were more heavily influenced by tumor type (exceeding ORR and DoR contributions), stage, and treatment description. Limitations include the modest dataset size and uncertain generalizability to rare tumor subtypes.  </p>  <b>Conclusions: </b>  </p>  Integrating early response endpoints with trial context features enabled prediction of survival outcomes across heterogeneous oncology trials, with higher accuracy for mPFS than mOS. The stronger influence of tumor type and treatment context on mOS prediction suggests that early response endpoints alone may be insufficient surrogates for OS. This framework may support early trial prioritization and survival endpoint estimation when mature OS data are unavailable.</div>\r\n\r\n\r\n\r\n\t<div class=\"table_caption\"><b>XGB performance (log scale).</b></div> \r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<p>Endpoint </p>\r\n</td>\r\n<td>\r\n<p>R²  </p>\r\n</td>\r\n<td>\r\n<p>RMSE  </p>\r\n</td>\r\n<td>\r\n<p>MAE  </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>mPFS (n=908) </p>\r\n</td>\r\n<td>\r\n<p>0.72 </p>\r\n</td>\r\n<td>\r\n<p>0.30 </p>\r\n</td>\r\n<td>\r\n<p>0.20 </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>mOS (n=690) </p>\r\n</td>\r\n<td>\r\n<p>0.53 </p>\r\n</td>\r\n<td>\r\n<p>0.32 </p>\r\n</td>\r\n<td>\r\n<p>0.22 </p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n \r\n\t<div class=\"table_footer\">R2 = Coefficient of Determination, RMSE = Root Mean Squared Error, MAE = Mean Absolute Error.</div> \r\n\r\n\r\n",
+  "contentId": "264328",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/264328",
+    "queryParams": null,
+    "target": null,
+    "title": "Predicting progression-free and overall survival from response endpoints in oncology clinical trials: An embedding-based machine learning approach."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION264328"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": null,
+  "presentationId": "264328",
+  "primaryPerson": {
+    "displayName": "Ankit Kalucha",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": "Objective response rate (ORR) and duration of response (DoR) provide important early efficacy signals in oncology trials. Their ability to predict subsequent progression-free survival (PFS) and overall survival (OS) varies widely by tumor type and treatment mechanism. Prior endpoint surrogacy analyses have focused on tumor type and treatment-specific statistical correlations, limiting generalizability across heterogeneous settings. We developed a machine learning (ML) framework incorporating ORR, DoR, and LLM-based clinical and treatment embeddings to predict median PFS (mPFS) and median OS (mOS) in a comprehensive cross-tumor clinical trials dataset.",
+  "taxonomy": {
+    "countriesThes": null,
+    "drugsThes": null,
+    "entitiesThes": null,
+    "genesThes": null,
+    "orgThes": null,
+    "subjectsThes": [
+      "Health care industry"
+    ]
+  },
+  "title": "Predicting progression-free and overall survival from response endpoints in oncology clinical trials: An embedding-based machine learning approach.",
+  "titles": null,
+  "uid": "PRESENTATION264328"
+}

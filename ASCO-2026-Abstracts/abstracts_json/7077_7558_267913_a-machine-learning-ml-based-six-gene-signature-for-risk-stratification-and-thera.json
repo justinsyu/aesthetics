@@ -1,0 +1,80 @@
+{
+  "abstractNumber": "7558",
+  "body": " \r\n\r\n\t<div><b>Background: </b> Multiple myeloma(MM) accounts for 10-15% of hematologic malignancies with significant heterogeneity. Current risk stratification relies on clinical variables (ISS, sex, race, age, cytogenetics) but has limited prognostic accuracy (C-index ~0.63).TP53mt MM has worse outcomes, present in only 5% of newly diagnosed patients and increase to 25% at progression.</p>  </p>  <b>Methods: </b> We performed differential gene expression (DGE) and gene set enrichment analysis (GSEA) between TP53mt (36) and TP53wt (717) MM from (MMRF CoMMpass). Intersection of DGE and GSEA identified 46 genes, which along with clinical variables were modeled using Cox regression and 4 ML algorithms: LASSO, CoxBoost, XGBoost and Random Forest. Models were trained on 70% and tested on 30% of data, with external validation on GSE24080 (n=559).The final 6-gene signature was functionally evaluated in drug sensitivity data from 16 MM cell lines (DepMap). Performance was assessed using concordance index (C-index) and hazard ratios (HR).</p>  <b>Results: </b> CoxBoost model 6-gene signature (UBE2C, STMN1, TK1, DSCC1, PTTG1, CENPF) outperformed all other models. Combined with clinical variables, it achieved C-index 0.742 in discovery (95% CI: 0.708-0.776) versus 0.629 for clinical variables alone (+18.0% improvement, p&lt;0.001).Minimal overfitting was observed (training: 0.748, test: 0.742, gap: 0.006). In multivariable Cox analysis, the CoxBoost risk score remained highly significant (HR 1.95, 95%CI:1.51-2.52,p&lt;0.001) independent of ISS stage (HR 2.89, p&lt;0.001) and age (HR 1.39 per decade, p&lt;0.001).External validation on GSE24080 showed improved performance (C-index 0.683,+6.8% over clinical variables).The signature showed 50% gene overlap with LASSO (3/6 genes) and outperformed UAMS-70 (C-index 0.742 vs 0.631).Drug sensitivity analysis identified three compounds (MACIMORELIN, MW-150, BROFAROMINE) with selective activity against high-risk MM cells (p&lt;0.001),validated across 16 cell lines.</p>  <b>Conclusions: </b>TP53 and its downstream pathways are central to MM progression. CoxBoost modeling produced a 6-gene signature that improved MM risk stratification over clinical variables, identifies therapeutic vulnerabilities, and is computationally efficient model suitable for clinical deployment, warranting prospective validation in MM treatment stratification.</div>\r\n\r\n\r\n\r\n\t<div class=\"table_caption\"><b>Performance of clinical-only and clinic-genomic machine learning models.</b></div> \r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<p><strong>Model</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Train C-Index</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Test C-Index</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Overfitting</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Improvement vs Clinical</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>%Improvement</strong></p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Clinical</p>\r\n</td>\r\n<td>\r\n<p>0.69</p>\r\n</td>\r\n<td>\r\n<p>0.72</p>\r\n</td>\r\n<td>\r\n<p>-0.03</p>\r\n</td>\r\n<td>\r\n<p>0</p>\r\n</td>\r\n<td>\r\n<p>0</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Random Forest</p>\r\n</td>\r\n<td>\r\n<p>0.57</p>\r\n</td>\r\n<td>\r\n<p>0.59</p>\r\n</td>\r\n<td>\r\n<p>-0.02</p>\r\n</td>\r\n<td>\r\n<p>-0.13</p>\r\n</td>\r\n<td>\r\n<p>-18.56</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>LASSO</p>\r\n</td>\r\n<td>\r\n<p>0.70</p>\r\n</td>\r\n<td>\r\n<p>0.68</p>\r\n</td>\r\n<td>\r\n<p>0.02</p>\r\n</td>\r\n<td>\r\n<p>-0.04</p>\r\n</td>\r\n<td>\r\n<p>-5.89</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>XGBoost</p>\r\n</td>\r\n<td>\r\n<p>0.81</p>\r\n</td>\r\n<td>\r\n<p>0.65</p>\r\n</td>\r\n<td>\r\n<p>0.16</p>\r\n</td>\r\n<td>\r\n<p>-0.06</p>\r\n</td>\r\n<td>\r\n<p>-8.95</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>CoxBoost</p>\r\n</td>\r\n<td>\r\n<p>0.75</p>\r\n</td>\r\n<td>\r\n<p>0.74</p>\r\n</td>\r\n<td>\r\n<p>0.01</p>\r\n</td>\r\n<td>\r\n<p>0.02</p>\r\n</td>\r\n<td>\r\n<p>3.31</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n\r\n\r\n",
+  "contentId": "267913",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/267913",
+    "queryParams": null,
+    "target": null,
+    "title": "A machine learning (ML)–based six-gene signature for risk stratification and therapeutic target identification in multiple myeloma."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION267913"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780333200000,
+    "start": 1780322400000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "437",
+  "presentationId": "267913",
+  "primaryPerson": {
+    "displayName": "Shahzad Raza, MD",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780333200000,
+    "start": 1780322400000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17107",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17107",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Hematologic Malignancies—Plasma Cell Dyscrasia"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": null,
+  "title": "A machine learning (ML)–based six-gene signature for risk stratification and therapeutic target identification in multiple myeloma.",
+  "titles": null,
+  "uid": "PRESENTATION267913"
+}

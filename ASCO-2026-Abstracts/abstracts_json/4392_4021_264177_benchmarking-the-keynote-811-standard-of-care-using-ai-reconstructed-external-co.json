@@ -1,0 +1,80 @@
+{
+  "abstractNumber": "4021",
+  "body": " \r\n\r\n\t<div><b>Background: </b></p>  Randomized controlled trials in rare cancers and biomarker-enriched populations face significant recruitment burdens. External control arms (ECA) derived from historical Individual Patient Data (IPD) can mitigate these challenges, yet cross-trial heterogeneity often confounds comparisons. This study evaluates the feasibility of an AI-powered pipeline to reconstruct IPD from historical HER2+ advanced gastroesophageal adenocarcinoma trials and validates the cohort against a modern standard-of-care benchmark (KEYNOTE-811).</p>  <b>Methods: </b></p>  An LLM-computer vision pipeline digitized KM curves from 10 historical trials (2011–2022) and the KEYNOTE-811 control arm (2023). IPD was reconstructed using a modified Guyot algorithm with risk-table guidance and least-squares optimization. Accuracy was validated against published HR and median survival. A propensity score matched (PSM) analysis (1:1 nearest-neighbor) compared the KEYNOTE-811 control arm (n=348) to historical controls (n=395). Sensitivity analyses addressed geographic imbalance (34% vs. 95% Asian) and early-period confounding via 3- and 6-month landmarking.</p>  <b>Results: </b></p>  Technical validation demonstrated high fidelity: median OS concordance was 100%, with a reconstructed-to-published OS HR delta of only 0.01 (0.85 vs 0.84). The initial PSM suggested significantly worse outcomes for the KEYNOTE-811 control (OS HR 1.69, p&lt;0.0001). However, this discrepancy was primarily driven by regional heterogeneity. After region-specific matching, OS HR stabilized at 1.13 (p=0.40). A 6-month landmark analysis further resolved early-period bias, achieving statistical equivalence for OS (HR 1.26, p=0.057) and PFS (HR 0.97, p=0.84). Residual imbalances in ECOG (SMD 0.25) and primary site (SMD 0.32) persisted but did not negate the trend toward equivalence.</p>  <b>Conclusions: </b></p>  AI-powered IPD reconstruction achieves high fidelity to original trial data. While naive pooled ECAs may display era-specific survival artifacts, rigorous causal inference frameworks can resolve cross-trial heterogeneity. This study confirms that AI-reconstructed ECAs are viable tools for benchmarking novel therapies when paired with robust methodological guardrails for regional and baseline covariate alignment.</div>\r\n\r\n\r\n\r\n\t<div class=\"table_caption\"><b>PSM sensitivity analyses with covariate balance.</b></div> \r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<p>Analysis </p>\r\n</td>\r\n<td>\r\n<p>OS HR (95% CI) </p>\r\n</td>\r\n<td>\r\n<p>PFS HR (95% CI) </p>\r\n</td>\r\n<td>\r\n<p>Pairs </p>\r\n</td>\r\n<td>\r\n<p>Key Imbalances (SMD &gt;0.2) </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Main PSM </p>\r\n</td>\r\n<td>\r\n<p>1.69 (1.37–2.08)*** </p>\r\n</td>\r\n<td>\r\n<p>1.30 (1.05–1.61)* </p>\r\n</td>\r\n<td>\r\n<p>217 </p>\r\n</td>\r\n<td>\r\n<p>Age (0.86), ECOG (0.42), Primary site (0.49), Region (0.65) </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>+ Geographic matching </p>\r\n</td>\r\n<td>\r\n<p>1.13 (0.85–1.50) </p>\r\n</td>\r\n<td>\r\n<p>0.87 (0.66–1.16) </p>\r\n</td>\r\n<td>\r\n<p>119 </p>\r\n</td>\r\n<td>\r\n<p>ECOG (0.25), Primary site (0.32) </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>+ 3-month landmark </p>\r\n</td>\r\n<td>\r\n<p>1.16 (0.93–1.45) </p>\r\n</td>\r\n<td>\r\n<p>1.17 (0.93–1.48) </p>\r\n</td>\r\n<td>\r\n<p>194/177 </p>\r\n</td>\r\n<td>\r\n<p>ECOG (0.25), Primary site (0.32) </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>+ 6-month landmark </p>\r\n</td>\r\n<td>\r\n<p>1.26 (0.99–1.60) </p>\r\n</td>\r\n<td>\r\n<p>0.97 (0.73–1.30) </p>\r\n</td>\r\n<td>\r\n<p>174/115 </p>\r\n</td>\r\n<td>\r\n<p>ECOG (0.25), Primary site (0.32) </p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n \r\n\t<div class=\"table_footer\">***p&lt;0.001, *p&lt;0.05; SMD = standardized mean difference; All other covariates SMD &lt;0.2.</div> \r\n\r\n\r\n",
+  "contentId": "264177",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/264177",
+    "queryParams": null,
+    "target": null,
+    "title": "Benchmarking the KEYNOTE-811 standard of care using AI-reconstructed external control arms in advanced gastric cancer."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION264177"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780160400000,
+    "start": 1780149600000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "4",
+  "presentationId": "264177",
+  "primaryPerson": {
+    "displayName": "Augustine Annan, PhD",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780160400000,
+    "start": 1780149600000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17143",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17143",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Gastrointestinal Cancer—Gastroesophageal, Pancreatic, and Hepatobiliary"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": null,
+  "title": "Benchmarking the KEYNOTE-811 standard of care using AI-reconstructed external control arms in advanced gastric cancer.",
+  "titles": null,
+  "uid": "PRESENTATION264177"
+}

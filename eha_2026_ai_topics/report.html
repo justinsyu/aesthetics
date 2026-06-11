@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1600">
+<title>EHA 2026 AI-related topics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#10120f;--muted:#555b52;--paper:#f6f1e8;--card:#fffaf0;--line:#20241c;--lime:#d7ff5f;--orange:#ffb86b;--blue:#b8d8ff;--pink:#ffd3e0;--gray:#d6d0c2;--shadow:0 18px 48px rgba(16,18,15,.08);--radius:22px}
+*{box-sizing:border-box}html,body{margin:0;font-family:Inter,ui-sans-serif,system-ui,sans-serif;color:var(--ink);background:#14140f;font-size:18px;line-height:1.35;-webkit-font-smoothing:antialiased}body{overflow-x:hidden}a{color:inherit;text-decoration:none}.slide{width:1600px;height:900px;position:relative;overflow:hidden;background:var(--paper);padding:42px 0 26px}.slide:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 16px 16px,rgba(16,18,15,.08) 1.1px,transparent 1.2px);background-size:28px 28px;opacity:.34}.slide.dark{background:#11130f;color:var(--paper)}.slide.dark:before{background:radial-gradient(circle at 16px 16px,rgba(215,255,95,.18) 1.1px,transparent 1.2px);background-size:30px 30px;opacity:.25}.wrap{position:relative;z-index:1;width:1360px;height:100%;margin:0 auto}h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;margin:0;font-weight:500;letter-spacing:0}h1{font-size:66px;line-height:1.02;max-width:1320px}h2{font-size:50px;line-height:1.06;margin-bottom:20px;max-width:1260px}h3{font-size:24px;line-height:1.12;margin-bottom:12px}p{margin:0;color:var(--muted)}.dark p,.dark .note{color:rgba(246,241,232,.72)}.dek{font-size:24px;line-height:1.32;max-width:1240px;margin:18px 0 22px;color:var(--muted)}.dark .dek{color:rgba(246,241,232,.82)}.chip,.eyebrow{display:inline-flex;align-items:center;border:1.5px solid var(--line);border-radius:999px;background:var(--lime);padding:7px 11px;font-size:14px;line-height:1.1;text-transform:uppercase;font-weight:700;letter-spacing:.02em;white-space:nowrap;color:var(--ink)}.eyebrow{margin-bottom:18px}.dark .chip,.dark .eyebrow{color:var(--ink)}.grid{display:grid;gap:20px}.cols-3{grid-template-columns:repeat(3,1fr)}.cols-2{grid-template-columns:repeat(2,1fr)}.card{background:rgba(255,250,240,.92);border:1.5px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}.dark .card{background:#1a1d17;border-color:rgba(246,241,232,.45);box-shadow:none}.metric{min-height:132px}.metric .num{font-family:"Space Grotesk";font-size:58px;line-height:1;font-weight:500}.metric .label{font-size:16px;color:var(--muted);margin-top:9px;line-height:1.25}.dark .metric .label{color:rgba(246,241,232,.68)}.callout{background:#11130f;color:var(--paper);padding:22px 28px;border-radius:var(--radius);border:1.5px solid var(--line);margin-top:20px}.callout p,.callout li{color:rgba(246,241,232,.82)}ul{margin:0;padding:0}li{list-style:none;position:relative;margin:0 0 9px 0;padding-left:20px;font-size:19px;line-height:1.28;color:inherit}li:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime);position:absolute;left:0;top:.58em}.bar-row{display:grid;grid-template-columns:minmax(340px,430px) 1fr 60px;gap:14px;align-items:center;margin:11px 0}.bar-label{font-size:18px;line-height:1.16}.bar-track{height:20px;border:1.5px solid var(--line);border-radius:999px;background:rgba(255,250,240,.62);overflow:hidden}.bar-track span{display:block;height:100%;background:linear-gradient(90deg,var(--lime),var(--orange))}.bar-count{font-size:18px;text-align:right;font-variant-numeric:tabular-nums}.split{display:grid;grid-template-columns:1.02fr .98fr;gap:24px;align-items:start}.note{font-size:15px;line-height:1.32;color:var(--muted);margin-top:14px;max-width:1260px}.table{width:100%;border-collapse:separate;border-spacing:0;font-size:15px;line-height:1.22;overflow:hidden;border:1.5px solid var(--line);border-radius:18px;background:rgba(255,250,240,.94)}.table th,.table td{padding:10px 12px;border-bottom:1px solid rgba(27,31,23,.22);vertical-align:top;text-align:left;font-weight:400}.table th{background:#11130f;color:var(--paper);font-weight:500}.table tr:last-child td{border-bottom:0}.table .ref-cell,.refs th:first-child,.refs td:first-child{text-align:center;vertical-align:middle;font-variant-numeric:tabular-nums}.examples th:nth-child(1),.examples td:nth-child(1){width:112px}.examples th:nth-child(2),.examples td:nth-child(2){width:250px}.examples th:nth-child(4),.examples td:nth-child(4){width:245px}.refs{font-size:13px;line-height:1.16}.refs th:nth-child(1),.refs td:nth-child(1){width:62px}.refs th:nth-child(3),.refs td:nth-child(3){width:168px}.refs th:nth-child(4),.refs td:nth-child(4){width:420px}.cite{font-size:.58em;vertical-align:super;margin-left:2px;color:inherit;text-decoration:none;font-weight:500}.topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}.topic-card{background:rgba(255,250,240,.94);border:1.5px solid var(--line);border-radius:20px;padding:18px;min-height:172px}.topic-count{font-family:"Space Grotesk";font-size:28px;line-height:1;margin:16px 0 10px;font-weight:500}.topic-card p{font-size:15px;line-height:1.28;color:var(--muted)}.pill-row{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 8px}.slide-num{position:absolute;z-index:2;right:42px;bottom:26px;font-size:12px;text-transform:uppercase;color:rgba(16,18,15,.48);font-weight:500}.dark .slide-num{color:rgba(246,241,232,.55)}code{font-family:Consolas,monospace;font-size:.92em}@media screen{body{display:flex;flex-direction:column;align-items:center;gap:34px;padding:36px 0}.slide{max-width:100vw;max-height:100vh;box-shadow:0 24px 80px rgba(0,0,0,.45)}}@media print{@page{size:1600px 900px;margin:0}body{background:#fff}.slide{page-break-after:always}.slide:last-child{page-break-after:auto}}
+</style>
+</head>
+<body>
+<article class="slide">
+  <div class="wrap">
+    <div class="eyebrow">EHA 2026 | AI-related abstracts and posters</div>
+    <h1>AI-related methods are documented across 177 EHA 2026 records</h1>
+    <p class="dek">A full local-corpus screen of 4,293 EHA 2026 detail records retained 177 records (4.1%) with explicit AI, machine-learning, language-model, image-analysis, radiomics, or comparable method language.<a class="cite" href="https://library.ehaweb.org/eha/#!*menu=6*browseby=3*sortby=2*ce_id=2934" title="EHA 2026 local abstract corpus summary">1</a></p>
+    <div class="grid cols-3">
+      <div class="card metric"><div class="num">4,293</div><div class="label">Local EHA detail records screened<a class="cite" href="https://library.ehaweb.org/eha/#!*menu=6*browseby=3*sortby=2*ce_id=2934" title="EHA 2026 local abstract corpus summary">1</a></div></div>
+      <div class="card metric"><div class="num">246</div><div class="label">Lexical candidates identified before relevance checks<a class="cite" href="https://library.ehaweb.org/eha/#!*menu=6*browseby=3*sortby=2*ce_id=2934" title="EHA 2026 local abstract corpus summary">1</a></div></div>
+      <div class="card metric"><div class="num">177</div><div class="label">AI-related records retained in the evidence set<a class="cite" href="https://library.ehaweb.org/eha/#!*menu=6*browseby=3*sortby=2*ce_id=2934" title="EHA 2026 local abstract corpus summary">1</a></div></div>
+    </div>
+    <div class="callout">
+      <h3>Summary</h3>
+      <ul>
+        <li>The largest retained cluster was Clinical prediction and risk stratification, with 98 records.<a class="cite" href="https://library.ehaweb.org/eha/2026/eha-2026/4207092/daniel.soto.ortiz.role.of.linker.histones.as.epigenetic.regulators.of.html?f=menu%3D6%2Abrowseby%3D8%2Asortby%3D6%2Amedia%3D3%2Ace_id%3D2934%2Aot_id%3D115599%2Amarker%3D6766" title="PF1204 EHA-6116">2</a></li>
+        <li>The most frequent disease area was Acute myeloid leukemia, with 55 retained records.<a class="cite" href="https://library.ehaweb.org/eha/2026/eha-2026/4209302/judith.prez-granado.analytical.reliability.of.large.language.models.in.network.html?f=menu%3D6%2Abrowseby%3D8%2Asortby%3D6%2Amedia%3D3%2Ace_id%3D2934%2Aot_id%3D115581%2Amarker%3D6767" title="PB2751 EHA-2133">7</a></li>
+        <li>Record-level CSV and JSON exports preserve abstract IDs, URLs, matched terms, derived classifications, and evidence excerpts.</li>
+      </ul>
+    </div>
+  </div><div class="slide-num">01 / 8</div>
+</article>
+
+<article class="slide dark">
+  <div class="wrap">
+    <div class="eyebrow">Methods | Local corpus</div>
+    <h2>Screening used explicit AI-method language and relevance checks</h2>
+    <div class="grid cols-2">
+      <div class="card"><h3>Inclusion logic</h3><ul>
+        <li>Records were retained when source text matched terms for artificial intelligence, machine learning, deep learning, neural networks, NLP, LLMs, radiomics, image analysis, digital pathology, classifiers, or AI-framed prediction.</li>
+        <li>Ordinary regression, Cox, logistic, or linear models were excluded when no AI or machine-learning framing was present.</li>
+        <li>Weak-only model or classifier language was excluded unless accompanied by stronger AI-method terminology.</li>
+      </ul></div>
+      <div class="card"><h3>Archive basis</h3><ul>
+        <li>The local scrape summary lists 4293 listing rows, 4293 detail rows, and 0 detail errors.<a class="cite" href="https://library.ehaweb.org/eha/#!*menu=6*browseby=3*sortby=2*ce_id=2934" title="EHA 2026 local abstract corpus summary">1</a></li>
+        <li>The retained set represents 4.1% of screened local detail records.<a class="cite" href="https://library.ehaweb.org/eha/#!*menu=6*browseby=3*sortby=2*ce_id=2934" title="EHA 2026 local abstract corpus summary">1</a></li>
+        <li>Derived cluster labels support review triage and should not be interpreted as a formal conference taxonomy.</li>
+      </ul></div>
+    </div>
+    <p class="note">Source basis: local EHA 2026 archive files in <code>C:\Users\Justin\Desktop\eha-2026\data</code>. No live website recrawl or external webpage screenshot collection was required for this local-archive run.</p>
+  </div><div class="slide-num">02 / 8</div>
+</article>
+
+<article class="slide">
+  <div class="wrap">
+    <div class="eyebrow">Topic clusters | Retained set</div>
+    <h2>Prediction-oriented and image-oriented applications account for most retained records</h2>
+    <div class="split">
+      <div class="card">
+        <div class="bar-row"><div class="bar-label">Clinical prediction and risk</div><div class="bar-track"><span style="width:100.0%"></span></div><div class="bar-count">98</div></div>
+<div class="bar-row"><div class="bar-label">Digital pathology and imaging</div><div class="bar-track"><span style="width:52.0%"></span></div><div class="bar-count">51</div></div>
+<div class="bar-row"><div class="bar-label">NLP, LLMs, and data extraction</div><div class="bar-track"><span style="width:21.4%"></span></div><div class="bar-count">21</div></div>
+<div class="bar-row"><div class="bar-label">Diagnosis and classification</div><div class="bar-track"><span style="width:7.0%"></span></div><div class="bar-count">6</div></div>
+<div class="bar-row"><div class="bar-label">Treatment response and therapy</div><div class="bar-track"><span style="width:7.0%"></span></div><div class="bar-count">1</div></div>
+      </div>
+      <div class="card"><h3>Interpretation</h3><ul>
+        <li>Clinical prediction and risk stratification includes prognosis, relapse, treatment response, survival, and other outcome-oriented models.</li>
+        <li>Digital pathology, imaging, and morphology includes image analysis, radiomics, microscopy, morphology, smear analysis, and segmentation.</li>
+        <li>Language-model records include clinical annotation, data abstraction, triage, education, and decision-support evaluations.</li>
+      </ul></div>
+    </div>
+  </div><div class="slide-num">03 / 8</div>
+</article>
+
+<article class="slide">
+  <div class="wrap">
+    <div class="eyebrow">Disease areas | Retained set</div>
+    <h2>AI-related records span malignant and non-malignant hematology categories</h2>
+    <div class="grid cols-2">
+      <div class="card"><h3>Disease area distribution</h3><div class="bar-row"><div class="bar-label">Acute myeloid leukemia</div><div class="bar-track"><span style="width:100.0%"></span></div><div class="bar-count">55</div></div>
+<div class="bar-row"><div class="bar-label">Lymphoma</div><div class="bar-track"><span style="width:43.6%"></span></div><div class="bar-count">24</div></div>
+<div class="bar-row"><div class="bar-label">Multiple myeloma</div><div class="bar-track"><span style="width:32.7%"></span></div><div class="bar-count">18</div></div>
+<div class="bar-row"><div class="bar-label">Myeloproliferative disease</div><div class="bar-track"><span style="width:25.5%"></span></div><div class="bar-count">14</div></div>
+<div class="bar-row"><div class="bar-label">Digital analytical tools</div><div class="bar-track"><span style="width:25.5%"></span></div><div class="bar-count">14</div></div>
+<div class="bar-row"><div class="bar-label">Thrombosis and hemostasis</div><div class="bar-track"><span style="width:20.0%"></span></div><div class="bar-count">11</div></div>
+<div class="bar-row"><div class="bar-label">Acute lymphoblastic leukemia</div><div class="bar-track"><span style="width:14.5%"></span></div><div class="bar-count">8</div></div>
+<div class="bar-row"><div class="bar-label">CLL</div><div class="bar-track"><span style="width:12.7%"></span></div><div class="bar-count">7</div></div></div>
+      <div class="card"><h3>Presentation type distribution</h3><div class="bar-row"><div class="bar-label">Poster Presentation</div><div class="bar-track"><span style="width:100.0%"></span></div><div class="bar-count">86</div></div>
+<div class="bar-row"><div class="bar-label">Publication Only</div><div class="bar-track"><span style="width:95.3%"></span></div><div class="bar-count">82</div></div>
+<div class="bar-row"><div class="bar-label">Oral Presentation</div><div class="bar-track"><span style="width:10.5%"></span></div><div class="bar-count">9</div></div>
+        <p class="note">Presentation type reflects the local EHA record metadata and not an independent prioritization of clinical importance.</p>
+      </div>
+    </div>
+  </div><div class="slide-num">04 / 8</div>
+</article>
+
+<article class="slide">
+  <div class="wrap">
+    <div class="eyebrow">Methods and use cases</div>
+    <h2>Retained records describe heterogeneous computational methods and clinical tasks</h2>
+    <div class="grid cols-2">
+      <div class="card"><h3>Method language</h3><div class="bar-row"><div class="bar-label">Classical machine learning</div><div class="bar-track"><span style="width:100.0%"></span></div><div class="bar-count">47</div></div>
+<div class="bar-row"><div class="bar-label">Deep learning or neural network</div><div class="bar-track"><span style="width:74.5%"></span></div><div class="bar-count">35</div></div>
+<div class="bar-row"><div class="bar-label">Tree-based machine learning</div><div class="bar-track"><span style="width:59.6%"></span></div><div class="bar-count">28</div></div>
+<div class="bar-row"><div class="bar-label">AI/ML method not specified</div><div class="bar-track"><span style="width:48.9%"></span></div><div class="bar-count">23</div></div>
+<div class="bar-row"><div class="bar-label">NLP or large language model</div><div class="bar-track"><span style="width:42.6%"></span></div><div class="bar-count">20</div></div>
+<div class="bar-row"><div class="bar-label">Radiomics or image analysis</div><div class="bar-track"><span style="width:31.9%"></span></div><div class="bar-count">15</div></div>
+<div class="bar-row"><div class="bar-label">Computational or predictive model</div><div class="bar-track"><span style="width:19.1%"></span></div><div class="bar-count">9</div></div></div>
+      <div class="card"><h3>Use-case language</h3><div class="bar-row"><div class="bar-label">Prognosis or risk stratification</div><div class="bar-track"><span style="width:100.0%"></span></div><div class="bar-count">128</div></div>
+<div class="bar-row"><div class="bar-label">Text extraction and language models</div><div class="bar-track"><span style="width:24.2%"></span></div><div class="bar-count">31</div></div>
+<div class="bar-row"><div class="bar-label">Diagnosis or classification</div><div class="bar-track"><span style="width:10.9%"></span></div><div class="bar-count">14</div></div>
+<div class="bar-row"><div class="bar-label">Treatment response and therapy</div><div class="bar-track"><span style="width:7.0%"></span></div><div class="bar-count">3</div></div>
+<div class="bar-row"><div class="bar-label">Biomarker and omics discovery</div><div class="bar-track"><span style="width:7.0%"></span></div><div class="bar-count">1</div></div></div>
+    </div>
+    <p class="note">The method and use-case categories are rule-based labels derived from abstract text. They are provided to support reproducible review, not to adjudicate model validity or clinical readiness.</p>
+  </div><div class="slide-num">05 / 8</div>
+</article>
+
+<article class="slide">
+  <div class="wrap">
+    <div class="eyebrow">Topic summaries</div>
+    <h2>Cluster-level summaries should be read as an evidence inventory</h2>
+    <div class="topic-grid">
+      <div class="topic-card"><div class="chip">Clinical prediction and risk</div><div class="topic-count">98 records</div><p>Records in this cluster most often describe machine-learning or AI-framed models for prognosis, relapse, response, survival, or other risk-related outcomes.</p></div>
+<div class="topic-card"><div class="chip">Digital pathology and imaging</div><div class="topic-count">51 records</div><p>This cluster includes image analysis, radiomics, morphology, microscopy, smear analysis, and related computational pathology or imaging approaches.</p></div>
+<div class="topic-card"><div class="chip">NLP, LLMs, and data extraction</div><div class="topic-count">21 records</div><p>This cluster includes language-model, NLP, triage, annotation, education, and data-abstraction applications.</p></div>
+<div class="topic-card"><div class="chip">Diagnosis and classification</div><div class="topic-count">6 records</div><p>These records use AI-related methods to classify samples, distinguish diagnostic subgroups, or support detection tasks.</p></div>
+<div class="topic-card"><div class="chip">Treatment response and therapy</div><div class="topic-count">1 record</div><p>These records address response prediction, treatment selection, resistance, or therapy-related decision support.</p></div>
+    </div>
+  </div><div class="slide-num">06 / 8</div>
+</article>
+
+<article class="slide">
+  <div class="wrap">
+    <div class="eyebrow">Representative records</div>
+    <h2>Examples show how retained records map to source-verifiable rows</h2>
+    <table class="table examples">
+      <thead><tr><th>REF</th><th>Disease area</th><th>AI-related topic</th><th>Method type</th></tr></thead>
+      <tbody><tr><td class="ref-cell">PF1204</td><td>Acute lymphoblastic leukemia</td><td>Clinical prediction and risk stratification<a class="cite" href="https://library.ehaweb.org/eha/2026/eha-2026/4207092/daniel.soto.ortiz.role.of.linker.histones.as.epigenetic.regulators.of.html?f=menu%3D6%2Abrowseby%3D8%2Asortby%3D6%2Amedia%3D3%2Ace_id%3D2934%2Aot_id%3D115599%2Amarker%3D6766" title="PF1204 EHA-6116">2</a></td><td>Tree-based machine learning</td></tr>
+<tr><td class="ref-cell">PF1245</td><td>Acute lymphoblastic leukemia</td><td>Clinical prediction and risk stratification<a class="cite" href="https://library.ehaweb.org/eha/2026/eha-2026/4207133/ao-ran.zhang.l-ipm.a.novel.model.for.predicting.late.neutropenia.immune.html?f=menu%3D6%2Abrowseby%3D8%2Asortby%3D6%2Amedia%3D3%2Ace_id%3D2934%2Aot_id%3D115601%2Amarker%3D6766" title="PF1245 EHA-1739">3</a></td><td>Classical machine learning</td></tr>
+<tr><td class="ref-cell">PB3018</td><td>Acute lymphoblastic leukemia</td><td>Digital pathology, imaging, and morphology<a class="cite" href="https://library.ehaweb.org/eha/2026/eha-2026/4209568/matteo.caridi.pax5.mllt3.fusion.defines.a.high-risk.shift.toward.lymphoid.html?f=menu%3D6%2Abrowseby%3D8%2Asortby%3D6%2Amedia%3D3%2Ace_id%3D2934%2Aot_id%3D115585%2Amarker%3D6767" title="PB3018 EHA-6084">4</a></td><td>AI or machine-learning method not specified</td></tr>
+<tr><td class="ref-cell">PS2523</td><td>Acute lymphoblastic leukemia</td><td>Digital pathology, imaging, and morphology<a class="cite" href="https://library.ehaweb.org/eha/2026/eha-2026/4209074/fatemeh.mohammadsadeghi.self-supervised.vision.transformer.with.html?f=menu%3D6%2Abrowseby%3D8%2Asortby%3D6%2Amedia%3D3%2Ace_id%3D2934%2Aot_id%3D115612%2Amarker%3D6766" title="PS2523 EHA-2081">5</a></td><td>Deep learning or neural network</td></tr>
+<tr><td class="ref-cell">PB4544</td><td>Acute lymphoblastic leukemia</td><td>NLP, LLMs, and text/data extraction<a class="cite" href="https://library.ehaweb.org/eha/2026/eha-2026/4211094/miguel.luengo-oroz.the.agentic.hematologist.a.patient-centric.ai.system.for.html?f=menu%3D6%2Abrowseby%3D8%2Asortby%3D6%2Amedia%3D3%2Ace_id%3D2934%2Aot_id%3D115612%2Amarker%3D6767" title="PB4544 EHA-6838">6</a></td><td>NLP or large language model</td></tr>
+<tr><td class="ref-cell">PB2751</td><td>Acute myeloid leukemia</td><td>NLP, LLMs, and text/data extraction<a class="cite" href="https://library.ehaweb.org/eha/2026/eha-2026/4209302/judith.prez-granado.analytical.reliability.of.large.language.models.in.network.html?f=menu%3D6%2Abrowseby%3D8%2Asortby%3D6%2Amedia%3D3%2Ace_id%3D2934%2Aot_id%3D115581%2Amarker%3D6767" title="PB2751 EHA-2133">7</a></td><td>NLP or large language model</td></tr>
+<tr><td class="ref-cell">PF368</td><td>Acute lymphoblastic leukemia</td><td>Diagnosis and classification<a class="cite" href="https://library.ehaweb.org/eha/2026/eha-2026/4207356/stefania.bortoluzzi.functional.study.of.circrnas.with.ectopic.expression.in.html?f=menu%3D6%2Abrowseby%3D8%2Asortby%3D6%2Amedia%3D3%2Ace_id%3D2934%2Aot_id%3D115579%2Amarker%3D6766" title="PF368 EHA-3857">8</a></td><td>Classical machine learning</td></tr>
+<tr><td class="ref-cell">PB3497</td><td>Acute myeloid leukemia</td><td>Diagnosis and classification<a class="cite" href="https://library.ehaweb.org/eha/2026/eha-2026/4210047/francesca.palandri.solid.second.primary.malignancies.28spms29.in.patients.with.html?f=menu%3D6%2Abrowseby%3D8%2Asortby%3D6%2Amedia%3D3%2Ace_id%3D2934%2Aot_id%3D115592%2Amarker%3D6767" title="PB3497 EHA-2132">9</a></td><td>Classical machine learning</td></tr>
+<tr><td class="ref-cell">PB4054</td><td>Transplantation</td><td>Treatment response and precision therapy<a class="cite" href="https://library.ehaweb.org/eha/2026/eha-2026/4210604/yeyan.he.a.qualitative.study.on.the.care.needs.of.patients.from.the.html?f=menu%3D6%2Abrowseby%3D8%2Asortby%3D6%2Amedia%3D3%2Ace_id%3D2934%2Aot_id%3D115598%2Amarker%3D6767" title="PB4054 EHA-2045">10</a></td><td>AI or machine-learning method not specified</td></tr></tbody>
+    </table>
+    <p class="note">The table is a representative sample. The companion retained CSV and JSON files contain the full record set, matched terms, source URLs, and evidence excerpts.</p>
+  </div><div class="slide-num">07 / 8</div>
+</article>
+
+<article class="slide">
+  <div class="wrap">
+    <div class="eyebrow">References 1-11</div>
+    <h2>References</h2>
+    <table class="table refs">
+      <thead><tr><th>REF</th><th>Source</th><th>Date basis</th><th>Evidence basis</th></tr></thead>
+      <tbody><tr><td class="ref-cell">1</td><td><a href="https://library.ehaweb.org/eha/#!*menu=6*browseby=3*sortby=2*ce_id=2934">EHA Library scrape summary</a></td><td>2026-05-30T04:51:02.656Z</td><td>4293 detail rows; 4293 listing rows; 0 detail errors.</td></tr>
+<tr><td class="ref-cell">2</td><td><a href="https://library.ehaweb.org/eha/2026/eha-2026/4207092/daniel.soto.ortiz.role.of.linker.histones.as.epigenetic.regulators.of.html?f=menu%3D6%2Abrowseby%3D8%2Asortby%3D6%2Amedia%3D3%2Ace_id%3D2934%2Aot_id%3D115599%2Amarker%3D6766">ROLE OF LINKER HISTONES AS EPIGENETIC REGULATORS OF HEMATOPOIESIS IN HEALTH AND DISEASE</a></td><td>2026-06-11 08:00:00</td><td>Clinical prediction and risk stratification; Acute lymphoblastic leukemia; matched terms: random forest.</td></tr>
+<tr><td class="ref-cell">3</td><td><a href="https://library.ehaweb.org/eha/2026/eha-2026/4207133/ao-ran.zhang.l-ipm.a.novel.model.for.predicting.late.neutropenia.immune.html?f=menu%3D6%2Abrowseby%3D8%2Asortby%3D6%2Amedia%3D3%2Ace_id%3D2934%2Aot_id%3D115601%2Amarker%3D6766">L-IPM: A NOVEL MODEL FOR PREDICTING LATE NEUTROPENIA IMMUNE EFFECTOR CELL-ASSOCIATED HEMATOTOXICITY (N-ICAHT)...</a></td><td>2026-06-11 08:00:00</td><td>Clinical prediction and risk stratification; Acute lymphoblastic leukemia; matched terms: machine learning; predictive model.</td></tr>
+<tr><td class="ref-cell">4</td><td><a href="https://library.ehaweb.org/eha/2026/eha-2026/4209568/matteo.caridi.pax5.mllt3.fusion.defines.a.high-risk.shift.toward.lymphoid.html?f=menu%3D6%2Abrowseby%3D8%2Asortby%3D6%2Amedia%3D3%2Ace_id%3D2934%2Aot_id%3D115585%2Amarker%3D6767">PAX5::MLLT3 FUSION DEFINES A HIGH-RISK SHIFT TOWARD LYMPHOID BLAST EVOLUTION IN CML</a></td><td>2026-05-12 00:00:00</td><td>Digital pathology, imaging, and morphology; Acute lymphoblastic leukemia; matched terms: artificial intelligence.</td></tr>
+<tr><td class="ref-cell">5</td><td><a href="https://library.ehaweb.org/eha/2026/eha-2026/4209074/fatemeh.mohammadsadeghi.self-supervised.vision.transformer.with.html?f=menu%3D6%2Abrowseby%3D8%2Asortby%3D6%2Amedia%3D3%2Ace_id%3D2934%2Aot_id%3D115612%2Amarker%3D6766">SELF-SUPERVISED VISION TRANSFORMER WITH UNCERTAINTY-AWARE CALIBRATION FOR AUTOMATED ACUTE LYMPHOBLASTIC LEUKE...</a></td><td>2026-06-11 08:00:00</td><td>Digital pathology, imaging, and morphology; Acute lymphoblastic leukemia; matched terms: artificial intelligence; AI; image analysis; class...</td></tr>
+<tr><td class="ref-cell">6</td><td><a href="https://library.ehaweb.org/eha/2026/eha-2026/4211094/miguel.luengo-oroz.the.agentic.hematologist.a.patient-centric.ai.system.for.html?f=menu%3D6%2Abrowseby%3D8%2Asortby%3D6%2Amedia%3D3%2Ace_id%3D2934%2Aot_id%3D115612%2Amarker%3D6767">THE AGENTIC HEMATOLOGIST: A PATIENT-CENTRIC AI SYSTEM FOR INTEGRATED REASONING IN COMPLEX HEMATOLOGY</a></td><td>2026-05-12 00:00:00</td><td>NLP, LLMs, and text/data extraction; Acute lymphoblastic leukemia; matched terms: artificial intelligence; AI-framed method; AI.</td></tr>
+<tr><td class="ref-cell">7</td><td><a href="https://library.ehaweb.org/eha/2026/eha-2026/4209302/judith.prez-granado.analytical.reliability.of.large.language.models.in.network.html?f=menu%3D6%2Abrowseby%3D8%2Asortby%3D6%2Amedia%3D3%2Ace_id%3D2934%2Aot_id%3D115581%2Amarker%3D6767">ANALYTICAL RELIABILITY OF LARGE LANGUAGE MODELS IN NETWORK META-ANALYSIS: A VALIDATION STUDY IN NEWLY DIAGNOS...</a></td><td>2026-05-12 00:00:00</td><td>NLP, LLMs, and text/data extraction; Acute myeloid leukemia; matched terms: artificial intelligence; large language model.</td></tr>
+<tr><td class="ref-cell">8</td><td><a href="https://library.ehaweb.org/eha/2026/eha-2026/4207356/stefania.bortoluzzi.functional.study.of.circrnas.with.ectopic.expression.in.html?f=menu%3D6%2Abrowseby%3D8%2Asortby%3D6%2Amedia%3D3%2Ace_id%3D2934%2Aot_id%3D115579%2Amarker%3D6766">FUNCTIONAL STUDY OF CIRCRNAS WITH ECTOPIC EXPRESSION IN T-ALL AND CIRCRNA-DRIVEN T-ALL SUBTYPE CLASSIFICATION</a></td><td>2026-06-11 08:00:00</td><td>Diagnosis and classification; Acute lymphoblastic leukemia; matched terms: machine learning; classifier.</td></tr>
+<tr><td class="ref-cell">9</td><td><a href="https://library.ehaweb.org/eha/2026/eha-2026/4210047/francesca.palandri.solid.second.primary.malignancies.28spms29.in.patients.with.html?f=menu%3D6%2Abrowseby%3D8%2Asortby%3D6%2Amedia%3D3%2Ace_id%3D2934%2Aot_id%3D115592%2Amarker%3D6767">SOLID SECOND PRIMARY MALIGNANCIES (SPMS) IN PATIENTS WITH POLYCYTHEMIA VERA (PV): A GLOBAL SYSTEMATIC LITERAT...</a></td><td>2026-05-12 00:00:00</td><td>Diagnosis and classification; Acute myeloid leukemia; matched terms: machine learning.</td></tr>
+<tr><td class="ref-cell">10</td><td><a href="https://library.ehaweb.org/eha/2026/eha-2026/4210604/yeyan.he.a.qualitative.study.on.the.care.needs.of.patients.from.the.html?f=menu%3D6%2Abrowseby%3D8%2Asortby%3D6%2Amedia%3D3%2Ace_id%3D2934%2Aot_id%3D115598%2Amarker%3D6767">A QUALITATIVE STUDY ON THE CARE NEEDS OF PATIENTS FROM THE PERSPECTIVES OF PATIENTS, CAREGIVERS AND HEALTHCAR...</a></td><td>2026-05-12 00:00:00</td><td>Treatment response and precision therapy; Transplantation; matched terms: artificial intelligence.</td></tr>
+<tr><td class="ref-cell">11</td><td><a href="https://library.ehaweb.org/eha/2026/eha-2026/4209209/sujun.gao.raman.spectroscopy.combined.with.machine.learning.predicts.initial.html?f=menu%3D6%2Abrowseby%3D8%2Asortby%3D6%2Amedia%3D3%2Ace_id%3D2934%2Aot_id%3D115580%2Amarker%3D6767">RAMAN SPECTROSCOPY COMBINED WITH MACHINE LEARNING PREDICTS INITIAL TREATMENT RESPONSE IN NEWLY DIAGNOSED ACUT...</a></td><td>2026-05-12 00:00:00</td><td>Clinical prediction and risk stratification; Acute myeloid leukemia; matched terms: machine learning.</td></tr></tbody>
+    </table>
+  </div><div class="slide-num">08 / 8</div>
+</article>
+<script>
+const slides = Array.from(document.querySelectorAll('.slide'));
+let cur = 0;
+const go = (i) => {
+  cur = Math.max(0, Math.min(slides.length - 1, i));
+  slides[cur].scrollIntoView({ behavior: 'smooth', block: 'center' });
+};
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ' || e.key === 'PageDown') {
+    e.preventDefault(); go(cur + 1);
+  } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp') {
+    e.preventDefault(); go(cur - 1);
+  } else if (e.key === 'Home') {
+    e.preventDefault(); go(0);
+  } else if (e.key === 'End') {
+    e.preventDefault(); go(slides.length - 1);
+  }
+});
+</script>
+</body>
+</html>

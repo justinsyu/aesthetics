@@ -43,7 +43,10 @@ Before building or revising a report, open that example report and match its cur
 - Deck subtitle/dek: `28px`, line-height `1.24`
 - Section supporting text: `25px`, line-height `1.24`
 - Card body: `19px` minimum baseline, line-height `1.27`; increase to `21-24px` where fixed-page card or component space allows
+- Mechanism-pattern explanatory text below section or card headings: use `22-24px` body sizing where space allows, with `12-16px` top spacing from the heading so the explanation does not read as cramped
 - Table cells: `16px`, line-height `1.21`
+- Table section/header cells must keep header text on one line, vertically centered, and fully inside the cell. Adjust column widths, cell padding, or concise header wording before allowing wrapped, clipped, or overflowing table headers.
+- For the References slide table specifically, increase body copy above `16px` (for example 17-19px) when fixed slide space permits, enlarge header text proportionally, then adjust row heights and wrapping rather than reducing legibility.
 - Source text: `16px`, line-height `1.27`
 - Key takeaway body: `24-26px`, line-height `1.16-1.21`
 - Minimum readable type: generally `10-11px`
@@ -53,7 +56,8 @@ Before building or revising a report, open that example report and match its cur
 
 - Eyebrow: lime pill with black border, uppercase, 15px, 8px x 12px padding; use topic and date only, with no time-window label
 - Panels/cards: 1.5px near-black border, `rgba(255,250,240,.86)` fill, 24px radius, restrained shadow
-- Dark panels: `#11130f` background, paper text, no washed-out gray in PDF
+- Dark panels: `#11130f` background, paper text, no washed-out gray in PDF; when review feedback asks for neon green on a selected heading inside a dark callout, or globally requests dark/black callout component headers in neon green, apply the lime accent only to the selected or affected dark-callout heading or phrase, keep supporting body text and citations in high-contrast white or light text, and verify the exported PDF preserves the accent color and readability
+- Dark panel lists: style visible bullet markers in lime while keeping bullet text, citations, and supporting copy in high-contrast white or light text
 - Metrics: large numeric value, muted label, compact citation
 - Tags: small uppercase pills using lime, blue, orange, pink, gray, or red
 - Lists: no browser bullets; use lime dot pseudo-elements
@@ -63,7 +67,9 @@ Before building or revising a report, open that example report and match its cur
 ## Example Report Structures
 
 - Cover slide: date/topic eyebrow, title, optional scope sentence, four compact metric cards when feasible, then a dark `Executive summary` callout containing cited bullets
-- References slide: `references-slide` article class, `References 1-N` eyebrow, `References` title, and a single-page source-agnostic grid/table with columns `Ref`, `Source`, `Date / Status / Source Owner`, and `Evidence Used in Report`
+- References slide: `references-slide` article class, `References 1-N` eyebrow, `References` title, and a single-page source-agnostic grid/table with columns `Ref`, `Source`, `Date / Status / Source Owner`, and `Evidence Used in Report`; for HEOR/value-evidence reference or evidence tables where the field is sponsorship or funding, use `Sponsor` or `Sponsor/Funder` instead of `Source Owner`
+- On the References slide table, keep the first `Ref` column centered horizontally in both header and body cells.
+- Knowledge-graph or relationship-map slides should keep node and edge labels readable, group nodes by explicit source-supported entity type, and avoid dense hairball layouts. Use legends for node type, edge type, and confidence/inference status, and keep graph-specific caveats or provenance references visually proximate without crowding the map.
 - If the exact number of metric cards differs because the report is small or dense, keep the example hierarchy: metrics before executive-summary bullets, not side-by-side with them
 
 ## HTML Skeleton
@@ -84,10 +90,11 @@ Before building or revising a report, open that example report and match its cur
 
 - Use scientific, objective source attribution such as "states that," "reported," "listed," "describes," or "documented"; do not use "says."
 - Use formal competitive-intelligence phrasing. Avoid casual freshness framing such as "new" or "newly" when "first-posted," "reported," "published," "during the reporting period," or an exact source date is more precise.
+- In HEOR and value-evidence tables, avoid vague labels such as "manufacturer signal" when manufacturer involvement can be confirmed. Use `Sponsor` or `Sponsor/Funder` when the field is asking for sponsorship or funding, confirm actual sponsor/funder/manufacturer involvement, and state the specific source-supported role, such as employee authorship, funding, sponsorship, consulting support, data-license involvement, or writing support.
 - Do not add terminal periods to title-style headings, chips, labels, captions, or fragment-style display text. Use periods only for complete sentences or where punctuation is required for grammar, citations, or abbreviations.
 - Do not use viewer-facing process headers such as "Factual scope," "Source construction," or "Recorded..." headings.
 - State the report date range once on the title slide. Avoid generic time-window labels elsewhere; when date range wording is necessary, use "between [date] and [date]."
-- Final citation slides should be titled "References" and use source-agnostic columns such as `Ref`, `Source`, `Date / Status / Source Owner`, and `Evidence Used in Report`.
+- Final citation slides should be titled "References" and use source-agnostic columns such as `Ref`, `Source`, `Date / Status / Source Owner`, and `Evidence Used in Report`; for HEOR/value-evidence reference or evidence tables where the field is sponsorship or funding, use `Sponsor` or `Sponsor/Funder` instead of `Source Owner`.
 
 ## Layout QA
 
@@ -112,5 +119,17 @@ When review selects a top utility strip, banner, status bar, or similar visible 
 When review selects a visible methodological caveat, methods note, limitation note, provenance note, or similar note box and asks to remove it, delete the entire visible note instead of restyling, shrinking, or relabeling it; preserve necessary caveats or provenance in source logs or other non-visible documentation where appropriate.
 
 For same-row peer components, reserve shared multi-line header height only when at least one peer header actually wraps; if every header in the row is one line, let subtext begin after the normal heading margin instead of leaving an empty second-line gap.
+For same-row peer-card headings, keep headings to a consistent rendered line count within the row; when one heading is flagged or wraps to two lines, make other same-row peer headings render as two lines through balanced wrapping or concise manual line breaks.
+
+Within peer cards or repeated component grids, balance comparable internal blocks as a set: keep subtext below like headings to the same rendered line count where feasible, align follow-on content starts, and use equal-height repeated boxes so one card does not appear heavier or looser than its peers.
+When review asks to remove a selected metric card, peer card, panel, or row component, delete it and reflow or rebalance the remaining row/grid; do not leave an empty slot or preserve the old column count.
+
+When render review flags a panel or section heading sitting too close to the table, card, or component immediately beneath it, add vertical spacing below the heading rather than shrinking the heading or the content below; when a heading is followed by a dense table, preserve clear vertical space below the heading before the table begins.
+
+After adjusting slide or infographic title line-height, preserve clear vertical spacing below the full title block so the next object does not sit too close to the title's lowest descenders, punctuation, or citation markers.
+
+When a slide uses section-head subtext directly under the title, keep that subtext on one line whenever the available width allows; adjust title/subtext width, spacing, or title-specific type size before accepting a two-line wrap.
+
+When review feedback asks for larger table text in a spacious table, increase the affected table body text and rebalance column widths, padding, or row spacing before shrinking content, while preserving slide fit; if repeated feedback says table or References body values are still too small and rendered whitespace remains, enlarge the body values further, then re-render and verify the table still fits on the page.
 
 For data or infographic cards with large metric values above bars, timelines, rings, or other visual marks, verify the rendered spacing between the number and the mark. If review flags the value as crowded, add enough vertical gap or rebalance the card so the metric reads as a distinct label rather than touching the visualization.

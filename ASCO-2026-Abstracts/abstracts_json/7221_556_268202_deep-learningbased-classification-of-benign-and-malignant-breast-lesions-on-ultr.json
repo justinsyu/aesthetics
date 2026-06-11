@@ -1,0 +1,80 @@
+{
+  "abstractNumber": "556",
+  "body": " \r\n\r\n\t<div><b>Background: </b> Breast cancer is the most common malignancy in women worldwide. Although breast ultrasonography is widely accessible, diagnostic accuracy remains limited by operator dependence and interobserver variability (κ≈0.6–0.8), contributing to delayed diagnosis and unnecessary biopsies. While deep learning has shown promise in ultrasound-based lesion classification, many models are computationally intensive and lack external validation, limiting clinical scalability. We developed a deployment-ready deep learning framework that balances diagnostic performance with computational efficiency using structured knowledge distillation.</p>  Objectives: To develop and externally validate a computationally efficient deep learning model for binary breast ultrasound lesion classification; to evaluate whether a distilled student model preserves clinically meaningful performance from a high-capacity teacher network; and to assess global clinical feasibility through independent radiologist evaluation.</p>  <b>Methods: </b> We analyzed 8,116 breast ultrasound images (4,074 benign; 4,042 malignant) independently annotated by two board-certified radiologists with consensus adjudication. A ResNet34 teacher network (21.8M parameters) was trained using ImageNet-pretrained weights. A lightweight ResNet18 student network (11.7M parameters; 46% reduction) was trained using structured knowledge distillation with confidence-aligned soft targets and KL-divergence regularization. External validation was performed on three independent ultrasound datasets not used during training. Performance metrics included accuracy, sensitivity, specificity, precision, F1 score, and AUROC. The model was deployed in a HIPAA-compliant cross-platform application and independently evaluated by physicians across six continents.</p>  <b>Results: </b> The student model achieved 91.9% accuracy on held-out test data with balanced performance (sensitivity 90.8%, specificity 93.0%, F1 score 0.918). External validation demonstrated stable generalization (accuracy 89–92%). In global clinical deployment, 94.2% of participating physicians rated the system clinically useful and suitable for integration into routine breast ultrasound workflows.</p>  <b>Conclusions: </b> Knowledge distillation enables substantial model compression while preserving diagnostic accuracy for breast lesion classification on ultrasound. This scalable, deployment-ready approach supports standardized interpretation across diverse clinical environments and warrants prospective evaluation for reducing unnecessary biopsies and improving diagnostic efficiency.</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+  "contentId": "268202",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/268202",
+    "queryParams": null,
+    "target": null,
+    "title": "Deep learning–based classification of benign and malignant breast lesions on ultrasound using knowledge distillation with external validation and global deployment."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION268202"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780349400000,
+    "start": 1780338600000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "41",
+  "presentationId": "268202",
+  "primaryPerson": {
+    "displayName": "Gowrishankar Palaniswamy, MD, MBBS",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780349400000,
+    "start": 1780338600000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17079",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17079",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Breast Cancer—Local/Regional/Adjuvant"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": null,
+  "title": "Deep learning–based classification of benign and malignant breast lesions on ultrasound using knowledge distillation with external validation and global deployment.",
+  "titles": null,
+  "uid": "PRESENTATION268202"
+}

@@ -1,0 +1,9 @@
+- https://www.jmcp.org/toc/jmcsp/32/1
+- https://api.crossref.org/
+- https://www.congress.gov/bill/117th-congress/house-bill/5376/
+- https://www.congress.gov/bill/119th-congress/house-bill/1/text/eh
+- https://www.healthaffairs.org/content/forefront/blockbusters-and-loopholes-expanding-exemptions-medicare-drug-price-negotiations
+- https://cdphe.colorado.gov/communicable/antimicrobial-stewardship
+- https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-pembrolizumab-her2-positive-gastric-or-gastroesophageal-junction-adenocarcinoma
+- https://www.dermatologytimes.com/view/new-level-up-period-2-data-shows-patients-who-switched-from-dupilumab-to-upadacitinib-achieved-higher-treatment-targets-in-ad
+- https://www.sicklecelldisease.org/sickle-cell-health-and-disease/types/

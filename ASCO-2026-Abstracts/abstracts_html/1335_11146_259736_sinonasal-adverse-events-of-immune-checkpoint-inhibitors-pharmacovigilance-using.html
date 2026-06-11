@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sinonasal adverse events of immune checkpoint inhibitors: Pharmacovigilance using FAERS.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Sinonasal adverse events of immune checkpoint inhibitors: Pharmacovigilance using FAERS.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 11146</div>
+    <div><strong>First speaker:</strong> Kevin Zhu, MD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/259736">https://www.asco.org/abstracts-presentations/259736</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b></p>  Immune checkpoint inhibitors (ICIs) are cancer therapies with diverse toxicities, known as immune-related adverse events (irAEs). Sinonasal irAEs have been described primarily in case reports, and their population-level characteristics remain poorly defined. To date, no statistical analysis of the FDA Adverse Events Reporting System Database (FAERS) has evaluated sinonasal adverse events (snAEs) associated with ICIs.</p>  <b>Methods: </b></p>  We investigated snAEs associated with FDA-approved ICIs in FAERS between 1/1/2011 and 10/1/2025. ICIs were grouped by therapeutic target (PD-1, PD-L1, or CTLA-4). Analyses were conducted in R using Bioconductor package “faers”.<sup> </sup>Data were standardized using preferred term in the Medical Dictionary for Regulatory Activities and deduplicated based on concordance across drug, adverse event, and demographics. Disproportionality analysis used reporting odds ratio (RORs) in comparison with the overall FAERS database. We excluded adverse events with &lt;2 reports. The study was created and reviewed by the authors prior to implementation.</p>  <b>Results: </b></p>  17 million FAERS reports were identified, of which 2,476 ICI-associated reports included snAEs. Two rare events demonstrated significant disproportionality among PD-1 inhibitors: chronic eosinophilic rhinosinusitis (n=3; ROR 7.71, 95% CI 2.34–25.42) and nasal mucosal hypertrophy (n=2; ROR 8.67, 95% CI 1.99 - 37.73). In contrast, more frequently reported snAEs including sinusitis, rhinorrhea, nasal congestion, anosmia, nasal polyps, paranasal sinus inflammation, parosmia, and rhinitis, were not overreported (Overall ROR<sub>2.5</sub> ≤1).</p>  <b>Conclusions: </b></p>  In this large pharmacovigilance analysis snAEs were not broadly overreported after ICI therapy. Rare inflammatory phenotypes were disproportionately reported with PD-1 inhibition, suggesting an immune-mediated mechanism. Given the limitations of spontaneous reporting data and small event counts, these findings should be interpreted cautiously but highlight the need for increased clinical awareness and prospective studies to better characterize sinonasal immune-related toxicities.</div>
+
+
+
+	<div class="table_caption"><b>Sinonasal adverse events reported after ICI therapy.</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p><strong>Adverse event</strong></p>
+</td>
+<td>
+<p><strong>Overall Freq</strong></p>
+</td>
+<td>
+<p><strong>Overall ROR (95% CI ROR<sub>2.5 </sub>– ROR<sub>97.5</sub>)</strong></p>
+</td>
+<td>
+<p><strong>CTLA 4 Freq</strong></p>
+</td>
+<td>
+<p><strong>CTLA4 ROR</strong></p>
+</td>
+<td>
+<p><strong>PD-1 Freq</strong></p>
+</td>
+<td>
+<p><strong>PD-1 ROR</strong></p>
+</td>
+<td>
+<p><strong>PD-L1 Freq</strong></p>
+</td>
+<td>
+<p><strong>PD-L1 ROR</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Anosmia</p>
+</td>
+<td>
+<p>31</p>
+</td>
+<td>
+<p>0.22 (0.15-0.32)</p>
+</td>
+<td>
+<p>4</p>
+</td>
+<td>
+<p>0.17</p>
+</td>
+<td>
+<p>23</p>
+</td>
+<td>
+<p>0.23</p>
+</td>
+<td>
+<p>4</p>
+</td>
+<td>
+<p>0.13</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Chronic eosinophilic rhinosinusitis</strong></p>
+</td>
+<td>
+<p><strong>3</strong></p>
+</td>
+<td>
+<p><strong>7.71 (2.34-25.42)</strong></p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p><strong>3</strong></p>
+</td>
+<td>
+<p><strong>10.56</strong></p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Nasal congestion</p>
+</td>
+<td>
+<p>157</p>
+</td>
+<td>
+<p>0.2 (0.17-0.24)</p>
+</td>
+<td>
+<p>15</p>
+</td>
+<td>
+<p>0.12</p>
+</td>
+<td>
+<p>122</p>
+</td>
+<td>
+<p>0.23</p>
+</td>
+<td>
+<p>20</p>
+</td>
+<td>
+<p>0.13</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Nasal mucosal hypertrophy</strong></p>
+</td>
+<td>
+<p><strong>2</strong></p>
+</td>
+<td>
+<p><strong>8.67 (1.99-37.73)</strong></p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p><strong>2</strong></p>
+</td>
+<td>
+<p><strong>11.88</strong></p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0.00</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Nasal polyps</p>
+</td>
+<td>
+<p>12</p>
+</td>
+<td>
+<p>0.17 (0.09-0.33)</p>
+</td>
+<td>
+<p>3</p>
+</td>
+<td>
+<p>0.33</p>
+</td>
+<td>
+<p>8</p>
+</td>
+<td>
+<p>0.21</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0.09</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Paranasal sinus inflammation</p>
+</td>
+<td>
+<p>4</p>
+</td>
+<td>
+<p>1.96 (0.87-4.42)</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>3.69</p>
+</td>
+<td>
+<p>3</p>
+</td>
+<td>
+<p>2.23</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>1.44</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Parosmia</p>
+</td>
+<td>
+<p>48</p>
+</td>
+<td>
+<p>0.52 (0.38-0.7)</p>
+</td>
+<td>
+<p>9</p>
+</td>
+<td>
+<p>0.64</p>
+</td>
+<td>
+<p>37</p>
+</td>
+<td>
+<p>0.63</p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>0.11</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Rhinitis</p>
+</td>
+<td>
+<p>50</p>
+</td>
+<td>
+<p>0.51 (0.39-0.68)</p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>0.12</p>
+</td>
+<td>
+<p>34</p>
+</td>
+<td>
+<p>0.50</p>
+</td>
+<td>
+<p>14</p>
+</td>
+<td>
+<p>0.67</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Rhinorrhoea</p>
+</td>
+<td>
+<p>267</p>
+</td>
+<td>
+<p>0.3 (0.27-0.35)</p>
+</td>
+<td>
+<p>32</p>
+</td>
+<td>
+<p>0.24</p>
+</td>
+<td>
+<p>215</p>
+</td>
+<td>
+<p>0.37</p>
+</td>
+<td>
+<p>20</p>
+</td>
+<td>
+<p>0.11</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Sinusitis</p>
+</td>
+<td>
+<p>300</p>
+</td>
+<td>
+<p>0.21 (0.19-0.24)</p>
+</td>
+<td>
+<p>56</p>
+</td>
+<td>
+<p>0.27</p>
+</td>
+<td>
+<p>204</p>
+</td>
+<td>
+<p>0.22</p>
+</td>
+<td>
+<p>40</p>
+</td>
+<td>
+<p>0.14</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+ 
+	<div class="table_footer">Bold denotes statistical significance (ROR<sub>2.5</sub>&gt;1).</div> 
+
+
+</main>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Predicting progression-free and overall survival from response endpoints in oncology clinical trials: An embedding-based machine learning approach.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Predicting progression-free and overall survival from response endpoints in oncology clinical trials: An embedding-based machine learning approach.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e13666</div>
+    <div><strong>First speaker:</strong> Ankit Kalucha</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/264328">https://www.asco.org/abstracts-presentations/264328</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Objective response rate (ORR) and duration of response (DoR) provide important early efficacy signals in oncology trials. Their ability to predict subsequent progression-free survival (PFS) and overall survival (OS) varies widely by tumor type and treatment mechanism. Prior endpoint surrogacy analyses have focused on tumor type and treatment-specific statistical correlations, limiting generalizability across heterogeneous settings. We developed a machine learning (ML) framework incorporating ORR, DoR, and LLM-based clinical and treatment embeddings to predict median PFS (mPFS) and median OS (mOS) in a comprehensive cross-tumor clinical trials dataset.</div>
+  <main> 
+
+	<div><b>Background: </b>  </p>  Objective response rate (ORR) and duration of response (DoR) provide important early efficacy signals in oncology trials. Their ability to predict subsequent progression-free survival (PFS) and overall survival (OS) varies widely by tumor type and treatment mechanism. Prior endpoint surrogacy analyses have focused on tumor type and treatment-specific statistical correlations, limiting generalizability across heterogeneous settings. We developed a machine learning (ML) framework incorporating ORR, DoR, and LLM-based clinical and treatment embeddings to predict median PFS (mPFS) and median OS (mOS) in a comprehensive cross-tumor clinical trials dataset.  </p>  <b>Methods: </b>  </p>  Data were extracted from the LARVOL CLIN, an outcomes database (2004–2023), comprising 1,223 Phase I–III trials (2,086 experimental and control arms) reporting both ORR and DoR. Median PFS and OS were available for 908 and 690 trials, respectively. To account for cross-trial heterogeneity, key population descriptors (tumor type, stage, treatment setting, prior lines of therapy, biomarker status) were embedded separately to preserve granularity, while treatment details (drugs, modalities, and dose/schedule) were embedded into a single representation. Embeddings from Sentence Transformers (all-mpnet-base-v2 embeddings) were used and reduced to 30 principal components (PCs). Two gradient boosting algorithms (XGBoost [XGB], LightGBM) were evaluated to predict log-transformed mPFS and mOS using log (ORR), log (DoR), arm size, population embeddings and treatment embeddings. To prevent intra-trial data leakage, trial-grouped five-fold cross-validation (CV) was used. </p>  <b>Results: </b>  </p>  The best-performing model, XGBoost, achieved higher predictive accuracy for mPFS than mOS (CV R&#178;: 0.72 vs 0.53 on log scale). SHAP importance analysis revealed that mPFS predictions were primarily driven by ORR and DoR, followed by tumor type and stage. Conversely, mOS predictions were more heavily influenced by tumor type (exceeding ORR and DoR contributions), stage, and treatment description. Limitations include the modest dataset size and uncertain generalizability to rare tumor subtypes.  </p>  <b>Conclusions: </b>  </p>  Integrating early response endpoints with trial context features enabled prediction of survival outcomes across heterogeneous oncology trials, with higher accuracy for mPFS than mOS. The stronger influence of tumor type and treatment context on mOS prediction suggests that early response endpoints alone may be insufficient surrogates for OS. This framework may support early trial prioritization and survival endpoint estimation when mature OS data are unavailable.</div>
+
+
+
+	<div class="table_caption"><b>XGB performance (log scale).</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p>Endpoint </p>
+</td>
+<td>
+<p>R²  </p>
+</td>
+<td>
+<p>RMSE  </p>
+</td>
+<td>
+<p>MAE  </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>mPFS (n=908) </p>
+</td>
+<td>
+<p>0.72 </p>
+</td>
+<td>
+<p>0.30 </p>
+</td>
+<td>
+<p>0.20 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>mOS (n=690) </p>
+</td>
+<td>
+<p>0.53 </p>
+</td>
+<td>
+<p>0.32 </p>
+</td>
+<td>
+<p>0.22 </p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+ 
+	<div class="table_footer">R2 = Coefficient of Determination, RMSE = Root Mean Squared Error, MAE = Mean Absolute Error.</div> 
+
+
+</main>
+</body>
+</html>

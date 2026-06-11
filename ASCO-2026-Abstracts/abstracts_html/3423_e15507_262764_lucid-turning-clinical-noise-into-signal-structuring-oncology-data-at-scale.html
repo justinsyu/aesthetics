@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LUCID: Turning clinical noise into signal, structuring oncology data at scale.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>LUCID: Turning clinical noise into signal, structuring oncology data at scale.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e15507</div>
+    <div><strong>First speaker:</strong> Nicholas James Hornstein, MD, PhD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/262764">https://www.asco.org/abstracts-presentations/262764</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Most clinically meaningful oncology information is recorded in unstructured formats, limiting its consistent use. Northwell Health diagnoses approximately 26,000 new cancer patients annually and operates a data lake in which all patient-level digital information is accessible. LUCID was developed to convert unstructured oncology data into structured representations in order to enable reliable downstream clinical, research, and operational use.</div>
+  <main> 
+
+	<div><b>Background: </b> Most clinically meaningful oncology information is recorded in unstructured formats, limiting its consistent use. Northwell Health diagnoses approximately 26,000 new cancer patients annually and operates a data lake in which all patient-level digital information is accessible. LUCID was developed to convert unstructured oncology data into structured representations in order to enable reliable downstream clinical, research, and operational use.</p>  <b>Methods: </b> LUCID is a platform deployed within a secure, HIPAA compliant environment designed to convert unstructured oncology data into clinically meaningful variables. The architecture combines natural language processing pipelines with modular large language model agents using GPT-5-mini. The modules described here characterize cancer presence, pathologic features, surgical resection events, staging, and follow longitudinal radiographic disease status. Each module was evaluated against clinician-validated ground truth, with cases reviewed by at least two clinicians and disagreements adjudicated by a third reviewer. Performance was assessed using accuracy, precision, recall, and F1 score. Time per patient abstraction and computational cost were measured.</p>  <b>Results: </b> 30 patient records were randomly select amongst patients who had undergone a biopsy at Northwell Health within the last decade and had a GI malignancy-associated ICD code; 20 of these cases had malignancy identified and were then assessed for staging and radiographic changes over time. These cases represented real-world heterogeneity including &gt;6 histologies, a range of TNM stages (I-IV), and a breadth of longitudinal imaging assessments (average 13 per patient). Across evaluated domains, LUCID achieved accuracy ranging from 93.0% to 100.0%, with F1 scores from 0.96 to 1 (Table 1). False positives (FP) describe identification of events such as progression or response, whereas false negatives (FN) represent no call detected for an event. Errors were typically attributed to clinical edge-cases such as pseudo-malignant cysts. Abstraction required a total of 85 seconds per patient and 3 cents in processing cost. </p>  <b>Conclusions: </b> This proof- of- principle shows that structured oncology information can be extracted efficiently and at scale from unstructured clinical data within a health-system data lake. Although LUCID is capable of generating longitudinal patient timelines, this evaluation focused on module-level performance to enable objective measurements. Ongoing work applies this architecture to expand clinical and research capabilities system-wide.</div>
+
+
+
+	<div class="table_caption"><b>LUCID Module Performance</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p>Domain </p>
+</td>
+<td>
+<p>N </p>
+</td>
+<td>
+<p>Accuracy </p>
+</td>
+<td>
+<p>Precision </p>
+</td>
+<td>
+<p>Recall </p>
+</td>
+<td>
+<p>F1 </p>
+</td>
+<td>
+<p>Error profile </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Cancer Presence </p>
+</td>
+<td>
+<p>30 </p>
+</td>
+<td>
+<p>100% </p>
+</td>
+<td>
+<p>100% </p>
+</td>
+<td>
+<p>100% </p>
+</td>
+<td>
+<p>100% </p>
+</td>
+<td>
+<p> </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Valid Resection </p>
+</td>
+<td>
+<p>30 </p>
+</td>
+<td>
+<p>93% </p>
+</td>
+<td>
+<p>100% </p>
+</td>
+<td>
+<p>82% </p>
+</td>
+<td>
+<p>90% </p>
+</td>
+<td>
+<p>2 FN </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Histology and Differentiation </p>
+</td>
+<td>
+<p>30 </p>
+</td>
+<td>
+<p>97% </p>
+</td>
+<td>
+<p>95% </p>
+</td>
+<td>
+<p>100% </p>
+</td>
+<td>
+<p>98% </p>
+</td>
+<td>
+<p>1 FP </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>T stage </p>
+</td>
+<td>
+<p>20 </p>
+</td>
+<td>
+<p>100% </p>
+</td>
+<td>
+<p>100% </p>
+</td>
+<td>
+<p>100% </p>
+</td>
+<td>
+<p>100% </p>
+</td>
+<td>
+<p> </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>N stage </p>
+</td>
+<td>
+<p>20 </p>
+</td>
+<td>
+<p>100% </p>
+</td>
+<td>
+<p>100% </p>
+</td>
+<td>
+<p>100% </p>
+</td>
+<td>
+<p>100% </p>
+</td>
+<td>
+<p> </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>M stage </p>
+</td>
+<td>
+<p>20 </p>
+</td>
+<td>
+<p>95% </p>
+</td>
+<td>
+<p>95% </p>
+</td>
+<td>
+<p>100% </p>
+</td>
+<td>
+<p>97% </p>
+</td>
+<td>
+<p>1 FP </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Radiographic Changes </p>
+</td>
+<td>
+<p>106 </p>
+</td>
+<td>
+<p>96% </p>
+</td>
+<td>
+<p>95% </p>
+</td>
+<td>
+<p>98% </p>
+</td>
+<td>
+<p>96% </p>
+</td>
+<td>
+<p>3 FP </p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

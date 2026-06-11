@@ -1,0 +1,64 @@
+{
+  "abstractNumber": "e13002",
+  "body": " \r\n\r\n\t<div><b>Background: </b></p>  Selecting the most effective anticancer drugs remains challenging. Comprehensive molecular profiling identifies alterations actionable with targeted agents, but genomic and clinical data may also predict benefit across different drug classes. We developed machine learning–based models (Support Vector Machines - SVM and Random Forest - RF) to predict treatment outcomes using real-world clinical, pathological, genomic, and prior-therapy data at the treatment line level. Genomic alterations were summarized at the pathway level.</p>  <b>Methods: </b></p>  We retrospectively analyzed 46 homogeneous patients with breast cancer who received PARP inhibitors (PARPi) discussed at the IEO Molecular Tumor Board between 2019 and 2023. Outcomes were progression-free survival (PFS) and objective response rate (ORR). As a quality control measure, models were trained to predict overall survival in first-line setting to assess data reliability. The most important predictors were expected (hormone receptor (HR), Ki-67 and age), thus supporting data reliability. We then trained outcome models for the four most represented treatment classes: PARPi, taxanes (Tx), endocrine therapies (ET), and pyrimidine analogues (Pyr).</p>  <b>Results: </b></p>  RF models outperformed linear SVMs, particularly for PFS prediction, suggesting non linear interactions among predictors. Overall discrimination was modest (Table 1), reflecting limited sample size and the scarcity of true negative controls, especially for targeted treatments. Prior treatments emerged as the strongest predictor: longer PFS of previous platinum therapy (pPFS) was among the most important features to predict longer PFS and better ORR for PARPi, but similar results were obtained for all the treatment classes. Features such as Ki-67, performance status (PS), age, HR status and treatment history added predictive value, while genomic pathway alterations provided weaker but detectable signals.</p>  <b>Conclusions: </b></p>  Our study demonstrates the feasibility of integrating data to predict treatment benefit and prioritize therapeutic options. Although current limited performance, the approach highlights the dominant yet still underestimated importance of prior treatment response on subsequent therapies’ outcome prediction, establishing a foundation for a methodological refinement, expansion across tumors, and external validation. It could evolve into a clinical decision support tool optimizing both personalized and standard treatments, which is especially relevant for low-income countries without access to expensive drugs.</div>\r\n\r\n\r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<p><strong>Drug</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>PFS</strong></p>\r\n<p>(RMSE)</p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p><strong>ORR</strong></p>\r\n<p>(ROC)</p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p><strong>Top features</strong></p>\r\n<p><strong>ORR</strong></p>\r\n</td>\r\n<td>\r\n<p><strong>Direction</strong></p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p>RF</p>\r\n</td>\r\n<td>\r\n<p>SVM</p>\r\n</td>\r\n<td>\r\n<p>RF</p>\r\n</td>\r\n<td>\r\n<p>SVM</p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>PARPi</p>\r\n<p>46</p>\r\n</td>\r\n<td>\r\n<p>9</p>\r\n</td>\r\n<td>\r\n<p>11.5</p>\r\n</td>\r\n<td>\r\n<p>0.63</p>\r\n</td>\r\n<td>\r\n<p>0.59</p>\r\n</td>\r\n<td>\r\n<p>RAS wt</p>\r\n</td>\r\n<td>\r\n<p>+</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p></p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p>pPFS platinum</p>\r\n</td>\r\n<td>\r\n<p>+</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p>BRCA1, BRCA2 and PALB2 wt</p>\r\n</td>\r\n<td>\r\n<p>-</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p>Lobular</p>\r\n</td>\r\n<td>\r\n<p>-</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>ET</p>\r\n<p>35</p>\r\n</td>\r\n<td>\r\n<p>14.4</p>\r\n</td>\r\n<td>\r\n<p>15.9</p>\r\n</td>\r\n<td>\r\n<p>0.48</p>\r\n</td>\r\n<td>\r\n<p>0.45</p>\r\n</td>\r\n<td>\r\n<p>PGR%</p>\r\n</td>\r\n<td>\r\n<p>+</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td></td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p>pPFS ET</p>\r\n</td>\r\n<td>\r\n<p>+</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p>RAS altered</p>\r\n</td>\r\n<td>\r\n<p>-</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p>NOTCH wt</p>\r\n</td>\r\n<td>\r\n<p>-</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Tx</p>\r\n<p>35</p>\r\n</td>\r\n<td>\r\n<p>8.2</p>\r\n</td>\r\n<td>\r\n<p>10.6</p>\r\n</td>\r\n<td>\r\n<p>0.75</p>\r\n</td>\r\n<td>\r\n<p>0.58</p>\r\n</td>\r\n<td>\r\n<p>pPFS anthracyclines</p>\r\n</td>\r\n<td>\r\n<p>+</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p></p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p>pPFS TROP2 ADC</p>\r\n</td>\r\n<td>\r\n<p>+</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p>PS</p>\r\n</td>\r\n<td>\r\n<p>-</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p>pPFS PARPi</p>\r\n</td>\r\n<td>\r\n<p>-</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Pyr</p>\r\n<p>34</p>\r\n</td>\r\n<td>\r\n<p>15.5</p>\r\n</td>\r\n<td>\r\n<p>22.8</p>\r\n</td>\r\n<td>\r\n<p>0.6</p>\r\n</td>\r\n<td>\r\n<p>0.58</p>\r\n</td>\r\n<td>\r\n<p>pPFS alkylating</p>\r\n</td>\r\n<td>\r\n<p>+</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p></p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p>Lobular</p>\r\n</td>\r\n<td>\r\n<p>+</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p>Ki-67</p>\r\n</td>\r\n<td>\r\n<p>-</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p>pPFS HER2 ADC</p>\r\n</td>\r\n<td>\r\n<p>-</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n\r\n\r\n",
+  "contentId": "263464",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/263464",
+    "queryParams": null,
+    "target": null,
+    "title": "Proof of concept for machine learning–based models to predict response to anticancer treatments."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION263464"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": null,
+  "presentationId": "263464",
+  "primaryPerson": {
+    "displayName": "Edoardo Crimini, MD",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": "Selecting the most effective anticancer drugs remains challenging. Comprehensive molecular profiling identifies alterations actionable with targeted agents, but genomic and clinical data may also predict benefit across different drug classes. We developed machine learning–based models (Support Vector Machines - SVM and Random Forest - RF) to predict treatment outcomes using real-world clinical, pathological, genomic, and prior-therapy data at the treatment line level. Genomic alterations were summarized at the pathway level.",
+  "taxonomy": null,
+  "title": "Proof of concept for machine learning–based models to predict response to anticancer treatments.",
+  "titles": null,
+  "uid": "PRESENTATION263464"
+}

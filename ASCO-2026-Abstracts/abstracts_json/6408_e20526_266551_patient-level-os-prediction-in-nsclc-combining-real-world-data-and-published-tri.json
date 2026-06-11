@@ -1,0 +1,64 @@
+{
+  "abstractNumber": "e20526",
+  "body": " \r\n\r\n\t<div><b>Background: </b></p>  The majority of early-phase clinical trials in oncology are single-arm trials. External comparator arms can provide important contextual information to interpret results and to inform the design of future trials. But patient-level trial data may be lacking, especially because oncology is characterized by rapidly evolving standards-of-care for increasingly granular subgroups. Real-world data (RWD) and summary trial results offer complementary but incomplete pictures of the effects of therapies on patients. The difficulty of combining these sources of information hampers optimal decision-making in trial planning, design, and analysis.</p>  <b>Methods: </b></p>  We developed a machine learning (ML) model that integrates patient-level RWD with summary statistics from recent trial publications. The model generates patient-level predictions of outcomes under existing treatments that conform to the results of past RCTs in the aggregate. This provides a novel approach to integrating RWD into granular analyses while maintaining the gold-standard status of randomized trial evidence.</p>  The core of the model consists in a foundational pan-cancer transformer model that was trained on RWD from a collection of detailed clinical and genetic data from roughly 250k tumor biopsies [custom-processed versions of AACR GENIE, GENIE BPC NSCLC &amp; CRC, and MSK-CHORD]. We demonstrate a novel calibration technique that allows us to conform the model’s survival predictions to match published results, incorporating one or many RCT results into its weights.</p>  <b>Results: </b></p>  We demonstrate the capability of this approach to both interpolate between results of RCTs and to extrapolate to new trials. We calibrate the model to the full set of KEYNOTE trials in mNSCLC and show that it generates patient-level trial simulations across baseline cohorts and treatments within the KEYNOTE trial span while recapitulating observed outcomes at calibration points. We further demonstrate that the model recapitulates published control-arm results from the POSEIDON and LEAP-006 trials. Across PD-L1 expression strata, histologic subtype, KEAP1/STK11/KRAS mutation status, and the overall population, 90.9% (40/44) of median and 2–5-year OS estimates fell within reported 95% confidence intervals, with median absolute deviation 2.7% in the survival benchmarks.</p>  <b>Conclusions: </b></p>  ML models integrating RWD with trial results enable accurate prediction of survival in a way that can simultaneously support granular analyses while conforming to gold-standard RCT results. Our approach enables the creation of external comparators to better evaluate the efficacy of new therapies. More broadly it supports data-driven decision-making in trial planning, trial analysis, and hypothesis generation.</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+  "contentId": "266551",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/266551",
+    "queryParams": null,
+    "target": null,
+    "title": "Patient-level OS prediction in NSCLC combining real-world data and published trial results."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION266551"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": null,
+  "presentationId": "266551",
+  "primaryPerson": {
+    "displayName": "Aaron Smith",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": "The majority of early-phase clinical trials in oncology are single-arm trials. External comparator arms can provide important contextual information to interpret results and to inform the design of future trials. But patient-level trial data may be lacking, especially because oncology is characterized by rapidly evolving standards-of-care for increasingly granular subgroups. Real-world data (RWD) and summary trial results offer complementary but incomplete pictures of the effects of therapies on patients. The difficulty of combining these sources of information hampers optimal decision-making in trial planning, design, and analysis.",
+  "taxonomy": null,
+  "title": "Patient-level OS prediction in NSCLC combining real-world data and published trial results.",
+  "titles": null,
+  "uid": "PRESENTATION266551"
+}

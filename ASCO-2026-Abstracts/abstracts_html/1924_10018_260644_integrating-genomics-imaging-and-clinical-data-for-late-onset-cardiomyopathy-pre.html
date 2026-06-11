@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Integrating genomics, imaging, and clinical data for late-onset cardiomyopathy prediction in pediatric cancer survivors: A multi-modal machine-learning comparison using St. Jude Cloud.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Integrating genomics, imaging, and clinical data for late-onset cardiomyopathy prediction in pediatric cancer survivors: A multi-modal machine-learning comparison using St. Jude Cloud.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 10018</div>
+    <div><strong>First speaker:</strong> Masab Mansoor, MBA</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/260644">https://www.asco.org/abstracts-presentations/260644</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b> Pediatric cancer survivors face substantial risk of anthracycline- and radiation therapy (RT)-related cardiomyopathy (CM). Current risk stratification using clinical factors alone demonstrates suboptimal discriminative capacity. We hypothesized that integrating multi-modal data (clinical, genomic, and cardiac imaging/electrocardiography) would enhance predictive accuracy for late-onset CM beyond single-modality models.</p>  <b>Methods: </b> We analyzed data from 1,217 adult survivors of childhood cancer enrolled in the St. Jude Lifetime Cohort (SJLIFE), accessed via St. Jude Cloud. The primary endpoint was CM, defined as left ventricular ejection fraction (LVEF) &lt;50% or ≥10% absolute decline from baseline. Four progressively complex feature sets were evaluated: (1) Clinical-Only (anthracycline/RT dose, age at diagnosis, sex); (2) Clinical+Genomic (adding 31 protective variants from PeCan); (3) Clinical+ECG/Imaging (adding 86 signal-processed ECG features and global longitudinal strain [GLS]); and (4) Multi-Modal (comprehensive integration). Logistic regression, random forest (RF), and extreme gradient boosting (XGBoost) algorithms were compared using 5-fold stratified cross-validation. Model interpretability was assessed via SHapley Additive exPlanations (SHAP) analysis.</p>  <b>Results: </b> Clinical-Only models demonstrated limited discrimination (AUC 0.70; 95% CI, 0.65-0.75). Incremental addition of genomic data (AUC 0.85) or ECG/GLS parameters (AUC 0.89) substantially improved performance. The Multi-Modal XGBoost model achieved superior predictive accuracy (AUC 0.93; 95% CI, 0.90-0.95; sensitivity 0.88; specificity 0.89), marginally outperforming RF (AUC 0.91). SHAP analysis identified GLS as the dominant predictor, followed by cumulative anthracycline dose and protective genomic variants, demonstrating synergistic contribution of multi-modal features.</p>  <b>Conclusions: </b> Multi-modal machine learning integration using open-source St. Jude Cloud data enables highly accurate prediction of late-onset CM in pediatric cancer survivors (AUC 0.93). The demonstrated superiority over single-modality approaches supports a paradigm shift toward comprehensive risk stratification. This XGBoost-based model could facilitate precision survivorship care, enabling risk-adapted surveillance intensification and early cardioprotective intervention for high-risk patients.</div>
+
+
+
+	<div class="table_caption"><b>Comparative performance of machine learning models for 10-year cardiomyopathy risk prediction.</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p>Model Type</p>
+</td>
+<td>
+<p>Algorithm</p>
+</td>
+<td>
+<p>AUC (95% CI)</p>
+</td>
+<td>
+<p>Sensitivity</p>
+</td>
+<td>
+<p>Specificity</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Clinical-Only</p>
+</td>
+<td>
+<p>Log. Reg.</p>
+</td>
+<td>
+<p>0.70 (0.65-0.75)</p>
+</td>
+<td>
+<p>0.62</p>
+</td>
+<td>
+<p>0.66</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Clinical + Genomic</p>
+</td>
+<td>
+<p>Random Forest</p>
+</td>
+<td>
+<p>0.85 (0.81-0.89)</p>
+</td>
+<td>
+<p>0.79</p>
+</td>
+<td>
+<p>0.82</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Clinical + ECG/GLS</p>
+</td>
+<td>
+<p>XGBoost</p>
+</td>
+<td>
+<p>0.89 (0.86-0.91)</p>
+</td>
+<td>
+<p>0.78</p>
+</td>
+<td>
+<p>0.81</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Multi-Modal (Full)</p>
+</td>
+<td>
+<p>XGBoost</p>
+</td>
+<td>
+<p>0.93 (0.90-0.95)</p>
+</td>
+<td>
+<p>0.88</p>
+</td>
+<td>
+<p>0.89</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

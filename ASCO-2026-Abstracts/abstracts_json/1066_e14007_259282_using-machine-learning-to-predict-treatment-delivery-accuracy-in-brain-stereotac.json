@@ -1,0 +1,64 @@
+{
+  "abstractNumber": "e14007",
+  "body": " \r\n\r\n\t<div><b>Background: </b> Accurate dose delivery in SRS is critical when treating small intracranial targets near critical structures. Suboptimal delivery can impact patient outcomes and have the potential to compromise clinical trial results. The SRS Head Phantom, issued by the Radiation Quality Assurance Lab (IROC) is a standardized patient surrogate used as a mandatory credentialing tool for institutions participating in NCI-sponsored clinical trials involving SRS. This study aims to develop ML models capable of predicting SRS delivery accuracy across various platforms and clinical settings. This approach can help identify key factors associated with suboptimal performance and could supplement the physical process to streamline clinical trial credentialing. </p>  <b>Methods: </b> We analyzed 930 SRS audit results from 673 institutions participating in the RQALab/IROC program between 2013 and 2023. The phantom contains a 1.9 cm spherical target with embedded detectors. Each test evaluated delivered versus intended dose at the treatment target, requiring agreement within &#177;5%3mm. We collected 60 features encompassing treatment and planning parameters, plan quality indices, and measures of plan complexity and used these to predict delivery accuracy. Random Forest models were trained to predict dose delivery deviation and pass/fail status. The dataset was divided into seven subgroups based on machine type and treatment planning system. Within each group, models were trained using a 25x4-fold cross-validation approach. SHAP (SHapley Additive exPlanations) values were utilized to identify the top contributing features and ensure model interpretability. </p>  <b>Results: </b> Machine-learning models predicted the delivered target dose with a mean absolute error of 2% in the largest practice cohort (N=320). For predicting unacceptable deliveries, the models exhibited high sensitivity (98%) and accuracy (0.93). For dedicated Gamma Knife platforms (N=77), the models achieved 99% prediction accuracy. Interpretability analyses revealed that plan quality metrics were the dominant predictors of suboptimal delivery accuracy; specifically, poor plan quality correlated with larger deviations between planned and delivered doses. Conformity and dose gradient were identified as top contributors across most cohorts. The specific ranking and predictive weight of these features varied by modality; for instance, complexity metrics contributed significantly to modulated plans, whereas target volume metrics played a larger role in deliveries using dedicated SRS treatment machines. </p>  <b>Conclusions: </b> Machine learning can effectively identify SRS deliveries at risk of failure through models tailored to specific delivery modalities. By integrating explainable AI methods, this approach highlights actionable strategies to improve precision, standardize performance across institutions, and enhance patient safety. </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+  "contentId": "259282",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/259282",
+    "queryParams": null,
+    "target": null,
+    "title": "Using machine learning to predict treatment delivery accuracy in brain stereotactic radiosurgery."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION259282"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": null,
+  "presentationId": "259282",
+  "primaryPerson": {
+    "displayName": "Lian Duan, MS",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": "Accurate dose delivery in SRS is critical when treating small intracranial targets near critical structures. Suboptimal delivery can impact patient outcomes and have the potential to compromise clinical trial results. The SRS Head Phantom, issued by the Radiation Quality Assurance Lab (IROC) is a standardized patient surrogate used as a mandatory credentialing tool for institutions participating in NCI-sponsored clinical trials involving SRS. This study aims to develop ML models capable of predicting SRS delivery accuracy across various platforms and clinical settings. This approach can help identify key factors associated with suboptimal performance and could supplement the physical process to streamline clinical trial credentialing.",
+  "taxonomy": null,
+  "title": "Using machine learning to predict treatment delivery accuracy in brain stereotactic radiosurgery.",
+  "titles": null,
+  "uid": "PRESENTATION259282"
+}

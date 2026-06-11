@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Development and internal validation of a clinical prognostic model for SMARCB1-deficient renal medullary carcinoma (RMC).</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Development and internal validation of a clinical prognostic model for SMARCB1-deficient renal medullary carcinoma (RMC).</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e16535</div>
+    <div><strong>First speaker:</strong> Stepan M. Esagian, MD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/263662">https://www.asco.org/abstracts-presentations/263662</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> RMC is a rare and highly aggressive malignancy that predominantly affects young individuals with sickle hemoglobinopathies. Due to its rarity, no validated prognostic models exist to guide clinical decision-making. We aimed to develop and internally validate a prognostic model for patients with RMC using routinely available clinical and laboratory variables.</div>
+  <main> 
+
+	<div><b>Background: </b></p>  RMC is a rare and highly aggressive malignancy that predominantly affects young individuals with sickle hemoglobinopathies. Due to its rarity, no validated prognostic models exist to guide clinical decision-making. We aimed to develop and internally validate a prognostic model for patients with RMC using routinely available clinical and laboratory variables.</p>  <b>Methods: </b></p>  We analyzed a single-institution cohort of patients with RMC. Candidate variables were identified based on biological plausibility and represented in a directed acyclic graph. Missing data were handled via multiple imputation by chained equations (<em>m</em>=&nbsp;50). Variables were ranked using elastic net Cox regression (<em>α</em>=&nbsp;0.5, <em>λ</em> = <em>λ</em><sub>min</sub>) with stability selection derived from 100 bootstrap resamples per imputed dataset. Predictors achieving &gt;&nbsp;60% selection frequency were retained for a nested parsimony analysis. Bootstrap internal validation (<em>B</em>=&nbsp;2000) estimated optimism-corrected discrimination and calibration performance, with the calibration slope applied as global shrinkage to penalize final coefficients for overfitting. Clinical utility was evaluated via decision curve analysis (DCA) at 18- and 24-month horizons.</p>  <b>Results: </b></p>  Among 180 patients (median age 29; IQR 23–37), 142 deaths occurred with a median follow-up of 12.4 months. The final model included four predictors (Table). The optimism-corrected c-index was 0.667 (optimism = 0.009), and the calibration slope was 0.964, indicating minimal overfitting. Calibration plots showed excellent predicted-observed agreement at 12, 18, 24, and 36 months. DCA showed net benefit across threshold probabilities of 10%–75% at 18 months and 10%–80% at 24 months compared to default strategies. In sensitivity analysis, inclusion of TP53 mutation status improved discrimination (<em>c</em>-index 0.686) and model fit (<em>ΔAIC </em>−10.6). An interactive web-based risk calculator was developed to facilitate clinical implementation.</p>  <b>Conclusions: </b></p>  This study presents the first internally validated prognostic model for RMC, demonstrating acceptable discrimination and excellent calibration using routinely available variables. By stratifying patients into distinct risk groups, this model may inform treatment intensity—guiding escalation to multi-agent regimens or sequential chemotherapy cycling in high-risk patients, while identifying lower-risk patients who may benefit from de-escalation strategies such as metastasis-directed therapy for oligometastatic disease or consideration of cytoreductive nephrectomy. External validation is warranted.</div>
+
+
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p><strong>Variable</strong></p>
+</td>
+<td>
+<p><strong>Time Ratio</strong></p>
+</td>
+<td>
+<p><strong>95% CI</strong></p>
+</td>
+<td>
+<p><strong><em>p</em></strong><strong> value</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>ECOG performance status</p>
+</td>
+<td>
+<p>0.64</p>
+</td>
+<td>
+<p>0.53–0.77</p>
+</td>
+<td>
+<p>&lt;0.001</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Distal (non-retroperitoneal) lymph node metastases</p>
+</td>
+<td>
+<p>0.69</p>
+</td>
+<td>
+<p>0.52–0.92</p>
+</td>
+<td>
+<p>0.011</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Neutrophil-to-lymphocyte ratio</p>
+</td>
+<td>
+<p>0.98</p>
+</td>
+<td>
+<p>0.94–1.02</p>
+</td>
+<td>
+<p>0.25</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Corrected calcium (mg/dL)</p>
+</td>
+<td>
+<p>0.77</p>
+</td>
+<td>
+<p>0.56–1.06</p>
+</td>
+<td>
+<p>0.10</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Sensitivity Analysis Only</p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>TP53 Mutation</p>
+</td>
+<td>
+<p>0.63</p>
+</td>
+<td>
+<p>0.36-1-10</p>
+</td>
+<td>
+<p>0.10</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

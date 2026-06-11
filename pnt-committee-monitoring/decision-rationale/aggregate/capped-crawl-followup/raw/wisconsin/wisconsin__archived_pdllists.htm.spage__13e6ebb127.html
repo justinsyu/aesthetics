@@ -1,0 +1,2445 @@
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head"><title>
+	Wisconsin Medicaid PDL Implementation Schedule
+</title>
+  <!--[if lt IE 9]>
+      <link rel="stylesheet" type="text/css" href="../../../../../css/ie8-and-down.css" />
+    <style>
+    .QuickLinks_container {behavior: url('/WIPortal/Css/PIE.htc');}
+    </style>
+  <![endif]-->
+
+  <script type="text/javascript" src="/WIPortal/Scripts/jquery-3.6.1.min.js"> </script>
+  <script type="text/javascript" src="/WIPortal/Javascript/DatePicker.js"> </script>
+  <script type="text/javascript" src="/WIPortal/Javascript/HotKeyButton.js"> </script>
+
+  <link id="LinkPortalStyle" rel="stylesheet" type="text/css" media="screen" href="../../../../../css/portal.css" /><link id="LinkCustomerOverride" rel="stylesheet" type="text/css" media="screen" href="../../../../../css/customerOverride.css" /><link id="favicon" rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico" />
+ <link rel="stylesheet"    id="LinkStaticStyle"          type="text/css" media="screen" href="/WIPortal/css/staticContent.css" />
+<link href="/WIPortal/WebResource.axd?d=fLCI0udPb0su0m5RjdPGP9r-ZpHKQvakDAuW_JTTGRXiE0dfNuB36TjD_bErqc626tyL-nBtxEnCLfHozfBXRKW3bvKHozpm88Em6XOJ12Sz2jJD6kMgmidHu1V1pklK7Ks2R-Ow9nc7SNh65JC_Mg2&amp;t=639125368620000000" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /></head>
+<body  >
+  <form method="post" action="./archived_pdllists.htm.spage?file=provider%2fmedicaid%2fpharmacy%2fpdl%2farchived_pdllists.htm" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="RadScriptManager1_TSM" id="RadScriptManager1_TSM" value="" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATEKEY" id="__VIEWSTATEKEY" value="BID1_WID1" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WIPortal/WebResource.axd?d=B_Wqgzqlp8Nrded0w6_l9vuogCdwSubS6GRwv01TlBICgXGPyaSrepexVh_qx2f2wMBkQioVBFsggsAUFh5eEP5PwCxOiGRiK-KOZNxexDs1&amp;t=638901356248157332" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+ function CheckDisableBackButton()
+ {
+   var excludeArray = [];
+ var url= '';
+ var arrayLength = excludeArray.length;
+//alert(arrayLength);
+ var exclusionMatch = false;
+  for (var i = 0; i < arrayLength; i++)
+  {
+     if (url.indexOf(excludeArray[i]) > -1)
+     {
+        exclusionMatch = true;
+        break;
+     }
+  }
+   if (exclusionMatch)
+   {
+      if(window.history.forward(1) != null)
+	     window.history.forward(1);
+   }
+}
+//]]>
+</script>
+
+<script src="/WIPortal/Javascript/iC_DNNHead.js" type="text/javascript"></script>
+<script src="/WIPortal/Javascript/ShowHide.js" type="text/javascript"></script>
+<script src="/WIPortal/Javascript/iC_SessionWarning.js" type="text/javascript"></script>
+<script src="/WIPortal/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=RadScriptManager1_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen-US%3aa8328cc8-0a99-4e41-8fe3-b58afac64e45%3aea597d4b%3ab25378d2%3bTelerik.Web.UI%3aen-US%3a1bc89511-db65-4edd-9b7b-852f5fbc5915%3a16e4e7cd%3af7645509%3a22a6274a%3aed16cbdc%3a88144a7a" type="text/javascript"></script>
+
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$RadScriptManager1', 'form1', ['tctl00$ctl00$MainContentAjaxPanePanel',''], [], [], 1800, 'ctl00');
+//]]>
+</script>
+
+    <script type="text/javascript" language="javascript">
+        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+        function EndRequestHandler(sender, args) {
+            if (args.get_error() != undefined && args.get_error().httpStatusCode == '500') {
+                var errorMessage = args.get_error().message
+                args.set_errorHandled(true);
+                alert(errorMessage + "<br/><br/> Close your browser and try again");
+            }
+        }
+    </script>
+
+    <script type="text/javascript" language="javascript">
+        Sys.WebForms.PageRequestManager.getInstance().add_pageLoaded(setPortalFocus);
+
+
+        function setPortalFocus() {
+
+            if ($("span[id*='WizardNextButton']").length > 0) {
+                var button = $("span[id*='WizardNextButton']");
+                button.focus();
+            }
+
+            var minMaxButton = $('span[id*="MinMaxButton"]');
+            minMaxButton.unbind("click");
+            minMaxButton.attr("onclick", "return false;");
+
+
+            var field = $('#PortalContentPane').find('input[type=radio],input[type=text],input[type=checkbox],input[type=password],textarea,select').filter(':enabled:first');
+            if (field.is(":enabled")) {
+                field.focus();
+            }                
+
+            $(function () {
+                var zIndexNumber = 1000;
+
+                // Put your target element(s) in the selector below!
+                $(".RadMenu").each(function () {
+                    $(this).css('zIndex', zIndexNumber);
+                    zIndexNumber -= 10;
+                });
+            });
+
+            $(".iC_InformationLink").parent().hide();
+
+            if (document.documentMode == 7) {
+                $(".iC_LimitWidth").css("width", $(window).width() - 50);
+                $(".iC_LimitWidth").css("max-width", $(window).width() - 50);
+                $(".iC_LimitWidth").css("min-width", $(window).width() - 50);
+            }
+
+            $(window).resize(function () {
+                if (document.documentMode == 7) {
+                    $(".iC_LimitWidth").css("width", $(window).width() - 50);
+                    $(".iC_LimitWidth").css("max-width", $(window).width() - 50);
+                    $(".iC_LimitWidth").css("min-width", $(window).width() - 50);
+                }
+            });
+
+            /* fix search control display name to [ Search ] if not already defined. */
+            $(function () {
+                var searchButton = $('span[id*="DataSearchButton"]').find('input');
+                $.each(searchButton,
+                  function (index, button) {
+                      if (button.value == 'Search') {
+                          button.value = "[ Search ]";
+                      }
+                  }
+                );
+            }
+            );
+
+
+        } // end setPortalFocus
+
+       
+       
+    </script>
+
+    
+
+    <div class="RadAjaxPanel" id="ctl00_ctl00_MainContentAjaxPanePanel" style="height:100%;">
+	<div id="ctl00_MainContentAjaxPane" class="iC_AjaxPane" style="height:100%;">
+		<!-- 2023.2.714.45 -->
+      <!-- Required State Header -->
+      <table class="header_banner">
+        <tr class="iC_SkinNoPrint">
+          <td>
+            <img id="HeaderMap" title="State of Wisconsin Agency Banner" src="../../../../../Images/agency_banner.gif" alt="State of Wisconsin Agency Banner" usemap="#ImageMapHeaderMap" /><map name="ImageMapHeaderMap" id="ImageMapHeaderMap">
+			<area shape="rect" coords="0,0,175,34" href="http://www.wisconsin.gov" target="_blank" title="wisconsin.gov Home" alt="wisconsin.gov Home" /><area shape="rect" coords="176,0,292,34" href="http://www.wisconsin.gov/Pages/allagencies.aspx" target="_blank" title="State Agencies" alt="State Agencies" /><area shape="rect" coords="293,0,500,34" href="http://dhs.wisconsin.gov/" target="_blank" title="Department of Health Services" alt="Department of Health Services" />
+		</map>
+          </td>
+        </tr>
+      </table>
+
+      
+
+      
+
+      
+
+      
+
+      <table id="PublicHeaderTable" class="BannerTable" style="background-color:#ffffff">
+			<tr>
+				<td class="fowardHealthLogo"><a id="LinkHomePublic2" tabindex="1010" href="../../../../../Default.aspx"><img id="Image5" title="Home Page" src="../../../../../Images/diamond_logo.gif" alt="Return to Main Page" /></a></td><td> 
+            <div class="ColumnHeader" style="font-weight:bold;"><span></span></div>
+            <div class="ColumnHeader"><span></span></div>
+          </td><td><table id="WelcomeTable" class="BannerTable">
+					<tr>
+						<td class="BannerRight">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td class="UserInfo" align="right" HorizontalAlign="right" style="padding-right: 15px;">
+            <span id="welcomemessage3_lblWelcome" title="Not currently logged in.">Welcome </span>&nbsp;&raquo;&nbsp;<span id="welcomemessage3_lblCurrentDate">May 28, 2026 12:48 PM</span>
+        </td>
+    </tr>
+</table></td>
+					</tr><tr>
+						<td class="BannerRight" style="font-weight:bold;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td class="UserInfo" align="right" HorizontalAlign="right" style="padding-right: 15px; text-align: right;">
+            <a id="loginout3_LinkButtonLogin" tabindex="1011" title="Log into the site" href="javascript:__doPostBack(&#39;ctl00$loginout3$LinkButtonLogin&#39;,&#39;&#39;)">Login</a>
+        </td>
+    </tr>
+</table></td>
+					</tr>
+				</table></td>
+			</tr><tr class="whiteBackground">
+				<td class="BannerRight" colspan="3">
+<table  id="tableMiniSearch" class="BannerTable">
+  <tr>
+  <td class="miniSearch"><input name="ctl00$MINI2$MiniSearchValue" type="text" size="15" id="MINI2_MiniSearchValue" tabindex="1012" aria-label="Search ForwardHealth" onkeydown="checkEnterHotKey(&#39;MINI2_MiniSearchSubmit&#39;, event);" style="font-size:Small;" /></td>
+  <td ><a id="MINI2_MiniSearchSubmit" tabindex="1013" class="iC_StyleButton iC_StyleButton iC_StyleButton_Medium" href="javascript:__doPostBack(&#39;ctl00$MINI2$MiniSearchSubmit&#39;,&#39;&#39;)">Search</a></td>
+</tr>
+</table></td>
+			</tr>
+		</table>
+
+      <div>
+        <div class="iC_SystemMessage"><table  style="padding:0;border-collapse:collapse;" class="white_GroupBox"><tr><td class="white_GroupBoxHeaderLeft"></td><td class="white_GroupBoxHeaderMiddle"><span class="white_GroupBoxTitle" title="Alerts">Alerts</span></td><td class="white_GroupBoxHeaderRight"></td></tr><tr><td class="white_GroupBoxBodyLeft"></td><td class="white_GroupBoxBodyMiddle white_GroupBoxTitlePadding"><div><ul class="ic_messageList"><li class="iC_Message">The ForwardHealth Portal is currently experiencing technical difficulties. Staff are working to resolve the issue as quickly as possible. Please check back at a later time.</li></ul></div></td><td class="white_GroupBoxBodyRight"></td></tr><tr><td class="white_GroupBoxFooterLeft"></td><td class="white_GroupBoxFooterMiddle"></td><td class="white_GroupBoxFooterRight"></td></tr></table></div>
+      </div>
+
+      <table id="TableStaticContentBreadcrumbs" class="HeaderTable">
+			<tr>
+				<td><span class="breadcrumbSelectedLink">Archived Preferred Drug Lists</span></td>
+			</tr>
+		</table>
+		
+
+      <table class='iC_ContentTable' cellpadding="0" cellspacing="0">
+        <tr>
+          <td id="LeftPanelBar" class="leftPanel" style="display:none;">
+            
+          </td>
+		
+          <td class="collapseBar" onclick='iC_ToggleExpand(this)' style="display:none;" >&nbsp;<input type="hidden" name="ctl00$LPanelClientState" id="LPanelClientState" /></td>
+          <td class="rightPanel">
+            <div class="HeaderTable" id="PortalContentPane">
+            
+  
+    
+<div id="MainContent_GenericPageCtrl1_content"><!--<title>Wisconsin Medicaid PDL Implementation Schedule</title>
+-->
+<!--<breadcrumb>Archived Preferred Drug Lists</breadcrumb>
+-->
+<h3>Pharmacy</h3>
+<h4>Archived Preferred Drug List (PDL)</h4>
+<p>
+  These publications are available only as PDFs. You will need Adobe Reader <sup>&#174;</sup>
+  to view these files.
+</p>
+<table style="width:92%;border-collapse: collapse; border-spacing: 0;" cellpadding="2">
+  <tr>
+  	<td style="vertical-align:top">
+      <h5>2026 Quick Reference PDLs</h5>
+      <ul>
+	  <li>
+          <a href="pdfs/quickref04012026.pdf.spage">4/1/2026</a>
+          (Published on 4/1/2026)
+      </li>
+	  <li>
+          <a href="pdfs/quickref03012026.pdf.spage">3/1/2026</a>
+          (Published on 3/1/2026)
+      </li>
+      <li>
+          <a href="pdfs/FINALquickref020126.pdf.spage">2/1/2026</a>
+          (Published on 2/29/2026)
+      </li>
+	  <li>
+          <a href="pdfs/FINALquickref010126.pdf.spage">1/1/2026</a>
+          (Published on 1/1/2026)
+      </li>
+      </ul>
+    </td>
+	<td style="vertical-align:top">
+      <h5>2026 Diabetic Supply List Quick Reference PDLs</h5>
+      <!-- <ul>
+        <li>
+            <a href="pdfs/dsquickref010125.pdf.spage">1/1/2025</a>
+            (Published on 12/19/2024)
+        </li>
+      </ul> -->
+    </td>
+  </tr>  
+  <tr>
+    <td style="vertical-align:top">
+      <h5>2025 Quick Reference PDLs</h5>
+      <ul>
+	  <li>
+          <a href="pdfs/quickref120125.pdf.spage">12/1/2025</a>
+          (Published on 11/13/2025)
+      </li>
+	  <li>
+          <a href="pdfs/quickref010126.pdf.spage">1/1/2026</a>
+          (Published on 12/19/2025)
+      </li>
+	  <li>
+          <a href="pdfs/quickref110125.pdf.spage">11/1/2025</a>
+          (Published on 10/17/2025)
+      </li>
+	  <li>
+          <a href="pdfs/quickref100125.pdf.spage">9/25/2025</a>
+          (Published on 9/25/2025)
+      </li>
+	  <li>
+          <a href="pdfs/quickref090825.pdf.spage">9/24/2025</a>
+          (Published on 9/8/2025)
+      </li>
+	  <li>
+          <a href="pdfs/quickref090125.pdf.spage">9/5/2025</a>
+          (Published on 8/28/2025)
+       </li>
+      <li>
+          <a href="pdfs/quickref092325.pdf.spage">9/1/2025</a>
+          (Published on 9/23/2025)
+      </li>
+	   <li>
+          <a href="pdfs/quickref080125_v3.pdf.spage">9/1/2025</a>
+          (Published on 8/08/2025)
+       </li>
+       <li>
+          <a href="pdfs/quickref080125_v2.pdf.spage">8/4/2025</a>
+          (Published on 7/22/2025)
+       </li>
+       <li>
+          <a href="pdfs/quickref080125.pdf.spage">8/1/2025</a>
+          (Published on 7/22/2025)
+       </li>
+       <li>
+          <a href="pdfs/quickref070125v3.pdf.spage">7/1/2025</a>
+          (Published on 7/22/2025)
+       </li>
+       <li>
+          <a href="pdfs/quickref070125.pdf.spage">7/1/2025</a>
+          (Published on 6/25/2025)
+       </li>
+       <li>
+          <a href="pdfs/prelimquickref070125.pdf.spage">7/1/2025</a>
+          (Published on 6/20/2025)
+       </li>
+       <li>
+          <a href="pdfs/quickref060125v3.pdf.spage">6/1/2025</a>
+          (Published on 6/17/2025)
+       </li>
+       <li>
+          <a href="pdfs/quickref060125v2.pdf.spage">6/1/2025</a>
+          (Published on 6/13/2025)
+       </li>
+       <li>
+          <a href="pdfs/quickref050125v3.pdf.spage">5/1/2025</a>
+          (Published on 5/29/2025)
+       </li>
+       <li>
+          <a href="pdfs/quickref050125v2.pdf.spage">5/1/2025</a>
+          (Published on 4/28/2025)
+       </li>
+	   <li>
+          <a href="pdfs/quickref040125.pdf.spage">4/1/2025</a>
+          (Published on 3/24/2025)
+       </li>
+        <li>
+          <a href="pdfs/quickref030125.pdf.spage">3/1/2025</a>
+          (Published on 2/24/2025)
+       </li>
+        <li>
+            <a href="pdfs/quickref020125.pdf.spage">2/1/2025</a>
+            (Published on 1/30/2025)
+        </li>
+        <li>
+            <a href="pdfs/quickref010125v5.pdf.spage">1/1/2025</a>
+            (Published on 1/30/2025)
+        </li>
+        <li>
+            <a href="pdfs/quickref010125v4.pdf.spage">1/1/2025</a>
+            (Published on 1/13/2025)
+        </li>
+        <li>
+            <a href="pdfs/quickref010125.pdf.spage">1/1/2025</a>
+            (Published on 12/19/2024)
+        </li>
+        <li>
+            <a href="pdfs/prelimquickref010125.pdf.spage">1/1/2025</a>
+            (Published on 12/12/2024)
+        </li>
+      </ul>
+    </td>
+	<td style="vertical-align:top">
+      <h5>2025 Diabetic Supply List Quick Reference PDLs</h5>
+      <ul>
+        <li>
+            <a href="pdfs/dsquickref010125.pdf.spage">1/1/2025</a>
+            (Published on 12/19/2024)
+        </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align:top">
+      <h5>2024 Quick Reference PDLs</h5>
+      <ul>
+        <li>
+            <a href="pdfs/quickref120124.pdf.spage">12/1/2024</a>
+            (Published on 11/15/2024)
+        </li>
+        <li>
+            <a href="pdfs/quickref110124v2.pdf.spage">11/1/2024</a>
+            (Published on 11/6/2024)
+        </li>
+        <li>
+            <a href="pdfs/quickref110124.pdf.spage">11/1/2024</a>
+            (Published on 10/21/2024)
+        </li>
+        <li>
+            <a href="pdfs/quickref100124v3.pdf.spage">9/1/2024</a>
+            (Published on 10/16/2024)
+        </li>
+        <li>
+            <a href="pdfs/quickref100124v2.pdf.spage">9/1/2024</a>
+            (Published on 10/3/2024)
+        </li>
+        <li>
+            <a href="pdfs/quickref100124.pdf.spage">9/1/2024</a>
+            (Published on 9/20/2024)
+        </li>
+        <li>
+            <a href="pdfs/quickref090124v2.pdf.spage">9/1/2024</a>
+            (Published on 9/9/2024)
+        </li>
+        <li>
+            <a href="pdfs/quickref090124.pdf.spage">9/1/2024</a>
+            (Published on 8/27/2024)
+        </li>
+        <li>
+            <a href="pdfs/quickref080124.pdf.spage">8/1/2024</a>
+            (Published on 7/19/2024)
+        </li>
+        <li>
+            <a href="pdfs/quickref070124v3.pdf.spage">7/1/2024</a>
+            (Published on 7/8/2024)
+        </li>
+        <li>
+            <a href="pdfs/quickref070124v2.pdf.spage">7/1/2024</a>
+            (Published on 7/3/2024)
+        </li>
+        <li>
+            <a href="pdfs/quickref070124.pdf.spage">7/1/2024</a>
+            (Published on 6/21/2024)
+        </li>
+        <li>
+            <a href="pdfs/prelimquickref070124.pdf.spage">7/1/2024</a>
+            (Published on 6/14/2024)
+        </li>
+        <li>
+            <a href="pdfs/quickref060124.pdf.spage">6/1/2024</a>
+            (Published on 5/22/2024)
+        </li>
+        <li>
+            <a href="pdfs/quickref050124v4.pdf.spage">5/1/2024</a>
+            (Published on 5/14/2024)
+        </li>
+        <li>
+            <a href="pdfs/quickref050124v2.pdf.spage">5/1/2024</a>
+            (Published on 5/7/2024)
+        </li>
+        <li>
+            <a href="pdfs/quickref050124.pdf.spage">4/1/2024</a>
+            (Published on 4/15/2024)
+        </li>
+        <li>
+            <a href="pdfs/quickref040124v3.pdf.spage">4/1/2024</a>
+            (Published on 4/10/2024)
+        </li>
+        <li>
+            <a href="pdfs/quickref040124v2.pdf.spage">4/1/2024</a>
+            (Published on 4/2/2024)
+        </li>
+         <li>
+            <a href="pdfs/quickref040124.pdf.spage">4/1/2024</a>
+            (Published on 3/27/2024)
+        </li>
+         <li>
+            <a href="pdfs/quickref030124v2.pdf.spage">3/1/2024</a>
+            (Published on 3/20/2024)
+        </li>
+         <li>
+            <a href="pdfs/quickref030124.pdf.spage">3/1/2024</a>
+            (Published on 2/23/2024)
+        </li>
+         <li>
+            <a href="pdfs/quickref020124v3.pdf.spage">2/1/2024</a>
+            (Published on 2/19/2024)
+        </li>
+         <li>
+            <a href="pdfs/quickref020124v2.pdf.spage">2/1/2024</a>
+            (Published on 1/31/2024)
+        </li>
+         <li>
+            <a href="pdfs/quickref020124.pdf.spage">2/1/2024</a>
+            (Published on 1/25/2024)
+        </li>
+         <li>
+            <a href="pdfs/prelimquickref010124v6.pdf.spage">1/1/2024</a>
+            (Published on 1/15/2024)
+        </li>
+         <li>
+            <a href="pdfs/prelimquickref010124v5.pdf.spage">1/1/2024</a>
+            (Published on 1/12/2024)
+        </li>
+         <li>
+            <a href="pdfs/prelimquickref010124v4.pdf.spage">1/1/2024</a>
+            (Published on 1/9/2024)
+        </li>
+         <li>
+            <a href="pdfs/prelimquickref010124v3.pdf.spage">1/1/2024</a>
+            (Published on 1/5/2024)
+        </li>
+        <li>
+            <a href="pdfs/prelimquickref010124v2.pdf.spage">1/1/2024</a>
+            (Published on 12/29/2023)
+        </li>
+      </ul>
+    </td>
+    <td style="vertical-align:top">
+      <h5>2024 Diabetic Supply List Quick Reference PDLs</h5>
+      <ul>
+        <li>
+            <a href="pdfs/dsquickref020124v2.pdf.spage">2/1/2024</a>
+            (Published on 10/2/2024)
+        </li>
+        <li>
+            <a href="pdfs/dsquickref020124.pdf.spage">2/1/2024</a>
+            (Published on 2/5/2024)
+        </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align:top">
+      <h5>2023 Quick Reference PDLs</h5>
+      <ul>
+         <li>
+            <a href="pdfs/quickref120123v3.pdf.spage">12/1/2023</a>
+            (Published on 12/21/2023)
+        </li>
+         <li>
+            <a href="pdfs/quickref120123v2.pdf.spage">12/1/2023</a>
+            (Published on 12/13/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref120123.pdf.spage">12/1/2023</a>
+            (Published on 11/29/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref110123v3.pdf.spage">11/1/2023</a>
+            (Published on 11/22/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref110123v2.pdf.spage">11/1/2023</a>
+            (Published on 11/1/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref110123.pdf.spage">11/1/2023</a>
+            (Published on 10/26/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref100123.pdf.spage">10/1/2023</a>
+            (Published on 9/27/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref090123v4.pdf.spage">9/1/2023</a>
+            (Published on 9/19/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref090123v3.pdf.spage">9/1/2023</a>
+            (Published on 9/13/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref090123v2.pdf.spage">9/1/2023</a>
+            (Published on 9/7/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref090123.pdf.spage">9/1/2023</a>
+            (Published on 8/31/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref080123v2.pdf.spage">8/1/2023</a>
+            (Published on 8/23/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref080123.pdf.spage">8/1/2023</a>
+            (Published on 7/27/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref070123.pdf.spage">7/1/2023</a>
+            (Published on 6/30/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref060123.pdf.spage">6/1/2023</a>
+            (Published on 6/14/2023)
+        </li>
+        <li>
+            <a href="pdfs/prelimquickref070123.pdf.spage">5/1/2023</a>
+            (Published on 6/22/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref050123v4.pdf.spage">5/1/2023</a>
+            (Published on 5/19/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref050123v3.pdf.spage">5/1/2023</a>
+            (Published on 5/12/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref050123v2.pdf.spage">5/1/2023</a>
+            (Published on 5/2/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref050123.pdf.spage">5/1/2023</a>
+            (Published on 4/27/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref040123v6.pdf.spage">4/1/2023</a>
+            (Published on 4/17/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref040123v5.pdf.spage">4/1/2023</a>
+            (Published on 4/13/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref040123v4.pdf.spage">4/1/2023</a>
+            (Published on 4/7/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref040123v3.pdf.spage">4/1/2023</a>
+            (Published on 4/5/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref040123v2.pdf.spage">4/1/2023</a>
+            (Published on 3/24/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref040123.pdf.spage">4/1/2023</a>
+            (Published on 3/21/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref030123v5.pdf.spage">3/1/2023</a>
+            (Published on 3/17/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref030123v4.pdf.spage">3/1/2023</a>
+            (Published on 3/2/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref030123v3.pdf.spage">3/1/2023</a>
+            (Published on 2/22/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref030123v2.pdf.spage">3/1/2023</a>
+            (Published on 2/16/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref030123.pdf.spage">3/1/2023</a>
+            (Published on 2/10/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref020123v3.pdf.spage">2/1/2023</a>
+            (Published on 2/16/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref020123v2.pdf.spage">2/1/2023</a>
+            (Published on 2/10/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref020123.pdf.spage">2/1/2023</a>
+            (Published on 1/18/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref010123v4.pdf.spage">1/1/2023</a>
+            (Published on 1/12/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref010123v3.pdf.spage">1/1/2023</a>
+            (Published on 1/4/2023)
+        </li>
+        <li>
+            <a href="pdfs/quickref010123v2.pdf.spage">1/1/2023</a>
+            (Published on 12/27/2022)
+        </li>
+        <li>
+            <a href="pdfs/quickref010123.pdf.spage">1/1/2023</a>
+            (Published on 12/20/2022)
+        </li>
+        <li>
+            <a href="pdfs/prelimquickre010123.pdf.spage">1/1/2023</a>
+            (Published on 12/16/2022)
+        </li>
+      </ul>
+    </td>
+    <td style="vertical-align:top">
+      <!-- <h5>2023 Diabetic Supply List Quick Reference PDLs</h5>
+      <ul>
+        <li>
+          <br>
+        </li>
+      </ul>
+    </td> -->
+  </tr>
+  <tr>
+    <td style="vertical-align:top">
+      <h5>2022 Quick Reference PDLs</h5>
+      <ul>
+		    <li>
+            <a href="pdfs/quickref120122v2.pdf.spage">12/1/2022</a>
+            (Published on 12/07/2022)
+        </li>
+	     <li>
+            <a href="pdfs/quickref120122.pdf.spage">12/1/2022</a>
+            (Published on 11/23/2022)
+        </li>
+        <li>
+            <a href="pdfs/quickref110122v2.pdf.spage">11/1/2022</a>
+            (Published on 10/20/2022)
+        </li>
+        <li>
+            <a href="pdfs/quickref110122.pdf.spage">11/1/2022</a>
+            (Published on 10/18/2022)
+        </li>
+        <li>
+            <a href="pdfs/quickref100122.pdf.spage">10/1/2022</a>
+            (Published on 9/23/2022)
+        </li>
+        <li>
+            <a href="pdfs/quickref090122v2.pdf.spage">9/1/2022</a>
+            (Published on 9/22/2022)
+        </li>
+        <li>
+            <a href="pdfs/quickref090122.pdf.spage">9/1/2022</a>
+            (Published on 8/22/2022)
+        </li>
+        <li>
+            <a href="pdfs/quickref080122.pdf.spage">8/1/2022</a>
+            (Published on 7/25/2022)
+        </li>
+        <li>
+            <a href="pdfs/quickref070122v3.pdf.spage">7/1/2022</a>
+            (Published on 7/13/2022)
+        </li>
+        <li>
+            <a href="pdfs/quickref070122v2.pdf.spage">7/1/2022</a>
+            (Published on 7/1/2022)
+        </li>
+        <li>
+            <a href="pdfs/quickref070122.pdf.spage">7/1/2022</a>
+            (Published on 6/23/2022)
+        </li>
+        <li>
+            <a href="pdfs/prelimquickref070122.pdf.spage">7/1/2022</a>
+            (Published on 6/16/2022)
+        </li>
+        <li>
+            <a href="pdfs/quickref060122v5.pdf.spage">6/1/2022</a>
+            (Published on 6/16/2022)
+        </li>
+        <li>
+            <a href="pdfs/quickref060122v4.pdf.spage">6/1/2022</a>
+              (Published on 6/15/2022)
+        </li>
+        <li>
+            <a href="pdfs/quickref060122v3.pdf.spage">6/1/2022</a>
+              (Published on 6/14/2022)
+        </li>
+        <li>
+            <a href="pdfs/quickref060122v2.pdf.spage">6/1/2022</a>
+              (Published on 6/3/2022)
+        </li>
+        <li>
+            <a href="pdfs/quickref060122.pdf.spage">6/1/2022</a>
+              (Published on 5/26/2022)
+        </li>
+        <li>
+            <a href="pdfs/quickref050122v2.pdf.spage">5/1/2022</a>
+              (Published on 5/5/2022)
+        </li>
+        <li>
+            <a href="pdfs/quickref050122.pdf.spage">5/1/2022</a>
+              (Published on 4/20/2022)
+        </li>
+        <li>
+            <a href="pdfs/quickref040122.pdf.spage">4/1/2022</a>
+              (Published on 3/25/2022)
+        </li>
+        <li>
+            <a href="pdfs/quickref030122.pdf.spage">3/1/2022</a>
+              (Published on 2/23/2022)
+        </li>
+        <li>
+            <a href="pdfs/quickref020122v2.pdf.spage">2/1/2022</a>
+              (Published on 2/18/2022)
+        </li>
+        <li>
+            <a href="pdfs/quickref020122.pdf.spage">2/1/2022</a>
+              (Published on 1/31/2022)
+        </li>
+        <li>
+            <a href="pdfs/quickref010122v4.pdf.spage">1/1/2022</a>
+              (Published on 1/24/2022)
+        </li>
+        <li>
+            <a href="pdfs/quickref010122v3.pdf.spage">1/1/2022</a>
+              (Published on 1/10/2022)
+        </li>
+        <li>
+            <a href="pdfs/quickref010122v2.pdf.spage">1/1/2022</a>
+              (Published on 1/7/2022)
+        </li>
+        <li>
+              <a href="pdfs/quickref010122.pdf.spage">1/1/2022</a>
+              (Published on 12/27/2021)
+        </li>
+      </ul>
+    </td>
+    <td style="vertical-align:top">
+      <h5>2022 Diabetic Supply List Quick Reference PDLs</h5>
+      <ul>
+        <li>
+          <a href="pdfs/dsquickref070122.pdf.spage">1/1/2022</a>
+          (Posted on 9/16/2022)
+        </li>
+        <li>
+          <a href="pdfs/dsquickref010122.pdf.spage">1/1/2022</a>
+          (Posted on 2/14/2022)
+        </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align:top">
+      <h5>2021 Quick Reference PDLs</h5>
+      <ul>
+    		<li>
+              <a href="pdfs/prelimquickref010122.pdf.spage">12/1/2021</a>
+              (Published on 12/17/2021)
+        </li>
+    		<li>
+              <a href="pdfs/quickref120121v2.pdf.spage">12/1/2021</a>
+              (Published on 11/30/2021)
+        </li>
+    		<li>
+          <a href="pdfs/quickref120121.pdf.spage">12/1/2021</a>
+          (Published on 11/24/2021)
+        </li>
+        <li>
+          <a href="pdfs/quickref110121v2.pdf.spage">11/1/2021</a>
+          (Published on 11/23/2021)
+        </li>
+        <li>
+          <a href="pdfs/quickref110121.pdf.spage">11/1/2021</a>
+          (Published on 10/19/2021)
+        </li>
+        <li>
+          <a href="pdfs/quickref100121.pdf.spage">10/1/2021</a>
+          (Published on 9/30/2021)
+        </li>
+        <li>
+          <a href="pdfs/quickref090121v2.pdf.spage">9/1/2021</a>
+          (Published on 8/27/2021)
+        </li>
+        <li>
+          <a href="pdfs/quickref090121.pdf.spage">9/1/2021</a>
+          (Published on 8/20/2021)
+        </li>
+        <li>
+          <a href="pdfs/quickref080121v2.pdf.spage">8/1/2021</a>
+          (Published on 7/28/2021)
+        </li>
+        <li>
+          <a href="pdfs/quickref080121.pdf.spage">8/1/2021</a>
+          (Published on 7/22/2021)
+        </li>
+        <li>
+          <a href="pdfs/quickref070121v2.pdf.spage">7/1/2021</a>
+          (Published on 7/13/2021)
+        </li>
+        <li>
+          <a href="pdfs/quickref070121.pdf.spage">7/1/2021</a>
+          (Published on 6/22/2021)
+        </li>
+        <li>
+          <a href="pdfs/prelimquickref070121.pdf.spage">7/1/2021</a>
+          (Published on 6/8/2021)
+        </li>
+        <li>
+          <a href="pdfs/quickref060121.pdf.spage">6/1/2021</a>
+          (Published on 5/25/2021)
+        </li>
+        <li>
+          <a href="pdfs/quickref050121v4.pdf.spage">5/1/2021</a>
+          (Published on 5/24/2021)
+        </li>
+        <li>
+          <a href="pdfs/quickref050121v3.pdf.spage">5/1/2021</a>
+          (Published on 5/3/2021)
+        </li>
+        <li>
+          <a href="pdfs/quickref050121v2.pdf.spage">5/1/2021</a>
+          (Published on 4/26/2021)
+        </li>
+        <li>
+          <a href="pdfs/quickref050121.pdf.spage">5/1/2021</a>
+          (Published on 4/19/2021)
+        </li>
+        <li>
+          <a href="pdfs/quickref040121v5.pdf.spage">4/1/2021</a>
+          (Published on 4/26/2021)
+        </li>
+        <li>
+          <a href="pdfs/quickref040121v4.pdf.spage">4/1/2021</a>
+          (Published on 4/12/2021)
+        </li>
+        <li>
+          <a href="pdfs/quickref040121v3.pdf.spage">4/1/2021</a>
+          (Published on 4/5/2021)
+        </li>
+        <li>
+          <a href="pdfs/quickref040121v2.pdf.spage">4/1/2021</a>
+          (Published on 4/1/2021)
+        </li>
+        <li>
+          <a href="pdfs/quickref040121.pdf.spage">4/1/2021</a>
+          (Published on 3/24/2021)
+        </li>
+        <li>
+          <a href="pdfs/quickref030121.pdf.spage">3/1/2021</a>
+          (Published on 2/18/2021)
+        </li>
+        <li>
+          <a href="pdfs/quickref020121v3.pdf.spage">2/1/2021</a>
+          (Published on 2/18/2021)
+        </li>
+        <li>
+          <a href="pdfs/quickref020121v2.pdf.spage">2/1/2021</a>
+          (Published on 1/27/2021)
+        </li>
+        <li>
+          <a href="pdfs/quickref020121.pdf.spage">2/1/2021</a>
+          (Published on 1/26/2021)
+        </li>
+        <li>
+          <a href="pdfs/quickref010121v3.pdf.spage">1/1/2021</a>
+          (Published on 1/21/2021)
+        </li>
+      </ul>
+    </td>
+    <td style="vertical-align:top">
+      <h5>2021 Diabetic Supply List Quick Reference PDLs</h5>
+      <ul>
+        <li>
+          <a href="pdfs/dsquickref100121v2.pdf.spage">10/1/2021</a>
+          (Posted on 1/10/2022)
+        </li>
+        <li>
+          <a href="pdfs/dsquickref100121.pdf.spage">10/1/2021</a>
+          (Posted on 11/18/2021)
+        </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align:top">
+      <h5>2020 Quick Reference PDLs</h5>
+      <ul>
+        <li>
+          <a href="pdfs/quickref120120v4.pdf.spage">12/1/2020</a>
+          (Published on 12/23/2020)
+        </li>
+        <li>
+          <a href="pdfs/quickref120120v2.pdf.spage">12/1/2020</a>
+          (Published on 11/23/2020)
+        </li>
+        <li>
+          <a href="pdfs/quickref120120.pdf.spage">12/1/2020</a>
+          (Published on 11/19/2020)
+        </li>
+        <li>
+          <a href="pdfs/quickref110120v3.pdf.spage">11/1/2020</a>
+          (Published on 11/12/2020)
+        </li>
+        <li>
+          <a href="pdfs/quickref110120v2.pdf.spage">11/1/2020</a>
+          (Published on 10/21/2020)
+        </li>
+        <li>
+          <a href="pdfs/quickref110120.pdf.spage">11/1/2020</a>
+          (Published on 10/19/2020)
+        </li>
+        <li>
+          <a href="pdfs/quickref100120.pdf.spage">10/1/2020</a>
+          (Published on 9/29/2020)
+        </li>
+        <li>
+          <a href="pdfs/quickref090120v2.pdf.spage">9/1/2020</a>
+          (Published on 9/3/2020)
+        </li>
+        <li>
+          <a href="pdfs/quickref090120.pdf.spage">9/1/2020</a>
+          (Published on 8/24/2020)
+        </li>
+        <li>
+          <a href="pdfs/quickref080120v4.pdf.spage">8/1/2020</a>
+          (Published on 8/18/2020)
+        </li>
+        <li>
+          <a href="pdfs/quickref080120v3.pdf.spage">8/1/2020</a>
+          (Published on 8/12/2020)
+        </li>
+        <li>
+          <a href="pdfs/quickref080120v2.pdf.spage">8/1/2020</a>
+          (Published on 7/29/2020)
+        </li>
+        <li>
+          <a href="pdfs/quickref080120.pdf.spage">8/1/2020</a>
+          (Published on 7/21/2020)
+        </li>
+        <li>
+          <a href="pdfs/quickref070120.pdf.spage">7/1/2020</a>
+          (Published on 6/23/2020)
+        </li>
+        <li>
+          <a href="pdfs/prelimquickref070120.pdf.spage">7/1/2020</a>
+          (Published on 6/15/2020)
+        </li>
+        <li>
+          <a href="pdfs/quickref060120.pdf.spage">6/1/2020</a>
+          (Published on 5/26/2020)
+        </li>
+        <li>
+          <a href="pdfs/quickref050120v4.pdf.spage">5/1/2020</a>
+          (Published on 4/29/2020)
+        </li>
+        <li>
+          <a href="pdfs/quickref050120v3.pdf.spage">5/1/2020</a>
+          (Published on 4/24/2020)
+        </li>
+        <li>
+          <a href="pdfs/quickref050120v2.pdf.spage">5/1/2020</a>
+          (Published on 4/21/2020)
+        </li>
+        <li>
+          <a href="pdfs/quickref050120.pdf.spage">5/1/2020</a>
+          (Published on 4/15/2020)
+        </li>
+        <li>
+          <a href="pdfs/quickref040120v4.pdf.spage">4/1/2020</a>
+          (Published on 3/31/2020)
+        </li>
+        <li>
+          <a href="pdfs/quickref040120v3.pdf.spage">4/1/2020</a>
+          (Published on 3/25/2020)
+        </li>
+        <li>
+          <a href="pdfs/quickref040120v2.pdf.spage">4/1/2020</a>
+          (Published on 3/24/2020)
+        </li>
+        <li>
+          <a href="pdfs/quickref040120.pdf.spage">4/1/2020</a>
+          (Published on 3/17/2020)
+        </li>
+        <li>
+          <a href="pdfs/quickref030120v4.pdf.spage">3/1/2020</a>
+          (Published on 3/25/2020)
+        </li>
+        <li>
+          <a href="pdfs/quickref03012020v3.pdf.spage">3/1/2020</a>
+          (Published on 2/25/2020)
+        </li>
+        <li>
+          <a href="pdfs/quickref030120.pdf.spage">3/1/2020</a>
+          (Published on 2/13/2020)
+        </li>
+        <li>
+          <a href="pdfs/quickref020120v2.pdf.spage">2/1/2020</a>
+          (Published on 1/22/2020)
+        </li>
+        <li>
+          <a href="pdfs/quickref020120.pdf.spage">2/1/2020</a>
+          (Published on 1/15/2019)
+        </li>
+        <li>
+          <a href="pdfs/quickref010120v2.pdf.spage">1/1/2020</a>
+          (Published on 1/8/2019)
+        </li>
+        <li>
+          <a href="pdfs/quickref010120.pdf.spage">1/1/2020</a>
+          (Published on 12/18/2019)
+        </li>
+      </ul>
+    </td>
+    <td style="vertical-align:top">
+      <h5>2020 Diabetic Supply List Quick Reference PDLs</h5>
+      <ul>
+        <li>
+          <a href="pdfs/dsquickref100120.pdf.spage">10/1/2020</a>
+          (Posted on 9/29/2020)
+        </li>
+				<li>
+					<a href="pdfs/dsquickref070119v2.pdf.spage">7/1/2019</a>
+					(Posted on 8/8/2019)
+				</li>
+			</ul>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align:top">
+      <h5>2019 Quick Reference PDLs</h5>
+      <ul>
+        <li>
+          <a href="pdfs/prelimquickref010120.pdf.spage">1/1/2020</a>
+          (Published on 12/12/2019)
+        </li>
+        <li>
+          <a href="pdfs/quickref120119.pdf.spage">12/1/2019</a>
+          (Published on 11/22/2019)
+        </li>
+        <li>
+          <a href="pdfs/quickref110119v2.pdf.spage">11/1/2019</a>
+          (Published on 11/1/2019)
+        </li>
+        <li>
+          <a href="pdfs/quickref110119.pdf.spage">11/1/2019</a>
+          (Published on 10/22/2019)
+        </li>
+        <li>
+          <a href="pdfs/quickref100119v3.pdf.spage">10/1/2019</a>
+          (Published on 10/1/2019)
+        </li>
+        <li>
+          <a href="pdfs/quickref100119v2.pdf.spage">10/1/2019</a>
+          (Published on 9/27/2019)
+        </li>
+        <li>
+          <a href="pdfs/quickref100119.pdf.spage">10/1/2019</a>
+          (Published on 9/23/2019)
+        </li>
+        <li>
+          <a href="pdfs/quickref090119v3.pdf.spage">10/1/2019</a>
+          (Published on 9/12/2019)
+        </li>
+        <li>
+          <a href="pdfs/quickref090119v2.pdf.spage">9/1/2019</a>
+          (Published on 9/11/2019)
+        </li>
+        <li>
+          <a href="pdfs/quickref090119.pdf.spage">9/1/2019</a>
+          (Published on 8/20/2019)
+        </li>
+        <li>
+          <a href="pdfs/quickref080119v3.pdf.spage">8/1/2019</a>
+          (Published on 8/6/2019)
+        </li>
+        <li>
+          <a href="pdfs/quickref080119v2.pdf.spage">8/1/2019</a>
+          (Published on 7/24/2019)
+        </li>
+        <li>
+          <a href="pdfs/quickref080119.pdf.spage">8/1/2019</a>
+          (Published on 7/16/2019)
+        </li>
+        <li>
+          <a href="pdfs/quickref070119v2.pdf.spage">7/1/2019</a>
+          (Published on 6/24/2019)
+        </li>
+        <li>
+          <a href="pdfs/quickref070119.pdf.spage">7/1/2019</a>
+          (Published on 6/18/2019)
+        </li>
+        <li>
+          <a href="pdfs/prelimquickref070119.pdf.spage">Preliminary July 1, 2019 Quick Reference</a>
+          (Published on 6/11/2019)
+        </li>
+        <li>
+          <a href="pdfs/quickref060119.pdf.spage">6/1/2019</a>
+          (Published on 5/23/2019)
+        </li>
+        <li>
+          <a href="pdfs/quickref050119v4.pdf.spage">5/1/2019</a>
+          (Published on 5/3/2019)
+        </li>
+        <li>
+          <a href="pdfs/quickref050119v3.pdf.spage">5/1/2019</a>
+          (Published on 4/26/2019)
+        </li>
+        <li>
+          <a href="pdfs/quickref050119v2.pdf.spage">5/1/2019</a>
+          (Published on 4/18/2019)
+        </li>
+        <li>
+          <a href="pdfs/quickref040119v3.pdf.spage">4/1/2019</a>
+          (Published on 3/28/2019)
+        </li>
+        <li>
+          <a href="pdfs/quickref040119v2.pdf.spage">4/1/2019</a>
+          (Published on 3/25/2019)
+        </li>
+        <li>
+          <a href="pdfs/quickref040119.pdf.spage">4/1/2019</a>
+          (Published on 3/19/2019)
+        </li>
+        <li>
+          <a href="pdfs/quickref030119v3.pdf.spage">3/1/2019</a>
+          (Published on 3/1/2019)
+        </li>
+        <li>
+          <a href="pdfs/quickref030119v2.pdf.spage">3/1/2019</a>
+          (Published on 2/27/2019)
+        </li>
+        <li>
+          <a href="pdfs/quickref030119.pdf.spage">3/1/2019</a>
+          (Published on 2/25/2019)
+        </li>
+        <li>
+          <a href="pdfs/quickref020119v2.pdf.spage">2/1/2019</a>
+          (Published on 1/28/2019)
+        </li>
+        <li>
+          <a href="pdfs/quickref020119.pdf.spage">1/22/2019</a>
+          (Published on 1/22/2019)
+        </li>
+        <li>
+          <a href="pdfs/quickref010119.pdf.spage">1/1/2019</a>
+          (Published on 12/20/2018)
+        </li>
+        <li>
+          <a href="pdfs/prelimquickref010119.pdf.spage">Preliminary January 1, 2019 Quick Reference</a>
+          (Published on 12/14/2018)
+        </li>
+    </td>
+    <td style="vertical-align:top">
+      <h5>2019 Diabetic Supply List Quick Reference PDLs</h5>
+      <ul>
+        <li>
+          <a href="pdfs/dsquickref070119.pdf.spage">7/1/2019</a>
+          (Posted on 6/13/2019)
+        </li>
+        <li>
+          <a href="pdfs/dsquickref040119.pdf.spage">4/1/2019</a>
+          (Posted on 5/1/2019)
+        </li>
+        <li>
+          <a href="pdfs/dsquickref100117.pdf.spage">10/1/2017</a>
+          (Posted on 9/28/2017)
+        </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align:top">
+      <h5>2018 Quick Reference PDLs</h5>
+      <ul>
+        <li>
+          <a href="pdfs/quickref120118.pdf.spage">12/1/2018</a>
+          (Published on 11/26/2018)
+        </li>
+        <li>
+          <a href="pdfs/quickref110118.pdf.spage">11/1/2018</a>
+          (Published on 11/1/2018)
+        </li>
+        <li>
+          <a href="pdfs/quickref100118v2.pdf.spage">10/1/2018</a>
+          (Published on 10/1/2018)
+        </li>
+        <li>
+          <a href="pdfs/quickref100118.pdf.spage">10/1/2018</a>
+          (Published on 9/26/2018)
+        </li>
+        <li>
+          <a href="pdfs/quickref092118.pdf.spage">9/21/2018</a>
+          (Published on 9/21/2018)
+        </li>
+        <li>
+          <a href="pdfs/quickref090118.pdf.spage">9/1/2018</a>
+          (Published on 8/24/2018)
+        </li>
+        <li>
+          <a href="pdfs/quickref080118v2.pdf.spage">8/1/2018</a>
+          (Published on 7/23/2018)
+        </li>
+        <li>
+          <a href="pdfs/quickref080118.pdf.spage">8/1/2018</a>
+          (Published on 7/20/2018)
+        </li>
+        <li>
+          <a href="pdfs/quickref070118.pdf.spage">7/1/2018</a>
+          (Published on 6/26/2018)
+        </li>
+        <li>
+          <a href="pdfs/quickref060118v2.pdf.spage">6/1/2018</a>
+          (Published on 6/1/2018)
+        </li>
+        <li>
+          <a href="pdfs/prelimquickref070118v3.pdf.spage">Preliminary July 1, 2018 Quick Reference</a>
+          (Published on 6/20/2018)
+        </li>
+        <li>
+          <a href="pdfs/prelimquickref070118v2.pdf.spage">Preliminary July 1, 2018 Quick Reference</a>
+          (Published on 6/20/2018)
+        </li>
+        <li>
+          <a href="pdfs/prelimquickref070118.pdf.spage">Preliminary July 1, 2018 Quick Reference</a>
+          (Published on 6/19/2018)
+        </li>
+        <li>
+          <a href="pdfs/quickref060118.pdf.spage">6/1/2018</a>
+          (Published on 5/24/2018)
+        </li>
+        <li>
+          <a href="pdfs/quickref050118v5.pdf.spage">5/1/2018</a>
+          (Published on 5/10/2018)
+        </li>
+        <li>
+          <a href="pdfs/quickref050118v4.pdf.spage">5/1/2018</a>
+          (Published on 5/7/2018)
+        </li>
+        <li>
+          <a href="pdfs/quickref050118v3.pdf.spage">5/1/2018</a>
+          (Published on 5/3/2018)
+        </li>
+        <li>
+          <a href="pdfs/quickref050118v2.pdf.spage">5/1/2018</a>
+          (Published on 4/30/2018)
+        </li>
+        <li>
+          <a href="pdfs/quickref050118.pdf.spage">5/1/2018</a>
+          (Published on 4/24/2018)
+        </li>
+        <li>
+          <a href="pdfs/quickref040118.pdf.spage">4/1/2018</a>
+          (Published on 3/21/2018)
+        </li>
+        <li>
+          <a href="pdfs/quickref030118v2.pdf.spage">3/1/2018</a>
+          (Published on 2/28/2018)
+        </li>
+        <li>
+          <a href="pdfs/quickref030118.pdf.spage">3/1/2018</a>
+          (Published on 2/16/2018)
+        </li>
+        <li>
+          <a href="pdfs/quickref020118v5.pdf.spage">2/1/2018</a>
+          (Published on 2/9/2018)
+        </li>
+        <li>
+          <a href="pdfs/quickref020118v4.pdf.spage">2/1/2018</a>
+          (Published on 2/6/2018)
+        </li>
+        <li>
+          <a href="pdfs/quickref020118v3.pdf.spage">2/1/2018</a>
+          (Published on 1/30/2018)
+        </li>
+        <li>
+          <a href="pdfs/quickref020118v3.pdf.spage">2/1/2018</a>
+          (Published on 1/30/2018)
+        </li>
+        <li>
+          <a href="pdfs/quickref020118v2.pdf.spage">2/1/2018</a>
+          (Published on 1/25/2018)
+        </li>
+        <li>
+          <a href="pdfs/quickref020118.pdf.spage">2/1/2018</a>
+          (Published on 1/18/2018)
+        </li>
+        <li>
+          <a href="pdfs/quickref010118.pdf.spage">1/1/2018</a>
+          (Published on 12/20/2017)
+        </li>
+      </ul>
+    </td>
+    <td style="vertical-align:top">
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align:top">
+      <h5>2017 Quick Reference PDLs</h5>
+      <ul>
+        <li>
+          <a href="pdfs/quickref120117v3.pdf.spage">12/1/2017</a>
+          (Published on 12/11/2017)
+        </li>
+        <li>
+          <a href="pdfs/prelimquickref010118.pdf.spage">Preliminary January 1, 2017 Quick Reference</a>
+          (Published on 12/8/2017)
+        </li>
+        <li>
+          <a href="pdfs/quickref120117v2.pdf.spage">12/1/2017</a>
+          (Published on 12/8/2017)
+        </li>
+        <li>
+          <a href="pdfs/quickref120117.pdf.spage">12/1/2017</a>
+          (Published on 11/28/2017)
+        </li>
+        <li>
+          <a href="pdfs/quickref110117.pdf.spage">11/1/2017</a>
+          (Published on 10/26/2017)
+        </li>
+        <li>
+          <a href="pdfs/quickref100117.pdf.spage">10/1/2017</a>
+          (Published on 10/13/2017)
+        </li>
+        <li>
+          <a href="pdfs/quickref090117v2.pdf.spage">9/1/2017</a>
+          (Published on 8/30/2017)
+        </li>
+        <li>
+          <a href="pdfs/quickref080117v2.pdf.spage">8/1/2017</a>
+          (Published on 8/1/2017)
+        </li>
+        <li>
+          <a href="pdfs/quickref090117.pdf.spage">9/1/2017</a>
+          (Published on 8/24/2017)
+        </li>
+        <li>
+          <a href="pdfs/quickref070117.pdf.spage">7/1/2017</a>
+          (Published on 7/3/2017)
+        </li>
+        <li>
+          <a href="pdfs/quickref080117.pdf.spage">8/1/2017</a>
+          (Published on 7/26/2017)
+        </li>
+        <li>
+          <a href="pdfs/quickref060117.pdf.spage">6/1/2017</a>
+          (Published on 5/24/2017)
+        </li>
+        <li>
+          <a href="pdfs/prelimquickref070117.pdf.spage">Preliminary July 1, 2017 Quick Reference</a>
+          (Published on 6/6/2017)
+        </li>
+        <li>
+          <a href="pdfs/quickref050117v2.pdf.spage">5/1/2017</a>
+          (Published on 4/25/2017)
+        </li>
+        <li>
+          <a href="pdfs/quickref050117.pdf.spage">5/1/2017</a>
+          (Published on 4/25/2017)
+        </li>
+        <li>
+          <a href="pdfs/quickref040117.pdf.spage">4/1/2017</a>
+          (Published on 3/29/2017)
+        </li>
+        <li>
+          <a href="pdfs/quickref030117.pdf.spage">3/1/2017</a>
+          (Published on 2/21/2017)
+        </li>
+        <li>
+          <a href="pdfs/quickref020117v3.pdf.spage">2/1/2017</a>
+          (Published on 2/8/2017)
+        </li>
+        <li>
+          <a href="pdfs/quickref020117v2.pdf.spage">2/1/2017</a>
+          (Published on 2/3/2017)
+        </li>
+        <li>
+          <a href="pdfs/quickref020117.pdf.spage">2/1/2017</a>
+          (Published on 1/20/2017)
+        </li>
+        <li>
+          <a href="pdfs/quickref010117.pdf.spage">1/1/2017</a>
+          (Published on 1/3/2017)
+        </li>
+      </ul>
+    </td>
+    <td style="vertical-align:top">
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align:top">
+      <h5>2016 Quick Reference PDLs</h5>
+      <ul>
+        <li>
+          <a href="pdfs/quickref120116.pdf.spage">12/1/2016</a>
+          (Published on 11/18/2016)
+        </li>
+        <li>
+          <a href="pdfs/prelimquickref010117.pdf.spage">Preliminary January 1, 2017 Quick Reference</a>
+          (Published on 12/7/2016)
+        </li>
+        <li>
+          <a href="pdfs/quickref110116v1.pdf.spage">11/1/2016</a>
+          (Published on 11/1/2016)
+        </li>
+        <li>
+          <a href="pdfs/quickref110116.pdf.spage">11/1/2016</a>
+          (Published on 10/27/2016)
+        </li>
+        <li>
+          <a href="pdfs/quickref100116.pdf.spage">10/1/2016</a>
+          (Published on 9/20/2016)
+        </li>
+        <li>
+          <a href="pdfs/quickref090116.pdf.spage">9/1/2016</a>
+          (Published on 8/19/2016)
+        </li>
+        <li>
+          <a href="pdfs/quickref080116.pdf.spage">8/1/2016</a>
+          (Published on 7/28/2016)
+        </li>
+        <li>
+          <a href="pdfs/quickref070116.pdf.spage">7/1/2016</a>
+          (Published on 6/17/2016)
+        </li>
+        <li>
+          <a href="pdfs/quickref060116.pdf.spage">6/1/2016</a>
+          (Published on 5/25/2016)
+        </li>
+        <li>
+          <a href="pdfs/prelimquickref070116.pdf.spage">Preliminary July 1, 2016 Quick Reference</a>
+          (Published on 6/13/2016)
+        </li>
+        <li>
+          <a href="pdfs/quickref050116.pdf.spage">5/1/2016</a>
+          (Published on 4/22/2016)
+        </li>
+        <li>
+          <a href="pdfs/quickref040116v3.pdf.spage">4/15/2016</a>
+          (Published on 4/12/2016)
+        </li>
+        <li>
+          <a href="pdfs/quickref040116v2.pdf.spage">4/1/2016</a>
+          (Published on 4/6/2016)
+        </li>
+        <li>
+          <a href="pdfs/quickref040116.pdf.spage">4/1/2016</a>
+          (Published on 3/18/2016)
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a href="pdfs/quickref030116.pdf.spage">3/1/2016</a>
+          (Published on 2/26/2016)
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a href="pdfs/quickref020116.pdf.spage">2/1/2016</a>
+          (Published on 1/27/2016)
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a href="pdfs/quickref010116.pdf.spage">1/1/2016</a>
+          (Published on 12/17/2015)
+        </li>
+      </ul>
+    </td>
+    <td style="vertical-align:top">
+      <h5>2016 Diabetic Supply List Quick Reference PDLs</h5>
+      <ul>
+        <li>
+          <a href="pdfs/dsquickref010116.pdf.spage">1/1/2016</a>
+          (Posted on 3/1/2016)
+        </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align:top">
+      <h5>2015 Quick Reference PDLs</h5>
+      <ul>
+        <li>
+          <a href="pdfs/quickref120115.pdf.spage">12/1/2015</a>
+          (Published on 11/20/2015)
+        </li>
+        <li>
+          <a href="pdfs/prelimquickref010116.pdf.spage">Preliminary January 1, 2016 Quick Reference</a>
+          (Published on 12/8/2015)
+        </li>
+        <li>
+          <a href="pdfs/quickref111515.pdf.spage">11/15/2015</a>
+          (Published on 11/2/2015)
+        </li>
+        <li>
+          <a href="pdfs/quickref110115.pdf.spage">11/1/2015</a>
+          (Published on 10/23/2015)
+        </li>
+        <li>
+          <a href="pdfs/quickref101515.pdf.spage">10/15/2015</a>
+          (Published on 10/5/2015)
+        </li>
+        <li>
+          <a href="pdfs/quickref100115.pdf.spage">10/1/2015</a>
+          (Published on 9/22/2015)
+        </li>
+        <li>
+          <a href="pdfs/quickref090115.pdf.spage">9/1/2015</a>
+          (Published on 8/20/2015)
+        </li>
+        <li>
+          <a href="pdfs/quickref080115.pdf.spage">8/1/2015</a>
+          (Published on 7/22/2015)
+        </li>
+        <li>
+          <a href="pdfs/quickref070115.pdf.spage">7/1/2015</a>
+          (Published on 6/17/2015)
+        </li>
+        <li>
+          <a href="pdfs/quickref060115.pdf.spage">6/1/2015</a>
+          (Published on 5/21/2015)
+        </li>
+        <li>
+          <a href="pdfs/prelimquickref070115.pdf.spage">Preliminary July 1, 2015 Quick Reference</a>
+          (Published on 6/8/2015)
+        </li>
+        <li>
+          <a href="pdfs/quickref050115v2.pdf.spage">5/1/2015</a>
+          (Published on 5/6/2015)
+        </li>
+        <li>
+          <a href="pdfs/quickref050115.pdf.spage">5/1/2015</a>
+          (Published on 4/20/2015)
+        </li>
+        <li>
+          <a href="pdfs/quickref040115.pdf.spage">4/1/2015</a>
+          (Published on 3/30/2015)
+        </li>
+        <li>
+          <a href="pdfs/quickref030115.pdf.spage">3/1/2015</a>
+          (Published on 2/19/2015)
+        </li>
+        <li>
+          <a href="pdfs/quickref020115.pdf.spage">2/1/2015</a>
+          (Published on 1/23/2015)
+        </li>
+        <li>
+          <a href="pdfs/quickref010115.pdf.spage">1/1/2015</a>
+          (Published on 12/22/2014)
+        </li>
+      </ul>
+    </td>
+    <td style="vertical-align:top">
+      <h5>2015 Diabetic Supply List Quick Reference PDLs</h5>
+      <ul>
+        <li>
+          <a href="pdfs/dsquickref100115.pdf.spage">10/1/2015</a>
+          (Posted on 9/18/2015)
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a href="pdfs/dsquickref010115.pdf.spage">1/1/2015</a>
+          (Posted on 12/22/2014)
+        </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align:top">
+      <h5>2014 Quick Reference PDLs</h5>
+      <ul>
+        <li>
+          <a href="pdfs/quickref120114.pdf.spage">12/1/2014</a>
+          (Published on 11/24/2014)
+        </li>
+        <li>
+          <a href="pdfs/prelimquickref010115.pdf.spage">Preliminary January 1, 2015 Quick Reference</a>
+          (Published on 12/8/2014)
+        </li>
+        <li>
+          <a href="pdfs/quickref110114.pdf.spage">11/1/2014</a>
+          (Published on 10/17/2014)
+        </li>
+        <li>
+          <a href="pdfs/quickref100114v2.pdf.spage">10/1/2014</a>
+          (Published on 9/26/2014)
+        </li>
+        <li>
+          <a href="pdfs/quickref100114.pdf.spage">10/1/2014</a>
+          (Published on 9/24/2014)
+        </li>
+        <li>
+          <a href="pdfs/quickref090114.pdf.spage">9/1/2014</a>
+          (Published on 8/21/2014)
+        </li>
+        <li>
+          <a href="pdfs/quickref080114.pdf.spage">8/1/2014</a>
+          (Published on 7/21/2014)
+        </li>
+        <li>
+          <a href="pdfs/quickref080114.pdf.spage">8/1/2014</a>
+          (Published on 7/21/2014)
+        </li>
+        <li>
+          <a href="pdfs/quickref070114v1.pdf.spage">7/1/2014</a>
+          (Published on 6/23/2014)
+        </li>
+        <li>
+          <a href="pdfs/quickref060114v1.pdf.spage">6/1/2014</a>
+          (Published on 5/29/2014)
+        </li>
+        <li>
+          <a href="pdfs/prelimquickref070114.pdf.spage">Preliminary July 1, 2014 Quick Reference</a>
+          (Published on 6/10/2014)
+        </li>
+        <li>
+          <a href="pdfs/quickref050114v1.pdf.spage">5/1/2014</a>
+          (Published on 4/28/2014)
+        </li>
+        <li>
+          <a href="pdfs/quickref040114.pdf.spage">4/1/2014</a>
+          (Published on 3/25/2014)
+        </li>
+        <li>
+          <a href="pdfs/quickref030114.pdf.spage">3/1/2014</a>
+          (Published on 2/24/2014)
+        </li>
+        <li>
+          <a href="pdfs/quickref020114v2.pdf.spage">2/1/2014</a>
+          (Published on 2/13/2014)
+        </li>
+        <li>
+          <a href="pdfs/quickref020114.pdf.spage">2/1/2014</a>
+          (Published on 1/23/2014)
+        </li>
+        <li>
+          <a href="pdfs/quickref010114v2.pdf.spage">1/1/2014</a>
+          (Published on 1/9/2014)
+        </li>
+        <li>
+          <a href="pdfs/quickref010114.pdf.spage">1/1/2014</a>
+          (Published on 12/19/2013)
+        </li>
+        <li>
+          <a href="pdfs/prelimquickref010114.pdf.spage">Preliminary January 1, 2014 Quick Reference</a>
+          (Published on 12/9/2013)
+        </li>
+      </ul>
+    </td>
+    <td style="vertical-align:top">
+      <h5>2014 Diabetic Supply List Quick Reference PDLs</h5>
+      <ul>
+        <li>
+          <a href="pdfs/dsquickref010114v2.pdf.spage">1/1/2014</a>
+          (Posted on 1/24/2014)
+        </li>
+        <li>
+          <a href="pdfs/dsquickref010114.pdf.spage">1/1/2014</a>
+          (Posted on 12/16/2013)
+        </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align:top">
+      <h5>2013 Quick Reference PDLs</h5>
+      <ul>
+        <li>
+          <a href="pdfs/quickref120113.pdf.spage">12/1/2013</a>
+        </li>
+        <li>
+          <a href="pdfs/quickref110113v2.pdf.spage">11/1/2013</a>
+          (Published on 11/5/2013)
+        </li>
+        <li>
+          <a href="pdfs/quickref110113.pdf.spage">11/1/2013</a>
+          (Published on 10/21/2013)
+        </li>
+        <li>
+          <a href="pdfs/quickref100113.pdf.spage">10/1/2013</a>
+        </li>
+        <li>
+          <a href="pdfs/quickref090113.pdf.spage">9/1/2013</a>
+        </li>
+        <li>
+          <a href="pdfs/quickref080113.pdf.spage">8/1/2013</a>
+        </li>
+        <li>
+          <a href="pdfs/quickref070113.pdf.spage">7/1/2013</a>
+        </li>
+        <li>
+          <a href="pdfs/prelim_quickref070113.pdf.spage">Preliminary July 1, 2013 Quick Reference</a>
+          (Published on 6/11/2013)
+        </li>
+        <li>
+          <a href="pdfs/quickref060113.pdf.spage">6/1/2013</a>
+        </li>
+        <li>
+          <a href="pdfs/quickref050113v2.pdf.spage">5/1/2013</a>
+          (Published on 4/30/2013)
+        </li>
+        <li>
+          <a href="pdfs/quickref050113.pdf.spage">5/1/2013</a>
+          (Published on 4/22/2013)
+        </li>
+        <li>
+          <a href="pdfs/quickref040113v2.pdf.spage">4/1/2013</a>
+          (Published on 4/4/2013)
+        </li>
+        <li>
+          <a href="pdfs/quickref040113.pdf.spage">4/1/2013</a>
+          (Published on 3/22/2013)
+        </li>
+        <li>
+          <a href="pdfs/quickref030113.pdf.spage">3/1/2013</a>
+        </li>
+        <li>
+          <a href="pdfs/quickref020113.pdf.spage">2/1/2013</a>
+        </li>
+        <li>
+          <a href="pdfs/quickref010113.pdf.spage">1/1/2013</a>
+          (Posted on 12/20/2012)
+        </li>
+        <li>
+          <a href="pdfs/prelimquickref010113.pdf.spage">Preliminary January 1, 2013 Quick Reference</a>
+          (Posted on 12/13/12)
+        </li>
+      </ul>
+    </td>
+    <td style="vertical-align:top">
+      <h5>2013 Diabetic Supply List Quick Reference PDLs</h5>
+      <ul>
+        <li>
+          <a href="pdfs/dsquickref110113.pdf.spage">11/1/2013</a>
+        </li>
+        <li>
+          <a href="pdfs/dsquickref100113.pdf.spage">10/1/2013</a>
+        </li>
+        <li>
+          <a href="pdfs/dsquickref060113.pdf.spage">6/1/2013</a>
+        </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align:top">
+      <h5>2012 Quick Reference PDLs</h5>
+      <ul>
+        <li>
+          <a href="pdfs/quickref120112.pdf.spage">12/1/12</a>
+        </li>
+        <li>
+          <a href="pdfs/quickref110112.pdf.spage">11/1/12</a>
+        </li>
+        <li>
+          <a href="pdfs/quickref100112.pdf.spage">10/1/12</a>
+        </li>
+        <li>
+          <a href="pdfs/quickref090112.pdf.spage">9/1/12</a>
+        </li>
+        <li>
+          <a href="pdfs/quickref080112v3.pdf.spage">8/1/12</a>
+          (Posted on 8/14/12)
+        </li>
+        <li>
+          <a href="pdfs/quickref080112v2.pdf.spage">8/1/12</a>
+          (Posted on 8/1/12)
+        </li>
+        <li>
+          <a href="pdfs/quickref080112.pdf.spage">8/1/12</a>
+          (Posted on 7/19/12)
+        </li>
+        <li>
+          <a href="pdfs/quickref071512.pdf.spage">7/15/12</a>
+          (Effective on 7/15/12)
+        </li>
+        <li>
+          <a href="pdfs/quickref070112.pdf.spage">7/1/12</a>
+          (Posted on 6/20/12)
+        </li>
+        <li>
+          <a href="pdfs/preliminaryquickref070112.pdf.spage">Preliminary July 1, 2012 Quick Reference</a>
+          (Posted on 6/7/12)
+        </li>
+        <li>
+          <a href="pdfs/quickref060112v2.pdf.spage">6/1/12</a>
+          (Posted on 5/23/12)
+        </li>
+        <li>
+          <a href="pdfs/quickref060112.pdf.spage">6/1/12</a>
+          (Posted on 5/22/12)
+        </li>
+        <li>
+          <a href="pdfs/quickref050112v2.pdf.spage">5/1/12</a>
+          (Posted on 5/2/12)
+        </li>
+        <li>
+          <a href="pdfs/quickref050112.pdf.spage">5/1/12</a>
+          (Posted on 4/23/12)
+        </li>
+        <li>
+          <a href="pdfs/quickref040112v3.pdf.spage">4/1/12</a>
+          (Posted on 4/5/12)
+        </li>
+        <li>
+          <a href="pdfs/quickref040112v2.pdf.spage">4/1/12</a>
+          (Posted on 3/26/12)
+        </li>
+        <li>
+          <a href="pdfs/quickref040112.pdf.spage">4/1/12</a>
+          (Posted on 3/23/12)
+        </li>
+        <li>
+          <a href="pdfs/quickref030112.pdf.spage">3/1/12</a>
+        </li>
+        <li>
+          <a href="pdfs/quickref02012012v2.pdf.spage">2/1/12</a>
+          (Posted on 2/14/12)
+        </li>
+        <li>
+          <a href="pdfs/quickref02012012.pdf.spage">2/1/12</a>
+          (Posted on 1/24/12)
+        </li>
+        <li>
+          <a href="pdfs/quickref01012012v2.pdf.spage">1/1/12</a>
+          (Posted on 12/22/11)
+        </li>
+        <li>
+          <a href="pdfs/quickref01012012.pdf.spage">1/1/12</a>
+          (Posted on 12/16/11)
+        </li>
+      </ul>
+    </td>
+    <td style="vertical-align:top">
+      <h5>2012 Diabetic Supply List Quick Reference PDLs</h5>
+      <ul>
+        <li>
+          <a href="pdfs/dsquickref080112.pdf.spage">8/1/2012</a>
+        </li>
+        <li>
+          <a href="pdfs/dsquickref040112.pdf.spage">4/1/12</a>
+        </li>
+        <li>
+          <a href="pdfs/dsquickref020112.pdf.spage">2/1/12</a>
+        </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align:top">
+      <h5>2011 Quick Reference PDLs</h5>
+      <ul>
+        <li>
+          <a href="pdfs/quickref120111.pdf.spage">12/1/11</a>
+        </li>
+        <li>
+          <a href="pdfs/quickref110111.pdf.spage">11/1/11</a>
+        </li>
+        <li>
+          <a href="pdfs/quickref100111v3.pdf.spage">10/1/11</a>
+          (Posted on 10/11/11)
+        </li>
+        <li>
+          <a href="pdfs/quickref100111v2.pdf.spage">10/1/11</a>
+          (Posted on 9/30/11)
+        </li>
+        <li>
+          <a href="pdfs/quickref100111.pdf.spage">10/1/11</a>
+          (Posted on 9/21/11)
+        </li>
+        <li>
+          <a href="pdfs/quickref090111.pdf.spage">9/1/11</a>
+        </li>
+        <li>
+          <a href="pdfs/quickref080111v2.pdf.spage">8/1/11</a>
+          (Posted on 8/2/11)
+        </li>
+        <li>
+          <a href="pdfs/quickref080111.pdf.spage">8/1/11</a>
+          (Posted on 7/20/11)
+        </li>
+        <li>
+          <a href="pdfs/quickref070111v5.pdf.spage">7/1/11</a>
+          (Posted on 7/15/11)
+        </li>
+        <li>
+          <a href="pdfs/quickref070111v4.pdf.spage">7/1/11</a>
+          (Posted on 7/7/11)
+        </li>
+        <li>
+          <a href="pdfs/quickref070111v3.pdf.spage">7/1/11</a>
+          (Posted on 6/24/11)
+        </li>
+        <li>
+          <a href="pdfs/quickref070111v2.pdf.spage">7/1/11</a>
+          (Posted on 6/16/11)
+        </li>
+        <li>
+          <a href="pdfs/quickref070111.pdf.spage">7/1/11</a>
+          (Posted on 6/13/11)
+        </li>
+        <li>
+          <a href="pdfs/quickref060111v2.pdf.spage">6/1/11</a>
+          (Posted on 5/26/11)
+        </li>
+        <li>
+          <a href="pdfs/quickref060111.pdf.spage">6/1/11</a>
+          (Posted on 5/23/11)
+        </li>
+        <li>
+          <a href="pdfs/quickref050111.pdf.spage">5/1/11</a>
+          (Posted on 4/26/11)
+        </li>
+        <li>
+          <a href="pdfs/quickref040111v2.pdf.spage">4/1/11</a>
+          (Posted on 4/1/11)
+        </li>
+        <li>
+          <a href="pdfs/quickref040111.pdf.spage">4/1/11</a>
+          (Posted on 3/16/11)
+        </li>
+        <li>
+          <a href="pdfs/quickref030111.pdf.spage">3/1/11</a>
+        </li>
+        <li>
+          <a href="pdfs/quickref020411.pdf.spage">2/4/11</a>
+        </li>
+        <li>
+          <a href="pdfs/quickref020311.pdf.spage">2/3/11</a>
+        </li>
+        <li>
+          <a href="pdfs/quickref020111.pdf.spage">2/1/11</a>
+        </li>
+        <li>
+          <a href="pdfs/quickref010111.pdf.spage">1/1/11</a>
+        </li>
+      </ul>
+    </td>
+    <td style="vertical-align:top">
+      <h5>2011 Diabetic Supply List Quick Reference PDLs</h5>
+      <ul>
+        <li>
+          <a href="pdfs/dsquickref102611.pdf.spage">10/26/11</a>
+          (Posted on 1/5/2012)
+        </li>
+        <li>
+          <a href="pdfs/dsquickref040111v2.pdf.spage">4/1/11</a>
+          (Posted on 9/19/2011)
+        </li>
+        <li>
+          <a href="pdfs/dsquickref040111.pdf.spage">4/1/11</a>
+        </li>
+        <li>
+          <a href="pdfs/dsquickref010111.pdf.spage">1/1/11</a>
+        </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align:top">
+      <h5>2010 Quick Reference PDLs</h5>
+      <ul>
+        <li>
+          <a href="pdfs/quickref120110.pdf.spage">12/1/10</a>
+        </li>
+        <li>
+          <a href="pdfs/quickref110110.pdf.spage">11/1/10</a>
+        </li>
+        <li>
+          <a href="pdfs/quickref100110.pdf.spage">10/1/10</a>
+        </li>
+        <li>
+          <a href="pdfs/quickref090110.pdf.spage">9/1/10</a>
+        </li>
+        <li>
+          <a href="pdfs/quickref080110.pdf.spage">8/1/10</a>
+        </li>
+        <li>
+          <a href="pdfs/quickref070110.pdf.spage">7/1/10</a>
+        </li>
+        <li>
+          <a href="pdfs/quickref060110.pdf.spage">6/1/10</a>
+        </li>
+        <li>
+          <a href="pdfs/quickref050110.pdf.spage">5/1/10</a>
+        </li>
+        <li>
+          <a href="pdfs/quickref040110.pdf.spage">4/1/10</a>
+        </li>
+        <li>
+          <a href="pdfs/quickref030110.pdf.spage">3/1/10</a>
+        </li>
+        <li>
+          <a href="pdfs/quickref020110.pdf.spage">2/1/10</a>
+        </li>
+        <li>
+          <a href="pdfs/quickref011510.pdf.spage">1/15/10</a>
+        </li>
+      </ul>
+    </td>
+    <td style="vertical-align:top">
+      <h5>2010 Diabetic Supply List Quick Reference PDLs</h5>
+      <ul>
+        <li>
+          <a href="pdfs/dsquickref080110.pdf.spage">8/1/10</a>
+        </li>
+        <li>
+          <a href="pdfs/dsquickref060110.pdf.spage">6/1/10</a>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+<h5>2009 Quick Reference PDLs</h5>
+<ul>
+  <li>
+    <a href="pdfs/quickref120109.pdf.spage">12/1/09</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref110109.pdf.spage">11/1/09</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref100109.pdf.spage">10/1/09</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref090109.pdf.spage">9/1/09</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref080109.pdf.spage">8/1/09</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref070109.pdf.spage">7/1/09</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref060109.pdf.spage">6/1/09</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref050109.pdf.spage">5/1/09</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref040109.pdf.spage">4/1/09</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref030109.pdf.spage">3/1/09</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref020109.pdf.spage">2/1/09</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref010109.pdf.spage">1/1/09</a>
+  </li>
+</ul>
+<h5>2008 Quick Reference PDLs</h5>
+<ul>
+  <li>
+    <a href="pdfs/quickref120108.pdf.spage">12/1/08</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref110108.pdf.spage">11/1/08</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref100108v2.pdf.spage">10/1/08</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref090108.pdf.spage">9/1/08</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref080108.pdf.spage">8/1/08</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref070108.pdf.spage">7/1/08</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref060208.pdf.spage">6/2/08</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref050108.pdf.spage">5/1/08</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref040208v3_1.pdf.spage">4/2/08</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref030308.pdf.spage">3/1/08</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref020108.pdf.spage">2/1/08</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref010208.pdf.spage">1/2/08</a>
+  </li>
+</ul>
+<h5>2007 Quick Reference PDLs</h5>
+<ul>
+  <li>
+    <a href="pdfs/quickref120107.pdf.spage">12/1/07</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref11012007v4.pdf.spage">11/19/07</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref100107_rev.pdf.spage">10/1/07</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref090107.pdf.spage">9/1/07</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref080107.pdf.spage">8/1/07</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref070107r.pdf.spage">7/1/07</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref060107.pdf.spage">6/1/07</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref050107.pdf.spage">5/1/07</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref040207.pdf.spage">4/2/07</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref040107.pdf.spage">4/1/07</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref030107.pdf.spage">3/1/07</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref020107.pdf.spage">2/1/07</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref010107.pdf.spage">1/1/07</a>
+  </li>
+</ul>
+<h5>2006 Quick Reference PDLs</h5>
+<ul>
+  <li>
+    <a href="pdfs/quickref122106.pdf.spage">12/21/06</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref120106.pdf.spage">12/1/06</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref110106.pdf.spage">11/1/06</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref102006.pdf.spage">10/1/06</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref091806.pdf.spage">9/18/06</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref09012006.pdf.spage">9/1/06</a>
+  </li>
+  <li>
+    <a href="pdfs/quickref_080106.pdf.spage">8/1/06</a>
+  </li>
+</ul>
+<h5>2006 Class and Status PDLs</h5>
+<ul>
+  <li>
+    7/13/06
+    <ul>
+      <li>
+        <a href="pdfs/class_07132006.pdf.spage">Class List</a>
+      </li>
+      <li>
+        <a href="pdfs/status_07132006.pdf.spage">Status List</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    7/1/06
+    <ul>
+      <li>
+        <a href="pdfs/class_07062006.pdf.spage">Class List</a>
+      </li>
+      <li>
+        <a href="pdfs/status_07062006.pdf.spage">Status List</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    6/1/06
+    <ul>
+      <li>
+        <a href="pdfs/class_06012006.pdf.spage">Class List</a>
+      </li>
+      <li>
+        <a href="pdfs/status_06012006.pdf.spage">Status List</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    5/1/06
+    <ul>
+      <li>
+        <a href="pdfs/classlist.pdf.spage">Class List</a>
+      </li>
+      <li>
+        <a href="pdfs/statuslist.pdf.spage">Status List</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="pdfs/4_3_06.pdf.spage">4/3/06</a>
+  </li>
+  <li>
+    <a href="pdfs/3_1_06.pdf.spage">3/1/06</a>
+  </li>
+  <li>
+    <a href="pdfs/1_2_06.pdf.spage">1/2/06</a>
+  </li>
+  <li>
+    <a href="pdfs/12.8.05_list.pdf.spage">12/8/05</a>
+  </li>
+  <li>
+    <a href="pdfs/pdllist_101005.pdf.spage">10/10/05</a>
+  </li>
+  <li>
+    <a href="pdfs/pdllist_100105.pdf.spage">10/1/05</a>
+  </li>
+  <li>
+    <a href="pdfs/pdl_list.pdf.spage">9/9/05</a>
+  </li>
+</ul>
+</div>
+
+
+              </div>
+            <div class='rightPanelWidth'>&nbsp;</div>
+          </td>
+        </tr>
+      </table>
+
+      <!-- footer -->
+    <div style="text-align:center;margin:auto;">
+      <div style="width: 600px;border-bottom: 1px solid #c0c0c0;text-align:center;margin:auto;">&nbsp;</div>
+      <div style="font-family: Verdana; font-size: smaller; padding-top: 10px;">
+        <a class="norm" title="About"           target="new" href="http://dhs.wisconsin.gov/aboutDHS/index.htm">About</a> &nbsp;|&nbsp;
+        <a id="ContactLink" tabindex="1014" title="Contact" class="norm" href="../../../../html/Contact.htm.spage" target="_top">Contact</a>&nbsp;|&nbsp;
+        <a class="norm" title="Disclaimer"      target="new" href="http://dhs.wisconsin.gov/disclaimer.htm">Disclaimer</a> &nbsp;|&nbsp;
+        <a class="norm" title="Privacy Notice"  target="new" href="http://www.dhs.wisconsin.gov/publications/p1/p13040.pdf">Privacy Notice</a>
+        <div><b>Wisconsin Department of Health Services</b></div>
+          
+        <table class="iC_SkinEnvironmentTag" id="Table1" align="center">
+	        <tr>
+		        <td valign="bottom" class="UserInfo"><div style="text-align:center;"><span id="ENVIRONMENT1_lblEnvironment" title="Represents the current environment the application is running in.">Production PROD_WIPortal2_M1056B__6</span>
+</div></td>
+	        </tr>
+	        <tr>
+		        <td valign="bottom" ><span style="font-size:xx-small;" id='iC_elapsedTime'></span></td>
+	        </tr>
+          <tr>
+		        <td valign="bottom" >
+              <span id="BrowserID" class="iC_WindowId">Browser Tab ID: 1  &nbsp;</span>
+              <span id="WindowID" class="iC_WindowId">-1</span>
+		        </td>
+	        </tr>
+        </table>
+      </div>
+    </div>
+
+      <input type="hidden" name="ctl00$iCWindowID" id="iCWindowID" value="1" />
+      <input type="hidden" name="ctl00$iCRequestID" id="iCRequestID" value="1" />
+      <input type="hidden" name="ctl00$UniqueBrowserID" id="UniqueBrowserID" value="1" /> 
+      <input type="hidden" name="ctl00$iCPanelViewMode" id="iCPanelViewMode" /> 
+      <input type="hidden" name="ctl00$iCPanelViewTabSelectMode" id="iCPanelViewTabSelectMode" /> 
+
+      <input name="ctl00$ScrollTop" type="hidden" id="ScrollTop" />
+      <input name="ctl00$__dnnVariable" type="hidden" id="__dnnVariable" />
+      <input name="ctl00$iCFieldsChanged" type="hidden" id="iCFieldsChanged" value="0" />
+      <input id="ScrollX"         type="hidden"                 name="ScrollX"          value="0"/>
+      <input id="ScrollY"         type="hidden"                 name="ScrollY"          value="0"/>
+            
+      
+      <div id="LoadingPanel1" class="iC_LoadingPanel" style="display:none;">
+
+		</div>
+
+    
+	</div>
+</div>
+    
+  <span id="ctl07"></span>
+                <div id='iC_SessionExtended' class='iC_SessionExtended' style='text-align:center;display: none;'>Session Extended.</div>
+                <div id='iC_SessionWarningPopup' class='iC_SessionWarningPopup' style='text-align:center;display: none;'>
+                    <br/>
+                    <p class='iC_WarningText'>
+                       Because you have not recently performed an action 
+	                    <br/>that loads or reloads a page, your session will expire in 
+	                    <br/>
+	                    <br/><span class='iC_SessionWarningTime' id='sw_minutesValue'></span><br/> 
+	                    <br/>
+	                    Upon expiration your unsaved data will be lost and you 
+	                    <br/>will be required to login again to begin a new session.  
+	                    <br/>
+	                    <br/>
+	                    To avoid a session expiration, 
+	                    <br/>
+	                    click this button to extend your session.
+	                    <br/>	                    
+                    </p>
+                    <p style='font-size:100%'>
+                        <a id='iC_ExtendSessionButton' class='iC_StyleButton iC_StyleButton_Large' 
+                            style='margin-left: auto;margin-right: auto;' 
+                            target='SessionExpirationWarning' title='Session Expiration Warning' 
+                            href='../../../../../iCSessionExtender.extend' onclick='ExtendSession("../../../../../iCSessionExtender.extend", "1");return false;'>Extend</a>
+                        <br/>
+                    </p>
+                </div> <script>SetupSessionWarning('1800','5','INFO','../Subsystem/Account/SecureSiteLogin.aspx');</script>
+
+<script type="text/javascript">
+//<![CDATA[
+$(window).bind('beforeunload', function() { WhatToCheck();});window.__TsmHiddenField = $get('RadScriptManager1_TSM');//]]>
+</script>
+<script src="/WIPortal/Javascript/ShortCutEnterKeyHandler.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+function SetupStartFunctions(){var localController=null; if(typeof icPanelViewModeController=='undefined'){ localController= new PanelViewModeController()} else{localController=icPanelViewModeController;  } 
+}
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadAjaxLoadingPanel, {"initialDelayTime":0,"isSticky":true,"minDisplayTime":0,"skin":"","transparency":20,"uniqueID":"ctl00$LoadingPanel1","zIndex":90000}, null, null, $get("LoadingPanel1"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadAjaxPanel, {"clientEvents":{OnRequestStart:"RequestStartWIPortal2",OnResponseEnd:"ResponseEnd"},"enableAJAX":true,"enableHistory":false,"links":[],"loadingPanelID":"LoadingPanel1","styles":[],"uniqueID":"ctl00$MainContentAjaxPane"}, null, null, $get("ctl00_MainContentAjaxPane"));
+});
+//]]>
+</script>
+</form>
+</body>
+</html>     
+<script type="text/javascript">
+
+  function portalScrollToError()
+  {
+    if ($(".MsgHeading")[0])
+    {
+      $(".MsgHeading")[0].scrollIntoView();
+
+      /* if we are showing the ignore checkbox, change the column span from 6 to 9 to match the extra fields. */
+      if ($(".WarningMessage").find("input:checkbox").length > 0) {
+        $(".iC_TaskList").find("td[colspan='6']").attr('colspan', 9);
+      }
+    }
+  }
+  
+  function backbuttonCheck()
+{
+    console.log("backbuttonCheck called.");
+}
+</script>

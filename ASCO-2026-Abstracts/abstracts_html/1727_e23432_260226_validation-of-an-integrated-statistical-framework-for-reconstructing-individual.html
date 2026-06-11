@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Validation of an integrated statistical framework for reconstructing individual-patient data from time-to-event curves.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Validation of an integrated statistical framework for reconstructing individual-patient data from time-to-event curves.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e23432</div>
+    <div><strong>First speaker:</strong> Spencer Lewis James, MD, MPH</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/260226">https://www.asco.org/abstracts-presentations/260226</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Published time-to-event results are most often presented as Kaplan-Meier (KM) plots, but the underlying individual participant data (IPD) are rarely accessible, limiting secondary analyses and evidence synthesis. Methods for reconstructing IPD from KM curves exist but remain technically demanding, non-reproducible, or slow to scale. We developed a provenance-preserving computational platform that enables accurate and reproducible IPD reconstruction directly from published survival figures.</div>
+  <main> 
+
+	<div><b>Background: </b> Published time-to-event results are most often presented as Kaplan-Meier (KM) plots, but the underlying individual participant data (IPD) are rarely accessible, limiting secondary analyses and evidence synthesis. Methods for reconstructing IPD from KM curves exist but remain technically demanding, non-reproducible, or slow to scale. We developed a provenance-preserving computational platform that enables accurate and reproducible IPD reconstruction directly from published survival figures.</p>  <b>Methods: </b> We developed and implemented an open-source, modular, semi-supervised architecture linking each study, figure, and curve to its calibration parameters and metadata. Study PDFs from published randomized control trials (RCTs) are uploaded and metadata including DOI and PMID are extracted automatically. Plots containing KM curves are identified and cropped by the user to establish boundaries based on Cartesian coordinates. KM curves are then masked to isolate each individual treatment curve, at which point the digitized KM plots are geometrically normalised, parsed for number-at-risk tables, and reconstructed using the validated Wei-Royston algorithm, which produces the patient-level data that would have been in the original arm in the RCT. This process was done systematically across an expert-curated selection of clinical trials relevant in urological oncology. Accuracy was assessed by comparing hazard ratios (HRs) and median survival values against those reported in 30 published clinical trials with 73 total curves spanning oncology and non-oncology indications. Comparative evaluation was performed against the fully automated KM-GPT pipeline published elsewhere for three additional studies.</p>  <b>Results: </b> Our approach reproduced published HRs with near-perfect concordance (slope = 1&#183;0059, R&#178; = 0&#183;994). The mean difference between reconstructed and reported HRs was -0&#183;0058 (SD 0&#183;0176). Reconstructed survival curves visually overlapped their published counterparts, and absolute error distributions were normally distributed, indicating random rather than systematic variance. Compared with KM-GPT, our approach achieved equivalent or superior accuracy while maintaining full provenance control such that users can run simulations and counterfactual analyses to analyze different scenarios, compare arms from different trials, or conduct population-level analysis to measure benefit at the population level. </p>  <b>Conclusions: </b> Our approach demonstrates that reliable, low-latency reconstruction of time-to-event data can be achieved at scale with transparent, auditable provenance. This platform provides a foundation for clinician-guided, reproducible evidence synthesis from the published biomedical literature.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

@@ -1,0 +1,89 @@
+{
+  "abstractNumber": "12153",
+  "body": " \r\n\r\n\t<div><b>Background: </b> </p>  Immune-related adverse events (irAE) associated with immune checkpoint inhibitors (ICI) substantially contribute to treatment-related morbidity, yet reliable pretreatment predictors remain unavailable. Immune-related pneumonitis (irP) is among the most serious irAE and is associated with a significant risk for mortality. Machine learning (ML) offers an opportunity to analyze complex clinical data to improve risk stratification. We aimed to develop a personalized ML-based model to identify and predict irP from electronic health records (EHR) using patient characteristics prior to ICI initiation.</p>  <b>Methods: </b> </p>  We extracted data from the EHR of patients with solid malignancies, in various disease stages, who were treated with ICI at Cedars-Sinai Medical Center between 2015 and 2024. For each patient, we collected comprehensive treatment data, including demographics and clinical variables from structured fields and clinical notes. Variables not reliably captured in structured fields, such as smoking or family history, were extracted using our pipeline. Using a large language model (LLM)-based pipeline, we identified irAE cases, enabling precise extraction and classification of irAE subtypes, and validated results against physician annotations for irP (excluding pneumonitis due to other causes). Chi-square analyses assessed associations between features and irAE. We used TPOT, an automated machine learning tool, to develop predictive models and explore sampling strategies for class imbalance. The model was trained on a balanced dataset, evaluated on an unbalanced test set (80/20 split), and hyperparameter-optimized using five-fold cross-validation.</p>  <b>Results: </b> </p>  Our study included 4,302 cancer patients treated with ICI, of whom 910 were identified by our pipeline as having an irAE and 276 cases of irP. The model achieved a sensitivity of 0.964 on a physician-annotated irP dataset. The best-performing predictive model was a tree-based classifier with an AUC of 0.68. Chi-square analysis identified significant associations (p&nbsp;&lt;&nbsp;0.05) between irP and multiple clinical features, including prior lung disease, radiotherapy, age at immunotherapy, comorbidity burden, and inflammatory markers. Odds ratio analysis based on model-derived risk score quartiles, showing that patients in the highest-risk quartile exhibited an average 10.3-fold increase in the odds of developing pneumonitis compared to those in the lowest-risk quartile.</p>   </p>  <b>Conclusions: </b> </p>  This study establishes a strong baseline for ML algorithms to identify and predict irP specifically in patients treated with ICI, using EHR-derived data. Our results demonstrate that pre-treatment clinical and laboratory variables can be effectively used to stratify irP risk. Future research should aim to refine these predictive models and incorporate a broader range of EHR-based features to further improve predictive performance and clinical applicability.</p>  </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+  "contentId": "258410",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/258410",
+    "queryParams": null,
+    "target": null,
+    "title": "Machine learning approach for prediction of immune-related pneumonitis."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION258410"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780176600000,
+    "start": 1780165800000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "136",
+  "presentationId": "258410",
+  "primaryPerson": {
+    "displayName": "Barliz Waissengrin, MD",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780176600000,
+    "start": 1780165800000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17131",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17131",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Symptom Science and Palliative Care"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": {
+    "countriesThes": null,
+    "drugsThes": null,
+    "entitiesThes": null,
+    "genesThes": null,
+    "orgThes": null,
+    "subjectsThes": [
+      "Patient care"
+    ]
+  },
+  "title": "Machine learning approach for prediction of immune-related pneumonitis.",
+  "titles": null,
+  "uid": "PRESENTATION258410"
+}

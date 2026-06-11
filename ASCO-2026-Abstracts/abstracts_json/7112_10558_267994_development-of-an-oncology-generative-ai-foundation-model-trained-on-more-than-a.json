@@ -1,0 +1,80 @@
+{
+  "abstractNumber": "10558",
+  "body": " \r\n\r\n\t<div><b>Background: </b> </p>  Incidence of cancer diagnoses continues to increase, while the average cost of cancer screening, such as mammogram or colonoscopy, remains high, ranging from hundreds to over a thousand dollars. This study explores the potential of building an oncology foundation model based on Generative Pre-trained Transformers (GPT) to predict future outcomes for patients. We assess the prediction accuracy and feasibility of leveraging the foundation model to inform when screening should be prioritized, thereby reducing the associated burden of unnecessary procedures.</p>  <b>Methods: </b> </p>  The advancement of generative AI offers the opportunity to model the progression of human disease over time. In this study, we extended the GPT architecture and pre-trained it with a subset of Truveta Data containing the electronic health record (EHR) from the journeys of 1.4 million de-identified patients diagnosed with 4 types of cancer (lung, breast, colorectal, prostate). Each sequence of the patient journey—including demographics (age, gender), conditions, lab results (represented by SNOMED-CT and LOINC codes), and the corresponding event time—was tokenized before passing through the GPT model for training. For validation, 1000 patients were randomly sampled from our test data, in which each type of cancer diagnosis constituted 19%-30% of the samples. We used the model to generate synthetic future patient journeys for the selected patients and compared the predicted outcomes with the actual cancer diagnoses within one year. </p>  <b>Results: </b></p>  The model achieved sensitivities above 78%, with positive predictive values (PPV) between 66% and 90%. More importantly, it demonstrated high specificities above 91%, with corresponding negative predictive values (NPV) above 90%. </p>  <b>Conclusions: </b> </p>  The high specificities and NPV indicate the feasibility of applying generative foundation model pre-trained with EHR data to predict negative cancer outcomes with high accuracy. Since the percentage of screening tests leading to positive cancer diagnosis is relatively low, the projected negative predictive outcomes offer valuable signals for clinicians, which they can use to complement their expert assessment to avoid unnecessary screening and subsequently reduce the burden of screening costs.</div>\r\n\r\n\r\n\r\n\t<div class=\"table_caption\"><b>Performance of the foundation model on cancer outcome prediction</b></div> \r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p>Lung</p>\r\n</td>\r\n<td>\r\n<p>Breast</p>\r\n</td>\r\n<td>\r\n<p>Colorectal</p>\r\n</td>\r\n<td>\r\n<p>Prostate</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Positive predictive value (PPV)</p>\r\n</td>\r\n<td>\r\n<p>72.77%</p>\r\n</td>\r\n<td>\r\n<p>90.11%</p>\r\n</td>\r\n<td>\r\n<p>65.78%</p>\r\n</td>\r\n<td>\r\n<p>88.88%</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Sensitivity</p>\r\n</td>\r\n<td>\r\n<p>80.28% </p>\r\n</td>\r\n<td>\r\n<p>79.00%</p>\r\n</td>\r\n<td>\r\n<p>78.13%</p>\r\n</td>\r\n<td>\r\n<p>78.26%</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Negative predictive value (NPV)</p>\r\n</td>\r\n<td>\r\n<p>91.87%     </p>\r\n</td>\r\n<td>\r\n<p>96.29%</p>\r\n</td>\r\n<td>\r\n<p>90.35%</p>\r\n</td>\r\n<td>\r\n<p>96.27%</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Specificity</p>\r\n</td>\r\n<td>\r\n<p>94.50% </p>\r\n</td>\r\n<td>\r\n<p>91.45%   </p>\r\n</td>\r\n<td>\r\n<p>94.56% </p>\r\n</td>\r\n<td>\r\n<p>92.07%</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n\r\n\r\n",
+  "contentId": "267994",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/267994",
+    "queryParams": null,
+    "target": null,
+    "title": "Development of an oncology generative AI foundation model trained on more than a million longitudinal patient journeys across the United States."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION267994"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780349400000,
+    "start": 1780338600000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "519",
+  "presentationId": "267994",
+  "primaryPerson": {
+    "displayName": "Sihang Zeng, PhD",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780349400000,
+    "start": 1780338600000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17125",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17125",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Prevention, Risk Reduction, and Genetics"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": null,
+  "title": "Development of an oncology generative AI foundation model trained on more than a million longitudinal patient journeys across the United States.",
+  "titles": null,
+  "uid": "PRESENTATION267994"
+}

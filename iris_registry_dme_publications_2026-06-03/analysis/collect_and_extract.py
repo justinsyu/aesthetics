@@ -1,0 +1,381 @@
+import json
+import re
+import time
+import urllib.error
+import urllib.parse
+import urllib.request
+from pathlib import Path
+
+import fitz
+
+
+ROOT = Path(__file__).resolve().parents[1]
+DOWNLOADS = ROOT / "downloads"
+SOURCES = ROOT / "source_pages"
+TEXT = ROOT / "text"
+
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "Accept": "text/html,application/pdf,application/xml,*/*",
+}
+
+
+ITEMS = [
+    {
+        "id": "cantrell_2020_treatment_patterns_dme",
+        "title": "Treatment Patterns for Diabetic Macular Edema: An Intelligent Research in Sight (IRIS) Registry Analysis",
+        "year": 2020,
+        "format": "manuscript",
+        "pmid": "31767437",
+        "doi": "10.1016/j.ophtha.2019.10.019",
+        "aao_listed": True,
+        "urls": [
+            "https://www.sciencedirect.com/science/article/pii/S0161642019321761",
+            "https://api.elsevier.com/content/article/PII:S0161642019321761?httpAccept=text/xml",
+        ],
+    },
+    {
+        "id": "malhotra_2021_disparities_initiation_anti_vegf_dme",
+        "title": "Racial, Ethnic, and Insurance-Based Disparities Upon Initiation of Anti-VEGF Therapy for Diabetic Macular Edema in the US",
+        "year": 2021,
+        "format": "manuscript",
+        "pmid": "33716048",
+        "doi": "10.1016/j.ophtha.2021.03.010",
+        "aao_listed": True,
+        "urls": [
+            "https://www.sciencedirect.com/science/article/pii/S0161642021001962",
+        ],
+    },
+    {
+        "id": "greenlee_2022_socioeconomic_disparities_dme",
+        "title": "Association of Socioeconomic Health Care Disparities With Use of Anti-VEGF and Visual Acuity Outcomes in Patients With Diabetic Macular Edema",
+        "year": 2022,
+        "format": "manuscript",
+        "pmid": "35858229",
+        "aao_listed": True,
+        "urls": [
+            "https://journals.healio.com/doi/10.3928/23258160-20220615-03",
+        ],
+    },
+    {
+        "id": "maturi_2024_race_insurance_dr_dme",
+        "title": "Effect of Race and Insurance Status on Treatment and Outcomes in Diabetic Retinopathy: Analysis of 43,274 Eyes Using the IRIS Registry",
+        "year": 2024,
+        "format": "manuscript",
+        "pmid": "38770080",
+        "pmcid": "PMC11102718",
+        "doi": "10.1177/24741264231221607",
+        "aao_listed": True,
+        "urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC11102718/",
+            "https://journals.sagepub.com/doi/10.1177/24741264231221607",
+        ],
+    },
+    {
+        "id": "kuo_2024_long_term_treatment_patterns_dme",
+        "title": "Long-term Treatment Patterns for Diabetic Macular Edema: Up to 6-Year Follow-Up in the IRIS Registry",
+        "year": 2024,
+        "format": "manuscript",
+        "pmid": "38830485",
+        "doi": "10.1016/j.oret.2024.05.017",
+        "aao_listed": True,
+        "urls": [
+            "https://www.sciencedirect.com/science/article/pii/S2468653024002665",
+        ],
+    },
+    {
+        "id": "singh_2024_initial_dosing_dme",
+        "title": "How intravitreal anti-VEGF initial dosing impacts patient outcomes in diabetic macular oedema",
+        "year": 2024,
+        "format": "manuscript",
+        "pmid": "39736584",
+        "pmcid": "PMC11684133",
+        "doi": "10.1186/s12886-024-03797-9",
+        "aao_listed": False,
+        "urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC11684133/",
+            "https://bmcophthalmol.biomedcentral.com/articles/10.1186/s12886-024-03797-9",
+        ],
+    },
+    {
+        "id": "borkar_2025_early_faricimab_dme",
+        "title": "Early Outcomes After Initiation of Faricimab in Patients With Diabetic Macular Edema",
+        "year": 2025,
+        "format": "manuscript",
+        "pmid": "40371971",
+        "doi": "10.3928/23258160-20250326-01",
+        "aao_listed": False,
+        "urls": [
+            "https://journals.healio.com/doi/10.3928/23258160-20250326-01",
+        ],
+    },
+    {
+        "id": "singh_2025_one_year_faricimab_dme",
+        "title": "One-year Real-world Outcomes and Durability With Faricimab in Patients With Diabetic Macular Edema",
+        "year": 2025,
+        "format": "manuscript",
+        "pmid": "41186474",
+        "doi": "10.3928/23258160-20250825-02",
+        "aao_listed": False,
+        "urls": [
+            "https://journals.healio.com/doi/10.3928/23258160-20250825-02",
+        ],
+    },
+    {
+        "id": "zhang_2026_endophthalmitis_ivt_dme_dr_subgroup",
+        "title": "Visual Outcomes Following Infectious Endophthalmitis from Intravitreal Injections of Biologic Drugs: An IRIS Registry Retrospective Analysis",
+        "year": 2026,
+        "format": "manuscript; DME/DR subgroup",
+        "pmid": "42033607",
+        "doi": "10.1007/s40123-026-01371-8",
+        "aao_listed": False,
+        "urls": [
+            "https://link.springer.com/article/10.1007/s40123-026-01371-8",
+        ],
+    },
+    {
+        "id": "ambrosino_2025_sickle_cell_dr_dme_outcome",
+        "title": "Sickle Cell Trait or Sickle Cell Disease Associated with Increased Diabetic Retinopathy Risk",
+        "year": 2025,
+        "format": "manuscript; DME as outcome",
+        "pmid": "40235826",
+        "pmcid": "PMC11999678",
+        "doi": "10.1016/j.xops.2025.100756",
+        "aao_listed": False,
+        "urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC11999678/",
+            "https://www.sciencedirect.com/science/article/pii/S2666914525000545",
+        ],
+    },
+    {
+        "id": "socioeconomic_2025_ivi_agent_selection_dme_subgroup",
+        "title": "Socioeconomic Disparities in Intravitreal Injection Use and Anti-VEGF Agent Selection: Aflibercept/Ranibizumab Versus Bevacizumab",
+        "year": 2025,
+        "format": "manuscript; DME among indication cohorts",
+        "pmid": "40383690",
+        "doi": "10.1016/j.clinthera.2025.04.010",
+        "aao_listed": False,
+        "urls": [
+            "https://www.sciencedirect.com/science/article/pii/S0149291825001298",
+        ],
+    },
+    {
+        "id": "gong_2021_pdr_dme_status",
+        "title": "Temporal Trends in the Treatment of Proliferative Diabetic Retinopathy: An AAO IRIS Registry Analysis",
+        "year": 2021,
+        "format": "manuscript; DME status variable",
+        "pmid": "36247812",
+        "pmcid": "PMC9560578",
+        "doi": "10.1016/j.xops.2021.100037",
+        "aao_listed": False,
+        "urls": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC9560578/",
+        ],
+    },
+    {
+        "id": "asrs_2022_leng_long_term_patterns_presentation",
+        "title": "Long-Term Real-World Treatment Patterns and Outcomes in Patients With DME: 6-Year Follow-Up Using the IRIS Registry",
+        "year": 2022,
+        "format": "conference presentation",
+        "urls": [
+            "https://medically.gene.com/content/dam/pdmahub/restricted/ophthalmology/asrs-2022/ASRS-2022-presentation-leng-long-term-real-world-treatment-patterns.pdf",
+        ],
+    },
+    {
+        "id": "asrs_2022_kuo_va_frequency_poster",
+        "title": "Association of Real-World Visual Acuity Outcomes and Frequency of Anti-VEGF Injections in Patients With DME: 6-Year Follow-Up Using the IRIS Registry",
+        "year": 2022,
+        "format": "conference poster",
+        "urls": [
+            "https://www.cuba.dialogoroche.com/content/dam/roche-dialogo/global-assets/downloadable-assets/congresos-y-eventos/ophthalmology/roche-asrs-2022/posters/05-asrs-2022-poster-kuo-association-of-real-world-visual-acuity-outcomes-and-frequency.pdf",
+        ],
+    },
+    {
+        "id": "arvo_2022_kim_discontinuation_switching_poster",
+        "title": "Discontinuation, Switching, and Other Long-Term Treatment Patterns in Routine Clinical Practice for Patients With DME: 6-Year Follow-Up Using the IRIS Registry",
+        "year": 2022,
+        "format": "conference poster",
+        "urls": [
+            "https://medically.gene.com/content/dam/pdmahub/restricted/ophthalmology/arvo-2022/ARVO-2022-poster-kim-discontinuation-switching-and-other-long-term-routine-clinical-practice.pdf",
+        ],
+    },
+    {
+        "id": "asrs_2023_borkar_early_faricimab_presentation",
+        "title": "Early Treatment Patterns and Outcomes in Patients With DME Treated With Faricimab: The FARETINA-DME Study",
+        "year": 2023,
+        "format": "conference presentation",
+        "urls": [
+            "https://medically.gene.com/content/dam/pdmahub/restricted/ophthalmology/asrs-2023/ASRS-2023-presentation-borkar-early-treatment-patterns-and-outcomes.pdf",
+        ],
+    },
+    {
+        "id": "retina_society_2023_borkar_early_faricimab_presentation",
+        "title": "Early Treatment Patterns and Outcomes in Patients With nAMD or DME Treated With Faricimab: An IRIS Registry Analysis",
+        "year": 2023,
+        "format": "conference presentation; DME subgroup",
+        "urls": [
+            "https://medically.gene.com/content/dam/pdmahub/restricted/ophthalmology/retina-society-2023/Retina-Society-2023-presentation-borkar-early-treatment-patterns-and-outcomes.pdf",
+        ],
+    },
+    {
+        "id": "hawaiian_eye_2024_borkar_faricimab_presentation",
+        "title": "Real-World Clinical and Anatomical Outcomes in Patients With DME Treated With Faricimab: The FARETINA-DME Study",
+        "year": 2024,
+        "format": "conference presentation",
+        "urls": [
+            "https://medically.roche.com/content/dam/pdmahub/restricted/ophthalmology/hawaiian-eye-2024/Hawaiian-Eye-2024-presentation-borkar-real-world-clinical-and-natomical-outcomes.pdf",
+        ],
+    },
+    {
+        "id": "arvo_2024_borkar_faricimab_poster",
+        "title": "Real-world clinical and anatomical outcomes in patients with DME treated with faricimab: The FARETINA-DME study",
+        "year": 2024,
+        "format": "conference poster",
+        "urls": [
+            "https://veranahealth.com/wp-content/uploads/2024/05/ARVO-2024_FARETINA-DME-Borkar-poster_FINAL-2.pdf",
+            "https://medically.gene.com/content/dam/pdmahub/restricted/ophthalmology/arvo-2024/ARVO-2024-poster-borkar-real-world-clinical-and-anatomical-outcomes.pdf",
+        ],
+    },
+    {
+        "id": "asrs_2024_leng_12_month_faricimab_presentation",
+        "title": "12-Month Real-World Clinical and Anatomical Outcomes in Patients With DME Treated With Faricimab: The FARETINA-DME Study",
+        "year": 2024,
+        "format": "conference presentation",
+        "urls": [
+            "https://medically.gene.com/content/dam/pdmahub/restricted/ophthalmology/asrs-2024/ASRS-2024-presentation-leng-12-month-real-world-clinical.pdf",
+        ],
+    },
+    {
+        "id": "hawaiian_eye_2025_borkar_faricimab_presentation",
+        "title": "Real-World Clinical Outcomes Update in Patients With DME Treated With Faricimab in the US: The FARETINA-DME Study",
+        "year": 2025,
+        "format": "conference presentation",
+        "urls": [
+            "https://medically.gene.com/content/dam/pdmahub/restricted/ophthalmology/hawaiian-eye-2025/Hawaiian-Eye-2025-presentation-borkar-12-month-real-world-clinical-outcomes.pdf",
+        ],
+    },
+    {
+        "id": "arvo_2025_singh_two_year_faricimab_poster",
+        "title": "Two-Year Real-World Clinical Outcomes in Patients With DME Treated With Faricimab in the US: The FARETINA-DME Study",
+        "year": 2025,
+        "format": "conference poster",
+        "urls": [
+            "https://medically.gene.com/content/dam/pdmahub/restricted/ophthalmology/arvo-2025/ARVO-2025-poster-singh-two-year-real-world-clinical-outcomes.pdf",
+        ],
+    },
+    {
+        "id": "macula_society_2026_borkar_two_year_faricimab_presentation",
+        "title": "Two-Year Real-World Clinical Outcomes in Patients With DME Treated With Faricimab in the US: The FARETINA-DME Study",
+        "year": 2026,
+        "format": "conference presentation",
+        "urls": [
+            "https://medically.gene.com/content/dam/pdmahub/restricted/ophthalmology/macula-society-2026/Macula-Society-2026-presentation-borkar-two-year-real-world-clinical-outcomes-in-patients.pdf",
+        ],
+    },
+    {
+        "id": "arvo_2026_cooper_linked_claims_iris_poster",
+        "title": "Real-World Outcomes in Individuals with Diabetic Macular Edema Utilizing Faricimab: A Linked Analysis of Administrative Claims and IRIS Registry EHR Data",
+        "year": 2026,
+        "format": "conference poster",
+        "urls": [
+            "https://medically.gene.com/content/dam/pdmahub/restricted/ophthalmology/arvo-2026/ARVO-2026-poster-cooper-real-world-outcomes-in-individuals-with-diabetic-macular-edema.pdf",
+        ],
+    },
+    {
+        "id": "ispor_2026_faricimab_claims_iris_abstract",
+        "title": "Clinical and Economic Impact of Faricimab-Treated Diabetic Macular Edema: A Linked Analysis of Administrative Claims and IRIS Registry Data",
+        "year": 2026,
+        "format": "conference abstract/web page",
+        "urls": [
+            "https://www.ispor.org/heor-resources/presentations-database/presentation-cti/ispor-2026/poster-session-2-4/clinical-and-economic-impact-of-faricimab-treated-diabetic-macular-edema-a-linked-analysis-of-administrative-claims-and-iris-registry-data",
+        ],
+    },
+]
+
+
+def fetch(url, path):
+    req = urllib.request.Request(url, headers=HEADERS)
+    try:
+        with urllib.request.urlopen(req, timeout=45) as resp:
+            body = resp.read()
+            ctype = resp.headers.get("content-type", "")
+        path.write_bytes(body)
+        return {"url": url, "path": str(path), "status": "ok", "bytes": len(body), "content_type": ctype}
+    except Exception as exc:
+        err_path = path.with_suffix(path.suffix + ".error.txt")
+        err_path.write_text(f"{type(exc).__name__}: {exc}\nURL: {url}\n", encoding="utf-8")
+        return {"url": url, "path": str(err_path), "status": "error", "error": str(exc)}
+
+
+def safe_name(text):
+    text = re.sub(r"[^A-Za-z0-9._-]+", "_", text).strip("_")
+    return text[:150]
+
+
+def ext_for(url):
+    parsed = urllib.parse.urlparse(url)
+    suffix = Path(parsed.path).suffix.lower()
+    if suffix in [".pdf", ".html", ".xml", ".json", ".docx", ".xlsx", ".jpeg", ".jpg", ".png"]:
+        return suffix
+    if "api.elsevier.com" in parsed.netloc:
+        return ".xml"
+    return ".html"
+
+
+def strip_html(raw):
+    raw = re.sub(r"(?is)<script.*?</script>|<style.*?</style>", " ", raw)
+    raw = re.sub(r"(?s)<[^>]+>", " ", raw)
+    raw = raw.replace("&nbsp;", " ").replace("&amp;", "&").replace("&lt;", "<").replace("&gt;", ">")
+    return re.sub(r"\s+", " ", raw).strip()
+
+
+def extract_pdf(path):
+    doc = fitz.open(path)
+    pages = [page.get_text("text") for page in doc]
+    return "\n\n".join(pages)
+
+
+def main():
+    DOWNLOADS.mkdir(exist_ok=True)
+    SOURCES.mkdir(exist_ok=True)
+    TEXT.mkdir(exist_ok=True)
+    manifest = []
+
+    for item in ITEMS:
+        item_dir = DOWNLOADS / item["id"]
+        item_dir.mkdir(exist_ok=True)
+        text_parts = []
+
+        if item.get("pmid"):
+            url = f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id={item['pmid']}&retmode=xml"
+            result = fetch(url, item_dir / f"{item['id']}_pubmed.xml")
+            manifest.append({**item, "download": result})
+            if result["status"] == "ok":
+                text_parts.append(strip_html(Path(result["path"]).read_text(encoding="utf-8", errors="ignore")))
+            time.sleep(0.34)
+
+        for i, url in enumerate(item["urls"], start=1):
+            ext = ext_for(url)
+            path = item_dir / f"{item['id']}_{i}{ext}"
+            result = fetch(url, path)
+            manifest.append({**item, "download": result})
+            if result["status"] == "ok":
+                try:
+                    if ext == ".pdf":
+                        text_parts.append(extract_pdf(path))
+                    elif ext in [".html", ".xml", ".json"]:
+                        text_parts.append(strip_html(path.read_text(encoding="utf-8", errors="ignore")))
+                except Exception as exc:
+                    (TEXT / f"{item['id']}_extract_error.txt").write_text(str(exc), encoding="utf-8")
+            time.sleep(0.5)
+
+        combined = "\n\n".join(part for part in text_parts if part)
+        (TEXT / f"{item['id']}.txt").write_text(combined, encoding="utf-8", errors="ignore")
+
+    (ROOT / "download_manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+    (ROOT / "publication_seed_list.json").write_text(json.dumps(ITEMS, indent=2), encoding="utf-8")
+    print(f"Saved manifest entries: {len(manifest)}")
+
+
+if __name__ == "__main__":
+    main()

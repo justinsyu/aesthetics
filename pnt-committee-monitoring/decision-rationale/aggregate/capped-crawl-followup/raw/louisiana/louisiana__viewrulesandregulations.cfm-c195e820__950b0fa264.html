@@ -1,0 +1,284 @@
+
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+	<html lang="en-US">
+	<head>
+		<title>State of Louisiana - Boards and Commissions</title>
+		
+			<link rel="stylesheet" type="text/css" href="style.css"/>
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<script language="javascript">
+		<!--
+			function docChanged ()
+			{	document.changed = true;
+			}
+			// returns whether or not docChanged() has been called on this page
+			function docHasChanged ()
+			{	return (typeof(document.changed) != "undefined" && document.changed);
+			}
+			// notifies the user that changes have not been saved
+			function confirmChangesNotSaved ()
+			{	return confirm ("Your changes have NOT yet been saved.\n\nPress OK to leave this page WITHOUT saving.");
+			}
+			function toZip(element)
+			{	if (element.value == "") return;
+				var regexp = /\d\d\d\d\d/;
+				var regexp2 = /\d\d\d\d\d\?\-?\d\d\d\d/;
+				if ((element.length != 5 || element.length != 10) && (!regexp.test(element.value) || !regexp2.test(element.value)))
+				//if (!regexp.test (element.value) && !regexp2.test(element.value))
+				{	alert ("Invalid Zip Code Format. \nTry xxxxx or xxxxx-xxxx\n");
+					element.select();
+				}
+			}
+			function toEmail(element)
+			{	if (element.value == "") return;
+				var regexp = /[\w\-\.]+@[\w\-\.]+/;
+				if (!regexp.test (element.value))
+				{	alert ("Invalid Email Format.\nYour email should be in the form: username@host.com\n");
+					element.select();
+				}
+			}
+			function toPhone(element)
+			{	if (element.value == "") return;
+				var regexp = /(\d\d\d)?\-?\-?(\d\d\d)\-?(\d\d\d\d)/;
+				if (!regexp.test (element.value))
+				{	alert ("Invalid Phone Number Format.\nTry xxx-xxx-xxxx\n");
+					element.value = '';
+					element.select ();
+				}
+				else
+				{	var result = (element.value).match (regexp);
+					if (result != null)
+					{	if (result[1] == "")
+							element.value = result[2] + "-" + result[3];
+						else
+							element.value = result[1] + "-" + result[2] + "-" + result[3];
+					}
+				}
+			}
+			/*function checkNumber(element)
+			{	element.value = formatNumber(parseNumber(element.value));
+			}*/
+			/* this function accepts a string, and returns the integer
+			   representation of it -- after removing all non-numeric characters */
+			/*function parseNumber(val)
+			{	var chars = "0123456789.-()";
+				var num = "";
+				for (var i=0; i<val.length; i++)
+					if (chars.indexOf(val.charAt(i)) != -1)
+						num = num + val.charAt(i);
+				if (num.substring(0,1) == '(' && num.substring(num.length - 1) == ')')
+					num = num.substring(1,val.length-1) * -1;
+				if (num == "" || isNaN(num))
+					num = "0";
+				num = Math.ceil(num);
+				return parseInt(num, 10);
+			}*/
+			/* this function formats an integer using commas separating the thousands places */
+			/*function formatNumber (num)
+			{	var str = new String(Math.abs(num));
+				if (num < 0)
+					str = "(" + str + ")";
+				return str;
+			}*/
+			function toDate(element)
+			{	if(element.value == "") return;
+				var regexp = /(\d+)\s*[\s\\\/\-\.]\s*(\d+)\s*[\s\\\/\-\.]\s*(\d+)\s*/;
+				if(!regexp.test(element.value))
+				{	element.value = "";
+					alert("Invalid date format. \n\nTry m/d/yyyy.\n");
+					element.select();
+				}
+			}
+			function menuOnClick ()
+			{	if (docHasChanged())
+					confirmChangesNotSaved()
+			}	
+			/*function formatTotalNumber (num)
+			{	var str = new String(Math.abs(num));
+				if (str.length > 3)
+				{	var i = str.length - 3;
+					while (i > 0)
+					{	var old_left = str.substring(0,i);
+						var left = str.substring(0,i);
+						var right = str.substring(i,str.length);
+						str = left + "," + right;
+						i = old_left.length - 3;
+					}
+				}
+				if (num < 0)
+					str = "(" + str + ")";
+				return str;
+			}*/
+			// makes sure element.value is a real number
+		function checkNumberWithParen(element)
+			{	element.value = numberWithCommas(parseNumberWithParen(element.value));
+			}
+			
+		/* this function accepts a string, and returns the integer
+		   representation of it -- after removing all non-numeric characters */
+		function parseNumberWithParen(val)
+		{	
+			var chars = "0123456789.-()";
+			var num = "";
+			val = val.replace(/[,]/g,'');
+			for (var i=0; i<val.length; i++)
+				if (chars.indexOf(val.charAt(i)) != -1)
+					num = num + val.charAt(i);
+			if (num.substring(0,1) == '(' && num.substring(num.length - 1) == ')')
+					num = num.substring(1,val.length-1) * -1;
+			//alert(num);
+			if (num == "" || isNaN(num))
+				num = "0";
+			var returnNum = Number(num).toFixed(0);
+			return returnNum;
+		}
+		function checkNumber(element)
+		{	element.value = numberWithCommas(parseNumber(element.value));
+		}
+		
+		function checkWholeNumber(element)
+		{	element.value = formatNumber(parseWholeNumber(element.value));
+		}
+		/* this function accepts a string, and returns the integer
+		   representation of it -- after removing all non-numeric characters */
+		function parseNumber(val)
+		{	var chars = "0123456789.-";
+			var num = "";
+			for (var i=0; i<val.length; i++)
+				if (chars.indexOf(val.charAt(i)) != -1)
+					num = num + val.charAt(i);
+			if (num == "" || isNaN(num))
+				num = "0";
+			var returnNum = Number(num).toFixed(2);
+			return returnNum;
+		}
+		
+		function parseWholeNumber(val)
+		{	var chars = "0123456789.-()";
+			var num = "";
+			for (var i=0; i<val.length; i++)
+				if (chars.indexOf(val.charAt(i)) != -1)
+					num = num + val.charAt(i);
+			if (num.substring(0,1) == '(' && num.substring(num.length - 1) == ')')
+				num = num.substring(1,val.length-1) * -1;
+			if (num == "" || isNaN(num))
+				num = "0";
+			return parseInt(num);
+		}
+		/* this function formats an integer using commas separating the thousands places */
+		function formatNumber (num)
+		{	var str = new String(Math.abs(num));
+			if (str.length > 3)
+			{	var i = str.length - 3;
+				while (i > 0)
+				{	var old_left = str.substring(0,i);
+					var left = str.substring(0,i);
+					var right = str.substring(i,str.length);
+					str = left + "," + right;
+					i = old_left.length - 3;
+				}
+			}
+			if (num < 0)
+				str = "-" + str;
+			return str;
+		}
+		
+		function formatTotalNumber (num)
+		{	var str = new String(Math.abs(num));
+			if (str.length > 3)
+			{	var i = str.length - 3;
+				while (i > 0)
+				{	var old_left = str.substring(0,i);
+					var left = str.substring(0,i);
+					var right = str.substring(i,str.length);
+					str = left + "," + right;
+					i = old_left.length - 3;
+				}
+			}
+			if (num < 0)
+				str = "(" + str + ")";
+			return str;
+		}
+		
+		function numberWithCommas(x) {
+			var parts = x.toString().split(".");
+			parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+			return parts.join(".");
+		}
+		//-->
+		</script>
+	
+
+	</head>	
+
+	<body onLoad="">
+	
+		<div id="divisionHeader"> </div>
+		
+		<div id="wrapper">		
+			<div id="bcHeader"/>
+			 
+			<div id="greyBar">	 		
+				<ul id="navi">
+					<li style="background:#ffffff;"> <a href="home.cfm">Home</a> </li>
+					
+						<li style="background:#ffffff;"> <a href="selectBoard.cfm">Boards and Commissions</a> </li>
+					
+					<li style="background:#ffffff;"> <a href="upcomingMeetings.cfm">Upcoming Meetings</a> </li>
+					
+					
+						<li style="background:#ffffff;"> <a href="otherResources.cfm" onClick="menuOnClick();">Other Resources</a> </li>
+					
+						<li style="background:#ffffff;"> <a href="../latrac/feedback/home.cfm" target="_blank">Feedback</a></li>
+					
+						<li class="last" style="background:#ffffff;"> <a href="login.cfm">Login</a> </li>
+					
+				</ul>
+			</div>
+		</div>
+	<div style="background-image:url(images/wrapperNoSidebar.gif); background-position:top left; background-repeat:repeat-y;border:0px solid red;">
+		
+			<div id="main">
+
+		<div id="subNav">
+			<ul>	
+				<li><a href="viewBoard.cfm?board=491" aria-label="Board">Board</a></li>
+				<li><a href="viewContacts.cfm?board=491" aria-label="Contacts">Contacts</a></li>
+				<li><a href="viewMembers.cfm?board=491" aria-label="Members">Members</a></li>
+				<li><a href="viewReimbursements.cfm?board=491" aria-label="Reimbursements">Reimbursements</a></li>
+				<li><a href="viewEmployees.cfm?board=491" aria-label="Employees">Employees</a></li>
+				<li><a href="viewMeetingNotices.cfm?board=491" aria-label="Notices">Notices</a></li>
+				<li><a href="viewMeetingMinutes.cfm?board=491" aria-label="Minutes">Minutes</a></li>
+				<li><a href="viewStatutoryCitations.cfm?board=491" aria-label="Citations">Citations</a></li>
+				<li><a href="viewRulesAndRegulations.cfm?board=491" aria-label="Rules">Rules</a></li>
+				<li class="last"><a href="viewBudgets.cfm?board=491" aria-label="Budgets ">Budgets</a></li>
+			</ul>
+		</div>
+	<div align="center"><h1 style="color:#555555; font-size: 1.5em;" align="center">Medicaid Pharmaceutical and Therapeutics Committee Rules and Regulations</h1></div> 
+					<table align="center" border="1" cellspacing="0" cellpadding="0" > 
+						
+						 
+						 	<tr>
+							<td>P & T Committee Bylaws <br />
+							
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="RulesAndRegulations/491_bylaws (5.4.16)Updated with ACT 339 Approved 11.4.22.pdf">View Rules and Regulations</a>
+							
+							</td>
+							</tr>
+						  
+					 </table>
+					
+			
+			</div>
+		</div>
+		<div id="footerNoSidebar"></div>
+					
+		<div class="disclaimer" style="color:black;">
+			LaTrac was developed by the Louisiana Office of Technology Services.
+		</div>
+
+	<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"1a78f1ae3d914afaa748434fbdd1a18b","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

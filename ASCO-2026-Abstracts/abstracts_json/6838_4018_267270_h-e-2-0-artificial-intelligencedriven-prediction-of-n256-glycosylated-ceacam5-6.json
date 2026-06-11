@@ -1,0 +1,80 @@
+{
+  "abstractNumber": "4018",
+  "body": " \r\n\r\n\t<div><b>Background: </b></p>  The antibody-drug conjugate (ADC) EBC-129 has shown promising clinical responses in a Phase 1A/B trial, where higher H-scores correlate with responses, slated to start Phase 2. It specifically targets N256-glycosylated CEACAM5/6, highly expressed on solid tumours, including gastro-oesophageal adenocarcinomas. Recent advances in deep learning enabled the extraction of morphological features from stained pathological images to predict protein expression from haematoxylin and eosin (H&amp;E) images.</p>  We investigated the feasibility of training deep learning models on H&amp;E images of gastro-oesophageal carcinomas and assessed the models’ ability to predict EBC-129 antigen (Ag) expression directly from H&amp;E images.</p>  <b>Methods: </b></p>  H&amp;E and immunohistochemistry (IHC) images from same sections of oesophageal and gastric adenocarcinoma TMA tissues (n&nbsp;=&nbsp;103 cores) were acquired at the same magnification. Tumour and EBC-positive areas were annotated in FIJI, with images pre-processed in Python to obtain 112x112-pixel H&amp;E image patches. Cell patches with tumour<sup>+</sup>EBC<sup>+</sup> labels were classified positive while patches with all other labels were classified negative.</p>  Six cores were held-out for testing while class balancing was conducted for the remaining 97 cores, where image patches were split 80:20 for training and validation respectively. Deep learning prediction of Ag was tested using two model architectures (DenseNet121 and ResNet50 - with no pre-trained weights) employing k-fold cross validation (k&nbsp;=&nbsp;5). Performance metrics were recorded for the best model of each split, with mean and standard deviation values tabulated across 5 splits to determine the best performing model architecture family, followed by core-level metrics to determine the best performing individual model.</p>  <b>Results: </b></p>  Feasibility and predictive potential of deep learning models was demonstrated, with superior performance metrics exhibited by the DenseNet121 model. It outperformed ResNet50 across all metrics for the combined held-out test set: AUC (0.796 ± 0.092 vs 0.748 ± 0.105), balanced accuracy (0.727 ± 0.075 vs 0.664 ± 0.100), F1 score (0.756 ± 0.059 vs 0.742 ± 0.070) and AUPRC (0.426 ± 0.132 vs 0.404 ± 0.157). Friedman test and post-hoc Conover’s test revealed significant (p&nbsp;&lt;&nbsp;0.05) differences in metrics amongst the 10 models, where subsequent rank sum of mean metric values showed that DenseNet121 fold2_epoch09 performed best across the held-out test cores, displaying robustness and generalisability.</p>  <b>Conclusions: </b></p>  There is potential of deep learning models to predict EBC-129 Ag expression from H&amp;E images and suggest possible triaging of patients suitable for treatment. Immediate next steps include examining virtual stain plots for comparison to ground truth IHC images. Future work will extend to pancreatic ductal adenocarcinoma, building on encouraging findings from the Phase 1 trial.</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+  "contentId": "267270",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/267270",
+    "queryParams": null,
+    "target": null,
+    "title": "H&E 2.0: Artificial intelligence–driven prediction of N256-glycosylated CEACAM5/6 expression in esophageal and gastric adenocarcinomas."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION267270"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780160400000,
+    "start": 1780149600000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "1",
+  "presentationId": "267270",
+  "primaryPerson": {
+    "displayName": "Veronica Diermayr, PhD",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780160400000,
+    "start": 1780149600000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17143",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17143",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Gastrointestinal Cancer—Gastroesophageal, Pancreatic, and Hepatobiliary"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": null,
+  "title": "H&E 2.0: Artificial intelligence–driven prediction of N256-glycosylated CEACAM5/6 expression in esophageal and gastric adenocarcinomas.",
+  "titles": null,
+  "uid": "PRESENTATION267270"
+}

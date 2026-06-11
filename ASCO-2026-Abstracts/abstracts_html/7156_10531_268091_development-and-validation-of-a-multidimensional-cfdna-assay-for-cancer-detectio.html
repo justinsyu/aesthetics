@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Development and validation of a multidimensional cfDNA assay for cancer detection and tissue-of-origin prediction.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Development and validation of a multidimensional cfDNA assay for cancer detection and tissue-of-origin prediction.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 10531</div>
+    <div><strong>First speaker:</strong> Haimeng Tang, MS, MSc</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/268091">https://www.asco.org/abstracts-presentations/268091</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b> Early detection remains a major unmet need in oncology, and multi-cancer early detection assays that analyze circulating cell-free DNA features have shown promise for detecting multiple cancers with high specificity and tissue-of-origin prediction. Here, we leverage whole-genome sequencing (WGS) to extract multiple cfDNA features (genomic, fragmentomic, and estimated methylation) from a single assay to enable multi-cancer early detection and tissue-of-origin (TOO) localization.</p>  <b>Methods: </b> Plasma samples were collected in a multicenter, prospective case-control study. From 5&#215; low-pass WGS data, multiple cfDNA feature sets were extracted, including fragmentomic, genomic, and inferred epigenetic features. Machine learning models were trained for cancer detection (healthy vs. cancer) and tissue-of-origin (TOO) classification. The training set included 3,577 healthy and 3,578 cancer participants, and the independent validation set included 2,384 healthy and 2,386 cancer participants. Cancer cases spanned 56 cancer types, grouped into 21 cancer classes.</p>  <b>Results: </b> Age and sex are evenly distributed across healthy and cancer samples in both the training and validation datasets (Table 1). At 99% specificity, cancer detection sensitivity increased with stage and was consistent between training and validation cohorts: Stage I: 70.66% vs 70.89%, Stage II: 80.41% vs 80.27%, Stage III: 89.89% vs 88.58%, and Stage IV: 92.23% vs 91.76%. Across tumor types, sensitivity at 99% specificity varied substantially, ranging from 57.43% (Thyroid tumor) and 63.87% (Kidney cancer) to 95.96% (Lymphoma) and 99.07% (Liver/Biliary cancer). Tissue-of-origin prediction achieved high accuracy in machine-learning predicted cancer-positive samples (Top-1/Top-2: 0.75/0.89 in training; 0.75/0.88 in validation).</p>  <b>Conclusions: </b> We developed a cost-efficient blood test (CanScan Pro) using multidimensional cfDNA features from low-pass WGS and machine learning that detects cancers at 99% specificity, with sensitivity increasing by stage and similar performance in training and validation cohorts. The model predicts tissue of origin with high accuracy, which may help guide downstream diagnostic evaluation following a positive result and thereby enhance real-world clinical utility.</div>
+
+
+
+	<div class="table_caption"><b>Patient characteristics.</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p><strong> </strong></p>
+</td>
+<td colspan="2">
+<p><strong>Train</strong></p>
+</td>
+<td colspan="2">
+<p><strong>Valid</strong></p>
+</td>
+</tr>
+<tr>
+<td rowspan="2"></td>
+<td>
+<p><strong>Healthy</strong></p>
+</td>
+<td>
+<p><strong>Cancer</strong></p>
+</td>
+<td>
+<p><strong>Healthy</strong></p>
+</td>
+<td>
+<p><strong>Cancer</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>(N=3577)</strong></p>
+</td>
+<td>
+<p><strong>(N=3578)</strong></p>
+</td>
+<td>
+<p><strong>(N=2384)</strong></p>
+</td>
+<td>
+<p><strong>(N=2386)</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Age</strong></p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Mean (SD)</p>
+</td>
+<td>
+<p>57.8 (6.46)</p>
+</td>
+<td>
+<p>57.7 (14.74)</p>
+</td>
+<td>
+<p>58.1 (6.63)</p>
+</td>
+<td>
+<p>57.2 (15.00)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Median [Min, Max]</p>
+</td>
+<td>
+<p>57.0 [45.0 ,76.0]</p>
+</td>
+<td>
+<p>60.0 [11.0 ,91.0]</p>
+</td>
+<td>
+<p>57.0 [45.0 ,76.0]</p>
+</td>
+<td>
+<p>59.0 [11.0 ,92.0]</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Sex</strong></p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>F</p>
+</td>
+<td>
+<p>2018 (56.4%)</p>
+</td>
+<td>
+<p>1655 (46.3%)</p>
+</td>
+<td>
+<p>1355 (56.8%)</p>
+</td>
+<td>
+<p>1101 (46.1%)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>M</p>
+</td>
+<td>
+<p>1559 (43.6%)</p>
+</td>
+<td>
+<p>1923 (53.7%)</p>
+</td>
+<td>
+<p>1029 (43.2%)</p>
+</td>
+<td>
+<p>1285 (53.9%)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Stage TNM</strong></p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+<td>
+<p> </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>3577 (100%)</p>
+</td>
+<td>
+<p>0 (0%)</p>
+</td>
+<td>
+<p>2384 (100%)</p>
+</td>
+<td>
+<p>0 (0%)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>I</p>
+</td>
+<td>
+<p>0 (0%)</p>
+</td>
+<td>
+<p>1060 (29.6%)</p>
+</td>
+<td>
+<p>0 (0%)</p>
+</td>
+<td>
+<p>718 (30.1%)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>II</p>
+</td>
+<td>
+<p>0 (0%)</p>
+</td>
+<td>
+<p>883 (24.7%)</p>
+</td>
+<td>
+<p>0 (0%)</p>
+</td>
+<td>
+<p>588 (24.6%)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>III</p>
+</td>
+<td>
+<p>0 (0%)</p>
+</td>
+<td>
+<p>811 (22.7%)</p>
+</td>
+<td>
+<p>0 (0%)</p>
+</td>
+<td>
+<p>534 (22.4%)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>IV</p>
+</td>
+<td>
+<p>0 (0%)</p>
+</td>
+<td>
+<p>824 (23.0%)</p>
+</td>
+<td>
+<p>0 (0%)</p>
+</td>
+<td>
+<p>546 (22.9%)</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

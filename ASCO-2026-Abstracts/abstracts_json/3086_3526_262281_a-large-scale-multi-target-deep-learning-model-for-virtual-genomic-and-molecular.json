@@ -1,0 +1,80 @@
+{
+  "abstractNumber": "3526",
+  "body": " \r\n\r\n\t<div><b>Background: </b> Molecular profiling of tumor biopsies is central to precision oncology, informing treatment selection, prognostication, and disease monitoring. Computational analysis of routine H&amp;E slides offers a complementary, scalable approach that can accelerate biological insights and optimize downstream molecular testing. Recent advances in computational pathology have demonstrated that deep learning models can infer molecular features directly from digital H&amp;E images, referred to as virtual genomics. However, most studies in colorectal cancer (CRC) have been constrained by limited cohort sizes, single-target predictions, and a lack of integration with longitudinal clinical outcomes. </p>  Here, we present a transformer-based deep learning framework designed for large-scale virtual genomic and molecular recurrence risk profiling in CRC.</p>  <b>Methods: </b> The model was trained on 45,155 patients with matched digital H&amp;E images, whole-exome sequencing (WES), and longitudinal circulating tumor DNA (ctDNA) for molecular recurrence monitoring. We embedded all images using H-optimus-0 and trained a transformer-based multiple instance learning aggregation head for downstream virtual genomic predictions. We trained individual models to predict genes found in the MSK-IMPACT505 cancer gene panel and a single model that predicts all genes simultaneously. Lastly, we trained an independent model to predict the risk of molecular recurrence. All results were validated on an external cohort from The Cancer Genome Atlas (TCGA; n&nbsp;=&nbsp;422 CRC patients).</p>  <b>Results: </b> Individual models predicted 379 mutated genes with an internal area under the receiver operating curve (AUROC)&nbsp;&gt;&nbsp;0.7. We validated 254 of these genes within TCGA with an AUROC&nbsp;&gt;&nbsp;0.7. Training a multi-task learning model to predict all genes simultaneously improved the AUROC for 85% of the genes. Based on NCCN guidelines in CRC, we further trained individual models to predict MSI status, BRAF V600E, KRAS G12D/V/G13D, and POLE/POLD1 exonuclease mutations with AUROCs of 0.96, 0.93, 0.84, and 0.86, respectively. Lastly, we developed an image-based molecular recurrence risk model trained directly on longitudinal ctDNA outcomes. The model stratified patients into low, medium, and high risk groups with a concordance index of 0.67. Compared to low-risk patients, the high-risk group exhibited a hazard ratio (HR) of 4.67, while the medium-risk group showed an HR of 1.98 (p-values&nbsp;&lt;&nbsp;&nbsp;&lt;&nbsp;1E-5).</p>  <b>Conclusions: </b> This unified framework demonstrates that virtual genomics from routine H&amp;E histopathology can enable scalable, cost-efficient inference of hundreds of clinically relevant genomic alterations and molecular recurrence risk in CRC. By leveraging universally available diagnostic slides, virtual genomics has the potential to expand access to precision oncology, optimize molecular testing strategies, and support earlier risk stratification.</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+  "contentId": "262281",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/262281",
+    "queryParams": null,
+    "target": null,
+    "title": "A large-scale, multi-target deep learning model for virtual genomic and molecular risk profiling in colorectal cancer."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION262281"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780160400000,
+    "start": 1780149600000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "280",
+  "presentationId": "262281",
+  "primaryPerson": {
+    "displayName": "Erik N. Bergstrom, PhD, BS",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780160400000,
+    "start": 1780149600000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17140",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17140",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Gastrointestinal Cancer—Colorectal and Anal"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": null,
+  "title": "A large-scale, multi-target deep learning model for virtual genomic and molecular risk profiling in colorectal cancer.",
+  "titles": null,
+  "uid": "PRESENTATION262281"
+}

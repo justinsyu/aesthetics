@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How Teams Build Multi-Agent Systems with LangChain</title>
+  <style>
+    @font-face{font-family:Manrope;src:url("https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/65bcfb1ca385c12606e47929_Manrope-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+    @font-face{font-family:Manrope;src:url("https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/65bcfb1daf85a6bf3864dfeb_Manrope-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
+    @font-face{font-family:Manrope;src:url("https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/65bcfb1822f3f674d4d82c3b_Manrope-Bold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+    @font-face{font-family:TWKLausanne;src:url("https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69899c86969c509c69a7199d_TWKLausanne-250.otf") format("opentype");font-weight:300;font-style:normal;font-display:swap}
+    @font-face{font-family:TWKLausanne;src:url("https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69ca847dfd7784a9fd885aa3_TWKLausanne-500.otf") format("opentype");font-weight:500;font-style:normal;font-display:swap}
+    @font-face{font-family:AeonikMono;src:url("https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69b955b08318559fe4fdad49_aeonikmono-regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+
+    :root{
+      --ink:#030710;
+      --ink-2:#161f34;
+      --muted:#cce9ffb3;
+      --line:#2f4b68;
+      --wash:#0d1322;
+      --blue:#006ddd;
+      --sky:#7fc8ff;
+      --sky-2:#cce9ff;
+      --lime:#c8ff00;
+      --paper:#030710;
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;background:#030710;color:#cce9ff;font-family:Aeonik,Manrope,Tahoma,sans-serif}
+    body{padding:28px}
+    a{color:inherit;text-decoration:none}
+    .deck{display:flex;flex-direction:column;gap:28px;align-items:center}
+    .slide{
+      width:1280px;height:720px;position:relative;overflow:hidden;
+      background:var(--paper);border:1px solid #2f4b68;border-radius:6px;
+      box-shadow:none;
+      padding:54px 62px 46px;
+    }
+    .slide.dark{background:#030710;color:#fff;border-color:#2f4b68}
+    .slide.blue{background:#0d1322}
+    .slide:after{
+      content:"";position:absolute;left:0;top:0;width:100%;height:6px;
+      background:var(--sky);
+    }
+    .kicker{font-family:AeonikMono,monospace;text-transform:uppercase;letter-spacing:.04em;font-size:13px;color:var(--blue);margin-bottom:18px}
+    .dark .kicker{color:var(--lime)}
+    h1,h2,h3{font-family:TWKLausanne,Tahoma,sans-serif;font-weight:300;margin:0;letter-spacing:0;text-wrap:balance}
+    h1{font-size:62px;line-height:1.04;max-width:720px}
+    h2{font-size:48px;line-height:1.1;max-width:940px}
+    h3{font-size:26px;line-height:1.08}
+    p{font-size:18px;line-height:1.4;color:var(--muted);margin:0}
+    .dark p,.dark .muted{color:#cce9ffcc}
+    .lead{font-size:24px;line-height:1.32;max-width:760px;margin-top:24px;color:#e5f4ffcc}
+    .dark .lead{color:#e5f4ff}
+    .grid{display:grid;gap:22px}
+    .two{grid-template-columns:1fr 1fr}
+    .three{grid-template-columns:repeat(3,1fr)}
+    .four{grid-template-columns:repeat(4,1fr)}
+    .content{position:relative;z-index:1}
+    .row{display:flex;gap:22px;align-items:stretch}
+    .panel{
+      border:1px solid var(--line);background:rgba(13,19,34,.86);border-radius:6px;padding:22px;
+      min-height:0;
+    }
+    .dark .panel{background:rgba(22,31,52,.78);border-color:#2f4b68}
+    .metric{font-family:TWKLausanne,Manrope,sans-serif;font-size:46px;line-height:1;color:#fff}
+    .dark .metric{color:#fff}
+    .metric-label{font-size:14px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-top:8px}
+    .dark .metric-label{color:#99caff}
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid #b2deff;
+      border-radius:80px;background:rgba(255,255,255,.05);color:#cce9ff;font-size:13px;font-weight:700;
+    }
+    .dark .pill{background:#132d2d;border-color:#40668d;color:#e5f4ff}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--lime);display:inline-block}
+    ul{margin:18px 0 0;padding:0;list-style:none;display:grid;gap:12px}
+    li{font-size:19px;line-height:1.3;color:#e5f4ff;padding-left:24px;position:relative}
+    li:before{content:"";position:absolute;left:0;top:.58em;width:8px;height:8px;border-radius:50%;background:var(--sky)}
+    .dark li{color:#e8ebeb}
+    .dark li:before{background:var(--lime)}
+    .table{display:grid;gap:9px;margin-top:24px}
+    .trow{display:grid;grid-template-columns:210px 1fr;gap:18px;align-items:start;padding:13px 0;border-top:1px solid var(--line)}
+    .dark .trow{border-top-color:#2f4b68}
+    .tkey{font-weight:700;font-size:18px;color:#fff}
+    .dark .tkey{color:#fff}
+    .tval{font-size:17px;line-height:1.34;color:#cce9ffcc}
+    .dark .tval{color:#cce9ff}
+    .image-card{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:6px;background:#0d1322;min-height:180px}
+    .dark .image-card{background:#0d1322;border-color:#2f4b68}
+    .image-card img{display:block;width:100%;height:100%;object-fit:contain;padding:12px}
+    .image-card.crop img{object-fit:cover;padding:0}
+    .caption{position:absolute;left:12px;right:12px;bottom:10px;background:rgba(3,7,16,.82);color:#fff;border-radius:5px;padding:8px 10px;font-size:12px;line-height:1.2}
+    .source{position:absolute;left:62px;bottom:24px;font-family:AeonikMono,monospace;font-size:11px;color:#758696;z-index:2}
+    .dark .source{color:#7fc8ff}
+    .slide-num{position:absolute;right:62px;bottom:24px;font-family:AeonikMono,monospace;font-size:11px;color:#758696;z-index:2}
+    .dark .slide-num{color:#7fc8ff}
+    .title-mosaic{position:absolute;right:54px;top:84px;width:410px;display:grid;grid-template-columns:1fr 1fr;gap:14px;z-index:1}
+    .title-mosaic .image-card{height:170px;border-radius:6px}
+    .brandline{display:flex;gap:14px;align-items:center;margin-bottom:30px}
+    .callout{border-left:6px solid var(--lime);background:#132d2d;padding:18px 20px;border-radius:0 6px 6px 0;font-size:21px;line-height:1.25;color:#fff}
+    .dark .callout{background:#132d2d;color:#fff}
+    .pattern-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:26px}
+    .pattern-grid .image-card{height:138px}
+    .stack-list{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:26px}
+    .stack-item{border:1px solid var(--line);border-radius:6px;padding:15px 17px;background:#111d2e}
+    .dark .stack-item{background:#111d2e;border-color:#2f4b68}
+    .stack-item b{display:block;font-size:16px;margin-bottom:6px}
+    .stack-item span{display:block;font-size:15px;line-height:1.28;color:#cce9ffcc}
+    .dark .stack-item span{color:#cce9ff}
+    .dense .trow{grid-template-columns:185px 1fr;padding:10px 0}
+    .dense .tval{font-size:16px}
+    .quote{font-family:TWKLausanne,Manrope,sans-serif;font-size:38px;line-height:1.08;color:#fff;max-width:620px}
+    .quote strong{color:var(--lime);font-weight:500}
+    .footer-note{position:absolute;right:62px;top:32px;font-family:AeonikMono,monospace;font-size:11px;color:#758696;text-transform:uppercase;letter-spacing:.04em}
+
+    @media print{
+      body{padding:0;background:#fff}
+      .deck{gap:0}
+      .slide{border-radius:0;box-shadow:none;break-after:page;margin:0}
+    }
+  </style>
+</head>
+<body>
+  <main class="deck">
+    <section class="slide dark">
+      <div class="content">
+        <div class="brandline"><span class="pill"><span class="dot"></span> LangChain source scan</span></div>
+        <h1>How Teams Build Multi-Agent Systems with LangChain</h1>
+        <p class="lead">Patterns, stacks, failure modes, and production guidance from LangChain case studies and docs.</p>
+      </div>
+      <div class="title-mosaic">
+        <div class="image-card"><img src="https://mintcdn.com/langchain-5e9cc07a/CRpSg52QqwDx49Bw/oss/langchain/multi-agent/images/pattern-subagents.png?fit=max&amp;auto=format&amp;n=CRpSg52QqwDx49Bw&amp;q=85&amp;s=f924dde09057820b08f0c577e08fcfe7" alt="Subagents pattern"><div class="caption">Subagents</div></div>
+        <div class="image-card"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/6a163d057c5a37ac3248d4eb_image6.png" alt="Lyft router architecture"><div class="caption">Lyft router</div></div>
+        <div class="image-card"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbaaabbf847dfe35ef4847_Diagram.png" alt="Exa research architecture"><div class="caption">Exa research</div></div>
+        <div class="image-card"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbaa3de691fa7cd1fb06e5_data-src-image-86315380-bdad-417f-8727-c97197f3b220.png" alt="ServiceNow trace to eval"><div class="caption">Trace to eval</div></div>
+      </div>
+      <div class="source">Official LangChain/LangGraph pages reviewed; diagrams sourced from public article and docs assets.</div><div class="slide-num">01 / 11</div>
+    </section>
+
+    <section class="slide blue">
+      <div class="content">
+        <div class="kicker">Why they show up</div>
+        <h2>Multi-agent systems respond to scale pressure</h2>
+        <div class="grid two" style="margin-top:34px;align-items:start">
+          <div class="panel">
+            <ul>
+              <li>Too many tools or domains for one prompt.</li>
+              <li>Independent read/research work that can run in parallel.</li>
+              <li>Separate ownership across teams, data sources, or workflows.</li>
+              <li>Stateful staged behavior where specialist prompts should change.</li>
+              <li>Production need for traceability, evals, and durable control.</li>
+            </ul>
+          </div>
+          <div class="image-card" style="height:380px"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbaa0eeea3104c341d0cfd_Multi-agent-architecture.png" alt="Multi-agent architecture overview"><div class="caption">Architecture selection overview</div></div>
+        </div>
+      </div>
+      <div class="source"><a href="https://www.langchain.com/blog/choosing-the-right-multi-agent-architecture">Choosing the Right Multi-Agent Architecture</a></div><div class="slide-num">02 / 11</div>
+    </section>
+
+    <section class="slide">
+      <div class="content">
+        <div class="kicker">Core patterns</div>
+        <h2>LangChain’s pattern set is about control, context, and handoff semantics</h2>
+        <div class="pattern-grid">
+          <div class="image-card"><img src="https://mintcdn.com/langchain-5e9cc07a/CRpSg52QqwDx49Bw/oss/langchain/multi-agent/images/pattern-subagents.png?fit=max&amp;auto=format&amp;n=CRpSg52QqwDx49Bw&amp;q=85&amp;s=f924dde09057820b08f0c577e08fcfe7" alt="Subagents"><div class="caption">Subagents</div></div>
+          <div class="image-card"><img src="https://mintcdn.com/langchain-5e9cc07a/CRpSg52QqwDx49Bw/oss/langchain/multi-agent/images/pattern-handoffs.png?fit=max&amp;auto=format&amp;n=CRpSg52QqwDx49Bw&amp;q=85&amp;s=57d935e6a8efab4afb3faa385113f4dd" alt="Handoffs"><div class="caption">Handoffs</div></div>
+          <div class="image-card"><img src="https://mintcdn.com/langchain-5e9cc07a/CRpSg52QqwDx49Bw/oss/langchain/multi-agent/images/pattern-skills.png?fit=max&amp;auto=format&amp;n=CRpSg52QqwDx49Bw&amp;q=85&amp;s=119131d1f19be1f0c6fb1e30f080b427" alt="Skills"><div class="caption">Skills</div></div>
+          <div class="image-card"><img src="https://mintcdn.com/langchain-5e9cc07a/CRpSg52QqwDx49Bw/oss/langchain/multi-agent/images/pattern-router.png?fit=max&amp;auto=format&amp;n=CRpSg52QqwDx49Bw&amp;q=85&amp;s=ceab32819240ba87f3a132357cc78b09" alt="Router"><div class="caption">Router</div></div>
+        </div>
+        <div class="table dense">
+          <div class="trow"><div class="tkey">Supervisor</div><div class="tval">Centralized orchestration over distinct worker domains.</div></div>
+          <div class="trow"><div class="tkey">Swarm / handoff</div><div class="tval">Specialist agents directly transfer control in stateful conversations.</div></div>
+          <div class="trow"><div class="tkey">Router</div><div class="tval">Classify and fan out to one or more specialized agents.</div></div>
+          <div class="trow"><div class="tkey">Skills</div><div class="tval">Load prompts, tools, files, and reference context on demand.</div></div>
+        </div>
+      </div>
+      <div class="source"><a href="https://docs.langchain.com/oss/python/langchain/multi-agent/index">LangChain multi-agent docs</a></div><div class="slide-num">03 / 11</div>
+    </section>
+
+    <section class="slide dark">
+      <div class="content">
+        <div class="kicker">Selection heuristics</div>
+        <h2>Do not start with a team of agents until one agent becomes the wrong abstraction</h2>
+        <div class="grid two" style="margin-top:34px;align-items:start">
+          <div>
+            <div class="callout">Use multi-agent patterns when context, tools, ownership, parallelism, or staged state are the scaling pressure.</div>
+            <ul>
+              <li>Router/subagents: independent read-heavy tasks.</li>
+              <li>Handoffs/swarm: direct specialist conversations.</li>
+              <li>Skills: lightweight specialization and progressive disclosure.</li>
+              <li>Custom LangGraph: deterministic steps mixed with agentic nodes.</li>
+              <li>Avoid agent teams for tightly coupled writes without strong integration logic.</li>
+            </ul>
+          </div>
+          <div class="image-card" style="height:388px"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbaab1649e3ebd9d13bb29_supervisor.png" alt="Supervisor model"><div class="caption">Supervisor/subagent research model</div></div>
+        </div>
+      </div>
+      <div class="source"><a href="https://www.langchain.com/blog/how-and-when-to-build-multi-agent-systems">How and when to build multi-agent systems</a></div><div class="slide-num">04 / 11</div>
+    </section>
+
+    <section class="slide blue">
+      <div class="content">
+        <div class="kicker">Cleanest fit</div>
+        <h2>Research agents show the strongest recurring fit because work can be parallelized</h2>
+        <div class="grid two" style="margin-top:22px">
+          <div class="image-card" style="height:228px"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbaaabbf847dfe35ef4847_Diagram.png" alt="Exa architecture"><div class="caption">Exa: planner, tasks, observer</div></div>
+          <div class="image-card" style="height:228px"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbaa9d967d1d6e80351bfa_simple.png" alt="Open Deep Research process"><div class="caption">Open Deep Research: scope, research, write</div></div>
+        </div>
+        <div class="table dense">
+          <div class="trow"><div class="tkey">Exa</div><div class="tval">Planner generates web research tasks; observer keeps full context; outputs are structured for API consumers.</div></div>
+          <div class="trow"><div class="tkey">Open Deep Research</div><div class="tval">Subagents clean findings before returning them, keeping supervisor context usable.</div></div>
+          <div class="trow"><div class="tkey">Due diligence</div><div class="tval">Deep Agents delegates tracks, while Parallel returns cited fields and confidence labels.</div></div>
+        </div>
+      </div>
+      <div class="source"><a href="https://www.langchain.com/blog/exa">Exa</a> · <a href="https://www.langchain.com/blog/open-deep-research">Open Deep Research</a> · <a href="https://www.langchain.com/blog/building-a-company-due-diligence-agent-with-deep-agents-langsmith-and-parallel">Due diligence agent</a></div><div class="slide-num">05 / 11</div>
+    </section>
+
+    <section class="slide">
+      <div class="content">
+        <div class="kicker">Enterprise workflows</div>
+        <h2>Customer-support and enterprise systems converge on routing, monitoring, and eval loops</h2>
+        <div class="grid two" style="margin-top:22px">
+          <div class="image-card" style="height:220px"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/6a163d057c5a37ac3248d4eb_image6.png" alt="Lyft router"><div class="caption">Lyft router multi-agent architecture</div></div>
+          <div class="image-card" style="height:220px"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbaa3de691fa7cd1fb06e5_data-src-image-86315380-bdad-417f-8727-c97197f3b220.png" alt="ServiceNow eval lifecycle"><div class="caption">ServiceNow trace-to-eval lifecycle</div></div>
+        </div>
+        <div class="table dense">
+          <div class="trow"><div class="tkey">Lyft</div><div class="tval">Meta-agent routes rider/driver requests to specialized subgraphs with safety fan-out.</div></div>
+          <div class="trow"><div class="tkey">Minimal</div><div class="tval">Planner, research agents, and tool-calling agent replace a brittle monolithic prompt.</div></div>
+          <div class="trow"><div class="tkey">ServiceNow</div><div class="tval">Supervisor, map-reduce graphs, Send API, and LangSmith regression prevention.</div></div>
+        </div>
+      </div>
+      <div class="source"><a href="https://www.langchain.com/blog/lyft-built-a-self-serve-ai-agent-platform-for-customer-support-with-langgraph-and-langsmith">Lyft</a> · <a href="https://www.langchain.com/blog/customers-servicenow">ServiceNow</a></div><div class="slide-num">06 / 11</div>
+    </section>
+
+    <section class="slide dark">
+      <div class="content">
+        <div class="kicker">Domain teams</div>
+        <h2>Specialist domains use agent teams to encode workflow structure, not just divide labor</h2>
+        <div class="grid two" style="margin-top:22px">
+          <div class="image-card" style="height:220px"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbade1f4d459ecdf5f0304_CleanShot-2025-03-05-at-01.19.52%402x.png" alt="Build inc graph"><div class="caption">Build.inc: 25+ subagent graph</div></div>
+          <div class="image-card" style="height:220px"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbae508232fce8d20d42f9_image-3.png" alt="Chaos Labs workflow"><div class="caption">Chaos Labs: oracle workflow</div></div>
+        </div>
+        <div class="table dense">
+          <div class="trow"><div class="tkey">Build.inc</div><div class="tval">Four-tier agent hierarchy decomposes CRE diligence into deterministic subtasks.</div></div>
+          <div class="trow"><div class="tkey">Chaos Labs</div><div class="tval">Multi-model council, source filtering, verifier agents, and confidence thresholds.</div></div>
+          <div class="trow"><div class="tkey">Definely</div><div class="tval">Legal agents plan, solve, adapt, and pause for human approval inside Word workflows.</div></div>
+        </div>
+      </div>
+      <div class="source"><a href="https://www.langchain.com/blog/how-build-inc-used-langgraph-to-launch-a-multi-agent-architecture-for-automating-critical-cre-workflows-for-data-center-development">Build.inc</a> · <a href="https://www.langchain.com/blog/how-chaos-labs-built-a-multi-agent-system-for-resolution-in-prediction-markets">Chaos Labs</a> · <a href="https://www.langchain.com/blog/customers-definely">Definely</a></div><div class="slide-num">07 / 11</div>
+    </section>
+
+    <section class="slide blue">
+      <div class="content">
+        <div class="kicker">Production stack</div>
+        <h2>The reusable stack is graph control plus observability plus source-aware tools</h2>
+        <div class="row" style="margin-top:30px">
+          <div style="width:54%">
+            <div class="stack-list">
+              <div class="stack-item"><b>Orchestration</b><span>LangGraph, Deep Agents, subgraphs, checkpointers.</span></div>
+              <div class="stack-item"><b>Control flow</b><span><code>Command</code>, <code>Send</code>, async/background subagents.</span></div>
+              <div class="stack-item"><b>Observability</b><span>LangSmith traces, dashboards, datasets, custom scorers.</span></div>
+              <div class="stack-item"><b>Data/tool layer</b><span>MCP, A2A/ACP, APIs, vector DBs, graph DBs, workpapers.</span></div>
+              <div class="stack-item"><b>Product layer</b><span>React/NextJS, LangGraph SDK, Studio inspection.</span></div>
+              <div class="stack-item"><b>Enterprise controls</b><span>RBAC, API gateways, audit logs, human-in-loop, CI/CD.</span></div>
+            </div>
+          </div>
+          <div class="image-card" style="width:46%;height:404px"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69f355041f7a1eae1778b75e_langsmith-architecture-dark%201.png" alt="Madrigal architecture"><div class="caption">Madrigal enterprise research architecture</div></div>
+        </div>
+      </div>
+      <div class="source"><a href="https://www.langchain.com/blog/customers-madrigal">Madrigal</a> · <a href="https://www.langchain.com/blog/cisco-outshift">Cisco Outshift</a> · <a href="https://docs.langchain.com/langsmith/deployment">LangSmith Deployment</a></div><div class="slide-num">08 / 11</div>
+    </section>
+
+    <section class="slide">
+      <div class="content">
+        <div class="kicker">Recurring fixes</div>
+        <h2>Production failures cluster around context, tools, prompts, debugging, and risk gates</h2>
+        <div class="grid two" style="margin-top:26px">
+          <div class="table dense">
+            <div class="trow"><div class="tkey">Context bloat</div><div class="tval">Subagent isolation, snippets first, workpapers, cleaned findings.</div></div>
+            <div class="trow"><div class="tkey">Too many tools</div><div class="tval">Routers, domain agents, dynamic tool loading, registries.</div></div>
+            <div class="trow"><div class="tkey">Prompt bottleneck</div><div class="tval">Templates, Prompt Hub, CI linting, contradiction checks, eval gates.</div></div>
+            <div class="trow"><div class="tkey">Debugging</div><div class="tval">LangSmith traces, thread IDs, metadata, Studio graph inspection.</div></div>
+            <div class="trow"><div class="tkey">High-risk action</div><div class="tval">Human approve/edit/reject gates and staged rollout.</div></div>
+          </div>
+          <div class="grid" style="gap:14px">
+            <div class="image-card" style="height:190px"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/6a163ef517c8da9aa491a2ee_image7.png" alt="Lyft prompt framework"><div class="caption">Lyft structured prompt framework</div></div>
+            <div class="image-card" style="height:190px"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbaa3de691fa7cd1fb06ce_data-src-image-540c2e86-95ce-46db-9d90-664b5b9c5238.png" alt="ServiceNow trace view"><div class="caption">ServiceNow trace/debug view</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="source"><a href="https://www.langchain.com/blog/lyft-built-a-self-serve-ai-agent-platform-for-customer-support-with-langgraph-and-langsmith">Lyft</a> · <a href="https://www.langchain.com/blog/customers-servicenow">ServiceNow</a></div><div class="slide-num">09 / 11</div>
+    </section>
+
+    <section class="slide dark">
+      <div class="content">
+        <div class="kicker">What mature teams measure</div>
+        <h2>Evals are the operating system for agent improvement</h2>
+        <div class="grid two" style="margin-top:28px">
+          <div>
+            <ul>
+              <li>Resolution quality, hallucination, contradiction, and policy compliance.</li>
+              <li>Token, cost, latency, and error rates by node, tool, and model.</li>
+              <li>Regression quality from golden datasets and sampled production traces.</li>
+              <li>Human feedback calibration for LLM-as-judge metrics.</li>
+              <li>Source URLs, confidence, and reasoning traces for auditability.</li>
+            </ul>
+          </div>
+          <div class="grid" style="gap:14px">
+            <div class="image-card" style="height:190px"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbaaba1bfa8a96ce61ae8a_newplot--1-.png" alt="Benchmark score chart"><div class="caption">Architecture benchmark score</div></div>
+            <div class="image-card" style="height:190px"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/6a1640a58a423e2209c3cc1a_lyft-image.png" alt="Lyft eval pipeline"><div class="caption">Lyft LLM-as-judge pipeline</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="source"><a href="https://www.langchain.com/blog/benchmarking-multi-agent-architectures">Benchmarking Multi-Agent Architectures</a> · <a href="https://www.langchain.com/blog/lyft-built-a-self-serve-ai-agent-platform-for-customer-support-with-langgraph-and-langsmith">Lyft</a></div><div class="slide-num">10 / 11</div>
+    </section>
+
+    <section class="slide blue">
+      <div class="content">
+        <div class="kicker">Build guidance</div>
+        <h2>General guidance from the case set</h2>
+        <div class="grid two" style="margin-top:34px">
+          <div class="panel">
+            <ul>
+              <li>Start single-agent; split only when there is real scaling pressure.</li>
+              <li>Define narrow jobs, tools, prompts, output contracts, and ownership.</li>
+              <li>Keep state, context, and handoffs explicit.</li>
+              <li>Parallelize independent reads; serialize risky writes.</li>
+              <li>Treat failures as eval data and prompts as production assets.</li>
+            </ul>
+          </div>
+          <div>
+            <div class="image-card" style="height:320px"><img src="https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/69cbb05973a7146af5caaec6_hierarchical-diagram.png" alt="Hierarchical architecture"><div class="caption">Hierarchical teams architecture</div></div>
+            <div class="callout" style="margin-top:18px">The recurring pattern: agent architecture is useful when it narrows context and increases control.</div>
+          </div>
+        </div>
+      </div>
+      <div class="source"><a href="https://www.langchain.com/blog/langgraph-multi-agent-workflows">LangGraph: Multi-Agent Workflows</a></div><div class="slide-num">11 / 11</div>
+    </section>
+  </main>
+  <script>
+    const slides = [...document.querySelectorAll('.slide')];
+    let current = 0;
+    function go(index){
+      current = Math.max(0, Math.min(slides.length - 1, index));
+      slides[current].scrollIntoView({behavior:'smooth', block:'center'});
+    }
+    window.addEventListener('keydown', (event) => {
+      if (['ArrowRight','PageDown',' '].includes(event.key)) { event.preventDefault(); go(current + 1); }
+      if (['ArrowLeft','PageUp'].includes(event.key)) { event.preventDefault(); go(current - 1); }
+      if (event.key === 'Home') go(0);
+      if (event.key === 'End') go(slides.length - 1);
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) current = slides.indexOf(entry.target);
+      });
+    }, {threshold: 0.6});
+    slides.forEach(slide => observer.observe(slide));
+  </script>
+</body>
+</html>

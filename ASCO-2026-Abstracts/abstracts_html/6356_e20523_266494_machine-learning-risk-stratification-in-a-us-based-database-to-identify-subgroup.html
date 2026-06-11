@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Machine learning risk stratification in a US-based database to identify subgroups of patients with PD-L1-high NSCLC who benefit from adding chemotherapy to pembrolizumab.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Machine learning risk stratification in a US-based database to identify subgroups of patients with PD-L1-high NSCLC who benefit from adding chemotherapy to pembrolizumab.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e20523</div>
+    <div><strong>First speaker:</strong> Xavier Orcutt, MD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/266494">https://www.asco.org/abstracts-presentations/266494</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> First-line treatment options for advanced non-small cell lung cancer (aNSCLC) with PD-L1 TPS ≥50% include pembrolizumab or pembrolizumab plus platinum-doublet chemotherapy. Without head-to-head randomized data, optimal patient selection remains unclear. We hypothesized that machine learning–predicted baseline prognosis modifies chemotherapy benefit, with higher-risk patients more likely to benefit from chemotherapy’s rapid clinical effects.</div>
+  <main> 
+
+	<div><b>Background: </b></p>  First-line treatment options for advanced non-small cell lung cancer (aNSCLC) with PD-L1 TPS ≥50% include pembrolizumab or pembrolizumab plus platinum-doublet chemotherapy. Without head-to-head randomized data, optimal patient selection remains unclear. We hypothesized that machine learning–predicted baseline prognosis modifies chemotherapy benefit, with higher-risk patients more likely to benefit from chemotherapy’s rapid clinical effects.</p>  <b>Methods: </b></p>  Using the Flatiron Health Research Database, we identified patients with aNSCLC and PD-L1 CPS TPS ≥50% treated with first-line pembrolizumab or pembrolizumab plus chemotherapy. A gradient-boosted survival model predicted 6-month survival from baseline clinical variables (demographics, cancer features, ECOG, laboratory values, and comorbidities) using cross-validation, then calibrated via isotonic regression. Heterogeneity of absolute treatment benefit was evaluated using overlap-weighted regression with 2-year restricted mean survival time (RMST) pseudo-observations. We summarized the continuous treatment-effect function using a crossover point, defined as the baseline 6-month survival probability at which the estimated RMST benefit of adding chemotherapy reached a clinically meaningful magnitude (≥30 days). Patients were stratified by this survival probability, and survival was compared between treatments using inverse probability of treatment weighting (IPTW).</p>  <b>Results: </b></p>  Among 1,434 eligible patients, 930 received pembrolizumab and 504 received pembrolizumab plus chemotherapy. Median age was 71 years, 53% were male, and median follow-up was 38 months. The model achieved 6-month AUC 0.76 with good calibration (Brier score 0.17). Chemotherapy benefit increased as baseline predicted survival worsened: for every 10 percentage-point decrease in predicted 6-month survival, patients gained 17 days in 2-year RMST with combination therapy (p&nbsp;=&nbsp;0.051). The crossover point corresponded to a baseline 6-month survival probability of 70%. </p>  Patients below the crossover survival probability (30.8%)—characterized by worse ECOG, weight loss, bone and liver metastases, anemia and hypoalbuminemia—derived significant benefit from adding chemotherapy in the IPTW-adjusted survival analysis, while those above (69.2%) showed no benefit (Table 1).</p>  <b>Conclusions: </b></p>  A machine learning model trained on nationally-representative data identified subgroups of patients with PD-L1-high aNSCLC who benefit from adding chemotherapy to pembrolizumab.</div>
+
+
+
+	<div class="table_caption"><b>Table 1. RMST Differences Stratified by Crossover Survival Probability </b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td></td>
+<td>
+<p>6-month Survival &lt;70%</p>
+</td>
+<td>
+<p>6-month Survival ≥70%</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>1-year RMST Δ</p>
+</td>
+<td>
+<p>57.9 (22.7-88.7)</p>
+</td>
+<td>
+<p>2.0 (-15.7-20.4)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>2-year RMST Δ</p>
+</td>
+<td>
+<p>93.7 (22.9-155.1)</p>
+</td>
+<td>
+<p>3.6 (-36.2-44.3)</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+ 
+	<div class="table_footer">RMST differences (Pembro+Chemo - Pembro) in days; 95% CI in parentheses</div> 
+
+
+</main>
+</body>
+</html>

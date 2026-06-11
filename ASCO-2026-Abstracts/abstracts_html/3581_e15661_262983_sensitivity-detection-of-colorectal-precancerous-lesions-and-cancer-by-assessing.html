@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sensitivity detection of colorectal precancerous lesions and cancer by assessing cell-free multimodal chromatin states in plasma.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Sensitivity detection of colorectal precancerous lesions and cancer by assessing cell-free multimodal chromatin states in plasma.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e15661</div>
+    <div><strong>First speaker:</strong> Xubin Chen</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/262983">https://www.asco.org/abstracts-presentations/262983</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Cell-free DNA in blood originates from fragmented chromatin released by dying cells from both healthy and diseased tissues. These fragments carry rich molecular modalities that can reveal pathological alterations in tissues of origin. Design of sensitive technologies capturing the molecular modalities in body fluid should open a new revenue to greatly advance cancer diagnostics.</div>
+  <main> 
+
+	<div><b>Background: </b> Cell-free DNA in blood originates from fragmented chromatin released by dying cells from both healthy and diseased tissues. These fragments carry rich molecular modalities that can reveal pathological alterations in tissues of origin. Design of sensitive technologies capturing the molecular modalities in body fluid should open a new revenue to greatly advance cancer diagnostics.</p>  <b>Methods: </b> cf-EpiTracing has been implemented on a Biomek i5 automated workstation to capture genome-wide multiple cell-free histone modifications in human plasma (50-100 μL). A two-round barcoding strategy was used to achieve high throughput, facilitating the parallel processing of 96 samples. Simplified procedures allow efficiently profiling cell-free epigenome in hundreds of samples within 6 h after antibody incubation. XGBoost machine learning models were developed to: classify colorectal cancer (CRC) patients and healthy individuals, and detect early colorectal precancerous lesions (colorectal adenoma, CRA).</p>  <b>Results: </b> By integrating multimodal chromatin states with machine learning, cf-EpiTracing enables accurate cancer detection and subtyping. The XGBoost model yielded robust CRC-healthy classification performance in both training (accuracy, 0.976) and independent validation group samples (accuracy, 0.922; Table 1). When applied to CRA detection, the model achieved a detection rate of 77.3%. Additionally, cf-EpiTracing achieved high classification accuracy for both colon and rectal cancer subtypes, in both early-stage (stage I, 66.7%; stage II, 69.2%) and advanced-stage (stage III, 80.0%; stage IV, 100.0%) patients.</p>  <b>Conclusions: </b> cf-EpiTracing leverages holistic epigenetic signatures, independently of knowledge for gene transcription, for realizing the noninvasive detection of pathological alterations in target tissues or cell types of origin. Thus, cf-EpiTracing represents a paradigm shift in colorectal diagnostics and may be widely applicable for other cancer types.</div>
+
+
+
+	<div class="table_caption"><b>Table 1. Performance metrics of CRC detection.</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p> </p>
+</td>
+<td>
+<p>Sensitivity</p>
+</td>
+<td>
+<p>Specificity</p>
+</td>
+<td>
+<p>Accuracy</p>
+</td>
+<td>
+<p>Precision</p>
+</td>
+<td>
+<p>Recall</p>
+</td>
+<td>
+<p>F1 score</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Training dataset(93 healthy + 75 CRC)</p>
+</td>
+<td>
+<p>0.987</p>
+</td>
+<td>
+<p>0.968</p>
+</td>
+<td>
+<p>0.976</p>
+</td>
+<td>
+<p>0.989</p>
+</td>
+<td>
+<p>0.968</p>
+</td>
+<td>
+<p>0.978</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Validation dataset(32 healthy + 32 CRC)</p>
+</td>
+<td>
+<p>0.907</p>
+</td>
+<td>
+<p>0.938</p>
+</td>
+<td>
+<p>0.922</p>
+</td>
+<td>
+<p>0.909</p>
+</td>
+<td>
+<p>0.938</p>
+</td>
+<td>
+<p>0.923</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

@@ -1,0 +1,89 @@
+{
+  "abstractNumber": "6540",
+  "body": " \r\n\r\n\t<div><b>Background: </b> Leukemogenesis mirrors hematopoietic differentiation yet proceeds through dysregulated programs. Multiparameter flow cytometry (MFC) allows leukemia immunophenotypes projection onto normal myeloid ontogeny. Here, we apply machine-learning (ML) models trained on MFC data to reconstruct a preliminary data-driven representation of inferred cell-of-origin (COO). Additionally, we explore integration of monocytic differentiation into canonical COO framework to identify dysregulated commitment programs not explained by developmental maturity alone.</p>  <b>Methods: </b> After IRB approval, MFC data from 261 AML patients were aligned to immunophenotypic signatures of normal myeloid ontogeny (HSC, MPP, CMP, GMP, GP, MP) as previously described (Simoes <em>et al.</em>, <em>Blood Neoplasia</em>, 2024; Vergez <em>et al.</em>, <em>Blood Cancer Journal</em>, 2022). Probabilistic COO states were inferred from core markers (CD34, HLA-DR, MPO, CD33, CD117) using ensemble Random Forest classifiers with gradient boosting [Training/Validation=70/30]. Because canonical COO algorithms omit monocytic features, we implemented a secondary Mono-Risk Layer trained on monocytic markers (CD14, CD64) and stemness/invasiveness surrogates (CD56, reflecting adhesion, migration propensity) and CD123, to generate complementary phenotypic labels. Models were trained with cross-validation in Python, and mutation enrichment was projected onto inferred COO states.</p>  <b>Results: </b> Mean age was 63.8 years. 114/261(44%) were male. 123/261 (47.1%) of cases produced multidimensional P-COO achieving “Ensembled (RF+ Boosting Gradient)\" AUC=0.74. Confusion matrix revealed a structured pattern of misclassification predominantly between adjacent COO states, consistent with a continuous differentiation manifold (Recall for MPP, CMP, GMP, GP, MP, 50% 83%, 62%, 65%, 76%, respectively). Mono-Risk-Layer (MRL) improved discriminatory ability for MP (AUC 0.94, Recall 86%, F1 0.75). <em>NPM1</em> was mapped to GMP (60%), MP (34%) and CMP (27%), <em>p=</em>2.61e-09, <em>FLT3 ITD</em> GMP (43.3%), CMP (32.4%) and MP (12.3%), <em>p</em>=4.72 e-05, <em>TP53</em> HSC (50%), MPP (24.3%) and GMP (16%), <em>p</em>=3.6e-04, <em>RUNX1</em> MPP (26.1%), HSC (25%) and MP (13%), <em>p</em>=7.7 e-03, RAS MP (35%), MPP (19%) and HSC (13%), <em>p</em>=5.18 e-03.</p>  <b>Conclusions: </b> Machine-learning–based probabilistic cell-of-origin inference from routine flow cytometry is feasible and biologically informative in AML. Incorporation of a monocytic risk layer improves resolution of monocytic programs not captured by canonical COO and reveals distinct mutation–differentiation relationships. <em>NPM1</em> and <em>FLT3-ITD</em> are enriched in GMP/MP-like states, <em>TP53</em> in primitive HSC/MPP compartments, <em>RUNX1</em> in early progenitors, and RAS in monocytic-skewed trajectories. These findings link genomic drivers to specific developmental niches and establish a scalable framework for biologically grounded AML classification and therapeutic modeling</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+  "contentId": "268037",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/268037",
+    "queryParams": null,
+    "target": null,
+    "title": "A two-axis machine learning framework for cell-of-origin inference in AML: A proof-of-concept study."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION268037"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780333200000,
+    "start": 1780322400000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "333",
+  "presentationId": "268037",
+  "primaryPerson": {
+    "displayName": "Alexandra Thalberg, BS",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780333200000,
+    "start": 1780322400000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17092",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17092",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Hematologic Malignancies—Leukemia, Myelodysplastic Syndromes, and Allotransplant"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": {
+    "countriesThes": null,
+    "drugsThes": null,
+    "entitiesThes": null,
+    "genesThes": null,
+    "orgThes": null,
+    "subjectsThes": [
+      "Oncology professional practice"
+    ]
+  },
+  "title": "A two-axis machine learning framework for cell-of-origin inference in AML: A proof-of-concept study.",
+  "titles": null,
+  "uid": "PRESENTATION268037"
+}

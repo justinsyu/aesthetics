@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HistoChrome: Virtual multiplex immunohistochemistry from routine H&amp;E in colorectal cancer.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>HistoChrome: Virtual multiplex immunohistochemistry from routine H&amp;E in colorectal cancer.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> 3523</div>
+    <div><strong>First speaker:</strong> Gertjan Rasschaert, MD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/267782">https://www.asco.org/abstracts-presentations/267782</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> </div>
+  <main> 
+
+	<div><b>Background: </b> </p>  In colorectal cancer (CRC), immunohistochemistry (IHC) is central to assessment of spatial protein expression but is typically limited to few stains per case due to cost, tissue availability, and limited multiplexing. As a result, many relevant markers are not evaluated systematically. It remains unclear which pathobiologically relevant protein expression patterns are reliably encoded in morphological cues visible on routine haematoxylin and eosin (H&amp;E) whole-slide images (WSIs). Markers of epithelial differentiation (CDX2, MUC2), immune infiltration (CD8), and mucin biology (MUC5) are clinically informative in colorectal cancer, yet their correspondence with H&amp;E morphology is poorly defined. We investigate whether whole-slide virtual multiplex IHC (mIHC) can be generated from routine H&amp;E for this marker panel.</p>  <b>Methods: </b> </p>  We trained a generative adversarial neural network with domain-specific constraints to enable whole-slide virtual mIHC generation from H&amp;E. The model operates in stain concentration space using explicit stain separation and recombination and enforces spatial coherence during tiled whole-slide inference via an overlap consistency loss. Training used 52,579 paired H&amp;E-mIHC patches (960&#215;960 at 0.5 microns per pixel) extracted from adjacent, registered sections stained for CDX2, CD8, MUC2, MUC5, and hematoxylin, across 128 WSIs from 23 patients. Performance was evaluated on an independent cohort of 27 paired H&amp;E-mIHC WSIs. </p>  <b>Results: </b> </p>  HistoChrome generates visually realistic and spatially coherent virtual mIHC WSIs from routine H&amp;E. Biological fidelity was assessed by computing patch-wise Spearman correlations between mean stain intensities in real and virtual mIHC, restricted to tumor regions to avoid inflation from morphologically trivial normal tissue. Strong agreement with biological ground truth was observed for epithelial differentiation markers, with correlations of 0.79 for CDX2 and 0.63 for MUC2. CD8-positive immune infiltration was also captured with moderate accuracy (ρ = 0.49). In contrast, MUC5 expression showed only modest correspondence with biological ground truth (ρ = 0.25).</p>  <b>Conclusions: </b> </p>  HistoChrome enables whole-slide virtual multiplex immunohistochemistry from routine H&amp;E, offering scalable access to biologically grounded protein markers without additional tissue or staining. Accurate inference of CDX2, MUC2, and CD8 supports slide-level pathological stratification of differentiation and immune contexts, with direct relevance for prognostic assessment and patient selection in therapeutic studies. The modest performance for MUC5 underscores that not all proteins may be morphologically encoded in H&amp;E, highlighting the importance of marker-specific validation. Together, these findings position virtual mIHC as a practical adjunct to routine pathology and a discovery tool for CRC.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI-driven TILs spatial analysis to identify high-density hot spots as a superior prognostic marker in triple-negative breast cancer.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>AI-driven TILs spatial analysis to identify high-density hot spots as a superior prognostic marker in triple-negative breast cancer.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e12562</div>
+    <div><strong>First speaker:</strong> Takuma Kobayashi</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/266142">https://www.asco.org/abstracts-presentations/266142</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Tumor-infiltrating lymphocytes (TILs) are a robust prognostic biomarker in triple-negative breast cancer (TNBC). However, conventional whole-slide mean density overlooks spatial heterogeneity and potential signals from localized hot spots. We systematically analyzed TIL distribution across multiple spatial scales to identify the optimal evaluation method for prognostication.</div>
+  <main> 
+
+	<div><b>Background: </b> Tumor-infiltrating lymphocytes (TILs) are a robust prognostic biomarker in triple-negative breast cancer (TNBC). However, conventional whole-slide mean density overlooks spatial heterogeneity and potential signals from localized hot spots. We systematically analyzed TIL distribution across multiple spatial scales to identify the optimal evaluation method for prognostication. </p> <b>Methods: </b> We analyzed 61 node-positive TNBC patients who underwent primary surgery without neoadjuvant therapy, selected from 3,902 breast cancer resection cases (2002-2016). Our AI-based pathological image analysis tool, DeepPathFinder, segmented epithelium and lymphocytes, with stroma defined as non-epithelial regions. Pathologist-annotated tumor bed regions were divided into square tiles of 250, 500, and 1000 μm for multi-scale analysis. For each patient and scale, we calculated stromal lymphocyte density per tile and derived patient-level distribution quantiles (Q25, Q50, Q75, and Q90). The conventional TILs score was defined as the ratio of lymphocyte area to stromal area across the entire WSI. Patients were dichotomized into high and low groups based on the cohort median. Survival curves were compared using the log-rank test, and hazard ratios (HR) were estimated via Cox regression.  </p> <b>Results: </b> With 23 DFS and 21 OS events, higher quantiles (Q75, Q90) consistently showed superior stratification across all scales. For DFS, 1000-μm hot spot density (Q90) provided the most robust stratification (HR 0.25, 95% CI 0.10-0.63, p=0.002), significantly outperforming the conventional TILs score (HR 0.40, p=0.032). For OS, both methods showed similar value (Q90: HR 0.28, p=0.006; TILs score: HR 0.29, p=0.006).  </p> <b>Conclusions: </b> Optimizing spatial resolution to capture 1000-μm high-density hot spots provides stronger prognostic signals than whole-slide averages, highlighting spatial immune architecture as a critical survival determinant in TNBC.</div>
+
+
+
+	<div class="table_caption"><b>Multi-scale prognostic analysis of stromal TILs density metrics</b></div> 
+
+
+	<div class="table"><table>
+<thead>
+<tr>
+<td><strong>Metric</strong></td>
+<td><strong>250μm DFS</strong></td>
+<td><strong>250μm OS</strong></td>
+<td><strong>500μm DFS</strong></td>
+<td><strong>500μm OS</strong></td>
+<td><strong>1000μm DFS</strong></td>
+<td><strong>1000μm OS</strong></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q25</td>
+<td>-**</td>
+<td>-**</td>
+<td>0.68 (0.30-1.55) 0.3584</td>
+<td>0.62 (0.26-1.48) 0.2775</td>
+<td>0.41 (0.17-0.96) 0.0345*</td>
+<td>0.35 (0.14-0.88) 0.0201*</td>
+</tr>
+<tr>
+<td>Q50</td>
+<td>0.41 (0.17-0.96) 0.0345*</td>
+<td>0.35 (0.14-0.88) 0.0201*</td>
+<td>0.41 (0.17-0.96) 0.0345*</td>
+<td>0.35 (0.14-0.88) 0.0201*</td>
+<td>0.43 (0.18-1.01) 0.0462*</td>
+<td>0.37 (0.15-0.93) 0.0276*</td>
+</tr>
+<tr>
+<td>Q75</td>
+<td>0.35 (0.14-0.84) 0.0146*</td>
+<td>0.37 (0.15-0.93) 0.0276*</td>
+<td>0.26 (0.10-0.66) 0.0023*</td>
+<td>0.27 (0.10-0.71) 0.0046*</td>
+<td>0.33 (0.14-0.81) 0.0104*</td>
+<td>0.36 (0.14-0.90) 0.0221*</td>
+</tr>
+<tr>
+<td>Q90</td>
+<td>0.26 (0.10-0.66) 0.0023*</td>
+<td>0.28 (0.11-0.73) 0.0054*</td>
+<td>0.33 (0.14-0.81) 0.0104*</td>
+<td>0.37 (0.15-0.92) 0.0252*</td>
+<td>0.25 (0.10-0.63) 0.0015*</td>
+<td>0.28 (0.11-0.73) 0.0057*</td>
+</tr>
+</tbody>
+</table></div> 
+
+ 
+	<div class="table_footer">Note: Values shown as HR (95% CI) p-value. *p&lt;0.05. **Excluded due to predominance of zero values (&gt;70%), preventing stratification.</div> 
+
+
+</main>
+</body>
+</html>

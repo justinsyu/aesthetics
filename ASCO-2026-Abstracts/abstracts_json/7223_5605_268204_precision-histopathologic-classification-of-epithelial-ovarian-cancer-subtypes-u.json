@@ -1,0 +1,80 @@
+{
+  "abstractNumber": "5605",
+  "body": " \r\n\r\n\t<div><b>Background: </b></p>  Epithelial ovarian cancer is the leading cause of gynecologic cancer mortality, with treatment and prognosis strongly dependent on accurate histopathologic subtype classification. The five major epithelial subtypes—high-grade serous, low-grade serous, endometrioid, mucinous, and clear cell carcinoma—exhibit distinct clinical behaviors, yet conventional interpretation is limited by subjectivity and interobserver variability. Although deep learning has advanced digital pathology, most high-performing models require substantial computational resources, limiting clinical scalability. We evaluated whether a lightweight multilayer perceptron (MLP) combined with structured dimensionality reduction could enable accurate and globally deployable ovarian cancer subtyping.</p>  <b>Methods: </b></p>  We analyzed 9,521 anonymized histopathology image patches representing five epithelial ovarian cancer subtypes from publicly available datasets with expert pathologist consensus ground truth. Images underwent Gaussian random projection followed by principal component analysis to preserve discriminative morphologic features. A feedforward MLP (2,048→1,024→512→5 neurons) with batch normalization and dropout (p=0.3) was trained using AdamW optimization with cosine annealing over 50 epochs on 80% of the data. External validation was performed on independent datasets. Performance metrics included accuracy, sensitivity, specificity, F1 score, and AUROC. The model was deployed on a cross-platform digital pathology system and evaluated by pathologists across six continents.</p>  <b>Results: </b></p>  The MLP achieved 97.4% test accuracy with balanced subtype performance. Sensitivity ranged from 94.2% to 99.3%, with a macro-averaged F1 score of 0.993 and AUROC &gt;0.99 for all classes. External validation accuracy ranged from 91% to 93% across heterogeneous staining protocols. Sensitivity for low-grade serous carcinoma (92.1%) exceeded reported interobserver agreement (52–73%). Inference time averaged 0.33 seconds per image on standard CPU hardware. Pathologists rated the system clinically useful in &gt;90% of evaluations. The model contained 2.8 million parameters, representing an 89% reduction compared with conventional convolutional architectures.</p>  <b>Conclusions: </b></p>  A computationally efficient MLP enables accurate and reproducible epithelial ovarian cancer subtype classification while substantially reducing computational complexity. This approach mitigates interobserver variability and supports scalable AI-assisted pathology deployment. Prospective multicenter studies are warranted to assess integration into routine diagnostic workflows and impact on treatment stratification.</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+  "contentId": "268204",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/268204",
+    "queryParams": null,
+    "target": null,
+    "title": "Precision histopathologic classification of epithelial ovarian cancer subtypes using a computationally efficient multilayer perceptron framework with global validation."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION268204"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780333200000,
+    "start": 1780322400000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "271",
+  "presentationId": "268204",
+  "primaryPerson": {
+    "displayName": "Gowrishankar Palaniswamy, MD, MBBS",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780333200000,
+    "start": 1780322400000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17152",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17152",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Gynecologic Cancer"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": null,
+  "title": "Precision histopathologic classification of epithelial ovarian cancer subtypes using a computationally efficient multilayer perceptron framework with global validation.",
+  "titles": null,
+  "uid": "PRESENTATION268204"
+}

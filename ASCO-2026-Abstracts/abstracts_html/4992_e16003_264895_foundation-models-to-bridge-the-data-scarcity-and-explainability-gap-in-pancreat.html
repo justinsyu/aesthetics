@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Foundation models to bridge the data scarcity and explainability gap in pancreatic cancer diagnosis.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Foundation models to bridge the data scarcity and explainability gap in pancreatic cancer diagnosis.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e16003</div>
+    <div><strong>First speaker:</strong> Samin Yaser</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/264895">https://www.asco.org/abstracts-presentations/264895</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Deep learning (DL) for medical imaging has traditionally emphasized standard classification metrics, such as accuracy, sensitivity, and specificity. However, performance gains alone are not sufficient for high variability scenarios such as pancreatic cancer diagnosis using endoscopy ultrasound (EUS). In these settings, clinical confidence requires decisions grounded in anatomically and clinically meaningful image regions. Furthermore, AI-ready EUS data is limited. To mitigate this, we compared conventional Convolutional Neural Networks (CNNs) against a vision transformer-based Ultrasound Foundation Model (USFM) with minimal fine-tuning on a small EUS dataset.</div>
+  <main> 
+
+	<div><b>Background: </b> Deep learning (DL) for medical imaging has traditionally emphasized standard classification metrics, such as accuracy, sensitivity, and specificity. However, performance gains alone are not sufficient for high variability scenarios such as pancreatic cancer diagnosis using endoscopy ultrasound (EUS). In these settings, clinical confidence requires decisions grounded in anatomically and clinically meaningful image regions. Furthermore, AI-ready EUS data is limited. To mitigate this, we compared conventional Convolutional Neural Networks (CNNs) against a vision transformer-based Ultrasound Foundation Model (USFM) with minimal fine-tuning on a small EUS dataset. </p>  <b>Methods: </b> We used an open EUS dataset of 50 subjects (18 pancreatic ductal adenocarcinoma cases and 32 healthy controls). USFM along with two CNN models, ResNet-50 (RN50) and EfficientNet-V2 (EN2), were fine-tuned for classification of cancer vs normal and tested with subject-wise 5-fold cross-validation (CV). Specifically, we fine-tuned the USFM by appending a two-layer classifier decoder to the publicly available encoder and utilized the last attention layer for generating attention maps. We also implemented a quantitative explainability framework based on the spatial overlap between the ground-truth lesion and AI model saliency maps (i.e., Attention Maps for USFM and Gradient-weighted Class Activation Maps for RN50 and EN2) using the Saliency-to-Segmentation Area under the Curve (AUC) metric. </p>  <b>Results: </b> USFM had the best performance and stability. It achieved the highest Accuracy (92%) and PPV (0.90), surpassing the best supervised baseline EN2 (Accuracy: 90%; PPV: 0.87). Furthermore, the alignment between model saliency and ground truth improved substantially. USFM's attention maps achieved a mean Saliency-to-Segmentation AUC of 0.85, outperforming the GradCAM results of EN2 (0.70) and RN50 (0.61). Qualitative and quantitative analyses showed that, unlike conventional DL models, transformer-based USFM can consistently concentrate on lesion regions. </p>  <b>Conclusions: </b> Results show that USFM, once finetuned with a small amount of downstream data, can improve predictive performance and interpretability. Validated through a 5-fold CV, the USFM not only achieved superior classification metrics with significantly fewer training epochs but also demonstrated substantially better localization of pathological regions in saliency maps. These findings suggest that FMs offer a more explainable method, effectively mitigating constraint of small data sizes while increasing reliability by ensuring decisions are grounded in anatomically and clinically relevant features.</div>
+
+
+
+	<div class="table_caption"><b>Performance comparison of EfficientNetV2, ResNet50, and USFM</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>Model</td>
+<td>Acc</td>
+<td>PPV</td>
+<td>NPV</td>
+<td>Sensitivity</td>
+<td>F1 Score</td>
+<td>Saliency to Segmentation AUC Score</td>
+</tr>
+<tr>
+<td>EfficientNetV2</td>
+<td>90%</td>
+<td>0.87</td>
+<td>0.94</td>
+<td>0.86</td>
+<td>0.85</td>
+<td>0.70</td>
+</tr>
+<tr>
+<td>ResNet50</td>
+<td>87%</td>
+<td>0.86</td>
+<td>0.89</td>
+<td>0.77</td>
+<td>0.80</td>
+<td>0.61</td>
+</tr>
+<tr>
+<td>USFM</td>
+<td>92%</td>
+<td>0.9</td>
+<td>0.93</td>
+<td>0.86</td>
+<td>0.87</td>
+<td>0.85</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

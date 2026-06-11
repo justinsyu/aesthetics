@@ -1,0 +1,80 @@
+{
+  "abstractNumber": "3064",
+  "body": " \r\n\r\n\t<div><b>Background: </b> Although mammography is an effective cancer detection modality, limited specificity at population scale leads to unnecessary biopsies, highlighting a need for adjunctive approaches. Cancer exhibits increased metabolic activity, leading to temperature differentials when compared with benign tissue. In this study, ultra-high sensitivity infrared imaging (IRI) was utilized with a novel thermophysics-based AI neural network to leverage temperature differentials for cancer screening. </p>  <b>Methods: </b> This prospective validation pilot study enrolled 14 patients with BI-RADS 4 or 5 breast lesions on diagnostic imaging prior to biopsy. IRI and optical images were acquired using an infrared imaging device at angular intervals, encoding the breast surface. Thermal and optical data were processed using a 3D reconstruction algorithm to generate breast surface thermal-spatial point-clouds, encoding temperature values at corresponding locations. Tumor presence or absence was predicted using an AI physics-informed neural network (PINN) that solves inverse bioheat transfer equations to identify heat sources associated with increased metabolic activity and blood perfusion. The PINN result was then compared to diagnostic mammography and to histologic findings on pathology.</p>  <b>Results: </b> 14 patients aged 42-83 years were included in a prespecified salient interim analysis approved by the study committee to assess feasibility. Histologic outcomes ranging from normal breast tissue to benign and premalignant/malignant conditions as outlined in Table 1. The PINN accurately predicted the presence and location of all premalignant/malignant lesions, including all incidences of IDC (n=3), DCIS (n=3), and ADH (n=2). Histologically benign lesions (n=6) were not detected by the PINN as a heat source. The mean size error for the PINN was 1.3 cm compared to size on pathology.</p>  <b>Conclusions: </b> Infrared imaging combined with a thermophysics-based AI neural network was able to localize and detect premalignant/malignant breast lesions with 100% sensitivity and specificity. Our findings suggest that IRI adjunctive screening may have the potential to both accurately detect breast cancer and minimize unnecessary biopsies. </div>\r\n\r\n\r\n\r\n\t<div class=\"table_caption\"><b>Comparison of PINN assessment with histological outcome.</b></div> \r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<p>Number of Patients </p>\r\n</td>\r\n<td>\r\n<p>Breast </p>\r\n<p>Tissue Type </p>\r\n</td>\r\n<td>\r\n<p>PINN Assessment </p>\r\n</td>\r\n<td>\r\n<p>PINN </p>\r\n<p>Diameter (cm) </p>\r\n</td>\r\n<td>\r\n<p>Histologic </p>\r\n<p>Assessment </p>\r\n</td>\r\n<td>\r\n<p>Histologic </p>\r\n<p>Diameter (cm) </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>2 </p>\r\n</td>\r\n<td>\r\n<p>SF  </p>\r\n</td>\r\n<td>\r\n<p>+ </p>\r\n</td>\r\n<td>\r\n<p>1.2, 2.2  </p>\r\n</td>\r\n<td>\r\n<p>ADH </p>\r\n</td>\r\n<td>\r\n<p>2.1,3.0 </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>3</p>\r\n</td>\r\n<td>\r\n<p>SF </p>\r\n</td>\r\n<td>\r\n<p>+ </p>\r\n</td>\r\n<td>\r\n<p>1.1, 1.4, 1.4 </p>\r\n</td>\r\n<td>\r\n<p>DCIS </p>\r\n</td>\r\n<td>\r\n<p>2.1, 2.0, 2.8 </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>3 </p>\r\n</td>\r\n<td>\r\n<p>SF </p>\r\n</td>\r\n<td>\r\n<p>+ </p>\r\n</td>\r\n<td>\r\n<p>1.0, 1.2, 1.6 </p>\r\n</td>\r\n<td>\r\n<p>IDC </p>\r\n</td>\r\n<td>\r\n<p>0.5, 3.0, 5.0 </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>1 </p>\r\n</td>\r\n<td>\r\n<p>SF </p>\r\n</td>\r\n<td>\r\n<p>− </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p>Fibrosis </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>1 </p>\r\n</td>\r\n<td>\r\n<p>SF </p>\r\n</td>\r\n<td>\r\n<p>− </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p>Cystic Fluid </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>1 </p>\r\n</td>\r\n<td>\r\n<p>SF </p>\r\n</td>\r\n<td>\r\n<p>− </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p>Fibrocystic </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>1 </p>\r\n</td>\r\n<td>\r\n<p>SF </p>\r\n</td>\r\n<td>\r\n<p>− </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p>Fibroadenoma </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>1 </p>\r\n</td>\r\n<td>\r\n<p>SF </p>\r\n</td>\r\n<td>\r\n<p>− </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p>Duct Ectasia </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>1 </p>\r\n</td>\r\n<td>\r\n<p>HD </p>\r\n</td>\r\n<td>\r\n<p>− </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n<td>\r\n<p>Normal Breast </p>\r\n</td>\r\n<td>\r\n<p> </p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n \r\n\t<div class=\"table_footer\">Breast tissue density classifications: scattered fibro-glandular (SF), heterogeneously dense (HD). Histology subtypes: invasive ductal carcinoma (IDC), ductal carcinoma in situ (DCIS), atypical ductal hyperplasia (ADH). PINN=physics-informed neural network.</div> \r\n\r\n\r\n",
+  "contentId": "263219",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/263219",
+    "queryParams": null,
+    "target": null,
+    "title": "Breast cancer screening is heating up: A novel thermophysics-based AI modality for screening subjects with BIRADS 4 or 5 mammograms."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION263219"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780176600000,
+    "start": 1780165800000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "201",
+  "presentationId": "263219",
+  "primaryPerson": {
+    "displayName": "Nedal Darwish, MD",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780176600000,
+    "start": 1780165800000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17137",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17137",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Developmental Therapeutics—Molecularly Targeted Agents and Tumor Biology"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": null,
+  "title": "Breast cancer screening is heating up: A novel thermophysics-based AI modality for screening subjects with BIRADS 4 or 5 mammograms.",
+  "titles": null,
+  "uid": "PRESENTATION263219"
+}

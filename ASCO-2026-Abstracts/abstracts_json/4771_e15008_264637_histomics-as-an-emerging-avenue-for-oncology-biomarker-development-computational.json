@@ -1,0 +1,75 @@
+{
+  "abstractNumber": "e15008",
+  "body": " \r\n\r\n\t<div><b>Background: </b></p>  Biomarkers are critical to precision oncology. The emerging modality of “histomics” is predicated upon the analysis of quantitative histologic features from routine hematoxylin &amp; eosin (H&amp;E) stained whole slide images (WSI) and provides a novel avenue for biomarker discovery. We utilized the CHAI histomics platform to analyze cases from TCGA to evaluate the prognostic value of histologic features independent of clinical factors.</p>  <b>Methods: </b></p>  The CHAI platform processed H&amp;E WSI from nonmetastatic solid tumor cases from TCGA, quantifying &gt;30,000 histomic features representing hallmarks of cancer biology (eg. nuclear shape, immune infiltration, and others). Models were developed separately for each cancer type, with cases randomly split 30%/70% into development (dev) &amp; validation (val) sets, stratified by stage. Progression-free survival (PFS) was the primary endpoint, except lung cancer, where overall survival was used due to data completeness. Supervised testing in the dev set optimized weighting of histomic features to construct a prognostic biomarker for each cancer type; a cut point dichotomized each case into biomarker (+) or (-), with (+) indicating higher risk. The models &amp; cutpoints were locked and evaluated in the held out val sets. Val was first done in each cancer; then the 20 cancer types were grouped into 9 disease sites to simplify reporting. Cox multivariable analysis (MVA) was used to assess associations between the CHAI biomarkers &amp; clinical outcomes. </p>  <b>Results: </b></p>  6117 nonmetastatic TCGA cases had available H&amp;E WSI: 1795 dev and 4322 val. CHAI processed &gt;7000 H&amp;E WSIs, classifying ~2 billion cells and &gt;200 billion μm2 tissue to calculate biomarker scores. A median of 35% of cases were biomarker (+). CHAI biomarker (+) remained significantly associated with worse survival for each disease site after controlling for available clinicopathologic variables including age, sex, and stage with hazard ratios ranging from 1.66-3.25 (Table).</p>  <b>Conclusions: </b></p>  The CHAI histomics platform quantified histologic features of prognostic value across cancer types (p≤0.02) from TCGA via cancer-specific histologic signatures. These findings support histomics as a modality for oncology biomarker development in solid tumors.</p>  </div>\r\n\r\n\r\n\r\n\t<div class=\"table_caption\"><b>CHAI validation results by disease site in TCGA. Biomarker(+): higher risk. </b></div> \r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<p>Disease site</p>\r\n</td>\r\n<td>\r\n<p>TCGA cancer type</p>\r\n</td>\r\n<td>\r\n<p>N</p>\r\n</td>\r\n<td>\r\n<p>Biomarker(+) (%)</p>\r\n</td>\r\n<td>\r\n<p>MVA HR [95% CI]</p>\r\n</td>\r\n<td>\r\n<p>p</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>GI Luminal</p>\r\n</td>\r\n<td>\r\n<p>COAD, READ, STAD, ESCA</p>\r\n</td>\r\n<td>\r\n<p>695</p>\r\n</td>\r\n<td>\r\n<p>262 (38)</p>\r\n</td>\r\n<td>\r\n<p>1.66 [1.22, 2.26]</p>\r\n</td>\r\n<td>\r\n<p>&lt;0.01</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Hepatobiliary</p>\r\n</td>\r\n<td>\r\n<p>PAAD, LIHC, CHOL</p>\r\n</td>\r\n<td>\r\n<p>399</p>\r\n</td>\r\n<td>\r\n<p>140 (35)</p>\r\n</td>\r\n<td>\r\n<p>1.72 [1.29, 2.30]</p>\r\n</td>\r\n<td>\r\n<p>&lt;0.01</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>GU</p>\r\n</td>\r\n<td>\r\n<p>PRAD, BLCA, KIRP, KIRC, KICH</p>\r\n</td>\r\n<td>\r\n<p>989</p>\r\n</td>\r\n<td>\r\n<p>272 (27)</p>\r\n</td>\r\n<td>\r\n<p>2.00 [1.45, 2.75]</p>\r\n</td>\r\n<td>\r\n<p>&lt;0.01</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Lung</p>\r\n</td>\r\n<td>\r\n<p>LUAD, LUSC</p>\r\n</td>\r\n<td>\r\n<p>621</p>\r\n</td>\r\n<td>\r\n<p>230 (37)</p>\r\n</td>\r\n<td>\r\n<p>1.73 [1.31, 2.29]</p>\r\n</td>\r\n<td>\r\n<p>&lt;0.01</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>GYN</p>\r\n</td>\r\n<td>\r\n<p>CESC, OV</p>\r\n</td>\r\n<td>\r\n<p>235</p>\r\n</td>\r\n<td>\r\n<p>49 (17)</p>\r\n</td>\r\n<td>\r\n<p>2.57 [1.43, 4.62]</p>\r\n</td>\r\n<td>\r\n<p>&lt;0.01</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Endocrine</p>\r\n</td>\r\n<td>\r\n<p>THCA</p>\r\n</td>\r\n<td>\r\n<p>317</p>\r\n</td>\r\n<td>\r\n<p>64 (20)</p>\r\n</td>\r\n<td>\r\n<p>2.79 [1.40, 5.57]</p>\r\n</td>\r\n<td>\r\n<p>&lt;0.01</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Breast</p>\r\n</td>\r\n<td>\r\n<p>BRCA</p>\r\n</td>\r\n<td>\r\n<p>643</p>\r\n</td>\r\n<td>\r\n<p>59 (9)</p>\r\n</td>\r\n<td>\r\n<p>2.42 [1.19, 4.90]</p>\r\n</td>\r\n<td>\r\n<p>0.01</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>H&amp;N</p>\r\n</td>\r\n<td>\r\n<p>HNSC</p>\r\n</td>\r\n<td>\r\n<p>140</p>\r\n</td>\r\n<td>\r\n<p>52 (37)</p>\r\n</td>\r\n<td>\r\n<p>3.25 [1.52, 6.94]</p>\r\n</td>\r\n<td>\r\n<p>0.02</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Skin</p>\r\n</td>\r\n<td>\r\n<p>SKCM</p>\r\n</td>\r\n<td>\r\n<p>280</p>\r\n</td>\r\n<td>\r\n<p>114 (40)</p>\r\n</td>\r\n<td>\r\n<p>2.25 [1.56, 3.24]</p>\r\n</td>\r\n<td>\r\n<p>&lt;0.01</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n\r\n\r\n",
+  "contentId": "264637",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/264637",
+    "queryParams": null,
+    "target": null,
+    "title": "Histomics as an emerging avenue for oncology biomarker development: Computational Histology Artificial Intelligence (CHAI) analysis of The Cancer Genome Atlas (TCGA)."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION264637"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": null,
+  "presentationId": "264637",
+  "primaryPerson": {
+    "displayName": "Richard M Goldberg, MD, FASCO",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": null,
+    "start": null,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": "Biomarkers are critical to precision oncology. The emerging modality of “histomics” is predicated upon the analysis of quantitative histologic features from routine hematoxylin & eosin (H&E) stained whole slide images (WSI) and provides a novel avenue for biomarker discovery. We utilized the CHAI histomics platform to analyze cases from TCGA to evaluate the prognostic value of histologic features independent of clinical factors.",
+  "taxonomy": {
+    "countriesThes": null,
+    "drugsThes": null,
+    "entitiesThes": null,
+    "genesThes": null,
+    "orgThes": null,
+    "subjectsThes": [
+      "Biology",
+      "Biology",
+      "Oncology professional practice"
+    ]
+  },
+  "title": "Histomics as an emerging avenue for oncology biomarker development: Computational Histology Artificial Intelligence (CHAI) analysis of The Cancer Genome Atlas (TCGA).",
+  "titles": null,
+  "uid": "PRESENTATION264637"
+}

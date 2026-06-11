@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Artificial intelligence-native startups for life-sciences document creation</title>
+  <style>
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --pink: #ffd3e0;
+      --gray: #d6d0c2;
+      --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 36px 0 20px;
+      page-break-after: always;
+      break-after: page;
+      background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1.4px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 850;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      background: var(--lime);
+      line-height: 1;
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1, h2, h3 {
+      font-family: "Space Grotesk", Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+    h1 { font-size: 68px; line-height: 1.05; font-weight: 560; max-width: 1320px; }
+    h2 { font-size: 49px; line-height: 1.02; font-weight: 560; max-width: 1320px; }
+    h3 { font-size: 25px; line-height: 1.08; font-weight: 650; }
+    .cover-title { font-size: 59px; line-height: 1.12; max-width: none; }
+    .title-line { display: block; white-space: nowrap; }
+    .dek { margin-top: 8px; color: var(--muted); font-size: 25px; line-height: 1.22; max-width: 1280px; }
+    .section-head { margin-bottom: 25px; }
+    .section-head p { margin-top: 15px; color: var(--muted); font-size: 22px; line-height: 1.18; max-width: 1280px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+    .panel, .metric, .card, .table, .callout, .mini {
+      border: 1.5px solid var(--line);
+      background: rgba(255,250,240,.88);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .panel { padding: 20px; }
+    .panel.dark, .callout { background: #11130f; color: var(--paper); border-color: #11130f; }
+    .panel.dark p, .panel.dark li, .callout p, .callout li { color: rgba(246,241,232,.88); }
+    .metric { padding: 17px; min-height: 128px; }
+    .num { font-size: 42px; line-height: .95; font-weight: 520; letter-spacing: 0; font-family: "Space Grotesk", Inter, sans-serif; }
+    .label { margin-top: 8px; font-size: 18px; line-height: 1.15; color: var(--muted); }
+    .card { padding: 18px; min-height: 206px; }
+    .card.compact { min-height: 164px; padding: 15px; }
+    .header-2line > .card h3,
+    .header-2line > .panel h3,
+    .card.header-2line h3,
+    .panel.header-2line h3 { min-height: 54px; }
+    .card p, .panel p { color: var(--muted); font-size: 18px; line-height: 1.19; margin-top: 9px; }
+    .card.compact p { font-size: 18px; line-height: 1.1; }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 9px;
+      border: 1.2px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 850;
+      text-transform: uppercase;
+      background: var(--paper-2);
+      white-space: nowrap;
+      margin-bottom: 9px;
+    }
+    .lime { background: var(--lime); }
+    .orange { background: var(--orange); }
+    .blue { background: var(--blue); }
+    .pink { background: var(--pink); }
+    .red { background: var(--red); }
+    .gray { background: var(--gray); }
+    .callout { padding: 20px 24px; }
+    .callout h3 { font-size: 29px; color: var(--lime); }
+    .summary-list { margin: 12px 0 0; padding: 0; list-style: none; display: grid; gap: 7px; }
+    .summary-list li { color: rgba(246,241,232,.88); font-size: 20px; line-height: 1.16; position: relative; padding-left: 22px; }
+    .summary-list li::before { content: ""; position: absolute; left: 0; top: .5em; width: 8px; height: 8px; border-radius: 50%; background: var(--lime); }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .matrix { display: grid; grid-template-columns: repeat(5, 1fr); gap: 11px; }
+    .mini { padding: 13px; min-height: 158px; }
+    .mini h3 { font-size: 22px; line-height: 1.03; }
+    .header-2line > .mini h3,
+    .mini.header-2line h3 { min-height: 46px; }
+    .mini p { margin-top: 8px; color: var(--muted); font-size: 16px; line-height: 1.15; }
+    .bar-set { display: grid; gap: 12px; margin-top: 12px; }
+    .bar-row { display: grid; grid-template-columns: 230px 1fr 120px; align-items: center; gap: 14px; }
+    .bar-label { font-size: 18px; line-height: 1.1; font-weight: 700; }
+    .bar-track { height: 34px; border: 1.3px solid var(--line); border-radius: 999px; background: rgba(255,250,240,.72); overflow: hidden; }
+    .bar-fill { height: 100%; background: linear-gradient(90deg, var(--lime), var(--orange)); border-right: 1.3px solid var(--line); }
+    .bar-value { color: var(--muted); font-size: 17px; line-height: 1; }
+    .table { display: grid; }
+    .row { display: grid; border-bottom: 1px solid var(--line); min-height: 51px; }
+    .row:last-child { border-bottom: 0; }
+    .row.cols-4 { grid-template-columns: .68fr 1.02fr 1.3fr 1.7fr; }
+    .row.cols-5 { grid-template-columns: .72fr .92fr 1fr 1.35fr .7fr; }
+    .row.cols-6 { grid-template-columns: .72fr .82fr .9fr .98fr 1.28fr .72fr; }
+    .row.refs { grid-template-columns: .18fr .52fr .84fr 2.46fr; min-height: 0; }
+    .cell { padding: 10px 13px; border-right: 1px solid var(--line); font-size: 17.5px; line-height: 1.12; display: flex; align-items: center; }
+    .cell:last-child { border-right: 0; }
+    .head .cell {
+      background: #11130f;
+      color: var(--paper);
+      font-weight: 850;
+      text-transform: uppercase;
+      font-size: 12.5px;
+      line-height: 1;
+      white-space: nowrap;
+      align-items: center;
+    }
+    .small-table .row { min-height: 58px; }
+    .small-table .head { min-height: 42px; }
+    .small-table .cell { font-size: 15px; line-height: 1.08; padding: 8px 9px; }
+    .small-table .head .cell { font-size: 11.8px; }
+    .refs .cell { font-size: 15.2px; line-height: 1.06; padding: 6px 8px; }
+    .refs.head .cell { font-size: 12.8px; line-height: 1; padding: 8px 8px; }
+    .row.refs .cell:first-child { justify-content: center; text-align: center; font-weight: 800; }
+    .references-slide h2 { font-size: 43px; }
+    .references-slide .section-head { margin-bottom: 16px; }
+    .source-note { color: var(--muted); font-size: 13px; line-height: 1.2; margin-top: 9px; }
+    .axis { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px; align-items: stretch; }
+    .axis .panel { min-height: 150px; }
+    .axis.header-2line .panel h3 { min-height: 56px; }
+    .axis .panel p { font-size: 16px; line-height: 1.15; }
+    .slide:nth-of-type(2) .mini p,
+    .slide:nth-of-type(2) .panel p { font-size: 19.5px; line-height: 1.12; }
+    .slide:nth-of-type(3) .card p,
+    .slide:nth-of-type(5) .card p,
+    .slide:nth-of-type(8) .card p,
+    .slide:nth-of-type(13) .card p { font-size: 21px; line-height: 1.15; }
+    .slide:nth-of-type(7) .card.compact p { font-size: 19.5px; line-height: 1.12; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .wrap { width: 1360px; }
+      .panel, .metric, .card, .table, .callout, .mini { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) {
+      .slide { width: 1600px; height: 900px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Vendor landscape | Retrieved June 3, 2026</div>
+      <h1 class="cover-title"><span class="title-line">Artificial intelligence-native startups for</span><span class="title-line">life-sciences document creation</span></h1>
+      <p class="dek">Public-source inventory of AI-first and AI-enabled vendors automating protocols, clinical study reports, regulatory submissions, evidence-derived documents, and regulated document change control.</p>
+      <div class="grid-4" style="margin-top:24px;">
+        <div class="metric"><div class="num">35</div><div class="label">Vendors and benchmarks retained across document-creation workflows</div></div>
+        <div class="metric"><div class="num">5</div><div class="label">Workflow clusters: CSR, protocol, submission, study startup, document graph</div></div>
+        <div class="metric"><div class="num">18</div><div class="label">Core or protocol-first companies with explicit AI writing workflows</div></div>
+        <div class="metric"><div class="num">4</div><div class="label">Maturity signals: funding, pharma partner, validated workflow, integration</div></div>
+      </div>
+      <div class="callout" style="margin-top:20px;">
+        <h3>Executive summary</h3>
+        <ul class="summary-list">
+          <li>The market is splitting into submission-first platforms, protocol-first workspaces, CSR/narrative automation, study-startup document generators, and document graph/change-control systems.</li>
+          <li>Weave Bio and Yseop show the clearest maturity signals: Weave reported $20M Series A funding and a Parexel partnership, while Yseop publicly reports Word/Veeva-integrated, traceable regulatory authoring and major-pharma references.<a class="cite" href="https://www.businesswire.com/news/home/20251016053611/en/Weave-Bio-Secures-%2420M-Series-A-Funding-to-Enhance-Its-AI-Native-Regulatory-Platform">2</a><a class="cite" href="https://newsroom.parexel.com/node/10446/pdf">3</a><a class="cite" href="https://yseop.com/automate-medical-regulatory-authoringworkflows/">4</a></li>
+          <li>The visible feature is first-draft generation; the real battleground is source-to-claim traceability, redlines, audit trails, reviewer control, and cross-document consistency.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">01 / 17</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Market structure</div>
+        <h2>Document creation is becoming a governed source-to-output workflow, not a generic writing use case</h2>
+        <p>Vendors differ by where they enter the document lifecycle: source ingestion, protocol design, clinical-report drafting, dossier assembly, review, or downstream reuse.</p>
+      </div>
+      <div class="matrix header-2line">
+        <div class="mini"><span class="tag lime">CSR / narratives</span><h3>Clinical-report drafting</h3><p>Yseop, TriloDocs, Narrativa, AlphaLife, Peer AI and TrialAssure emphasize CSR foundations, patient narratives, lay summaries and writer review.<a class="cite" href="https://www.trilodocs.com/products">5</a><a class="cite" href="https://www.narrativa.com/natural-language-generation-for-life-sciences">6</a></p></div>
+        <div class="mini"><span class="tag orange">Protocol-first</span><h3>Protocol design</h3><p>Faro, Risklick, Kitsa, Cori, Merquell and Avenio target protocol drafting, amendment reduction, ICH M11 alignment and protocol-derived reuse.<a class="cite" href="https://farohealth.com/ai-powered-protocol-design/">14</a><a class="cite" href="https://www.risklick.com/">15</a></p></div>
+        <div class="mini"><span class="tag blue">Submission-first</span><h3>Dossier assembly</h3><p>Weave, Ritivel, Angelonia and Tehistark point toward IND/CTA/NDA/BLA/CTD workflows with traceability and audit-ready outputs.<a class="cite" href="https://www.weave.bio/news/">1</a><a class="cite" href="https://www.ritivel.com/">9</a></p></div>
+        <div class="mini"><span class="tag pink">Study startup</span><h3>Protocol-derived docs</h3><p>HumanTrue, Clinials, Tryal, Trialynx and Nimble turn protocols into site, patient, operational and startup documents.<a class="cite" href="https://humantrue.com/">26</a><a class="cite" href="https://clinials.com/">27</a></p></div>
+        <div class="mini"><span class="tag gray">Document graph</span><h3>Review and reuse</h3><p>Raycaster, Cori, Docuvera, RegASK and Veeva-style systems focus on redlines, content reuse, change impact and compliance controls.<a class="cite" href="https://www.raycaster.ai/">21</a><a class="cite" href="https://docuvera.com/">23</a></p></div>
+      </div>
+      <div class="axis header-2line">
+        <div class="panel"><span class="tag lime">Startup wedge</span><h3>AI-native companies are narrowing<br>the entry point</h3><p>Most early companies avoid full dossier automation at launch and instead start with one high-value document surface: IND, protocol, CSR, Module 2/3, preclinical reports, or protocol-derived startup documents.</p></div>
+        <div class="panel"><span class="tag orange">Enterprise requirement</span><h3>Document generation must survive regulated review</h3><p>Buyer diligence should prioritize traceable source maps, controlled templates, reviewer workflows, audit trails, no-answer behavior, data residency, and Word/Veeva compatibility.</p></div>
+      </div>
+    </div>
+    <div class="slide-num">02 / 17</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Maturity pattern</div>
+        <h2>Production proof is still concentrated in a small group of regulatory-writing specialists and enterprise benchmarks</h2>
+        <p>Early vendors often claim broad document coverage; defensible maturity requires public evidence of funding, partner validation, customer adoption, or repeatable regulated workflow controls.</p>
+      </div>
+      <div class="grid-4 header-2line">
+        <div class="card"><span class="tag lime">Highest public proof</span><h3>Weave Bio</h3><p>Reported $20M Series A and $36M total capital; Parexel announced an AI partnership using AutoIND for regulatory submissions.<a class="cite" href="https://www.businesswire.com/news/home/20251016053611/en/Weave-Bio-Secures-%2420M-Series-A-Funding-to-Enhance-Its-AI-Native-Regulatory-Platform">2</a><a class="cite" href="https://newsroom.parexel.com/node/10446/pdf">3</a></p></div>
+        <div class="card"><span class="tag lime">Mature writing benchmark</span><h3>Yseop</h3><p>Describes regulatory-grade AI authoring in Word and Veeva with sentence-level source traceability across CSR, narratives and CMC-related workflows.<a class="cite" href="https://yseop.com/automate-medical-regulatory-authoringworkflows/">4</a></p></div>
+        <div class="card"><span class="tag orange">Focused CSR automation</span><h3>TriloDocs / Narrativa</h3><p>TriloDocs emphasizes symbolic AI plus guided LLMs for CSR and lay summaries; Narrativa positions Navigator and Clinical Atlas for regulated documentation automation.<a class="cite" href="https://www.trilodocs.com/products">5</a><a class="cite" href="https://www.narrativa.com/natural-language-generation-for-life-sciences">6</a></p></div>
+        <div class="card"><span class="tag blue">Incumbent pressure</span><h3>Certara / TrialAssure / Docuvera</h3><p>Enterprise incumbents compete on validation, services, disclosure, structured content, and procurement readiness rather than startup speed alone.<a class="cite" href="https://www.certara.com/pressrelease/certara-launches-next-generation-coauthor-generative-ai-regulatory-writing-software/">30</a><a class="cite" href="https://docuvera.com/">23</a></p></div>
+      </div>
+      <div class="bar-set">
+        <div class="bar-row"><div class="bar-label">Production / benchmark</div><div class="bar-track"><div class="bar-fill" style="width:80%"></div></div><div class="bar-value">12 vendors</div></div>
+        <div class="bar-row"><div class="bar-label">Early commercial</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="bar-value">15 vendors</div></div>
+        <div class="bar-row"><div class="bar-label">Pre-launch / watchlist</div><div class="bar-track"><div class="bar-fill" style="width:53.3%"></div></div><div class="bar-value">8 vendors</div></div>
+      </div>
+      <p class="source-note">Classification based on public source signals reviewed for the retained landscape, not private customer validation.</p>
+    </div>
+    <div class="slide-num">03 / 17</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Leaders and comparables</div>
+        <h2>The most credible companies combine document generation with regulated source provenance</h2>
+      </div>
+      <div class="table">
+        <div class="row cols-4 head"><div class="cell">Company</div><div class="cell">Primary wedge</div><div class="cell">Specific AI offering</div><div class="cell">Why it matters for diligence</div></div>
+        <div class="row cols-4"><div class="cell">Weave Bio</div><div class="cell">AI-native regulatory lifecycle</div><div class="cell">Weave Platform, AutoIND, HAQ Manager, AutoUpdate</div><div class="cell">Pure-play regulatory automation with reported Series A funding and a Parexel partnership; strongest public signal for IND-to-lifecycle automation.<a class="cite" href="https://www.businesswire.com/news/home/20251016053611/en/Weave-Bio-Secures-%2420M-Series-A-Funding-to-Enhance-Its-AI-Native-Regulatory-Platform">2</a><a class="cite" href="https://newsroom.parexel.com/node/10446/pdf">3</a></div></div>
+        <div class="row cols-4"><div class="cell">Yseop</div><div class="cell">Regulatory-grade medical writing</div><div class="cell">Yseop Copilot and one-click dossier roadmap</div><div class="cell">Mature benchmark for traceable medical/regulatory writing in Word and Veeva across CSR, narratives, summaries and CMC outputs.<a class="cite" href="https://yseop.com/automate-medical-regulatory-authoringworkflows/">4</a></div></div>
+        <div class="row cols-4"><div class="cell">TriloDocs</div><div class="cell">CSR and lay-summary automation</div><div class="cell">Symbolic AI plus guided LLM medical-writing agents</div><div class="cell">Specific claim to deterministic clinical-data processing for CSR foundations, with LLM agents layered onto controlled writing workflows.<a class="cite" href="https://www.trilodocs.com/products">5</a></div></div>
+        <div class="row cols-4"><div class="cell">Raycaster</div><div class="cell">Regulated document editor</div><div class="cell">Cited redlines and cross-document impact analysis</div><div class="cell">Differentiates around document review, revision, and change propagation across protocols, CSRs, CMC, quality and submission content.<a class="cite" href="https://www.raycaster.ai/">21</a></div></div>
+        <div class="row cols-4"><div class="cell">Faro / Risklick</div><div class="cell">Protocol-first design</div><div class="cell">AI protocol generation and study-plan development</div><div class="cell">Protocol automation is the most crowded wedge; impact should be tested against amendment reduction and review-cycle performance, not only draft speed.<a class="cite" href="https://farohealth.com/ai-powered-protocol-design/">14</a><a class="cite" href="https://www.risklick.com/">15</a></div></div>
+      </div>
+    </div>
+    <div class="slide-num">04 / 17</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">CSR and narrative automation</div>
+        <h2>CSR vendors are moving toward controlled drafts grounded in TLFs, source documents and reviewer feedback</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card"><span class="tag lime">Yseop</span><h3>Traceable clinical reporting</h3><p>Product materials list CSR, clinical narratives, SCS/SCE, IB, ICF and other medical-writing outputs, with every sentence linked to source materials.<a class="cite" href="https://yseop.com/automate-medical-regulatory-authoringworkflows/">4</a></p></div>
+        <div class="card"><span class="tag lime">TriloDocs</span><h3>Deterministic CSR foundation</h3><p>CSR platform combines rule-based clinical data processing with guided LLM agents, separating signal identification from drafted narrative text.<a class="cite" href="https://www.trilodocs.com/products">5</a></p></div>
+        <div class="card"><span class="tag lime">Narrativa</span><h3>Agentic clinical atlas</h3><p>Narrativa positions Clinical Atlas and Navigator for CSR automation, patient narratives, TLFs, redactions and regulator-ready documentation.<a class="cite" href="https://www.narrativa.com/natural-language-generation-for-life-sciences">6</a></p></div>
+        <div class="card"><span class="tag blue">AlphaLife Sciences</span><h3>Word add-in writing assistant</h3><p>AuroraPrime RMA is described as a Microsoft Word add-in for CSRs, protocols, safety narratives and SAPs, with Microsoft 365 and Veeva-oriented integration claims.<a class="cite" href="https://alphalifesci.com/">7</a></p></div>
+        <div class="card"><span class="tag orange">Peer AI</span><h3>Purpose-built CSR agents</h3><p>Peer AI and Biogen described a collaboration focused on reimagining CSR authoring with purpose-built AI agents and feedback loops.<a class="cite" href="https://getpeer.ai/webinars/peer-ai-biogen-reimagining-csr-authoring-with-purpose-built-ai-agents">8</a></p></div>
+        <div class="card"><span class="tag gray">TrialAssure</span><h3>Disclosure-linked writing</h3><p>TrialAssure is a benchmark where GenAI document creation sits beside anonymization, disclosure, registry results and plain-language-summary workflows.<a class="cite" href="https://www.trialassure.com/about/company/">31</a></p></div>
+      </div>
+    </div>
+    <div class="slide-num">05 / 17</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Submission-first platforms</div>
+        <h2>Submission automation is differentiating on dossier breadth, local deployment, health-authority response support and auditability</h2>
+      </div>
+      <div class="table">
+        <div class="row cols-5 head"><div class="cell">Company</div><div class="cell">Submission focus</div><div class="cell">AI offering</div><div class="cell">Publicly described coverage</div><div class="cell">Caveat</div></div>
+        <div class="row cols-5"><div class="cell">Weave Bio</div><div class="cell">IND and lifecycle regulatory automation</div><div class="cell">AutoIND, AutoUpdate, HAQ Manager</div><div class="cell">Drafting, review, verification, publishing, health-authority questions and post-market updates.<a class="cite" href="https://www.weave.bio/news/">1</a></div><div class="cell">Strongest pure-play signal.</div></div>
+        <div class="row cols-5"><div class="cell">Ritivel</div><div class="cell">CTD, IND/NDA/BLA, CSR, IB, SAP</div><div class="cell">Domain-trained regulatory LLM</div><div class="cell">Word-level traceability, reproducible outputs and fully local deployment claims.<a class="cite" href="https://www.ritivel.com/">9</a></div><div class="cell">Very early.</div></div>
+        <div class="row cols-5"><div class="cell">Angelonia AI</div><div class="cell">Preclinical-to-IND and eCTD</div><div class="cell">INDaccel</div><div class="cell">Preclinical reports, Module 4 eCTD packages, Module 2/3 summaries and IB workflows.<a class="cite" href="https://www.angelonia.ai/platform/indaccel">10</a></div><div class="cell">Specialized wedge.</div></div>
+        <div class="row cols-5"><div class="cell">Tehistark</div><div class="cell">IND/CTA, NDA/MAA, BLA, CMC, HTA</div><div class="cell">AutoDossier</div><div class="cell">AI-assisted planning, drafting, fact verification and sentence-level provenance.<a class="cite" href="https://www.tehistark.com/">11</a></div><div class="cell">POC-heavy proof.</div></div>
+        <div class="row cols-5"><div class="cell">KNavis AI</div><div class="cell">Protocol to eCTD dossier</div><div class="cell">ProtocolIQ</div><div class="cell">Protocols, CSRs, IBs, eCTD dossiers, narratives and amendment impact assessment.<a class="cite" href="https://knavis-ai.com/">17</a></div><div class="cell">Broad beta claims.</div></div>
+      </div>
+      <p class="source-note">Submission-first diligence should include a sponsor-provided source-file test, generated source map, redline history, and validation package review.</p>
+    </div>
+    <div class="slide-num">06 / 17</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Protocol-first platforms</div>
+        <h2>Protocol automation is crowded because ICH M11 and USDM give AI vendors a structured target</h2>
+        <p>Protocol vendors should be judged on consistency, downstream reuse and amendment prevention, not only the ability to draft a Word document; ICH M11 and CDISC USDM create a structured target for digital protocol content.<a class="cite" href="https://www.ema.europa.eu/en/documents/scientific-guideline/ich-m11-guideline-clinical-study-protocol-template-and-technical-specifications-step-2b_en.pdf">36</a><a class="cite" href="https://www.cdisc.org/ja/node/8100">37</a></p>
+      </div>
+      <div class="grid-4">
+        <div class="card compact header-2line"><span class="tag lime">Faro Health</span><h3>AI Protocol Generator</h3><p>Multi-model author, evaluator and refiner approach for compliant protocol generation and key study documents.<a class="cite" href="https://farohealth.com/ai-powered-protocol-design/">14</a></p></div>
+        <div class="card compact header-2line"><span class="tag lime">Risklick</span><h3>Protocol AI</h3><p>End-to-end software for protocols and study plans, with ICH M11 / USDM exports and amendment-reduction claims.<a class="cite" href="https://www.risklick.com/">15</a></p></div>
+        <div class="card compact header-2line"><span class="tag orange">Kitsa</span><h3>KScribe Clinical Studio</h3><p>AI regulatory document generation for protocols, amendments, SAPs, CSRs, ICFs, IBs, DSURs and startup documents.<a class="cite" href="https://kitsa.ai/protocol-development">12</a></p></div>
+        <div class="card compact header-2line"><span class="tag orange">Cori Clinical</span><h3>Co-Author / Assist / Amend</h3><p>Secure AI workspace and Word add-in for drafting, QC, review and controlled changes across trial documents.<a class="cite" href="https://www.cori-clinical.com/">13</a></p></div>
+        <div class="card compact"><span class="tag blue">Merquell</span><h3>Cardinal</h3><p>Pre-launch protocol authoring for Phase 2 studies from IB upload and structured inputs, with ICH M11 positioning.<a class="cite" href="https://merquell.com/">16</a></p></div>
+        <div class="card compact"><span class="tag blue">Avenio</span><h3>Intelligent Protocol Hub</h3><p>Protocol excellence workspace publicly described as grounded on 12,000+ protocols and 70B+ clinical data points.<a class="cite" href="https://www.avenio.ai/">20</a></p></div>
+        <div class="card compact"><span class="tag gray">Clinion</span><h3>eProtocol</h3><p>AI-powered protocol creation aligned with ICH and TransCelerate templates, with Word export.<a class="cite" href="https://www.clinion.com/protocol-automation/">19</a></p></div>
+        <div class="card compact"><span class="tag pink">TrialStack</span><h3>Studio / Catalyst</h3><p>Governed workflow connecting protocol design, evidence synthesis, document generation and submission-ready packages.<a class="cite" href="https://www.trialstack.com/">25</a></p></div>
+      </div>
+    </div>
+    <div class="slide-num">07 / 17</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Document graph and review</div>
+        <h2>The next control layer is change propagation across protocols, SAPs, ICFs, CSRs and submission modules</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card"><span class="tag lime">Raycaster</span><h3>Cited redlines</h3><p>Reviews, revises, drafts and redlines regulated documents while surfacing cross-document impact across clinical, CMC, regulatory and quality files.<a class="cite" href="https://www.raycaster.ai/">21</a></p></div>
+        <div class="card"><span class="tag lime">Cori Clinical</span><h3>Controlled updates</h3><p>Combines document drafting, QC, review and amendment workflows, including protocol-derived trial documents and Word/Veeva-oriented operations.<a class="cite" href="https://www.cori-clinical.com/assist">32</a></p></div>
+        <div class="card"><span class="tag orange">Docuvera</span><h3>Structured content reuse</h3><p>Structured content is a benchmark for scale: Docuvera reports AI-powered modular content, controlled reuse and pharma customer logos.<a class="cite" href="https://docuvera.com/">23</a></p></div>
+        <div class="card"><span class="tag blue">RegASK</span><h3>Regulatory intelligence OS</h3><p>Agentic regulatory intelligence and workflow automation can connect global rule changes to impact assessments and submission-linked actions.<a class="cite" href="https://regask.com/">22</a></p></div>
+        <div class="card"><span class="tag pink">Dossia</span><h3>Writer workspace</h3><p>Early-access positioning focuses on source-grounded suggestions, version chaos, table formatting, and downstream section-review flags.<a class="cite" href="https://dossia.ai/">29</a></p></div>
+        <div class="card"><span class="tag gray">Veeva target state</span><h3>System-of-record integration</h3><p>Most serious vendors will need to coexist with Word, Veeva Vault, controlled templates and existing document-management review workflows.</p></div>
+      </div>
+    </div>
+    <div class="slide-num">08 / 17</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Study-startup and adjacent documents</div>
+        <h2>Protocol-derived document generation is adjacent, but it may become the connective tissue for trial operations</h2>
+      </div>
+      <div class="table">
+        <div class="row cols-4 head"><div class="cell">Company</div><div class="cell">Workflow</div><div class="cell">Documents / outputs</div><div class="cell">Why it belongs in the scan</div></div>
+        <div class="row cols-4"><div class="cell">HumanTrue</div><div class="cell">Protocol-powered AI application</div><div class="cell">Consent forms, recruiting screeners, study guides, regulatory documents</div><div class="cell">Turns protocols and dense study documents into source-referenced operational content.<a class="cite" href="https://humantrue.com/">26</a></div></div>
+        <div class="row cols-4"><div class="cell">Clinials</div><div class="cell">Protocol intelligence</div><div class="cell">Operational synopses, feasibility, regulatory-review and patient-communication documents</div><div class="cell">Converts protocols into structured, review-ready documents for sites, sponsors, CROs and labs.<a class="cite" href="https://clinials.com/">27</a></div></div>
+        <div class="row cols-4"><div class="cell">Tryal</div><div class="cell">Study-startup document platform</div><div class="cell">Documents grounded in protocol, prior materials, email, meetings and recordings</div><div class="cell">Useful for startup-cycle acceleration but less directly focused on CSR or dossier writing.<a class="cite" href="https://www.tryalclinical.com/">33</a></div></div>
+        <div class="row cols-4"><div class="cell">Trialynx / Nimble</div><div class="cell">Trial design, clinical data and generated documents</div><div class="cell">Rapid document generation, protocols, CRFs, ICFs, SDTM/SEND/ADaM-related outputs</div><div class="cell">Relevant as adjacent workflow automation, but public evidence is broader and less document-specialist.<a class="cite" href="https://www.trialynx.io/">34</a><a class="cite" href="https://nimble-cr.com/platform/">35</a></div></div>
+        <div class="row cols-4"><div class="cell">Sorcero</div><div class="cell">Scientific content generation</div><div class="cell">Manuscripts, plain-language summaries, content from CSRs/protocols/TFLs</div><div class="cell">Adjacent medical-affairs/publications engine with documented ingestion of clinical source materials.<a class="cite" href="https://www.sorcero.com/solutions/scientific-content-generation">24</a></div></div>
+      </div>
+    </div>
+    <div class="slide-num">09 / 17</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Comprehensive inventory I</div>
+        <h2>Core document-creation vendors with explicit regulatory or clinical-writing workflows</h2>
+      </div>
+      <div class="table small-table">
+        <div class="row cols-6 head"><div class="cell">Company</div><div class="cell">Fit</div><div class="cell">Offering</div><div class="cell">Document scope</div><div class="cell">Relevant details</div><div class="cell">Evidence signal</div></div>
+        <div class="row cols-6"><div class="cell">Weave Bio</div><div class="cell">Submission-first</div><div class="cell">AutoIND / ReALM</div><div class="cell">IND, NDA/BLA expansion, HAQ/RTQ, updates</div><div class="cell">Reported Series A, Parexel partnership, regulatory lifecycle focus.</div><div class="cell">Strong</div></div>
+        <div class="row cols-6"><div class="cell">Yseop</div><div class="cell">Core / benchmark</div><div class="cell">Yseop Copilot</div><div class="cell">CSR, narratives, IB, ICF, summaries, CMC outputs</div><div class="cell">Word/Veeva integration and traceability are central claims.</div><div class="cell">Strong</div></div>
+        <div class="row cols-6"><div class="cell">TriloDocs</div><div class="cell">Core</div><div class="cell">CSR / lay-summary agents</div><div class="cell">CSR, lay summaries, safety summary module</div><div class="cell">Symbolic AI plus guided LLMs; deterministic CSR foundations.</div><div class="cell">Medium-high</div></div>
+        <div class="row cols-6"><div class="cell">Narrativa</div><div class="cell">Core</div><div class="cell">Navigator / Clinical Atlas</div><div class="cell">CSR, narratives, TLFs, eCTD, redaction</div><div class="cell">Agentic regulated documentation automation and case-study evidence.</div><div class="cell">Medium-high</div></div>
+        <div class="row cols-6"><div class="cell">AlphaLife</div><div class="cell">Core</div><div class="cell">AuroraPrime RMA</div><div class="cell">CSR, protocols, safety narratives, SAP</div><div class="cell">Word add-in and enterprise integration claims.</div><div class="cell">Medium</div></div>
+        <div class="row cols-6"><div class="cell">Peer AI</div><div class="cell">Core / watchlist</div><div class="cell">Purpose-built CSR agents</div><div class="cell">CSR and regulatory document authoring</div><div class="cell">Biogen collaboration is concrete but source footprint is narrow.</div><div class="cell">Medium</div></div>
+        <div class="row cols-6"><div class="cell">Ritivel</div><div class="cell">Submission-first</div><div class="cell">Regulatory LLM platform</div><div class="cell">CTD, CSR, IND/NDA/BLA, IB, SAP, protocols</div><div class="cell">Local deployment and word-level traceability claims.</div><div class="cell">Early</div></div>
+        <div class="row cols-6"><div class="cell">Angelonia AI</div><div class="cell">Submission-first</div><div class="cell">INDaccel</div><div class="cell">Preclinical reports, eCTD Module 4, Module 2/3, IB</div><div class="cell">Preclinical-to-IND focus with traceability and GxP claims.</div><div class="cell">Early</div></div>
+      </div>
+    </div>
+    <div class="slide-num">10 / 17</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Comprehensive inventory II</div>
+        <h2>Protocol-first and early submission entrants are numerous but unevenly proven</h2>
+      </div>
+      <div class="table small-table">
+        <div class="row cols-6 head"><div class="cell">Company</div><div class="cell">Fit</div><div class="cell">Offering</div><div class="cell">Document scope</div><div class="cell">Relevant details</div><div class="cell">Evidence signal</div></div>
+        <div class="row cols-6"><div class="cell">Tehistark</div><div class="cell">Submission-first</div><div class="cell">AutoDossier</div><div class="cell">IND/CTA, NDA/MAA, BLA, CSR, CMC, HTA</div><div class="cell">Sentence-level provenance and top-20 pharma POC language.</div><div class="cell">Early</div></div>
+        <div class="row cols-6"><div class="cell">Kitsa</div><div class="cell">Protocol/core</div><div class="cell">KScribe Clinical Studio</div><div class="cell">Protocols, amendments, SAP, CSR, ICF, IB, DSUR</div><div class="cell">Broad clinical-document generation and quality checks.</div><div class="cell">Early commercial</div></div>
+        <div class="row cols-6"><div class="cell">Cori Clinical</div><div class="cell">Protocol/core</div><div class="cell">Co-Author / Assist / Amend</div><div class="cell">Protocols, PIS, SOPs, IBs, amendments</div><div class="cell">Draft, QC, review and controlled changes across trial documents.</div><div class="cell">Medium</div></div>
+        <div class="row cols-6"><div class="cell">Faro Health</div><div class="cell">Protocol-first</div><div class="cell">AI Protocol Generator</div><div class="cell">Protocols and key study documents</div><div class="cell">Protocol design specialist with LLM-powered author/evaluator/refiner.</div><div class="cell">Medium-high</div></div>
+        <div class="row cols-6"><div class="cell">Risklick</div><div class="cell">Protocol-first</div><div class="cell">Protocol AI</div><div class="cell">Protocols and study plans</div><div class="cell">ICH M11 / USDM outputs and amendment-reduction positioning.</div><div class="cell">Medium</div></div>
+        <div class="row cols-6"><div class="cell">Merquell</div><div class="cell">Protocol watchlist</div><div class="cell">Cardinal</div><div class="cell">Phase 2 protocols; planned submissions and IB</div><div class="cell">Pre-launch, design-partner stage, ICH M11 protocol drafts.</div><div class="cell">Early</div></div>
+        <div class="row cols-6"><div class="cell">KNavis AI</div><div class="cell">Core watchlist</div><div class="cell">ProtocolIQ</div><div class="cell">Protocols, CSR, IB, eCTD, narratives</div><div class="cell">Very broad beta claims across trial lifecycle and submissions.</div><div class="cell">Watchlist</div></div>
+        <div class="row cols-6"><div class="cell">Luminari / Confyde / Avenio</div><div class="cell">Protocol-first</div><div class="cell">LumiPath, Confyde, Protocol Hub</div><div class="cell">Protocols, regulatory pathfinding, scenario design</div><div class="cell">Early protocol-design tools; verify adoption and regulated output controls.</div><div class="cell">Early</div></div>
+      </div>
+    </div>
+    <div class="slide-num">11 / 17</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Comprehensive inventory III</div>
+        <h2>Adjacent and benchmark vendors shape procurement expectations even when they are not pure startups</h2>
+      </div>
+      <div class="table small-table">
+        <div class="row cols-6 head"><div class="cell">Company</div><div class="cell">Fit</div><div class="cell">Offering</div><div class="cell">Document scope</div><div class="cell">Relevant details</div><div class="cell">Evidence signal</div></div>
+        <div class="row cols-6"><div class="cell">Raycaster</div><div class="cell">Document graph</div><div class="cell">Regulated document workspace</div><div class="cell">Protocols, IBs, CSRs, Module 2/3, quality, labels</div><div class="cell">Cited review, redlines and cross-document impact analysis.</div><div class="cell">Early</div></div>
+        <div class="row cols-6"><div class="cell">Docuvera</div><div class="cell">Benchmark</div><div class="cell">Structured content authoring</div><div class="cell">Labeling, submissions, SOPs, CMC, PV, quality</div><div class="cell">AI-powered reuse and customer-logo evidence.</div><div class="cell">Established</div></div>
+        <div class="row cols-6"><div class="cell">RegASK</div><div class="cell">Adjacent benchmark</div><div class="cell">Regulatory intelligence OS</div><div class="cell">Alerts, impact assessments, submission workflows</div><div class="cell">Agentic regulatory intelligence with expert-in-loop model.</div><div class="cell">Established</div></div>
+        <div class="row cols-6"><div class="cell">HumanTrue / Clinials / Tryal</div><div class="cell">Startup-doc adjacent</div><div class="cell">Protocol-derived documents</div><div class="cell">Consent, screeners, study guides, site and patient documents</div><div class="cell">Useful downstream of protocol authoring; less CSR/submission centric.</div><div class="cell">Adjacent</div></div>
+        <div class="row cols-6"><div class="cell">Sorcero</div><div class="cell">Adjacent</div><div class="cell">Scientific content generation</div><div class="cell">Manuscripts, summaries, CSR/protocol/TFL-derived content</div><div class="cell">Medical-affairs and publications generation from clinical evidence.</div><div class="cell">Scaleup</div></div>
+        <div class="row cols-6"><div class="cell">Certara / TrialAssure</div><div class="cell">Benchmarks</div><div class="cell">CoAuthor / LINK AI</div><div class="cell">Regulatory writing, disclosure, anonymization</div><div class="cell">Incumbent validation and services expectations.</div><div class="cell">Established</div></div>
+        <div class="row cols-6"><div class="cell">AI4RA / Dossia / Praxara</div><div class="cell">Watchlist</div><div class="cell">Regulatory writer AI</div><div class="cell">Smart documents, regulatory workflows, PV, audit chain</div><div class="cell">Very early public footprint; verify team, customers and controls.</div><div class="cell">Watchlist</div></div>
+        <div class="row cols-6"><div class="cell">Dossian / Astraea</div><div class="cell">Medtech / data adjacent</div><div class="cell">Submission automation</div><div class="cell">eSTAR, MDR, 510(k), SDTM, ADaM, Define-XML</div><div class="cell">Relevant only if medtech or data-standard automation is in scope.</div><div class="cell">Adjacent</div></div>
+      </div>
+    </div>
+    <div class="slide-num">12 / 17</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Diligence screen</div>
+        <h2>RFP evaluation should test regulated workflow performance, not demo-page fluency</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card"><span class="tag lime">1. Source map</span><h3>Can every claim be traced?</h3><p>Require sentence- or word-level source links to TLFs, protocols, SAPs, IBs, prior submissions, guidance, and sponsor standards.</p></div>
+        <div class="card"><span class="tag lime">2. Review control</span><h3>Can writers stay in charge?</h3><p>Check tracked changes, reviewer comments, human approval, no-answer behavior, template governance, and controlled prompts.</p></div>
+        <div class="card"><span class="tag orange">3. System fit</span><h3>Can it work where writers work?</h3><p>Prioritize Word, Veeva Vault, SharePoint, structured-content repositories, clinical data packages, and exportable audit logs.</p></div>
+        <div class="card header-2line"><span class="tag orange">4. Change propagation</span><h3>Does it update dependent documents?</h3><p>Test whether a protocol amendment flags downstream effects in SAP, ICF, CSR shells, Module 2 summaries and operational materials.</p></div>
+        <div class="card header-2line"><span class="tag blue">5. Deployment model</span><h3>Can sponsor data remain controlled?</h3><p>Verify tenant isolation, local or private deployment options, retention policy, access controls, validation documents and data-residency options.</p></div>
+        <div class="card header-2line"><span class="tag gray">6. Evidence of maturity</span><h3>Is the vendor deployable?</h3><p>Ask for named references, partner deployments, funding runway, implementation team, validation artifacts and security certifications.</p></div>
+      </div>
+    </div>
+    <div class="slide-num">13 / 17</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Shortlist logic</div>
+        <h2>A practical screen starts with document type, then narrows by traceability and deployment proof</h2>
+      </div>
+      <div class="grid-2 header-2line">
+        <div class="panel"><span class="tag lime">CSR and clinical reporting</span><h3>Start with Yseop, TriloDocs, Narrativa, AlphaLife and Peer AI</h3><p>Use TrialAssure and Certara as benchmarks where disclosure, anonymization, services or established regulatory-writing workflows are part of the buyer requirement.</p></div>
+        <div class="panel"><span class="tag blue">IND / CTA / CTD / dossier</span><h3>Start with Weave, Ritivel, Angelonia, Tehistark and Raycaster</h3><p>Compare against Yseop, Certara and Docuvera when the workflow requires enterprise-grade traceability, structured content reuse or regulated document-management integration.</p></div>
+        <div class="panel"><span class="tag orange">Protocol design and authoring</span><h3>Start with Faro, Risklick, Kitsa, Cori, Merquell and Avenio</h3><p>Include KNavis, Luminari, Confyde, Clinion and TrialStack as broader or earlier-stage comparisons depending on trial design, amendment risk and startup-package needs.</p></div>
+        <div class="panel"><span class="tag pink">Protocol-derived operations</span><h3>Use HumanTrue, Clinials, Tryal, Trialynx and Nimble as adjacent workflow screens</h3><p>These are relevant when the buyer wants site, patient, feasibility or startup content generated from the protocol rather than full regulatory submission authoring.</p></div>
+      </div>
+      <div class="callout" style="margin-top:18px;">
+        <h3>Competitive hypothesis</h3>
+        <ul class="summary-list">
+          <li>The winning vendors will not be those with the most document types listed. They will be the vendors that can keep source evidence, sponsor standards, reviewer comments, and downstream documents synchronized through regulated change.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">14 / 17</div>
+  </article>
+
+  <article class="slide references-slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">References 1-13</div>
+        <h2>References</h2>
+      </div>
+      <div class="table">
+        <div class="row refs head"><div class="cell">Ref</div><div class="cell">Source</div><div class="cell">Date / Status / Source Owner</div><div class="cell">Evidence Used in Report</div></div>
+        <div class="row refs"><div class="cell">1</div><div class="cell"><a href="https://www.weave.bio/news/">Weave Bio news</a></div><div class="cell">Retrieved Jun. 3, 2026; company website</div><div class="cell">AI-native ReALM, AutoIND, AutoUpdate, HAQ Manager, regulatory lifecycle positioning.</div></div>
+        <div class="row refs"><div class="cell">2</div><div class="cell"><a href="https://www.businesswire.com/news/home/20251016053611/en/Weave-Bio-Secures-%2420M-Series-A-Funding-to-Enhance-Its-AI-Native-Regulatory-Platform">Weave Bio Series A</a></div><div class="cell">Oct. 16, 2025; BusinessWire</div><div class="cell">$20M Series A, $36M total capital and AI-native regulatory platform expansion.</div></div>
+        <div class="row refs"><div class="cell">3</div><div class="cell"><a href="https://newsroom.parexel.com/node/10446/pdf">Parexel / Weave Bio</a></div><div class="cell">Retrieved Jun. 3, 2026; Parexel release PDF</div><div class="cell">Partnership using AutoIND to accelerate regulatory submissions.</div></div>
+        <div class="row refs"><div class="cell">4</div><div class="cell"><a href="https://yseop.com/automate-medical-regulatory-authoringworkflows/">Yseop regulatory authoring</a></div><div class="cell">Retrieved Jun. 3, 2026; company website</div><div class="cell">Word/Veeva workflow, source traceability and listed medical/regulatory document types.</div></div>
+        <div class="row refs"><div class="cell">5</div><div class="cell"><a href="https://www.trilodocs.com/products">TriloDocs products</a></div><div class="cell">Retrieved Jun. 3, 2026; company website</div><div class="cell">CSR, lay-summary and safety-summary products using symbolic AI and guided LLMs.</div></div>
+        <div class="row refs"><div class="cell">6</div><div class="cell"><a href="https://www.narrativa.com/natural-language-generation-for-life-sciences">Narrativa life sciences</a></div><div class="cell">Retrieved Jun. 3, 2026; company website</div><div class="cell">Navigator, Clinical Atlas, patient narratives, TLFs, redactions and regulatory documentation.</div></div>
+        <div class="row refs"><div class="cell">7</div><div class="cell"><a href="https://alphalifesci.com/">AlphaLife Sciences</a></div><div class="cell">Retrieved Jun. 3, 2026; company website</div><div class="cell">AuroraPrime RMA, CSR/protocol/safety narrative/SAP authoring and enterprise integration claims.</div></div>
+        <div class="row refs"><div class="cell">8</div><div class="cell"><a href="https://getpeer.ai/webinars/peer-ai-biogen-reimagining-csr-authoring-with-purpose-built-ai-agents">Peer AI / Biogen webinar</a></div><div class="cell">Retrieved Jun. 3, 2026; company webinar</div><div class="cell">CSR authoring with purpose-built AI agents and Biogen collaboration.</div></div>
+        <div class="row refs"><div class="cell">9</div><div class="cell"><a href="https://www.ritivel.com/">Ritivel</a></div><div class="cell">Retrieved Jun. 3, 2026; company website</div><div class="cell">Regulatory LLM, CTD/CSR/IND/NDA/BLA coverage, local deployment and word-level traceability.</div></div>
+        <div class="row refs"><div class="cell">10</div><div class="cell"><a href="https://www.angelonia.ai/platform/indaccel">Angelonia INDaccel</a></div><div class="cell">Retrieved Jun. 3, 2026; company website</div><div class="cell">Preclinical reports, eCTD modules, IND scope, 21 CFR Part 11/GxP and traceability claims.</div></div>
+        <div class="row refs"><div class="cell">11</div><div class="cell"><a href="https://www.tehistark.com/">Tehistark</a></div><div class="cell">Retrieved Jun. 3, 2026; company website</div><div class="cell">AutoDossier, IND/CTA/NDA/MAA/BLA/CSR/CMC/HTA scope and provenance claims.</div></div>
+        <div class="row refs"><div class="cell">12</div><div class="cell"><a href="https://kitsa.ai/protocol-development">Kitsa KScribe</a></div><div class="cell">Retrieved Jun. 3, 2026; company website</div><div class="cell">Protocol development and broad clinical document-generation scope.</div></div>
+        <div class="row refs"><div class="cell">13</div><div class="cell"><a href="https://www.cori-clinical.com/">Cori Clinical</a></div><div class="cell">Retrieved Jun. 3, 2026; company website</div><div class="cell">AI workspace, Word add-in, drafting, QC, review, change control and trial documents.</div></div>
+      </div>
+    </div>
+    <div class="slide-num">15 / 17</div>
+  </article>
+
+  <article class="slide references-slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">References 14-26</div>
+        <h2>References</h2>
+      </div>
+      <div class="table">
+        <div class="row refs head"><div class="cell">Ref</div><div class="cell">Source</div><div class="cell">Date / Status / Source Owner</div><div class="cell">Evidence Used in Report</div></div>
+        <div class="row refs"><div class="cell">14</div><div class="cell"><a href="https://farohealth.com/ai-powered-protocol-design/">Faro Health</a></div><div class="cell">Retrieved Jun. 3, 2026; company website</div><div class="cell">AI Protocol Generator and multi-model author/evaluator/refiner approach.</div></div>
+        <div class="row refs"><div class="cell">15</div><div class="cell"><a href="https://www.risklick.com/">Risklick</a></div><div class="cell">Retrieved Jun. 3, 2026; company website</div><div class="cell">Protocol AI, study-plan development and ICH M11 / USDM exports.</div></div>
+        <div class="row refs"><div class="cell">16</div><div class="cell"><a href="https://merquell.com/">Merquell</a></div><div class="cell">Retrieved Jun. 3, 2026; company website</div><div class="cell">Cardinal, pre-launch Phase 2 protocol drafting and ICH M11 positioning.</div></div>
+        <div class="row refs"><div class="cell">17</div><div class="cell"><a href="https://knavis-ai.com/">KNavis AI</a></div><div class="cell">Retrieved Jun. 3, 2026; company website</div><div class="cell">ProtocolIQ beta, protocol/CSR/IB/eCTD/narrative coverage and amendment impact claims.</div></div>
+        <div class="row refs"><div class="cell">18</div><div class="cell"><a href="https://www.luminaricro.com/">Luminari CRO</a></div><div class="cell">Retrieved Jun. 3, 2026; company website</div><div class="cell">LumiPath AI regulatory submission pathfinder and protocol generation.</div></div>
+        <div class="row refs"><div class="cell">19</div><div class="cell"><a href="https://www.clinion.com/protocol-automation/">Clinion eProtocol</a></div><div class="cell">Retrieved Jun. 3, 2026; company website</div><div class="cell">AI-powered protocol creation aligned with ICH and TransCelerate templates.</div></div>
+        <div class="row refs"><div class="cell">20</div><div class="cell"><a href="https://www.avenio.ai/">Avenio</a></div><div class="cell">Retrieved Jun. 3, 2026; company website</div><div class="cell">Intelligent Protocol Hub and public claims about protocol and data grounding.</div></div>
+        <div class="row refs"><div class="cell">21</div><div class="cell"><a href="https://www.raycaster.ai/">Raycaster</a></div><div class="cell">Retrieved Jun. 3, 2026; company website</div><div class="cell">Cited redlines, document review/revision and cross-document impact analysis.</div></div>
+        <div class="row refs"><div class="cell">22</div><div class="cell"><a href="https://regask.com/">RegASK</a></div><div class="cell">Retrieved Jun. 3, 2026; company website</div><div class="cell">Agentic regulatory intelligence, workflow OS and expert-in-loop regulatory coverage.</div></div>
+        <div class="row refs"><div class="cell">23</div><div class="cell"><a href="https://docuvera.com/">Docuvera</a></div><div class="cell">Retrieved Jun. 3, 2026; company website</div><div class="cell">AI-powered structured content, reuse and regulated content workflow benchmark.</div></div>
+        <div class="row refs"><div class="cell">24</div><div class="cell"><a href="https://www.sorcero.com/solutions/scientific-content-generation">Sorcero</a></div><div class="cell">Retrieved Jun. 3, 2026; company website</div><div class="cell">Scientific content generation from CSR, protocols, TFLs and clinical source materials.</div></div>
+        <div class="row refs"><div class="cell">25</div><div class="cell"><a href="https://www.trialstack.com/">TrialStack</a></div><div class="cell">Retrieved Jun. 3, 2026; company website</div><div class="cell">Protocol design, evidence synthesis, document generation and submission-ready packages.</div></div>
+        <div class="row refs"><div class="cell">26</div><div class="cell"><a href="https://humantrue.com/">HumanTrue</a></div><div class="cell">Retrieved Jun. 3, 2026; company website</div><div class="cell">Protocol-powered AI for consent forms, study guides and source-referenced content.</div></div>
+      </div>
+    </div>
+    <div class="slide-num">16 / 17</div>
+  </article>
+
+  <article class="slide references-slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">References 27-37</div>
+        <h2>References</h2>
+      </div>
+      <div class="table">
+        <div class="row refs head"><div class="cell">Ref</div><div class="cell">Source</div><div class="cell">Date / Status / Source Owner</div><div class="cell">Evidence Used in Report</div></div>
+        <div class="row refs"><div class="cell">27</div><div class="cell"><a href="https://clinials.com/">Clinials</a></div><div class="cell">Retrieved Jun. 3, 2026; company website</div><div class="cell">Protocol conversion into review-ready clinical documents.</div></div>
+        <div class="row refs"><div class="cell">28</div><div class="cell"><a href="https://www.confyde.ai/">Confyde</a></div><div class="cell">Retrieved Jun. 3, 2026; company website</div><div class="cell">AI-native trial design and protocol drafting.</div></div>
+        <div class="row refs"><div class="cell">29</div><div class="cell"><a href="https://dossia.ai/">Dossia</a></div><div class="cell">Retrieved Jun. 3, 2026; early-access website</div><div class="cell">Regulatory writer workspace, source-grounded suggestions and downstream review flags.</div></div>
+        <div class="row refs"><div class="cell">30</div><div class="cell"><a href="https://www.certara.com/pressrelease/certara-launches-next-generation-coauthor-generative-ai-regulatory-writing-software/">Certara CoAuthor</a></div><div class="cell">Retrieved Jun. 3, 2026; company release</div><div class="cell">GenAI regulatory-writing benchmark, templates, Word integration and human-in-loop drafting.</div></div>
+        <div class="row refs"><div class="cell">31</div><div class="cell"><a href="https://www.trialassure.com/about/company/">TrialAssure</a></div><div class="cell">Retrieved Jun. 3, 2026; company website</div><div class="cell">LINK AI, GenAI document creation, anonymization and disclosure workflows.</div></div>
+        <div class="row refs"><div class="cell">32</div><div class="cell"><a href="https://www.cori-clinical.com/assist">Cori Assist</a></div><div class="cell">Retrieved Jun. 3, 2026; company website</div><div class="cell">AI assistance for clinical-document workflows and source-grounded review.</div></div>
+        <div class="row refs"><div class="cell">33</div><div class="cell"><a href="https://www.tryalclinical.com/">Tryal</a></div><div class="cell">Retrieved Jun. 3, 2026; company website</div><div class="cell">Study-startup document platform grounded in protocol and curated materials.</div></div>
+        <div class="row refs"><div class="cell">34</div><div class="cell"><a href="https://www.trialynx.io/">Trialynx</a></div><div class="cell">Retrieved Jun. 3, 2026; company website</div><div class="cell">Trial design, feasibility and rapid document generation.</div></div>
+        <div class="row refs"><div class="cell">35</div><div class="cell"><a href="https://nimble-cr.com/platform/">Nimble Clinical Research</a></div><div class="cell">Retrieved Jun. 3, 2026; company website</div><div class="cell">AI document generation and submission-ready clinical data outputs.</div></div>
+        <div class="row refs"><div class="cell">36</div><div class="cell"><a href="https://www.ema.europa.eu/en/documents/scientific-guideline/ich-m11-guideline-clinical-study-protocol-template-and-technical-specifications-step-2b_en.pdf">EMA / ICH M11</a></div><div class="cell">Retrieved Jun. 3, 2026; regulator-hosted guideline PDF</div><div class="cell">Clinical study protocol template and technical specifications.</div></div>
+        <div class="row refs"><div class="cell">37</div><div class="cell"><a href="https://www.cdisc.org/ja/node/8100">CDISC Digital Data Flow</a></div><div class="cell">Retrieved Jun. 3, 2026; standards organization</div><div class="cell">USDM and digital data-flow context for protocol representation.</div></div>
+      </div>
+    </div>
+    <div class="slide-num">17 / 17</div>
+  </article>
+</body>
+</html>

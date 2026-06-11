@@ -1,0 +1,101 @@
+{
+  "abstractNumber": "546",
+  "body": " \r\n\r\n\t<div><b>Background: </b> BRCA1/2 mutation status is essential for precision oncology in breast cancer, directly guiding therapy decisions such as eligibility for PARP inhibitors. However, not all patients globally have reimbursed access to genetic BRCA testing, due to cost and a lack of uniform global implementation, leading to actionable mutations being missed. We developed a scalable artificial intelligence pre-screening algorithm that estimates BRCA1/2 mutation likelihood from routine whole-slide H&amp;E images, to enable systematic prioritization of patients for genetic testing.</p>  <b>Methods: </b> peakPredictBRCA, a deep learning-based algorithm, was developed to predict likelihood of BRCA1/2 mutations from H&amp;E whole-slide images of primary and metastatic breast cancer cases, independent of hormone receptor or HER2 status. Breast cancer images were collected from 6 institutions across 5 countries using different whole-slide scanners (Argentina, Brazil, Germany, Jordan, and USA), with slide-level BRCA mutation labels derived from clinical sequencing (n=725 images, 60% mutated). Training data was augmented with open-access TCGA datasets for breast, prostate, and ovarian cancer (n = 1,633 images), resulting in 2,358 total images (21% mutated). Model performance was evaluated on the collected breast cancer images using five-fold cross-validation. The model was trained end-to-end without manual annotations using multiple-instance learning.</p>  <b>Results: </b> On the breast cancer cohort, peakPredictBRCA achieved a mean AUC of 0.81&#177;0.13. At a screening-oriented operating point, the model identified most BRCA1/2 mutated cases (mean sensitivity 0.82&#177;0.23) while excluding a substantial proportion of non-mutated cases (mean specificity 0.56&#177;0.38), without additional calibration on held-out images. Additional analyses during development demonstrated that robust generalization to unseen data depends on appropriate tumor tissue detection and model architecture selection.</p>  <b>Conclusions: </b> Our results demonstrate that BRCA1/2 mutation likelihood can be effectively triaged from routine H&amp;E breast cancer histology with consistent performance across institutions, scanners, and slide preparations. Implementation of the peakPredictBRCA algorithm in routine pathology workflows could enable systematic prescreening of unselected breast cancer cases at diagnosis and prioritization for confirmatory genetic testing, particularly in resource-constrained settings. Ongoing work focuses on incorporating human-interpretable features and on prospective validation in real-world workflows.</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+  "contentId": "268160",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/268160",
+    "queryParams": null,
+    "target": null,
+    "title": "AI-based pre-screening of <em>BRCA1/2</em> mutation likelihood from routine H&E histopathology in unselected breast cancer cases using peakPredictBRCA."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION268160"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780349400000,
+    "start": 1780338600000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "31",
+  "presentationId": "268160",
+  "primaryPerson": {
+    "displayName": "Patrick Frey, PhD",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780349400000,
+    "start": 1780338600000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17079",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17079",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Breast Cancer—Local/Regional/Adjuvant"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": {
+    "countriesThes": [
+      "United States",
+      "Jordan",
+      "Germany",
+      "Brazil",
+      "Argentina"
+    ],
+    "drugsThes": null,
+    "entitiesThes": null,
+    "genesThes": [
+      "Protein-coding genes",
+      "Protein-coding genes"
+    ],
+    "orgThes": null,
+    "subjectsThes": [
+      "Cancers",
+      "Biology",
+      "Biology",
+      "Biology"
+    ]
+  },
+  "title": "AI-based pre-screening of <em>BRCA1/2</em> mutation likelihood from routine H&E histopathology in unselected breast cancer cases using peakPredictBRCA.",
+  "titles": null,
+  "uid": "PRESENTATION268160"
+}

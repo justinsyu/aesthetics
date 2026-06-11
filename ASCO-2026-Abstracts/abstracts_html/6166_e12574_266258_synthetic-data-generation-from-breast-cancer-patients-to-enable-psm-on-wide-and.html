@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Synthetic data generation from breast cancer patients to enable PSM on wide and multidimensional real-world populations.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Synthetic data generation from breast cancer patients to enable PSM on wide and multidimensional real-world populations.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e12574</div>
+    <div><strong>First speaker:</strong> Giuseppe Catanuto</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/266258">https://www.asco.org/abstracts-presentations/266258</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> In several surgical oncology domains randomized controlled trials are no longer feasible due to ethical and acceptability constraints. Evidence generation therefore relies on real-world data (RWD), which are intrinsically affected by strong selection bias. Propensityscore matching (PSM) improves comparability but, in highly multidimensional datasets, often causes substantial loss of sample size. Synthetic data generation may enable expansion of matched cohorts while preserving real-world structure. We tested this methodology in the historical setting of breast conservation and radiotherapy vs. mastectomy.</div>
+  <main> 
+
+	<div><b>Background: </b>In several surgical oncology domains randomized controlled trials are no longer feasible due to ethical and acceptability constraints. Evidence generation therefore relies on real-world data (RWD), which are intrinsically affected by strong selection bias. Propensityscore matching (PSM) improves comparability but, in highly multidimensional datasets, often causes substantial loss of sample size. Synthetic data generation may enable expansion of matched cohorts while preserving real-world structure. We tested this methodology in the historical setting of breast conservation and radiotherapy vs. mastectomy.</p>  <b>Methods: </b>SEER-based RWD were used to compare PSM performance between real and synthetic cohorts. A synthetic cohort was generatedusing a conditional generative adversarial network, preconditioned on the same covariates used for propensity score estimation, to preserve the full multidimensional joint distribution of clinical, demographic, and socioeconomic variables, including rare and extreme treatment patterns. Fidelity, correlation structure, utility, and privacy were validated using the Synthetic Validation Framework (SAFE). Propensity scores were estimated via logistic regression including 12 covariates. Stratified nearest-neighbor PSM was applied using distances computed in a whitened covariate space (Mahalanobis-equivalent). Matching quality was assessed using standardized mean differences (SMD;&nbsp;&lt;&nbsp;0.1 optimal, &lt;&nbsp;0.2 acceptable). Identical matching parameters were applied to real and synthetic datasets, followed by caliper sensitivity analyses.</p>  <b>Results: </b>When PSM was applied to RWD alone (22,405 patients), only 7.5% of MX-RT patients (601) were matched, despite excellent balance (mean SMD 0.02; all SMD &lt;&nbsp;0.2). The synthetic cohort (137,782 patients) substantially increased matching yield. Using identical parameters, 33.7% of MX-RT patients (17,383) were matched with preserved balance (mean SMD 0.037). After caliper optimization (c&nbsp;=&nbsp;2.6), matching efficiency increased to 46.1% (23,753 patients), while maintaining acceptable balance (mean SMD 0.056; all SMD &lt;&nbsp;0.2). The treated-to-control ratio remained stable (~1:1.4). Overall, synthetic data enabled up to a six-fold increase in matched patients, allowing exploration of clinically relevant subgroups.</p>  <b>Conclusions: </b>Synthetic data generation, validated with SAFE, enables recovery of sample size lost to PSM in highly multidimensional RWD while preserving covariate balance and structural complexity. This approach does not generate new clinical evidence but enables adequately powered exploratory and subgroup analyses in observational settings where randomization is no longer feasible.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

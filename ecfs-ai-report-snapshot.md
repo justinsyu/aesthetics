@@ -1,0 +1,41 @@
+- generic [active] [ref=e1] [box=0,0,1285,7796]:
+  - article [ref=e2] [box=0,0,1285,1299]:
+    - img [box=0,0,1285,1299]
+    - generic [ref=e3] [box=28,36,1229,772]:
+      - generic [ref=e4] [box=28,36,296,39]: ECFS 2026 AI topics | May 31, 2026
+      - heading "Artificial intelligence-related topics at ECFS 2026" [level=1] [ref=e5] [box=28,93,1229,53]
+      - paragraph [ref=e6] [box=28,160,1229,89]
+      - generic [ref=e10] [box=28,286,1229,227]
+      - generic [ref=e23] [box=28,532,1229,276]
+    - generic [ref=e39] [box=1200,1261,46,15]: 01 / 06
+  - article [ref=e40] [box=0,1299,1285,1299]:
+    - img [box=0,1299,1285,1299]
+    - generic [ref=e41] [box=28,1335,1229,635]:
+      - generic [ref=e42] [box=28,1335,1229,221]
+      - generic [ref=e46] [box=28,1597,1229,344]
+      - paragraph [ref=e77] [box=28,1952,1229,18]: "Excluded: clinical screening algorithms, regression-only predictors, biological or mechanistic models, and incidental keyword matches."
+    - generic [ref=e78] [box=1198,2560,47,15]: 02 / 06
+  - article [ref=e79] [box=0,2599,1285,1299]:
+    - img [box=0,2599,1285,1299]
+    - generic [ref=e80] [box=28,2635,1229,893]:
+      - generic [ref=e81] [box=28,2635,1229,153]
+      - generic [ref=e84] [box=28,2827,1229,700]
+    - generic [ref=e115] [box=1198,3859,47,15]: 03 / 06
+  - article [ref=e116] [box=0,3898,1285,1299]:
+    - img [box=0,3898,1285,1299]
+    - generic [ref=e117] [box=28,3934,1229,730]:
+      - generic [ref=e118] [box=28,3934,1229,173]
+      - generic [ref=e122] [box=28,4147,1229,517]
+    - generic [ref=e147] [box=1198,5159,47,15]: 04 / 06
+  - article [ref=e148] [box=0,5197,1285,1299]:
+    - img [box=0,5197,1285,1299]
+    - generic [ref=e149] [box=28,5233,1229,513]:
+      - generic [ref=e150] [box=28,5233,1229,105]
+      - generic [ref=e153] [box=28,5378,1229,368]
+    - generic [ref=e165] [box=1198,6458,47,15]: 05 / 06
+  - article [ref=e166] [box=0,6497,1285,1299]:
+    - img [box=0,6497,1285,1299]
+    - generic [ref=e167] [box=28,6533,1229,817]:
+      - generic [ref=e168] [box=28,6533,1229,105]
+      - generic [ref=e171] [box=28,6671,1229,679]
+    - generic [ref=e237] [box=1198,7757,47,15]: 06 / 06

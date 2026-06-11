@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning from the literature: An AI-assisted Bayesian framework for evidence-driven oncology trial design.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Learning from the literature: An AI-assisted Bayesian framework for evidence-driven oncology trial design.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e23010</div>
+    <div><strong>First speaker:</strong> Guannan Gong, PhD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/260008">https://www.asco.org/abstracts-presentations/260008</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Designing modern oncology trials requires synthesizing prior evidence to inform hypotheses and sample size estimation. Incomplete or imprecise literature summaries can lead to mis-specified hypotheses and underpowered studies. To address this gap, we developed LEAD-ONC (Literature to Evidence for Analytics &amp; Design in Oncology), an AI-assisted platform that extracts trial data from published studies and performs Bayesian evidence synthesis to support evidence-driven trial design.</div>
+  <main> 
+
+	<div><b>Background: </b> Designing modern oncology trials requires synthesizing prior evidence to inform hypotheses and sample size estimation. Incomplete or imprecise literature summaries can lead to mis-specified hypotheses and underpowered studies. To address this gap, we developed LEAD-ONC (Literature to Evidence for Analytics &amp; Design in Oncology), an AI-assisted platform that extracts trial data from published studies and performs Bayesian evidence synthesis to support evidence-driven trial design.</p>  <b>Methods: </b> Using expert-curated publications meeting prespecified criteria, LEAD-ONC applies large language models to extract baseline characteristics from published tables and reconstruct individual-patient data (IPD) from Kaplan–Meier curves. Trials are clustered by similarity in baseline characteristics to define comparable populations, including cohorts enrolling multiple histologies (i.e., trials enrolling both squamous and non-squamous disease). Within each cluster, Bayesian hierarchical models are fitted to reconstructed IPD to generate predictive survival distributions for new trials enrolling similar populations.</p>  <b>Results: </b> IPD were reconstructed from five completed phase III non–small-cell lung cancer trials evaluating chemo-immunotherapy versus intensified immunotherapy strategies involving PD-1/PD-L1 inhibitors with or without CTLA-4 inhibition. LEAD-ONC identified three population groupings: non-squamous (KEYNOTE-189), squamous (KEYNOTE-407), and multi-histology trial populations (POSEIDON, CheckMate-227, CheckMate-9LA). For a hypothetical randomized trial enrolling a multi-histology population, comparing standard chemo-immunotherapy with intensified regimens incorporating dual immune checkpoint blockade (± chemotherapy), the predicted median overall survival difference was 2.8 months (95% CI, −1.8 to 7.6), with a 0.45 probability of achieving a ≥3-month OS benefit.</p>  <b>Conclusions: </b> Integrating AI-based data extraction with Bayesian hierarchical modeling enables scalable learning from published trials and provides an evidence-driven framework for oncology trial design.</div>
+
+
+
+	<div class="table_caption"><b>Projected overall survival by immunotherapy strategy in multi-histology NSCLC trials.</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td rowspan="2">
+<p>Time</p>
+</td>
+<td colspan="3">
+<p>OS (Mono-ICI)</p>
+</td>
+<td colspan="3">
+<p>OS (Dual-ICIs)</p>
+</td>
+<td colspan="3">
+<p>OS Differences</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Mean</p>
+</td>
+<td>
+<p>2.5% CI</p>
+</td>
+<td>
+<p>97.5% CI</p>
+</td>
+<td>
+<p>Mean</p>
+</td>
+<td>
+<p>2.5% CI</p>
+</td>
+<td>
+<p>97.5% CI</p>
+</td>
+<td>
+<p>Mean</p>
+</td>
+<td>
+<p>2.5% CI</p>
+</td>
+<td>
+<p>97.5% CI</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>12</p>
+</td>
+<td>
+<p>0.54</p>
+</td>
+<td>
+<p>0.48</p>
+</td>
+<td>
+<p>0.59</p>
+</td>
+<td>
+<p>0.58</p>
+</td>
+<td>
+<p>0.52</p>
+</td>
+<td>
+<p>0.63</p>
+</td>
+<td>
+<p>0.04</p>
+</td>
+<td>
+<p>-0.04</p>
+</td>
+<td>
+<p>0.12</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>24</p>
+</td>
+<td>
+<p>0.35</p>
+</td>
+<td>
+<p>0.30</p>
+</td>
+<td>
+<p>0.41</p>
+</td>
+<td>
+<p>0.41</p>
+</td>
+<td>
+<p>0.36</p>
+</td>
+<td>
+<p>0.46</p>
+</td>
+<td>
+<p>0.06</p>
+</td>
+<td>
+<p>-0.02</p>
+</td>
+<td>
+<p>0.13</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>36</p>
+</td>
+<td>
+<p>0.24</p>
+</td>
+<td>
+<p>0.20</p>
+</td>
+<td>
+<p>0.29</p>
+</td>
+<td>
+<p>0.30</p>
+</td>
+<td>
+<p>0.25</p>
+</td>
+<td>
+<p>0.36</p>
+</td>
+<td>
+<p>0.06</p>
+</td>
+<td>
+<p>-0.01</p>
+</td>
+<td>
+<p>0.13</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>48</p>
+</td>
+<td>
+<p>0.17</p>
+</td>
+<td>
+<p>0.13</p>
+</td>
+<td>
+<p>0.22</p>
+</td>
+<td>
+<p>0.23</p>
+</td>
+<td>
+<p>0.19</p>
+</td>
+<td>
+<p>0.28</p>
+</td>
+<td>
+<p>0.06</p>
+</td>
+<td>
+<p>-0.01</p>
+</td>
+<td>
+<p>0.12</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>60</p>
+</td>
+<td>
+<p>0.13</p>
+</td>
+<td>
+<p>0.09</p>
+</td>
+<td>
+<p>0.17</p>
+</td>
+<td>
+<p>0.18</p>
+</td>
+<td>
+<p>0.14</p>
+</td>
+<td>
+<p>0.23</p>
+</td>
+<td>
+<p>0.05</p>
+</td>
+<td>
+<p>-0.01</p>
+</td>
+<td>
+<p>0.12</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>72</p>
+</td>
+<td>
+<p>0.09</p>
+</td>
+<td>
+<p>0.06</p>
+</td>
+<td>
+<p>0.13</p>
+</td>
+<td>
+<p>0.14</p>
+</td>
+<td>
+<p>0.10</p>
+</td>
+<td>
+<p>0.19</p>
+</td>
+<td>
+<p>0.05</p>
+</td>
+<td>
+<p>-0.01</p>
+</td>
+<td>
+<p>0.10</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

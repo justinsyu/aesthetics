@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Uncertainty-aware multimodal imaging for lung metastasis risk stratification in extremity soft-tissue sarcoma.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Uncertainty-aware multimodal imaging for lung metastasis risk stratification in extremity soft-tissue sarcoma.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e23543</div>
+    <div><strong>First speaker:</strong> Manpreet Saini, MD, MBBS</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/259486">https://www.asco.org/abstracts-presentations/259486</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> In the field of soft-tissue sarcoma (STS), imaging-based risk prediction has been based on Radiomics and Deep Learning Models that have been optimized on measures of discrimination, including accuracy or area under the curve. Although feasibility has been established, most of the studies are done on small cohorts with no assessment of predictive uncertainty, implicitly assuming identical reliability for all patients. This is a major gap in rare cancers like STS where the fundamental limitation to model’s confidence is limited by sample size and biological heterogeneity. In this study, uncertainty estimation has been incorporated in multimodal MRI and FDG-PET-based imaging for lung metastasis risk stratification, making the model’s output more useful for clinical decision support.</div>
+  <main> 
+
+	<div><b>Background: </b></p>  In the field of soft-tissue sarcoma (STS), imaging-based risk prediction has been based on Radiomics and Deep Learning Models that have been optimized on measures of discrimination, including accuracy or area under the curve. Although feasibility has been established, most of the studies are done on small cohorts with no assessment of predictive uncertainty, implicitly assuming identical reliability for all patients. This is a major gap in rare cancers like STS where the fundamental limitation to model’s confidence is limited by sample size and biological heterogeneity. In this study, uncertainty estimation has been incorporated in multimodal MRI and FDG-PET-based imaging for lung metastasis risk stratification, making the model’s output more useful for clinical decision support.</p>  <b>Methods: </b></p>  Data for Pre-treatment MRI and FDG-PET imaging for extremity soft-tissue sarcoma patients was obtained from The Cancer Imaging Archive. Patients were included only if both modalities and confirmed lung metastasis outcomes were available, resulting in a cohort of 51 patients (19 metastatic, 32 non-metastatic). The preprocessed MRI and PET images were individually encoded with independent convolutional neural networks with latent features being combined at the representation stage and the binary cross-entropy loss being used to optimize the model. Monte Carlo dropout was used in estimating predictive uncertainty during inference. Strict leave-one-patient-out cross-validation was used for model training and evaluation to guarantee a complete patient-level separation. Performance measurement involved accuracy, area under the receiver operating characteristic curve, uncertainty error correlation and uncertainty-based deferral. Another secondary 10-patient exploratory analysis examined feasibility in case of extreme data scarcity.</p>  <b>Results: </b></p>  The model achieved a leave-one-out accuracy of 62.8% with an AUC of 0.28, reflecting inherent heterogeneity of the lung metastasis prediction method in a rare and heterogeneous population of sarcomas. False Forecasting was linked with greater uncertainty and pulling out the cases with the high level of uncertainty resulted in improved accuracy among the remaining patients. Similar uncertainty-performance patterns were observed in the 10-patient exploratory analysis, where the accuracy reached 80% among low uncertainty cases.</p>  <b>Conclusions: </b></p>  Although the previous studies on sarcoma imaging focus on a point-estimate, this study shows that under the worst conditions of severe data constraints, uncertainty-aware multimodal models prove to be safer in assisting clinical decision-making. The suggested approach focuses on defining situations when predictions cannot be trusted, which is why our approach fills one of the existing gaps in the literature of sarcoma AI and corresponds to the safety-critical oncology processes.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

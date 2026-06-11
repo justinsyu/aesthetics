@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280" />
+  <title>Pipeline Intelligence Snapshot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: "Space Grotesk";
+      src: url("fonts/SpaceGrotesk-Regular.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: block;
+    }
+    @font-face {
+      font-family: "Space Grotesk";
+      src: url("fonts/SpaceGrotesk-Medium.ttf") format("truetype");
+      font-weight: 500;
+      font-style: normal;
+      font-display: block;
+    }
+    @font-face {
+      font-family: "Space Grotesk";
+      src: url("fonts/SpaceGrotesk-Bold.ttf") format("truetype");
+      font-weight: 700;
+      font-style: normal;
+      font-display: block;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: #11130f; }
+    body {
+      font-family: "Inter", Arial, sans-serif;
+      color: #171914;
+      -webkit-font-smoothing: antialiased;
+      font-synthesis: none;
+    }
+    .slide {
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      position: relative;
+      padding: 28px 36px 30px;
+      background:
+        linear-gradient(90deg, rgba(16, 18, 15, 0.035) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(16, 18, 15, 0.032) 1px, transparent 1px),
+        radial-gradient(circle at 76% 0%, rgba(172, 214, 255, 0.42), transparent 33%),
+        radial-gradient(circle at 75% 12%, rgba(255, 128, 109, 0.15), transparent 31%),
+        linear-gradient(135deg, rgba(215, 255, 95, 0.14), transparent 25%),
+        #fbf6ea;
+      background-size: 32px 32px, 32px 32px, auto, auto, auto, auto;
+    }
+    .bg-layer {
+      content: "";
+      position: absolute;
+      inset: 0;
+      width: 1280px;
+      height: 720px;
+      object-fit: cover;
+      opacity: 0.52;
+      pointer-events: none;
+    }
+    .content { position: relative; z-index: 1; }
+    .header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: start;
+      margin-bottom: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #10120f;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 40px;
+      line-height: 1;
+      font-weight: 700;
+    }
+    .brand > span:last-child,
+    .brand strong {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+    }
+    .brand-mark {
+      width: 15px;
+      height: 40px;
+      border-left: 4px solid #d7ff5f;
+      border-right: 1px solid rgba(16, 18, 15, 0.22);
+      box-shadow: 7px 0 0 rgba(215, 255, 95, 0.26);
+    }
+    .brand strong { color: #9fe32c; font-weight: 700; }
+    .subtitle {
+      margin: 9px 0 0 29px;
+      color: #5f6558;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+    .timestamp {
+      color: #5f6558;
+      font-size: 12px;
+      text-align: right;
+      line-height: 1.4;
+      padding-top: 4px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 390px;
+      grid-template-rows: 132px 322px 104px;
+      gap: 12px;
+      height: 582px;
+    }
+    .card {
+      background:
+        linear-gradient(180deg, rgba(255, 252, 244, 0.96), rgba(249, 244, 234, 0.9));
+      border: 1px solid rgba(16, 18, 15, 0.14);
+      border-radius: 8px;
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.72) inset,
+        0 16px 36px rgba(27, 31, 23, 0.08);
+      padding: 16px;
+    }
+    .metric-wrap {
+      grid-column: 1 / 3;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 390px;
+      gap: 12px;
+    }
+    .metric-pair {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      min-width: 0;
+    }
+    .metric {
+      min-height: 0;
+      padding: 18px 20px 18px;
+      position: relative;
+      overflow: hidden;
+    }
+    .metric::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #d7ff5f, rgba(172, 214, 255, 0.9), transparent);
+      opacity: 0.7;
+    }
+    .metric.dark {
+      background:
+        linear-gradient(135deg, rgba(215, 255, 95, 0.1), transparent 42%),
+        radial-gradient(circle at 86% 12%, rgba(172, 214, 255, 0.14), transparent 28%),
+        #10120f;
+      color: #fffaf0;
+      border-color: rgba(215, 255, 95, 0.28);
+      box-shadow:
+        0 0 0 1px rgba(215, 255, 95, 0.12) inset,
+        0 14px 34px rgba(16, 18, 15, 0.18);
+    }
+    .eyebrow {
+      display: block;
+      color: #596250;
+      font-size: 12.4px;
+      font-weight: 750;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      margin-bottom: 4px;
+    }
+    .dark .eyebrow, .dark p { color: rgba(255, 250, 240, 0.82); }
+    .metric .number {
+      font-size: 36px;
+      line-height: 0.95;
+      font-weight: 400;
+      margin-bottom: 7px;
+      font-family: "Space Grotesk", "Inter", Arial, sans-serif;
+    }
+    .metric p {
+      color: #5f6558;
+      font-size: 12.6px;
+      line-height: 1.25;
+      margin: 0;
+    }
+    .panel-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 12px;
+      margin-bottom: 12px;
+      padding-bottom: 9px;
+      border-bottom: 1px solid rgba(16, 18, 15, 0.1);
+    }
+    h2 {
+      font-family: "Space Grotesk", "Inter", Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.05;
+      margin: 0;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .panel-title span {
+      color: #5f6558;
+      font-size: 11px;
+      font-weight: 650;
+      text-align: right;
+    }
+    .timeline {
+      grid-column: 1 / 3;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      align-items: end;
+      gap: 30px;
+      height: 204px;
+      padding: 5px 4px 0;
+      background:
+        linear-gradient(to top, rgba(16, 18, 15, 0.08) 1px, transparent 1px);
+      background-size: 100% 45px;
+    }
+    .bar-col {
+      display: grid;
+      grid-template-rows: 1fr auto;
+      gap: 8px;
+      min-width: 0;
+    }
+    .bar-area {
+      position: relative;
+      height: 172px;
+      display: flex;
+      align-items: end;
+    }
+    .bar-total {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 750;
+      color: #10120f;
+    }
+    .bar {
+      display: flex;
+      flex-direction: column-reverse;
+      width: 100%;
+      height: var(--h);
+      min-height: 6px;
+      border-bottom: 1px solid rgba(27, 31, 23, 0.28);
+      background: rgba(27, 31, 23, 0.08);
+      border-radius: 4px 4px 0 0;
+      overflow: hidden;
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    }
+    .seg { border: 1px solid rgba(27, 31, 23, 0.07); }
+    .oncology { background: #ff806d; }
+    .immunology { background: #ffb45f; }
+    .cardio { background: #d6cdb8; }
+    .ophth { background: #acd6ff; }
+    .bar-label {
+      color: #5f6558;
+      text-align: center;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      margin-top: 10px;
+      color: #5f6558;
+      font-size: 11px;
+    }
+    .legend i {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin-right: 5px;
+      border-radius: 2px;
+      vertical-align: -1px;
+    }
+    .heatmap {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+      margin-top: 10px;
+    }
+    .heat-panel {
+      grid-column: 2;
+      grid-row: 2;
+    }
+    .heat {
+      min-height: 59px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 250, 240, 0.95);
+      border-radius: 5px;
+      font-size: 20px;
+      font-weight: 650;
+      text-align: center;
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.35) inset;
+    }
+    .heat small {
+      display: block;
+      margin-top: 5px;
+      color: rgba(16, 18, 15, 0.68);
+      font-size: 10px;
+      font-weight: 500;
+    }
+    .high { background: #ff7b68; }
+    .med { background: #ffb75e; }
+    .low { background: #a8d7ff; }
+    .empty { background: #dfd9c9; }
+    .notes {
+      grid-column: 1 / 3;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr)) 390px;
+      gap: 12px;
+      padding: 0;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+    }
+    .note {
+      background:
+        linear-gradient(180deg, rgba(255, 252, 244, 0.96), rgba(250, 244, 232, 0.9));
+      border: 1px solid rgba(27, 31, 23, 0.14);
+      border-radius: 8px;
+      padding: 10px 12px;
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.76) inset;
+      position: relative;
+    }
+    .note::before {
+      content: "";
+      position: absolute;
+      left: 12px;
+      top: 0;
+      width: 38px;
+      height: 3px;
+      background: #d7ff5f;
+    }
+    .note h3 {
+      margin: 0 0 6px;
+      color: #10120f;
+      font-size: 12px;
+      line-height: 1.1;
+      text-transform: uppercase;
+      font-weight: 750;
+    }
+    .note p {
+      margin: 0;
+      color: #4d5347;
+      font-size: 10.6px;
+      line-height: 1.3;
+    }
+    .slide {
+      padding: 24px 30px 26px;
+      background:
+        radial-gradient(circle at 8% 8%, rgba(215, 255, 95, 0.18), transparent 20%),
+        radial-gradient(circle at 88% 12%, rgba(172, 214, 255, 0.2), transparent 26%),
+        linear-gradient(90deg, rgba(215, 255, 95, 0.08) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(255, 250, 240, 0.06) 1px, transparent 1px),
+        #10120f;
+      background-size: auto, auto, 40px 40px, 40px 40px, auto;
+    }
+    .bg-layer { opacity: 0.13; mix-blend-mode: screen; }
+    .content { height: 100%; }
+    .header {
+      height: 84px;
+      margin-bottom: 12px;
+      padding: 16px 18px 14px;
+      border: 1px solid rgba(215, 255, 95, 0.28);
+      border-left: 5px solid #d7ff5f;
+      border-radius: 6px;
+      background:
+        linear-gradient(90deg, rgba(255, 250, 240, 0.1), rgba(255, 250, 240, 0.035)),
+        rgba(16, 18, 15, 0.9);
+      box-shadow:
+        0 0 0 1px rgba(255, 250, 240, 0.05) inset,
+        0 18px 46px rgba(0, 0, 0, 0.22);
+    }
+    .brand {
+      gap: 10px;
+      color: #fffaf0;
+      font-size: 42px;
+    }
+    .brand-mark {
+      width: 10px;
+      height: 42px;
+      border-left-width: 3px;
+      border-right-color: rgba(255, 250, 240, 0.28);
+      box-shadow: 6px 0 0 rgba(215, 255, 95, 0.18);
+    }
+    .brand strong { color: #d7ff5f; }
+    .subtitle {
+      margin: 7px 0 0 24px;
+      color: rgba(255, 250, 240, 0.72);
+      font-size: 12.8px;
+    }
+    .timestamp {
+      color: rgba(255, 250, 240, 0.76);
+      font-size: 12px;
+      padding-top: 2px;
+    }
+    .grid {
+      grid-template-columns: minmax(0, 1fr) 376px;
+      grid-template-rows: 112px 326px 104px;
+      height: 566px;
+      gap: 12px;
+    }
+    .card {
+      border-radius: 6px;
+      border: 1px solid rgba(255, 250, 240, 0.16);
+      background:
+        linear-gradient(180deg, rgba(255, 250, 240, 0.94), rgba(248, 241, 229, 0.9));
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.65) inset,
+        0 18px 38px rgba(0, 0, 0, 0.22);
+    }
+    .metric-wrap {
+      grid-template-columns: minmax(0, 1fr) 376px;
+      gap: 12px;
+    }
+    .metric-pair { gap: 12px; }
+    .metric {
+      padding: 15px 18px 14px;
+      border-top: 3px solid rgba(215, 255, 95, 0.72);
+      background:
+        linear-gradient(135deg, rgba(172, 214, 255, 0.2), transparent 44%),
+        rgba(255, 250, 240, 0.92);
+    }
+    .metric::after {
+      width: 44px;
+      height: 44px;
+      left: auto;
+      top: 12px;
+      right: 14px;
+      bottom: auto;
+      border: 1px solid rgba(16, 18, 15, 0.1);
+      border-radius: 50%;
+      background:
+        linear-gradient(90deg, transparent 48%, rgba(16, 18, 15, 0.18) 49%, rgba(16, 18, 15, 0.18) 51%, transparent 52%),
+        linear-gradient(180deg, transparent 48%, rgba(16, 18, 15, 0.18) 49%, rgba(16, 18, 15, 0.18) 51%, transparent 52%);
+      opacity: 0.42;
+    }
+    .metric.dark {
+      background:
+        radial-gradient(circle at 85% 23%, rgba(215, 255, 95, 0.18), transparent 24%),
+        linear-gradient(135deg, rgba(172, 214, 255, 0.1), transparent 42%),
+        #090b09;
+      border-color: rgba(215, 255, 95, 0.46);
+      border-top-color: #d7ff5f;
+    }
+    .eyebrow {
+      font-size: 11.6px;
+      margin-bottom: 4px;
+    }
+    .metric .number {
+      font-size: 37px;
+      line-height: 0.9;
+      margin-bottom: 8px;
+    }
+    .metric p {
+      max-width: 88%;
+      font-size: 12px;
+      line-height: 1.22;
+    }
+    .dark .eyebrow, .dark p { color: rgba(255, 250, 240, 0.78); }
+    .grid > article.card[style*="grid-column: 1"] {
+      padding: 14px 16px 16px;
+      background:
+        linear-gradient(90deg, rgba(255, 250, 240, 0.93), rgba(255, 250, 240, 0.86)),
+        linear-gradient(180deg, rgba(215, 255, 95, 0.12), transparent);
+      border-left: 4px solid #d7ff5f;
+    }
+    .heat-panel {
+      padding: 14px;
+      background:
+        linear-gradient(180deg, rgba(255, 250, 240, 0.95), rgba(241, 236, 224, 0.92));
+      border-top: 3px solid rgba(172, 214, 255, 0.9);
+    }
+    .panel-title {
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(16, 18, 15, 0.14);
+    }
+    h2 {
+      font-size: 16.4px;
+      letter-spacing: 0;
+    }
+    .panel-title span {
+      font-size: 10.2px;
+      color: rgba(16, 18, 15, 0.68);
+    }
+    .timeline {
+      height: 207px;
+      gap: 22px;
+      padding: 4px 4px 0;
+      background:
+        linear-gradient(to top, rgba(16, 18, 15, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16, 18, 15, 0.04) 1px, transparent 1px);
+      background-size: 100% 41px, 25% 100%;
+    }
+    .bar-area { height: 174px; }
+    .bar {
+      border-radius: 2px 2px 0 0;
+      border-bottom-color: rgba(16, 18, 15, 0.38);
+      box-shadow:
+        0 0 0 1px rgba(16, 18, 15, 0.08) inset,
+        0 9px 20px rgba(16, 18, 15, 0.08);
+    }
+    .bar-total {
+      font-family: "Space Grotesk", "Inter", Arial, sans-serif;
+      font-size: 14px;
+    }
+    .bar-label { font-size: 11.2px; color: #50564c; }
+    .legend {
+      padding-top: 8px;
+      border-top: 1px solid rgba(16, 18, 15, 0.08);
+      font-size: 10.6px;
+      gap: 7px 12px;
+    }
+    .heatmap {
+      gap: 3px;
+      margin-top: 9px;
+    }
+    .heat {
+      min-height: 57px;
+      border-radius: 2px;
+      border-color: rgba(255, 250, 240, 0.88);
+      font-family: "Space Grotesk", "Inter", Arial, sans-serif;
+    }
+    .heat small {
+      font-family: "Inter", Arial, sans-serif;
+      font-size: 9.4px;
+    }
+    .notes {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) 376px;
+      gap: 12px;
+    }
+    .note {
+      border-radius: 6px;
+      padding: 11px 13px 10px 15px;
+      border-left: 3px solid rgba(215, 255, 95, 0.9);
+      background:
+        linear-gradient(90deg, rgba(16, 18, 15, 0.78), rgba(16, 18, 15, 0.68)),
+        rgba(16, 18, 15, 0.74);
+      color: #fffaf0;
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.08) inset,
+        0 18px 32px rgba(0, 0, 0, 0.2);
+    }
+    .note::before {
+      display: none;
+    }
+    .note h3 {
+      color: #d7ff5f;
+      font-size: 12.1px;
+      margin-bottom: 6px;
+    }
+    .note p {
+      color: rgba(255, 250, 240, 0.76);
+      font-size: 10.5px;
+      line-height: 1.25;
+    }
+    .oncology { background: #ff7f6f; }
+    .immunology { background: #ffba65; }
+    .cardio { background: #c9c1ae; }
+    .ophth { background: #9ccfff; }
+    @page { size: 1280px 720px; margin: 0; }
+    @media print {
+      html, body { width: 1280px; height: 720px; }
+      .slide { page-break-after: always; }
+    }
+  </style>
+</head>
+<body>
+  <section class="slide">
+    <img class="bg-layer" src="pipeline-intelligence-background.png" alt="" />
+    <div class="content">
+      <header class="header">
+        <div>
+          <div class="brand"><span class="brand-mark"></span><span><strong>Pipeline</strong> Intelligence</span></div>
+          <p class="subtitle">Active pipeline formulary view across Oncology, Immunology, Cardiometabolic, and Ophthalmology assets</p>
+        </div>
+        <div class="timestamp">Source-backed refresh<br>May 28, 2026</div>
+      </header>
+
+      <main class="grid">
+        <div class="metric-wrap">
+          <div class="metric-pair">
+            <article class="card metric dark">
+              <span class="eyebrow">Total assets</span>
+              <div class="number">27</div>
+              <p>Active commercial-sponsor pipeline assets after exclusions.</p>
+            </article>
+            <article class="card metric">
+              <span class="eyebrow">High risk</span>
+              <div class="number">2</div>
+              <p>Planning priority based on launch timing, budget impact, differentiation, and readiness.</p>
+            </article>
+          </div>
+          <article class="card metric">
+            <span class="eyebrow">Near term</span>
+            <div class="number">1</div>
+            <p>Expected within 24 months based on normalized launch-timeline bucket.</p>
+          </article>
+        </div>
+
+        <article class="card heat-panel">
+          <div class="panel-title">
+            <h2>Formulary Disruption Heatmap</h2>
+            <span>budget impact x clinical differentiation</span>
+          </div>
+          <div class="heatmap">
+            <div class="heat empty">0<small>High / Low</small></div>
+            <div class="heat high">4<small>High / Modest</small></div>
+            <div class="heat high">8<small>High / Meaningful</small></div>
+            <div class="heat high">1<small>High / High</small></div>
+            <div class="heat empty">0<small>Medium / Low</small></div>
+            <div class="heat med">10<small>Medium / Modest</small></div>
+            <div class="heat med">3<small>Medium / Meaningful</small></div>
+            <div class="heat empty">0<small>Medium / High</small></div>
+            <div class="heat empty">0<small>Low / Low</small></div>
+            <div class="heat low">1<small>Low / Modest</small></div>
+            <div class="heat empty">0<small>Low / Meaningful</small></div>
+            <div class="heat empty">0<small>Low / High</small></div>
+          </div>
+        </article>
+
+        <article class="card" style="grid-column: 1; grid-row: 2;">
+          <div class="panel-title">
+            <h2>Launch Timeline</h2>
+            <span>normalized source-derived timing bucket</span>
+          </div>
+          <div class="timeline">
+            <div class="bar-col">
+              <div class="bar-area">
+                <div class="bar-total" style="bottom: 11px;">0</div>
+                <div class="bar" style="--h: 6px;"></div>
+              </div>
+              <div class="bar-label">0-12 months</div>
+            </div>
+            <div class="bar-col">
+              <div class="bar-area">
+                <div class="bar-total" style="bottom: 14px;">1</div>
+                <div class="bar" style="--h: 10px;"><div class="seg ophth" style="height: 10px;"></div></div>
+              </div>
+              <div class="bar-label">12-24 months</div>
+            </div>
+            <div class="bar-col">
+              <div class="bar-area">
+                <div class="bar-total" style="bottom: 20px;">2</div>
+                <div class="bar" style="--h: 18px;"><div class="seg immunology" style="height: 18px;"></div></div>
+              </div>
+              <div class="bar-label">24-36 months</div>
+            </div>
+            <div class="bar-col">
+              <div class="bar-area">
+                <div class="bar-total" style="bottom: 157px;">24</div>
+                <div class="bar" style="--h: 172px;">
+                  <div class="seg oncology" style="height: 51px;"></div>
+                  <div class="seg immunology" style="height: 29px;"></div>
+                  <div class="seg cardio" style="height: 36px;"></div>
+                  <div class="seg ophth" style="height: 56px;"></div>
+                </div>
+              </div>
+              <div class="bar-label">36+ months</div>
+            </div>
+          </div>
+          <div class="legend">
+            <span><i class="oncology"></i>Oncology 7</span>
+            <span><i class="immunology"></i>Immunology 6</span>
+            <span><i class="cardio"></i>Cardiometabolic 5</span>
+            <span><i class="ophth"></i>Ophthalmology 9</span>
+          </div>
+        </article>
+
+        <section class="notes">
+      <div class="note">
+            <h3>Launch Timing</h3>
+            <p>Buckets normalize assets to 0-12, 12-24, 24-36, or 36+ months. Official company or regulatory timing is used when available; otherwise estimates use CT.gov dates, phase, filing signals, and public updates.</p>
+          </div>
+          <div class="note">
+            <h3>Heatmap Read</h3>
+            <p>Each cell counts assets at the intersection of budget impact and clinical differentiation. Upper-right cells indicate higher potential payer-management attention; empty cells mean no active assets in that combination.</p>
+          </div>
+          <div class="note">
+            <h3>Evidence Basis</h3>
+            <p>All 27 assets are source-backed with source-derived rationales. No fallback data were used; marketed/non-pipeline assets and non-commercial sponsor records were excluded.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+  </section>
+</body>
+</html>

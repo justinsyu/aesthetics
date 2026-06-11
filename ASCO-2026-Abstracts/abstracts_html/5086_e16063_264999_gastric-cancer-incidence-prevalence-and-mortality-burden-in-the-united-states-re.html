@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gastric cancer incidence, prevalence, and mortality burden in the United States: Retrospective epidemiological trends and burden (1990–2023) with machine learning–based projections to 2050.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Gastric cancer incidence, prevalence, and mortality burden in the United States: Retrospective epidemiological trends and burden (1990–2023) with machine learning–based projections to 2050.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e16063</div>
+    <div><strong>First speaker:</strong> Mst. Mahmuda Akter</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/264999">https://www.asco.org/abstracts-presentations/264999</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Gastric cancer continues to represent a major global health challenge, though incidence and mortality have declined markedly in high-income countries including the United States, largely due to reductions in Helicobacter pylori prevalence, dietary improvements, and advances in early detection and treatment. This study evaluated age-standardized rates (ASRs) of DALYs, deaths, incidence, and prevalence from 1990 to 2023 using IHME GBD 2023 data, calculated estimated annual percentage changes (EAPC), and generated projections to 2050 via ARIMA time-series modeling.</div>
+  <main> 
+
+	<div><b>Background: </b> Gastric cancer continues to represent a major global health challenge, though incidence and mortality have declined markedly in high-income countries including the United States, largely due to reductions in Helicobacter pylori prevalence, dietary improvements, and advances in early detection and treatment. This study evaluated age-standardized rates (ASRs) of DALYs, deaths, incidence, and prevalence from 1990 to 2023 using IHME GBD 2023 data, calculated estimated annual percentage changes (EAPC), and generated projections to 2050 via ARIMA time-series modeling.</p>  <b>Methods: </b> Age-standardized rates per 100,000 population were retrieved from the Global Burden of Disease 2023 database for the United States, stratified by sex (Both, Female, Male). Historical trends (1990–2023) were quantified using EAPC from linear regression on log-transformed ASRs. Future projections (2024–2050) were produced with ARIMA models fitted to historical data, yielding point estimates and 95% prediction intervals.</p>  <b>Results: </b> From 1990 to 2023, age-standardized DALYs (Both sexes) decreased from 125.34 (95% UI: 116.60–135.49) to 68.51 (95% UI: 61.82–75.62), with an EAPC of -1.88% (95% CI: -1.98 to -1.77); males exhibited a steeper decline (EAPC -2.22%, 95% CI: -2.32 to -2.11) than females (EAPC -1.49%, 95% CI: -1.59 to -1.38). Age-standardized death rates fell from 5.39 to 2.77 (EAPC -2.08%, 95% CI: -2.17 to -2.00), again with greater reductions in males (EAPC -2.39%) than females (EAPC -1.85%). Incidence declined from 8.02 to 4.94 (EAPC -1.59%, 95% CI: -1.66 to -1.52), and prevalence from 18.42 to 14.18 (EAPC -0.99%, 95% CI: -1.12 to -0.85), reflecting successful risk factor control and improved survival. ARIMA forecasts indicate accelerated ongoing declines in age-standardized DALYs (Both: from 67.56 in 2024 toward ~42.84 by 2050), deaths (to ~1.51), and incidence (to ~2.42), while prevalence continues to erode gradually.</p>  <b>Conclusions: </b> Age-standardized burden of gastric cancer in the US declined sharply from 1990–2023 across all metrics, with particularly strong reductions in males for DALYs, mortality, and incidence. Projections to 2050 suggest continued substantial decreases in key indicators, approaching very low levels, underscoring the success of primary and secondary prevention efforts, though vigilance remains warranted for high-risk subgroups and potential emerging risk factors.</div>
+
+
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p>Measure</p>
+</td>
+<td>
+<p>Sex</p>
+</td>
+<td>
+<p>EAPC</p>
+</td>
+<td>
+<p>Lower 95%CI</p>
+</td>
+<td>
+<p>Upper 95%CI</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>DALYs</p>
+</td>
+<td>
+<p>Both</p>
+</td>
+<td>
+<p>-1.88</p>
+</td>
+<td>
+<p>-1.98</p>
+</td>
+<td>
+<p>-1.77</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>DALYs</p>
+</td>
+<td>
+<p>Female</p>
+</td>
+<td>
+<p>-1.49</p>
+</td>
+<td>
+<p>-1.59</p>
+</td>
+<td>
+<p>-1.38</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>DALYs</p>
+</td>
+<td>
+<p>Male</p>
+</td>
+<td>
+<p>-2.22</p>
+</td>
+<td>
+<p>-2.32</p>
+</td>
+<td>
+<p>-2.11</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Deaths</p>
+</td>
+<td>
+<p>Both</p>
+</td>
+<td>
+<p>-2.08</p>
+</td>
+<td>
+<p>-2.17</p>
+</td>
+<td>
+<p>-2</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Deaths</p>
+</td>
+<td>
+<p>Female</p>
+</td>
+<td>
+<p>-1.85</p>
+</td>
+<td>
+<p>-1.94</p>
+</td>
+<td>
+<p>-1.75</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Deaths</p>
+</td>
+<td>
+<p>Male</p>
+</td>
+<td>
+<p>-2.39</p>
+</td>
+<td>
+<p>-2.47</p>
+</td>
+<td>
+<p>-2.3</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Incidence</p>
+</td>
+<td>
+<p>Both</p>
+</td>
+<td>
+<p>-1.59</p>
+</td>
+<td>
+<p>-1.66</p>
+</td>
+<td>
+<p>-1.52</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Incidence</p>
+</td>
+<td>
+<p>Female</p>
+</td>
+<td>
+<p>-1.36</p>
+</td>
+<td>
+<p>-1.44</p>
+</td>
+<td>
+<p>-1.27</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Incidence</p>
+</td>
+<td>
+<p>Male</p>
+</td>
+<td>
+<p>-1.88</p>
+</td>
+<td>
+<p>-1.94</p>
+</td>
+<td>
+<p>-1.81</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Prevalence</p>
+</td>
+<td>
+<p>Both</p>
+</td>
+<td>
+<p>-0.99</p>
+</td>
+<td>
+<p>-1.12</p>
+</td>
+<td>
+<p>-0.85</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Prevalence</p>
+</td>
+<td>
+<p>Female</p>
+</td>
+<td>
+<p>-0.76</p>
+</td>
+<td>
+<p>-0.89</p>
+</td>
+<td>
+<p>-0.63</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Prevalence</p>
+</td>
+<td>
+<p>Male</p>
+</td>
+<td>
+<p>-1.23</p>
+</td>
+<td>
+<p>-1.37</p>
+</td>
+<td>
+<p>-1.09</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

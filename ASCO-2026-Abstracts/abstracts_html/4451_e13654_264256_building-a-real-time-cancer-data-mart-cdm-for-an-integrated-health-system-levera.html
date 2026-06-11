@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Building a real-time cancer data mart (CDM) for an integrated health system, leveraging traditional natural language processing (NLP) methods, curated data sources, and large language models (LLMs).</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Building a real-time cancer data mart (CDM) for an integrated health system, leveraging traditional natural language processing (NLP) methods, curated data sources, and large language models (LLMs).</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e13654</div>
+    <div><strong>First speaker:</strong> Shiyun Zhu, MPH</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/264256">https://www.asco.org/abstracts-presentations/264256</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Timely cancer case ascertainment is critical for supporting clinical trials, research, and operational workflows. Despite being the gold standard, information on people diagnosed with cancer from accredited cancer registries is often delayed well over one-year post-diagnosis. Advances in LLMs offer promising solutions but require high computational and GPU power. A novel strategy combining rule-based NLP with curated data sources and selective LLM use may offer a practical alternative. We developed a real-time CDM and evaluated two approaches: an NLP-only method and a hybrid method for identifying incident cancer cases and classifying key oncology characteristics.</div>
+  <main> 
+
+	<div><b>Background: </b></p>  Timely cancer case ascertainment is critical for supporting clinical trials, research, and operational workflows. Despite being the gold standard, information on people diagnosed with cancer from accredited cancer registries is often delayed well over one-year post-diagnosis. Advances in LLMs offer promising solutions but require high computational and GPU power. A novel strategy combining rule-based NLP with curated data sources and selective LLM use may offer a practical alternative. We developed a real-time CDM and evaluated two approaches: an NLP-only method and a hybrid method for identifying incident cancer cases and classifying key oncology characteristics.</p>  <b>Methods: </b></p>  We identified 230,500 patients with no cancer history who had pathology reports or cancer diagnoses between 07/01/2023 and 12/31/2023 in Kaiser Permanente Northern California (KPNC). All records were processed using eMaRC, a CDC rule-based NLP model widely used by cancer registries. For the hybrid method, pathology reports indicating malignancy or suspicious findings were further analyzed using MedGemma, a generative LLM trained on medical datasets and applied using structured prompts. Both models classified malignancy, primary site, histology, and behavior. When models disagreed on, MedGemma results were prioritized. We evaluated accuracy by comparing cancer cases against those recorded in KPNC Cancer Registry, which conforms to SEER/NAACCR standards. Sensitivity, specificity, PPV, and NPV were calculated for 1631 breast, 851 colorectal, 677 lung, 687 melanoma, and 1358 prostate cancers cases, which together represent 60% of annual cases recorded in the registry.</p>  <b>Results: </b></p>  Both methods – eMaRC only and hybrid approach – demonstrated high specificity (&nbsp;&gt;&nbsp;99%). Adding MedGemma to eMaRC resulted sensitivities of 97%–99% across all cancer types, an average 2% increase over eMaRC alone. Sensitivity improved the most for prostate cancer (95% to 99%), followed by lung cancer (94% to 97%). Among 230,500 patients, true case prevalence ranged from 0.3% to 0.7%. Using the hybrid approach, was 91% for breast and prostate, ranged from 84%-86% for melanoma and colorectal, and lowest for lung at 71%. In practice, cases classified as breast and prostate are generally reliable, while lung cancer classification needed further review due to a higher rate of false positives.</p>  <b>Conclusions: </b></p>  A hybrid method combining rule-based NLP, curated data sources, and selective LLM use achieved overall high sensitivity and specificity. Although less detailed than the cancer registry and prone to misclassification of certain cancers, the CDM’s rapid and automated process is highly scalable and efficient, making it valuable for operational use and research requiring rapid case identifications.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

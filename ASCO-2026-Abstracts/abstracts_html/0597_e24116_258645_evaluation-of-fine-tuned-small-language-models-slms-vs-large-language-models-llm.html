@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Evaluation of fine-tuned small language models (SLMs) vs large language models (LLMs) in modeled patient conversations for lung cancer screening.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Evaluation of fine-tuned small language models (SLMs) vs large language models (LLMs) in modeled patient conversations for lung cancer screening.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e24116</div>
+    <div><strong>First speaker:</strong> Sanjay Khanna, PhD, MBBS</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/258645">https://www.asco.org/abstracts-presentations/258645</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Lung Cancer Screening (LCS) uptake in the US remains suboptimal at approximately 18%, with disproportionately lower rates among those with limited health literacy. While Generative AI offers a scalable solution to improve patient access to information, uninstructed commercial large language models (LLMs) exhibit language complexity that limits their utility as equitable decision-support tools. Building on our prior work demonstrating their limitations, we aimed to develop a deployable, patient-centric, small language model (SLM) to address this accessibility gap.</div>
+  <main> 
+
+	<div><b>Background: </b> Lung Cancer Screening (LCS) uptake in the US remains suboptimal at approximately 18%, with disproportionately lower rates among those with limited health literacy. While Generative AI offers a scalable solution to improve patient access to information, uninstructed commercial large language models (LLMs) exhibit language complexity that limits their utility as equitable decision-support tools. Building on our prior work demonstrating their limitations, we aimed to develop a deployable, patient-centric, small language model (SLM) to address this accessibility gap.</p>  <b>Methods: </b> We fine-tuned two SLMs (Google: Gemma-7B and MedGemma-4B) using Parameter-Efficient Fine-Tuning (PEFT/LoRA) on a curated dataset of physician-scored, empathetic dialogues. We modelled conversations using five patient personas (e.g. anxious, low health-literacy) to compare fine-tuned SLMs against uninstructed LLMs (GPT-4o, Gemini Pro 2.5), with static patient information (FAQs). Endpoints included readability (Flesch-Kincaid Grade Level [FKGL]), empathy (reduction in "fear-inducing" sentiment via RoBERTa analysis), clinical safety (semantic adherence to national patient information guidance via BERTScore) and technical density (Type-Token Ratio). </p>  <b>Results: </b> Uninstructed LLMs produced responses with a mean reading difficulty of Grade 11.8 (SD 1.7), exceeding the recommended 6th-8th grade level for patient materials. In contrast, the fine-tuned Gemma-7B SLM achieved a mean Grade Level of 6.6 (SD 2.2), making it significantly more accessible than both the generalist models (<em>P</em> &lt; .001) and static patient information (<em>P</em> &lt; .001). Regarding empathy, the 7B model reduced the frequency of fear-inducing language by 44% compared to the LLMs (12.1% vs 21.6%; <em>P</em> &lt; .05). Crucially, this simplification did not compromise safety; the 7B model demonstrated high semantic adherence to official patient guidance (BERTScore 0.95) and was non-inferior to public FAQs (<em>P</em> &gt; 0.05). The smaller MedGemma-4B, however, exhibited a trade-off: while highly accurate, it prioritised technical density (Type-Token Ratio 0.97) over readability (Grade 14.8; <em>P</em> &lt; .001 vs 7B), rendering it less suitable for direct patient interaction.</p>  <b>Conclusions: </b> Building on our prior demonstration of an equity blindspot with uninstructed commercial LLMs, this study suggests that a fine-tuned 7B-parameter SLM may decouple clinical accuracy from linguistic complexity in the context of LCS patient information. We demonstrate that SLMs offer a safe, deployable, and resource-efficient alternative that maintains high fidelity to national guidelines while remaining accessible to low-literacy populations. Future work will focus on validating these findings in real-world patient cohorts to assess impact on screening uptake.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

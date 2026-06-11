@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Value-Based Contracting Public Disclosure Scan</title>
+  <style>
+    :root {
+      --ink:#10120f; --muted:#5c6257; --paper:#f6f1e8; --card:#fffaf0; --line:#1b1f17;
+      --lime:#d7ff5f; --orange:#ffb86b; --blue:#b8d8ff; --pink:#ffd3e0; --gray:#d6d0c2; --red:#ff8a76;
+      --shadow:0 18px 48px rgba(16,18,15,.08); --radius:24px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px}
+    .slide{width:100vw;height:100vh;min-height:100vh;overflow:hidden;position:relative;display:flex;align-items:flex-start;padding:36px 0 20px;page-break-after:always;break-after:page;background:var(--paper)}
+    .slide:last-child{page-break-after:auto;break-after:auto}
+    .slide-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none}
+    .wrap{width:min(1360px,calc(100vw - 56px));margin:0 auto;position:relative;z-index:1}
+    .eyebrow{display:inline-flex;align-items:center;border:1.4px solid var(--line);padding:8px 12px;border-radius:999px;font-size:15px;font-weight:850;text-transform:uppercase;background:var(--lime);margin-bottom:18px;letter-spacing:0}
+    h1,h2,h3,p{margin:0} h1,h2,h3{font-family:"Space Grotesk",Inter,ui-sans-serif,system-ui,sans-serif;letter-spacing:0}
+    h1{font-size:66px;line-height:1.05;font-weight:560;max-width:1320px}
+    h2{font-size:50px;line-height:1.02;font-weight:560;max-width:1320px}
+    h3{font-size:25px;line-height:1.08;font-weight:650}
+    .dek{margin-top:10px;color:var(--muted);font-size:25px;line-height:1.23;max-width:1260px}
+    .grid{display:grid;gap:14px}.grid-2{grid-template-columns:repeat(2,1fr)}.grid-3{grid-template-columns:repeat(3,1fr)}.grid-4{grid-template-columns:repeat(4,1fr)}
+    .panel,.metric,.card,.table,.callout{border:1.5px solid var(--line);background:rgba(255,250,240,.9);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+    .panel{padding:20px}.metric{padding:16px 18px}.metric .value{font-size:42px;font-weight:620;line-height:1}.metric .label{margin-top:6px;color:var(--muted);font-size:18px;line-height:1.22}.callout{padding:20px;background:#11130f;color:var(--paper);border-color:#11130f}
+    .callout h3{margin-bottom:10px}.bullets{display:grid;gap:10px}.bullet{position:relative;padding-left:22px;font-size:20px;line-height:1.22}.bullet:before{content:"";position:absolute;left:0;top:.52em;width:9px;height:9px;border-radius:50%;background:var(--lime);border:1px solid #000}
+    .section-head{margin-bottom:16px}.section-head p{margin-top:10px;color:var(--muted);font-size:21px;line-height:1.2;max-width:1280px}
+    .card{padding:17px}.tag{display:inline-flex;border:1.2px solid var(--line);border-radius:999px;padding:5px 9px;font-size:12px;font-weight:850;text-transform:uppercase;margin-bottom:9px;background:var(--blue)}
+    .tag.lime{background:var(--lime)}.tag.orange{background:var(--orange)}.tag.pink{background:var(--pink)}.tag.gray{background:var(--gray)}
+    .card p{margin-top:8px;color:var(--muted);font-size:16px;line-height:1.25}.card .title{font-size:20px;font-weight:700;line-height:1.1}.large-card-copy .card p{font-size:20px;line-height:1.28}
+    table{width:100%;border-collapse:collapse;font-size:15px;line-height:1.18}th,td{border-top:1px solid rgba(27,31,23,.35);padding:8px 9px;text-align:left;vertical-align:top}th{font-size:12px;text-transform:uppercase;background:#11130f;color:var(--paper);letter-spacing:0}tr:first-child td{border-top:0}.large-table{font-size:18px;line-height:1.22}.large-table th{font-size:13px}.large-table th,.large-table td{padding:10px 11px}.similar-access-table td{font-size:17px;line-height:1.22}
+    .small{font-size:14px;line-height:1.25;color:var(--muted)}.cite{font-size:.58em;vertical-align:super;margin-left:2px;font-weight:900}.slide-num{position:absolute;right:28px;bottom:18px;font-size:12px;font-weight:800;text-transform:uppercase;color:var(--muted);z-index:2}
+    .note{font-size:16px;line-height:1.26;color:var(--muted)}
+    .mechanism-panel .note{margin-top:10px;font-size:24px;line-height:1.24}
+    .refs table{font-size:16px;line-height:1.12;table-layout:fixed}.refs th,.refs td{padding:3px 6px}.refs th{font-size:15px}.refs th:nth-child(1),.refs td:nth-child(1){width:48px;text-align:center}.refs th:nth-child(2),.refs td:nth-child(2){width:27%}.refs th:nth-child(3),.refs td:nth-child(3){width:17%}.refs h2{font-size:44px}
+    @page{size:1600px 900px;margin:0}
+    @media print{.slide{width:1600px;height:900px;min-height:900px}.wrap{width:1360px}}
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">Value-based access contracts | June 8, 2026</div>
+      <h1>Review of publicly-disclosed value-based agreements: 2023-2026</h1>
+      <p class="dek">Scan scope: product-linked medicine, gene therapy, digital therapy, device, or access pathways publicly implemented, launched, signed, or active from June 8, 2023 through June 8, 2026.</p>
+      <div class="grid grid-4" style="margin-top:22px">
+        <div class="metric"><div class="value">17</div><div class="label">proof-backed public references included in the report</div></div>
+        <div class="metric"><div class="value">10</div><div class="label">references with explicit outcomes, warranty, value, or performance linkage</div></div>
+        <div class="metric"><div class="value">8</div><div class="label">cell and gene therapy product families represented</div></div>
+        <div class="metric"><div class="value">5</div><div class="label">geographies with proof-backed implementation or access evidence</div></div>
+      </div>
+      <div class="callout" style="margin-top:18px">
+        <h3>Executive summary</h3>
+        <div class="bullets">
+          <div class="bullet">The U.S. public record shows outcomes-based or warranty-style access across gene therapies: bluebird bio's LYFGENIA and portfolio payer agreements, Pfizer's BEQVEZ warranty, Orchard's LENMELDY risk-sharing, Abeona's ZEVASKYN value-based agreements, and BioMarin's ROCTAVIAN payer OBAs.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1293971/000129397123000057/blue-20231214.htm">1</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1293971/000129397124000010/exhibit99120240324.htm">2</a><a class="cite" href="https://www.pfizer.com/news/press-release/press-release-detail/us-fda-approves-pfizers-beqveztm-fidanacogene-elaparvovec">5</a><a class="cite" href="https://ir.orchard-tx.com/news-releases/news-release-details/orchard-therapeutics-outlines-us-launch-plans-lenmeldytm/">6</a><a class="cite" href="https://investors.abeonatherapeutics.com/news-events/press-releases/detail/308/abeona-therapeutics-reports-first-quarter-2025-financial-results-and-corporate-updates">7</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1048477/000104847724000126/bmrn-20240630.htm">8</a></div>
+          <div class="bullet">Ex-U.S. disclosures are led by HEMGENIX, with England documenting an outcomes-based payment model and Denmark documenting a performance-based model in which regions incur costs only if therapy proves effective.<a class="cite" href="https://www.cslbehring.de/en-us/news/2024/pm-hemgenix-managed-access-uk">10</a><a class="cite" href="https://www.mynewsdesk.com/se/csl-behring/pressreleases/csl-behring-signs-milestone-commercial-agreement-with-amgros-to-fund-haemophilia-b-gene-therapy-hemgenix-in-denmark-3351393">11</a></div>
+          <div class="bullet">Managed access and reimbursed-access agreements for CASGEVY, Libmeldy, and HEMGENIX are retained as similar access mechanisms, but labeled separately when the public text does not state an outcome-contingent payment mechanism.<a class="cite" href="https://www.nice.org.uk/guidance/ta989">12</a><a class="cite" href="https://ir.orchard-tx.com/news-releases/news-release-details/orchard-therapeutics-announces-agreement-beneluxa-consortium/">15</a><a class="cite" href="https://news.vrtx.com/news-releases/news-release-details/vertex-announces-casgevyr-reimbursement-agreement-treatment">17</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">01 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">United States | outcomes-linked</div>
+        <h2>U.S. product-linked agreements emphasize payer risk sharing for high-cost therapies</h2>
+        <p style="max-width:1360px">Rows below include only public source text that explicitly documents an outcomes-based, value-based, warranty, or risk-sharing mechanism.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card"><div class="tag lime">bluebird | 2023-2024</div><div class="title">LYFGENIA and portfolio payer OBAs</div><p>bluebird disclosed a December 2023 outcomes-based agreement with an organization representing approximately 100 million covered lives, then disclosed Michigan Medicaid plus four national commercial LYFGENIA OBAs in March 2024.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1293971/000129397123000057/blue-20231214.htm">1</a><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1293971/000129397124000010/exhibit99120240324.htm">2</a></p></div>
+        <div class="card"><div class="tag orange">Pfizer | 2024</div><div class="title">BEQVEZ warranty program</div><p>Pfizer reported launch of a warranty program based on durability of patient response, with the stated goal of offering payer financial protection against efficacy failure.<a class="cite" href="https://www.pfizer.com/news/press-release/press-release-detail/us-fda-approves-pfizers-beqveztm-fidanacogene-elaparvovec">5</a></p></div>
+        <div class="card"><div class="tag pink">Orchard | 2024</div><div class="title">LENMELDY outcomes/value agreements</div><p>Orchard reported work with commercial and government payers to offer outcomes- and value-based agreements intended to share risk and support timely access.<a class="cite" href="https://ir.orchard-tx.com/news-releases/news-release-details/orchard-therapeutics-outlines-us-launch-plans-lenmeldytm/">6</a></p></div>
+        <div class="card"><div class="tag lime">Abeona | 2025</div><div class="title">ZEVASKYN value-based agreements</div><p>Abeona reported executed value-based agreements with several commercial payer groups representing downstream plans and approximately 100 million commercially insured lives.<a class="cite" href="https://investors.abeonatherapeutics.com/news-events/press-releases/detail/308/abeona-therapeutics-reports-first-quarter-2025-financial-results-and-corporate-updates">7</a></p></div>
+        <div class="card"><div class="tag orange">BioMarin | 2024</div><div class="title">ROCTAVIAN third-party payer OBAs</div><p>BioMarin reported entering, and planning additional, outcomes-based agreements for ROCTAVIAN with third-party payers to share the risk of one-time treatment.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1048477/000104847724000126/bmrn-20240630.htm">8</a></p></div>
+        <div class="card"><div class="tag gray">Evidence note</div><div class="title">Public text often omits financial terms</div><p>Most U.S. sources disclose agreement existence and broad mechanism but not contract formulas, patient-level triggers, reconciliation periods, or rebate amounts.</p></div>
+      </div>
+    </div>
+    <div class="slide-num">02 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Medicaid | CGT Access Model</div>
+        <h2>Medicaid activity moved from state-by-state contracting toward a CMS-negotiated CGT model</h2>
+        <p>The CGT Access Model is a federal-state outcomes-based framework for sickle cell disease gene therapies; Kansas provides a product-specific state implementation example.</p>
+      </div>
+      <div class="grid grid-2">
+        <div class="panel">
+          <h3>Federal model and manufacturers</h3>
+          <table class="large-table" style="margin-top:16px">
+            <tr><th>Signal</th><th>Public support</th></tr>
+            <tr><td>State participation</td><td>CMS reported 33 states plus the District of Columbia and Puerto Rico participating in July 2025.<a class="cite" href="https://www.cms.gov/newsroom/press-releases/cms-expands-access-lifesaving-gene-therapies-through-innovative-state-agreements">3</a></td></tr>
+            <tr><td>Manufacturer agreements</td><td>CMS FAQ states Genetix Biotherapeutics and Vertex entered separate agreements with CMS and offer OBAs to state Medicaid agencies.<a class="cite" href="https://www.cms.gov/priorities/innovation/cgt-access-model-frequently-asked-questions">4</a></td></tr>
+            <tr><td>Model timing</td><td>CMS FAQ states the model went live with a rolling start in January 2025, with participation choices through January 2026.<a class="cite" href="https://www.cms.gov/priorities/innovation/cgt-access-model-frequently-asked-questions">4</a></td></tr>
+          </table>
+        </div>
+        <div class="panel">
+          <h3>Product-specific state implementation</h3>
+          <table class="large-table" style="margin-top:16px">
+            <tr><th>State / product</th><th>Mechanism and timing</th></tr>
+            <tr><td>Michigan / LYFGENIA</td><td>bluebird reported its first Medicaid outcomes-based agreement for LYFGENIA with Michigan in Q1 2024.<a class="cite" href="https://www.sec.gov/Archives/edgar/data/1293971/000129397124000010/exhibit99120240324.htm">2</a></td></tr>
+            <tr><td>Kansas / CASGEVY</td><td>Kansas Medicaid bulletin states effective January 1, 2026, Kansas Medicaid has a Value/Outcomes-Based Agreement contract with Vertex for Casgevy.<a class="cite" href="https://www.sunflowerhealthplan.com/newsroom/kmap-25312.html">13</a></td></tr>
+            <tr><td>Source-scope boundary</td><td>State Plan Amendments authorizing VOBA authority were excluded unless a product-specific contract source was identified.</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:16px"><div class="bullet">The public evidence indicates Medicaid contracting is moving toward model-level standardization for sickle cell disease CGTs, while product-specific state bulletins remain useful for confirming local implementation.</div></div>
+    </div>
+    <div class="slide-num">03 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Ex-U.S. | explicit value or performance linkage</div>
+        <h2>HEMGENIX and antimicrobial access show the clearest ex-U.S. value-based mechanisms</h2>
+      </div>
+      <div class="grid grid-4 large-card-copy">
+        <div class="card"><div class="tag lime">England | HEMGENIX</div><div class="title">Outcomes-based payment model</div><p>CSL reported HEMGENIX as the first ATMP in the UK to use an innovative outcomes-based payment model under managed access.<a class="cite" href="https://www.cslbehring.de/en-us/news/2024/pm-hemgenix-managed-access-uk">10</a></p></div>
+        <div class="card"><div class="tag orange">Denmark | HEMGENIX</div><div class="title">Performance-based cost exposure</div><p>CSL reported Denmark reimburses HEMGENIX under a model in which regions only incur costs if the therapy proves effective over an agreed long-term period.<a class="cite" href="https://www.mynewsdesk.com/se/csl-behring/pressreleases/csl-behring-signs-milestone-commercial-agreement-with-amgros-to-fund-haemophilia-b-gene-therapy-hemgenix-in-denmark-3351393">11</a></p></div>
+        <div class="card"><div class="tag blue">Austria | HEMGENIX</div><div class="title">Commercial funding<br>contract</div><p>CSL reported a commercial contract to fund HEMGENIX in Austria, retained as a similar access agreement because the public text does not state outcome-contingent payment mechanics.<a class="cite" href="https://www.cslbehring.de/en-us/news/2024/pm-hemgenix-agreement-austria">14</a></p></div>
+        <div class="card"><div class="tag pink">NHS England | antimicrobials</div><div class="title">Subscription fee delinked from volume</div><p>NHS England guidance describes fixed annual fees for antimicrobials based on value to the NHS rather than volumes used.<a class="cite" href="https://www.england.nhs.uk/publication/antimicrobial-products-subscription-model-guidance-on-commercial-arrangements/">9</a></p></div>
+      </div>
+      <div class="panel mechanism-panel" style="margin-top:22px">
+        <h3>Mechanism pattern</h3>
+        <p class="note">The ex-U.S. set shows two different routes: performance-linked contracts for high-cost gene therapy durability uncertainty, and value-scored fixed subscription contracts for antimicrobials where stewardship policy requires volume delinkage.</p>
+      </div>
+    </div>
+    <div class="slide-num">04 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Similar access agreements | lower mechanism specificity</div>
+        <h2>Managed access and reimbursement agreements were retained separately from explicit outcomes contracts</h2>
+        <p>These sources document access, reimbursement, or managed access but do not all state a public outcome-contingent payment formula.</p>
+      </div>
+      <div class="panel">
+        <table class="similar-access-table">
+          <tr><th>Agreement</th><th>Geography</th><th>Publicly visible mechanism</th><th>Classification</th></tr>
+          <tr><td>HEMGENIX NICE TA989</td><td>England</td><td>Managed access agreement including commercial access agreement for etranacogene dezaparvovec.<a class="cite" href="https://www.nice.org.uk/guidance/ta989">12</a></td><td>Similar: managed access with commercial access</td></tr>
+          <tr><td>Libmeldy Beneluxa</td><td>Belgium, Netherlands, Ireland</td><td>Agreement enabling reimbursed access to Libmeldy through the Beneluxa Initiative.<a class="cite" href="https://ir.orchard-tx.com/news-releases/news-release-details/orchard-therapeutics-announces-agreement-beneluxa-consortium/">15</a></td><td>Similar: multi-country reimbursed access</td></tr>
+          <tr><td>CASGEVY TDT</td><td>England</td><td>Vertex announced a reimbursement agreement with NHS England for eligible transfusion-dependent beta thalassemia patients.<a class="cite" href="https://news.vrtx.com/news-releases/news-release-details/vertex-announces-casgevytm-reimbursement-agreement-treatment">16</a></td><td>Similar: reimbursement / IMF access</td></tr>
+          <tr><td>CASGEVY SCD</td><td>England</td><td>Vertex announced a reimbursement agreement with NHS England for eligible sickle cell disease patients.<a class="cite" href="https://news.vrtx.com/news-releases/news-release-details/vertex-announces-casgevyr-reimbursement-agreement-treatment">17</a></td><td>Similar: reimbursement agreement</td></tr>
+        </table>
+      </div>
+      <div class="callout" style="margin-top:16px"><div class="bullet">Separating explicit value/outcome mechanisms from broader access agreements prevents overcounting ordinary reimbursement agreements as value-based contracts.</div></div>
+    </div>
+    <div class="slide-num">05 / 06</div>
+  </article>
+
+  <article class="slide refs">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">References 1-17</div>
+      <h2>References</h2>
+      <div class="panel" style="margin-top:12px">
+        <table class="large-table">
+          <tr><th>Ref</th><th>Source</th><th>Date / status</th><th>Evidence used in report</th></tr>
+          <tr><td>1</td><td><a href="https://www.sec.gov/Archives/edgar/data/1293971/000129397123000057/blue-20231214.htm">bluebird bio SEC Form 8-K</a></td><td>Dec. 14, 2023</td><td>Outcomes-based agreement with organization representing approximately 100 million covered lives</td></tr>
+          <tr><td>2</td><td><a href="https://www.sec.gov/Archives/edgar/data/1293971/000129397124000010/exhibit99120240324.htm">bluebird bio Exhibit 99.1</a></td><td>Mar. 26, 2024</td><td>Michigan Medicaid OBA; four national commercial LYFGENIA OBAs</td></tr>
+          <tr><td>3</td><td><a href="https://www.cms.gov/newsroom/press-releases/cms-expands-access-lifesaving-gene-therapies-through-innovative-state-agreements">CMS press release</a></td><td>Jul. 15, 2025</td><td>CGT Access Model state participation and federal negotiation of CGT OBAs</td></tr>
+          <tr><td>4</td><td><a href="https://www.cms.gov/priorities/innovation/cgt-access-model-frequently-asked-questions">CMS CGT Access Model FAQ</a></td><td>Rolling start Jan. 2025-Jan. 2026</td><td>Genetix and Vertex agreements with CMS; manufacturers offer OBAs to states</td></tr>
+          <tr><td>5</td><td><a href="https://www.pfizer.com/news/press-release/press-release-detail/us-fda-approves-pfizers-beqveztm-fidanacogene-elaparvovec">Pfizer BEQVEZ press release</a></td><td>Apr. 26, 2024</td><td>Warranty program based on durability of patient response</td></tr>
+          <tr><td>6</td><td><a href="https://ir.orchard-tx.com/news-releases/news-release-details/orchard-therapeutics-outlines-us-launch-plans-lenmeldytm/">Orchard LENMELDY press release</a></td><td>Mar. 20, 2024</td><td>Outcomes- and value-based agreements sharing payer/manufacturer risk</td></tr>
+          <tr><td>7</td><td><a href="https://investors.abeonatherapeutics.com/news-events/press-releases/detail/308/abeona-therapeutics-reports-first-quarter-2025-financial-results-and-corporate-updates">Abeona ZEVASKYN update</a></td><td>May 15, 2025</td><td>Executed value-based agreements with commercial payer groups</td></tr>
+          <tr><td>8</td><td><a href="https://www.sec.gov/Archives/edgar/data/1048477/000104847724000126/bmrn-20240630.htm">BioMarin Form 10-Q</a></td><td>Quarter ended Jun. 30, 2024</td><td>ROCTAVIAN outcomes-based agreements with third-party payers</td></tr>
+          <tr><td>9</td><td><a href="https://www.england.nhs.uk/publication/antimicrobial-products-subscription-model-guidance-on-commercial-arrangements/">NHS England antimicrobial subscription guidance</a></td><td>May 8, 2024</td><td>Fixed annual fee based on NHS value rather than volume used</td></tr>
+          <tr><td>10</td><td><a href="https://www.cslbehring.de/en-us/news/2024/pm-hemgenix-managed-access-uk">CSL HEMGENIX UK announcement</a></td><td>Jun. 27, 2024</td><td>UK innovative outcomes-based payment model</td></tr>
+          <tr><td>11</td><td><a href="https://www.mynewsdesk.com/se/csl-behring/pressreleases/csl-behring-signs-milestone-commercial-agreement-with-amgros-to-fund-haemophilia-b-gene-therapy-hemgenix-in-denmark-3351393">CSL HEMGENIX Denmark announcement</a></td><td>Oct. 29, 2024</td><td>Performance model where regions incur costs only if therapy proves effective</td></tr>
+          <tr><td>12</td><td><a href="https://www.nice.org.uk/guidance/ta989">NICE TA989 HEMGENIX</a></td><td>Jul. 24, 2024</td><td>Managed access agreement including commercial access agreement</td></tr>
+          <tr><td>13</td><td><a href="https://www.sunflowerhealthplan.com/newsroom/kmap-25312.html">Kansas Medicaid CASGEVY bulletin</a></td><td>Effective Jan. 1, 2026</td><td>VOBA contract with Vertex for Casgevy</td></tr>
+          <tr><td>14</td><td><a href="https://www.cslbehring.de/en-us/news/2024/pm-hemgenix-agreement-austria">CSL HEMGENIX Austria announcement</a></td><td>Mar. 4, 2024</td><td>Commercial contract to fund HEMGENIX in Austria</td></tr>
+          <tr><td>15</td><td><a href="https://ir.orchard-tx.com/news-releases/news-release-details/orchard-therapeutics-announces-agreement-beneluxa-consortium/">Orchard Libmeldy Beneluxa announcement</a></td><td>Jan. 25, 2024</td><td>Agreement enabling reimbursed access to Libmeldy</td></tr>
+          <tr><td>16</td><td><a href="https://news.vrtx.com/news-releases/news-release-details/vertex-announces-casgevytm-reimbursement-agreement-treatment">Vertex CASGEVY TDT announcement</a></td><td>Aug. 7, 2024</td><td>NHS England reimbursement agreement for TDT</td></tr>
+          <tr><td>17</td><td><a href="https://news.vrtx.com/news-releases/news-release-details/vertex-announces-casgevyr-reimbursement-agreement-treatment">Vertex CASGEVY SCD announcement</a></td><td>Jan. 31, 2025</td><td>NHS England reimbursement agreement for SCD</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="slide-num">06 / 06</div>
+  </article>
+</body>
+</html>

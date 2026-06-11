@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Understanding the role of large language models in cancer mortality prediction: A real-world study.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Understanding the role of large language models in cancer mortality prediction: A real-world study.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e23177</div>
+    <div><strong>First speaker:</strong> Xueqing Peng, PhD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/260082">https://www.asco.org/abstracts-presentations/260082</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Although mortality risk prediction is essential in oncology, risk determinants vary widely across cancer types and patient characteristics, rendering population-level prediction challenging. While traditional statistical and machine learning (ML) approaches have shown encouraging results, the effectiveness of ML and large language models (LLMs) for near and long-term cancer mortality prediction remains unknown. We sought to assess the mortality prediction of these different models for multiple timepoints in a heterogeneous cancer population.</div>
+  <main> 
+
+	<div><b>Background: </b> Although mortality risk prediction is essential in oncology, risk determinants vary widely across cancer types and patient characteristics, rendering population-level prediction challenging. While traditional statistical and machine learning (ML) approaches have shown encouraging results, the effectiveness of ML and large language models (LLMs) for near and long-term cancer mortality prediction remains unknown. We sought to assess the mortality prediction of these different models for multiple timepoints in a heterogeneous cancer population.</p>  <b>Methods: </b> We conducted a retrospective cohort study using electronic health record (EHR) data from Yale New Haven Health, with follow-up through 6/30/25. Patients with any first cancer diagnosis on or after 1/2019 were included. One post-diagnosis encounter was randomly selected as the index visit, excluding visits within 7 days of death. The final cohort was randomly divided into training, validation, and test sets. Structed demographics, laboratory, and diagnostic comorbidity codes were included in training models and derived from the 180 days preceding the index visit. Outcomes included mortality at 30 and 180 days after index visit. We assessed logistic regression (LR), ML model (XGBoost), and LLM (GPT-4o) for prediction of mortality. LR and XGBoost were trained on the full training set, whereas GPT-4o was not trained on patient data and evaluated using zero-shot inference and limited in-context learning (ICL) with five example patients, within a secure environment. Model performance was compared using area under the receiver operating characteristic curve (AUROC), sensitivity, and specificity with higher values indicating better performance.</p>  <b>Results: </b> Our cohort included 82,662 individuals with a median follow-up of 23.4 months after their index date. 15,152 (18.33%) of individuals died during our study period. The most common diagnoses were prostate (14.5%), breast (12.4%), and lung (6.8%). Fully trained ML models achieved the highest AUROC, while untrained LLMs (0-shot) showed meaningful performance and improved with minimal ICL, approaching traditional and ML methods (Table).</p>  <b>Conclusions: </b> Our findings highlight the importance of assessing both short- and longer-term mortality, as model performance differed across timepoints. LLMs captured clinically relevant risk signals from structured EHR data even without task-specific training, with further improvement using minimal ICL. While ML achieved the best performance after supervised training, LLMs show promise for mortality prediction and integration into EHR-based clinical decision support.</div>
+
+
+
+	<div class="table_caption"><b>Performance of models for mortality prediction</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p><strong>Model</strong></p>
+</td>
+<td>
+<p><strong>Time (days)</strong></p>
+</td>
+<td>
+<p><strong>AUROC</strong></p>
+</td>
+<td>
+<p><strong>Sensitivity</strong></p>
+</td>
+<td>
+<p><strong>Specificity</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>LR</p>
+</td>
+<td>
+<p>30</p>
+</td>
+<td>
+<p>0.90</p>
+</td>
+<td>
+<p>0.81</p>
+</td>
+<td>
+<p>0.84</p>
+</td>
+</tr>
+<tr>
+<td>
+<p> </p>
+</td>
+<td>
+<p>180</p>
+</td>
+<td>
+<p>0.87</p>
+</td>
+<td>
+<p>0.74</p>
+</td>
+<td>
+<p>0.82</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>XGBoost</p>
+</td>
+<td>
+<p>30</p>
+</td>
+<td>
+<p>0.92</p>
+</td>
+<td>
+<p>0.38</p>
+</td>
+<td>
+<p>0.98</p>
+</td>
+</tr>
+<tr>
+<td>
+<p> </p>
+</td>
+<td>
+<p>180</p>
+</td>
+<td>
+<p>0.89</p>
+</td>
+<td>
+<p>0.59</p>
+</td>
+<td>
+<p>0.93</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>GPT-4o (0-shot)</p>
+</td>
+<td>
+<p>30</p>
+</td>
+<td>
+<p>0.87</p>
+</td>
+<td>
+<p>0.90</p>
+</td>
+<td>
+<p>0.70</p>
+</td>
+</tr>
+<tr>
+<td>
+<p> </p>
+</td>
+<td>
+<p>180</p>
+</td>
+<td>
+<p>0.83</p>
+</td>
+<td>
+<p>0.81</p>
+</td>
+<td>
+<p>0.73</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>GPT-4o (ICL)</p>
+</td>
+<td>
+<p>30</p>
+</td>
+<td>
+<p>0.88</p>
+</td>
+<td>
+<p>0.85</p>
+</td>
+<td>
+<p>0.80</p>
+</td>
+</tr>
+<tr>
+<td>
+<p> </p>
+</td>
+<td>
+<p>180</p>
+</td>
+<td>
+<p>0.84</p>
+</td>
+<td>
+<p>0.75</p>
+</td>
+<td>
+<p>0.80</p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

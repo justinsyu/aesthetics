@@ -1,0 +1,991 @@
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head"><title>
+	Wisconsin Medicaid Pharmacy Prior Authorization Advisory Committee
+</title>
+  <!--[if lt IE 9]>
+      <link rel="stylesheet" type="text/css" href="../../../css/ie8-and-down.css" />
+    <style>
+    .QuickLinks_container {behavior: url('/WIPortal/Css/PIE.htc');}
+    </style>
+  <![endif]-->
+
+  <script type="text/javascript" src="/WIPortal/Scripts/jquery-3.6.1.min.js"> </script>
+  <script type="text/javascript" src="/WIPortal/Javascript/DatePicker.js"> </script>
+  <script type="text/javascript" src="/WIPortal/Javascript/HotKeyButton.js"> </script>
+
+  <link id="LinkPortalStyle" rel="stylesheet" type="text/css" media="screen" href="../../../css/portal.css" /><link id="LinkCustomerOverride" rel="stylesheet" type="text/css" media="screen" href="../../../css/customerOverride.css" /><link id="favicon" rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
+ <link rel="stylesheet"    id="LinkStaticStyle"          type="text/css" media="screen" href="/WIPortal/css/staticContent.css" />
+<link href="/WIPortal/WebResource.axd?d=xEXd0TBaWgW_MQvEjb1LhNsuGNuTLTAS71h4FpZyNpFIiY0tvslXWR0FKaHs6_T77aMCBCUoC3myNllv2RMTNIG9p_tL_iDgW9mGhDuevvQA-CXa5aIhL7FXkdg28BBNAQasuPFsSBK4qp5ZgqjkUA2&amp;t=639125368620000000" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /></head>
+<body  >
+  <form method="post" action="./index.htm.spage?file=provider%2fpac%2findex.htm" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="RadScriptManager1_TSM" id="RadScriptManager1_TSM" value="" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATEKEY" id="__VIEWSTATEKEY" value="BID1_WID1" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WIPortal/WebResource.axd?d=EjWswd8kSJGGhK9eBpI1nzlGB7lqqyBC9fn1L1QMGN94EPIojAzmyigA296as7VgzEqhQwp8OdQo1s7fI_jukBYOv3V8pg7uSetyfaMIv5o1&amp;t=638901356248157332" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+ function CheckDisableBackButton()
+ {
+   var excludeArray = [];
+ var url= '';
+ var arrayLength = excludeArray.length;
+//alert(arrayLength);
+ var exclusionMatch = false;
+  for (var i = 0; i < arrayLength; i++)
+  {
+     if (url.indexOf(excludeArray[i]) > -1)
+     {
+        exclusionMatch = true;
+        break;
+     }
+  }
+   if (exclusionMatch)
+   {
+      if(window.history.forward(1) != null)
+	     window.history.forward(1);
+   }
+}
+//]]>
+</script>
+
+<script src="/WIPortal/Javascript/iC_DNNHead.js" type="text/javascript"></script>
+<script src="/WIPortal/Javascript/ShowHide.js" type="text/javascript"></script>
+<script src="/WIPortal/Javascript/iC_SessionWarning.js" type="text/javascript"></script>
+<script src="/WIPortal/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=RadScriptManager1_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen-US%3aa8328cc8-0a99-4e41-8fe3-b58afac64e45%3aea597d4b%3ab25378d2%3bTelerik.Web.UI%3aen-US%3a1bc89511-db65-4edd-9b7b-852f5fbc5915%3a16e4e7cd%3af7645509%3a22a6274a%3aed16cbdc%3a88144a7a" type="text/javascript"></script>
+
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$RadScriptManager1', 'form1', ['tctl00$ctl00$MainContentAjaxPanePanel',''], [], [], 1800, 'ctl00');
+//]]>
+</script>
+
+    <script type="text/javascript" language="javascript">
+        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+        function EndRequestHandler(sender, args) {
+            if (args.get_error() != undefined && args.get_error().httpStatusCode == '500') {
+                var errorMessage = args.get_error().message
+                args.set_errorHandled(true);
+                alert(errorMessage + "<br/><br/> Close your browser and try again");
+            }
+        }
+    </script>
+
+    <script type="text/javascript" language="javascript">
+        Sys.WebForms.PageRequestManager.getInstance().add_pageLoaded(setPortalFocus);
+
+
+        function setPortalFocus() {
+
+            if ($("span[id*='WizardNextButton']").length > 0) {
+                var button = $("span[id*='WizardNextButton']");
+                button.focus();
+            }
+
+            var minMaxButton = $('span[id*="MinMaxButton"]');
+            minMaxButton.unbind("click");
+            minMaxButton.attr("onclick", "return false;");
+
+
+            var field = $('#PortalContentPane').find('input[type=radio],input[type=text],input[type=checkbox],input[type=password],textarea,select').filter(':enabled:first');
+            if (field.is(":enabled")) {
+                field.focus();
+            }                
+
+            $(function () {
+                var zIndexNumber = 1000;
+
+                // Put your target element(s) in the selector below!
+                $(".RadMenu").each(function () {
+                    $(this).css('zIndex', zIndexNumber);
+                    zIndexNumber -= 10;
+                });
+            });
+
+            $(".iC_InformationLink").parent().hide();
+
+            if (document.documentMode == 7) {
+                $(".iC_LimitWidth").css("width", $(window).width() - 50);
+                $(".iC_LimitWidth").css("max-width", $(window).width() - 50);
+                $(".iC_LimitWidth").css("min-width", $(window).width() - 50);
+            }
+
+            $(window).resize(function () {
+                if (document.documentMode == 7) {
+                    $(".iC_LimitWidth").css("width", $(window).width() - 50);
+                    $(".iC_LimitWidth").css("max-width", $(window).width() - 50);
+                    $(".iC_LimitWidth").css("min-width", $(window).width() - 50);
+                }
+            });
+
+            /* fix search control display name to [ Search ] if not already defined. */
+            $(function () {
+                var searchButton = $('span[id*="DataSearchButton"]').find('input');
+                $.each(searchButton,
+                  function (index, button) {
+                      if (button.value == 'Search') {
+                          button.value = "[ Search ]";
+                      }
+                  }
+                );
+            }
+            );
+
+
+        } // end setPortalFocus
+
+       
+       
+    </script>
+
+    
+
+    <div class="RadAjaxPanel" id="ctl00_ctl00_MainContentAjaxPanePanel" style="height:100%;">
+	<div id="ctl00_MainContentAjaxPane" class="iC_AjaxPane" style="height:100%;">
+		<!-- 2023.2.714.45 -->
+      <!-- Required State Header -->
+      <table class="header_banner">
+        <tr class="iC_SkinNoPrint">
+          <td>
+            <img id="HeaderMap" title="State of Wisconsin Agency Banner" src="../../../Images/agency_banner.gif" alt="State of Wisconsin Agency Banner" usemap="#ImageMapHeaderMap" /><map name="ImageMapHeaderMap" id="ImageMapHeaderMap">
+			<area shape="rect" coords="0,0,175,34" href="http://www.wisconsin.gov" target="_blank" title="wisconsin.gov Home" alt="wisconsin.gov Home" /><area shape="rect" coords="176,0,292,34" href="http://www.wisconsin.gov/Pages/allagencies.aspx" target="_blank" title="State Agencies" alt="State Agencies" /><area shape="rect" coords="293,0,500,34" href="http://dhs.wisconsin.gov/" target="_blank" title="Department of Health Services" alt="Department of Health Services" />
+		</map>
+          </td>
+        </tr>
+      </table>
+
+      
+
+      
+
+      
+
+      
+
+      <table id="PublicHeaderTable" class="BannerTable" style="background-color:#ffffff">
+			<tr>
+				<td class="fowardHealthLogo"><a id="LinkHomePublic2" tabindex="1010" href="../../../Default.aspx"><img id="Image5" title="Home Page" src="../../../Images/diamond_logo.gif" alt="Return to Main Page" /></a></td><td> 
+            <div class="ColumnHeader" style="font-weight:bold;"><span></span></div>
+            <div class="ColumnHeader"><span></span></div>
+          </td><td><table id="WelcomeTable" class="BannerTable">
+					<tr>
+						<td class="BannerRight">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td class="UserInfo" align="right" HorizontalAlign="right" style="padding-right: 15px;">
+            <span id="welcomemessage3_lblWelcome" title="Not currently logged in.">Welcome </span>&nbsp;&raquo;&nbsp;<span id="welcomemessage3_lblCurrentDate">May 28, 2026 12:26 PM</span>
+        </td>
+    </tr>
+</table></td>
+					</tr><tr>
+						<td class="BannerRight" style="font-weight:bold;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td class="UserInfo" align="right" HorizontalAlign="right" style="padding-right: 15px; text-align: right;">
+            <a id="loginout3_LinkButtonLogin" tabindex="1011" title="Log into the site" href="javascript:__doPostBack(&#39;ctl00$loginout3$LinkButtonLogin&#39;,&#39;&#39;)">Login</a>
+        </td>
+    </tr>
+</table></td>
+					</tr>
+				</table></td>
+			</tr><tr class="whiteBackground">
+				<td class="BannerRight" colspan="3">
+<table  id="tableMiniSearch" class="BannerTable">
+  <tr>
+  <td class="miniSearch"><input name="ctl00$MINI2$MiniSearchValue" type="text" size="15" id="MINI2_MiniSearchValue" tabindex="1012" aria-label="Search ForwardHealth" onkeydown="checkEnterHotKey(&#39;MINI2_MiniSearchSubmit&#39;, event);" style="font-size:Small;" /></td>
+  <td ><a id="MINI2_MiniSearchSubmit" tabindex="1013" class="iC_StyleButton iC_StyleButton iC_StyleButton_Medium" href="javascript:__doPostBack(&#39;ctl00$MINI2$MiniSearchSubmit&#39;,&#39;&#39;)">Search</a></td>
+</tr>
+</table></td>
+			</tr>
+		</table>
+
+      <div>
+        <div class="iC_SystemMessage"><table  style="padding:0;border-collapse:collapse;" class="white_GroupBox"><tr><td class="white_GroupBoxHeaderLeft"></td><td class="white_GroupBoxHeaderMiddle"><span class="white_GroupBoxTitle" title="Alerts">Alerts</span></td><td class="white_GroupBoxHeaderRight"></td></tr><tr><td class="white_GroupBoxBodyLeft"></td><td class="white_GroupBoxBodyMiddle white_GroupBoxTitlePadding"><div><ul class="ic_messageList"><li class="iC_Message">The ForwardHealth Portal is currently experiencing technical difficulties. Staff are working to resolve the issue as quickly as possible. Please check back at a later time.</li></ul></div></td><td class="white_GroupBoxBodyRight"></td></tr><tr><td class="white_GroupBoxFooterLeft"></td><td class="white_GroupBoxFooterMiddle"></td><td class="white_GroupBoxFooterRight"></td></tr></table></div>
+      </div>
+
+      <table id="TableStaticContentBreadcrumbs" class="HeaderTable">
+			<tr>
+				<td><span class="breadcrumbSelectedLink">Prior Authorization Advisory Committee</span></td>
+			</tr>
+		</table>
+		
+
+      <table class='iC_ContentTable' cellpadding="0" cellspacing="0">
+        <tr>
+          <td id="LeftPanelBar" class="leftPanel" style="display:none;">
+            
+          </td>
+		
+          <td class="collapseBar" onclick='iC_ToggleExpand(this)' style="display:none;" >&nbsp;<input type="hidden" name="ctl00$LPanelClientState" id="LPanelClientState" /></td>
+          <td class="rightPanel">
+            <div class="HeaderTable" id="PortalContentPane">
+            
+  
+    
+<div id="MainContent_GenericPageCtrl1_content"><!--<title>Wisconsin Medicaid Pharmacy Prior Authorization Advisory Committee</title>-->
+<!--<breadcrumb>Prior Authorization Advisory Committee</breadcrumb>-->
+<div class="staticContent">
+  <h1 style="text-align:left;">Medicaid Pharmacy Prior Authorization Advisory Committee</h1>
+  <div style="margin-left:15px">
+    <div style="float: right; width: 90%;">
+      <div style="background-color:#000080;">
+        <p style="padding: 10px; color:white; margin-top:0px;">
+          Join the Pharmacy PA Advisory Committee <a href="/WIPortal/Subsystem/KW/Subscriptions.aspx" target="_blank" rel="noopener noreferrer" style="color:white;">email subscription list</a>.
+        </p>
+        <p style="padding-left: 10px; padding-right: 10px; color:white;">
+          Subscribers will receive email notifications about the May or November Wisconsin Medicaid Pharmacy Prior Authorization (PA) Advisory Committee meeting whenever this ForwardHealth Portal page is updated.
+        </p>
+        <p style="padding: 10px; color:white;">
+          Refer to the <a href="/WIPortal/Subsystem/Publications/ForwardHealthCommunications.aspx?panel=Guides" target="_blank" rel="noopener noreferrer" style="color:white;">ForwardHealth Email Subscription User Guide</a> for step-by-step instructions about how to
+          subscribe.
+        </p>
+      </div>
+    </div>
+    <p><a href="members/PACmembersV12.pdf.spage">Member List</a></p>
+    <p><a href="pdf/PAC_Guidelines.pdf.spage">Department Guidelines</a>
+  </div>
+  <br>
+  <br>
+  <br>
+  <h3>Medicaid PA Advisory Committee May 6, 2026 Meeting</h3>
+  <div style="margin-left:15px;">
+	<table width="auto;">
+	<tbody>
+		<tr>
+			<td width="auto;">
+			
+			<p style="color:red; font-weight:bold;">** Medicaid PA Advisory Committee meeting will be a virtual meeting scheduled to occur May 6, 2026.</p>
+				<p>
+					To participate in this meeting, including the open sessions from 9:00am – 11:00am and 1:45pm – 3:00pm (afternoon session time may vary depending on when morning session ends), please click the link below to join the webinar (you may need to paste the link in your browser):
+				</p>
+				<p>&nbsp;</p>
+				<p style="margin:0;">Webinar link: <a href="https://primetherapeutics.zoom.us/j/87962115980" target="_blank" rel="noopener noreferrer" >https://primetherapeutics.zoom.us/j/87962115980</a></P>
+				<p style="margin:0;">or Telephone: dial (312) 626-6799 Webinar ID: 879 6211 5980</P>
+				
+				<p>
+					<strong>Meeting Information</strong>- The next meeting for the Medicaid PA Advisory Committee is scheduled for <strong>Wednesday, May 6, 2026,</strong> from 9:00am-3:00pm. &nbsp;Department staff and their contractors will not meet with drug manufacturers from March 30th through June 19th, 2026, in order to prepare for and complete work associated with the meeting.&nbsp;</p>
+					
+					
+				<!-- <p>o&nbsp;&nbsp;  -->
+					<!-- <a href="/WIPortal/content/provider/pac/pdf/prelimMay2026.pdf.spage">Preliminary May 2026 Drug Classes</a> -->
+				<!-- </p> -->
+				<!-- <p>&nbsp;</p> -->
+				
+				
+				<p>
+					<ul>
+						<!-- <li><a href="pdf/11052025summary.pdf.spage">Final Meeting Summary</a></li> -->
+						<li><a href="pdf/05062026Agenda.pdf.spage">Open Meeting Notice</a></li>
+					</ul>
+					<ul>
+						<li>Meeting Information
+						<ul>
+							<li><a href="/WIPortal/content/provider/pac/pdf/FinalMay2026DrugClasses.pdf.spage">Final May 2026 Drug Classes</a></li>
+							<li><a href="/WIPortal/content/provider/pac/pdf/prelimMay2026.pdf.spage">Preliminary May 2026 Drug Classes
+							</a></li>
+						</ul>
+						</li>
+					</ul>
+				</p> 
+				
+				
+				
+				
+				
+				
+				<p>
+					<strong>Speaking requests</strong> will be accepted beginning <strong>March 30, 2026 through April 24, 2026</strong>. <strong style="color:red;" >Please do not submit speaking requests prior to March 30, 2026.</strong>
+				</p>
+				<p>&nbsp;</p>
+				<ul>
+					<ul>
+						<li>
+							<strong>Prior to requesting a speaking time or submitting written testimony, </strong>please review the Public Participation and Public Testimony section of the Medicaid PA Advisory Committee Department Guidelines for more detailed information.</li>
+						<li>
+							<strong>
+								<u>Only one speaking slot will be permitted per company or organization for a</u>
+							</strong>
+							<strong>
+								<u>maximum of two individual drug classes.</u>
+							</strong> However, multiple speakers per company or organization will be permitted to share the same four minute time slot per drug class.</li>
+						<li>
+							<u>Speakers may only provide testimony regarding drugs included in the specific drug class assigned to each four minute time slot. </u>
+						</li>
+						<li>Speakers are <strong>required</strong> to submit a <strong>Prior Authorization Public Testimony Registration</strong>
+							<strong>form</strong> to register for a speaking slot prior to the meeting. <strong>Registration forms must be submitted by e-mail</strong> to:<a href="https://dhsworkweb.wisconsin.gov/forms/docs/DHSWIPDL@Wisconsin.gov">DHSWIPDL@Wisconsin.gov</a>
+						</li>
+					</ul>
+				</ul>
+				<ul>
+					<ul>
+						<ul>
+							<li>
+								<u><a target="_blank" href="http://www.dhs.wisconsin.gov/forms/f0/f00704.pdf">Prior Authorization Committee Public Testimony Registration form</a></u>
+							</li>
+						</ul>
+					</ul>
+				</ul>
+				<p>
+					<strong>&nbsp;</strong>
+				</p>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+  </div>
+  <h3>Medicaid PA Advisory Committee November  5, 2025 Meeting</h3>
+  <div style="margin-left:15px">
+	<p>
+      <ul>
+        <li><a href="pdf/11052025summary.pdf.spage">Final Meeting Summary</a></li>
+        <li><a href="pdf/11052025Agenda.pdf.spage">Open Meeting Notice</a></li>
+      </ul>
+      <ul>
+        <li>Meeting Information
+          <ul>
+             <li><a href="/WIPortal/content/provider/pac/pdf/FinalNov2025DrugClasses.pdf.spage">Final November 2025 Drug Classes</a></li>
+             <li><a href="/WIPortal/content/provider/pac/pdf/prelimNov2025.pdf.spage">Preliminary November 2025 Drug Classes</a></li>
+          </ul>
+        </li>
+      </ul>
+    </p> 
+  </div>
+  <h3>Medicaid PA Advisory Committee May 7, 2025 Meeting</h3>
+  <div style="margin-left:15px">
+    <!-- <p><strong><span style="color: red;">** Medicaid PA Advisory Committee meeting will be a virtual meeting scheduled to occur May 7, 2025.</span></strong></p>
+    <p>To participate in this meeting, including the open sessions from 9:00am &ndash; 11:00am and 1:45pm &ndash; 3:00pm (afternoon session time may vary depending on when morning session ends), please click the link below to join the webinar (you may need to paste the link in your browser):</p>
+    <p><a target="_blank" rel="noopener noreferrer" href="https://primetherapeutics.zoom.us/webinar/register/WN_PeWnhLSrSSuliF99qWtjXA">https://primetherapeutics.zoom.us/webinar/register/WN_PeWnhLSrSSuliF99qWtjXA</a></p> -->
+   <!-- <p>Webinar ID: 867 1884 3062 Passcode: 475559</p>
+	<p>
+      <ul> 
+        <li><a href="pdf/05012024summary.pdf.spage">Final Meeting Summary</a></li> 
+         <li><a target="_blank" rel="noopener noreferrer" href="pdf/05072025Agenda.pdf.spage">Open Meeting Notice</a></li>
+      </ul>
+    </p> -->
+	<!-- <p>
+      <strong>Meeting Information</strong>: The next meeting for the Medicaid PA Advisory Committee is scheduled for <strong>Wednesday, May 7, 2025,</strong> from 9:00 am-3:00 pm. &nbsp;Department staff and their contractors will not meet with drug manufacturers from October 7th through December 13th, 2024, in order to prepare for and complete work associated with the meeting.&nbsp;</p>
+      <ul>
+		<li><a href="/WIPortal/content/provider/pac/pdf/FinalMay2025DrugClasses.pdf.spage">Final May 2025 Drug Classes</a></li>
+        <li><a href="/WIPortal/content/provider/pac/pdf/prelimMay2025.pdf.spage">Preliminary May 2025 Drug Classes</a></li>
+      </ul>
+    <p>
+      <strong>Speaking requests</strong> will be accepted beginning <strong>March 31, 2025, through April 25, 2025</strong>. <strong><span style="color: red;">Please do not submit speaking requests prior to March 31, 2025.</span></strong>
+      <ul>
+        <li><strong>Prior to requesting a speaking time or submitting written testimony, </strong>please review the Public Participation and Public Testimony section of the Medicaid PA Advisory Committee Department Guidelines for more detailed information.</li>
+        <li><strong><u>Only one speaking slot will be permitted per company or organization for a</u></strong><strong> <u>maximum of two individual drug classes.</u></strong> However, multiple speakers per company or organization will be permitted to share the same four minute time slot per drug class.</li>
+        <li><u>Speakers may only provide testimony regarding drugs included in the specific drug class assigned to each four-minute time slot. </u></li>
+        <li>Speakers are <strong>required</strong> to submit a <strong>Prior Authorization Committee Public Testimony Registration</strong> <strong>form</strong> to register for a speaking slot prior to the meeting. <strong>Registration forms must be submitted by email</strong> to:<a href="https://dhsworkweb.wisconsin.gov/forms/docs/DHSWIPDL@Wisconsin.gov">DHSWIPDL@Wisconsin.gov</a>
+          <ul>
+            <li><a target="_blank" rel="noopener noreferrer" href="http://www.dhs.wisconsin.gov/forms/f0/f00704.pdf">Prior Authorization Committee Public Testimony Registration form</a></li>
+          </ul>
+        </li>
+      </ul>
+    </p> -->
+	<p>
+      <ul>
+        <li><a href="pdf/05072025summary.pdf.spage">Final Meeting Summary</a></li>
+        <li><a href="pdf/05072025Agenda.pdf.spage">Open Meeting Notice</a></li>
+      </ul>
+      <ul>
+        <li>Meeting Information
+          <ul>
+             <li><a href="pdf/FinalMay2025DrugClasses.pdf.spage">Final May 2025 Drug Classes</a></li>
+             <li><a href="/WIPortal/content/provider/pac/pdf/prelimMay2025.pdf.spage">Preliminary May 2025 Drug Classes</a></li>
+          </ul>
+        </li>
+      </ul>
+    </p> 
+  </div>
+  <h3>Medicaid PA Advisory Committee November 6, 2024 Meeting</h3>
+  <div style="margin-left:15px">
+    <p>
+      <ul>
+        <li><a href="pdf/11062024summary.pdf.spage">Final Meeting Summary</a></li>
+        <li><a href="pdf/11062024Agenda.pdf.spage">Open Meeting Notice</a></li>
+      </ul>
+      <ul>
+        <li>Meeting Information
+          <ul>
+             <li><a href="pdf/FinalNov2024DrugClasses.pdf.spage">Final November 2024 Drug Classes</a></li>
+             <li><a href="pdf/prelimNov2024.pdf.spage">Preliminary November 2024 Drug Classes</a></li>
+          </ul>
+        </li>
+      </ul>
+    </p>
+  </div>
+  <h3>Medicaid PA Advisory Committee May 1, 2024 Meeting</h3>
+  <div style="margin-left:15px">
+    <p>
+      <ul>
+        <li><a href="pdf/05012024summary.pdf.spage">Final Meeting Summary</a></li>
+        <li><a href="pdf/05012024Agenda.pdf.spage">Open Meeting Notice</a></li>
+      </ul>          
+      <ul>
+        <li>Meeting Information</li>
+        <ul>
+          <li><a href="pdf/FinalMay2024DrugClasses.pdf.spage">Final May 2024 Drug Classes</a></li>
+          <li><a href="pdf/prelimMay2024.pdf.spage">Preliminary May 2024 Drug Classes</a></li>
+        </ul>
+      </ul>
+    </p>
+  </div>
+  <h3>Medicaid PA Advisory Committee November 1, 2023 Meeting</h3>
+  <div style="margin-left:15px">
+    <p>
+      <ul>
+        <li><a href="pdf/11012023summary.pdf.spage">Final Meeting Summary</a></li>
+        <li><a href="pdf/11012023Agenda.pdf.spage">Open Meeting Notice</a></li>
+      </ul>     
+      <ul>
+        <li>Meeting Information</li>
+        <ul>
+          <li><a href="pdf/FinalNov2023DrugClasses.pdf.spage">Final November 2023 Drug Classes</a></li>
+          <li><a href="pdf/prelimNov2023.pdf.spage">Preliminary November 2023 Drug Classes</a></li>
+        </ul>
+      </ul>
+    </p>
+  </div>
+  <h3>Medicaid PA Advisory Committee May 3, 2023 Meeting</h3>
+  <div style="margin-left:15px">
+    <p>
+      <ul>
+        <li><a href="pdf/05032023summary.pdf.spage">Final Meeting Summary</a></li>
+        <li><a href="pdf/05032023Agenda.pdf.spage">Open Meeting Notice</a></li>
+      </ul>
+      
+      <ul>
+        <li>Meeting Information</li>
+        <ul>
+          <li><a href="pdf/FinalMay2023DrugClasses.pdf.spage">Final May 2023 Drug Classes</a></li>
+          <li><a href="pdf/prelimMay2023.pdf.spage">Preliminary May 2023 Drug Classes</a></li>
+        </ul>
+      </ul>
+    </p>
+  </div>
+  <h3>Medicaid PA Advisory Committee November 2, 2022 Meeting</h3>
+  <div style="margin-left:15px">
+    <p>
+      <ul>
+        <li><a href="pdf/11022022summary.pdf.spage">Final Meeting Summary</a></li>
+        <li><a href="pdf/11022022Agenda.pdf.spage">Open Meeting Notice</a></li>
+      </ul>
+      <ul>
+        <li>
+          Meeting Information
+          <ul>
+            <li><a href="pdf/FinalNov2022DrugClasses.pdf.spage">Final November 2022 Drug Classes</a></li>
+            <li><a href="pdf/prelimNov2022.pdf.spage">Preliminary November 2022 Drug Classes</a></li>
+          </ul>
+        </li>
+      </ul>
+    </p>
+  </div>
+  <h3>Medicaid PA Advisory Committee May 4, 2022 Meeting</h3>
+  <div style="margin-left:15px">
+    <p>
+      <ul>
+        <li><a href="pdf/05042022summary.pdf.spage">Final Meeting Summary</a></li>
+        <li><a href="pdf/05042022Agenda.pdf.spage">Open Meeting Notice</a></li>
+      </ul>
+      <ul>
+        <li>
+          Meeting Information
+          <ul>
+            <li><a href="pdf/FinalMay2022DrugClasses.pdf.spage">Final May 2022 Drug Classes</a></li>
+            <li><a href="pdf/prelimMay2022.pdf.spage" target="_blank" rel="noopener noreferrer">Preliminary May 2022 Drug Classes </a></li>
+          </ul>
+        </li>
+      </ul>
+    </p>
+  </div>
+  <h3>Medicaid PA Advisory Committee November 3, 2021 Meeting</h3>
+  <div style="margin-left:15px">
+    <p>
+      <ul>
+        <li><a href="pdf/11032021summary.pdf.spage">Final Meeting Summary</a></li>
+        <li><a href="pdf/11032021Agenda.pdf.spage">Open Meeting Notice</a></li>
+      </ul>
+      <ul>
+        <li>
+          Meeting Information
+          <ul>
+            <li><a href="pdf/FinalNov2021DrugClasses.pdf.spage">Final November 2021 Drug Classes</a></li>
+            <li><a href="pdf/prelimNov2021.pdf.spage" target="_blank" rel="noopener noreferrer">Preliminary November 2021 Drug Classes</a></li>
+          </ul>
+        </li>
+      </ul>
+    </p>
+  </div>
+  <h3>Medicaid PA Advisory Committee May 5, 2021 Meeting</h3>
+  <div style="margin-left:15px">
+    <p>
+      <ul>
+        <li><a href="pdf/05052021summary.pdf.spage">Final Meeting Summary</a></li>
+        <li><a href="pdf/05052021Agenda.pdf.spage">Open Meeting Notice</a></li>
+      </ul>
+    </p>
+    <p>
+      <ul>
+        <li>Meeting Information</li>
+        <ul>
+          <li><a href="pdf/FinalMay2021DrugClasses.pdf.spage">Final May 2021 Drug Classes</a></li>
+          <li><a href="pdf/prelimMay2021.pdf.spage" target="_blank" rel="noopener noreferrer">Preliminary May 2021 Drug Classes</a></li>
+        </ul>
+      </ul>
+    </p>
+  </div>
+  <h3>Medicaid PA Advisory Committee November 4, 2020 Meeting</h3>
+  <div style="margin-left:15px">
+    <p>
+      <ul>
+        <li><a href="pdf/11042020summary.pdf.spage">Final Meeting Summary</a></li>
+        <li><a href="pdf/11042020Agenda.pdf.spage">Open Meeting Notice</a></li>
+      </ul>
+    </p>
+    <ul>
+      <li>
+        Meeting Information
+        <ul>
+          <li><a href="pdf/FinalNov2020DrugClasses.pdf.spage">Final November 2020 Drug Classes</a></li>
+          <li><a href="pdf/prelimNov2020.pdf.spage" target="_blank" rel="noopener noreferrer">Preliminary November 2020 Drug Classes</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <h3>Medicaid PA Advisory Committee May 6, 2020 Meeting</h3>
+  <div style="margin-left:15px">
+    <ul>
+      <li><a href="pdf/05062020summary.pdf.spage">Final Meeting Summary</a></li>
+      <li><a href="pdf/05062020Agenda.pdf.spage">Open Meeting Notice</a></li>
+    </ul>
+    <ul>
+      <li>
+        Meeting Information
+        <ul>
+          <li><a href="pdf/FinalMay2020DrugClasses.pdf.spage">Final May 2020 Drug Classes</a></li>
+          <li><a href="pdf/prelimMay2020.pdf.spage" target="_blank" rel="noopener noreferrer">Preliminary May 2020 Drug Classes</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <h3>Medicaid PA Advisory Committee November 6, 2019 Meeting</h3>
+  <div style="margin-left:15px">
+    <p>
+    <ul>
+      <li><a href="pdf/11062019summary.pdf.spage">Final Meeting Summary</a></li>
+      <li><a href="pdf/11062019Agenda.pdf.spage">Open Meeting Notice</a></li>
+    </ul>
+    <ul>
+      <li>
+        Meeting Information
+        <ul>
+          <li><a href="pdf/FinalNov2019DrugClasses.pdf.spage">Final November 2019 Drug Classes</a></li>
+          <li><a href="pdf/prelimNov2019.pdf.spage">Preliminary November 2019 Drug Classes</a></li>
+        </ul>
+      </li>
+    </ul>
+    </p>
+  </div>
+  <h3>Medicaid PA Advisory Committee May 8, 2019 Meeting</h3>
+  <div style="margin-left:15px">
+    <p>
+    <ul>
+      <li><a href="pdf/05082019summary.pdf.spage">Final Meeting Summary</a></li>
+      <li><a href="pdf/05082019Agenda.pdf.spage">Open Meeting Notice</a></li>
+    </ul>
+    <ul>
+      <li>
+        Meeting Information
+        <ul>
+          <li><a href="pdf/FinalMay2019DrugClasses.pdf.spage">Final May 2019 Drug Classes</a></li>
+          <li><a href="pdf/prelimMay2019.pdf.spage">Preliminary May 2019 Drug Classes</a></li>
+        </ul>
+      </li>
+    </ul>
+    </p>
+  </div>
+  <h3>Medicaid PA Advisory Committee November 7, 2018 Meeting</h3>
+  <div style="margin-left:15px">
+    <p>
+    <ul>
+      <li><a href="pdf/11072018summary.pdf.spage">Final Meeting Summary</a></li>
+      <li><a href="pdf/11072018Agenda.pdf.spage">Open Meeting Notice</a></li>
+    </ul>
+    <ul>
+      <li>
+        Meeting Information
+        <ul>
+          <li><a href="pdf/FinalNov2018DrugClasses.pdf.spage">Final November 2018 Drug Classes</a></li>
+          <li><a href="pdf/prelimNov2018.pdf.spage">Preliminary November 2018 Drug Classes</a></li>
+        </ul>
+      </li>
+    </ul>
+    </p>
+  </div>
+  <h3>Medicaid PA Advisory Committee May 9, 2018 Meeting</h3>
+  <div style="margin-left:15px">
+    <p>
+    <ul>
+      <li><a href="pdf/05092018summary.pdf.spage">Final Meeting Summary</a></li>
+      <li><a href="pdf/05092018Agenda.pdf.spage">Open Meeting Notice</a></li>
+    </ul>
+    <ul>
+      <li>
+        Meeting Information
+        <ul>
+          <li><a href="pdf/FinalMay2018DrugClasses.pdf.spage">Final May 2018 Drug Classes</a></li>
+          <li><a href="pdf/04092018summary.pdf.spage">Preliminary May 2018 Drug Classes</a></li>
+        </ul>
+      </li>
+    </ul>
+    </p>
+  </div>
+  <h3>Medicaid PA Advisory Committee November 8, 2017 Meeting</h3>
+  <div style="margin-left:15px">
+    <p>
+    <ul>
+      <li><a href="pdf/11082017summary.pdf.spage">Final Meeting Summary</a></li>
+      <li><a href="pdf/11082017Agenda.pdf.spage">Open Meeting Notice</a></li>
+      <li>
+        Meeting Information
+        <ul>
+          <li><a href="pdf/FinalNov2017DrugClasses.pdf.spage">Final November 2017 Drug Classes</a></li>
+          <li>
+            <a href="pdf/prelimNov2017.pdf.spage">Preliminary November 2017 Drug Classes</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    </p>
+  </div>
+  <h3>Medicaid PA Advisory Committee May 10, 2017 Meeting</h3>
+  <div style="margin-left:15px">
+    <p>
+    <ul>
+      <li><a href="pdf/05102017summary.pdf.spage">Final Meeting Summary</a></li>
+      <li><a href="pdf/05102017Agenda.pdf.spage">Open Meeting Notice</a></li>
+      <li>
+        Meeting Information
+        <ul>
+          <li><a href="pdf/FinalMay2017DrugClasses.pdf.spage">Final May 2017 Drug Classes</a></li>
+          <ul>
+            <li><a href="pdf/prelimMay2017.pdf.spage">Preliminary May 2017 Drug Classes</a></li>
+          </ul>
+        </ul>
+      </li>
+    </ul>
+    </p>
+  </div>
+  <h3>Medicaid PA Advisory Committee November 2, 2016 Meeting</h3>
+  <div style="margin-left:15px">
+    <p>
+    <ul>
+      <li><a href="pdf/11022016summary.pdf.spage">Final Meeting Summary</a></li>
+      <li><a href="pdf/11022016Agenda.pdf.spage">Open Meeting Notice</a></li>
+      <li>
+        Meeting Information
+        <ul>
+          <li>
+            <a href="pdf/FinalNovember2016DrugClasses.pdf.spage">Final November 2016 Drug Classes</a>
+            <ul>
+              <li><a href="pdf/prelimNov2016.pdf.spage">Preliminary November 2016 Drug Classes</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    </p>
+  </div>
+  <h3>Medicaid PA Advisory Committee May 11, 2016 Meeting</h3>
+  <p>
+  <ul>
+    <li><a href="pdf/051116summary.pdf.spage">Final Meeting Summary</a></li>
+    <li><a href="pdf/05112016Agenda.pdf.spage">Open Meeting Notice</a></li>
+    <li>
+      Meeting Information
+      <ul>
+        <li>
+          <a href="pdf/FinalMay2016DrugClasses.pdf.spage">Final May 2016 Drug Classes</a>
+          <ul>
+            <li><a href="pdf/prelimMay16.pdf.spage">Preliminary May 2016 Drug Classes</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  </p>
+  <h3>Medicaid PA Advisory Committee November 11, 2015 Meeting</h3>
+  <ul>
+    <li><a href="pdf/111115summary.pdf.spage">Final Meeting Summary</a></li>
+    <li><a href="pdf/11112015Agenda.pdf.spage">Open Meeting Notice</a></li>
+    <li>
+      Meeting Information
+      <ul>
+        <li>
+          <a href="pdf/FinalNov2015DrugClasses.pdf.spage">Final November 2015 Drug Classes</a>
+          <ul>
+            <li><a target="_blank" rel="noopener noreferrer" href="pdf/prelimNov15.pdf.spage">Preliminary November 2015 Drug Classes</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <h3>Medicaid PA Advisory Committee May 13, 2015 Meeting</h3>
+  <ul>
+    <li><a href="pdf/051315summary.pdf.spage">Final Meeting Summary</a></li>
+    <li><a href="pdf/05132015Agenda.pdf.spage">Open Meeting Notice</a></li>
+    <li>
+      Meeting Information
+      <ul>
+        <li>
+          <a href="pdf/FinalMay2015DrugClasses.pdf.spage">Final May 2014 Drug Classes</a>
+          <ul>
+            <li><a href="pdf/Summer2015PreliminaryClassListDraft.pdf.spage">Preliminary May 2014 Drug Classes</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <h3>Medicaid PA Advisory Committee November 5, 2014 Meeting</h3>
+  <ul>
+    <li><span style="color:red">Revised</span>&nbsp;&mdash;&nbsp;<a href="pdf/110514summaryRevised.pdf.spage">Final
+        Meeting Summary</a></li>
+    <li><a href="pdf/11052014Agenda.pdf.spage">Open Meeting Notice</a></li>
+    <li>
+      Meeting Information
+      <ul>
+        <li>
+          <a href="pdf/FinalNovember2014DrugClasses.pdf.spage">Final November 2014 Drug Class</a>
+          <ul>
+            <li><a href="pdf/prelimNov14.pdf.spage">Preliminary November 2014 Drug Classes</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <h3>Medicaid PA Advisory Committee Meeting May 14, 2014</h3>
+  <ul>
+    <li><a href="pdf/051414summary.pdf.spage">Final Meeting Summary</a></li>
+    <li><a href="pdf/05142014Agenda.pdf.spage">Open Meeting Notice</a></li>
+    <li>
+      Meeting Information
+      <ul>
+        <li>
+          <a href="pdf/FinalMay2014DrugClasses.pdf.spage">Final May 2014 Drug Classes</a>
+          <ul>
+            <li><a href="pdf/prelimMay14.pdf.spage">Preliminary May 2014 Drug Classes</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <h3>Medicaid PA Advisory Committee Meeting November 6, 2013</h3>
+  <ul>
+    <li><a href="pdf/110613summary.pdf.spage">Final Meeting Summary</a></li>
+    <li><a href="pdf/11062013Agenda.pdf.spage">Open Meeting Notice</a></li>
+    <li>
+      Meeting Information
+      <ul>
+        <li>
+          <a href="pdf/finalNovemberDrugClass.pdf.spage">
+            Final November 2013 Drug Classes
+            <ul>
+              <li>
+                <a href="pdf/prelimNovemberDrugClass.pdf.spage">Preliminary November 2013 Drug Classes</a></li>
+            </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <h3>Medicaid PA Advisory Committee Meeting May 15, 2013</h3>
+  <div style="margin-left:20px">
+    <ul>
+      <li><a href="pdf/051313Summary.pdf.spage">Final Meeting Summary</a></li>
+      <li><a href="pdf/051513Agenda.pdf.spage">Open Meeting Notice</a></li>
+      <li>
+        Meeting Information
+        <ul>
+          <li>
+            <a href="pdf/FinalMayDrugClasses.pdf.spage">Final May 2013 Drug Classes</a>
+            <ul>
+              <li><a href="pdf/prelimMayDrugClasses.pdf.spage">Preliminary May 2013 Drug Classes</a></li>
+            </ul>
+          <li><a href="pdf/speakingguidelines.pdf.spage">Speaking Guidelines</a></li>
+      </li>
+    </ul>
+  </div>
+  <h3>Medicaid PA Advisory Committee Meeting November 7, 2012</h3>
+  <div style="margin-left:20px">
+    <ul>
+      <li><a href="pdf/110712Summary.pdf.spage">Final Meeting Summary</a></li>
+      <li><a target="b" href="pdf/110712Agenda.pdf.spage">Open Meeting Notice</a></li>
+      <li>Meeting Information<ul>
+          <li><a target="b" href="pdf/finalNovDrugClasses.pdf.spage">Final November 2012 Drug Classes</a>
+            <ul>
+              <li><a target="b" href="pdf/prelimNovDrugClasses.pdf.spage">Preliminary November 2012 Drug
+                  Classes</a></li>
+            </ul>
+          </li>
+          <li><a href="pdf/NovSpeakingGuide.pdf.spage">Speaking Guidelines</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <br />
+  <br />
+  <div style="margin-left:15px"><a href="PAC_archive.htm.spage">PAC Archive</a></div>
+</div>
+    </div>
+
+
+              </div>
+            <div class='rightPanelWidth'>&nbsp;</div>
+          </td>
+        </tr>
+      </table>
+
+      <!-- footer -->
+    <div style="text-align:center;margin:auto;">
+      <div style="width: 600px;border-bottom: 1px solid #c0c0c0;text-align:center;margin:auto;">&nbsp;</div>
+      <div style="font-family: Verdana; font-size: smaller; padding-top: 10px;">
+        <a class="norm" title="About"           target="new" href="http://dhs.wisconsin.gov/aboutDHS/index.htm">About</a> &nbsp;|&nbsp;
+        <a id="ContactLink" tabindex="1014" title="Contact" class="norm" href="../../html/Contact.htm.spage" target="_top">Contact</a>&nbsp;|&nbsp;
+        <a class="norm" title="Disclaimer"      target="new" href="http://dhs.wisconsin.gov/disclaimer.htm">Disclaimer</a> &nbsp;|&nbsp;
+        <a class="norm" title="Privacy Notice"  target="new" href="http://www.dhs.wisconsin.gov/publications/p1/p13040.pdf">Privacy Notice</a>
+        <div><b>Wisconsin Department of Health Services</b></div>
+          
+        <table class="iC_SkinEnvironmentTag" id="Table1" align="center">
+	        <tr>
+		        <td valign="bottom" class="UserInfo"><div style="text-align:center;"><span id="ENVIRONMENT1_lblEnvironment" title="Represents the current environment the application is running in.">Production PROD_WIPortal2_M1056B__8</span>
+</div></td>
+	        </tr>
+	        <tr>
+		        <td valign="bottom" ><span style="font-size:xx-small;" id='iC_elapsedTime'></span></td>
+	        </tr>
+          <tr>
+		        <td valign="bottom" >
+              <span id="BrowserID" class="iC_WindowId">Browser Tab ID: 1  &nbsp;</span>
+              <span id="WindowID" class="iC_WindowId">-1</span>
+		        </td>
+	        </tr>
+        </table>
+      </div>
+    </div>
+
+      <input type="hidden" name="ctl00$iCWindowID" id="iCWindowID" value="1" />
+      <input type="hidden" name="ctl00$iCRequestID" id="iCRequestID" value="1" />
+      <input type="hidden" name="ctl00$UniqueBrowserID" id="UniqueBrowserID" value="1" /> 
+      <input type="hidden" name="ctl00$iCPanelViewMode" id="iCPanelViewMode" /> 
+      <input type="hidden" name="ctl00$iCPanelViewTabSelectMode" id="iCPanelViewTabSelectMode" /> 
+
+      <input name="ctl00$ScrollTop" type="hidden" id="ScrollTop" />
+      <input name="ctl00$__dnnVariable" type="hidden" id="__dnnVariable" />
+      <input name="ctl00$iCFieldsChanged" type="hidden" id="iCFieldsChanged" value="0" />
+      <input id="ScrollX"         type="hidden"                 name="ScrollX"          value="0"/>
+      <input id="ScrollY"         type="hidden"                 name="ScrollY"          value="0"/>
+            
+      
+      <div id="LoadingPanel1" class="iC_LoadingPanel" style="display:none;">
+
+		</div>
+
+    
+	</div>
+</div>
+    
+  <span id="ctl07"></span>
+                <div id='iC_SessionExtended' class='iC_SessionExtended' style='text-align:center;display: none;'>Session Extended.</div>
+                <div id='iC_SessionWarningPopup' class='iC_SessionWarningPopup' style='text-align:center;display: none;'>
+                    <br/>
+                    <p class='iC_WarningText'>
+                       Because you have not recently performed an action 
+	                    <br/>that loads or reloads a page, your session will expire in 
+	                    <br/>
+	                    <br/><span class='iC_SessionWarningTime' id='sw_minutesValue'></span><br/> 
+	                    <br/>
+	                    Upon expiration your unsaved data will be lost and you 
+	                    <br/>will be required to login again to begin a new session.  
+	                    <br/>
+	                    <br/>
+	                    To avoid a session expiration, 
+	                    <br/>
+	                    click this button to extend your session.
+	                    <br/>	                    
+                    </p>
+                    <p style='font-size:100%'>
+                        <a id='iC_ExtendSessionButton' class='iC_StyleButton iC_StyleButton_Large' 
+                            style='margin-left: auto;margin-right: auto;' 
+                            target='SessionExpirationWarning' title='Session Expiration Warning' 
+                            href='../../../iCSessionExtender.extend' onclick='ExtendSession("../../../iCSessionExtender.extend", "1");return false;'>Extend</a>
+                        <br/>
+                    </p>
+                </div> <script>SetupSessionWarning('1800','5','INFO','../Subsystem/Account/SecureSiteLogin.aspx');</script>
+
+<script type="text/javascript">
+//<![CDATA[
+$(window).bind('beforeunload', function() { WhatToCheck();});window.__TsmHiddenField = $get('RadScriptManager1_TSM');//]]>
+</script>
+<script src="/WIPortal/Javascript/ShortCutEnterKeyHandler.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+function SetupStartFunctions(){var localController=null; if(typeof icPanelViewModeController=='undefined'){ localController= new PanelViewModeController()} else{localController=icPanelViewModeController;  } 
+}
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadAjaxLoadingPanel, {"initialDelayTime":0,"isSticky":true,"minDisplayTime":0,"skin":"","transparency":20,"uniqueID":"ctl00$LoadingPanel1","zIndex":90000}, null, null, $get("LoadingPanel1"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadAjaxPanel, {"clientEvents":{OnRequestStart:"RequestStartWIPortal2",OnResponseEnd:"ResponseEnd"},"enableAJAX":true,"enableHistory":false,"links":[],"loadingPanelID":"LoadingPanel1","styles":[],"uniqueID":"ctl00$MainContentAjaxPane"}, null, null, $get("ctl00_MainContentAjaxPane"));
+});
+//]]>
+</script>
+</form>
+</body>
+</html>     
+<script type="text/javascript">
+
+  function portalScrollToError()
+  {
+    if ($(".MsgHeading")[0])
+    {
+      $(".MsgHeading")[0].scrollIntoView();
+
+      /* if we are showing the ignore checkbox, change the column span from 6 to 9 to match the extra fields. */
+      if ($(".WarningMessage").find("input:checkbox").length > 0) {
+        $(".iC_TaskList").find("td[colspan='6']").attr('colspan', 9);
+      }
+    }
+  }
+  
+  function backbuttonCheck()
+{
+    console.log("backbuttonCheck called.");
+}
+</script>

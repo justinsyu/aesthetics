@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A multiple-instance learning-based deep learning model with multi-channel input for early detection of breast tumor.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>A multiple-instance learning-based deep learning model with multi-channel input for early detection of breast tumor.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e12576</div>
+    <div><strong>First speaker:</strong> Hyeong-Gon Moon, MD, PhD</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/266302">https://www.asco.org/abstracts-presentations/266302</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Early detection of breast cancer is essential but remains limited by the high cost. Echo signal–based approaches offer a low-cost alternative and have demonstrated tumor detection using single-channel signals; however, limited information content restricts performance stability. Recent advances in multi-channel echo signal acquisition highlight the need for adaptive models that can effectively integrate different channel configurations.</div>
+  <main> 
+
+	<div><b>Background: </b> </p>  Early detection of breast cancer is essential but remains limited by the high cost. Echo signal–based approaches offer a low-cost alternative and have demonstrated tumor detection using single-channel signals; however, limited information content restricts performance stability. Recent advances in multi-channel echo signal acquisition highlight the need for adaptive models that can effectively integrate different channel configurations.</p>  <b>Methods: </b> </p>  Single-channel echo signals were prospectively collected from 200 breast tumor patients who underwent curative surgery at Seoul National University Hospital (SNUH) and SMG-SNU Boramae Medical Center between Oct 2022 and Feb 2024. In addition, four-channel echo signal data were collected from 34 patients between Apr and Dec 2025 at SNUH. To enable unified processing of different channel configurations, all inputs were represented in a bag-of-instances format, with single-channel data modeled as a single-instance bag and four-channel data as a four-instance bag. Feature extraction was performed using an ImageNet-pretrained EfficientNet-B0 backbone, followed by a gated attention–based multiple instance learning architecture.</p>  <b>Results: </b> </p>  In the independent test set, single-channel models achieved AUC values ranging from 0.739 to 0.872, whereas the proposed model achieved an AUC of 0.892. Although the difference in AUC was not statistically significant (DeLong test, p = 0.7804), the AUC standard deviation of the four-channel–based MIL model (0.007) was substantially lower than that of the single-channel models (0.015–0.043), indicating superior performance stability. Notably, the MIL model showed improved performance in the independent test set compared with internal evaluation, suggesting enhanced generalization.</p>  <b>Conclusions: </b> </p>  This study demonstrates that extending single-channel echo signal–based approaches to a four-channel–based MIL framework improves performance stability and generalization in breast tumor detection. Although the performance difference was not statistically significant, the proposed method demonstrates the potential of integrating multiple channels for more robust and stable predictions in clinical applications.</div>
+
+
+
+	<div class="table_caption"><b>Model performance comparison in terms of AUC and others.</b></div> 
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p><strong>Model</strong></p>
+</td>
+<td>
+<p><strong>AUC</strong></p>
+</td>
+<td>
+<p><strong>ACC@SEN95</strong></p>
+</td>
+<td>
+<p><strong>SPE@SEN95</strong></p>
+</td>
+<td>
+<p><strong>PPV@SEN95</strong></p>
+</td>
+<td>
+<p><strong>NPV@SEN95</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>1<sup>st</sup> CH Single</p>
+</td>
+<td>
+<p>0.872±0.025</p>
+</td>
+<td>
+<p>0.813±0.025</p>
+</td>
+<td>
+<p>0.815±0.052</p>
+</td>
+<td>
+<p>0.802±0.045</p>
+</td>
+<td>
+<p>0.825±0.009</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>2<sup>nd</sup> CH Single</p>
+</td>
+<td>
+<p>0.865±0.034</p>
+</td>
+<td>
+<p>0.807±0.029</p>
+</td>
+<td>
+<p>0.810±0.055</p>
+</td>
+<td>
+<p>0.795±0.046</p>
+</td>
+<td>
+<p>0.819±0.010</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>3<sup>rd</sup> CH Single</p>
+</td>
+<td>
+<p>0.823±0.043</p>
+</td>
+<td>
+<p>0.751±0.068</p>
+</td>
+<td>
+<p>0.696±0.139</p>
+</td>
+<td>
+<p>0.717±0.086</p>
+</td>
+<td>
+<p>0.798±0.025</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>4<sup>th</sup> CH Single</p>
+</td>
+<td>
+<p>0.739±0.015</p>
+</td>
+<td>
+<p>0.673±0.037</p>
+</td>
+<td>
+<p>0.536±0.064</p>
+</td>
+<td>
+<p>0.619±0.035</p>
+</td>
+<td>
+<p>0.768±0.033</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>4CH-MIL</p>
+</td>
+<td>
+<p><strong>0.892±0.007</strong></p>
+</td>
+<td>
+<p><strong>0.841±0.058</strong></p>
+</td>
+<td>
+<p><strong>0.863±0.092</strong></p>
+</td>
+<td>
+<p><strong>0.850±0.095</strong></p>
+</td>
+<td>
+<p><strong>0.837±0.030</strong></p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+ 
+	<div class="table_footer">Abbreviations: AUC, Area under the curve; ACC, Accuracy; SEN, Sensivitiy; SPE, Specificity; PPV, Positive predictive value; NPV, Negative predictive value</div> 
+
+
+</main>
+</body>
+</html>

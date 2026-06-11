@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Development of an analytics dashboard to measure infusion treatment initiation timelines.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Development of an analytics dashboard to measure infusion treatment initiation timelines.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e23250</div>
+    <div><strong>First speaker:</strong> Tulsi Patel</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/260311">https://www.asco.org/abstracts-presentations/260311</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Prior studies demonstrate that longer time from cancer diagnosis to treatment initiation is associated with worse survival outcomes. However, these analyses largely rely on national datasets, limiting institution-level visibility into care delivery processes and the ability to isolate infusion specific delays. As a result, cancer centers lack integrated tools to systematically measure time to infusion treatment (TTI) across referral, scheduling, and infusion workflows. To address this gap, we sought to develop an automated, scalable EMR-based analytics dashboard.</div>
+  <main> 
+
+	<div><b>Background: </b> Prior studies demonstrate that longer time from cancer diagnosis to treatment initiation is associated with worse survival outcomes. However, these analyses largely rely on national datasets, limiting institution-level visibility into care delivery processes and the ability to isolate infusion specific delays. As a result, cancer centers lack integrated tools to systematically measure time to infusion treatment (TTI) across referral, scheduling, and infusion workflows. To address this gap, we sought to develop an automated, scalable EMR-based analytics dashboard. </p>  <b>Methods: </b> We conducted a retrospective health services analysis by creating an EMR-integrated Tableau analytics platform to automate measurement of referral-to-scheduling and scheduling-to-treatment intervals. Metric definitions and visualizations were iteratively refined with physicians and multidisciplinary stakeholders to ensure clinical relevance. The dashboard supports stratified analyses by time period, cancer type, patient characteristics, infusion duration, regimen, and provider. Descriptive analyses included patients initiating chemotherapy between July 2024 and December 2025. </p>  <b>Results: </b> </p>  A total of 2,024 curative intent referrals to the infusion center were recorded. Time from referral entry to infusion was ≤14 days for 49% of referrals and ≥30 days in 17%. Among patients starting systemic therapy in 2025, median TTI varied by malignancy, ranging from 10 days in BMT to 18 days in gynecologic oncology (Table 1). </p>  Process-level analysis showed referral-to-scheduling intervals were relatively consistent across services (median 3-5 days), whereas the scheduling-to-treatment intervals were more variable (median 5-12 days). Reliability of TTI varied widely, with initiation within ±5 days of the planned start date ranging from 38% to 94% across teams. </p>  <b>Conclusions: </b> Development of this analytics platform establishes a reproducible, institution-level framework for measuring TTI and addresses a critical gap between national datasets and actionable, local process metrics. Strengths include process orientation, scalability across all oncology teams, clinician-facing transparency, and incorporation of real-time data. Limitations include incomplete capture of externally administered infusions, and heterogeneity in provider selection for planned start date. This platform is being extended to radiation oncology, surgical oncology, and new patient access to support broader evaluation of timely cancer care.</div>
+
+
+
+	<div class="table_caption"><b>Table 1</b></div> 
+
+
+	<div class="table"></p>
+<table>
+<tbody>
+<tr>
+<td>
+<p> </p>
+</td>
+<td>
+<p>BMT </p>
+</td>
+<td>
+<p>Breast </p>
+</td>
+<td>
+<p>GI </p>
+</td>
+<td>
+<p>GU </p>
+</td>
+<td>
+<p>Gyn </p>
+</td>
+<td>
+<p>H&amp;N </p>
+</td>
+<td>
+<p>Hema </p>
+</td>
+<td>
+<p>Skin </p>
+</td>
+<td>
+<p>Thoracic </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>TTI, median days  </p>
+<p>(n= # patients) </p>
+</td>
+<td>
+<p>10  </p>
+<p>(n=64) </p>
+</td>
+<td>
+<p>14 (n=259) </p>
+</td>
+<td>
+<p>17 (n=215) </p>
+</td>
+<td>
+<p>17 (n=134) </p>
+</td>
+<td>
+<p>18 (n=124) </p>
+</td>
+<td>
+<p>12  </p>
+<p>(n=36) </p>
+</td>
+<td>
+<p>14  </p>
+<p>(n=29) </p>
+</td>
+<td>
+<p>13 (n=113) </p>
+</td>
+<td>
+<p>14  </p>
+<p>(n=91) </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Referral entry to infusion scheduled, median days </p>
+</td>
+<td>
+<p>3 </p>
+</td>
+<td>
+<p>4 </p>
+</td>
+<td>
+<p>4 </p>
+</td>
+<td>
+<p>4 </p>
+</td>
+<td>
+<p>4 </p>
+</td>
+<td>
+<p>3 </p>
+</td>
+<td>
+<p>5 </p>
+</td>
+<td>
+<p>4 </p>
+</td>
+<td>
+<p>4 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Infusion scheduled to treatment start, median days </p>
+</td>
+<td>
+<p>7 </p>
+</td>
+<td>
+<p>8 </p>
+</td>
+<td>
+<p>11 </p>
+</td>
+<td>
+<p>12 </p>
+</td>
+<td>
+<p>10 </p>
+</td>
+<td>
+<p>5 </p>
+</td>
+<td>
+<p>8 </p>
+</td>
+<td>
+<p>8 </p>
+</td>
+<td>
+<p>7 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>% starting within ±5 days of planned </p>
+</td>
+<td>
+<p>66% </p>
+</td>
+<td>
+<p>64% </p>
+</td>
+<td>
+<p>55% </p>
+</td>
+<td>
+<p>82% </p>
+</td>
+<td>
+<p>55% </p>
+</td>
+<td>
+<p>38% </p>
+</td>
+<td>
+<p>60% </p>
+</td>
+<td>
+<p>94% </p>
+</td>
+<td>
+<p>45% </p>
+</td>
+</tr>
+</tbody>
+</table>
+<p> </div> 
+
+
+
+</main>
+</body>
+</html>

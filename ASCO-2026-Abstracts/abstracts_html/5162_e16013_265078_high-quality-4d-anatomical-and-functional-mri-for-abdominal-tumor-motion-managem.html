@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>High-quality 4D anatomical and functional MRI for abdominal tumor motion management.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>High-quality 4D anatomical and functional MRI for abdominal tumor motion management.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e16013</div>
+    <div><strong>First speaker:</strong> Junjie Ma, MPhil</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/265078">https://www.asco.org/abstracts-presentations/265078</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> 4D-MRI offers superior soft-tissue contrast for abdominal motion management but is often limited by the trade-off between image quality and scan duration. Moreover, existing techniques are largely restricted to anatomical imaging, lacking the integration of functional data. This study proposes a deep learning framework to generate high-quality (HQ) 4D anatomical and functional MRI from low-quality (LQ) inputs via accurate motion estimation and reconstruction, aiming to significantly enhance tumor tracking reliability and precision in Image-Guided Radiotherapy (IGRT).</div>
+  <main> 
+
+	<div><b>Background: </b> </p>  4D-MRI offers superior soft-tissue contrast for abdominal motion management but is often limited by the trade-off between image quality and scan duration. Moreover, existing techniques are largely restricted to anatomical imaging, lacking the integration of functional data. This study proposes a deep learning framework to generate high-quality (HQ) 4D anatomical and functional MRI from low-quality (LQ) inputs via accurate motion estimation and reconstruction, aiming to significantly enhance tumor tracking reliability and precision in Image-Guided Radiotherapy (IGRT).</p>  <b>Methods: </b> </p>  A total of 169 abdominal MRI datasets with complete liver coverage were partitioned into training and internal validation cohorts (8:2). Additionally, an independent external test cohort (n&nbsp;=&nbsp;12) was acquired. The model employed a 3D U-Net-based architecture, utilizing HQ static 3D-MRI and LQ 4D-MRI inputs to synthesize HQ 4D anatomical MRI, HQ 4D functional MRI, and corresponding deformation vector fields (DVFs). To ensure spatial consistency, DWI was aligned via a hierarchical cross-contrast registration (HCR) pipeline. Image quality was quantified using Full Width at Half Maximum (FWHM) and CNR, while motion consistency was assessed via liver centroid trajectories.</p>  <b>Results: </b> </p>  In the validation and testing cohorts, quantitative motion analysis demonstrated consistent sub-voxel accuracy. For every individual patient and across all motion directions, the mean 3D trajectory errors were consistently &lt;&nbsp;1 mm. Furthermore, the maximum error for each case remained below the original voxel dimensions (Training:1.56&#215;1.56&#215;3.0mm&#179;; Testing: 2.68&#215;2.68&#215;2.7mm&#179;). For a representative test case, Figure 1 presents the motion tracking curves and quality metrics (CNR, FWHM). Correspondingly, Figure 2 displays the generated HQ images (T1, T2, and DWI). As shown in Figure 2, while the tumor was indistinguishable on anatomical sequences, the generated HQ-DWI delineated the lesion, validating the model's capability to recover functional information for target definition.</p>  <b>Conclusions: </b> </p>  The proposed framework successfully reconstructs HQ 4D anatomical and functional MRI from LQ inputs while maintaining precise motion information. This personalized, multi-parametric 4D-MRI approach demonstrates feasibility for fast and reliable motion management, potentially enabling high-precision IGRT for abdominal cancers.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

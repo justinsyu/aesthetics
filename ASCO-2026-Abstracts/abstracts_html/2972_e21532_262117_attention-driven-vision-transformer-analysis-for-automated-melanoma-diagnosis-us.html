@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Attention-driven vision transformer analysis for automated melanoma diagnosis using dermoscopy.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Attention-driven vision transformer analysis for automated melanoma diagnosis using dermoscopy.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e21532</div>
+    <div><strong>First speaker:</strong> Ramya Elangovan, BS</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/262117">https://www.asco.org/abstracts-presentations/262117</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Melanoma is an aggressive skin cancer with rapidly rising incidence and disproportionately high mortality when diagnosed at advanced stages. Dermoscopy improves diagnostic accuracy but remains highly operator dependent, with substantial interobserver variability, particularly for early or atypical lesions. Although convolutional neural networks (CNNs) have demonstrated strong performance in automated skin lesion analysis, their reliance on localized receptive fields may limit modeling of global lesion characteristics—such as asymmetry, border irregularity, and spatial color heterogeneity—that are central to melanoma diagnosis. Vision Transformers (ViTs) introduce an alternative paradigm based on self-attention, enabling global contextual reasoning across entire images. We evaluated a Vision Transformer B/16 (ViT-B/16) model for automated melanoma diagnosis using dermoscopic imaging.</div>
+  <main> 
+
+	<div><b>Background: </b>Melanoma is an aggressive skin cancer with rapidly rising incidence and disproportionately high mortality when diagnosed at advanced stages. Dermoscopy improves diagnostic accuracy but remains highly operator dependent, with substantial interobserver variability, particularly for early or atypical lesions. Although convolutional neural networks (CNNs) have demonstrated strong performance in automated skin lesion analysis, their reliance on localized receptive fields may limit modeling of global lesion characteristics—such as asymmetry, border irregularity, and spatial color heterogeneity—that are central to melanoma diagnosis. Vision Transformers (ViTs) introduce an alternative paradigm based on self-attention, enabling global contextual reasoning across entire images. We evaluated a Vision Transformer B/16 (ViT-B/16) model for automated melanoma diagnosis using dermoscopic imaging.</p>  <b>Methods: </b>We analyzed publicly available dermoscopy datasets from established melanoma imaging repositories, including the ISIC Archive and HAM10000 collections, comprising malignant melanoma, non-melanoma skin cancers, and benign melanocytic lesions with histopathologic confirmation or expert consensus annotation. Images were standardized, augmented, and stratified into training and validation cohorts. A ViT-B/16 model pretrained on ImageNet was fine-tuned for multi-class lesion classification. Input images (224&#215;224) were partitioned into non-overlapping 16&#215;16 patches and embedded into a token sequence with positional encodings and a learnable class token. The architecture employed 12 transformer encoder blocks with multi-head self-attention and feed-forward layers. Performance was assessed using accuracy, sensitivity, specificity, F1 score, and area under the receiver operating characteristic curve (AUROC).</p>  <b>Results: </b>The Vision Transformer achieved strong diagnostic performance, with overall accuracy exceeding 97% and AUROC greater than 0.97 across lesion categories. Attention-based global modeling improved discrimination of melanomas with asymmetric structure, heterogeneous pigmentation, and irregular borders—features commonly associated with diagnostic uncertainty. Performance remained stable across lesion subtypes and imaging conditions and was comparable to state-of-the-art CNN-based approaches.</p>  <b>Conclusions: </b>Vision Transformer–based modeling enables accurate and interpretable melanoma classification by capturing global dermoscopic context beyond localized feature extraction. Although computationally more intensive than conventional CNNs, ViT architectures offer complementary strengths for modeling complex lesion morphology and warrant further evaluation for integration into melanoma screening and AI-assisted dermatologic workflows.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

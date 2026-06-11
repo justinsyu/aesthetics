@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Artificial intelligence-related topics at ECFS 2026</title>
+  <style>
+    :root {
+      --ink: #10120f; --muted: #5c6257; --paper: #f6f1e8; --paper-2: #ebe4d6;
+      --card: #fffaf0; --line: #1b1f17; --lime: #d7ff5f; --orange: #ffb86b;
+      --blue: #b8d8ff; --pink: #ffd3e0; --gray: #d6d0c2; --red: #ff8a76;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08); --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); scrollbar-width: none; }
+    html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+    body, *, *::before, *::after {
+      -webkit-print-color-adjust: exact; print-color-adjust: exact;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .slide {
+      width: 100vw; height: 100vh; min-height: 100vh; overflow: hidden; position: relative;
+      display: flex; align-items: flex-start; padding: 36px 0 20px; page-break-after: always;
+      break-after: page; background: var(--paper);
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+    .slide-bg-img { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; user-select: none; }
+    .wrap { width: min(1360px, calc(100vw - 56px)); margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex; align-items: center; border: 1.4px solid var(--line); padding: 8px 12px;
+      border-radius: 999px; font-size: 15px; font-weight: 850; letter-spacing: 0; text-transform: uppercase;
+      margin-bottom: 18px; background: var(--lime);
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 54px; line-height: .98; letter-spacing: 0; font-weight: 420; max-width: 1360px; }
+    h2 { font-size: 48px; line-height: 1; letter-spacing: 0; font-weight: 420; max-width: 1300px; }
+    h3 { font-size: 26px; line-height: 1.04; letter-spacing: 0; font-weight: 640; }
+    .dek { margin-top: 14px; color: var(--muted); font-size: 25px; line-height: 1.18; max-width: 1260px; }
+    .section-head { margin-bottom: 40px; }
+    .section-head p { margin-top: 12px; color: var(--muted); font-size: 24px; line-height: 1.18; max-width: 1280px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+    .panel, .metric, .card, .table, .callout {
+      border: 1.5px solid var(--line); background: rgba(255,250,240,.88); border-radius: var(--radius);
+      box-shadow: var(--shadow); overflow: hidden;
+    }
+    .panel { padding: 22px; }
+    .callout { padding: 22px 26px; background: #11130f; color: var(--paper); border-color: #11130f; }
+    .callout h3 { color: var(--lime); font-size: 31px; }
+    .summary-list { margin: 12px 0 0; padding-left: 22px; display: grid; gap: 8px; }
+    .summary-list li { color: rgba(246,241,232,.86); font-size: 22px; line-height: 1.1; }
+    .metric { padding: 19px; min-height: 154px; }
+    .num { font-size: 50px; line-height: .92; font-weight: 430; letter-spacing: 0; }
+    .label { margin-top: 12px; font-size: 23px; line-height: 1.12; color: var(--muted); }
+    .card { padding: 21px; min-height: 235px; }
+    .card h3, .panel h3 { font-weight: 760; }
+    .card h3 { font-size: 21px; line-height: 1.08; }
+    .card p { color: var(--muted); font-size: 19px; line-height: 1.14; margin-top: 10px; }
+    .card h3 .cite { font-size: .48em; }
+    .meta { margin-top: 12px; color: #3f453b; font-size: 13px; line-height: 1.16; }
+    .tag {
+      display: inline-block; padding: 5px 9px; border: 1.2px solid var(--line); border-radius: 999px;
+      font-size: 12px; line-height: 1; font-weight: 850; text-transform: uppercase; background: var(--paper-2);
+      margin-bottom: 11px; white-space: nowrap;
+    }
+    .lime { background: var(--lime); } .orange { background: var(--orange); } .blue { background: var(--blue); }
+    .pink { background: var(--pink); } .red { background: var(--red); } .gray { background: var(--gray); }
+    .table { display: grid; }
+    .row { display: grid; border-bottom: 1px solid var(--line); min-height: 64px; }
+    .row:last-child { border-bottom: 0; }
+    .row.tax { grid-template-columns: .86fr .18fr 2.56fr; }
+    .row.tax.head { min-height: 56px; }
+    .row.refs { grid-template-columns: .32fr .85fr 1.05fr 2.05fr; min-height: 0; }
+    .cell { padding: 13px 14px; border-right: 1px solid var(--line); font-size: 20px; line-height: 1.12; }
+    .cell:last-child { border-right: 0; }
+    .head .cell {
+      background: #11130f; color: var(--paper); font-weight: 760; text-transform: uppercase;
+      font-size: 14px; line-height: 1; white-space: nowrap;
+      padding-top: 11px; padding-bottom: 11px;
+    }
+    .row.tax.head .cell { display: flex; align-items: center; }
+    .row.tax:not(.head) .cell:first-child { font-weight: 400; }
+    .refs .cell { font-size: 14px; line-height: 1.1; padding: 8px 10px; }
+    .refs .cell span { color: var(--muted); }
+    .refs.head .cell { font-size: 14px; line-height: 1; padding: 9px 10px; white-space: nowrap; }
+    .row.refs .cell:first-child { display: flex; justify-content: center; align-items: center; text-align: center; }
+    .references-slide .section-head { margin-bottom: 34px; }
+    .references-slide h2 { font-size: 48px; font-weight: 420; }
+    .cite { font-size: .58em; vertical-align: super; margin-left: 2px; font-weight: 900; text-decoration: none; }
+    .cite + .cite::before { content: ","; margin-right: 1px; }
+    .source-note { color: var(--muted); font-size: 15px; line-height: 1.22; margin-top: 12px; }
+    .slide-num { position: absolute; right: 40px; bottom: 24px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(16,18,15,.38); font-weight: 800; z-index: 2; }
+    @page { size: 1600px 900px; margin: 0; }
+    @media print {
+      html, body { width: 1600px; height: 900px; }
+      .slide { width: 1600px; height: 900px; min-height: 900px; padding: 36px 0 20px; }
+      .wrap { width: 1360px; }
+      .panel, .metric, .card, .table, .callout { box-shadow: none; }
+    }
+    @media screen and (max-width: 900px) { .slide { width: 1600px; height: 900px; } }
+  </style>
+</head>
+<body>
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="eyebrow">ECFS 2026 AI topics | May 31, 2026</div>
+      <h1>Artificial intelligence-related topics at ECFS 2026</h1>
+      <p class="dek">Screening of 818 ECFS 2026 presentation records retained 10 records related to artificial intelligence: 5 with explicit AI/ML methods, 2 addressing AI as an operational or session topic, 2 describing patient/public AI information behavior, and 1 ML-adjacent classifier workflow.<a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/543">10</a><a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/257">5</a><a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/441">9</a></p>
+      <div class="grid-4" style="margin-top:38px;">
+        <div class="metric"><div class="num">818</div><div class="label">ECFS 2026 conference presentation records screened.</div></div>
+        <div class="metric"><div class="num">10</div><div class="label">Records related to artificial intelligence after excluding regression-only and incidental keyword matches.</div></div>
+        <div class="metric"><div class="num">5</div><div class="label">Records that described explicit AI/ML methods in imaging, morphology, and registry analyses.</div></div>
+        <div class="metric"><div class="num">4</div><div class="label">Records addressing registry operations or patient/public information behavior.</div></div>
+      </div>
+      <div class="callout" style="margin-top:18px;">
+        <h3>Evidence summary</h3>
+        <ul class="summary-list">
+          <li>Five records described explicit AI/ML methods: registry forecasting with CatBoost/SHAP, AI-based CT analysis, CFFPR k-means clustering, AI-based organoid morphology, and deep-learning HRCT analysis.<a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/543">10</a><a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/349">6</a><a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/226">3</a><a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/241">4</a><a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/257">5</a></li>
+          <li>Two symposium records addressed artificial intelligence in pulmonary-exacerbation detection and registry data management; abstract text was unavailable in the presentation data.<a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/7">1</a><a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/90">2</a></li>
+          <li>Two records described patient/public use of AI-related information resources, including AI searches in digital-health-literacy training and AI chatbots in cancer-screening information support; one breathomics classifier was classified separately as ML-adjacent because it used XGBoost feature selection.<a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/432">8</a><a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/378">7</a><a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/441">9</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-num">01 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Role taxonomy</div>
+        <h2>Records were classified by AI role and evidence context</h2>
+        <p>Counts reflect retained records, not unique abstracts; classifications are rule-based and derived from explicit source terms in the presentation data.</p>
+      </div>
+      <div class="table">
+        <div class="row tax head"><div class="cell">Category</div><div class="cell">Count</div><div class="cell">Included records and scope note</div></div>
+        <div class="row tax"><div class="cell">Explicit AI/ML methods</div><div class="cell">5</div><div class="cell">R3, R4, R6, R8, R9: machine learning, AI-based CT or morphology analysis, k-means clustering, and deep learning.<a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/543">10</a><a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/349">6</a><a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/226">3</a><a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/241">4</a><a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/257">5</a></div></div>
+        <div class="row tax"><div class="cell">AI as operational/session topic</div><div class="cell">2</div><div class="cell">R1 and R2: symposium-level artificial-intelligence topics in pulmonary-exacerbation detection and registry data management.<a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/7">1</a><a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/90">2</a></div></div>
+        <div class="row tax"><div class="cell">Patient/public AI information behavior</div><div class="cell">2</div><div class="cell">R5 and R7: AI searches and AI chatbots were described in the context of digital health literacy and cancer-screening information behavior.<a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/432">8</a><a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/378">7</a></div></div>
+        <div class="row tax"><div class="cell">ML-adjacent algorithmic modeling</div><div class="cell">1</div><div class="cell">R10: XGBoost feature selection and hold-out classifier evaluation in breathomics; classified separately from records that explicitly used artificial-intelligence terminology.<a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/441">9</a></div></div>
+      </div>
+      <p class="source-note">Excluded: clinical screening algorithms, regression-only predictors, biological or mechanistic models, and incidental keyword matches.</p>
+    </div>
+    <div class="slide-num">02 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Explicit AI/ML methods</div>
+        <h2>AI/ML methods spanned registry and imaging studies</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag lime">Explicit AI/ML methods</span>
+          <h3>Registry lung-function models<a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/543">10</a></h3>
+          <p>Machine-learning time-series models were used to estimate short-term FEV1 and FVC trajectories from CF Registry of Turkey data using CatBoost, nested cross-validation, hyperparameter optimization, and SHAP.</p>
+          <div class="meta">Trigger: machine learning; CatBoost; SHAP</div>
+        </div>
+
+        <div class="card">
+          <span class="tag blue">Explicit AI/ML methods</span>
+          <h3>AI-CT modulator assessment<a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/349">6</a></h3>
+          <p>A retrospective pediatric CFTR modulator outcomes study states that chest CT scans were analyzed using AI-based methods, paired with Swedish registry lung-function data and mixed-effects modeling.</p>
+          <div class="meta">Trigger: Chest CT scans were analysed using AI-based methods</div>
+        </div>
+
+        <div class="card">
+          <span class="tag orange">Explicit AI/ML methods</span>
+          <h3>Registry clustering, CF states<a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/226">3</a></h3>
+          <p>CFFPR encounter data were clustered using unsupervised machine learning and k-means to classify clinical states and transitions associated with lung transplant-free survival.</p>
+          <div class="meta">Trigger: unsupervised machine learning; k-means clustering</div>
+        </div>
+
+        <div class="card">
+          <span class="tag pink">Explicit AI/ML methods</span>
+          <h3>Organoid morphology workflow<a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/241">4</a></h3>
+          <p>An AI-based morphology pipeline analyzed patient-derived intestinal organoids to distinguish wild-type from CF organoids and detect ETI-associated recovery.</p>
+          <div class="meta">Trigger: AI-based morphological analysis pipeline; AI-derived analysis</div>
+        </div>
+
+        <div class="card">
+          <span class="tag red">Explicit AI/ML methods</span>
+          <h3>AI-HRCT imaging workflow<a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/257">5</a></h3>
+          <p>A deep learning model analyzed chest HRCT images from 48 CF patients aged 10 to 18 years across five pulmonary findings, reporting 97% average accuracy, sensitivity, specificity, and F1.</p>
+          <div class="meta">Trigger: Artificial intelligence-assisted; deep learning-based diagnostic model</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">03 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Operational and information-behavior AI</div>
+        <h2>Operational and information-behavior records</h2>
+        <p>Two symposium titles addressed AI as an operational or implementation topic, and two empirical records reported patient/public information behavior involving AI resources.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <span class="tag lime">AI as operational/session topic</span>
+          <h3>Pulmonary exacerbation detection<a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/7">1</a></h3>
+          <p>The symposium presentation title refers to use of artificial intelligence for detecting pulmonary exacerbations in the CFTR modulator era; abstract text was not available in the presentation data.</p>
+          <div class="meta">Trigger: using AI would be ACE</div>
+        </div>
+
+        <div class="card">
+          <span class="tag blue">AI as operational/session topic</span>
+          <h3>Registry data management<a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/90">2</a></h3>
+          <p>The symposium presentation title addresses the potential role of artificial intelligence in registry data management; abstract text was not available in the presentation data.</p>
+          <div class="meta">Trigger: can AI play a role</div>
+        </div>
+
+        <div class="card">
+          <span class="tag orange">Patient/public AI information behavior</span>
+          <h3>Digital health literacy training<a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/432">8</a></h3>
+          <p>An Irish digital-health-literacy survey included AI searches among CF digital health resources and described information-seeking via CF medical websites and social media.</p>
+          <div class="meta">Trigger: AI searches</div>
+        </div>
+
+        <div class="card">
+          <span class="tag pink">Patient/public AI information behavior</span>
+          <h3>Cancer-screening information needs<a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/378">7</a></h3>
+          <p>Qualitative interview findings on CF cancer-screening information needs reported patients&#x27; use of internet-based information and support, including peer social media and AI chatbots.</p>
+          <div class="meta">Trigger: AI chatbots</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">04 / 06</div>
+  </article>
+
+  <article class="slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">ML-adjacent classification</div>
+        <h2>One classifier workflow was classified separately</h2>
+      </div>
+      <div class="grid-2">
+        
+        <div class="card">
+          <span class="tag gray">ML-adjacent algorithmic modeling</span>
+          <h3>Breathomics VOC classification<a class="cite" href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/441">9</a></h3>
+          <p>A breathomics study used repeated subsampling with XGBoost importance aggregation to select 24 VOC features and evaluated CF-versus-asthma classification on a hold-out test set.</p>
+          <div class="meta">Trigger: XGBoost importance aggregation; classification performance</div>
+        </div>
+        <div class="panel">
+          <span class="tag orange">Classification note</span>
+          <h3>Classification rules excluded statistical or mechanistic modeling alone</h3>
+          <p style="margin-top:12px;color:var(--muted);font-size:23px;line-height:1.18;">The retained count does not include records that only used statistical regression, clinical screening algorithms, non-AI automation, or biological model language. P205 is classified as ML-adjacent because the abstract identifies XGBoost feature selection and classifier evaluation but does not describe the study as artificial intelligence.</p>
+          <p class="source-note">Classification was based on explicit terminology in the ECFS 2026 presentation data.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">05 / 06</div>
+  </article>
+
+  <article class="slide references-slide">
+    <img class="slide-bg-img" src="assets/tan_slide_background.png" alt="" aria-hidden="true" />
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">References</div>
+        <h2>References</h2>
+      </div>
+      <div class="table">
+        <div class="row refs head"><div class="cell">Ref</div><div class="cell">Source</div><div class="cell">Date / Status / Source Owner</div><div class="cell">Evidence Used in Report</div></div>
+        
+        <div class="row refs">
+          <div class="cell">1</div>
+          <div class="cell">R1: Session<br><a href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/7">Presentation 7</a></div>
+          <div class="cell">2026-06-04<br>Symposium 06 - Detection and treatment of pulmonary exacerbations</div>
+          <div class="cell">Detection of pulmonary exacerbations in the CFTR modulator era using AI would be ACE!<br><span>using AI would be ACE</span></div>
+        </div>
+
+        <div class="row refs">
+          <div class="cell">2</div>
+          <div class="cell">R2: Session<br><a href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/90">Presentation 90</a></div>
+          <div class="cell">2026-06-05<br>Symposium 15 - Moving forward with registries</div>
+          <div class="cell">Data management in registries – can AI play a role?<br><span>can AI play a role</span></div>
+        </div>
+
+        <div class="row refs">
+          <div class="cell">3</div>
+          <div class="cell">R6: EPS11.05<br><a href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/226">Presentation 226</a></div>
+          <div class="cell">2026-06-05<br>ePoster Session 11 - Telehealth and digital tools in care and education</div>
+          <div class="cell">Clinical state transitions identified by unsupervised machine learning are associated with improved lung transplant-free survival in cystic fibrosis<br><span>unsupervised machine learning; k-means clustering</span></div>
+        </div>
+
+        <div class="row refs">
+          <div class="cell">4</div>
+          <div class="cell">R8: WS13.5<br><a href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/241">Presentation 241</a></div>
+          <div class="cell">2026-06-05<br>Workshop 13 - From allele to human: the complexity of CFTR</div>
+          <div class="cell">Development of an unbiased and sensitive AI-based morphological pipeline for challenging cystic fibrosis diagnoses<br><span>AI-based morphological analysis pipeline; AI-derived analysis</span></div>
+        </div>
+
+        <div class="row refs">
+          <div class="cell">5</div>
+          <div class="cell">R9: WS16.2<br><a href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/257">Presentation 257</a></div>
+          <div class="cell">2026-06-05<br>Workshop 16 - Further optimising measures of cystic fibrosis pulmonary disease</div>
+          <div class="cell">Artificial intelligence-assisted chest HRCT analysis in cystic fibrosis patients<br><span>Artificial intelligence-assisted; deep learning-based diagnostic model</span></div>
+        </div>
+
+        <div class="row refs">
+          <div class="cell">6</div>
+          <div class="cell">R4: P434<br><a href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/349">Presentation 349</a></div>
+          <div class="cell">2026-06-04<br>Poster Viewing 1</div>
+          <div class="cell">Impact of CFTR modulator therapy on pulmonary structure and lung function in children and adolescents with cystic fibrosis<br><span>Chest CT scans were analysed using AI-based methods</span></div>
+        </div>
+
+        <div class="row refs">
+          <div class="cell">7</div>
+          <div class="cell">R7: WS11.3<br><a href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/378">Presentation 378</a></div>
+          <div class="cell">2026-06-05<br>Workshop 11 - The changing face of cystic fibrosis wellbeing, risk and reproductive realities</div>
+          <div class="cell">Cancer screening information, promotion and care for people with cystic fibrosis: patient and clinician perspectives from qualitative interview studies<br><span>AI chatbots</span></div>
+        </div>
+
+        <div class="row refs">
+          <div class="cell">8</div>
+          <div class="cell">R5: P493<br><a href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/432">Presentation 432</a></div>
+          <div class="cell">2026-06-04<br>Poster Viewing 1</div>
+          <div class="cell">How to deliver digital health literacy training to PwCF, families, and caregivers: results of an Irish survey<br><span>AI searches</span></div>
+        </div>
+
+        <div class="row refs">
+          <div class="cell">9</div>
+          <div class="cell">R10: P205<br><a href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/441">Presentation 441</a></div>
+          <div class="cell">2026-06-04<br>Poster Viewing 1</div>
+          <div class="cell">Breath VOC signature differentiates cystic fibrosis from bronchial asthma using PTR-TOF-MS breathomics<br><span>XGBoost importance aggregation; classification performance</span></div>
+        </div>
+
+        <div class="row refs">
+          <div class="cell">10</div>
+          <div class="cell">R3: P194<br><a href="https://ecfs2026.abstractserver.com/programme/#/details/presentations/543">Presentation 543</a></div>
+          <div class="cell">2026-06-04<br>Poster Viewing 1</div>
+          <div class="cell">Machine learning-based prediction of longitudinal lung function trajectories in patients not using modulators from national CF registry data in Turkey<br><span>machine learning; CatBoost; SHAP</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">06 / 06</div>
+  </article>
+</body>
+</html>

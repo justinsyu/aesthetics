@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Efficient machine learning for pulmonary nodule classification on computed tomography: A lightweight multilayer perceptron approach with global radiologist validation.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Efficient machine learning for pulmonary nodule classification on computed tomography: A lightweight multilayer perceptron approach with global radiologist validation.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e20021</div>
+    <div><strong>First speaker:</strong> Shravya Subashini Sivaramakrishnan, MBBS</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/265544">https://www.asco.org/abstracts-presentations/265544</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Lung cancer remains the leading cause of cancer mortality worldwide. Pulmonary nodules detected on Computed tomography(CT) are critical for early detection, but interobserver and nodule variability limit interpretation. Deep learning models are computationally intensive, restricting routine use. Lightweight multilayer perceptron (MLP) offer scalable and clinically deployable alternative for pulmonary nodule assessment.  Aims:To develop and externally validate a lightweight MLP model for pulmonary nodule classification on CT imaging; to assess whether structured preprocessing preserves diagnostic performance while reducing computational complexity; to evaluate clinical feasibility through independent radiologist assessment across diverse healthcare environments.</div>
+  <main> 
+
+	<div><b>Background: </b></p>  </p>  Lung cancer remains the leading cause of cancer mortality worldwide. Pulmonary nodules detected on Computed tomography(CT) are critical for early detection, but interobserver and nodule variability limit interpretation. Deep learning models are computationally intensive, restricting routine use. Lightweight multilayer perceptron (MLP) offer scalable and clinically deployable alternative for pulmonary nodule assessment.</p>  Aims:To develop and externally validate a lightweight MLP model for pulmonary nodule classification on CT imaging; to assess whether structured preprocessing preserves diagnostic performance while reducing computational complexity; to evaluate clinical feasibility through independent radiologist assessment across diverse healthcare environments.</p>  <b>Methods: </b></p>  We analyzed 8,147 anonymized CT studies comprising normal or benign findings (n&nbsp;=&nbsp;3,892), indeterminate nodules (n&nbsp;=&nbsp;2,255), and malignant nodules (n&nbsp;=&nbsp;2,000) from publicly available datasets (LIDC-IDRI, LUNA16, Lung Nodule Analysis 2016) with consensus radiologist annotation and pathologic correlation when available. Images were standardized and transformed using Gaussian random projection followed by principal component analysis to reduce dimensionality while preserving morphologic features. A two-layer feedforward MLP with batch normalization and dropout was trained using AdamW optimization on 80% of the data, with independent validation and testing cohorts. Performance metrics included accuracy, sensitivity, specificity, F1-score, and AUROC. External validation was conducted on independent datasets. The model was deployed on cross-platform infrastructure and evaluated by radiologists across six continents.</p>  <b>Results: </b></p>  The MLP achieved 88.6% accuracy on the independent test set with balanced class-wise performance. Sensitivity for malignant nodules was 89.7% with specificity of 93.6%, yielding an F1-score of 0.915. Macro-averaged F1-score exceeded 0.90, and AUROC values were greater than 0.91 across all classes. External validation accuracy ranged from 86% to 90% across heterogeneous CT protocols. Compared with radiologist interpretation, the model reduced false-negative rates by 38% in the indeterminate nodule category. The model contained 2.7 million parameters and achieved inference times of 0.32 seconds per nodule on standard CPU hardware. Overall, 94.1% of radiologist evaluators rated the system clinically useful for screening triage.</p>  <b>Conclusions: </b></p>  A computationally efficient multilayer perceptron accurately classifies pulmonary nodules on CT while reducing model complexity and hardware requirements. Reduction of false negatives, together with external validation by global radiologists, confirms scalability, enabling AI-assisted screening across resource-diverse settings.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

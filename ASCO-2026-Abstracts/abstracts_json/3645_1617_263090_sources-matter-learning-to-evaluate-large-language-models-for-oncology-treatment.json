@@ -1,0 +1,80 @@
+{
+  "abstractNumber": "1617",
+  "body": " \r\n\r\n\t<div><b>Background: </b> Large language models (LLMs) are increasingly evaluated for oncology decision support, yet guideline concordance and hallucinations remain variable across cancer types and tasks. Retrieval-augmented generation (RAG) may improve safety by constraining the evidence base used during generation. Prior oncology LLM studies report discordance with guideline-based care, but few describe a reproducible health-system “vetting mechanism” that couples guideline-only retrieval with clinician-scored safety rubrics across multiple oncology domains.</p>  <b>Methods: </b> We assembled 316 de-identified oncology cases in a tumor-board template: medical oncology (breast, GI, GU, leukemia; n=216), gynecologic oncology (n=50), and neuro-oncology/CNS metastatic cancer (n=50). Each case was run on three systems: baseline GPT-4 (O1), NCCN-guideline anchored RAG (O2; guideline-constrained retrieval), and a literature-anchored system (OpenEvidence; O3). Oncologists independently scored outputs using a modified Generative Performance Score (mGPS; −1 to +1) combining guideline concordance with hallucination penalties; readability/rationality was scored on a 1–5 Likert scale. Inter-rater reliability was assessed (κ =.63). This workflow was designed as a pre-deployment model credentialing step for health-system governance (source policy → case bank → clinician-scored acceptance criteria).</p>  <b>Results: </b> Across all 316 cases (case-averaged), O2 achieved the highest mean total mGPS (0.75) compared with O1 (0.43) and O3 (0.59). In the medical oncology cohort (n=216), O2 outperformed O1 and O3 (mean mGPS 0.72 vs 0.35 and 0.54), with higher guideline concordance (0.85 vs 0.68 and 0.75) and lower hallucination penalties (−0.09 vs −0.25 and −0.19); readability was also highest for O2 (4.17 vs 3.22 and 3.86). In gynecologic oncology (n=50), O2 again performed best (mGPS 0.827) relative to O3 (0.697) and O1 (0.647). In the CNS cohort (n=50), mean composite mGPS favored O2 (0.82) over O3 (0.68) and O1 (0.55), while readability remained stable across models (3.55–3.73). Severe hallucination/unsafe recommendation rate: O1 [26%], O2 [5%], O3 [17%] (pre-specified definition; e.g., major fabricated citation or guideline-discordant harmful recommendation).</p>  <b>Conclusions: </b> In a 316-case, multi-domain clinician-scored evaluation, limiting retrieval to oncology guideline sources improved safety-aligned performance relative to unconstrained generation or literature-only anchoring. A guideline-constrained RAG configuration paired with clinician-scored rubrics and tail-risk reporting can serve as a practical health-system vetting mechanism for governance, re-validation, and change control of LLM decision support, including in resource-limited settings where reliable guideline-consistent recommendations are essential.</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+  "contentId": "263090",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/263090",
+    "queryParams": null,
+    "target": null,
+    "title": "Sources matter: Learning to evaluate large language models for oncology treatment plans and changes observed by anchoring models to an oncology-specific database."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION263090"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780160400000,
+    "start": 1780149600000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "535",
+  "presentationId": "263090",
+  "primaryPerson": {
+    "displayName": "Connor Yost, DO",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780160400000,
+    "start": 1780149600000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17086",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17086",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Care Delivery/Models of Care"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": null,
+  "title": "Sources matter: Learning to evaluate large language models for oncology treatment plans and changes observed by anchoring models to an oncology-specific database.",
+  "titles": null,
+  "uid": "PRESENTATION263090"
+}

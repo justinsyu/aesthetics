@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Global context modeling with vision transformers for MRI-based classification of brain tumors.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Global context modeling with vision transformers for MRI-based classification of brain tumors.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e14003</div>
+    <div><strong>First speaker:</strong> Ramya Elangovan, BS</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/259263">https://www.asco.org/abstracts-presentations/259263</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> Brain tumors represent a heterogeneous group of neoplasms with widely variable prognosis and treatment strategies. Magnetic resonance imaging (MRI) is the cornerstone of brain tumor diagnosis and classification, yet interpretation is challenged by tumor heterogeneity, infiltrative growth patterns, and overlapping radiologic features across tumor subtypes. Convolutional neural networks (CNNs) have demonstrated strong performance in automated MRI analysis but rely primarily on localized receptive fields, which may limit modeling of long-range spatial relationships essential for characterizing tumor extent, edema, and mass effect. Vision Transformers (ViTs) introduce a fundamentally different paradigm by leveraging self-attention to capture global contextual dependencies across entire images. We evaluated a ViT-B/16 model for automated diagnosis and classification of brain tumors on MRI.</div>
+  <main> 
+
+	<div><b>Background: </b></p>  Brain tumors represent a heterogeneous group of neoplasms with widely variable prognosis and treatment strategies. Magnetic resonance imaging (MRI) is the cornerstone of brain tumor diagnosis and classification, yet interpretation is challenged by tumor heterogeneity, infiltrative growth patterns, and overlapping radiologic features across tumor subtypes. Convolutional neural networks (CNNs) have demonstrated strong performance in automated MRI analysis but rely primarily on localized receptive fields, which may limit modeling of long-range spatial relationships essential for characterizing tumor extent, edema, and mass effect. Vision Transformers (ViTs) introduce a fundamentally different paradigm by leveraging self-attention to capture global contextual dependencies across entire images. We evaluated a ViT-B/16 model for automated diagnosis and classification of brain tumors on MRI.</p>  <b>Methods: </b></p>  We analyzed publicly available, curated brain MRI datasets, comprising gliomas and non-glioma brain tumors with expert annotation and histopathologic correlation. Multisequence MRI images were standardized, augmented, and split into training and validation cohorts using stratified sampling. A Vision Transformer B/16 model pretrained on ImageNet was fine-tuned for multi-class brain tumor classification. Input images (224&#215;224) were partitioned into non-overlapping 16&#215;16 patches and embedded into a token sequence augmented with positional encodings and a learnable class token. The architecture employed 12 transformer encoder blocks with multi-head self-attention and feed-forward layers, enabling global contextual modeling across tumor and peritumoral regions. Model performance was assessed using accuracy, sensitivity, specificity, F1 score, and area under the receiver operating characteristic curve (AUROC).</p>  <b>Results: </b></p>  The Vision Transformer achieved robust diagnostic performance across brain tumor classes, with overall accuracy exceeding 90% and AUROC greater than 0.90. Attention-based global modeling improved discrimination of infiltrative tumors and lesions with heterogeneous signal characteristics, reducing misclassification commonly observed with convolutional approaches. Performance remained stable across MRI sequences and tumor morphologies, supporting generalizability.</p>  <b>Conclusions: </b></p>  Vision Transformer–based modeling enables accurate and interpretable diagnosis and classification of brain tumors by capturing long-range spatial context beyond localized feature extraction. Although computationally more intensive than CNNs, ViT architectures offer complementary strengths for complex neuro-oncology imaging tasks and warrant further prospective evaluation to support clinical decision-making and treatment planning.</div>
+
+
+
+
+
+
+</main>
+</body>
+</html>

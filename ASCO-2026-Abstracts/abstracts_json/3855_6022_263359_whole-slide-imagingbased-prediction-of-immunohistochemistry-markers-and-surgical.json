@@ -1,0 +1,89 @@
+{
+  "abstractNumber": "6022",
+  "body": " \r\n\r\n\t<div><b>Background: </b> </p>  Immunohistochemistry (IHC) marker testing and identification of pathological features are essential tasks in surgical pathology following resection of head and neck cancers. However, IHC testing is time-consuming, and identifying pathologic features typically requires examination of multiple slides. We hypothesized that imaging features from a single H&amp;E-stained whole slide image (WSI) could predict this information using machine learning. </p>  <b>Methods: </b> </p>  We utilized data from the publicly available HANCOCK dataset for machine learning model development and testing. All patients had undergone surgical resection for locoregional head and neck cancer. Image features (embeddings extracted by TITAN, a pretrained vision-language pathology foundation model) from each primary tumor's H&amp;E-stained WSI served as model inputs. Four machine learning algorithms (XGBoost, support vector machine, multilayer perceptron, and random forest) were trained to predict seven IHC markers (CD3, CD8, CD56, CD68, CD163, MHC-I, PD-L1) and three surgical pathological features (tumor grading, lymphovascular invasion, and perineural invasion). IHC marker positivity was determined using DeepLIIF-derived percent-positive staining, with non-PD-L1 markers binarized by median split and PD-L1 positivity defined using a 10% threshold. Surgical pathological features were binary except for tumor grade, which included four classes. All models underwent nested stratified five-fold cross-validation with hyperparameter tuning. Performance was assessed using AUC and F1 score for binary tasks (IHC markers, lymphovascular invasion, perineural invasion), and balanced accuracy and macro-F1 score and for tumor grading. </p>  <b>Results: </b> </p>  Between 685 and 699 cases were available for model development depending on the prediction task. Support vector machine (SVM) was the best-performing model for five tasks, followed by XGBoost (XGB) for three tasks and random forest (RF) for two tasks. Performance metrics for the best-performing models are detailed in the table. </p>  <b>Conclusions: </b></p>  Our findings demonstrate that IHC markers and surgical pathological features can be predicted with reasonable accuracy from image features extracted from a single H&amp;E-stained WSI. Future work will focus on external validation of these models in independent cohorts and exploration of advanced foundational models to further improve prediction performance. </div>\r\n\r\n\r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<p>Task </p>\r\n</td>\r\n<td>\r\n<p>Best Model </p>\r\n</td>\r\n<td>\r\n<p>Metrics </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>CD3 </p>\r\n</td>\r\n<td>\r\n<p>XGB </p>\r\n</td>\r\n<td>\r\n<p>AUC: 0.78 ± 0.04 </p>\r\n<p>F1: 0.72 ± 0.03 </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>CD8 </p>\r\n</td>\r\n<td>\r\n<p>SVM </p>\r\n</td>\r\n<td>\r\n<p>AUC: 0.73 ± 0.03  F1: 0.67 ± 0.04 </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>CD56 </p>\r\n</td>\r\n<td>\r\n<p>XGB </p>\r\n</td>\r\n<td>\r\n<p>AUC: 0.66 ± 0.03  F1: 0.67 ± 0.02 </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>CD68 </p>\r\n</td>\r\n<td>\r\n<p>SVM </p>\r\n</td>\r\n<td>\r\n<p>AUC: 0.75 ± 0.03 F1: 0.70 ± 0.04 </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>CD163 </p>\r\n</td>\r\n<td>\r\n<p>SVM </p>\r\n</td>\r\n<td>\r\n<p>AUC: 0.71 ± 0.05 F1: 0.67 ± 0.04 </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>MHC1 </p>\r\n</td>\r\n<td>\r\n<p>SVM </p>\r\n</td>\r\n<td>\r\n<p>AUC: 0.68 ± 0.05 F1: 0.66 ± 0.03 </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>PDL1 </p>\r\n</td>\r\n<td>\r\n<p>SVM </p>\r\n</td>\r\n<td>\r\n<p>AUC: 0.73 ± 0.06  Macro F1: 0.54 ± 0.04 </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Grading </p>\r\n</td>\r\n<td>\r\n<p>RF </p>\r\n</td>\r\n<td>\r\n<p>Balanced Acc: 0.71 ± 0.04 </p>\r\n<p>Macro F1: 0.70 ± 0.03 </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Lymphovascular Invasion </p>\r\n</td>\r\n<td>\r\n<p>RF </p>\r\n</td>\r\n<td>\r\n<p>AUC: 0.82 ± 0.02 </p>\r\n<p>Macro F1: 0.70 ± 0.02 </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Perineural Invasion </p>\r\n</td>\r\n<td>\r\n<p>XGB </p>\r\n</td>\r\n<td>\r\n<p>AUC: 0.78 ± 0.03 </p>\r\n<p>Macro F1: 0.67 ± 0.03 </p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n\r\n\r\n",
+  "contentId": "263359",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/263359",
+    "queryParams": null,
+    "target": null,
+    "title": "Whole slide imaging–based prediction of immunohistochemistry markers and surgical pathological features."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION263359"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780176600000,
+    "start": 1780165800000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "479",
+  "presentationId": "263359",
+  "primaryPerson": {
+    "displayName": "Yusuf Sadek, BA",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780176600000,
+    "start": 1780165800000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17155",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17155",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Head and Neck Cancer"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": {
+    "countriesThes": null,
+    "drugsThes": null,
+    "entitiesThes": null,
+    "genesThes": null,
+    "orgThes": null,
+    "subjectsThes": [
+      "Cancers"
+    ]
+  },
+  "title": "Whole slide imaging–based prediction of immunohistochemistry markers and surgical pathological features.",
+  "titles": null,
+  "uid": "PRESENTATION263359"
+}

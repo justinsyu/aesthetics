@@ -1,0 +1,80 @@
+{
+  "abstractNumber": "3021",
+  "body": " \r\n\r\n\t<div><b>Background: </b></p>  Tumor of unknown primary origin remains a critical unmet need in oncology, as histologic and anatomic diagnoses are essential for ensuring effective and timely therapies. We previously developed the Tempus Tumor Origin (TO) Laboratory Developed Test (LDT), an RNA sequencing-based machine learning algorithm that discriminates between clinically relevant cancer subtypes. However, RNA-sequencing data is not always available, with a failure rate that can be &gt; 20% in the literature. In this study, we develop and assess the accuracy of a hematoxylin and eosin (H&amp;E)-based machine learning algorithm to predict tumor origin. We also explore combining predictions from H&amp;E and RNA models to improve accuracy further.</p>  <b>Methods: </b></p>  We curated a cohort of 93,770 H&amp;E whole slide images (WSIs) of tumor biopsies and surgical resections across 67 cancer subtypes from 73,634 patients. The cohort was split into 60/20/20 for training, validation, and testing, stratified by cancer subtypes and clinical covariates. We extracted tile embeddings from WSIs using a foundation model, H-optimus-0, and trained an attention-based multiple instance learning model to predict cancer subtype labels derived from clinically abstracted documents. Using a subset of 54,878 samples that also have predictions from the RNA-based Tempus TO algorithm, we trained and evaluated a multilayer perceptron multimodal model that takes the prediction scores from the H&amp;E model and the RNA model as input.</p>  <b>Results: </b></p>  On 7,092 test set samples that had both modalities available, the H&amp;E, RNA, and multimodal models achieved top-1 accuracies of 0.85, 0.91, and 0.92 and top-3 accuracies of 0.94, 0.97, and 0.97, respectively. Among subtypes with at least 30 samples in the test set, the multimodal model statistically significantly outperformed the RNA model on five subtypes and underperformed on two. In addition, the H&amp;E model had a top-1 accuracy of 0.77 and a top-3 accuracy of 0.90 on 3,028 samples in the test set that failed RNA sequencing due to quantity insufficient (QNS). Table 1 presents H&amp;E model performance on the RNA QNS samples by diagnosis subtypes.</p>  <b>Conclusions: </b></p>  We developed a high-performing H&amp;E-based algorithm to predict tumor origin. With shorter turnaround time and wider availability, the H&amp;E model can potentially deliver accurate tumor origin predictions faster and, critically, in cases where RNA-seq is unsuccessful or unavailable. Furthermore, leveraging both H&amp;E and RNA in a multimodal model may improve the performance of future tumor origin algorithms.</p>  </div>\r\n\r\n\r\n\r\n\t<div class=\"table_caption\"><b>H&amp;E model performance on RNA QNS test set samples in the five most prevalent diagnosis subtypes and other subtypes combined.</b></div> \r\n\r\n\r\n\t<div class=\"table\"><table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<p>Diagnosis subtype</p>\r\n</td>\r\n<td>\r\n<p>N</p>\r\n</td>\r\n<td>\r\n<p>Top-1 accuracy (%)</p>\r\n</td>\r\n<td>\r\n<p>Top-3 accuracy (%)</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Lung adenocarcinoma</p>\r\n</td>\r\n<td>\r\n<p>497</p>\r\n</td>\r\n<td>\r\n<p>84</p>\r\n</td>\r\n<td>\r\n<p>94</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Prostatic adenocarcinoma</p>\r\n</td>\r\n<td>\r\n<p>387</p>\r\n</td>\r\n<td>\r\n<p>92</p>\r\n</td>\r\n<td>\r\n<p>95</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Breast carcinoma</p>\r\n</td>\r\n<td>\r\n<p>348</p>\r\n</td>\r\n<td>\r\n<p>83</p>\r\n</td>\r\n<td>\r\n<p>95</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Colorectal adenocarcinoma</p>\r\n</td>\r\n<td>\r\n<p>327</p>\r\n</td>\r\n<td>\r\n<p>85</p>\r\n</td>\r\n<td>\r\n<p>93</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Pancreatic adenocarcinoma</p>\r\n</td>\r\n<td>\r\n<p>272</p>\r\n</td>\r\n<td>\r\n<p>78</p>\r\n</td>\r\n<td>\r\n<p>94</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<p>Other</p>\r\n</td>\r\n<td>\r\n<p>1,197</p>\r\n</td>\r\n<td>\r\n<p>64</p>\r\n</td>\r\n<td>\r\n<p>83</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table></div> \r\n\r\n\r\n\r\n",
+  "contentId": "262545",
+  "contentSourceId": "PRESENTATION",
+  "contentType": "Presentation",
+  "contentUrl": {
+    "fqdn": null,
+    "fragment": null,
+    "path": "/abstracts-presentations/262545",
+    "queryParams": null,
+    "target": null,
+    "title": "Development and clinical utility of an H&E-based tumor origin prediction model."
+  },
+  "cursor": {
+    "__typename": "MultiSearchHitCursor",
+    "abstractNumber": null,
+    "dateTimePublished": null,
+    "primaryTrack": null,
+    "score": 762,
+    "sessionTypeWeight": null,
+    "startDate": null,
+    "uid": "PRESENTATION262545"
+  },
+  "date": null,
+  "deadlineDate": null,
+  "doi": null,
+  "hasAbstract": true,
+  "hasPosters": false,
+  "hasSlides": false,
+  "hasVideos": false,
+  "isExternal": false,
+  "journalName": null,
+  "lastUpdated": {
+    "end": 1780176600000,
+    "start": 1780165800000,
+    "timeZone": "America/Chicago"
+  },
+  "meeting": {
+    "contentId": "335",
+    "name": "ASCO Annual Meeting",
+    "year": 2026
+  },
+  "meetingName": "2026 ASCO Annual Meeting",
+  "posterBoardNumber": "158",
+  "presentationId": "262545",
+  "primaryPerson": {
+    "displayName": "Qiyuan Isabelle Hu, PhD",
+    "role": "First Speaker"
+  },
+  "publishDate": {
+    "end": 1780176600000,
+    "start": 1780165800000,
+    "timeZone": "America/Chicago"
+  },
+  "relatedMaterials": [
+    {
+      "contentId": "17137",
+      "contentSourceId": null,
+      "contentType": "SESSION",
+      "contentUrl": {
+        "fqdn": "meetings.asco.org",
+        "fragment": null,
+        "path": "/meetings/2026-asco-annual-meeting/335/17137",
+        "queryParams": null,
+        "target": null,
+        "title": null
+      },
+      "sessionType": "Poster Session",
+      "title": "Developmental Therapeutics—Molecularly Targeted Agents and Tumor Biology"
+    }
+  ],
+  "status": null,
+  "styleType": "Presentation",
+  "summary": null,
+  "taxonomy": null,
+  "title": "Development and clinical utility of an H&E-based tumor origin prediction model.",
+  "titles": null,
+  "uid": "PRESENTATION262545"
+}

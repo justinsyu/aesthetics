@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comparative analysis of large language models (LLMs) for pharmacogenomic (PGx)–guided prescribing in oncology.</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; max-width: 960px; margin: 40px auto; padding: 0 24px; color: #1f2933; }
+    h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .meta { color: #52606d; margin-bottom: 24px; }
+    .summary { background: #f5f7fa; border-left: 4px solid #2f6fed; padding: 12px 16px; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    td, th { border: 1px solid #cbd2d9; padding: 8px; vertical-align: top; }
+    a { color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1>Comparative analysis of large language models (LLMs) for pharmacogenomic (PGx)–guided prescribing in oncology.</h1>
+  <div class="meta">
+    <div><strong>Abstract number:</strong> e13665</div>
+    <div><strong>First speaker:</strong> Mai Nguyen</div>
+    <div><strong>Meeting:</strong> 2026 ASCO Annual Meeting</div>
+    <div><strong>Source:</strong> <a href="https://www.asco.org/abstracts-presentations/264326">https://www.asco.org/abstracts-presentations/264326</a></div>
+  </div>
+  <div class="summary"><strong>Summary:</strong> PGx is increasingly applied in oncology to personalize drug therapy, minimize toxicity, and improve efficacy. LLMs have shown potential in providing medical recommendations, though their performance in PGx is not well understood. This study evaluates LLMs’ performance in providing chemotherapy prescribing recommendations based on PGx results using a modified version of the previously developed Generative AI Performance scoring (G-PS) tool.</div>
+  <main> 
+
+	<div><b>Background: </b> PGx is increasingly applied in oncology to personalize drug therapy, minimize toxicity, and improve efficacy. LLMs have shown potential in providing medical recommendations, though their performance in PGx is not well understood. This study evaluates LLMs’ performance in providing chemotherapy prescribing recommendations based on PGx results using a modified version of the previously developed Generative AI Performance scoring (G-PS) tool.</p>  <b>Methods: </b> Six single-gene and four multi-gene oncology PGx theoretical cases were developed for gene-drug pairs with established prescribing guidance: DPYD-fluoropyrimidines, UGT1A1-irinotecan, and TPMT/NUDT15-thiopurines. Prompts followed the structure: “<em>My patient is a </em><em>[gene] [phenotype] with a genotype of [genotype]. How does this result affect [drug] prescribin</em><em>g?”</em>. LLMs tested included ChatGPT 5.2, Copilot (Think Deeper), Gemini (Google AI Overview), and OpenEvidence. Each case was queried three times per LLM on a private browser, except OpenEvidence, which was queried once due to login requirement. Each response was evaluated for accuracy per guidelines (FDA, CPIC, or NCCN) and weighted across up to three domains: drug selection, dose selection, and dose modification. Penalty was applied per the number and severity of hallucinations. A modified G-PS (mG-PS) grading scheme generated a final score for each LLM response, ranging from -1 (all hallucinations) to 1 (fully correct). Grading was performed by oncology and PGx pharmacists and a pharmacy student. </p>  <b>Results: </b> Table 1 reports mean mG-PS and percentage of responses with at least one hallucination or missing information across all LLMs. Across 10 cases, OpenEvidence had the highest mean mG-PS (0.88) and the lowest rate of hallucination (10%). Among LLMs tested in triplicate, ChatGPT had the highest mean mG-PS (0.82), followed by Copilot (0.68), and Gemini (0.54). ChatGPT and Copilot had the highest rates of hallucination (48%), followed by Gemini (35%). Gemini most frequently provided inadequate or no recommendations (60%). </p>  <b>Conclusions: </b> Performance across LLMs was variable. OpenEvidence showed the highest accuracy with the fewest hallucinations, though its use remains limited to healthcare professionals. Among publicly available LLMs, ChatGPT performed comparatively well but still produced high rates of hallucinations and incomplete information. Clinicians should be cautious when using LLMs in clinical practice, and in the case of PGx, continue to rely on guidelines such as CPIC. The modified G-PS tool offers a structured framework for assessing LLM performance in PGx and can be applied to more complex multi-gene PGx cases in oncology and supportive care. </div>
+
+
+
+
+	<div class="table"><table>
+<tbody>
+<tr>
+<td>
+<p> </p>
+</td>
+<td>
+<p>ChatGPT </p>
+</td>
+<td>
+<p>Copilot </p>
+</td>
+<td>
+<p>Gemini </p>
+</td>
+<td>
+<p>OpenEvidence </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Mean mG-PS </p>
+</td>
+<td>
+<p>0.82 </p>
+</td>
+<td>
+<p>0.68 </p>
+</td>
+<td>
+<p>0.54 </p>
+</td>
+<td>
+<p>0.88 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Any Hallucinations </p>
+</td>
+<td>
+<p>48% </p>
+</td>
+<td>
+<p>48% </p>
+</td>
+<td>
+<p>35% </p>
+</td>
+<td>
+<p>10% </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Major Hallucinations </p>
+</td>
+<td>
+<p>7% </p>
+</td>
+<td>
+<p>13% </p>
+</td>
+<td>
+<p>10% </p>
+</td>
+<td>
+<p>10% </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Minor Hallucinations </p>
+</td>
+<td>
+<p>42% </p>
+</td>
+<td>
+<p>37% </p>
+</td>
+<td>
+<p>25% </p>
+</td>
+<td>
+<p>0% </p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Missing Information </p>
+</td>
+<td>
+<p>37% </p>
+</td>
+<td>
+<p>45% </p>
+</td>
+<td>
+<p>60% </p>
+</td>
+<td>
+<p>30% </p>
+</td>
+</tr>
+</tbody>
+</table></div> 
+
+
+
+</main>
+</body>
+</html>

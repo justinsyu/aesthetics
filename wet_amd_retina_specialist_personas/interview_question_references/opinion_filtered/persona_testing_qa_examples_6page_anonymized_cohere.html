@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Persona Testing Q&A Examples - Anonymized</title>
+  <style>
+    @page { size: 11in 8.5in; margin: 0; }
+    :root {
+      --ink: #10120f;
+      --muted: #5c6257;
+      --paper: #f6f1e8;
+      --paper-2: #ebe4d6;
+      --card: #fffaf0;
+      --line: #1b1f17;
+      --lime: #d7ff5f;
+      --orange: #ffb86b;
+      --blue: #b8d8ff;
+      --gray: #d6d0c2;
+      --shadow: 0 18px 48px rgba(16, 18, 15, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper-2);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .page {
+      width: 11in;
+      height: 8.5in;
+      page-break-after: always;
+      padding: 0.36in 0.48in 0.28in;
+      background: linear-gradient(180deg, var(--paper), #f4eddf);
+      position: relative;
+      overflow: hidden;
+      --dot-step: 20px;
+      --dot-size: 1.25px;
+      --dot-shift-x: 0px;
+      --dot-shift-y: 0px;
+      --field-a-x: 15%;
+      --field-a-y: 16%;
+      --field-b-x: 78%;
+      --field-b-y: 30%;
+      --field-c-x: 55%;
+      --field-c-y: 82%;
+    }
+    .page::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at var(--field-a-x) var(--field-a-y), rgba(16, 18, 15, 0.34) 0 0.28in, rgba(16, 18, 15, 0.18) 0.52in, transparent 1.42in),
+        radial-gradient(circle at var(--field-b-x) var(--field-b-y), rgba(16, 18, 15, 0.28) 0 0.18in, rgba(16, 18, 15, 0.15) 0.62in, transparent 1.55in),
+        radial-gradient(circle at var(--field-c-x) var(--field-c-y), rgba(16, 18, 15, 0.24) 0 0.24in, rgba(16, 18, 15, 0.12) 0.72in, transparent 1.7in),
+        linear-gradient(rgba(16, 18, 15, 0.07), rgba(16, 18, 15, 0.07));
+      -webkit-mask-image: radial-gradient(circle, #000 0 var(--dot-size), transparent calc(var(--dot-size) + 0.65px));
+      -webkit-mask-size: var(--dot-step) var(--dot-step);
+      -webkit-mask-position: var(--dot-shift-x) var(--dot-shift-y);
+      mask-image: radial-gradient(circle, #000 0 var(--dot-size), transparent calc(var(--dot-size) + 0.65px));
+      mask-size: var(--dot-step) var(--dot-step);
+      mask-position: var(--dot-shift-x) var(--dot-shift-y);
+      opacity: 0.66;
+    }
+    .page::after {
+      content: "";
+      position: absolute;
+      inset: 0.18in;
+      border: 1.5px solid rgba(27, 31, 23, 0.88);
+      border-radius: 0.14in;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .page:nth-of-type(2) {
+      --dot-step: 19px;
+      --dot-size: 1.15px;
+      --dot-shift-x: 5px;
+      --dot-shift-y: 9px;
+      --field-a-x: 20%;
+      --field-a-y: 74%;
+      --field-b-x: 84%;
+      --field-b-y: 18%;
+      --field-c-x: 52%;
+      --field-c-y: 46%;
+    }
+    .page:nth-of-type(3) {
+      --dot-step: 21px;
+      --dot-size: 1.2px;
+      --dot-shift-x: 11px;
+      --dot-shift-y: 2px;
+      --field-a-x: 12%;
+      --field-a-y: 38%;
+      --field-b-x: 72%;
+      --field-b-y: 78%;
+      --field-c-x: 88%;
+      --field-c-y: 24%;
+    }
+    .page:nth-of-type(4) {
+      --dot-step: 18px;
+      --dot-size: 1.1px;
+      --dot-shift-x: 3px;
+      --dot-shift-y: 12px;
+      --field-a-x: 30%;
+      --field-a-y: 20%;
+      --field-b-x: 66%;
+      --field-b-y: 62%;
+      --field-c-x: 90%;
+      --field-c-y: 84%;
+    }
+    .page:nth-of-type(5) {
+      --dot-step: 20px;
+      --dot-size: 1.2px;
+      --dot-shift-x: 14px;
+      --dot-shift-y: 8px;
+      --field-a-x: 16%;
+      --field-a-y: 84%;
+      --field-b-x: 46%;
+      --field-b-y: 18%;
+      --field-c-x: 82%;
+      --field-c-y: 52%;
+    }
+    .page:nth-of-type(6) {
+      --dot-step: 19px;
+      --dot-size: 1.1px;
+      --dot-shift-x: 7px;
+      --dot-shift-y: 4px;
+      --field-a-x: 24%;
+      --field-a-y: 28%;
+      --field-b-x: 76%;
+      --field-b-y: 70%;
+      --field-c-x: 54%;
+      --field-c-y: 90%;
+    }
+    .cover {
+      display: flex;
+      align-items: stretch;
+      padding: 0.62in 0.68in 0.54in;
+    }
+    .cover-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0.32in;
+      align-items: start;
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: none;
+      min-height: 100%;
+      margin: 0;
+      padding: 0.5in 0.34in 0.38in 0.42in;
+      border: 0;
+      border-radius: 0.18in;
+      background: transparent;
+      box-shadow: none;
+    }
+    .cover-grid::before { content: none; }
+    .cover-grid > div:first-child {
+      align-self: start;
+      width: 100%;
+    }
+    .cover h1 {
+      max-width: 9in;
+      font-size: 64px;
+      line-height: 0.93;
+      margin: 0.22in 0 0;
+      font-weight: 560;
+      letter-spacing: 0;
+      font-family: "Space Grotesk", Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .cover-panel {
+      background: rgba(255, 250, 240, 0.86);
+      color: var(--ink);
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius);
+      padding: 0.3in 0.34in 0.3in 0.42in;
+      width: 100%;
+      min-height: 1.72in;
+      margin-top: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: 0 24px 48px rgba(16, 18, 15, 0.09);
+      position: relative;
+      overflow: hidden;
+    }
+    .cover-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0.18in auto 0.18in 0;
+      width: 0.055in;
+      border-radius: 999px;
+      background: var(--lime);
+    }
+    .cover-panel > * {
+      position: relative;
+      z-index: 1;
+    }
+    .cover-panel h2 {
+      margin: 0 0 0.16in;
+      font-size: 26px;
+      line-height: 1.05;
+      font-weight: 560;
+      font-family: "Space Grotesk", Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .cover-panel ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.26in;
+      font-size: 18.5px;
+      line-height: 1.25;
+    }
+    .cover-panel li {
+      position: relative;
+      padding-left: 0.22in;
+    }
+    .cover-panel li::before {
+      content: "";
+      position: absolute;
+      width: 0.095in;
+      height: 0.095in;
+      left: 0;
+      top: 0.065in;
+      border-radius: 50%;
+      background: #4f5f12;
+    }
+    .header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.25in;
+      align-items: start;
+      margin-bottom: 0.15in;
+      position: relative;
+      z-index: 1;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      min-height: 0.25in;
+      font-size: 10px;
+      line-height: 1;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink);
+      font-weight: 800;
+      margin-bottom: 0.07in;
+      background: var(--lime);
+      border: 1.5px solid var(--line);
+      border-radius: 999px;
+      padding: 0.06in 0.1in;
+    }
+    .header .eyebrow {
+      margin-bottom: 0.16in;
+    }
+    h1 {
+      font-size: 32px;
+      line-height: 0.98;
+      margin: 0;
+      font-weight: 560;
+      letter-spacing: 0;
+      font-family: "Space Grotesk", Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .page-num {
+      font-size: 10px;
+      color: var(--ink);
+      border: 1.5px solid var(--line);
+      padding: 0.06in 0.1in;
+      border-radius: 999px;
+      white-space: nowrap;
+      background: var(--card);
+      font-weight: 800;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.18in;
+      position: relative;
+      z-index: 1;
+    }
+    .card {
+      height: 6.62in;
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 250, 240, 0.9);
+      padding: 0.19in 0.2in;
+      display: grid;
+      grid-template-rows: 0.26in 0.3in 0.98in 3.48in 0.86in;
+      gap: 0.09in;
+      box-shadow: var(--shadow);
+    }
+    .meta {
+      display: flex;
+      gap: 0.08in;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .chip {
+      font-size: 9.2px;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.035em;
+      border: 1.5px solid var(--line);
+      color: var(--ink);
+      padding: 0.055in 0.075in;
+      border-radius: 999px;
+      background: var(--blue);
+      font-weight: 800;
+    }
+    .chip:nth-child(2) { background: var(--orange); }
+    .doctor {
+      font-size: 23px;
+      line-height: 1.02;
+      font-weight: 560;
+      margin: 0;
+      letter-spacing: 0;
+      font-family: "Space Grotesk", Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .section {
+      border-top: 1.5px solid rgba(27, 31, 23, 0.22);
+      padding-top: 0.1in;
+      min-height: 0;
+    }
+    .label {
+      font-size: 9.6px;
+      line-height: 1;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 800;
+      margin-bottom: 0.055in;
+    }
+    .question {
+      font-size: 14.4px;
+      line-height: 1.25;
+      font-weight: 700;
+      margin: 0;
+    }
+    .answer {
+      font-size: 14.4px;
+      line-height: 1.24;
+      margin: 0;
+    }
+    .why {
+      font-size: 13.8px;
+      line-height: 1.22;
+      margin: 0;
+      color: #37352f;
+    }
+    .note {
+      position: absolute;
+      bottom: 0.36in;
+      left: 0.5in;
+      right: 0.5in;
+      font-size: 8px;
+      line-height: 1.2;
+      color: var(--muted);
+      z-index: 1;
+    }
+    @media print {
+      body { background: #fff; }
+      .page { margin: 0; }
+    }
+  </style>
+</head>
+<body>
+  <section class="page cover">
+    <div class="cover-grid">
+      <div>
+        <div class="eyebrow">Persona benchmark examples</div>
+        <h1>Anonymized Q&A examples for persona testing</h1>
+      </div>
+      <div class="cover-panel">
+        <ul>
+          <li>People and source identifiers are removed from the viewer-facing pages.</li>
+          <li>Questions and answer summaries are preserved except for neutral name replacement.</li>
+          <li>Examples focus on opinion, judgment, tradeoffs, and clinical perspective.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="header">
+      <div>
+        <div class="eyebrow">Persona benchmark examples</div>
+        <h1>Access, Value, and Policy Pressure</h1>
+      </div>
+      <div class="page-num">Page 1 / 5</div>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="meta"><span class="chip">Persona example</span><span class="chip">Payer / treatment selection</span></div>
+        <h2 class="doctor">Anonymous specialist</h2>
+        <div class="section"><div class="label">Question</div><p class="question">How does a provider choose among wet AMD treatments, including patient access and step-therapy considerations?</p></div>
+        <div class="section"><div class="label">Actual answer summary</div><p class="answer">The specialist emphasized patient and physician choice, timely access, and matching the right medicine to the patient. The specialist said Avastin can work but is off-label and requires repackaging, opposed mandatory step therapy because it can delay care and risk vision, and advised patients to understand insurance constraints.</p></div>
+        <div class="section"><div class="label">Why this tests a persona</div><p class="why">Strong discriminator for payer pressure, access friction, and willingness to push back on policy constraints when vision is at risk.</p></div>
+      </article>
+      <article class="card">
+        <div class="meta"><span class="chip">Persona example</span><span class="chip">Adoption / risk tolerance</span></div>
+        <h2 class="doctor">Anonymous specialist</h2>
+        <div class="section"><div class="label">Question</div><p class="question">What challenges and concerns might physicians face when using biosimilars for retinal diseases?</p></div>
+        <div class="section"><div class="label">Actual answer summary</div><p class="answer">The specialist said adoption depends on trust in FDA analytics, safety, clinical outcomes, and personal experience with the product. The specialist flags antidrug antibodies and intraocular inflammation as issues ophthalmologists now watch closely, while noting ranibizumab biosimilar trials did not show higher ADA or IOI rates versus reference ranibizumab.</p></div>
+        <div class="section"><div class="label">Why this tests a persona</div><p class="why">Tests how the persona weighs regulatory evidence, immune/safety risk, real-world comfort, and economic pressure.</p></div>
+      </article>
+    </div>
+    <div class="note">Answer summaries are concise paraphrases from the benchmark answer key.</div>
+  </section>
+
+  <section class="page">
+    <div class="header">
+      <div>
+        <div class="eyebrow">Persona benchmark examples</div>
+        <h1>Monitoring and Retreatment Logic</h1>
+      </div>
+      <div class="page-num">Page 2 / 5</div>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="meta"><span class="chip">Persona example</span><span class="chip">Monitoring / treatment selection</span></div>
+        <h2 class="doctor">Anonymous specialist</h2>
+        <div class="section"><div class="label">Question</div><p class="question">How do you decide on retreatment after anti-VEGF therapy: visual acuity, OCT, or fluorescein angiography?</p></div>
+        <div class="section"><div class="label">Actual answer summary</div><p class="answer">The specialist relies heavily on qualitative OCT for retreatment and treats for any macular fluid until the macula is dry. The specialist then follows monthly to learn the patient's fluid-free interval and returns just before expected recurrence, or uses treat-and-extend injections while dry to define and maintain that interval.</p></div>
+        <div class="section"><div class="label">Why this tests a persona</div><p class="why">Clear decision rule for OCT-driven retreatment; useful for testing precision, fluid tolerance, and protocol logic.</p></div>
+      </article>
+      <article class="card">
+        <div class="meta"><span class="chip">Persona example</span><span class="chip">Patient selection / treatment strategy</span></div>
+        <h2 class="doctor">Anonymous specialist</h2>
+        <div class="section"><div class="label">Question</div><p class="question">For patients who need frequent injections and are not fully dry after multiple monthly anti-VEGF injections, what is your next approach and patient discussion?</p></div>
+        <div class="section"><div class="label">Actual answer summary</div><p class="answer">The specialist said the diagnosis is rechecked and masqueraders are considered before labeling a patient as a high-VEGF-need incomplete responder. The specialist emphasized continued maintenance/treat-and-extend, patient communication about chronic therapy, and greater concern for intraretinal than subretinal fluid.</p></div>
+        <div class="section"><div class="label">Why this tests a persona</div><p class="why">Tests differential diagnosis, incomplete-responder management, fluid tolerance, and patient-facing explanation style.</p></div>
+      </article>
+    </div>
+    <div class="note">Selected examples emphasize subjective judgment, not factual recall.</div>
+  </section>
+
+  <section class="page">
+    <div class="header">
+      <div>
+        <div class="eyebrow">Persona benchmark examples</div>
+        <h1>Durable Delivery and Gene Therapy Thresholds</h1>
+      </div>
+      <div class="page-num">Page 3 / 5</div>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="meta"><span class="chip">Persona example</span><span class="chip">Adoption / treatment selection</span></div>
+        <h2 class="doctor">Anonymous specialist</h2>
+        <div class="section"><div class="label">Question</div><p class="question">Discuss whether retinal gene therapy is working, including anti-VEGF biofactory approaches for wet AMD, and where it may fit relative to injections.</p></div>
+        <div class="section"><div class="label">Actual answer summary</div><p class="answer">The specialist said retinal gene therapy is moving from rare inherited disease into common retina diseases such as wet AMD, with evidence that anti-VEGF-like proteins can be produced durably. The specialist does not expect injections to disappear; the specialist sees gene therapy as a possible foundation therapy for selected high-burden patients, with injections still used as needed.</p></div>
+        <div class="section"><div class="label">Why this tests a persona</div><p class="why">Tests adoption threshold for disruptive therapy and whether the persona avoids overclaiming replacement of injections.</p></div>
+      </article>
+      <article class="card">
+        <div class="meta"><span class="chip">Persona example</span><span class="chip">Evidence / patient selection</span></div>
+        <h2 class="doctor">Anonymous specialist</h2>
+        <div class="section"><div class="label">Question</div><p class="question">Explain the significance of suprachoroidal RGX-314 AAVIATE data for high-burden previously treated nAMD patients.</p></div>
+        <div class="section"><div class="label">Actual answer summary</div><p class="answer">The specialist called AAVIATE important because it was the first suprachoroidal gene-therapy trial and showed early tolerability plus meaningful treatment-burden reduction while maintaining anatomy and vision. The specialist stressed that RGX-314 is not curative, but a one-time in-clinic approach could reduce repeated anti-VEGF injections.</p></div>
+        <div class="section"><div class="label">Why this tests a persona</div><p class="why">Tests enthusiasm control: recognizes burden reduction and novelty while avoiding cure claims.</p></div>
+      </article>
+    </div>
+    <div class="note">These examples distinguish cautious platform adoption from pipeline-forward interpretation.</div>
+  </section>
+
+  <section class="page">
+    <div class="header">
+      <div>
+        <div class="eyebrow">Persona benchmark examples</div>
+        <h1>Risk, Futility, and Patient Selection</h1>
+      </div>
+      <div class="page-num">Page 4 / 5</div>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="meta"><span class="chip">Persona example</span><span class="chip">Risk / patient selection</span></div>
+        <h2 class="doctor">Anonymous specialist</h2>
+        <div class="section"><div class="label">Question</div><p class="question">When would an eye with wet AMD not receive treatment?</p></div>
+        <div class="section"><div class="label">Actual answer summary</div><p class="answer">The specialist said active wet AMD may sometimes be observed or dosed infrequently when there is a disciform scar, limited visual potential, a well-sighted fellow eye, or near end of life. The specialist emphasized individualized decisions rather than a single universal stopping rule.</p></div>
+        <div class="section"><div class="label">Why this tests a persona</div><p class="why">Tests treatment futility thresholds, patient-context reasoning, and willingness to depart from reflexive treatment.</p></div>
+      </article>
+      <article class="card">
+        <div class="meta"><span class="chip">Persona example</span><span class="chip">Risk / shared decision</span></div>
+        <h2 class="doctor">Anonymous specialist</h2>
+        <div class="section"><div class="label">Question</div><p class="question">In a patient with prior cerebrovascular accident or myocardial infarction and occult CNV, what treatment would you choose?</p></div>
+        <div class="section"><div class="label">Actual answer summary</div><p class="answer">The specialist said prior CVA or MI does not change his treatment choice. The specialist presents options and finds patients generally accept even a small possible vascular risk to avoid likely blindness or vision loss, framing the decision as shared risk-benefit judgment.</p></div>
+        <div class="section"><div class="label">Why this tests a persona</div><p class="why">Tests medically complex risk communication and whether the persona balances small systemic risks against likely vision loss.</p></div>
+      </article>
+    </div>
+    <div class="note">These examples test judgment under uncertainty, not factual knowledge.</div>
+  </section>
+
+  <section class="page">
+    <div class="header">
+      <div>
+        <div class="eyebrow">Persona benchmark examples</div>
+        <h1>Practice Burden and Future Workflow</h1>
+      </div>
+      <div class="page-num">Page 5 / 5</div>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="meta"><span class="chip">Persona example</span><span class="chip">Evidence / operations</span></div>
+        <h2 class="doctor">Anonymous specialist</h2>
+        <div class="section"><div class="label">Question</div><p class="question">What are your impressions of the durability of currently available anti-VEGF agents?</p></div>
+        <div class="section"><div class="label">Actual answer summary</div><p class="answer">The specialist said durability varies by patient but is broadly similar across agents, with many patients extending beyond 8 weeks but fewer reaching 12 to 16 weeks. The specialist emphasized that durability definitions depend on tolerated exudation thresholds, and described PDS as technically more demanding than injection but well tolerated and supported by LADDER/ARCHWAY maintenance data.</p></div>
+        <div class="section"><div class="label">Why this tests a persona</div><p class="why">Tests realistic durability expectations, exudation tolerance, and procedural adoption realism.</p></div>
+      </article>
+      <article class="card">
+        <div class="meta"><span class="chip">Persona example</span><span class="chip">Operations / risk tolerance</span></div>
+        <h2 class="doctor">Anonymous specialist</h2>
+        <div class="section"><div class="label">Question</div><p class="question">How do emerging options such as PDS, bispecific therapy, home OCT, and durability-focused therapies address wet AMD burden?</p></div>
+        <div class="section"><div class="label">Actual answer summary</div><p class="answer">The specialist said durability is the biggest unmet need because anti-VEGF works when patients adhere, but maintaining frequent care is difficult. The specialist viewed PDS as a potential burden reducer while recognizing a small absolute, higher relative infection risk, and saw future durability plus home OCT as ways to reduce burden.</p></div>
+        <div class="section"><div class="label">Why this tests a persona</div><p class="why">Tests durability-versus-safety tradeoff, procedural realism, and openness to monitoring-enabled care models.</p></div>
+      </article>
+    </div>
+    <div class="note">Sampled from 136 opinion-filtered benchmark rows; selected for answer availability and persona-discriminating value.</div>
+  </section>
+</body>
+</html>
