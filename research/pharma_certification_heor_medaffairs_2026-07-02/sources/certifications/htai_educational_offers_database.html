@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+	<meta charset="UTF-8" />
+	<script data-cfasync="false" data-no-defer="1" data-no-minify="1" data-no-optimize="1">var ewww_webp_supported=!1;function check_webp_feature(A,e){var w;e=void 0!==e?e:function(){},ewww_webp_supported?e(ewww_webp_supported):((w=new Image).onload=function(){ewww_webp_supported=0<w.width&&0<w.height,e&&e(ewww_webp_supported)},w.onerror=function(){e&&e(!1)},w.src="data:image/webp;base64,"+{alpha:"UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA=="}[A])}check_webp_feature("alpha");</script><script data-cfasync="false" data-no-defer="1" data-no-minify="1" data-no-optimize="1">var Arrive=function(c,w){"use strict";if(c.MutationObserver&&"undefined"!=typeof HTMLElement){var r,a=0,u=(r=HTMLElement.prototype.matches||HTMLElement.prototype.webkitMatchesSelector||HTMLElement.prototype.mozMatchesSelector||HTMLElement.prototype.msMatchesSelector,{matchesSelector:function(e,t){return e instanceof HTMLElement&&r.call(e,t)},addMethod:function(e,t,r){var a=e[t];e[t]=function(){return r.length==arguments.length?r.apply(this,arguments):"function"==typeof a?a.apply(this,arguments):void 0}},callCallbacks:function(e,t){t&&t.options.onceOnly&&1==t.firedElems.length&&(e=[e[0]]);for(var r,a=0;r=e[a];a++)r&&r.callback&&r.callback.call(r.elem,r.elem);t&&t.options.onceOnly&&1==t.firedElems.length&&t.me.unbindEventWithSelectorAndCallback.call(t.target,t.selector,t.callback)},checkChildNodesRecursively:function(e,t,r,a){for(var i,n=0;i=e[n];n++)r(i,t,a)&&a.push({callback:t.callback,elem:i}),0<i.childNodes.length&&u.checkChildNodesRecursively(i.childNodes,t,r,a)},mergeArrays:function(e,t){var r,a={};for(r in e)e.hasOwnProperty(r)&&(a[r]=e[r]);for(r in t)t.hasOwnProperty(r)&&(a[r]=t[r]);return a},toElementsArray:function(e){return e=void 0!==e&&("number"!=typeof e.length||e===c)?[e]:e}}),e=(l.prototype.addEvent=function(e,t,r,a){a={target:e,selector:t,options:r,callback:a,firedElems:[]};return this._beforeAdding&&this._beforeAdding(a),this._eventsBucket.push(a),a},l.prototype.removeEvent=function(e){for(var t,r=this._eventsBucket.length-1;t=this._eventsBucket[r];r--)e(t)&&(this._beforeRemoving&&this._beforeRemoving(t),(t=this._eventsBucket.splice(r,1))&&t.length&&(t[0].callback=null))},l.prototype.beforeAdding=function(e){this._beforeAdding=e},l.prototype.beforeRemoving=function(e){this._beforeRemoving=e},l),t=function(i,n){var o=new e,l=this,s={fireOnAttributesModification:!1};return o.beforeAdding(function(t){var e=t.target;e!==c.document&&e!==c||(e=document.getElementsByTagName("html")[0]);var r=new MutationObserver(function(e){n.call(this,e,t)}),a=i(t.options);r.observe(e,a),t.observer=r,t.me=l}),o.beforeRemoving(function(e){e.observer.disconnect()}),this.bindEvent=function(e,t,r){t=u.mergeArrays(s,t);for(var a=u.toElementsArray(this),i=0;i<a.length;i++)o.addEvent(a[i],e,t,r)},this.unbindEvent=function(){var r=u.toElementsArray(this);o.removeEvent(function(e){for(var t=0;t<r.length;t++)if(this===w||e.target===r[t])return!0;return!1})},this.unbindEventWithSelectorOrCallback=function(r){var a=u.toElementsArray(this),i=r,e="function"==typeof r?function(e){for(var t=0;t<a.length;t++)if((this===w||e.target===a[t])&&e.callback===i)return!0;return!1}:function(e){for(var t=0;t<a.length;t++)if((this===w||e.target===a[t])&&e.selector===r)return!0;return!1};o.removeEvent(e)},this.unbindEventWithSelectorAndCallback=function(r,a){var i=u.toElementsArray(this);o.removeEvent(function(e){for(var t=0;t<i.length;t++)if((this===w||e.target===i[t])&&e.selector===r&&e.callback===a)return!0;return!1})},this},i=new function(){var s={fireOnAttributesModification:!1,onceOnly:!1,existing:!1};function n(e,t,r){return!(!u.matchesSelector(e,t.selector)||(e._id===w&&(e._id=a++),-1!=t.firedElems.indexOf(e._id)))&&(t.firedElems.push(e._id),!0)}var c=(i=new t(function(e){var t={attributes:!1,childList:!0,subtree:!0};return e.fireOnAttributesModification&&(t.attributes=!0),t},function(e,i){e.forEach(function(e){var t=e.addedNodes,r=e.target,a=[];null!==t&&0<t.length?u.checkChildNodesRecursively(t,i,n,a):"attributes"===e.type&&n(r,i)&&a.push({callback:i.callback,elem:r}),u.callCallbacks(a,i)})})).bindEvent;return i.bindEvent=function(e,t,r){t=void 0===r?(r=t,s):u.mergeArrays(s,t);var a=u.toElementsArray(this);if(t.existing){for(var i=[],n=0;n<a.length;n++)for(var o=a[n].querySelectorAll(e),l=0;l<o.length;l++)i.push({callback:r,elem:o[l]});if(t.onceOnly&&i.length)return r.call(i[0].elem,i[0].elem);setTimeout(u.callCallbacks,1,i)}c.call(this,e,t,r)},i},o=new function(){var a={};function i(e,t){return u.matchesSelector(e,t.selector)}var n=(o=new t(function(){return{childList:!0,subtree:!0}},function(e,r){e.forEach(function(e){var t=e.removedNodes,e=[];null!==t&&0<t.length&&u.checkChildNodesRecursively(t,r,i,e),u.callCallbacks(e,r)})})).bindEvent;return o.bindEvent=function(e,t,r){t=void 0===r?(r=t,a):u.mergeArrays(a,t),n.call(this,e,t,r)},o};d(HTMLElement.prototype),d(NodeList.prototype),d(HTMLCollection.prototype),d(HTMLDocument.prototype),d(Window.prototype);var n={};return s(i,n,"unbindAllArrive"),s(o,n,"unbindAllLeave"),n}function l(){this._eventsBucket=[],this._beforeAdding=null,this._beforeRemoving=null}function s(e,t,r){u.addMethod(t,r,e.unbindEvent),u.addMethod(t,r,e.unbindEventWithSelectorOrCallback),u.addMethod(t,r,e.unbindEventWithSelectorAndCallback)}function d(e){e.arrive=i.bindEvent,s(i,e,"unbindArrive"),e.leave=o.bindEvent,s(o,e,"unbindLeave")}}(window,void 0),ewww_webp_supported=!1;function check_webp_feature(e,t){var r;ewww_webp_supported?t(ewww_webp_supported):((r=new Image).onload=function(){ewww_webp_supported=0<r.width&&0<r.height,t(ewww_webp_supported)},r.onerror=function(){t(!1)},r.src="data:image/webp;base64,"+{alpha:"UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA==",animation:"UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA"}[e])}function ewwwLoadImages(e){if(e){for(var t=document.querySelectorAll(".batch-image img, .image-wrapper a, .ngg-pro-masonry-item a, .ngg-galleria-offscreen-seo-wrapper a"),r=0,a=t.length;r<a;r++)ewwwAttr(t[r],"data-src",t[r].getAttribute("data-webp")),ewwwAttr(t[r],"data-thumbnail",t[r].getAttribute("data-webp-thumbnail"));for(var i=document.querySelectorAll("div.woocommerce-product-gallery__image"),r=0,a=i.length;r<a;r++)ewwwAttr(i[r],"data-thumb",i[r].getAttribute("data-webp-thumb"))}for(var n=document.querySelectorAll("video"),r=0,a=n.length;r<a;r++)ewwwAttr(n[r],"poster",e?n[r].getAttribute("data-poster-webp"):n[r].getAttribute("data-poster-image"));for(var o,l=document.querySelectorAll("img.ewww_webp_lazy_load"),r=0,a=l.length;r<a;r++)e&&(ewwwAttr(l[r],"data-lazy-srcset",l[r].getAttribute("data-lazy-srcset-webp")),ewwwAttr(l[r],"data-srcset",l[r].getAttribute("data-srcset-webp")),ewwwAttr(l[r],"data-lazy-src",l[r].getAttribute("data-lazy-src-webp")),ewwwAttr(l[r],"data-src",l[r].getAttribute("data-src-webp")),ewwwAttr(l[r],"data-orig-file",l[r].getAttribute("data-webp-orig-file")),ewwwAttr(l[r],"data-medium-file",l[r].getAttribute("data-webp-medium-file")),ewwwAttr(l[r],"data-large-file",l[r].getAttribute("data-webp-large-file")),null!=(o=l[r].getAttribute("srcset"))&&!1!==o&&o.includes("R0lGOD")&&ewwwAttr(l[r],"src",l[r].getAttribute("data-lazy-src-webp"))),l[r].className=l[r].className.replace(/\bewww_webp_lazy_load\b/,"");for(var s=document.querySelectorAll(".ewww_webp"),r=0,a=s.length;r<a;r++)e?(ewwwAttr(s[r],"srcset",s[r].getAttribute("data-srcset-webp")),ewwwAttr(s[r],"src",s[r].getAttribute("data-src-webp")),ewwwAttr(s[r],"data-orig-file",s[r].getAttribute("data-webp-orig-file")),ewwwAttr(s[r],"data-medium-file",s[r].getAttribute("data-webp-medium-file")),ewwwAttr(s[r],"data-large-file",s[r].getAttribute("data-webp-large-file")),ewwwAttr(s[r],"data-large_image",s[r].getAttribute("data-webp-large_image")),ewwwAttr(s[r],"data-src",s[r].getAttribute("data-webp-src"))):(ewwwAttr(s[r],"srcset",s[r].getAttribute("data-srcset-img")),ewwwAttr(s[r],"src",s[r].getAttribute("data-src-img"))),s[r].className=s[r].className.replace(/\bewww_webp\b/,"ewww_webp_loaded");window.jQuery&&jQuery.fn.isotope&&jQuery.fn.imagesLoaded&&(jQuery(".fusion-posts-container-infinite").imagesLoaded(function(){jQuery(".fusion-posts-container-infinite").hasClass("isotope")&&jQuery(".fusion-posts-container-infinite").isotope()}),jQuery(".fusion-portfolio:not(.fusion-recent-works) .fusion-portfolio-wrapper").imagesLoaded(function(){jQuery(".fusion-portfolio:not(.fusion-recent-works) .fusion-portfolio-wrapper").isotope()}))}function ewwwWebPInit(e){ewwwLoadImages(e),ewwwNggLoadGalleries(e),document.arrive(".ewww_webp",function(){ewwwLoadImages(e)}),document.arrive(".ewww_webp_lazy_load",function(){ewwwLoadImages(e)}),document.arrive("videos",function(){ewwwLoadImages(e)}),"loading"==document.readyState?document.addEventListener("DOMContentLoaded",ewwwJSONParserInit):("undefined"!=typeof galleries&&ewwwNggParseGalleries(e),ewwwWooParseVariations(e))}function ewwwAttr(e,t,r){null!=r&&!1!==r&&e.setAttribute(t,r)}function ewwwJSONParserInit(){"undefined"!=typeof galleries&&check_webp_feature("alpha",ewwwNggParseGalleries),check_webp_feature("alpha",ewwwWooParseVariations)}function ewwwWooParseVariations(e){if(e)for(var t=document.querySelectorAll("form.variations_form"),r=0,a=t.length;r<a;r++){var i=t[r].getAttribute("data-product_variations"),n=!1;try{for(var o in i=JSON.parse(i))void 0!==i[o]&&void 0!==i[o].image&&(void 0!==i[o].image.src_webp&&(i[o].image.src=i[o].image.src_webp,n=!0),void 0!==i[o].image.srcset_webp&&(i[o].image.srcset=i[o].image.srcset_webp,n=!0),void 0!==i[o].image.full_src_webp&&(i[o].image.full_src=i[o].image.full_src_webp,n=!0),void 0!==i[o].image.gallery_thumbnail_src_webp&&(i[o].image.gallery_thumbnail_src=i[o].image.gallery_thumbnail_src_webp,n=!0),void 0!==i[o].image.thumb_src_webp&&(i[o].image.thumb_src=i[o].image.thumb_src_webp,n=!0));n&&ewwwAttr(t[r],"data-product_variations",JSON.stringify(i))}catch(e){}}}function ewwwNggParseGalleries(e){if(e)for(var t in galleries){var r=galleries[t];galleries[t].images_list=ewwwNggParseImageList(r.images_list)}}function ewwwNggLoadGalleries(e){e&&document.addEventListener("ngg.galleria.themeadded",function(e,t){window.ngg_galleria._create_backup=window.ngg_galleria.create,window.ngg_galleria.create=function(e,t){var r=$(e).data("id");return galleries["gallery_"+r].images_list=ewwwNggParseImageList(galleries["gallery_"+r].images_list),window.ngg_galleria._create_backup(e,t)}})}function ewwwNggParseImageList(e){for(var t in e){var r=e[t];if(void 0!==r["image-webp"]&&(e[t].image=r["image-webp"],delete e[t]["image-webp"]),void 0!==r["thumb-webp"]&&(e[t].thumb=r["thumb-webp"],delete e[t]["thumb-webp"]),void 0!==r.full_image_webp&&(e[t].full_image=r.full_image_webp,delete e[t].full_image_webp),void 0!==r.srcsets)for(var a in r.srcsets)nggSrcset=r.srcsets[a],void 0!==r.srcsets[a+"-webp"]&&(e[t].srcsets[a]=r.srcsets[a+"-webp"],delete e[t].srcsets[a+"-webp"]);if(void 0!==r.full_srcsets)for(var i in r.full_srcsets)nggFSrcset=r.full_srcsets[i],void 0!==r.full_srcsets[i+"-webp"]&&(e[t].full_srcsets[i]=r.full_srcsets[i+"-webp"],delete e[t].full_srcsets[i+"-webp"])}return e}check_webp_feature("alpha",ewwwWebPInit);</script><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name='robots' content='max-image-preview:large' />
+            <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+            <link rel="preconnect" href="https://p.typekit.net" crossorigin />
+                <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- sonder header scripts -->                        <meta name="description" content="Your free online tool to collect educational and training programs that are being offered globally in the field of Health Technology Assessment." /><link rel="canonical" href="https://htai.org/learn-with-us/educational-offers-database/" />        <meta content='' name='twitter:image:src' />
+        <meta name="twitter:card" content="Your free online tool to collect educational and training programs that are being offered globally in the field of Health Technology Assessment." />
+
+                <meta property="og:title" content="Educational Offers Database" />
+        <meta property="og:description" content="Your free online tool to collect educational and training programs that are being offered globally in the field of Health Technology Assessment." />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://htai.org/learn-with-us/educational-offers-database/" />
+        <meta property="og:site_name" content="HTAi" />
+        <meta property="og:image" content="" />
+                    <script id="cookie-consent">
+                            window.cookieConsent = {
+                    enabled: true,
+                    config: {
+                        languages: {
+                            current: {
+                                consent_modal: {
+                                    title: 'We use cookies',
+                                    description: `<p>Hi, this website uses essential cookies to ensure its proper operation and tracking cookies to understand how you interact with it. The latter will be set only after consent. <button class="cc-link" type="button" data-cc="c-settings" aria-haspopup="dialog">Let me choose</button></p>
+`,
+                                    primary_btn: {
+                                        text: 'Accept all',
+                                        role: 'accept_all',
+                                    },
+                                    secondary_btn: {
+                                        text: 'Reject all',
+                                        role: 'accept_necessary',
+                                    },
+                                },
+                                settings_modal: {
+                                    title: 'Cookie preferences',
+                                    save_settings_btn: 'Save settings',
+                                    accept_all_btn:  'Accept all',
+                                    reject_all_btn:  'Reject all',
+                                    close_btn_label: 'Close',
+                                    cookie_table_headers: [
+                                        { col1: 'Name' },
+                                        { col2: 'Domain' },
+                                        { col3: 'Expiration' },
+                                        { col4: 'Description' },
+                                    ],
+                                    blocks: [
+                                        {
+                                            title: 'Settings',
+                                            description: `<p>I use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href="/about/privacy-policy/">privacy policy</a>.</p>
+`,
+                                        },
+                                                                                            {
+                                                        title: 'Strictly necessary cookies',
+                                                        description: 'These cookies are essential for the proper functioning of my website. Without these cookies, the website would not work properly',
+                                                        toggle: {
+                                                            value: 'necessary',
+                                                            enabled: true,
+                                                            readonly: true,
+                                                        },
+                                                                                                            },                                                     {
+                                                        title: 'Performance and Analytics cookies',
+                                                        description: 'These cookies collect information about how you use the website, which pages you visited and which links you clicked on. All of the data is anonymized and cannot be used to identify you',
+                                                        toggle: {
+                                                            value: 'analytics',
+                                                            enabled: true,
+                                                            readonly: false,
+                                                        },
+                                                                                                                        cookie_table: [
+                                                                                                                                    { col1: '^_ga',
+                                                                    col2: 'google.com',
+                                                                    col3: '2 Years',
+                                                                    col4: 'Used by Google Analytics to distinguish users and collect data on the number of times a user has visited a website.',
+                                                                    is_regex: true },
+                                                                                                                                ]                                                     },                                                     {
+                                                        title: 'Advertisement and Targeting cookies',
+                                                        description: 'Targeting cookies are used to track visitors across websites. The intention is to display ads that are relevant and engaging for the individual user and thereby more valuable for publishers and third party advertisers.',
+                                                        toggle: {
+                                                            value: 'targeting',
+                                                            enabled: true,
+                                                            readonly: false,
+                                                        },
+                                                                                                            },                                         {
+                                            title: 'More Information',
+                                            description: `<p>For any queries in relation to our policy on cookies and your choices, please <a class="cc-link" href="/contact">contact us</a>.</p>
+`
+                                        },
+                                    ],
+                                },
+                            },
+                        }
+                    }
+                }
+                    </script>
+            
+        <script>
+                        window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+
+                        gtag('consent', 'default', {
+                'ad_storage': 'denied',
+                'analytics_storage': 'denied'
+            });
+        </script>
+
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com/" >
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-79CPBECN0V"></script>
+
+        <script  type="text/plain" data-cookiecategory="analytics">
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-79CPBECN0V');
+        </script>
+
+                <script  type="text/plain" data-cookiecategory="analytics">
+            gtag('consent', 'update', {
+                'analytics_storage': 'granted'
+            });
+        </script>
+
+                <script  type="text/plain" data-cookiecategory="targeting">
+            gtag('consent', 'update', {
+                'ad_storage': 'granted'
+            });
+        </script>
+
+            <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if(document.querySelector('.acf-map')) {
+                let script = document.createElement('script');
+                script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDxqNJsa7QgGIMSD3WxoQOFoFxMbu3mK8A&callback=initGoogleMaps';
+                script.async = true;
+                document.body.appendChild(script);
+            }
+        })
+    </script>
+        
+<title>Educational Offers Database &#8211; HTAi</title>
+<link rel='dns-prefetch' href='//www.google.com' />
+<link rel='dns-prefetch' href='//use.typekit.net' />
+<link rel="alternate" type="text/calendar" title="HTAi &raquo; iCal Feed" href="https://htai.org/events/?ical=1" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://htai.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fhtai.org%2Flearn-with-us%2Feducational-offers-database%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://htai.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fhtai.org%2Flearn-with-us%2Feducational-offers-database%2F&#038;format=xml" />
+<style id='wp-img-auto-sizes-contain-inline-css'>
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id='wp-block-paragraph-inline-css'>
+.is-small-text{font-size:.875em}.is-regular-text{font-size:1em}.is-large-text{font-size:2.25em}.is-larger-text{font-size:3em}.has-drop-cap:not(:focus):first-letter{float:left;font-size:8.4em;font-style:normal;font-weight:100;line-height:.68;margin:.05em .1em 0 0;text-transform:uppercase}body.rtl .has-drop-cap:not(:focus):first-letter{float:none;margin-left:.1em}p.has-drop-cap.has-background{overflow:hidden}:root :where(p.has-background){padding:1.25em 2.375em}:where(p.has-text-color:not(.has-link-color)) a{color:inherit}p.has-text-align-left[style*="writing-mode:vertical-lr"],p.has-text-align-right[style*="writing-mode:vertical-rl"]{rotate:180deg}
+/*# sourceURL=https://htai.org/wp-includes/blocks/paragraph/style.min.css */
+</style>
+<style id='wp-block-heading-inline-css'>
+h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-background,h3:where(.wp-block-heading).has-background,h4:where(.wp-block-heading).has-background,h5:where(.wp-block-heading).has-background,h6:where(.wp-block-heading).has-background{padding:1.25em 2.375em}h1.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h1.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h2.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h2.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h3.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h3.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h4.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h4.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h5.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h5.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h6.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h6.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]){rotate:180deg}
+/*# sourceURL=https://htai.org/wp-includes/blocks/heading/style.min.css */
+</style>
+<style id='wp-block-post-content-inline-css'>
+.wp-block-post-content{display:flow-root}
+/*# sourceURL=https://htai.org/wp-includes/blocks/post-content/style.min.css */
+</style>
+<style id='wp-block-library-inline-css'>
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}.has-text-align-center{text-align:center}.has-text-align-left{text-align:left}.has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id='global-styles-inline-css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--pc-100: #b2b5d5ff;--wp--preset--color--pc-300: #656cabff;--wp--preset--color--pc-500: #182281ff;--wp--preset--color--pc-700: #101756ff;--wp--preset--color--pc-900: #080b2bff;--wp--preset--color--sc-100: #bde0f3ff;--wp--preset--color--sc-300: #7ac0e7ff;--wp--preset--color--sc-500: #38a1dbff;--wp--preset--color--sc-700: #256b92ff;--wp--preset--color--sc-900: #133649ff;--wp--preset--color--tc-100: #dfbfe1ff;--wp--preset--color--tc-300: #bb90beff;--wp--preset--color--tc-500: #a167a5ff;--wp--preset--color--tc-700: #854889ff;--wp--preset--color--tc-900: #6f3373ff;--wp--preset--color--qc-100: #f9efffff;--wp--preset--color--qc-300: #f0e2f8ff;--wp--preset--color--qc-500: #d7c8e8ff;--wp--preset--color--qc-700: #b9a8ccff;--wp--preset--color--qc-900: #a697b8ff;--wp--preset--color--main-bg: #f8fbfaff;--wp--preset--color--text-100: #bac1cdff;--wp--preset--color--text-300: #75849aff;--wp--preset--color--text-500: #304668ff;--wp--preset--color--text-700: #202f45ff;--wp--preset--color--text-900: #101723ff;--wp--preset--color--success-300: #a3ddbcff;--wp--preset--color--success-400: #5dc389ff;--wp--preset--color--success-500: #18a957ff;--wp--preset--color--success-600: #11763dff;--wp--preset--color--success-700: #0a4423ff;--wp--preset--color--warning-300: #ffe4afff;--wp--preset--color--warning-400: #ffcf74ff;--wp--preset--color--warning-500: #ffbb38ff;--wp--preset--color--warning-600: #b38327ff;--wp--preset--color--warning-700: #664b16ff;--wp--preset--color--error-300: #f2a2b3ff;--wp--preset--color--error-400: #e95c7bff;--wp--preset--color--error-500: #df1642ff;--wp--preset--color--error-600: #9c0f2eff;--wp--preset--color--error-700: #59091aff;--wp--preset--color--gray-50: #fcfcfcff;--wp--preset--color--gray-100: #f5f5f5ff;--wp--preset--color--gray-200: #eeeeeeff;--wp--preset--color--gray-300: #e0e0e0ff;--wp--preset--color--gray-400: #bdbdbdff;--wp--preset--color--gray-500: #9e9e9eff;--wp--preset--color--gray-600: #757575ff;--wp--preset--color--gray-700: #616161ff;--wp--preset--color--gray-800: #424242ff;--wp--preset--color--gray-900: #323232ff;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-family--area-normal: proxima-nova, sans-serif;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:root { --wp--style--global--content-size: 90%;--wp--style--global--wide-size: 100%; }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}a:where(:not(.wp-element-button)){text-decoration: initial;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-pc-100-color{color: var(--wp--preset--color--pc-100) !important;}.has-pc-300-color{color: var(--wp--preset--color--pc-300) !important;}.has-pc-500-color{color: var(--wp--preset--color--pc-500) !important;}.has-pc-700-color{color: var(--wp--preset--color--pc-700) !important;}.has-pc-900-color{color: var(--wp--preset--color--pc-900) !important;}.has-sc-100-color{color: var(--wp--preset--color--sc-100) !important;}.has-sc-300-color{color: var(--wp--preset--color--sc-300) !important;}.has-sc-500-color{color: var(--wp--preset--color--sc-500) !important;}.has-sc-700-color{color: var(--wp--preset--color--sc-700) !important;}.has-sc-900-color{color: var(--wp--preset--color--sc-900) !important;}.has-tc-100-color{color: var(--wp--preset--color--tc-100) !important;}.has-tc-300-color{color: var(--wp--preset--color--tc-300) !important;}.has-tc-500-color{color: var(--wp--preset--color--tc-500) !important;}.has-tc-700-color{color: var(--wp--preset--color--tc-700) !important;}.has-tc-900-color{color: var(--wp--preset--color--tc-900) !important;}.has-qc-100-color{color: var(--wp--preset--color--qc-100) !important;}.has-qc-300-color{color: var(--wp--preset--color--qc-300) !important;}.has-qc-500-color{color: var(--wp--preset--color--qc-500) !important;}.has-qc-700-color{color: var(--wp--preset--color--qc-700) !important;}.has-qc-900-color{color: var(--wp--preset--color--qc-900) !important;}.has-main-bg-color{color: var(--wp--preset--color--main-bg) !important;}.has-text-100-color{color: var(--wp--preset--color--text-100) !important;}.has-text-300-color{color: var(--wp--preset--color--text-300) !important;}.has-text-500-color{color: var(--wp--preset--color--text-500) !important;}.has-text-700-color{color: var(--wp--preset--color--text-700) !important;}.has-text-900-color{color: var(--wp--preset--color--text-900) !important;}.has-success-300-color{color: var(--wp--preset--color--success-300) !important;}.has-success-400-color{color: var(--wp--preset--color--success-400) !important;}.has-success-500-color{color: var(--wp--preset--color--success-500) !important;}.has-success-600-color{color: var(--wp--preset--color--success-600) !important;}.has-success-700-color{color: var(--wp--preset--color--success-700) !important;}.has-warning-300-color{color: var(--wp--preset--color--warning-300) !important;}.has-warning-400-color{color: var(--wp--preset--color--warning-400) !important;}.has-warning-500-color{color: var(--wp--preset--color--warning-500) !important;}.has-warning-600-color{color: var(--wp--preset--color--warning-600) !important;}.has-warning-700-color{color: var(--wp--preset--color--warning-700) !important;}.has-error-300-color{color: var(--wp--preset--color--error-300) !important;}.has-error-400-color{color: var(--wp--preset--color--error-400) !important;}.has-error-500-color{color: var(--wp--preset--color--error-500) !important;}.has-error-600-color{color: var(--wp--preset--color--error-600) !important;}.has-error-700-color{color: var(--wp--preset--color--error-700) !important;}.has-gray-50-color{color: var(--wp--preset--color--gray-50) !important;}.has-gray-100-color{color: var(--wp--preset--color--gray-100) !important;}.has-gray-200-color{color: var(--wp--preset--color--gray-200) !important;}.has-gray-300-color{color: var(--wp--preset--color--gray-300) !important;}.has-gray-400-color{color: var(--wp--preset--color--gray-400) !important;}.has-gray-500-color{color: var(--wp--preset--color--gray-500) !important;}.has-gray-600-color{color: var(--wp--preset--color--gray-600) !important;}.has-gray-700-color{color: var(--wp--preset--color--gray-700) !important;}.has-gray-800-color{color: var(--wp--preset--color--gray-800) !important;}.has-gray-900-color{color: var(--wp--preset--color--gray-900) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-pc-100-background-color{background-color: var(--wp--preset--color--pc-100) !important;}.has-pc-300-background-color{background-color: var(--wp--preset--color--pc-300) !important;}.has-pc-500-background-color{background-color: var(--wp--preset--color--pc-500) !important;}.has-pc-700-background-color{background-color: var(--wp--preset--color--pc-700) !important;}.has-pc-900-background-color{background-color: var(--wp--preset--color--pc-900) !important;}.has-sc-100-background-color{background-color: var(--wp--preset--color--sc-100) !important;}.has-sc-300-background-color{background-color: var(--wp--preset--color--sc-300) !important;}.has-sc-500-background-color{background-color: var(--wp--preset--color--sc-500) !important;}.has-sc-700-background-color{background-color: var(--wp--preset--color--sc-700) !important;}.has-sc-900-background-color{background-color: var(--wp--preset--color--sc-900) !important;}.has-tc-100-background-color{background-color: var(--wp--preset--color--tc-100) !important;}.has-tc-300-background-color{background-color: var(--wp--preset--color--tc-300) !important;}.has-tc-500-background-color{background-color: var(--wp--preset--color--tc-500) !important;}.has-tc-700-background-color{background-color: var(--wp--preset--color--tc-700) !important;}.has-tc-900-background-color{background-color: var(--wp--preset--color--tc-900) !important;}.has-qc-100-background-color{background-color: var(--wp--preset--color--qc-100) !important;}.has-qc-300-background-color{background-color: var(--wp--preset--color--qc-300) !important;}.has-qc-500-background-color{background-color: var(--wp--preset--color--qc-500) !important;}.has-qc-700-background-color{background-color: var(--wp--preset--color--qc-700) !important;}.has-qc-900-background-color{background-color: var(--wp--preset--color--qc-900) !important;}.has-main-bg-background-color{background-color: var(--wp--preset--color--main-bg) !important;}.has-text-100-background-color{background-color: var(--wp--preset--color--text-100) !important;}.has-text-300-background-color{background-color: var(--wp--preset--color--text-300) !important;}.has-text-500-background-color{background-color: var(--wp--preset--color--text-500) !important;}.has-text-700-background-color{background-color: var(--wp--preset--color--text-700) !important;}.has-text-900-background-color{background-color: var(--wp--preset--color--text-900) !important;}.has-success-300-background-color{background-color: var(--wp--preset--color--success-300) !important;}.has-success-400-background-color{background-color: var(--wp--preset--color--success-400) !important;}.has-success-500-background-color{background-color: var(--wp--preset--color--success-500) !important;}.has-success-600-background-color{background-color: var(--wp--preset--color--success-600) !important;}.has-success-700-background-color{background-color: var(--wp--preset--color--success-700) !important;}.has-warning-300-background-color{background-color: var(--wp--preset--color--warning-300) !important;}.has-warning-400-background-color{background-color: var(--wp--preset--color--warning-400) !important;}.has-warning-500-background-color{background-color: var(--wp--preset--color--warning-500) !important;}.has-warning-600-background-color{background-color: var(--wp--preset--color--warning-600) !important;}.has-warning-700-background-color{background-color: var(--wp--preset--color--warning-700) !important;}.has-error-300-background-color{background-color: var(--wp--preset--color--error-300) !important;}.has-error-400-background-color{background-color: var(--wp--preset--color--error-400) !important;}.has-error-500-background-color{background-color: var(--wp--preset--color--error-500) !important;}.has-error-600-background-color{background-color: var(--wp--preset--color--error-600) !important;}.has-error-700-background-color{background-color: var(--wp--preset--color--error-700) !important;}.has-gray-50-background-color{background-color: var(--wp--preset--color--gray-50) !important;}.has-gray-100-background-color{background-color: var(--wp--preset--color--gray-100) !important;}.has-gray-200-background-color{background-color: var(--wp--preset--color--gray-200) !important;}.has-gray-300-background-color{background-color: var(--wp--preset--color--gray-300) !important;}.has-gray-400-background-color{background-color: var(--wp--preset--color--gray-400) !important;}.has-gray-500-background-color{background-color: var(--wp--preset--color--gray-500) !important;}.has-gray-600-background-color{background-color: var(--wp--preset--color--gray-600) !important;}.has-gray-700-background-color{background-color: var(--wp--preset--color--gray-700) !important;}.has-gray-800-background-color{background-color: var(--wp--preset--color--gray-800) !important;}.has-gray-900-background-color{background-color: var(--wp--preset--color--gray-900) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-pc-100-border-color{border-color: var(--wp--preset--color--pc-100) !important;}.has-pc-300-border-color{border-color: var(--wp--preset--color--pc-300) !important;}.has-pc-500-border-color{border-color: var(--wp--preset--color--pc-500) !important;}.has-pc-700-border-color{border-color: var(--wp--preset--color--pc-700) !important;}.has-pc-900-border-color{border-color: var(--wp--preset--color--pc-900) !important;}.has-sc-100-border-color{border-color: var(--wp--preset--color--sc-100) !important;}.has-sc-300-border-color{border-color: var(--wp--preset--color--sc-300) !important;}.has-sc-500-border-color{border-color: var(--wp--preset--color--sc-500) !important;}.has-sc-700-border-color{border-color: var(--wp--preset--color--sc-700) !important;}.has-sc-900-border-color{border-color: var(--wp--preset--color--sc-900) !important;}.has-tc-100-border-color{border-color: var(--wp--preset--color--tc-100) !important;}.has-tc-300-border-color{border-color: var(--wp--preset--color--tc-300) !important;}.has-tc-500-border-color{border-color: var(--wp--preset--color--tc-500) !important;}.has-tc-700-border-color{border-color: var(--wp--preset--color--tc-700) !important;}.has-tc-900-border-color{border-color: var(--wp--preset--color--tc-900) !important;}.has-qc-100-border-color{border-color: var(--wp--preset--color--qc-100) !important;}.has-qc-300-border-color{border-color: var(--wp--preset--color--qc-300) !important;}.has-qc-500-border-color{border-color: var(--wp--preset--color--qc-500) !important;}.has-qc-700-border-color{border-color: var(--wp--preset--color--qc-700) !important;}.has-qc-900-border-color{border-color: var(--wp--preset--color--qc-900) !important;}.has-main-bg-border-color{border-color: var(--wp--preset--color--main-bg) !important;}.has-text-100-border-color{border-color: var(--wp--preset--color--text-100) !important;}.has-text-300-border-color{border-color: var(--wp--preset--color--text-300) !important;}.has-text-500-border-color{border-color: var(--wp--preset--color--text-500) !important;}.has-text-700-border-color{border-color: var(--wp--preset--color--text-700) !important;}.has-text-900-border-color{border-color: var(--wp--preset--color--text-900) !important;}.has-success-300-border-color{border-color: var(--wp--preset--color--success-300) !important;}.has-success-400-border-color{border-color: var(--wp--preset--color--success-400) !important;}.has-success-500-border-color{border-color: var(--wp--preset--color--success-500) !important;}.has-success-600-border-color{border-color: var(--wp--preset--color--success-600) !important;}.has-success-700-border-color{border-color: var(--wp--preset--color--success-700) !important;}.has-warning-300-border-color{border-color: var(--wp--preset--color--warning-300) !important;}.has-warning-400-border-color{border-color: var(--wp--preset--color--warning-400) !important;}.has-warning-500-border-color{border-color: var(--wp--preset--color--warning-500) !important;}.has-warning-600-border-color{border-color: var(--wp--preset--color--warning-600) !important;}.has-warning-700-border-color{border-color: var(--wp--preset--color--warning-700) !important;}.has-error-300-border-color{border-color: var(--wp--preset--color--error-300) !important;}.has-error-400-border-color{border-color: var(--wp--preset--color--error-400) !important;}.has-error-500-border-color{border-color: var(--wp--preset--color--error-500) !important;}.has-error-600-border-color{border-color: var(--wp--preset--color--error-600) !important;}.has-error-700-border-color{border-color: var(--wp--preset--color--error-700) !important;}.has-gray-50-border-color{border-color: var(--wp--preset--color--gray-50) !important;}.has-gray-100-border-color{border-color: var(--wp--preset--color--gray-100) !important;}.has-gray-200-border-color{border-color: var(--wp--preset--color--gray-200) !important;}.has-gray-300-border-color{border-color: var(--wp--preset--color--gray-300) !important;}.has-gray-400-border-color{border-color: var(--wp--preset--color--gray-400) !important;}.has-gray-500-border-color{border-color: var(--wp--preset--color--gray-500) !important;}.has-gray-600-border-color{border-color: var(--wp--preset--color--gray-600) !important;}.has-gray-700-border-color{border-color: var(--wp--preset--color--gray-700) !important;}.has-gray-800-border-color{border-color: var(--wp--preset--color--gray-800) !important;}.has-gray-900-border-color{border-color: var(--wp--preset--color--gray-900) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}.has-area-normal-font-family{font-family: var(--wp--preset--font-family--area-normal) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+<link rel='stylesheet' id='tribe-events-v2-single-skeleton-css' href='https://htai.org/wp-content/plugins/the-events-calendar/build/css/tribe-events-single-skeleton.css?ver=6.16.2' media='all' />
+<link rel='stylesheet' id='tribe-events-v2-single-skeleton-full-css' href='https://htai.org/wp-content/plugins/the-events-calendar/build/css/tribe-events-single-full.css?ver=6.16.2' media='all' />
+<link rel='stylesheet' id='tec-events-elementor-widgets-base-styles-css' href='https://htai.org/wp-content/plugins/the-events-calendar/build/css/integrations/plugins/elementor/widgets/widget-base.css?ver=6.16.2' media='all' />
+<link rel='stylesheet' id='_scroll-DFK-joVw.js-css-0-css' href='https://htai.org/wp-content/themes/Sonder-Client/dist/assets/scroll-r_5G_hiI.css?ver=1.0' media='all' />
+<link rel='stylesheet' id='src/main.js-css-0-css' href='https://htai.org/wp-content/themes/Sonder-Client/dist/assets/main-BbdflwhK.css?ver=1.0' media='all' />
+<link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet';this.removeAttribute('as');" id='loadingFont_1' href='https://use.typekit.net/tza6krp.css' type='text/css' media='all' /><noscript><link rel='stylesheet' href='https://use.typekit.net/tza6krp.css'></noscript><script id="__commonjsHelpers-BosuxZz1-js" type="module" src="https://htai.org/wp-content/themes/Sonder-Client/dist/assets/_commonjsHelpers-BosuxZz1.js?ver=1.0.0" ></script><script id="_sonder-DGKo_DME-js" type="module" src="https://htai.org/wp-content/themes/Sonder-Client/dist/assets/sonder-DGKo_DME.js?ver=1.0.0" ></script><script id="_scroll-DFK-joVw-js" type="module" src="https://htai.org/wp-content/themes/Sonder-Client/dist/assets/scroll-DFK-joVw.js?ver=1.0.0" ></script><script id="_chapterLinks-DgenJGqr-js" type="module" src="https://htai.org/wp-content/themes/Sonder-Client/dist/assets/chapterLinks-DgenJGqr.js?ver=1.0.0" ></script><script id="_client-DWCNAQLh-js" type="module" src="https://htai.org/wp-content/themes/Sonder-Client/dist/assets/client-DWCNAQLh.js?ver=1.0.0" ></script><script id="_index-Ce_RUgA6-js" type="module" src="https://htai.org/wp-content/themes/Sonder-Client/dist/assets/index-Ce_RUgA6.js?ver=1.0.0" ></script><script id="_setPrototypeOf-CtPl7uDk-js" type="module" src="https://htai.org/wp-content/themes/Sonder-Client/dist/assets/setPrototypeOf-CtPl7uDk.js?ver=1.0.0" ></script><script id="_index-B1fIeQp3-js" type="module" src="https://htai.org/wp-content/themes/Sonder-Client/dist/assets/index-B1fIeQp3.js?ver=1.0.0" ></script><script id="src-main-js" type="module" src="https://htai.org/wp-content/themes/Sonder-Client/dist/assets/main-04gD0im6.js?ver=1.0.0" ></script><link rel="https://api.w.org/" href="https://htai.org/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://htai.org/wp-json/wp/v2/pages/1603" /><meta name="tec-api-version" content="v1"><meta name="tec-api-origin" content="https://htai.org"><link rel="alternate" href="https://htai.org/wp-json/tribe/events/v1/" /><meta name="generator" content="Elementor 4.0.9; features: e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap">
+			<style>
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
+					background-image: none !important;
+				}
+				@media screen and (max-height: 1024px) {
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+				@media screen and (max-height: 640px) {
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+			</style>
+			<noscript><style>.lazyload[data-src]{display:none !important;}</style></noscript><style>.lazyload{background-image:none !important;}.lazyload:before{background-image:none !important;}</style><link rel="icon" href="https://htai.org/wp-content/uploads/2024/05/cropped-HTAI-favicon-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://htai.org/wp-content/uploads/2024/05/cropped-HTAI-favicon-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://htai.org/wp-content/uploads/2024/05/cropped-HTAI-favicon-180x180.png" />
+<meta name="msapplication-TileImage" content="https://htai.org/wp-content/uploads/2024/05/cropped-HTAI-favicon-270x270.png" />
+</head>
+
+<body class="wp-singular page-template-default page page-id-1603 page-child parent-pageid-728 wp-embed-responsive wp-theme-Sonder-Client tribe-no-js post-educational-offers-database preload elementor-default elementor-kit-1355">
+        <div class="skip">
+            <a href="#main" class="sr-only skip-to-main-content-link no-scroll-handler">Skip to main content</a>
+        </div>
+        <div class="spacer-grid fixed w-full h-full z-1000 hidden">
+            <button class="button toggle-spacer-grid absolute right-0 top-0 z-1 mt-8">Close</button>
+        </div>
+            <div style="display: none;">
+            <svg width="0" height="0" style="position:absolute"><symbol viewBox="0 0 70 70" fill="none" id="htai-compact-logo" xmlns="http://www.w3.org/2000/svg"><path d="M21.43 27.417v5.964h-6.644v-5.964h-4.123v15.994h4.123V36.98h6.644v6.431h4.122V27.417H21.43zM30.581 27.417v3.584h4.49v12.41h4.138v-12.41h4.448v-3.584H30.58zM51.166 37.504l2.04-6.021 2.04 6.02h-4.08zm4.632-10.087h-5.17l-6.022 15.994h4.675l.794-2.309h6.318l.793 2.31h4.675l-6.049-15.995h-.014z" fill="#fff"/><path d="M64.766 29.188c0 1.218.963 2.21 2.195 2.21a2.192 2.192 0 002.196-2.21 2.18 2.18 0 00-2.195-2.196 2.171 2.171 0 00-2.196 2.196z" fill="#5EB3E4"/><path d="M65.261 49.277c-.41 0-.765.255-.92.623-5.27 10.625-15.98 17.652-27.966 18.09-2.62.1-5.241-.112-7.777-.637-.383-.085-.751-.17-1.134-.255A32.526 32.526 0 012.63 35.436c0-17.978 14.62-32.584 32.584-32.598h.028c12.495 0 23.687 6.97 29.226 18.176a.98.98 0 001.317.454.98.98 0 00.454-1.318C60.416 8.35 48.686.997 35.582.87h-1.729C14.813 1.576-.104 17.656.604 36.696c.581 15.569 11.362 28.673 26.379 32.3h.028c.383.099.78.184 1.162.269 2.691.552 5.468.779 8.245.68 12.75-.482 24.126-7.948 29.707-19.267a.986.986 0 00-.892-1.417" fill="#5EB3E4"/><path d="M65.106 33.55v9.875h3.697V33.55a3.774 3.774 0 01-1.856.481c-.666 0-1.289-.184-1.841-.481z" fill="#5EB3E4"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-alert" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.67 12.3c0-5.524 4.478-10 10-10 5.524 0 10 4.476 10 10 0 5.522-4.476 10-10 10-5.522 0-10-4.478-10-10zm2 0a8 8 0 1016 0 8 8 0 00-16 0zm8.708 3.292a1 1 0 11-1.414 1.414 1 1 0 011.414-1.414zm-1.707-7.293a1 1 0 112 0v5a1 1 0 11-2 0v-5z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-arrow-down" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.567 14.287a1 1 0 00-1.408-.132l-.002.002-4.36 3.63V5.927a1 1 0 10-2 0v11.86l-4.36-3.63a1.001 1.001 0 00-1.28 1.54l6 5 .15.09.13.07a1 1 0 00.72 0l.13-.07.15-.09 6-5a1 1 0 00.13-1.41z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-arrow-left" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.045 11.05H7.185l3.63-4.36a1.001 1.001 0 10-1.54-1.28l-5 6a1.184 1.184 0 00-.09.15c0 .05 0 .08-.07.13a1 1 0 00-.07.36 1 1 0 00.07.36c0 .05 0 .08.07.13.026.053.056.103.09.15l5 6a1 1 0 00.77.36 1 1 0 00.772-1.638l-.002-.001-3.63-4.36h11.86a1 1 0 100-2z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-arrow-right" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.733 13.927h11.86l-3.63 4.36a1.001 1.001 0 101.54 1.28l5-6c.034-.048.064-.098.09-.15 0-.05.05-.08.07-.13a1 1 0 00.07-.36 1 1 0 00-.07-.36c0-.05-.05-.08-.07-.13a1.206 1.206 0 00-.09-.15l-5-6a1 1 0 00-.77-.36 1 1 0 00-.772 1.638l.002.002 3.63 4.36H5.733a1 1 0 000 2z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-arrow-up" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.09 10.69a1 1 0 001.408.132l.002-.001 4.36-3.63v11.86a1 1 0 002 0V7.19l4.36 3.63a1.001 1.001 0 001.28-1.54l-6-5-.15-.09-.13-.07a1 1 0 00-.72 0l-.13.07-.15.09-6 5a1 1 0 00-.131 1.408l.001.002z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" id="icon-bluesky" xmlns="http://www.w3.org/2000/svg"><path d="M7.02 4.63c2.34 1.76 4.85 5.33 5.78 7.25v5.06c0-.11-.04.01-.13.28-.48 1.42-2.36 6.96-6.67 2.53-2.27-2.33-1.22-4.67 2.91-5.37-2.36.4-5.01-.26-5.74-2.87-.21-.75-.57-5.37-.57-6 0-3.13 2.73-2.15 4.42-.87zm11.55 0c-2.34 1.76-4.85 5.33-5.78 7.25v5.06c0-.11.04.01.13.28.48 1.42 2.36 6.96 6.67 2.53 2.27-2.33 1.22-4.67-2.91-5.37 2.36.4 5.01-.26 5.74-2.87.21-.75.57-5.37.57-6 0-3.13-2.73-2.15-4.42-.87z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-check" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.345 18.299a1 1 0 01-.73-.32l-4.86-5.17a1.001 1.001 0 011.46-1.37l4.12 4.39 8.41-9.2a1 1 0 111.48 1.34l-9.14 10a1 1 0 01-.73.33h-.01z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-chevron-down" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.984 16.3a1 1 0 01-.64-.23l-6-5a1.001 1.001 0 111.28-1.54l5.36 4.48 5.36-4.32a1 1 0 011.41.15 1 1 0 01-.14 1.46l-6 4.83a1 1 0 01-.63.17z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-chevron-left" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.875 19.3a1 1 0 01-.78-.37l-4.83-6a1 1 0 010-1.27l5-6a1.001 1.001 0 111.54 1.28l-4.47 5.36 4.32 5.36a1 1 0 01-.78 1.64z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-chevron-right" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.86 19.299a1 1 0 01-.772-1.638l.001-.002 4.48-5.36-4.32-5.37a1 1 0 01.146-1.407c.002 0 .003-.002.004-.003a1 1 0 011.46.15l4.83 6a1 1 0 010 1.27l-5 6a1 1 0 01-.83.36z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-chevron-up" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.92 15.3a1 1 0 01-.64-.23l-5.36-4.48-5.37 4.32a1 1 0 01-1.41-.15 1 1 0 01.146-1.408l.004-.003 6-4.83a1 1 0 011.27 0l6 5a1 1 0 01.13 1.41 1 1 0 01-.77.37z" fill="currentColor"/></symbol><symbol viewBox="0 0 24 24" fill="none" id="icon-close" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.413 11.998l4.3-4.29a1.004 1.004 0 00-1.42-1.42l-4.29 4.3-4.29-4.3a1.004 1.004 0 10-1.42 1.42l4.3 4.29-4.3 4.29a1 1 0 00-.005 1.415l.005.006a1 1 0 001.415.005l.005-.005 4.29-4.3 4.29 4.3a1 1 0 001.42 0 1 1 0 000-1.42l-4.3-4.29z" fill="currentColor"/></symbol><symbol viewBox="0 0 24 24" fill="none" id="icon-download" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.002 12.062A.967.967 0 0111 12V4a1 1 0 112 0v8.008l2.402-1.808a1 1 0 111.2 1.6l-4 3a1 1 0 01-.6.2 1.001 1.001 0 01-.58-.18l-4-2.82a1 1 0 011.152-1.635l.008.005 2.42 1.692zM4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2a1 1 0 10-2 0v1H6v-1a1 1 0 10-2 0z" fill="currentcolor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-email-fill" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.67 4.927h-14a3 3 0 00-3 3v10a3 3 0 003 3h14a3 3 0 003-3v-10a3 3 0 00-3-3zm0 2l-6.5 4.47a1 1 0 01-1 0l-6.5-4.47h14z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-email-line" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.61 4.926h-14a3 3 0 00-3 3v10a3 3 0 003 3h14a3 3 0 003-3v-10a3 3 0 00-3-3zm-.669 2l-6.33 4.75-6.33-4.75h12.66zm.668 12h-14a1 1 0 01-1-1v-9.75l7.4 5.55a1 1 0 001.2 0l7.4-5.55v9.75a1 1 0 01-1 1z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-external" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.484 12.175a1 1 0 112 0v6a3 3 0 01-3 3h-12a3 3 0 01-3-3v-12a3 3 0 013-3h6a1 1 0 110 2h-6a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1v-6zm-1.418-7h-1.58a1 1 0 110-2h4a1 1 0 011 1v4a1 1 0 01-2 0v-1.58l-6.29 6.28-.005.006a1 1 0 01-1.415-.006l-.005-.006a1 1 0 01.005-1.414l6.29-6.28z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-eye-fill" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M22.729 11.675c-.64-1.11-4.16-6.68-10.14-6.5-5.53.14-8.73 5-9.6 6.5a1 1 0 000 1c.63 1.09 4 6.5 9.89 6.5h.25c5.53-.14 8.74-5 9.6-6.5a1 1 0 000-1zm-9.87 4a3.5 3.5 0 110-7 3.5 3.5 0 010 7zm1.06-2.44a1.5 1.5 0 10-2.121-2.12 1.5 1.5 0 002.121 2.12z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-eye-line" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M22.666 11.675c-.64-1.11-4.16-6.68-10.14-6.5-5.53.14-8.73 5-9.6 6.5a1 1 0 000 1c.63 1.09 4 6.5 9.89 6.5h.25c5.53-.14 8.74-5 9.6-6.5a1 1 0 000-1zm-9.651 5.5c-4.31.1-7.12-3.59-8-5 1-1.61 3.61-4.9 7.61-5 4.29-.11 7.11 3.59 8 5-1.03 1.61-3.61 4.9-7.61 5zm-.219-8.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm0 5a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" fill="currentColor"/></symbol><symbol viewBox="0 0 20 25" fill="none" id="icon-facebook" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.594 22.423v-9h2.884l.471-4h-3.355V7.475c0-1.03.028-2.052 1.547-2.052h1.539v-2.86c0-.043-1.322-.14-2.66-.14-2.792 0-4.54 1.657-4.54 4.7v2.3H4.393v4h3.085v9h4.115z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-google" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M22.187 12.655c0 5.667-3.88 9.7-9.611 9.7a9.92 9.92 0 01-9.931-9.932 9.92 9.92 0 019.93-9.931c2.676 0 4.926.981 6.66 2.599L16.532 7.69c-3.536-3.412-10.111-.85-10.111 4.733 0 3.464 2.767 6.271 6.155 6.271 3.932 0 5.406-2.819 5.638-4.28h-5.638v-3.416h9.454c.093.508.157.997.157 1.658z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-heart-fill" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.984 21.05a1 1 0 01-.71-.29l-7.77-7.78a5.26 5.26 0 010-7.4 5.24 5.24 0 017.4 0l1.08 1.08 1.08-1.08a5.24 5.24 0 017.4 0 5.26 5.26 0 010 7.4l-7.77 7.78a1 1 0 01-.71.29z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-heart-line" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.921 21.05a1 1 0 01-.71-.29l-7.77-7.78a5.26 5.26 0 010-7.4 5.24 5.24 0 017.4 0l1.08 1.08 1.08-1.08a5.24 5.24 0 017.4 0 5.26 5.26 0 010 7.4l-7.77 7.78a1 1 0 01-.71.29zm-4.778-15a3.2 3.2 0 00-2.28.94 3.24 3.24 0 000 4.57l7.06 7.07 7.06-7.07a3.24 3.24 0 000-4.57 3.32 3.32 0 00-4.56 0l-1.79 1.8a1 1 0 01-1.414.007l-.006-.006-1.79-1.8a3.2 3.2 0 00-2.28-.94z" fill="currentColor"/></symbol><symbol viewBox="0 0 18 20" fill="none" id="icon-home" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M17.42 8.18L9.71.3a1 1 0 00-1.42 0L.58 8.19A2 2 0 000 9.62V18a2 2 0 001.89 2h14.22A2 2 0 0018 18V9.62a2.07 2.07 0 00-.58-1.44zM7 18v-6h4v6H7zm9 0h-3v-7a1 1 0 00-1-1H6a1 1 0 00-1 1v7H2V9.58l7-7.15 7 7.19V18z" fill="currentcolor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-image-fill" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.608 3.05h-12a3 3 0 00-3 3v12a3 3 0 003 3h12a3 3 0 003-3v-12a3 3 0 00-3-3zm-12 2h12a1 1 0 011 1v8.36l-3.2-2.73a2.77 2.77 0 00-3.52 0l-7.28 6.07V6.05a1 1 0 011-1zM9.67 9.61a1.5 1.5 0 10-2.121-2.12 1.5 1.5 0 002.121 2.12z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-image-line" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.547 3.05h12a3 3 0 013 3v12a3 3 0 01-3 3h-12a3 3 0 01-3-3v-12a3 3 0 013-3zm12 2h-12a1 1 0 00-1 1v11.7l7.28-6.07a2.77 2.77 0 013.52 0l3.2 2.73V6.05a1 1 0 00-1-1zm-.002 14H7.106l7-5.84a.78.78 0 01.93 0l4.51 3.84v1a1 1 0 01-1 1zM9.609 9.612a1.5 1.5 0 10-2.122-2.12 1.5 1.5 0 002.122 2.12z" fill="currentColor"/></symbol><symbol viewBox="0 0 26 25" fill="none" id="icon-info" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13 .451C6.325.451.915 5.861.915 12.534c0 6.674 5.41 12.084 12.083 12.084 6.674 0 12.084-5.41 12.084-12.083C25.083 5.86 19.673.45 12.999.45zm1.208 16.917a1.208 1.208 0 11-2.417 0v-6.042a1.208 1.208 0 112.417 0v6.042zM12.999 8.91A1.208 1.208 0 1114.208 7.7c0 .668-.541 1.208-1.209 1.208z" fill="currentcolor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-instagram" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.79 2.55c-1.628.074-3.04.472-4.179 1.607-1.143 1.14-1.536 2.557-1.61 4.168-.045 1.005-.313 8.601.463 10.594a5.04 5.04 0 002.91 2.902c.633.246 1.356.413 2.416.461 8.86.401 12.145.183 13.53-3.363.246-.632.415-1.353.462-2.41.405-8.884-.066-10.81-1.61-12.352C19.947 2.935 18.506 2.103 8.79 2.55m.083 17.945c-.97-.044-1.497-.206-1.848-.342a3.255 3.255 0 01-1.888-1.883c-.591-1.513-.395-8.703-.343-9.866.052-1.14.283-2.18 1.087-2.985.995-.992 2.28-1.479 11.034-1.083 1.142.051 2.186.281 2.992 1.083.995.993 1.488 2.288 1.087 11.008-.044.968-.206 1.493-.343 1.843-.9 2.308-2.972 2.629-11.778 2.225M17.01 7.118c0 .657.534 1.19 1.194 1.19.66 0 1.195-.533 1.195-1.19a1.194 1.194 0 00-2.39 0m-9.227 5.298a5.103 5.103 0 005.11 5.097 5.103 5.103 0 005.11-5.097 5.102 5.102 0 00-5.11-5.096 5.102 5.102 0 00-5.11 5.096m1.793 0a3.313 3.313 0 013.317-3.308 3.313 3.313 0 013.316 3.308 3.313 3.313 0 01-3.316 3.31 3.313 3.313 0 01-3.317-3.31" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-leave" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M17.796 4.05h2a1 1 0 011 1v14a1 1 0 01-1 1h-2a1 1 0 110-2h1v-12h-1a1 1 0 110-2zm-6.6 3.2a1 1 0 011.4.2l3.02 4.02a1 1 0 010 1.18l-2.82 4a1 1 0 01-1.39.24l-.007-.004a1 1 0 01-.233-1.395l1.72-2.44h-8.09a1 1 0 110-2h8l-1.8-2.4a1 1 0 01.2-1.4z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-link" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.2 4.075a6.18 6.18 0 018.13-.68 6.06 6.06 0 01.6 9.06l-1.42 1.42-.005.006a1 1 0 01-1.415-.006l-.005-.006a1 1 0 01.005-1.414l1.42-1.43a3.999 3.999 0 00-.27-5.95 4.17 4.17 0 00-5.57.4l-1.3 1.31-.005.006a1 1 0 01-1.415-.006 1.09 1.09 0 01.17-1.61l1.08-1.1zm1.759 5.39l-4 4a1 1 0 00-.006 1.414l.006.006a1 1 0 001.414.006l.006-.006 4-4a1.004 1.004 0 00-1.42-1.42zm-1.008 8.11l-1.28 1.27a4.2 4.2 0 01-5.58.4 4 4 0 01-.27-5.93l1.42-1.43a1 1 0 00.005-1.414l-.005-.006a1 1 0 00-1.415-.006l-.005.006-1.27 1.28a6.15 6.15 0 00-.67 8.07 6.06 6.06 0 009.07.6l1.42-1.42a1.004 1.004 0 00-1.42-1.42z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-link-alt" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M17.493 6.175a6.16 6.16 0 016.24 5.24 6 6 0 01-6 6.76h-2a1 1 0 110-2h2a4 4 0 004-4.37 4.13 4.13 0 00-4.21-3.63h-1.79a1 1 0 01-1-1c0-.55.44-1 1.25-1h1.51zm-7.76 10h-1.79a4.13 4.13 0 01-4.21-3.63 4 4 0 014-4.37h2a1 1 0 100-2h-1.79a6.15 6.15 0 00-6.16 5.21 6 6 0 005.95 6.79h2a1 1 0 100-2zm-1-4a1 1 0 001 1h6a1 1 0 100-2h-6a1 1 0 00-1 1z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-linkedin" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M21.298 21.677h-3.802V15.2c0-1.776-.675-2.768-2.08-2.768-1.53 0-2.329 1.033-2.329 2.768v6.477H9.423V9.339h3.664V11s1.102-2.04 3.72-2.04c2.617 0 4.491 1.599 4.491 4.904v7.812zM5.051 7.723a2.268 2.268 0 01-2.26-2.277 2.268 2.268 0 012.26-2.276c1.248 0 2.259 1.02 2.259 2.276a2.268 2.268 0 01-2.26 2.277zM3.159 21.677h3.82V9.339H3.16v12.338z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-linkedin-alt" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M20.727 22.38H5.238a2.213 2.213 0 01-2.213-2.212V4.678c0-1.221.991-2.212 2.213-2.212h15.489c1.222 0 2.212.99 2.212 2.213v15.489c0 1.222-.99 2.212-2.212 2.212zm-3.509-2.765h2.956v-6.071c0-2.569-1.456-3.81-3.49-3.81-2.035 0-2.891 1.584-2.891 1.584v-1.292h-2.848v9.588h2.848v-5.033c0-1.348.62-2.15 1.809-2.15 1.092 0 1.616.77 1.616 2.15v5.034zM5.791 7c0 .977.786 1.77 1.756 1.77S9.303 7.978 9.303 7s-.786-1.769-1.756-1.769-1.756.792-1.756 1.77zm3.255 12.613h-2.97v-9.588h2.97v9.588z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-menu" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.484 7.1c0 .525.426.95.95.95h16.1a.95.95 0 00.95-.95V7a.95.95 0 00-.95-.95h-16.1a.95.95 0 00-.95.95v.1zm.95 5.95a.95.95 0 01-.95-.95V12a.95.95 0 01.95-.95h16.1a.95.95 0 01.95.95v.1a.95.95 0 01-.95.95h-16.1zm0 5a.95.95 0 01-.95-.95V17a.95.95 0 01.95-.95h16.1a.95.95 0 01.95.95v.1a.95.95 0 01-.95.95h-16.1z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-minus" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.547 13.175h-14a1 1 0 110-2h14a1 1 0 110 2z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-moon" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.847 22.3h-.1a10.31 10.31 0 01-7.34-3.15 10.46 10.46 0 01-.26-14 10.13 10.13 0 014-2.74 1 1 0 011.06.22 1 1 0 01.24 1 8.4 8.4 0 001.94 8.81 8.47 8.47 0 008.83 1.94 1 1 0 011.27 1.29 10.161 10.161 0 01-2.34 3.63 10.28 10.28 0 01-7.3 3z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-phone-fill" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.133 22.05c-8.5-.01-15.389-6.899-15.4-15.4a4.6 4.6 0 014.6-4.6 3.94 3.94 0 01.77.07c.246.037.487.097.72.18a1 1 0 01.65.75l1.37 6a1 1 0 01-.26.92c-.13.14-.14.15-1.37.79a9.91 9.91 0 004.87 4.89c.65-1.24.66-1.25.8-1.38a1 1 0 01.92-.26l6 1.37a1 1 0 01.72.65c.085.238.148.482.19.73.04.252.06.506.06.76a4.6 4.6 0 01-4.64 4.53z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-phone-line" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.07 22.05c-8.5-.01-15.388-6.899-15.4-15.4a4.6 4.6 0 014.6-4.6 3.94 3.94 0 01.77.07c.246.037.487.097.72.18a1 1 0 01.65.75l1.37 6a1 1 0 01-.26.92c-.13.14-.14.15-1.37.79a9.91 9.91 0 004.87 4.89c.65-1.24.66-1.25.8-1.38a1 1 0 01.92-.26l6 1.37a1 1 0 01.72.65c.085.238.149.482.19.73.041.252.061.506.06.76a4.6 4.6 0 01-4.64 4.53zm-10.8-18a2.61 2.61 0 00-2.6 2.6c.006 7.398 6.002 13.395 13.4 13.4a2.61 2.61 0 002.6-2.6v-.33l-4.64-1.07-.29.55c-.45.87-.78 1.5-1.62 1.16a11.85 11.85 0 01-7.18-7.21c-.36-.78.32-1.14 1.18-1.59l.55-.27L7.6 4.05h-.33z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-pin-fill" xmlns="http://www.w3.org/2000/svg"><path d="M13.857 10.86a1.5 1.5 0 10-2.122-2.122 1.5 1.5 0 002.122 2.122z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M12.796 2.3a8 8 0 00-8 7.92c0 5.47 7.025 11.558 7.348 11.838l.002.001a1 1 0 001.3 0c.35-.26 7.35-6.36 7.35-11.84a8 8 0 00-8-7.92zm0 11a3.5 3.5 0 110-7 3.5 3.5 0 010 7z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-pin-line" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.733 6.3a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm0 5a1.5 1.5 0 110-3.001 1.5 1.5 0 010 3z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M12.733 2.3a8 8 0 00-8 7.92c0 5.47 7.026 11.558 7.349 11.838l.001.001a1 1 0 001.3 0c.35-.26 7.35-6.36 7.35-11.84a8 8 0 00-8-7.92zm0 17.65c-1.67-1.59-6-6-6-9.73a6 6 0 1112 0c0 3.7-4.33 8.14-6 9.73z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-pinterest" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.672 2.423c-5.477 0-9.876 4.435-9.876 9.959 0 4.1 2.407 7.53 5.893 9.12 0-1.867-.013-1.626 1.41-7.698-.782-1.578-.174-4.184 1.577-4.184 2.43 0 .779 3.603.498 5.02-.25 1.089.58 1.926 1.577 1.926 1.909 0 3.153-2.427 3.153-5.272 0-2.176-1.493-3.766-4.066-3.766-4.575 0-5.735 5.095-4.15 6.694.4.604 0 .632 0 1.423-.276.836-2.49-.38-2.49-3.514 0-2.846 2.325-6.193 7.055-6.193 3.734 0 6.224 2.761 6.224 5.69 0 3.933-2.158 6.779-5.311 6.779-1.08 0-2.075-.586-2.407-1.256-.603 2.346-.725 3.535-1.66 4.854.913.25 1.826.418 2.822.418 5.477 0 9.875-4.435 9.875-9.957-.248-5.608-4.647-10.043-10.124-10.043" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-plus" xmlns="http://www.w3.org/2000/svg"><path d="M13.64 11.201V5.177c0-.554-.447-1.003-1-1.003-.552 0-1 .449-1 1.003V19.233c0 .554.448 1.004 1 1.004.553 0 1-.45 1-1.004v-6.024" fill="currentColor" class="icon-plus-vertical" opacity="var(--plus-vertical-opacity)"/><path d="M13.601 13.17h6.024c.554 0 1.004-.447 1.004-1 0-.552-.45-1-1.004-1H5.57c-.555 0-1.004.448-1.004 1 0 .553.45 1 1.004 1h6.023" fill="currentColor" class="icon-plus-horizontal"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-search" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M21.257 20.217l-3.4-3.39a7.92 7.92 0 001.69-4.9 8 8 0 10-8 8 7.92 7.92 0 004.9-1.69l3.39 3.4a1 1 0 001.42 0 1 1 0 000-1.42zm-15.71-8.29a6 6 0 116 6 6 6 0 01-6-6z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-star-fill" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.541 21.175c-.16 0-.317-.037-.46-.11l-5.1-2.67-5.1 2.67a1 1 0 01-1.45-1.06l1-5.63-4.12-4a1 1 0 01-.25-1 1 1 0 01.81-.68l5.7-.83 2.51-5.13a1 1 0 011.8 0l2.54 5.12 5.7.83a1 1 0 01.81.68 1 1 0 01-.25 1l-4.12 4 1 5.63a1 1 0 01-.4 1 1 1 0 01-.62.18z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-star-line" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.479 21.175c-.16 0-.318-.037-.46-.11l-5.1-2.67-5.1 2.67a1 1 0 01-1.45-1.06l1-5.63-4.12-4a1 1 0 01-.25-1 1 1 0 01.81-.68l5.7-.83 2.51-5.13a1 1 0 011.8 0l2.54 5.12 5.7.83a1 1 0 01.81.68 1 1 0 01-.25 1l-4.12 4 1 5.63a1 1 0 01-.4 1 1 1 0 01-.62.18zm-5.559-4.9a.92.92 0 01.46.11l3.77 2-.72-4.21a1 1 0 01.29-.89l3-2.93-4.2-.62a1 1 0 01-.71-.56l-1.89-3.75-1.89 3.75a1 1 0 01-.75.54l-4.2.62 3 2.93a1 1 0 01.29.89l-.72 4.16 3.77-2a.92.92 0 01.5-.04z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-sun" xmlns="http://www.w3.org/2000/svg"><path d="M13.61 1.299a1 1 0 10-2 0v2a1 1 0 102 0v-2zM5.536 3.812a1 1 0 10-1.414 1.414l1.42 1.42a1 1 0 001.414-1.414l-1.42-1.42zM21.096 5.226a1 1 0 00-1.414-1.414l-1.42 1.42a1 1 0 001.414 1.414l1.42-1.42zM12.61 6.299a6 6 0 100 12 6 6 0 000-12zM1.61 11.299a1 1 0 100 2h2a1 1 0 100-2h-2zM21.61 11.299a1 1 0 100 2h2a1 1 0 100-2h-2zM6.956 19.366a1 1 0 10-1.414-1.414l-1.42 1.42a1 1 0 001.414 1.414l1.42-1.42zM19.676 17.951a1 1 0 00-1.414 1.415l1.42 1.42a1 1 0 001.414-1.415l-1.42-1.42zM13.61 21.299a1 1 0 10-2 0v2a1 1 0 102 0v-2z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-tag-fill" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M22.453 12.507l-6.42-6.41a1 1 0 00-.61-.29l-9.35-.88a1 1 0 00-.8.29 1 1 0 00-.29.8l.88 9.35a1 1 0 00.29.61l6.41 6.42a1.82 1.82 0 002.57 0l7.32-7.32a1.82 1.82 0 000-2.57zm-9.91 0a1.5 1.5 0 110-2.12 1.49 1.49 0 010 2.1v.02z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-tag-line" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.915 22.927a1.84 1.84 0 01-1.29-.53l-6.41-6.42a1 1 0 01-.29-.61l-.88-9.35a1 1 0 01.29-.8 1 1 0 01.8-.29l9.35.88a1 1 0 01.61.29l6.42 6.41a1.82 1.82 0 010 2.57l-7.32 7.32c-.34.338-.8.529-1.28.53zm-6-8.11l6 6 7.05-7.05-6-6-7.81-.73.76 7.78zm4.69-2.33a1.5 1.5 0 10-2.12-2.121 1.5 1.5 0 002.12 2.121z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-threads" xmlns="http://www.w3.org/2000/svg"><path d="M18.494 11.647a7.416 7.416 0 00-.278-.127c-.164-3.022-1.816-4.753-4.59-4.77h-.037c-1.659 0-3.038.708-3.887 1.996l1.525 1.046c.634-.962 1.63-1.167 2.363-1.167h.025c.913.006 1.602.271 2.049.789.324.377.541.898.649 1.555-.81-.137-1.686-.18-2.622-.126-2.636.152-4.331 1.69-4.218 3.826.058 1.084.598 2.017 1.52 2.626.78.515 1.786.767 2.83.71 1.379-.076 2.46-.602 3.215-1.564.573-.73.936-1.677 1.096-2.87.657.396 1.144.918 1.413 1.546.457 1.066.484 2.819-.946 4.247-1.253 1.252-2.759 1.794-5.035 1.81-2.525-.018-4.434-.828-5.676-2.406-1.162-1.478-1.763-3.613-1.785-6.345.022-2.732.623-4.866 1.785-6.344C9.132 4.5 11.041 3.69 13.566 3.672c2.543.019 4.486.833 5.775 2.418.632.778 1.108 1.756 1.423 2.896l1.787-.477c-.38-1.403-.98-2.613-1.795-3.616-1.653-2.033-4.07-3.075-7.184-3.096h-.012c-3.108.021-5.498 1.067-7.103 3.108-1.429 1.816-2.166 4.343-2.19 7.51v.016c.024 3.167.761 5.694 2.19 7.51 1.605 2.041 3.995 3.087 7.103 3.109h.012c2.763-.02 4.71-.743 6.315-2.346 2.1-2.097 2.036-4.726 1.344-6.34-.496-1.156-1.443-2.096-2.737-2.717zm-4.77 4.485c-1.155.065-2.356-.454-2.415-1.565-.044-.823.586-1.742 2.486-1.852.218-.012.431-.019.64-.019.691 0 1.337.067 1.924.196-.22 2.734-1.504 3.178-2.635 3.24z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-twitter" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.55 21.044c8.131 0 12.578-6.632 12.578-12.384 0-.188 0-.376-.012-.563a8.904 8.904 0 002.205-2.253 8.913 8.913 0 01-2.538.685 4.385 4.385 0 001.943-2.407 8.946 8.946 0 01-2.807 1.056c-1.675-1.752-4.475-1.837-6.256-.189a4.316 4.316 0 00-1.279 4.16A12.624 12.624 0 013.274 4.6a4.315 4.315 0 001.368 5.81 4.441 4.441 0 01-2.007-.545v.056c.001 2.071 1.485 3.855 3.547 4.266-.65.175-1.334.2-1.995.074.578 1.774 2.239 2.988 4.13 3.023a8.958 8.958 0 01-6.544 1.804 12.663 12.663 0 006.777 1.952" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-user" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16.045 7.175a4 4 0 11-8 0 4 4 0 018 0zm3 13a1 1 0 01-1 1h-12a1 1 0 01-1-1 7 7 0 1114 0z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-x" xmlns="http://www.w3.org/2000/svg"><path d="M18.897 3.423h3.22l-7.035 7.625 8.276 10.375h-6.48l-5.075-6.292-5.808 6.292H2.773l7.524-8.155-7.939-9.845h6.645l4.588 5.752 5.306-5.752zm-1.13 16.172h1.784L8.033 5.155H6.12l11.648 14.44z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-youtube" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.473 15.01V9.396c1.992.938 3.535 1.843 5.36 2.82-1.505.835-3.368 1.77-5.36 2.792m11.102-8.403c-.343-.453-.929-.805-1.553-.921-1.832-.348-13.267-.35-15.098 0-.5.093-.946.32-1.328.672-1.612 1.496-1.107 9.518-.718 10.817.163.563.374.968.64 1.235.343.352.812.594 1.35.703 1.51.312 9.284.487 15.123.047a2.62 2.62 0 001.39-.711c1.49-1.49 1.388-9.963.194-11.842" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-zoom-in" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M21.63 20.217l-3.4-3.39a7.92 7.92 0 001.69-4.9 8 8 0 10-8 8 7.92 7.92 0 004.9-1.69l3.39 3.4a1 1 0 001.414.005l.006-.005a1 1 0 00.006-1.415l-.006-.005zm-15.71-8.29a6 6 0 1112 0 6 6 0 01-12 0zm7-1h1a1 1 0 010 2h-1v1a1 1 0 11-2 0v-1h-1a1 1 0 110-2h1v-1a1 1 0 112 0v1z" fill="currentColor"/></symbol><symbol viewBox="0 0 25 25" fill="none" id="icon-zoom-out" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M21.097 20.099l-3.4-3.39a7.92 7.92 0 001.69-4.9 8 8 0 10-8 8 7.92 7.92 0 004.9-1.69l3.39 3.4a1 1 0 001.414.005l.006-.005a1 1 0 00.005-1.415l-.005-.005zm-15.71-8.29a6 6 0 1112 0 6 6 0 01-12 0zm3 0a1 1 0 011-1h4a1 1 0 110 2h-4a1 1 0 01-1-1z" fill="currentColor"/></symbol><symbol viewBox="0 0 191 192" fill="none" id="quarter-circle" xmlns="http://www.w3.org/2000/svg"><path d="M10 192C10 91.496 91.029 10 191 10" vector-effect="non-scaling-stroke"/></symbol><symbol viewBox="0 0 523 568" fill="none" id="quarter-circle-cutoff" xmlns="http://www.w3.org/2000/svg"><path d="M0 10c307.585 0 557 249.802 557 558" stroke="currentcolor" stroke-miterlimit="10"/></symbol></svg>        </div>
+    
+<div class="wp-site-blocks"><header   >
+<div class="float-nav nav-type-control top-nav"  data-sonder-pattern="nav-1" >
+<div class="be:relative fixed navWrap top-0 w-full z-5"  be:top-96="" >
+<div class="max-w-screen-xxxl mx-auto lg:pt-4 lg:px-4"  >
+<nav class="be:h-auto h-header headerNav lg:px-4 px-gutter"  >
+    <div class="container be:items-start be:w-96 flex h-full justify-end max-w-none navigation relative"  >
+
+        <div class="logo mr-auto h-full inline-block overflow-hidden z-5">
+                            <a id='logo-container' href='https://htai.org' class='homeLink' aria-label="HTAi - Shaping the future of HTA">
+                    <svg id="site-logo" aria-labelledby="site-title" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288 86" fill="none">
+    <title id="site-title">HTAi &#8211; Shaping the future of HTA</title>
+    <path d="M98.1523 40.1057V37.1885H94.6527V40.1057H93.4668V33.418H94.6527V36.1507H98.1523V33.418H99.3382V40.1057H98.1523Z" class="class-1 letters"/>
+    <path d="M103.013 40.1057V33.418H107.628V34.4442H104.199V36.1853H107.559V37.2116H104.199V39.068H107.628V40.1057H103.013Z" class="class-1 letters"/>
+    <path d="M113.755 34.5941L112.546 37.7881H114.965L113.755 34.5941ZM115.802 40.1057L115.302 38.8258H112.209L111.721 40.1057H110.372L113.011 33.418H114.488L117.127 40.1057H115.79H115.802Z" class="class-1 letters"/>
+    <path d="M120.127 40.1057V33.418H121.301V39.068H124.278V40.1057H120.127Z" class="class-1 letters"/>
+    <path d="M128.184 40.1057V34.4442H126.149V33.418H131.405V34.4442H129.37V40.1057H128.184Z" class="class-1 letters"/>
+    <path d="M139.334 40.1057V37.1885H135.834V40.1057H134.648V33.418H135.834V36.1507H139.334V33.418H140.52V40.1057H139.334Z" class="class-1 letters"/>
+    <path d="M150.635 40.1057V34.4442H148.601V33.418H153.856V34.4442H151.821V40.1057H150.635Z" class="class-1 letters"/>
+    <path d="M157.111 40.1057V33.418H161.715V34.4442H158.286V36.1853H161.646V37.2116H158.286V39.068H161.715V40.1057H157.111Z" class="class-1 letters"/>
+    <path d="M164.878 36.7619C164.878 34.7095 166.424 33.3027 168.412 33.3027C169.773 33.3027 170.61 34.0061 171.121 34.8017L170.11 35.3091C169.784 34.7556 169.145 34.3405 168.412 34.3405C167.075 34.3405 166.087 35.3552 166.087 36.7619C166.087 38.1687 167.075 39.1834 168.412 39.1834C169.133 39.1834 169.784 38.7683 170.11 38.2148L171.121 38.7221C170.61 39.5293 169.784 40.2211 168.412 40.2211C166.424 40.2211 164.878 38.8144 164.878 36.7619Z" class="class-1 letters"/>
+    <path d="M178.992 40.1057V37.1885H175.481V40.1057H174.307V33.418H175.481V36.1507H178.992V33.418H180.166V40.1057H178.992Z" class="class-1 letters"/>
+    <path d="M188.538 40.1057L185.027 35.3321V40.1057H183.853V33.418H185.062L188.503 38.0533V33.418H189.689V40.1057H188.538Z" class="class-1 letters"/>
+    <path d="M198.734 36.7619C198.734 35.3783 197.851 34.3405 196.502 34.3405C195.153 34.3405 194.27 35.3783 194.27 36.7619C194.27 38.1456 195.142 39.1834 196.502 39.1834C197.862 39.1834 198.734 38.1456 198.734 36.7619ZM193.061 36.7619C193.061 34.7671 194.491 33.3027 196.502 33.3027C198.513 33.3027 199.944 34.7671 199.944 36.7619C199.944 38.7567 198.525 40.2211 196.502 40.2211C194.479 40.2211 193.061 38.7567 193.061 36.7619Z" class="class-1 letters"/>
+    <path d="M203.327 40.1057V33.418H204.513V39.068H207.478V40.1057H203.327Z" class="class-1 letters"/>
+    <path d="M215.86 36.7619C215.86 35.3783 214.977 34.3405 213.628 34.3405C212.279 34.3405 211.396 35.3783 211.396 36.7619C211.396 38.1456 212.268 39.1834 213.628 39.1834C214.988 39.1834 215.86 38.1456 215.86 36.7619ZM210.187 36.7619C210.187 34.7671 211.617 33.3027 213.628 33.3027C215.639 33.3027 217.069 34.7671 217.069 36.7619C217.069 38.7567 215.651 40.2211 213.628 40.2211C211.605 40.2211 210.187 38.7567 210.187 36.7619Z" class="class-1 letters"/>
+    <path d="M220.15 36.7619C220.15 34.6634 221.732 33.3027 223.685 33.3027C224.999 33.3027 225.859 33.9254 226.394 34.6979L225.429 35.2399C225.08 34.7441 224.441 34.352 223.685 34.352C222.348 34.352 221.359 35.3667 221.359 36.7735C221.359 38.1802 222.348 39.1949 223.685 39.1949C224.371 39.1949 224.975 38.872 225.278 38.5953V37.546H223.266V36.5083H226.452V39.0104C225.789 39.7484 224.847 40.2211 223.673 40.2211C221.72 40.2211 220.139 38.849 220.139 36.7504" class="class-1 letters"/>
+    <path d="M231.696 40.1057V37.3269L229.08 33.418H230.44L232.289 36.2776L234.126 33.418H235.486L232.882 37.3269V40.1057H231.696Z" class="class-1 letters"/>
+    <path d="M96.1412 47.4505L94.932 50.6445H97.3503L96.1412 47.4505ZM98.1874 52.9622L97.6875 51.6823H94.5948L94.1065 52.9622H92.7578L95.3971 46.2744H96.8736L99.5129 52.9622H98.1758H98.1874Z" class="class-1 letters"/>
+    <path d="M101.977 52.0169L102.629 51.1175C103.094 51.6134 103.826 52.04 104.756 52.04C105.686 52.04 106.105 51.5672 106.105 51.1291C106.105 50.5295 105.384 50.345 104.57 50.1374C103.466 49.8722 102.175 49.5494 102.175 48.1311C102.175 47.0242 103.152 46.1709 104.628 46.1709C105.675 46.1709 106.523 46.5053 107.151 47.1049L106.477 47.9812C105.954 47.4623 105.233 47.2202 104.524 47.2202C103.814 47.2202 103.384 47.5546 103.384 48.0504C103.384 48.5462 104.07 48.7422 104.872 48.9383C105.989 49.215 107.302 49.5609 107.302 51.0138C107.302 52.1207 106.512 53.0778 104.698 53.0778C103.454 53.0778 102.559 52.6511 101.966 52.0169" class="class-1 letters"/>
+    <path d="M110.221 52.0169L110.872 51.1175C111.337 51.6134 112.069 52.04 112.999 52.04C113.929 52.04 114.348 51.5672 114.348 51.1291C114.348 50.5295 113.627 50.345 112.813 50.1374C111.709 49.8722 110.418 49.5494 110.418 48.1311C110.418 47.0242 111.395 46.1709 112.871 46.1709C113.918 46.1709 114.767 46.5053 115.394 47.1049L114.72 47.9812C114.197 47.4623 113.476 47.2202 112.767 47.2202C112.058 47.2202 111.627 47.5546 111.627 48.0504C111.627 48.5462 112.313 48.7422 113.116 48.9383C114.232 49.215 115.546 49.5609 115.546 51.0138C115.546 52.1207 114.755 53.0778 112.941 53.0778C111.697 53.0778 110.802 52.6511 110.209 52.0169" class="class-1 letters"/>
+    <path d="M118.895 52.9625V46.2632H123.51V47.3009H120.069V49.0305H123.441V50.0683H120.069V51.9247H123.51V52.9625H118.895Z" class="class-1 letters"/>
+    <path d="M126.533 52.0169L127.184 51.1175C127.649 51.6134 128.382 52.04 129.312 52.04C130.242 52.04 130.661 51.5672 130.661 51.1291C130.661 50.5295 129.94 50.345 129.126 50.1374C128.021 49.8722 126.731 49.5494 126.731 48.1311C126.731 47.0242 127.707 46.1709 129.184 46.1709C130.23 46.1709 131.079 46.5053 131.707 47.1049L131.033 47.9812C130.509 47.4623 129.789 47.2202 129.079 47.2202C128.37 47.2202 127.94 47.5546 127.94 48.0504C127.94 48.5462 128.626 48.7422 129.428 48.9383C130.544 49.215 131.858 49.5609 131.858 51.0138C131.858 52.1207 131.067 53.0778 129.254 53.0778C128.01 53.0778 127.114 52.6511 126.521 52.0169" class="class-1 letters"/>
+    <path d="M134.776 52.0169L135.427 51.1175C135.892 51.6134 136.625 52.04 137.555 52.04C138.485 52.04 138.904 51.5672 138.904 51.1291C138.904 50.5295 138.183 50.345 137.369 50.1374C136.264 49.8722 134.974 49.5494 134.974 48.1311C134.974 47.0242 135.951 46.1709 137.427 46.1709C138.474 46.1709 139.322 46.5053 139.95 47.1049L139.276 47.9812C138.753 47.4623 138.032 47.2202 137.323 47.2202C136.613 47.2202 136.183 47.5546 136.183 48.0504C136.183 48.5462 136.869 48.7422 137.671 48.9383C138.787 49.215 140.101 49.5609 140.101 51.0138C140.101 52.1207 139.311 53.0778 137.497 53.0778C136.253 53.0778 135.358 52.6511 134.765 52.0169" class="class-1 letters"/>
+    <path d="M149.264 52.9625V47.9928L147.194 52.9625H146.682L144.624 47.9928V52.9625H143.45V46.2632H145.113L146.938 50.6679L148.775 46.2632H150.438V52.9625H149.264Z" class="class-1 letters"/>
+    <path d="M154.123 52.9625V46.2632H158.739V47.3009H155.297V49.0305H158.657V50.0683H155.297V51.9247H158.739V52.9625H154.123Z" class="class-1 letters"/>
+    <path d="M166.89 52.9625L163.367 48.1888V52.9625H162.192V46.2632H163.402L166.843 50.91V46.2632H168.029V52.9625H166.89Z" class="class-1 letters"/>
+    <path d="M173.307 52.9625V47.3009H171.272V46.2632H176.528V47.3009H174.493V52.9625H173.307Z" class="class-1 letters"/>
+    <path d="M194.177 52.9625L190.654 48.1888V52.9625H189.479V46.2632H190.689L194.13 50.91V46.2632H195.316V52.9625H194.177Z" class="class-2 letters"/>
+    <path d="M200.595 52.9625V47.3009H198.561V46.2632H203.816V47.3009H201.781V52.9625H200.595Z" class="class-2 letters"/>
+    <path d="M207.06 52.9625V46.2632H211.675V47.3009H208.245V49.0305H211.606V50.0683H208.245V51.9247H211.675V52.9625H207.06Z" class="class-2 letters"/>
+    <path d="M219.081 48.3615C219.081 47.7157 218.593 47.3006 217.93 47.3006H216.314V49.4223H217.93C218.593 49.4223 219.081 49.0072 219.081 48.3615ZM218.976 52.9622L217.477 50.46H216.302V52.9622H215.128V46.2744H218.081C219.418 46.2744 220.279 47.1392 220.279 48.373C220.279 49.6068 219.488 50.2064 218.686 50.3447L220.325 52.9737H218.965L218.976 52.9622Z" class="class-2 letters"/>
+    <path d="M228.405 52.9625L224.894 48.1888V52.9625H223.72V46.2632H224.929L228.37 50.91V46.2632H229.556V52.9625H228.405Z" class="class-2 letters"/>
+    <path d="M235.905 47.4505L234.696 50.6445H237.114L235.905 47.4505ZM237.939 52.9622L237.439 51.6823H234.347L233.858 52.9622H232.51L235.149 46.2744H236.626L239.276 52.9622H237.928H237.939Z" class="class-2 letters"/>
+    <path d="M243.218 52.9625V47.3009H241.172V46.2632H246.439V47.3009H244.392V52.9625H243.218Z" class="class-2 letters"/>
+    <path d="M250.869 46.2632H249.683V52.951H250.869V46.2632Z" class="class-2 letters"/>
+    <path d="M259.914 49.6184C259.914 48.2347 259.03 47.1969 257.682 47.1969C256.333 47.1969 255.449 48.2347 255.449 49.6184C255.449 51.0021 256.321 52.0398 257.682 52.0398C259.042 52.0398 259.914 50.9905 259.914 49.6184ZM254.24 49.6184C254.24 47.6236 255.67 46.1592 257.682 46.1592C259.693 46.1592 261.123 47.6236 261.123 49.6184C261.123 51.6132 259.705 53.0776 257.682 53.0776C255.659 53.0776 254.24 51.6132 254.24 49.6184Z" class="class-2 letters"/>
+    <path d="M269.203 52.9625L265.692 48.1888V52.9625H264.506V46.2632H265.727L269.168 50.91V46.2632H270.342V52.9625H269.203Z" class="class-2 letters"/>
+    <path d="M276.703 47.4505L275.493 50.6445H277.912L276.703 47.4505ZM278.737 52.9622L278.237 51.6823H275.145L274.656 52.9622H273.308L275.947 46.2744H277.423L280.063 52.9622H278.726H278.737Z" class="class-2 letters"/>
+    <path d="M283.062 52.9625V46.2632H284.248V51.9247H287.213V52.9625H283.062Z" class="class-2 letters"/>
+    <path d="M185.794 48.7769H184.608V53.0086H185.794V48.7769Z" class="class-2 letters"/>
+    <path d="M184.469 46.7357C184.469 46.3321 184.806 46.0093 185.201 46.0093C185.597 46.0093 185.934 46.3321 185.934 46.7357C185.934 47.1393 185.608 47.4621 185.201 47.4621C184.794 47.4621 184.469 47.1393 184.469 46.7357Z" class="class-2 letters"/>
+    
+    
+    <path d="M26.602 33.291V40.6476H18.3587V33.291H13.2197V52.9969H18.3587V45.0753H26.602V52.9969H31.7177V33.291H26.602Z" fill="#001C71"/>
+    <path d="M37.9736 33.291V37.7188H43.5428V52.9969H48.6701V37.7188H54.2044V33.291H37.9736Z" fill="#001C71"/>
+    <path d="M63.5398 45.7326L66.0744 38.3184L68.609 45.7326H63.5398ZM69.2834 33.291H62.8538L55.3779 52.9969H61.1796L62.1563 50.1604H70.0042L70.9809 52.9969H76.7825L69.2717 33.291H69.2834Z" fill="#001C71"/>
+    <path d="M80.4219 35.4819C80.4219 36.9808 81.631 38.2031 83.1425 38.2031C84.654 38.2031 85.8631 36.9693 85.8631 35.4819C85.8631 33.9944 84.6656 32.7837 83.1425 32.7837C81.6194 32.7837 80.4219 33.9713 80.4219 35.4819Z" fill="#5EB3E4"/>
+    <path d="M81.0386 60.2151C80.527 60.2151 80.0852 60.5379 79.8991 60.9876C79.8991 60.9876 79.8991 60.9876 79.8875 60.9876C73.3301 74.0864 60.0409 82.7229 45.1472 83.2764C41.8917 83.3917 38.6363 83.138 35.4854 82.4923C35.0204 82.4 34.5437 82.2847 34.0786 82.181C15.9295 77.7763 3.25645 61.7371 3.25645 43.1843C3.25645 21.0339 21.4056 3.03458 43.7171 3.02305H43.7636C59.2735 3.02305 73.1906 11.6019 80.0619 25.404C80.3642 26.0036 81.0967 26.2573 81.7129 25.9575C82.3175 25.6577 82.5733 24.9313 82.271 24.3317C75.0276 9.8146 60.4594 0.763045 44.1822 0.601616C44.1822 0.601616 44.1822 0.601616 44.1822 0.590086C44.0543 0.590086 43.9264 0.590086 43.7985 0.590086C43.7752 0.590086 43.752 0.590086 43.7403 0.590086C43.7055 0.590086 43.6706 0.590086 43.6357 0.590086C43.1009 0.590086 42.5661 0.578555 42.0312 0.590086C18.3711 1.46642 -0.15015 21.2645 0.733473 44.7294C1.45432 63.9049 14.8482 80.0593 33.4973 84.5217C33.5089 84.5217 33.5205 84.5217 33.5322 84.5217C33.5322 84.5217 33.5322 84.5217 33.5438 84.5217C34.0205 84.637 34.5088 84.7523 34.9971 84.8445C38.3456 85.5249 41.7987 85.8016 45.2402 85.6748C61.0756 85.0867 75.202 75.8737 82.1431 61.9331C82.2245 61.7717 82.271 61.5988 82.271 61.4143C82.271 60.7455 81.7245 60.192 81.0386 60.192" fill="#5EB3E4"/>
+    <path d="M80.8525 40.855V50.2755V53.0198H85.4451V40.855C84.7591 41.2355 83.9685 41.4546 83.1546 41.4546C82.3407 41.4546 81.5501 41.2355 80.8642 40.855" fill="#5EB3E4"/>
+</svg>
+                </a>
+                    </div>
+
+
+<div class="absolute be:bg-pc-100 be:h-auto be:relative be:w-240 h-screen left-0 lg:mx-0 lg:show-always mx-expand nav-desktop nav-menu nav-slide pretty-scrollbar right-0 show-on-menu-open top-0"  >
+<div class="nav-menu-scroll-wrap"><ul class="list-none nav-menu-first-level" id="main-menu"><li id="menu-item-732" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-732" ><a href="https://htai.org/about/">About Us</a><button type='button' id='732-trigger' class='sub-toggle' aria-controls='732-menu' data-target='732-menu'><span class='sr-only'>Open About Us Menu</span><svg class="svg-icon-chevron-right-icon "><use xlink:href="#icon-chevron-right"></use></svg><svg class="svg-icon-arrow-right-icon "><use xlink:href="#icon-arrow-right"></use></svg></button><div class='sub-menu-wrap default'><div class='nav-menu-scroll-wrap'><ul id='732-menu' class='sub-menu depth_0 list-none'><li class='parentName'><div>About Us</div></li><li class='back'><button class='md:uppercase inline-flex items-center px-0' aria-label='Close'><svg class="svg-icon-arrow-left-icon mr-2"><use xlink:href="#icon-arrow-left"></use></svg><span class='my-0'>Back</span></button></li>
+	<li id="menu-item-1595" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1595" ><a href="https://htai.org/about/board-of-directors/">Board of Directors</a></li>
+	<li id="menu-item-6660" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6660" ><a href="https://htai.org/about/board-of-directors/#committees">Our Committees</a></li>
+	<li id="menu-item-1598" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1598" ><a href="https://htai.org/about/our-team/">Our Team</a></li>
+	<li id="menu-item-1638" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1638" ><a href="https://htai.org/about/awards-scholarships/">Awards &#038; Scholarships</a></li>
+	<li id="menu-item-1632" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1632" ><a href="https://htai.org/about/news/">News</a></li>
+	<li id="menu-item-1637" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1637" ><a href="https://htai.org/about/endorsement/">Endorsement</a></li>
+	<li id="menu-item-1633" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1633" ><a href="https://htai.org/contact/">Contact</a></li>
+</ul></div></div>
+</li>
+<li id="menu-item-738" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-738" ><a href="https://htai.org/what-is-hta/">What is HTA?</a></li>
+<li id="menu-item-1025" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children has-sub-menu-pattern sub-menu-pattern-600 menu-item-1025" ><a href="https://htai.org/engage-with-us/">Engage with us</a><span class="description">Discover upcoming events and ways you can get involved.</span><button type='button' id='1025-trigger' class='sub-toggle' aria-controls='1025-menu' data-target='1025-menu'><span class='sr-only'>Open Engage with us Menu</span><svg class="svg-icon-chevron-right-icon "><use xlink:href="#icon-chevron-right"></use></svg><svg class="svg-icon-arrow-right-icon "><use xlink:href="#icon-arrow-right"></use></svg></button><div class='sub-menu-wrap sub-menu-pattern'><div class="absolute left-0 right-0 top-full none lg:block pb-4"  >
+<div class="bg-white max-w-screen-xxl mx-auto px-8 py-4 rounded-xl shadow-light-100 sub-menu"  >
+    <div class="container max-w-none"  >
+    <div class="columns flex-wrap"  >
+    <div class="column col-gap-none relative w-1/2"  >
+<div class="hover:bg-sc-100 mb-4 mr-4 pb-2 pt-4 px-4 relative rounded-lg"  >
+    <a class="card-link font-bold h6 icon-md inline-flex inverted items-center primary text-pc-500"                 href="https://htai.org/engage-with-us/"    >
+        
+        Events
+                    <svg class="svg-icon-arrow-right-icon">
+                <use xlink:href="#icon-arrow-right"></use>
+            </svg>
+            </a>
+
+
+
+
+<p class="mt-2">Discover upcoming events and ways you can get involved.</p>
+
+</div>
+
+
+
+<div class="flex flex-col px-4 xl:flex-row xl:items-stretch"  >
+<div class="be:h-auto be:min-w-12 bg-pc-100 flex hover-grow items-end justify-end min-h-40 overflow-hidden relative rounded-lg xl:w-7/12 z-1"  >
+<img loading="lazy" loading="lazy" decoding="async" width="768" height="512" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="sonder-image size-medium absolute be:h-48 be:w-96 h-full left-0 object-cover top-0 w-full z-n ewww_webp" alt="HTA met 305" loading="lazy" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== 1w" sizes="auto, (max-width: 768px) 100vw, 768px" data-src-img="https://htai.org/wp-content/uploads/2025/06/HTA-met-305-768x512.jpg" data-src-webp="https://htai.org/wp-content/uploads/2025/06/HTA-met-305-768x512.jpg.webp" data-srcset-webp="https://htai.org/wp-content/uploads/2025/06/HTA-met-305-768x512.jpg.webp 768w, https://htai.org/wp-content/uploads/2025/06/HTA-met-305-1024x682.jpg.webp 1024w, https://htai.org/wp-content/uploads/2025/06/HTA-met-305-1536x1024.jpg.webp 1536w, https://htai.org/wp-content/uploads/2025/06/HTA-met-305-1500x1000.jpg.webp 1500w, https://htai.org/wp-content/uploads/2025/06/HTA-met-305-576x384.jpg.webp 576w, https://htai.org/wp-content/uploads/2025/06/HTA-met-305-100x67.jpg.webp 100w, https://htai.org/wp-content/uploads/2025/06/HTA-met-305.jpg.webp 2000w" data-srcset-img="https://htai.org/wp-content/uploads/2025/06/HTA-met-305-768x512.jpg 768w, https://htai.org/wp-content/uploads/2025/06/HTA-met-305-1024x682.jpg 1024w, https://htai.org/wp-content/uploads/2025/06/HTA-met-305-1536x1024.jpg 1536w, https://htai.org/wp-content/uploads/2025/06/HTA-met-305-1500x1000.jpg 1500w, https://htai.org/wp-content/uploads/2025/06/HTA-met-305-576x384.jpg 576w, https://htai.org/wp-content/uploads/2025/06/HTA-met-305-100x67.jpg 100w, https://htai.org/wp-content/uploads/2025/06/HTA-met-305.jpg 2000w" data-eio="j" /><noscript><img loading="lazy" loading="lazy" decoding="async" width="768" height="512" src="https://htai.org/wp-content/uploads/2025/06/HTA-met-305-768x512.jpg" class="sonder-image size-medium absolute be:h-48 be:w-96 h-full left-0 object-cover top-0 w-full z-n" alt="HTA met 305" loading="lazy" srcset="https://htai.org/wp-content/uploads/2025/06/HTA-met-305-768x512.jpg 768w, https://htai.org/wp-content/uploads/2025/06/HTA-met-305-1024x682.jpg 1024w, https://htai.org/wp-content/uploads/2025/06/HTA-met-305-1536x1024.jpg 1536w, https://htai.org/wp-content/uploads/2025/06/HTA-met-305-1500x1000.jpg 1500w, https://htai.org/wp-content/uploads/2025/06/HTA-met-305-576x384.jpg 576w, https://htai.org/wp-content/uploads/2025/06/HTA-met-305-100x67.jpg 100w, https://htai.org/wp-content/uploads/2025/06/HTA-met-305.jpg 2000w" sizes="auto, (max-width: 768px) 100vw, 768px" /></noscript>
+
+    <a class="be:my-4 bg-sc-100 card-link font-bold icon-sm inline-flex items-center px-6 py-4 rounded-tl-lg text-pc-500"                 href="https://htai.org/event/htai-2027-annual-meeting-2/"    >
+        
+        HTAi 2027 Annual Meeting in Brussels, Belgium
+                    <svg class="svg-icon-arrow-right-icon">
+                <use xlink:href="#icon-arrow-right"></use>
+            </svg>
+            </a>
+
+
+</div>
+
+
+
+<div class="flex flex-col pt-8 xl:pl-8 xl:pt-0"  >
+    <a class="font-bold hover:underline icon-sm inline-flex inverted items-center my-4 primary text-pc-500"                 href="https://htai.org/engage-with-us/policy-forums/"    >
+        
+        Policy Forums
+                    <svg class="svg-icon-arrow-right-icon">
+                <use xlink:href="#icon-arrow-right"></use>
+            </svg>
+            </a>
+
+
+
+    <a class="font-bold hover:underline icon-sm inline-flex inverted items-center my-4 primary text-pc-500"                 href="https://htai.org/engage-with-us/regional-meetings/"    >
+        
+        Regional Meetings
+                    <svg class="svg-icon-arrow-right-icon">
+                <use xlink:href="#icon-arrow-right"></use>
+            </svg>
+            </a>
+
+
+
+    <a class="font-bold hover:underline icon-sm inline-flex inverted items-center my-4 primary text-pc-500"                 href="https://htai.org/engage-with-us/annual-meeting/"    >
+        
+        Annual Meetings
+                    <svg class="svg-icon-arrow-right-icon">
+                <use xlink:href="#icon-arrow-right"></use>
+            </svg>
+            </a>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="absolute bg-sc-100 inset-y-4 right-0 w-0.5"  ></div>
+
+
+</div>
+
+
+    <div class="column w-1/2 xl:flex"  >
+<div   >
+<div class="hover:bg-sc-100 mb-4 ml-4 pb-2 pt-4 px-4 relative rounded-lg"  >
+    <a class="card-link font-bold h6 icon-md inline-flex inverted items-center primary text-pc-500"                 href="https://htai.org/engage-with-us/interest-groups/"    >
+        
+        Interest Groups
+                    <svg class="svg-icon-arrow-right-icon">
+                <use xlink:href="#icon-arrow-right"></use>
+            </svg>
+            </a>
+
+
+
+
+<p class="mt-2">Find experts in your field, exchange information, and collaborate on your projects to create a network of impact</p>
+
+</div>
+
+
+
+<div class="hover:bg-sc-100 mb-4 ml-4 pb-2 pt-4 px-4 relative rounded-lg"  >
+    <a class="card-link font-bold h6 icon-md inline-flex inverted items-center primary text-pc-500"                 href="https://htai.org/engage-with-us/working-groups/"    >
+        
+        Working Groups &amp; Task Forces
+                    <svg class="svg-icon-arrow-right-icon">
+                <use xlink:href="#icon-arrow-right"></use>
+            </svg>
+            </a>
+
+
+
+
+<p class="mt-2">Explore the topics, the groups, and their deliverables</p>
+
+</div>
+
+
+</div>
+
+
+
+<div   >
+<div class="hover:bg-sc-100 mb-4 ml-4 pb-2 pt-4 px-4 relative rounded-lg"  >
+    <a class="card-link font-bold h6 icon-md inline-flex inverted items-center primary text-pc-500"                 href="https://htai.org/become-a-member/"    >
+        
+        Membership
+                    <svg class="svg-icon-arrow-right-icon">
+                <use xlink:href="#icon-arrow-right"></use>
+            </svg>
+            </a>
+
+
+
+
+<p class="mt-2">Become a member of HTAi as an individual or organization</p>
+
+</div>
+
+
+
+<div class="be:h-auto be:min-w-12 bg-pc-100 flex hover-grow items-end justify-end min-h-40 ml-8 overflow-hidden relative rounded-lg z-1"  >
+<img loading="lazy" loading="lazy" decoding="async" width="768" height="512" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAwAAAAIAAQMAAAAPOJl5AAAAA1BMVEVHcEyC+tLSAAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAEdJREFUeNrtwTEBAAAAwqD1T20MH6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC+BsIAAAGoLEC+AAAAAElFTkSuQmCC" class="sonder-image size-medium absolute be:h-48 be:w-96 h-full left-0 object-cover top-0 w-full z-n lazyload ewww_webp_lazy_load" alt="Couple standing together for picture" loading="lazy"   data-src="https://htai.org/wp-content/uploads/2024/07/53849167707_9393989245_o-768x512.jpg" data-srcset="https://htai.org/wp-content/uploads/2024/07/53849167707_9393989245_o-768x512.jpg 768w, https://htai.org/wp-content/uploads/2024/07/53849167707_9393989245_o-1024x682.jpg 1024w, https://htai.org/wp-content/uploads/2024/07/53849167707_9393989245_o-1536x1024.jpg 1536w, https://htai.org/wp-content/uploads/2024/07/53849167707_9393989245_o-1500x1000.jpg 1500w, https://htai.org/wp-content/uploads/2024/07/53849167707_9393989245_o-576x384.jpg 576w, https://htai.org/wp-content/uploads/2024/07/53849167707_9393989245_o-100x67.jpg 100w, https://htai.org/wp-content/uploads/2024/07/53849167707_9393989245_o.jpg 2000w" data-sizes="auto" data-eio-rwidth="768" data-eio-rheight="512" data-src-webp="https://htai.org/wp-content/uploads/2024/07/53849167707_9393989245_o-768x512.jpg.webp" data-srcset-webp="https://htai.org/wp-content/uploads/2024/07/53849167707_9393989245_o-768x512.jpg.webp 768w, https://htai.org/wp-content/uploads/2024/07/53849167707_9393989245_o-1024x682.jpg.webp 1024w, https://htai.org/wp-content/uploads/2024/07/53849167707_9393989245_o-1536x1024.jpg.webp 1536w, https://htai.org/wp-content/uploads/2024/07/53849167707_9393989245_o-1500x1000.jpg.webp 1500w, https://htai.org/wp-content/uploads/2024/07/53849167707_9393989245_o-576x384.jpg.webp 576w, https://htai.org/wp-content/uploads/2024/07/53849167707_9393989245_o-100x67.jpg.webp 100w, https://htai.org/wp-content/uploads/2024/07/53849167707_9393989245_o.jpg.webp 2000w" /><noscript><img loading="lazy" loading="lazy" decoding="async" width="768" height="512" src="https://htai.org/wp-content/uploads/2024/07/53849167707_9393989245_o-768x512.jpg" class="sonder-image size-medium absolute be:h-48 be:w-96 h-full left-0 object-cover top-0 w-full z-n" alt="Couple standing together for picture" loading="lazy" srcset="https://htai.org/wp-content/uploads/2024/07/53849167707_9393989245_o-768x512.jpg 768w, https://htai.org/wp-content/uploads/2024/07/53849167707_9393989245_o-1024x682.jpg 1024w, https://htai.org/wp-content/uploads/2024/07/53849167707_9393989245_o-1536x1024.jpg 1536w, https://htai.org/wp-content/uploads/2024/07/53849167707_9393989245_o-1500x1000.jpg 1500w, https://htai.org/wp-content/uploads/2024/07/53849167707_9393989245_o-576x384.jpg 576w, https://htai.org/wp-content/uploads/2024/07/53849167707_9393989245_o-100x67.jpg 100w, https://htai.org/wp-content/uploads/2024/07/53849167707_9393989245_o.jpg 2000w" sizes="auto, (max-width: 768px) 100vw, 768px" data-eio="l" /></noscript>
+
+    <a class="be:my-4 bg-sc-100 card-link font-bold icon-sm inline-flex items-center px-6 py-4 rounded-tl-lg text-pc-500"                 href="https://htai.org/become-a-member/"    >
+        
+        Become a Member
+                    <svg class="svg-icon-arrow-right-icon">
+                <use xlink:href="#icon-arrow-right"></use>
+            </svg>
+            </a>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+  </div>
+</div><div class='sub-menu-wrap default'><div class='nav-menu-scroll-wrap'><ul id='1025-menu' class='sub-menu depth_0 list-none'><li class='parentName'><div>Engage with us</div><p class='desc'>Discover upcoming events and ways you can get involved.</p></li><li class='back'><button class='md:uppercase inline-flex items-center px-0' aria-label='Close'><svg class="svg-icon-arrow-left-icon mr-2"><use xlink:href="#icon-arrow-left"></use></svg><span class='my-0'>Back</span></button></li>
+	<li id="menu-item-1651" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1651" ><a href="https://htai.org/engage-with-us/policy-forums/">Policy Forums</a></li>
+	<li id="menu-item-1650" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1650" ><a href="https://htai.org/engage-with-us/regional-meetings/">Regional Meetings</a></li>
+	<li id="menu-item-1028" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1028" ><a href="https://htai.org/engage-with-us/annual-meeting/">Annual Meeting</a></li>
+	<li id="menu-item-1639" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1639" ><a href="https://htai.org/engage-with-us/interest-groups/">Interest Groups</a></li>
+	<li id="menu-item-1654" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1654" ><a href="https://htai.org/engage-with-us/working-groups/">Working Groups and Task Forces</a></li>
+</ul></div></div>
+</li>
+<li id="menu-item-2441" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children active menu-item-2441" ><a href="https://htai.org/learn-with-us/">Learn with us</a><button type='button' id='2441-trigger' class='sub-toggle' aria-controls='2441-menu' data-target='2441-menu'><span class='sr-only'>Open Learn with us Menu</span><svg class="svg-icon-chevron-right-icon "><use xlink:href="#icon-chevron-right"></use></svg><svg class="svg-icon-arrow-right-icon "><use xlink:href="#icon-arrow-right"></use></svg></button><div class='sub-menu-wrap default'><div class='nav-menu-scroll-wrap'><ul id='2441-menu' class='sub-menu depth_0 list-none'><li class='parentName'><div>Learn with us</div></li><li class='back'><button class='md:uppercase inline-flex items-center px-0' aria-label='Close'><svg class="svg-icon-arrow-left-icon mr-2"><use xlink:href="#icon-arrow-left"></use></svg><span class='my-0'>Back</span></button></li>
+	<li id="menu-item-6839" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6839" ><a href="https://htai.org/learn-with-us/gaps-needs-initiative/">Gaps &amp; Needs Initiative</a></li>
+	<li id="menu-item-1631" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1631" ><a href="https://htai.org/learn-with-us/journal/">IJTAHC: International Journal of Technology Assessment in Health Care</a></li>
+	<li id="menu-item-1606" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1606" ><a href="https://htai.org/learn-with-us/newcomers-guide/">Newcomer’s Guide</a></li>
+	<li id="menu-item-1605" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1603 current_page_item active menu-item-1605" ><a href="https://htai.org/learn-with-us/educational-offers-database/">Educational Offers Database</a></li>
+	<li id="menu-item-1649" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1649" ><a href="https://htai.org/learn-with-us/webinars/">Webinars</a></li>
+	<li id="menu-item-1648" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1648" ><a href="https://htai.org/learn-with-us/presentations/">Presentations</a></li>
+</ul></div></div>
+</li>
+<li id="menu-item-1556" class="menu-item menu-item-type-custom menu-item-object-custom !none lg:!inline-flex menu-item-1556" ><a href="https://htai.eventsair.com/membership-system/htai-membership-portal">Sign In</a></li>
+<li id="menu-item-731" class="menu-item menu-item-type-post_type menu-item-object-page !none lg:!inline-flex menu-item-731" ><a href="https://htai.org/become-a-member/" class="button whitespace-nowrap"><span>Become a Member</span></a></li>
+</ul></div>
+
+<div class="lg:none mb-4 search-wrap-mobile"  >
+<div class="be:flex-col flex mb-4"  >
+<div class="absolute aspect-square be:aspect-auto be:bg-gray-100 be:left-auto be:opacity-100 be:relative be:top-0 be:w-full bottom-0 lg:none opacity-10 right-0 text-sc-500 w-1/3"  >
+
+    <svg class="svg-quarter-circle-cutoff-icon h-full w-full" >
+        <use xlink:href="#quarter-circle-cutoff"></use>
+    </svg>
+
+
+</div>
+
+
+
+    <a class="be:my-4 button icon-sm inline-flex items-center mr-4 z-1"                 href="https://htai.org/become-a-member/"    >
+        
+        Become a Member
+            </a>
+
+
+
+    <a class="be:my-4 button icon-sm inline-flex items-center z-1"                 href=""    >
+        
+        Sign In
+            </a>
+
+
+</div>
+
+
+
+            <form role="search" action="https://htai.org" method="get" class="search-form mobile-nav" id="mobile-nav-search">
+                                <input type="hidden" name="site_section" value="site-search" />
+                <input type="text" class="input" name="s" placeholder="Search entire site" />
+                <button type="submit" class="button" title="Search">
+                    <svg class="svg-icon-search-icon "><use xlink:href="#icon-search"></use></svg>                </button>
+            </form>
+        
+</div>
+
+
+</div>
+
+
+
+    <div class="nav-activator lg:none inline-flex h-full relative z-20">
+        <button type="button" id='main-menu-trigger' class="bg-transparent border-0 appearance-none touch-manipulation"  aria-expanded="false" aria-controls="main-menu" data-target="main-menu" aria-label="Open Navigation">
+                
+    <div class="hamburger hamburger-1 ">
+        <span aria-hidden="true">
+            <span aria-hidden="true"></span>
+        </span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </div>
+        </button>
+    </div>
+
+            <div class="search-activator-wrap none lg:inline-flex">
+                <button aria-labelledby="desktop-nav-search" class="search-activator">
+                    <span class="sr-only">Search</span>
+
+                    <svg class="svg-icon-close-icon "><use xlink:href="#icon-close"></use></svg>                    <svg class="svg-icon-search-icon "><use xlink:href="#icon-search"></use></svg>
+                </button>
+            </div>
+        
+
+<div class="be:bg-pc-100 be:flex-col be:w-96 close flex open-down searchWrapHeader z-10"  >
+            <form role="search" action="https://htai.org" method="get" class="search-form desktop-nav" id="desktop-nav-search">
+                                <input type="hidden" name="site_section" value="site-search" />
+                <input type="text" class="input" name="s" placeholder="Search entire site" />
+                <button type="submit" class="button" title="Search">
+                    <svg class="svg-icon-search-icon "><use xlink:href="#icon-search"></use></svg>                </button>
+            </form>
+        
+</div>
+
+
+</div>
+
+  </nav>
+
+</div>
+
+
+  </div>
+
+  </div>
+
+<section class=" section sonder-block-section be:bg-gray-100 h-auto page-head page-head-default pb-0 pt-header"  >
+<div class="absolute aspect-square be:aspect-auto be:bg-gray-100 be:left-auto be:opacity-100 be:relative be:top-0 lg:w-1/4 opacity-10 right-0 text-sc-500 top-header w-1/3"  >
+
+    <svg class="svg-quarter-circle-cutoff-icon h-full w-full" >
+        <use xlink:href="#quarter-circle-cutoff"></use>
+    </svg>
+
+
+</div>
+
+
+
+    <div class="container h-full pt-section"  >
+    <div class="columns flex-wrap h-full"  >
+    <div class="column be:flex-col flex h-full items-center lg:w-8/12 md:w-10/12 w-full xxl:w-6/12"  >
+<div class="be:bg-gray-500 lg:pr-8"  >
+<nav class="breadcrumbs" aria-label="breadcrumbs"><ul class="list-none items-center mb-4 flex flex-wrap "><li><a class="breadcrumb intro text-pc-500" href="https://htai.org/learn-with-us/" title="Learn with us">Learn with us</a></li></ul></nav>
+
+<h1 class="title hero">Educational Offers Database</h1>
+        
+
+            <div class="page-header-intro "><p class="lead">Your free online tool to collect educational and training programs that are being offered globally in the field of Health Technology Assessment.</p>
+</div>
+        
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+  </section>
+
+  </header>
+
+
+<main   id="main" >
+<div class="container"  >
+<div class="entry-content wp-block-post-content is-layout-flow wp-block-post-content-is-layout-flow"><section class=" section sonder-block-section alignfull fancy-gradient-down-contained"  >
+    <div  class="container"  >
+    <div class="columns flex-wrap"  >
+    <div class="column w-full md:w-1/2"  >
+
+<h2 class="wp-block-heading">Background</h2>
+
+
+
+<p>The&nbsp;HTAi Educational Offers Database is a&nbsp;free online tool for HTAi members and non-members to collect educational and training programs that are being offered globally in the field of Health Technology Assessment. The Educational Offers Database is targeted to&nbsp;individuals who wish to search for specific HTA courses or programs around the world, and academic institutions and education or training providers who would like to showcase their HTA course or program.<br></p>
+
+</div>
+
+
+    <div  class="column"  >
+
+<h2 class="wp-block-heading">The Database</h2>
+
+
+
+<p>The Database is the result of projects executed by the HTAi Scientific Development and Capacity Building Committee.&nbsp;Currently, the Database is limited to Master programs (M.Sc.) in HTA but will be soon expanded to include other educational offers.</p>
+
+
+
+<p>Registration is required to access the Database. Once registered, users will be able to search the Database and add new courses by filling in a specific online form. HTAi members will have full access to the Database once verified, while non-members will be able to view a limited selection.</p>
+
+
+    <a class="button inline-flex items-center be:my-4 icon-sm"                 href="https://portal.htai.org/?_gl=1*1ygq4nb*_ga*ODg5Njg0NDExLjE3MTQ2NjMxNzE.*_ga_79CPBECN0V*MTcyMTc2NjAwMi40NC4xLjE3MjE3Njk1NzUuMC4wLjA."    >
+        
+        Access the Database
+                    <svg class="svg-icon-link-icon">
+                <use xlink:href="#icon-link"></use>
+            </svg>
+            </a>
+
+
+</div>
+
+</div>
+
+</div>
+
+  </section>
+</div>
+</div>
+
+
+  </main>
+
+
+<footer   >
+<div class="text-white section bg-pc-900"  data-sonder-pattern="footer-hans" >
+    <div class="container primary"  >
+    <div class="columns flex-wrap items-start"  >
+    <div class="column lg:w-1/4 md:w-1/3 w-full"  >
+
+    <a                        href="https://htai.org/"     >
+        
+
+    <svg class="svg-htai-compact-logo-icon h-18 w-18" >
+        <use xlink:href="#htai-compact-logo"></use>
+    </svg>
+
+
+    </a>
+
+
+</div>
+
+
+    <div class="column lg:w-1/4 md:w-1/3 w-full"  >
+<div   >
+
+<h3 class="wp-block-heading intro mb-8">About Us</h3>
+
+
+
+<p class="hover:link-underline link-color-inherit link-no-underline text-sc-100"><a href="https://htai.org/about/" data-type="page" data-id="152">What is HTAi?</a></p>
+
+
+
+<p class="hover:link-underline link-color-inherit link-no-underline text-sc-100"><a href="https://htai.org/what-is-hta/" data-type="page" data-id="736">Intro to HTA</a></p>
+
+
+
+<p class="hover:link-underline link-color-inherit link-no-underline text-sc-100"><a href="https://htai.org/about/news/" data-type="page" data-id="156">News</a></p>
+
+
+
+<p class="hover:link-underline link-color-inherit link-no-underline text-sc-100"><a href="https://htaglossary.net/HomePage" data-type="page" data-id="3084">HTA Glossary</a></p>
+
+
+
+<p class="hover:link-underline link-color-inherit link-no-underline text-sc-100"><a href="https://htai.org/code-of-conduct/" data-type="page" data-id="3084">Code of Conduct</a></p>
+
+
+
+<p class="hover:link-underline link-color-inherit link-no-underline text-sc-100"><a href="https://htai.org/about/our-team/careers/" data-type="page" data-id="7961">Careers</a></p>
+
+</div>
+
+
+</div>
+
+
+    <div class="column lg:w-1/4 md:w-1/3 w-full"  >
+<div   >
+
+<h3 class="wp-block-heading intro mb-8">Get Involved</h3>
+
+
+
+<p class="hover:link-underline link-color-inherit link-no-underline text-sc-100"><a href="https://htai.org/become-a-member/" data-type="page" data-id="684">Become a Member</a></p>
+
+
+
+<p class="hover:link-underline link-color-inherit link-no-underline text-sc-100"><a href="https://htai.org/engage-with-us/annual-meeting/" data-type="page" data-id="1026">Annual Meeting</a></p>
+
+
+
+<p class="hover:link-underline link-color-inherit link-no-underline text-sc-100"><a href="https://htai.org/engage-with-us/" data-type="page" data-id="741">Events</a></p>
+
+
+
+<p class="hover:link-underline link-color-inherit link-no-underline text-sc-100"><a href="https://htai.org/engage-with-us/interest-groups/" data-type="page" data-id="1542">Interest Groups</a></p>
+
+</div>
+
+
+</div>
+
+
+    <div class="column lg:ml-0 lg:w-1/4 md:ml-4/12 md:w-2/3 ml:w-2/3 w-full"  >
+<div   >
+
+<h3 class="wp-block-heading intro mb-8">Contact Us</h3>
+
+
+
+<p class="mb-0 text-white">Health Technology Assessment international</p>
+
+
+
+            <a class="text-sc-100 no-underline" href="https://www.google.com/maps?saddr=My+Location&#038;daddr=53.5406449,-113.5040108" target="_blank"><p>First Edmonton Place<br />
+10665 Jasper Avenue, 14th Floor<br />
+Edmonton, Alberta T5J 3S9</p>
+</a>
+        
+
+        <a class="email text-sc-100 font-bold no-underline hover:underline my-8" href="mailto:info@htai.org">
+            <span class="my-0 pointer-events-none ">info@htai.org</span>
+        </a>
+
+
+    <ul class="list-none social-icons my-4">
+        
+                    <li><a aria-label="LinkedIn" href="https://www.linkedin.com/company/4795702">
+                        <svg class="svg-icon-linkedin-icon text-sc-100"><use xlink:href="#icon-linkedin"></use></svg>                    </a></li>
+                    <li><a aria-label="Facebook" href="https://www.facebook.com/HTAiOrg">
+                        <svg class="svg-icon-facebook-icon text-sc-100"><use xlink:href="#icon-facebook"></use></svg>                    </a></li>
+                    <li><a aria-label="YouTube" href="https://www.youtube.com/channel/UC9eThoUtBV1omfrkeDcEJPg">
+                        <svg class="svg-icon-youtube-icon text-sc-100"><use xlink:href="#icon-youtube"></use></svg>                    </a></li>
+                    <li><a aria-label="Instagram" href="https://www.instagram.com/htaiorg/">
+                        <svg class="svg-icon-instagram-icon text-sc-100"><use xlink:href="#icon-instagram"></use></svg>                    </a></li>
+                    <li><a aria-label="Bluesky" href="https://bsky.app/profile/htaiorg.bsky.social">
+                        <svg class="svg-icon-bluesky-icon text-sc-100"><use xlink:href="#icon-bluesky"></use></svg>                    </a></li>    </ul>
+
+    <p class="copyright ">
+        Copyright &copy; 2026 HTAi    </p>
+
+</div>
+
+
+</div>
+
+
+    <div class="column text-sm text-white w-full"  >
+
+<p class="hover:link-underline link-color-inherit link-no-underline text-sc-500 mt-12">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+    <div class="container container"  ></div>
+
+  </div>
+
+  </footer>
+</div>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/Sonder-Client/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+		<script>
+		( function ( body ) {
+			'use strict';
+			body.className = body.className.replace( /\btribe-no-js\b/, 'tribe-js' );
+		} )( document.body );
+		</script>
+		<script> /* <![CDATA[ */var tribe_l10n_datatables = {"aria":{"sort_ascending":": activate to sort column ascending","sort_descending":": activate to sort column descending"},"length_menu":"Show _MENU_ entries","empty_table":"No data available in table","info":"Showing _START_ to _END_ of _TOTAL_ entries","info_empty":"Showing 0 to 0 of 0 entries","info_filtered":"(filtered from _MAX_ total entries)","zero_records":"No matching records found","search":"Search:","all_selected_text":"All items on this page were selected. ","select_all_link":"Select all pages","clear_selection":"Clear Selection.","pagination":{"all":"All","next":"Next","previous":"Previous"},"select":{"rows":{"0":"","_":": Selected %d rows","1":": Selected 1 row"}},"datepicker":{"dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesMin":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Prev","currentText":"Today","closeText":"Done","today":"Today","clear":"Clear"}};/* ]]> */ </script>			<script>
+				const lazyloadRunObserver = () => {
+					const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+						entries.forEach( ( entry ) => {
+							if ( entry.isIntersecting ) {
+								let lazyloadBackground = entry.target;
+								if( lazyloadBackground ) {
+									lazyloadBackground.classList.add( 'e-lazyloaded' );
+								}
+								lazyloadBackgroundObserver.unobserve( entry.target );
+							}
+						});
+					}, { rootMargin: '200px 0px 200px 0px' } );
+					lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+						lazyloadBackgroundObserver.observe( lazyloadBackground );
+					} );
+				};
+				const events = [
+					'DOMContentLoaded',
+					'elementor/lazyload/observe',
+				];
+				events.forEach( ( event ) => {
+					document.addEventListener( event, lazyloadRunObserver );
+				} );
+			</script>
+			<script id="eio-lazy-load-js-before">
+var eio_lazy_vars = {"exactdn_domain":"","skip_autoscale":0,"bg_min_dpr":1.1,"threshold":0,"use_dpr":1};
+//# sourceURL=eio-lazy-load-js-before
+</script>
+<script src="https://htai.org/wp-content/plugins/ewww-image-optimizer/includes/lazysizes.min.js?ver=870" id="eio-lazy-load-js" async data-wp-strategy="async"></script>
+<script src="https://htai.org/wp-content/plugins/the-events-calendar/common/build/js/user-agent.js?ver=da75d0bdea6dde3898df" id="tec-user-agent-js"></script>
+<script id="gforms_recaptcha_recaptcha-js-extra">
+var gforms_recaptcha_recaptcha_strings = {"nonce":"3b6a1b035f","disconnect":"Disconnecting","change_connection_type":"Resetting","spinner":"https://htai.org/wp-content/plugins/gravityforms/images/spinner.svg","connection_type":"classic","disable_badge":"1","change_connection_type_title":"Change Connection Type","change_connection_type_message":"Changing the connection type will delete your current settings.  Do you want to proceed?","disconnect_title":"Disconnect","disconnect_message":"Disconnecting from reCAPTCHA will delete your current settings.  Do you want to proceed?","site_key":"6LfZYGQqAAAAABKmlmrnnywqXtmEZBkV_VyyyEkL"};
+//# sourceURL=gforms_recaptcha_recaptcha-js-extra
+</script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LfZYGQqAAAAABKmlmrnnywqXtmEZBkV_VyyyEkL&amp;ver=2.2.2" id="gforms_recaptcha_recaptcha-js" defer data-wp-strategy="defer"></script>
+<script src="https://htai.org/wp-content/plugins/gravityformsrecaptcha/js/frontend.min.js?ver=2.2.2" id="gforms_recaptcha_frontend-js" defer data-wp-strategy="defer"></script>
+</body>
+</html>

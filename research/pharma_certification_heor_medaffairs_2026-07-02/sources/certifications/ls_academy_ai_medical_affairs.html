@@ -1,0 +1,1448 @@
+<!doctype html>
+<html lang="it-IT">
+  <head>
+
+  <meta charset="utf-8">
+<script type="text/javascript">
+/* <![CDATA[ */
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),document.addEventListener("gform/theme/scripts_loaded",function(){gform.themeScriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,themeScriptsLoaded:!1,isFormEditor:()=>"function"==typeof InitializeEditor,callIfLoaded:function(o){return!(!gform.domLoaded||!gform.scriptsLoaded||!gform.themeScriptsLoaded&&!gform.isFormEditor()||(gform.isFormEditor()&&console.warn("The use of gform.initializeOnLoaded() is deprecated in the form editor context and will be removed in Gravity Forms 3.1."),o(),0))},initializeOnLoaded:function(o){gform.callIfLoaded(o)||(document.addEventListener("gform_main_scripts_loaded",()=>{gform.scriptsLoaded=!0,gform.callIfLoaded(o)}),document.addEventListener("gform/theme/scripts_loaded",()=>{gform.themeScriptsLoaded=!0,gform.callIfLoaded(o)}),window.addEventListener("DOMContentLoaded",()=>{gform.domLoaded=!0,gform.callIfLoaded(o)}))},hooks:{action:{},filter:{}},addAction:function(o,r,e,t){gform.addHook("action",o,r,e,t)},addFilter:function(o,r,e,t){gform.addHook("filter",o,r,e,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,r){gform.removeHook("action",o,r)},removeFilter:function(o,r,e){gform.removeHook("filter",o,r,e)},addHook:function(o,r,e,t,n){null==gform.hooks[o][r]&&(gform.hooks[o][r]=[]);var d=gform.hooks[o][r];null==n&&(n=r+"_"+d.length),gform.hooks[o][r].push({tag:n,callable:e,priority:t=null==t?10:t})},doHook:function(r,o,e){var t;if(e=Array.prototype.slice.call(e,1),null!=gform.hooks[r][o]&&((o=gform.hooks[r][o]).sort(function(o,r){return o.priority-r.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==r?t.apply(null,e):e[0]=t.apply(null,e)})),"filter"==r)return e[0]},removeHook:function(o,r,t,n){var e;null!=gform.hooks[o][r]&&(e=(e=gform.hooks[o][r]).filter(function(o,r,e){return!!(null!=n&&n!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][r]=e)}});
+/* ]]> */
+</script>
+
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <script>
+  window.CURRENTLANGUAGE = "it";
+  window.LSAAJAX = "whGcugXYqFWLulWbkF2LulWbkFWLwd3Lt92YukXblRWYjF2cs9yL6MHc0RHa";
+  window.LSAASSETS = "vQ3cpR2LFJ1byB3LzVWblhGdvQnblRnbvNWLwd3Lt92YukXblRWYjF2cs9yL6MHc0RHa";
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+  <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<!-- Google tag (gtag.js) consent mode dataLayer added by Site Kit -->
+<script type="text/javascript" id="google_gtagjs-js-consent-mode-data-layer">
+/* <![CDATA[ */
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {"ad_personalization":"denied","ad_storage":"denied","ad_user_data":"denied","analytics_storage":"denied","functionality_storage":"denied","security_storage":"denied","personalization_storage":"denied","region":["AT","BE","BG","CH","CY","CZ","DE","DK","EE","ES","FI","FR","GB","GR","HR","HU","IE","IS","IT","LI","LT","LU","LV","MT","NL","NO","PL","PT","RO","SE","SI","SK"],"wait_for_update":500});
+window._googlesitekitConsentCategoryMap = {"statistics":["analytics_storage"],"marketing":["ad_storage","ad_user_data","ad_personalization"],"functional":["functionality_storage","security_storage"],"preferences":["personalization_storage"]};
+window._googlesitekitConsents = {"ad_personalization":"denied","ad_storage":"denied","ad_user_data":"denied","analytics_storage":"denied","functionality_storage":"denied","security_storage":"denied","personalization_storage":"denied","region":["AT","BE","BG","CH","CY","CZ","DE","DK","EE","ES","FI","FR","GB","GR","HR","HU","IE","IS","IT","LI","LT","LU","LV","MT","NL","NO","PL","PT","RO","SE","SI","SK"],"wait_for_update":500};
+/* ]]> */
+</script>
+<!-- Fine del dataLayer della modalità di consenso del tag Google (gtag.js) aggiunto da Site Kit -->
+
+	<!-- This site is optimized with the Yoast SEO plugin v27.2 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<title>Training on AI Applications for Medical Affairs | LS Academy</title>
+	<meta name="description" content="Online hands-on AI tools and AI Act compliance training for Medical Affairs: master ethical use and regulatory requirements." />
+	<link rel="canonical" href="https://lsacademy.com/it/productgroup/hands-on-lab-on-ai-tools-and-compliance-with-ai-act-for-medical-affairs-professionals/" />
+	<meta property="og:locale" content="it_IT" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Training on AI Applications for Medical Affairs | LS Academy" />
+	<meta property="og:description" content="Online hands-on AI tools and AI Act compliance training for Medical Affairs: master ethical use and regulatory requirements." />
+	<meta property="og:url" content="https://lsacademy.com/it/productgroup/hands-on-lab-on-ai-tools-and-compliance-with-ai-act-for-medical-affairs-professionals/" />
+	<meta property="og:site_name" content="LS Academy" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@LSAcademy_EasyB" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://lsacademy.com/it/productgroup/hands-on-lab-on-ai-tools-and-compliance-with-ai-act-for-medical-affairs-professionals/","url":"https://lsacademy.com/it/productgroup/hands-on-lab-on-ai-tools-and-compliance-with-ai-act-for-medical-affairs-professionals/","name":"Training on AI Applications for Medical Affairs | LS Academy","isPartOf":{"@id":"https://lsacademy.com/en/#website"},"primaryImageOfPage":{"@id":"https://lsacademy.com/it/productgroup/hands-on-lab-on-ai-tools-and-compliance-with-ai-act-for-medical-affairs-professionals/#primaryimage"},"image":{"@id":"https://lsacademy.com/it/productgroup/hands-on-lab-on-ai-tools-and-compliance-with-ai-act-for-medical-affairs-professionals/#primaryimage"},"thumbnailUrl":"https://lsacademy.com/wp-content/uploads/2024/12/AI-MedAff-2025.jpg","description":"Online hands-on AI tools and AI Act compliance training for Medical Affairs: master ethical use and regulatory requirements.","breadcrumb":{"@id":"https://lsacademy.com/it/productgroup/hands-on-lab-on-ai-tools-and-compliance-with-ai-act-for-medical-affairs-professionals/#breadcrumb"},"inLanguage":"it-IT"},{"@type":"ImageObject","inLanguage":"it-IT","@id":"https://lsacademy.com/it/productgroup/hands-on-lab-on-ai-tools-and-compliance-with-ai-act-for-medical-affairs-professionals/#primaryimage","url":"https://lsacademy.com/wp-content/uploads/2024/12/AI-MedAff-2025.jpg","contentUrl":"https://lsacademy.com/wp-content/uploads/2024/12/AI-MedAff-2025.jpg","width":1920,"height":1080,"caption":"AI futuristic technology background vector"},{"@type":"BreadcrumbList","@id":"https://lsacademy.com/it/productgroup/hands-on-lab-on-ai-tools-and-compliance-with-ai-act-for-medical-affairs-professionals/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://lsacademy.com/it/"},{"@type":"ListItem","position":2,"name":"Hands-On Lab on AI Tools and Compliance with AI Act for Medical Affairs Professionals"}]},{"@type":"WebSite","@id":"https://lsacademy.com/en/#website","url":"https://lsacademy.com/en/","name":"LS Academy","description":"Formazione settore farmaceutico e dispositivi medici","publisher":{"@id":"https://lsacademy.com/en/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://lsacademy.com/en/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"it-IT"},{"@type":"Organization","@id":"https://lsacademy.com/en/#organization","name":"Life Science Academy - LS Academy","url":"https://lsacademy.com/en/","logo":{"@type":"ImageObject","inLanguage":"it-IT","@id":"https://lsacademy.com/en/#/schema/logo/image/","url":"http://lsacademy.com/wp-content/uploads/2020/08/lsacademy-logo.png","contentUrl":"http://lsacademy.com/wp-content/uploads/2020/08/lsacademy-logo.png","width":390,"height":100,"caption":"Life Science Academy - LS Academy"},"image":{"@id":"https://lsacademy.com/en/#/schema/logo/image/"},"sameAs":["https://www.facebook.com/LSAcademyItaly/","https://x.com/LSAcademy_EasyB","https://it.linkedin.com/company/ls-academy","https://www.cylex-italia.it/alzano-lombardo/life-science-academy-14732251.html","https://www.youtube.com/channel/UCGfFh5-vZN168RW7XY6IaQQ","https://maps.google.com/maps?cid=3167808527628398402"]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//cdn.iubenda.com' />
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+<link rel="alternate" type="application/rss+xml" title="Feed LS Academy &raquo; Hands-On Lab on AI Tools and Compliance with AI Act for Medical Affairs Professionals Product Group" href="https://lsacademy.com/it/productgroup/hands-on-lab-on-ai-tools-and-compliance-with-ai-act-for-medical-affairs-professionals/feed/" />
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/lsacademy.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.8.5"}};
+/*! This file is auto-generated */
+!function(s,n){var o,i,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),a=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===a[t]})}function u(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);for(var n=e.getImageData(16,16,1,1),a=0;a<n.data.length;a++)if(0!==n.data[a])return!1;return!0}function f(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\udedf")}return!1}function g(e,t,n,a){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):s.createElement("canvas"),o=r.getContext("2d",{willReadFrequently:!0}),i=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(function(e){i[e]=t(o,e,n,a)}),i}function t(e){var t=s.createElement("script");t.src=e,t.defer=!0,s.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",i=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){s.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+g.toString()+"("+[JSON.stringify(i),f.toString(),p.toString(),u.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"}),r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=function(e){c(n=e.data),r.terminate(),t(n)})}catch(e){}c(n=g(i,f,p,u))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<link rel='stylesheet' id='disable-payment-method-for-woocommerce-css' href='https://lsacademy.com/wp-content/plugins/disable-payment-method-for-woocommerce/public/css/style.css?ver=6.8.5' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-layout-css' href='https://lsacademy.com/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=10.2.3' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-smallscreen-css' href='https://lsacademy.com/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=10.2.3' type='text/css' media='only screen and (max-width: 768px)' />
+<link rel='stylesheet' id='woocommerce-general-css' href='https://lsacademy.com/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=10.2.3' type='text/css' media='all' />
+<style id='woocommerce-inline-inline-css' type='text/css'>
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+<link rel='stylesheet' id='xpay-checkout-css' href='https://lsacademy.com/wp-content/plugins/cartasi-x-pay/assets/css/xpay.css?ver=8.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='brands-styles-css' href='https://lsacademy.com/wp-content/plugins/woocommerce/assets/css/brands.css?ver=10.2.3' type='text/css' media='all' />
+<link rel='stylesheet' id='sage/main.css-css' href='https://lsacademy.com/wp-content/themes/lsacademy/dist/styles/main.css' type='text/css' media='all' />
+<script type="text/javascript" id="wpml-cookie-js-extra">
+/* <![CDATA[ */
+var wpml_cookies = {"wp-wpml_current_language":{"value":"it","expires":1,"path":"\/"}};
+var wpml_cookies = {"wp-wpml_current_language":{"value":"it","expires":1,"path":"\/"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://lsacademy.com/wp-content/plugins/sitepress-multilingual-cms/res/js/cookies/language-cookie.js?ver=491900" id="wpml-cookie-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="text/javascript" src="https://lsacademy.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://lsacademy.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="https://lsacademy.com/wp-content/plugins/disable-payment-method-for-woocommerce/public/js/disable-payment-method.js?ver=1.1.9.42" id="disable-payment-method-for-woocommerce-js"></script>
+<script type="text/javascript" src="https://lsacademy.com/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.10.2.3" id="jquery-blockui-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="text/javascript" id="wc-add-to-cart-js-extra">
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/it\/?wc-ajax=%%endpoint%%","i18n_view_cart":"Visualizza carrello","cart_url":"https:\/\/lsacademy.com\/it\/cart\/","is_cart":"","cart_redirect_after_add":"yes"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://lsacademy.com/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=10.2.3" id="wc-add-to-cart-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="text/javascript" src="https://lsacademy.com/wp-content/plugins/woocommerce-js-cookie-fix/js_cookie.min.js?ver=2.1.4" id="js-cookie-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="text/javascript" id="woocommerce-js-extra">
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/it\/?wc-ajax=%%endpoint%%","i18n_password_show":"Mostra password","i18n_password_hide":"Nascondi password"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://lsacademy.com/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=10.2.3" id="woocommerce-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="text/javascript" src="https://lsacademy.com/wp-content/plugins/cartasi-x-pay/assets/js/xpay.js?ver=8.3.1" id="xpay-checkout-js"></script>
+<script type="text/javascript" id="wc-cart-fragments-js-extra">
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/it\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_212f08eb47a4aeb426a3f079eaa40012-it","fragment_name":"wc_fragments_212f08eb47a4aeb426a3f079eaa40012","request_timeout":"5000"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://lsacademy.com/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=10.2.3" id="wc-cart-fragments-js" defer="defer" data-wp-strategy="defer"></script>
+<link rel="https://api.w.org/" href="https://lsacademy.com/it/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://lsacademy.com/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.8.5" />
+<meta name="generator" content="WooCommerce 10.2.3" />
+<meta name="generator" content="WPML ver:4.9.2 stt:1,27;" />
+<meta name="generator" content="Site Kit by Google 1.182.0" /><script src="https://lsacademy.com/wp-content/plugins/cartasi-x-pay/assets/js/pagodil-sticker.min.js?v=8.3.1"></script><style>.pagodil-sticker-container { display: inline-block; margin-bottom: 60px; } </style>	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	
+<!-- Snippet Google Tag Manager aggiunto da Site Kit -->
+<script type="text/javascript">
+/* <![CDATA[ */
+
+			( function( w, d, s, l, i ) {
+				w[l] = w[l] || [];
+				w[l].push( {'gtm.start': new Date().getTime(), event: 'gtm.js'} );
+				var f = d.getElementsByTagName( s )[0],
+					j = d.createElement( s ), dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore( j, f );
+			} )( window, document, 'script', 'dataLayer', 'GTM-M29BRWD' );
+			
+/* ]]> */
+</script>
+
+<!-- Termina lo snippet Google Tag Manager aggiunto da Site Kit -->
+<link rel="icon" href="https://lsacademy.com/wp-content/uploads/2022/06/cropped-LSA-favicon-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://lsacademy.com/wp-content/uploads/2022/06/cropped-LSA-favicon-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://lsacademy.com/wp-content/uploads/2022/06/cropped-LSA-favicon-180x180.png" />
+<meta name="msapplication-TileImage" content="https://lsacademy.com/wp-content/uploads/2022/06/cropped-LSA-favicon-270x270.png" />
+		<style type="text/css" id="wp-custom-css">
+			
+div.homepage-featured.bg-cover > div > div > div > div > div{text-align:left;line-height:1.4}
+
+div.homepage-featured.bg-cover > div > div > div > div > div > h1{margin-bottom:40px;}
+
+.pre-footer-content-wrapper {
+	background-color:#0054a1;
+}
+
+.pre-footer-content {
+	color:white;
+    display: block;
+    margin: 0 auto;
+    max-width: 900px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+	column-count:2
+}
+
+.pre-footer-content p {
+	font-size:0.8rem!important;
+}
+
+.pre-footer-content h2 {
+	font-size:1.3rem!important;
+}
+
+.pre-footer-content h3,
+.pre-footer-content h4 {
+	font-size:1.1rem!important;
+}
+		</style>
+		
+
+  <!-- TruConversion for lsacademy.com -->
+<script type="text/javascript">
+    var tip = tip || [];
+    (function(d,s,id){
+        var js, tjs = d.getElementsByTagName(s)[0];
+        if(d.getElementById(id)) { return; }
+        js = d.createElement(s); js.id = id;
+        js.async = true;
+        js.src = d.location.protocol + '//app.truconversion.com/ti-js/17484/7ccb3.js';
+        tjs.parentNode.insertBefore(js, tjs);
+    }(document, 'script', 'ti-js'));
+</script>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1376635519102047');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1376635519102047&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<!-- Custom Automatic Popup -->
+
+
+<script>
+window.lsa_auto_popup = {
+  enabled: true,
+  delay: 30,
+};  
+</script>
+
+<!-- End Custom Automatic Popup -->
+</head>
+  <body class="archive tax-productgroup term-hands-on-lab-on-ai-tools-and-compliance-with-ai-act-for-medical-affairs-professionals term-541 wp-theme-lsacademyresources theme-lsacademy/resources woocommerce woocommerce-page woocommerce-no-js app-data index-data archive-data taxonomy-data taxonomy-productgroup-data taxonomy-productgroup-hands-on-lab-on-ai-tools-and-compliance-with-ai-act-for-medical-affairs-professionals-data">
+
+
+ 
+    
+    <!--<div class="bg-danger">
+	<div class="container text-white">
+		<div class="row">
+			<div class="col-sm-6 small text-center p-3">
+				Stai cercando di effettuare un ordine? Il carrello è al momento in manutenzione. Contattaci per procedere con la tua iscrizione: info@lsacademy.com | T. +39(0)35.515684
+			</div>
+			<div class="col-sm-6 small text-center p-3">
+				Are you looking to place an order? The shopping cart is currently under maintenance. Contact us to proceed with your registration: info@lsacademy.com | T. +39 (0) 35.515684
+			</div>
+		</div>
+
+
+	</div>
+</div>
+-->
+
+<header class="banner banner-lsa  ">
+		<div class="d-none d-md-block bg-gray text-white py-2 contacts-header font-family-title">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-7">
+					<span class="contacts-container">
+										<span class="contact-item first">
+						<a class="btn btn-sm" href="tel: +39.035.515.684"><i class="fa fa-phone  mr-2"></i>+39.035.515.684</a>
+					</span>
+															<span class="contact-item">
+						<a class="btn btn-sm" href="mailto: info@lsacademy.com"><i class="fa fa-envelope  mr-2"></i>info@lsacademy.com</a>
+					</span>
+					
+									<a class="btn btn-accent btn-sm p-1 text-white" href="https://lsacademy.com/it/iscrizione-newsletter/"> <i class="fa fa-envelope"></i>&nbsp;Newsletter</a>
+									</span>
+				</div>
+				<div class="col-sm-5 text-right">
+
+
+					<span class="btn text-muted" id="btn-searchbar-show"><i class="fa fa-search"></i></span>
+
+					
+					<span class="user-container ml-4">
+											<a class="btn btn-secondary btn-sm p-1 text-white" href="https://lsacademy.com/it/my-account/">Accedi o registrati</a>
+										</span>
+					<span class="minicart-container ml-4">
+						<div class="lsa-wc-minicart-container woocommerce dropdown d-inline-block">
+	<a href="#" data-toggle="dropdown">
+		
+			<i class="fa fa-shopping-cart text-dark lsa-cart-icon"></i>
+			<span class="badge badge-light badge-lg lsa-cart-badge"><span class="badge-minicart-count">0</span></span></a>
+		
+
+	<div class="lsa-wc-minicart dropdown-menu  dropdown-menu-right p-2">
+	 	<div class="widget_shopping_cart_content">
+		
+
+	<p class="woocommerce-mini-cart__empty-message">Nessun prodotto nel carrello.</p>
+
+
+
+		</div> 
+	</div>
+</div>
+
+					</span>
+				</div>
+
+			</div>
+
+
+
+			<!--
+							<span class="text-secondary mr-2">Seguici su</span>
+			
+							<a href="https://www.facebook.com/LSAcademyItaly/" target="_blank"><i class="fa fa-facebook-square mr-2"></i></a>
+										<a href="https://it.linkedin.com/company/ls-academy" target="_blank"><i class="fa fa-linkedin-square mr-2"></i></a>
+										<a href="https://twitter.com/LSAcademy_EasyB" target="_blank"><i class="fa fa-twitter-square mr-2"></i></a>
+						-->
+
+		</div>
+	</div>
+
+
+  <div class="container">
+
+
+
+    <nav class="navbar navbar-expand-md navbar-lsa py-0">
+
+
+
+		
+
+	    <a class="brand" href="https://lsacademy.com/it/">
+	    		    	<img class="mb-3" src="https://lsacademy.com/wp-content/uploads/2020/08/lsacademy-logo.png" alt="LS Academy">
+	    		   </a>
+
+		
+		<div>
+			<span class="minicart-container mobile d-md-none">
+				<div class="lsa-wc-minicart-container woocommerce dropdown d-inline-block">
+	<a href="#" data-toggle="dropdown">
+		
+			<i class="fa fa-shopping-cart text-dark lsa-cart-icon"></i>
+			<span class="badge badge-light badge-lg lsa-cart-badge"><span class="badge-minicart-count">0</span></span></a>
+		
+
+	<div class="lsa-wc-minicart dropdown-menu  dropdown-menu-right p-2">
+	 	<div class="widget_shopping_cart_content">
+		
+
+	<p class="woocommerce-mini-cart__empty-message">Nessun prodotto nel carrello.</p>
+
+
+
+		</div> 
+	</div>
+</div>
+
+			</span>
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<i class="fa fa-bars m-2"></i>
+			</button>
+		</div>
+
+		
+
+
+		<div id="navbarSupportedContent" class="navbar-collapse collapse"><ul id="menu-main-menu-ita" class="navbar-nav ml-auto "><li id="menu-item-8708" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8708 nav-item"><a href="https://lsacademy.com/it/societa-di-consulenza-per-aziende-farmaceutiche/" class="nav-link">Chi Siamo</a><li id="menu-item-11269" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-11269 nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Corsi</a>
+<div class="dropdown-menu dropdown-menu-right">
+<a href="https://lsacademy.com/it/corsi/" class="dropdown-item">Corsi</a><a href="https://lsacademy.com/it/percorsi-formativi/" class="dropdown-item">Percorsi Formativi</a><a href="https://lsacademy.com/it/corsi-on-demand/" class="dropdown-item">Corsi On Demand</a><a href="https://lsacademy.com/it/service/formazione-in-azienda-tailored/" class="dropdown-item">Formazione in Azienda “Tailored”</a></div>
+<li id="menu-item-8712" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8712 nav-item"><a href="https://lsacademy.com/it/conferenze/" class="nav-link">Conferenze</a><li id="menu-item-11270" class="menu-item menu-item-type-post_type menu-item-object-service menu-item-11270 nav-item"><a href="https://lsacademy.com/it/service/medical-writing/" class="nav-link">Medical Writing</a><li id="menu-item-8711" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8711 nav-item"><a href="https://lsacademy.com/it/servizi/" class="nav-link">Servizi</a><li id="menu-item-20403" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20403 nav-item"><a href="https://lsacademy.com/it/blog/" class="nav-link">Blog</a><li id="menu-item-8713" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8713 nav-item"><a href="https://lsacademy.com/it/contatti/" class="nav-link">Contatti</a><li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle font-weight-bold" href="#" role="button" data-toggle="dropdown"> <img src="/wp-content/plugins/sitepress-multilingual-cms/res/flags/it.png" class="mr-2"></a>
+						<div class="dropdown-menu dropdown-menu-right dropdown-menu-lang"><a class="dropdown-item" href="https://lsacademy.com/en/"> <img src="/wp-content/plugins/sitepress-multilingual-cms/res/flags/en.png" class="mr-2">ENGLISH</a><a class="dropdown-item" href="https://lsacademy.com/it/"> <img src="/wp-content/plugins/sitepress-multilingual-cms/res/flags/it.png" class="mr-2">ITALIANO</a></div></li></ul></div>
+
+
+	</nav>
+
+  </div>
+
+
+  <div class="bg-secondary py-2 d-none" id="searchbar">
+	  <div class="container">
+		  <form class="form-inline m-0" method="get" action="https://lsacademy.com/it/">
+			<input name="s" type="text" id="searchbar-input" class="form-control form-control-sm col-10">
+			<span class="col-2 text-left">
+				<button class="btn text-white"><i class="fa fa-search"></i></button>
+				<span class="btn text-white" id="btn-searchbar-hide"><i class="fa fa-times"></i></span>
+			</span>
+
+		  </form>
+	  </div>
+  </div>
+
+
+  <!--
+  <div class="bg-secondary">
+	<div class="container p-2">
+		<div class="row">
+			<div class="col-8">
+				
+
+									<a href="https://lsacademy.com/it/my-account/" class="text-white">Accedi o registrati</a>
+				
+			</div>
+			<div class="col-4 text-md-right">
+				<div class="lsa-wc-minicart-container woocommerce dropdown d-inline-block">
+	<a href="#" data-toggle="dropdown">
+		
+			<i class="fa fa-shopping-cart text-dark lsa-cart-icon"></i>
+			<span class="badge badge-light badge-lg lsa-cart-badge"><span class="badge-minicart-count">0</span></span></a>
+		
+
+	<div class="lsa-wc-minicart dropdown-menu  dropdown-menu-right p-2">
+	 	<div class="widget_shopping_cart_content">
+		
+
+	<p class="woocommerce-mini-cart__empty-message">Nessun prodotto nel carrello.</p>
+
+
+
+		</div> 
+	</div>
+</div>
+
+			</div>
+		</div>
+
+
+	</div>
+</div>
+-->
+
+
+
+</header>
+
+    <div class="wrap"  role="document">
+
+
+        <div class="featured-container " style="background-image: url(https://lsacademy.com/wp-content/uploads/2024/12/AI-MedAff-2025.jpg)">
+	<div class="bg-overlay-black">
+		<div class="container">
+			<header class="featured small text-white d-flex align-items-center"  >
+				<div>
+					<div class="row no-gutters">
+						<div class="col-sm-12">
+							
+							<h1 class="entry-title text-uppercase mb-4">Hands-On Lab on AI Tools and Compliance with AI Act for Medical Affairs Professionals</h1>
+													</div>
+											</div>
+				</div>	
+				
+			</header>
+		</div>
+	</div>
+</div>
+  
+
+      
+      
+
+      <div class="content">
+        <main class="main">
+          
+    
+    <div class="bg-dark pt-4 sticky-top sticky-top-banner">
+        
+        <div class="container">
+                
+                        <div class="row mb-4">
+                <div class="col-md-6 pb-4 text-center text-md-left align-content-center text-white">
+                    <span class="h5 font-weight-bold">19 and 21 October 2026</span> 
+                </div>
+                <div class="col-md-6 pb-4 text-center align-content-center">
+                    <a class="h5 btn btn-variation w-100" href="https://lsacademy.com/it/product/hands-on-lab-on-ai-tools-and-compliance-with-ai-act-for-medical-affairs-professionals-2/">Dettagli e registrazione</a>
+                </div>   
+            </div>
+                            
+        </div>
+    </div>
+
+        
+
+                        <article class="product-single-content post-content post-19742 product type-product status-publish has-post-thumbnail course_topics-medical-affairs course_topics-medical-writing course_types-corso-online productgroup-hands-on-lab-on-ai-tools-and-compliance-with-ai-act-for-medical-affairs-professionals product_cat-corsi first instock taxable shipping-taxable purchasable product-type-variable">
+  
+  <div class="container mt-2">
+    <div class="woocommerce-notices-wrapper"></div>
+
+        
+    
+    <div class="row">
+      <div class="col-md-8">
+        
+        <div class="entry-content">
+          
+          <div class="card card-product-details mb-3">
+            <div class="card-header">
+              <h5> Introduzione</h5>
+            </div>
+            <div class="card-body">
+              <h2>Hands-On Lab on AI Tools and Compliance with AI Act for Medical Affairs Professionals</h2>
+<p>Artificial Intelligence (AI), particularly Large Language Models (LLMs) like ChatGPT, is revolutionizing the field of Medical Affairs by enabling more efficient scientific data analysis, advancing medical education, and opening new opportunities for real-world data utilization.</p>
+<p>As the integration of AI expands, frameworks like the AI Act play a crucial role in ensuring the ethical and reliable use of these technologies, setting standards that safeguard both innovation and compliance.</p>
+<p>This workshop explores the use of advanced artificial intelligence tools in Medical Affairs, with a focus on practical exercises. Participants will:</p>
+<ul>
+<li>Adhere to the AI Act, in particular to Article 4 of the AI Act, promoting AI literacy</li>
+<li>Understand how to control AI tools for Medical Affairs processes</li>
+<li>Recognize regulatory requirements under the AI Act and ensure compliance</li>
+<li>Identify and address risks associated with implementing AI solutions.</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+        
+        
+        
+        <div class="card card-product-details mb-3">
+          <div class="card-header nav-product">
+            
+            <ul class="nav nav-pills"  role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="program-tab" data-toggle="tab" role="tab" href="#program">Programma</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" id="target-tab" data-toggle="tab" role="tab" href="#target">A chi è rivolto</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" id="teaching_techniques-tab" data-toggle="tab" role="tab" href="#teaching_techniques">Tecniche didattiche</a>
+              </li>
+            </ul>
+            
+          </div>
+          <div class="card-body">
+            
+            <div class="tab-content">
+              
+              <div class="tab-pane show active " role="tabpanel" id="program">
+                <h2>Programme</h2>
+<h3><em><strong>Module 1</strong></em></h3>
+<ul>
+<li><strong>Welcome and Introduction to the Course</strong></li>
+<li><strong>Introduction and Key Applications</strong>
+<ul>
+<li>Basics of AI, Machine Learning, and Large Language Models</li>
+<li>Overview of AI’s potential role in Medical Affairs activities</li>
+</ul>
+</li>
+<li><strong>Overview of the AI Act</strong>
+<ul>
+<li>Implications of the use of patient data/information and AI tools in Medical Affairs.</li>
+</ul>
+</li>
+<li><strong>Putting AI to Work</strong>
+<ul>
+<li>Prompt engineering: basic concepts</li>
+<li>Case Presentations: AI in Scientific Communication and Engagement</li>
+<li>Hands-on Session: using ChatGPT (or alternatives) for Medical Information Retrieval</li>
+<li>Potential risks and issues of using AI</li>
+</ul>
+</li>
+<li><strong>Group Discussion and Q&amp;A</strong>
+<ul>
+<li>Focus on compliance issues<strong></strong></li>
+</ul>
+</li>
+</ul>
+<ul></ul>
+<h3><em><strong>Module 2</strong></em></h3>
+<ul>
+<li><strong>Recap of Key Takeaways from Module 1:</strong>
+<ul>
+<li>Review of key insights, tools, and challenges explored in the previous session.</li>
+</ul>
+</li>
+<li><strong>More advanced Prompt Engineering</strong></li>
+<li><strong>Advanced Practical Workshop:</strong>
+<ul>
+<li><strong>Exercise 1:</strong> Developing GPT for internal use/ Perplexity</li>
+<li><strong>Exercise 2:</strong> Adhering to the AI Act for AI-based software and their internal use</li>
+<li><strong>Exercise 3:</strong> Hands-on versus Hands-off RWD and AI tools for data extraction. Identifying and addressing data limitations under the AI Act. Key challenges: data quality, bias, and ethical concerns.</li>
+</ul>
+</li>
+<li><strong>Final Discussion and Wrap-Up:</strong>
+<ul>
+<li>Reflection on the two days exercise sessions, integrating AI tools with existing software ecosystems in Medical Affairs. Sharing learnings, open Q&amp;A session.</li>
+</ul>
+</li>
+</ul>
+<p><em>Participants will be asked to bring examples/practical cases they would like to work on during the workshop.</em></p>
+
+                
+              </div>
+              
+              <div class="tab-pane " role="tabpanel" id="target">
+                <ul>
+<li>Medical Affairs professionals</li>
+<li>Compliance and regulatory experts</li>
+<li>Managers seeking to integrate AI into Medical Affairs strategies</li>
+</ul>
+<p><strong>Participant&#8217;s experience<br />
+</strong>Basic familiarity with Medical Affairs context.<br />
+Elementary knowledge of CHAT GPT, and prompting techniques.<br />
+Introductory knowledge of basic AI Tools, and their use.</p>
+
+                
+              </div>
+              
+              <div class="tab-pane show " role="tabpanel" id="teaching_techniques">
+                <p>Brief theoretical sessions with a practical focus.<br />
+Interactive sessions using AI tools.<br />
+Real-world case study discussions.<br />
+Q&amp;A with expert.</p>
+
+                
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        
+        
+        
+        
+        <div class="card card-product-details  bg-gray rounded-lg py-2 px-4 mb-3">
+          <div class="card-header">
+            <h5> Docente/i</h5>
+          </div>
+          <div class="card-body">
+                        
+            
+                                    <div class="row pb-2 mb-2">
+              <div class="col-2">
+                                <img src="https://lsacademy.com/wp-content/uploads/2020/09/Anelli_sito-new.jpg" alt="Marco Anelli" class="img-fluid rounded-circle">
+                              </div>
+              <div class="col-10">
+                
+                <span class="float-right">
+                  <a data-toggle="collapse" class="text-secondary" href="#speaker_info_417" role="button"><i class="fa fa-plus mr-1"></i> Info</a>
+                </span>
+                <h4 class="mb-1">Marco Anelli</h4>
+                <div class="text-muted">MD, Freelance consultant in Medical Affairs and Pharmacovigilance</div>
+                
+                <div class="py-2 collapse" id="speaker_info_417">
+                  <small>
+                    <p>Marco has a medical degree from the University of Milan, specializations in Medical Statistics and Clinical Pharmacology from the University of Pavia and an international master’s degree in health economics and pharmacoeconomics from the University of Pompeu Fabra in Barcelona, plus formal training in Data Science and Artificial Intelligence. In the last few years, he has extensively worked in the fields of pharmacoeconomics and health technology assessment. Marco has been a free-lance consultant in Medical Affairs and Pharmacovigilance/ Drug Safety since 2022. Before that, he has been “Head of Pharmacovigilance and Medical Affairs Advisory Services” at ProductLife Group (PLG). As “Deputy Chief Scientific Officer”, always at PLG, Marco has also coordinated all delivery and research projects (internal and on behalf of clients) linked to Big Data, Knowledge Management, Artificial Intelligence and Machine Learning. Previously, Marco was R&amp;D Director at Keypharma, an Italy-based consultancy company (later acquired by PLG), where was responsible for the oversight of all clinical and preclinical aspects of projects run internally and on behalf of clients. Drawing on a career in the pharmaceutical industry that spans more than 30 years, Marco provides expert oversight on a wide range of R&amp;D and Medical Affairs related activities. Marco has participated in and supervised all stages of drug development – from formulation to Phase I-IV and pharmacovigilance. In addition, Marco is a qualified QPPV and has prepared and overseen more than 200 non-clinical and clinical overviews and summaries. Before joining Keypharma and PLG, Marco was Medical Affairs Director at Eurand.</p>
+
+                  </small>
+                </div>
+
+                
+              </div>
+              
+              
+            </div>
+            <hr class="border-primary border-top mb-3 mt-1">
+            
+                        <div class="row pb-2 mb-2">
+              <div class="col-2">
+                                <img src="https://lsacademy.com/wp-content/uploads/2025/01/Foto-Giovanna-Gelmi.jpg" alt="Giovanna Gelmi" class="img-fluid rounded-circle">
+                              </div>
+              <div class="col-10">
+                
+                <span class="float-right">
+                  <a data-toggle="collapse" class="text-secondary" href="#speaker_info_16513" role="button"><i class="fa fa-plus mr-1"></i> Info</a>
+                </span>
+                <h4 class="mb-1">Giovanna Gelmi</h4>
+                <div class="text-muted">Medical Writer – MedwithGroove</div>
+                
+                <div class="py-2 collapse" id="speaker_info_16513">
+                  <small>
+                    <p>Giovanna Gelmi is a Clinical Data Manager since 2019 and a Medical Writer since 2021. As a freelancer, she specializes in creating online courses, conference materials, and presentations, overseeing not only the written content based on client requests but also the graphic design, audio, and video production.<br />
+She holds a Master&#8217;s degree in Food Science and Technology, as well as in Agricultural Science, both from the University of Milan, along with a Master&#8217;s in Project Management. After completing her Master&#8217;s, she spent a year conducting research at the Escuela Politécnica Nacional de Quito in Ecuador, where she stayed two more years working on development projects.<br />
+Upon returning to Italy, she taught Food Science, and Biology before relocating to Germany with her husband. There, she studied Clinical Data Management at the Medicine Institute of Cologne and worked as a Clinical Data Manager at Uniklinikum Köln.<br />
+Giovanna founded Med with Groove, a company dedicated to medical writing, and has since focused on bridging the gap between medical affairs and advanced AI technologies, ensuring compliance and ethical practices in a rapidly evolving industry landscape. Her teaching style is particularly distinctive, marked by her special touch and ability to make lessons practical, engaging, and lively, with a strong emphasis on real-world applications.<br />
+More recently, she has expanded her expertise into the fields of AI Act and AI Governance, focusing on their application within Medical Affairs.</p>
+
+                  </small>
+                </div>
+
+                
+              </div>
+              
+              
+            </div>
+            <hr class="border-primary border-top mb-3 mt-1">
+            
+                                  </div>
+        </div>
+        
+        
+        
+                
+        <div class="card card-product-details mb-3">
+          <div class="card-header nav-product">
+            
+            <ul class="nav nav-pills"  role="tablist">
+              <li class="nav-item ">
+                <a class="nav-link active" id="useful_informations-tab" data-toggle="tab" role="tab" href="#useful_informations">Durata e Informazioni utili</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" id="subscription_fees-tab" data-toggle="tab" role="tab" href="#subscription_fees">Quote Iscrizione</a>
+              </li>
+              
+                            
+            </ul>
+            
+          </div>
+          <div class="card-body">
+            
+            <div class="tab-content">
+              
+              <div class="tab-pane active" role="tabpanel" id="useful_informations">
+                <p><strong>Online Training – 2 modules</strong></p>
+<p>MODULE 1 | 19 October 2026 from 2:00 pm to 6:00 pm CEST<br />
+MODULE 2 | 21 October 2026 from 2:00 pm to 6:00 pm CEST</p>
+<p>After the registration, you will receive all details about the connection.</p>
+<p><strong>The course will proceed with a minimum number of participants. Should this number not be reached the registered participants will be notified one week prior to the commencement of the course.</strong></p>
+
+                
+              </div>
+              
+              
+              <div class="tab-pane " role="tabpanel" id="subscription_fees">
+                <p><strong>Early Bird:</strong><span> </span><span style="color: #7eaddd;"><strong>€ 955,00*</strong></span> (until 28 September 2026)</p>
+<p><strong>Ordinary:</strong><span> </span><span style="color: #7eaddd;"><strong>€ 1.155,00*</strong></span></p>
+<p><strong>Freelance – Individual<span> </span><em>–<span> </span></em>Academy – Public Administration:<span style="color: #7eaddd;"> € 645,00*</span></strong></p>
+<p><em>* for Italian companies: +22% VAT</em></p>
+<p><strong>The fee includes:</strong><span> </span>tuitions, organizational office assistance, teaching materials and attendance certificate that will be sent after the training via e-mail.</p>
+
+                
+              </div>
+              
+                            
+            </div>
+            
+          </div>
+        </div>
+
+
+        <div class="text-center py-4">
+        <div class="newsletter-box bg-gray rounded p-3">
+    <div class="row">
+        <div class="col-md-3  align-content-center">
+            <h4 class="text-secondary">
+                Newsletter
+                <img src="/wp-content/themes/lsacademy/dist/images/icon-envelope.png" alt="Newsletter" class="d-inline mr-2" />
+            </h4>
+        </div>
+        <div class="col-md-6 text-start align-content-center">
+            Rimani aggiornato sui corsi di formazione, le conferenze e tutte le novità di LS Academy.
+            
+        </div>
+        <div class="col-md-3  align-content-center">
+            <a href="https://lsacademy.com/it/iscrizione-newsletter/" target="_blank" class="btn btn-accent">Iscriviti</a>
+        </div>
+    </div>
+</div>
+
+        </div>
+        
+        
+      </div>
+      
+      
+      <!-- SIDEBAR -->
+      
+      
+      <div class="col-md-4">
+        
+                
+        
+        
+        
+        
+        <!-- MODULO INFORMAZIONI -->
+        
+        <!-- manager_id 1360-->
+
+                  <div class="text-center py-4">
+          
+            <img class="img-fluid  img-manager mb-2 shadow" src="https://lsacademy.com/wp-content/uploads/2020/10/3-1.jpg" alt="Mara Claudia Algarotti" >
+            <br>
+
+            <strong>Mara Claudia Algarotti</strong>
+            <br>Training Manager &amp; MW Operations </strong>
+
+          </div>
+                
+                <button type="button" class="btn btn-accent  btn-block mb-4" data-toggle="modal" data-target="#product-modal">
+          <!-- <i class="fa  fa-question-circle mr-1"></i> -->
+          Richiedi Informazioni
+        </button>
+        
+
+
+        <!-- BROCHURE AUTOMATICA -->
+                <a target="_blank" href="https://lsacademy.com/wp-content/uploads/product_pdf/lsacademy-it_19742.pdf" class="btn btn-secondary btn-block mb-4">
+          <!-- <i class="fa  fa-file-pdf-o mr-1"></i> -->
+          Versione Stampabile
+        </a>
+        
+                
+        <hr class="small gray my-4">
+        
+        
+                
+                
+        <div class="card card-product-details  mb-3">
+          
+          <div class="card-header">
+            <h5>Cosa saprai fare dopo il corso</h5>
+          </div>
+          
+          <div class="card-body">
+                        <div class="row mb-2">
+              <div class="col-2 text-center px-1">
+                <!-- <i class="fa fa-check-circle-o text-secondary"></i> -->
+                <img src="https://lsacademy.com/wp-content/themes/lsacademy/dist/images/icon-check.png" alt="Risultato atteso">
+              </div>
+              <div class="col-10">Recognize ethical and regulatory boundaries when using AI</div>
+            </div>
+                        <div class="row mb-2">
+              <div class="col-2 text-center px-1">
+                <!-- <i class="fa fa-check-circle-o text-secondary"></i> -->
+                <img src="https://lsacademy.com/wp-content/themes/lsacademy/dist/images/icon-check.png" alt="Risultato atteso">
+              </div>
+              <div class="col-10">Prompt CHAT GPT according to the AI Act</div>
+            </div>
+                        <div class="row mb-2">
+              <div class="col-2 text-center px-1">
+                <!-- <i class="fa fa-check-circle-o text-secondary"></i> -->
+                <img src="https://lsacademy.com/wp-content/themes/lsacademy/dist/images/icon-check.png" alt="Risultato atteso">
+              </div>
+              <div class="col-10">Apply practical insights to your Medical Affairs activities</div>
+            </div>
+                        
+          </div>
+          
+        </div>
+        
+                
+        
+        <hr class="small gray my-4">
+        
+        
+        <!--  SEDE DEL CORSO -->
+        
+                
+        
+        <div class="card card-product-details mb-3">
+                    <img class="card-img-top" src="https://lsacademy.com/wp-content/uploads/2020/09/online-training-e1600953588215.png" alt="&lt;p&gt;Online interactive training on Zoom platform.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;LS Academy will provide the access link to the virtual platform a few days before the training.&lt;/em&gt;&lt;/p&gt;
+">
+                    <div class="card-body">
+            
+            <p>Online interactive training on Zoom platform.</p>
+<p><em>LS Academy will provide the access link to the virtual platform a few days before the training.</em></p>
+
+            
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                <a href="https://lsacademy.com/wp-content/uploads/2020/09/online-training-e1600953588215.png" data-lightbox="venue-gallery"><img class="img-fluid img-thumbnail" src="https://lsacademy.com/wp-content/uploads/2020/09/online-training-e1600953588215.png" alt="&lt;p&gt;Online interactive training on Zoom platform.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;LS Academy will provide the access link to the virtual platform a few days before the training.&lt;/em&gt;&lt;/p&gt;
+"></a>
+              </div>
+                          </div>
+                        
+            
+          </div>
+        </div>
+        
+        <div class="product-group-link text-center my-5">
+
+        <span>Vedi tutte le edizioni</span>
+        <div class="font-weight-bold"><a href="https://lsacademy.com/it/productgroup/hands-on-lab-on-ai-tools-and-compliance-with-ai-act-for-medical-affairs-professionals/">Hands-On Lab on AI Tools and Compliance with AI Act for Medical Affairs Professionals</a></div>
+    </div>
+
+    
+        
+        
+        
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-8">
+             </div>
+    </div>
+        
+    </main></div>
+
+
+  </div><!-- container -->
+</article>
+
+<div class="modal" tabindex="-1" role="dialog" id="product-modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Richiedi informazioni</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+              
+                  <div class="form-lsa form-product">
+            
+                <div class='gf_browser_unknown gform_wrapper gform_legacy_markup_wrapper gform-theme--no-framework form-row_wrapper' data-form-theme='legacy' data-form-index='0' id='gform_wrapper_1' ><div id='gf_1' class='gform_anchor' tabindex='-1'></div>
+                        <div class='gform_heading'>
+                            <p class='gform_description'></p>
+                        </div><form method='post' enctype='multipart/form-data' target='gform_ajax_frame_1' id='gform_1' class='form-row' action='/it/productgroup/hands-on-lab-on-ai-tools-and-compliance-with-ai-act-for-medical-affairs-professionals/#gf_1' data-formid='1' novalidate>
+                        <div class='gform-body gform_body'><ul id='gform_fields_1' class='gform_fields top_label form_sublabel_below description_below validation_below'><li id="field_1_1" class="gfield gfield--type-text col-md-6 gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_1_1'>Cognome<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_text'><input name='input_1' id='input_1_1' type='text' value='' class='medium'     aria-required="true" aria-invalid="false"   /></div></li><li id="field_1_12" class="gfield gfield--type-text col-md-6 gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_1_12'>Nome<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_text'><input name='input_12' id='input_1_12' type='text' value='' class='medium'     aria-required="true" aria-invalid="false"   /></div></li><li id="field_1_3" class="gfield gfield--type-text col-md-12 gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_1_3'>Azienda<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_text'><input name='input_3' id='input_1_3' type='text' value='' class='medium'     aria-required="true" aria-invalid="false"   /></div></li><li id="field_1_5" class="gfield gfield--type-email col-md-6 gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_1_5'>Email<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_email'>
+                            <input name='input_5' id='input_1_5' type='email' value='' class='medium'    aria-required="true" aria-invalid="false"  />
+                        </div></li><li id="field_1_4" class="gfield gfield--type-text col-md-6 field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_1_4'>Telefono</label><div class='ginput_container ginput_container_text'><input name='input_4' id='input_1_4' type='text' value='' class='medium'      aria-invalid="false"   /></div></li><li id="field_1_6" class="gfield gfield--type-textarea col-md-12 field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_1_6'>Messaggio</label><div class='ginput_container ginput_container_textarea'><textarea name='input_6' id='input_1_6' class='textarea medium'      aria-invalid="false"   rows='10' cols='50'></textarea></div></li><li id="field_1_11" class="gfield gfield--type-consent gfield--type-choice gfield--input-type-consent col-md-12 gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label gfield_label_before_complex' >Privacy Policy<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_consent'><input name='input_11.1' id='input_1_11_1' type='checkbox' value='1'   aria-required="true" aria-invalid="false"   /> <label class="gform-field-label gform-field-label--type-inline gfield_consent_label" for='input_1_11_1' >Ho letto e accetto i termini della <a href="/privacy-cookie-policy">Privacy Policy</a></label><input type='hidden' name='input_11.2' value='Ho letto e accetto i termini della &lt;a href=&quot;/privacy-cookie-policy&quot;&gt;Privacy Policy&lt;/a&gt;' class='gform_hidden' /><input type='hidden' name='input_11.3' value='2' class='gform_hidden' /></div></li><li id="field_1_13" class="gfield gfield--type-captcha pl-3 field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_1_13'>CAPTCHA</label><div id='input_1_13' class='ginput_container ginput_recaptcha' data-sitekey='6Ldoft4ZAAAAAJmIz8RvNDdHWflBRiO16bYcqYab'  data-theme='light' data-tabindex='0'  data-badge=''></div></li><li id="field_1_10" class="gfield gfield--type-text field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_hidden"  ><div class="admin-hidden-markup"><i class="gform-icon gform-icon--hidden" aria-hidden="true" title="Questo campo è nascosto quando si visualizza il modulo"></i><span>Questo campo è nascosto quando si visualizza il modulo</span></div><label class='gfield_label gform-field-label' for='input_1_10'>Prodotto</label><div class='ginput_container ginput_container_text'><input name='input_10' id='input_1_10' type='text' value='Hands-On Lab on AI Tools and Compliance with AI Act for Medical Affairs Professionals' class='medium'      aria-invalid="false"   /></div></li></ul></div>
+        <div class='gform-footer gform_footer top_label'> <input type='submit' id='gform_submit_button_1' class='gform_button button' onclick='gform.submission.handleButtonClick(this);' data-submission-type='submit' value='Invia'  /> <input type='hidden' name='gform_ajax' value='form_id=1&amp;title=&amp;description=1&amp;tabindex=0&amp;theme=legacy&amp;hash=4f078c3bc2dc67339252a42feab90fc3' />
+            <input type='hidden' class='gform_hidden' name='gform_submission_method' data-js='gform_submission_method_1' value='iframe' />
+            <input type='hidden' class='gform_hidden' name='gform_theme' data-js='gform_theme_1' id='gform_theme_1' value='legacy' />
+            <input type='hidden' class='gform_hidden' name='gform_style_settings' data-js='gform_style_settings_1' id='gform_style_settings_1' value='' />
+            <input type='hidden' class='gform_hidden' name='is_submit_1' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='1' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_currency' data-currency='EUR' value='kFImCBy0Y/gsLzYAUA04MiiXBVtwFwpYMmGeDWHdZwGn+aE0ZnR/sJ6GCz24g67TELJIgCGcDh074KPgpeH4FtByxyqtp8BhAOWZUQEwkNSMxQ8=' />
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_1' value='WyJ7XCIxMS4xXCI6XCIxOTk4NzExYmYwN2E1ZDIwMjIyZWU5ZDg3MDM3MzZiOFwiLFwiMTEuMlwiOlwiOGY0ZTFlZDlhNWNmZGE5NmI3ZjJmZGRlNGZjNDYxMThcIixcIjExLjNcIjpcIjFiYTEwZjZiMmUyODk3NTJmMzM0Mjk3NTRiNTlhMGUwXCJ9IiwiMDNlMzI2NmM1ZmMxNTFkYTBjZmViZmE0NjgzMTdlMmUiXQ==' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_target_page_number_1' id='gform_target_page_number_1' value='0' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_source_page_number_1' id='gform_source_page_number_1' value='1' />
+            <input type='hidden' name='gform_field_values' value='product_name=Hands-On+Lab+on+AI+Tools+and+Compliance+with+AI+Act+for+Medical+Affairs+Professionals' />
+            
+        </div>
+                        </form>
+                        </div>
+		                <iframe style='display:none;width:0px;height:0px;' src='about:blank' name='gform_ajax_frame_1' id='gform_ajax_frame_1' title='Questo iframe contiene la logica necessaria per gestire Gravity Forms con Ajax.'></iframe>
+		                <script type="text/javascript">
+/* <![CDATA[ */
+ gform.initializeOnLoaded( function() {gformInitSpinner( 1, 'https://lsacademy.com/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery('#gform_ajax_frame_1').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_1');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_1').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_1').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_1').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_1').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_1').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_1').val();gformInitSpinner( 1, 'https://lsacademy.com/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery(document).trigger('gform_page_loaded', [1, current_page]);window['gf_submitting_1'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}jQuery('#gform_wrapper_1').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_1').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [1]);window['gf_submitting_1'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_1').text());}else{jQuery('#gform_1').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger("gform_pre_post_render", [{ formId: "1", currentPage: "current_page", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_1" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_1";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_1" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 1, current_page );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );} ); 
+/* ]]> */
+</script>
+
+          </div>
+              </div>
+    </div>
+  </div>
+</div>            
+    
+
+    
+    <div class="bg-light py-3">
+        <div class="container">
+                <h3 class="text-secondary">Edizioni precedenti</h3>
+                <div class="row justify-content-center">
+                                    <div class="col-md-3 pb-4">
+                    <div class="card card-product bg-gray h-100 shadow-sm ">
+		<a href="https://lsacademy.com/it/product/hands-on-lab-on-ai-tools-and-compliance-with-ai-act-for-medical-affairs-professionals/" class="h-100">
+			<figure class=" bg-cover bg-white mb-3 d-flex align-items-end"  style="background-image:  url(https://lsacademy.com/wp-content/uploads/2024/12/AI-MedAff-2025.jpg); ">
+				
+				
+					<div class="badge-new type-1">
+											NEW COURSE
+										
+					</div>
+								
+
+			</figure>
+
+			 
+				<div class="card-product-date bg-secondary d-inline-block text-white ">
+					17 and 18 November 2025
+				</div>
+						
+			<div class="card-product-info">
+
+				<!-- Argomenti -->
+				                	<strong class="product-topic font-family-title text-secondary">Medical Affairs</strong> / <strong class="product-topic font-family-title text-secondary">Medical Writing</strong>
+				
+				<h2 class="product-title pr-4 ">Hands-On Lab on AI Tools and Compliance with AI Act for Medical Affairs Professionals</h2>
+
+				
+									<img src="https://lsacademy.com/wp-content/themes/lsacademy/dist/images/flags/en.png" alt="English" class="img-flag m-2 ">
+									
+
+				
+				
+
+				
+				
+			</div>
+
+		</a>
+
+
+
+
+
+		<!--
+
+		<div class="row row-eq-height  no-gutters h-100 ">
+			<div class="col-4  h-100 " >
+
+				
+				<a class="text-white" href="https://lsacademy.com/it/product/hands-on-lab-on-ai-tools-and-compliance-with-ai-act-for-medical-affairs-professionals/" >
+				<div class="w-100 h-100 bg-cover" style="background-image: url(https://lsacademy.com/wp-content/uploads/2024/12/AI-MedAff-2025.jpg)">
+					
+					<span class="badge  bg-course ml-2 mt-1 text-titlecase">course</span>
+				</div>
+				</a>
+
+			</div>
+			<div class="col-8 position-relative bg-light d-flex align-items-center">
+				
+				
+
+				<div class="card-product-info p-2">
+
+					
+
+
+					<table class="table-card-info mr-5">
+						<tr>
+							<td class="text-center align-top"><i class="fa fa-tag text-course"></i></td>
+							<td class="align-top">
+								Medical Affairs, Medical Writing
+								
+							</td>
+						</tr>
+
+						<tr>
+							<td class="text-center align-top"></td>
+							<td class="align-top"></td>
+						</tr>
+
+						<tr>
+							<td class="text-center align-top"><i class="fa fa-calendar  text-course"></td>
+							<td class="align-top">17 and 18 November 2025</td>
+						</tr>
+
+						<tr>
+							<td class="text-center align-top"><i class="fa fa-map-marker text-course"></td>
+							<td  class="align-top">Online</td>
+						</tr>
+
+					</table>
+
+					
+				</div>
+			</div>
+		</div>
+
+
+		<div class="card-footer bg-course  p-2">
+								<img src="https://lsacademy.com/wp-content/themes/lsacademy/dist/images/flags/en.svg" alt="English" class="img-flag float-right ">
+							<a class="text-white" href="https://lsacademy.com/it/product/hands-on-lab-on-ai-tools-and-compliance-with-ai-act-for-medical-affairs-professionals/" >
+				<h5 class="font-weight-bold pr-4">Hands-On Lab on AI Tools and Compliance with AI Act for Medical Affairs Professionals</h5>
+			</a>
+
+
+		</div>
+
+	-->
+
+	
+	</div>
+
+
+
+
+
+
+                    </div>
+                                </div>
+        </div>
+    </div>
+
+    
+
+
+    <div class="bg-primary text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 offset-md-1 p-4">
+                     
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+        </main>
+      </div>
+
+      
+    </div>
+    
+    <!-- PREFOOTER | START -->
+<!-- No Data -->
+<!-- PREFOOTER | END -->
+    <footer class="content-info">
+  <div class="container">
+  	
+	<section class="widget_text widget custom_html-2 widget_custom_html"><div class="textwidget custom-html-widget"><div class="row">
+    <div class="col-sm-6 pb-3">
+        <a class="brand px-3" href="http://lsacademy.com/">
+            <img src="http://lsacademy.com/wp-content/uploads/2020/10/lsacademy-logo-light.png" class="img-logo img-fluid mb-5" alt="LS Academy">
+        </a>
+        <p>
+            <strong>Easyb S.r.l.</strong><br>
+            Via Roma, 20<br>	
+            24022 Alzano Lombardo BG ITALY<br>
+            P.IVA 03633040161<br>
+            Codice Destinatario W7YVJK9<br>
+        </p>
+        <p>
+            <div class="my-4">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <a href="http://lsacademy.com/privacy-policy/" class="text-light small">Privacy Policy</a><br>
+											<a href="http://lsacademy.com/cookie-policy/" class="text-light small">Cookie Policy</a>
+											<br>
+                        <a href="http://lsacademy.com/wp-content/uploads/2023/01/Politica-Qualita-Aziendale-EasyB_Rev1.1.pdf" target="_blank" class="text-light small">Politica aziendale per la qualità</a><br>
+                        <a href="http://lsacademy.com/condizioni-di-vendita/" target="_blank" class="text-light small">Condizioni di vendita</a><br>
+											<a href="http://lsacademy.com/attestato-e-crediti-formativi/"  target="_blank" class="text-light small">Attestato e Crediti Formativi</a><br><br>
+
+                    </div>
+                    <div class="col-sm-6">
+											
+                            <a href="http://lsacademy.com/politica-anti-money-laundering/" class="text-light small">Politica Anti-Money Laundering</a><br>
+                            <a href="http://lsacademy.com/politica-anti-schiavitu-e-diritti-umani/" class="text-light small">Politica Anti-Schiavitù e Diritti Umani</a><br>
+                            <a href="http://lsacademy.com/politica-di-diversita-e-inclusione/" class="text-light small">Politica di Diversità e Inclusione </a><br>
+                            <a href="http://lsacademy.com/politica-di-sostenibilita/" class="text-light small">Politica di Sostenibilità</a><br>
+											
+											<a href="http://lsacademy.com/domande-frequenti-faq/" class="text-light small">Domande Frequenti (FAQ)</a><br>
+											
+
+                    </div>
+                </div>  
+                
+            </div>
+
+            <div>
+                <div class="d-inline  me-4"><img class="img-fluid m-1" src="http://lsacademy.com/wp-content/uploads/2022/06/2018_9001_v02-white.png" alt="ISO" style="height: 75px;">	</div>
+                <div class="d-inline ms-4"><img class="img-fluid m-1" src="http://lsacademy.com/wp-content/uploads/2023/12/logo-confindustria-bergamo.png" alt="Confindustria Bergamo" style="height: 40px;">	</div>
+							
+							 <div class="d-inline ms-4"><img class="img-fluid m-1" src="http://lsacademy.com/wp-content/uploads/2024/07/ride2medlogo-3.png" alt="Ride2Med Foundation" style="height: 40px;">	</div>
+							
+            </div>
+                
+            
+        </p>
+    </div>
+    <div class="col-sm-3 pb-3"><h4 class="" title="course"><a href="https://lsacademy.com/it/corsi/" >Corsi</a></h2>	
+					<ul class="mini"><li><a href="https://lsacademy.com/it/course_topics/animal-health/">Animal Health</a></li><li><a href="https://lsacademy.com/it/course_topics/dispositivi-medici/">Dispositivi Medici</a></li><li><a href="https://lsacademy.com/it/course_topics/real-world-data-e-real-world-evidence/">Evidence Generation</a></li><li><a href="https://lsacademy.com/it/course_topics/farmacovigilanza/">Farmacovigilanza</a></li><li><a href="https://lsacademy.com/it/course_topics/gmp/">GMP Farmaceutico - Good Manufacturing Practices</a></li><li><a href="https://lsacademy.com/it/course_topics/ivd-in-vitro-diagnostic-product/">IVD - Dispositivi Medico Diagnostici In Vitro</a></li><li><a href="https://lsacademy.com/it/course_topics/market-access/">Market Access Farmaceutico</a></li><li><a href="https://lsacademy.com/it/course_topics/medical-affairs/">Medical Affairs</a></li><li><a href="https://lsacademy.com/it/course_topics/medical-writing/">Medical Writing</a></li><li><a href="https://lsacademy.com/it/course_topics/regolatorio/">Regolatorio</a></li><li><a href="https://lsacademy.com/it/course_topics/ricerca-clinica/">Ricerca Clinica</a></li><li><a href="https://lsacademy.com/it/course_topics/soft-skill/">Soft Skill</a></li><li><a href="https://lsacademy.com/it/course_topics/statistica-e-data-management/">Statistica e Data Management</a></li></ul></div>
+    <div class="col-sm-3 pb-3"><h4 class="" title="conference"><a href="https://lsacademy.com/it/conferenze/" >Conferenze</a></h2>	
+					<ul class="mini"><li><a href="https://lsacademy.com/it/conference_topics/dispositivi-medici/">Dispositivi Medici</a></li><li><a href="https://lsacademy.com/it/conference_topics/farmacovigilanza/">Farmacovigilanza</a></li><li><a href="https://lsacademy.com/it/conference_topics/real-world-data/">Real World Data e Real World Evidence</a></li><li><a href="https://lsacademy.com/it/conference_topics/ricerca-clinica/">Ricerca Clinica</a></li><li><a href="https://lsacademy.com/it/conference_topics/statistica-e-data-management/">Statistica e Data Management</a></li></ul></div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-4 col-md-1"><img class="img-fluid" src="http://lsacademy.com/wp-content/uploads/2023/12/logo_dark-nexi.png" alt="Nexi"></div>
+    <div class="col-4 col-md-1"><img class="img-fluid" src="http://lsacademy.com/wp-content/uploads/2023/12/logo_dark-visa.png" alt="Visa"></div>
+    <div class="col-4 col-md-1"><img class="img-fluid" src="http://lsacademy.com/wp-content/uploads/2023/12/logo_dark-vpay.png" alt="VPay"></div>
+    <div class="col-4 col-md-1"><img class="img-fluid" src="http://lsacademy.com/wp-content/uploads/2023/12/logo_dark-mastercard.png" alt="mastercard"></div>
+    <div class="col-4 col-md-1"><img class="img-fluid" src="http://lsacademy.com/wp-content/uploads/2023/12/logo_dark-maestro.png" alt="maestro"></div>
+    <div class="col-4 col-md-1"><img class="img-fluid" src="http://lsacademy.com/wp-content/uploads/2023/12/logo_dark-paypal.png" alt="paypal"></div>
+    <div class="col-4 col-md-1"><img class="img-fluid" src="http://lsacademy.com/wp-content/uploads/2023/12/logo_dark-amex.png" alt="amex"></div>
+    <div class="col-4 col-md-1"><img class="img-fluid" src="http://lsacademy.com/wp-content/uploads/2023/12/logo_dark-banktransfer-3.png" alt="banktransfer"></div>
+    <div class="col-4 col-md-1"><img class="img-fluid" src="http://lsacademy.com/wp-content/uploads/2023/12/logo_dark-unionpay-2.png" alt="unionpay"></div>
+</div>
+</div></section>			
+  </div>
+</footer>
+
+
+
+<footer class="contacts">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-3 text-center text-md-left mb-3">
+									<a href="https://www.facebook.com/LSAcademyItaly/" target="_blank"><i class="fa fa-facebook-square mr-2"></i></a>
+													<a href="https://it.linkedin.com/company/ls-academy" target="_blank"><i class="fa fa-linkedin-square mr-2"></i></a>
+													<a href="https://twitter.com/LSAcademy_EasyB" target="_blank"><i class="fa fa-twitter-square mr-2"></i></a>
+													<a href="https://wa.me/39035515684?text=Hi%2C%20I&#039;m%20looking%20for%20more%20information%20about%20LS%20Academy." target="_blank"><i class="fa fa-whatsapp mr-2"></i></a>
+							</div>
+			<div class="col-md-3 text-center mb-3">
+
+									<a class="" href="tel: +39.035.515.684"><i class="fa fa-phone mr-2"></i>+39.035.515.684</a>
+							</div>
+			<div class="col-md-3 text-center mb-3">
+									<a class="" href="mailto: info@lsacademy.com"><i class="fa fa-envelope mr-2"></i>info@lsacademy.com</a>
+							</div>
+			<div class="col-md-3 text-center text-md-right  mb-3">
+				&copy; EasyB s.r.l. 2026
+			</div>
+		</div>
+
+
+		
+
+	</div>
+	 	
+	
+
+
+
+
+
+
+
+</footer>
+
+<!-- TEMPORARILY ADDED TO MAKE RECAPCHA WORK -->
+<!--<script type='text/javascript' src='https://www.google.com/recaptcha/api.js?ver=1.0' id='i13-woo-captcha-js'></script>-->
+    <div class="modal" tabindex="-1" role="dialog" id="auto-popup-modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title  text-uppercase text-primary">Iscriviti alla Newsletter</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <script type="text/javascript">
+/* <![CDATA[ */
+
+/* ]]&gt; */
+</script>
+
+                <div class='gf_browser_unknown gform_wrapper gravity-theme gform-theme--no-framework form-newsletter-mc_wrapper ita_wrapper' data-form-theme='gravity-theme' data-form-index='0' id='gform_wrapper_17' ><div id='gf_17' class='gform_anchor' tabindex='-1'></div>
+                        <div class='gform_heading'>
+							<p class='gform_required_legend'>&quot;<span class="gfield_required gfield_required_asterisk">*</span>&quot; indica i campi obbligatori</p>
+                        </div><form method='post' enctype='multipart/form-data' target='gform_ajax_frame_17' id='gform_17' class='form-newsletter-mc ita' action='/it/productgroup/hands-on-lab-on-ai-tools-and-compliance-with-ai-act-for-medical-affairs-professionals/#gf_17' data-formid='17' novalidate>
+                        <div class='gform-body gform_body'><div id='gform_fields_17' class='gform_fields top_label form_sublabel_above description_below validation_below'><div id="field_17_3" class="gfield gfield--type-email gfield--input-type-email gfield--width-full mb-4 gfield_contains_required field_sublabel_above gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_17_3'>Email<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_email'>
+                            <input name='input_3' id='input_17_3' type='email' value='' class='large' tabindex='49'   aria-required="true" aria-invalid="false"  />
+                        </div></div><fieldset id="field_17_5" class="gfield gfield--type-name gfield--input-type-name gfield--width-full mb-4 gfield_contains_required field_sublabel_above gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><legend class='gfield_label gform-field-label gfield_label_before_complex' >Nome Completo<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></legend><div class='ginput_complex ginput_container ginput_container--name no_prefix has_first_name no_middle_name has_last_name no_suffix gf_name_has_2 ginput_container_name gform-grid-row' id='input_17_5'>
+                            
+                            <span id='input_17_5_3_container' class='name_first gform-grid-col gform-grid-col--size-auto' >
+                                                    <label for='input_17_5_3' class='gform-field-label gform-field-label--type-sub '>Nome</label>
+                                                    <input type='text' name='input_5.3' id='input_17_5_3' value='' tabindex='51'  aria-required='true'   placeholder='Nome'  />
+                                                </span>
+                            
+                            <span id='input_17_5_6_container' class='name_last gform-grid-col gform-grid-col--size-auto' >
+                                                            <label for='input_17_5_6' class='gform-field-label gform-field-label--type-sub '>Cognome</label>
+                                                            <input type='text' name='input_5.6' id='input_17_5_6' value='' tabindex='53'  aria-required='true'   placeholder='Cognome'  />
+                                                        </span>
+                            
+                        </div></fieldset><div id="field_17_6" class="gfield gfield--type-text gfield--input-type-text gfield--width-full mb-4 field_sublabel_above gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_17_6'>Ruolo professionale</label><div class='ginput_container ginput_container_text'><input name='input_6' id='input_17_6' type='text' value='' class='large' maxlength='64'  tabindex='55'   aria-invalid="false"   /></div></div><fieldset id="field_17_7" class="gfield gfield--type-consent gfield--type-choice gfield--input-type-consent gfield_contains_required field_sublabel_above gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><legend class='gfield_label gform-field-label gfield_label_before_complex' >Informativa Privacy<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></legend><div class='ginput_container ginput_container_consent'><input name='input_7.1' id='input_17_7_1' type='checkbox' value='1' tabindex='56'  aria-required="true" aria-invalid="false"   /> <label class="gform-field-label gform-field-label--type-inline gfield_consent_label" for='input_17_7_1' >Ho preso visione <a href="/wp-content/uploads/2024/10/Privacy-Information_Newsletter_Sito-Web_ITA.pdf" target="_blank">dell'informativa</a> relativa al trattamento dei dati personali con finalità “Newsletter”</label><input type='hidden' name='input_7.2' value='Ho preso visione &lt;a href=&quot;/wp-content/uploads/2024/10/Privacy-Information_Newsletter_Sito-Web_ITA.pdf&quot; target=&quot;_blank&quot;&gt;dell&#039;informativa&lt;/a&gt; relativa al trattamento dei dati personali con finalità “Newsletter”' class='gform_hidden' /><input type='hidden' name='input_7.3' value='14' class='gform_hidden' /></div></fieldset></div></div>
+        <div class='gform-footer gform_footer top_label'> <input type='submit' id='gform_submit_button_17' class='gform_button button' onclick='gform.submission.handleButtonClick(this);' data-submission-type='submit' value='Invia' tabindex='57' /> <input type='hidden' name='gform_ajax' value='form_id=17&amp;title=&amp;description=&amp;tabindex=49&amp;theme=gravity-theme&amp;styles=[]&amp;hash=b29838bac7174f42d0ce4347f06df848' />
+            <input type='hidden' class='gform_hidden' name='gform_submission_method' data-js='gform_submission_method_17' value='iframe' />
+            <input type='hidden' class='gform_hidden' name='gform_theme' data-js='gform_theme_17' id='gform_theme_17' value='gravity-theme' />
+            <input type='hidden' class='gform_hidden' name='gform_style_settings' data-js='gform_style_settings_17' id='gform_style_settings_17' value='[]' />
+            <input type='hidden' class='gform_hidden' name='is_submit_17' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='17' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_currency' data-currency='EUR' value='+1MdSmN1xAaTP+DU3kYnEB6O0nMjhoVPGqeTnQv6CmQhuasH+j/ui/gvBLKs/rwoULG1odf/V5jRvRRT4+5j8/eyPKMMpzYkBRkWHbnFdcS2UF4=' />
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_17' value='WyJ7XCI3LjFcIjpcIjE5OTg3MTFiZjA3YTVkMjAyMjJlZTlkODcwMzczNmI4XCIsXCI3LjJcIjpcIjI2ZDU4Y2U0MDViMWUzMzIxMzgyOWNjNzhhZjMwNWE3XCIsXCI3LjNcIjpcIjUxYzQwMDljN2VmNTAyNWM0OGI3YTQ4MzFmNGUxOTllXCJ9IiwiMjhmZGI1ZTRlNDg2YjlkMDE4MWY0NjAwY2VjMzAzYmMiXQ==' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_target_page_number_17' id='gform_target_page_number_17' value='0' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_source_page_number_17' id='gform_source_page_number_17' value='1' />
+            <input type='hidden' name='gform_field_values' value='' />
+            
+        </div>
+                        </form>
+                        </div>
+		                <iframe style='display:none;width:0px;height:0px;' src='about:blank' name='gform_ajax_frame_17' id='gform_ajax_frame_17' title='Questo iframe contiene la logica necessaria per gestire Gravity Forms con Ajax.'></iframe>
+		                <script type="text/javascript">
+/* <![CDATA[ */
+ gform.initializeOnLoaded( function() {gformInitSpinner( 17, 'https://lsacademy.com/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery('#gform_ajax_frame_17').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_17');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_17').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_17').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_17').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_17').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_17').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_17').val();gformInitSpinner( 17, 'https://lsacademy.com/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery(document).trigger('gform_page_loaded', [17, current_page]);window['gf_submitting_17'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}jQuery('#gform_wrapper_17').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_17').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [17]);window['gf_submitting_17'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_17').text());}else{jQuery('#gform_17').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger("gform_pre_post_render", [{ formId: "17", currentPage: "current_page", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_17" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_17";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_17" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 17, current_page );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );} ); 
+/* ]]&gt; */
+</script>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+    <script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/it\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/lsacademy\/resources\/*","\/it\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<!-- Matomo --><script type="text/javascript">
+/* <![CDATA[ */
+(function () {
+function initTracking() {
+var _paq = window._paq = window._paq || [];
+_paq.push(['trackPageView']);_paq.push(['enableLinkTracking']);_paq.push(['alwaysUseSendBeacon']);_paq.push(['setTrackerUrl', "\/\/lsacademy.com\/wp-content\/plugins\/matomo\/app\/matomo.php"]);_paq.push(['setSiteId', '1']);var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+g.type='text/javascript'; g.async=true; g.src="\/\/lsacademy.com\/wp-content\/uploads\/matomo\/matomo.js"; s.parentNode.insertBefore(g,s);
+}
+if (document.prerendering) {
+	document.addEventListener('prerenderingchange', initTracking, {once: true});
+} else {
+	initTracking();
+}
+})();
+/* ]]> */
+</script>
+<!-- End Matomo Code -->
+<!--Start of Tawk.to Script (0.9.3)-->
+<script id="tawk-script" type="text/javascript">
+var Tawk_API = Tawk_API || {};
+var Tawk_LoadStart=new Date();
+(function(){
+	var s1 = document.createElement( 'script' ),s0=document.getElementsByTagName( 'script' )[0];
+	s1.async = true;
+	s1.src = 'https://embed.tawk.to/599ec24c4fe3a1168ead98f4/default';
+	s1.charset = 'UTF-8';
+	s1.setAttribute( 'crossorigin','*' );
+	s0.parentNode.insertBefore( s1, s0 );
+})();
+</script>
+<!--End of Tawk.to Script (0.9.3)-->
+
+		<!-- Snippet Google Tag Manager (noscript) aggiunto da Site Kit -->
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M29BRWD" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<!-- Termina lo snippet Google Tag Manager (noscript) aggiunto da Site Kit -->
+			<script type='text/javascript'>
+		(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+	</script>
+	<link rel='stylesheet' id='wc-gateway-xpay-blocks-integration-style-css' href='https://lsacademy.com/wp-content/plugins/cartasi-x-pay/build/index_xpay.css?ver=e061ae41c5945f5e3bf3' type='text/css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-css' href='https://lsacademy.com/wp-content/plugins/woocommerce/assets/client/blocks/wc-blocks.css?ver=wc-10.2.3' type='text/css' media='all' />
+<script type="text/javascript" id="alg-wc-cpp-currency-switcher-js-extra">
+/* <![CDATA[ */
+var alg_wc_cpp_ajax = {"url":"https:\/\/lsacademy.com\/wp-admin\/admin-ajax.php","nonce":"4ea0396f08","action":"alg_wc_cpp_set_currency"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://lsacademy.com/wp-content/plugins/currency-per-product-for-woocommerce-pro/assets/js/alg-wc-cpp-currency-switcher.js?ver=1.0" id="alg-wc-cpp-currency-switcher-js"></script>
+<script type="text/javascript" id="iubenda-forms-js-extra">
+/* <![CDATA[ */
+var iubFormParams = [];
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://lsacademy.com/wp-content/plugins/iubenda-cookie-law-solution/assets/js/frontend.js?ver=3.13.1" id="iubenda-forms-js"></script>
+<script type="text/javascript" id="analyticswp-js-extra">
+/* <![CDATA[ */
+var analyticswp_vars = {"ajaxurl":"https:\/\/lsacademy.com\/wp-admin\/admin-ajax.php","nonce":"810b93523e"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://lsacademy.com/wp-content/plugins/analyticswp/Lib/../Lib/analyticswp.min.js?ver=2.2.0" id="analyticswp-js"></script>
+<script type="text/javascript" src="https://lsacademy.com/wp-content/plugins/google-site-kit/dist/assets/js/googlesitekit-consent-mode-86cb52dcb9f2b27ed244.js" id="googlesitekit-consent-mode-js"></script>
+<script type="text/javascript" id="cart-widget-js-extra">
+/* <![CDATA[ */
+var actions = {"is_lang_switched":"1","force_reset":"0"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://lsacademy.com/wp-content/plugins/woocommerce-multilingual/res/js/cart_widget.min.js?ver=5.5.5" id="cart-widget-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="text/javascript" src="https://lsacademy.com/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=10.2.3" id="sourcebuster-js-js"></script>
+<script type="text/javascript" id="wc-order-attribution-js-extra">
+/* <![CDATA[ */
+var wc_order_attribution = {"params":{"lifetime":1.0e-5,"session":30,"base64":false,"ajaxurl":"https:\/\/lsacademy.com\/wp-admin\/admin-ajax.php","prefix":"wc_order_attribution_","allowTracking":true},"fields":{"source_type":"current.typ","referrer":"current_add.rf","utm_campaign":"current.cmp","utm_source":"current.src","utm_medium":"current.mdm","utm_content":"current.cnt","utm_id":"current.id","utm_term":"current.trm","utm_source_platform":"current.plt","utm_creative_format":"current.fmt","utm_marketing_tactic":"current.tct","session_entry":"current_add.ep","session_start_time":"current_add.fd","session_pages":"session.pgs","session_count":"udata.vst","user_agent":"udata.uag"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://lsacademy.com/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=10.2.3" id="wc-order-attribution-js"></script>
+<script type="text/javascript" id="wp-consent-api-js-extra">
+/* <![CDATA[ */
+var consent_api = {"consent_type":"","waitfor_consent_hook":"","cookie_expiration":"30","cookie_prefix":"wp_consent","services":[]};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://lsacademy.com/wp-content/plugins/wp-consent-api/assets/js/wp-consent-api.min.js?ver=2.0.1" id="wp-consent-api-js"></script>
+<script type="text/javascript" id="wp-consent-api-integration-js-before">
+/* <![CDATA[ */
+window.wc_order_attribution.params.consentCategory = "marketing";
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://lsacademy.com/wp-content/plugins/woocommerce/assets/js/frontend/wp-consent-api-integration.min.js?ver=10.2.3" id="wp-consent-api-integration-js"></script>
+<script type="text/javascript" src="https://lsacademy.com/wp-content/themes/lsacademy/dist/scripts/main.js" id="sage/main.js-js" data-iub-purposes="1"></script><script type="text/javascript" src="https://lsacademy.com/wp-content/themes/lsacademy/dist/scripts/video.js" id="sage/video.js-js"></script>
+<script type="text/javascript" src="//cdn.iubenda.com/cons/iubenda_cons.js?ver=3.13.1" id="iubenda-cons-cdn-js"></script>
+<script type="text/javascript" id="iubenda-cons-js-extra">
+/* <![CDATA[ */
+var iubConsParams = {"api_key":"9nLa9yx2ZlWieaVLbbbU5fnfUKuK1eaT","log_level":"error","logger":"console","send_from_local_storage_at_load":"true"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://lsacademy.com/wp-content/plugins/iubenda-cookie-law-solution/assets/js/cons.js?ver=3.13.1" id="iubenda-cons-js"></script>
+<script type="text/javascript" src="https://lsacademy.com/wp-includes/js/dist/dom-ready.min.js?ver=f77871ff7694fffea381" id="wp-dom-ready-js"></script>
+<script type="text/javascript" src="https://lsacademy.com/wp-includes/js/dist/hooks.min.js?ver=4d63a3d491d11ffd8ac6" id="wp-hooks-js"></script>
+<script type="text/javascript" src="https://lsacademy.com/wp-includes/js/dist/i18n.min.js?ver=5e580eb46a90c2b997e6" id="wp-i18n-js"></script>
+<script type="text/javascript" id="wp-i18n-js-after">
+/* <![CDATA[ */
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+/* ]]> */
+</script>
+<script type="text/javascript" id="wp-a11y-js-translations">
+/* <![CDATA[ */
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "default", {"translation-revision-date":"2026-04-02 17:10:59+0000","generator":"GlotPress\/4.0.3","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n != 1;","lang":"it"},"Notifications":["Notifiche"]}},"comment":{"reference":"wp-includes\/js\/dist\/a11y.js"}} );
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://lsacademy.com/wp-includes/js/dist/a11y.min.js?ver=3156534cc54473497e14" id="wp-a11y-js"></script>
+<script type="text/javascript" defer='defer' src="https://lsacademy.com/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=2.10.5" id="gform_json-js"></script>
+<script type="text/javascript" id="gform_gravityforms-js-extra">
+/* <![CDATA[ */
+var gform_i18n = {"datepicker":{"days":{"monday":"Lun","tuesday":"Mar","wednesday":"Mer","thursday":"Gio","friday":"Ven","saturday":"Sab","sunday":"Dom"},"months":{"january":"Gennaio","february":"Febbraio","march":"Marzo","april":"Aprile","may":"Maggio","june":"Giugno","july":"Luglio","august":"Agosto","september":"Settembre","october":"Ottobre","november":"Novembre","december":"Dicembre"},"firstDay":1,"iconText":"Seleziona la data"}};
+var gf_legacy_multi = [];
+var gform_gravityforms = {"strings":{"invalid_file_extension":"Questo tipo di file non \u00e8 consentito. Deve avere uno dei seguenti formati:","file_uploaded":"File uploaded","delete_file":"Elimina questo file","in_progress":"in lavorazione","file_exceeds_limit":"La dimensione del file supera i limiti","illegal_extension":"Questo tipo di file non \u00e8 consentito.","max_reached":"Numero massimo di file raggiunto","unknown_error":"C\u2019\u00e8 stato un problema durante il salvataggio del file sul server","currently_uploading":"Aspetta che il caricamento sia completato","cancel":"Annulla","cancel_upload":"Annulla questo caricamento","cancelled":"Annullato","error":"Errore","message":"Messaggio"},"vars":{"images_url":"https:\/\/lsacademy.com\/wp-content\/plugins\/gravityforms\/images"}};
+var gf_global = {"gf_currency_config":{"name":"Euro","symbol_left":"","symbol_right":"&#8364;","symbol_padding":" ","thousand_separator":".","decimal_separator":",","decimals":2,"code":"EUR"},"base_url":"https:\/\/lsacademy.com\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/lsacademy.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","version_hash":"122b719e3252fb2608e9fb3446d82e22","strings":{"newRowAdded":"\u00c8 stata aggiunta una nuova riga.","rowRemoved":"La riga \u00e8 stata rimossa","formSaved":"Il modulo \u00e8 stato salvato. Il contenuto include il link per tornare a completare il modulo."}};
+var gf_global = {"gf_currency_config":{"name":"Euro","symbol_left":"","symbol_right":"&#8364;","symbol_padding":" ","thousand_separator":".","decimal_separator":",","decimals":2,"code":"EUR"},"base_url":"https:\/\/lsacademy.com\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/lsacademy.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","version_hash":"122b719e3252fb2608e9fb3446d82e22","strings":{"newRowAdded":"\u00c8 stata aggiunta una nuova riga.","rowRemoved":"La riga \u00e8 stata rimossa","formSaved":"Il modulo \u00e8 stato salvato. Il contenuto include il link per tornare a completare il modulo."}};
+/* ]]> */
+</script>
+<script type="text/javascript" defer='defer' src="https://lsacademy.com/wp-content/plugins/gravityforms/js/gravityforms.min.js?ver=2.10.5" id="gform_gravityforms-js"></script>
+<script type="text/javascript" defer='defer' src="https://lsacademy.com/wp-content/plugins/gravityforms/js/jquery.textareaCounter.plugin.min.js?ver=2.10.5" id="gform_textarea_counter-js"></script>
+<script type="text/javascript" defer='defer' src="https://lsacademy.com/wp-content/plugins/gravityforms/js/placeholders.jquery.min.js?ver=2.10.5" id="gform_placeholder-js"></script>
+<script type="text/javascript" defer='defer' src="https://lsacademy.com/wp-content/plugins/gravityforms/assets/js/dist/utils.min.js?ver=3f278756f0a3032bed328ff6a9f6c01d" id="gform_gravityforms_utils-js"></script>
+<script type="text/javascript" defer='defer' src="https://lsacademy.com/wp-content/plugins/gravityforms/assets/js/dist/vendor-theme.min.js?ver=7c651d0ba638ce98b9c65141edddd567" id="gform_gravityforms_theme_vendors-js"></script>
+<script type="text/javascript" id="gform_gravityforms_theme-js-extra">
+/* <![CDATA[ */
+var gform_theme_config = {"common":{"form":{"honeypot":{"version_hash":"122b719e3252fb2608e9fb3446d82e22"},"ajax":{"ajaxurl":"https:\/\/lsacademy.com\/wp-admin\/admin-ajax.php","ajax_submission_nonce":"2d79bb354b","i18n":{"step_announcement":"Passaggio %1$s di %2$s, %3$s","unknown_error":"Si \u00e8 verificato un errore sconosciuto nell&#039;elaborazione della richiesta. Riprova.","error_403":"The request was blocked (403 error) for unknown security reasons. Remove any code-like text (scripts or DB queries) and try again."}}}},"hmr_dev":"","public_path":"https:\/\/lsacademy.com\/wp-content\/plugins\/gravityforms\/assets\/js\/dist\/","config_nonce":"8575a4eadf"};
+/* ]]> */
+</script>
+<script type="text/javascript" defer='defer' src="https://lsacademy.com/wp-content/plugins/gravityforms/assets/js/dist/scripts-theme.min.js?ver=301fdc9aa6144168f3b854c4c2c8f6d3" id="gform_gravityforms_theme-js"></script>
+<script type="text/javascript" defer='defer' src="https://www.google.com/recaptcha/api.js?hl=it&amp;ver=6.8.5#038;render=explicit" id="gform_recaptcha-js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+ gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 17) {if(!jQuery('#input_17_6+.ginput_counter').length){jQuery('#input_17_6').textareaCount(    {'maxCharacterSize': 64,    'originalStyle': 'ginput_counter gfield_description',	 'truncate': true,	 'errorStyle' : '',    'displayFormat' : '#input di #max numero massimo di caratteri'    });jQuery('#input_17_6').next('.ginput_counter').attr('aria-live','polite');}if(typeof Placeholders != 'undefined'){
+                        Placeholders.enable();
+                    }				gform.utils.addAsyncFilter('gform/submission/pre_submission', async (data) => {
+				    const input = document.createElement('input');
+				    input.type = 'hidden';
+				    input.name = 'gf_zero_spam_key';
+				    input.value = '6TYPRTwAZgqQ4MMZg1BNRXFbXilPZbPBpAFrI173i6I0Ga1AC1WesR2Mf1HD3mKz';
+				    input.setAttribute('autocomplete', 'new-password');
+				    data.form.appendChild(input);
+				
+				    return data;
+				});} } );jQuery(document).on('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } ); 
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+ gform.initializeOnLoaded( function() {jQuery(document).trigger("gform_pre_post_render", [{ formId: "17", currentPage: "1", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_17" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_17";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_17" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 17, 1 );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } ); 
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+ gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 1) {				gform.utils.addAsyncFilter('gform/submission/pre_submission', async (data) => {
+				    const input = document.createElement('input');
+				    input.type = 'hidden';
+				    input.name = 'gf_zero_spam_key';
+				    input.value = '6TYPRTwAZgqQ4MMZg1BNRXFbXilPZbPBpAFrI173i6I0Ga1AC1WesR2Mf1HD3mKz';
+				    input.setAttribute('autocomplete', 'new-password');
+				    data.form.appendChild(input);
+				
+				    return data;
+				});} } );jQuery(document).on('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } ); 
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+ gform.initializeOnLoaded( function() {jQuery(document).trigger("gform_pre_post_render", [{ formId: "1", currentPage: "1", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_1" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_1";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_1" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 1, 1 );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } ); 
+/* ]]> */
+</script>
+
+  </body>
+</html>

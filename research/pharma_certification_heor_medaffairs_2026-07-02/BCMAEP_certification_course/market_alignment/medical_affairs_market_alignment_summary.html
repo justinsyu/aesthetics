@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+  MEDICAL AFFAIRS RESPONSIBILITIES: FREQUENCY ANALYSIS AND CURRICULUM ALIGNMENT.
+  Standalone, offline-safe (no script). Styling reused from the Syndax EHA 2026
+  insights brief (navy #0a054a ink, dark teal #006781 accent). Tier pills encode
+  responsibility frequency; coverage pills encode how directly the BCMAEP
+  curriculum addresses each responsibility. Every figure is an approximate
+  thematic tally across the collected job postings, not an exact measurement.
+-->
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Medical Affairs Responsibilities &middot; Frequency and Curriculum Alignment</title>
+<style>
+:root{
+  /* ---- BRAND TOKENS ---- */
+  --accent:#006781;        /* dark teal: links, eyebrows, chip/bar fills */
+  --accent-ink:#006781;    /* accent text/underlines */
+  --ink:#0a054a;           /* navy/indigo: headings / strong text */
+  --black:#0a054a;
+  /* ---- neutral tokens ---- */
+  --body:#252735; --muted:rgba(10,5,74,.62); --faint:rgba(10,5,74,.34);
+  --bg:#ffffff; --warm:#f7fafc; --warm2:#eef2f6;
+  --line:rgba(10,5,74,.12); --line-strong:rgba(10,5,74,.2);
+  --font-display:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --font-body:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --font-ui:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --font-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--body);font-family:var(--font-body);
+  font-size:17px;line-height:1.6;letter-spacing:-.01em;-webkit-font-smoothing:antialiased;}
+.page{max-width:880px;margin:0 auto;padding:4rem 1.75rem 5rem;}
+h1{margin:0;font-family:var(--font-display);font-weight:700;
+  font-size:clamp(2.6rem,6vw,3.7rem);line-height:1.12;letter-spacing:-.035em;color:var(--ink);}
+h1 .soft{color:var(--faint);display:block;margin-top:.25rem;font-weight:300;font-size:.52em;letter-spacing:-.02em;}
+.lead{margin:1.25rem 0 0;max-width:46rem;color:var(--muted);font-size:1.02rem;line-height:1.55;letter-spacing:-.012em;}
+.meta{margin:0;padding-top:1.25rem;border-top:1px solid var(--line);
+  font-family:var(--font-ui);font-size:.82rem;color:var(--muted);}
+.meta b{color:var(--ink);font-weight:700;}
+.cover{display:flex;flex-direction:column;}
+.result-label{font-family:var(--font-ui);font-size:.66rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);margin:1.6rem 0 .55rem;}
+.step{margin-top:1.5rem;}
+.step-head.no-badge{display:grid;grid-template-columns:1fr;row-gap:.7rem;}
+.step-eyebrow{font-family:var(--font-ui);font-size:.7rem;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--accent-ink);margin:0;}
+.step h2{margin:0;font-family:var(--font-display);font-weight:700;
+  font-size:clamp(1.5rem,3.2vw,2rem);line-height:1.12;letter-spacing:-.025em;color:var(--ink);}
+.field{margin:1.05rem 0 0;color:var(--body);font-size:1rem;}
+.field.match{color:var(--muted);font-size:.92rem;}
+.flabel{display:inline-flex;align-items:center;line-height:1.1;font-family:var(--font-ui);font-size:.6rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--accent-ink);background:var(--warm2);border:1px solid var(--line);
+  padding:.16rem .45rem;border-radius:5px;margin-right:.5rem;vertical-align:middle;}
+.sources{margin:.9rem 0 0;color:var(--muted);font-size:.82rem;line-height:1.5;}
+.signals{list-style:none;margin:.4rem 0 0;padding:0;display:grid;gap:.55rem;}
+.signals .signal{background:var(--warm);border:1px solid var(--line);border-radius:12px;padding:.7rem .85rem;}
+.signal-head{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin-bottom:.3rem;}
+.signal-head .rank{font-family:var(--font-mono);font-size:.8rem;font-weight:700;color:var(--accent-ink);}
+.signal-head .name{font-weight:700;color:var(--ink);font-size:.96rem;}
+.signal-head .count{font-family:var(--font-ui);font-size:.72rem;color:var(--muted);}
+.signal-body{display:block;color:var(--body);font-size:.94rem;line-height:1.5;}
+.tag{display:inline-flex;align-items:center;line-height:1.1;font-family:var(--font-ui);font-size:.62rem;font-weight:700;letter-spacing:.04em;
+  padding:.18rem .5rem;border-radius:999px;border:1px solid var(--line);text-transform:lowercase;}
+.tier-direct{background:var(--accent);color:#ffffff;border-color:var(--accent);}
+.tier-portfolio{background:color-mix(in srgb,var(--accent) 14%,#fff);color:var(--accent-ink);}
+.tier-session{background:rgba(10,5,74,.07);color:var(--ink);}
+.tier-landscape{background:var(--warm2);color:var(--muted);}
+.activity{list-style:none;margin:.4rem 0 .2rem;padding:0;display:grid;gap:.45rem;}
+.activity li{position:relative;padding-left:1rem;color:var(--muted);font-size:.86rem;line-height:1.5;}
+.activity li::before{content:"";position:absolute;left:.05rem;top:.6em;width:.32rem;height:.32rem;border-radius:50%;background:var(--faint);}
+.activity li a{color:var(--accent-ink);}
+.activity li b{color:var(--ink);font-weight:700;}
+.gaps{list-style:none;margin:.4rem 0 0;padding:0;display:grid;gap:.7rem;}
+.gap{background:var(--warm);border:1px solid var(--line);border-radius:12px;padding:.8rem .9rem;display:grid;gap:.45rem;}
+.gap-row{display:grid;grid-template-columns:8rem minmax(0,1fr);gap:.7rem;align-items:start;}
+.gap-key{font-family:var(--font-ui);font-size:.62rem;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--accent-ink);padding-top:.12rem;line-height:1.3;}
+.gap-val{color:var(--body);font-size:.9rem;line-height:1.5;}
+.gap-delta{border-top:1px dashed var(--line);padding-top:.5rem;}
+.gap-rec{border-top:1px dashed var(--line);padding-top:.5rem;}
+.gap-rec .gap-val{color:var(--ink);}
+.uc-tag{display:inline-flex;align-items:center;line-height:1.1;vertical-align:middle;font-family:var(--font-ui);font-size:.6rem;font-weight:700;
+  letter-spacing:.04em;text-transform:uppercase;color:#ffffff;background:var(--accent-ink);
+  padding:.14rem .45rem;border-radius:999px;margin-right:.35rem;}
+.resnote{margin:1.1rem 0 0;color:var(--muted);font-size:.9rem;line-height:1.5;border-left:2px solid var(--line-strong);padding-left:.9rem;}
+.resnote b{color:var(--ink);font-weight:700;}
+.legend{margin:.7rem 0 0;display:flex;flex-wrap:wrap;gap:.5rem 1rem;font-family:var(--font-ui);font-size:.72rem;color:var(--muted);}
+.legend span{display:inline-flex;align-items:center;gap:.35rem;}
+a{color:var(--accent-ink);}
+.field a,.sources a,.activity a{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent-ink) 30%,transparent);}
+hr.sep{border:0;border-top:1px solid var(--line);margin:1.5rem 0 0;}
+footer.doc{margin-top:2.5rem;color:var(--muted);font-family:var(--font-ui);font-size:.8rem;line-height:1.5;}
+@media (max-width:680px){.gap-row{grid-template-columns:1fr;gap:.15rem;}}
+</style>
+<style>
+/* Print stylesheet: preserve colors, keep cards intact, start major sections on a new page. */
+@media print{
+  @page{margin:14mm;}
+  html,body{background:#ffffff;}
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .page{max-width:none;margin:0;padding:0;}
+  .signal,.gap,li.signal,li.gap{break-inside:avoid;}
+  .step{break-inside:auto;}
+  h1,h2,.step-head{break-after:avoid;}
+  .result-label.page-break-before{break-before:page;page-break-before:always;}
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="cover">
+    <h1>Medical Affairs Roles<span class="soft">What the job market asks for, and whether the curriculum matches</span></h1>
+    <p class="lead">This brief ranks the responsibilities that appear in real medical affairs and evidence job descriptions, from most to least common, and maps them against the 15-module BCMAEP curriculum to test whether the course prepares candidates for the work they will actually do. It is a reference for people moving into pharma and a design check for the program. Every figure is an approximate thematic tally across the collected postings, not an exact measurement; the full link index and analysis are in the companion files.</p>
+    <p class="meta"><b>Prepared:</b> 2026-07-02 &nbsp;|&nbsp; <b>Evidence base:</b> approximately 75 medical affairs and evidence job postings across more than 33 companies, plus 6 role-definition references, collected 2026-07-02 &nbsp;|&nbsp; <b>Method:</b> thematic frequency coding of listed responsibilities, mapped to the BCMAEP module map</p>
+  </header>
+
+  <hr class="sep" />
+
+  <section class="step" id="analysis">
+    <div class="step-head no-badge"><div>
+      <p class="step-eyebrow">Job-market evidence and method</p>
+      <h2>What the postings say</h2>
+    </div></div>
+
+    <p class="field"><span class="flabel">Evidence base</span> Five parallel searches collected roughly 75 real postings across five role families: field medical and medical science liaison (MSL); medical affairs management and medical director; medical information, communications, and publications; HEOR, market access, and real-world evidence; and biotech and mid-size company roles. Companies represented include Pfizer, Merck, Bristol Myers Squibb, Eli Lilly, AbbVie, Amgen, Gilead, Regeneron, Vertex, Johnson &amp; Johnson, Novartis, Roche and Genentech, AstraZeneca, GSK, Sanofi, Bayer, Takeda, Boehringer Ingelheim, Novo Nordisk, Biogen, UCB, Astellas, Jazz, and the biotechs Alnylam, Insmed, Ultragenyx, BioMarin, Incyte, argenx, Apellis, Sarepta, Blueprint Medicines, and Neurocrine. Durable role definitions were drawn from the <a href="https://themsls.org/what-is-an-msl/" target="_blank" rel="noopener">MSL Society</a>, the <a href="https://medicalaffairs.org/maps-medical-affairs-competency-framework/" target="_blank" rel="noopener">MAPS competency framework</a>, and an <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8492581/" target="_blank" rel="noopener">APPA, IFAPP, MAPS, and MSL Society position statement</a>.</p>
+
+    <p class="field match"><span class="flabel">Method and limits</span> The counts are thematic tallies, not exact measurements. Responsibilities are worded differently across postings, so each theme groups several phrasings, and one posting can contribute to many themes. About one third of the postings were fetched in full; the rest were captured from search-result summaries, which under-report longer duty lists. The approximate count shown for each theme is the number of the roughly 75 postings in which the theme clearly appeared. Read the numbers as prevalence tiers, not precise frequencies.</p>
+
+    <div class="legend">
+      <span><span class="tag tier-direct">tier 1</span> near-universal</span>
+      <span><span class="tag tier-portfolio">tier 2</span> very common</span>
+      <span><span class="tag tier-session">tier 3</span> common</span>
+      <span><span class="tag tier-landscape">tier 4</span> role-specific or emerging</span>
+    </div>
+
+    <div class="result-label">Responsibilities ranked, most to least common</div>
+    <ul class="signals">
+      <li class="signal"><span class="signal-head"><span class="rank">01</span><span class="name">Cross-functional collaboration</span><span class="tag tier-direct">tier 1</span><span class="count">~65 of 75</span></span><span class="signal-body">Working with commercial, market access, regulatory, clinical development, safety, and HEOR. Stated or implied in nearly every posting across all role families.</span></li>
+      <li class="signal"><span class="signal-head"><span class="rank">02</span><span class="name">Compliance, ethics, and medical governance</span><span class="tag tier-direct">tier 1</span><span class="count">~60 of 75</span></span><span class="signal-body">The nonpromotional standard, fair balance, and adverse-event and product-complaint reporting. The medical-versus-commercial boundary is a recurring emphasis.</span></li>
+      <li class="signal"><span class="signal-head"><span class="rank">03</span><span class="name">KOL and HCP relationship building</span><span class="tag tier-direct">tier 1</span><span class="count">~50 of 75</span></span><span class="signal-body">Identifying and engaging thought leaders and healthcare professionals in an area or geography. Universal in field medical; common in management and HEOR.</span></li>
+      <li class="signal"><span class="signal-head"><span class="rank">04</span><span class="name">Compliant scientific exchange and education</span><span class="tag tier-direct">tier 1</span><span class="count">~48 of 75</span></span><span class="signal-body">Delivering approved, fair-balanced clinical and scientific data. Universal in field medical; common in management and medical information.</span></li>
+      <li class="signal"><span class="signal-head"><span class="rank">05</span><span class="name">Therapeutic-area and scientific expertise</span><span class="tag tier-direct">tier 1</span><span class="count">~45 of 75</span></span><span class="signal-body">Maintaining deep, current disease and product knowledge through continuous learning. Common across field medical, management, and communications roles.</span></li>
+      <li class="signal"><span class="signal-head"><span class="rank">06</span><span class="name">Evidence generation</span><span class="tag tier-direct">tier 1</span><span class="count">~45 of 75</span></span><span class="signal-body">Input to clinical trials, investigator-initiated and investigator-sponsored studies, real-world evidence, and HEOR studies. Field medical supports it; management and HEOR own it.</span></li>
+      <li class="signal"><span class="signal-head"><span class="rank">07</span><span class="name">Field and medical insight gathering</span><span class="tag tier-portfolio">tier 2</span><span class="count">~42 of 75</span></span><span class="signal-body">Capturing, synthesizing, and reporting insights to shape internal strategy and identify evidence gaps. Universal in field medical; common in management.</span></li>
+      <li class="signal"><span class="signal-head"><span class="rank">08</span><span class="name">Medical affairs strategy and medical plan</span><span class="tag tier-portfolio">tier 2</span><span class="count">~40 of 75</span></span><span class="signal-body">Developing and executing a medical plan for a therapeutic area (management) or a territory and engagement plan (field).</span></li>
+      <li class="signal"><span class="signal-head"><span class="rank">09</span><span class="name">Congress and advisory board support</span><span class="tag tier-portfolio">tier 2</span><span class="count">~40 of 75</span></span><span class="signal-body">Planning and delivering advisory boards, symposia, and congress activity. Common across all role families.</span></li>
+      <li class="signal"><span class="signal-head"><span class="rank">10</span><span class="name">Scientific communications and publications</span><span class="tag tier-portfolio">tier 2</span><span class="count">~35 of 75</span></span><span class="signal-body">Publication planning, abstracts, manuscripts, congress content, and the scientific communication platform. Universal in communications and publications roles.</span></li>
+      <li class="signal"><span class="signal-head"><span class="rank">11</span><span class="name">Medical information inquiry response</span><span class="tag tier-portfolio">tier 2</span><span class="count">~35 of 75</span></span><span class="signal-body">Responding to unsolicited medical inquiries accurately, compliantly, and within service standards. Universal in medical information; common in field medical.</span></li>
+      <li class="signal"><span class="signal-head"><span class="rank">12</span><span class="name">Clinical trial site identification and feasibility</span><span class="tag tier-session">tier 3</span><span class="count">~28 of 75</span></span><span class="signal-body">Identifying investigators and sites and supporting feasibility and recruitment. Very common in field medical.</span></li>
+      <li class="signal"><span class="signal-head"><span class="rank">13</span><span class="name">Medical and scientific content development</span><span class="tag tier-session">tier 3</span><span class="count">~25 of 75</span></span><span class="signal-body">Standard and custom response documents, FAQs, Data on File, slide decks, and medical materials. Concentrated in medical information and communications.</span></li>
+      <li class="signal"><span class="signal-head"><span class="rank">14</span><span class="name">Speaker training and education programs</span><span class="tag tier-session">tier 3</span><span class="count">~22 of 75</span></span><span class="signal-body">Identifying and training speakers and supporting education programs. Common in field medical and management.</span></li>
+      <li class="signal"><span class="signal-head"><span class="rank">15</span><span class="name">Medical, legal, and regulatory review of materials</span><span class="tag tier-session">tier 3</span><span class="count">~20 of 75</span></span><span class="signal-body">Reviewing and approving promotional and medical materials for compliance (copy approval, certification). Common in management and medical information.</span></li>
+      <li class="signal"><span class="signal-head"><span class="rank">16</span><span class="name">HEOR and health-economics methods</span><span class="tag tier-session">tier 3</span><span class="count">~20 of 75</span></span><span class="signal-body">Economic models, cost-effectiveness, budget impact, patient-reported and clinical outcome assessments, and evidence synthesis. Universal in HEOR roles.</span></li>
+      <li class="signal"><span class="signal-head"><span class="rank">17</span><span class="name">Project, budget, and vendor management</span><span class="tag tier-session">tier 3</span><span class="count">~20 of 75</span></span><span class="signal-body">Managing timelines, deliverables, budgets, and vendors. Common in HEOR, publications, and director-level roles.</span></li>
+      <li class="signal"><span class="signal-head"><span class="rank">18</span><span class="name">Value dossiers and HTA submissions</span><span class="tag tier-session">tier 3</span><span class="count">~15 of 75</span></span><span class="signal-body">AMCP dossiers, Global Value Dossiers, and health technology assessment submissions. Concentrated in HEOR and market access.</span></li>
+      <li class="signal"><span class="signal-head"><span class="rank">19</span><span class="name">Market access, pricing, and reimbursement</span><span class="tag tier-session">tier 3</span><span class="count">~15 of 75</span></span><span class="signal-body">Payer engagement, pricing and reimbursement strategy, and contracting. Concentrated in HEOR, market access, and US medical-access roles.</span></li>
+      <li class="signal"><span class="signal-head"><span class="rank">20</span><span class="name">Real-world data study design and analysis</span><span class="tag tier-session">tier 3</span><span class="count">~15 of 75</span></span><span class="signal-body">Claims, electronic health records, registries, target-trial emulation, and cohort and code-list construction. Concentrated in real-world evidence roles.</span></li>
+      <li class="signal"><span class="signal-head"><span class="rank">21</span><span class="name">People and team management, leadership</span><span class="tag tier-landscape">tier 4</span><span class="count">~12 of 75</span></span><span class="signal-body">Managing teams and budgets. Concentrated in director-level and above roles.</span></li>
+      <li class="signal"><span class="signal-head"><span class="rank">22</span><span class="name">Payer, HTA, and policy monitoring</span><span class="tag tier-landscape">tier 4</span><span class="count">~10 of 75</span></span><span class="signal-body">Tracking the payer, HTA, and policy landscape, including the US Inflation Reduction Act drug price negotiation program. Concentrated in market access.</span></li>
+      <li class="signal"><span class="signal-head"><span class="rank">23</span><span class="name">CRM, documentation, and territory operations</span><span class="tag tier-landscape">tier 4</span><span class="count">~10 of 75</span></span><span class="signal-body">CRM and administrative documentation (for example Veeva), territory administration, and substantial field travel. Explicit in several field roles, implied in most.</span></li>
+      <li class="signal"><span class="signal-head"><span class="rank">24</span><span class="name">AI and digital tools</span><span class="tag tier-landscape">tier 4</span><span class="count">~5 of 75</span></span><span class="signal-body">Use of AI, omni-channel content, and digital medical information. Named explicitly in only a few postings today (for example a Novartis HEOR and an Astellas content-operations role); an emerging theme.</span></li>
+    </ul>
+  </section>
+
+  <section class="step" id="alignment">
+    <div class="result-label page-break-before">How the BCMAEP curriculum aligns</div>
+    <p class="field">Coverage is rated by how directly a module addresses each responsibility: <span class="tag tier-direct">direct</span> a module is built around it, <span class="tag tier-portfolio">substantial</span> covered within a module, <span class="tag tier-session">partial</span> introduced but not a focus.</p>
+    <ul class="signals">
+      <li class="signal"><span class="signal-head"><span class="name">Cross-functional collaboration</span><span class="tag tier-direct">direct</span></span><span class="signal-body">Module 2 (operating model and cross-functional ecosystem).</span></li>
+      <li class="signal"><span class="signal-head"><span class="name">Compliance, ethics, governance, safety reporting</span><span class="tag tier-direct">direct</span></span><span class="signal-body">Module 3 (compliance and the nonpromotional boundary) and Module 6 (pharmacovigilance).</span></li>
+      <li class="signal"><span class="signal-head"><span class="name">KOL engagement and insight gathering</span><span class="tag tier-direct">direct</span></span><span class="signal-body">Module 11 (MSL and field medical strategy), including insight capture and synthesis.</span></li>
+      <li class="signal"><span class="signal-head"><span class="name">Scientific exchange and education</span><span class="tag tier-direct">direct</span></span><span class="signal-body">Module 11, with the nonpromotional boundary from Module 3 and evidence interpretation from Module 4.</span></li>
+      <li class="signal"><span class="signal-head"><span class="name">Evidence generation (trials, RWE, HEOR)</span><span class="tag tier-direct">direct</span></span><span class="signal-body">Module 10 (integrated evidence generation planning), Module 7 (real-world evidence), Module 4, and Module 13 (investigator-sponsored research).</span></li>
+      <li class="signal"><span class="signal-head"><span class="name">Scientific communications, publications, medical information</span><span class="tag tier-direct">direct</span></span><span class="signal-body">Module 12 (publications under GPP 2022, congresses, and medical information).</span></li>
+      <li class="signal"><span class="signal-head"><span class="name">Congress and advisory board support</span><span class="tag tier-direct">direct</span></span><span class="signal-body">Module 12 (congresses) and Module 13 (advisory boards).</span></li>
+      <li class="signal"><span class="signal-head"><span class="name">HEOR methods, value dossiers, market access, RWD</span><span class="tag tier-direct">direct</span></span><span class="signal-body">Module 8 (economic evaluation), Module 9 (HTA and market access), and Module 7 (real-world data).</span></li>
+      <li class="signal"><span class="signal-head"><span class="name">Strategy and medical plan</span><span class="tag tier-direct">direct</span></span><span class="signal-body">Module 2, Module 10, and Module 15 (strategy and recommendation framing).</span></li>
+      <li class="signal"><span class="signal-head"><span class="name">Medical, legal, and regulatory review of materials</span><span class="tag tier-portfolio">substantial</span></span><span class="signal-body">The medical reviewer role in Module 3, applied in Module 12.</span></li>
+      <li class="signal"><span class="signal-head"><span class="name">Therapeutic-area and scientific expertise</span><span class="tag tier-portfolio">substantial</span></span><span class="signal-body">Module 4 (critical appraisal) and Module 1. Product-specific depth is employer-provided by design.</span></li>
+      <li class="signal"><span class="signal-head"><span class="name">Clinical trial site identification and feasibility</span><span class="tag tier-portfolio">substantial</span></span><span class="signal-body">Modules 4, 5, and 11.</span></li>
+      <li class="signal"><span class="signal-head"><span class="name">AI and digital tools</span><span class="tag tier-direct">direct</span></span><span class="signal-body">Module 14 (AI and data fluency) plus AI woven through every module and a program-wide AI-use policy. The course is ahead of current posting frequency here.</span></li>
+      <li class="signal"><span class="signal-head"><span class="name">Project, budget, and vendor management</span><span class="tag tier-session">partial</span></span><span class="signal-body">Introduced in Module 15; not a dedicated project-management course.</span></li>
+      <li class="signal"><span class="signal-head"><span class="name">People and team management, leadership</span><span class="tag tier-session">partial</span></span><span class="signal-body">Module 15 and the leadership domain; introductory, appropriate for an entry-transition credential.</span></li>
+      <li class="signal"><span class="signal-head"><span class="name">CRM, documentation, and territory operations</span><span class="tag tier-session">partial</span></span><span class="signal-body">Module 11 covers the field operating model; tool-specific training (Veeva) is employer-provided.</span></li>
+    </ul>
+  </section>
+
+  <section class="step" id="findings">
+    <div class="result-label">What the analysis shows</div>
+    <ul class="gaps">
+      <li class="gap">
+        <div class="gap-row"><span class="gap-key">Finding</span><span class="gap-val">The curriculum covers the responsibilities that dominate the field.</span></div>
+        <div class="gap-row gap-delta"><span class="gap-key">Evidence</span><span class="gap-val">All six near-universal (tier 1) themes and all five very-common (tier 2) themes are covered directly by a dedicated module. The three functions in almost every posting, cross-functional collaboration, compliant nonpromotional exchange, and KOL engagement with insight gathering, are the subjects of Modules 2, 3, and 11.</span></div>
+        <div class="gap-row gap-rec"><span class="gap-key">Read</span><span class="gap-val"><span class="uc-tag">alignment</span> Strong on the high-frequency work. A graduate is prepared for what the job asks most.</span></div>
+      </li>
+      <li class="gap">
+        <div class="gap-row"><span class="gap-key">Finding</span><span class="gap-val">The course is ahead of the current market on two trending themes.</span></div>
+        <div class="gap-row gap-delta"><span class="gap-key">Evidence</span><span class="gap-val">Integrated evidence generation planning is a named requirement in only a minority of today's postings but is the explicit function of senior evidence roles. AI and digital tools appear explicitly in only about 5 of 75 postings, yet the course makes AI governance a dedicated module and a program-wide policy.</span></div>
+        <div class="gap-row gap-rec"><span class="gap-key">Read</span><span class="gap-val"><span class="uc-tag">forward-looking</span> Positions graduates for where medical affairs is moving, appropriate for a credential meant to last. Revisit the AI theme's market frequency at each curriculum review.</span></div>
+      </li>
+      <li class="gap">
+        <div class="gap-row"><span class="gap-key">Finding</span><span class="gap-val">Three areas are lighter, by design rather than omission.</span></div>
+        <div class="gap-row gap-delta"><span class="gap-key">Evidence</span><span class="gap-val">Project, budget, and vendor management and people management are introduced in Module 15 but not to management depth; these concentrate in director-and-above roles a first hire grows into. Employer-specific tooling (CRM such as Veeva) is taught conceptually in Module 11, not as tool training. Product-specific scientific depth is left to the employer.</span></div>
+        <div class="gap-row gap-rec"><span class="gap-key">Recommendation</span><span class="gap-val"><span class="uc-tag">optional additions</span> A short field-medical operating-tools and metrics unit (generic, not one vendor) in Module 11 or 15, and a brief project-and-vendor-management segment in Module 15, would close the visible gaps without expanding the entry-transition scope.</span></div>
+      </li>
+    </ul>
+
+    <div class="result-label">Notes for candidates by target role</div>
+    <ul class="activity">
+      <li><b>MSL or field medical:</b> emphasize KOL engagement, compliant scientific exchange, insight gathering, and trial-site support (themes 3, 4, 7, 12), covered in Module 11 with compliance from Module 3. Expect substantial travel and CRM documentation.</li>
+      <li><b>Medical information, communications, or publications:</b> emphasize inquiry response, content development, publication planning under GPP 2022, and material review (themes 11, 13, 10, 15), covered in Module 12 with standards from Module 3.</li>
+      <li><b>HEOR, market access, or real-world evidence:</b> emphasize economic methods, value dossiers and HTA, market access, and real-world data (themes 16, 18, 19, 20), covered in Modules 7, 8, and 9 with integrated evidence planning from Module 10. This is the course's deepest area and clearest differentiator.</li>
+      <li><b>Medical affairs management or medical director:</b> emphasize strategy ownership, evidence-generation leadership, cross-functional leadership, and material review (themes 8, 6, 1, 15), plus the emerging people and budget management (theme 21).</li>
+    </ul>
+
+    <p class="resnote"><b>Confidence and caveats.</b> The tier assignments are robust: the same near-universal themes recur across independent searches and across the durable role-definition sources, which lends confidence that Modules 2, 3, and 11 address the core of the work. The exact counts are approximate and skewed downward for postings captured by snippet rather than full fetch, so a theme's true prevalence may be higher than shown. Job postings expire; the link index records each with its date and title for re-finding. Full data and the underlying postings are in <a href="job_description_links.md">job_description_links.md</a> and <a href="medical_affairs_responsibilities_summary.md">medical_affairs_responsibilities_summary.md</a>.</p>
+  </section>
+
+  <footer class="doc">
+    Medical affairs responsibilities: frequency analysis and curriculum alignment &middot; prepared 2026-07-02 &middot; evidence base approximately 75 job postings across more than 33 companies, collected 2026-07-02 &middot; counts are approximate thematic tallies, not exact measurements &middot; companion files: job_description_links.md, medical_affairs_responsibilities_summary.md.
+  </footer>
+</div>
+</body>
+</html>
