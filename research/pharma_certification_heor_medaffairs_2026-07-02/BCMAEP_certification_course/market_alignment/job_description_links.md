@@ -2,12 +2,12 @@
 
 Collected 2026-07-02. This is a reference index of real medical affairs and evidence job postings gathered by web search across company career sites and job aggregators, plus durable role-definition sources. It supports the responsibilities analysis in `medical_affairs_responsibilities_summary.md`.
 
-Coverage: approximately 75 postings across more than 35 companies, spanning five role families (field medical/MSL; medical affairs management and medical director; medical information, communications, and publications; HEOR, market access, and real-world evidence; and biotech/mid-size roles), plus 6 role-definition and competency references.
+Coverage: approximately 75 postings across 39 companies and organizations, spanning five role families (field medical/MSL; medical affairs management and medical director; medical information, communications, and publications; HEOR, market access, and real-world evidence; and biotech/mid-size roles), plus role-definition and competency references.
 
 Important caveats:
 - Job postings expire and are often served from applicant-tracking systems that require a live session. Some links below will return "position filled" or a 404 over time; they are recorded with the date seen (2026-07-02) and the exact title so the role can be re-found.
 - "Access" indicates whether the individual posting page was successfully fetched (full text) or whether the responsibilities were captured from the search-result summary ("snippet only"). Nothing was fabricated; every URL appeared in a real search result or a fetched page.
-- Raw per-agent collections with the full responsibility bullets are in `raw/`.
+- Raw per-agent collections with the full responsibility bullets are in the `raw/` folder of the repository archive (not bundled in the static site).
 
 ---
 
@@ -117,6 +117,8 @@ Important caveats:
 | MSL Society | Study: MSL Competencies That Contribute Most to Success | fetched | https://themsls.org/study-reveals-medical-science-liaison-competencies-contribute-success/ |
 | APPA, IFAPP, MAPS, MSLS | Promoting Best Practices for Medical Science Liaisons (position statement) | fetched | https://pmc.ncbi.nlm.nih.gov/articles/PMC8492581/ |
 
-## Companies represented (33 named)
+## Companies and organizations represented (39 named)
 
 Pfizer, Merck (MSD), Bristol Myers Squibb, Eli Lilly, AbbVie, Amgen, Gilead Sciences, Regeneron, Vertex, Johnson & Johnson (Innovative Medicine), Novartis, Roche/Genentech, AstraZeneca, GSK (including ViiV Healthcare), Sanofi, Bayer, Takeda, Boehringer Ingelheim, Novo Nordisk, Biogen, Moderna (searched), UCB, Otsuka (searched), Astellas, Teva (searched), Jazz Pharmaceuticals, Organon (searched), Alnylam, Insmed, Ultragenyx, BioMarin, Incyte, argenx, Apellis, Sarepta, Blueprint Medicines, Neurocrine, plus the consultancies Syneos Health and IQVIA.
+
+Entries marked (searched) were queried but did not yield a posting retained in this sample; all named organizations are included in the count of 39.

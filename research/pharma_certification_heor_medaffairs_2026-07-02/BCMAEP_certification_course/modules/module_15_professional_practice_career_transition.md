@@ -34,13 +34,13 @@ Two failure modes are common in transition. The first is presenting analysis wit
 
 ## 15.3 The transition narrative for clinicians moving into industry
 
-A clinician entering industry needs a concise account of why the move is coherent and what they bring. An effective narrative does three things: it names the transferable competencies (evidence appraisal, clinical reasoning, communication with experts and patients, understanding of care delivery); it connects them to the target function (for example, that appraisal skill maps to medical review, publication planning, or evidence generation); and it states the direction of travel without apology for leaving direct care. The MAPS Medical Affairs Competency Framework, which describes 42 competencies across seven domains, is a useful map for locating one's existing strengths and naming the gaps to close ([MAPS, Foundations in Medical Affairs](https://medicalaffairs.org/medical-affairs-training/)).
+A clinician entering industry needs a concise account of why the move is coherent and what they bring. An effective narrative does three things: it names the transferable competencies (evidence appraisal, clinical reasoning, communication with experts and patients, understanding of care delivery); it connects them to the target function (for example, that appraisal skill maps to medical review, publication planning, or evidence generation); and it states the direction of travel without apology for leaving direct care. The program's seven-domain competency framework (handbook, section 5) is a useful map for locating one's existing strengths and naming the gaps to close.
 
 The profile that results, a resume, a professional summary, and an interview narrative, should be specific and quantified rather than adjectival: what was done, in what setting, with what result, and how it transfers. The same standard that governs scientific writing applies here, namely that specifics are more credible than superlatives.
 
 ## 15.4 Interview and case-presentation preparation
 
-Medical affairs and evidence roles frequently assess candidates with a case exercise or a presentation, because the job is to reason about evidence and communicate a recommendation under scrutiny. Preparation has three parts. First, rehearse the structured problem-solving sequence from 15.2 on unfamiliar prompts, so the framing is automatic. Second, prepare to present a piece of work end to end and to defend the methods and the uncertainty, which is what a case presentation tests. Third, prepare behavioral answers that evidence the competencies named in the transition narrative, each with a concrete example and outcome. Scenario-based practice materials, such as the DIA medical affairs modules, provide realistic prompts for this rehearsal ([DIA, Medical Affairs eLearning Program](https://www.diaglobal.org/en/course-listing/elearning/modules/medical-affairs)). The capstone executive summary and stakeholder briefing produced in this module double as interview artifacts: a candidate who has presented a portfolio to a simulated leadership audience has a rehearsed, defensible case presentation ready.
+Medical affairs and evidence roles frequently assess candidates with a case exercise or a presentation, because the job is to reason about evidence and communicate a recommendation under scrutiny. Preparation has three parts. First, rehearse the structured problem-solving sequence from 15.2 on unfamiliar prompts, so the framing is automatic. Second, prepare to present a piece of work end to end and to defend the methods and the uncertainty, which is what a case presentation tests. Third, prepare behavioral answers that evidence the competencies named in the transition narrative, each with a concrete example and outcome. Scenario-based practice on realistic case prompts supports this rehearsal. The capstone executive summary and stakeholder briefing produced in this module double as interview artifacts: a candidate who has presented a portfolio to a simulated leadership audience has a rehearsed, defensible case presentation ready.
 
 ## 15.5 Professional ethics and identity
 
@@ -48,7 +48,7 @@ The transition into industry does not lower the ethical bar; it changes the spec
 
 ## 15.6 The recertification and continuing-development plan
 
-A credential is a commitment to stay current, not a terminal achievement, and the leading credentials in this field are structured that way. The ACMA BCMAS requires annual maintenance through approved learning activities plus attestation ([ACMA, BCMAS Recertification](https://medicalaffairsspecialist.org/certifications/bcmas/bcmas-recertification)); the MSL Society MSL-BC uses a three-year recertification cycle ([MSL Society, MSL-BC Board Certification](https://themsls.org/msl-board-certification/)); and the ISMPP CMPP is a five-year credential ([ISMPP, CMPP certification](https://www.ismpp.org/cmpp)). BCMAEP follows this model and, because AI guidance from the FDA, EMA, ISPOR, and publication bodies is changing quickly, requires continuing education in AI governance each recertification cycle rather than treating AI fluency as a one-time competency (`governance/ai_use_policy_and_playbook.md`).
+A credential is a commitment to stay current, not a terminal achievement. BCMAEP is valid for three years and requires documented continuing professional development for renewal, with minimums in evidence generation or HEOR and in AI governance or data ethics (handbook, section 10). Because AI guidance from the FDA, EMA, and publication bodies is changing quickly, the program requires continuing education in AI governance each recertification cycle rather than treating AI fluency as a one-time competency (`governance/ai_use_policy_and_playbook.md`).
 
 A personal development plan turns this requirement into a specific sequence. It should name the competency gaps identified in 15.3, the learning activities that will close them, the recertification obligations and their timing, and a short list of near-term professional goals with the evidence that would show they were met. The plan is a working document, revised as the role and the guidance landscape change.
 
@@ -75,14 +75,8 @@ Required controls: the professional's voice, judgment, and factual claims remain
 6. Why does the program require continuing education in AI governance each recertification cycle? (Answer: FDA, EMA, ISPOR, and publication-body guidance on AI is changing quickly, so AI fluency is treated as an ongoing rather than a one-time competency.)
 
 ## Key readings
-
-- [MAPS, Foundations in Medical Affairs (competency framework)](https://medicalaffairs.org/medical-affairs-training/)
 - [AMCP, Format for Formulary Submissions guidance](https://www.amcp.org/resource/amcp-format-formulary-submissions-guidance)
-- [ISPOR, HEOR impact-case abstract example](https://www.ispor.org/docs/default-source/ispor-eu-2025/impact-cases-abstract-example.pdf?sfvrsn=1dfb3b54_3)
-- [DIA, Medical Affairs eLearning Program](https://www.diaglobal.org/en/course-listing/elearning/modules/medical-affairs)
-- [ICMJE, Defining the Role of Authors and Contributors](https://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html)
-- [ACMA, BCMAS Recertification](https://medicalaffairsspecialist.org/certifications/bcmas/bcmas-recertification); [MSL Society, MSL-BC Board Certification](https://themsls.org/msl-board-certification/); [ISMPP, CMPP certification](https://www.ismpp.org/cmpp)
-- Program AI-use policy and playbook (`governance/ai_use_policy_and_playbook.md`)
+- [ISPOR, HEOR impact-case abstract example](https://www.ispor.org/docs/default-source/ispor-eu-2025/impact-cases-abstract-example.pdf?sfvrsn=1dfb3b54_3)- [ICMJE, Defining the Role of Authors and Contributors](https://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html)- Program AI-use policy and playbook (`governance/ai_use_policy_and_playbook.md`)
 
 ## Connection to the capstone
 

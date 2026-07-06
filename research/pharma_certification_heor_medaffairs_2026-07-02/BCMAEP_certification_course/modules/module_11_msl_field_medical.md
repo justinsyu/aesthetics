@@ -33,9 +33,9 @@ Core activities of the role include:
 - Capturing and routing medical insights that inform evidence and communication strategy.
 - Providing scientific training and support internally, within the medical function.
 
-The competency set for the role is now formalized. The Medical Science Liaison Society administers a psychometrically developed board certification (MSL-BC) that requires a bachelor's degree plus at least one year of MSL experience, tests 140 items (125 scored) across three practice domains, and requires recertification every three years ([MSL Society, MSL-BC Board Certification](https://themsls.org/msl-board-certification/)).
+The competency set for the role is now well established, spanning scientific and therapeutic-area expertise, territory and stakeholder management, compliant nonpromotional scientific exchange, and insight capture.
 
-The role sits within the Customer Engagement and Scientific Communications domain of the MAPS Medical Affairs Competency Framework, one of seven domains that structure the field ([MAPS, Foundations in Medical Affairs](https://medicalaffairs.org/medical-affairs-training/)).
+The role sits within the program's scientific communication and field medical domain (Domain D).
 
 The boundaries of the role are as important as its content:
 
@@ -211,13 +211,9 @@ Required controls: verify every attribute, affiliation, publication, and citatio
 
 ## Key readings
 
-- [IQVIA, Medical Science Liaisons white paper](https://www.iqvia.com/-/media/library/white-papers/medical-science-liaisons.pdf) (role, deployment, and field sizing)
-- [MSL Society, MSL-BC Board Certification](https://themsls.org/msl-board-certification/) (role competency set and certification structure)
-- [MAPS/H1, autoimmune KOL intelligence case](https://medicalaffairs.org/wp-content/uploads/2023/05/2023-HCPU-TL-Enterprise-Case-Study-H1-Empower-Global-Intelligence-in-Autoimmune-research.pdf) (data-driven KOL and DOL identification and mapping)
+- [IQVIA, Medical Science Liaisons white paper](https://www.iqvia.com/-/media/library/white-papers/medical-science-liaisons.pdf) (role, deployment, and field sizing)- [MAPS/H1, autoimmune KOL intelligence case](https://medicalaffairs.org/wp-content/uploads/2023/05/2023-HCPU-TL-Enterprise-Case-Study-H1-Empower-Global-Intelligence-in-Autoimmune-research.pdf) (data-driven KOL and DOL identification and mapping)
 - [MAPS, Converting Challenges Into Opportunities](https://medicalaffairs.org/wp-content/uploads/2021/05/Challenges-to-Opportunities.pdf) and [MAPS/Amedea, innovation and metrics webinar](https://medicalaffairs.org/wp-content/uploads/2023/03/FINAL-SLIDES-MAPS-Webinar-Mar-10-Amedea-Pharma-Final-Updated-for-download14-Read-Only.pdf) (field metrics: activity versus outcome)
 - [MAPS, Digital, Advanced Analytics and AI in Medical Affairs benchmark report, 2024](https://medicalaffairs.org/wp-content/uploads/2024/10/MAPS-Digital-Advanced-Analytics-Artificial-Intelligence-Report-2024.pdf) (AI adoption in field medical)
-- [MAPS, Foundations in Medical Affairs](https://medicalaffairs.org/medical-affairs-training/) (Customer Engagement and Scientific Communications domain)
-
 ## Connection to the capstone
 
 The KOL engagement plan and insight-capture template produced here form the field-medical component of capstone work product 7. The insight-capture template also feeds the integrated evidence generation plan (Module 10, work product 5) by supplying field-derived evidence gaps, and the AI use in drafting the landscape is recorded in the portfolio-wide AI-use log (Module 14, work product 8). The nonpromotional congress abstract that completes work product 7 is developed in Module 12.

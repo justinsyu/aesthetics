@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Module 4: Clinical trial design, biostatistics, and critical literature appraisal | BCMAEP</title>
+<meta name="description" content="BCMAEP Module 4: Clinical trial design, biostatistics, and critical literature appraisal. Domain B lesson with objectives, worked example, applied activity, and knowledge check.">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2064%2064%22%20role%3D%22img%22%20aria-label%3D%22BCMAEP%20seal%22%3E%0A%20%20%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%2230%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%2224%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%3Ctext%20x%3D%2232%22%20y%3D%2237%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2C%20'Times%20New%20Roman'%2C%20serif%22%20font-size%3D%2215%22%20font-weight%3D%22bold%22%20fill%3D%22currentColor%22%20letter-spacing%3D%220.5%22%3EMA%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%2232%22%20y%3D%2214.5%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2C%20serif%22%20font-size%3D%226.5%22%20fill%3D%22currentColor%22%20letter-spacing%3D%222%22%3EBCMAEP%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2C%20serif%22%20font-size%3D%226.5%22%20fill%3D%22currentColor%22%20letter-spacing%3D%221%22%3EEST%202026%3C%2Ftext%3E%0A%3C%2Fsvg%3E">
+</head>
+<body class="page-lesson">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="sidebar">
+      <span class="nav-toggle-bars" aria-hidden="true"></span> Menu
+    </button>
+    <a class="brand" href="../index.html">
+      <svg class="seal" width="38" height="38" viewBox="0 0 64 64" role="img" aria-label="BCMAEP seal">
+  <circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="2.5"/>
+  <circle cx="32" cy="32" r="24" fill="none" stroke="currentColor" stroke-width="1"/>
+  <text x="32" y="37" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-weight="bold" fill="currentColor" letter-spacing="0.5">MA</text>
+  <text x="32" y="14.5" text-anchor="middle" font-family="Georgia, serif" font-size="6.5" fill="currentColor" letter-spacing="2">BCMAEP</text>
+  <text x="32" y="55" text-anchor="middle" font-family="Georgia, serif" font-size="6.5" fill="currentColor" letter-spacing="1">EST 2026</text>
+</svg>
+      <span class="brand-text">
+        <span class="brand-name">BCMAEP</span>
+        <span class="brand-sub">Board Certified Medical Affairs and Evidence Professional</span>
+      </span>
+    </a>
+    <nav class="top-nav" aria-label="Primary">
+      <a href="../index.html">Overview</a>
+      <a href="../curriculum.html">Curriculum</a>
+      <a href="../assessment.html">Assessment</a>
+      <a href="../accreditation.html">Accreditation</a>
+      <a href="../references.html">Sources</a>
+    </nav>
+  </div>
+</header>
+<div class="layout">
+
+<nav class="sidebar" id="sidebar" aria-label="Course navigation">
+  <div class="snav-group">
+    <span class="snav-head">Program</span>
+    <ul>
+      <li><a class="snav-link " href="../index.html">Overview</a></li>
+      <li><a class="snav-link " href="../handbook.html">Program handbook</a></li>
+      <li><a class="snav-link " href="../curriculum.html">Curriculum and syllabus</a></li>
+    </ul>
+  </div>
+  <div class="snav-group">
+    <span class="snav-head">Modules</span>
+    <div class="snav-progress" aria-hidden="true"><div class="snav-progress-bar" id="snav-progress-bar"></div></div>
+    <p class="snav-progress-text" id="snav-progress-text" role="status"></p>
+    <ul class="snav-domains">
+<li class="snav-domain"><span class="snav-domain-label">Domain A &middot; Industry orientation and translation</span><ul><li><a class="snav-link snav-module" data-module="m01" href="../modules/module-01.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">1</span><span>Industry and the development lifecycle</span></a></li>
+<li><a class="snav-link snav-module" data-module="m02" href="../modules/module-02.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">2</span><span>The medical affairs operating model</span></a></li>
+<li><a class="snav-link snav-module" data-module="m03" href="../modules/module-03.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">3</span><span>Compliance and the nonpromotional boundary</span></a></li></ul></li>
+<li class="snav-domain"><span class="snav-domain-label">Domain B &middot; Scientific and clinical foundations</span><ul><li><a class="snav-link snav-module" data-module="m04" aria-current="page" href="../modules/module-04.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">4</span><span>Trial design, biostatistics, and appraisal</span></a></li>
+<li><a class="snav-link snav-module" data-module="m05" href="../modules/module-05.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">5</span><span>Regulatory affairs and approval pathways</span></a></li>
+<li><a class="snav-link snav-module" data-module="m06" href="../modules/module-06.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">6</span><span>Pharmacovigilance and risk management</span></a></li></ul></li>
+<li class="snav-domain"><span class="snav-domain-label">Domain C &middot; Evidence generation, HEOR, HTA, and market access</span><ul><li><a class="snav-link snav-module" data-module="m07" href="../modules/module-07.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">7</span><span>Real-world data and evidence</span></a></li>
+<li><a class="snav-link snav-module" data-module="m08" href="../modules/module-08.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">8</span><span>HEOR methods and economic evaluation</span></a></li>
+<li><a class="snav-link snav-module" data-module="m09" href="../modules/module-09.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">9</span><span>HTA and global market access</span></a></li>
+<li><a class="snav-link snav-module" data-module="m10" href="../modules/module-10.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">10</span><span>Integrated evidence generation planning</span></a></li></ul></li>
+<li class="snav-domain"><span class="snav-domain-label">Domain D &middot; Scientific communication and field medical</span><ul><li><a class="snav-link snav-module" data-module="m11" href="../modules/module-11.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">11</span><span>MSL excellence and field medical</span></a></li>
+<li><a class="snav-link snav-module" data-module="m12" href="../modules/module-12.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">12</span><span>Scientific communications and publications</span></a></li>
+<li><a class="snav-link snav-module" data-module="m13" href="../modules/module-13.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">13</span><span>Advisory boards, ISR, and education</span></a></li></ul></li>
+<li class="snav-domain"><span class="snav-domain-label">Domain E &middot; AI, data, and professional practice</span><ul><li><a class="snav-link snav-module" data-module="m14" href="../modules/module-14.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">14</span><span>AI and data fluency</span></a></li>
+<li><a class="snav-link snav-module" data-module="m15" href="../modules/module-15.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">15</span><span>Professional practice and transition</span></a></li></ul></li>
+    </ul>
+  </div>
+  <div class="snav-group">
+    <span class="snav-head">Assessment</span>
+    <ul>
+      <li><a class="snav-link " href="../assessment.html">Examination blueprint</a></li>
+      <li><a class="snav-link " href="../capstone.html">Capstone portfolio</a></li>
+      <li><a class="snav-link " href="../cases.html">Case library</a></li>
+    </ul>
+  </div>
+  <div class="snav-group">
+    <span class="snav-head">Governance</span>
+    <ul>
+      <li><a class="snav-link " href="../ai-policy.html">AI-use policy</a></li>
+      <li><a class="snav-link " href="../accreditation.html">Accreditation and quality</a></li>
+    </ul>
+  </div>
+  <div class="snav-group">
+    <span class="snav-head">Reference</span>
+    <ul>
+      <li><a class="snav-link " href="../references.html">Source register</a></li>
+      <li><a class="snav-link " href="../market-alignment.html">Market alignment</a></li>
+    </ul>
+  </div>
+</nav>
+<main id="main" class="main">
+
+<nav class="breadcrumbs" aria-label="Breadcrumb"><ol>
+  <li><a href="../index.html">BCMAEP</a></li>
+  <li><a href="../curriculum.html">Curriculum</a></li>
+  <li aria-current="page">Module 4</li>
+</ol></nav>
+<nav class="prevnext prevnext-top" aria-label="Lesson navigation"><a class="pn-link pn-prev" href="../modules/module-03.html"><span class="pn-dir">Previous</span><span class="pn-title">Module 3: Compliance and the nonpromotional boundary</span></a><a class="pn-link pn-next" href="../modules/module-05.html"><span class="pn-dir">Next</span><span class="pn-title">Module 5: Regulatory affairs and approval pathways</span></a></nav>
+<article class="lesson" data-module="m04">
+<header class="lesson-header">
+  <p class="lesson-meta"><span>Module 4 of 15</span><span class="meta-sep" aria-hidden="true">&middot;</span><span>Domain B</span><span class="meta-sep" aria-hidden="true">&middot;</span><span>approximately 8 hours of structured effort</span><span class="meta-sep" aria-hidden="true">&middot;</span><span>about 20 minutes of core reading</span><span class="meta-sep" aria-hidden="true">&middot;</span><span>7 knowledge-check questions</span></p>
+  <h1>Clinical trial design, biostatistics, and critical literature appraisal</h1>
+  <p class="lesson-domain">Domain B (Scientific and clinical foundations). Approximately 8 hours.</p>
+</header>
+<nav class="lesson-toc" aria-label="In this module"><span class="lesson-toc-head">In this module</span><ol><li><a href="#41-what-counts-as-a-clinical-trial-and-why-classification-is-the">4.1 What counts as a clinical trial, and why classification is the first appraisal step</a></li><li><a href="#42-the-hierarchy-of-evidence-and-its-limits">4.2 The hierarchy of evidence and its limits</a></li><li><a href="#43-randomization-allocation-concealment-blinding-and-the-control">4.3 Randomization, allocation concealment, blinding, and the control group</a></li><li><a href="#44-the-estimand-specifying-the-question-before-the-analysis">4.4 The estimand: specifying the question before the analysis</a></li><li><a href="#45-comparative-frames-superiority-noninferiority-and-equivalence">4.5 Comparative frames: superiority, noninferiority, and equivalence</a></li><li><a href="#46-effect-measures-and-their-uncertainty">4.6 Effect measures and their uncertainty</a></li><li><a href="#47-a-taxonomy-of-bias-and-confounding">4.7 A taxonomy of bias and confounding</a></li><li><a href="#48-adaptive-bayesian-and-master-protocol-designs">4.8 Adaptive, Bayesian, and master-protocol designs</a></li><li><a href="#49-single-arm-and-externally-controlled-trials">4.9 Single-arm and externally controlled trials</a></li><li><a href="#410-endpoints-surrogate-endpoints-patient-reported-outcomes-and-">4.10 Endpoints: surrogate endpoints, patient-reported outcomes, and clinical outcome assessments</a></li><li><a href="#411-missing-data-and-sensitivity-analysis">4.11 Missing data and sensitivity analysis</a></li><li><a href="#412-critical-appraisal-a-structured-approach-and-common-failure-">4.12 Critical appraisal: a structured approach and common failure modes</a></li><li><a href="#413-appraising-a-body-of-evidence-systematic-reviews-and-synthes">4.13 Appraising a body of evidence: systematic reviews and synthesis</a></li><li><a href="#worked-example-appraising-an-externally-controlled-design">Worked example</a></li><li><a href="#applied-activity-produces-capstone-work-product-3">Applied activity</a></li><li><a href="#ai-use-focus">AI-use focus</a></li><li><a href="#knowledge-check">Knowledge check</a></li><li><a href="#key-readings">Key readings</a></li></ol></nav>
+<section class="objectives" id="learning-objectives" aria-labelledby="learning-objectives-h">
+<h2 id="learning-objectives-h">Learning objectives</h2>
+<p>On completion, the learner can:</p>
+<ol>
+<li>Classify study designs (randomized controlled trials, observational designs, single-arm and externally controlled trials, adaptive and master-protocol designs) and state their strengths and threats to validity. (B)</li>
+<li>Interpret common statistical measures: effect sizes, confidence intervals, p-values, hazard ratios, number needed to treat, and multiplicity. (B)</li>
+<li>Evaluate endpoints, including surrogate endpoints, patient-reported outcomes, and clinical outcome assessments. (B)</li>
+<li>Critically appraise a publication and identify bias, confounding, and overinterpretation. (B)</li>
+</ol>
+
+</section>
+<section class="callout callout-why" id="why-this-matters-for-the-career-changer">
+<h2>Why this matters for the career changer</h2>
+<p>A clinician reads a trial to decide whether to act on its conclusion for a patient. An industry evidence professional reads the same trial to a different standard: whether the design can support the claim being made, whether the analysis controls the errors it is exposed to, and whether the result will withstand review by regulators, health technology assessment (HTA) committees, journal peer reviewers, and skeptical prescribers.</p>
+<p>The task shifts from consuming a conclusion to auditing how that conclusion was produced, and to stating plainly what the evidence does and does not establish. A well-appraised study is not one that is praised or dismissed; it is one whose supported claims and residual uncertainties have both been named.</p>
+<p>This appraisal discipline is the foundation that later functions draw on: regulatory strategy (Module 5), pharmacovigilance (Module 6), real-world evidence (Module 7), and the clinical value arguments assembled for payers (Modules 8 and 9). This module develops the vocabulary and the habits of structured appraisal, and it produces the critical appraisal and evidence table that anchor the capstone (work product 3).</p>
+
+</section>
+<section class="lesson-section" id="41-what-counts-as-a-clinical-trial-and-why-classification-is-the">
+<h2>4.1 What counts as a clinical trial, and why classification is the first appraisal step</h2>
+<p>Appraisal begins with correct classification, because the design sets the ceiling on the inferences that are legitimate. Whether a study is interventional or observational, randomized or single-arm, prospective or retrospective determines which causal claims it can support and which specific biases it must defend against.</p>
+<p>Reading the abstract&#39;s conclusion before establishing the design is the most common appraisal error. The disciplined sequence is to establish the design first, then read the result through the constraints that design imposes.</p>
+<p>The NIH clinical-trial definition case studies are a useful drill for this step: for each scenario, the reader decides whether the study meets the interventional clinical-trial definition before checking the answer (<a href="https://grants.nih.gov/policy/clinical-trials/CT-Definition-Case-Studies_1-4-18.pdf" target="_blank" rel="noopener">NIH, Clinical Trial Definition Case Studies</a>). The classification is not a labeling exercise; it triggers registration, protocol, analysis-plan, and regulatory-documentation obligations, and it signals to the reader which validity framework applies.</p>
+<p>A working taxonomy for appraisal:</p>
+<ul>
+<li><strong>Randomized controlled trials (RCTs).</strong> Participants are randomly allocated to interventions, which, on average, balances measured and unmeasured confounders across arms. This is the design&#39;s central advantage.</li>
+<li><strong>Cohort studies.</strong> Groups defined by exposure are followed for outcomes; prospective cohorts reduce some biases that retrospective cohorts cannot.</li>
+<li><strong>Case-control studies.</strong> Groups defined by outcome are compared for prior exposure; efficient for rare outcomes but vulnerable to selection and recall bias.</li>
+<li><strong>Cross-sectional studies.</strong> Exposure and outcome are measured at one time; they describe association, not temporal sequence.</li>
+<li><strong>Single-arm trials.</strong> All participants receive the intervention; there is no concurrent comparator, so the counterfactual must come from external information.</li>
+<li><strong>Externally controlled trials.</strong> A treated group is compared with a control constructed from historical or real-world sources rather than concurrent randomization.</li>
+<li><strong>Adaptive and master-protocol designs.</strong> The design permits prespecified modification, or studies multiple interventions or subpopulations under one protocol.</li>
+</ul>
+
+</section>
+<section class="lesson-section" id="42-the-hierarchy-of-evidence-and-its-limits">
+<h2>4.2 The hierarchy of evidence and its limits</h2>
+<p>The conventional evidence hierarchy places systematic reviews of RCTs above individual RCTs, above observational studies, above case series and expert opinion. The hierarchy is a useful default for ranking internal validity, but it is a heuristic, not a rule.</p>
+<p>A large, well-conducted RCT with a fragile surrogate endpoint and heavy loss to follow-up can be less informative than a rigorously designed observational study with a well-specified causal question. The reader should rank a given study on its actual conduct and its fitness for the specific decision, not on its design label alone.</p>
+<p>The hierarchy also does not settle external validity. A trial can be internally valid (its effect estimate is unbiased for the population studied) yet not applicable to the population a payer or clinician cares about. Appraisal separates these two questions and reports both:</p>
+<ul>
+<li><strong>Internal validity:</strong> is the effect estimate unbiased for the study&#39;s own population?</li>
+<li><strong>External validity (generalizability):</strong> does the estimate transport to the population, setting, and comparators of the decision at hand?</li>
+</ul>
+
+</section>
+<section class="lesson-section" id="43-randomization-allocation-concealment-blinding-and-the-control">
+<h2>4.3 Randomization, allocation concealment, blinding, and the control group</h2>
+<p>Randomization is the mechanism that lets an RCT support a causal claim: it makes the arms exchangeable in expectation, so that observed differences can be attributed to the intervention rather than to confounding. Three features determine whether that promise is realized.</p>
+<ul>
+<li><strong>Allocation concealment</strong> prevents those enrolling participants from foreseeing the next assignment; its absence permits selection bias even when a valid randomization list exists.</li>
+<li><strong>Blinding</strong> (of participants, treating clinicians, outcome assessors, and analysts) limits performance and detection bias. Open-label designs are sometimes unavoidable but raise the bar for using objective, blindly adjudicated endpoints.</li>
+<li><strong>The choice of comparator</strong> (placebo, active control, or standard of care) determines what question the trial answers. A placebo-controlled trial establishes efficacy against no treatment; it does not establish relative efficacy against an existing therapy.</li>
+</ul>
+<p>The reader should also identify the analysis population.</p>
+<ul>
+<li>An <strong>intention-to-treat</strong> analysis preserves the randomization by analyzing participants as assigned, regardless of adherence; it is generally the primary analysis for superiority questions.</li>
+<li>A <strong>per-protocol</strong> analysis conditions on adherence and can reintroduce confounding; it is better read as supportive, and it takes on a specific role in noninferiority testing (section 4.5).</li>
+</ul>
+
+</section>
+<section class="lesson-section" id="44-the-estimand-specifying-the-question-before-the-analysis">
+<h2>4.4 The estimand: specifying the question before the analysis</h2>
+<p>An estimand is a precise statement of the treatment effect the trial intends to estimate, defined before the analysis method is chosen. A complete estimand specifies five attributes:</p>
+<ol>
+<li>The <strong>treatment condition</strong> being compared.</li>
+<li>The <strong>target population</strong> of interest.</li>
+<li>The <strong>endpoint (variable)</strong> measured on each participant.</li>
+<li>The <strong>strategy for handling intercurrent events</strong>, such as treatment discontinuation, use of rescue medication, or death.</li>
+<li>The <strong>population-level summary</strong>, such as a difference in means or a hazard ratio.</li>
+</ol>
+<p>Intercurrent events are the crux. A trial that does not state how it handles them can report an effect that answers a different question than the one the label will claim. The reader should identify the estimand, confirm that the primary analysis matches it, and confirm that sensitivity analyses probe the intercurrent-event assumptions.</p>
+
+</section>
+<section class="lesson-section" id="45-comparative-frames-superiority-noninferiority-and-equivalence">
+<h2>4.5 Comparative frames: superiority, noninferiority, and equivalence</h2>
+<p>The comparative frame determines how the result is interpreted.</p>
+<ul>
+<li><strong>Superiority</strong> trials test whether the intervention is better than the comparator. Failure to reject the null does not prove equivalence; absence of evidence of a difference is not evidence of no difference.</li>
+<li><strong>Noninferiority</strong> trials test whether the intervention is not worse than an active comparator by more than a prespecified margin. The margin must be justified clinically and statistically, and the inference rests on two assumptions: assay sensitivity (the trial could have detected a difference had one existed) and constancy (the active comparator&#39;s effect is similar to that seen in its own prior trials). A noninferiority conclusion is only as credible as these assumptions.</li>
+<li><strong>Equivalence</strong> trials test whether the effect falls within a symmetric margin on both sides, a frame common for pharmacokinetic comparisons.</li>
+</ul>
+<p>For noninferiority, the reader checks the one-sided confidence interval against the margin, not the p-value against 0.05, and confirms that the margin was fixed before unblinding. A per-protocol analysis is often examined alongside intention-to-treat, because dropout can bias a noninferiority result toward the null and thus toward a false noninferiority claim.</p>
+
+</section>
+<section class="lesson-section" id="46-effect-measures-and-their-uncertainty">
+<h2>4.6 Effect measures and their uncertainty</h2>
+<p>Effect size, precision, and multiplicity are read together; no single number is sufficient.</p>
+<ul>
+<li><strong>Relative measures</strong> (relative risk, odds ratio, hazard ratio) express the ratio of outcome frequency or event rate between arms. A hazard ratio summarizes the instantaneous relative risk over follow-up under a proportional-hazards assumption; when hazards are not proportional, a single hazard ratio can mislead, and the reader should examine the survival curves and the time course.</li>
+<li><strong>Absolute measures</strong> (absolute risk reduction, risk difference) express the arithmetic difference in outcome frequency and are necessary to judge clinical relevance.</li>
+<li><strong>The number needed to treat</strong> is the reciprocal of the absolute risk reduction (NNT = 1 / ARR). It is only interpretable alongside the time horizon and the baseline risk from which it was derived. A large relative effect on a rare outcome can correspond to a small absolute benefit and a large NNT.</li>
+<li><strong>Confidence intervals</strong> express precision. A 95% confidence interval is the range of effect values compatible with the data at that level; its width, and whether it crosses the null, is more informative than a dichotomous significant-or-not reading. Report and interpret the interval, not only the point estimate.</li>
+<li><strong>P-values</strong> quantify the compatibility of the data with the null hypothesis. A small p-value does not measure effect size, clinical importance, or the probability that the hypothesis is true, and a non-significant result is not evidence of no effect.</li>
+<li><strong>Multiplicity</strong> arises when a trial tests many endpoints, subgroups, or interim looks; each additional test inflates the family-wise probability of a false-positive finding. Credible trials prespecify a testing hierarchy or split the alpha across comparisons.</li>
+</ul>
+<p>Secondary and subgroup findings that fall outside the prespecified, multiplicity-controlled analysis are hypothesis-generating, not confirmatory, however striking they appear.</p>
+
+</section>
+<section class="lesson-section" id="47-a-taxonomy-of-bias-and-confounding">
+<h2>4.7 A taxonomy of bias and confounding</h2>
+<p>Bias is a systematic error in design, conduct, or analysis that moves an estimate away from the truth; it is not corrected by a larger sample. Naming the specific bias is more useful than the general word.</p>
+<ul>
+<li><strong>Selection bias</strong> arises when the compared groups differ systematically at entry or when who is analyzed depends on the outcome.</li>
+<li><strong>Performance bias</strong> arises when groups receive different co-interventions or care because their assignment is known.</li>
+<li><strong>Detection bias</strong> arises when outcomes are ascertained differently by group, which unblinded assessment invites.</li>
+<li><strong>Attrition bias</strong> arises when loss to follow-up is differential and related to the outcome.</li>
+<li><strong>Reporting bias</strong> arises when the reported analyses or outcomes are selected on their results; comparison of the publication with its registered protocol and analysis plan is the check.</li>
+<li><strong>Confounding</strong> arises when a third factor is associated with both exposure and outcome; randomization addresses it in expectation, whereas observational designs must address it by design and analysis (Module 7).</li>
+</ul>
+
+</section>
+<section class="lesson-section" id="48-adaptive-bayesian-and-master-protocol-designs">
+<h2>4.8 Adaptive, Bayesian, and master-protocol designs</h2>
+<p>Prespecified adaptation can make development more efficient without sacrificing validity, provided the adaptation rules and their error control are fixed in advance.</p>
+<ul>
+<li><strong>Adaptive designs</strong> may permit sample-size re-estimation, dropping of arms, or response-adaptive randomization.</li>
+<li><strong>Bayesian designs</strong> update a prior with accumulating data and can support borrowing of information across sources.</li>
+<li><strong>Master protocols</strong> study more than one question under a single infrastructure: basket trials (one intervention across several conditions defined by a shared feature), umbrella trials (several interventions within one condition), and platform trials (interventions enter and leave over time against a common control).</li>
+</ul>
+<p>The FDA Complex Innovative Trial Design (CID) meeting program publishes worked cases that expose the design assumptions and the simulations sponsors used to justify error control, including a master-protocol case in chronic pain (<a href="https://www.fda.gov/media/155403/download?attachment=" target="_blank" rel="noopener">FDA, CID master-protocol case</a>), linked from the program page (<a href="https://www.fda.gov/drugs/development-resources/complex-innovative-trial-design-meeting-program" target="_blank" rel="noopener">FDA, Complex Innovative Trial Design Meeting Program</a>).</p>
+<p>Quantitative modeling and simulation increasingly underpin these designs; the FDA model-informed drug development materials describe how such models support dose selection, trial design, and evidence synthesis (<a href="https://www.fda.gov/files/about%20fda/published/Application-of-Model-Informed-Drug-Development-in-Study-Design-and-Analysis.pdf" target="_blank" rel="noopener">FDA, Application of Model-Informed Drug Development in Study Design and Analysis</a>). For an adaptive design, the appraisal question is whether the adaptation was prespecified and whether the type I error rate is preserved across the possible analysis paths.</p>
+
+</section>
+<section class="lesson-section" id="49-single-arm-and-externally-controlled-trials">
+<h2>4.9 Single-arm and externally controlled trials</h2>
+<p>When a concurrent randomized control is infeasible (for example in a small rare-disease population, discussed in Module 5), sponsors may use a single-arm trial with an external control drawn from historical trials, registries, or real-world data. The inference then depends entirely on whether the external control is comparable to the treated group; differences in era, standard of care, measurement, and patient selection can bias the estimate in either direction.</p>
+<p>The FDA CID program includes an external- and synthetic-control case in alopecia areata that makes these assumptions explicit (<a href="https://www.fda.gov/media/188560/download?attachment=" target="_blank" rel="noopener">FDA, CID alopecia external-control case</a>).</p>
+<p>A disciplined way to reason about a non-randomized comparison is to specify the randomized trial one would ideally have run, then ask how the available data depart from it. This target-trial framework makes the eligibility criteria, treatment strategies, assignment, follow-up, and outcome definitions explicit, and it surfaces the biases (immortal-time bias, prevalent-user bias, and confounding by indication) that arise when those elements are not aligned (<a href="https://doi.org/10.1093/aje/kwv254" target="_blank" rel="noopener">Hernán and Robins, 2016</a>). Module 7 develops these methods in full; here the point is that an external control shifts the burden of proof onto the comparability argument, and the reader must judge that argument on its merits.</p>
+
+</section>
+<section class="lesson-section" id="410-endpoints-surrogate-endpoints-patient-reported-outcomes-and-">
+<h2>4.10 Endpoints: surrogate endpoints, patient-reported outcomes, and clinical outcome assessments</h2>
+<p>An endpoint is only as good as its link to a benefit that patients value.</p>
+<ul>
+<li><strong>Clinical (final) endpoints</strong> measure how a patient feels, functions, or survives.</li>
+<li><strong>Surrogate endpoints</strong> are markers (laboratory values, imaging, or other measurements) intended to predict a clinical benefit. A surrogate is credible only to the extent that its treatment-induced change reliably predicts the treatment-induced change in the clinical outcome; a marker merely correlated with prognosis is not automatically a valid surrogate for treatment effect. Surrogate endpoints are central to accelerated approval (Module 5), where clinical benefit is confirmed later.</li>
+<li><strong>Clinical outcome assessments (COAs)</strong>, including patient-reported (PRO), clinician-reported, observer-reported, and performance outcomes, measure symptoms and function directly. Their interpretation depends on instrument validation, the prespecified analysis, and a defensible threshold for a meaningful within-patient change.</li>
+</ul>
+<p>In small rare-disease populations, endpoint selection is often the pivotal design decision; the FDA LEADER 3D teaching cases illustrate how an endpoint is chosen to capture clinically meaningful change when the population constrains trial size (<a href="https://www.fda.gov/media/186133/download?attachment=" target="_blank" rel="noopener">FDA, LEADER 3D odevixibat case</a>).</p>
+
+</section>
+<section class="lesson-section" id="411-missing-data-and-sensitivity-analysis">
+<h2>4.11 Missing data and sensitivity analysis</h2>
+<p>Missing data threaten validity because the reason data are missing is often related to the outcome. The reader should ask how much data are missing, whether the amount differs by arm, and what assumption the primary analysis makes about the missing values.</p>
+<p>A credible analysis states its missing-data assumption, uses a primary method consistent with the estimand, and reports sensitivity analyses that test whether the conclusion holds under less favorable assumptions. A result that survives only under the most optimistic missing-data assumption is fragile and should be reported as such.</p>
+
+</section>
+<section class="lesson-section" id="412-critical-appraisal-a-structured-approach-and-common-failure-">
+<h2>4.12 Critical appraisal: a structured approach and common failure modes</h2>
+<p>A structured appraisal answers, in order:</p>
+<ol>
+<li>What was the question (estimand and comparator)?</li>
+<li>What was the design, and does it fit the question?</li>
+<li>How were participants selected and allocated?</li>
+<li>How was bias controlled (allocation concealment, blinding, analysis population)?</li>
+<li>What were the endpoints, and were they prespecified?</li>
+<li>What is the effect size, with its confidence interval and its absolute counterpart?</li>
+<li>Was multiplicity controlled?</li>
+<li>How much data were missing, and how was that handled?</li>
+<li>What do the results, and only the results, support?</li>
+</ol>
+<p>Reporting standards for the relevant design give item-level checklists that make an appraisal reproducible; comparing a publication against the appropriate checklist is a fast way to surface omissions.</p>
+<p>Common failure modes to flag: conclusions that outrun the estimand; a relative effect reported without its absolute counterpart; emphasis on a non-significant secondary or subgroup finding; a surrogate endpoint treated as a clinical benefit; a per-protocol result presented as if it preserved randomization; and a single-arm result compared informally with an unrelated trial as though the comparison were randomized. Correct appraisal states the finding with its uncertainty and names what remains unproven.</p>
+
+</section>
+<section class="lesson-section" id="413-appraising-a-body-of-evidence-systematic-reviews-and-synthes">
+<h2>4.13 Appraising a body of evidence: systematic reviews and synthesis</h2>
+<p>Most decisions rest on more than one study, so appraisal extends from the single trial to the body of evidence. A systematic review identifies, selects, and appraises the relevant studies against a prespecified protocol; a meta-analysis, where appropriate, combines their estimates quantitatively.</p>
+<p>The reader appraises a synthesis on features distinct from those of a single trial:</p>
+<ul>
+<li><strong>Search and selection.</strong> Was the search comprehensive and reproducible, and were inclusion criteria set before results were known?</li>
+<li><strong>Risk of bias across studies.</strong> Were the included studies appraised individually, and does the synthesis account for their quality?</li>
+<li><strong>Heterogeneity.</strong> Do the studies estimate a common effect, or do populations, comparators, and endpoints differ enough that a pooled estimate is hard to interpret?</li>
+<li><strong>Publication and reporting bias.</strong> Could studies with unfavorable results be missing from the evidence base?</li>
+</ul>
+<p>An indirect or network comparison, which infers relative effects between treatments that were never compared head to head, adds a further assumption of transitivity across the connected trials; this method is developed for HTA in Module 9. The general rule carries over from the single study: a synthesis is only as trustworthy as the weakest link its assumptions depend on.</p>
+
+</section>
+<section class="feature-card card-worked" id="worked-example-appraising-an-externally-controlled-design" aria-label="Worked example">
+<span class="card-kicker">Worked example</span>
+<h2>Appraising an externally controlled design</h2>
+<p>Use the FDA CID alopecia areata case, which discloses an external- and synthetic-control design (<a href="https://www.fda.gov/media/188560/download?attachment=" target="_blank" rel="noopener">FDA, CID alopecia external-control case</a>).</p>
+<p>Working from the public case, the learner appraises the design rather than the product:</p>
+<ul>
+<li>Identify the comparator, and why a concurrent randomized control was not used.</li>
+<li>List the ways the external control could differ from the treated group (era, standard of care, measurement, and selection).</li>
+<li>Specify the simulation scenarios a sponsor should run to demonstrate error control.</li>
+<li>Translate the disclosed design categories into a briefing-package outline.</li>
+<li>Frame the comparability argument as a target trial, and name the biases that would arise if its elements are not aligned (<a href="https://doi.org/10.1093/aje/kwv254" target="_blank" rel="noopener">Hernán and Robins, 2016</a>).</li>
+</ul>
+<p>FDA notes that each CID case focuses on the specific submitted design and does not cover the full development program&#39;s evidence needs (<a href="https://www.fda.gov/drugs/development-resources/complex-innovative-trial-design-meeting-program" target="_blank" rel="noopener">FDA, Complex Innovative Trial Design Meeting Program</a>); the exercise is to reason about the design, not to endorse it.</p>
+
+</section>
+<section class="feature-card card-activity" id="applied-activity-produces-capstone-work-product-3" aria-label="Applied activity">
+<span class="card-kicker">Applied activity</span>
+<h2>Produces capstone work product 3</h2>
+<p>Using an assigned trial publication for the capstone product scenario (case J in the case library), produce a structured critical appraisal and an evidence table.</p>
+<p>The appraisal states the estimand and comparator, classifies the design, assesses internal and external validity, reports the primary effect with its confidence interval and its absolute counterpart, notes multiplicity and missing-data handling, and closes with a plain-language summary of what the evidence supports and what it does not, suitable for internal use.</p>
+<p>The evidence table records study characteristics, design, population, endpoints, effect estimates, and validity notes in a reusable format. Together these become the critical appraisal and evidence table of the capstone (work product 3), and the evidence table feeds the integrated evidence generation plan (Module 10).</p>
+
+</section>
+<section class="feature-card card-ai" id="ai-use-focus" aria-label="AI-use focus">
+<span class="card-kicker">AI-use focus</span>
+<h2 class="visually-hidden">AI-use focus</h2>
+<p>Permitted: use an AI assistant to extract study characteristics (design, population, endpoints, effect estimates) from a source article and to draft the first version of the evidence table.</p>
+<p>Required controls: verify every extracted value against the source article before use, because language models can transcribe numbers, confidence intervals, and endpoint definitions incorrectly or invent them; do not enter confidential or embargoed manuscripts into a tool that is not validated and approved; record the AI use in your audit log (tool, task, what you verified, who is accountable). The appraisal judgment, especially the assessment of bias and the statement of what the evidence supports, remains a human responsibility. This applies the program AI-use policy (<a href="../ai-policy.html">AI-use policy</a>).</p>
+
+</section>
+<section class="knowledge-check" id="knowledge-check">
+<h2>Knowledge check</h2>
+<p class="kc-intro">Answer each question from memory before revealing the model answer. Retrieval practice of this kind improves retention relative to re-reading (<a href="https://doi.org/10.3102/0034654316689306" target="_blank" rel="noopener">Adesope et al., 2017</a>).</p>
+<div class="kc-list"><details class="kc-item">
+  <summary><span class="kc-num">1</span><span class="kc-q">Why is classifying the design the first step in appraisal?</span><span class="kc-toggle" aria-hidden="true">Show answer</span></summary>
+  <div class="kc-answer"><span class="kc-answer-label">Model answer</span><p>The design sets the ceiling on the causal claims a study can support and determines which specific biases it must defend against; reading the conclusion first invites overinterpretation. See the NIH case studies.</p>
+</div>
+</details>
+<details class="kc-item">
+  <summary><span class="kc-num">2</span><span class="kc-q">A trial reports a hazard ratio of 0.70 (95% CI 0.55 to 0.89) but the survival curves cross. What is the concern?</span><span class="kc-toggle" aria-hidden="true">Show answer</span></summary>
+  <div class="kc-answer"><span class="kc-answer-label">Model answer</span><p>A single hazard ratio assumes proportional hazards; crossing curves suggest the assumption is violated, so the summary estimate can mislead and the time course must be examined.</p>
+</div>
+</details>
+<details class="kc-item">
+  <summary><span class="kc-num">3</span><span class="kc-q">An intervention reduces relative risk by 40%, but the NNT is 200 over five years. What does this show?</span><span class="kc-toggle" aria-hidden="true">Show answer</span></summary>
+  <div class="kc-answer"><span class="kc-answer-label">Model answer</span><p>A large relative effect on a low-baseline-risk outcome can yield a small absolute benefit; relative and absolute measures must be read together, with the time horizon.</p>
+</div>
+</details>
+<details class="kc-item">
+  <summary><span class="kc-num">4</span><span class="kc-q">What must hold for a noninferiority conclusion to be credible?</span><span class="kc-toggle" aria-hidden="true">Show answer</span></summary>
+  <div class="kc-answer"><span class="kc-answer-label">Model answer</span><p>A clinically justified, prespecified margin; assay sensitivity; and constancy of the active comparator&#39;s effect. The inference uses the one-sided confidence interval against the margin, and dropout must be scrutinized because it can bias toward a false noninferiority claim.</p>
+</div>
+</details>
+<details class="kc-item">
+  <summary><span class="kc-num">5</span><span class="kc-q">Why is a striking subgroup finding outside the prespecified analysis treated as hypothesis-generating?</span><span class="kc-toggle" aria-hidden="true">Show answer</span></summary>
+  <div class="kc-answer"><span class="kc-answer-label">Model answer</span><p>Multiplicity inflates the family-wise false-positive probability; only prespecified, multiplicity-controlled analyses are confirmatory.</p>
+</div>
+</details>
+<details class="kc-item">
+  <summary><span class="kc-num">6</span><span class="kc-q">When a single-arm trial uses an external control, where does the burden of proof shift?</span><span class="kc-toggle" aria-hidden="true">Show answer</span></summary>
+  <div class="kc-answer"><span class="kc-answer-label">Model answer</span><p>Onto the argument that the external control is comparable to the treated group; the target-trial framework makes the assumptions and biases explicit.</p>
+</div>
+</details>
+<details class="kc-item">
+  <summary><span class="kc-num">7</span><span class="kc-q">Name three specific biases and one design or analysis feature that addresses each.</span><span class="kc-toggle" aria-hidden="true">Show answer</span></summary>
+  <div class="kc-answer"><span class="kc-answer-label">Model answer</span><p>Examples: selection bias, addressed by concealed randomization; detection bias, addressed by blinded outcome assessment; attrition bias, addressed by intention-to-treat analysis and missing-data sensitivity analyses.</p>
+</div>
+</details></div>
+</section>
+<section class="key-readings" id="key-readings">
+<h2>Key readings</h2>
+<ul>
+<li><a href="https://grants.nih.gov/policy/clinical-trials/CT-Definition-Case-Studies_1-4-18.pdf" target="_blank" rel="noopener">NIH, Clinical Trial Definition Case Studies</a> (design classification drill)</li>
+<li><a href="https://www.fda.gov/drugs/development-resources/complex-innovative-trial-design-meeting-program" target="_blank" rel="noopener">FDA, Complex Innovative Trial Design Meeting Program</a>, with the <a href="https://www.fda.gov/media/188560/download?attachment=" target="_blank" rel="noopener">alopecia external-control case</a> and the <a href="https://www.fda.gov/media/155403/download?attachment=" target="_blank" rel="noopener">master-protocol chronic pain case</a></li>
+<li><a href="https://doi.org/10.1093/aje/kwv254" target="_blank" rel="noopener">Hernán and Robins, 2016, target-trial emulation</a> (reasoning about non-randomized comparisons)</li>
+<li><a href="https://www.fda.gov/files/about%20fda/published/Application-of-Model-Informed-Drug-Development-in-Study-Design-and-Analysis.pdf" target="_blank" rel="noopener">FDA, Application of Model-Informed Drug Development in Study Design and Analysis</a> (modeling and simulation in design)</li>
+<li><a href="https://www.fda.gov/media/186133/download?attachment=" target="_blank" rel="noopener">FDA, LEADER 3D odevixibat case</a> (endpoint selection in a small population)</li>
+</ul>
+
+</section>
+<section class="callout callout-capstone" id="connection-to-the-capstone">
+<h2>Connection to the capstone</h2>
+<p>The critical appraisal and evidence table produced here are work product 3 of the capstone. The appraisal discipline carries directly into Module 5 (judging whether the evidence meets a regulatory standard), Module 6 (reading safety data), Module 7 (appraising real-world evidence), and Modules 8 and 9 (assembling and defending the clinical value argument before payers and HTA committees). The evidence table is a reusable input to the integrated evidence generation plan (Module 10).</p>
+
+</section>
+<div class="lesson-complete">
+  <button class="btn btn-complete" data-complete="m04" type="button">Mark module 4 as complete</button>
+  <span class="lesson-complete-status" role="status"></span>
+</div>
+</article>
+<nav class="prevnext prevnext-bottom" aria-label="Lesson navigation"><a class="pn-link pn-prev" href="../modules/module-03.html"><span class="pn-dir">Previous</span><span class="pn-title">Module 3: Compliance and the nonpromotional boundary</span></a><a class="pn-link pn-next" href="../modules/module-05.html"><span class="pn-dir">Next</span><span class="pn-title">Module 5: Regulatory affairs and approval pathways</span></a></nav>
+</main>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><svg class="seal" width="34" height="34" viewBox="0 0 64 64" role="img" aria-label="BCMAEP seal">
+  <circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="2.5"/>
+  <circle cx="32" cy="32" r="24" fill="none" stroke="currentColor" stroke-width="1"/>
+  <text x="32" y="37" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-weight="bold" fill="currentColor" letter-spacing="0.5">MA</text>
+  <text x="32" y="14.5" text-anchor="middle" font-family="Georgia, serif" font-size="6.5" fill="currentColor" letter-spacing="2">BCMAEP</text>
+  <text x="32" y="55" text-anchor="middle" font-family="Georgia, serif" font-size="6.5" fill="currentColor" letter-spacing="1">EST 2026</text>
+</svg><div><strong>BCMAEP</strong><br>Board Certified Medical Affairs and Evidence Professional</div></div>
+    <div class="footer-cols">
+      <div>
+        <span class="footer-head">Program</span>
+        <a href="../handbook.html">Program handbook</a>
+        <a href="../curriculum.html">Curriculum and syllabus</a>
+        <a href="../assessment.html">Examination blueprint</a>
+        <a href="../capstone.html">Capstone portfolio</a>
+      </div>
+      <div>
+        <span class="footer-head">Governance</span>
+        <a href="../accreditation.html">Accreditation and quality</a>
+        <a href="../ai-policy.html">AI-use policy</a>
+        <a href="../references.html">Source register</a>
+        <a href="../market-alignment.html">Market alignment</a>
+      </div>
+      <div>
+        <span class="footer-head">Help</span>
+        <a href="../index.html#how-to-use">How to use this site</a>
+        <a href="../index.html#program-status">Program status</a>
+        <a href="../curriculum.html#your-progress">Your progress</a>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p><strong>Program status.</strong> Version 1.0 curriculum design, prepared July 2026. This program is a complete curriculum and certification design; it has not undergone job-task-analysis validation, item-bank piloting, formal standard setting, or accreditation review. It is designed for alignment with ISO/IEC 17024, the NCCA Standards, and the ANSI/IACET Standard, and is not accredited by any body at this version (see <a href="../accreditation.html">accreditation and quality alignment</a>).</p>
+      <p><strong>Accessibility.</strong> This site targets WCAG 2.2 Level AA conformance: minimum 4.5:1 text contrast, keyboard-operable interactive components, visible focus indicators, and single-column reflow at narrow widths.</p>
+      <p><strong>Sources.</strong> Teaching claims carry hyperlinked citations to verified authoritative sources; the consolidated pool is the <a href="../references.html">source register</a>. Cited third-party materials are assigned readings; public availability does not grant republication rights.</p>
+    </div>
+  </div>
+</footer>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

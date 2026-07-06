@@ -92,13 +92,13 @@ Licensing: PBAC public document; cite and do not reproduce substantial text.
 
 ## Anchor case F: Pharmacoeconomic critique and communication
 
-Primary sources: the University of Florida pharmacoeconomics and managed-care syllabi and their assignment structures ([UF, Principles of Pharmacoeconomics syllabus](https://curriculum.pharmacy.ufl.edu/wordpress/files/2025/09/PHA5267-Syllabus-2025.pdf); [UF, Introduction to Pharmacoeconomics syllabus](https://onlinepop.pharmacy.ufl.edu/wordpress/files/2025/02/PHA6283-Introduction-to-Pharmacoeconomics_Evergreen-1.pdf); [UF, Managed Care Pharmacy syllabus](https://curriculum.pharmacy.ufl.edu/wordpress/files/2025/11/PHA5209-Syllabus-2025.pdf)).
+Primary sources: the CHEERS 2022 reporting standard and the Second Panel on Cost-Effectiveness reference case (see `references/source_register.md`), and the economic-evaluation methods developed in Module 8. The scenario uses illustrative inputs and is not drawn from a specific product.
 
 Serves: Module 8 (economic evaluation and critique).
 
-Exercise: critique a published economic evaluation with the CHEERS reporting standard, then write a plain-language value memo. These are university course documents used as design references, not open assignment banks; learners produce original critiques.
+Exercise: critique a published economic evaluation against the CHEERS reporting standard, then write a plain-language value memo. Learners produce original critiques.
 
-Licensing: university syllabi; use as design references, cite the source.
+Licensing: the case uses illustrative inputs; any published economic evaluation a learner selects to critique should be cited to its source.
 
 ---
 

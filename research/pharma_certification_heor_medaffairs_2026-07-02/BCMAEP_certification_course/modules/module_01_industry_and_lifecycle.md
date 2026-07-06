@@ -17,7 +17,7 @@ A clinician evaluates a therapy at the point of care: is it approved, is it indi
 
 ## 1.1 The industry and its segments
 
-The industry that develops medicines and medical technologies spans several segments: pharmaceutical companies (traditionally small-molecule drugs), biotechnology companies (biologic and advanced-therapy products), and medical-technology companies (devices and diagnostics). Many organizations now span more than one segment, and the ACMA BCMAS curriculum treats the field as covering pharmaceuticals, medical devices, diagnostics, and emerging areas such as artificial intelligence ([ACMA, BCMAS Program Information](https://medicalaffairsspecialist.org/certifications/bcmas/program-info)).
+The industry that develops medicines and medical technologies spans several segments: pharmaceutical companies (traditionally small-molecule drugs), biotechnology companies (biologic and advanced-therapy products), and medical-technology companies (devices and diagnostics). Many organizations now span more than one segment, and the field as a whole covers pharmaceuticals, biotechnology, medical devices, diagnostics, and emerging areas such as artificial intelligence.
 
 The core economic feature of the industry is that development is long, expensive, and high-risk: most candidate molecules that enter development do not reach approval, and the cost of the successes must cover the cost of the failures. This attrition is why evidence planning, prioritization, and value demonstration (the subjects of Domain C) are central rather than peripheral activities.
 
@@ -50,7 +50,7 @@ The lifecycle above is a common frame, but the modality changes the evidence and
 - **Diagnostics** support treatment decisions and are central to precision-medicine strategies; companion diagnostics may be co-developed with a therapy.
 - **Combination products** join two or more of the above and require coordinated regulatory handling.
 
-The BCMAS curriculum similarly treats device classification, combination products, and diagnostic development as distinct competencies alongside drug development ([ACMA, BCMAS Program Information](https://medicalaffairsspecialist.org/certifications/bcmas/program-info)). For a non-specialist audience, the EUPATI open educational materials give a useful overview of how medicines move from discovery to market and where patients are involved ([EUPATI, discovery and development of medicines](https://toolbox.eupati.eu/resources/discovery-and-development-of-medicines/)).
+Device classification, combination products, and diagnostic development are distinct areas of knowledge alongside drug development. For a non-specialist audience, the EUPATI open educational materials give a useful overview of how medicines move from discovery to market and where patients are involved ([EUPATI, discovery and development of medicines](https://toolbox.eupati.eu/resources/discovery-and-development-of-medicines/)).
 
 ## 1.4 Stakeholders and where value is decided
 
@@ -97,8 +97,6 @@ Required controls: verify every date, phase, and regulatory fact against a prima
 5. Give one reason attrition in development makes evidence prioritization important. (Answer: because resources are finite and most candidates fail, teams must prioritize the evidence that most changes decisions.)
 
 ## Key readings
-
-- [ACMA, BCMAS Program Information](https://medicalaffairsspecialist.org/certifications/bcmas/program-info) (industry scope and competencies)
 - [NIH, Clinical Trial Definition Case Studies](https://grants.nih.gov/policy/clinical-trials/CT-Definition-Case-Studies_1-4-18.pdf)
 - [FDA, Application of Model-Informed Drug Development in Study Design and Analysis](https://www.fda.gov/files/about%20fda/published/Application-of-Model-Informed-Drug-Development-in-Study-Design-and-Analysis.pdf)
 - [EUPATI, discovery and development of medicines](https://toolbox.eupati.eu/resources/discovery-and-development-of-medicines/)

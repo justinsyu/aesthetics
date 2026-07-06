@@ -25,7 +25,7 @@ The shift is not only organizational but temporal. Evidence decisions made years
 
 Integrated evidence generation planning is a cross-functional process that identifies the evidence a product will need across its lifecycle, prioritizes it against the decisions it must inform, and coordinates its generation so that the right evidence is available at the right time for the right stakeholder. It exists because the alternative, siloed study planning, systematically produces gaps and duplication: clinical development optimizes for the registration dossier, HEOR generates value evidence on a separate cycle, and medical affairs collects real-world and post-launch evidence after commitments have already hardened. Each function can execute well and the product can still arrive at an HTA appraisal missing the comparator the committee needs.
 
-The case for integration is now made explicitly in the literature. Schneeweiss and Miksad describe integrated evidence generation as a single view of a medication's evidence needs that runs from early development through payer and budget decisions, coordinating clinical trials, real-world evidence, and economic analysis rather than treating them as sequential handoffs ([Schneeweiss and Miksad, 2025](https://doi.org/10.1002/cpt.3603)). The professional competency frameworks reflect the same shift: the MAPS Medical Affairs Competency Framework lists integrated evidence planning and identifying data gaps as named competencies within its Evidence Generation domain, alongside HEOR and real-world evidence ([MAPS, Foundations in Medical Affairs](https://medicalaffairs.org/medical-affairs-training/)).
+The case for integration is now made explicitly in the literature. Schneeweiss and Miksad describe integrated evidence generation as a single view of a medication's evidence needs that runs from early development through payer and budget decisions, coordinating clinical trials, real-world evidence, and economic analysis rather than treating them as sequential handoffs ([Schneeweiss and Miksad, 2025](https://doi.org/10.1002/cpt.3603)). Integrated evidence planning and the identification of data gaps are increasingly recognized as named competencies for medical affairs and evidence roles, and this program develops them alongside HEOR and real-world evidence.
 
 The core move is to treat evidence generation as a continuous, owned plan rather than a series of studies. Three shifts distinguish the integrated approach from siloed planning:
 
@@ -288,9 +288,7 @@ Required controls: verify every extracted fact, citation, and study characterist
 
 - [Schneeweiss and Miksad, Bench to Budget: Integrated Evidence Generation for Medications, 2025](https://doi.org/10.1002/cpt.3603)
 - [Wang et al., building HTA and payer perspectives into development through a dynamic target product profile, 2022](https://doi.org/10.3389/fphar.2022.948161)
-- [Vreman et al., getting the right evidence after drug approval, 2020](https://doi.org/10.3389/fphar.2020.569535)
-- [MAPS, Foundations in Medical Affairs](https://medicalaffairs.org/medical-affairs-training/) (Evidence Generation domain: integrated evidence planning and identifying data gaps)
-- [MAPS, launch-excellence masterclass brochure](https://medicalaffairs.org/wp-content/uploads/2023/05/MAPS-MasterClass-Singapore-English-Brochure-5.13-min.pdf)
+- [Vreman et al., getting the right evidence after drug approval, 2020](https://doi.org/10.3389/fphar.2020.569535)- [MAPS, launch-excellence masterclass brochure](https://medicalaffairs.org/wp-content/uploads/2023/05/MAPS-MasterClass-Singapore-English-Brochure-5.13-min.pdf)
 - [Fleurence et al., generative AI for HTA, 2025](https://doi.org/10.1016/j.jval.2024.10.3846) and [a taxonomy of generative AI in HEOR, 2025](https://doi.org/10.1016/j.jval.2025.04.2167)
 
 ## Connection to the capstone

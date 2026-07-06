@@ -60,7 +60,7 @@ Applied deliverable: a cross-functional responsibility map for a launch scenario
 
 AI-use focus: using AI to draft a stakeholder map and a metrics framework, with human review for accuracy and compliance.
 
-Source anchors: MAPS competency framework and practice materials; DIA medical affairs curriculum; IQVIA and Worldwide medical affairs perspectives; MAPS innovation and metrics materials.
+Source anchors: medical affairs professional-society practice and benchmark materials; IQVIA and Worldwide medical affairs perspectives; industry innovation and metrics materials.
 
 ---
 
@@ -179,7 +179,7 @@ Applied deliverable: an introductory spreadsheet cost-effectiveness model for an
 
 AI-use focus: using AI to structure a model and draft documentation, with independent verification of model logic and inputs; when to use spreadsheet versus programmed models.
 
-Source anchors: University of Washington economic-evaluation syllabus topics; ISPOR HEOR education; University of Florida pharmacoeconomics materials; CHEERS reporting standard.
+Source anchors: standard economic-evaluation method topics; CHEERS reporting standard; the Second Panel on Cost-Effectiveness in Health and Medicine reference case.
 
 ---
 
@@ -199,7 +199,7 @@ Applied deliverable: an HTA submission outline for an assigned product for one j
 
 AI-use focus: using AI to compare agency methods and draft a submission skeleton, with verification against each agency's published manual.
 
-Source anchors: University of Washington global HTA and market access syllabus topics; ICER guide to understanding HTA; NICE health technology evaluations manual; iDSI HTA toolkit; AMCP Format for Formulary Submissions.
+Source anchors: ICER guide to understanding HTA; NICE health technology evaluations manual; iDSI HTA toolkit; AMCP Format for Formulary Submissions.
 
 ---
 
@@ -219,7 +219,7 @@ Applied deliverable: a full integrated evidence generation plan outline for the 
 
 AI-use focus: using AI for evidence-landscape mapping and gap detection, then human prioritization and verification; documenting AI contributions in the plan.
 
-Source anchors: MAPS strategic evidence generation guidance; DiMe integrated evidence resources; peer-reviewed integrated evidence generation literature (see `references/source_register.md`); IQVIA and Axtria integrated evidence planning materials.
+Source anchors: professional-society strategic evidence-generation guidance; DiMe integrated evidence resources; peer-reviewed integrated evidence generation literature (see `references/source_register.md`); IQVIA and Axtria integrated evidence planning materials.
 
 ---
 
@@ -239,7 +239,7 @@ Applied deliverable: a KOL engagement plan and an insight-capture template for t
 
 AI-use focus: using AI for KOL landscape drafting and insight theme synthesis, with human validation and privacy safeguards.
 
-Source anchors: MSL Society board-certification and training materials; MAPS and IQVIA field-medical materials; MAPS/H1 KOL intelligence case.
+Source anchors: professional-society and IQVIA field-medical materials; MAPS/H1 KOL intelligence case.
 
 ---
 
@@ -259,7 +259,7 @@ Applied deliverable: a nonpromotional congress abstract (HEOR impact-case format
 
 AI-use focus: permitted and disclosed AI assistance in drafting and literature search; the GPP and ICMJE positions on AI authorship; verification of all references.
 
-Source anchors: GPP 2022; ICMJE recommendations; ISPOR impact-case and workshop examples; MAPS scientific-communication materials.
+Source anchors: GPP 2022; ICMJE recommendations; professional-society scientific-communication materials.
 
 ---
 
@@ -278,7 +278,7 @@ Applied deliverable: an advisory board objectives-and-agenda document for the ca
 
 AI-use focus: using AI to synthesize advisory-board pre-reads and draft summaries, with human validation and attribution.
 
-Source anchors: MAPS advisory-board and challenges-to-opportunities materials; APGO responsible-interaction materials; compliance frameworks from Module 3.
+Source anchors: professional-society advisory-board practice materials; responsible-interaction guidance; compliance frameworks from Module 3.
 
 ---
 
@@ -298,7 +298,7 @@ Applied deliverable: an AI-use plan and audit log for the capstone, and an evalu
 
 AI-use focus: this module defines the standard applied everywhere else.
 
-Source anchors: FDA AI draft guidance (2025); EMA reflection paper on AI (2024); ISPOR working-group reports on machine learning and generative AI in HEOR; GPP 2022 and ICMJE positions on AI; MAPS AI position materials (see `references/source_register.md`).
+Source anchors: FDA AI draft guidance (2025); EMA reflection paper on AI (2024); peer-reviewed working-group reports on machine learning and generative AI in HEOR; GPP 2022 and ICMJE positions on AI; professional-society AI position materials (see `references/source_register.md`).
 
 ---
 
@@ -318,7 +318,7 @@ Applied deliverable: a capstone executive summary and a five-minute recorded or 
 
 AI-use focus: using AI to rehearse and refine communication while preserving authenticity and disclosure.
 
-Source anchors: DIA case-competition and communication materials; MAPS strategy and leadership materials; Rutgers and fellowship role-competency benchmarks.
+Source anchors: professional-society strategy and leadership materials; documented industry role-competency descriptions.
 
 ---
 

@@ -33,7 +33,7 @@ All economic evaluations compare at least two options on both costs and conseque
 | Cost-benefit | Monetary value of outcomes | Comparison beyond health |
 | Cost-consequence | Disaggregated list of consequences | Multiple outcomes left for the reader |
 
-Selecting the type follows from the decision and the decision maker. When a jurisdiction's HTA body evaluates in cost per QALY, a cost-utility analysis is required to engage with it; the choice is not a matter of preference. University pharmacoeconomics curricula organize the field along exactly these categories and the situations that select among them ([UF, Principles of Pharmacoeconomics syllabus](https://curriculum.pharmacy.ufl.edu/wordpress/files/2025/09/PHA5267-Syllabus-2025.pdf)).
+Selecting the type follows from the decision and the decision maker. When a jurisdiction's HTA body evaluates in cost per QALY, a cost-utility analysis is required to engage with it; the choice is not a matter of preference. These evaluation types, and the decision situations that select among them, are the standard categories of pharmacoeconomic analysis.
 
 ## 8.2 Perspective, the reference case, and the impact inventory
 
@@ -165,7 +165,7 @@ Overstating certainty, or presenting a favorable point estimate without its unce
 
 ## Worked example: computing and interpreting an ICER (anchor case F)
 
-Anchor case F is the pharmacoeconomic critique case built on the University of Florida syllabi ([UF, Introduction to Pharmacoeconomics syllabus](https://onlinepop.pharmacy.ufl.edu/wordpress/files/2025/02/PHA6283-Introduction-to-Pharmacoeconomics_Evergreen-1.pdf)). The following inputs are illustrative and are used only to demonstrate the arithmetic and its interpretation; they are not drawn from a specific product.
+Anchor case F is the pharmacoeconomic critique case in the case library. The following inputs are illustrative and are used only to demonstrate the arithmetic and its interpretation; they are not drawn from a specific product.
 
 Consider a new drug B compared with standard care A over a defined horizon, from a health care sector perspective, with costs and QALYs discounted at 3% ([Sanders et al., 2016](https://doi.org/10.1001/jama.2016.12195)).
 
@@ -190,7 +190,7 @@ Sensitivity analysis is required before that conclusion is trusted. A one-way an
 
 The conclusion is most sensitive to the incremental QALY, which is therefore where additional evidence would be most valuable; across the ranges shown, the ICER remains below common thresholds. A probabilistic sensitivity analysis would go further and report the probability that B is cost-effective at each threshold.
 
-Now contrast the budget impact. Suppose 8,000 patients are eligible and treated in the first year, and the net cost per patient (drug cost minus offset savings) is $30,000. The first-year budget impact is 8,000 x $30,000 = $240 million, regardless of the favorable ICER. This is the divergence in section 8.9: B is cost-effective per QALY yet may still exceed what the payer can absorb in a single year, which is why the value story must address both the ratio and the total. The University of Florida managed-care syllabus situates exactly this payer reasoning ([UF, Managed Care Pharmacy syllabus](https://curriculum.pharmacy.ufl.edu/wordpress/files/2025/11/PHA5209-Syllabus-2025.pdf)).
+Now contrast the budget impact. Suppose 8,000 patients are eligible and treated in the first year, and the net cost per patient (drug cost minus offset savings) is $30,000. The first-year budget impact is 8,000 x $30,000 = $240 million, regardless of the favorable ICER. This is the divergence in section 8.9: B is cost-effective per QALY yet may still exceed what the payer can absorb in a single year, which is why the value story must address both the ratio and the total. Weighing the cost-effectiveness ratio against the total budget impact in this way is central to managed-care assessment.
 
 ## Worked example: reading a committee's cost-effectiveness reasoning (anchor case D)
 
@@ -236,8 +236,6 @@ Required controls: independently verify the model logic and every input; an AI a
 - [ICER, Guide to Understanding Health Technology Assessment](https://icer.org/wp-content/uploads/2020/10/ICER-Guide-to-Understanding-Health-Technology-Assessment-6.19.18.pdf) and [NICE, health technology evaluations manual (PMG36)](https://www.nice.org.uk/guidance/pmg36/resources/nice-technology-appraisal-and-highly-specialised-technologies-guidance-the-manual-pdf-72286779244741) (thresholds and decision rules)
 - [AMCP, Format for Formulary Submissions guidance](https://www.amcp.org/resource/amcp-format-formulary-submissions-guidance) (how cost-effectiveness and budget-impact evidence are presented to payers)
 - [PBAC, Public Summary Document, pembrolizumab early triple-negative breast cancer, 2023](https://www.pbs.gov.au/industry/pbac/psd/2023/03/pembrolizumab-early-tnbc-psd-03-2023.pdf?variant=3) and [PBAC, Guidelines for preparing a submission, version 5](https://pbac.pbs.gov.au/content/information/files/pbac-guidelines-version-5.pdf) (a committee's cost-effectiveness reasoning)
-- [UF, Principles of Pharmacoeconomics syllabus](https://curriculum.pharmacy.ufl.edu/wordpress/files/2025/09/PHA5267-Syllabus-2025.pdf) and [UF, Introduction to Pharmacoeconomics syllabus](https://onlinepop.pharmacy.ufl.edu/wordpress/files/2025/02/PHA6283-Introduction-to-Pharmacoeconomics_Evergreen-1.pdf) (evaluation types and worked methods)
-
 ## Connection to the capstone
 
 The cost-effectiveness model and interpretation memo built here are the cost-effectiveness summary inside the HTA or payer submission outline (capstone work product 6), which Module 9 develops into a full submission argument for a chosen jurisdiction. The effectiveness inputs to this model trace back to the RWE feasibility reasoning of Module 7 and to the evidence matrix of Module 10: an ICER is only as credible as the effectiveness estimate that feeds it, which is why the economic and evidence-generation work products are assessed as one integrated portfolio.

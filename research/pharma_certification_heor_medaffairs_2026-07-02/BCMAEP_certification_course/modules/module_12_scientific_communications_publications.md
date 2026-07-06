@@ -40,9 +40,9 @@ Its purpose is consistency and accuracy: field medical (Module 11), publications
 
 The lexicon is governed centrally so that the same term carries the same meaning across functions. Divergent terminology between the field, publications, and medical information is a common source of inconsistency and of inadvertent statements that drift beyond the evidence.
 
-The competency of building and maintaining these communications is formalized in the field. The Certified Medical Publication Professional (CMPP) credential tests three duties (develop a publication plan, implement the plan, and foster ethical and compliant behavior) through a 150-item examination on a five-year credential cycle ([ISMPP, CMPP certification](https://www.ismpp.org/cmpp)).
+The competency of building and maintaining these communications is well established in the field, and it centers on three duties: developing a publication plan, implementing it, and fostering ethical and compliant publication practice.
 
-Scientific communication sits within the Customer Engagement and Scientific Communications domain of the MAPS competency framework ([MAPS, Foundations in Medical Affairs](https://medicalaffairs.org/medical-affairs-training/)), and building a coherent platform under data and budget constraints is a recognized medical affairs skill ([MAPS, Converting Challenges Into Opportunities](https://medicalaffairs.org/wp-content/uploads/2021/05/Challenges-to-Opportunities.pdf)).
+Scientific communication sits within the program's scientific communication and field medical domain (Domain D), and building a coherent platform under data and budget constraints is a recognized medical affairs skill ([MAPS, Converting Challenges Into Opportunities](https://medicalaffairs.org/wp-content/uploads/2021/05/Challenges-to-Opportunities.pdf)).
 
 ## 12.2 Publication planning and GPP 2022
 
@@ -210,11 +210,7 @@ Required controls: the human authors remain fully accountable; every AI-generate
 
 - [DeTora et al., Good Publication Practice (GPP 2022) Update, Ann Intern Med 2022](https://doi.org/10.7326/M22-1460) (publication planning and ethics)
 - [ICMJE, Defining the Role of Authors and Contributors](https://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html) (authorship, contributorship, disclosure, and AI provisions)
-- [ISPOR, HEOR impact-case abstract example](https://www.ispor.org/docs/default-source/ispor-eu-2025/impact-cases-abstract-example.pdf?sfvrsn=1dfb3b54_3) and [ISPOR, workshop proposal example](https://www.ispor.org/docs/default-source/ispor-eu-2025/workshop-proposal-example_2025.pdf?sfvrsn=7bdad0f5_1) (nonpromotional congress standard)
-- [ISMPP, CMPP certification](https://www.ismpp.org/cmpp) (publication professional competencies)
-- [AMCP, pre-approval and post-approval clinical and economic evidence guidance](https://www.amcp.org/resource/amcp-format-formulary-submissions-guidance-submission-pre-approval-and-post-approval-clinical-and) (payer information exchange)
-- [MAPS, Foundations in Medical Affairs](https://medicalaffairs.org/medical-affairs-training/) (Customer Engagement and Scientific Communications domain)
-
+- [ISPOR, HEOR impact-case abstract example](https://www.ispor.org/docs/default-source/ispor-eu-2025/impact-cases-abstract-example.pdf?sfvrsn=1dfb3b54_3) and [ISPOR, workshop proposal example](https://www.ispor.org/docs/default-source/ispor-eu-2025/workshop-proposal-example_2025.pdf?sfvrsn=7bdad0f5_1) (nonpromotional congress standard)- [AMCP, pre-approval and post-approval clinical and economic evidence guidance](https://www.amcp.org/resource/amcp-format-formulary-submissions-guidance-submission-pre-approval-and-post-approval-clinical-and) (payer information exchange)
 ## Connection to the capstone
 
 The nonpromotional congress abstract produced here completes capstone work product 7, joining the KOL engagement plan from Module 11. The abstract draws its content from the HEOR and HTA work products (Modules 8 and 9, work product 6) and its evidence questions from the integrated evidence generation plan (Module 10, work product 5), demonstrating that a value result generated for a payer can be communicated to the scientific community within the nonpromotional standard. The standard medical-information response document and all AI-assisted drafting are recorded in the portfolio compliance and AI-use record (Module 14, work product 8).

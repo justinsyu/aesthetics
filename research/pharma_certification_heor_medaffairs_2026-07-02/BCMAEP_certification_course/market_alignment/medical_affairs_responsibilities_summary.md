@@ -1,6 +1,6 @@
 # Medical Affairs Responsibilities: Frequency Analysis and Curriculum Alignment
 
-Prepared 2026-07-02. Companion to `job_description_links.md` (the link index) and the `raw/` per-agent collections (the full responsibility bullets).
+Prepared 2026-07-02. Companion to the job-posting link index and the per-agent raw collections (the full responsibility bullets), both in the repository archive.
 
 ## Purpose
 
@@ -8,7 +8,7 @@ This document does two things. First, it ranks the responsibilities that appear 
 
 ## Method and its limits
 
-The evidence base is approximately 75 job postings collected by web search on 2026-07-02 across more than 33 companies and five role families (field medical/MSL; medical affairs management and medical director; medical information, communications, and publications; HEOR, market access, and real-world evidence; and biotech/mid-size roles), plus 6 durable role-definition references (the [MSL Society](https://themsls.org/what-is-an-msl/), the [MAPS Medical Affairs Competency Framework](https://medicalaffairs.org/maps-medical-affairs-competency-framework/), [Rutgers](https://grad.rutgers.edu/news/career-spotlight-medical-science-liaison), [ExploreHealthCareers](https://explorehealthcareers.org/careers/allied-health-professions/medical-science-liaison/), an [MSL competency study](https://themsls.org/study-reveals-medical-science-liaison-competencies-contribute-success/), and an [APPA/IFAPP/MAPS/MSLS position statement](https://pmc.ncbi.nlm.nih.gov/articles/PMC8492581/)).
+The evidence base is approximately 75 job postings collected by web search on 2026-07-02 across 39 companies and organizations and five role families (field medical/MSL; medical affairs management and medical director; medical information, communications, and publications; HEOR, market access, and real-world evidence; and biotech/mid-size roles), supplemented by durable role-definition references, notably a peer-reviewed joint position statement on the medical science liaison profession ([position statement, PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC8492581/)) and a public allied-health career description ([ExploreHealthCareers, medical science liaison](https://explorehealthcareers.org/careers/allied-health-professions/medical-science-liaison/)).
 
 The counts below are thematic tallies, not exact measurements. Responsibilities are worded differently across postings, so each theme groups several phrasings, and a single posting can contribute to many themes. Roughly one third of the individual postings were fetched in full; the remainder were captured from search-result summaries, which under-report the longer duty lists. The numbers should therefore be read as prevalence tiers, not precise frequencies. Where a theme is concentrated in one role family, that is noted.
 

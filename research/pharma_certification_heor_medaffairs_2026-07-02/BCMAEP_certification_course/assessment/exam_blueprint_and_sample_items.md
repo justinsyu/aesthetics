@@ -9,8 +9,8 @@ Companion to `00_program_handbook.md` (section 8) and the competency framework (
 - Format: proctored, multiple-choice (single best answer), delivered online with remote or center-based proctoring.
 - Length: 150 scored items plus 15 unscored pilot items (165 total).
 - Time: 3 hours.
-- Retakes: up to four attempts, consistent with common board-exam retake policy ([ACMA, BCMAS Program Information](https://medicalaffairsspecialist.org/certifications/bcmas/program-info)).
-- Scope: broad application across the domains, independent of any single module, consistent with the definition of a certification examination as broad in scope and independent of a specific learning event ([MSL Society, MSL-BC](https://themsls.org/msl-board-certification/)).
+- Retakes: up to four attempts.
+- Scope: broad application across the domains, independent of any single module, consistent with the defining feature of a certification examination: it assesses competency independently of any specific learning event.
 
 The examination is one of two required components; the capstone portfolio is the other (`assessment/capstone_portfolio_and_rubrics.md`).
 
@@ -135,7 +135,7 @@ B. To identify the differences between the evidence stakeholders will require an
 C. To design the phase III protocol.
 D. To set the launch price.
 
-Correct: B. Rationale: an evidence-gap assessment compares required evidence (across regulators, HTA and payers, clinicians, and patients) with available and planned evidence, and it drives prioritization of evidence questions in the plan (Module 10). This reflects the MAPS Evidence Generation domain competencies of integrated evidence planning and identifying data gaps ([MAPS, Foundations in Medical Affairs](https://medicalaffairs.org/medical-affairs-training/)).
+Correct: B. Rationale: an evidence-gap assessment compares required evidence (across regulators, HTA and payers, clinicians, and patients) with available and planned evidence, and it drives prioritization of evidence questions in the plan (Module 10).
 
 ### Sample item 8 (Domain D, application)
 

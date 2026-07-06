@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Module 7: Real-world data and real-world evidence | BCMAEP</title>
+<meta name="description" content="BCMAEP Module 7: Real-world data and real-world evidence. Domain C lesson with objectives, worked example, applied activity, and knowledge check.">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2064%2064%22%20role%3D%22img%22%20aria-label%3D%22BCMAEP%20seal%22%3E%0A%20%20%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%2230%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%2224%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%3Ctext%20x%3D%2232%22%20y%3D%2237%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2C%20'Times%20New%20Roman'%2C%20serif%22%20font-size%3D%2215%22%20font-weight%3D%22bold%22%20fill%3D%22currentColor%22%20letter-spacing%3D%220.5%22%3EMA%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%2232%22%20y%3D%2214.5%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2C%20serif%22%20font-size%3D%226.5%22%20fill%3D%22currentColor%22%20letter-spacing%3D%222%22%3EBCMAEP%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2C%20serif%22%20font-size%3D%226.5%22%20fill%3D%22currentColor%22%20letter-spacing%3D%221%22%3EEST%202026%3C%2Ftext%3E%0A%3C%2Fsvg%3E">
+</head>
+<body class="page-lesson">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="sidebar">
+      <span class="nav-toggle-bars" aria-hidden="true"></span> Menu
+    </button>
+    <a class="brand" href="../index.html">
+      <svg class="seal" width="38" height="38" viewBox="0 0 64 64" role="img" aria-label="BCMAEP seal">
+  <circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="2.5"/>
+  <circle cx="32" cy="32" r="24" fill="none" stroke="currentColor" stroke-width="1"/>
+  <text x="32" y="37" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-weight="bold" fill="currentColor" letter-spacing="0.5">MA</text>
+  <text x="32" y="14.5" text-anchor="middle" font-family="Georgia, serif" font-size="6.5" fill="currentColor" letter-spacing="2">BCMAEP</text>
+  <text x="32" y="55" text-anchor="middle" font-family="Georgia, serif" font-size="6.5" fill="currentColor" letter-spacing="1">EST 2026</text>
+</svg>
+      <span class="brand-text">
+        <span class="brand-name">BCMAEP</span>
+        <span class="brand-sub">Board Certified Medical Affairs and Evidence Professional</span>
+      </span>
+    </a>
+    <nav class="top-nav" aria-label="Primary">
+      <a href="../index.html">Overview</a>
+      <a href="../curriculum.html">Curriculum</a>
+      <a href="../assessment.html">Assessment</a>
+      <a href="../accreditation.html">Accreditation</a>
+      <a href="../references.html">Sources</a>
+    </nav>
+  </div>
+</header>
+<div class="layout">
+
+<nav class="sidebar" id="sidebar" aria-label="Course navigation">
+  <div class="snav-group">
+    <span class="snav-head">Program</span>
+    <ul>
+      <li><a class="snav-link " href="../index.html">Overview</a></li>
+      <li><a class="snav-link " href="../handbook.html">Program handbook</a></li>
+      <li><a class="snav-link " href="../curriculum.html">Curriculum and syllabus</a></li>
+    </ul>
+  </div>
+  <div class="snav-group">
+    <span class="snav-head">Modules</span>
+    <div class="snav-progress" aria-hidden="true"><div class="snav-progress-bar" id="snav-progress-bar"></div></div>
+    <p class="snav-progress-text" id="snav-progress-text" role="status"></p>
+    <ul class="snav-domains">
+<li class="snav-domain"><span class="snav-domain-label">Domain A &middot; Industry orientation and translation</span><ul><li><a class="snav-link snav-module" data-module="m01" href="../modules/module-01.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">1</span><span>Industry and the development lifecycle</span></a></li>
+<li><a class="snav-link snav-module" data-module="m02" href="../modules/module-02.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">2</span><span>The medical affairs operating model</span></a></li>
+<li><a class="snav-link snav-module" data-module="m03" href="../modules/module-03.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">3</span><span>Compliance and the nonpromotional boundary</span></a></li></ul></li>
+<li class="snav-domain"><span class="snav-domain-label">Domain B &middot; Scientific and clinical foundations</span><ul><li><a class="snav-link snav-module" data-module="m04" href="../modules/module-04.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">4</span><span>Trial design, biostatistics, and appraisal</span></a></li>
+<li><a class="snav-link snav-module" data-module="m05" href="../modules/module-05.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">5</span><span>Regulatory affairs and approval pathways</span></a></li>
+<li><a class="snav-link snav-module" data-module="m06" href="../modules/module-06.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">6</span><span>Pharmacovigilance and risk management</span></a></li></ul></li>
+<li class="snav-domain"><span class="snav-domain-label">Domain C &middot; Evidence generation, HEOR, HTA, and market access</span><ul><li><a class="snav-link snav-module" data-module="m07" aria-current="page" href="../modules/module-07.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">7</span><span>Real-world data and evidence</span></a></li>
+<li><a class="snav-link snav-module" data-module="m08" href="../modules/module-08.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">8</span><span>HEOR methods and economic evaluation</span></a></li>
+<li><a class="snav-link snav-module" data-module="m09" href="../modules/module-09.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">9</span><span>HTA and global market access</span></a></li>
+<li><a class="snav-link snav-module" data-module="m10" href="../modules/module-10.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">10</span><span>Integrated evidence generation planning</span></a></li></ul></li>
+<li class="snav-domain"><span class="snav-domain-label">Domain D &middot; Scientific communication and field medical</span><ul><li><a class="snav-link snav-module" data-module="m11" href="../modules/module-11.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">11</span><span>MSL excellence and field medical</span></a></li>
+<li><a class="snav-link snav-module" data-module="m12" href="../modules/module-12.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">12</span><span>Scientific communications and publications</span></a></li>
+<li><a class="snav-link snav-module" data-module="m13" href="../modules/module-13.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">13</span><span>Advisory boards, ISR, and education</span></a></li></ul></li>
+<li class="snav-domain"><span class="snav-domain-label">Domain E &middot; AI, data, and professional practice</span><ul><li><a class="snav-link snav-module" data-module="m14" href="../modules/module-14.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">14</span><span>AI and data fluency</span></a></li>
+<li><a class="snav-link snav-module" data-module="m15" href="../modules/module-15.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">15</span><span>Professional practice and transition</span></a></li></ul></li>
+    </ul>
+  </div>
+  <div class="snav-group">
+    <span class="snav-head">Assessment</span>
+    <ul>
+      <li><a class="snav-link " href="../assessment.html">Examination blueprint</a></li>
+      <li><a class="snav-link " href="../capstone.html">Capstone portfolio</a></li>
+      <li><a class="snav-link " href="../cases.html">Case library</a></li>
+    </ul>
+  </div>
+  <div class="snav-group">
+    <span class="snav-head">Governance</span>
+    <ul>
+      <li><a class="snav-link " href="../ai-policy.html">AI-use policy</a></li>
+      <li><a class="snav-link " href="../accreditation.html">Accreditation and quality</a></li>
+    </ul>
+  </div>
+  <div class="snav-group">
+    <span class="snav-head">Reference</span>
+    <ul>
+      <li><a class="snav-link " href="../references.html">Source register</a></li>
+      <li><a class="snav-link " href="../market-alignment.html">Market alignment</a></li>
+    </ul>
+  </div>
+</nav>
+<main id="main" class="main">
+
+<nav class="breadcrumbs" aria-label="Breadcrumb"><ol>
+  <li><a href="../index.html">BCMAEP</a></li>
+  <li><a href="../curriculum.html">Curriculum</a></li>
+  <li aria-current="page">Module 7</li>
+</ol></nav>
+<nav class="prevnext prevnext-top" aria-label="Lesson navigation"><a class="pn-link pn-prev" href="../modules/module-06.html"><span class="pn-dir">Previous</span><span class="pn-title">Module 6: Pharmacovigilance and risk management</span></a><a class="pn-link pn-next" href="../modules/module-08.html"><span class="pn-dir">Next</span><span class="pn-title">Module 8: HEOR methods and economic evaluation</span></a></nav>
+<article class="lesson" data-module="m07">
+<header class="lesson-header">
+  <p class="lesson-meta"><span>Module 7 of 15</span><span class="meta-sep" aria-hidden="true">&middot;</span><span>Domain C</span><span class="meta-sep" aria-hidden="true">&middot;</span><span>approximately 7 hours of structured effort</span><span class="meta-sep" aria-hidden="true">&middot;</span><span>about 25 minutes of core reading</span><span class="meta-sep" aria-hidden="true">&middot;</span><span>10 knowledge-check questions</span></p>
+  <h1>Real-world data and real-world evidence</h1>
+  <p class="lesson-domain">Domain C (Real-world evidence, health economics, and value). Approximately 7 hours.</p>
+</header>
+<nav class="lesson-toc" aria-label="In this module"><span class="lesson-toc-head">In this module</span><ol><li><a href="#71-real-world-data-and-the-source-taxonomy">7.1 Real-world data and the source taxonomy</a></li><li><a href="#72-fitness-for-purpose">7.2 Fitness for purpose</a></li><li><a href="#73-from-association-to-a-causal-question-target-trial-emulation">7.3 From association to a causal question: target-trial emulation</a></li><li><a href="#74-causal-inference-assumptions-in-plain-terms">7.4 Causal-inference assumptions in plain terms</a></li><li><a href="#75-comparative-effectiveness-rwe-and-design-options">7.5 Comparative-effectiveness RWE and design options</a></li><li><a href="#76-external-and-synthetic-control-arms">7.6 External and synthetic control arms</a></li><li><a href="#77-threats-to-validity-and-the-methods-that-address-them">7.7 Threats to validity and the methods that address them</a></li><li><a href="#78-transparency-and-reproducibility">7.8 Transparency and reproducibility</a></li><li><a href="#79-regulator-and-hta-acceptability">7.9 Regulator and HTA acceptability</a></li><li><a href="#710-matching-the-evidence-to-the-decision">7.10 Matching the evidence to the decision</a></li><li><a href="#711-common-failure-modes">7.11 Common failure modes</a></li><li><a href="#worked-example-reasoning-about-an-external-control-anchor-case-b">Worked example</a></li><li><a href="#applied-activity-produces-input-to-capstone-work-product-5">Applied activity</a></li><li><a href="#ai-use-focus">AI-use focus</a></li><li><a href="#knowledge-check">Knowledge check</a></li><li><a href="#key-readings">Key readings</a></li></ol></nav>
+<section class="objectives" id="learning-objectives" aria-labelledby="learning-objectives-h">
+<h2 id="learning-objectives-h">Learning objectives</h2>
+<p>On completion, the learner can:</p>
+<ol>
+<li>Distinguish real-world data (RWD) sources, including claims, electronic health records, registries, and patient-generated data, and judge their fitness for a stated purpose. (C)</li>
+<li>Explain real-world evidence (RWE) study designs, including target-trial emulation, comparative-effectiveness cohorts, and externally controlled designs, and their acceptability to regulators and health technology assessment (HTA) bodies. (C)</li>
+<li>Identify the principal threats to validity in RWE (confounding, selection, and misclassification) and the design and analytic methods that address them. (C)</li>
+<li>State when RWE can support a regulatory or access decision and when it cannot. (C)</li>
+</ol>
+
+</section>
+<section class="callout callout-why" id="why-this-matters-for-the-career-changer">
+<h2>Why this matters for the career changer</h2>
+<p>A clinician reads a randomized trial and asks whether its result applies to the patient in front of them. An evidence professional in industry works one layer further out: much of the evidence that payers, HTA bodies, and regulators request after approval cannot come from a new randomized trial, because the trial would be too slow, too small, unethical, or infeasible. That evidence is generated instead from data produced during routine care. The task is to decide which real-world data source can answer a specific question, which study design turns that data into a credible causal comparison, and how far a regulator or payer will accept the result. Getting the right evidence after approval is a recognized and distinct problem, and it is not solved by defaulting to whatever data are easiest to obtain (<a href="https://doi.org/10.3389/fphar.2020.569535" target="_blank" rel="noopener">Vreman et al., 2020</a>). This module builds the reasoning that a later integrated evidence plan (Module 10) depends on.</p>
+
+</section>
+<section class="lesson-section" id="71-real-world-data-and-the-source-taxonomy">
+<h2>7.1 Real-world data and the source taxonomy</h2>
+<p>Real-world data are data relating to patient health status or the delivery of health care that are collected outside the setting of a conventional randomized trial. Real-world evidence is the clinical evidence about the use, benefits, or risks of a product that is derived from analysis of such data. The distinction matters: data are not evidence until a study design and an analysis convert them into an answer to a defined question.</p>
+<p>The main source categories differ in what they capture and what they omit:</p>
+<ul>
+<li><strong>Administrative claims.</strong> Generated for billing. They capture enrollment, diagnoses, procedures, and dispensed prescriptions across large populations and long follow-up, but they record what was billed, not what was clinically observed, and they lack laboratory values, vital signs, and results.</li>
+<li><strong>Electronic health records (EHR).</strong> Generated during care. They capture clinical detail (laboratory results, vital signs, clinician notes, imaging) but are fragmented across systems, incomplete when a patient receives care elsewhere, and irregular in timing.</li>
+<li><strong>Product and disease registries.</strong> Assembled deliberately for a defined population. They can capture disease-specific variables and long-term outcomes but depend on site participation and consistent data entry.</li>
+<li><strong>Patient-generated health data.</strong> From wearables, applications, and patient-reported outcome instruments. They capture the patient&#39;s experience and between-visit measurements but vary in validation and completeness.</li>
+<li><strong>Linked and composite sources.</strong> Mortality files, pharmacy dispensing, genomic data, and social or administrative data linked to the above to fill specific gaps.</li>
+</ul>
+<p>The strengths and limitations follow directly from why each source exists:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Primary strength</th>
+<th>Principal limitation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Administrative claims</td>
+<td>Large population, long continuous follow-up</td>
+<td>No clinical results; records billing, not observation</td>
+</tr>
+<tr>
+<td>Electronic health records</td>
+<td>Clinical detail</td>
+<td>Fragmented across systems; incomplete; irregular timing</td>
+</tr>
+<tr>
+<td>Product and disease registries</td>
+<td>Disease-specific variables, long-term outcomes</td>
+<td>Depend on site participation and consistent entry</td>
+</tr>
+<tr>
+<td>Patient-generated health data</td>
+<td>Between-visit and patient-experience measures</td>
+<td>Variable validation and completeness</td>
+</tr>
+<tr>
+<td>Linked and composite sources</td>
+<td>Fill specific gaps (mortality, genomics)</td>
+<td>Linkage error; access and privacy constraints</td>
+</tr>
+</tbody></table></div>
+<p>No single source is complete, and the deficits are structural rather than incidental: claims omit clinical results because billing does not require them, and EHR data are incomplete because care is delivered across unconnected systems. The reason integrated evidence generation now spans the product lifecycle, from development through post-approval, is that different decisions require different data assembled deliberately rather than opportunistically (<a href="https://doi.org/10.1002/cpt.3603" target="_blank" rel="noopener">Schneeweiss &amp; Miksad, 2025</a>).</p>
+<p>To study a question across several databases, the sources are often transformed to a common data model, a standardized structure and vocabulary that lets the same analytic code run on each database so results can be compared or pooled. Common data models support multi-database and distributed analyses, in which patient-level data need not leave each site, which eases privacy constraints. The cost is that work shifts onto the mapping step, and an error in mapping a source to the model propagates to every study that uses it.</p>
+
+</section>
+<section class="lesson-section" id="72-fitness-for-purpose">
+<h2>7.2 Fitness for purpose</h2>
+<p>A source is not good or bad in the abstract; it is fit or unfit for a specific question. Two dimensions organize the judgment.</p>
+<p><strong>Relevance</strong> asks whether the data contain what the question requires:</p>
+<ul>
+<li>the target population, at sufficient size;</li>
+<li>the exposure and a suitable comparator, both identifiable;</li>
+<li>the outcome, measured in an interpretable and consistent way;</li>
+<li>the covariates needed to control confounding; and</li>
+<li>follow-up long enough to observe the outcome.</li>
+</ul>
+<p><strong>Reliability</strong> asks whether the recorded values can be trusted:</p>
+<ul>
+<li>accuracy of key variables against a reference where one exists;</li>
+<li>completeness, including how missing data arise and how much is missing;</li>
+<li>consistency of definitions across sites and over calendar time; and</li>
+<li>provenance that is documented and auditable from collection through transformation to analysis.</li>
+</ul>
+<p>The practical drill for any proposed study is to write the question first (population, exposure, comparator, outcome, and time), then test each candidate source against relevance and reliability. A claims database with five years of follow-up may be fit to study a hospitalization outcome and unfit to study a laboratory-defined response that it never records. Stating the mismatch is part of the deliverable, not a failure of it.</p>
+
+</section>
+<section class="lesson-section" id="73-from-association-to-a-causal-question-target-trial-emulation">
+<h2>7.3 From association to a causal question: target-trial emulation</h2>
+<p>The central methodological advance in modern RWE is to stop asking loosely &quot;what does the database show&quot; and instead specify the randomized trial one would run if it were feasible, then emulate that trial&#39;s protocol in the observational data. This target-trial framework forces the analyst to state the protocol elements before touching the data, which removes several avoidable biases at the design stage (<a href="https://doi.org/10.1093/aje/kwv254" target="_blank" rel="noopener">Hernán &amp; Robins, 2016</a>). The elements to specify in advance are:</p>
+<ul>
+<li>eligibility criteria;</li>
+<li>the treatment strategies being compared;</li>
+<li>the assignment procedure (and how the observational data approximate it);</li>
+<li>the start of follow-up, or time zero;</li>
+<li>the outcome and its measurement;</li>
+<li>the causal contrast of interest (the estimand); and</li>
+<li>the analysis plan.</li>
+</ul>
+<p>Two errors that target-trial emulation prevents are worth naming, because they recur:</p>
+<ul>
+<li><strong>Immortal time bias.</strong> When follow-up begins before the exposure is defined, treated persons must survive long enough to become treated, which manufactures an apparent survival advantage. Aligning eligibility, treatment assignment, and the start of follow-up at a single time zero removes it.</li>
+<li><strong>Prevalent-user bias.</strong> Studying patients already established on a treatment excludes those who stopped early because of harm or non-response, flattering the treatment. Emulating a trial that enrolls new users at initiation avoids it.</li>
+</ul>
+<p>To see immortal time bias concretely: suppose &quot;treated&quot; is defined by receiving the drug at any point during follow-up, and follow-up is counted from diagnosis. A patient who dies at month 2 cannot have received a drug first dispensed at month 4, so early deaths are, by construction, assigned to the untreated group. The treated group is guaranteed to have survived until its first dispensing, and its apparent survival advantage is an artifact of the definition, not an effect of the drug. Anchoring time zero at treatment initiation for both groups removes the artifact.</p>
+<p>The framework does not require that the emulated trial ever be run. Its value is discipline: it converts a vague comparison into an explicit protocol whose assumptions can be inspected and criticized.</p>
+
+</section>
+<section class="lesson-section" id="74-causal-inference-assumptions-in-plain-terms">
+<h2>7.4 Causal-inference assumptions in plain terms</h2>
+<p>A causal effect can be estimated from observational data only under conditions that should be stated and defended, not left implicit. Three assumptions do the work.</p>
+<ul>
+<li><strong>Exchangeability (no unmeasured confounding).</strong> After adjusting for measured covariates, the treated and untreated groups are comparable in their outcome risk. This is the assumption most often violated, because it can never be fully verified from the data, and it is why unmeasured confounding is addressed by sensitivity analysis rather than assumed away.</li>
+<li><strong>Positivity.</strong> Every type of patient has a non-zero probability of receiving each treatment being compared. If a subgroup never receives one option, its effect in that subgroup is not estimable from the data.</li>
+<li><strong>Consistency and a well-defined intervention.</strong> The treatment must be specified precisely enough that &quot;the effect of treatment&quot; is a single, well-defined quantity. A vague exposure (for example &quot;on therapy&quot;) produces an ambiguous effect. The target-trial framework enforces this by requiring the treatment strategies to be written as a protocol would write them (<a href="https://doi.org/10.1093/aje/kwv254" target="_blank" rel="noopener">Hernán &amp; Robins, 2016</a>).</li>
+</ul>
+<p>Naming these assumptions is not academic. Each one maps to a design or reporting choice, and a study that does not address them is not credible regardless of how large the database is.</p>
+
+</section>
+<section class="lesson-section" id="75-comparative-effectiveness-rwe-and-design-options">
+<h2>7.5 Comparative-effectiveness RWE and design options</h2>
+<p>Beyond emulating a target trial in existing data, several designs sit on a spectrum from fully observational to fully randomized:</p>
+<ul>
+<li><strong>Observational cohort, new-user active-comparator.</strong> The default rigorous design: enroll patients at initiation of the study drug or an active comparator, follow both forward, and adjust for measured confounders. The active comparator reduces confounding by indication because both groups are treatment candidates.</li>
+<li><strong>Registry-based or hybrid studies.</strong> A registry provides the population and long-term outcomes; a study element (for example a randomized treatment assignment, or a pre-specified data collection) is added. These combine real-world follow-up with some of the rigor of a trial.</li>
+<li><strong>Pragmatic trials.</strong> Randomized, so confounding is handled by design, but conducted in routine-care settings with broad eligibility and routinely collected outcomes, which improves relevance to practice at some cost to internal control.</li>
+</ul>
+<p>The choice moves along a trade-off: designs closer to a randomized trial give stronger causal claims and weaker feasibility or generalizability, and designs closer to routine data give the reverse. Matching the design to the specific residual question, rather than to convenience, is the same principle that governs post-approval evidence generation generally (<a href="https://doi.org/10.3389/fphar.2020.569535" target="_blank" rel="noopener">Vreman et al., 2020</a>).</p>
+
+</section>
+<section class="lesson-section" id="76-external-and-synthetic-control-arms">
+<h2>7.6 External and synthetic control arms</h2>
+<p>When randomization is infeasible, for example in a small rare-disease population or where withholding an active treatment is not ethical, a single-arm study can be compared against an external control constructed from historical trial data, registry data, or other real-world data. A synthetic control arm is a specific case in which patient-level external data are selected and weighted to resemble the single-arm population.</p>
+<p>External controls are attractive and hazardous for the same reason: the comparator is not randomized, so any difference in the populations, in how outcomes were measured, or in the standard of care over calendar time can be mistaken for a treatment effect. The design questions that determine credibility are:</p>
+<ul>
+<li>whether the external population meets the same eligibility criteria;</li>
+<li>whether the outcome is measured the same way and at the same times;</li>
+<li>whether time zero is defined comparably in both arms; and</li>
+<li>whether the analysis adjusts for measured differences and quantifies sensitivity to unmeasured ones.</li>
+</ul>
+<p>The US FDA has engaged with externally controlled designs through its Complex Innovative Trial Design meeting program, whose public case materials let a learner see how a regulator reasons about these assumptions (<a href="https://www.fda.gov/drugs/development-resources/complex-innovative-trial-design-meeting-program" target="_blank" rel="noopener">FDA, Complex Innovative Trial Design Meeting Program</a>).</p>
+<p>Because the credibility of an external control rests on unverifiable assumptions, a defensible analysis quantifies how fragile its conclusion is. A tipping-point analysis asks how large a difference between the arms (for example in unmeasured prognosis) would be needed to overturn the result; if a small, plausible bias would reverse the conclusion, the evidence is weak regardless of the point estimate.</p>
+
+</section>
+<section class="lesson-section" id="77-threats-to-validity-and-the-methods-that-address-them">
+<h2>7.7 Threats to validity and the methods that address them</h2>
+<p>Three threats dominate the appraisal of any RWE study.</p>
+<ul>
+<li><strong>Confounding.</strong> A factor associated with both the treatment choice and the outcome distorts the comparison. Confounding by indication, where sicker patients receive a particular treatment, is the most common. Design responses include new-user and active-comparator designs; analytic responses include multivariable adjustment, propensity-score matching, weighting, and stratification, and, for time-varying confounding, methods such as marginal structural models. Only measured confounders can be adjusted, which is why unmeasured confounding must be addressed by sensitivity analysis (for example a quantitative bias analysis or a negative-control outcome) rather than assumed away.</li>
+<li><strong>Selection bias.</strong> The way persons enter or leave the data, differential loss to follow-up, or conditioning on a variable affected by treatment can create a spurious association. Defining eligibility and time zero as in a target trial reduces it.</li>
+<li><strong>Misclassification.</strong> Exposures, outcomes, and covariates measured in routine data are imperfect. A billing code is not a validated diagnosis. Validation of the algorithm that defines each variable, and reporting its sensitivity and specificity, is part of a credible study.</li>
+</ul>
+<p>To make confounding by indication concrete: if clinicians preferentially give a new drug to healthier patients, the drug can appear to lower mortality even with no true effect, because its recipients would have had lower mortality regardless of treatment. Adjustment removes this distortion only for the health markers that are measured; residual differences in unmeasured severity persist. This is why a negative-control outcome, or a quantitative bias analysis that asks how strong an unmeasured confounder would have to be to explain the result, is reported rather than a claim that confounding was fully controlled.</p>
+<p>Outcomes in routine data often require purpose-built real-world endpoints, for example real-world progression-free survival or time to treatment discontinuation, because the trial endpoint (such as blinded independent radiologic review) is not recorded during routine care. These endpoints must be validated against the clinical endpoint they stand in for, and their definition documented, because an endpoint that is convenient to extract is not necessarily the one the decision requires.</p>
+
+</section>
+<section class="lesson-section" id="78-transparency-and-reproducibility">
+<h2>7.8 Transparency and reproducibility</h2>
+<p>Transparency is a validity method in its own right, not an administrative formality. Pre-specifying the protocol and the analysis, and registering the study before results are known, prevent the selection of the single most favorable comparison from among the many a large database permits; that selection is itself a form of bias. To let an independent analyst reproduce and criticize the result, a report should include:</p>
+<ul>
+<li>the data source and its version;</li>
+<li>the full variable definitions and code lists;</li>
+<li>the cohort-selection counts at each step (an attrition diagram); and</li>
+<li>the analysis code.</li>
+</ul>
+<p>A study that cannot be reproduced from its own report cannot be appraised, and an evidence plan should therefore commit to these reporting standards at the design stage rather than after the analysis is complete.</p>
+<p>Access to real-world data is also governed by privacy and contractual constraints. Patient-level data carry confidentiality and data-protection obligations (for example HIPAA and GDPR, covered in Module 3), and a feasibility assessment must confirm that the intended analysis is permitted under the data&#39;s governance terms before a design is finalized. A study that is methodologically sound but not permissible under the data agreement cannot proceed.</p>
+
+</section>
+<section class="lesson-section" id="79-regulator-and-hta-acceptability">
+<h2>7.9 Regulator and HTA acceptability</h2>
+<p>RWE occupies different positions across decision makers, and a career changer should resist a single blanket claim about &quot;acceptance.&quot;</p>
+<p>For <strong>regulators</strong>, RWE is routinely accepted for safety and natural-history questions and, increasingly, for effectiveness questions where a randomized trial is infeasible and the data and design are strong; it is accepted least readily as the sole basis for a new effectiveness claim where a trial was feasible. The recurring principle is that the evidence generated after approval should be matched to the specific residual question, not produced generically (<a href="https://doi.org/10.3389/fphar.2020.569535" target="_blank" rel="noopener">Vreman et al., 2020</a>). The extent of regulatory use is visible in practice: the FDA has published a compendium of 73 examples of real-world evidence used in medical device regulatory decisions over fiscal years 2020 to 2025, which a learner can review to see what evidence quality and context the agency found sufficient (<a href="https://www.fda.gov/media/191805/download" target="_blank" rel="noopener">FDA, Examples of Real-World Evidence Used in Medical Device Regulatory Decisions, FY 2020-2025</a>).</p>
+<p>For <strong>HTA bodies and payers</strong>, RWE is used to characterize the treated population, to estimate real-world effectiveness and adherence, to inform economic models, and to support managed-entry agreements, but comparative-effectiveness claims from non-randomized data are scrutinized for the threats in section 7.7. Where evidence is promising but immature, some payers use a managed-entry or coverage-with-evidence-development agreement: the product is reimbursed on the condition that specified real-world evidence is collected to resolve the residual uncertainty, with the coverage decision revisited once it matures. Such agreements make the design and governance of the post-decision RWE study part of the access decision itself, not an afterthought. HTA methods guides set out how observational evidence is weighed alongside trial evidence and where its limitations bear on a decision (<a href="https://www.nice.org.uk/guidance/pmg36/resources/nice-technology-appraisal-and-highly-specialised-technologies-guidance-the-manual-pdf-72286779244741" target="_blank" rel="noopener">NICE, health technology evaluations manual, PMG36</a>; <a href="https://icer.org/wp-content/uploads/2020/10/ICER-Guide-to-Understanding-Health-Technology-Assessment-6.19.18.pdf" target="_blank" rel="noopener">ICER, Guide to Understanding Health Technology Assessment</a>). For settings with different data and capacity constraints, the iDSI toolkit frames how evidence is assembled and appraised for coverage decisions (<a href="https://f1000research.com/documents/8-703/pdf" target="_blank" rel="noopener">iDSI, Health Technology Assessment Toolkit</a>).</p>
+<p>A separate question from internal validity is transportability: whether an effect estimated in one population applies to the target population of a decision. The two differ when the effect depends on characteristics distributed differently in the study and target populations, so a well-conducted study can still fail to answer the local question. HTA bodies weigh this directly when a trial or study population differs from the local treated population, which is one reason the same evidence is received differently across jurisdictions.</p>
+<p>The operating conclusion is conditional: RWE can support a decision when the question suits observational data, the source is fit for purpose, a credible causal design is used, and the residual biases are quantified and judged tolerable for the decision at hand. It cannot substitute for a feasible randomized trial of a new effectiveness claim simply because it is faster or cheaper.</p>
+
+</section>
+<section class="lesson-section" id="710-matching-the-evidence-to-the-decision">
+<h2>7.10 Matching the evidence to the decision</h2>
+<p>The reasoning in sections 7.1 to 7.9 can be summarized as a triage from the question to a preferred source and design. The table below is a starting orientation, not a rule; the fitness-for-purpose test always overrides it for a specific question.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Evidence question</th>
+<th>Typically suited source</th>
+<th>Typically suited design</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Incidence, prevalence, natural history</td>
+<td>Registry, claims, EHR</td>
+<td>Descriptive cohort</td>
+</tr>
+<tr>
+<td>Treatment patterns and adherence</td>
+<td>Claims, EHR</td>
+<td>Longitudinal descriptive cohort</td>
+</tr>
+<tr>
+<td>Safety signal or rare adverse event</td>
+<td>Claims, linked mortality, registries</td>
+<td>Cohort or self-controlled design</td>
+</tr>
+<tr>
+<td>Comparative effectiveness where a trial is infeasible</td>
+<td>EHR or claims with rich covariates</td>
+<td>New-user active-comparator cohort (target-trial emulation)</td>
+</tr>
+<tr>
+<td>Effect of a single-arm therapy in a rare disease</td>
+<td>Historical trial or registry external data</td>
+<td>Externally controlled single-arm</td>
+</tr>
+<tr>
+<td>Effectiveness where a trial is feasible</td>
+<td>Prospective data collection</td>
+<td>Randomized or pragmatic trial</td>
+</tr>
+</tbody></table></div>
+<p>The organizing logic is the same throughout: match the design to the specific residual question and to what the data can credibly support (<a href="https://doi.org/10.3389/fphar.2020.569535" target="_blank" rel="noopener">Vreman et al., 2020</a>; <a href="https://doi.org/10.1002/cpt.3603" target="_blank" rel="noopener">Schneeweiss &amp; Miksad, 2025</a>).</p>
+
+</section>
+<section class="lesson-section" id="711-common-failure-modes">
+<h2>7.11 Common failure modes</h2>
+<p>A reviewer of an RWE proposal looks for the recurrent errors, each of which maps to a section above:</p>
+<ul>
+<li>choosing the data source before writing the question, so convenience drives the analysis (7.2);</li>
+<li>defining the outcome by an unvalidated code list, introducing misclassification (7.7);</li>
+<li>beginning follow-up before the exposure is defined, introducing immortal time bias (7.3);</li>
+<li>comparing patients already established on treatment, introducing prevalent-user bias (7.3);</li>
+<li>adjusting for a variable on the causal pathway or affected by treatment, introducing overadjustment or collider bias (7.7); and</li>
+<li>running many comparisons and reporting the most favorable, without pre-specification (7.8).</li>
+</ul>
+<p>Naming these in the plan, with the response to each, is how a reviewer confirms they were considered rather than overlooked.</p>
+
+</section>
+<section class="feature-card card-worked" id="worked-example-reasoning-about-an-external-control-anchor-case-b" aria-label="Worked example">
+<span class="card-kicker">Worked example</span>
+<h2>Reasoning about an external control (anchor case B)</h2>
+<p>Anchor case B in the case library is the FDA Complex Innovative Trial Design case in alopecia areata, in which a single-arm study is compared against an external control (<a href="https://www.fda.gov/media/188560/download?attachment=" target="_blank" rel="noopener">FDA, Complex Innovative Trial Design alopecia external-control case</a>). Working only from the public case, apply the target-trial logic of sections 7.3 and 7.4.</p>
+<ol>
+<li><strong>Specify the emulated trial.</strong> State the eligibility criteria, the treatment strategy and its comparator, time zero, the outcome and its measurement, and the causal contrast, exactly as a randomized protocol would.</li>
+<li><strong>Test the assumptions.</strong> Is exchangeability plausible given how the external cohort was selected, and which confounders are measured? Does positivity hold, or are there patient types who could never appear in one arm? Is the intervention well defined?</li>
+<li><strong>Test the external control against relevance and reliability.</strong> Does the external population meet the same eligibility criteria? Is the outcome (for example a defined regrowth threshold) measured the same way and at the same times? Was the standard of care in the external data contemporaneous, or drawn from an earlier period when management differed?</li>
+<li><strong>Enumerate the threats and the response to each.</strong> Confounding from non-randomized selection, misclassification of the outcome across data sources, and selection from differential follow-up; for each, name the design or analytic response and the residual uncertainty.</li>
+<li><strong>Identify the sensitivity analyses.</strong> What would a regulator want simulated: the effect of plausible unmeasured confounding, alternative outcome definitions, and alternative weighting of the external cohort?</li>
+</ol>
+<p>FDA notes that each such case focuses on the specific submitted design and does not cover the full development-program evidence needs (<a href="https://www.fda.gov/drugs/development-resources/complex-innovative-trial-design-meeting-program" target="_blank" rel="noopener">FDA, Complex Innovative Trial Design Meeting Program</a>); treat the exercise as reasoning about one design decision, not as a template for a program.</p>
+
+</section>
+<section class="feature-card card-activity" id="applied-activity-produces-input-to-capstone-work-product-5" aria-label="Applied activity">
+<span class="card-kicker">Applied activity</span>
+<h2>Produces input to capstone work product 5</h2>
+<p>Using the assigned capstone product scenario (case J in the case library), take one evidence question from the product&#39;s gap list that cannot be answered by a randomized trial, and draft a one- to two-page RWE feasibility note that:</p>
+<ul>
+<li>(a) writes the question as a target-trial protocol (population, exposure, comparator, outcome, time zero);</li>
+<li>(b) selects a candidate RWD source and justifies its fitness for purpose on relevance and reliability;</li>
+<li>(c) names the study design (for example new-user active-comparator cohort, or externally controlled single-arm) and the two or three principal threats to validity with the method for each;</li>
+<li>(d) confirms the intended analysis is permitted under the data source&#39;s governance and privacy terms; and</li>
+<li>(e) states plainly whether the result could support the intended regulatory or access decision, and its main residual uncertainty.</li>
+</ul>
+<p>This note becomes an input to the integrated evidence generation plan (capstone work product 5).</p>
+
+</section>
+<section class="feature-card card-ai" id="ai-use-focus" aria-label="AI-use focus">
+<span class="card-kicker">AI-use focus</span>
+<h2 class="visually-hidden">AI-use focus</h2>
+<p>Permitted: use an AI assistant to draft candidate code lists and phenotype definitions (for example the diagnosis and procedure codes that operationalize an outcome), to triage the methods literature, and to summarize a data source&#39;s documented contents.</p>
+<p>Required controls: validate every code list and phenotype definition against the source data dictionary and, where available, a published validation study, because an unverified algorithm silently introduces misclassification; do not enter identifiable patient-level data or confidential protocols into a tool that is not validated and approved; record the AI use in your audit log (tool, task, what was verified, who is accountable). As a concrete example, if an assistant proposes a set of diagnosis codes to define an outcome, each code must be checked against the coding manual and the study&#39;s clinical definition before use, and codes the assistant omitted or invented must be corrected; an unchecked list is a source of misclassification, not a shortcut. Good-practice reports for machine learning and for generative AI in health economics and outcomes research set out the validation, transparency, and reproducibility expectations that apply here (<a href="https://doi.org/10.1016/j.jval.2022.03.022" target="_blank" rel="noopener">Padula et al., 2022, PALISADE checklist</a>; <a href="https://doi.org/10.1016/j.jval.2024.10.3846" target="_blank" rel="noopener">Fleurence et al., 2025, generative AI for HTA</a>). This applies the program AI-use policy (<a href="../ai-policy.html">AI-use policy</a>).</p>
+
+</section>
+<section class="knowledge-check" id="knowledge-check">
+<h2>Knowledge check</h2>
+<p class="kc-intro">Answer each question from memory before revealing the model answer. Retrieval practice of this kind improves retention relative to re-reading (<a href="https://doi.org/10.3102/0034654316689306" target="_blank" rel="noopener">Adesope et al., 2017</a>).</p>
+<div class="kc-list"><details class="kc-item">
+  <summary><span class="kc-num">1</span><span class="kc-q">What is the difference between real-world data and real-world evidence?</span><span class="kc-toggle" aria-hidden="true">Show answer</span></summary>
+  <div class="kc-answer"><span class="kc-answer-label">Model answer</span><p>RWD are the data collected outside a conventional randomized trial, such as claims, EHR, registries, and patient-generated data; RWE is the clinical evidence about a product&#39;s use, benefits, or risks derived by applying a study design and analysis to those data. Data become evidence only through a design that answers a defined question.</p>
+</div>
+</details>
+<details class="kc-item">
+  <summary><span class="kc-num">2</span><span class="kc-q">A claims database records dispensed prescriptions and hospitalizations but no laboratory values. For which of these questions is it fit: (a) rate of a hospitalization outcome, or (b) proportion achieving a laboratory-defined response?</span><span class="kc-toggle" aria-hidden="true">Show answer</span></summary>
+  <div class="kc-answer"><span class="kc-answer-label">Model answer</span><p>Fit for (a); unfit for (b), because it never records the laboratory value that defines the outcome. Fitness is judged against the specific question.</p>
+</div>
+</details>
+<details class="kc-item">
+  <summary><span class="kc-num">3</span><span class="kc-q">What does specifying a target trial accomplish before any data are analyzed?</span><span class="kc-toggle" aria-hidden="true">Show answer</span></summary>
+  <div class="kc-answer"><span class="kc-answer-label">Model answer</span><p>It forces explicit eligibility, treatment strategies, assignment, time zero, outcome, and causal contrast, which prevents design-stage biases such as immortal time bias and prevalent-user bias; see Hernán &amp; Robins, 2016.</p>
+</div>
+</details>
+<details class="kc-item">
+  <summary><span class="kc-num">4</span><span class="kc-q">State the three causal-inference assumptions and why exchangeability is the hardest to satisfy.</span><span class="kc-toggle" aria-hidden="true">Show answer</span></summary>
+  <div class="kc-answer"><span class="kc-answer-label">Model answer</span><p>Exchangeability or no unmeasured confounding, positivity, and consistency with a well-defined intervention; exchangeability cannot be verified from the data alone, so its violation by unmeasured confounders must be probed with sensitivity analysis.</p>
+</div>
+</details>
+<details class="kc-item">
+  <summary><span class="kc-num">5</span><span class="kc-q">Name the three principal threats to validity in RWE and one method that addresses each.</span><span class="kc-toggle" aria-hidden="true">Show answer</span></summary>
+  <div class="kc-answer"><span class="kc-answer-label">Model answer</span><p>Confounding, addressed by new-user active-comparator design and propensity-score methods, with sensitivity analysis for unmeasured confounding; selection bias, addressed by defining eligibility and time zero as in a target trial; misclassification, addressed by validating the variable-defining algorithm and reporting its accuracy.</p>
+</div>
+</details>
+<details class="kc-item">
+  <summary><span class="kc-num">6</span><span class="kc-q">For a question about the natural history of a rare disease, which source and design would you triage to first, and why?</span><span class="kc-toggle" aria-hidden="true">Show answer</span></summary>
+  <div class="kc-answer"><span class="kc-answer-label">Model answer</span><p>A disease registry or claims/EHR with a descriptive cohort, because the question is descriptive rather than causal and needs disease-specific variables and follow-up rather than a randomized comparator; confirm with the fitness-for-purpose test.</p>
+</div>
+</details>
+<details class="kc-item">
+  <summary><span class="kc-num">7</span><span class="kc-q">Give one question for which a regulator commonly accepts RWE and one for which it is accepted least readily.</span><span class="kc-toggle" aria-hidden="true">Show answer</span></summary>
+  <div class="kc-answer"><span class="kc-answer-label">Model answer</span><p>Commonly accepted for safety and natural-history questions and for effectiveness where a trial is infeasible; accepted least readily as the sole basis for a new effectiveness claim where a randomized trial was feasible.</p>
+</div>
+</details>
+<details class="kc-item">
+  <summary><span class="kc-num">8</span><span class="kc-q">Why is transparency, such as pre-registration and reproducible reporting, treated as a validity method rather than an administrative formality?</span><span class="kc-toggle" aria-hidden="true">Show answer</span></summary>
+  <div class="kc-answer"><span class="kc-answer-label">Model answer</span><p>Pre-specification and full reporting prevent selection of the most favorable of many possible analyses, which is a form of bias; they let an independent analyst reproduce and criticize the result.</p>
+</div>
+</details>
+<details class="kc-item">
+  <summary><span class="kc-num">9</span><span class="kc-q">What is the difference between internal validity and transportability, and why can a valid study still fail to answer a decision maker&#39;s question?</span><span class="kc-toggle" aria-hidden="true">Show answer</span></summary>
+  <div class="kc-answer"><span class="kc-answer-label">Model answer</span><p>Internal validity concerns whether the effect is estimated without bias in the study population; transportability concerns whether that effect applies to the different target population of the decision; a study can be internally valid yet not transportable when the effect depends on characteristics distributed differently in the two populations.</p>
+</div>
+</details>
+<details class="kc-item">
+  <summary><span class="kc-num">10</span><span class="kc-q">An external control study reports a favorable result, but a tipping-point analysis shows that a small, plausible difference in unmeasured baseline severity would reverse it. How should this affect the strength of the conclusion?</span><span class="kc-toggle" aria-hidden="true">Show answer</span></summary>
+  <div class="kc-answer"><span class="kc-answer-label">Model answer</span><p>It weakens it substantially; a conclusion that a small plausible bias can overturn is fragile regardless of the point estimate, and the result should be presented with that fragility stated rather than as a firm effect.</p>
+</div>
+</details></div>
+</section>
+<section class="key-readings" id="key-readings">
+<h2>Key readings</h2>
+<ul>
+<li><a href="https://doi.org/10.1093/aje/kwv254" target="_blank" rel="noopener">Hernán MA, Robins JM. Using Big Data to Emulate a Target Trial When a Randomized Trial Is Not Available. Am J Epidemiol. 2016;183(8):758-764</a></li>
+<li><a href="https://doi.org/10.3389/fphar.2020.569535" target="_blank" rel="noopener">Vreman RA, Leufkens HGM, Kesselheim AS. Getting the Right Evidence After Drug Approval. Front Pharmacol. 2020;11:569535</a></li>
+<li><a href="https://doi.org/10.1002/cpt.3603" target="_blank" rel="noopener">Schneeweiss S, Miksad R. Bench to Budget: Integrated Evidence Generation for Medications. Clin Pharmacol Ther. 2025;117(4):869-871</a></li>
+<li><a href="https://www.fda.gov/drugs/development-resources/complex-innovative-trial-design-meeting-program" target="_blank" rel="noopener">FDA, Complex Innovative Trial Design Meeting Program</a> (external and synthetic control case materials)</li>
+<li><a href="https://www.nice.org.uk/guidance/pmg36/resources/nice-technology-appraisal-and-highly-specialised-technologies-guidance-the-manual-pdf-72286779244741" target="_blank" rel="noopener">NICE, health technology evaluations manual (PMG36)</a> and <a href="https://icer.org/wp-content/uploads/2020/10/ICER-Guide-to-Understanding-Health-Technology-Assessment-6.19.18.pdf" target="_blank" rel="noopener">ICER, Guide to Understanding Health Technology Assessment</a> (how HTA bodies weigh observational evidence)</li>
+<li><a href="https://doi.org/10.1016/j.jval.2022.03.022" target="_blank" rel="noopener">Padula WV, Kreif N, Vanness DJ, et al. Machine Learning Methods in Health Economics and Outcomes Research: The PALISADE Checklist. Value Health. 2022;25(7):1063-1080</a> (validation and reporting expectations for computational and AI-assisted work)</li>
+</ul>
+
+</section>
+<section class="callout callout-capstone" id="connection-to-the-capstone">
+<h2>Connection to the capstone</h2>
+<p>The RWE feasibility note produced here feeds the integrated evidence generation plan (capstone work product 5), where it becomes one row of the evidence matrix that maps each evidence question to a data source, a design, an owner, and a decision point (Module 10). The fitness-for-purpose and validity reasoning also supports the economic model inputs in Module 8 and the value argument for the HTA or payer submission in Modules 8 and 9, because a cost-effectiveness or budget-impact result is only as credible as the effectiveness estimate that feeds it.</p>
+
+</section>
+<div class="lesson-complete">
+  <button class="btn btn-complete" data-complete="m07" type="button">Mark module 7 as complete</button>
+  <span class="lesson-complete-status" role="status"></span>
+</div>
+</article>
+<nav class="prevnext prevnext-bottom" aria-label="Lesson navigation"><a class="pn-link pn-prev" href="../modules/module-06.html"><span class="pn-dir">Previous</span><span class="pn-title">Module 6: Pharmacovigilance and risk management</span></a><a class="pn-link pn-next" href="../modules/module-08.html"><span class="pn-dir">Next</span><span class="pn-title">Module 8: HEOR methods and economic evaluation</span></a></nav>
+</main>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><svg class="seal" width="34" height="34" viewBox="0 0 64 64" role="img" aria-label="BCMAEP seal">
+  <circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="2.5"/>
+  <circle cx="32" cy="32" r="24" fill="none" stroke="currentColor" stroke-width="1"/>
+  <text x="32" y="37" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-weight="bold" fill="currentColor" letter-spacing="0.5">MA</text>
+  <text x="32" y="14.5" text-anchor="middle" font-family="Georgia, serif" font-size="6.5" fill="currentColor" letter-spacing="2">BCMAEP</text>
+  <text x="32" y="55" text-anchor="middle" font-family="Georgia, serif" font-size="6.5" fill="currentColor" letter-spacing="1">EST 2026</text>
+</svg><div><strong>BCMAEP</strong><br>Board Certified Medical Affairs and Evidence Professional</div></div>
+    <div class="footer-cols">
+      <div>
+        <span class="footer-head">Program</span>
+        <a href="../handbook.html">Program handbook</a>
+        <a href="../curriculum.html">Curriculum and syllabus</a>
+        <a href="../assessment.html">Examination blueprint</a>
+        <a href="../capstone.html">Capstone portfolio</a>
+      </div>
+      <div>
+        <span class="footer-head">Governance</span>
+        <a href="../accreditation.html">Accreditation and quality</a>
+        <a href="../ai-policy.html">AI-use policy</a>
+        <a href="../references.html">Source register</a>
+        <a href="../market-alignment.html">Market alignment</a>
+      </div>
+      <div>
+        <span class="footer-head">Help</span>
+        <a href="../index.html#how-to-use">How to use this site</a>
+        <a href="../index.html#program-status">Program status</a>
+        <a href="../curriculum.html#your-progress">Your progress</a>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p><strong>Program status.</strong> Version 1.0 curriculum design, prepared July 2026. This program is a complete curriculum and certification design; it has not undergone job-task-analysis validation, item-bank piloting, formal standard setting, or accreditation review. It is designed for alignment with ISO/IEC 17024, the NCCA Standards, and the ANSI/IACET Standard, and is not accredited by any body at this version (see <a href="../accreditation.html">accreditation and quality alignment</a>).</p>
+      <p><strong>Accessibility.</strong> This site targets WCAG 2.2 Level AA conformance: minimum 4.5:1 text contrast, keyboard-operable interactive components, visible focus indicators, and single-column reflow at narrow widths.</p>
+      <p><strong>Sources.</strong> Teaching claims carry hyperlinked citations to verified authoritative sources; the consolidated pool is the <a href="../references.html">source register</a>. Cited third-party materials are assigned readings; public availability does not grant republication rights.</p>
+    </div>
+  </div>
+</footer>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

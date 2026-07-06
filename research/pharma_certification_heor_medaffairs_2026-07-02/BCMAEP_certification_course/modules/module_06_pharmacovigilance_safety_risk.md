@@ -28,7 +28,7 @@ Pharmacovigilance is the set of activities concerned with detecting, assessing, 
 
 Premarketing trials, however well designed, enroll limited numbers of relatively selected participants over limited time. Rare, delayed, and population-specific harms often become detectable only with broad, prolonged, real-world exposure. Pharmacovigilance therefore extends the safety inquiry that began in development (Module 4) into the entire post-approval period.
 
-Pharmacovigilance is a recognized competency within the medical affairs knowledge base ([ACMA, BCMAS Program Information](https://medicalaffairsspecialist.org/certifications/bcmas/program-info)), and continued safety evidence generation is one strand of the integrated, lifecycle view of evidence that the curriculum treats as a spine ([Schneeweiss and Miksad, 2025](https://doi.org/10.1002/cpt.3603)).
+Pharmacovigilance is a core competency within the medical affairs knowledge base, and continued safety evidence generation is one strand of the integrated, lifecycle view of evidence that the curriculum treats as a spine ([Schneeweiss and Miksad, 2025](https://doi.org/10.1002/cpt.3603)).
 
 ## 6.2 Adverse-event definitions and seriousness
 
@@ -109,7 +109,7 @@ The field professional's obligations are to:
 - Refrain from offering clinical management advice beyond the approved label or the scope of the role.
 - Document the interaction so that it satisfies both the safety-reporting duty and the nonpromotional standard.
 
-This duty coexists with the nonpromotional boundary (Module 3): the same interaction that must stay within nonpromotional scientific exchange also carries a mandatory safety-reporting obligation. Field-medical deployment models and the MSL role are described in the industry literature ([IQVIA, Medical Science Liaisons white paper](https://www.iqvia.com/-/media/library/white-papers/medical-science-liaisons.pdf)), and scenario-based safety and medical-affairs training reinforces the reporting reflex ([DIA, Medical Affairs eLearning Program](https://www.diaglobal.org/en/course-listing/elearning/modules/medical-affairs)).
+This duty coexists with the nonpromotional boundary (Module 3): the same interaction that must stay within nonpromotional scientific exchange also carries a mandatory safety-reporting obligation. Field-medical deployment models and the MSL role are described in the industry literature ([IQVIA, Medical Science Liaisons white paper](https://www.iqvia.com/-/media/library/white-papers/medical-science-liaisons.pdf)).
 
 ## 6.9 Safety in real-world data
 
@@ -204,11 +204,9 @@ Required controls: do not use AI to adjudicate causality, seriousness, or report
 9. Why does the quality of an initial field report matter for the whole system? (Answer: aggregate analyses and signal detection depend on complete, accurate, de-duplicated, and consistently coded cases; an incomplete source report degrades every downstream assessment.)
 
 ## Key readings
-
-- [ACMA, BCMAS Program Information](https://medicalaffairsspecialist.org/certifications/bcmas/program-info) (pharmacovigilance within the medical affairs competency set)
 - [Vreman, Leufkens, and Kesselheim, 2020, getting the right evidence after drug approval](https://doi.org/10.3389/fphar.2020.569535) (post-approval evidence and benefit-risk)
 - [Schneeweiss and Miksad, 2025, integrated evidence generation for medications](https://doi.org/10.1002/cpt.3603) (lifecycle safety and effectiveness evidence)
-- [IQVIA, Medical Science Liaisons white paper](https://www.iqvia.com/-/media/library/white-papers/medical-science-liaisons.pdf) (the field-medical role) and [DIA, Medical Affairs eLearning Program](https://www.diaglobal.org/en/course-listing/elearning/modules/medical-affairs) (scenario-based training)
+- [IQVIA, Medical Science Liaisons white paper](https://www.iqvia.com/-/media/library/white-papers/medical-science-liaisons.pdf) (the field-medical role)
 - [EMA, reflection paper on AI in the medicinal product lifecycle](https://www.ema.europa.eu/en/use-artificial-intelligence-ai-medicinal-product-lifecycle) and [FDA, AI in regulatory decision-making, 2025](https://www.federalregister.gov/documents/2025/01/07/2024-31542/considerations-for-the-use-of-artificial-intelligence-to-support-regulatory-decision-making-for-drug) (AI constraints)
 
 ## Connection to the capstone

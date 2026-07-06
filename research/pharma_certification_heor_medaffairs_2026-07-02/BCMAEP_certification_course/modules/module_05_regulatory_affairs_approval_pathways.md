@@ -41,7 +41,7 @@ The FDA reviews human drugs and biologics through distinct centers and applicati
 - **Abbreviated New Drug Application (ANDA).** The pathway for generic small molecules.
 - **Biosimilar pathway.** A dedicated biologics route for products highly similar to a licensed reference biologic.
 
-The BCMAS competency set similarly treats regulatory affairs, application types, and the distinction between drug and biologic pathways as core knowledge for medical affairs professionals ([ACMA, BCMAS Program Information](https://medicalaffairsspecialist.org/certifications/bcmas/program-info)). For a non-specialist orientation to how a product moves from development to authorization, the EUPATI materials give an accessible overview ([EUPATI, discovery and development of medicines](https://toolbox.eupati.eu/resources/discovery-and-development-of-medicines/)). Regulatory affairs is also a distinct professional specialty with its own certification, the RAPS Regulatory Affairs Certification (RAC) ([RAPS, RAC-Drugs candidate guide](https://www.raps.org/rac-drugs-candidate-guide)); the aim of this module is working literacy sufficient for a medical affairs or evidence role and effective collaboration with regulatory colleagues, not the specialist depth the RAC assesses.
+Regulatory affairs, application types, and the distinction between drug and biologic pathways are core knowledge for medical affairs professionals. For a non-specialist orientation to how a product moves from development to authorization, the EUPATI materials give an accessible overview ([EUPATI, discovery and development of medicines](https://toolbox.eupati.eu/resources/discovery-and-development-of-medicines/)). Regulatory affairs is also a distinct professional specialty in its own right; the aim of this module is working literacy sufficient for a medical affairs or evidence role and effective collaboration with regulatory colleagues, not specialist regulatory depth.
 
 ## 5.3 Expedited programs
 
@@ -213,8 +213,6 @@ Required controls: verify every regulatory fact (pathway names, evidence standar
 - [Vreman, Leufkens, and Kesselheim, 2020, getting the right evidence after drug approval](https://doi.org/10.3389/fphar.2020.569535) (accelerated approval and confirmatory evidence)
 - [Wang, McAuslane, Goettsch, Leufkens, and De Bruin, 2022, dynamic target product profile](https://doi.org/10.3389/fphar.2022.948161) (linking the label to development and payer requirements)
 - [FDA, Complex Innovative Trial Design Meeting Program](https://www.fda.gov/drugs/development-resources/complex-innovative-trial-design-meeting-program) (agency interaction on novel designs)
-- [ACMA, BCMAS Program Information](https://medicalaffairsspecialist.org/certifications/bcmas/program-info) (regulatory affairs competency scope)
-
 ## Connection to the capstone
 
 The regulatory strategy brief produced here is work product 4 of the capstone. It builds on the critical appraisal from Module 4: the brief must show that the available evidence meets the standard the chosen pathway requires.

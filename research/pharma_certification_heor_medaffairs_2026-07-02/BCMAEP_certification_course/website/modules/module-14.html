@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Module 14: AI and data fluency for medical affairs and evidence generation | BCMAEP</title>
+<meta name="description" content="BCMAEP Module 14: AI and data fluency for medical affairs and evidence generation. Domain E lesson with objectives, worked example, applied activity, and knowledge check.">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2064%2064%22%20role%3D%22img%22%20aria-label%3D%22BCMAEP%20seal%22%3E%0A%20%20%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%2230%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%2224%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%3Ctext%20x%3D%2232%22%20y%3D%2237%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2C%20'Times%20New%20Roman'%2C%20serif%22%20font-size%3D%2215%22%20font-weight%3D%22bold%22%20fill%3D%22currentColor%22%20letter-spacing%3D%220.5%22%3EMA%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%2232%22%20y%3D%2214.5%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2C%20serif%22%20font-size%3D%226.5%22%20fill%3D%22currentColor%22%20letter-spacing%3D%222%22%3EBCMAEP%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2C%20serif%22%20font-size%3D%226.5%22%20fill%3D%22currentColor%22%20letter-spacing%3D%221%22%3EEST%202026%3C%2Ftext%3E%0A%3C%2Fsvg%3E">
+</head>
+<body class="page-lesson">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="sidebar">
+      <span class="nav-toggle-bars" aria-hidden="true"></span> Menu
+    </button>
+    <a class="brand" href="../index.html">
+      <svg class="seal" width="38" height="38" viewBox="0 0 64 64" role="img" aria-label="BCMAEP seal">
+  <circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="2.5"/>
+  <circle cx="32" cy="32" r="24" fill="none" stroke="currentColor" stroke-width="1"/>
+  <text x="32" y="37" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-weight="bold" fill="currentColor" letter-spacing="0.5">MA</text>
+  <text x="32" y="14.5" text-anchor="middle" font-family="Georgia, serif" font-size="6.5" fill="currentColor" letter-spacing="2">BCMAEP</text>
+  <text x="32" y="55" text-anchor="middle" font-family="Georgia, serif" font-size="6.5" fill="currentColor" letter-spacing="1">EST 2026</text>
+</svg>
+      <span class="brand-text">
+        <span class="brand-name">BCMAEP</span>
+        <span class="brand-sub">Board Certified Medical Affairs and Evidence Professional</span>
+      </span>
+    </a>
+    <nav class="top-nav" aria-label="Primary">
+      <a href="../index.html">Overview</a>
+      <a href="../curriculum.html">Curriculum</a>
+      <a href="../assessment.html">Assessment</a>
+      <a href="../accreditation.html">Accreditation</a>
+      <a href="../references.html">Sources</a>
+    </nav>
+  </div>
+</header>
+<div class="layout">
+
+<nav class="sidebar" id="sidebar" aria-label="Course navigation">
+  <div class="snav-group">
+    <span class="snav-head">Program</span>
+    <ul>
+      <li><a class="snav-link " href="../index.html">Overview</a></li>
+      <li><a class="snav-link " href="../handbook.html">Program handbook</a></li>
+      <li><a class="snav-link " href="../curriculum.html">Curriculum and syllabus</a></li>
+    </ul>
+  </div>
+  <div class="snav-group">
+    <span class="snav-head">Modules</span>
+    <div class="snav-progress" aria-hidden="true"><div class="snav-progress-bar" id="snav-progress-bar"></div></div>
+    <p class="snav-progress-text" id="snav-progress-text" role="status"></p>
+    <ul class="snav-domains">
+<li class="snav-domain"><span class="snav-domain-label">Domain A &middot; Industry orientation and translation</span><ul><li><a class="snav-link snav-module" data-module="m01" href="../modules/module-01.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">1</span><span>Industry and the development lifecycle</span></a></li>
+<li><a class="snav-link snav-module" data-module="m02" href="../modules/module-02.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">2</span><span>The medical affairs operating model</span></a></li>
+<li><a class="snav-link snav-module" data-module="m03" href="../modules/module-03.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">3</span><span>Compliance and the nonpromotional boundary</span></a></li></ul></li>
+<li class="snav-domain"><span class="snav-domain-label">Domain B &middot; Scientific and clinical foundations</span><ul><li><a class="snav-link snav-module" data-module="m04" href="../modules/module-04.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">4</span><span>Trial design, biostatistics, and appraisal</span></a></li>
+<li><a class="snav-link snav-module" data-module="m05" href="../modules/module-05.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">5</span><span>Regulatory affairs and approval pathways</span></a></li>
+<li><a class="snav-link snav-module" data-module="m06" href="../modules/module-06.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">6</span><span>Pharmacovigilance and risk management</span></a></li></ul></li>
+<li class="snav-domain"><span class="snav-domain-label">Domain C &middot; Evidence generation, HEOR, HTA, and market access</span><ul><li><a class="snav-link snav-module" data-module="m07" href="../modules/module-07.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">7</span><span>Real-world data and evidence</span></a></li>
+<li><a class="snav-link snav-module" data-module="m08" href="../modules/module-08.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">8</span><span>HEOR methods and economic evaluation</span></a></li>
+<li><a class="snav-link snav-module" data-module="m09" href="../modules/module-09.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">9</span><span>HTA and global market access</span></a></li>
+<li><a class="snav-link snav-module" data-module="m10" href="../modules/module-10.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">10</span><span>Integrated evidence generation planning</span></a></li></ul></li>
+<li class="snav-domain"><span class="snav-domain-label">Domain D &middot; Scientific communication and field medical</span><ul><li><a class="snav-link snav-module" data-module="m11" href="../modules/module-11.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">11</span><span>MSL excellence and field medical</span></a></li>
+<li><a class="snav-link snav-module" data-module="m12" href="../modules/module-12.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">12</span><span>Scientific communications and publications</span></a></li>
+<li><a class="snav-link snav-module" data-module="m13" href="../modules/module-13.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">13</span><span>Advisory boards, ISR, and education</span></a></li></ul></li>
+<li class="snav-domain"><span class="snav-domain-label">Domain E &middot; AI, data, and professional practice</span><ul><li><a class="snav-link snav-module" data-module="m14" aria-current="page" href="../modules/module-14.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">14</span><span>AI and data fluency</span></a></li>
+<li><a class="snav-link snav-module" data-module="m15" href="../modules/module-15.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">15</span><span>Professional practice and transition</span></a></li></ul></li>
+    </ul>
+  </div>
+  <div class="snav-group">
+    <span class="snav-head">Assessment</span>
+    <ul>
+      <li><a class="snav-link " href="../assessment.html">Examination blueprint</a></li>
+      <li><a class="snav-link " href="../capstone.html">Capstone portfolio</a></li>
+      <li><a class="snav-link " href="../cases.html">Case library</a></li>
+    </ul>
+  </div>
+  <div class="snav-group">
+    <span class="snav-head">Governance</span>
+    <ul>
+      <li><a class="snav-link " href="../ai-policy.html">AI-use policy</a></li>
+      <li><a class="snav-link " href="../accreditation.html">Accreditation and quality</a></li>
+    </ul>
+  </div>
+  <div class="snav-group">
+    <span class="snav-head">Reference</span>
+    <ul>
+      <li><a class="snav-link " href="../references.html">Source register</a></li>
+      <li><a class="snav-link " href="../market-alignment.html">Market alignment</a></li>
+    </ul>
+  </div>
+</nav>
+<main id="main" class="main">
+
+<nav class="breadcrumbs" aria-label="Breadcrumb"><ol>
+  <li><a href="../index.html">BCMAEP</a></li>
+  <li><a href="../curriculum.html">Curriculum</a></li>
+  <li aria-current="page">Module 14</li>
+</ol></nav>
+<nav class="prevnext prevnext-top" aria-label="Lesson navigation"><a class="pn-link pn-prev" href="../modules/module-13.html"><span class="pn-dir">Previous</span><span class="pn-title">Module 13: Advisory boards, ISR, and education</span></a><a class="pn-link pn-next" href="../modules/module-15.html"><span class="pn-dir">Next</span><span class="pn-title">Module 15: Professional practice and transition</span></a></nav>
+<article class="lesson" data-module="m14">
+<header class="lesson-header">
+  <p class="lesson-meta"><span>Module 14 of 15</span><span class="meta-sep" aria-hidden="true">&middot;</span><span>Domain E</span><span class="meta-sep" aria-hidden="true">&middot;</span><span>approximately 7 hours of structured effort</span><span class="meta-sep" aria-hidden="true">&middot;</span><span>about 25 minutes of core reading</span><span class="meta-sep" aria-hidden="true">&middot;</span><span>8 knowledge-check questions</span></p>
+  <h1>AI and data fluency for medical affairs and evidence generation</h1>
+  <p class="lesson-domain">Domains E (Data and AI fluency) and F (Compliance, ethics, and accountability). Approximately 7 hours.</p>
+</header>
+<nav class="lesson-toc" aria-label="In this module"><span class="lesson-toc-head">In this module</span><ol><li><a href="#141-data-fluency-sources-quality-and-fitness-for-purpose">14.1 Data fluency: sources, quality, and fitness for purpose</a></li><li><a href="#142-how-machine-learning-works-at-a-working-level">14.2 How machine learning works at a working level</a></li><li><a href="#143-how-large-language-models-work-and-prompt-design-and-retriev">14.3 How large language models work, and prompt design and retrieval</a></li><li><a href="#144-where-ai-fails-hallucination-bias-drift-and-reproducibility">14.4 Where AI fails: hallucination, bias, drift, and reproducibility</a></li><li><a href="#145-validation-and-the-human-in-the-loop">14.5 Validation and the human in the loop</a></li><li><a href="#146-privacy-confidentiality-and-intellectual-property">14.6 Privacy, confidentiality, and intellectual property</a></li><li><a href="#147-the-program-ai-use-policy-applied">14.7 The program AI-use policy applied</a></li><li><a href="#148-the-regulatory-and-professional-guidance-landscape">14.8 The regulatory and professional guidance landscape</a></li><li><a href="#149-building-the-ai-use-log">14.9 Building the AI-use log</a></li><li><a href="#1410-evaluating-a-tool-workflow-or-vendor">14.10 Evaluating a tool, workflow, or vendor</a></li><li><a href="#worked-example-evaluating-a-retrieval-augmented-literature-summa">Worked example</a></li><li><a href="#applied-activity-produces-capstone-work-product-8">Applied activity</a></li><li><a href="#ai-use-focus">AI-use focus</a></li><li><a href="#knowledge-check">Knowledge check</a></li><li><a href="#key-readings">Key readings</a></li></ol></nav>
+<section class="objectives" id="learning-objectives" aria-labelledby="learning-objectives-h">
+<h2 id="learning-objectives-h">Learning objectives</h2>
+<p>On completion, the learner can:</p>
+<ol>
+<li>Explain, at a working level, how large language models and common machine-learning methods function and where they fail (hallucination, bias, drift, reproducibility). (E)</li>
+<li>Apply the program AI-use policy: permitted uses, validation, source verification, privacy, disclosure, and human accountability. (E, F)</li>
+<li>Situate AI use within current regulatory and professional guidance, including the FDA and EMA positions on AI, the ISPOR good practices for machine learning and generative AI in HEOR, and publication-ethics positions on AI. (E, F)</li>
+<li>Evaluate an AI tool, workflow, or vendor for fitness, bias, reproducibility, and governance. (E, F)</li>
+</ol>
+
+</section>
+<section class="callout callout-why" id="why-this-matters-for-the-career-changer">
+<h2>Why this matters for the career changer</h2>
+<p>A clinician who uses a decision-support tool at the bedside asks a narrow question: does this tool help me make a better decision for this patient. An industry professional who uses AI in evidence work carries a wider set of obligations.</p>
+<p>The output may enter a publication, a payer submission, a regulatory interaction, or a field-medical conversation, and someone must be able to defend how it was produced to an editor, a compliance officer, and an HTA reviewer. The professional is accountable not only for the decision but for the provenance of the evidence behind it.</p>
+<p>Fluency here is not the ability to write clever prompts. It is the ability to state what a model can and cannot do, to verify what it produces, to protect confidential and patient data, to disclose assistance, and to keep a record that a reviewer can audit.</p>
+<p>This module teaches those capabilities and defines the standard that every other module applies. It is the concept layer beneath the program AI-use policy (<a href="../ai-policy.html">AI-use policy</a>), which is the operative standard the capstone enforces.</p>
+<p>BCMAEP makes AI governance an operative policy that is applied in every module and audited in the capstone. The distinction is between knowing that AI exists and being able to document that a specific use of it met a defined standard.</p>
+
+</section>
+<section class="lesson-section" id="141-data-fluency-sources-quality-and-fitness-for-purpose">
+<h2>14.1 Data fluency: sources, quality, and fitness for purpose</h2>
+<p>Data fluency precedes AI fluency, because every model is a function of the data it learned from and every output is only as sound as the data behind it.</p>
+<p>Two distinctions do most of the work. The first is structured versus unstructured data: structured data are values in defined fields (a claims table, a trial dataset, a formulary file), while unstructured data are free text or images (a publication, a label, a medical inquiry, a slide). Many AI tools in medical affairs act on unstructured text, which is harder to validate than a tabular field.</p>
+<p>The second distinction is fitness for purpose: a dataset that is accurate for one question can be misleading for another. The relevant test is not whether data are &quot;good&quot; in the abstract but whether they fit the specific use.</p>
+<p>A short set of questions establishes fitness before any analysis or AI step:</p>
+<ul>
+<li><strong>Provenance:</strong> where did the data come from, who collected them, and for what original purpose?</li>
+<li><strong>Completeness and quality:</strong> what is missing, how are missing values handled, and how were errors checked?</li>
+<li><strong>Representativeness:</strong> whom or what do the data cover, and who is absent, since absence drives bias downstream?</li>
+<li><strong>Timeliness:</strong> how current are the data relative to the decision they will inform?</li>
+<li><strong>Permission:</strong> are the data allowed to be used for this purpose, and do privacy and contractual terms permit entering them into a given tool?</li>
+</ul>
+<p>These questions carry directly into the fitness-for-purpose reasoning applied to real-world data sources in Module 7 and to the inputs of an economic model in Module 8.</p>
+<p>The point for this module is that a fluent user interrogates the data before trusting anything a model does with them. A model cannot correct a defect in the data it was given; it can only propagate it, often with added confidence.</p>
+
+</section>
+<section class="lesson-section" id="142-how-machine-learning-works-at-a-working-level">
+<h2>14.2 How machine learning works at a working level</h2>
+<p>A machine-learning model learns statistical relationships from examples rather than from explicit rules.</p>
+<p>The learner does not need the mathematics, but does need the shape of the method, because the shape determines where it can be trusted.</p>
+<ul>
+<li><strong>Supervised learning</strong> trains on inputs paired with known outputs (features and labels) and learns to predict the label for a new input. Classification predicts a category (for example, does this record indicate the condition of interest); regression predicts a quantity (for example, expected cost).</li>
+<li><strong>Unsupervised learning</strong> finds structure in data without labels, for example grouping similar records or reducing many variables to a few.</li>
+<li><strong>Training, validation, and testing</strong> separate the data used to fit a model from the data used to tune it and the data used to estimate how it will perform on inputs it has not seen. A model that performs well on its training data but poorly on new data is overfit; it has memorized noise rather than learning a generalizable pattern.</li>
+</ul>
+<p>The single most important idea is that a model estimates patterns that held in its training data and applies them to new inputs. It does not understand the domain.</p>
+<p>When new inputs differ from the training data, performance can degrade without warning. This is why the match between the training data and the intended use is the first thing to check, and it is the reason data fluency (14.1) comes before AI fluency.</p>
+
+</section>
+<section class="lesson-section" id="143-how-large-language-models-work-and-prompt-design-and-retriev">
+<h2>14.3 How large language models work, and prompt design and retrieval</h2>
+<p>A large language model is a specific case of a learned model. It is trained on large text corpora to predict the next unit of text (a token) given the preceding context, and at use time it generates a plausible continuation one token at a time.</p>
+<p>Instruction tuning and preference feedback then shape the raw model into one that follows instructions and produces helpful responses. The learner does not need these mechanics in detail, only their implication for accountability.</p>
+<p>This mechanism has one consequence that governs everything else: the model produces text that is statistically likely given its training, not text retrieved from a verified source of record. It can compose a fluent sentence, a well-formed citation, or a confident numerical claim that has no basis in fact.</p>
+<p>Treating the output as a draft to be verified, rather than as a lookup result, therefore follows directly from how the model works, not from caution alone.</p>
+<p>Applied work has acquired a common vocabulary for the techniques used to steer these models. An ISPOR working group has defined a taxonomy of generative-AI concepts, together with the current limitations of each (<a href="https://doi.org/10.1016/j.jval.2025.04.2167" target="_blank" rel="noopener">Fleurence et al., 2025, taxonomy of generative AI in HEOR</a>):</p>
+<ul>
+<li><strong>Prompt engineering</strong> structures the instruction to shape the output: stating the role, the task, the constraints, the format, and, where useful, an example. A precise prompt reduces vague or off-target output but does not make the output true.</li>
+<li><strong>Retrieval-augmented generation</strong> supplies the model with source documents at query time so its answer is grounded in provided text rather than in its training alone. This reduces, but does not remove, the risk of unsupported claims, because the model can still misread or misattribute the supplied passages.</li>
+<li><strong>Fine-tuning</strong> further trains a model on task-specific data to specialize its behavior.</li>
+<li><strong>Agents</strong> chain multiple model calls to take multi-step actions; the more autonomous the chain, the more places an unverified step can propagate an error.</li>
+</ul>
+<p>Prompt design, in practice, is less a matter of wording tricks than of supplying what the model needs: the role it should take, the exact task, the constraints and scope, the required output format, and the source material it must use. A few habits improve reliability:</p>
+<ul>
+<li>State the task and the intended audience explicitly rather than assuming the model will infer them.</li>
+<li>Give the model the source text to work from when accuracy matters, rather than relying on its training.</li>
+<li>Ask for the reasoning or the source of each claim, so each can be checked.</li>
+<li>Constrain the output format so it is easy to verify against a source.</li>
+<li>Ask the model to flag uncertainty and to say when it does not know, rather than to fill gaps.</li>
+</ul>
+<p>The practical lesson is that these techniques change how a model behaves, not whether its output requires verification. Retrieval and careful prompting improve grounding and relevance; they do not transfer accountability to the tool.</p>
+
+</section>
+<section class="lesson-section" id="144-where-ai-fails-hallucination-bias-drift-and-reproducibility">
+<h2>14.4 Where AI fails: hallucination, bias, drift, and reproducibility</h2>
+<p>Four failure modes recur across machine-learning and generative-AI work, and each has a corresponding control. Naming them precisely is what allows a professional to anticipate and manage them rather than discover them after the fact.</p>
+<ul>
+<li><strong>Hallucination.</strong> Because generation is probabilistic rather than retrieval-based, a model can produce fluent, confident content that is fabricated, including invented references, quotations, statistics, and study results. This is a property of the method, not an occasional defect that better wording removes. The control is verification of every factual claim and every citation against a primary source before use, which is why publication and HEOR guidance emphasize human oversight of generative output rather than acceptance of it (<a href="https://doi.org/10.1016/j.jval.2024.10.3846" target="_blank" rel="noopener">Fleurence et al., 2025, generative AI for HTA</a>). In practice, a model may return a citation with real-looking authors, journal, and year that does not exist; the only defense is to resolve the identifier against a primary index.</li>
+<li><strong>Bias.</strong> A model reflects patterns in its training data, including systematic ones, so it can err differently for different subgroups, data sources, or phrasings. This matters wherever outputs affect people or shape evidence. The control is to evaluate a tool for fitness and fairness before relying on it and to check outputs for systematic error, applying a transparency standard where machine learning is used (<a href="https://doi.org/10.1016/j.jval.2022.03.022" target="_blank" rel="noopener">Padula et al., 2022, PALISADE checklist, ISPOR</a>).</li>
+<li><strong>Drift.</strong> Performance degrades when the inputs a model sees diverge from the data it was trained on (data drift) or when the underlying relationship changes over time (concept drift). Deployed model versions also change, sometimes without notice, so a workflow that was validated once is not validated forever. The control is to monitor performance against a check set over time and to record the model and version in use.</li>
+<li><strong>Reproducibility.</strong> Generative models sample from a probability distribution, so the same prompt can produce different outputs across runs and across model versions. Without recorded prompts, settings, and versions, a colleague cannot reproduce or audit the result. The control is documentation sufficient for a reviewer to understand what was done and, where relevant, repeat it; the PALISADE checklist provides a transparency structure for machine-learning work in HEOR (<a href="https://doi.org/10.1016/j.jval.2022.03.022" target="_blank" rel="noopener">Padula et al., 2022</a>).</li>
+</ul>
+<p>The common thread is that none of these failures is fixed by the model becoming more fluent. If anything, greater fluency can mask them, because an incorrect answer that reads well is harder to catch than one that reads poorly.</p>
+<p>Each failure is managed by a human control rather than by the model: verification for hallucination, fairness evaluation for bias, monitoring for drift, and documentation for reproducibility. These four controls are the concrete content of the program AI-use policy that follows.</p>
+
+</section>
+<section class="lesson-section" id="145-validation-and-the-human-in-the-loop">
+<h2>14.5 Validation and the human in the loop</h2>
+<p>&quot;Human in the loop&quot; is often used loosely, sometimes to mean no more than that a person was present. In this program it has a specific meaning: a named person reviews the AI output against a defined standard before the output is used or released, and that review is recorded.</p>
+<p>The depth of the required review scales with risk.</p>
+<p>It ranges from a fact check on an orientation summary, to full verification, medical review, and disclosure on a released document, up to tasks that are not permitted at all.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Risk tier</th>
+<th>Example task</th>
+<th>Human-in-the-loop requirement</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Low</td>
+<td>Literature summary to orient a search</td>
+<td>Fact check before any claim is carried forward</td>
+</tr>
+<tr>
+<td>Moderate</td>
+<td>Evidence-table extraction; code-list draft</td>
+<td>Verify every extracted value or definition against the source</td>
+</tr>
+<tr>
+<td>High</td>
+<td>Medical-information response; manuscript or abstract</td>
+<td>Full reference and fact verification, medical review, and disclosure before release</td>
+</tr>
+<tr>
+<td>Not permitted</td>
+<td>Automated safety adjudication</td>
+<td>No autonomous decision; validated systems and human accountability required (Module 6)</td>
+</tr>
+</tbody></table></div>
+<p>Validation is not a one-time event. A workflow is validated for a defined task on a defined kind of input.</p>
+<p>When the task, the input, or the model version changes, the validation is revisited. This is the operational meaning of the drift control in 14.4 and the reason the tool and version are recorded in the audit log (14.9).</p>
+
+</section>
+<section class="lesson-section" id="146-privacy-confidentiality-and-intellectual-property">
+<h2>14.6 Privacy, confidentiality, and intellectual property</h2>
+<p>Three data-handling risks are distinct, and each has its own rule. They are often confused, which is why they are separated here.</p>
+<ul>
+<li><strong>Privacy.</strong> Patient-level data and personally identifiable information are not entered into an AI tool unless the tool is validated, approved, and contractually governed for that purpose. The privacy and confidentiality frameworks introduced in Module 3 (for example HIPAA and GDPR at a working level) apply to AI inputs exactly as they apply to any other handling of the data.</li>
+<li><strong>Confidentiality.</strong> Proprietary or commercially sensitive company information (unpublished data, strategy, draft submissions) is treated the same way, because a general tool may retain or train on what is entered. The default is exclusion when in doubt.</li>
+<li><strong>Intellectual property.</strong> Generated content can reproduce third-party material, and public availability of a source does not grant rights to reproduce it. Learners should treat archived third-party materials as assigned-reading links to cite, not text to reproduce, and should not paste substantial third-party content into a tool or a deliverable without permission (<a href="../references.html">BCMAEP source register, verification status and cautions</a>).</li>
+</ul>
+<p>The unifying rule is simple to state and easy to violate under time pressure: know where inputs and outputs go, and who can see them, before entering anything. This is the data-governance question in the tool evaluation (14.10), and it is the point at which many otherwise compliant workflows fail.</p>
+
+</section>
+<section class="lesson-section" id="147-the-program-ai-use-policy-applied">
+<h2>14.7 The program AI-use policy applied</h2>
+<p>The program AI-use policy operationalizes six principles that this module explains and that every module enforces (<a href="../ai-policy.html">AI-use policy</a>). Each principle is the operational form of a failure mode or obligation described above.</p>
+<ol>
+<li><strong>Human accountability.</strong> A named person is accountable for every AI-assisted output. AI tools cannot be authors and cannot bear responsibility, because they cannot be responsible for the accuracy, integrity, and originality of the work (<a href="https://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html" target="_blank" rel="noopener">ICMJE, Defining the Role of Authors and Contributors</a>).</li>
+<li><strong>Source verification.</strong> Every factual claim and every citation produced with AI assistance is verified against a primary source before use. This is the control for hallucination described in 14.4.</li>
+<li><strong>Privacy and confidentiality.</strong> Patient-level data, personally identifiable information, and confidential or proprietary company information are not entered into an AI tool unless the tool is validated, approved, and contractually governed for that purpose, with exclusion the default when in doubt.</li>
+<li><strong>Disclosure.</strong> AI assistance is disclosed where the output is shared. GPP 2022 addresses the compliant incorporation of new and emerging publication tools (<a href="https://doi.org/10.7326/M22-1460" target="_blank" rel="noopener">DeTora et al., 2022, GPP 2022</a>), and the ICMJE recommendations require disclosure of AI-assisted technologies at submission and place responsibility for the content, including plagiarism and accuracy review, on the human authors (<a href="https://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html" target="_blank" rel="noopener">ICMJE</a>).</li>
+<li><strong>Fitness, fairness, and bias.</strong> A tool is evaluated for fitness for the specific task and for bias before it is relied upon; outputs affecting people or evidence are checked for systematic error.</li>
+<li><strong>Reproducibility and documentation.</strong> AI use is documented so that a colleague or reviewer can understand what was done and, where relevant, reproduce it, applying transparency standards such as the PALISADE checklist where machine learning is used (<a href="https://doi.org/10.1016/j.jval.2022.03.022" target="_blank" rel="noopener">Padula et al., 2022</a>).</li>
+</ol>
+<p>The policy translates these principles into a task classification that is applied in every module&#39;s applied activity. &quot;Conditional&quot; means permitted only with the stated control (<a href="../ai-policy.html">program AI-use policy</a>).</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Classification</th>
+<th>Required control</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Summarizing published literature to orient a search</td>
+<td>Permitted</td>
+<td>Verify all facts and citations against primary sources before use</td>
+</tr>
+<tr>
+<td>Drafting an outline for a work product</td>
+<td>Permitted</td>
+<td>Human authorship and editing; no unverified claims carried forward</td>
+</tr>
+<tr>
+<td>Extracting study characteristics into an evidence table</td>
+<td>Conditional</td>
+<td>Verify every extracted value against the source article</td>
+</tr>
+<tr>
+<td>Drafting code lists or phenotype definitions for RWE</td>
+<td>Conditional</td>
+<td>Validate every definition against source documentation</td>
+</tr>
+<tr>
+<td>Drafting a standard medical-information response</td>
+<td>Conditional</td>
+<td>Verify every reference and fact; disclose AI assistance; medical review before release</td>
+</tr>
+<tr>
+<td>Structuring or documenting an economic model</td>
+<td>Conditional</td>
+<td>Independently verify model logic and inputs; apply the PALISADE transparency checklist where machine learning is used</td>
+</tr>
+<tr>
+<td>Drafting a manuscript or abstract with AI assistance</td>
+<td>Conditional</td>
+<td>Disclose per journal and GPP 2022; human authors accountable; AI not an author; verify all references</td>
+</tr>
+<tr>
+<td>Entering patient-level or confidential company data into a general AI tool</td>
+<td>Prohibited</td>
+<td>Use only a validated, approved, contractually governed environment</td>
+</tr>
+<tr>
+<td>Presenting AI output as fact without verification</td>
+<td>Prohibited</td>
+<td>Not permitted under any circumstance</td>
+</tr>
+<tr>
+<td>Automated safety adjudication without human sign-off</td>
+<td>Prohibited</td>
+<td>Pharmacovigilance decisions require validated systems and human accountability</td>
+</tr>
+<tr>
+<td>Fabricating or guessing a citation, DOI, or data point</td>
+<td>Prohibited</td>
+<td>Not permitted; mark a gap instead</td>
+</tr>
+</tbody></table></div>
+<p>The correct response to a claim that cannot be verified is to mark a gap, not to guess. The classification is deliberately conservative: when a task is not clearly permitted, it is treated as conditional and the control is applied.</p>
+
+</section>
+<section class="lesson-section" id="148-the-regulatory-and-professional-guidance-landscape">
+<h2>14.8 The regulatory and professional guidance landscape</h2>
+<p>Learners are expected to situate their AI use within current guidance.</p>
+<p>The requirement is not to memorize these documents but to know they exist, what they say at a principle level, and where to find them, because the guidance is what a reviewer will expect a professional to be aware of.</p>
+<ul>
+<li><strong>FDA.</strong> In January 2025 the FDA issued draft guidance, &quot;Considerations for the Use of Artificial Intelligence To Support Regulatory Decision-Making for Drug and Biological Products,&quot; its first guidance on AI in drug and biologic development; the availability notice was published in the Federal Register on January 7, 2025 (<a href="https://www.federalregister.gov/documents/2025/01/07/2024-31542/considerations-for-the-use-of-artificial-intelligence-to-support-regulatory-decision-making-for-drug" target="_blank" rel="noopener">Federal Register, FDA AI draft guidance notice</a>), and the draft guidance and related materials are collected on the FDA CDER resource hub (<a href="https://www.fda.gov/about-fda/center-drug-evaluation-and-research-cder/artificial-intelligence-drug-development" target="_blank" rel="noopener">FDA, Artificial Intelligence in Drug Development</a>; <a href="https://www.fda.gov/media/184830/download" target="_blank" rel="noopener">FDA, AI draft guidance (PDF)</a>). It proposes a risk-based credibility assessment for an AI model tied to a defined context of use, spanning nonclinical, clinical, postmarketing, and manufacturing phases. The practical lesson is that the level of scrutiny should scale with how much the AI output influences a decision and how consequential that decision is. This document remains a draft; in January 2026 the FDA and the EMA jointly published ten &quot;Guiding Principles of Good AI Practice in Drug Development&quot; that apply a human-centric, risk-based approach across the development lifecycle (<a href="https://www.fda.gov/about-fda/artificial-intelligence-drug-development/guiding-principles-good-ai-practice-drug-development" target="_blank" rel="noopener">FDA, Guiding Principles of Good AI Practice in Drug Development</a>).</li>
+<li><strong>EMA.</strong> The European Medicines Agency&#39;s &quot;Reflection paper on the use of Artificial Intelligence in the medicinal product lifecycle&quot; (EMA/CHMP/CVMP/83833/2023), first published on September 30, 2024, is adopted as final and sets out principles for applying AI and machine learning at any step of the medicine lifecycle (<a href="https://www.ema.europa.eu/en/use-artificial-intelligence-ai-medicinal-product-lifecycle" target="_blank" rel="noopener">EMA, use of AI in the medicinal product lifecycle</a>).</li>
+<li><strong>ISPOR (HEOR).</strong> The PALISADE checklist is a good-practices report for machine-learning methods in HEOR and provides a transparency checklist across five application areas (<a href="https://doi.org/10.1016/j.jval.2022.03.022" target="_blank" rel="noopener">Padula et al., 2022</a>). Two ISPOR working-group reports address generative AI: one on the opportunities, challenges, and policy considerations for HTA, which emphasizes human oversight (<a href="https://doi.org/10.1016/j.jval.2024.10.3846" target="_blank" rel="noopener">Fleurence et al., 2025, generative AI for HTA</a>), and one defining a taxonomy of generative-AI concepts for HEOR with their current limitations (<a href="https://doi.org/10.1016/j.jval.2025.04.2167" target="_blank" rel="noopener">Fleurence et al., 2025, taxonomy of generative AI in HEOR</a>).</li>
+<li><strong>Publications.</strong> GPP 2022 covers ethics, transparency, and the compliant incorporation of new publication tools (<a href="https://doi.org/10.7326/M22-1460" target="_blank" rel="noopener">DeTora et al., 2022</a>); the ICMJE recommendations place responsibility for AI-assisted content on the human authors and prohibit listing AI tools as authors (<a href="https://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html" target="_blank" rel="noopener">ICMJE</a>).</li>
+<li><strong>Medical affairs practice.</strong> MAPS has published a 2024 benchmark report on digital, advanced analytics, and AI in medical affairs, surveying 32 companies, which situates AI adoption and governance in current practice (<a href="https://medicalaffairs.org/wp-content/uploads/2024/10/MAPS-Digital-Advanced-Analytics-Artificial-Intelligence-Report-2024.pdf" target="_blank" rel="noopener">MAPS, Digital, Advanced Analytics and AI in Medical Affairs benchmark report, 2024</a>).</li>
+</ul>
+<p>A single thread runs through all five. Each body places a human, not the tool, in the position of accountability, and each ties the required scrutiny to how much the AI output influences a consequential decision.</p>
+<p>Because the FDA, EMA, ISPOR, and publication bodies have all issued or updated AI guidance recently, the field is treated as fast-moving. The program therefore requires continuing education in AI governance each recertification cycle rather than treating this module as a one-time competency (<a href="../ai-policy.html">program AI-use policy</a>).</p>
+
+</section>
+<section class="lesson-section" id="149-building-the-ai-use-log">
+<h2>14.9 Building the AI-use log</h2>
+<p>The AI-use log is the record that makes AI use auditable. Every learner maintains one across the portfolio, and it is capstone work product 8. Each material AI use is one row, with the fields defined in the policy (<a href="../ai-policy.html">program AI-use policy</a>):</p>
+<ul>
+<li><strong>Date:</strong> when the AI was used.</li>
+<li><strong>Work product:</strong> which deliverable the use supported.</li>
+<li><strong>Tool:</strong> the specific tool or model and version (this supports reproducibility and drift tracking).</li>
+<li><strong>Task:</strong> what the AI was asked to do.</li>
+<li><strong>Data handling:</strong> what data were entered, and confirmation that no confidential or patient data entered a non-approved tool.</li>
+<li><strong>Verification:</strong> what was checked, against which primary source, and the result.</li>
+<li><strong>Changes made:</strong> how the human edited or corrected the output.</li>
+<li><strong>Accountable person:</strong> the named person responsible for the final output.</li>
+<li><strong>Disclosure:</strong> where and how the AI use was disclosed, if the output was shared.</li>
+</ul>
+<p>Two failure states are graded strictly. A portfolio that used AI without a log is returned, and a log that shows unverified claims carried into a deliverable fails the compliance and evidence dimensions of the capstone rubric.</p>
+<p>The log is not paperwork added after the fact. It is completed as the work is done, because verification recorded at the point of use is the evidence that the six principles were followed; a log reconstructed later cannot demonstrate that verification actually preceded use.</p>
+
+</section>
+<section class="lesson-section" id="1410-evaluating-a-tool-workflow-or-vendor">
+<h2>14.10 Evaluating a tool, workflow, or vendor</h2>
+<p>Evaluation is where the preceding sections become a single judgment. Before relying on a tool for a task, the learner answers and documents six questions, which are the tool-evaluation deliverable and a required part of the capstone AI-use plan (<a href="../ai-policy.html">program AI-use policy</a>):</p>
+<ol>
+<li><strong>Fitness:</strong> is the tool designed and validated for this task, or is it being used outside its intended purpose?</li>
+<li><strong>Data governance:</strong> where do inputs and outputs go, who can see them, and are confidentiality and privacy preserved?</li>
+<li><strong>Accuracy and hallucination risk:</strong> how are factual claims and citations verified, and what is the observed error rate on a check set?</li>
+<li><strong>Bias:</strong> could the tool systematically err for some groups or inputs, and how is that checked?</li>
+<li><strong>Reproducibility:</strong> can the process be described and, where needed, repeated, and are prompts and settings recorded?</li>
+<li><strong>Accountability:</strong> who signs off, and what is the escalation path if the tool fails?</li>
+</ol>
+<p>When the tool is a purchased vendor product rather than an internally built workflow, the same six questions apply, with additional procurement considerations:</p>
+<ul>
+<li>What data the vendor retains, and whether it trains on customer inputs.</li>
+<li>Whether the vendor documents model versions and changes, so drift can be tracked.</li>
+<li>Whether performance claims are supported by evidence the buyer can inspect.</li>
+<li>Where liability and accountability sit contractually.</li>
+</ul>
+<p>A compliant organization approves tools and use cases through an accountable function and restricts general tools to non-confidential tasks (<a href="../ai-policy.html">program AI-use policy</a>). The learner&#39;s evaluation should reach a decision that would satisfy such a function.</p>
+<p>The point of the evaluation is to reach a defensible decision about whether and how to use the tool, not to produce a favorable verdict.</p>
+<p>A tool that is unfit, ungoverned for the data involved, or unverifiable should be declined for that task, and the evaluation documents why. Declining a tool for a task is a valid and often correct outcome.</p>
+
+</section>
+<section class="feature-card card-worked" id="worked-example-evaluating-a-retrieval-augmented-literature-summa" aria-label="Worked example">
+<span class="card-kicker">Worked example</span>
+<h2>Evaluating a retrieval-augmented literature-summarization workflow</h2>
+<p>Consider a workflow that answers medical questions by retrieving passages from an internal document set and generating a summary with citations, a retrieval-augmented generation design in the ISPOR taxonomy sense (<a href="https://doi.org/10.1016/j.jval.2025.04.2167" target="_blank" rel="noopener">Fleurence et al., 2025, taxonomy</a>).</p>
+<p>Applying the six questions:</p>
+<ul>
+<li><strong>Fitness:</strong> the tool is intended for drafting orientation summaries, not for producing final medical-information responses, so its use is bounded to a draft.</li>
+<li><strong>Data governance:</strong> the internal corpus and queries must remain in an approved environment; general consumer tools are excluded because confidential material is involved.</li>
+<li><strong>Accuracy:</strong> each cited passage is checked against the source document, because retrieval grounds but does not guarantee correct attribution; an error rate is estimated on a check set of known questions.</li>
+<li><strong>Bias:</strong> the team checks whether the tool answers well for common questions but poorly for rare indications or subpopulations underrepresented in the corpus.</li>
+<li><strong>Reproducibility:</strong> the prompt template, model version, and retrieval settings are recorded so a reviewer can repeat the run.</li>
+<li><strong>Accountability:</strong> a named medical reviewer signs off before any answer is released, and the escalation path is to withhold release if verification fails.</li>
+</ul>
+<p>The workflow is accepted for drafting under these controls and logged accordingly; it is not accepted for unreviewed external release.</p>
+<p>This mirrors the policy classification of a medical-information response as a conditional use requiring verification, disclosure, and medical review (<a href="../ai-policy.html">program AI-use policy</a>). The evaluation did not ask whether the tool is impressive; it asked whether its output can be trusted for a specific purpose and who is answerable if it is not.</p>
+
+</section>
+<section class="feature-card card-activity" id="applied-activity-produces-capstone-work-product-8" aria-label="Applied activity">
+<span class="card-kicker">Applied activity</span>
+<h2>Produces capstone work product 8</h2>
+<p>Using the assigned capstone product scenario, build two artifacts.</p>
+<p>First, an AI-use plan for the portfolio: state, for each work product where AI will assist, the permitted task and its required control drawn from the policy classification, and the accountable person. Second, an AI-use audit log with the nine fields above, populated as you complete the other work products, showing what was entered, what was verified against which primary source, and how the output was corrected.</p>
+<p>Then apply the six-question evaluation to one AI workflow you actually used in the portfolio (for example an evidence-table extraction, a code-list draft, or a literature summary) and record the decision and its rationale. Together these become capstone work product 8, the AI-use plan and audit log spanning the portfolio.</p>
+
+</section>
+<section class="feature-card card-ai" id="ai-use-focus" aria-label="AI-use focus">
+<span class="card-kicker">AI-use focus</span>
+<h2 class="visually-hidden">AI-use focus</h2>
+<p>This module defines the standard applied everywhere else in the program. Every other module&#39;s AI-use focus box is a specific application of the six principles taught here: verify every date and regulatory fact (Modules 1 and 5); verify every extracted value in an evidence table (Module 4); validate every code list and phenotype definition (Module 7); independently verify model logic and inputs (Module 8); disclose AI assistance and secure medical review before release (Module 12).</p>
+<p>The deliverable of this module, the AI-use plan and audit log, is the instrument that demonstrates the standard was met across the portfolio (<a href="../ai-policy.html">AI-use policy</a>).</p>
+
+</section>
+<section class="knowledge-check" id="knowledge-check">
+<h2>Knowledge check</h2>
+<p class="kc-intro">Answer each question from memory before revealing the model answer. Retrieval practice of this kind improves retention relative to re-reading (<a href="https://doi.org/10.3102/0034654316689306" target="_blank" rel="noopener">Adesope et al., 2017</a>).</p>
+<div class="kc-list"><details class="kc-item">
+  <summary><span class="kc-num">1</span><span class="kc-q">Why does a large language model produce fabricated references even when it sounds confident?</span><span class="kc-toggle" aria-hidden="true">Show answer</span></summary>
+  <div class="kc-answer"><span class="kc-answer-label">Model answer</span><p>It generates statistically plausible next tokens rather than retrieving from a source of record, so a well-formed but false citation is a property of the method, not an occasional defect; the control is verification against a primary source.</p>
+</div>
+</details>
+<details class="kc-item">
+  <summary><span class="kc-num">2</span><span class="kc-q">A colleague enters a de-identified but proprietary trial dataset into a public consumer chatbot to draft a summary. Which principle is violated, and what should have happened?</span><span class="kc-toggle" aria-hidden="true">Show answer</span></summary>
+  <div class="kc-answer"><span class="kc-answer-label">Model answer</span><p>Privacy and confidentiality; proprietary company data should not enter a tool that is not validated, approved, and contractually governed, so an approved environment or exclusion was required.</p>
+</div>
+</details>
+<details class="kc-item">
+  <summary><span class="kc-num">3</span><span class="kc-q">Distinguish data drift from a reproducibility problem.</span><span class="kc-toggle" aria-hidden="true">Show answer</span></summary>
+  <div class="kc-answer"><span class="kc-answer-label">Model answer</span><p>Drift is degraded performance when inputs diverge from training data or the underlying relationship changes over time; a reproducibility problem is that the same prompt can yield different outputs across runs or versions, which is why prompts, settings, and versions are recorded.</p>
+</div>
+</details>
+<details class="kc-item">
+  <summary><span class="kc-num">4</span><span class="kc-q">What does the FDA January 2025 draft guidance propose as its central concept, and what is the practical implication?</span><span class="kc-toggle" aria-hidden="true">Show answer</span></summary>
+  <div class="kc-answer"><span class="kc-answer-label">Model answer</span><p>A risk-based credibility assessment for an AI model tied to a defined context of use; scrutiny should scale with the model&#39;s influence on a decision and the decision&#39;s consequence.</p>
+</div>
+</details>
+<details class="kc-item">
+  <summary><span class="kc-num">5</span><span class="kc-q">Can an AI tool be listed as an author on a manuscript, and why or why not?</span><span class="kc-toggle" aria-hidden="true">Show answer</span></summary>
+  <div class="kc-answer"><span class="kc-answer-label">Model answer</span><p>No; ICMJE holds that AI cannot be responsible for the accuracy, integrity, and originality of the work, so responsibility rests with the human authors, and AI assistance is disclosed.</p>
+</div>
+</details>
+<details class="kc-item">
+  <summary><span class="kc-num">6</span><span class="kc-q">Give the six questions used to evaluate an AI tool or workflow.</span><span class="kc-toggle" aria-hidden="true">Show answer</span></summary>
+  <div class="kc-answer"><span class="kc-answer-label">Model answer</span><p>Fitness, data governance, accuracy and hallucination risk, bias, reproducibility, and accountability.</p>
+</div>
+</details>
+<details class="kc-item">
+  <summary><span class="kc-num">7</span><span class="kc-q">Where AI assistance was used but a factual claim cannot be verified against a primary source, what is the correct action?</span><span class="kc-toggle" aria-hidden="true">Show answer</span></summary>
+  <div class="kc-answer"><span class="kc-answer-label">Model answer</span><p>Mark the gap; presenting unverified output as fact and guessing or fabricating a citation are both prohibited.</p>
+</div>
+</details>
+<details class="kc-item">
+  <summary><span class="kc-num">8</span><span class="kc-q">Why does retrieval-augmented generation reduce but not remove the need for verification?</span><span class="kc-toggle" aria-hidden="true">Show answer</span></summary>
+  <div class="kc-answer"><span class="kc-answer-label">Model answer</span><p>Supplying source documents grounds the answer in provided text, but the model can still misread or misattribute those passages, so cited material is still checked against the source.</p>
+</div>
+</details></div>
+</section>
+<section class="key-readings" id="key-readings">
+<h2>Key readings</h2>
+<ul>
+<li><a href="https://www.federalregister.gov/documents/2025/01/07/2024-31542/considerations-for-the-use-of-artificial-intelligence-to-support-regulatory-decision-making-for-drug" target="_blank" rel="noopener">Federal Register, FDA draft guidance on AI to support regulatory decision-making (January 7, 2025 notice)</a></li>
+<li><a href="https://www.fda.gov/about-fda/artificial-intelligence-drug-development/guiding-principles-good-ai-practice-drug-development" target="_blank" rel="noopener">FDA, Guiding Principles of Good AI Practice in Drug Development (January 2026, issued jointly with EMA)</a></li>
+<li><a href="https://www.ema.europa.eu/en/use-artificial-intelligence-ai-medicinal-product-lifecycle" target="_blank" rel="noopener">EMA, Reflection paper on the use of AI in the medicinal product lifecycle</a></li>
+<li><a href="https://doi.org/10.1016/j.jval.2022.03.022" target="_blank" rel="noopener">Padula et al., 2022, PALISADE checklist for machine learning in HEOR (ISPOR)</a></li>
+<li><a href="https://doi.org/10.1016/j.jval.2024.10.3846" target="_blank" rel="noopener">Fleurence et al., 2025, generative AI for health technology assessment (ISPOR)</a></li>
+<li><a href="https://doi.org/10.1016/j.jval.2025.04.2167" target="_blank" rel="noopener">Fleurence et al., 2025, taxonomy of generative AI in HEOR (ISPOR)</a></li>
+<li><a href="https://doi.org/10.7326/M22-1460" target="_blank" rel="noopener">DeTora et al., 2022, Good Publication Practice (GPP 2022)</a></li>
+<li><a href="https://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html" target="_blank" rel="noopener">ICMJE, Defining the Role of Authors and Contributors (including AI provisions)</a></li>
+<li><a href="https://medicalaffairs.org/wp-content/uploads/2024/10/MAPS-Digital-Advanced-Analytics-Artificial-Intelligence-Report-2024.pdf" target="_blank" rel="noopener">MAPS, Digital, Advanced Analytics and AI in Medical Affairs benchmark report, 2024</a></li>
+<li>Program AI-use policy and playbook (<a href="../ai-policy.html">AI-use policy</a>)</li>
+</ul>
+
+</section>
+<section class="callout callout-capstone" id="connection-to-the-capstone">
+<h2>Connection to the capstone</h2>
+<p>The AI-use plan and audit log produced here is capstone work product 8, and it is the only work product that spans the whole portfolio.</p>
+<p>Every other deliverable that used AI is recorded in this log, and the six-question evaluation documents that at least one workflow was assessed for fitness, bias, reproducibility, and governance. The capstone rubric grades the portfolio for compliance and evidence integrity on the basis of this record.</p>
+<p>A portfolio without a log is returned, and a log that carries unverified claims into a deliverable fails those dimensions.</p>
+<p>The module thus supplies both a competency and the audit instrument that demonstrates it. A graduate who has completed this work can use AI productively and defend how they used it to a compliance officer, an editor, and an HTA reviewer, which is the outcome the credential is intended to certify.</p>
+
+</section>
+<div class="lesson-complete">
+  <button class="btn btn-complete" data-complete="m14" type="button">Mark module 14 as complete</button>
+  <span class="lesson-complete-status" role="status"></span>
+</div>
+</article>
+<nav class="prevnext prevnext-bottom" aria-label="Lesson navigation"><a class="pn-link pn-prev" href="../modules/module-13.html"><span class="pn-dir">Previous</span><span class="pn-title">Module 13: Advisory boards, ISR, and education</span></a><a class="pn-link pn-next" href="../modules/module-15.html"><span class="pn-dir">Next</span><span class="pn-title">Module 15: Professional practice and transition</span></a></nav>
+</main>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><svg class="seal" width="34" height="34" viewBox="0 0 64 64" role="img" aria-label="BCMAEP seal">
+  <circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="2.5"/>
+  <circle cx="32" cy="32" r="24" fill="none" stroke="currentColor" stroke-width="1"/>
+  <text x="32" y="37" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-weight="bold" fill="currentColor" letter-spacing="0.5">MA</text>
+  <text x="32" y="14.5" text-anchor="middle" font-family="Georgia, serif" font-size="6.5" fill="currentColor" letter-spacing="2">BCMAEP</text>
+  <text x="32" y="55" text-anchor="middle" font-family="Georgia, serif" font-size="6.5" fill="currentColor" letter-spacing="1">EST 2026</text>
+</svg><div><strong>BCMAEP</strong><br>Board Certified Medical Affairs and Evidence Professional</div></div>
+    <div class="footer-cols">
+      <div>
+        <span class="footer-head">Program</span>
+        <a href="../handbook.html">Program handbook</a>
+        <a href="../curriculum.html">Curriculum and syllabus</a>
+        <a href="../assessment.html">Examination blueprint</a>
+        <a href="../capstone.html">Capstone portfolio</a>
+      </div>
+      <div>
+        <span class="footer-head">Governance</span>
+        <a href="../accreditation.html">Accreditation and quality</a>
+        <a href="../ai-policy.html">AI-use policy</a>
+        <a href="../references.html">Source register</a>
+        <a href="../market-alignment.html">Market alignment</a>
+      </div>
+      <div>
+        <span class="footer-head">Help</span>
+        <a href="../index.html#how-to-use">How to use this site</a>
+        <a href="../index.html#program-status">Program status</a>
+        <a href="../curriculum.html#your-progress">Your progress</a>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p><strong>Program status.</strong> Version 1.0 curriculum design, prepared July 2026. This program is a complete curriculum and certification design; it has not undergone job-task-analysis validation, item-bank piloting, formal standard setting, or accreditation review. It is designed for alignment with ISO/IEC 17024, the NCCA Standards, and the ANSI/IACET Standard, and is not accredited by any body at this version (see <a href="../accreditation.html">accreditation and quality alignment</a>).</p>
+      <p><strong>Accessibility.</strong> This site targets WCAG 2.2 Level AA conformance: minimum 4.5:1 text contrast, keyboard-operable interactive components, visible focus indicators, and single-column reflow at narrow widths.</p>
+      <p><strong>Sources.</strong> Teaching claims carry hyperlinked citations to verified authoritative sources; the consolidated pool is the <a href="../references.html">source register</a>. Cited third-party materials are assigned readings; public availability does not grant republication rights.</p>
+    </div>
+  </div>
+</footer>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

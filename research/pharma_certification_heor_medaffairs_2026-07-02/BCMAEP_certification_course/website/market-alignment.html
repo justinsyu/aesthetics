@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Market alignment analysis | BCMAEP</title>
+<meta name="description" content="BCMAEP Market alignment analysis.">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2064%2064%22%20role%3D%22img%22%20aria-label%3D%22BCMAEP%20seal%22%3E%0A%20%20%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%2230%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222.5%22%2F%3E%0A%20%20%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%2224%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%221%22%2F%3E%0A%20%20%3Ctext%20x%3D%2232%22%20y%3D%2237%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2C%20'Times%20New%20Roman'%2C%20serif%22%20font-size%3D%2215%22%20font-weight%3D%22bold%22%20fill%3D%22currentColor%22%20letter-spacing%3D%220.5%22%3EMA%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%2232%22%20y%3D%2214.5%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2C%20serif%22%20font-size%3D%226.5%22%20fill%3D%22currentColor%22%20letter-spacing%3D%222%22%3EBCMAEP%3C%2Ftext%3E%0A%20%20%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2C%20serif%22%20font-size%3D%226.5%22%20fill%3D%22currentColor%22%20letter-spacing%3D%221%22%3EEST%202026%3C%2Ftext%3E%0A%3C%2Fsvg%3E">
+</head>
+<body class="page-document">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="sidebar">
+      <span class="nav-toggle-bars" aria-hidden="true"></span> Menu
+    </button>
+    <a class="brand" href="index.html">
+      <svg class="seal" width="38" height="38" viewBox="0 0 64 64" role="img" aria-label="BCMAEP seal">
+  <circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="2.5"/>
+  <circle cx="32" cy="32" r="24" fill="none" stroke="currentColor" stroke-width="1"/>
+  <text x="32" y="37" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-weight="bold" fill="currentColor" letter-spacing="0.5">MA</text>
+  <text x="32" y="14.5" text-anchor="middle" font-family="Georgia, serif" font-size="6.5" fill="currentColor" letter-spacing="2">BCMAEP</text>
+  <text x="32" y="55" text-anchor="middle" font-family="Georgia, serif" font-size="6.5" fill="currentColor" letter-spacing="1">EST 2026</text>
+</svg>
+      <span class="brand-text">
+        <span class="brand-name">BCMAEP</span>
+        <span class="brand-sub">Board Certified Medical Affairs and Evidence Professional</span>
+      </span>
+    </a>
+    <nav class="top-nav" aria-label="Primary">
+      <a href="index.html">Overview</a>
+      <a href="curriculum.html">Curriculum</a>
+      <a href="assessment.html">Assessment</a>
+      <a href="accreditation.html">Accreditation</a>
+      <a href="references.html">Sources</a>
+    </nav>
+  </div>
+</header>
+<div class="layout">
+
+<nav class="sidebar" id="sidebar" aria-label="Course navigation">
+  <div class="snav-group">
+    <span class="snav-head">Program</span>
+    <ul>
+      <li><a class="snav-link " href="index.html">Overview</a></li>
+      <li><a class="snav-link " href="handbook.html">Program handbook</a></li>
+      <li><a class="snav-link " href="curriculum.html">Curriculum and syllabus</a></li>
+    </ul>
+  </div>
+  <div class="snav-group">
+    <span class="snav-head">Modules</span>
+    <div class="snav-progress" aria-hidden="true"><div class="snav-progress-bar" id="snav-progress-bar"></div></div>
+    <p class="snav-progress-text" id="snav-progress-text" role="status"></p>
+    <ul class="snav-domains">
+<li class="snav-domain"><span class="snav-domain-label">Domain A &middot; Industry orientation and translation</span><ul><li><a class="snav-link snav-module" data-module="m01" href="modules/module-01.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">1</span><span>Industry and the development lifecycle</span></a></li>
+<li><a class="snav-link snav-module" data-module="m02" href="modules/module-02.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">2</span><span>The medical affairs operating model</span></a></li>
+<li><a class="snav-link snav-module" data-module="m03" href="modules/module-03.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">3</span><span>Compliance and the nonpromotional boundary</span></a></li></ul></li>
+<li class="snav-domain"><span class="snav-domain-label">Domain B &middot; Scientific and clinical foundations</span><ul><li><a class="snav-link snav-module" data-module="m04" href="modules/module-04.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">4</span><span>Trial design, biostatistics, and appraisal</span></a></li>
+<li><a class="snav-link snav-module" data-module="m05" href="modules/module-05.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">5</span><span>Regulatory affairs and approval pathways</span></a></li>
+<li><a class="snav-link snav-module" data-module="m06" href="modules/module-06.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">6</span><span>Pharmacovigilance and risk management</span></a></li></ul></li>
+<li class="snav-domain"><span class="snav-domain-label">Domain C &middot; Evidence generation, HEOR, HTA, and market access</span><ul><li><a class="snav-link snav-module" data-module="m07" href="modules/module-07.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">7</span><span>Real-world data and evidence</span></a></li>
+<li><a class="snav-link snav-module" data-module="m08" href="modules/module-08.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">8</span><span>HEOR methods and economic evaluation</span></a></li>
+<li><a class="snav-link snav-module" data-module="m09" href="modules/module-09.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">9</span><span>HTA and global market access</span></a></li>
+<li><a class="snav-link snav-module" data-module="m10" href="modules/module-10.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">10</span><span>Integrated evidence generation planning</span></a></li></ul></li>
+<li class="snav-domain"><span class="snav-domain-label">Domain D &middot; Scientific communication and field medical</span><ul><li><a class="snav-link snav-module" data-module="m11" href="modules/module-11.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">11</span><span>MSL excellence and field medical</span></a></li>
+<li><a class="snav-link snav-module" data-module="m12" href="modules/module-12.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">12</span><span>Scientific communications and publications</span></a></li>
+<li><a class="snav-link snav-module" data-module="m13" href="modules/module-13.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">13</span><span>Advisory boards, ISR, and education</span></a></li></ul></li>
+<li class="snav-domain"><span class="snav-domain-label">Domain E &middot; AI, data, and professional practice</span><ul><li><a class="snav-link snav-module" data-module="m14" href="modules/module-14.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">14</span><span>AI and data fluency</span></a></li>
+<li><a class="snav-link snav-module" data-module="m15" href="modules/module-15.html"><span class="snav-check" aria-hidden="true"></span><span class="snav-num">15</span><span>Professional practice and transition</span></a></li></ul></li>
+    </ul>
+  </div>
+  <div class="snav-group">
+    <span class="snav-head">Assessment</span>
+    <ul>
+      <li><a class="snav-link " href="assessment.html">Examination blueprint</a></li>
+      <li><a class="snav-link " href="capstone.html">Capstone portfolio</a></li>
+      <li><a class="snav-link " href="cases.html">Case library</a></li>
+    </ul>
+  </div>
+  <div class="snav-group">
+    <span class="snav-head">Governance</span>
+    <ul>
+      <li><a class="snav-link " href="ai-policy.html">AI-use policy</a></li>
+      <li><a class="snav-link " href="accreditation.html">Accreditation and quality</a></li>
+    </ul>
+  </div>
+  <div class="snav-group">
+    <span class="snav-head">Reference</span>
+    <ul>
+      <li><a class="snav-link " href="references.html">Source register</a></li>
+      <li><a class="snav-link " aria-current="page" href="market-alignment.html">Market alignment</a></li>
+    </ul>
+  </div>
+</nav>
+<main id="main" class="main">
+
+<nav class="breadcrumbs" aria-label="Breadcrumb"><ol>
+  <li><a href="index.html">BCMAEP</a></li>
+  <li aria-current="page">Market alignment analysis</li>
+</ol></nav>
+<article class="document">
+<header class="lesson-header"><h1>Medical Affairs Responsibilities: Frequency Analysis and Curriculum Alignment</h1></header>
+<nav class="lesson-toc" aria-label="On this page"><span class="lesson-toc-head">On this page</span><ol><li><a href="#purpose">Purpose</a></li><li><a href="#method-and-its-limits">Method and its limits</a></li><li><a href="#responsibilities-ranked-from-most-to-least-common">Responsibilities ranked from most to least common</a></li><li><a href="#curriculum-alignment">Curriculum alignment</a></li><li><a href="#what-the-analysis-shows">What the analysis shows</a></li><li><a href="#role-family-notes-for-candidates">Role-family notes for candidates</a></li></ol></nav>
+<p>Prepared 2026-07-02. Companion to the job-posting link index and the per-agent raw collections (the full responsibility bullets), both in the repository archive.</p>
+<h2 id="purpose">Purpose</h2>
+<p>This document does two things. First, it ranks the responsibilities that appear in real medical affairs and evidence job descriptions, from most to least common, so that a person moving into pharma can see what the work actually involves. Second, it maps those responsibilities against the 15-module BCMAEP curriculum to test whether the course prepares candidates for the responsibilities they will hold.</p>
+<h2 id="method-and-its-limits">Method and its limits</h2>
+<p>The evidence base is approximately 75 job postings collected by web search on 2026-07-02 across 39 companies and organizations and five role families (field medical/MSL; medical affairs management and medical director; medical information, communications, and publications; HEOR, market access, and real-world evidence; and biotech/mid-size roles), supplemented by durable role-definition references, notably a peer-reviewed joint position statement on the medical science liaison profession (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8492581/" target="_blank" rel="noopener">position statement, PMC</a>) and a public allied-health career description (<a href="https://explorehealthcareers.org/careers/allied-health-professions/medical-science-liaison/" target="_blank" rel="noopener">ExploreHealthCareers, medical science liaison</a>).</p>
+<p>The counts below are thematic tallies, not exact measurements. Responsibilities are worded differently across postings, so each theme groups several phrasings, and a single posting can contribute to many themes. Roughly one third of the individual postings were fetched in full; the remainder were captured from search-result summaries, which under-report the longer duty lists. The numbers should therefore be read as prevalence tiers, not precise frequencies. Where a theme is concentrated in one role family, that is noted.</p>
+<h2 id="responsibilities-ranked-from-most-to-least-common">Responsibilities ranked from most to least common</h2>
+<p>The approximate count is the number of the roughly 75 postings in which the theme clearly appeared.</p>
+<h3 id="tier-1-near-universal-appears-in-most-postings-roughly-45-or-mor">Tier 1: near-universal (appears in most postings, roughly 45 or more of 75)</h3>
+<ol>
+<li><strong>Cross-functional collaboration</strong> with commercial, market access, regulatory, clinical development, safety/pharmacovigilance, and HEOR (about 65). Stated or implied in nearly every posting across all role families.</li>
+<li><strong>Compliance, ethics, medical governance, and the nonpromotional standard,</strong> including adverse-event and product-complaint reporting (about 60). Explicit in most and assumed in the rest; the boundary between medical and commercial activity is a recurring emphasis.</li>
+<li><strong>Building and maintaining KOL, thought-leader, and HCP relationships</strong> within an assigned area or geography (about 50). Universal in field medical; common in medical affairs management and HEOR.</li>
+<li><strong>Compliant scientific exchange and medical education,</strong> delivering approved, fair-balanced clinical and scientific data (about 48). Universal in field medical; common in management and medical information.</li>
+<li><strong>Maintaining deep therapeutic-area and scientific expertise</strong> through continuous learning (about 45). Common across field medical, management, and communications roles.</li>
+<li><strong>Evidence generation:</strong> input to clinical trials, investigator-initiated or investigator-sponsored studies, real-world evidence, and HEOR studies (about 45). Field medical supports it; management and HEOR roles own it.</li>
+</ol>
+<h3 id="tier-2-very-common-roughly-30-to-44-of-75">Tier 2: very common (roughly 30 to 44 of 75)</h3>
+<ol start="7">
+<li><strong>Gathering, synthesizing, and reporting field and medical insights</strong> to shape internal strategy and identify evidence gaps (about 42). Universal in field medical; common in management.</li>
+<li><strong>Developing and executing a medical affairs strategy or medical plan</strong> (management roles) or a territory and engagement plan (field roles), for a therapeutic area (about 40).</li>
+<li><strong>Congress, advisory board, and symposium support and delivery</strong> (about 40). Common across all role families.</li>
+<li><strong>Scientific communications and publications:</strong> publication planning, abstracts, manuscripts, congress content, and the scientific communication platform and narrative (about 35). Universal in communications and publications roles; common in management and for HEOR dissemination.</li>
+<li><strong>Responding to unsolicited medical information inquiries</strong> accurately and compliantly (about 35). Universal in medical information; common in field medical.</li>
+</ol>
+<h3 id="tier-3-common-roughly-18-to-29-of-75">Tier 3: common (roughly 18 to 29 of 75)</h3>
+<ol start="12">
+<li><strong>Clinical trial site identification, feasibility, and recruitment support</strong> (about 28). Very common in field medical.</li>
+<li><strong>Developing medical and scientific content:</strong> standard and custom response documents, FAQs, Data on File, slide decks, and medical materials (about 25). Concentrated in medical information and communications.</li>
+<li><strong>Speaker identification, training, and education-program support</strong> (about 22). Common in field medical and management.</li>
+<li><strong>Medical and scientific review and approval of materials</strong> (medical, legal, and regulatory review; copy approval; certification) (about 20). Common in management and medical information.</li>
+<li><strong>HEOR and health-economics methods:</strong> economic models, cost-effectiveness, budget impact, patient-reported and clinical outcome assessments, and evidence synthesis (about 20). Universal in HEOR roles; appears in management and medical information via value communication.</li>
+<li><strong>Project, budget, and vendor management,</strong> including timelines and deliverables (about 20). Common in HEOR, publications, and director-level roles.</li>
+<li><strong>Value dossiers (AMCP dossier, Global Value Dossier) and HTA submissions</strong> (about 15). Concentrated in HEOR and market access.</li>
+<li><strong>Market access, payer engagement, pricing, reimbursement, and contracting</strong> (about 15). Concentrated in HEOR and market access; appears in US medical-access management roles.</li>
+<li><strong>Real-world data study design and analysis</strong> using claims, electronic health records, registries, and target-trial emulation, including code-list and cohort construction (about 15). Concentrated in real-world evidence roles.</li>
+</ol>
+<h3 id="tier-4-role-specific-or-emerging-fewer-than-15-of-75">Tier 4: role-specific or emerging (fewer than 15 of 75)</h3>
+<ol start="21">
+<li><strong>People and team management and leadership</strong> at director level and above (about 12). Concentrated in senior roles.</li>
+<li><strong>Monitoring the payer, HTA, and policy landscape,</strong> including the US Inflation Reduction Act drug price negotiation program (about 10). Concentrated in market access.</li>
+<li><strong>CRM and administrative documentation</strong> (for example Veeva), territory administration, and substantial field travel (about 10 explicit, implied in most field roles).</li>
+<li><strong>Use of AI and digital tools,</strong> omni-channel content, and digital medical information (about 5 explicit). Emerging: named in a Novartis HEOR posting (&quot;leverage AI tools&quot;), an Astellas scientific-content-operations posting, and AbbVie and AstraZeneca medical information postings referencing digital content.</li>
+</ol>
+<h2 id="curriculum-alignment">Curriculum alignment</h2>
+<p>The table maps each responsibility theme to the BCMAEP module or modules that develop it. Coverage is rated as Direct (a module is built around it), Substantial (covered within a module), or Partial (introduced but not a focus).</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Responsibility theme</th>
+<th>Tier</th>
+<th>BCMAEP module(s)</th>
+<th>Coverage</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>Cross-functional collaboration</td>
+<td>1</td>
+<td>Module 2 (operating model and cross-functional ecosystem)</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Compliance, ethics, governance, AE reporting</td>
+<td>1</td>
+<td>Module 3 (compliance and the nonpromotional boundary); Module 6 (pharmacovigilance)</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>3</td>
+<td>KOL and HCP relationship building</td>
+<td>1</td>
+<td>Module 11 (MSL and field medical strategy)</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Compliant scientific exchange and education</td>
+<td>1</td>
+<td>Module 11; Module 3; Module 4 (interpreting evidence)</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Therapeutic-area and scientific expertise</td>
+<td>1</td>
+<td>Module 4 (critical appraisal); Module 1 (lifecycle). Product-specific depth is employer-provided</td>
+<td>Substantial</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Evidence generation (trials, IIS, RWE, HEOR)</td>
+<td>1</td>
+<td>Module 10 (IEGP); Module 7 (RWE); Module 4; Module 13 (investigator-sponsored research)</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Field and medical insight gathering and synthesis</td>
+<td>2</td>
+<td>Module 11 (insight capture and synthesis); Module 2</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Medical affairs strategy and medical plan</td>
+<td>2</td>
+<td>Module 2; Module 10; Module 15 (strategy and recommendation framing)</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Congress and advisory board support</td>
+<td>2</td>
+<td>Module 12 (congresses); Module 13 (advisory boards)</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Scientific communications and publications</td>
+<td>2</td>
+<td>Module 12 (publications, GPP 2022, congresses)</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Medical information inquiry response</td>
+<td>2</td>
+<td>Module 12 (medical information); Module 3 (unsolicited requests)</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Clinical trial site identification and feasibility</td>
+<td>3</td>
+<td>Module 4; Module 5 (regulatory); Module 11</td>
+<td>Substantial</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Medical and scientific content development</td>
+<td>3</td>
+<td>Module 12 (standard response documents, platform, narratives)</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Speaker training and education programs</td>
+<td>3</td>
+<td>Module 12; Module 13 (medical education)</td>
+<td>Substantial</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Medical, legal, and regulatory review of materials</td>
+<td>3</td>
+<td>Module 3 (the medical reviewer role and MLR); Module 12</td>
+<td>Substantial</td>
+</tr>
+<tr>
+<td>16</td>
+<td>HEOR and health-economics methods</td>
+<td>3</td>
+<td>Module 8 (economic evaluation, modeling, outcomes research)</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Project, budget, and vendor management</td>
+<td>3</td>
+<td>Module 15 (professional practice). Not a dedicated project-management course</td>
+<td>Partial</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Value dossiers and HTA submissions</td>
+<td>3</td>
+<td>Module 9 (HTA and market access); Module 8; capstone item 6</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Market access, pricing, reimbursement, contracting</td>
+<td>3</td>
+<td>Module 9</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Real-world data study design and analysis</td>
+<td>3</td>
+<td>Module 7 (RWD and RWE); Module 8</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>21</td>
+<td>People and team management, leadership</td>
+<td>4</td>
+<td>Module 15; handbook domain G. Introductory, not a management curriculum</td>
+<td>Partial</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Payer, HTA, and policy monitoring (including IRA)</td>
+<td>4</td>
+<td>Module 9 (includes the Medicare drug price negotiation program)</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>23</td>
+<td>CRM and administrative documentation, territory ops</td>
+<td>4</td>
+<td>Module 11 (field operating model). Tool-specific training (Veeva) is employer-provided</td>
+<td>Partial</td>
+</tr>
+<tr>
+<td>24</td>
+<td>AI and digital tools</td>
+<td>4 (emerging)</td>
+<td>Module 14 (AI and data fluency) plus AI woven through every module and the AI-use policy</td>
+<td>Direct</td>
+</tr>
+</tbody></table></div>
+<h2 id="what-the-analysis-shows">What the analysis shows</h2>
+<p><strong>The curriculum aligns with the responsibilities that dominate the field.</strong> All six Tier 1 (near-universal) themes and all five Tier 2 (very common) themes are covered Directly by a dedicated module. The three functions that recur in almost every posting, cross-functional collaboration, compliant nonpromotional exchange, and KOL engagement with insight gathering, are exactly the subjects of Modules 2, 3, and 11. The evidence-generation theme that appears in about 45 of 75 postings maps to the course&#39;s most developed area (Modules 7, 8, 9, and 10).</p>
+<p><strong>The course is ahead of the current job market on two themes that are trending.</strong> Integrated evidence generation planning (theme 6, and the connective tissue behind themes 16 to 20) is a named requirement in only a minority of today&#39;s postings but is the explicit function of senior evidence roles (for example the Sanofi &quot;Medical Affairs Director, Evidence Generation&quot; and the several HEOR and real-world-value director roles). AI and digital tools (theme 24) appear explicitly in only about 5 of 75 postings today, yet the course makes AI governance a dedicated module and a program-wide policy. Both choices position graduates for where medical affairs is moving rather than only where it is, which is appropriate for a credential intended to last.</p>
+<p><strong>Three areas are lighter, and this is by design rather than omission.</strong> Project, budget, and vendor management (theme 17) and people and team management (theme 21) are introduced in Module 15 and the leadership domain but are not taught to a management-curriculum depth; these responsibilities concentrate in director-and-above roles that a first industry hire grows into. Employer-specific tooling, principally CRM systems such as Veeva and territory administration (theme 23), is taught conceptually in Module 11 but not as tool training, because those systems are configured and taught by each employer. Product- and therapeutic-area-specific scientific depth (part of theme 5) is intentionally not taught, because it is company- and asset-specific; the course teaches the appraisal and communication skills that let a graduate acquire that depth quickly.</p>
+<p><strong>Recommended small additions to close the visible gaps</strong> (optional, and consistent with the course&#39;s entry-transition scope):</p>
+<ul>
+<li>Add a short applied unit in Module 11 or Module 15 on field-medical operating tools and metrics (CRM insight logging, engagement planning, and the activity-versus-outcome metric distinction already discussed in the case library), framed generically rather than to one vendor.</li>
+<li>Add a brief project-and-vendor-management segment to Module 15, since HEOR, publications, and director roles all list it; the capstone already exercises timeline and deliverable planning, which this would formalize.</li>
+<li>Keep AI and integrated evidence planning prominent, and revisit the AI theme&#39;s market frequency at each curriculum review, since its share of postings is likely to rise.</li>
+</ul>
+<h2 id="role-family-notes-for-candidates">Role-family notes for candidates</h2>
+<ul>
+<li><strong>Aiming for MSL or field medical:</strong> emphasize KOL engagement, compliant scientific exchange, insight gathering, and clinical-trial site support (themes 3, 4, 7, 12), all covered in Module 11 with compliance from Module 3. Expect substantial travel and CRM documentation.</li>
+<li><strong>Aiming for medical information, communications, or publications:</strong> emphasize inquiry response, content development, publication planning under GPP 2022, and material review (themes 11, 13, 10, 15), covered in Module 12 with the compliance and authorship standards from Modules 3 and 12.</li>
+<li><strong>Aiming for HEOR, market access, or real-world evidence:</strong> emphasize economic methods, value dossiers and HTA, market access, and real-world data analysis (themes 16, 18, 19, 20), covered in Modules 7, 8, and 9, with integrated evidence planning from Module 10. This is the course&#39;s deepest area and its clearest differentiator from field-only training.</li>
+<li><strong>Aiming for medical affairs management or medical director:</strong> emphasize strategy ownership, evidence-generation leadership, cross-functional leadership, and material review (themes 8, 6, 1, 15), plus the emerging people and budget management (theme 21); the course prepares the strategic and evidence competencies and introduces the leadership dimension.</li>
+</ul>
+
+</article>
+</main>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><svg class="seal" width="34" height="34" viewBox="0 0 64 64" role="img" aria-label="BCMAEP seal">
+  <circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="2.5"/>
+  <circle cx="32" cy="32" r="24" fill="none" stroke="currentColor" stroke-width="1"/>
+  <text x="32" y="37" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-weight="bold" fill="currentColor" letter-spacing="0.5">MA</text>
+  <text x="32" y="14.5" text-anchor="middle" font-family="Georgia, serif" font-size="6.5" fill="currentColor" letter-spacing="2">BCMAEP</text>
+  <text x="32" y="55" text-anchor="middle" font-family="Georgia, serif" font-size="6.5" fill="currentColor" letter-spacing="1">EST 2026</text>
+</svg><div><strong>BCMAEP</strong><br>Board Certified Medical Affairs and Evidence Professional</div></div>
+    <div class="footer-cols">
+      <div>
+        <span class="footer-head">Program</span>
+        <a href="handbook.html">Program handbook</a>
+        <a href="curriculum.html">Curriculum and syllabus</a>
+        <a href="assessment.html">Examination blueprint</a>
+        <a href="capstone.html">Capstone portfolio</a>
+      </div>
+      <div>
+        <span class="footer-head">Governance</span>
+        <a href="accreditation.html">Accreditation and quality</a>
+        <a href="ai-policy.html">AI-use policy</a>
+        <a href="references.html">Source register</a>
+        <a href="market-alignment.html">Market alignment</a>
+      </div>
+      <div>
+        <span class="footer-head">Help</span>
+        <a href="index.html#how-to-use">How to use this site</a>
+        <a href="index.html#program-status">Program status</a>
+        <a href="curriculum.html#your-progress">Your progress</a>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p><strong>Program status.</strong> Version 1.0 curriculum design, prepared July 2026. This program is a complete curriculum and certification design; it has not undergone job-task-analysis validation, item-bank piloting, formal standard setting, or accreditation review. It is designed for alignment with ISO/IEC 17024, the NCCA Standards, and the ANSI/IACET Standard, and is not accredited by any body at this version (see <a href="accreditation.html">accreditation and quality alignment</a>).</p>
+      <p><strong>Accessibility.</strong> This site targets WCAG 2.2 Level AA conformance: minimum 4.5:1 text contrast, keyboard-operable interactive components, visible focus indicators, and single-column reflow at narrow widths.</p>
+      <p><strong>Sources.</strong> Teaching claims carry hyperlinked citations to verified authoritative sources; the consolidated pool is the <a href="references.html">source register</a>. Cited third-party materials are assigned readings; public availability does not grant republication rights.</p>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/site.js"></script>
+</body>
+</html>

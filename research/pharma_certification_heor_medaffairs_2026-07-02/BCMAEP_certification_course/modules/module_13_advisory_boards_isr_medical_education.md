@@ -47,7 +47,7 @@ A defensible advisory board has the following elements:
 
 Advisory boards are a recognized medical affairs activity whose value depends on disciplined design and on demonstrating impact rather than volume, a theme that runs through the MAPS practice materials on converting operational challenges into strategic contribution ([MAPS, Converting Challenges Into Opportunities](https://medicalaffairs.org/wp-content/uploads/2021/05/Challenges-to-Opportunities.pdf); [MAPS/Amedea, innovation and metrics webinar](https://medicalaffairs.org/wp-content/uploads/2023/03/FINAL-SLIDES-MAPS-Webinar-Mar-10-Amedea-Pharma-Final-Updated-for-download14-Read-Only.pdf)).
 
-Governance of these interactions falls within the Medical Governance and Compliance domain of the MAPS competency framework ([MAPS, Foundations in Medical Affairs](https://medicalaffairs.org/medical-affairs-training/)), and advisory activity is a recognized element of launch-phase medical planning ([MAPS, launch-excellence masterclass brochure](https://medicalaffairs.org/wp-content/uploads/2023/05/MAPS-MasterClass-Singapore-English-Brochure-5.13-min.pdf)).
+Governance of these interactions falls within the program's medical governance and compliance domain (Domain F), and advisory activity is a recognized element of launch-phase medical planning ([MAPS, launch-excellence masterclass brochure](https://medicalaffairs.org/wp-content/uploads/2023/05/MAPS-MasterClass-Singapore-English-Brochure-5.13-min.pdf)).
 
 The documentation trail is what makes a compliant advisory board defensible after the fact. A complete record typically includes:
 
@@ -209,9 +209,7 @@ Adoption of these tools in medical affairs is documented but must be governed ra
 
 - [MAPS, Converting Challenges Into Opportunities](https://medicalaffairs.org/wp-content/uploads/2021/05/Challenges-to-Opportunities.pdf) (advisory board and medical affairs activity design under constraints)
 - [MAPS/Amedea, innovation and metrics webinar](https://medicalaffairs.org/wp-content/uploads/2023/03/FINAL-SLIDES-MAPS-Webinar-Mar-10-Amedea-Pharma-Final-Updated-for-download14-Read-Only.pdf) (documenting outputs and demonstrating impact)
-- [MAPS, launch-excellence masterclass brochure](https://medicalaffairs.org/wp-content/uploads/2023/05/MAPS-MasterClass-Singapore-English-Brochure-5.13-min.pdf) (advisory activity in the launch context)
-- [MAPS, Foundations in Medical Affairs](https://medicalaffairs.org/medical-affairs-training/) (Medical Governance and Compliance domain)
-- [MAPS, Digital, Advanced Analytics and AI in Medical Affairs benchmark report, 2024](https://medicalaffairs.org/wp-content/uploads/2024/10/MAPS-Digital-Advanced-Analytics-Artificial-Intelligence-Report-2024.pdf) (AI use in advisory-board preparation and summarization)
+- [MAPS, launch-excellence masterclass brochure](https://medicalaffairs.org/wp-content/uploads/2023/05/MAPS-MasterClass-Singapore-English-Brochure-5.13-min.pdf) (advisory activity in the launch context)- [MAPS, Digital, Advanced Analytics and AI in Medical Affairs benchmark report, 2024](https://medicalaffairs.org/wp-content/uploads/2024/10/MAPS-Digital-Advanced-Analytics-Artificial-Intelligence-Report-2024.pdf) (AI use in advisory-board preparation and summarization)
 - Compliance foundations (Anti-Kickback Statute, fair-market value, transparency reporting, and the nonpromotional boundary) are developed in Module 3.
 
 ## Connection to the capstone
